@@ -61,7 +61,7 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain("decoration-dotted");
  });
 
- it("does not mark source-aligned polyphonic pinyin for review", () => {
+ it("keeps source-aligned polyphonic pinyin marked until manually reviewed", () => {
   const markup = renderReaderText(
    <ContextualReaderText
     analysis={analyzeContextualPronunciation({ text: "重庆", sourcePinyin: "Chóngqìng" })}
@@ -69,9 +69,49 @@ describe("ContextualReaderText", () => {
     onGlyphInspect={() => undefined}
    />,
   );
-  expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 重"');
+  expect(markup).toContain('aria-label="Pinyin chữ 重 cần kiểm tra"');
+  expect(markup).toContain("text-warning");
+  expect(markup).toContain("decoration-dotted");
+ });
+
+ it("keeps dictionary-based polyphonic readings marked for review", () => {
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analyzeContextualPronunciation({ text: "听得入迷" })}
+    displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+    onGlyphInspect={() => undefined}
+   />,
+  );
+  expect(markup).toContain('aria-label="Pinyin chữ 得 cần kiểm tra"');
+  expect(markup).toContain(">de</span>");
+  expect(markup).toContain("text-warning");
+ });
+
+ it("removes the review marker only after manual confirmation", () => {
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analyzeContextualPronunciation({
+     text: "得",
+     sourcePinyin: "de",
+     overrides: [
+      {
+       id: "reviewed-de",
+       text: "得",
+       readings: ["de5"],
+       scope: "sentence-instance",
+       sentenceText: "得",
+       start: 0,
+       end: 1,
+       updatedAt: "2026-09-05T00:00:00.000Z",
+      },
+     ],
+    })}
+    displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+    onGlyphInspect={() => undefined}
+   />,
+  );
+  expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 得"');
   expect(markup).not.toContain("text-warning");
-  expect(markup).not.toContain("decoration-dotted");
  });
 
  it("preserves reviewed source phrase pinyin when alignment is valid", () => {

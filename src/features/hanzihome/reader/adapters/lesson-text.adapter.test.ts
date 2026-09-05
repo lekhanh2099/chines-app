@@ -80,6 +80,25 @@ const textSection: TextSection = {
 };
 
 describe("lesson text reader adapter", () => {
+ it("preserves optional titles and meanings without inventing section headings", () => {
+  const result = lessonTextToReaderDocument({
+   documentId: "untitled:text",
+   lessonId: "untitled",
+   titleZh: "",
+   sections: [
+    {
+     ...textSection,
+     blocks: textSection.blocks.map((block) => ({ ...block, title: "", title_vi: "" })),
+    },
+   ],
+   sectionPathFor: () => ["lesson", "sections", 0],
+  });
+  expect(result.document.title).toBeUndefined();
+  expect(result.document.sections.map((section) => section.title)).toEqual(["", ""]);
+  expect(result.document.segments[0]?.vi).toBe("Hôm nay là Chủ nhật.");
+  expect(result.document.segments[1]?.vi).toBe("Bạn khỏe không?");
+ });
+
  it("normalizes textbook blocks into ordered continuous reader sections", () => {
   const result = lessonTextToReaderDocument({
    documentId: "lesson-1:text",

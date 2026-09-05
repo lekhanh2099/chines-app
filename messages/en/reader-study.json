@@ -58,7 +58,8 @@
   "segment": {
    "dialogue": "Turn {speaker}",
    "dialogueFallback": "dialogue",
-   "reading": "Reading segment"
+   "reading": "Reading segment",
+   "sampleRetelling": "Sample retelling"
   },
   "overview": {
    "whatIsThis": "What is this reading?",

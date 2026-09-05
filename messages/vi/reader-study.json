@@ -58,7 +58,8 @@
   "segment": {
    "dialogue": "Lượt {speaker}",
    "dialogueFallback": "thoại",
-   "reading": "Đoạn đọc"
+   "reading": "Đoạn đọc",
+   "sampleRetelling": "Bài kể mẫu"
   },
   "overview": {
    "whatIsThis": "Bài này là gì?",

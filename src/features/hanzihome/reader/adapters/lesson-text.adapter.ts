@@ -169,7 +169,7 @@ export function lessonTextToReaderDocument({
    if (segmentIds.length === 0) continue;
    readerSections.push({
     id: block.id,
-    title: block.title_vi.trim() || block.title.trim() || `Phần ${readerSections.length + 1}`,
+    title: block.title_vi.trim() || block.title.trim(),
     segmentIds,
    });
    sectionBindings.set(block.id, {

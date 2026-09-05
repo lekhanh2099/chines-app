@@ -6,7 +6,7 @@ import { ExerciseCard } from "./ExerciseSection";
 import { GrammarCard } from "./GrammarSection";
 import { NoteCard } from "./NotesSection";
 import { ReadingCard } from "./ReadingSection";
-import { TextBlockView } from "./TextSection";
+import { TextSectionView } from "./TextSection";
 import { ProperNounCard } from "./book-section/ProperNounCard";
 import { PreparationSectionView } from "./book-section/PreparationSectionView";
 import { SectionContentFrame } from "./book-section/SectionContentFrame";
@@ -25,9 +25,6 @@ export function BookSectionContent({
  debugMode = false,
  readingItems,
  readingSections,
- interactiveReading = false,
- readingMode = false,
- documentMode = false,
 }: {
  lessonId?: string;
  section: Section;
@@ -56,20 +53,12 @@ export function BookSectionContent({
     debugMode={debugMode}
    >
     {section.blocks.length > 0 ? (
-     <div className="grid gap-3">
-      {section.blocks.map((block, index) => (
-       <TextBlockView
-        key={block.id}
-        lessonId={lessonId}
-        block={block}
-        path={sectionPath ? [...sectionPath, "blocks", index] : undefined}
-        displayMode={displayMode}
-        interactiveReading={interactiveReading}
-        readingMode={readingMode}
-        documentMode={documentMode}
-       />
-      ))}
-     </div>
+     <TextSectionView
+      lessonId={lessonId}
+      section={section}
+      sectionPath={sectionPath}
+      displayMode={displayMode}
+     />
     ) : (
      renderSectionFallback()
     )}

@@ -99,10 +99,7 @@ export function ContextualReaderText({
    ? cn("cursor-pointer rounded-sm", focusRingClassName)
    : undefined;
   const needsPronunciationReview =
-   glyph.isPolyphonic &&
-   !glyph.evidence.includes("manual-override") &&
-   !glyph.evidence.includes("source-pinyin") &&
-   !glyph.evidence.includes("dictionary-exact");
+   glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
   const hanziActionLabel = hanziInteractive
    ? t("playFromCharacter", { character: grapheme.segment })
    : undefined;

@@ -17,6 +17,10 @@ import { ReadingCard } from "./ReadingSection";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
+import { loadAppMessages } from "@/i18n/messages";
+import type { AppLocale } from "@/i18n/config";
+import { SampleRetelling } from "./reading-section/SampleRetelling";
+import { PassageCard } from "./PassageCard";
 
 vi.mock("next/navigation", () => ({
  useSearchParams: () => new URLSearchParams(),
@@ -42,6 +46,56 @@ function renderToStaticMarkup(element: ReactNode) {
 }
 
 describe("ExerciseCard", () => {
+ it.each(["vi", "en", "zh-CN"] satisfies AppLocale[])(
+  "renders the shared sample reader with loaded %s messages",
+  async (locale) => {
+   const messages = await loadAppMessages(locale);
+   const html = renderMarkup(
+    <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <MandarinTtsProvider>
+      <SampleRetelling
+       value={{ zh: "我喜欢读书。", vi: "Tôi thích đọc sách." }}
+       displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showMeaning: true, revealMode: "always" }}
+      />
+     </MandarinTtsProvider>
+    </NextIntlClientProvider>,
+   );
+   expect(html).toContain(messages.Reader.study.chrome.segment.sampleRetelling);
+   expect(html).toContain(messages.Reader.study.chrome.surface.aria);
+   expect(html).toContain("Tôi thích đọc sách.");
+   expect(html).toContain('data-reader-segment-id="sample-retelling"');
+   expect(html).not.toContain("Reader.study.");
+  },
+ );
+
+ it("renders a titleless article with optional paragraph meanings and puts support after the reader", () => {
+  const html = renderToStaticMarkup(
+   <MandarinTtsProvider>
+    <PassageCard
+     itemId="optional-fields"
+     displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showMeaning: true, revealMode: "always" }}
+     passage={{
+      paragraphs: [
+       { id: "with-meaning", zh: "我喜欢读书。", vi: "Tôi thích đọc sách." },
+       { id: "without-meaning", zh: "他也喜欢。" },
+      ],
+      supplementary_vocabulary: [{ zh: "读书", vi: "đọc sách" }],
+     }}
+    />
+   </MandarinTtsProvider>,
+  );
+  expect(html).toContain("Nghe bài");
+  expect(html).toContain("Đoạn 1 / 2");
+  expect(html).toContain('data-reader-segment-id="with-meaning"');
+  expect(html).toContain('data-reader-segment-id="without-meaning"');
+  expect(html).toContain("Tôi thích đọc sách.");
+  expect(html).not.toContain("<header");
+  expect(html).not.toContain("Phần 1");
+  expect(html.indexOf("Từ bổ sung")).toBeGreaterThan(
+   html.indexOf('data-reader-segment-id="without-meaning"'),
+  );
+ });
+
  it("uses the Chinese exercise title instead of page metadata mislabeled as Vietnamese", () => {
   const item = ExerciseSchema.parse({
    id: "boya-preintermediate-2-l01-src-004",
@@ -436,7 +490,8 @@ describe("ReadingCard", () => {
   expect(html).toContain("Tốc độ đọc");
   expect(html).toContain("Mục lục đoạn");
   expect(html).toContain("<ruby");
-  expect(html).toContain('aria-label="Kiểm tra pinyin chữ 个"');
+  expect(html).toContain('aria-label="Pinyin chữ 个 cần kiểm tra"');
+  expect(html).toContain("text-warning");
   expect(html).toContain(">ge</span>");
   expect(html).toContain("Ngày xưa, có một người ngồi thuyền qua sông.");
  });

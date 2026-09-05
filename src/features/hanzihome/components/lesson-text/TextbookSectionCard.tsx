@@ -1,6 +1,5 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/typography";
 import { BookSectionContent } from "@/features/hanzihome/components/LessonOverview";
@@ -93,16 +92,7 @@ export function TextbookSectionCard({
   />
  );
 
- if (section.type === "text") {
-  return (
-   <Card asChild variant="section" padding="md">
-    <article className="grid gap-4 sm:gap-5">
-     {sectionHeader}
-     {sectionContent}
-    </article>
-   </Card>
-  );
- }
+ if (section.type === "reading" || section.type === "text") return sectionContent;
 
  return (
   <article className="grid gap-3">

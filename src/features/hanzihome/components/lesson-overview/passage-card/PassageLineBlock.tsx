@@ -21,10 +21,12 @@ export function PassageLineBlock({
  const isCloze = shouldRenderAsCloze(line.zh, answerMap, rendererId);
 
  return (
-  <div className="study-content-surface rounded-xl border p-3">
+  <div className="grid min-w-0 gap-2">
    {isCloze ? (
     <div className="grid gap-2">
-     <ClozeText text={line.zh} answerMap={answerMap} displayMode={displayMode} />
+     <div data-reader-hanzi-content>
+      <ClozeText text={line.zh} answerMap={answerMap} displayMode={displayMode} />
+     </div>
      {displayMode.showPinyin && line.pinyin && (
       <StudyInstructionText variant="caption" tone="muted" weight="bold" emphasis="italic">
        {line.pinyin}

@@ -7,6 +7,8 @@ import businessChineseMessages from "../../../../../messages/vi/business-chinese
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import type { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import type { ReaderDocumentModel } from "@/features/hanzihome/reader/model/reader-document.types";
 import {
  getBusinessChineseCatalog,
  getBusinessChineseLesson,
@@ -16,6 +18,28 @@ type SidebarItemProps = ComponentProps<typeof LessonModuleSidebarItem>;
 
 const routerPushMock = vi.hoisted(() => vi.fn());
 const sidebarItemMock = vi.hoisted(() => vi.fn<(props: SidebarItemProps) => void>());
+const readerDocumentMock = vi.hoisted(() => vi.fn<(document: ReaderDocumentModel) => void>());
+
+vi.mock("@/features/hanzihome/reader/components/ReaderSurface", async (importOriginal) => {
+ const actual =
+  await importOriginal<typeof import("@/features/hanzihome/reader/components/ReaderSurface")>();
+ return {
+  ...actual,
+  ReaderSurface: (props: ComponentProps<typeof actual.ReaderSurface>) => {
+   readerDocumentMock(props.document);
+   return <actual.ReaderSurface {...props} />;
+  },
+ };
+});
+
+vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
+ useVocabInspector: () => ({ openInspector: vi.fn() }),
+}));
+vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
+ useLearningState: () => ({
+  state: { settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE } },
+ }),
+}));
 
 vi.mock("next/navigation", () => ({
  useSearchParams: () => new URLSearchParams(),
@@ -72,9 +96,9 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("GIỚI THIỆU TỔNG QUAN");
   expect(markup).toContain("BÀI KHÓA CHÍNH");
   expect(markup).toContain("电话会议");
-  expect(markup).not.toContain("Đoạn 1 /");
-  expect(markup).not.toContain("Nghe bài");
-  expect(markup).not.toContain("Công cụ học");
+  expect(markup).toContain("Đoạn 1 /");
+  expect(markup).toContain("Nghe bài");
+  expect(markup).toContain("Công cụ học");
   expect(markup).toContain("<ruby");
   expect(markup).toContain('lang="zh-CN"');
   expect(markup).toContain('lang="zh-Latn-pinyin"');
@@ -133,14 +157,25 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("赵经理");
   expect(markup).toContain("Xin chào! Cho tôi hỏi có phải là Giám đốc Tôn không ạ?");
   expect(markup).not.toContain("DỊCH BÀI KHÓA");
-  expect(markup).toContain('aria-label="Đọc tiếng Trung: 您好！请问是孙经理吗？"');
+  expect(markup).toContain("data-reader-segment-id=");
+  expect(markup).toContain('aria-label="Đọc từ chữ 您"');
   expect(markup).not.toContain('aria-label="Đọc tiếng Trung: 赵经理： 您好！请问是孙经理吗？"');
-  expect(markup).toContain(
-   'aria-label="Đọc tiếng Trung: 孙经理，我们公司的订单逐年增加，其中60%来自国外',
+  expect(markup).toContain("60%");
+  expect(readerDocumentMock).toHaveBeenLastCalledWith(
+   expect.objectContaining({
+    segments: expect.arrayContaining([
+     expect.objectContaining({
+      zh: "您好！请问是孙经理吗？",
+      speechText: "您好！请问是孙经理吗？",
+      speaker: { label: "赵经理" },
+      vi: "Xin chào! Cho tôi hỏi có phải là Giám đốc Tôn không ạ?",
+     }),
+    ]),
+   }),
   );
   expect(markup).toContain('aria-label="Pinyin chữ 行 cần kiểm tra"');
   expect(markup).toContain("text-warning underline decoration-dotted underline-offset-2");
-  expect(markup).not.toContain("Công cụ học");
+  expect(markup).toContain("Công cụ học");
  });
 
  it("renders inline lesson translations with the same speaker and TTS structure", () => {
@@ -159,8 +194,17 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain(
    "Xin chào, tôi là Đỗ Sâm của Công ty Moore Mỹ, đây là danh thiếp của tôi.",
   );
-  expect(markup).toContain(
-   'aria-label="Đọc tiếng Trung: 您好，我是美国摩尔公司的杜森，这是我的名片。"',
+  expect(markup).toContain('aria-label="Đọc từ chữ 您"');
+  expect(readerDocumentMock).toHaveBeenLastCalledWith(
+   expect.objectContaining({
+    segments: expect.arrayContaining([
+     expect.objectContaining({
+      speechText: "您好，我是美国摩尔公司的杜森，这是我的名片。",
+      speaker: { label: "杜森" },
+      vi: "Xin chào, tôi là Đỗ Sâm của Công ty Moore Mỹ, đây là danh thiếp của tôi.",
+     }),
+    ]),
+   }),
   );
   expect(markup).not.toContain(
    'aria-label="Đọc tiếng Trung: 杜森： 您好，我是美国摩尔公司的杜森，这是我的名片。"',

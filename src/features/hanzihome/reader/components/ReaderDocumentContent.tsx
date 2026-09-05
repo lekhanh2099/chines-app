@@ -8,6 +8,8 @@ import { Separator } from "@/components/ui/separator";
 import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import {
+ containsHanziText,
+ AdaptiveStudyText,
  PinyinText,
  ReaderHanziText,
  StudyInstructionText,
@@ -64,6 +66,7 @@ export type ReaderSurfaceRenderSegment = (input: {
  segment: ReaderSegment;
  index: number;
  content: ReactNode;
+ displayMode: LessonDisplayMode;
 }) => ReactNode;
 
 export type ReaderSurfaceRenderSection = (input: {
@@ -109,6 +112,14 @@ const ReaderDocumentContentView = memo(function ReaderDocumentContentView({
  setSegmentElement,
  displayMode,
 }: ReaderDocumentContentProps & { displayMode: LessonDisplayMode }) {
+ const titlePinyin = useMemo(
+  () =>
+   document.titlePinyin ||
+   (displayMode.autoDetectPinyin && document.title && containsHanziText(document.title)
+    ? formatContextualSpokenPinyin(analyzeContextualPronunciation({ text: document.title }))
+    : ""),
+  [document.title, document.titlePinyin, displayMode.autoDetectPinyin],
+ );
  const segmentById = useMemo(
   () => new Map(document.segments.map((segment) => [segment.id, segment])),
   [document.segments],
@@ -129,6 +140,30 @@ const ReaderDocumentContentView = memo(function ReaderDocumentContentView({
  return (
   <Card variant="section" padding="lg">
    <div className="grid min-w-0 gap-5">
+    {document.title || document.titlePinyin || document.titleVi ? (
+     <header className="grid min-w-0 gap-1">
+      {document.title ? (
+       <AdaptiveStudyText
+        as="h3"
+        text={document.title}
+        displayMode={displayMode}
+        hanziSize="lg"
+        variant="cardTitle"
+        weight="black"
+       />
+      ) : null}
+      {titlePinyin && displayMode.showPinyin ? (
+       <PinyinText tone="accent" weight="semibold">
+        {titlePinyin}
+       </PinyinText>
+      ) : null}
+      {document.titleVi && displayMode.showMeaning && document.titleVi !== document.title ? (
+       <TranslationText tone="muted" weight="medium">
+        {document.titleVi}
+       </TranslationText>
+      ) : null}
+     </header>
+    ) : null}
     {document.sections.map((section, sectionIndex) => {
      const segments = section.segmentIds
       .map((segmentId) => segmentById.get(segmentId))
@@ -136,20 +171,11 @@ const ReaderDocumentContentView = memo(function ReaderDocumentContentView({
      if (segments.length === 0) return null;
      const content = (
       <section className="grid min-w-0 gap-4">
-       <div className="grid gap-1">
-        <StudyInstructionText
-         variant="overline"
-         tone="muted"
-         weight="black"
-         tracking="wide"
-         transform="uppercase"
-        >
-         Phần {sectionIndex + 1}
-        </StudyInstructionText>
+       {section.title ? (
         <Typography as="h3" variant="cardTitle" weight="black">
          {section.title}
         </Typography>
-       </div>
+       ) : null}
        <div className="grid min-w-0 gap-5">
         {segments.map((segment, localIndex) => (
          <ReaderSegmentRow
@@ -236,7 +262,7 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
    onPronunciationInspect={onPronunciationInspect}
   />
  );
- const rendered = renderSegment ? renderSegment({ segment, index, content }) : content;
+ const rendered = renderSegment ? renderSegment({ segment, index, content, displayMode }) : content;
 
  const captureSelection = (element: HTMLElement) => {
   const selection = window.getSelection();

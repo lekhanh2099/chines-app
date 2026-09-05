@@ -119,17 +119,21 @@ export function ReadingCard({
  const passageOwnsClozeAnswers = Boolean(passage) && clozeAnswers.length > 0;
 
  const content = (
-  <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
-   <div>
-    <Typography as="h4" variant="cardTitle" tone="default" weight="black">
-     {item.title_vi || item.title}
-    </Typography>
-    {instructionText && (
-     <StudyInstructionText tone="muted" weight="semibold">
-      {instructionText}
-     </StudyInstructionText>
-    )}
-   </div>
+  <article className="grid min-w-0 gap-3">
+   {!passage || instructionText ? (
+    <div>
+     {!passage ? (
+      <Typography as="h4" variant="cardTitle" tone="default" weight="black">
+       {item.title_vi || item.title}
+      </Typography>
+     ) : null}
+     {instructionText && (
+      <StudyInstructionText tone="muted" weight="semibold">
+       {instructionText}
+      </StudyInstructionText>
+     )}
+    </div>
+   ) : null}
 
    {lessonId && path && passageSegments ? (
     <NestedEditControls
@@ -179,6 +183,7 @@ export function ReadingCard({
     displayMode={displayMode}
     lessonId={lessonId}
     showTitle={showPassageTitle}
+    title={readingTitle || undefined}
    />
 
    {!passage && (

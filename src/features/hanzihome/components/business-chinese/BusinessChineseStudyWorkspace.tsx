@@ -25,7 +25,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import {
  Select,
  SelectContent,
@@ -57,9 +56,11 @@ import {
  type ContextualPronunciationGlyph,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { ContextualReaderText } from "@/features/hanzihome/reader/ContextualReaderText";
-import { ReaderCommandBar } from "@/features/hanzihome/reader/components/ReaderCommandBar";
+import {
+ ReaderSurface,
+ ReaderSurfaceView,
+} from "@/features/hanzihome/reader/components/ReaderSurface";
 import type { ReaderSurfacePronunciationTarget } from "@/features/hanzihome/reader/components/ReaderDocumentContent";
-import { ReaderOutlineContent } from "@/features/hanzihome/reader/components/ReaderOutline";
 import {
  ReaderPronunciationReviewPopover,
  type ReaderPronunciationSaveInput,
@@ -78,7 +79,6 @@ import {
  useReaderRuntimeCommands,
  useReaderRuntimeSelector,
 } from "@/features/hanzihome/reader/runtime/ReaderRuntimeProvider";
-import { useReaderPositionSync } from "@/features/hanzihome/reader/runtime/useReaderPositionSync";
 import type {
  BusinessChineseBookSummary,
  BusinessChineseLesson,
@@ -174,6 +174,11 @@ function buildBusinessChineseReaderDocument(
 ): ReaderDocumentModel {
  const segments: ReaderSegment[] = [];
  const sections: ReaderDocumentModel["sections"][number][] = [];
+ const translationIndex = lesson.sections.findIndex((section) =>
+  section.title.includes("DỊCH BÀI KHÓA"),
+ );
+ const translatedSection = lesson.sections[translationIndex];
+ const sourceSection = translationIndex > 0 ? lesson.sections[translationIndex - 1] : undefined;
 
  for (const section of lesson.sections) {
   if (
@@ -220,7 +225,14 @@ function buildBusinessChineseReaderDocument(
     section.category === "practice" && block.text.includes("→")
      ? block.text.slice(0, block.text.indexOf("→")).trim()
      : block.text;
-   const sourceText = splitDialogueTurn(splitTrailingTranslation(blockText).source).content;
+   const inlineText = splitTrailingTranslation(blockText);
+   const sourceTurn = splitDialogueTurn(inlineText.source);
+   const translatedBlock =
+    section.id === sourceSection?.id
+     ? translatedSection?.blocks[section.blocks.indexOf(block)]
+     : undefined;
+   const translationTurn = splitDialogueTurn(translatedBlock?.text || inlineText.translation);
+   const sourceText = sourceTurn.content;
    const speechSegments = getChineseSpeechSegments(sourceText);
    if (speechSegments.length === 0) continue;
    const id =
@@ -229,9 +241,12 @@ function buildBusinessChineseReaderDocument(
    segmentIds.push(id);
    segments.push({
     id,
-    kind: block.type === "subheading" ? "heading" : "sentence",
+    kind:
+     block.type === "subheading" ? "heading" : sourceTurn.speaker ? "dialogue-turn" : "paragraph",
     sectionId: section.id,
-    zh: speechText,
+    zh: section.category === "text" ? sourceText : speechText,
+    vi: translationTurn.content || undefined,
+    speaker: sourceTurn.speaker ? { label: sourceTurn.speaker } : undefined,
     speechText,
    });
   }
@@ -253,7 +268,8 @@ function buildBusinessChineseReaderDocument(
    sourceId: lesson.id,
    label: lesson.title,
   },
-  title: lesson.title,
+  title: splitTrailingTranslation(lessonDisplayTitle(lesson.title)).source,
+  titleVi: splitTrailingTranslation(lessonDisplayTitle(lesson.title)).translation,
   sections,
   segments,
   metadata: [],
@@ -543,10 +559,7 @@ function BusinessChineseMixedText({
      return <span key={`${grapheme.index}:${grapheme.segment}`}>{grapheme.segment}</span>;
     }
     const needsPronunciationReview =
-     glyph.isPolyphonic &&
-     !glyph.evidence.includes("manual-override") &&
-     !glyph.evidence.includes("source-pinyin") &&
-     !glyph.evidence.includes("dictionary-exact");
+     glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
 
     if (!showPinyin || glyph.spokenPinyin === null) {
      return (
@@ -1055,49 +1068,6 @@ function DesktopSectionNavigation({
  );
 }
 
-function BusinessChineseReaderCommandBar({
- readerDocument,
- displayMode,
- onDisplayModeChange,
-}: {
- readerDocument: ReaderDocumentModel;
- displayMode: LessonDisplayMode;
- onDisplayModeChange: (updates: Partial<LessonDisplayMode>) => void;
-}) {
- const [outlineOpen, setOutlineOpen] = useState(false);
- const getSegmentElement = useCallback(
-  (segmentId: string) => window.document.getElementById(segmentId),
-  [],
- );
- useReaderPositionSync({ document: readerDocument, getSegmentElement });
-
- if (readerDocument.segments.length === 0) return null;
-
- return (
-  <>
-   <ReaderCommandBar
-    segmentCount={readerDocument.segments.length}
-    onOpenOutline={() => setOutlineOpen(true)}
-    stickyOffset="page"
-    displayMode={displayMode}
-    onDisplayModeChange={onDisplayModeChange}
-    outlineMenu={(onNavigate) => (
-     <ReaderOutlineContent document={readerDocument} onNavigate={onNavigate} />
-    )}
-   />
-   <Sheet open={outlineOpen} onOpenChange={setOutlineOpen} side="right" className="sm:max-w-md">
-    <SheetHeader
-     title={readerDocument.title ?? readerDocument.source.label ?? ""}
-     onClose={() => setOutlineOpen(false)}
-    />
-    <SheetBody>
-     <ReaderOutlineContent document={readerDocument} onNavigate={() => setOutlineOpen(false)} />
-    </SheetBody>
-   </Sheet>
-  </>
- );
-}
-
 export function BusinessChineseStudyWorkspace({
  books,
  lesson,
@@ -1142,7 +1112,11 @@ function BusinessChineseStudyWorkspaceContent({
  readerDocument: ReaderDocumentModel;
 }) {
  const t = useTranslations("BusinessChinese");
- const [displayMode, setDisplayMode] = useState(businessChineseDisplayMode);
+ const displayMode = businessChineseDisplayMode;
+ const textReaderDocument = useMemo(
+  () => buildBusinessChineseReaderDocument(lesson, "text"),
+  [lesson],
+ );
  const [sidebarOpen, setSidebarOpen] = useState(true);
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const pairedTranslations = useMemo(() => {
@@ -1187,9 +1161,6 @@ function BusinessChineseStudyWorkspaceContent({
  );
  const intro = lesson.intro.join(" ");
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
- const updateDisplayMode = (updates: Partial<LessonDisplayMode>) => {
-  setDisplayMode((current) => ({ ...current, ...updates }));
- };
  const selectSection = (sectionId: string) => {
   scrollAppContentToElement(document.getElementById(sectionId), {
    behavior: "smooth",
@@ -1232,14 +1203,19 @@ function BusinessChineseStudyWorkspaceContent({
            <Typography variant="overline" tone="muted">
             {lesson.bookLabel} · {t("lessonPosition", { lesson: lesson.number })}
            </Typography>
-           <BusinessChineseText
-            pronunciationId={`${lesson.id}:title`}
-            text={lessonTitle.source}
-            displayMode={displayMode}
-            variant="pageTitle"
-            weight="black"
-           />
-           {lessonTitle.translation && displayMode.showMeaning ? (
+           {activeView !== "text" && activeView !== "all" ? (
+            <BusinessChineseText
+             pronunciationId={`${lesson.id}:title`}
+             text={lessonTitle.source}
+             displayMode={displayMode}
+             variant="pageTitle"
+             weight="black"
+            />
+           ) : null}
+           {activeView !== "text" &&
+           activeView !== "all" &&
+           lessonTitle.translation &&
+           displayMode.showMeaning ? (
             <TranslationText variant="sectionTitle" tone="secondary" weight="black">
              {lessonTitle.translation}
             </TranslationText>
@@ -1259,39 +1235,45 @@ function BusinessChineseStudyWorkspaceContent({
          </Card>
 
          {activeView === "text" ? (
-          <BusinessChineseReaderCommandBar
-           readerDocument={readerDocument}
-           displayMode={displayMode}
-           onDisplayModeChange={updateDisplayMode}
-          />
+          <ReaderSurfaceView document={readerDocument} displayMode={displayMode} />
          ) : null}
 
-         <div
-          className={cn("grid min-w-0 gap-3", !focusMode && "2xl:grid-cols-[minmax(0,1fr)_15rem]")}
-         >
-          <div className="grid min-w-0 gap-3">
-           {!focusMode ? (
-            <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
-           ) : null}
-           <Card variant="section" padding="md" className="min-w-0">
+         {activeView !== "text" ? (
+          <div
+           className={cn("grid min-w-0 gap-3", !focusMode && "2xl:grid-cols-[minmax(0,1fr)_15rem]")}
+          >
+           <div className="grid min-w-0 gap-3">
+            {!focusMode ? (
+             <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
+            ) : null}
             <div className="grid min-w-0 gap-6">
              {visibleSections.map((section, index) => (
               <Fragment key={section.id}>
-               <BusinessChineseSection
-                section={section}
-                displayMode={displayMode}
-                translations={pairedTranslations}
-               />
+               {section.category === "text" ? (
+                section.id === textReaderDocument.sections[0]?.id ? (
+                 <div id={section.id}>
+                  <ReaderSurface document={textReaderDocument} displayMode={displayMode} />
+                 </div>
+                ) : null
+               ) : (
+                <Card variant="section" padding="md">
+                 <BusinessChineseSection
+                  section={section}
+                  displayMode={displayMode}
+                  translations={pairedTranslations}
+                 />
+                </Card>
+               )}
                {index < visibleSections.length - 1 ? <Separator /> : null}
               </Fragment>
              ))}
             </div>
-           </Card>
+           </div>
+           {!focusMode ? (
+            <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
+           ) : null}
           </div>
-          {!focusMode ? (
-           <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
-          ) : null}
-         </div>
+         ) : null}
         </div>
        </LessonModuleFrame>
       </TabsContent>

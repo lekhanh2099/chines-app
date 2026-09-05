@@ -342,18 +342,22 @@ function ReaderDocumentStudyContent({
       </Badge>
      ) : null}
     </div>
-    <Typography as="h1" variant="sectionTitle" weight="black" clamp="two">
-     {resource.document.title_zh}
-    </Typography>
-    <Typography as="p" variant="bodySmall" tone="muted">
-     {resource.document.title_pinyin ? (
-      <PinyinText as="span" variant="caption" tone="accent">
-       {resource.document.title_pinyin}
-      </PinyinText>
-     ) : null}
-     {resource.document.title_pinyin ? " · " : ""}
-     {resource.document.title_vi || resource.document.genre_vi || t("chrome.defaultReading")}
-    </Typography>
+    {activeWorkspaceTab !== "reader" ? (
+     <>
+      <Typography as="h1" variant="sectionTitle" weight="black" clamp="two">
+       {resource.document.title_zh}
+      </Typography>
+      <Typography as="p" variant="bodySmall" tone="muted">
+       {resource.document.title_pinyin ? (
+        <PinyinText as="span" variant="caption" tone="accent">
+         {resource.document.title_pinyin}
+        </PinyinText>
+       ) : null}
+       {resource.document.title_pinyin ? " · " : ""}
+       {resource.document.title_vi || resource.document.genre_vi || t("chrome.defaultReading")}
+      </Typography>
+     </>
+    ) : null}
    </div>
    {study.pending ? (
     <Typography variant="caption" tone="muted">

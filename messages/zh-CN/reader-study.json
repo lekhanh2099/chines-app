@@ -58,7 +58,8 @@
   "segment": {
    "dialogue": "第 {speaker} 轮",
    "dialogueFallback": "对话",
-   "reading": "阅读段落"
+   "reading": "阅读段落",
+   "sampleRetelling": "复述范文"
   },
   "overview": {
    "whatIsThis": "这篇阅读是什么？",

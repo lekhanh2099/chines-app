@@ -1,4 +1,6 @@
-import { renderToStaticMarkup } from "react-dom/server";
+import type { ReactNode } from "react";
+import { renderToStaticMarkup as renderMarkup } from "react-dom/server";
+import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it, vi } from "vitest";
 
 import { SectionSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
@@ -6,6 +8,22 @@ import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsP
 
 import { BookSectionContent } from "./BookSectionContent";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
+import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
+import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
+
+vi.mock("next/navigation", () => ({ useSearchParams: () => new URLSearchParams() }));
+
+function renderToStaticMarkup(element: ReactNode) {
+ return renderMarkup(
+  <NextIntlClientProvider
+   locale="vi"
+   timeZone="Asia/Ho_Chi_Minh"
+   messages={{ Reader: { study: readerStudyMessages, document: readerDocumentMessages } }}
+  >
+   {element}
+  </NextIntlClientProvider>,
+ );
+}
 
 vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
  useVocabInspector: () => ({ openInspector: vi.fn() }),
@@ -115,7 +133,7 @@ describe("BookSectionContent", () => {
   expect(html).not.toContain("table_index");
  });
 
- it("renders narrative paragraphs without adding labels to learner text", () => {
+ it("renders narrative paragraphs with the same reader regardless of legacy display flags", () => {
   const section = SectionSchema.parse({
    id: "lesson-text",
    type: "text",
@@ -137,21 +155,26 @@ describe("BookSectionContent", () => {
 
   const html = renderToStaticMarkup(
    <MandarinTtsProvider>
-    <BookSectionContent section={section} displayMode={DEFAULT_LESSON_DISPLAY_MODE} />
+    <BookSectionContent
+     section={section}
+     displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showMeaning: true, revealMode: "always" }}
+    />
    </MandarinTtsProvider>,
   );
 
-  expect(html).toContain("第一段。");
-  expect(html).toContain("第二段。");
-  expect(html).not.toContain('aria-label="Đọc từ chữ');
-  expect(html).not.toContain("Đoạn 1");
-  expect(html).not.toContain("Đoạn 2");
+  expect(html).toContain('data-reader-segment-id="paragraph-1"');
+  expect(html).toContain('data-reader-segment-id="paragraph-2"');
+  expect(html).toContain("Đoạn một.");
+  expect(html).toContain("Đoạn hai.");
+  expect(html).toContain("Đoạn 1 / 2");
+  expect(html).toContain("Nghe bài");
+  expect(html).toContain("Công cụ học");
 
   const readingHtml = renderToStaticMarkup(
    <MandarinTtsProvider>
     <BookSectionContent
      section={section}
-     displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+     displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showMeaning: true, revealMode: "always" }}
      interactiveReading
      readingMode
     />
@@ -159,6 +182,7 @@ describe("BookSectionContent", () => {
   );
 
   expect(readingHtml.match(/aria-label="Đọc từ chữ/g)).toHaveLength(6);
+  expect(readingHtml.match(/data-reader-segment-id=/g)).toHaveLength(2);
  });
 
  it("renders text blocks as one document surface when requested", () => {
@@ -185,6 +209,7 @@ describe("BookSectionContent", () => {
   );
 
   expect(html.match(/study-content-surface/g)).toBeNull();
-  expect(html).toContain("第一段。");
+  expect(html).toContain('data-reader-segment-id="paragraph-1"');
+  expect(html).toContain("Nghe bài");
  });
 });

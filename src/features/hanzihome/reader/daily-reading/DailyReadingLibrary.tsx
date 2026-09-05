@@ -611,18 +611,22 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
      </Badge>
     </div>
     <div className="grid min-w-0 gap-1.5">
-     <HanziText as="h1" size="card" weight="black">
-      {reading.article.titleZh}
-     </HanziText>
-     {displayMode.showPinyin && titlePronunciation !== null ? (
-      <PinyinText as="p" variant="bodySmall" tone="accent">
-       {formatContextualSpokenPinyin(titlePronunciation)}
-      </PinyinText>
-     ) : null}
-     {translation !== null ? (
-      <Typography variant="bodySmall" tone="secondary">
-       {translation.titleVi}
-      </Typography>
+     {effectiveTab !== "reader" ? (
+      <>
+       <HanziText as="h1" size="card" weight="black">
+        {reading.article.titleZh}
+       </HanziText>
+       {displayMode.showPinyin && titlePronunciation !== null ? (
+        <PinyinText as="p" variant="bodySmall" tone="accent">
+         {formatContextualSpokenPinyin(titlePronunciation)}
+        </PinyinText>
+       ) : null}
+       {translation !== null ? (
+        <Typography variant="bodySmall" tone="secondary">
+         {translation.titleVi}
+        </Typography>
+       ) : null}
+      </>
      ) : null}
      <Typography variant="caption" tone="muted">
       {t("detail.capturedMeta", {
