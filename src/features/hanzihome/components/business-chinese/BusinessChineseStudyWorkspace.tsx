@@ -80,8 +80,8 @@ import {
  useReaderRuntimeSelector,
 } from "@/features/hanzihome/reader/runtime/ReaderRuntimeProvider";
 import type {
- BusinessChineseBookSummary,
- BusinessChineseLesson,
+ TextbookBookSummary,
+ TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { useRouter as useLocalizedRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
@@ -106,7 +106,9 @@ const businessChineseDisplayMode: LessonDisplayMode = {
  revealMode: "always",
 };
 
-function buildBusinessChineseHref(book: string, lessonNumber: number) {
+function buildTextbookHref(book: TextbookLesson["bookKey"], lessonNumber: number) {
+ if (book === "nhip-cau") return `/hsk/nhip-cau-han-ngu?lesson=${lessonNumber}`;
+ if (book === "doc-hieu") return `/hsk/doc-hieu?lesson=${lessonNumber}`;
  return `/hsk/han-thuong-mai?book=${book}&lesson=${lessonNumber}`;
 }
 
@@ -169,11 +171,12 @@ function isChineseOnlyText(value: string) {
 }
 
 function buildBusinessChineseReaderDocument(
- lesson: BusinessChineseLesson,
+ lesson: TextbookLesson,
  activeView: string,
 ): ReaderDocumentModel {
  const segments: ReaderSegment[] = [];
  const sections: ReaderDocumentModel["sections"][number][] = [];
+ const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
  const translationIndex = lesson.sections.findIndex((section) =>
   section.title.includes("DỊCH BÀI KHÓA"),
  );
@@ -191,11 +194,19 @@ function buildBusinessChineseReaderDocument(
 
   const segmentIds: string[] = [];
   for (const block of section.blocks) {
+   if (
+    block.type === "subheading" &&
+    segments.length === 0 &&
+    block.text === lessonTitle.source &&
+    (!block.translation || block.translation === lessonTitle.translation)
+   ) {
+    continue;
+   }
    if (block.type === "table") {
     const headers = block.rows[0] ?? [];
     const pinyinColumnIndex = headers.findIndex((header) => /pinyin/iu.test(header));
     const hanziColumnIndex = headers.findIndex((header) =>
-     /tiếng trung|giản thể|hán tự|từ vựng/iu.test(header),
+     /tiếng trung|giản thể|hán tự|từ vựng|^từ$/iu.test(header),
     );
     block.rows.slice(1).forEach((row, rowIndex) => {
      row.forEach((cell, cellIndex) => {
@@ -226,18 +237,24 @@ function buildBusinessChineseReaderDocument(
      ? block.text.slice(0, block.text.indexOf("→")).trim()
      : block.text;
    const inlineText = splitTrailingTranslation(blockText);
-   const sourceTurn = splitDialogueTurn(inlineText.source);
+   const sourceTurn =
+    block.translation !== undefined
+     ? { speaker: block.speaker ?? "", content: block.text }
+     : splitDialogueTurn(inlineText.source);
    const translatedBlock =
     section.id === sourceSection?.id
      ? translatedSection?.blocks[section.blocks.indexOf(block)]
      : undefined;
-   const translationTurn = splitDialogueTurn(translatedBlock?.text || inlineText.translation);
+   const translationTurn =
+    block.translation !== undefined
+     ? { speaker: "", content: block.translation }
+     : splitDialogueTurn(translatedBlock?.text || inlineText.translation);
    const sourceText = sourceTurn.content;
    const speechSegments = getChineseSpeechSegments(sourceText);
    if (speechSegments.length === 0) continue;
    const id =
     section.category === "practice" && block.text.includes("→") ? `${block.id}:prompt` : block.id;
-   const speechText = speechSegments.join(" ");
+   const speechText = block.translation !== undefined ? sourceText : speechSegments.join(" ");
    segmentIds.push(id);
    segments.push({
     id,
@@ -268,8 +285,8 @@ function buildBusinessChineseReaderDocument(
    sourceId: lesson.id,
    label: lesson.title,
   },
-  title: splitTrailingTranslation(lessonDisplayTitle(lesson.title)).source,
-  titleVi: splitTrailingTranslation(lessonDisplayTitle(lesson.title)).translation,
+  title: lessonTitle.source,
+  titleVi: lessonTitle.translation,
   sections,
   segments,
   metadata: [],
@@ -281,8 +298,8 @@ function BusinessChineseHeaderContextBridge({
  books,
  lesson,
 }: {
- books: BusinessChineseBookSummary[];
- lesson: BusinessChineseLesson;
+ books: TextbookBookSummary[];
+ lesson: TextbookLesson;
 }) {
  const t = useTranslations("BusinessChinese");
  const router = useLocalizedRouter();
@@ -296,7 +313,7 @@ function BusinessChineseHeaderContextBridge({
    >
     <AppHeaderBreadcrumbItem className="hidden md:flex">
      <AppHeaderBreadcrumbLink
-      href="/hsk/han-thuong-mai"
+      href={buildTextbookHref(lesson.bookKey, 1)}
       disabled={focusModeEnabled}
       className="max-w-[9rem]"
       title="HanziHome"
@@ -321,7 +338,7 @@ function BusinessChineseHeaderContextBridge({
         .flatMap((book) => book.lessons)
         .find((item) => item.id === lessonId);
        if (!selectedLesson) return;
-       router.push(buildBusinessChineseHref(selectedLesson.bookKey, selectedLesson.number), {
+       router.push(buildTextbookHref(selectedLesson.bookKey, selectedLesson.number), {
         scroll: false,
        });
       }}
@@ -349,7 +366,7 @@ function BusinessChineseHeaderContextBridge({
     </AppHeaderBreadcrumbItem>
    </AppHeaderBreadcrumb>
   ),
-  [books, focusModeEnabled, lesson.bookLabel, lesson.id, router, selectedBook, t],
+  [books, focusModeEnabled, lesson.bookKey, lesson.bookLabel, lesson.id, router, selectedBook, t],
  );
 
  useEffect(() => {
@@ -660,75 +677,101 @@ function BusinessChineseTable({
  block,
  displayMode,
 }: {
- block: BusinessChineseLesson["sections"][number]["blocks"][number];
+ block: TextbookLesson["sections"][number]["blocks"][number];
  displayMode: LessonDisplayMode;
 }) {
+ const t = useTranslations("BusinessChinese");
+ const [revealed, setRevealed] = useState(false);
+ const answerVisible = displayMode.showAnswers || revealed;
  const headers = block.rows[0] ?? [];
  const pinyinColumnIndex = headers.findIndex((header) => /pinyin/iu.test(header));
  const hanziColumnIndex = headers.findIndex((header) =>
-  /tiếng trung|giản thể|hán tự|từ vựng/iu.test(header),
+  /tiếng trung|giản thể|hán tự|từ vựng|^từ$/iu.test(header),
  );
  const visibleColumnIndexes = headers
   .map((header, index) => ({ header, index }))
-  .filter(
-   ({ header }) => displayMode.showMeaning || !/tiếng việt|dịch nghĩa|hán việt/iu.test(header),
-  )
+  .filter(({ header }) => displayMode.showMeaning || !/tiếng việt|nghĩa|hán việt/iu.test(header))
+  .filter(({ index }) => answerVisible || !block.answerColumnIndexes?.includes(index))
   .map(({ index }) => index);
 
  return (
-  <div className="max-w-full overflow-x-auto rounded-xl border border-border-default">
-   <table className="w-full min-w-[42rem] border-collapse text-left">
-    <thead className="bg-surface-muted">
-     <tr>
-      {visibleColumnIndexes.map((cellIndex) => (
-       <th
-        key={`${block.id}-header-${cellIndex}`}
-        scope="col"
-        className="border-b border-border-default px-3 py-2 align-top"
-       >
-        <BusinessChineseText
-         pronunciationId={`${block.id}:header:${cellIndex}`}
-         text={headers[cellIndex] ?? ""}
-         displayMode={displayMode}
-         variant="label"
-         compactHanzi
-        />
-       </th>
-      ))}
-     </tr>
-    </thead>
-    <tbody>
-     {block.rows.slice(1).map((row, rowIndex) => (
-      <tr
-       key={`${block.id}-row-${rowIndex}`}
-       className="border-b border-border-default last:border-b-0"
-      >
-       {visibleColumnIndexes.map((cellIndex) => (
-        <td key={`${block.id}-row-${rowIndex}-cell-${cellIndex}`} className="px-3 py-2 align-top">
-         {cellIndex === pinyinColumnIndex ? (
-          <PinyinText as="span" tone="secondary" weight="semibold" wrapping="preWrap">
-           {row[cellIndex] ?? ""}
-          </PinyinText>
-         ) : (
-          <SpeakableBusinessChineseText
-           pronunciationId={`${block.id}:row:${rowIndex}:cell:${cellIndex}`}
-           text={row[cellIndex] ?? ""}
+  <div className="grid min-w-0 gap-2">
+   {block.text ? (
+    <SpeakableBusinessChineseText
+     pronunciationId={`${block.id}:prompt`}
+     text={block.text}
+     displayMode={displayMode}
+     compactHanzi
+    />
+   ) : null}
+   {block.answerColumnIndexes?.length && !displayMode.showAnswers ? (
+    <Button
+     type="button"
+     variant="outline"
+     size="compact"
+     className="justify-self-start"
+     aria-expanded={revealed}
+     onClick={() => setRevealed((current) => !current)}
+    >
+     {revealed ? t("actions.hideAnswer") : t("actions.showAnswer")}
+    </Button>
+   ) : null}
+   {visibleColumnIndexes.length > 0 ? (
+    <div className="max-w-full overflow-x-auto rounded-xl border border-border-default">
+     <table className="w-full min-w-[42rem] border-collapse text-left">
+      <thead className="bg-surface-muted">
+       <tr>
+        {visibleColumnIndexes.map((cellIndex) => (
+         <th
+          key={`${block.id}-header-${cellIndex}`}
+          scope="col"
+          className="border-b border-border-default px-3 py-2 align-top"
+         >
+          <BusinessChineseText
+           pronunciationId={`${block.id}:header:${cellIndex}`}
+           text={headers[cellIndex] ?? ""}
            displayMode={displayMode}
-           sourcePinyin={
-            cellIndex === hanziColumnIndex && pinyinColumnIndex >= 0
-             ? row[pinyinColumnIndex]
-             : undefined
-           }
-           variant="bodySmall"
-           compactHanzi={headers.length !== 2}
+           variant="label"
+           compactHanzi
           />
-         )}
-        </td>
+         </th>
+        ))}
+       </tr>
+      </thead>
+      <tbody>
+       {block.rows.slice(1).map((row, rowIndex) => (
+        <tr
+         key={`${block.id}-row-${rowIndex}`}
+         className="border-b border-border-default last:border-b-0"
+        >
+         {visibleColumnIndexes.map((cellIndex) => (
+          <td key={`${block.id}-row-${rowIndex}-cell-${cellIndex}`} className="px-3 py-2 align-top">
+           {cellIndex === pinyinColumnIndex ? (
+            <PinyinText as="span" tone="secondary" weight="semibold" wrapping="preWrap">
+             {row[cellIndex] ?? ""}
+            </PinyinText>
+           ) : (
+            <SpeakableBusinessChineseText
+             pronunciationId={`${block.id}:row:${rowIndex}:cell:${cellIndex}`}
+             text={row[cellIndex] ?? ""}
+             displayMode={displayMode}
+             sourcePinyin={
+              cellIndex === hanziColumnIndex && pinyinColumnIndex >= 0
+               ? row[pinyinColumnIndex]
+               : undefined
+             }
+             variant="bodySmall"
+             compactHanzi={headers.length !== 2}
+            />
+           )}
+          </td>
+         ))}
+        </tr>
        ))}
-      </tr>
-     ))}
-    </tbody>
-   </table>
+      </tbody>
+     </table>
+    </div>
+   ) : null}
   </div>
  );
 }
@@ -737,7 +780,7 @@ function BusinessChineseExercise({
  block,
  displayMode,
 }: {
- block: BusinessChineseLesson["sections"][number]["blocks"][number];
+ block: TextbookLesson["sections"][number]["blocks"][number];
  displayMode: LessonDisplayMode;
 }) {
  const t = useTranslations("BusinessChinese");
@@ -892,7 +935,7 @@ function BusinessChineseSection({
  displayMode,
  translations,
 }: {
- section: BusinessChineseLesson["sections"][number];
+ section: TextbookLesson["sections"][number];
  displayMode: LessonDisplayMode;
  translations: ReadonlyMap<string, string>;
 }) {
@@ -919,7 +962,7 @@ function BusinessChineseSection({
         key={block.id}
         pronunciationId={block.id}
         text={block.text}
-        translation={translations.get(block.id)}
+        translation={block.translation ?? translations.get(block.id)}
         displayMode={displayMode}
         compactHanzi={section.category !== "text"}
         variant="cardTitle"
@@ -935,7 +978,7 @@ function BusinessChineseSection({
        key={block.id}
        pronunciationId={block.id}
        text={block.text}
-       translation={translations.get(block.id)}
+       translation={block.translation ?? translations.get(block.id)}
        displayMode={displayMode}
        compactHanzi={section.category !== "text"}
       />
@@ -950,8 +993,8 @@ function BusinessChineseSidebar({
  books,
  lesson,
 }: {
- books: BusinessChineseBookSummary[];
- lesson: BusinessChineseLesson;
+ books: TextbookBookSummary[];
+ lesson: TextbookLesson;
 }) {
  const t = useTranslations("BusinessChinese");
  const router = useLocalizedRouter();
@@ -968,7 +1011,7 @@ function BusinessChineseSidebar({
      onValueChange={(bookKey) => {
       const book = books.find((item) => item.key === bookKey);
       if (!book) return;
-      router.push(buildBusinessChineseHref(book.key, 1), {
+      router.push(buildTextbookHref(book.key, 1), {
        scroll: false,
       });
      }}
@@ -994,7 +1037,7 @@ function BusinessChineseSidebar({
       marker={t("vocabCount", { count: item.vocabCount })}
       icon={<BookOpen />}
       onClick={() => {
-       router.push(buildBusinessChineseHref(item.bookKey, item.number), {
+       router.push(buildTextbookHref(item.bookKey, item.number), {
         scroll: false,
        });
       }}
@@ -1009,7 +1052,7 @@ function MobileSectionNavigation({
  sections,
  onSelect,
 }: {
- sections: BusinessChineseLesson["sections"];
+ sections: TextbookLesson["sections"];
  onSelect: (sectionId: string) => void;
 }) {
  const t = useTranslations("BusinessChinese");
@@ -1036,7 +1079,7 @@ function DesktopSectionNavigation({
  sections,
  onSelect,
 }: {
- sections: BusinessChineseLesson["sections"];
+ sections: TextbookLesson["sections"];
  onSelect: (sectionId: string) => void;
 }) {
  const t = useTranslations("BusinessChinese");
@@ -1072,8 +1115,8 @@ export function BusinessChineseStudyWorkspace({
  books,
  lesson,
 }: {
- books: BusinessChineseBookSummary[];
- lesson: BusinessChineseLesson;
+ books: TextbookBookSummary[];
+ lesson: TextbookLesson;
 }) {
  const [activeView, setActiveView] = useState("all");
  const readerDocument = useMemo(
@@ -1105,8 +1148,8 @@ function BusinessChineseStudyWorkspaceContent({
  onActiveViewChange,
  readerDocument,
 }: {
- books: BusinessChineseBookSummary[];
- lesson: BusinessChineseLesson;
+ books: TextbookBookSummary[];
+ lesson: TextbookLesson;
  activeView: string;
  onActiveViewChange: (value: string) => void;
  readerDocument: ReaderDocumentModel;
@@ -1148,16 +1191,19 @@ function BusinessChineseStudyWorkspaceContent({
   [activeView, contentSections],
  );
  const tabs = useMemo(
-  () => [
-   { key: "all", label: t("tabs.all") },
-   { key: "overview", label: t("tabs.overview") },
-   { key: "core", label: t("tabs.core") },
-   { key: "text", label: t("tabs.text") },
-   { key: "vocab", label: t("tabs.vocab") },
-   { key: "grammar", label: t("tabs.grammar") },
-   { key: "practice", label: t("tabs.practice") },
-  ],
-  [t],
+  () =>
+   [
+    { key: "all", label: t("tabs.all") },
+    { key: "overview", label: t("tabs.overview") },
+    { key: "core", label: t("tabs.core") },
+    { key: "text", label: t("tabs.text") },
+    { key: "vocab", label: t("tabs.vocab") },
+    { key: "grammar", label: t("tabs.grammar") },
+    { key: "practice", label: t("tabs.practice") },
+   ].filter(
+    (tab) => tab.key === "all" || contentSections.some((section) => section.category === tab.key),
+   ),
+  [contentSections, t],
  );
  const intro = lesson.intro.join(" ");
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
@@ -1220,7 +1266,11 @@ function BusinessChineseStudyWorkspaceContent({
          >
           <div className="grid min-w-0 gap-2">
            <Typography variant="overline" tone="muted">
-            {lesson.bookLabel} · {t("lessonPosition", { lesson: lesson.number })}
+            {lesson.bookLabel} ·{" "}
+            {t("lessonPosition", {
+             lesson: lesson.number,
+             count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
+            })}
            </Typography>
            {activeView !== "text" && activeView !== "all" ? (
             <BusinessChineseText
@@ -1269,11 +1319,30 @@ function BusinessChineseStudyWorkspaceContent({
              {visibleSections.map((section, index) => (
               <Fragment key={section.id}>
                {section.category === "text" ? (
-                section.id === textReaderDocument.sections[0]?.id ? (
-                 <div id={section.id}>
-                  <ReaderSurface document={textReaderDocument} displayMode={displayMode} />
-                 </div>
-                ) : null
+                <ReaderSurface
+                 document={{
+                  ...textReaderDocument,
+                  id: `${textReaderDocument.id}:${section.id}`,
+                  title:
+                   section.id === textReaderDocument.sections[0]?.id
+                    ? textReaderDocument.title
+                    : undefined,
+                  titleVi:
+                   section.id === textReaderDocument.sections[0]?.id
+                    ? textReaderDocument.titleVi
+                    : undefined,
+                  sections: textReaderDocument.sections.filter(
+                   (readerSection) => readerSection.id === section.id,
+                  ),
+                  segments: textReaderDocument.segments.filter(
+                   (segment) => segment.sectionId === section.id,
+                  ),
+                 }}
+                 displayMode={displayMode}
+                 renderSection={({ section: readerSection, content }) => (
+                  <div id={readerSection.id}>{content}</div>
+                 )}
+                />
                ) : (
                 <Card variant="section" padding="md">
                  <BusinessChineseSection

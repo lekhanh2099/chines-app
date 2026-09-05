@@ -34,7 +34,7 @@ describe("navigation configuration", () => {
  });
 
  it("places HTML files with the primary learning destinations", () => {
-  expect(navigationGroups[0]?.sections[2]?.itemIds).toEqual(["humanities", "htmlArtifacts"]);
+  expect(navigationGroups[0]?.sections[3]?.itemIds).toEqual(["humanities", "htmlArtifacts"]);
   expect(navigationGroups[3]?.sections.flatMap((section) => section.itemIds)).not.toContain(
    "htmlArtifacts",
   );
@@ -53,11 +53,16 @@ describe("navigation configuration", () => {
  it("keeps reading and HSK destinations inside the learning journey", () => {
   expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("reader");
   expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("dailyReading");
-  expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual([
-   "hskReading",
-   "hskGrammar",
-   "businessChinese",
-  ]);
+  expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
+ });
+
+ it("groups the three textbook curricula beside HSK inside the learning journey", () => {
+  expect(navigationGroups[0]?.sections[2]).toMatchObject({
+   id: "textbooks",
+   messageKey: "navigation.sections.textbooks",
+   collapsible: true,
+   itemIds: ["businessChinese", "chineseBridge", "readingComprehension"],
+  });
  });
 
  it("keeps personal destinations together without a separate system group", () => {
@@ -87,6 +92,8 @@ describe("navigation configuration", () => {
   expect(navigationItems.hskReading.aliases).toContain("/reader/hsk");
   expect(navigationItems.hskGrammar.href).toBe("/hsk/grammar");
   expect(navigationItems.businessChinese.href).toBe("/hsk/han-thuong-mai");
+  expect(navigationItems.chineseBridge.href).toBe("/hsk/nhip-cau-han-ngu");
+  expect(navigationItems.readingComprehension.href).toBe("/hsk/doc-hieu");
  });
 
  it("hides engineering destinations without the HanziHome content capability", () => {

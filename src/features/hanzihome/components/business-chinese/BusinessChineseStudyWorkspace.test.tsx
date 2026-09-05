@@ -12,6 +12,8 @@ import type { ReaderDocumentModel } from "@/features/hanzihome/reader/model/read
 import {
  getBusinessChineseCatalog,
  getBusinessChineseLesson,
+ getTextbookCatalog,
+ getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
 type SidebarItemProps = ComponentProps<typeof LessonModuleSidebarItem>;
@@ -83,6 +85,160 @@ function renderWorkspace(element: ReactNode) {
 }
 
 describe("BusinessChineseStudyWorkspace", () => {
+ it.each(["nhip-cau", "doc-hieu"])(
+  "keeps real %s source sections in order with one All-view reader per source text section",
+  (bookKey) => {
+   const book = getTextbookCatalog().find((item) => item.key === bookKey);
+   const lesson = book ? getTextbookLesson(book.key, 1) : null;
+   if (!lesson) throw new Error(`Expected ${bookKey} lesson 1.`);
+   readerDocumentMock.mockClear();
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
+   );
+   const positions = lesson.sections.map((section) => markup.indexOf(`id="${section.id}"`));
+
+   expect(positions.every((position) => position >= 0)).toBe(true);
+   expect(positions).toEqual([...positions].sort((left, right) => left - right));
+   const textSections = lesson.sections.filter((section) => section.category === "text");
+   const readers = readerDocumentMock.mock.calls.map(([document]) => document);
+   expect(readers.map((reader) => reader.sections.map((section) => section.id))).toEqual(
+    textSections.map((section) => [section.id]),
+   );
+   expect(new Set(readers.map((reader) => reader.id)).size).toBe(textSections.length);
+   for (const reader of readers) {
+    expect(reader.segments.every((segment) => segment.sectionId === reader.sections[0]?.id)).toBe(
+     true,
+    );
+   }
+   expect(readers.slice(1).every((reader) => !reader.title && !reader.titleVi)).toBe(true);
+   expect(markup.match(/>Nghe bài</g)).toHaveLength(textSections.length);
+
+   const vocabularyTable = lesson.sections
+    .find((section) => section.category === "vocab")
+    ?.blocks.find((block) => block.type === "table");
+   if (!vocabularyTable) throw new Error("Expected the source vocabulary table.");
+   const hanziColumn = vocabularyTable.rows[0]?.findIndex(
+    (header) => header === "Hán tự" || header === "Từ",
+   );
+   const cellStart = markup.indexOf(`id="${vocabularyTable.id}:row:0:cell:${hanziColumn}"`);
+   expect(cellStart).toBeGreaterThan(-1);
+   const firstVocabularyCell = markup.slice(cellStart, markup.indexOf("</td>", cellStart));
+   expect(firstVocabularyCell).toContain(`aria-label="Đọc từ chữ ${lesson.vocab[0]?.hanzi[0]}"`);
+  },
+ );
+
+ it("uses the same reader for all five unit articles without dropping temperatures or meanings", () => {
+  const lesson = getTextbookLesson("doc-hieu", 1);
+  if (!lesson) throw new Error("Expected Đọc hiểu unit 1.");
+  const textSections = lesson.sections.filter((section) => section.category === "text");
+  const sourceBlock = textSections[0]?.blocks[0];
+  if (!sourceBlock) throw new Error("Expected the source weather forecast.");
+
+  readerDocumentMock.mockClear();
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{ ...lesson, sections: textSections }}
+   />,
+  );
+  const readers = readerDocumentMock.mock.calls.map(([document]) => document);
+  const segments = readers.flatMap((reader) => reader.segments);
+
+  expect(readers).toHaveLength(5);
+  expect(readers.every((reader) => reader.sections.length === 1)).toBe(true);
+  expect(segments[0]).toMatchObject({
+   zh: sourceBlock.text,
+   speechText: sourceBlock.text,
+   vi: sourceBlock.translation,
+  });
+  expect(segments[0]?.speechText).toContain("-5℃");
+  expect(markup).toContain("Bài 1/18");
+  expect(markup).toContain("Nghe bài");
+  expect(markup).toContain("Công cụ học");
+  expect(markup).toContain("text-warning underline decoration-dotted underline-offset-2");
+  expect(markup).not.toContain(">Ngữ pháp<");
+  for (const section of textSections) expect(markup).toContain(`id="${section.id}"`);
+ });
+
+ it("preserves Nhịp cầu narrative colons and their complete source translations", () => {
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  if (!lesson) throw new Error("Expected Nhịp cầu lesson 1.");
+  const section = lesson.sections.find((item) => item.category === "text");
+  const paragraph = section?.blocks.find((block) => block.text.startsWith("邮包上的字"));
+  if (!section || !paragraph) throw new Error("Expected the source narrative paragraph.");
+
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{ ...lesson, sections: [{ ...section, blocks: [paragraph] }] }}
+   />,
+  );
+  const reader = readerDocumentMock.mock.calls.at(-1)?.[0];
+
+  expect(reader?.segments).toHaveLength(1);
+  expect(reader?.segments[0]).toMatchObject({
+   zh: paragraph.text,
+   speechText: paragraph.text,
+   vi: paragraph.translation,
+  });
+  expect(reader?.segments[0]?.speaker).toBeUndefined();
+  expect(markup).toContain("Bài 1/15");
+  expect(markup).toContain(
+   "Những chữ trên bưu kiện nguệch ngoạc, như đang nhảy múa kể cho tôi nghe:",
+  );
+ });
+
+ it("renders authoritative Excel columns and supplied pinyin through the existing vocabulary table", () => {
+  const lesson = getTextbookLesson("doc-hieu", 1);
+  if (!lesson) throw new Error("Expected Đọc hiểu unit 1.");
+  const section = lesson.sections.find((item) => item.category === "vocab");
+  const table = section?.blocks.find((block) => block.type === "table");
+  if (!section || !table) throw new Error("Expected the Excel vocabulary table.");
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{
+     ...lesson,
+     sections: [{ ...section, blocks: [{ ...table, rows: table.rows.slice(0, 3) }] }],
+    }}
+   />,
+  );
+
+  for (const header of table.rows[0] ?? []) expect(markup).toContain(header);
+  expect(markup).toContain("báitiān");
+  expect(markup).toContain("Bạch thiên");
+  expect(markup).toContain("ban ngày");
+  expect(markup).not.toContain("Chưa học");
+ });
+
+ it.each([
+  { unit: 1, promptCells: 3 },
+  { unit: 8, promptCells: 0 },
+ ])(
+  "hides source answer columns while preserving prompt cells in unit $unit",
+  ({ unit, promptCells }) => {
+   const lesson = getTextbookLesson("doc-hieu", unit);
+   if (!lesson) throw new Error(`Expected Đọc hiểu unit ${unit}.`);
+   const section = lesson.sections.find((item) =>
+    item.blocks.some((block) => block.answerColumnIndexes?.length),
+   );
+   const table = section?.blocks.find((block) => block.answerColumnIndexes?.length);
+   if (!section || !table) throw new Error("Expected the source weather answer table.");
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={getTextbookCatalog()}
+     lesson={{ ...lesson, sections: [{ ...section, blocks: [table] }] }}
+    />,
+   );
+
+   expect(markup).toContain("Hiện đáp án");
+   expect(markup).toContain('aria-expanded="false"');
+   expect(markup.match(/<td\b/g) ?? []).toHaveLength(promptCells);
+   expect(markup).not.toContain("-5℃");
+   expect(markup).not.toContain("-3℃");
+  },
+ );
+
  it("renders the ordered source document with tabs, ruby pinyin, and no connected content load", () => {
   const books = getBusinessChineseCatalog();
   const lesson = getBusinessChineseLesson("tm2", 2);

@@ -1,5 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
+import type { ReactNode } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
@@ -35,6 +36,25 @@ vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
  },
 }));
 
+vi.mock("@/components/ui/dropdown-menu", () => {
+ const passthrough = ({ children }: { children?: ReactNode }) => children;
+
+ return {
+  DropdownMenu: passthrough,
+  DropdownMenuCheckboxItem: passthrough,
+  DropdownMenuContent: passthrough,
+  DropdownMenuItem: passthrough,
+  DropdownMenuLabel: passthrough,
+  DropdownMenuRadioGroup: passthrough,
+  DropdownMenuRadioItem: passthrough,
+  DropdownMenuSeparator: () => null,
+  DropdownMenuSub: passthrough,
+  DropdownMenuSubContent: passthrough,
+  DropdownMenuSubTrigger: passthrough,
+  DropdownMenuTrigger: passthrough,
+ };
+});
+
 vi.mock("../runtime/ReaderRuntimeProvider", () => ({
  useReaderRuntimeCommands: () => ({ playAll: vi.fn() }),
  useReaderRuntimeActions: () => ({
@@ -66,6 +86,20 @@ function renderReaderTools() {
 }
 
 describe("ReaderTools", () => {
+ it("renders full desktop reading controls for supplied static settings without connected state", () => {
+  const markup = renderReaderTools();
+
+  expect(markup).toContain("Phông chữ");
+  expect(markup).toContain("Cỡ chữ");
+  expect(markup).toContain("Cách mở nội dung");
+  expect(markup).toContain("Hiển thị lớp học");
+  expect(markup).toContain("ZCOOL XiaoWei");
+  expect(markup).toContain("Pinyin");
+  expect(markup).toContain("Nghĩa");
+  expect(markup).toContain("Đáp án");
+  expect(markup).toContain("Tự nhận diện pinyin");
+ });
+
  it("keeps the full accessible segment label and mobile controls in the shared toolbar", () => {
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider

@@ -175,7 +175,14 @@ function ReaderToolsContent({
        {t("focus")}
       </DropdownMenuCheckboxItem>
       <DropdownMenuSeparator />
-      {persistentSettings ? <HanziHomeReadingQuickSettingsMenu /> : null}
+      {persistentSettings ? (
+       <HanziHomeReadingQuickSettingsMenu />
+      ) : (
+       <HanziHomeReadingQuickSettingsMenu
+        displayMode={displayMode}
+        onChange={onDisplayModeChange}
+       />
+      )}
      </DropdownMenuContent>
     </DropdownMenu>
    ) : (

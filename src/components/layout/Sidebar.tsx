@@ -63,7 +63,9 @@ function matchesHref(
    pathname === "/hsk" ||
    (pathname.startsWith("/hsk/") &&
     pathname !== "/hsk/grammar" &&
-    pathname !== "/hsk/han-thuong-mai")
+    pathname !== "/hsk/han-thuong-mai" &&
+    pathname !== "/hsk/nhip-cau-han-ngu" &&
+    pathname !== "/hsk/doc-hieu")
   );
  }
 

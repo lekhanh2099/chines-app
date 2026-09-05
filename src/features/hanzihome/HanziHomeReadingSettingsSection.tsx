@@ -27,7 +27,10 @@ import {
  sizeOptions,
  visibilityOptions,
 } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+ type LessonDisplayMode,
+} from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 
 export function HanziHomeReadingSettingsSection() {
@@ -104,8 +107,21 @@ export function HanziHomeReadingSettingsSection() {
  );
 }
 
-export function HanziHomeReadingQuickSettingsMenu() {
- const t = useTranslations("Reader.study.chrome.tools");
+export function HanziHomeReadingQuickSettingsMenu({
+ displayMode,
+ onChange,
+}: {
+ displayMode?: LessonDisplayMode;
+ onChange?: (updates: Partial<LessonDisplayMode>) => void;
+} = {}) {
+ if (displayMode && onChange) {
+  return <ReadingQuickSettingsMenuContent displayMode={displayMode} onChange={onChange} />;
+ }
+
+ return <ConnectedReadingQuickSettingsMenu />;
+}
+
+function ConnectedReadingQuickSettingsMenu() {
  const learning = useLearningState();
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
 
@@ -114,9 +130,32 @@ export function HanziHomeReadingQuickSettingsMenu() {
  };
 
  return (
+  <ReadingQuickSettingsMenuContent
+   displayMode={displayMode}
+   onChange={updateDisplayMode}
+   isLoading={learning.isLoading}
+   onRetrySync={learning.isError ? () => void learning.retrySync() : undefined}
+  />
+ );
+}
+
+function ReadingQuickSettingsMenuContent({
+ displayMode,
+ onChange,
+ isLoading = false,
+ onRetrySync,
+}: {
+ displayMode: LessonDisplayMode;
+ onChange: (updates: Partial<LessonDisplayMode>) => void;
+ isLoading?: boolean;
+ onRetrySync?: () => void;
+}) {
+ const t = useTranslations("Reader.study.chrome.tools");
+
+ return (
   <>
    <DropdownMenuLabel>Thiết lập đọc</DropdownMenuLabel>
-   {learning.isLoading ? (
+   {isLoading ? (
     <DropdownMenuItem disabled>
      <Spinner />
      Đang tải cài đặt đọc…
@@ -137,7 +176,7 @@ export function HanziHomeReadingQuickSettingsMenu() {
         value={displayMode.hanziFont}
         onValueChange={(value) => {
          const option = fontOptions.find((candidate) => candidate.value === value);
-         if (option) updateDisplayMode({ hanziFont: option.value });
+         if (option) onChange({ hanziFont: option.value });
         }}
        >
         {fontOptions.map((option) => (
@@ -170,7 +209,7 @@ export function HanziHomeReadingQuickSettingsMenu() {
         value={displayMode.hanziSize}
         onValueChange={(value) => {
          const option = sizeOptions.find((candidate) => candidate.value === value);
-         if (option) updateDisplayMode({ hanziSize: option.value });
+         if (option) onChange({ hanziSize: option.value });
         }}
        >
         {sizeOptions.map((option) => (
@@ -203,7 +242,7 @@ export function HanziHomeReadingQuickSettingsMenu() {
         value={displayMode.revealMode}
         onValueChange={(value) => {
          const option = revealOptions.find((candidate) => candidate.value === value);
-         if (option) updateDisplayMode({ revealMode: option.value });
+         if (option) onChange({ revealMode: option.value });
         }}
        >
         {revealOptions.map((option) => (
@@ -235,7 +274,7 @@ export function HanziHomeReadingQuickSettingsMenu() {
           (option.key === "showPinyin" || option.key === "showMeaning")
          }
          onSelect={(event) => event.preventDefault()}
-         onCheckedChange={(checked) => updateDisplayMode({ [option.key]: checked })}
+         onCheckedChange={(checked) => onChange({ [option.key]: checked })}
         >
          {option.label}
         </DropdownMenuCheckboxItem>
@@ -244,7 +283,7 @@ export function HanziHomeReadingQuickSettingsMenu() {
        <DropdownMenuCheckboxItem
         checked={displayMode.autoDetectPinyin}
         onSelect={(event) => event.preventDefault()}
-        onCheckedChange={(checked) => updateDisplayMode({ autoDetectPinyin: checked })}
+        onCheckedChange={(checked) => onChange({ autoDetectPinyin: checked })}
        >
         {t("autoPinyin")}
        </DropdownMenuCheckboxItem>
@@ -253,10 +292,10 @@ export function HanziHomeReadingQuickSettingsMenu() {
     </>
    )}
 
-   {learning.isError ? (
+   {onRetrySync ? (
     <>
      <DropdownMenuSeparator />
-     <DropdownMenuItem onSelect={() => void learning.retrySync()}>
+     <DropdownMenuItem onSelect={onRetrySync}>
       <RefreshCcw />
       Thử đồng bộ lại
      </DropdownMenuItem>

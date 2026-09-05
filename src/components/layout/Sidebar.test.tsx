@@ -38,6 +38,9 @@ const localeCases = [
   personalGroup: "Cá nhân",
   knowledgeGroup: "Năng lực",
   moreCluster: "Thêm",
+  textbooks: "Giáo trình",
+  chineseBridge: "Nhịp cầu Hán ngữ",
+  readingComprehension: "Đọc hiểu",
   dataQuality: "Chất lượng dữ liệu",
   apiDocs: "API & tích hợp",
   tts: "Giọng đọc",
@@ -47,6 +50,9 @@ const localeCases = [
   personalGroup: "Personal",
   knowledgeGroup: "Capabilities",
   moreCluster: "More",
+  textbooks: "Textbooks",
+  chineseBridge: "Chinese Bridge",
+  readingComprehension: "Reading comprehension",
   dataQuality: "Data quality",
   apiDocs: "API & integrations",
   tts: "Text to speech",
@@ -56,6 +62,9 @@ const localeCases = [
   personalGroup: "个人",
   knowledgeGroup: "能力",
   moreCluster: "更多",
+  textbooks: "教材",
+  chineseBridge: "桥梁",
+  readingComprehension: "阅读理解",
   dataQuality: "数据质量",
   apiDocs: "API 与集成",
   tts: "语音",
@@ -65,6 +74,9 @@ const localeCases = [
  personalGroup: string;
  knowledgeGroup: string;
  moreCluster: string;
+ textbooks: string;
+ chineseBridge: string;
+ readingComprehension: string;
  dataQuality: string;
  apiDocs: string;
  tts: string;
@@ -73,7 +85,18 @@ const localeCases = [
 describe("Sidebar translations", () => {
  it.each(localeCases)(
   "renders configured navigation labels for $locale instead of message keys",
-  async ({ locale, personalGroup, knowledgeGroup, moreCluster, dataQuality, apiDocs, tts }) => {
+  async ({
+   locale,
+   personalGroup,
+   knowledgeGroup,
+   moreCluster,
+   textbooks,
+   chineseBridge,
+   readingComprehension,
+   dataQuality,
+   apiDocs,
+   tts,
+  }) => {
    const messages = await loadAppMessages(locale);
    const markup = renderToStaticMarkup(
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
@@ -84,6 +107,9 @@ describe("Sidebar translations", () => {
    expect(markup).toContain(personalGroup);
    expect(markup).toContain(knowledgeGroup);
    expect(markup).toContain(moreCluster);
+   expect(markup).toContain(textbooks);
+   expect(markup).toContain(chineseBridge);
+   expect(markup).toContain(readingComprehension);
    expect(markup).not.toContain(dataQuality);
    expect(markup).not.toContain(apiDocs);
    expect(markup).not.toContain(tts);
@@ -118,19 +144,26 @@ describe("Sidebar translations", () => {
   }
  });
 
- it("activates only Hán thương mại on its static HSK route", async () => {
-  currentPathname = "/hsk/han-thuong-mai";
-  const messages = await loadAppMessages("vi");
-  const markup = renderToStaticMarkup(
-   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <Sidebar canManageContent={false} />
-   </NextIntlClientProvider>,
-  );
-  const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
+ it.each(["/hsk/han-thuong-mai", "/hsk/nhip-cau-han-ngu", "/hsk/doc-hieu"])(
+  "activates only the selected textbook destination on %s",
+  async (pathname) => {
+   currentPathname = pathname;
+   const messages = await loadAppMessages("vi");
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <Sidebar canManageContent={false} />
+    </NextIntlClientProvider>,
+   );
+   const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
 
-  expect(activeLinks).toHaveLength(1);
-  expect(activeLinks[0]).toContain('href="/hsk/han-thuong-mai"');
-  expect(activeLinks[0]).not.toContain('href="/hsk"');
-  currentPathname = "/reader";
- });
+   expect(activeLinks).toHaveLength(1);
+   expect(activeLinks[0]).toContain(`href="${pathname}"`);
+   expect(activeLinks[0]).not.toContain('href="/hsk"');
+   const textbooksTrigger = markup.match(
+    /<button[^>]*aria-controls="sidebar-section-textbooks"[^>]*>/u,
+   )?.[0];
+   expect(textbooksTrigger).toContain('aria-expanded="true"');
+   currentPathname = "/reader";
+  },
+ );
 });
