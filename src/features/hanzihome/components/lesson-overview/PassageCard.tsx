@@ -6,8 +6,13 @@ import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
+import { ReaderSurface } from "@/features/hanzihome/reader/components/ReaderSurface";
+import { deriveSegmentContentCapabilities } from "@/features/hanzihome/reader/model/reader-capabilities";
+import type {
+ ReaderDocumentModel,
+ ReaderSegment,
+} from "@/features/hanzihome/reader/model/reader-document.types";
 
-import { TextLineCard } from "./TextLineCard";
 import { StudyInstructionText, ReaderHanziText } from "./hanzi-typography";
 import { AnswerList } from "./passage-card/AnswerList";
 import { ClozeText } from "./passage-card/ClozeText";
@@ -125,6 +130,34 @@ export function PassageCard({
      .map((line) => fillClozeBlanksWithAnswers(line.zh, answerMap, rendererId).trim())
      .filter(Boolean)
   : [completedPassageText || passageText || clozeText].filter(Boolean);
+ const isCloze =
+  passageLines.length > 0
+   ? passageLines.some((line) => shouldRenderAsCloze(line.zh, answerMap, rendererId))
+   : shouldRenderAsCloze(passageText || clozeText, answerMap, rendererId);
+ const readerSegments: ReaderSegment[] =
+  passageLines.length > 0
+   ? passageLines.map((line) => ({ ...line, kind: "paragraph", speechText: line.zh }))
+   : passageText || clozeText
+     ? [
+        {
+         id: itemId,
+         kind: "paragraph",
+         zh: passageText || clozeText,
+         pinyin: passagePinyin,
+         vi: passageMeaning,
+        },
+       ]
+     : [];
+ const readerDocument: ReaderDocumentModel = {
+  id: `${lessonId ?? "passage"}:${itemId}`,
+  language: "zh-CN",
+  source: { kind: "lesson", sourceId: lessonId },
+  title: passageTitle,
+  sections: [],
+  segments: readerSegments,
+  metadata: [],
+  capabilities: deriveSegmentContentCapabilities(readerSegments),
+ };
 
  const hasMainPayload =
   Boolean(passageTitle) ||
@@ -140,8 +173,10 @@ export function PassageCard({
  if (!hasMainPayload) return null;
 
  return (
-  <Card variant="section" padding="md" className="grid gap-3">
-   {((showTitle && passageTitle) || instructionText || playbackSegments.length > 1) && (
+  <div className="grid min-w-0 gap-3">
+   {((showTitle && passageTitle) ||
+    instructionText ||
+    (isCloze && playbackSegments.length > 1)) && (
     <div className="flex min-w-0 flex-wrap items-start justify-between gap-2">
      <div className="grid min-w-0 gap-1">
       {showTitle && passageTitle && (
@@ -155,7 +190,7 @@ export function PassageCard({
        </StudyInstructionText>
       )}
      </div>
-     {playbackSegments.length > 1 ? (
+     {isCloze && playbackSegments.length > 1 ? (
       <MandarinSpeakButton
        text={playbackSegments.join("\n")}
        segments={playbackSegments}
@@ -169,7 +204,16 @@ export function PassageCard({
 
    <WordBank words={wordBank} />
 
-   {passageLines.length > 0 && (
+   {!isCloze && readerSegments.length > 0 ? (
+    <ReaderSurface
+     key={readerDocument.id}
+     document={readerDocument}
+     lessonId={lessonId}
+     displayMode={lessonId ? undefined : displayMode}
+    />
+   ) : null}
+
+   {isCloze && passageLines.length > 0 && (
     <div className="grid gap-2">
      {passageLines.map((line) => (
       <PassageLineBlock
@@ -184,41 +228,30 @@ export function PassageCard({
     </div>
    )}
 
-   {(passageText || clozeText) && passageLines.length === 0 && (
+   {isCloze && (passageText || clozeText) && passageLines.length === 0 && (
     <Card variant="subtle" padding="md">
-     {shouldRenderAsCloze(passageText || clozeText, answerMap, rendererId) ? (
-      <div className="grid gap-2">
-       <div className="flex min-w-0 items-start gap-1.5">
-        <div className="min-w-0 flex-1">
-         <ClozeText
-          text={passageText || clozeText}
-          answerMap={answerMap}
-          displayMode={clozeDisplayMode}
-         />
-        </div>
-        <MandarinSpeakButton text={completedPassageText || passageText || clozeText} />
+     <div className="grid gap-2">
+      <div className="flex min-w-0 items-start gap-1.5">
+       <div className="min-w-0 flex-1">
+        <ClozeText
+         text={passageText || clozeText}
+         answerMap={answerMap}
+         displayMode={clozeDisplayMode}
+        />
        </div>
-       {displayMode.showPinyin && passagePinyin && (
-        <StudyInstructionText variant="caption" tone="muted" weight="bold" emphasis="italic">
-         {passagePinyin}
-        </StudyInstructionText>
-       )}
-       {displayMode.showMeaning && passageMeaning && (
-        <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
-         {passageMeaning}
-        </StudyInstructionText>
-       )}
+       <MandarinSpeakButton text={completedPassageText || passageText || clozeText} />
       </div>
-     ) : (
-      <TextLineCard
-       zh={passageText || clozeText}
-       pinyin={passagePinyin}
-       vi={passageMeaning}
-       displayMode={displayMode}
-       variant="reader"
-       annotationTarget={lessonId ? { lessonId, nodeType: "passage", nodeId: itemId } : undefined}
-      />
-     )}
+      {displayMode.showPinyin && passagePinyin && (
+       <StudyInstructionText variant="caption" tone="muted" weight="bold" emphasis="italic">
+        {passagePinyin}
+       </StudyInstructionText>
+      )}
+      {displayMode.showMeaning && passageMeaning && (
+       <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
+        {passageMeaning}
+       </StudyInstructionText>
+      )}
+     </div>
     </Card>
    )}
 
@@ -246,6 +279,6 @@ export function PassageCard({
    )}
 
    <AnswerList answers={answerList} open={answerListOpen} onOpenChange={setManualAnswerListOpen} />
-  </Card>
+  </div>
  );
 }

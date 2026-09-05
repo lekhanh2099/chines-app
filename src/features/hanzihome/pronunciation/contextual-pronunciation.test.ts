@@ -6,6 +6,29 @@ import {
 } from "./contextual-pronunciation";
 
 describe("HanziHome contextual pronunciation", () => {
+ it("accepts source neutral tones without discarding the rest of a reading paragraph", () => {
+  const result = analyzeContextualPronunciation({
+   text: "国王的乐队有三百个吹竽的人，优美的音乐让他听得入迷。",
+   sourcePinyin:
+    "guó wáng de yuè duì yǒu sān bǎi ge chuī yú de rén，yōu měi de yīn yuè ràng tā tīng de rù mí。",
+  });
+  expect(result.sourcePinyinStatus).toBe("aligned");
+  expect(result.glyphs.find((glyph) => glyph.text === "个")?.spokenReadingKey).toBe("ge5");
+  expect(result.glyphs.find((glyph) => glyph.text === "得")?.spokenReadingKey).toBe("de5");
+  expect(result.glyphs.every((glyph) => glyph.evidence.includes("source-pinyin"))).toBe(true);
+ });
+
+ it.each([
+  ["优美的音乐让他听得入迷。", "de5"],
+  ["而且吹得不比他们中的任何一位差。", "de5"],
+  ["既然你的盾坚固得什么矛都刺不进去。", "de5"],
+  ["他得到了奖品。", "de2"],
+  ["我得去上课。", "dei3"],
+ ])("resolves 得 in its phrase context: %s", (text, reading) => {
+  const result = analyzeContextualPronunciation({ text });
+  expect(result.glyphs.find((glyph) => glyph.text === "得")?.spokenReadingKey).toBe(reading);
+ });
+
  it("keeps lexical and tone-sandhi readings aligned to Hanzi graphemes", () => {
   const result = analyzeContextualPronunciation({ text: "一不" });
   expect(result.glyphs).toHaveLength(2);

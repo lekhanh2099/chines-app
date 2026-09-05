@@ -399,11 +399,11 @@ function BusinessChineseText({
    containsHanziText(text)
     ? analyzeContextualPronunciation({
        text,
-       sourcePinyin: displayMode.autoDetectPinyin ? null : (sourcePinyin ?? null),
+       sourcePinyin: sourcePinyin ?? null,
        overrides: pronunciationOverrides,
       })
     : null,
-  [displayMode.autoDetectPinyin, pronunciationOverrides, sourcePinyin, text],
+  [pronunciationOverrides, sourcePinyin, text],
  );
  const contextualDisplayMode: LessonDisplayMode = useMemo(
   () => (compactHanzi ? { ...displayMode, hanziSize: "md" } : displayMode),

@@ -1,4 +1,6 @@
-import { renderToStaticMarkup } from "react-dom/server";
+import type { ReactNode } from "react";
+import { renderToStaticMarkup as renderMarkup } from "react-dom/server";
+import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it, vi } from "vitest";
 
 import {
@@ -13,10 +15,31 @@ import { ExerciseRenderIssues } from "./exercise-section/ExerciseRenderIssues";
 import { AdaptiveStudyText } from "./hanzi-typography";
 import { ReadingCard } from "./ReadingSection";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
+import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
+import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 
-vi.mock("next-intl", () => ({
- useTranslations: () => (key: string) => (key === "playAll" ? "Đọc cả bài" : key),
+vi.mock("next/navigation", () => ({
+ useSearchParams: () => new URLSearchParams(),
 }));
+vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
+ useVocabInspector: () => ({ openInspector: vi.fn() }),
+}));
+vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
+ useLearningState: () => ({
+  state: { settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE } },
+ }),
+}));
+
+function renderToStaticMarkup(element: ReactNode) {
+ return renderMarkup(
+  <NextIntlClientProvider
+   locale="vi"
+   messages={{ Reader: { study: readerStudyMessages, document: readerDocumentMessages } }}
+  >
+   {element}
+  </NextIntlClientProvider>,
+ );
+}
 
 describe("ExerciseCard", () => {
  it("uses the Chinese exercise title instead of page metadata mislabeled as Vietnamese", () => {
@@ -159,7 +182,11 @@ describe("ExerciseCard", () => {
   );
 
   expect(html.split("Bài đọc điền từ: Nhổ mầm giúp cây lớn")).toHaveLength(2);
-  expect(html).toContain("Đọc cả bài");
+  expect(html).toContain("Nghe bài");
+  expect(html).toContain("Công cụ học");
+  expect(html).toContain("Đoạn 1 / 2");
+  expect(html).toContain('data-reader-segment-id="paragraph-01"');
+  expect(html).toContain('data-reader-segment-id="paragraph-02"');
  });
 
  it("reports a missing cloze marker when a linked reading passage is plain text", () => {
@@ -366,6 +393,74 @@ describe("ExerciseCard", () => {
 });
 
 describe("ReadingCard", () => {
+ it("renders the reading passage with shared reader controls and source-aligned ruby pinyin", () => {
+  const item = ReadingItemSchema.parse({
+   id: "reading-kezhouqiujian",
+   type: "reading_text",
+   order: 1,
+   title: "刻舟求剑",
+   title_vi: "Khắc thuyền tìm kiếm",
+   paragraphs: [
+    {
+     id: "paragraph-01",
+     order: 1,
+     zh: "从前，有一个人坐船过河。",
+     pinyin: "cóng qián，yǒu yí ge rén zuò chuán guò hé。",
+     vi: "Ngày xưa, có một người ngồi thuyền qua sông.",
+    },
+    {
+     id: "paragraph-02",
+     order: 2,
+     zh: "船在河里走了好久，终于到了岸边。",
+     pinyin: "chuán zài hé lǐ zǒu le hǎo jiǔ，zhōng yú dào le àn biān。",
+    },
+    {
+     id: "paragraph-03",
+     order: 3,
+     zh: "这也是中国一个很有名的成语故事。",
+     pinyin: "zhè yě shì zhōng guó yí ge hěn yǒu míng de chéng yǔ gù shi。",
+    },
+   ],
+  });
+  const html = renderToStaticMarkup(
+   <MandarinTtsProvider>
+    <ReadingCard
+     item={item}
+     displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, autoDetectPinyin: true, showMeaning: true }}
+    />
+   </MandarinTtsProvider>,
+  );
+  expect(html).toContain("Đoạn 1 / 3");
+  expect(html).toContain("Nghe bài");
+  expect(html).toContain("Công cụ học");
+  expect(html).toContain("Tốc độ đọc");
+  expect(html).toContain("Mục lục đoạn");
+  expect(html).toContain("<ruby");
+  expect(html).toContain('aria-label="Kiểm tra pinyin chữ 个"');
+  expect(html).toContain(">ge</span>");
+  expect(html).toContain("Ngày xưa, có một người ngồi thuyền qua sông.");
+ });
+
+ it("keeps cloze answers concealed until explicitly revealed", () => {
+  const item = ReadingItemSchema.parse({
+   id: "reading-cloze",
+   type: "reading_cloze",
+   order: 1,
+   title: "填空",
+   passage: {
+    text_with_blanks: "她①____了。",
+    answers: [{ blank_id: "blank-01", answer: "回家" }],
+   },
+  });
+  const html = renderToStaticMarkup(
+   <MandarinTtsProvider>
+    <ReadingCard item={item} displayMode={DEFAULT_LESSON_DISPLAY_MODE} />
+   </MandarinTtsProvider>,
+  );
+  expect(html).not.toContain(">回家<");
+  expect(html).not.toContain("data-reader-segment-id");
+ });
+
  it("does not repeat its own reading title inside the linked passage card", () => {
   const item = ReadingItemSchema.parse({
    id: "reading-001",

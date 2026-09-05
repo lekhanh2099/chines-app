@@ -1,10 +1,19 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { ExerciseSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 
 import { DEFAULT_LESSON_DISPLAY_MODE } from "../types";
 import { PhoneticsExerciseBody } from "./PhoneticsExerciseBody";
+
+vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
+ useVocabInspector: () => ({ openInspector: vi.fn() }),
+}));
+vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
+ useLearningState: () => ({
+  state: { settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE } },
+ }),
+}));
 
 describe("PhoneticsExerciseBody", () => {
  it("renders normalized Boya questions without leaking import metadata", () => {

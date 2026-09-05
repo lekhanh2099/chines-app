@@ -42,6 +42,15 @@ export type PronunciationDictionaryEntry = {
  priority: number;
 };
 
+// Phrase readings missing from pinyin-pro's built-in dictionary. Keep 得 scoped
+// to a complete context: a character-wide replacement would break 得到 and 得去.
+const contextualPhraseDictionary: PronunciationDictionaryEntry[] = [
+ { id: "complement-listen", text: "听得入迷", pinyin: "tīng de rù mí", priority: 0 },
+ { id: "complement-play", text: "吹得不比", pinyin: "chuī de bù bǐ", priority: 0 },
+ { id: "complement-solid", text: "坚固得", pinyin: "jiān gù de", priority: 0 },
+ { id: "modal-must-go", text: "我得去", pinyin: "wǒ děi qù", priority: 0 },
+];
+
 export type PronunciationOverride = z.output<typeof requestSchema>["overrides"][number];
 
 export type ContextualPronunciationGlyph = {
@@ -288,9 +297,14 @@ function alignSourceKeys(
  if (lexicalReadings.length !== spokenReadings.length) return null;
  const compactSource = normalizeSourcePinyin(sourcePinyin);
  const candidates = lexicalReadings.map((lexical, index) =>
-  [...new Set([lexical, spokenReadings[index], ...(alternatives[index] ?? [])])].sort(
-   (left, right) => right.length - left.length,
-  ),
+  [
+   ...new Set(
+    [lexical, spokenReadings[index], ...(alternatives[index] ?? [])].flatMap((key) => [
+     key,
+     `${key.slice(0, -1)}5`,
+    ]),
+   ),
+  ].sort((left, right) => right.length - left.length),
  );
  const memo = new Map<string, string[] | null>();
 
@@ -370,6 +384,7 @@ export function analyzeContextualPronunciation(
  dictionary: PronunciationDictionaryEntry[] = [],
 ): ContextualPronunciationAnalysis {
  const request = requestSchema.parse(input);
+ const pronunciationDictionary = [...dictionary, ...contextualPhraseDictionary];
  const originalText = request.text;
  const normalizedText = originalText.normalize("NFC");
  const graphemes = [
@@ -432,7 +447,7 @@ export function analyzeContextualPronunciation(
      lexicalValues,
      spokenValues,
      alternatives,
-     dictionary,
+     pronunciationDictionary,
     )
   : new Map<number, string>();
  const glyphs: ContextualPronunciationGlyph[] = [];
@@ -496,7 +511,7 @@ export function analyzeContextualPronunciation(
  const tokens: ContextualPronunciationToken[] = [];
  let index = 0;
  while (index < normalizedText.length) {
-  const entry = dictionaryToken(normalizedText, index, dictionary);
+  const entry = dictionaryToken(normalizedText, index, pronunciationDictionary);
   if (entry !== null) {
    tokens.push({
     id: `token:${index}:${index + entry.text.length}`,
