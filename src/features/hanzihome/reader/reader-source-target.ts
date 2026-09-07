@@ -25,16 +25,16 @@ export const readerSourceTargetSchema = z
 
 export type ReaderSourceTarget = z.output<typeof readerSourceTargetSchema>;
 
-export function buildReaderSourceHref(input: ReaderSourceTarget) {
+export function buildReaderSourceHref(input: ReaderSourceTarget, baseHref = "/reader") {
  const target = readerSourceTargetSchema.parse(input);
- const params = new URLSearchParams({
-  document: target.documentId,
-  source: target.source,
- });
+ const [pathname, search] = baseHref.split("?");
+ const params = new URLSearchParams(search);
+ params.set("document", target.documentId);
+ params.set("source", target.source);
  if (target.paragraphId) params.set("paragraph", target.paragraphId);
  if (target.startOffset !== undefined) params.set("start", String(target.startOffset));
  if (target.endOffset !== undefined) params.set("end", String(target.endOffset));
- return `/reader?${params.toString()}`;
+ return `${pathname}?${params.toString()}`;
 }
 
 function parseOptionalOffset(value: string | null) {

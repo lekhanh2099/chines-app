@@ -1,7 +1,7 @@
 import { JsonObjectSchema } from "@/types/json";
 import { z } from "zod";
 
-import { readerAnnotationRowSchema } from "./reader.schemas";
+import { readerAnnotationRowSchema, type ReaderAnnotationRow } from "./reader.schemas";
 
 const annotationFieldsSchema = z
  .strictObject({
@@ -74,4 +74,29 @@ export async function deleteReaderAnnotation(annotationId: string, expectedRevis
   },
  );
  if (!response.ok) throw new Error("Không xoá được ghi chú Reader.");
+}
+
+export async function updateReaderAnnotation(annotation: ReaderAnnotationRow, noteText: string) {
+ const response = await fetch(
+  `/api/hanzihome/reader/annotations/${encodeURIComponent(annotation.id)}`,
+  {
+   method: "PATCH",
+   headers: { "Content-Type": "application/json" },
+   body: JSON.stringify({
+    paragraphId: annotation.paragraph_id,
+    assetId: annotation.asset_id,
+    color: annotation.color,
+    pageNumber: annotation.page_number,
+    startOffset: annotation.start_offset,
+    endOffset: annotation.end_offset,
+    selectedText: annotation.selected_text,
+    noteText,
+    payload: annotation.payload,
+    expectedRevision: annotation.revision,
+   }),
+  },
+ );
+ const value = await response.json().catch(() => null);
+ if (!response.ok) throw new Error("Không cập nhật được ghi chú Reader.");
+ return createAnnotationResponseSchema.parse(value).annotation;
 }

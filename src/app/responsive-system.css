@@ -6,6 +6,15 @@
  * the Lexical reading surface.
  */
 
+/* Reading keeps its own command bar. Reclaim global chrome space while moving
+   down a reader; upward scrolling and keyboard/focus interaction reveal it.
+   No transition is needed, including for reduced-motion users. */
+.app-shell
+ > div:has(> [data-app-scroll-viewport][data-reader-chrome="hidden"] [data-reader-segment-id])
+ > .nova-shell-header:not(:focus-within) {
+ display: none;
+}
+
 @media (max-width: 47.999rem) {
  :root {
   --bottom-nav-height: 3.25rem;

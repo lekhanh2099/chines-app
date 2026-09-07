@@ -87,10 +87,20 @@ function getSelectionOffsets(container: HTMLElement, range: Range) {
  const beforeEnd = document.createRange();
  beforeEnd.selectNodeContents(container);
  beforeEnd.setEnd(range.endContainer, range.endOffset);
+ const sourceRange = document.createRange();
+ sourceRange.selectNodeContents(container);
+ const [precedingStart, precedingEnd, sourceText] = [beforeStart, beforeEnd, sourceRange].map(
+  (part) => {
+   const fragment = part.cloneContents();
+   fragment.querySelectorAll("rt, rp").forEach((rubyText) => rubyText.remove());
+   return fragment.textContent ?? "";
+  },
+ );
 
  return {
-  startOffset: beforeStart.toString().length,
-  endOffset: beforeEnd.toString().length,
+  startOffset: precedingStart.length,
+  endOffset: precedingEnd.length,
+  sourceText,
  };
 }
 
@@ -155,17 +165,20 @@ export function LessonAnnotationProvider({
     const range = selection.getRangeAt(0);
     const target = selectionTarget(range);
     if (!target || target.dataset.lessonId !== lessonId) return;
+    if (target.getAttribute("aria-hidden") === "true") return;
 
     const offsets = getSelectionOffsets(target, range);
-    const sourceText = target.textContent || "";
-    if (!offsets || !containsChinese(range.toString())) return;
+    if (!offsets) return;
+    const { sourceText, startOffset, endOffset } = offsets;
+    if (!containsChinese(sourceText.slice(startOffset, endOffset))) return;
 
     const anchor = createAnnotationAnchor({
      lessonId,
      nodeType: target.dataset.nodeType || "text",
      nodeId: target.dataset.nodeId || "",
      text: sourceText,
-     ...offsets,
+     startOffset,
+     endOffset,
     });
     const rect = getSelectionRect(range);
     if (!anchor || !anchor.nodeId || !rect) return;

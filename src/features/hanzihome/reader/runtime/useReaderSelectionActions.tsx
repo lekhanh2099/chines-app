@@ -20,8 +20,14 @@ import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTts
 import { formatContextualPinyinRange } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { hanzihomeQueryKeys } from "../../query-keys";
 import type { ReaderSurfaceSelection } from "../components/ReaderSurface";
-import { createReaderAnnotation, deleteReaderAnnotation } from "../reader-annotation-api";
+import {
+ createReaderAnnotation,
+ deleteReaderAnnotation,
+ updateReaderAnnotation,
+} from "../reader-annotation-api";
 import type { ReaderDocumentResource } from "../reader-content-api";
+import type { ReaderDocumentModel } from "../model/reader-document.types";
+import type { ReaderAnnotationRow } from "../reader.schemas";
 import { buildReaderSourceHref } from "../reader-source-target";
 import {
  useReaderRuntimeActions,
@@ -32,17 +38,20 @@ import type { ReaderProgressOwner, ReaderPronunciationAnalysis } from "./useRead
 type SelectionMode = "quick" | "note";
 
 export function useReaderSelectionActions({
- resource,
+ document: documentModel,
+ vocabulary: documentVocabulary,
  stateOwner,
  analysisBySegmentId,
  setSaveError,
 }: {
- resource: ReaderDocumentResource;
+ document: ReaderDocumentModel;
+ vocabulary: ReaderDocumentResource["vocabulary"];
  stateOwner: ReaderProgressOwner;
  analysisBySegmentId: ReadonlyMap<string, ReaderPronunciationAnalysis>;
  setSaveError: (error: string) => void;
 }) {
  const t = useTranslations("Reader.study.chrome.selection");
+ const notesT = useTranslations("Reader.study.chrome.notes");
  const queryClient = useQueryClient();
  const tts = useSharedMandarinTts();
  const { openInspector } = useVocabInspector();
@@ -51,9 +60,11 @@ export function useReaderSelectionActions({
  const [selection, setSelection] = useState<ReaderSurfaceSelection | null>(null);
  const [mode, setMode] = useState<SelectionMode>("quick");
  const [noteDraft, setNoteDraft] = useState("");
+ const [openedAnnotation, setOpenedAnnotation] = useState<ReaderAnnotationRow>();
+ const [saving, setSaving] = useState(false);
  const analysis = selection ? analysisBySegmentId.get(selection.segment.id) : undefined;
  const vocabulary = selection
-  ? resource.vocabulary.find((item) => item.word === selection.text)
+  ? documentVocabulary.find((item) => item.word === selection.text)
   : undefined;
  const selectedPinyin =
   selection && analysis && selection.start !== null && selection.end !== null
@@ -64,6 +75,7 @@ export function useReaderSelectionActions({
   setSelection(null);
   setMode("quick");
   setNoteDraft("");
+  setOpenedAnnotation(undefined);
   window.getSelection()?.removeAllRanges();
  }, []);
  const handleSelection = useCallback(
@@ -72,54 +84,81 @@ export function useReaderSelectionActions({
    setSelection(next);
    setMode("quick");
    setNoteDraft("");
+   setOpenedAnnotation(undefined);
   },
   [runtimeActions],
  );
+ const handleOpenAnnotation = (annotation: ReaderAnnotationRow, rect: DOMRect) => {
+  const index = documentModel.segments.findIndex(
+   (segment) => segment.id === annotation.paragraph_id,
+  );
+  const segment = documentModel.segments[index];
+  if (!segment) return;
+  setSelection({
+   segment,
+   index,
+   text: annotation.selected_text,
+   start: annotation.start_offset,
+   end: annotation.end_offset,
+   rect,
+  });
+  setOpenedAnnotation(annotation);
+  setNoteDraft(annotation.note_text);
+  setMode("note");
+ };
  const invalidateAnnotations = () =>
   queryClient.invalidateQueries({
    queryKey:
     stateOwner === "reader"
-     ? hanzihomeQueryKeys.readerState(resource.document.id)
-     : hanzihomeQueryKeys.readerAnnotations(resource.document.id),
+     ? hanzihomeQueryKeys.readerState(documentModel.id)
+     : hanzihomeQueryKeys.readerAnnotations(documentModel.id),
   });
  const sourceHref = (
   current: ReaderSurfaceSelection,
   source: "reader-selection" | "reader-highlight",
  ) =>
-  buildReaderSourceHref({
-   source,
-   documentId: resource.document.id,
-   paragraphId: current.segment.id,
-   ...(current.start !== null && current.end !== null
-    ? { startOffset: current.start, endOffset: current.end }
-    : {}),
-  });
+  buildReaderSourceHref(
+   {
+    source,
+    documentId: documentModel.id,
+    paragraphId: current.segment.id,
+    ...(current.start !== null && current.end !== null
+     ? { startOffset: current.start, endOffset: current.end }
+     : {}),
+   },
+   documentModel.source.href,
+  );
  const saveAnnotation = (annotationType: "highlight" | "note") => {
-  if (!selection || selection.start === null || selection.end === null) return;
-  void createReaderAnnotation({
-   documentId: resource.document.id,
-   paragraphId: selection.segment.id,
-   assetId: null,
-   annotationType,
-   pageNumber: null,
-   startOffset: selection.start,
-   endOffset: selection.end,
-   selectedText: selection.text,
-   noteText: annotationType === "note" ? noteDraft : "",
-   color: annotationType === "note" ? "yellow" : "green",
-   payload: {},
-  })
+  if (saving || !selection || selection.start === null || selection.end === null) return;
+  setSaving(true);
+  setSaveError("");
+  const request = openedAnnotation
+   ? updateReaderAnnotation(openedAnnotation, noteDraft)
+   : createReaderAnnotation({
+      documentId: documentModel.id,
+      paragraphId: selection.segment.id,
+      assetId: null,
+      annotationType,
+      pageNumber: null,
+      startOffset: selection.start,
+      endOffset: selection.end,
+      selectedText: selection.text,
+      noteText: annotationType === "note" ? noteDraft : "",
+      color: annotationType === "note" ? "yellow" : "green",
+      payload: {},
+     });
+  void request
    .then(() => {
     if (annotationType === "highlight") {
      const now = new Date().toISOString();
      void upsertLearningLoopItem({
-      id: `reader-bookmark:${resource.document.id}:${selection.segment.id}:${selection.start}`,
-      stable_key: `reader-bookmark:${resource.document.id}:${selection.segment.id}:${selection.start}`,
+      id: `reader-bookmark:${documentModel.id}:${selection.segment.id}:${selection.start}`,
+      stable_key: `reader-bookmark:${documentModel.id}:${selection.segment.id}:${selection.start}`,
       kind: "reading_bookmark",
-      source_id: resource.document.id,
+      source_id: documentModel.id,
       source_href: sourceHref(selection, "reader-highlight"),
-      title_zh: resource.document.title_zh,
-      title_vi: resource.document.title_vi,
+      title_zh: documentModel.title ?? "",
+      title_vi: documentModel.titleVi ?? "",
       prompt_zh: selection.text,
       pinyin: "",
       meaning_vi: "",
@@ -136,24 +175,32 @@ export function useReaderSelectionActions({
     clear();
     return invalidateAnnotations();
    })
-   .catch((annotationError: Error) => setSaveError(annotationError.message));
+   .catch((annotationError: Error) => setSaveError(annotationError.message))
+   .finally(() => setSaving(false));
  };
  const removeAnnotation = (annotationId: string, revision: number) => {
+  if (saving) return;
+  setSaving(true);
+  setSaveError("");
   void deleteReaderAnnotation(annotationId, revision)
-   .then(invalidateAnnotations)
-   .catch((annotationError: Error) => setSaveError(annotationError.message));
+   .then(() => {
+    clear();
+    return invalidateAnnotations();
+   })
+   .catch((annotationError: Error) => setSaveError(annotationError.message))
+   .finally(() => setSaving(false));
  };
  const addToReview = () => {
   if (!selection || selection.start === null) return;
   const now = new Date().toISOString();
   void upsertLearningLoopItem({
-   id: `reader-selection:${resource.document.id}:${selection.segment.id}:${selection.start}`,
-   stable_key: `reader-selection:${resource.document.id}:${selection.segment.id}:${selection.start}`,
+   id: `reader-selection:${documentModel.id}:${selection.segment.id}:${selection.start}`,
+   stable_key: `reader-selection:${documentModel.id}:${selection.segment.id}:${selection.start}`,
    kind: vocabulary === undefined ? "reading_bookmark" : "vocabulary",
-   source_id: resource.document.id,
+   source_id: documentModel.id,
    source_href: sourceHref(selection, "reader-selection"),
-   title_zh: resource.document.title_zh,
-   title_vi: resource.document.title_vi,
+   title_zh: documentModel.title ?? "",
+   title_vi: documentModel.titleVi ?? "",
    prompt_zh: selection.text,
    pinyin: vocabulary?.pinyin || selectedPinyin,
    meaning_vi: vocabulary?.meaning || "",
@@ -178,135 +225,179 @@ export function useReaderSelectionActions({
   [selection],
  );
 
- const popover = selection ? (
-  <Popover.Root open modal={false} onOpenChange={(open) => !open && clear()}>
-   <Popover.Portal>
-    <BasePopoverPositioner
-     anchor={anchor}
-     side="top"
-     align="center"
-     sideOffset={10}
-     collisionPadding={8}
-     positionMethod="fixed"
-    >
-     <BasePopoverPopup
-      variant="lookup"
-      data-no-inspector
-      onMouseDown={(event) => event.preventDefault()}
+ const popover = (
+  <Popover.Root
+   open={!!selection}
+   modal={false}
+   onOpenChange={(open, details) => {
+    if (open) return;
+    const target = details.event.target;
+    // The click ending a text selection (or opening a saved mark) is its anchor,
+    // not an outside click dismissing the menu that just opened on mouseup.
+    if (
+     details.reason === "outside-press" &&
+     details.event.type === "click" &&
+     target instanceof Element &&
+     target.closest("[data-reader-hanzi-content]") &&
+     (window.getSelection()?.isCollapsed === false || target.closest(".reading-highlight"))
+    )
+     return;
+    clear();
+   }}
+  >
+   {selection ? (
+    <Popover.Portal>
+     <BasePopoverPositioner
+      anchor={anchor}
+      side="top"
+      align="center"
+      sideOffset={10}
+      collisionPadding={8}
+      positionMethod="fixed"
      >
-      <div className="grid gap-3 p-3">
-       <div className="flex items-start justify-between gap-2">
-        <div className="grid min-w-0 gap-0.5">
-         <Typography as="strong" variant="cardTitle" lang="zh-CN" clamp="one">
-          {selection.text}
-         </Typography>
-         <PinyinText variant="caption" tone="muted">
-          {selectedPinyin || t("missingPinyin")}
-         </PinyinText>
+      <BasePopoverPopup
+       variant="lookup"
+       initialFocus={false}
+       finalFocus={false}
+       data-no-inspector
+       onMouseDown={(event) => {
+        if (event.target instanceof Element && event.target.closest("textarea, input")) return;
+        event.preventDefault();
+       }}
+      >
+       <div className="grid gap-3 p-3">
+        <div className="flex items-start justify-between gap-2">
+         <div className="grid min-w-0 gap-0.5">
+          <Typography as="strong" variant="cardTitle" lang="zh-CN" clamp="one">
+           {selection.text}
+          </Typography>
+          <PinyinText variant="caption" tone="muted">
+           {selectedPinyin || t("missingPinyin")}
+          </PinyinText>
+         </div>
+         <Button
+          type="button"
+          size="icon-sm"
+          variant="ghost"
+          aria-label={t("closeAria")}
+          onClick={clear}
+         >
+          <X aria-hidden="true" />
+         </Button>
         </div>
-        <Button
-         type="button"
-         size="icon-sm"
-         variant="ghost"
-         aria-label={t("closeAria")}
-         onClick={clear}
-        >
-         <X aria-hidden="true" />
-        </Button>
+        {mode === "quick" ? (
+         <>
+          <Typography variant="bodySmall" tone="muted">
+           {vocabulary?.meaning || t("missingMeaning")}
+          </Typography>
+          <div className="grid grid-cols-3 gap-1" role="toolbar" aria-label={t("actionsAria")}>
+           <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            onClick={() => {
+             openInspector(selection.text, { anchorRect: selection.rect });
+             clear();
+            }}
+           >
+            <Languages data-icon="inline-start" />
+            {t("lookup")}
+           </Button>
+           <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            disabled={saving || selection.start === null || selection.end === null}
+            onClick={() => saveAnnotation("highlight")}
+           >
+            <Highlighter data-icon="inline-start" />
+            {t("highlight")}
+           </Button>
+           <Button type="button" size="sm" variant="ghost" onClick={() => setMode("note")}>
+            <StickyNote data-icon="inline-start" />
+            {t("note")}
+           </Button>
+          </div>
+         </>
+        ) : (
+         <>
+          <Textarea
+           value={noteDraft}
+           onChange={(event) => setNoteDraft(event.target.value)}
+           placeholder={t("notePlaceholder")}
+           aria-label={t("noteAria")}
+           rows={2}
+          />
+          <div className="flex justify-end gap-2">
+           {openedAnnotation ? (
+            <Button
+             type="button"
+             size="sm"
+             variant="ghost"
+             disabled={saving}
+             onClick={() => removeAnnotation(openedAnnotation.id, openedAnnotation.revision)}
+            >
+             {notesT("delete")}
+            </Button>
+           ) : null}
+           <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            onClick={() => (openedAnnotation ? clear() : setMode("quick"))}
+           >
+            {t("cancel")}
+           </Button>
+           <Button
+            type="button"
+            size="sm"
+            disabled={
+             saving || !noteDraft.trim() || selection.start === null || selection.end === null
+            }
+            onClick={() => saveAnnotation("note")}
+           >
+            {t("saveNote")}
+           </Button>
+          </div>
+         </>
+        )}
+        <div className="flex flex-wrap gap-1 border-t border-border-default pt-2">
+         <Button
+          type="button"
+          size="sm"
+          variant="ghost"
+          onClick={() => {
+           commands.stop();
+           tts.speakSequence([selection.text]);
+          }}
+         >
+          <Volume2 data-icon="inline-start" />
+          {t("listen")}
+         </Button>
+         <Button type="button" size="sm" variant="ghost" onClick={addToReview}>
+          <BookmarkPlus data-icon="inline-start" />
+          {t("review")}
+         </Button>
+         <Button
+          type="button"
+          size="sm"
+          variant="ghost"
+          onClick={() => {
+           openInspector(selection.text, { anchorRect: selection.rect });
+           clear();
+          }}
+         >
+          <Info data-icon="inline-start" />
+          {t("understand")}
+         </Button>
+        </div>
        </div>
-       {mode === "quick" ? (
-        <>
-         <Typography variant="bodySmall" tone="muted">
-          {vocabulary?.meaning || t("missingMeaning")}
-         </Typography>
-         <div className="grid grid-cols-3 gap-1" role="toolbar" aria-label={t("actionsAria")}>
-          <Button
-           type="button"
-           size="sm"
-           variant="ghost"
-           onClick={() => {
-            openInspector(selection.text, { anchorRect: selection.rect });
-            clear();
-           }}
-          >
-           <Languages data-icon="inline-start" />
-           {t("lookup")}
-          </Button>
-          <Button
-           type="button"
-           size="sm"
-           variant="ghost"
-           onClick={() => saveAnnotation("highlight")}
-          >
-           <Highlighter data-icon="inline-start" />
-           {t("highlight")}
-          </Button>
-          <Button type="button" size="sm" variant="ghost" onClick={() => setMode("note")}>
-           <StickyNote data-icon="inline-start" />
-           {t("note")}
-          </Button>
-         </div>
-        </>
-       ) : (
-        <>
-         <Textarea
-          value={noteDraft}
-          onChange={(event) => setNoteDraft(event.target.value)}
-          placeholder={t("notePlaceholder")}
-          aria-label={t("noteAria")}
-          rows={2}
-         />
-         <div className="flex justify-end gap-2">
-          <Button type="button" size="sm" variant="ghost" onClick={() => setMode("quick")}>
-           {t("cancel")}
-          </Button>
-          <Button
-           type="button"
-           size="sm"
-           disabled={!noteDraft.trim()}
-           onClick={() => saveAnnotation("note")}
-          >
-           {t("saveNote")}
-          </Button>
-         </div>
-        </>
-       )}
-       <div className="flex flex-wrap gap-1 border-t border-border-default pt-2">
-        <Button
-         type="button"
-         size="sm"
-         variant="ghost"
-         onClick={() => {
-          commands.stop();
-          tts.speakSequence([selection.text]);
-         }}
-        >
-         <Volume2 data-icon="inline-start" />
-         {t("listen")}
-        </Button>
-        <Button type="button" size="sm" variant="ghost" onClick={addToReview}>
-         <BookmarkPlus data-icon="inline-start" />
-         {t("review")}
-        </Button>
-        <Button
-         type="button"
-         size="sm"
-         variant="ghost"
-         onClick={() => {
-          openInspector(selection.text, { anchorRect: selection.rect });
-          clear();
-         }}
-        >
-         <Info data-icon="inline-start" />
-         {t("understand")}
-        </Button>
-       </div>
-      </div>
-     </BasePopoverPopup>
-    </BasePopoverPositioner>
-   </Popover.Portal>
+      </BasePopoverPopup>
+     </BasePopoverPositioner>
+    </Popover.Portal>
+   ) : null}
   </Popover.Root>
- ) : null;
+ );
 
- return { handleSelection, popover, removeAnnotation };
+ return { handleSelection, handleOpenAnnotation, popover, removeAnnotation };
 }

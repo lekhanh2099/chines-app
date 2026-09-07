@@ -8,9 +8,11 @@ import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
+import type { AnnotationAnchor } from "@/features/hanzihome/annotations/types";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 import type { ReaderDocumentModel } from "../model/reader-document.types";
+import type { ReaderAnnotationRow } from "../reader.schemas";
 import { parseReaderSourceTarget, type ReaderSourceTarget } from "../reader-source-target";
 import {
  ReaderPronunciationSessionProvider,
@@ -49,6 +51,9 @@ export type {
 export type ReaderSurfaceProps = {
  document: ReaderDocumentModel;
  lessonId?: string;
+ annotationNodeType?: AnnotationAnchor["nodeType"];
+ readerAnnotations?: readonly ReaderAnnotationRow[];
+ onOpenReaderAnnotation?: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
  renderSegment?: ReaderSurfaceRenderSegment;
  renderSection?: ReaderSurfaceRenderSection;
  analysisBySegmentId?: ReadonlyMap<string, ReaderPronunciationAnalysis>;
@@ -56,6 +61,7 @@ export type ReaderSurfaceProps = {
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
  onOpenShadowing?: () => void;
  toolbarStickyOffset?: ReaderToolbarStickyOffset;
+ toolbarTargetId?: string;
  initialFocus?: ReaderSourceTarget | null;
  compact?: boolean;
  displayMode?: LessonDisplayMode;
@@ -70,7 +76,7 @@ function textPointAt(root: HTMLElement, targetOffset: number): TextPoint | null 
  let lastText: Text | null = null;
 
  while (node) {
-  if (node instanceof Text) {
+  if (node instanceof Text && !node.parentElement?.closest("rt, rp")) {
    lastText = node;
    const length = node.data.length;
    if (targetOffset <= traversed + length) {
@@ -119,6 +125,9 @@ export function ReaderSurfaceView(props: ReaderSurfaceProps) {
 function ReaderSurfaceViewContent({
  document,
  lessonId,
+ annotationNodeType,
+ readerAnnotations,
+ onOpenReaderAnnotation,
  renderSegment,
  renderSection,
  analysisBySegmentId,
@@ -126,6 +135,7 @@ function ReaderSurfaceViewContent({
  onPronunciationInspect,
  onOpenShadowing,
  toolbarStickyOffset = "page",
+ toolbarTargetId,
  initialFocus,
  compact = false,
  displayMode: initialDisplayMode,
@@ -247,6 +257,7 @@ function ReaderSurfaceViewContent({
  }, [commands, document.id, document.segments, resolvedInitialFocus]);
 
  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+  if (event.shiftKey || event.altKey || event.ctrlKey || event.metaKey) return;
   const target = event.target;
   if (
    target instanceof Element &&
@@ -289,12 +300,26 @@ function ReaderSurfaceViewContent({
    role="region"
    onKeyDown={handleKeyDown}
    aria-label={t("aria")}
+   onCopy={(event) => {
+    const selection = window.getSelection();
+    if (!selection || selection.isCollapsed || selection.rangeCount !== 1) return;
+    const range = selection.getRangeAt(0);
+    if (!event.currentTarget.contains(range.commonAncestorContainer)) return;
+    const fragment = range.cloneContents();
+    if (!fragment.querySelector("ruby, rt, [lang='zh-Latn-pinyin']")) return;
+    fragment
+     .querySelectorAll("rt, rp, [lang='zh-Latn-pinyin'], [aria-hidden='true']")
+     .forEach((pinyin) => pinyin.remove());
+    event.preventDefault();
+    event.clipboardData.setData("text/plain", fragment.textContent ?? "");
+   }}
   >
    <ReaderCommandBar
     segmentCount={document.segments.length}
     onOpenOutline={() => setOutlineOpen(true)}
     onOpenShadowing={onOpenShadowing}
     stickyOffset={toolbarStickyOffset}
+    portalTargetId={toolbarTargetId}
     compact={compact}
     displayMode={displayMode}
     onDisplayModeChange={displayMode ? updateDisplayMode : undefined}
@@ -321,6 +346,9 @@ function ReaderSurfaceViewContent({
      <ReaderDocumentContent
       document={document}
       lessonId={lessonId}
+      annotationNodeType={annotationNodeType}
+      readerAnnotations={readerAnnotations}
+      onOpenReaderAnnotation={onOpenReaderAnnotation}
       displayMode={displayMode}
       renderSegment={renderSegment}
       renderSection={renderSection}

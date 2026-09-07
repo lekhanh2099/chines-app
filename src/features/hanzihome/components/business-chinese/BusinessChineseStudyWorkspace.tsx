@@ -10,7 +10,10 @@ import {
  type MouseEvent,
 } from "react";
 import { useSelector } from "@tanstack/react-store";
+import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { useClientSession } from "@/components/providers/QueryProvider";
 
 import {
  AppHeaderBreadcrumb,
@@ -35,6 +38,8 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography, type TypographyProps } from "@/components/ui/typography";
+import { HANZIHOME_READER_COMMAND_BAR_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
+import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import {
  containsHanziText,
  HanziAwareText,
@@ -53,6 +58,19 @@ import {
  type ContextualPronunciationGlyph,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { ContextualReaderText } from "@/features/hanzihome/reader/ContextualReaderText";
+import {
+ buildBusinessChineseReaderDocument,
+ buildTextbookHref,
+ stripLeadingEmoji,
+ lessonDisplayTitle,
+ splitTrailingTranslation,
+ splitDialogueTurn,
+ getChineseSpeechSegments,
+} from "@/features/hanzihome/reader/adapters/business-chinese.adapter";
+import { fetchReaderAnnotations } from "@/features/hanzihome/reader/reader-annotation-api";
+import { parseReaderSourceTarget } from "@/features/hanzihome/reader/reader-source-target";
+import { useReaderSelectionActions } from "@/features/hanzihome/reader/runtime/useReaderSelectionActions";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import {
  ReaderSurface,
  ReaderSurfaceView,
@@ -89,8 +107,6 @@ const headerOwnerId = "business-chinese-study";
 const chineseGraphemeSegmenter = new Intl.Segmenter("zh-CN", {
  granularity: "grapheme",
 });
-const chineseSpeechSegmentPattern =
- /[\p{Script=Han}\p{Number}%％，。！？；：、“”‘’（）《》〈〉…—\s]+/gu;
 const nonChineseTextPattern = /[^\p{Script=Han}\p{Number}\p{Punctuation}\p{Separator}\p{Symbol}]/gu;
 
 const businessChineseDisplayMode: LessonDisplayMode = {
@@ -103,192 +119,8 @@ const businessChineseDisplayMode: LessonDisplayMode = {
  revealMode: "always",
 };
 
-function buildTextbookHref(book: TextbookLesson["bookKey"], lessonNumber: number) {
- if (book === "nhip-cau") return `/hsk/nhip-cau-han-ngu?lesson=${lessonNumber}`;
- if (book === "doc-hieu") return `/hsk/doc-hieu?lesson=${lessonNumber}`;
- return `/hsk/han-thuong-mai?book=${book}&lesson=${lessonNumber}`;
-}
-
-function stripLeadingEmoji(value: string) {
- return value.replace(/^[\p{Extended_Pictographic}\uFE0F\s]+/u, "").trim();
-}
-
-function lessonDisplayTitle(value: string) {
- return value.replace(/^BÀI\s+\d+\s*:\s*/iu, "").trim();
-}
-
-function splitTrailingTranslation(value: string) {
- const separatorIndex = value.lastIndexOf(" (");
- if (separatorIndex < 0 || !value.endsWith(")")) {
-  return { source: value.trim(), translation: "" };
- }
-
- const source = value.slice(0, separatorIndex).trim();
- const translation = value.slice(separatorIndex + 2, -1).trim();
- if (
-  !containsHanziText(source) ||
-  containsHanziText(translation) ||
-  !/[A-Za-zÀ-ỹ]/u.test(translation)
- ) {
-  return { source: value.trim(), translation: "" };
- }
-
- return { source, translation };
-}
-
-function splitDialogueTurn(value: string) {
- const fullWidthColonIndex = value.indexOf("：");
- const asciiColonIndex = value.indexOf(":");
- const separatorIndex =
-  fullWidthColonIndex >= 0 && asciiColonIndex >= 0
-   ? Math.min(fullWidthColonIndex, asciiColonIndex)
-   : Math.max(fullWidthColonIndex, asciiColonIndex);
- if (separatorIndex <= 0 || separatorIndex > 24) {
-  return { speaker: "", content: value.trim() };
- }
-
- const speaker = value.slice(0, separatorIndex).trim();
- const content = value.slice(separatorIndex + 1).trim();
- if (!content || /[。！？；]/u.test(speaker)) {
-  return { speaker: "", content: value.trim() };
- }
-
- return { speaker, content };
-}
-
-function getChineseSpeechSegments(value: string) {
- const { source } = splitTrailingTranslation(value);
- return (source.match(chineseSpeechSegmentPattern) ?? [])
-  .map((segment) => segment.trim())
-  .filter((segment) => containsHanziText(segment));
-}
-
 function isChineseOnlyText(value: string) {
  return value.replace(nonChineseTextPattern, "").trim().length === value.trim().length;
-}
-
-function buildBusinessChineseReaderDocument(
- lesson: TextbookLesson,
- activeView: string,
-): ReaderDocumentModel {
- const segments: ReaderSegment[] = [];
- const sections: ReaderDocumentModel["sections"][number][] = [];
- const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
- const translationIndex = lesson.sections.findIndex((section) =>
-  section.title.includes("DỊCH BÀI KHÓA"),
- );
- const translatedSection = lesson.sections[translationIndex];
- const sourceSection = translationIndex > 0 ? lesson.sections[translationIndex - 1] : undefined;
-
- for (const section of lesson.sections) {
-  if (
-   section.title.includes("DỊCH BÀI KHÓA") ||
-   section.blocks.length === 0 ||
-   (activeView !== "all" && section.category !== activeView)
-  ) {
-   continue;
-  }
-
-  const segmentIds: string[] = [];
-  for (const block of section.blocks) {
-   if (
-    block.type === "subheading" &&
-    segments.length === 0 &&
-    block.text === lessonTitle.source &&
-    (!block.translation || block.translation === lessonTitle.translation)
-   ) {
-    continue;
-   }
-   if (block.type === "table") {
-    const headers = block.rows[0] ?? [];
-    const pinyinColumnIndex = headers.findIndex((header) => /pinyin/iu.test(header));
-    const hanziColumnIndex = headers.findIndex((header) =>
-     /tiếng trung|giản thể|hán tự|từ vựng|^từ$/iu.test(header),
-    );
-    block.rows.slice(1).forEach((row, rowIndex) => {
-     row.forEach((cell, cellIndex) => {
-      if (cellIndex === pinyinColumnIndex) return;
-      const speechSegments = getChineseSpeechSegments(cell);
-      if (speechSegments.length === 0) return;
-      const id = `${block.id}:row:${rowIndex}:cell:${cellIndex}`;
-      const speechText = speechSegments.join(" ");
-      segmentIds.push(id);
-      segments.push({
-       id,
-       kind: "sentence",
-       sectionId: section.id,
-       zh: speechText,
-       pinyin:
-        cellIndex === hanziColumnIndex && pinyinColumnIndex >= 0
-         ? row[pinyinColumnIndex]
-         : undefined,
-       speechText,
-      });
-     });
-    });
-    continue;
-   }
-
-   const blockText =
-    section.category === "practice" && block.text.includes("→")
-     ? block.text.slice(0, block.text.indexOf("→")).trim()
-     : block.text;
-   const inlineText = splitTrailingTranslation(blockText);
-   const sourceTurn =
-    block.translation !== undefined
-     ? { speaker: block.speaker ?? "", content: block.text }
-     : splitDialogueTurn(inlineText.source);
-   const translatedBlock =
-    section.id === sourceSection?.id
-     ? translatedSection?.blocks[section.blocks.indexOf(block)]
-     : undefined;
-   const translationTurn =
-    block.translation !== undefined
-     ? { speaker: "", content: block.translation }
-     : splitDialogueTurn(translatedBlock?.text || inlineText.translation);
-   const sourceText = sourceTurn.content;
-   const speechSegments = getChineseSpeechSegments(sourceText);
-   if (speechSegments.length === 0) continue;
-   const id =
-    section.category === "practice" && block.text.includes("→") ? `${block.id}:prompt` : block.id;
-   const speechText = block.translation !== undefined ? sourceText : speechSegments.join(" ");
-   segmentIds.push(id);
-   segments.push({
-    id,
-    kind:
-     block.type === "subheading" ? "heading" : sourceTurn.speaker ? "dialogue-turn" : "paragraph",
-    sectionId: section.id,
-    zh: section.category === "text" ? sourceText : speechText,
-    vi: translationTurn.content || undefined,
-    speaker: sourceTurn.speaker ? { label: sourceTurn.speaker } : undefined,
-    speechText,
-   });
-  }
-
-  if (segmentIds.length > 0) {
-   sections.push({
-    id: section.id,
-    title: stripLeadingEmoji(section.title),
-    segmentIds,
-   });
-  }
- }
-
- return {
-  id: `${lesson.id}:${activeView}`,
-  language: "zh-CN",
-  source: {
-   kind: "lesson",
-   sourceId: lesson.id,
-   label: lesson.title,
-  },
-  title: lessonTitle.source,
-  titleVi: lessonTitle.translation,
-  sections,
-  segments,
-  metadata: [],
-  capabilities: ["pinyin", "translation"],
- };
 }
 
 function BusinessChineseHeaderContextBridge({
@@ -592,7 +424,7 @@ function BusinessChineseMixedText({
       <ReaderHanziText displayMode={displayMode} size="inherit">
        {grapheme.segment}
       </ReaderHanziText>
-      <rt>
+      <rt className="select-none">
        <PinyinText
         as="span"
         tone="accent"
@@ -1056,7 +888,11 @@ export function BusinessChineseStudyWorkspace({
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
 }) {
- const [activeView, setActiveView] = useState("all");
+ const searchParams = useSearchParams();
+ const sourceTarget = parseReaderSourceTarget(new URLSearchParams(searchParams.toString()));
+ const [activeView, setActiveView] = useState(
+  sourceTarget?.documentId === `${lesson.id}:text` ? "text" : "all",
+ );
  const readerDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, activeView),
   [activeView, lesson],
@@ -1098,6 +934,43 @@ function BusinessChineseStudyWorkspaceContent({
   () => buildBusinessChineseReaderDocument(lesson, "text"),
   [lesson],
  );
+ const { userId, isResolved } = useClientSession();
+ const [annotationError, setAnnotationError] = useState("");
+ const annotationsQuery = useQuery({
+  queryKey: hanzihomeQueryKeys.readerAnnotations(userId, textReaderDocument.id),
+  queryFn: () => fetchReaderAnnotations(textReaderDocument.id),
+  enabled: isResolved && userId !== null,
+  staleTime: 60_000,
+  retry: false,
+  refetchOnWindowFocus: false,
+ });
+ const readerVocabulary = useMemo(
+  () =>
+   lesson.vocab.map((item) => ({
+    id: item.id,
+    word: item.hanzi,
+    pinyin: item.pinyin,
+    meaning: item.meaning,
+   })),
+  [lesson.vocab],
+ );
+ const analysisBySegmentId = useMemo(
+  () =>
+   new Map(
+    textReaderDocument.segments.map((segment) => [
+     segment.id,
+     analyzeContextualPronunciation({ text: segment.zh, sourcePinyin: segment.pinyin ?? null }),
+    ]),
+   ),
+  [textReaderDocument],
+ );
+ const selection = useReaderSelectionActions({
+  document: textReaderDocument,
+  vocabulary: readerVocabulary,
+  stateOwner: "personal",
+  analysisBySegmentId,
+  setSaveError: setAnnotationError,
+ });
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const pairedTranslations = useMemo(() => {
   const translations = new Map<string, string>();
@@ -1150,37 +1023,58 @@ function BusinessChineseStudyWorkspaceContent({
    block: "start",
   });
  };
+ const viewSelector = (
+  <Select value={activeView} onValueChange={onActiveViewChange}>
+   <SelectTrigger aria-label={t("tabsLabel")} width="full" size="sm">
+    <SelectValue />
+   </SelectTrigger>
+   <SelectContent>
+    {tabs.map((tab) => (
+     <SelectItem key={tab.key} value={tab.key}>
+      {tab.label}
+     </SelectItem>
+    ))}
+   </SelectContent>
+  </Select>
+ );
 
  return (
   <>
    <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
    <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
-     <div className="shrink-0 sm:hidden">
-      <Select value={activeView} onValueChange={onActiveViewChange}>
-       <SelectTrigger aria-label={t("tabsLabel")} width="full" size="sm">
-        <SelectValue />
-       </SelectTrigger>
-       <SelectContent>
-        {tabs.map((tab) => (
-         <SelectItem key={tab.key} value={tab.key}>
-          {tab.label}
-         </SelectItem>
-        ))}
-       </SelectContent>
-      </Select>
-     </div>
+     {activeView === "text" ? (
+      <WorkspaceToolbar>
+       <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
+        <div className="min-w-0 flex-1">{viewSelector}</div>
+        <div
+         id={HANZIHOME_READER_COMMAND_BAR_TARGET_ID}
+         className="flex w-full min-w-0 items-center empty:hidden xl:w-auto"
+        />
+       </div>
+      </WorkspaceToolbar>
+     ) : (
+      <div className="shrink-0 sm:hidden">{viewSelector}</div>
+     )}
      <Tabs
       value={activeView}
       items={tabs}
       onValueChange={onActiveViewChange}
       aria-label={t("tabsLabel")}
-      className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden sm:grid-rows-[auto_minmax(0,1fr)]"
-      listClassName="hanzihome-liquid-toolbar hidden sm:flex"
+      className={cn(
+       "grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden",
+       activeView !== "text" && "sm:grid-rows-[auto_minmax(0,1fr)]",
+      )}
+      listClassName={activeView === "text" ? "hidden" : "hanzihome-liquid-toolbar hidden sm:flex"}
      >
       <TabsContent value={activeView} className="min-h-0 overflow-hidden">
        <div className="relative h-full min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">
         <div className="grid min-w-0 gap-3 pb-4">
+         {annotationError || annotationsQuery.error ? (
+          <Typography variant="bodySmall" tone="danger" role="alert">
+           {annotationError || annotationsQuery.error?.message}
+          </Typography>
+         ) : null}
          <Card
           variant="section"
           padding="md"
@@ -1226,7 +1120,14 @@ function BusinessChineseStudyWorkspaceContent({
          </Card>
 
          {activeView === "text" ? (
-          <ReaderSurfaceView document={readerDocument} displayMode={displayMode} />
+          <ReaderSurfaceView
+           document={readerDocument}
+           displayMode={displayMode}
+           toolbarTargetId={HANZIHOME_READER_COMMAND_BAR_TARGET_ID}
+           readerAnnotations={annotationsQuery.data}
+           onOpenReaderAnnotation={selection.handleOpenAnnotation}
+           onSelection={selection.handleSelection}
+          />
          ) : null}
 
          {activeView !== "text" ? (
@@ -1261,6 +1162,9 @@ function BusinessChineseStudyWorkspaceContent({
                   ),
                  }}
                  displayMode={displayMode}
+                 readerAnnotations={annotationsQuery.data}
+                 onOpenReaderAnnotation={selection.handleOpenAnnotation}
+                 onSelection={selection.handleSelection}
                  renderSection={({ section: readerSection, content }) => (
                   <div id={readerSection.id}>{content}</div>
                  )}
@@ -1288,6 +1192,7 @@ function BusinessChineseStudyWorkspaceContent({
        </div>
       </TabsContent>
      </Tabs>
+     {selection.popover}
     </div>
    </div>
   </>

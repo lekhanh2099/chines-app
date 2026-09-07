@@ -180,6 +180,7 @@ export function PassageCard({
      key={readerDocument.id}
      document={readerDocument}
      lessonId={lessonId}
+     annotationNodeType="passage_line"
      displayMode={lessonId ? undefined : displayMode}
      renderSegment={
       isCloze

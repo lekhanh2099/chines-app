@@ -9,10 +9,12 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { useTTS } from "@/hooks/useTTS";
 import { useMemo, useState, type MouseEvent, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 import { useLessonAnnotationContext } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
 import type { ResolvedLessonTextAnnotation } from "@/features/hanzihome/annotations/types";
+import type { ReaderAnnotationRow } from "@/features/hanzihome/reader/reader.schemas";
 import {
  analyzeContextualPronunciation,
  formatContextualSpokenPinyin,
@@ -56,6 +58,8 @@ export function ProgressiveStudyText({
  displayMode,
  className,
  annotationTarget,
+ readerAnnotations = [],
+ onOpenReaderAnnotation,
  readingPlayback,
  readingMode = false,
 }: {
@@ -65,6 +69,8 @@ export function ProgressiveStudyText({
  displayMode: LessonDisplayMode;
  className?: string;
  annotationTarget?: { lessonId: string; nodeType: string; nodeId: string };
+ readerAnnotations?: readonly ReaderAnnotationRow[];
+ onOpenReaderAnnotation?: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
  readingPlayback?: ReadingPlayback;
  readingMode?: boolean;
 }) {
@@ -141,6 +147,7 @@ export function ProgressiveStudyText({
    leading="learner"
    wrapping="preWrap"
    className={cn("min-w-0", tapMode && stage !== 0 && "invisible pointer-events-none")}
+   data-reader-hanzi-content="true"
    data-no-inspector={readingMode || annotationTarget ? "true" : undefined}
    data-study-annotation-node={annotationTarget ? "true" : undefined}
    data-lesson-id={annotationTarget?.lessonId}
@@ -150,6 +157,8 @@ export function ProgressiveStudyText({
    <AnnotatedText
     text={zh}
     annotations={annotations}
+    readerAnnotations={readerAnnotations}
+    onOpenReaderAnnotation={onOpenReaderAnnotation}
     onOpen={(annotation) => {
      annotationContext?.openAnnotation(annotation);
     }}
@@ -268,6 +277,8 @@ export function getActiveCharacterIndex(
 function AnnotatedText({
  text,
  annotations,
+ readerAnnotations,
+ onOpenReaderAnnotation,
  onOpen,
  readingMode,
  readingPlayback,
@@ -276,12 +287,15 @@ function AnnotatedText({
 }: {
  text: string;
  annotations: ResolvedLessonTextAnnotation[];
+ readerAnnotations: readonly ReaderAnnotationRow[];
+ onOpenReaderAnnotation?: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
  onOpen: (annotation: ResolvedLessonTextAnnotation) => void;
  readingMode: boolean;
  readingPlayback?: ReadingPlayback;
  activeCharacterIndex: number;
  onSpeakFrom: (index: number) => void;
 }) {
+ const t = useTranslations("Reader.document.text");
  if (readingMode && readingPlayback) {
   return (
    <InteractiveReadingText
@@ -295,10 +309,39 @@ function AnnotatedText({
   );
  }
 
- if (!annotations.length) return text;
+ if (!annotations.length && !readerAnnotations.length) return text;
 
  const output: ReactNode[] = [];
  let cursor = 0;
+ for (const annotation of [...readerAnnotations].sort(
+  (left, right) => (left.start_offset ?? 0) - (right.start_offset ?? 0),
+ )) {
+  if (
+   annotation.start_offset === null ||
+   annotation.end_offset === null ||
+   annotation.start_offset < cursor ||
+   text.slice(annotation.start_offset, annotation.end_offset) !== annotation.selected_text
+  )
+   continue;
+  output.push(text.slice(cursor, annotation.start_offset));
+  output.push(
+   <Button
+    key={annotation.id}
+    type="button"
+    variant="ghost"
+    size="inline"
+    aria-label={t("openAnnotation", { text: annotation.selected_text })}
+    onClick={(event) => {
+     event.stopPropagation();
+     if (window.getSelection()?.isCollapsed === false) return;
+     onOpenReaderAnnotation?.(annotation, event.currentTarget.getBoundingClientRect());
+    }}
+   >
+    <mark className="reading-highlight rounded-sm">{annotation.selected_text}</mark>
+   </Button>,
+  );
+  cursor = annotation.end_offset;
+ }
  for (const annotation of [...annotations].sort(
   (left, right) => left.resolvedStartOffset - right.resolvedStartOffset,
  )) {

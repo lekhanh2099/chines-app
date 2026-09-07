@@ -1,17 +1,18 @@
 "use client";
 
-import { memo, useMemo, type ReactNode } from "react";
+import { memo, useMemo, type ComponentProps, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
+import { useLessonAnnotationContext } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
+import type { AnnotationAnchor } from "@/features/hanzihome/annotations/types";
 import {
  containsHanziText,
  AdaptiveStudyText,
  PinyinText,
- ReaderHanziText,
  StudyInstructionText,
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
@@ -32,6 +33,7 @@ import {
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 
 import { ContextualReaderText } from "../ContextualReaderText";
+import type { ReaderAnnotationRow } from "../reader.schemas";
 import type {
  ReaderDocumentModel,
  ReaderSection,
@@ -77,6 +79,9 @@ export type ReaderSurfaceRenderSection = (input: {
 type ReaderDocumentContentProps = {
  document: ReaderDocumentModel;
  lessonId?: string;
+ annotationNodeType?: AnnotationAnchor["nodeType"];
+ readerAnnotations?: readonly ReaderAnnotationRow[];
+ onOpenReaderAnnotation?: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
  renderSegment?: ReaderSurfaceRenderSegment;
  renderSection?: ReaderSurfaceRenderSection;
  analysisBySegmentId?: ReadonlyMap<string, ReaderPronunciationAnalysis>;
@@ -104,6 +109,9 @@ function ConnectedReaderDocumentContent(props: ReaderDocumentContentProps) {
 const ReaderDocumentContentView = memo(function ReaderDocumentContentView({
  document,
  lessonId,
+ annotationNodeType,
+ readerAnnotations,
+ onOpenReaderAnnotation,
  renderSegment,
  renderSection,
  analysisBySegmentId,
@@ -183,6 +191,9 @@ const ReaderDocumentContentView = memo(function ReaderDocumentContentView({
           segment={segment}
           index={indexById.get(segment.id) ?? localIndex}
           lessonId={lessonId}
+          annotationNodeType={annotationNodeType}
+          readerAnnotations={readerAnnotations}
+          onOpenReaderAnnotation={onOpenReaderAnnotation}
           displayMode={displayMode}
           renderSegment={renderSegment}
           analysis={analysisBySegmentId?.get(segment.id)}
@@ -211,6 +222,9 @@ const ReaderDocumentContentView = memo(function ReaderDocumentContentView({
         segment={segment}
         index={indexById.get(segment.id) ?? localIndex}
         lessonId={lessonId}
+        annotationNodeType={annotationNodeType}
+        readerAnnotations={readerAnnotations}
+        onOpenReaderAnnotation={onOpenReaderAnnotation}
         displayMode={displayMode}
         renderSegment={renderSegment}
         analysis={analysisBySegmentId?.get(segment.id)}
@@ -231,6 +245,9 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
  segment,
  index,
  lessonId,
+ annotationNodeType,
+ readerAnnotations,
+ onOpenReaderAnnotation,
  displayMode,
  renderSegment,
  analysis,
@@ -242,6 +259,9 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
  segment: ReaderSegment;
  index: number;
  lessonId?: string;
+ annotationNodeType?: AnnotationAnchor["nodeType"];
+ readerAnnotations?: readonly ReaderAnnotationRow[];
+ onOpenReaderAnnotation?: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
  displayMode: LessonDisplayMode;
  renderSegment?: ReaderSurfaceRenderSegment;
  analysis?: ReaderPronunciationAnalysis;
@@ -252,6 +272,16 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
 }) {
  const active = useReaderRuntimeSelector((state) => state.activeSegmentId === segment.id);
  const { openInspector } = useVocabInspector();
+ const annotationContext = useLessonAnnotationContext();
+ const annotationTarget =
+  lessonId && annotationContext
+   ? {
+      lessonId,
+      nodeId: segment.id,
+      nodeType:
+       annotationNodeType ?? (segment.kind === "paragraph" ? "text_paragraph" : "text_line"),
+     }
+   : undefined;
  const content = (
   <ReaderSegmentText
    segment={segment}
@@ -260,6 +290,11 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
    displayMode={displayMode}
    analysis={analysis}
    onPronunciationInspect={onPronunciationInspect}
+   annotationTarget={annotationTarget}
+   readerAnnotations={readerAnnotations?.filter(
+    (annotation) => annotation.paragraph_id === segment.id,
+   )}
+   onOpenReaderAnnotation={onOpenReaderAnnotation}
   />
  );
  const rendered = renderSegment ? renderSegment({ segment, index, content, displayMode }) : content;
@@ -267,11 +302,10 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
  const captureSelection = (element: HTMLElement) => {
   const selection = window.getSelection();
   if (!selection || selection.isCollapsed || selection.rangeCount === 0) return;
-  const selectedText = selection.toString().trim();
-  if (!selectedText) return;
   const range = selection.getRangeAt(0);
   const hanziContainer = element.querySelector<HTMLElement>("[data-reader-hanzi-content]");
   if (!hanziContainer || !hanziContainer.contains(range.commonAncestorContainer)) return;
+  if (hanziContainer.getAttribute("aria-hidden") === "true") return;
 
   const beforeStart = document.createRange();
   beforeStart.selectNodeContents(hanziContainer);
@@ -279,8 +313,15 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
   const beforeEnd = document.createRange();
   beforeEnd.selectNodeContents(hanziContainer);
   beforeEnd.setEnd(range.endContainer, range.endOffset);
-  let start = Math.min(beforeStart.toString().length, beforeEnd.toString().length);
-  let end = Math.max(beforeStart.toString().length, beforeEnd.toString().length);
+  const [selected, precedingStart, precedingEnd] = [range, beforeStart, beforeEnd].map((part) => {
+   const fragment = part.cloneContents();
+   fragment.querySelectorAll("rt, rp").forEach((rubyText) => rubyText.remove());
+   return fragment.textContent ?? "";
+  });
+  const selectedText = selected.trim();
+  if (!selectedText) return;
+  let start = precedingStart.length + selected.length - selected.trimStart().length;
+  let end = precedingEnd.length - (selected.length - selected.trimEnd().length);
   if (segment.zh.slice(start, end).trim() !== selectedText) {
    const first = segment.zh.indexOf(selectedText);
    const second = first < 0 ? -1 : segment.zh.indexOf(selectedText, first + selectedText.length);
@@ -305,6 +346,7 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
    });
    return;
   }
+  if (annotationTarget) return;
   void openInspector(selectedText, { lessonId, anchorRect: rect });
  };
 
@@ -316,6 +358,7 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
    className="grid min-w-0 gap-5"
    onMouseUp={(event) => captureSelection(event.currentTarget)}
    onTouchEnd={(event) => captureSelection(event.currentTarget)}
+   onKeyUp={(event) => captureSelection(event.currentTarget)}
   >
    {showSeparator ? <Separator /> : null}
    {rendered}
@@ -330,6 +373,9 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
  displayMode,
  analysis: providedAnalysis,
  onPronunciationInspect,
+ annotationTarget,
+ readerAnnotations,
+ onOpenReaderAnnotation,
 }: {
  segment: ReaderSegment;
  index: number;
@@ -337,6 +383,9 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
  displayMode: LessonDisplayMode;
  analysis?: ReaderPronunciationAnalysis;
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
+ annotationTarget?: ComponentProps<typeof ProgressiveStudyText>["annotationTarget"];
+ readerAnnotations?: readonly ReaderAnnotationRow[];
+ onOpenReaderAnnotation?: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
 }) {
  const t = useTranslations("Reader.study.chrome.segment");
  const commands = useReaderRuntimeCommands();
@@ -432,13 +481,16 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
     ) : null}
    </div>
 
-   <div data-reader-hanzi-content={segment.id}>
+   <div>
     {displayMode.revealMode === "tap" ? (
      <ProgressiveStudyText
       zh={segment.zh}
       pinyin={contextualPinyin}
       vi={segment.vi}
       displayMode={displayMode}
+      annotationTarget={annotationTarget}
+      readerAnnotations={readerAnnotations}
+      onOpenReaderAnnotation={onOpenReaderAnnotation}
      />
     ) : computedAnalysis ? (
      <div className="grid min-w-0 gap-1.5">
@@ -449,6 +501,9 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
        showPinyin={displayMode.showPinyin}
        pinyinPresentation="ruby"
        sourcePinyin={segment.pinyin}
+       annotationTarget={annotationTarget}
+       readerAnnotations={readerAnnotations}
+       onOpenReaderAnnotation={onOpenReaderAnnotation}
        onGlyphClick={(start) => commands.playFromCharacter(index, start)}
        onGlyphInspect={
         onPronunciationInspect
@@ -470,27 +525,15 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
       ) : null}
      </div>
     ) : (
-     <div className="grid min-w-0 gap-1.5">
-      <ReaderHanziText
-       displayMode={displayMode}
-       tone="default"
-       leading="learner"
-       wrapping="preWrap"
-       className="min-w-0"
-      >
-       {segment.zh}
-      </ReaderHanziText>
-      {segment.pinyin && displayMode.showPinyin ? (
-       <PinyinText tone="accent" weight="semibold" leading="relaxed" wrapping="preWrap">
-        {segment.pinyin}
-       </PinyinText>
-      ) : null}
-      {segment.vi && displayMode.showMeaning ? (
-       <TranslationText tone="muted" weight="medium" leading="relaxed" wrapping="preWrap">
-        {segment.vi}
-       </TranslationText>
-      ) : null}
-     </div>
+     <ProgressiveStudyText
+      zh={segment.zh}
+      pinyin={segment.pinyin}
+      vi={segment.vi}
+      displayMode={displayMode}
+      annotationTarget={annotationTarget}
+      readerAnnotations={readerAnnotations}
+      onOpenReaderAnnotation={onOpenReaderAnnotation}
+     />
     )}
    </div>
   </article>

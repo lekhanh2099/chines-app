@@ -1,9 +1,53 @@
 import { describe, expect, it } from "vitest";
 
-import { attachLessonVocabularyResource } from "./hanzihome-content-resources";
+import {
+ attachLessonVocabularyResource,
+ buildLessonSectionResources,
+} from "./hanzihome-content-resources";
 import { hanziHomeVocabItemSchema, lessonSchema } from "../hanzihome-api.schemas";
 
 describe("attachLessonVocabularyResource", () => {
+ it("routes non-reading source sections to their matching modules", () => {
+  const lesson = lessonSchema.parse({
+   id: "lesson-7",
+   courseId: "hanyu-q3",
+   bookId: "hanyu-q3-shang",
+   lessonNumber: 7,
+   titleZh: "成语故事",
+   title: "Câu chuyện thành ngữ",
+   vocabIds: [],
+   grammarPointIds: [],
+   vocab: [],
+   grammar: [],
+   sourceLesson: {
+    lesson: {
+     id: "lesson-7",
+     title: { zh: "成语故事" },
+     sections: [
+      { id: "text", type: "text", order: 1, title: "课文", blocks: [] },
+      { id: "names", type: "proper_nouns", order: 2, title: "专名", items: [] },
+      { id: "notes", type: "notes", order: 3, title: "注释", items: [] },
+      { id: "summary", type: "summary", order: 4, title: "总结", items: [] },
+      { id: "reading", type: "reading", order: 5, title: "阅读", items: [] },
+     ],
+    },
+   },
+  });
+
+  expect(
+   buildLessonSectionResources(lesson).map((section) => ({
+    id: section.id,
+    module: new URL(section.href, "https://app.example").searchParams.get("module"),
+   })),
+  ).toEqual([
+   { id: "text", module: "lessonText" },
+   { id: "names", module: "vocab" },
+   { id: "notes", module: "notes" },
+   { id: "summary", module: "overview" },
+   { id: "reading", module: "practice" },
+  ]);
+ });
+
  it("hydrates lesson vocab and the vocabulary mini-grid from one resource", () => {
   const lesson = lessonSchema.parse({
    id: "lesson-1",

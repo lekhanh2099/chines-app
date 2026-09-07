@@ -23,7 +23,10 @@ import {
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
-import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
+import {
+ HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
+ HANZIHOME_READER_COMMAND_BAR_TARGET_ID,
+} from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { HanziHomeDeveloperTools } from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
 import { HanziHomeReadingSettingsTrigger } from "@/features/hanzihome/components/layout/HanziHomeReadingSettingsTrigger";
 import { WorkspacePane } from "@/features/hanzihome/components/layout/WorkspacePane";
@@ -232,7 +235,7 @@ export function ModuleSplitWorkspaceContent() {
  ) : (
   <>
    <div className="min-w-0 flex-1">
-    <div className="xl:hidden">
+    <div className={runtime.activeModule === "lessonText" ? undefined : "xl:hidden"}>
      <Select
       value={runtime.activeModule}
       onValueChange={(module) => {
@@ -259,7 +262,7 @@ export function ModuleSplitWorkspaceContent() {
       </SelectContent>
      </Select>
     </div>
-    <div className="hidden xl:block">
+    <div className={runtime.activeModule === "lessonText" ? "hidden" : "hidden xl:block"}>
      <HanziHomeStudyTabs
       value={runtime.activeModule}
       items={lessonTabs}
@@ -275,7 +278,9 @@ export function ModuleSplitWorkspaceContent() {
      id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
-    {readingSettingsTrigger}
+    <div className="group-has-[[data-reader-command-controls]]/lesson-toolbar:hidden">
+     {readingSettingsTrigger}
+    </div>
     {workspaceTools}
    </div>
   </>
@@ -297,7 +302,17 @@ export function ModuleSplitWorkspaceContent() {
  if (!effectiveSplitEnabled) {
   return (
    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-    <WorkspaceToolbar>{workspaceControls}</WorkspaceToolbar>
+    <WorkspaceToolbar>
+     <div className="group/lesson-toolbar flex min-w-0 flex-1 flex-wrap items-center gap-2">
+      <div className="flex min-w-0 flex-1 items-center gap-2">{workspaceControls}</div>
+      {runtime.activeModule === "lessonText" ? (
+       <div
+        id={HANZIHOME_READER_COMMAND_BAR_TARGET_ID}
+        className="flex w-full min-w-0 items-center empty:hidden xl:w-auto"
+       />
+      ) : null}
+     </div>
+    </WorkspaceToolbar>
     <div className="grid h-full min-h-0 overflow-hidden">
      <div className="min-h-0 min-w-0 overflow-y-auto scrollbar-soft">
       <LessonModuleContent

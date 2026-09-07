@@ -4,6 +4,7 @@ import { type ReactNode, useCallback, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 export const HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID = "hanzihome-command-bar-module-controls";
 export const HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID = "hanzihome-command-bar-tools-menu";
+export const HANZIHOME_READER_COMMAND_BAR_TARGET_ID = "hanzihome-reader-command-bar";
 
 export function HanziHomeCommandBarPortal({
  targetId,

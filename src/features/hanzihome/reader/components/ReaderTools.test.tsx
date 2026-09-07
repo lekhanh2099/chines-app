@@ -100,7 +100,7 @@ describe("ReaderTools", () => {
   expect(markup).toContain("Tự nhận diện pinyin");
  });
 
- it("keeps the full accessible segment label and mobile controls in the shared toolbar", () => {
+ it.each([false, true])("keeps one full toolbar when portal placement is %s", (usePortal) => {
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider
     locale="vi"
@@ -109,6 +109,7 @@ describe("ReaderTools", () => {
    >
     <ReaderCommandBar
      segmentCount={14}
+     portalTargetId={usePortal ? "lesson-toolbar" : undefined}
      onOpenOutline={vi.fn()}
      displayMode={DEFAULT_LESSON_DISPLAY_MODE}
      onDisplayModeChange={vi.fn()}
@@ -119,6 +120,12 @@ describe("ReaderTools", () => {
   expect(markup).toContain("Đoạn 1 / 14");
   expect(markup).toContain('aria-label="Nghe bài"');
   expect(markup).toContain('aria-label="Công cụ học"');
+  expect(markup.match(/data-reader-command-controls/g)).toHaveLength(1);
+  expect(markup).toContain('aria-label="Đoạn trước"');
+  expect(markup).toContain('aria-label="Đoạn sau"');
+  expect(markup).toContain('aria-label="Nghe lại đoạn"');
+  expect(markup).toContain('aria-label="Dừng đọc"');
+  expect(markup).toContain('aria-label="Tốc độ đọc"');
   expect(markup).toContain("hidden sm:inline-flex");
  });
  it("uses the desktop dropdown for mouse and trackpad input regardless of viewport width", () => {

@@ -3,6 +3,11 @@ import { describe, expect, it } from "vitest";
 import type { ReaderDocumentResource } from "../reader-content-api";
 import { readerHasCapability } from "../model/reader-capabilities";
 import { readerResourceToDocument } from "./reader-resource.adapter";
+import { buildBusinessChineseReaderDocument, buildTextbookHref } from "./business-chinese.adapter";
+import {
+ getTextbookCatalog,
+ getTextbookLesson,
+} from "@/features/hanzihome/static-json/business-chinese-static-content";
 
 const now = "2026-08-18T00:00:00.000Z";
 
@@ -87,6 +92,31 @@ function createResource(): ReaderDocumentResource {
 }
 
 describe("unified reader source adapters", () => {
+ it.each(getTextbookCatalog())(
+  "preserves canonical reading targets and a real source href for $label",
+  (book) => {
+   const lesson = getTextbookLesson(book.key, 1);
+   if (!lesson) throw new Error("Missing textbook fixture");
+   const document = buildBusinessChineseReaderDocument(lesson, "text");
+   const all = buildBusinessChineseReaderDocument(lesson, "all");
+   const readingSectionIds = lesson.sections
+    .filter((section) => section.category === "text" && !section.title.includes("DỊCH BÀI KHÓA"))
+    .map((section) => section.id);
+
+   expect(document.id).toBe(`${lesson.id}:text`);
+   expect(document.source.sourceId).toBe(lesson.id);
+   expect(document.source.href).toBe(buildTextbookHref(book.key, lesson.number));
+   expect(document.segments.length).toBeGreaterThan(0);
+   expect(new Set(document.segments.map((segment) => segment.id)).size).toBe(
+    document.segments.length,
+   );
+   for (const segment of document.segments) {
+    expect(readingSectionIds).toContain(segment.sectionId);
+    expect(all.segments.find((candidate) => candidate.id === segment.id)).toEqual(segment);
+   }
+  },
+ );
+
  it("normalizes the existing Reader resource without leaking source row order", () => {
   const document = readerResourceToDocument(createResource());
 

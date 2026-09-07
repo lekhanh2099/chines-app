@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { createElement } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { createElement, type ReactNode } from "react";
+import { renderToStaticMarkup as renderMarkup } from "react-dom/server";
+import { NextIntlClientProvider } from "next-intl";
+import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 
 import { getActiveCharacterIndex, ProgressiveStudyText } from "./ProgressiveStudyText";
 import {
@@ -8,6 +10,14 @@ import {
  nextRevealStage,
  shouldAdvanceReveal,
 } from "./progressive-reveal";
+
+function renderToStaticMarkup(element: ReactNode) {
+ return renderMarkup(
+  <NextIntlClientProvider locale="vi" messages={{ Reader: { document: readerDocumentMessages } }}>
+   {element}
+  </NextIntlClientProvider>,
+ );
+}
 
 describe("progressive study text", () => {
  it("maps audio progress to the character currently being read", () => {

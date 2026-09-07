@@ -11,6 +11,7 @@
   "readingPart": " · Bài đọc {reading}"
  },
  "text": {
+  "openAnnotation": "Mở ghi chú cho {text}",
   "playFromCharacter": "Đọc từ chữ {character}",
   "inspectPinyin": "Kiểm tra pinyin chữ {character}",
   "inspectUnconfirmedPinyin": "Pinyin chữ {character} cần kiểm tra"

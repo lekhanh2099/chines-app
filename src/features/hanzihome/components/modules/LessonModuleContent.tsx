@@ -15,6 +15,9 @@ import { ListeningWorkspace } from "@/features/hanzihome/listening/ListeningWork
 import { ListeningDictationWorkspace } from "@/features/hanzihome/listening/ListeningDictationWorkspace";
 import { LessonAnnotationProvider } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
+import { getBookSections } from "@/features/hanzihome/components/lesson-overview/utils";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import { TextbookSectionCard } from "@/features/hanzihome/components/lesson-text/TextbookSectionCard";
 
 export function LessonModuleContent({
  module,
@@ -29,6 +32,12 @@ export function LessonModuleContent({
 }) {
  const runtime = useHanziHomeRuntime();
  const { lesson } = runtime;
+ const supplementalSections = getBookSections(lesson.sourceLesson).filter(
+  (section) =>
+   (module === "vocab" && section.type === "proper_nouns") ||
+   (module === "notes" && section.type === "notes") ||
+   (module === "overview" && section.type === "summary"),
+ );
 
  if (runtime.readOnly) {
   return (
@@ -74,7 +83,7 @@ export function LessonModuleContent({
    content = <ListeningWorkspace />;
    break;
   case "notes":
-   content = <LessonNoteAccessCard compact />;
+   content = <LessonNoteAccessCard compact={supplementalSections.length === 0} />;
    break;
   case "vocab":
    content = <VocabWorkspace compact={compact} />;
@@ -87,5 +96,32 @@ export function LessonModuleContent({
    break;
  }
 
- return <LessonAnnotationProvider lessonId={lesson.id}>{content}</LessonAnnotationProvider>;
+ return (
+  <LessonAnnotationProvider lessonId={lesson.id}>
+   {supplementalSections.length > 0 ? (
+    <div className="grid h-full min-h-0 gap-3 overflow-y-auto">
+     {content}
+     {supplementalSections.map(({ section }) => (
+      <TextbookSectionCard
+       key={section.id}
+       lessonId={lesson.id}
+       section={section}
+       sectionPath={[
+        "lesson",
+        "sections",
+        lesson.sourceLesson?.lesson.sections.findIndex((item) => item.id === section.id) ?? -1,
+       ]}
+       displayMode={
+        runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE
+       }
+       interactiveReading={false}
+       readingMode={false}
+      />
+     ))}
+    </div>
+   ) : (
+    content
+   )}
+  </LessonAnnotationProvider>
+ );
 }

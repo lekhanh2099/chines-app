@@ -2,6 +2,7 @@ import type { ComponentProps, ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it, vi } from "vitest";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
@@ -17,6 +18,10 @@ import {
 
 const routerPushMock = vi.hoisted(() => vi.fn());
 const readerDocumentMock = vi.hoisted(() => vi.fn<(document: ReaderDocumentModel) => void>());
+
+vi.mock("@/components/providers/QueryProvider", () => ({
+ useClientSession: () => ({ userId: null, isResolved: true }),
+}));
 
 vi.mock("@/features/hanzihome/reader/components/ReaderSurface", async (importOriginal) => {
  const actual =
@@ -68,7 +73,7 @@ function renderWorkspace(element: ReactNode) {
    }}
    timeZone="Asia/Ho_Chi_Minh"
   >
-   {element}
+   <QueryClientProvider client={new QueryClient()}>{element}</QueryClientProvider>
   </NextIntlClientProvider>,
  );
 }

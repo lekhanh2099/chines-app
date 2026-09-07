@@ -193,7 +193,7 @@ function mapSourceSectionType(type: string): LessonSectionKind {
 
 function buildLessonSectionHref(lesson: HanziHomeLesson, type: string) {
  const targetModule =
-  type === "vocabulary"
+  type === "vocabulary" || type === "proper_nouns"
    ? "vocab"
    : type === "grammar"
      ? "grammar"
@@ -204,7 +204,9 @@ function buildLessonSectionHref(lesson: HanziHomeLesson, type: string) {
            type === "communication" ||
            type === "character_writing"
          ? "practice"
-         : "lessonText";
+         : type === "summary"
+           ? "overview"
+           : "lessonText";
 
  return buildHanziHomeLessonHref({
   courseId: lesson.courseId || "",

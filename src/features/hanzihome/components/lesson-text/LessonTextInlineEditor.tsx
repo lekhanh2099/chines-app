@@ -13,6 +13,7 @@ import {
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { sectionIcons } from "@/features/hanzihome/components/lesson-overview/section-icons";
 import { moduleMeta } from "@/features/hanzihome/components/layout/moduleMeta";
+import { HANZIHOME_READER_COMMAND_BAR_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import {
  sectionSubtitle,
  sectionTitle,
@@ -66,7 +67,7 @@ export function LessonTextInlineEditor({
    sectionResource?.sections ??
    [];
   return sections.filter((section) =>
-   practiceOnly ? practiceSectionTypes.has(section.type) : !practiceSectionTypes.has(section.type),
+   practiceOnly ? practiceSectionTypes.has(section.type) : section.type === "text",
   );
  }, [lesson.sourceLesson, practiceOnly, sectionResource]);
 
@@ -272,6 +273,7 @@ function LessonTextWorkspace({
   lessonReader.document.segments.length > 0 ? (
    <ReaderSurface
     document={lessonReader.document}
+    toolbarTargetId={module === "lessonText" ? HANZIHOME_READER_COMMAND_BAR_TARGET_ID : undefined}
     lessonId={editable ? lesson.id : undefined}
     compact={compact}
     displayMode={editable ? undefined : displayMode}

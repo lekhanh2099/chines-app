@@ -3,6 +3,25 @@ import { describe, expect, it } from "vitest";
 import { buildReaderSourceHref, parseReaderSourceTarget } from "./reader-source-target";
 
 describe("reader source targets", () => {
+ it.each([
+  "/hsk/han-thuong-mai?book=tm2&lesson=1",
+  "/hsk/nhip-cau-han-ngu?lesson=2",
+  "/hsk/doc-hieu?lesson=3",
+ ])("preserves the textbook route and lesson for %s", (baseHref) => {
+  const target = {
+   source: "reader-highlight",
+   documentId: "textbook:text",
+   paragraphId: "paragraph-2",
+   startOffset: 2,
+   endOffset: 4,
+  } satisfies Parameters<typeof buildReaderSourceHref>[0];
+  const href = new URL(buildReaderSourceHref(target, baseHref), "https://app.example");
+  const base = new URL(baseHref, "https://app.example");
+  expect(href.pathname).toBe(base.pathname);
+  expect(href.searchParams.get("lesson")).toBe(base.searchParams.get("lesson"));
+  expect(href.searchParams.get("book")).toBe(base.searchParams.get("book"));
+  expect(parseReaderSourceTarget(href.searchParams)).toEqual(target);
+ });
  it("round-trips a document paragraph and selected range", () => {
   const href = buildReaderSourceHref({
    source: "reader-selection",

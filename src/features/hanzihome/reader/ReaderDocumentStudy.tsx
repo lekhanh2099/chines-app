@@ -156,7 +156,8 @@ function ReaderDocumentStudyContent({
   ? study.annotations.filter((annotation) => annotation.paragraph_id === activeSegment.id)
   : [];
  const selection = useReaderSelectionActions({
-  resource,
+  document: study.documentModel,
+  vocabulary: resource.vocabulary,
   stateOwner,
   analysisBySegmentId: study.analysisBySegmentId,
   setSaveError: study.setSaveError,
@@ -282,6 +283,8 @@ function ReaderDocumentStudyContent({
     document={study.documentModel}
     analysisBySegmentId={study.analysisBySegmentId}
     onSelection={selection.handleSelection}
+    readerAnnotations={study.annotations}
+    onOpenReaderAnnotation={selection.handleOpenAnnotation}
     onPronunciationInspect={pronunciation.handleInspect}
     onOpenShadowing={() => setShadowingOpen((current) => !current)}
     toolbarStickyOffset={toolbarStickyOffset}

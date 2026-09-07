@@ -1,8 +1,25 @@
 import { describe, expect, it } from "vitest";
 
 import { resolveAppScrollTargetTop } from "./app-scroll";
+import { resolveAppScrollChromeHidden } from "./app-scroll-state";
 
 const containerRect = { top: 64, bottom: 664, height: 600 };
+
+describe("resolveAppScrollChromeHidden", () => {
+ it.each([
+  { scrollTop: 0, previousScrollTop: 0, hidden: false, expected: false },
+  { scrollTop: 64, previousScrollTop: 0, hidden: false, expected: false },
+  { scrollTop: 96, previousScrollTop: 64, hidden: false, expected: true },
+  { scrollTop: 240, previousScrollTop: 120, hidden: false, expected: true },
+  { scrollTop: 232, previousScrollTop: 240, hidden: true, expected: true },
+  { scrollTop: 200, previousScrollTop: 240, hidden: true, expected: false },
+  { scrollTop: 208, previousScrollTop: 200, hidden: false, expected: false },
+  { scrollTop: 16, previousScrollTop: 24, hidden: true, expected: false },
+  { scrollTop: -12, previousScrollTop: 8, hidden: true, expected: false },
+ ])("resolves scrolling $previousScrollTop → $scrollTop to hidden=$expected", (input) => {
+  expect(resolveAppScrollChromeHidden(input)).toBe(input.expected);
+ });
+});
 
 describe("resolveAppScrollTargetTop", () => {
  it("aligns a target to the start of the app viewport", () => {
