@@ -854,12 +854,16 @@ function DesktopSectionNavigation({
  const t = useTranslations("BusinessChinese");
 
  return (
-  <Card variant="section" padding="sm" className="hidden self-start 2xl:sticky 2xl:top-0 2xl:block">
-   <div className="grid gap-2">
+  <Card
+   variant="section"
+   padding="sm"
+   className="hidden min-w-0 self-start 2xl:sticky 2xl:top-0 2xl:block"
+  >
+   <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-2">
     <Typography variant="overline" tone="muted">
      {t("tocLabel")}
     </Typography>
-    <div className="grid gap-1">
+    <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-1">
      {sections.map((section) => (
       <Button
        key={section.id}
@@ -867,11 +871,13 @@ function DesktopSectionNavigation({
        variant="navigation"
        size="menu"
        align="start"
-       wrap="normal"
-       className="w-full"
+       className="min-w-0 w-full"
+       title={stripLeadingEmoji(section.title)}
        onClick={() => onSelect(section.id)}
       >
-       <HanziInlineText text={stripLeadingEmoji(section.title)} />
+       <span className="min-w-0 truncate">
+        <HanziInlineText text={stripLeadingEmoji(section.title)} />
+       </span>
       </Button>
      ))}
     </div>
@@ -1119,8 +1125,11 @@ function BusinessChineseStudyWorkspaceContent({
 
          {activeView !== "text" ? (
           <div
-           className={cn("grid min-w-0 gap-3", !focusMode && "2xl:grid-cols-[minmax(0,1fr)_15rem]")}
+           className={cn("grid min-w-0 gap-3", !focusMode && "2xl:grid-cols-[15rem_minmax(0,1fr)]")}
           >
+           {!focusMode ? (
+            <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
+           ) : null}
            <div className="grid min-w-0 gap-3">
             {!focusMode ? (
              <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
@@ -1170,9 +1179,6 @@ function BusinessChineseStudyWorkspaceContent({
              ))}
             </div>
            </div>
-           {!focusMode ? (
-            <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
-           ) : null}
           </div>
          ) : null}
         </div>

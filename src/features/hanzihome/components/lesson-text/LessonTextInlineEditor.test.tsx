@@ -19,18 +19,22 @@ const { frameMock, readerMock, sectionCardMock } = vi.hoisted(() => ({
 vi.mock("@/features/hanzihome/hooks/useHanziHomeLessonResources", () => ({
  useHanziHomeLessonSections: () => null,
 }));
-vi.mock("@/features/hanzihome/components/lesson-overview/LessonModuleFrame", () => ({
- LessonModuleFrame: (props: ComponentProps<typeof LessonModuleFrame>) => {
-  frameMock(props);
-  return (
-   <>
-    {props.sidebar}
-    {props.children}
-   </>
-  );
+vi.mock(
+ "@/features/hanzihome/components/lesson-overview/LessonModuleFrame",
+ async (importOriginal) => {
+  const actual =
+   await importOriginal<
+    typeof import("@/features/hanzihome/components/lesson-overview/LessonModuleFrame")
+   >();
+  return {
+   ...actual,
+   LessonModuleFrame: (props: ComponentProps<typeof LessonModuleFrame>) => {
+    frameMock(props);
+    return <actual.LessonModuleFrame {...props} />;
+   },
+  };
  },
- LessonModuleSidebarRailItem: () => null,
-}));
+);
 vi.mock("@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem", () => ({
  LessonModuleSidebarItem: (props: ComponentProps<typeof LessonModuleSidebarItem>) => (
   <button type="button" aria-pressed={props.selected} onClick={props.onClick}>
@@ -241,6 +245,7 @@ describe("LessonTextInlineEditor module filtering", () => {
    sidebarRail: null,
   });
   expect(frameMock.mock.calls[0]?.[0].mobileNavigation).toBeUndefined();
+  expect(markup).not.toContain("overflow-y-auto");
   for (const title of ["Từ vựng", "Tên riêng", "Chú thích", "Ngữ pháp", "Tổng kết", "Đọc hiểu"]) {
    expect(markup).not.toContain(title);
   }

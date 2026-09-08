@@ -91,6 +91,11 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).not.toContain("xl:grid-cols-[3.25rem_minmax(0,1fr)]");
   expect(markup).toContain("Trong trang");
   expect(markup).toContain("Nghe bài");
+  expect(markup).toContain("2xl:grid-cols-[15rem_minmax(0,1fr)]");
+  expect(markup.indexOf("Trong trang")).toBeLessThan(
+   markup.indexOf("data-reader-command-controls"),
+  );
+  expect(markup).toContain('<span class="min-w-0 truncate">');
  });
 
  it.each(["nhip-cau", "doc-hieu"])(

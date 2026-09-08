@@ -256,7 +256,7 @@ export function LessonModuleFrame({
 
      <div
       ref={contentViewportRef}
-      className="relative min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft"
+      className={cn("relative min-h-0 min-w-0 pr-1", !compact && "overflow-y-auto scrollbar-soft")}
      >
       {children}
      </div>
