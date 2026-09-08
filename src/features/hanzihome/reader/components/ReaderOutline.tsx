@@ -43,12 +43,12 @@ export function ReaderOutlineContent({
  );
 
  return (
-  <div className="grid gap-4">
-   <div className="grid gap-2">
+  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
+   <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-2">
     <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
      {t("segments")}
     </Typography>
-    <nav aria-label={t("aria")} className="grid gap-1">
+    <nav aria-label={t("aria")} className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-1">
      {document.sections.length > 0
       ? document.sections.map((section, index) => {
          const firstSegmentId = section.segmentIds[0];

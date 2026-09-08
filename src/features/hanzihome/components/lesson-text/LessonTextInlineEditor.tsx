@@ -13,7 +13,6 @@ import {
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { sectionIcons } from "@/features/hanzihome/components/lesson-overview/section-icons";
 import { moduleMeta } from "@/features/hanzihome/components/layout/moduleMeta";
-import { HANZIHOME_READER_COMMAND_BAR_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import {
  sectionSubtitle,
  sectionTitle,
@@ -51,6 +50,8 @@ type LessonTextInlineEditorProps = {
  practiceOnly?: boolean;
  selectedSectionId: string;
  onSelectSection: (sectionId: string) => void;
+ readerToolsMenuContent?: ReactNode;
+ readerToolsSheetContent?: ReactNode;
 };
 
 export function LessonTextInlineEditor({
@@ -58,6 +59,8 @@ export function LessonTextInlineEditor({
  practiceOnly = false,
  selectedSectionId,
  onSelectSection,
+ readerToolsMenuContent,
+ readerToolsSheetContent,
 }: LessonTextInlineEditorProps) {
  const { lesson } = useHanziHomeRuntime();
  const sectionResource = useHanziHomeLessonSections(lesson.id);
@@ -80,6 +83,8 @@ export function LessonTextInlineEditor({
    onSelectSection={onSelectSection}
    sourceSections={sourceSections}
    editable
+   readerToolsMenuContent={readerToolsMenuContent}
+   readerToolsSheetContent={readerToolsSheetContent}
   />
  );
 }
@@ -143,6 +148,8 @@ function LessonTextWorkspace({
  onSelectSection,
  sourceSections,
  editable,
+ readerToolsMenuContent,
+ readerToolsSheetContent,
 }: LessonTextInlineEditorProps & {
  module: StudyModule;
  sourceSections: readonly Section[];
@@ -162,8 +169,10 @@ function LessonTextWorkspace({
   () => sourceSections.filter((section) => section.type === "reading"),
   [sourceSections],
  );
+ const showSectionNavigation = module !== "lessonText";
  const selectedSection = sourceSections.find((section) => section.id === selectedSectionId) ?? null;
- const showAllSections = selectedSectionId === allSectionsId || !selectedSection;
+ const showAllSections =
+  !showSectionNavigation || selectedSectionId === allSectionsId || !selectedSection;
 
  const sectionPathFor = useCallback(
   (section: Section): EditableNodePath => {
@@ -220,7 +229,7 @@ function LessonTextWorkspace({
   [lessonReader.sectionBindings, wrapBinding],
  );
 
- const sidebar = (
+ const sidebar = showSectionNavigation ? (
   <div className="grid gap-2">
    <LessonModuleSidebarItem
     selected={showAllSections}
@@ -245,8 +254,8 @@ function LessonTextWorkspace({
     })}
    </div>
   </div>
- );
- const sidebarRail = (
+ ) : null;
+ const sidebarRail = showSectionNavigation ? (
   <>
    <LessonModuleSidebarRailItem
     icon={<Layers className="h-4 w-4" />}
@@ -267,13 +276,14 @@ function LessonTextWorkspace({
     );
    })}
   </>
- );
+ ) : null;
 
  const renderTextReader = () =>
   lessonReader.document.segments.length > 0 ? (
    <ReaderSurface
     document={lessonReader.document}
-    toolbarTargetId={module === "lessonText" ? HANZIHOME_READER_COMMAND_BAR_TARGET_ID : undefined}
+    toolsMenuContent={readerToolsMenuContent}
+    toolsSheetContent={readerToolsSheetContent}
     lessonId={editable ? lesson.id : undefined}
     compact={compact}
     displayMode={editable ? undefined : displayMode}
@@ -302,19 +312,24 @@ function LessonTextWorkspace({
    sidebar={sidebar}
    sidebarRail={sidebarRail}
    sidebarSelectionKey={selectedSectionId}
-   mobileNavigation={{
-    label: "Đề mục",
-    value: showAllSections ? allSectionsId : (selectedSection?.id ?? allSectionsId),
-    items: [
-     { value: allSectionsId, label: "Xem toàn bộ" },
-     ...sourceSections.map((section) => ({
-      value: section.id,
-      label: `${section.order}. ${sectionTitle(section)}`,
-     })),
-    ],
-    onChange: onSelectSection,
-   }}
-   compact={compact}
+   mobileNavigation={
+    showSectionNavigation
+     ? {
+        label: "Đề mục",
+        value: showAllSections ? allSectionsId : (selectedSection?.id ?? allSectionsId),
+        items: [
+         { value: allSectionsId, label: "Xem toàn bộ" },
+         ...sourceSections.map((section) => ({
+          value: section.id,
+          label: `${section.order}. ${sectionTitle(section)}`,
+         })),
+        ],
+        onChange: onSelectSection,
+       }
+     : undefined
+   }
+   compact={compact || !showSectionNavigation}
+   showMobileHeader={showSectionNavigation}
   >
    {sourceSections.length > 0 ? (
     <div className="grid min-w-0 gap-2.5">

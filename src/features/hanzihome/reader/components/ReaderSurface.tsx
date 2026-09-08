@@ -2,7 +2,15 @@
 
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
+import {
+ useCallback,
+ useEffect,
+ useMemo,
+ useRef,
+ useState,
+ type KeyboardEvent,
+ type ReactNode,
+} from "react";
 
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
@@ -61,7 +69,8 @@ export type ReaderSurfaceProps = {
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
  onOpenShadowing?: () => void;
  toolbarStickyOffset?: ReaderToolbarStickyOffset;
- toolbarTargetId?: string;
+ toolsMenuContent?: ReactNode;
+ toolsSheetContent?: ReactNode;
  initialFocus?: ReaderSourceTarget | null;
  compact?: boolean;
  displayMode?: LessonDisplayMode;
@@ -135,7 +144,8 @@ function ReaderSurfaceViewContent({
  onPronunciationInspect,
  onOpenShadowing,
  toolbarStickyOffset = "page",
- toolbarTargetId,
+ toolsMenuContent,
+ toolsSheetContent,
  initialFocus,
  compact = false,
  displayMode: initialDisplayMode,
@@ -314,35 +324,67 @@ function ReaderSurfaceViewContent({
     event.clipboardData.setData("text/plain", fragment.textContent ?? "");
    }}
   >
-   <ReaderCommandBar
-    segmentCount={document.segments.length}
-    onOpenOutline={() => setOutlineOpen(true)}
-    onOpenShadowing={onOpenShadowing}
-    stickyOffset={toolbarStickyOffset}
-    portalTargetId={toolbarTargetId}
-    compact={compact}
-    displayMode={displayMode}
-    onDisplayModeChange={displayMode ? updateDisplayMode : undefined}
-    outlineMenu={(onNavigate) => (
-     <ReaderOutlineContent document={document} onNavigate={onNavigate} />
-    )}
-   />
-   {error ? (
-    <Typography as="p" variant="caption" tone="danger" role="alert">
-     {error}
-    </Typography>
-   ) : null}
-
    <div
     className={
      focusMode
-      ? "grid min-w-0"
+      ? "grid min-w-0 gap-3"
       : compact
-        ? "grid min-w-0"
-        : "grid min-w-0 items-start gap-4 2xl:grid-cols-[minmax(0,1fr)_18rem]"
+        ? "grid min-w-0 gap-3"
+        : "grid min-w-0 items-start gap-3 2xl:grid-cols-[minmax(0,1fr)_18rem]"
     }
    >
-    <div className={focusMode ? "mx-auto w-full max-w-5xl" : "min-w-0"}>
+    {!focusMode && !compact ? (
+     <div className="contents 2xl:sticky 2xl:top-0 2xl:col-start-2 2xl:row-start-1 2xl:grid 2xl:min-w-0 2xl:grid-cols-[minmax(0,1fr)] 2xl:content-start 2xl:gap-3">
+      <ReaderCommandBar
+       segmentCount={document.segments.length}
+       onOpenOutline={() => setOutlineOpen(true)}
+       onOpenShadowing={onOpenShadowing}
+       stickyOffset={toolbarStickyOffset}
+       compact={compact}
+       sidebar
+       displayMode={displayMode}
+       onDisplayModeChange={displayMode ? updateDisplayMode : undefined}
+       toolsMenuContent={toolsMenuContent}
+       toolsSheetContent={toolsSheetContent}
+       outlineMenu={(onNavigate) => (
+        <ReaderOutlineContent document={document} onNavigate={onNavigate} />
+       )}
+      />
+      <div className="hidden 2xl:block">
+       <ReaderOutline document={document} />
+      </div>
+     </div>
+    ) : (
+     <ReaderCommandBar
+      segmentCount={document.segments.length}
+      onOpenOutline={() => setOutlineOpen(true)}
+      onOpenShadowing={onOpenShadowing}
+      stickyOffset={toolbarStickyOffset}
+      compact={compact}
+      displayMode={displayMode}
+      onDisplayModeChange={displayMode ? updateDisplayMode : undefined}
+      toolsMenuContent={toolsMenuContent}
+      toolsSheetContent={toolsSheetContent}
+      outlineMenu={(onNavigate) => (
+       <ReaderOutlineContent document={document} onNavigate={onNavigate} />
+      )}
+     />
+    )}
+
+    <div
+     className={
+      focusMode
+       ? "mx-auto grid w-full max-w-5xl gap-3"
+       : compact
+         ? "grid min-w-0 gap-3"
+         : "grid min-w-0 gap-3 2xl:col-start-1 2xl:row-start-1"
+     }
+    >
+     {error ? (
+      <Typography as="p" variant="caption" tone="danger" role="alert">
+       {error}
+      </Typography>
+     ) : null}
      <ReaderDocumentContent
       document={document}
       lessonId={lessonId}
@@ -358,11 +400,6 @@ function ReaderSurfaceViewContent({
       setSegmentElement={setSegmentElement}
      />
     </div>
-    {!focusMode && !compact ? (
-     <div className="hidden min-w-0 2xl:block">
-      <ReaderOutline document={document} />
-     </div>
-    ) : null}
    </div>
 
    {isCoarsePointer ? (

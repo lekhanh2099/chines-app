@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
@@ -13,7 +13,17 @@ import { moveModuleInLayout, setPaneActive } from "@/features/hanzihome/context/
 import { ModulePane } from "./ModulePane";
 import { tabsForLesson } from "./moduleMeta";
 
-export function WorkspacePane({ paneId, className }: { paneId: PaneId; className?: string }) {
+export function WorkspacePane({
+ paneId,
+ className,
+ readerToolsMenuContent,
+ readerToolsSheetContent,
+}: {
+ paneId: PaneId;
+ className?: string;
+ readerToolsMenuContent?: ReactNode;
+ readerToolsSheetContent?: ReactNode;
+}) {
  const runtime = useHanziHomeRuntime();
  const { paneLayout, draggedModule } = useHanziHomeWorkspaceLayout();
  const actions = useHanziHomeFeatureActions();
@@ -69,6 +79,8 @@ export function WorkspacePane({ paneId, className }: { paneId: PaneId; className
     compact
     lessonTextSelectedSectionId={lessonTextSelectedSectionId}
     onSelectLessonTextSection={setLessonTextSelectedSectionId}
+    readerToolsMenuContent={readerToolsMenuContent}
+    readerToolsSheetContent={readerToolsSheetContent}
    />
   </ModulePane>
  );

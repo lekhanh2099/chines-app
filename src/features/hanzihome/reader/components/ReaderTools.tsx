@@ -1,7 +1,7 @@
 "use client";
 
 import { Focus, ListEnd, Play, Repeat2, RotateCcw, Settings2, Square } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
@@ -44,6 +44,9 @@ type ReaderToolsProps = {
  onOpenShadowing?: () => void;
  displayMode?: LessonDisplayMode;
  onDisplayModeChange?: (updates: Partial<LessonDisplayMode>) => void;
+ menuContent?: ReactNode;
+ sheetContent?: ReactNode;
+ compactAtWide?: boolean;
 };
 
 export const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];
@@ -52,6 +55,9 @@ export function ReaderTools({
  onOpenShadowing,
  displayMode,
  onDisplayModeChange,
+ menuContent,
+ sheetContent,
+ compactAtWide,
 }: ReaderToolsProps) {
  if (displayMode && onDisplayModeChange) {
   return (
@@ -60,18 +66,40 @@ export function ReaderTools({
     displayMode={displayMode}
     onDisplayModeChange={onDisplayModeChange}
     persistentSettings={false}
+    menuContent={menuContent}
+    sheetContent={sheetContent}
+    compactAtWide={compactAtWide}
    />
   );
  }
 
- return <ConnectedReaderTools onOpenShadowing={onOpenShadowing} />;
+ return (
+  <ConnectedReaderTools
+   onOpenShadowing={onOpenShadowing}
+   menuContent={menuContent}
+   sheetContent={sheetContent}
+   compactAtWide={compactAtWide}
+  />
+ );
 }
 
-function ConnectedReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void }) {
+function ConnectedReaderTools({
+ onOpenShadowing,
+ menuContent,
+ sheetContent,
+ compactAtWide,
+}: {
+ onOpenShadowing?: () => void;
+ menuContent?: ReactNode;
+ sheetContent?: ReactNode;
+ compactAtWide?: boolean;
+}) {
  const learning = useLearningState();
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const updateDisplayMode = (updates: Partial<LessonDisplayMode>) => {
-  learning.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...updates } });
+  learning.updateSettings({
+   lessonTextDisplayMode: { ...displayMode, ...updates },
+  });
  };
 
  return (
@@ -80,6 +108,9 @@ function ConnectedReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => voi
    displayMode={displayMode}
    onDisplayModeChange={updateDisplayMode}
    persistentSettings
+   menuContent={menuContent}
+   sheetContent={sheetContent}
+   compactAtWide={compactAtWide}
   />
  );
 }
@@ -89,11 +120,17 @@ function ReaderToolsContent({
  displayMode,
  onDisplayModeChange,
  persistentSettings,
+ menuContent,
+ sheetContent,
+ compactAtWide,
 }: {
  onOpenShadowing?: () => void;
  displayMode: LessonDisplayMode;
  onDisplayModeChange: (updates: Partial<LessonDisplayMode>) => void;
  persistentSettings: boolean;
+ menuContent?: ReactNode;
+ sheetContent?: ReactNode;
+ compactAtWide?: boolean;
 }) {
  const t = useTranslations("Reader.study.chrome.tools");
  const commandLabels = useTranslations("Reader.study.chrome.commands");
@@ -114,7 +151,9 @@ function ReaderToolsContent({
      <DropdownMenuTrigger asChild>
       <Button type="button" variant="outline" size="toolbar" aria-label={t("title")}>
        <Settings2 data-icon="inline-start" />
-       <span className="hidden sm:inline">{t("title")}</span>
+       <span className={compactAtWide ? "hidden sm:inline 2xl:hidden" : "hidden sm:inline"}>
+        {t("title")}
+       </span>
       </Button>
      </DropdownMenuTrigger>
      <DropdownMenuContent align="end" width="lg">
@@ -183,6 +222,7 @@ function ReaderToolsContent({
         onChange={onDisplayModeChange}
        />
       )}
+      {menuContent}
      </DropdownMenuContent>
     </DropdownMenu>
    ) : (
@@ -197,7 +237,9 @@ function ReaderToolsContent({
       onClick={() => setSheetOpen(true)}
      >
       <Settings2 data-icon="inline-start" />
-      <span className="hidden sm:inline">{t("title")}</span>
+      <span className={compactAtWide ? "hidden sm:inline 2xl:hidden" : "hidden sm:inline"}>
+       {t("title")}
+      </span>
      </Button>
 
      <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
@@ -289,6 +331,12 @@ function ReaderToolsContent({
 
         <Separator />
         <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
+        {sheetContent ? (
+         <>
+          <Separator />
+          {sheetContent}
+         </>
+        ) : null}
        </div>
       </SheetBody>
      </Sheet>

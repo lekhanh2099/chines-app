@@ -10,6 +10,7 @@ import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuLabel,
+ DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
@@ -23,17 +24,19 @@ import {
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
+import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import {
- HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
- HANZIHOME_READER_COMMAND_BAR_TARGET_ID,
-} from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
-import { HanziHomeDeveloperTools } from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
+ HanziHomeDeveloperTools,
+ HanziHomeDeveloperToolsMenuContent,
+ HanziHomeDeveloperToolsSheetContent,
+} from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
 import { HanziHomeReadingSettingsTrigger } from "@/features/hanzihome/components/layout/HanziHomeReadingSettingsTrigger";
 import { WorkspacePane } from "@/features/hanzihome/components/layout/WorkspacePane";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import { moduleMeta, tabsForLesson } from "@/features/hanzihome/components/layout/moduleMeta";
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
 import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/DebugRawDataPanel";
+import { HanziHomeEditingDialogShell } from "@/features/hanzihome/editing";
 import {
  DEFAULT_LESSON_DISPLAY_MODE,
  type LessonDisplayMode,
@@ -212,6 +215,31 @@ export function ModuleSplitWorkspaceContent() {
  ) : (
   <HanziHomeReadingSettingsTrigger />
  );
+ const readerToolsMenuContent = runtime.readOnly ? (
+  <>
+   <DropdownMenuSeparator />
+   <DropdownMenuLabel>Không gian học</DropdownMenuLabel>
+   <DropdownMenuItem disabled>
+    <Lock />
+    Nội dung chỉ đọc
+   </DropdownMenuItem>
+  </>
+ ) : (
+  <HanziHomeDeveloperToolsMenuContent leadingSeparator>
+   <DropdownMenuItem
+    onSelect={effectiveSplitEnabled ? () => actions.setSplitEnabled(false) : enableSplit}
+   >
+    <Columns2 />
+    {effectiveSplitEnabled ? "Đóng chia đôi màn hình" : "Chia đôi màn hình"}
+   </DropdownMenuItem>
+  </HanziHomeDeveloperToolsMenuContent>
+ );
+ const readerToolsSheetContent = runtime.readOnly ? undefined : (
+  <HanziHomeDeveloperToolsSheetContent
+   splitEnabled={effectiveSplitEnabled}
+   onToggleSplit={effectiveSplitEnabled ? () => actions.setSplitEnabled(false) : enableSplit}
+  />
+ );
 
  const workspaceControls = effectiveSplitEnabled ? (
   <div className="flex w-full min-w-0 items-center justify-end gap-1.5 sm:gap-2">
@@ -220,22 +248,26 @@ export function ModuleSplitWorkspaceContent() {
     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
    />
-   {readingSettingsTrigger}
-   {runtime.readOnly ? (
-    workspaceTools
-   ) : (
-    <HanziHomeDeveloperTools inline>
-     <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
-      <Columns2 />
-      Đóng chia đôi màn hình
-     </DropdownMenuItem>
-    </HanziHomeDeveloperTools>
+   {runtime.activeModule === "lessonText" ? null : (
+    <>
+     {readingSettingsTrigger}
+     {runtime.readOnly ? (
+      workspaceTools
+     ) : (
+      <HanziHomeDeveloperTools inline>
+       <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
+        <Columns2 />
+        Đóng chia đôi màn hình
+       </DropdownMenuItem>
+      </HanziHomeDeveloperTools>
+     )}
+    </>
    )}
   </div>
  ) : (
   <>
    <div className="min-w-0 flex-1">
-    <div className={runtime.activeModule === "lessonText" ? undefined : "xl:hidden"}>
+    <div className="xl:hidden">
      <Select
       value={runtime.activeModule}
       onValueChange={(module) => {
@@ -262,7 +294,7 @@ export function ModuleSplitWorkspaceContent() {
       </SelectContent>
      </Select>
     </div>
-    <div className={runtime.activeModule === "lessonText" ? "hidden" : "hidden xl:block"}>
+    <div className="hidden xl:block">
      <HanziHomeStudyTabs
       value={runtime.activeModule}
       items={lessonTabs}
@@ -278,10 +310,8 @@ export function ModuleSplitWorkspaceContent() {
      id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
-    <div className="group-has-[[data-reader-command-controls]]/lesson-toolbar:hidden">
-     {readingSettingsTrigger}
-    </div>
-    {workspaceTools}
+    {runtime.activeModule === "lessonText" ? null : readingSettingsTrigger}
+    {runtime.activeModule === "lessonText" ? null : workspaceTools}
    </div>
   </>
  );
@@ -303,22 +333,23 @@ export function ModuleSplitWorkspaceContent() {
   return (
    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
     <WorkspaceToolbar>
-     <div className="group/lesson-toolbar flex min-w-0 flex-1 flex-wrap items-center gap-2">
-      <div className="flex min-w-0 flex-1 items-center gap-2">{workspaceControls}</div>
-      {runtime.activeModule === "lessonText" ? (
-       <div
-        id={HANZIHOME_READER_COMMAND_BAR_TARGET_ID}
-        className="flex w-full min-w-0 items-center empty:hidden xl:w-auto"
-       />
-      ) : null}
-     </div>
+     <div className="flex min-w-0 flex-1 items-center gap-2">{workspaceControls}</div>
     </WorkspaceToolbar>
     <div className="grid h-full min-h-0 overflow-hidden">
+     {runtime.activeModule === "lessonText" && !runtime.readOnly ? (
+      <HanziHomeEditingDialogShell />
+     ) : null}
      <div className="min-h-0 min-w-0 overflow-y-auto scrollbar-soft">
       <LessonModuleContent
        module={runtime.activeModule}
        lessonTextSelectedSectionId={lessonTextSelectedSectionId}
        onSelectLessonTextSection={actions.selectLessonTextSection}
+       readerToolsMenuContent={
+        runtime.activeModule === "lessonText" ? readerToolsMenuContent : undefined
+       }
+       readerToolsSheetContent={
+        runtime.activeModule === "lessonText" ? readerToolsSheetContent : undefined
+       }
       />
      </div>
      {debugPanel}
@@ -331,6 +362,9 @@ export function ModuleSplitWorkspaceContent() {
   <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
    <WorkspaceToolbar>{workspaceControls}</WorkspaceToolbar>
    <div className="grid h-full min-h-0 min-w-0 overflow-hidden">
+    {runtime.activeModule === "lessonText" && !runtime.readOnly ? (
+     <HanziHomeEditingDialogShell />
+    ) : null}
     {isMobileSplit ? (
      <div className="grid h-full min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
       <SegmentedControl<PaneId>
@@ -345,10 +379,18 @@ export function ModuleSplitWorkspaceContent() {
       />
       <div className="grid min-h-0 min-w-0 overflow-hidden">
        <div className={activePane === "left" ? "min-h-0 min-w-0 overflow-hidden" : "hidden"}>
-        <WorkspacePane paneId="left" />
+        <WorkspacePane
+         paneId="left"
+         readerToolsMenuContent={readerToolsMenuContent}
+         readerToolsSheetContent={readerToolsSheetContent}
+        />
        </div>
        <div className={activePane === "right" ? "min-h-0 min-w-0 overflow-hidden" : "hidden"}>
-        <WorkspacePane paneId="right" />
+        <WorkspacePane
+         paneId="right"
+         readerToolsMenuContent={readerToolsMenuContent}
+         readerToolsSheetContent={readerToolsSheetContent}
+        />
        </div>
       </div>
      </div>
@@ -366,7 +408,11 @@ export function ModuleSplitWorkspaceContent() {
        defaultSize={splitPaneSize}
        onResize={(size) => actions.setSplitPaneSize(Math.round(size.asPercentage))}
       >
-       <WorkspacePane paneId="left" />
+       <WorkspacePane
+        paneId="left"
+        readerToolsMenuContent={readerToolsMenuContent}
+        readerToolsSheetContent={readerToolsSheetContent}
+       />
       </ResizablePanel>
       <ResizableHandle />
       <ResizablePanel
@@ -375,7 +421,11 @@ export function ModuleSplitWorkspaceContent() {
        minSize={isHorizontalSplit ? 38 : 30}
        defaultSize={100 - splitPaneSize}
       >
-       <WorkspacePane paneId="right" />
+       <WorkspacePane
+        paneId="right"
+        readerToolsMenuContent={readerToolsMenuContent}
+        readerToolsSheetContent={readerToolsSheetContent}
+       />
       </ResizablePanel>
      </ResizablePanelGroup>
     )}

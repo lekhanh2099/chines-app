@@ -100,7 +100,7 @@ describe("ReaderTools", () => {
   expect(markup).toContain("Tự nhận diện pinyin");
  });
 
- it.each([false, true])("keeps one full toolbar when portal placement is %s", (usePortal) => {
+ it("keeps one full toolbar immediately before the reader document", () => {
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider
     locale="vi"
@@ -109,7 +109,6 @@ describe("ReaderTools", () => {
    >
     <ReaderCommandBar
      segmentCount={14}
-     portalTargetId={usePortal ? "lesson-toolbar" : undefined}
      onOpenOutline={vi.fn()}
      displayMode={DEFAULT_LESSON_DISPLAY_MODE}
      onDisplayModeChange={vi.fn()}

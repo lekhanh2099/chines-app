@@ -1,5 +1,7 @@
 "use client";
 
+import type { ReactNode } from "react";
+
 import { GrammarWorkspace } from "@/features/hanzihome/components/grammar/GrammarWorkspace";
 import { LessonNoteAccessCard } from "@/features/hanzihome/components/notes/LessonNoteAccessCard";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
@@ -24,11 +26,15 @@ export function LessonModuleContent({
  compact = false,
  lessonTextSelectedSectionId,
  onSelectLessonTextSection,
+ readerToolsMenuContent,
+ readerToolsSheetContent,
 }: {
  module: StudyModule;
  compact?: boolean;
  lessonTextSelectedSectionId: string;
  onSelectLessonTextSection: (sectionId: string) => void;
+ readerToolsMenuContent?: ReactNode;
+ readerToolsSheetContent?: ReactNode;
 }) {
  const runtime = useHanziHomeRuntime();
  const { lesson } = runtime;
@@ -61,6 +67,8 @@ export function LessonModuleContent({
      compact={compact}
      selectedSectionId={lessonTextSelectedSectionId}
      onSelectSection={onSelectLessonTextSection}
+     readerToolsMenuContent={readerToolsMenuContent}
+     readerToolsSheetContent={readerToolsSheetContent}
     />
    );
    break;

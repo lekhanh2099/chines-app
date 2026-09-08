@@ -31,18 +31,17 @@ export function AppScrollViewport({ children, className }: AppScrollViewportProp
  const viewportRef = useRef<HTMLElement>(null);
 
  useLayoutEffect(() => {
-  if (viewportRef.current) viewportRef.current.dataset.readerChrome = "visible";
- }, [routeKey]);
-
- useLayoutEffect(() => {
   const viewport = viewportRef.current;
   if (viewport === null) return undefined;
 
+  viewport.dataset.readerChrome = "visible";
   viewport.scrollTo({ behavior: "auto", left: 0, top: 0 });
   updateAppScrollState(viewport);
 
   const scrollPositions = new WeakMap<HTMLElement, number>();
   let scrollTarget = viewport;
+  let inputDirection = 0;
+  let touchY = 0;
   let animationFrameId: number | null = null;
   const handleScroll = (event: Event): void => {
    if (!(event.target instanceof HTMLElement)) return;
@@ -51,16 +50,27 @@ export function AppScrollViewport({ children, className }: AppScrollViewportProp
    animationFrameId = window.requestAnimationFrame(() => {
     updateAppScrollState(viewport);
     const previousScrollTop = scrollPositions.get(scrollTarget) ?? 0;
-    const scrollTop = Math.max(0, scrollTarget.scrollTop);
+    const scrollTop = Math.max(
+     0,
+     Math.min(scrollTarget.scrollTop, scrollTarget.scrollHeight - scrollTarget.clientHeight),
+    );
     const hasReader = scrollTarget.querySelector("[data-reader-segment-id]") !== null;
-    if (hasReader) {
-     viewport.dataset.readerChrome = resolveAppScrollChromeHidden({
+    if (
+     hasReader &&
+     inputDirection !== 0 &&
+     Math.sign(scrollTop - previousScrollTop) === inputDirection
+    ) {
+     const hidden = resolveAppScrollChromeHidden({
       scrollTop,
       previousScrollTop,
       hidden: viewport.dataset.readerChrome === "hidden",
-     })
-      ? "hidden"
-      : "visible";
+     });
+     if (hidden !== (viewport.dataset.readerChrome === "hidden")) {
+      viewport.dataset.readerChrome = hidden ? "hidden" : "visible";
+      // The chrome resize can itself emit scroll events; require fresh input
+      // before interpreting those events as another change of direction.
+      inputDirection = 0;
+     }
     }
     if (
      scrollTop <= APP_SCROLL_COMPACT_EXIT_PX ||
@@ -72,19 +82,39 @@ export function AppScrollViewport({ children, className }: AppScrollViewportProp
    });
   };
   const revealChrome = () => {
+   inputDirection = 0;
    viewport.dataset.readerChrome = "visible";
+  };
+  const handleWheel = (event: WheelEvent) => {
+   if (event.deltaY !== 0) inputDirection = Math.sign(event.deltaY);
+  };
+  const handleTouchStart = (event: TouchEvent) => {
+   touchY = event.touches[0]?.clientY ?? 0;
+   inputDirection = 0;
+  };
+  const handleTouchMove = (event: TouchEvent) => {
+   const nextY = event.touches[0]?.clientY;
+   if (nextY === undefined) return;
+   if (nextY !== touchY) inputDirection = Math.sign(touchY - nextY);
+   touchY = nextY;
   };
 
   viewport.addEventListener("scroll", handleScroll, { passive: true, capture: true });
+  viewport.addEventListener("wheel", handleWheel, { passive: true });
+  viewport.addEventListener("touchstart", handleTouchStart, { passive: true });
+  viewport.addEventListener("touchmove", handleTouchMove, { passive: true });
   viewport.addEventListener("focusin", revealChrome);
   document.addEventListener("keydown", revealChrome);
   return () => {
    viewport.removeEventListener("scroll", handleScroll, { capture: true });
+   viewport.removeEventListener("wheel", handleWheel);
+   viewport.removeEventListener("touchstart", handleTouchStart);
+   viewport.removeEventListener("touchmove", handleTouchMove);
    viewport.removeEventListener("focusin", revealChrome);
    document.removeEventListener("keydown", revealChrome);
    if (animationFrameId !== null) window.cancelAnimationFrame(animationFrameId);
   };
- }, [pathname]);
+ }, [routeKey]);
 
  return (
   <main

@@ -233,15 +233,14 @@ describe("LessonTextInlineEditor module filtering", () => {
   const markup = renderWorkspace(
    <LessonTextInlineEditor selectedSectionId="__all_lesson_sections__" onSelectSection={vi.fn()} />,
   );
-  const navigation = frameMock.mock.calls[0]?.[0].mobileNavigation;
 
-  expect(navigation?.items.map((item) => item.value)).toEqual([
-   "__all_lesson_sections__",
-   "text-first",
-   "text-second",
-  ]);
-  expect(markup).toContain("1. Bài khóa thứ nhất");
-  expect(markup).toContain("11. Bài khóa thứ hai");
+  expect(frameMock.mock.calls[0]?.[0]).toMatchObject({
+   compact: true,
+   showMobileHeader: false,
+   sidebar: null,
+   sidebarRail: null,
+  });
+  expect(frameMock.mock.calls[0]?.[0].mobileNavigation).toBeUndefined();
   for (const title of ["Từ vựng", "Tên riêng", "Chú thích", "Ngữ pháp", "Tổng kết", "Đọc hiểu"]) {
    expect(markup).not.toContain(title);
   }
@@ -281,12 +280,11 @@ describe("LessonTextInlineEditor module filtering", () => {
  it.each(["proper-nouns", "removed-section"])(
   "falls back to all text sections when the selected ID %s is outside Bài khóa",
   (selectedSectionId) => {
-   const markup = renderWorkspace(
+   renderWorkspace(
     <LessonTextInlineEditor selectedSectionId={selectedSectionId} onSelectSection={vi.fn()} />,
    );
 
-   expect(frameMock.mock.calls[0]?.[0].mobileNavigation?.value).toBe("__all_lesson_sections__");
-   expect(markup).toContain('aria-pressed="true">Xem toàn bộ');
+   expect(frameMock.mock.calls[0]?.[0].mobileNavigation).toBeUndefined();
    expect(readerMock).toHaveBeenCalledOnce();
    expect(readerMock.mock.calls[0]?.[0].document.segments.map((segment) => segment.id)).toEqual([
     "paragraph-first",

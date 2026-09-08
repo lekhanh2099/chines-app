@@ -38,7 +38,6 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography, type TypographyProps } from "@/components/ui/typography";
-import { HANZIHOME_READER_COMMAND_BAR_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import {
  containsHanziText,
@@ -1043,29 +1042,18 @@ function BusinessChineseStudyWorkspaceContent({
    <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
    <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
-     {activeView === "text" ? (
+     <div className="shrink-0 xl:hidden">
       <WorkspaceToolbar>
-       <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
-        <div className="min-w-0 flex-1">{viewSelector}</div>
-        <div
-         id={HANZIHOME_READER_COMMAND_BAR_TARGET_ID}
-         className="flex w-full min-w-0 items-center empty:hidden xl:w-auto"
-        />
-       </div>
+       <div className="min-w-0 flex-1">{viewSelector}</div>
       </WorkspaceToolbar>
-     ) : (
-      <div className="shrink-0 sm:hidden">{viewSelector}</div>
-     )}
+     </div>
      <Tabs
       value={activeView}
       items={tabs}
       onValueChange={onActiveViewChange}
       aria-label={t("tabsLabel")}
-      className={cn(
-       "grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden",
-       activeView !== "text" && "sm:grid-rows-[auto_minmax(0,1fr)]",
-      )}
-      listClassName={activeView === "text" ? "hidden" : "hanzihome-liquid-toolbar hidden sm:flex"}
+      className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden xl:grid-rows-[auto_minmax(0,1fr)]"
+      listClassName="hanzihome-liquid-toolbar hidden xl:flex"
      >
       <TabsContent value={activeView} className="min-h-0 overflow-hidden">
        <div className="relative h-full min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">
@@ -1123,7 +1111,6 @@ function BusinessChineseStudyWorkspaceContent({
           <ReaderSurfaceView
            document={readerDocument}
            displayMode={displayMode}
-           toolbarTargetId={HANZIHOME_READER_COMMAND_BAR_TARGET_ID}
            readerAnnotations={annotationsQuery.data}
            onOpenReaderAnnotation={selection.handleOpenAnnotation}
            onSelection={selection.handleSelection}
