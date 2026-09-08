@@ -8,6 +8,7 @@ import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { logger } from "@/lib/logger";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor-document";
 import { DbNoteSchema, type DbNote, type NoteCategory } from "@/types/database";
 import type { Database, TablesUpdate } from "@/types/supabase.generated";
 
@@ -329,10 +330,7 @@ export async function createNote(
    title: input.title,
    tags: input.tags,
    category: input.category || "general",
-   content: input.content || {
-    type: "doc",
-    content: [{ type: "paragraph" }],
-   },
+   content: input.content || EMPTY_LEXICAL_DOCUMENT,
    reading_content: input.readingContent ?? null,
    split_view_enabled: input.splitViewEnabled ?? false,
    folder_id: input.folderId ?? null,

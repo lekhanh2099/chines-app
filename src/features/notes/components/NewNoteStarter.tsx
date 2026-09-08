@@ -9,6 +9,7 @@ import { EmptyState } from "@/components/patterns/empty-state";
 import { Button } from "@/components/ui/button";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { useRouter } from "@/i18n/navigation";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor-document";
 import { focusModeStore } from "@/stores/focus-mode-store";
 
 export function NewNoteStarter() {
@@ -28,10 +29,7 @@ export function NewNoteStarter() {
     title: t("starter.defaultTitle"),
     tags: [],
     category: "general",
-    content: {
-     type: "doc",
-     content: [{ type: "paragraph" }],
-    },
+    content: EMPTY_LEXICAL_DOCUMENT,
    },
    {
     onSuccess: (note) => {

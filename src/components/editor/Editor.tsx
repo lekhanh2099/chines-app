@@ -45,6 +45,7 @@ import {
 } from "lexical";
 import type { InitialConfigType } from "@lexical/react/LexicalComposer";
 import { logger } from "@/lib/logger";
+import { toLexicalEditorState } from "@/lib/editor-document";
 
 import { PinyinNode } from "./nodes/PinyinNode";
 import { InternalLinkNode } from "./nodes/InternalLinkNode";
@@ -179,7 +180,7 @@ export function Editor({
    html: {
     import: SAFE_HTML_IMPORT,
    },
-   editorState: initialContent ? JSON.stringify(initialContent) : undefined,
+   editorState: toLexicalEditorState(initialContent),
    nodes: [
     HeadingNode,
     QuoteNode,

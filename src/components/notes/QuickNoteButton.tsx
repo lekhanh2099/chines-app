@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "@/i18n/navigation";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { createClient } from "@/lib/supabase/client";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor-document";
 import { cn } from "@/lib/utils";
 import { focusModeStore } from "@/stores/focus-mode-store";
 
@@ -66,10 +67,7 @@ export function QuickNoteButton({
      user_id: user.id,
      title,
      tags: ["quick-note"],
-     content: {
-      type: "doc",
-      content: [{ type: "paragraph" }],
-     },
+     content: EMPTY_LEXICAL_DOCUMENT,
     })
     .select()
     .single();

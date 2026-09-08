@@ -37,6 +37,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { useRouter } from "@/i18n/navigation";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor-document";
 import { cn } from "@/lib/utils";
 import type { NoteFolder } from "@/services/notes.service";
 import { focusModeStore } from "@/stores/focus-mode-store";
@@ -88,7 +89,7 @@ export function NoteCreateDialog({
    }
 
    try {
-    const emptyDocument = { type: "doc", content: [{ type: "paragraph" }] };
+    const emptyDocument = EMPTY_LEXICAL_DOCUMENT;
     const note = await createNoteMutation.mutateAsync({
      title: value.title.trim(),
      tags: parseTags(value.tags),
