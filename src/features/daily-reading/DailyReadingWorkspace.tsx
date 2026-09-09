@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { ChevronRight, FileText, Settings } from "lucide-react";
+import { ArrowLeft, ChevronRight, FileText, Settings } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { z } from "zod";
@@ -362,6 +362,7 @@ export function DailyReadingWorkspace({
        className="justify-self-start"
        onClick={() => setQuery({})}
       >
+       <ArrowLeft data-icon="inline-start" />
        {t("document.back")}
       </Button>
       <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">

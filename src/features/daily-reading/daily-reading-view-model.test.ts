@@ -93,6 +93,7 @@ describe("Daily Reading presentation model", () => {
   expect(document.segments[0]?.vi).toContain("Những năm gần đây");
   expect(document.segments.every((segment) => !("pinyin" in segment))).toBe(true);
   expect(document.metadata).toEqual([]);
+  expect(document.capabilities).toEqual(["pinyin", "translation"]);
  });
 
  it("derives one compact learning status without hiding partial success", () => {

@@ -45,6 +45,8 @@
    "loop": "Lặp đoạn",
    "autoAdvance": "Tự chuyển",
    "display": "Hiển thị",
+   "pinyin": "Pinyin",
+   "translation": "Bản dịch",
    "showPinyin": "Hiện pinyin",
    "showTranslation": "Hiện bản dịch",
    "font": "Phông chữ",

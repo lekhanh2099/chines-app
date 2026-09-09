@@ -32,7 +32,7 @@
  },
  "document": {
   "notFound": "Không tìm thấy bài đọc hằng ngày trong dữ liệu hiện có.",
-  "back": "← Danh sách bài hằng ngày",
+  "back": "Danh sách bài hằng ngày",
   "minutes": "{count} phút"
  },
  "attempts": {

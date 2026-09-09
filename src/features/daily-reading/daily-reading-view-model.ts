@@ -112,8 +112,7 @@ export function buildDailyReadingReaderDocument(
    ...(translated?.roleVi ? { role: translated.roleVi } : {}),
   };
  });
- const capabilities: ReaderContentCapability[] =
-  visibleTranslationParagraphs.length === 0 ? [] : ["translation"];
+ const capabilities: ReaderContentCapability[] = ["pinyin", "translation"];
 
  return {
   id: reading.id,

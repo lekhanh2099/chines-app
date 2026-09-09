@@ -45,6 +45,8 @@
    "loop": "循环本段",
    "autoAdvance": "自动前进",
    "display": "显示",
+   "pinyin": "拼音",
+   "translation": "译文",
    "showPinyin": "显示拼音",
    "showTranslation": "显示译文",
    "font": "字体",

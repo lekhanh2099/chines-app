@@ -32,7 +32,7 @@
  },
  "document": {
   "notFound": "This daily reading was not found in the available data.",
-  "back": "← Daily reading list",
+  "back": "Daily reading list",
   "minutes": "{count} min"
  },
  "attempts": {

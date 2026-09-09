@@ -204,6 +204,11 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
     onKeyUp={(event) => captureSelection(event.currentTarget)}
    >
     <div className="flex min-w-0 flex-wrap items-center gap-2">
+     {segment.speaker?.label ? (
+      <Typography variant="caption" tone="muted" weight="semibold">
+       {segment.speaker.label}
+      </Typography>
+     ) : null}
      {segment.role ? (
       <Typography variant="caption" tone="muted">
        {segment.role}

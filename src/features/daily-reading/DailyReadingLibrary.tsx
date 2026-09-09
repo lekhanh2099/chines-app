@@ -491,10 +491,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
    : buildDailyReadingReaderDocument(reading, transientTranslationParagraphs);
  const titlePronunciation =
   reading === null ? null : analyzeDailyReadingText(reading.article.titleZh);
- const pronunciation = useReaderSessionPronunciation(
-  readerDocument?.segments ?? [],
-  displayMode.autoDetectPinyin,
- );
+ const pronunciation = useReaderSessionPronunciation(readerDocument?.segments ?? [], true);
  const dateFormatter = useMemo(
   () =>
    new Intl.DateTimeFormat(locale, {
@@ -675,7 +672,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
       data={{
        ...readerDocument,
        segments: pronunciation.segments,
-       ...(displayMode.autoDetectPinyin && titlePronunciation
+       ...(titlePronunciation
         ? { titlePinyin: formatContextualSpokenPinyin(titlePronunciation) }
         : {}),
       }}

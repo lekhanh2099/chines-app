@@ -1,6 +1,15 @@
 "use client";
 
-import { Focus, ListEnd, Play, Repeat2, RotateCcw, Settings2, Square } from "lucide-react";
+import {
+ ChevronDown,
+ Focus,
+ ListEnd,
+ Play,
+ Repeat2,
+ RotateCcw,
+ SlidersHorizontal,
+ Square,
+} from "lucide-react";
 import { useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
@@ -44,7 +53,7 @@ export function LessonReaderTools({
  onDisplayModeChange,
  menuContent,
  sheetContent,
- compactAtWide,
+ compactAtWide: _compactAtWide,
 }: {
  onOpenShadowing?: () => void;
  displayMode: LessonDisplayMode;
@@ -72,10 +81,9 @@ export function LessonReaderTools({
     <DropdownMenu>
      <DropdownMenuTrigger asChild>
       <Button type="button" variant="outline" size="toolbar" aria-label={t("title")}>
-       <Settings2 data-icon="inline-start" />
-       <span className={compactAtWide ? "hidden sm:inline 2xl:hidden" : "hidden sm:inline"}>
-        {t("title")}
-       </span>
+       <SlidersHorizontal data-icon="inline-start" />
+       <span>{t("title")}</span>
+       <ChevronDown data-icon="inline-end" />
       </Button>
      </DropdownMenuTrigger>
      <DropdownMenuContent align="end" width="lg">
@@ -157,10 +165,9 @@ export function LessonReaderTools({
       aria-expanded={sheetOpen}
       onClick={() => setSheetOpen(true)}
      >
-      <Settings2 data-icon="inline-start" />
-      <span className={compactAtWide ? "hidden sm:inline 2xl:hidden" : "hidden sm:inline"}>
-       {t("title")}
-      </span>
+      <SlidersHorizontal data-icon="inline-start" />
+      <span>{t("title")}</span>
+      <ChevronDown data-icon="inline-end" />
      </Button>
 
      <Sheet

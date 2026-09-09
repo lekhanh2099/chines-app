@@ -13,6 +13,7 @@ import {
 
 export function ReaderOutline() {
  const t = useTranslations("Reader.study.chrome.outline");
+ const commandLabels = useTranslations("Reader.study.chrome.commands");
  const commands = useReaderCommands();
  const registry = useReaderRegistry();
  const { actions } = useReaderStore();
@@ -23,24 +24,41 @@ export function ReaderOutline() {
   .map((id) => content.sectionsById[id])
   .filter((section) => section !== undefined);
  const activeSection = sections.find((section) => section.segmentIds.includes(active ?? ""));
+ const hasSections = sections.length > 0;
+ const items = hasSections
+  ? sections.map((section, index) => ({
+     id: section.id,
+     label: section.title || t("lesson", { number: index + 1 }),
+     targetSegmentId: section.segmentIds[0],
+    }))
+  : content.segmentIds.map((id, index) => ({
+     id,
+     label: t("segment", { number: index + 1 }),
+     targetSegmentId: id,
+    }));
+ const activeValue = hasSections
+  ? (activeSection?.id ?? sections[0]?.id ?? "")
+  : (active ?? content.segmentIds[0] ?? "");
+
  return (
   <Select
    open={open}
    onOpenChange={actions.setOutlineOpen}
-   value={activeSection?.id ?? sections[0]?.id ?? ""}
-   onValueChange={(sectionId) => {
-    const section = sections.find((item) => item.id === sectionId);
-    const firstSegmentId = section?.segmentIds[0];
-    if (firstSegmentId) commands.selectSegment(firstSegmentId);
+   value={activeValue}
+   onValueChange={(itemId) => {
+    const item = items.find((entry) => entry.id === itemId);
+    if (item?.targetSegmentId) commands.selectSegment(item.targetSegmentId);
     actions.closeOutline();
     registry.focusOutlineTrigger();
    }}
   >
    <SelectTrigger
     size="sm"
-    aria-label={t("aria")}
-    className="w-11 [&>svg:last-child]:hidden"
-    disabled={sections.length === 0}
+    hideIcon
+    aria-label={commandLabels("openOutline")}
+    title={t("aria")}
+    className="w-11"
+    disabled={items.length === 0}
     ref={(element) => {
      if (element) registry.setOutlineTrigger(element);
     }}
@@ -48,9 +66,9 @@ export function ReaderOutline() {
     <List />
    </SelectTrigger>
    <SelectContent>
-    {sections.map((section, index) => (
-     <SelectItem key={section.id} value={section.id}>
-      {section.title || t("lesson", { number: index + 1 })}
+    {items.map((item) => (
+     <SelectItem key={item.id} value={item.id}>
+      {item.label}
      </SelectItem>
     ))}
    </SelectContent>

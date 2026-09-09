@@ -32,7 +32,7 @@
  },
  "document": {
   "notFound": "现有数据中未找到这篇每日阅读。",
-  "back": "← 每日阅读列表",
+  "back": "每日阅读列表",
   "minutes": "{count} 分钟"
  },
  "attempts": {

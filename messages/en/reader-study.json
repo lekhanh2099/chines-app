@@ -45,6 +45,8 @@
    "loop": "Loop segment",
    "autoAdvance": "Auto-advance",
    "display": "Display",
+   "pinyin": "Pinyin",
+   "translation": "Translation",
    "showPinyin": "Show pinyin",
    "showTranslation": "Show translation",
    "font": "Font",

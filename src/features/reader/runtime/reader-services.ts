@@ -20,6 +20,8 @@ export type ReaderServices = {
  toolbar?: {
   stickyOffset?: "none" | "page" | "tabs";
   actions?: ReactNode;
+  hideContentDisplay?: boolean;
+  hideAdvancedTools?: boolean;
  };
  renderReader?: (input: { content: ReactNode }) => ReactNode;
  renderTools?: (input: { content: ReactNode }) => ReactNode;

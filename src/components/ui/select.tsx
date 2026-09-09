@@ -35,15 +35,17 @@ function SelectTrigger({
  size = SelectTriggerSizeSchema.enum.default,
  width = SelectTriggerWidthSchema.enum.content,
  variant = SelectTriggerVariantSchema.enum.default,
+ hideIcon = false,
  children,
  ...props
 }: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
  size?: z.infer<typeof SelectTriggerSizeSchema>;
  width?: z.infer<typeof SelectTriggerWidthSchema>;
  variant?: z.infer<typeof SelectTriggerVariantSchema>;
+ hideIcon?: boolean;
 }) {
  const defaultAppearance =
-  "border-input bg-bg-input py-2 pr-2 pl-2.5 data-[size=default]:h-11 data-[size=sm]:h-9";
+  "border-input bg-bg-input py-2 pr-2 pl-2.5 text-sm data-[size=default]:h-11 data-[size=sm]:h-9";
  const breadcrumbAppearance =
   "h-11 min-h-11 border-transparent bg-transparent px-1.5 text-sm font-bold text-text-primary shadow-none hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle sm:h-8 sm:min-h-8 sm:px-2 [&_svg]:text-text-muted";
 
@@ -63,9 +65,11 @@ function SelectTrigger({
    {...props}
   >
    {children}
-   <SelectPrimitive.Icon asChild>
-    <ChevronDownIcon className="pointer-events-none size-4 text-muted-foreground" />
-   </SelectPrimitive.Icon>
+   {!hideIcon ? (
+    <SelectPrimitive.Icon asChild>
+     <ChevronDownIcon className="pointer-events-none size-4 text-muted-foreground" />
+    </SelectPrimitive.Icon>
+   ) : null}
   </SelectPrimitive.Trigger>
  );
 }

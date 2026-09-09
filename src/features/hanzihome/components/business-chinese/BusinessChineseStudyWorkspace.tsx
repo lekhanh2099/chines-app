@@ -943,6 +943,11 @@ function BusinessChineseReader({
    services={{
     ...integration.services,
     ...services,
+    toolbar: {
+     stickyOffset: "page",
+     ...integration.services.toolbar,
+     ...services?.toolbar,
+    },
     renderReader: ({ content }) => {
      const workspace = services?.renderReader ? services.renderReader({ content }) : content;
      return integration.services.renderReader
