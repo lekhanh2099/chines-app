@@ -22,13 +22,16 @@ export function ReaderOutline() {
  const sections = content.sectionIds
   .map((id) => content.sectionsById[id])
   .filter((section) => section !== undefined);
+ const activeSection = sections.find((section) => section.segmentIds.includes(active ?? ""));
  return (
   <Select
    open={open}
    onOpenChange={actions.setOutlineOpen}
-   value={active ?? content.segmentIds[0] ?? ""}
+   value={activeSection?.id ?? sections[0]?.id ?? ""}
    onValueChange={(sectionId) => {
-    commands.selectSegment(sectionId);
+    const section = sections.find((item) => item.id === sectionId);
+    const firstSegmentId = section?.segmentIds[0];
+    if (firstSegmentId) commands.selectSegment(firstSegmentId);
     actions.closeOutline();
     registry.focusOutlineTrigger();
    }}
@@ -45,9 +48,9 @@ export function ReaderOutline() {
     <List />
    </SelectTrigger>
    <SelectContent>
-    {content.segmentIds.map((segmentId, index) => (
-     <SelectItem key={segmentId} value={segmentId}>
-      {t("segment", { number: index + 1 })}
+    {sections.map((section, index) => (
+     <SelectItem key={section.id} value={section.id}>
+      {section.title || t("lesson", { number: index + 1 })}
      </SelectItem>
     ))}
    </SelectContent>

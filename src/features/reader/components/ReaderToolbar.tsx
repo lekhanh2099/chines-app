@@ -67,28 +67,7 @@ export function ReaderToolbar() {
   >
    <div className="flex min-w-0 flex-wrap items-center gap-2" data-reader-toolbar>
     <Typography variant="caption" className="mr-auto">
-     <Select
-      value={sections[activeSectionIndex]?.id ?? ""}
-      onValueChange={(sectionId) => {
-       const section = sections.find((item) => item.id === sectionId);
-       const firstSegmentId = section?.segmentIds[0];
-       if (firstSegmentId) commands.selectSegment(firstSegmentId);
-      }}
-     >
-      <SelectTrigger
-       size="sm"
-       aria-label={t("lesson", { current: activeSectionIndex + 1, total: count })}
-      >
-       <SelectValue placeholder={t("lesson", { current: 0, total: count })} />
-      </SelectTrigger>
-      <SelectContent>
-       {sections.map((section, sectionIndex) => (
-        <SelectItem key={section.id} value={section.id}>
-         {section.title || t("lesson", { current: sectionIndex + 1, total: count })}
-        </SelectItem>
-       ))}
-      </SelectContent>
-     </Select>
+     {t("lesson", { current: count === 0 ? 0 : activeSectionIndex + 1, total: count })}
     </Typography>
     <Button
      variant="ghost"
