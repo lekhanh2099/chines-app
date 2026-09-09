@@ -1,4 +1,9 @@
 import * as z from "zod";
+import {
+ readerFontSchema,
+ readerSizeSchema,
+ readerRevealModeSchema,
+} from "@/features/reader/model/reader-display";
 
 export const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
 export const reviewResultSchema = z.enum(["again", "hard", "known"]);
@@ -16,11 +21,9 @@ export const hanziReaderFontSchema = z
   "mengshen",
  ])
  .transform((font) => (font === "kai" || font === "mengshen" ? "system" : font))
- .pipe(
-  z.enum(["system", "songti", "noto-sans", "pinyin", "kaiti", "fangsong", "ma-shan", "xiaowei"]),
- );
-export const hanziReaderSizeSchema = z.enum(["md", "lg", "xl", "2xl", "3xl"]);
-export const lessonTextRevealModeSchema = z.enum(["always", "tap"]);
+ .pipe(readerFontSchema);
+export const hanziReaderSizeSchema = readerSizeSchema;
+export const lessonTextRevealModeSchema = readerRevealModeSchema;
 export const moduleSchema = z.enum([
  "overview",
  "lessonText",

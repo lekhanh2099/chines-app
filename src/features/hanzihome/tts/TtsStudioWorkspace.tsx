@@ -14,7 +14,7 @@ import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { MandarinTtsControls } from "@/features/hanzihome/listening/MandarinTtsControls";
-import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
+import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { buildCacheKey } from "@/lib/tts-cache";
 
 import {

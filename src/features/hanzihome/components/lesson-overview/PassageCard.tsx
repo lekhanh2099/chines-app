@@ -3,12 +3,13 @@
 import { Card } from "@/components/ui/card";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { useState } from "react";
-import { ReaderSurface } from "@/features/hanzihome/reader/components/ReaderSurface";
-import { deriveSegmentContentCapabilities } from "@/features/hanzihome/reader/model/reader-capabilities";
+import { Reader } from "@/features/reader/components/Reader";
+import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
+import { deriveSegmentContentCapabilities } from "@/features/reader/model/reader-capabilities";
 import type {
  ReaderDocumentModel,
  ReaderSegment,
-} from "@/features/hanzihome/reader/model/reader-document.types";
+} from "@/features/reader/model/reader-document.types";
 
 import { StudyInstructionText, ReaderHanziText } from "./hanzi-typography";
 import { AnswerList } from "./passage-card/AnswerList";
@@ -147,13 +148,19 @@ export function PassageCard({
   id: `${lessonId ?? "passage"}:${itemId}`,
   language: "zh-CN",
   source: { kind: "lesson", sourceId: lessonId },
-  title: title ?? (showTitle ? passageTitle : ""),
+  title: (title ?? (showTitle ? passageTitle : "")).trim() || undefined,
   sections: [],
   segments: readerSegments,
   metadata: [],
   capabilities: deriveSegmentContentCapabilities(readerSegments),
  };
 
+ const integration = useLessonReader({
+  document: readerDocument,
+  lessonId,
+  annotationNodeType: "passage_line",
+  displayMode: lessonId ? undefined : displayMode,
+ });
  const hasMainPayload =
   Boolean(passageTitle) ||
   Boolean(instructionText) ||
@@ -176,31 +183,30 @@ export function PassageCard({
    )}
 
    {readerSegments.length > 0 ? (
-    <ReaderSurface
+    <Reader
      key={readerDocument.id}
-     document={readerDocument}
-     lessonId={lessonId}
-     annotationNodeType="passage_line"
-     displayMode={lessonId ? undefined : displayMode}
-     renderSegment={
-      isCloze
-       ? ({ segment, content, displayMode: readerDisplayMode }) =>
+     data={integration.data}
+     display={integration.display}
+     services={{
+      ...integration.services,
+      renderHanzi: isCloze
+       ? ({ segment, content }) =>
           shouldRenderAsCloze(segment.zh, answerMap, rendererId) ? (
            <PassageLineBlock
-            line={segment}
+            line={{ ...segment, pinyin: "", vi: "" }}
             answerMap={answerMap}
             rendererId={rendererId}
             displayMode={{
-             ...readerDisplayMode,
-             showAnswers: readerDisplayMode.showAnswers || manualAnswerListOpen,
+             ...integration.displayMode,
+             showAnswers: integration.displayMode.showAnswers || manualAnswerListOpen,
             }}
             lessonId={lessonId}
            />
           ) : (
-           content
+           (integration.services.renderHanzi?.({ segment, content }) ?? content)
           )
-       : undefined
-     }
+       : integration.services.renderHanzi,
+     }}
     />
    ) : null}
 

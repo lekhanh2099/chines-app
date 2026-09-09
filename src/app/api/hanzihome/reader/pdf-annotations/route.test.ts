@@ -8,7 +8,7 @@ const { getPdfAnnotation, savePdfAnnotation, requireAuthenticatedRoute } = vi.ho
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/pdf-annotation-repository", () => ({
+vi.mock("@/features/reading/pdf/pdf-annotation-repository", () => ({
  getPdfAnnotation,
  savePdfAnnotation,
 }));

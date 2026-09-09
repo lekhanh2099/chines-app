@@ -4,7 +4,7 @@ import { z } from "zod";
 import {
  practiceAttemptRowSchema,
  practiceAttemptSurfaceSchema,
-} from "@/features/hanzihome/reader/reader-state.schemas";
+} from "@/features/hanzihome/practice/practice-attempt.schemas";
 
 const practiceAttemptPayloadSchema = z.strictObject({
  attemptId: z.uuid().optional(),

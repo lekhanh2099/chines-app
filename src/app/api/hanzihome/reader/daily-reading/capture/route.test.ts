@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { defaultDailyReadingSettings } from "@/features/hanzihome/reader/daily-reading/daily-reading.settings";
+import { defaultDailyReadingSettings } from "@/features/daily-reading/daily-reading.settings";
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),
@@ -12,11 +12,11 @@ vi.mock("@/lib/api/authenticated-route", () => ({
  privateNoStoreJson: (body: object, init?: ResponseInit) => Response.json(body, init),
 }));
 
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-capture.server", () => ({
+vi.mock("@/features/daily-reading/daily-reading-capture.server", () => ({
  captureDailyReadingArticle: mocks.captureDailyReadingArticle,
 }));
 
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-source.server", () => ({
+vi.mock("@/features/daily-reading/daily-reading-source.server", () => ({
  formatDailyReadingSourceReport: () => "source report",
 }));
 

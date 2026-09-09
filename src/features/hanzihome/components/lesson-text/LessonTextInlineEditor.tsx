@@ -28,12 +28,10 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 import {
  lessonTextToReaderDocument,
  type LessonReaderEditBinding,
-} from "@/features/hanzihome/reader/adapters/lesson-text.adapter";
-import {
- ReaderSurface,
- type ReaderSurfaceRenderSection,
- type ReaderSurfaceRenderSegment,
-} from "@/features/hanzihome/reader/components/ReaderSurface";
+} from "@/features/hanzihome/reader-adapters/lesson-text.adapter";
+import { Reader } from "@/features/reader/components/Reader";
+import type { ReaderServices } from "@/features/reader/runtime/reader-services";
+import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
 
 const allSectionsId = "__all_lesson_sections__";
 const practiceSectionTypes = new Set<Section["type"]>([
@@ -220,15 +218,22 @@ function LessonTextWorkspace({
   },
   [editable],
  );
- const renderReaderSegment = useCallback<ReaderSurfaceRenderSegment>(
+ const renderReaderSegment = useCallback<NonNullable<ReaderServices["renderSegment"]>>(
   ({ segment, content }) => wrapBinding(lessonReader.segmentBindings.get(segment.id), content),
   [lessonReader.segmentBindings, wrapBinding],
  );
- const renderReaderSection = useCallback<ReaderSurfaceRenderSection>(
+ const renderReaderSection = useCallback<NonNullable<ReaderServices["renderSection"]>>(
   ({ section, content }) => wrapBinding(lessonReader.sectionBindings.get(section.id), content),
   [lessonReader.sectionBindings, wrapBinding],
  );
 
+ const integration = useLessonReader({
+  document: lessonReader.document,
+  lessonId: editable ? lesson.id : undefined,
+  displayMode: editable ? undefined : displayMode,
+  menuContent: readerToolsMenuContent,
+  sheetContent: readerToolsSheetContent,
+ });
  const sidebar = showSectionNavigation ? (
   <div className="grid gap-2">
    <LessonModuleSidebarItem
@@ -280,15 +285,14 @@ function LessonTextWorkspace({
 
  const renderTextReader = () =>
   lessonReader.document.segments.length > 0 ? (
-   <ReaderSurface
-    document={lessonReader.document}
-    toolsMenuContent={readerToolsMenuContent}
-    toolsSheetContent={readerToolsSheetContent}
-    lessonId={editable ? lesson.id : undefined}
-    compact={compact}
-    displayMode={editable ? undefined : displayMode}
-    renderSegment={editable ? renderReaderSegment : undefined}
-    renderSection={editable ? renderReaderSection : undefined}
+   <Reader
+    data={integration.data}
+    display={integration.display}
+    services={{
+     ...integration.services,
+     renderSegment: editable ? renderReaderSegment : undefined,
+     renderSection: editable ? renderReaderSection : undefined,
+    }}
    />
   ) : null;
  const firstTextSectionId = visibleTextSections[0]?.id;

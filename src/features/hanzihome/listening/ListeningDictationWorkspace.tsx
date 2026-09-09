@@ -24,13 +24,16 @@ import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { buildDictationDiff } from "../practice/dictation-comparison";
-import { createDictationAttempt, type DictationAttempt } from "../practice/dictation-session";
+import {
+ createDictationAttempt,
+ type DictationAttempt,
+} from "@/features/dictation/dictation-session";
 import { savePracticeAttempt } from "../practice/practice-attempt-api";
 import { upsertLearningLoopItem } from "../learning-loop/learning-loop-api";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
 import { MandarinTtsControls } from "./MandarinTtsControls";
-import { useSharedMandarinTts } from "./MandarinTtsProvider";
+import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { listeningCategoryLabels } from "./listening.labels";
 import { LISTENING_CATEGORIES } from "./listening.types";
 import {

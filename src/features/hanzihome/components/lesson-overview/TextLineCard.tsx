@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
-import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
+import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { ProgressiveStudyText } from "./ProgressiveStudyText";

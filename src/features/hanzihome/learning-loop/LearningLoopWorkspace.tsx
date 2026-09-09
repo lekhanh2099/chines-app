@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
-import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
+import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 import { fetchLearningLoopItems, rateLearningLoopItem } from "./learning-loop-api";

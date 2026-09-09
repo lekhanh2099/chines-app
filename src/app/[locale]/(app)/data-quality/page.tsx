@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { ReaderDataQualityWorkspace } from "@/features/hanzihome/reader/ReaderDataQualityWorkspace";
+import { ReaderDataQualityWorkspace } from "@/features/reading/workspaces/ReaderDataQualityWorkspace";
 import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import { requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
 

@@ -38,7 +38,7 @@ vi.mock("@/services/user-api-keys.service", () => ({
  moveUserApiKey: mocks.moveUserApiKey,
  updateUserApiKey: mocks.updateUserApiKey,
 }));
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment-jobs.server", () => ({
+vi.mock("@/features/daily-reading/daily-reading-enrichment-jobs.server", () => ({
  DailyReadingEnrichmentJobStorageError: class DailyReadingEnrichmentJobStorageError extends Error {},
  listActiveDailyReadingJobsForKey: mocks.listActiveDailyReadingJobsForKey,
 }));

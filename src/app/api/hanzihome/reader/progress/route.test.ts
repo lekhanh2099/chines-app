@@ -10,7 +10,7 @@ const { getReaderProgress, saveReaderProgressOwnedState, requireAuthenticatedRou
  }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/reader-progress-repository.server", () => ({
+vi.mock("@/features/reading/repositories/reading-progress.repository", () => ({
  getReaderProgress,
  saveReaderProgressOwnedState,
 }));

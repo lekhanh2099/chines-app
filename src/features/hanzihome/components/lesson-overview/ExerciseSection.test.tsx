@@ -38,6 +38,7 @@ function renderToStaticMarkup(element: ReactNode) {
  return renderMarkup(
   <NextIntlClientProvider
    locale="vi"
+   timeZone="Asia/Ho_Chi_Minh"
    messages={{ Reader: { study: readerStudyMessages, document: readerDocumentMessages } }}
   >
    {element}
@@ -63,7 +64,7 @@ describe("ExerciseCard", () => {
    expect(html).toContain(messages.Reader.study.chrome.segment.sampleRetelling);
    expect(html).toContain(messages.Reader.study.chrome.surface.aria);
    expect(html).toContain("Tôi thích đọc sách.");
-   expect(html).toContain('data-reader-segment-id="sample-retelling"');
+   expect(html).toContain('data-reader-segment="sample-retelling"');
    expect(html).not.toContain("Reader.study.");
   },
  );
@@ -86,13 +87,13 @@ describe("ExerciseCard", () => {
   );
   expect(html).toContain("Nghe bài");
   expect(html).toContain("Đoạn 1 / 2");
-  expect(html).toContain('data-reader-segment-id="with-meaning"');
-  expect(html).toContain('data-reader-segment-id="without-meaning"');
+  expect(html).toContain('data-reader-segment="with-meaning"');
+  expect(html).toContain('data-reader-segment="without-meaning"');
   expect(html).toContain("Tôi thích đọc sách.");
   expect(html).not.toContain("<header");
   expect(html).not.toContain("Phần 1");
   expect(html.indexOf("Từ bổ sung")).toBeGreaterThan(
-   html.indexOf('data-reader-segment-id="without-meaning"'),
+   html.indexOf('data-reader-segment="without-meaning"'),
   );
  });
 
@@ -239,8 +240,8 @@ describe("ExerciseCard", () => {
   expect(html).toContain("Nghe bài");
   expect(html).toContain("Công cụ học");
   expect(html).toContain("Đoạn 1 / 2");
-  expect(html).toContain('data-reader-segment-id="paragraph-01"');
-  expect(html).toContain('data-reader-segment-id="paragraph-02"');
+  expect(html).toContain('data-reader-segment="paragraph-01"');
+  expect(html).toContain('data-reader-segment="paragraph-02"');
  });
 
  it("reports a missing cloze marker when a linked reading passage is plain text", () => {
@@ -317,7 +318,7 @@ describe("ExerciseCard", () => {
    </MandarinTtsProvider>,
   );
 
-  expect(html).toContain("王明每天学习汉语");
+  expect(html.replace(/<[^>]*>/gu, "")).toContain("王明每天学习汉语");
   expect(html).toContain("王明");
   expect(html).not.toContain("Chưa có nội dung");
  });
@@ -348,7 +349,7 @@ describe("ExerciseCard", () => {
    </MandarinTtsProvider>,
   );
 
-  expect(html).toContain("王明每天学习汉语");
+  expect(html.replace(/<[^>]*>/gu, "")).toContain("王明每天学习汉语");
   expect(html).not.toContain("Chưa có nội dung");
  });
 
@@ -488,7 +489,7 @@ describe("ReadingCard", () => {
   expect(html).toContain("Nghe bài");
   expect(html).toContain("Công cụ học");
   expect(html).toContain("Tốc độ đọc");
-  expect(html).toContain("Mục lục đoạn");
+  expect(html).toContain("Mở mục lục đoạn");
   expect(html).toContain("<ruby");
   expect(html).toContain('aria-label="Pinyin chữ 个 cần kiểm tra"');
   expect(html).toContain("text-warning");
@@ -513,7 +514,7 @@ describe("ReadingCard", () => {
    </MandarinTtsProvider>,
   );
   expect(html).not.toContain(">回家<");
-  expect(html).not.toContain("data-reader-segment-id");
+  expect(html).not.toContain("data-reader-segment");
  });
 
  it("does not repeat its own reading title inside the linked passage card", () => {

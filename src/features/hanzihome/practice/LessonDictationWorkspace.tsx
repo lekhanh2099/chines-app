@@ -13,14 +13,14 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Typography } from "@/components/ui/typography";
-import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
+import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
-import type { DictationAttempt } from "./dictation-session";
-import { StudioDictationPracticePanel } from "./StudioDictationPracticePanel";
-import { StudioDictationReferencePanel } from "./StudioDictationReferencePanel";
-import type { StudioDictationScriptMode } from "./StudioDictationSettingsMenu";
+import type { DictationAttempt } from "@/features/dictation/dictation-session";
+import { StudioDictationPracticePanel } from "@/features/dictation/StudioDictationPracticePanel";
+import { StudioDictationReferencePanel } from "@/features/dictation/StudioDictationReferencePanel";
+import type { StudioDictationScriptMode } from "@/features/dictation/StudioDictationSettingsMenu";
 import { dictationSourcesFromLesson } from "./translation-practice";
 
 export function LessonDictationWorkspace({

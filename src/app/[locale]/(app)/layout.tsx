@@ -1,7 +1,7 @@
 import { AppScrollViewport } from "@/components/layout/AppScrollViewport";
 import { Header } from "@/components/layout/Header";
 import { MobileBottomNavigation, Sidebar } from "@/components/layout/Sidebar";
-import { DailyReadingSchedulerAgent } from "@/features/hanzihome/reader/daily-reading/DailyReadingSchedulerAgent";
+import { DailyReadingSchedulerAgent } from "@/features/daily-reading/DailyReadingSchedulerAgent";
 import { HanziHomeGlobalSearchBridge } from "@/features/hanzihome/search/HanziHomeGlobalSearchBridge";
 import { HanziTypographyPreferenceBridge } from "@/features/hanzihome/typography/HanziTypographyPreferenceBridge";
 import { LearningStateSyncAgent } from "@/features/hanzihome/hooks/useLearningState";

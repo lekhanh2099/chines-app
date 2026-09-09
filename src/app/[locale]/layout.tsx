@@ -12,7 +12,7 @@ import { AppToaster } from "@/components/layout/AppToaster";
 import { VocabInspectorProvider } from "@/features/dictionary/components/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
+import { MandarinTtsProvider } from "@/features/speech/MandarinTtsProvider";
 import { routing } from "@/i18n/routing";
 import {
  DEFAULT_THEME_MODE,

@@ -1,9 +1,9 @@
-import { DailyReadingWorkspace } from "@/features/hanzihome/reader/DailyReadingWorkspace";
-import { GeneratedDailyReadingArea } from "@/features/hanzihome/reader/daily-reading/GeneratedDailyReadingArea";
+import { DailyReadingWorkspace } from "@/features/daily-reading/DailyReadingWorkspace";
+import { GeneratedDailyReadingArea } from "@/features/daily-reading/GeneratedDailyReadingArea";
 import {
  getReaderDocument,
  listReaderDocuments,
-} from "@/features/hanzihome/reader/reader-content-repository";
+} from "@/features/reading/repositories/reading-content.repository";
 import { getStaticStudioLessonDetail } from "@/features/hanzihome/static-json/studio-static-content";
 
 export default async function DailyReadingPage({

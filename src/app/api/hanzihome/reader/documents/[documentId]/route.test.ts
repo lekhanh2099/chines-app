@@ -5,7 +5,7 @@ const { getReaderDocument } = vi.hoisted(() => ({
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/reader-content-repository", () => ({
+vi.mock("@/features/reading/repositories/reading-content.repository", () => ({
  getReaderDocument,
 }));
 vi.mock("@/lib/api/authenticated-route", () => ({

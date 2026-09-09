@@ -1,6 +1,6 @@
 import { HanziHomeReadingSettingsSection } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
-import { DailyReadingSettingsPanel } from "@/features/hanzihome/reader/daily-reading/DailyReadingSettingsPanel";
-import { DailyReadingManagementPanel } from "@/features/hanzihome/reader/daily-reading/DailyReadingManagementPanel";
+import { DailyReadingSettingsPanel } from "@/features/daily-reading/DailyReadingSettingsPanel";
+import { DailyReadingManagementPanel } from "@/features/daily-reading/DailyReadingManagementPanel";
 import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import { SettingsPageContent } from "@/features/settings/SettingsPageContent";
 import { requireAuthenticatedRoute } from "@/lib/api/authenticated-route";

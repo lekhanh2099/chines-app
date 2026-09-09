@@ -5,13 +5,13 @@ import {
  listDueLearningLoopItems,
  rateLearningLoopItem,
  saveLearningLoopItem,
-} from "@/features/hanzihome/reader/learning-loop-repository";
+} from "@/features/hanzihome/learning-loop/learning-loop-repository";
 import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
 } from "@/lib/api/authenticated-route";
-import { learningLoopItemRowSchema } from "@/features/hanzihome/reader/reader-state.schemas";
+import { learningLoopItemRowSchema } from "@/features/hanzihome/learning-loop/learning-loop-state.schemas";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

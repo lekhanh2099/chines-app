@@ -5,14 +5,16 @@ import { fileURLToPath } from "node:url";
 import { z } from "zod";
 import type { Json, TablesInsert } from "../src/types/supabase.generated.ts";
 import type {
- ReaderAssetRow,
- ReaderDocumentRow,
  ReaderExerciseGroupRow,
  ReaderExerciseItemRow,
- ReaderHumanitiesEvaluation,
+} from "../src/features/reading/model/reading-exercise.schemas.ts";
+import type { ReaderHumanitiesEvaluation } from "../src/features/humanities/model/humanities-exercise.schemas.ts";
+import type { ReaderAssetRow } from "../src/features/reading/model/reading-assets.schemas.ts";
+import type {
+ ReaderDocumentRow,
  ReaderParagraphRow,
  ReaderVocabularyLinkRow,
-} from "../src/features/hanzihome/reader/reader.schemas.ts";
+} from "../src/features/reading/model/reading-resource.schemas.ts";
 import {
  assertStudioInventoryBaseline,
  buildStudioImportPreview,

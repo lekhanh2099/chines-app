@@ -8,6 +8,7 @@ import {
  useState,
  type KeyboardEvent,
  type MouseEvent,
+ type ReactNode,
 } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useQuery } from "@tanstack/react-query";
@@ -50,13 +51,13 @@ import {
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { getActiveCharacterIndex } from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
-import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
+import { MandarinTtsProvider } from "@/features/speech/MandarinTtsProvider";
 import {
  analyzeContextualPronunciation,
  type ContextualPronunciationAnalysis,
  type ContextualPronunciationGlyph,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
-import { ContextualReaderText } from "@/features/hanzihome/reader/ContextualReaderText";
+import { ContextualReaderText } from "@/features/hanzihome/components/reading/ContextualReaderText";
 import {
  buildBusinessChineseReaderDocument,
  buildTextbookHref,
@@ -65,34 +66,35 @@ import {
  splitTrailingTranslation,
  splitDialogueTurn,
  getChineseSpeechSegments,
-} from "@/features/hanzihome/reader/adapters/business-chinese.adapter";
-import { fetchReaderAnnotations } from "@/features/hanzihome/reader/reader-annotation-api";
-import { parseReaderSourceTarget } from "@/features/hanzihome/reader/reader-source-target";
-import { useReaderSelectionActions } from "@/features/hanzihome/reader/runtime/useReaderSelectionActions";
+} from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
+import { fetchReaderAnnotations } from "@/features/reading/services/reading-annotation-api";
+import { parseReaderSourceTarget } from "@/features/reading/model/reading-source-target";
+import { useReaderSelectionActions } from "@/features/reading/hooks/useReaderSelectionActions";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import {
- ReaderSurface,
- ReaderSurfaceView,
-} from "@/features/hanzihome/reader/components/ReaderSurface";
-import type { ReaderSurfacePronunciationTarget } from "@/features/hanzihome/reader/components/ReaderDocumentContent";
+import { Reader } from "@/features/reader/components/Reader";
+import type { ReaderServices } from "@/features/reader/runtime/reader-services";
+import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
+import type { ReaderSurfacePronunciationTarget } from "@/features/reading/model/reading-interactions";
 import {
  ReaderPronunciationReviewPopover,
  type ReaderPronunciationSaveInput,
-} from "@/features/hanzihome/reader/components/ReaderPronunciationReviewPopover";
+} from "@/features/reading/components/ReaderPronunciationReviewPopover";
 import type {
  ReaderDocumentModel,
  ReaderSegment,
-} from "@/features/hanzihome/reader/model/reader-document.types";
+} from "@/features/reader/model/reader-document.types";
 import {
  ReaderPronunciationSessionProvider,
  useReaderPronunciationSessionActions,
  useReaderPronunciationSessionOverrides,
-} from "@/features/hanzihome/reader/runtime/reader-pronunciation-session";
+} from "@/features/hanzihome/reader-adapters/reader-pronunciation-session";
 import {
- ReaderRuntimeProvider,
- useReaderRuntimeCommands,
- useReaderRuntimeSelector,
-} from "@/features/hanzihome/reader/runtime/ReaderRuntimeProvider";
+ ReaderServicesContext,
+ useReaderServices,
+ useReaderCommands,
+ useReaderStore,
+ useReaderSelector,
+} from "@/features/reader/runtime/reader-context";
 import type {
  TextbookBookSummary,
  TextbookLesson,
@@ -143,7 +145,7 @@ function BusinessChineseHeaderContextBridge({
      <AppHeaderBreadcrumbLink
       href={buildTextbookHref(lesson.bookKey, 1)}
       disabled={focusModeEnabled}
-      className="max-w-[9rem]"
+      className="max-w-36"
       title="HanziHome"
      >
       HanziHome
@@ -230,18 +232,18 @@ function BusinessChineseText({
 }) {
  const pronunciationSessionActions = useReaderPronunciationSessionActions();
  const pronunciationOverrides = useReaderPronunciationSessionOverrides(pronunciationId);
- const readerCommands = useReaderRuntimeCommands();
- const readerSegmentIndex = useReaderRuntimeSelector((state) =>
-  state.segmentIds.indexOf(pronunciationId),
+ const readerCommands = useReaderCommands();
+ const readerSegmentIndex = useReaderSelector((state) =>
+  state.content.segmentIds.indexOf(pronunciationId),
  );
- const playbackProgress = useReaderRuntimeSelector((state) =>
-  state.playbackSegmentId === pronunciationId && state.playbackStatus !== "idle"
-   ? state.progress
+ const playbackProgress = useReaderSelector((state) =>
+  state.playback.segmentId === pronunciationId && state.playback.status !== "idle"
+   ? state.playback.progress
    : -1,
  );
- const playbackStartOffset = useReaderRuntimeSelector((state) =>
-  state.playbackSegmentId === pronunciationId && state.playbackStatus !== "idle"
-   ? state.playbackStartOffset
+ const playbackStartOffset = useReaderSelector((state) =>
+  state.playback.segmentId === pronunciationId && state.playback.status !== "idle"
+   ? state.playback.startOffset
    : 0,
  );
  const [pronunciationPreview, setPronunciationPreview] =
@@ -338,7 +340,7 @@ function BusinessChineseText({
    activeCharacterIndex={activeCharacterIndex}
    onGlyphClick={
     readerSegmentIndex >= 0
-     ? (start) => readerCommands.playFromCharacter(readerSegmentIndex, start)
+     ? (start) => readerCommands.playFromCharacter(pronunciationId, start)
      : undefined
    }
    onGlyphInspect={inspectPronunciation}
@@ -546,7 +548,7 @@ function BusinessChineseTable({
    ) : null}
    {visibleColumnIndexes.length > 0 ? (
     <div className="max-w-full overflow-x-auto rounded-xl border border-border-default">
-     <table className="w-full min-w-[42rem] border-collapse text-left">
+     <table className="w-full min-w-2xl border-collapse text-left">
       <thead className="bg-surface-muted">
        <tr>
         {visibleColumnIndexes.map((cellIndex) => (
@@ -906,17 +908,49 @@ export function BusinessChineseStudyWorkspace({
  return (
   <MandarinTtsProvider>
    <ReaderPronunciationSessionProvider key={lesson.id}>
-    <ReaderRuntimeProvider key={readerDocument.id} document={readerDocument}>
-     <BusinessChineseStudyWorkspaceContent
-      books={books}
-      lesson={lesson}
-      activeView={activeView}
-      onActiveViewChange={setActiveView}
-      readerDocument={readerDocument}
-     />
-    </ReaderRuntimeProvider>
+    <BusinessChineseReader
+     key={readerDocument.id}
+     document={readerDocument}
+     services={{
+      renderReader: ({ content }) => (
+       <BusinessChineseStudyWorkspaceContent
+        books={books}
+        lesson={lesson}
+        activeView={activeView}
+        onActiveViewChange={setActiveView}
+        readerContent={content}
+       />
+      ),
+     }}
+    />
    </ReaderPronunciationSessionProvider>
   </MandarinTtsProvider>
+ );
+}
+
+function BusinessChineseReader({
+ document,
+ services,
+}: {
+ document: ReaderDocumentModel;
+ services?: ReaderServices;
+}) {
+ const integration = useLessonReader({ document, displayMode: businessChineseDisplayMode });
+ return (
+  <Reader
+   data={integration.data}
+   display={integration.display}
+   services={{
+    ...integration.services,
+    ...services,
+    renderReader: ({ content }) => {
+     const workspace = services?.renderReader ? services.renderReader({ content }) : content;
+     return integration.services.renderReader
+      ? integration.services.renderReader({ content: workspace })
+      : workspace;
+    },
+   }}
+  />
  );
 }
 
@@ -925,13 +959,13 @@ function BusinessChineseStudyWorkspaceContent({
  lesson,
  activeView,
  onActiveViewChange,
- readerDocument,
+ readerContent,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
  activeView: string;
  onActiveViewChange: (value: string) => void;
- readerDocument: ReaderDocumentModel;
+ readerContent: ReactNode;
 }) {
  const t = useTranslations("BusinessChinese");
  const displayMode = businessChineseDisplayMode;
@@ -964,19 +998,59 @@ function BusinessChineseStudyWorkspaceContent({
    new Map(
     textReaderDocument.segments.map((segment) => [
      segment.id,
-     analyzeContextualPronunciation({ text: segment.zh, sourcePinyin: segment.pinyin ?? null }),
+     analyzeContextualPronunciation({
+      text: segment.zh,
+      sourcePinyin: segment.pinyin ?? null,
+     }),
     ]),
    ),
   [textReaderDocument],
  );
+ const readerCommands = useReaderCommands();
+ const { actions: readerActions } = useReaderStore();
+ const parentServices = useReaderServices();
  const selection = useReaderSelectionActions({
+  selectSegment: readerActions.selectSegment,
+  stop: readerCommands.stop,
   document: textReaderDocument,
   vocabulary: readerVocabulary,
   stateOwner: "personal",
   analysisBySegmentId,
   setSaveError: setAnnotationError,
  });
- const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
+ const focusMode = useReaderSelector((state) => state.ui.focusMode);
+ const annotationServices: ReaderServices = {
+  annotations: {
+   items: (annotationsQuery.data ?? []).flatMap((annotation) =>
+    annotation.paragraph_id !== null &&
+    annotation.start_offset !== null &&
+    annotation.end_offset !== null &&
+    annotation.end_offset > annotation.start_offset &&
+    annotation.selected_text.length > 0
+     ? [
+        {
+         id: annotation.id,
+         segmentId: annotation.paragraph_id,
+         text: annotation.selected_text,
+         start: annotation.start_offset,
+         end: annotation.end_offset,
+        },
+       ]
+     : [],
+   ),
+   onOpen: (annotation, rect) => {
+    const source = annotationsQuery.data?.find((item) => item.id === annotation.id);
+    if (source) selection.handleOpenAnnotation(source, rect);
+   },
+   onSelection: (target) => {
+    const index = textReaderDocument.segments.findIndex(
+     (segment) => segment.id === target.segmentId,
+    );
+    const segment = textReaderDocument.segments[index];
+    if (segment) selection.handleSelection({ ...target, segment, index });
+   },
+  },
+ };
  const pairedTranslations = useMemo(() => {
   const translations = new Map<string, string>();
   const translationIndex = lesson.sections.findIndex((section) =>
@@ -1114,13 +1188,9 @@ function BusinessChineseStudyWorkspaceContent({
          </Card>
 
          {activeView === "text" ? (
-          <ReaderSurfaceView
-           document={readerDocument}
-           displayMode={displayMode}
-           readerAnnotations={annotationsQuery.data}
-           onOpenReaderAnnotation={selection.handleOpenAnnotation}
-           onSelection={selection.handleSelection}
-          />
+          <ReaderServicesContext.Provider value={{ ...parentServices, ...annotationServices }}>
+           {readerContent}
+          </ReaderServicesContext.Provider>
          ) : null}
 
          {activeView !== "text" ? (
@@ -1138,7 +1208,7 @@ function BusinessChineseStudyWorkspaceContent({
              {visibleSections.map((section, index) => (
               <Fragment key={section.id}>
                {section.category === "text" ? (
-                <ReaderSurface
+                <BusinessChineseReader
                  document={{
                   ...textReaderDocument,
                   id: `${textReaderDocument.id}:${section.id}`,
@@ -1157,13 +1227,12 @@ function BusinessChineseStudyWorkspaceContent({
                    (segment) => segment.sectionId === section.id,
                   ),
                  }}
-                 displayMode={displayMode}
-                 readerAnnotations={annotationsQuery.data}
-                 onOpenReaderAnnotation={selection.handleOpenAnnotation}
-                 onSelection={selection.handleSelection}
-                 renderSection={({ section: readerSection, content }) => (
-                  <div id={readerSection.id}>{content}</div>
-                 )}
+                 services={{
+                  ...annotationServices,
+                  renderSection: ({ section: readerSection, content }) => (
+                   <div id={readerSection.id}>{content}</div>
+                  ),
+                 }}
                 />
                ) : (
                 <Card variant="section" padding="md">

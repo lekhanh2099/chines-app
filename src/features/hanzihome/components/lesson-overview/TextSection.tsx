@@ -1,7 +1,10 @@
+"use client";
+
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
-import { lessonTextToReaderDocument } from "@/features/hanzihome/reader/adapters/lesson-text.adapter";
-import { ReaderSurface } from "@/features/hanzihome/reader/components/ReaderSurface";
+import { lessonTextToReaderDocument } from "@/features/hanzihome/reader-adapters/lesson-text.adapter";
+import { Reader } from "@/features/reader/components/Reader";
+import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
 import type { LessonDisplayMode } from "./types";
 
 export function TextSectionView({
@@ -24,26 +27,33 @@ export function TextSectionView({
   sectionPathFor: () => sectionPath ?? [],
  });
 
+ const integration = useLessonReader({
+  document: reader.document,
+  lessonId,
+  displayMode: lessonId ? undefined : displayMode,
+ });
  return (
-  <ReaderSurface
-   document={reader.document}
-   lessonId={lessonId}
-   displayMode={lessonId ? undefined : displayMode}
-   renderSegment={({ segment, content }) => {
-    const binding = reader.segmentBindings.get(segment.id);
-    return lessonId && sectionPath && binding ? (
-     <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>
-    ) : (
-     content
-    );
-   }}
-   renderSection={({ section: readerSection, content }) => {
-    const binding = reader.sectionBindings.get(readerSection.id);
-    return lessonId && sectionPath && binding ? (
-     <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>
-    ) : (
-     content
-    );
+  <Reader
+   data={integration.data}
+   display={integration.display}
+   services={{
+    ...integration.services,
+    renderSegment: ({ segment, content }) => {
+     const binding = reader.segmentBindings.get(segment.id);
+     return lessonId && sectionPath && binding ? (
+      <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>
+     ) : (
+      content
+     );
+    },
+    renderSection: ({ section: readerSection, content }) => {
+     const binding = reader.sectionBindings.get(readerSection.id);
+     return lessonId && sectionPath && binding ? (
+      <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>
+     ) : (
+      content
+     );
+    },
    }}
   />
  );

@@ -29,7 +29,7 @@ vi.mock("@/services/ai-runtime.service", () => ({
  recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment-jobs.server", () => ({
+vi.mock("@/features/daily-reading/daily-reading-enrichment-jobs.server", () => ({
  attachWorkflowRunToDailyReadingJobs: mocks.attachWorkflowRunToDailyReadingJobs,
  completeDailyReadingEnrichmentJob: mocks.completeDailyReadingEnrichmentJob,
  createDailyReadingEnrichmentJobs: mocks.createDailyReadingEnrichmentJobs,
@@ -38,7 +38,7 @@ vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment-jobs
  findReusableDailyReadingEnrichmentJob: mocks.findReusableDailyReadingEnrichmentJob,
  listDailyReadingEnrichmentJobs: mocks.listDailyReadingEnrichmentJobs,
 }));
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment.workflow", () => ({
+vi.mock("@/features/daily-reading/daily-reading-enrichment.workflow", () => ({
  dailyReadingEnrichmentWorkflow: vi.fn(),
 }));
 

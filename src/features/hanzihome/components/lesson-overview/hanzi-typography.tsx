@@ -2,7 +2,11 @@ import type { CSSProperties } from "react";
 import { z } from "zod";
 
 import { Typography, type TypographyProps } from "@/components/ui/typography";
-import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
+import type { HanziReaderFont, LessonDisplayMode } from "./types";
+import {
+ getReaderFontFamily,
+ getReaderTypographyStyle,
+} from "@/features/reader/components/reader-typography";
 import { hanziReaderSizeSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { cn } from "@/lib/utils";
 
@@ -77,40 +81,6 @@ const staticHanziTextSizes: Record<z.infer<typeof StaticHanziTextSizeSchema>, st
  radicalHero: "text-5xl sm:text-6xl",
 };
 
-const hanziFontFamilies: Record<HanziReaderFont, string> = {
- system:
-  'system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", var(--font-reading-noto-sans), sans-serif',
- songti: 'var(--font-reading-noto-serif), "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif',
- "noto-sans":
-  'var(--font-reading-noto-sans), "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif',
- pinyin: '"FZKTPY01", "Kaiti SC", "KaiTi", var(--font-reading-noto-serif), "Noto Serif SC", serif',
- kaiti:
-  '"HanziHome Kaiti", "Kaiti SC", "KaiTi", "STKaiti", "DFKai-SB", var(--font-reading-noto-serif), "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif',
- fangsong:
-  '"FangSong", "STFangsong", "FangSong_GB2312", var(--font-reading-noto-serif), "Noto Serif SC", serif',
- "ma-shan": 'var(--font-reading-ma-shan), "Ma Shan Zheng", "Kaiti SC", "KaiTi", serif',
- xiaowei: 'var(--font-reading-xiaowei), "ZCOOL XiaoWei", "Kaiti SC", "KaiTi", serif',
-};
-
-const hanziFontSizes: Record<HanziReaderSize, string> = {
- md: "1.125rem",
- lg: "clamp(1.25rem, 3.5vw, 1.375rem)",
- xl: "clamp(1.375rem, 4vw, 1.75rem)",
- "2xl": "clamp(1.5rem, 4.5vw, 2.125rem)",
- "3xl": "clamp(1.75rem, 5vw, 2.625rem)",
-};
-
-const hanziFontWeights: Record<HanziReaderFont, CSSProperties["fontWeight"]> = {
- system: 400,
- songti: 400,
- "noto-sans": 400,
- pinyin: 500,
- kaiti: 400,
- fangsong: 400,
- "ma-shan": 400,
- xiaowei: 400,
-};
-
 const HAN_SCRIPT_PATTERN = /\p{Script=Han}/u;
 const HANZI_SEGMENT_PATTERN = /(\p{Script=Han}+)/gu;
 
@@ -119,21 +89,14 @@ export function containsHanziText(value: string): boolean {
 }
 
 export function getHanziFontFamily(font: HanziReaderFont): string {
- return hanziFontFamilies[font];
+ return getReaderFontFamily(font);
 }
 
 export function getHanziTypographyStyle(
  displayMode: LessonDisplayMode,
  options: { size?: z.infer<typeof HanziTypographySizeSchema> } = {},
 ): CSSProperties {
- return {
-  fontFamily: getHanziFontFamily(displayMode.hanziFont),
-  fontSize:
-   options.size === HanziTypographySizeSchema.options[1].value
-    ? undefined
-    : hanziFontSizes[options.size ?? displayMode.hanziSize],
-  fontWeight: hanziFontWeights[displayMode.hanziFont],
- };
+ return getReaderTypographyStyle(displayMode, options);
 }
 
 export function HanziText({

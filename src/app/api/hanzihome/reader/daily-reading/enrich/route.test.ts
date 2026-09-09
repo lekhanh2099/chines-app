@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { DailyReading } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
+import type { DailyReading } from "@/features/daily-reading/daily-reading.schemas";
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),
@@ -19,7 +19,7 @@ vi.mock("@/services/ai-runtime.service", () => ({
  recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment.server", () => ({
+vi.mock("@/features/daily-reading/daily-reading-enrichment.server", () => ({
  generateDailyReadingEnrichment: mocks.generateDailyReadingEnrichment,
 }));
 

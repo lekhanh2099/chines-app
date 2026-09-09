@@ -5,14 +5,30 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { HanziHomeFeatureProvider } from "@/features/hanzihome/context/HanziHomeFeatureProvider";
 import type { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import type { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
-import type { ReaderSurface } from "@/features/hanzihome/reader/components/ReaderSurface";
+import type { Reader } from "@/features/reader/components/Reader";
+import { cookReaderData } from "@/features/reader/model/cook-reader-data";
+import { EditableNodeWrapper } from "@/features/hanzihome/editing/components/EditableNodeWrapper";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "../lesson-overview/types";
 import type { TextbookSectionCard } from "./TextbookSectionCard";
 import { HanyuLessonSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
+vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
+ useLearningState: () => ({
+  state: { settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE } },
+  updateSettings: vi.fn(),
+ }),
+}));
+vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
+ useVocabInspector: () => ({ openInspector: vi.fn() }),
+}));
+vi.mock("@/features/speech/MandarinTtsProvider", () => ({
+ useMandarinReaderSpeechService: () => ({ speak: vi.fn(), stop: vi.fn() }),
+}));
+
 const { frameMock, readerMock, sectionCardMock } = vi.hoisted(() => ({
  frameMock: vi.fn<(props: ComponentProps<typeof LessonModuleFrame>) => void>(),
- readerMock: vi.fn<(props: ComponentProps<typeof ReaderSurface>) => void>(),
+ readerMock: vi.fn<(props: ComponentProps<typeof Reader>) => void>(),
  sectionCardMock: vi.fn<(props: ComponentProps<typeof TextbookSectionCard>) => void>(),
 }));
 
@@ -42,10 +58,10 @@ vi.mock("@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem
   </button>
  ),
 }));
-vi.mock("@/features/hanzihome/reader/components/ReaderSurface", () => ({
- ReaderSurface: (props: ComponentProps<typeof ReaderSurface>) => {
+vi.mock("@/features/reader/components/Reader", () => ({
+ Reader: (props: ComponentProps<typeof Reader>) => {
   readerMock(props);
-  return props.document.segments.map((segment) => <p key={segment.id}>{segment.zh}</p>);
+  return cookReaderData(props.data).segmentIds.map((id) => <p key={id}>{id}</p>);
  },
 }));
 vi.mock("./TextbookSectionCard", () => ({
@@ -55,6 +71,7 @@ vi.mock("./TextbookSectionCard", () => ({
  },
 }));
 vi.mock("@/features/hanzihome/annotations/LessonAnnotationProvider", () => ({
+ useLessonAnnotationContext: () => null,
  LessonAnnotationProvider: ({ children }: { children: ReactNode }) => children,
 }));
 vi.mock("@/features/hanzihome/components/LessonOverview", () => ({
@@ -204,6 +221,39 @@ function renderWorkspace(element: ReactNode) {
 beforeEach(() => vi.clearAllMocks());
 
 describe("LessonTextInlineEditor module filtering", () => {
+ it("binds facade callbacks to the original source paths despite display sorting", () => {
+  renderWorkspace(
+   <LessonTextInlineEditor selectedSectionId="__all_lesson_sections__" onSelectSection={vi.fn()} />,
+  );
+  const props = readerMock.mock.calls[0]?.[0];
+  if (!props) throw new Error("Missing Reader facade");
+  const data = cookReaderData(props.data);
+  const segment = data.segmentsById["paragraph-first"];
+  const section = data.sectionsById["narrative-first"];
+  if (!segment || !section) throw new Error("Missing source binding");
+  const content = <span>Source content</span>;
+  expect(props.services?.renderSegment?.({ segment, content })).toMatchObject({
+   type: EditableNodeWrapper,
+   props: {
+    lessonId: lesson.id,
+    entityType: "text_paragraph",
+    entityId: "paragraph-first",
+    parentEntityId: "narrative-first",
+    path: ["lesson", "sections", 10, "blocks", 0, "paragraphs", 0],
+    children: content,
+   },
+  });
+  expect(props.services?.renderSection?.({ section, content })).toMatchObject({
+   type: EditableNodeWrapper,
+   props: {
+    lessonId: lesson.id,
+    entityType: "text_block",
+    entityId: "narrative-first",
+    path: ["lesson", "sections", 10, "blocks", 0],
+    children: content,
+   },
+  });
+ });
  const supplementCases = [
   { module: "vocab", sectionId: "proper-nouns", owner: "Vocabulary workspace", sourceIndex: 2 },
   { module: "notes", sectionId: "notes", owner: "Personal notes", sourceIndex: 3 },
@@ -250,10 +300,9 @@ describe("LessonTextInlineEditor module filtering", () => {
    expect(markup).not.toContain(title);
   }
   expect(readerMock).toHaveBeenCalledOnce();
-  expect(readerMock.mock.calls[0]?.[0].document.segments.map((segment) => segment.id)).toEqual([
-   "paragraph-first",
-   "paragraph-second",
-  ]);
+  expect(
+   readerMock.mock.calls.map(([props]) => cookReaderData(props.data).segmentIds).flat(),
+  ).toEqual(["paragraph-first", "paragraph-second"]);
   expect(sectionCardMock).not.toHaveBeenCalled();
  });
 
@@ -291,10 +340,9 @@ describe("LessonTextInlineEditor module filtering", () => {
 
    expect(frameMock.mock.calls[0]?.[0].mobileNavigation).toBeUndefined();
    expect(readerMock).toHaveBeenCalledOnce();
-   expect(readerMock.mock.calls[0]?.[0].document.segments.map((segment) => segment.id)).toEqual([
-    "paragraph-first",
-    "paragraph-second",
-   ]);
+   expect(
+    readerMock.mock.calls.map(([props]) => cookReaderData(props.data).segmentIds).flat(),
+   ).toEqual(["paragraph-first", "paragraph-second"]);
    expect(sectionCardMock).not.toHaveBeenCalled();
   },
  );

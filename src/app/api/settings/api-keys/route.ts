@@ -33,7 +33,7 @@ import {
 import {
  DailyReadingEnrichmentJobStorageError,
  listActiveDailyReadingJobsForKey,
-} from "@/features/hanzihome/reader/daily-reading/daily-reading-enrichment-jobs.server";
+} from "@/features/daily-reading/daily-reading-enrichment-jobs.server";
 
 async function assignedKeyConflict(userId: string, keyId: string) {
  try {

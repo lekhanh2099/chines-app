@@ -21,7 +21,7 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 
 import { ListeningExerciseItems } from "./ListeningExerciseItems";
 import { MandarinTtsControls } from "./MandarinTtsControls";
-import { useSharedMandarinTts } from "./MandarinTtsProvider";
+import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
 import { itemsForListeningSection } from "./listening.view-model";
 import { listeningCategoryLabels } from "./listening.labels";

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import type { PracticeAttemptRow } from "@/features/hanzihome/reader/reader-state.schemas";
+import type { PracticeAttemptRow } from "@/features/hanzihome/practice/practice-attempt.schemas";
 import { buildHomeRecentActivity, projectHomeReviewEvidence } from "./home-dashboard.utils";
 
 const labels = {

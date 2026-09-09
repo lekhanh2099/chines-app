@@ -9,7 +9,7 @@ const { getReaderDataQualityReport, hasHanziHomeContentCapability, requireAuthen
  }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/reader-data-quality-repository", () => ({
+vi.mock("@/features/reading/repositories/reading-data-quality.repository", () => ({
  getReaderDataQualityReport,
 }));
 vi.mock("@/features/hanzihome/server/content-capability", () => ({

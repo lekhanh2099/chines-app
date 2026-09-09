@@ -14,7 +14,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { useLessonAnnotationContext } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
 import type { ResolvedLessonTextAnnotation } from "@/features/hanzihome/annotations/types";
-import type { ReaderAnnotationRow } from "@/features/hanzihome/reader/reader.schemas";
+import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
 import {
  analyzeContextualPronunciation,
  formatContextualSpokenPinyin,

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { cn } from "@/lib/utils";
 
-import { useSharedMandarinTts } from "./MandarinTtsProvider";
+import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 
 export function MandarinSpeakButton({
  text,

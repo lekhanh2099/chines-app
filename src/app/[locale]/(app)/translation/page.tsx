@@ -1,8 +1,8 @@
-import { HumanitiesPracticeWorkspace } from "@/features/hanzihome/humanities/HumanitiesPracticeWorkspace";
+import { TranslationWorkspace } from "@/features/translation/TranslationWorkspace";
 import {
  getReaderDocument,
  listReaderDocuments,
-} from "@/features/hanzihome/reader/reader-content-repository";
+} from "@/features/reading/repositories/reading-content.repository";
 
 export default async function TranslationPage({
  searchParams,
@@ -16,10 +16,7 @@ export default async function TranslationPage({
 
  return (
   <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
-   <HumanitiesPracticeWorkspace
-    initialDocuments={initialDocuments}
-    initialResource={initialResource}
-   />
+   <TranslationWorkspace initialDocuments={initialDocuments} initialResource={initialResource} />
   </div>
  );
 }

@@ -37,7 +37,27 @@ export const aiRuntimeDailyReadingApiInventory = [
    "Daily Reading source capture belongs to the authenticated local-first learner workflow.",
  }),
  inventoryEntry({
+  currentPath: "/api/daily-reading/capture",
+  methods: ["POST"],
+  source: "route",
+  group: "HanziHome Daily Reading",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "Daily Reading source capture belongs to the authenticated local-first learner workflow.",
+ }),
+ inventoryEntry({
   currentPath: "/api/hanzihome/reader/daily-reading/enrich",
+  methods: ["POST"],
+  source: "route",
+  group: "HanziHome Daily Reading",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "Daily Reading enrichment uses authenticated personal BYOK and local article persistence.",
+ }),
+ inventoryEntry({
+  currentPath: "/api/daily-reading/enrich",
   methods: ["POST"],
   source: "route",
   group: "HanziHome Daily Reading",

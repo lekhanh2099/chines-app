@@ -18,6 +18,7 @@ export function Sheet({
  side = SheetSideSchema.enum.right,
  height = SheetHeightSchema.enum.default,
  className,
+ onCloseAutoFocus,
 }: {
  open: boolean;
  onOpenChange: (open: boolean) => void;
@@ -25,12 +26,14 @@ export function Sheet({
  side?: z.infer<typeof SheetSideSchema>;
  height?: z.infer<typeof SheetHeightSchema>;
  className?: string;
+ onCloseAutoFocus?: React.ComponentProps<typeof DialogPrimitive.Content>["onCloseAutoFocus"];
 }) {
  return (
   <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
    <DialogPrimitive.Portal>
     <DialogPrimitive.Overlay className="fixed inset-0 z-100 bg-overlay" />
     <DialogPrimitive.Content
+     onCloseAutoFocus={onCloseAutoFocus}
      aria-describedby={undefined}
      data-height={height}
      className={cn(

@@ -8,7 +8,7 @@ const { getReaderStateBootstrap, requireAuthenticatedRoute, verifyOwner } = vi.h
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/reader-state-bootstrap-repository.server", () => ({
+vi.mock("@/features/reading/repositories/reading-state-bootstrap.repository", () => ({
  getReaderStateBootstrap,
 }));
 vi.mock("@/lib/api/authenticated-route", () => ({
@@ -21,9 +21,14 @@ vi.mock("@/lib/api/authenticated-route", () => ({
 }));
 
 import { GET } from "./route";
+import { GET as canonicalGET } from "@/app/api/reading/state/route";
 
 describe("/api/hanzihome/reader/state", () => {
  const context = { user: { id: "user-1" } };
+
+ it("delegates to the exact canonical handler without redirecting", () => {
+  expect(GET).toBe(canonicalGET);
+ });
 
  beforeEach(() => {
   getReaderStateBootstrap.mockReset();

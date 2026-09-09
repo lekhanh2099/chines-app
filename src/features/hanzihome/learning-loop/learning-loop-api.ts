@@ -1,7 +1,7 @@
 import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
-import { learningLoopItemRowSchema } from "@/features/hanzihome/reader/reader-state.schemas";
+import { learningLoopItemRowSchema } from "@/features/hanzihome/learning-loop/learning-loop-state.schemas";
 
 const itemsResponseSchema = z.strictObject({
  items: z.array(learningLoopItemRowSchema),

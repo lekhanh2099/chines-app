@@ -1,6 +1,6 @@
 import "server-only";
 
-import { listReaderDocuments } from "@/features/hanzihome/reader/reader-content-repository";
+import { listReaderDocuments } from "@/features/reading/repositories/reading-content.repository";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role.server";
 
 export type HomeLearningOverview = {

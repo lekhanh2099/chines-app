@@ -8,7 +8,7 @@ import businessChineseMessages from "../../../../../messages/vi/business-chinese
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
-import type { ReaderDocumentModel } from "@/features/hanzihome/reader/model/reader-document.types";
+import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import {
  getBusinessChineseCatalog,
  getBusinessChineseLesson,
@@ -23,14 +23,18 @@ vi.mock("@/components/providers/QueryProvider", () => ({
  useClientSession: () => ({ userId: null, isResolved: true }),
 }));
 
-vi.mock("@/features/hanzihome/reader/components/ReaderSurface", async (importOriginal) => {
- const actual =
-  await importOriginal<typeof import("@/features/hanzihome/reader/components/ReaderSurface")>();
+vi.mock("@/features/reader/components/Reader", async (importOriginal) => {
+ const actual = await importOriginal<typeof import("@/features/reader/components/Reader")>();
  return {
   ...actual,
-  ReaderSurface: (props: ComponentProps<typeof actual.ReaderSurface>) => {
-   readerDocumentMock(props.document);
-   return <actual.ReaderSurface {...props} />;
+  Reader: (props: ComponentProps<typeof actual.Reader>) => {
+   if (
+    typeof props.data === "object" &&
+    "segments" in props.data &&
+    !props.data.id.endsWith(":all")
+   )
+    readerDocumentMock(props.data);
+   return <actual.Reader {...props} />;
   },
  };
 });
@@ -54,11 +58,6 @@ vi.mock("@/i18n/navigation", () => ({
 
 vi.mock("@/features/hanzihome/annotations/LessonAnnotationProvider", () => ({
  useLessonAnnotationContext: () => null,
-}));
-
-vi.mock("@/features/hanzihome/reader/components/ReaderTools", async (importOriginal) => ({
- ...(await importOriginal<typeof import("@/features/hanzihome/reader/components/ReaderTools")>()),
- ReaderTools: () => <button type="button">Công cụ học</button>,
 }));
 
 import { BusinessChineseStudyWorkspace } from "./BusinessChineseStudyWorkspace";
@@ -92,9 +91,7 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("Trong trang");
   expect(markup).toContain("Nghe bài");
   expect(markup).toContain("2xl:grid-cols-[15rem_minmax(0,1fr)]");
-  expect(markup.indexOf("Trong trang")).toBeLessThan(
-   markup.indexOf("data-reader-command-controls"),
-  );
+  expect(markup.indexOf("Trong trang")).toBeLessThan(markup.indexOf("data-reader-toolbar"));
   expect(markup).toContain('<span class="min-w-0 truncate">');
  });
 
@@ -329,7 +326,7 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("赵经理");
   expect(markup).toContain("Xin chào! Cho tôi hỏi có phải là Giám đốc Tôn không ạ?");
   expect(markup).not.toContain("DỊCH BÀI KHÓA");
-  expect(markup).toContain("data-reader-segment-id=");
+  expect(markup).toContain("data-reader-segment=");
   expect(markup).toContain('aria-label="Đọc từ chữ 您"');
   expect(markup).not.toContain('aria-label="Đọc tiếng Trung: 赵经理： 您好！请问是孙经理吗？"');
   expect(markup).toContain("60%");

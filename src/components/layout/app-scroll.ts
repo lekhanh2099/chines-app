@@ -70,18 +70,22 @@ export function getScrollContainerForTarget(target: HTMLElement | null): HTMLEle
 
 export function scrollAppContentToElement(
  target: HTMLElement | null,
- options: { behavior?: ScrollBehavior; block?: AppScrollBlock } = {},
+ options: { behavior?: ScrollBehavior; block?: AppScrollBlock; allowViewport?: boolean } = {},
 ): void {
  if (target === null) return;
  const container = getScrollContainerForTarget(target);
- if (container === null) return;
+ if (container === null && (!options.allowViewport || typeof window === "undefined")) return;
 
- const containerRect = container.getBoundingClientRect();
+ const containerRect = container?.getBoundingClientRect() ?? {
+  top: 0,
+  bottom: window.innerHeight,
+  height: window.innerHeight,
+ };
  const targetRect = target.getBoundingClientRect();
  const top = resolveAppScrollTargetTop({
   block: options.block ?? "nearest",
-  containerClientHeight: container.clientHeight,
-  containerScrollTop: container.scrollTop,
+  containerClientHeight: container?.clientHeight ?? window.innerHeight,
+  containerScrollTop: container?.scrollTop ?? window.scrollY,
   containerRect: {
    top: containerRect.top,
    bottom: containerRect.bottom,
@@ -94,5 +98,6 @@ export function scrollAppContentToElement(
   },
  });
 
- container.scrollTo({ behavior: options.behavior ?? "smooth", left: 0, top });
+ if (container) container.scrollTo({ behavior: options.behavior ?? "smooth", left: 0, top });
+ else document.scrollingElement?.scrollTo({ behavior: options.behavior ?? "smooth", left: 0, top });
 }

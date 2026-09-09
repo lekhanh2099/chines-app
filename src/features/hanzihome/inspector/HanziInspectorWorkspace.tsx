@@ -13,13 +13,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { JsonValueSchema } from "@/types/json";
 import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
-import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
+import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import {
  analyzeContextualPronunciation,
  formatContextualSpokenPinyin,
  type ContextualPronunciationAnalysis,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
-import { ContextualReaderText } from "@/features/hanzihome/reader/ContextualReaderText";
+import { ContextualReaderText } from "@/features/hanzihome/components/reading/ContextualReaderText";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 
 const lookupResponseSchema = z.strictObject({

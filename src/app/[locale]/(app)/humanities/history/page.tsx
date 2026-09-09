@@ -1,8 +1,8 @@
-import { HumanitiesTrackWorkspace } from "@/features/hanzihome/humanities/HumanitiesTrackWorkspace";
+import { HumanitiesTrackWorkspace } from "@/features/humanities/HumanitiesTrackWorkspace";
 import {
  getReaderDocument,
  listReaderDocuments,
-} from "@/features/hanzihome/reader/reader-content-repository";
+} from "@/features/reading/repositories/reading-content.repository";
 
 export default async function HumanitiesHistoryPage({
  searchParams,

@@ -18,6 +18,17 @@ export type TTSVoice = z.infer<typeof TTSVoiceSchema>;
 const DEFAULT_RATE = 1;
 const MAX_TTS_TEXT_LENGTH = 10_000;
 
+const ttsPlaybackResultSchema = z.strictObject({ completed: z.boolean(), cancelled: z.boolean() });
+type TTSPlaybackOptions = {
+ onProgress?: (progress: number) => void;
+ onSettled?: () => void;
+ rate: number;
+};
+type TTSPlaybackLifecycle = TTSPlaybackOptions & {
+ resolve: (result: z.output<typeof ttsPlaybackResultSchema>) => void;
+ reject: (error: Error) => void;
+};
+
 function splitSpeechSegments(segments: readonly string[]) {
  const normalizedText = segments
   .map((segment) => segment.trim())
@@ -74,6 +85,8 @@ export function useTTS() {
  const sequenceSegmentsRef = useRef<string[]>([]);
  const sequenceIndexRef = useRef(0);
  const settledCallbackRef = useRef<() => void>(null);
+ const lifecycleRef = useRef<TTSPlaybackLifecycle>(null);
+ const synthesisRateRef = useRef(DEFAULT_RATE);
 
  const cleanupAudio = useCallback(() => {
   if (audioRef.current) {
@@ -95,11 +108,23 @@ export function useTTS() {
   }
  }, []);
 
- const settlePlayback = useCallback(() => {
-  const callback = settledCallbackRef.current;
-  settledCallbackRef.current = null;
-  callback?.();
+ const settleLifecycle = useCallback((completed: boolean, error?: Error) => {
+  const lifecycle = lifecycleRef.current;
+  lifecycleRef.current = null;
+  lifecycle?.onSettled?.();
+  if (error) lifecycle?.reject(error);
+  else lifecycle?.resolve({ completed, cancelled: !completed });
  }, []);
+
+ const settlePlayback = useCallback(
+  (completed = true, error?: Error) => {
+   const callback = settledCallbackRef.current;
+   settledCallbackRef.current = null;
+   settleLifecycle(completed, error);
+   callback?.();
+  },
+  [settleLifecycle],
+ );
 
  const stop = useCallback(() => {
   playbackRunRef.current += 1;
@@ -116,7 +141,7 @@ export function useTTS() {
   sequenceSegmentsRef.current = [];
   sequenceIndexRef.current = 0;
   setState({ isSpeaking: false, isPaused: false, isLoading: false, error: null });
-  settlePlayback();
+  settlePlayback(false);
  }, [cleanupAudio, settlePlayback]);
 
  const pause = useCallback(() => {
@@ -128,15 +153,18 @@ export function useTTS() {
  const resume = useCallback(() => {
   const audio = audioRef.current;
   if (audio === null || !audio.paused) return;
+  const runId = playbackRunRef.current;
   void audio.play().catch(() => {
+   if (playbackRunRef.current !== runId) return;
    setState((current) => ({
     ...current,
     isSpeaking: false,
     isPaused: true,
     error: "Trình duyệt đã chặn tiếp tục phát audio.",
    }));
+   settleLifecycle(false, new Error("Trình duyệt đã chặn tiếp tục phát audio."));
   });
- }, []);
+ }, [settleLifecycle]);
 
  const loadVoices = useCallback((): Promise<TTSVoice[]> => {
   if (voices.length > 0) return Promise.resolve(voices);
@@ -188,17 +216,20 @@ export function useTTS() {
    abortControllerRef.current?.abort();
    generationAbortControllerRef.current?.abort();
    cleanupAudio();
+   settleLifecycle(false);
   };
- }, [cleanupAudio]);
+ }, [cleanupAudio, settleLifecycle]);
 
  const playBlob = useCallback(
-  (blob: Blob, runId: number, text: string, onComplete?: () => void) => {
+  (blob: Blob, runId: number, text: string, onComplete?: () => void, synthesisRate = rate) => {
    if (playbackRunRef.current !== runId) return;
 
    const url = URL.createObjectURL(blob);
    objectUrlRef.current = url;
    const audio = new Audio(url);
    audioRef.current = audio;
+   synthesisRateRef.current = synthesisRate;
+   audio.playbackRate = (lifecycleRef.current?.rate ?? synthesisRate) / synthesisRate;
    const finish = () => {
     if (playbackRunRef.current !== runId) return;
     cleanupAudio();
@@ -230,7 +261,7 @@ export function useTTS() {
      isLoading: false,
      error: "Không thể phát audio từ Microsoft Edge Read Aloud.",
     });
-    settlePlayback();
+    settlePlayback(false, new Error("Không thể phát audio từ Microsoft Edge Read Aloud."));
    };
    const syncTiming = () => {
     if (playbackRunRef.current !== runId) return;
@@ -238,7 +269,11 @@ export function useTTS() {
     const currentTime = Number.isFinite(audio.currentTime) ? Math.max(0, audio.currentTime) : 0;
     setCurrentTimeSeconds(currentTime);
     setDurationSeconds(duration);
-    if (duration > 0) setProgress(Math.min(1, Math.max(0, currentTime / duration)));
+    if (duration > 0) {
+     const nextProgress = Math.min(1, Math.max(0, currentTime / duration));
+     setProgress(nextProgress);
+     lifecycleRef.current?.onProgress?.(nextProgress);
+    }
    };
    audio.onloadedmetadata = syncTiming;
    audio.ontimeupdate = syncTiming;
@@ -247,6 +282,9 @@ export function useTTS() {
    audio.onplay = () => {
     if (playbackRunRef.current !== runId) return;
     setState((current) => ({ ...current, isSpeaking: true, isPaused: false, error: null }));
+    lifecycleRef.current?.onProgress?.(
+     audio.duration > 0 ? Math.min(1, Math.max(0, audio.currentTime / audio.duration)) : 0,
+    );
    };
    audio.onpause = () => {
     if (playbackRunRef.current !== runId || audio.ended) return;
@@ -269,19 +307,25 @@ export function useTTS() {
      isLoading: false,
      error: "Trình duyệt đã chặn phát audio. Hãy chạm lại nút đọc.",
     });
-    settlePlayback();
+    settlePlayback(false, new Error("Trình duyệt đã chặn phát audio. Hãy chạm lại nút đọc."));
    });
   },
-  [cleanupAudio, settlePlayback],
+  [cleanupAudio, rate, settlePlayback],
  );
 
  const loadAndPlay = useCallback(
-  async (text: string, runId: number, onComplete?: () => void, voiceName = selectedVoiceName) => {
-   const cacheKey = buildCacheKey(text, voiceName, rate);
+  async (
+   text: string,
+   runId: number,
+   onComplete?: () => void,
+   voiceName = selectedVoiceName,
+   synthesisRate = rate,
+  ) => {
+   const cacheKey = buildCacheKey(text, voiceName, synthesisRate);
    const cached = await getCachedAudio(cacheKey);
    if (playbackRunRef.current !== runId) return;
    if (cached) {
-    playBlob(cached, runId, text, onComplete);
+    playBlob(cached, runId, text, onComplete, synthesisRate);
     return;
    }
 
@@ -295,7 +339,7 @@ export function useTTS() {
      body: JSON.stringify({
       text,
       voice: voiceName,
-      rate,
+      rate: synthesisRate,
      }),
      signal: controller.signal,
     });
@@ -304,7 +348,7 @@ export function useTTS() {
     const blob = await response.blob();
     if (playbackRunRef.current !== runId) return;
     void setCachedAudio(cacheKey, blob);
-    playBlob(blob, runId, text, onComplete);
+    playBlob(blob, runId, text, onComplete, synthesisRate);
    } catch (error) {
     if (controller.signal.aborted || playbackRunRef.current !== runId) return;
     setSpeakingText(null);
@@ -320,7 +364,10 @@ export function useTTS() {
      isLoading: false,
      error: error instanceof Error ? error.message : "Microsoft Edge Read Aloud không khả dụng.",
     });
-    settlePlayback();
+    settlePlayback(
+     false,
+     error instanceof Error ? error : new Error("Microsoft Edge Read Aloud không khả dụng."),
+    );
    } finally {
     if (abortControllerRef.current === controller) abortControllerRef.current = null;
    }
@@ -341,6 +388,7 @@ export function useTTS() {
 
    playbackRunRef.current += 1;
    const runId = playbackRunRef.current;
+   settleLifecycle(false);
    abortControllerRef.current?.abort();
    cleanupAudio();
 
@@ -371,8 +419,15 @@ export function useTTS() {
     voiceName,
    );
   },
-  [cleanupAudio, loadAndPlay, loadVoices, selectedVoiceName, settlePlayback],
+  [cleanupAudio, loadAndPlay, loadVoices, selectedVoiceName, settleLifecycle, settlePlayback],
  );
+
+ const setPlaybackRate = useCallback((nextRate: number) => {
+  if (!Number.isFinite(nextRate) || nextRate <= 0) return;
+  setRate(nextRate);
+  if (lifecycleRef.current) lifecycleRef.current.rate = nextRate;
+  if (audioRef.current) audioRef.current.playbackRate = nextRate / synthesisRateRef.current;
+ }, []);
 
  const generateAudio = useCallback(
   async (text: string): Promise<Blob | null> => {
@@ -464,9 +519,61 @@ export function useTTS() {
      void playNextSequenceSegment(runId, voiceName);
     },
     voiceName,
+    lifecycleRef.current?.rate ?? rate,
    );
   },
-  [finishSequence, loadAndPlay],
+  [finishSequence, loadAndPlay, rate],
+ );
+
+ const speakWithLifecycle = useCallback(
+  (
+   text: string,
+   options: TTSPlaybackOptions,
+  ): Promise<z.output<typeof ttsPlaybackResultSchema>> => {
+   stop();
+   const runId = playbackRunRef.current;
+   const normalizedText = text.trim();
+   if (!normalizedText) return Promise.resolve({ completed: true, cancelled: false });
+   if (!Number.isFinite(options.rate) || options.rate <= 0)
+    return Promise.reject(new Error("Invalid speech rate"));
+   return new Promise((resolve, reject) => {
+    sequenceSegmentsRef.current = splitSpeechSegments([normalizedText]);
+    sequenceIndexRef.current = 0;
+    lifecycleRef.current = {
+     ...options,
+     resolve,
+     reject,
+     onProgress: (progress) => {
+      const index = sequenceIndexRef.current;
+      const preceding = sequenceSegmentsRef.current
+       .slice(0, index)
+       .reduce((sum, part) => sum + part.length, 0);
+      const length = sequenceSegmentsRef.current[index]?.length ?? 0;
+      options.onProgress?.(
+       preceding / normalizedText.length + (length / normalizedText.length) * progress,
+      );
+     },
+    };
+    setSpeakingRequestText(normalizedText);
+    setState({ isSpeaking: false, isPaused: false, isLoading: true, error: null });
+    void loadVoices()
+     .then(async (availableVoices) => {
+      if (playbackRunRef.current !== runId) return;
+      const voiceName = selectedVoiceName || availableVoices[0]?.shortName;
+      if (!voiceName) throw new Error("Không tải được giọng Mandarin zh-CN");
+      await playNextSequenceSegment(runId, voiceName);
+     })
+     .catch((error) => {
+      if (playbackRunRef.current !== runId) return;
+      const failure =
+       error instanceof Error ? error : new Error("Microsoft Edge Read Aloud không khả dụng.");
+      settlePlayback(false, failure);
+      setSpeakingRequestText(null);
+      setState({ isSpeaking: false, isPaused: false, isLoading: false, error: failure.message });
+     });
+   });
+  },
+  [loadVoices, playNextSequenceSegment, selectedVoiceName, settlePlayback, stop],
  );
 
  const speakSequence = useCallback(
@@ -483,6 +590,7 @@ export function useTTS() {
 
    playbackRunRef.current += 1;
    const runId = playbackRunRef.current;
+   settleLifecycle(false);
    abortControllerRef.current?.abort();
    cleanupAudio();
 
@@ -503,7 +611,7 @@ export function useTTS() {
     void playNextSequenceSegment(runId, voiceName);
    });
   },
-  [cleanupAudio, loadVoices, playNextSequenceSegment, selectedVoiceName, stop],
+  [cleanupAudio, loadVoices, playNextSequenceSegment, selectedVoiceName, settleLifecycle, stop],
  );
 
  const selectedVoice =
@@ -518,6 +626,8 @@ export function useTTS() {
   rate,
   setRate,
   speak,
+  speakWithLifecycle,
+  setPlaybackRate,
   speakSequence,
   pause,
   resume,

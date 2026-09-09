@@ -1,27 +1,5 @@
-import { ReaderCollectionWorkspace } from "@/features/hanzihome/reader/ReaderCollectionWorkspace";
-import {
- getReaderDocument,
- listReaderDocuments,
-} from "@/features/hanzihome/reader/reader-content-repository";
-
-export default async function ReaderCourseDocumentPage({
- params,
-}: {
- params: Promise<{ slug: string }>;
-}) {
- const { slug } = await params;
- const initialDocuments = await listReaderDocuments("core");
- const selected = initialDocuments.find((document) => document.slug === slug);
- const initialResource = selected === undefined ? null : await getReaderDocument(selected.id);
-
- return (
-  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
-   <ReaderCollectionWorkspace
-    kind="core"
-    initialDocuments={initialDocuments}
-    initialResource={initialResource}
-    initialDocumentSlug={slug}
-   />
-  </div>
- );
+import { ReadingCollectionPage } from "@/features/reading/workspaces/ReadingCollectionPage";
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+ const paramsValue = await params;
+ return <ReadingCollectionPage kind="core" slug={paramsValue.slug} />;
 }

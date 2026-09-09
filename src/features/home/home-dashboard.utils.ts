@@ -2,7 +2,7 @@ import {
  reviewAttemptAnswerSchema,
  type ReviewAttemptAnswer,
 } from "@/features/hanzihome/practice/review-attempt";
-import type { PracticeAttemptRow } from "@/features/hanzihome/reader/reader-state.schemas";
+import type { PracticeAttemptRow } from "@/features/hanzihome/practice/practice-attempt.schemas";
 import type { HomeRecentActivityItem } from "@/features/home/types";
 
 export type HomeReviewEvidence = {

@@ -1,8 +1,8 @@
-import { StudioDictationWorkspace } from "@/features/hanzihome/practice/StudioDictationWorkspace";
+import { StudioDictationWorkspace } from "@/features/dictation/StudioDictationWorkspace";
 import {
  getReaderDocument,
  listReaderDocuments,
-} from "@/features/hanzihome/reader/reader-content-repository";
+} from "@/features/reading/repositories/reading-content.repository";
 import { listStaticStudioCourseLessons } from "@/features/hanzihome/static-json/studio-static-content";
 
 export default async function DictationPage({

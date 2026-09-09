@@ -14,11 +14,11 @@ vi.mock("@/lib/api/authenticated-route", () => ({
  apiError: (message: string, status: number, code?: string) =>
   Response.json({ error: message, ...(code ? { code } : {}) }, { status }),
 }));
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment-jobs.server", () => ({
+vi.mock("@/features/daily-reading/daily-reading-enrichment-jobs.server", () => ({
  DailyReadingEnrichmentJobStorageError: class DailyReadingEnrichmentJobStorageError extends Error {},
  listDailyReadingEnrichmentJobs: mocks.listDailyReadingEnrichmentJobs,
 }));
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment.workflow", () => ({
+vi.mock("@/features/daily-reading/daily-reading-enrichment.workflow", () => ({
  dailyReadingTranslationProgressStream: "translation-progress",
 }));
 

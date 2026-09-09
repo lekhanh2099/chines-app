@@ -7,7 +7,7 @@ import {
  practiceAttemptRowSchema,
  type PracticeAttemptRow,
  type PracticeAttemptSurface,
-} from "@/features/hanzihome/reader/reader-state.schemas";
+} from "@/features/hanzihome/practice/practice-attempt.schemas";
 
 export async function savePracticeAttempt(
  input: {

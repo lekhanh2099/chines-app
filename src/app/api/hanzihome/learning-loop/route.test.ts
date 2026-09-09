@@ -14,7 +14,7 @@ const {
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/learning-loop-repository", () => ({
+vi.mock("@/features/hanzihome/learning-loop/learning-loop-repository", () => ({
  listDueLearningLoopItems,
  rateLearningLoopItem,
  saveLearningLoopItem,

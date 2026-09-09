@@ -162,8 +162,8 @@ describe("BookSectionContent", () => {
    </MandarinTtsProvider>,
   );
 
-  expect(html).toContain('data-reader-segment-id="paragraph-1"');
-  expect(html).toContain('data-reader-segment-id="paragraph-2"');
+  expect(html).toContain('data-reader-segment="paragraph-1"');
+  expect(html).toContain('data-reader-segment="paragraph-2"');
   expect(html).toContain("Đoạn một.");
   expect(html).toContain("Đoạn hai.");
   expect(html).toContain("Đoạn 1 / 2");
@@ -182,7 +182,7 @@ describe("BookSectionContent", () => {
   );
 
   expect(readingHtml.match(/aria-label="Đọc từ chữ/g)).toHaveLength(6);
-  expect(readingHtml.match(/data-reader-segment-id=/g)).toHaveLength(2);
+  expect(readingHtml.match(/data-reader-segment=/g)).toHaveLength(2);
  });
 
  it("renders text blocks as one document surface when requested", () => {
@@ -209,7 +209,7 @@ describe("BookSectionContent", () => {
   );
 
   expect(html.match(/study-content-surface/g)).toBeNull();
-  expect(html).toContain('data-reader-segment-id="paragraph-1"');
+  expect(html).toContain('data-reader-segment="paragraph-1"');
   expect(html).toContain("Nghe bài");
  });
 });

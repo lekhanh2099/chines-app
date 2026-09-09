@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
  dailyReadingErrorResponseSchema,
  dailyReadingSourcePreviewResponseSchema,
-} from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
+} from "@/features/daily-reading/daily-reading.schemas";
 import type { JsonFieldValue } from "@/types/json";
 
 const { discoverDailyReadingSource, requireAuthenticatedRoute } = vi.hoisted(() => ({
@@ -20,7 +20,7 @@ vi.mock("@/lib/api/authenticated-route", () => ({
    headers: { "Cache-Control": "private, no-store" },
   }),
 }));
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-source.server", () => ({
+vi.mock("@/features/daily-reading/daily-reading-source.server", () => ({
  discoverDailyReadingSource,
  formatDailyReadingSourceReport: () => "discovery 0/2; candidates 0; extracted 0",
 }));

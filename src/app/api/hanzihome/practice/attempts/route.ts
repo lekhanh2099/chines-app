@@ -8,7 +8,7 @@ import {
  savePracticeAttempt,
 } from "@/features/hanzihome/practice/practice-attempt-repository.server";
 import { JsonObjectSchema } from "@/types/json";
-import { practiceAttemptSurfaceSchema } from "@/features/hanzihome/reader/reader-state.schemas";
+import { practiceAttemptSurfaceSchema } from "@/features/hanzihome/practice/practice-attempt.schemas";
 import {
  apiError,
  privateNoStoreJson,
