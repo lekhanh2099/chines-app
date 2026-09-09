@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, List, Pause, Play, RotateCcw, Square } from "lucide-react";
+import { ChevronLeft, ChevronRight, Pause, Play, RotateCcw, Square } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
@@ -13,27 +13,32 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import {
- useReaderCommands,
- useReaderRegistry,
- useReaderSelector,
- useReaderServices,
- useReaderStore,
-} from "../runtime/reader-context";
+import { useReaderCommands, useReaderSelector, useReaderServices } from "../runtime/reader-context";
 import { ReaderTools } from "./ReaderTools";
+import { ReaderOutline } from "./ReaderOutline";
 
 export function ReaderToolbar() {
  const t = useTranslations("Reader.study.chrome.commands");
  const commands = useReaderCommands();
- const registry = useReaderRegistry();
  const { speech, toolbar, renderTools } = useReaderServices();
- const { actions } = useReaderStore();
  const index = useReaderSelector((state) => state.navigation.activeIndex);
- const count = useReaderSelector((state) => state.content.segmentIds.length);
+ const content = useReaderSelector((state) => state.content);
+ const sections = content.sectionIds
+  .map((id) => content.sectionsById[id])
+  .filter((section) => section !== undefined);
+ const segmentCount = useReaderSelector((state) => state.content.segmentIds.length);
+ const count = sections.length > 0 ? sections.length : segmentCount;
+ const activeSegmentId = useReaderSelector((state) => state.navigation.activeSegmentId);
+ const activeSectionIndex =
+  sections.length > 0
+   ? Math.max(
+      0,
+      sections.findIndex((section) => section.segmentIds.includes(activeSegmentId ?? "")),
+     )
+   : index;
  const status = useReaderSelector((state) => state.playback.status);
  const rate = useReaderSelector((state) => state.playback.rate);
  const error = useReaderSelector((state) => state.playback.error);
- const outlineOpen = useReaderSelector((state) => state.ui.outlineOpen);
  const label =
   status === "playing"
    ? t("pause")
@@ -62,7 +67,7 @@ export function ReaderToolbar() {
   >
    <div className="flex min-w-0 flex-wrap items-center gap-2" data-reader-toolbar>
     <Typography variant="caption" className="mr-auto">
-     {t("segment", { current: count === 0 ? 0 : index + 1, total: count })}
+     {t("lesson", { current: count === 0 ? 0 : activeSectionIndex + 1, total: count })}
     </Typography>
     <Button
      variant="ghost"
@@ -133,19 +138,7 @@ export function ReaderToolbar() {
       </Select>
      </>
     ) : null}
-    <Button
-     variant="outline"
-     size="icon"
-     aria-label={t("openOutline")}
-     aria-expanded={outlineOpen}
-     disabled={count === 0}
-     onClick={(event) => {
-      registry.setOutlineTrigger(event.currentTarget);
-      actions.openOutline();
-     }}
-    >
-     <List />
-    </Button>
+    <ReaderOutline />
     {renderTools ? renderTools({ content: <ReaderTools /> }) : <ReaderTools />}
     {toolbar?.actions}
    </div>

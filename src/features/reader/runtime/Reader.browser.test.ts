@@ -140,13 +140,8 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
       "data-workspace-active",
       "segment-1",
      );
-     const outline = page.getByRole("button", { name: "Mở mục lục đoạn", exact: true });
-     await outline.focus();
-     await page.keyboard.press("Enter");
-     await browserExpect(page.getByRole("dialog")).toBeVisible();
-     await page.keyboard.press("Escape");
-     await browserExpect(page.getByRole("dialog")).toHaveCount(0);
-     await browserExpect(outline).toBeFocused();
+     const outline = page.getByRole("combobox", { name: "Mục lục bài đọc", exact: true });
+     await browserExpect(outline).toHaveAttribute("aria-expanded", "false");
      expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
      ).toBe(true);
@@ -236,8 +231,8 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(30);
     await page.evaluate(() => window.readerHarness.scrollWithDefaultOptions("viewport-20"));
     expect(await page.evaluate(() => window.scrollY)).toBe(0);
-    await page.getByRole("button", { name: "Mở mục lục đoạn", exact: true }).click();
-    await page.getByRole("dialog").getByRole("button", { name: "Đoạn 21", exact: true }).click();
+    await page.getByRole("button", { name: "Mục lục bài đọc", exact: true }).click();
+    await page.getByRole("option").nth(20).click();
     await browserExpect(page.locator('[data-reader-segment="viewport-20"]')).toHaveAttribute(
      "data-active",
      "true",

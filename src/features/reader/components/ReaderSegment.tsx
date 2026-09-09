@@ -1,6 +1,7 @@
 "use client";
 
 import { memo, useCallback, useMemo, useState } from "react";
+import { Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { LearnerHanziText } from "@/components/patterns/learner-text";
@@ -41,6 +42,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   [segment?.zh],
  );
  const textLabels = useTranslations("Reader.document.text");
+ const commandLabels = useTranslations("Reader.study.chrome.commands");
  const toolsLabels = useTranslations("Reader.study.chrome.tools");
  const [stage, setStage] = useState<RevealStage>(0);
  const providedAnalysis = services.pronunciationReview?.analyses.get(segmentId);
@@ -219,31 +221,47 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
       </Typography>
      ) : null}
     </div>
-    {services.renderHanzi ? (
-     <div hidden={tapMode && stage !== 0} aria-hidden={tapMode && stage !== 0}>
-      {services.renderHanzi({ segment, content: hanziContent })}
+    <div className="flex min-w-0 items-end gap-2">
+     <div className="min-w-0 flex-1">
+      {services.renderHanzi ? (
+       <div hidden={tapMode && stage !== 0} aria-hidden={tapMode && stage !== 0}>
+        {services.renderHanzi({ segment, content: hanziContent })}
+       </div>
+      ) : (
+       hanziContent
+      )}
+      {(tapMode ? stage === 1 : display.showPinyin && !inlinePinyin) && segment.pinyin ? (
+       <Typography lang="zh-Latn-pinyin" tone="muted" wrapping="preWrap">
+        {segment.pinyin}
+       </Typography>
+      ) : null}
+      {(tapMode ? stage === 2 : display.showMeaning) && segment.vi ? (
+       <Typography wrapping="preWrap">{segment.vi}</Typography>
+      ) : null}
+      {tapMode ? (
+       <Button
+        variant="ghost"
+        size="touch"
+        disabled={nextStage === stage}
+        onClick={() => setStage(nextStage)}
+       >
+        {toolsLabels("revealNext")}
+       </Button>
+      ) : null}
      </div>
-    ) : (
-     hanziContent
-    )}
-    {(tapMode ? stage === 1 : display.showPinyin && !inlinePinyin) && segment.pinyin ? (
-     <Typography lang="zh-Latn-pinyin" tone="muted" wrapping="preWrap">
-      {segment.pinyin}
-     </Typography>
-    ) : null}
-    {(tapMode ? stage === 2 : display.showMeaning) && segment.vi ? (
-     <Typography wrapping="preWrap">{segment.vi}</Typography>
-    ) : null}
-    {tapMode ? (
-     <Button
-      variant="ghost"
-      size="touch"
-      disabled={nextStage === stage}
-      onClick={() => setStage(nextStage)}
-     >
-      {toolsLabels("revealNext")}
-     </Button>
-    ) : null}
+     {services.speech ? (
+      <Button
+       type="button"
+       variant="ghost"
+       size="icon"
+       className="shrink-0 self-end"
+       aria-label={commandLabels("listen")}
+       onClick={() => commands.playFromCharacter(segmentId, 0)}
+      >
+       <Volume2 />
+      </Button>
+     ) : null}
+    </div>
     {status !== "idle" ? (
      <Typography variant="caption" tone="muted" aria-live="off">
       {Math.round(progress * 100)}%

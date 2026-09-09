@@ -183,7 +183,11 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      page.getByText("Không lưu được pinyin override của Reader.", { exact: true }),
     ).toBeVisible();
     await page.getByRole("button", { name: chrome.pronunciation.close, exact: true }).click();
-    await page.getByRole("button", { name: chrome.commands.listen, exact: true }).click();
+    await page
+     .locator("[data-reader-segment]")
+     .first()
+     .getByRole("button", { name: chrome.commands.listen, exact: true })
+     .click();
     await browserExpect
      .poll(
       async () => (await page.evaluate(() => window.readingHarness.snapshot())).requests.length,
@@ -218,12 +222,8 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
      ).toBe(true);
-     const outline = page.getByRole("button", { name: chrome.commands.openOutline, exact: true });
-     await outline.focus();
-     await page.keyboard.press("Enter");
-     await browserExpect(page.getByRole("dialog")).toBeVisible();
-     await page.keyboard.press("Escape");
-     await browserExpect(outline).toBeFocused();
+     const outline = page.getByRole("combobox", { name: chrome.outline.aria, exact: true });
+     await browserExpect(outline).toHaveAttribute("aria-expanded", "false");
     }
     await page.evaluate(() => window.readingHarness.mountHsk());
     await browserExpect(page.locator('a[href^="/hsk/"]')).toHaveCount(50);
@@ -249,7 +249,11 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     ).toBeDisabled();
     const beforeHskSpeech = (await page.evaluate(() => window.readingHarness.snapshot())).requests
      .length;
-    await page.getByRole("button", { name: chrome.commands.listen, exact: true }).click();
+    await page
+     .locator("[data-reader-segment]")
+     .first()
+     .getByRole("button", { name: chrome.commands.listen, exact: true })
+     .click();
     await browserExpect
      .poll(
       async () => (await page.evaluate(() => window.readingHarness.snapshot())).requests.length,
@@ -320,8 +324,7 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     }
     await page.evaluate(() => window.readingHarness.mountTextbook());
     await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(2);
-    await page.getByRole("button", { name: chrome.commands.next, exact: true }).click();
-    await browserExpect(page.locator('[data-reader-segment="textbook-p2"]')).toHaveAttribute(
+    await browserExpect(page.locator('[data-reader-segment="textbook-p1"]')).toHaveAttribute(
      "data-active",
      "true",
     );

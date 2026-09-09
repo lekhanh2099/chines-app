@@ -19,6 +19,7 @@
   "tabsAria": "Các phần của bài Reader",
   "commands": {
    "segment": "Đoạn {current} / {total}",
+   "lesson": "Bài {current} / {total}",
    "pause": "Tạm dừng",
    "resume": "Tiếp tục",
    "stop": "Dừng",
@@ -70,6 +71,7 @@
   "outline": {
    "segments": "Mục lục đoạn",
    "aria": "Mục lục bài đọc",
+   "lesson": "Bài {number}",
    "segment": "Đoạn {number}",
    "metadata": "Thông tin bài"
   },

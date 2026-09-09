@@ -19,6 +19,7 @@
   "tabsAria": "Reader sections",
   "commands": {
    "segment": "Segment {current} / {total}",
+   "lesson": "Lesson {current} / {total}",
    "pause": "Pause",
    "resume": "Resume",
    "stop": "Stop",
@@ -76,6 +77,7 @@
   "outline": {
    "segments": "Segment outline",
    "aria": "Reading outline",
+   "lesson": "Lesson {number}",
    "segment": "Segment {number}",
    "metadata": "Reading details"
   },

@@ -1,10 +1,9 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { List } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { Typography } from "@/components/ui/typography";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
 import {
  useReaderCommands,
  useReaderRegistry,
@@ -20,53 +19,41 @@ export function ReaderOutline() {
  const open = useReaderSelector((state) => state.ui.outlineOpen);
  const content = useReaderSelector((state) => state.content);
  const active = useReaderSelector((state) => state.navigation.activeSegmentId);
+ const sections = content.sectionIds
+  .map((id) => content.sectionsById[id])
+  .filter((section) => section !== undefined);
+ const activeSection = sections.find((section) => section.segmentIds.includes(active ?? ""));
  return (
-  <Sheet
+  <Select
    open={open}
    onOpenChange={actions.setOutlineOpen}
-   side="bottom"
-   height="tall"
-   onCloseAutoFocus={(event) => {
-    event.preventDefault();
+   value={activeSection?.id ?? sections[0]?.id ?? ""}
+   onValueChange={(sectionId) => {
+    const section = sections.find((item) => item.id === sectionId);
+    const firstSegmentId = section?.segmentIds[0];
+    if (firstSegmentId) commands.selectSegment(firstSegmentId);
+    actions.closeOutline();
     registry.focusOutlineTrigger();
    }}
   >
-   <SheetHeader title={t("aria")} onClose={actions.closeOutline} />
-   <SheetBody className="grid content-start gap-4">
-    <nav aria-label={t("aria")} className="grid min-w-0 gap-2">
-     {content.segmentIds.map((id, index) => (
-      <Button
-       key={id}
-       variant={active === id ? "active" : "ghost"}
-       size="touch"
-       align="start"
-       wrap="normal"
-       aria-current={active === id ? "location" : undefined}
-       onClick={() => {
-        commands.selectSegment(id);
-        actions.closeOutline();
-       }}
-      >
-       {t("segment", { number: index + 1 })}
-      </Button>
-     ))}
-    </nav>
-    {content.metadata.length > 0 ? (
-     <section className="grid min-w-0 gap-2">
-      <Typography as="h3" variant="sectionTitle">
-       {t("metadata")}
-      </Typography>
-      {content.metadata.map((item) => (
-       <div key={item.id} className="grid min-w-0 gap-1">
-        <Typography variant="caption" tone="muted" wrapping="breakWords">
-         {item.label}
-        </Typography>
-        <Typography wrapping="breakWords">{item.value}</Typography>
-       </div>
-      ))}
-     </section>
-    ) : null}
-   </SheetBody>
-  </Sheet>
+   <SelectTrigger
+    size="sm"
+    aria-label={t("aria")}
+    className="w-11 [&>svg:last-child]:hidden"
+    disabled={sections.length === 0}
+    ref={(element) => {
+     if (element) registry.setOutlineTrigger(element);
+    }}
+   >
+    <List />
+   </SelectTrigger>
+   <SelectContent>
+    {sections.map((section, index) => (
+     <SelectItem key={section.id} value={section.id}>
+      {section.title || t("lesson", { number: index + 1 })}
+     </SelectItem>
+    ))}
+   </SelectContent>
+  </Select>
  );
 }

@@ -11,7 +11,6 @@ import type { ReaderServices } from "../runtime/reader-services";
 import { defaultReaderDisplay, type ReaderDisplayAdapter } from "../model/reader-display";
 import { ReaderContent } from "./ReaderContent";
 import { ReaderToolbar } from "./ReaderToolbar";
-import { ReaderOutline } from "./ReaderOutline";
 import {
  useReaderCommands,
  useReaderSelector,
@@ -109,7 +108,6 @@ function ReaderFrame({ className }: { className?: string }) {
    }}
   >
    <ReaderToolbar />
-   <ReaderOutline />
    <ReaderContent />
   </section>
  );

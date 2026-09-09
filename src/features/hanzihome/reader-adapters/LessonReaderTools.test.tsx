@@ -99,7 +99,7 @@ describe("ReaderTools", () => {
    </NextIntlClientProvider>,
   );
   expect(markup.indexOf("data-reader-toolbar")).toBeLessThan(markup.indexOf("data-reader-content"));
-  expect(markup).toContain("Đoạn 1 / 14");
+  expect(markup).toContain("Bài 1 / 1");
   expect(markup).toContain('aria-label="Nghe bài"');
   expect(markup).toContain('aria-label="Công cụ học"');
   expect(markup.match(/data-reader-toolbar/g)).toHaveLength(1);

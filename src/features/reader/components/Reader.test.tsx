@@ -95,7 +95,7 @@ describe("standalone Reader facade", () => {
    expect(html).toContain("你好。");
    expect(html).toContain("nǐ hǎo");
    expect(html).toContain("Xin chào.");
-   expect(html).toContain(messages.Reader.study.chrome.commands.openOutline);
+   expect(html).toContain(messages.Reader.study.chrome.outline.aria);
    expect(html).toContain(messages.Reader.study.chrome.tools.showPinyin);
    expect(html).toContain(messages.Reader.study.chrome.tools.showTranslation);
    expect(html).not.toContain(messages.Reader.study.chrome.tools.playAll);

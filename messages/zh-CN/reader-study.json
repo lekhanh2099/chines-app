@@ -19,6 +19,7 @@
   "tabsAria": "Reader 分区",
   "commands": {
    "segment": "第 {current} / {total} 段",
+   "lesson": "第 {current} / {total} 课",
    "pause": "暂停",
    "resume": "继续",
    "stop": "停止",
@@ -70,6 +71,7 @@
   "outline": {
    "segments": "段落目录",
    "aria": "阅读目录",
+   "lesson": "第 {number} 课",
    "segment": "第 {number} 段",
    "metadata": "阅读信息"
   },
