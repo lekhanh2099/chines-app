@@ -27,7 +27,6 @@ import {
 } from "../runtime/reader-context";
 
 export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmentId: string }) {
- const t = useTranslations("Reader.study.chrome.segment");
  const commands = useReaderCommands();
  const { value: display } = useReaderDisplay();
  const services = useReaderServices();
@@ -205,16 +204,6 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
     onKeyUp={(event) => captureSelection(event.currentTarget)}
    >
     <div className="flex min-w-0 flex-wrap items-center gap-2">
-     <Button
-      variant={active ? "active" : "ghost"}
-      size="compact"
-      aria-pressed={active}
-      onClick={() => commands.selectSegment(segmentId)}
-     >
-      {segment.kind === "dialogue-turn"
-       ? t("dialogue", { speaker: segment.speaker?.label ?? t("dialogueFallback") })
-       : t("reading")}
-     </Button>
      {segment.role ? (
       <Typography variant="caption" tone="muted">
        {segment.role}

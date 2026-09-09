@@ -53,7 +53,6 @@ export function ListeningTranscriptBlock({
       }
      >
       <Play data-icon="inline-start" />
-      Đọc đoạn
      </Button>
     </div>
    </div>
