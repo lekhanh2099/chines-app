@@ -1,8 +1,10 @@
 "use client";
 
 import {
+ createContext,
  Fragment,
  useCallback,
+ useContext,
  useEffect,
  useMemo,
  useState,
@@ -15,6 +17,15 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useClientSession } from "@/components/providers/QueryProvider";
+import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
+
+type BusinessChineseAnnotationsContextValue = {
+ readerAnnotations: readonly ReaderAnnotationRow[];
+ onOpenReaderAnnotation: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
+};
+
+const BusinessChineseAnnotationsContext =
+ createContext<BusinessChineseAnnotationsContextValue | null>(null);
 
 import {
  AppHeaderBreadcrumb,
@@ -232,6 +243,7 @@ function BusinessChineseText({
  weight?: TypographyProps<"div">["weight"];
  compactHanzi?: boolean;
 }) {
+ const annotationsContext = useContext(BusinessChineseAnnotationsContext);
  const pronunciationSessionActions = useReaderPronunciationSessionActions();
  const pronunciationOverrides = useReaderPronunciationSessionOverrides(pronunciationId);
  const readerCommands = useReaderCommands();
@@ -340,6 +352,8 @@ function BusinessChineseText({
    pinyinPresentation="ruby"
    sourcePinyin={sourcePinyin}
    activeCharacterIndex={activeCharacterIndex}
+   readerAnnotations={annotationsContext?.readerAnnotations}
+   onOpenReaderAnnotation={annotationsContext?.onOpenReaderAnnotation}
    onGlyphClick={
     readerSegmentIndex >= 0
      ? (start) => readerCommands.playFromCharacter(pronunciationId, start)
@@ -985,7 +999,7 @@ function BusinessChineseStudyWorkspaceContent({
  const annotationsQuery = useQuery({
   queryKey: hanzihomeQueryKeys.readerAnnotations(userId, textReaderDocument.id),
   queryFn: () => fetchReaderAnnotations(textReaderDocument.id),
-  enabled: isResolved && userId !== null,
+  enabled: isResolved,
   staleTime: 60_000,
   retry: false,
   refetchOnWindowFocus: false,
@@ -1019,6 +1033,7 @@ function BusinessChineseStudyWorkspaceContent({
  const selection = useReaderSelectionActions({
   selectSegment: readerActions.selectSegment,
   stop: readerCommands.stop,
+  playFromCharacter: readerCommands.playFromCharacter,
   document: textReaderDocument,
   vocabulary: readerVocabulary,
   stateOwner: "personal",
@@ -1125,165 +1140,171 @@ function BusinessChineseStudyWorkspaceContent({
  );
 
  return (
-  <>
-   <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
-   <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
-    <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
-     <div className="shrink-0 xl:hidden">
-      <WorkspaceToolbar>
-       <div className="min-w-0 flex-1">{viewSelector}</div>
-       <Badge
-        variant="success"
-        size="sm"
-        className="cursor-default gap-1 shrink-0"
-        title={t("offlineDescription")}
-       >
-        <CloudCheck data-icon="inline-start" />
-        <span className="hidden sm:inline">{t("offlineReady")}</span>
-       </Badge>
-      </WorkspaceToolbar>
-     </div>
-     <Tabs
-      value={activeView}
-      items={tabs}
-      onValueChange={onActiveViewChange}
-      aria-label={t("tabsLabel")}
-      className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden xl:grid-rows-[auto_minmax(0,1fr)]"
-      listClassName="hanzihome-liquid-toolbar hidden xl:flex"
-     >
-      <TabsContent value={activeView} className="min-h-0 overflow-hidden">
-       <div className="relative h-full min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">
-        <div className="grid min-w-0 gap-3 pb-4">
-         {annotationError || annotationsQuery.error ? (
-          <Typography variant="bodySmall" tone="danger" role="alert">
-           {annotationError || annotationsQuery.error?.message}
-          </Typography>
-         ) : null}
-         <Card
-          variant="section"
-          padding="md"
-          className={activeView === "text" ? "hidden sm:block" : undefined}
-         >
-          <div className="grid min-w-0 gap-2">
-           <div className="flex flex-wrap items-center justify-between gap-2">
-            <Typography variant="overline" tone="muted">
-             {lesson.bookLabel} ·{" "}
-             {t("lessonPosition", {
-              lesson: lesson.number,
-              count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
+  <BusinessChineseAnnotationsContext.Provider
+   value={{
+    readerAnnotations: annotationsQuery.data ?? [],
+    onOpenReaderAnnotation: selection.handleOpenAnnotation,
+   }}
+  >
+   <ReaderServicesContext.Provider value={{ ...parentServices, ...annotationServices }}>
+    <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
+    <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
+     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
+      <div className="shrink-0 xl:hidden">
+       <WorkspaceToolbar>
+        <div className="min-w-0 flex-1">{viewSelector}</div>
+        <Badge
+         variant="success"
+         size="sm"
+         className="cursor-default gap-1 shrink-0"
+         title={t("offlineDescription")}
+        >
+         <CloudCheck data-icon="inline-start" />
+         <span className="hidden sm:inline">{t("offlineReady")}</span>
+        </Badge>
+       </WorkspaceToolbar>
+      </div>
+      <Tabs
+       value={activeView}
+       items={tabs}
+       onValueChange={onActiveViewChange}
+       aria-label={t("tabsLabel")}
+       className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden xl:grid-rows-[auto_minmax(0,1fr)]"
+       listClassName="hanzihome-liquid-toolbar hidden xl:flex"
+      >
+       <TabsContent value={activeView} className="min-h-0 overflow-hidden">
+        <div className="relative h-full min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">
+         <div className="grid min-w-0 gap-3 pb-4">
+          {annotationError || annotationsQuery.error ? (
+           <Typography variant="bodySmall" tone="danger" role="alert">
+            {annotationError || annotationsQuery.error?.message}
+           </Typography>
+          ) : null}
+          <Card
+           variant="section"
+           padding="md"
+           className={activeView === "text" ? "hidden sm:block" : undefined}
+          >
+           <div className="grid min-w-0 gap-2">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+             <Typography variant="overline" tone="muted">
+              {lesson.bookLabel} ·{" "}
+              {t("lessonPosition", {
+               lesson: lesson.number,
+               count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
+              })}
+             </Typography>
+             <Badge
+              variant="success"
+              size="sm"
+              className="cursor-default gap-1 shrink-0"
+              title={t("offlineDescription")}
+             >
+              <CloudCheck data-icon="inline-start" />
+              <span>{t("offlineReady")}</span>
+             </Badge>
+            </div>
+            {activeView !== "text" && activeView !== "all" ? (
+             <BusinessChineseText
+              pronunciationId={`${lesson.id}:title`}
+              text={lessonTitle.source}
+              displayMode={displayMode}
+              variant="pageTitle"
+              weight="black"
+             />
+            ) : null}
+            {activeView !== "text" &&
+            activeView !== "all" &&
+            lessonTitle.translation &&
+            displayMode.showMeaning ? (
+             <TranslationText variant="sectionTitle" tone="secondary" weight="black">
+              {lessonTitle.translation}
+             </TranslationText>
+            ) : null}
+            {intro ? (
+             <Typography variant="bodySmall" tone="secondary">
+              {intro}
+             </Typography>
+            ) : null}
+            <Typography variant="caption" tone="muted">
+             {t("lessonMeta", {
+              sections: contentSections.length,
+              vocab: lesson.vocab.length,
              })}
             </Typography>
-            <Badge
-             variant="success"
-             size="sm"
-             className="cursor-default gap-1 shrink-0"
-             title={t("offlineDescription")}
-            >
-             <CloudCheck data-icon="inline-start" />
-             <span>{t("offlineReady")}</span>
-            </Badge>
            </div>
-           {activeView !== "text" && activeView !== "all" ? (
-            <BusinessChineseText
-             pronunciationId={`${lesson.id}:title`}
-             text={lessonTitle.source}
-             displayMode={displayMode}
-             variant="pageTitle"
-             weight="black"
-            />
-           ) : null}
-           {activeView !== "text" &&
-           activeView !== "all" &&
-           lessonTitle.translation &&
-           displayMode.showMeaning ? (
-            <TranslationText variant="sectionTitle" tone="secondary" weight="black">
-             {lessonTitle.translation}
-            </TranslationText>
-           ) : null}
-           {intro ? (
-            <Typography variant="bodySmall" tone="secondary">
-             {intro}
-            </Typography>
-           ) : null}
-           <Typography variant="caption" tone="muted">
-            {t("lessonMeta", {
-             sections: contentSections.length,
-             vocab: lesson.vocab.length,
-            })}
-           </Typography>
-          </div>
-         </Card>
+          </Card>
 
-         {activeView === "text" ? (
-          <ReaderServicesContext.Provider value={{ ...parentServices, ...annotationServices }}>
-           {readerContent}
-          </ReaderServicesContext.Provider>
-         ) : null}
+          {activeView === "text" ? readerContent : null}
 
-         {activeView !== "text" ? (
-          <div
-           className={cn("grid min-w-0 gap-3", !focusMode && "2xl:grid-cols-[15rem_minmax(0,1fr)]")}
-          >
-           {!focusMode ? (
-            <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
-           ) : null}
-           <div className="grid min-w-0 gap-3">
+          {activeView !== "text" ? (
+           <div
+            className={cn(
+             "grid min-w-0 gap-3",
+             !focusMode && "2xl:grid-cols-[15rem_minmax(0,1fr)]",
+            )}
+           >
             {!focusMode ? (
-             <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
+             <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
             ) : null}
-            <div className="grid min-w-0 gap-6">
-             {visibleSections.map((section, index) => (
-              <Fragment key={section.id}>
-               {section.category === "text" ? (
-                <BusinessChineseReader
-                 document={{
-                  ...textReaderDocument,
-                  id: `${textReaderDocument.id}:${section.id}`,
-                  title:
-                   section.id === textReaderDocument.sections[0]?.id
-                    ? textReaderDocument.title
-                    : undefined,
-                  titleVi:
-                   section.id === textReaderDocument.sections[0]?.id
-                    ? textReaderDocument.titleVi
-                    : undefined,
-                  sections: textReaderDocument.sections.filter(
-                   (readerSection) => readerSection.id === section.id,
-                  ),
-                  segments: textReaderDocument.segments.filter(
-                   (segment) => segment.sectionId === section.id,
-                  ),
-                 }}
-                 services={{
-                  ...annotationServices,
-                  renderSection: ({ section: readerSection, content }) => (
-                   <div id={readerSection.id}>{content}</div>
-                  ),
-                 }}
-                />
-               ) : (
-                <Card variant="section" padding="md">
-                 <BusinessChineseSection
-                  section={section}
-                  displayMode={displayMode}
-                  translations={pairedTranslations}
+            <div className="grid min-w-0 gap-3">
+             {!focusMode ? (
+              <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
+             ) : null}
+             <div className="grid min-w-0 gap-6">
+              {visibleSections.map((section, index) => (
+               <Fragment key={section.id}>
+                {section.category === "text" ? (
+                 <BusinessChineseReader
+                  document={{
+                   ...textReaderDocument,
+                   id: `${textReaderDocument.id}:${section.id}`,
+                   title:
+                    section.id === textReaderDocument.sections[0]?.id
+                     ? textReaderDocument.title
+                     : undefined,
+                   titleVi:
+                    section.id === textReaderDocument.sections[0]?.id
+                     ? textReaderDocument.titleVi
+                     : undefined,
+                   sections: textReaderDocument.sections.filter(
+                    (readerSection) => readerSection.id === section.id,
+                   ),
+                   segments: textReaderDocument.segments.filter(
+                    (segment) => segment.sectionId === section.id,
+                   ),
+                  }}
+                  services={{
+                   ...annotationServices,
+                   renderSection: ({ section: readerSection, content }) => (
+                    <div id={readerSection.id}>{content}</div>
+                   ),
+                  }}
                  />
-                </Card>
-               )}
-               {index < visibleSections.length - 1 ? <Separator /> : null}
-              </Fragment>
-             ))}
+                ) : (
+                 <Card variant="section" padding="md">
+                  <BusinessChineseSection
+                   section={section}
+                   displayMode={displayMode}
+                   translations={pairedTranslations}
+                  />
+                 </Card>
+                )}
+                {index < visibleSections.length - 1 ? <Separator /> : null}
+               </Fragment>
+              ))}
+             </div>
             </div>
            </div>
-          </div>
-         ) : null}
+          ) : null}
+         </div>
         </div>
-       </div>
-      </TabsContent>
-     </Tabs>
-     {selection.popover}
+       </TabsContent>
+      </Tabs>
+      {selection.popover}
+     </div>
     </div>
-   </div>
-  </>
+   </ReaderServicesContext.Provider>
+  </BusinessChineseAnnotationsContext.Provider>
  );
 }

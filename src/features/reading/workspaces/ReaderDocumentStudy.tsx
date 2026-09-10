@@ -193,6 +193,7 @@ function ReaderDocumentStudyContent({
  const selection = useReaderSelectionActions({
   selectSegment: actions.selectSegment,
   stop: commands.stop,
+  playFromCharacter: commands.playFromCharacter,
   document: study.documentModel,
   vocabulary: resource.vocabulary,
   stateOwner,

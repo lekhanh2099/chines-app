@@ -54,14 +54,15 @@ describe("hanzihome-local-db migration and lifecycle", () => {
   const db = await dbModule.openHanziHomeLocalDb();
   expect(db).toBe(mockDb);
 
-  // Verified: content_cache was added additively
+  // Verified: content_cache and reader_annotations were added additively
   expect(createdStores.has("content_cache")).toBe(true);
-  // Verified: indexes on content_cache were created
   expect(createdIndexes.get("content_cache")).toEqual([
    "ownerId",
    "resourceType",
    "lastAccessedAt",
   ]);
+  expect(createdStores.has("reader_annotations")).toBe(true);
+  expect(createdIndexes.get("reader_annotations")).toEqual(["documentId", "updatedAt"]);
 
   // Verified: pre-existing stores were untouched
   expect(createdStores.has("learning_state")).toBe(true);

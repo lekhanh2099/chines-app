@@ -106,10 +106,14 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
         status !== "idle" &&
         grapheme.index <= currentOffset &&
         currentOffset < grapheme.index + grapheme.segment.length;
-       const play = (element: HTMLElement) => {
+       const play = (element: HTMLElement, event?: React.SyntheticEvent) => {
+        event?.stopPropagation();
+        if (annotation) {
+         services.annotations?.onOpen(annotation, element.getBoundingClientRect());
+         return;
+        }
         if (window.getSelection()?.isCollapsed === false) return;
-        if (annotation) services.annotations?.onOpen(annotation, element.getBoundingClientRect());
-        else commands.playFromCharacter(segmentId, grapheme.index);
+        commands.playFromCharacter(segmentId, grapheme.index);
        };
        const hanzi = (
         <span
@@ -130,13 +134,13 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
              : undefined
          }
          aria-current={highlighted ? "true" : undefined}
-         onClick={playable ? (event) => play(event.currentTarget) : undefined}
+         onClick={playable ? (event) => play(event.currentTarget, event) : undefined}
          onKeyDown={
           playable
            ? (event) => {
               if (event.key !== "Enter" && event.key !== " ") return;
               event.preventDefault();
-              play(event.currentTarget);
+              play(event.currentTarget, event);
              }
            : undefined
          }

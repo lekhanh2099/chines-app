@@ -110,24 +110,32 @@ export function ContextualReaderText({
   const active = index === activeCharacterIndex;
   const hanziInteractive = Boolean(annotation || readerAnnotation || onGlyphClick);
   const pinyinInteractive = Boolean(onGlyphInspect);
-  const activateHanzi = (element: HTMLElement) => {
-   if (window.getSelection()?.isCollapsed === false) return;
-   if (annotation) annotationContext?.openAnnotation(annotation);
-   else if (readerAnnotation)
+  const activateHanzi = (element: HTMLElement, event?: React.SyntheticEvent) => {
+   event?.stopPropagation();
+   if (annotation) {
+    annotationContext?.openAnnotation(annotation);
+    return;
+   }
+   if (readerAnnotation) {
     onOpenReaderAnnotation?.(readerAnnotation, element.getBoundingClientRect());
-   else onGlyphClick?.(glyph.start, glyph.end);
+    return;
+   }
+   if (window.getSelection()?.isCollapsed === false) return;
+   onGlyphClick?.(glyph.start, glyph.end);
   };
-  const activatePinyin = (element: HTMLElement) =>
+  const activatePinyin = (element: HTMLElement, event?: React.SyntheticEvent) => {
+   event?.stopPropagation();
    onGlyphInspect?.(glyph, element.getBoundingClientRect());
+  };
   const handleHanziKeyDown = (event: KeyboardEvent<HTMLElement>) => {
    if (event.key !== "Enter" && event.key !== " ") return;
    event.preventDefault();
-   activateHanzi(event.currentTarget);
+   activateHanzi(event.currentTarget, event);
   };
   const handlePinyinKeyDown = (event: KeyboardEvent<HTMLElement>) => {
    if (event.key !== "Enter" && event.key !== " ") return;
    event.preventDefault();
-   activatePinyin(event.currentTarget);
+   activatePinyin(event.currentTarget, event);
   };
   const hanziClassName = hanziInteractive
    ? cn(
@@ -159,7 +167,7 @@ export function ContextualReaderText({
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
      className={cn(hanziClassName, active && "reading-progress-highlight")}
-     onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget) : undefined}
+     onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget, event) : undefined}
      onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
      role={hanziInteractive ? "button" : undefined}
      tabIndex={hanziInteractive ? 0 : undefined}
@@ -176,7 +184,7 @@ export function ContextualReaderText({
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
      className={cn(hanziClassName, active && "reading-progress-highlight")}
-     onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget) : undefined}
+     onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget, event) : undefined}
      onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
      role={hanziInteractive ? "button" : undefined}
      tabIndex={hanziInteractive ? 0 : undefined}
@@ -197,7 +205,7 @@ export function ContextualReaderText({
    >
     <span
      className={hanziClassName}
-     onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget) : undefined}
+     onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget, event) : undefined}
      onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
      role={hanziInteractive ? "button" : undefined}
      tabIndex={hanziInteractive ? 0 : undefined}

@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { syncPendingReviewAttempts } from "@/features/hanzihome/local/review-attempt-outbox";
+import { syncPendingReaderAnnotations } from "@/features/reading/services/reading-annotation-api";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
@@ -28,17 +29,24 @@ export function AutoSyncReconnectBridge(): null {
     try {
      const supabase = createClient();
      const user = await getClientSessionUser(supabase);
-     if (!user?.id) return;
+     if (user?.id) {
+      const result = await syncPendingReviewAttempts(user.id);
+      if (result.syncedCount > 0) {
+       void queryClient.invalidateQueries({
+        queryKey: hanzihomeQueryKeys.learningState(user.id),
+       });
+       void queryClient.invalidateQueries({
+        queryKey: hanzihomeQueryKeys.catalogRoot,
+       });
+       toast.success(t("offlinePack.reconnectSyncSuccess", { count: result.syncedCount }));
+      }
+     }
 
-     const result = await syncPendingReviewAttempts(user.id);
-     if (result.syncedCount > 0) {
+     const annotationResult = await syncPendingReaderAnnotations();
+     if (annotationResult.syncedCount > 0) {
       void queryClient.invalidateQueries({
-       queryKey: hanzihomeQueryKeys.learningState(user.id),
+       queryKey: hanzihomeQueryKeys.readerAnnotations(null),
       });
-      void queryClient.invalidateQueries({
-       queryKey: hanzihomeQueryKeys.catalogRoot,
-      });
-      toast.success(t("offlinePack.reconnectSyncSuccess", { count: result.syncedCount }));
      }
     } catch {
      // Non-fatal background sync

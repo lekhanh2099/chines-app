@@ -1,7 +1,16 @@
 "use client";
 
 import { useQueryClient } from "@tanstack/react-query";
-import { BookmarkPlus, Highlighter, Info, Languages, StickyNote, Volume2, X } from "lucide-react";
+import {
+ BookmarkPlus,
+ Highlighter,
+ Info,
+ Languages,
+ Play,
+ StickyNote,
+ Volume2,
+ X,
+} from "lucide-react";
 import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
 
@@ -46,6 +55,7 @@ export function useReaderSelectionActions({
  setSaveError,
  selectSegment,
  stop,
+ playFromCharacter,
 }: {
  document: ReaderDocumentModel;
  vocabulary: ReaderDocumentResource["vocabulary"];
@@ -54,6 +64,7 @@ export function useReaderSelectionActions({
  setSaveError: (error: string) => void;
  selectSegment: ReaderStore["actions"]["selectSegment"];
  stop: ReaderCommands["stop"];
+ playFromCharacter?: ReaderCommands["playFromCharacter"];
 }) {
  const t = useTranslations("Reader.study.chrome.selection");
  const notesT = useTranslations("Reader.study.chrome.notes");
@@ -151,7 +162,17 @@ export function useReaderSelectionActions({
       payload: {},
      });
   void request
-   .then(() => {
+   .then((savedAnnotation) => {
+    queryClient.setQueriesData<readonly ReaderAnnotationRow[]>(
+     { queryKey: ["hanzihome", "reader", "annotations"] },
+     (current) => {
+      if (!current) return [savedAnnotation];
+      const exists = current.some((item) => item.id === savedAnnotation.id);
+      return exists
+       ? current.map((item) => (item.id === savedAnnotation.id ? savedAnnotation : item))
+       : [...current, savedAnnotation];
+     },
+    );
     if (annotationType === "highlight") {
      const now = new Date().toISOString();
      void upsertLearningLoopItem({
@@ -187,6 +208,10 @@ export function useReaderSelectionActions({
   setSaveError("");
   void deleteReaderAnnotation(annotationId, revision)
    .then(() => {
+    queryClient.setQueriesData<readonly ReaderAnnotationRow[]>(
+     { queryKey: ["hanzihome", "reader", "annotations"] },
+     (current) => (current ? current.filter((item) => item.id !== annotationId) : []),
+    );
     clear();
     return invalidateAnnotations();
    })
@@ -239,7 +264,7 @@ export function useReaderSelectionActions({
     // not an outside click dismissing the menu that just opened on mouseup.
     if (
      details.reason === "outside-press" &&
-     details.event.type === "click" &&
+     ["click", "pointerdown", "mousedown", "touchstart"].includes(details.event.type) &&
      target instanceof Element &&
      target.closest("[data-reader-hanzi-content], [data-reader-source]") &&
      (window.getSelection()?.isCollapsed === false || target.closest(".reading-highlight"))
@@ -377,6 +402,22 @@ export function useReaderSelectionActions({
           <Volume2 data-icon="inline-start" />
           {t("listen")}
          </Button>
+         {playFromCharacter && selection.start !== null ? (
+          <Button
+           type="button"
+           size="sm"
+           variant="ghost"
+           onClick={() => {
+            stop();
+            selectSegment(selection.segment.id, "scroll");
+            playFromCharacter(selection.segment.id, selection.start ?? 0);
+            clear();
+           }}
+          >
+           <Play data-icon="inline-start" />
+           {t("playFromHere")}
+          </Button>
+         ) : null}
          <Button type="button" size="sm" variant="ghost" onClick={addToReview}>
           <BookmarkPlus data-icon="inline-start" />
           {t("review")}

@@ -4,12 +4,13 @@ import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 const DB_NAME = "hanzihome-local-db";
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 export const HANZIHOME_LOCAL_STORES = {
  learningState: "learning_state",
  pendingMutations: "pending_mutations",
  contentCache: "content_cache",
+ readerAnnotations: "reader_annotations",
 };
 
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
@@ -33,6 +34,12 @@ function createStores(db: IDBDatabase) {
   store.createIndex("ownerId", "ownerId");
   store.createIndex("resourceType", "resourceType");
   store.createIndex("lastAccessedAt", "lastAccessedAt");
+ }
+
+ if (!db.objectStoreNames.contains(HANZIHOME_LOCAL_STORES.readerAnnotations)) {
+  const store = db.createObjectStore(HANZIHOME_LOCAL_STORES.readerAnnotations, { keyPath: "id" });
+  store.createIndex("documentId", "document_id");
+  store.createIndex("updatedAt", "updated_at");
  }
 }
 
