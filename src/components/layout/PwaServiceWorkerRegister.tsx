@@ -15,14 +15,34 @@ export function PwaServiceWorkerRegister() {
    window.location.hostname === "127.0.0.1" ||
    window.location.hostname.endsWith(".localhost");
 
-  if (window.location.protocol !== "https:" && !isLocalhost) {
+  const isSecure =
+   window.location.protocol === "https:" || isLocalhost || Boolean(window.isSecureContext);
+
+  if (!isSecure) {
    return;
   }
+
+  const sendWarmup = (controller: ServiceWorker) => {
+   controller.postMessage({
+    type: "WARMUP_OFFLINE_CACHE",
+    routes: [
+     window.location.pathname,
+     "/vi/hanzihome",
+     "/vi/hsk/han-thuong-mai",
+     "/vi/hsk/nhip-cau-han-ngu",
+     "/vi/hsk/doc-hieu",
+    ],
+   });
+  };
 
   const handleLoad = () => {
    navigator.serviceWorker
     .register("/sw.js", { scope: "/" })
     .then((registration) => {
+     if (navigator.serviceWorker.controller) {
+      sendWarmup(navigator.serviceWorker.controller);
+     }
+
      registration.addEventListener("updatefound", () => {
       const installingWorker = registration.installing;
       if (!installingWorker) return;
@@ -37,6 +57,12 @@ export function PwaServiceWorkerRegister() {
      logger.error("[PWA] Service worker registration failed:", error);
     });
   };
+
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+   if (navigator.serviceWorker.controller) {
+    sendWarmup(navigator.serviceWorker.controller);
+   }
+  });
 
   if (document.readyState === "complete") {
    handleLoad();

@@ -203,6 +203,18 @@ export async function downloadCourseOfflinePack(
 
  const isAborted = signal?.aborted ?? false;
 
+ if (
+  !isAborted &&
+  typeof window !== "undefined" &&
+  "serviceWorker" in navigator &&
+  navigator.serviceWorker.controller
+ ) {
+  navigator.serviceWorker.controller.postMessage({
+   type: "WARMUP_OFFLINE_CACHE",
+   routes: ["/vi/hanzihome", `/vi/hanzihome?course=${encodeURIComponent(courseId)}`],
+  });
+ }
+
  return {
   success: !isAborted && failedCount === 0,
   downloadedCount,

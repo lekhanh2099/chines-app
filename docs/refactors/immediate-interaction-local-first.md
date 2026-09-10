@@ -69,6 +69,11 @@ These rules are mandatory, not suggestions.
     - Added static textbook offline indicator badge (`Đã sẵn sàng offline`) to `BusinessChineseStudyWorkspace.tsx` across both desktop and mobile toolbars.
     - Verified strict UI standards compliance with `scripts/check-ui-standards.mjs` (0 violations).
     - Full translations added for `Common.offlinePack` and `BusinessChinese.offlineReady` across `vi`, `en`, and `zh-CN`.
+  - **Service Worker Offline Reload Hardening (`public/sw.js`)**:
+    - Fixed iPadOS Safari offline reload failure: precache HTML App Shells along with embedded static CSS/JS (`precachePageAndAssets`).
+    - Stripped Next.js `Vary` header from cached HTML to prevent WebKit cache match rejection on browser reload.
+    - Added hierarchical fallback: exact URL -> parent textbook route -> library App Shell -> rich offline recovery launcher.
+    - Added client warmup bridge via `WARMUP_OFFLINE_CACHE` message from `PwaServiceWorkerRegister.tsx` and course offline pack downloads.
   - **Verification & Quality Gate**:
     - All 226 test files (1,156 tests) passed.
     - `npm run typecheck` passed (0 errors).
