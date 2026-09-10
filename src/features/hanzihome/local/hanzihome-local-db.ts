@@ -4,11 +4,12 @@ import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 const DB_NAME = "hanzihome-local-db";
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 export const HANZIHOME_LOCAL_STORES = {
  learningState: "learning_state",
  pendingMutations: "pending_mutations",
+ contentCache: "content_cache",
 };
 
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
@@ -25,6 +26,20 @@ function createStores(db: IDBDatabase) {
   store.createIndex("type", "type");
   store.createIndex("status", "status");
   store.createIndex("createdAt", "createdAt");
+ }
+
+ if (!db.objectStoreNames.contains(HANZIHOME_LOCAL_STORES.contentCache)) {
+  const store = db.createObjectStore(HANZIHOME_LOCAL_STORES.contentCache, { keyPath: "key" });
+  store.createIndex("ownerId", "ownerId");
+  store.createIndex("resourceType", "resourceType");
+  store.createIndex("lastAccessedAt", "lastAccessedAt");
+ }
+}
+
+export function closeHanziHomeLocalDb(): void {
+ if (dbPromise) {
+  dbPromise.then((db) => db.close()).catch(() => {});
+  dbPromise = null;
  }
 }
 
@@ -184,5 +199,62 @@ export async function getAllFromStoreMatching<T>(
    resolve(values);
   };
   request.onerror = () => reject(request.error);
+ });
+}
+
+export function promisifyRequest<R>(request: IDBRequest<R>): Promise<R> {
+ return new Promise((resolve, reject) => {
+  request.onsuccess = () => resolve(request.result);
+  request.onerror = () => reject(request.error);
+ });
+}
+
+export async function runInLocalTransaction<T>(
+ storeNames: string[],
+ mode: IDBTransactionMode,
+ operation: (stores: Record<string, IDBObjectStore>, tx: IDBTransaction) => Promise<T> | T,
+): Promise<T> {
+ const db = await openHanziHomeLocalDb();
+
+ return new Promise((resolve, reject) => {
+  let result: T;
+  let operationError: unknown = null;
+
+  const tx = db.transaction(storeNames, mode);
+  const stores: Record<string, IDBObjectStore> = {};
+  for (const name of storeNames) {
+   stores[name] = tx.objectStore(name);
+  }
+
+  tx.oncomplete = () => {
+   if (operationError !== null) {
+    reject(operationError);
+   } else {
+    resolve(result);
+   }
+  };
+
+  tx.onerror = () => {
+   reject(tx.error ?? operationError ?? new Error("IndexedDB transaction error"));
+  };
+
+  tx.onabort = () => {
+   reject(tx.error ?? operationError ?? new Error("IndexedDB transaction aborted"));
+  };
+
+  Promise.resolve()
+   .then(() => operation(stores, tx))
+   .then((val) => {
+    result = val;
+   })
+   .catch((err: unknown) => {
+    operationError = err;
+    try {
+     tx.abort();
+    } catch {
+     // Transaction may have already been aborted or closed
+    }
+    reject(err);
+   });
  });
 }

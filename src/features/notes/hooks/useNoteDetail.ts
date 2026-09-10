@@ -16,6 +16,7 @@ import {
 } from "@/services/notes.service";
 import type { NoteCategory } from "@/types/database";
 import { noteQueryKeys } from "@/features/notes/query-keys";
+import { clearNoteDraft, getNoteDraft } from "@/features/notes/local/note-draft-store";
 
 type ReadingContent = Parameters<typeof updateReadingContent>[2];
 
@@ -37,7 +38,26 @@ export function useNoteDetail(noteId: string) {
   queryKey: detailKey,
   queryFn: async () => {
    if (!userId) return null;
-   return getNoteById(supabase, noteId, userId);
+   const serverNote = await getNoteById(supabase, noteId, userId);
+   if (!serverNote) return null;
+
+   try {
+    const localDraft = await getNoteDraft(userId, noteId);
+    if (localDraft) {
+     const serverTime = new Date(serverNote.updated_at).getTime();
+     if (localDraft.updatedAt > serverTime) {
+      return {
+       ...serverNote,
+       content: localDraft.content,
+       reading_content: localDraft.readingContent ?? serverNote.reading_content,
+      };
+     }
+    }
+   } catch {
+    // Local draft reading is an enhancement; fall back to server note on storage error
+   }
+
+   return serverNote;
   },
   enabled: isResolved && Boolean(userId) && !!noteId && noteId !== "new",
  });
@@ -50,15 +70,27 @@ export function useNoteDetail(noteId: string) {
    if (!success) throw new Error("Failed to save content");
    return content;
   },
-  onSuccess: (content) => {
+  onMutate: async (content: JsonObject) => {
+   await queryClient.cancelQueries({ queryKey: detailKey });
+   const previousNote = queryClient.getQueryData(detailKey);
    queryClient.setQueryData(detailKey, (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
-
     return {
      ...old,
      content,
     };
    });
+   return { previousNote };
+  },
+  onError: (_err, _content, context) => {
+   if (context?.previousNote) {
+    queryClient.setQueryData(detailKey, context.previousNote);
+   }
+  },
+  onSuccess: async () => {
+   if (userId && noteId) {
+    await clearNoteDraft(userId, noteId);
+   }
   },
  });
 

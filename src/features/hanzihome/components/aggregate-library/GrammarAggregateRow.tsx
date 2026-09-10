@@ -16,7 +16,6 @@ export function GrammarAggregateRow({ item }: { item: AggregateGrammarItem }) {
      lessonNumber: item.lessonNumber,
      module: "grammar",
     })}
-    prefetch={false}
    >
     <Typography as="h3" variant="cardTitle" tone="default" weight="black" clamp="one">
      {item.cleanTitle || item.title}

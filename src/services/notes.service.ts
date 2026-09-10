@@ -306,6 +306,10 @@ export async function getNoteById(
   return null;
  }
 
+ if (!data) {
+  return null;
+ }
+
  const linksByNoteId = await getLessonNoteLinksForNotes(supabase, userId, [noteId]);
  return {
   ...DbNoteSchema.parse(data),

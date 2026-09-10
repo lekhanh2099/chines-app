@@ -224,6 +224,22 @@ Regression work reproduces the failure before or alongside the change and adds t
 
 For UI claims, source inspection is insufficient: render/interact with the affected viewport/state when the environment supports it.
 
+### Approved implementation checkpoints
+
+For an approved checkpoint-based plan, keep the repository plan current. Mark a
+checkpoint `[x]` only after all of its acceptance criteria and required gates
+pass on the final source. Record the changed owners, actual commands/results,
+remaining limitations and rollback before starting the next checkpoint. Keep
+partial, failed or blocked checkpoints unchecked; never substitute a partial
+test pass for completion. Respect any stricter publish/CI gate in the plan.
+
+Clean code is a mandatory completion criterion: audit the full diff for scope,
+authoritative types, existing ownership and meaningful regression coverage.
+Do not leave speculative abstractions, unused symbols, debug code, commented-out
+implementations, temporary migration scaffolding or safety-critical TODOs.
+Never weaken types, schemas, tests or gates to obtain a pass. Preserve unrelated
+user changes and report out-of-scope blockers instead of cleaning them up.
+
 ## 9. Risk and confirmation
 
 Read `docs/agent/risk-confirmation.md` for high-risk work.

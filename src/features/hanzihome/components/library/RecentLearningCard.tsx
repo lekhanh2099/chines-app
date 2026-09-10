@@ -1,5 +1,6 @@
 "use client";
 
+import { useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { Typography } from "@/components/ui/typography";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
@@ -15,7 +17,7 @@ import type {
  HanziHomeModule,
 } from "@/features/hanzihome/types";
 import { resolveRecentLearning } from "./recent-learning";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 
 const moduleLabels: Record<HanziHomeModule, string> = {
  overview: "Tổng quan",
@@ -40,6 +42,8 @@ export function RecentLearningCard({
  books: HanziHomeCourseBook[];
  lessons: HanziHomeLesson[];
 }) {
+ const router = useRouter();
+ const queryClient = useQueryClient();
  const learning = useLearningState();
  const lastCourseId = learning.state.settings.lastCourseId ?? "";
  const lastLessonId = learning.state.settings.lastLessonId;
@@ -59,6 +63,12 @@ export function RecentLearningCard({
  if (!recentLearning) return null;
 
  const { lesson, course, book, href } = recentLearning;
+
+ const prefetchRecentLesson = () => {
+  if (!lesson.id) return;
+  router.prefetch(href);
+  prefetchHanziHomeLessonResources(queryClient, lesson.id);
+ };
 
  return (
   <section aria-labelledby="recent-learning-heading">
@@ -84,7 +94,12 @@ export function RecentLearningCard({
     </div>
 
     <Button asChild variant="outline" size="toolbar" className="w-full sm:w-auto">
-     <Link href={href} prefetch={false}>
+     <Link
+      href={href}
+      onMouseEnter={prefetchRecentLesson}
+      onFocus={prefetchRecentLesson}
+      onTouchStart={prefetchRecentLesson}
+     >
       Học tiếp
       <ArrowRight data-icon="inline-end" />
      </Link>

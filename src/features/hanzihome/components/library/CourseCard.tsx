@@ -16,8 +16,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Typography } from "@/components/ui/typography";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
+import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
@@ -75,15 +74,17 @@ export function CourseCard({
   (sum, lesson) => sum + (lesson.grammarCount ?? lesson.grammarPointIds.length),
   0,
  );
- const prefetchSelectedLesson = () => {
-  if (!effectiveLessonId) return;
+
+ const prefetchSelectedLesson = (targetLessonId = effectiveLessonId) => {
+  if (!targetLessonId) return;
 
   router.prefetch(href);
-  void queryClient.prefetchQuery({
-   queryKey: hanzihomeQueryKeys.lessonDetail(effectiveLessonId),
-   queryFn: () => fetchHanziHomeLessonDetail(effectiveLessonId),
-   staleTime: Infinity,
-  });
+  prefetchHanziHomeLessonResources(queryClient, targetLessonId);
+ };
+
+ const handleLessonSelectionChange = (newLessonId: string) => {
+  setSelectedLessonId(newLessonId);
+  prefetchSelectedLesson(newLessonId);
  };
 
  return (
@@ -119,7 +120,7 @@ export function CourseCard({
    {bookLessons.length > 0 ? (
     <div className="flex min-w-0 items-center gap-1.5">
      <div className="min-w-0 flex-1">
-      <Select value={effectiveLessonId} onValueChange={setSelectedLessonId}>
+      <Select value={effectiveLessonId} onValueChange={handleLessonSelectionChange}>
        <SelectTrigger
         size="sm"
         width="full"
@@ -141,9 +142,9 @@ export function CourseCard({
      <Button asChild size="toolbar" aria-label={`Mở ${effectiveLesson?.titleZh || "bài học"}`}>
       <Link
        href={href}
-       prefetch={false}
-       onMouseEnter={prefetchSelectedLesson}
-       onFocus={prefetchSelectedLesson}
+       onMouseEnter={() => prefetchSelectedLesson()}
+       onFocus={() => prefetchSelectedLesson()}
+       onTouchStart={() => prefetchSelectedLesson()}
       >
        Mở
        <ArrowRight data-icon="inline-end" />

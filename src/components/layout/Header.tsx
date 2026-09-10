@@ -20,6 +20,7 @@ import {
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { useSearchParams } from "next/navigation";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { appShellStore } from "@/stores/app-shell-store";
@@ -27,6 +28,7 @@ import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { globalSearchStore } from "@/stores/global-search-store";
 import { headerToolbarStore } from "@/stores/header-toolbar-store";
+import { navigationPendingStore } from "@/stores/navigation-pending-store";
 import {
  AppHeaderBreadcrumb,
  AppHeaderBreadcrumbItem,
@@ -69,6 +71,8 @@ export function Header() {
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { theme, toggleTheme } = useTheme();
  const pathname = usePathname();
+ const searchParams = useSearchParams();
+ const isNavPending = useSelector(navigationPendingStore, (state) => state.isPending);
  const searchValue = useSelector(globalSearchStore, (state) => state.query);
  useSelector(dictionaryLookupStore, (state) => state.overrides);
  const lookupEnabled = dictionaryLookupStore.actions.isEnabled(pathname);
@@ -79,6 +83,10 @@ export function Header() {
  const headerToolbarContent = useSelector(headerToolbarStore, (state) => state.content);
  const simpleBreadcrumb = getSimpleHeaderBreadcrumb(pathname);
  const hasRouteToolbar = Boolean(headerToolbarContent || simpleBreadcrumb);
+
+ useEffect(() => {
+  navigationPendingStore.actions.finishNavigation();
+ }, [pathname, searchParams]);
 
  useEffect(() => {
   hydrateLookupSettings();
@@ -102,6 +110,14 @@ export function Header() {
   <>
    <FocusModeRouteGuard />
    <header className="nova-shell-header sticky top-0 z-50 flex h-12 w-full max-w-full min-w-0 shrink-0 items-center overflow-hidden border-b border-border-default px-2 sm:h-14 sm:px-5 lg:px-7">
+    {isNavPending ? (
+     <div
+      role="progressbar"
+      aria-label="Navigation in progress"
+      aria-busy="true"
+      className="nav-progress-line"
+     />
+    ) : null}
     <div
      className={cn(
       "grid h-12 w-full min-w-0 items-center gap-1.5 sm:h-14 sm:gap-3",

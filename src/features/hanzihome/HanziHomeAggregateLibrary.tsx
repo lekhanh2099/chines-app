@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useQueries, useQuery } from "@tanstack/react-query";
+import { useQueries, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Search } from "lucide-react";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -56,6 +56,7 @@ import {
  resolveReviewLessonTokens,
  REVIEW_LESSONS_QUERY_KEY,
 } from "@/features/hanzihome/utils/review-selection-route";
+import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
@@ -76,6 +77,7 @@ function useReviewLessons(lessonIds: string[]) {
 
 export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  const router = useRouter();
+ const queryClient = useQueryClient();
  const searchParams = useSearchParams();
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const learning = useLearningState();
@@ -442,7 +444,9 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
              lessonNumber: group.lessonNumber,
              module: kind === "vocab" ? "vocab" : "grammar",
             })}
-            prefetch={false}
+            onMouseEnter={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
+            onFocus={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
+            onTouchStart={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
            >
             Mở bài
            </Link>
@@ -459,7 +463,9 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
                titleZh: group.lessonTitle,
               },
              ])}
-             prefetch={false}
+             onMouseEnter={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
+             onFocus={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
+             onTouchStart={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
             >
              Ôn bài
             </Link>

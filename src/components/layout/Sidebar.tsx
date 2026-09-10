@@ -31,6 +31,7 @@ import { Typography } from "@/components/ui/typography";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { appShellStore } from "@/stores/app-shell-store";
+import { navigationPendingStore } from "@/stores/navigation-pending-store";
 import { sidebarStore } from "@/stores/sidebar-store";
 
 type NavigationGroup = NavigationGroupConfig;
@@ -130,6 +131,8 @@ function NavRow({
  const item = navigationItems[itemId];
  const Icon = item.icon;
  const label = t(item.messageKey);
+ const pendingHref = useSelector(navigationPendingStore, (state) => state.pendingHref);
+ const isPendingThisItem = pendingHref === item.href;
 
  return (
   <Button
@@ -138,11 +141,25 @@ function NavRow({
    align={collapsed ? "center" : "start"}
    asChild
    aria-current={active ? "page" : undefined}
+   aria-busy={isPendingThisItem ? "true" : undefined}
    aria-label={collapsed ? label : undefined}
    title={collapsed ? label : undefined}
-   className={collapsed ? "w-10" : "w-full min-w-0 overflow-hidden"}
+   className={cn(
+    collapsed ? "w-10" : "w-full min-w-0 overflow-hidden",
+    isPendingThisItem && "pointer-events-none opacity-80",
+   )}
   >
-   <Link href={item.href} prefetch={false} onClick={onNavigate}>
+   <Link
+    href={item.href}
+    onClick={(event) => {
+     if (active || isPendingThisItem) {
+      event.preventDefault();
+      return;
+     }
+     navigationPendingStore.actions.startNavigation(item.href);
+     onNavigate?.();
+    }}
+   >
     <Icon data-icon="inline-start" />
     {!collapsed ? (
      <Typography as="span" clamp="one" className="min-w-0 flex-1">
@@ -164,6 +181,7 @@ function CollapsedGroupMenu({
  searchParams: URLSearchParams;
 }) {
  const t = useTranslations("Shell");
+ const pendingHref = useSelector(navigationPendingStore, (state) => state.pendingHref);
  const GroupIcon = group.icon;
  const groupLabel = t(group.messageKey);
  const active = groupHasActiveRoute(group, pathname, searchParams);
@@ -193,9 +211,22 @@ function CollapsedGroupMenu({
        const item = navigationItems[itemId];
        const Icon = item.icon;
        const itemActive = isActive(pathname, searchParams, itemId);
+       const isPendingThisItem = pendingHref === item.href;
        return (
         <DropdownMenuItem key={itemId} tone={itemActive ? "accent" : "default"} asChild>
-         <Link href={item.href} prefetch={false} aria-current={itemActive ? "page" : undefined}>
+         <Link
+          href={item.href}
+          aria-current={itemActive ? "page" : undefined}
+          aria-busy={isPendingThisItem ? "true" : undefined}
+          className={cn(isPendingThisItem && "pointer-events-none opacity-80")}
+          onClick={(event) => {
+           if (itemActive || isPendingThisItem) {
+            event.preventDefault();
+            return;
+           }
+           navigationPendingStore.actions.startNavigation(item.href);
+          }}
+         >
           <Icon aria-hidden="true" />
           <Typography as="span" clamp="one" className="min-w-0 flex-1">
            {t(item.messageKey)}
@@ -213,6 +244,7 @@ function CollapsedGroupMenu({
 
 export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
  const t = useTranslations("Shell");
+ const pendingHref = useSelector(navigationPendingStore, (state) => state.pendingHref);
  const visibleNavigationGroups = filterNavigationGroupsForContentCapability(canManageContent);
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
@@ -259,7 +291,20 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
     )}
    >
     {!isCollapsed ? (
-     <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
+     <Link
+      href="/"
+      className={cn(
+       "flex min-w-0 items-center gap-3",
+       pendingHref === "/" && "pointer-events-none opacity-80",
+      )}
+      onClick={(event) => {
+       if (pathname === "/" || pendingHref === "/") {
+        event.preventDefault();
+        return;
+       }
+       navigationPendingStore.actions.startNavigation("/");
+      }}
+     >
       <AppLogoMark />
       <Typography tone="default" weight="black" clamp="one">
        HanziHome
@@ -414,6 +459,7 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
 
 export function MobileBottomNavigation({ canManageContent }: { canManageContent: boolean }) {
  const t = useTranslations("Shell");
+ const pendingHref = useSelector(navigationPendingStore, (state) => state.pendingHref);
  const visibleNavigationGroups = filterNavigationGroupsForContentCapability(canManageContent);
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
@@ -438,6 +484,7 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
       const Icon = item.icon;
       const active = isActive(pathname, searchParams, itemId);
       const label = t(item.messageKey);
+      const isPendingThisItem = pendingHref === item.href;
 
       return (
        <Button
@@ -446,11 +493,21 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
         size="icon"
         asChild
         aria-current={active ? "page" : undefined}
+        aria-busy={isPendingThisItem ? "true" : undefined}
         aria-label={label}
         title={label}
-        className="justify-self-center"
+        className={cn("justify-self-center", isPendingThisItem && "pointer-events-none opacity-80")}
        >
-        <Link href={item.href} prefetch={false}>
+        <Link
+         href={item.href}
+         onClick={(event) => {
+          if (active || isPendingThisItem) {
+           event.preventDefault();
+           return;
+          }
+          navigationPendingStore.actions.startNavigation(item.href);
+         }}
+        >
          <Icon />
         </Link>
        </Button>

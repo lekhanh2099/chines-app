@@ -17,5 +17,18 @@
   "vi": "Vietnamese",
   "en": "English",
   "zh-CN": "Simplified Chinese"
+ },
+ "syncStatus": {
+  "localSavePending": "Saving locally...",
+  "durablySavedOffline": "Saved offline",
+  "syncing": "Syncing...",
+  "syncError": "Not synced",
+  "localStorageFailed": "Local storage failed",
+  "cachedSnapshot": "Offline snapshot",
+  "offlineUnavailableTitle": "Unavailable offline",
+  "offlineUnavailableDescription": "This lesson has not been downloaded yet. Please connect to the internet to load it.",
+  "retry": "Retry",
+  "offline": "Offline",
+  "synced": "Synced"
  }
 }

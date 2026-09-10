@@ -11,8 +11,10 @@ import { JsonObjectSchema } from "@/types/json";
 import { practiceAttemptSurfaceSchema } from "@/features/hanzihome/practice/practice-attempt.schemas";
 import {
  apiError,
+ expectedAuthenticatedOwnerHeader,
  privateNoStoreJson,
  requireAuthenticatedRoute,
+ verifyExpectedAuthenticatedOwner,
 } from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
@@ -91,6 +93,12 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+
+ if (request.headers.has(expectedAuthenticatedOwnerHeader)) {
+  const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+  if (ownerError) return ownerError;
+ }
+
  const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = payloadSchema.safeParse(body);
  if (!parsed.success) return apiError("Invalid practice attempt payload", 400, "INVALID_PAYLOAD");

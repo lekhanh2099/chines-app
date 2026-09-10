@@ -32,7 +32,7 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
       </Typography>
      </div>
      <Button variant="outline" size="toolbar" asChild>
-      <Link href="/dictionary" prefetch={false}>
+      <Link href="/dictionary">
        <Repeat2 data-icon="inline-start" />
        {t("pulse.openSrs")}
       </Link>

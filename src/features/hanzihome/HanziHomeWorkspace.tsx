@@ -26,9 +26,11 @@ import {
 import { parseHanziHomeModule, resolveLessonModule } from "@/features/hanzihome/workspace-modules";
 import type { HanziHomeModule, LearningStatus, ReviewResult } from "@/features/hanzihome/types";
 import type { ReviewItem } from "@/features/hanzihome/context/types";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 
 export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeModule }) {
+ const tSync = useTranslations("Common.syncStatus");
  const router = useRouter();
  const searchParams = useSearchParams();
  const learning = useLearningState();
@@ -206,11 +208,16 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
  if (isRadicalsLoading) return <RadicalWorkspaceSkeleton />;
 
  if (catalogQuery.isError || hasLessonWorkspaceError) {
+  const isOffline = !learning.isOnline;
   return (
    <HanziHomeWorkspaceMessage
     eyebrow={selectedCourse?.title || "HanziHome"}
-    title="Không tải được bài học"
-    description="Dữ liệu bài học hiện không khả dụng. Thử tải lại trang hoặc quay về thư viện."
+    title={isOffline ? tSync("offlineUnavailableTitle") : "Không tải được bài học"}
+    description={
+     isOffline
+      ? tSync("offlineUnavailableDescription")
+      : "Dữ liệu bài học hiện không khả dụng. Thử tải lại trang hoặc quay về thư viện."
+    }
     onRetry={() => {
      void Promise.all([
       catalogQuery.refetch(),
@@ -255,7 +262,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
      {resolvedActiveModule === "radicals" ? (
       <RadicalWorkspace
        key={matchingSearchIntent?.id ?? "radicals"}
-       radicals={catalogData.radicals}
+       radicals={catalogData?.radicals ?? []}
       />
      ) : (
       lesson && (
@@ -266,6 +273,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
         learningState={learning.state}
         learningSync={{
          status: learning.syncStatus,
+         durability: learning.durability,
          pendingCount: learning.pendingSyncCount,
          lastError: learning.lastSyncError,
          isOnline: learning.isOnline,

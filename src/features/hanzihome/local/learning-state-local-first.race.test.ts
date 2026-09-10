@@ -4,16 +4,13 @@ import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
 import type { PendingLearningStateMutation } from "./learning-state-local-store";
 
 const store = vi.hoisted(() => ({
- clear: vi.fn(),
- enqueue: vi.fn(),
- list: vi.fn(),
- markFailed: vi.fn(),
+ acknowledgeSyncAtomic: vi.fn(),
  markSyncing: vi.fn(),
- replace: vi.fn(),
- readLocal: vi.fn(),
+ rebaseMutationAtomic: vi.fn(),
+ list: vi.fn(),
  readPending: vi.fn(),
- writeLocal: vi.fn(),
 }));
+
 const api = vi.hoisted(() => ({
  fetch: vi.fn(),
  save: vi.fn(),
@@ -25,16 +22,13 @@ const api = vi.hoisted(() => ({
 }));
 
 vi.mock("./learning-state-local-store", () => ({
- clearPendingLearningStateMutation: store.clear,
- enqueueLearningStateSync: store.enqueue,
- listPendingLearningStateMutations: store.list,
- markLearningStateMutationFailed: store.markFailed,
+ acknowledgeLearningStateSyncAtomic: store.acknowledgeSyncAtomic,
  markLearningStateMutationSyncing: store.markSyncing,
- replacePendingLearningStateMutation: store.replace,
- readLocalLearningState: store.readLocal,
+ rebaseLearningStateMutationAtomic: store.rebaseMutationAtomic,
+ listPendingLearningStateMutations: store.list,
  readPendingLearningStateMutation: store.readPending,
- writeLocalLearningState: store.writeLocal,
 }));
+
 vi.mock("@/features/hanzihome/repositories/hanzihome-content-api-client", () => ({
  fetchHanziHomeLearningState: api.fetch,
  saveHanziHomeLearningState: api.save,
@@ -69,7 +63,7 @@ describe("learning-state IndexedDB generation races", () => {
  beforeEach(() => {
   vi.clearAllMocks();
   vi.stubGlobal("navigator", { onLine: true });
-  store.clear.mockResolvedValue(true);
+  store.acknowledgeSyncAtomic.mockResolvedValue(true);
   store.readPending.mockResolvedValue(newer);
   api.save.mockResolvedValue({
    state: newer.payload,
@@ -89,7 +83,12 @@ describe("learning-state IndexedDB generation races", () => {
 
   expect(api.save).toHaveBeenCalledOnce();
   expect(api.save).toHaveBeenCalledWith(newer.payload, null, ownerUserId);
-  expect(store.clear).toHaveBeenCalledWith(ownerUserId, newer.updatedAt);
+  expect(store.acknowledgeSyncAtomic).toHaveBeenCalledWith({
+   ownerUserId,
+   expectedMutationUpdatedAt: newer.updatedAt,
+   savedState: newer.payload,
+   remoteUpdatedAt: "2026-08-20T00:00:03.000Z",
+  });
   expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
  });
 
@@ -100,7 +99,7 @@ describe("learning-state IndexedDB generation races", () => {
    .mockResolvedValueOnce([newer])
    .mockResolvedValueOnce([]);
   store.markSyncing.mockResolvedValueOnce(first).mockResolvedValueOnce(newer);
-  store.replace.mockResolvedValueOnce(null);
+  store.rebaseMutationAtomic.mockResolvedValueOnce(null);
   api.save.mockRejectedValueOnce(new api.ApiError(409)).mockResolvedValueOnce({
    state: newer.payload,
    updatedAt: "2026-08-20T00:00:04.000Z",
@@ -112,10 +111,15 @@ describe("learning-state IndexedDB generation races", () => {
 
   const result = await syncPendingLearningStateMutations(ownerUserId);
 
-  expect(store.replace).toHaveBeenCalledOnce();
+  expect(store.rebaseMutationAtomic).toHaveBeenCalledOnce();
   expect(api.save).toHaveBeenCalledTimes(2);
   expect(api.save).toHaveBeenLastCalledWith(newer.payload, null, ownerUserId);
-  expect(store.clear).toHaveBeenCalledWith(ownerUserId, newer.updatedAt);
+  expect(store.acknowledgeSyncAtomic).toHaveBeenCalledWith({
+   ownerUserId,
+   expectedMutationUpdatedAt: newer.updatedAt,
+   savedState: newer.payload,
+   remoteUpdatedAt: "2026-08-20T00:00:04.000Z",
+  });
   expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
  });
 });

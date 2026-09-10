@@ -6,7 +6,18 @@ const localDb = vi.hoisted(() => ({
  put: vi.fn(),
  replaceIf: vi.fn(),
 }));
-const practice = vi.hoisted(() => ({ save: vi.fn() }));
+const practice = vi.hoisted(() => ({
+ save: vi.fn(),
+ ApiError: class extends Error {
+  constructor(
+   message: string,
+   readonly status: number,
+  ) {
+   super(message);
+   this.name = "PracticeAttemptApiError";
+  }
+ },
+}));
 
 vi.mock("./hanzihome-local-db", () => ({
  HANZIHOME_LOCAL_STORES: { pendingMutations: "pending_mutations" },
@@ -17,6 +28,7 @@ vi.mock("./hanzihome-local-db", () => ({
 }));
 vi.mock("@/features/hanzihome/practice/practice-attempt-api", () => ({
  savePracticeAttempt: practice.save,
+ PracticeAttemptApiError: practice.ApiError,
 }));
 
 import {
@@ -80,20 +92,23 @@ describe("review attempt outbox", () => {
 
   const result = await syncPendingReviewAttempts(ownerUserId);
 
-  expect(practice.save).toHaveBeenCalledWith({
-   attemptId,
-   surface: "review",
-   contentId: "grammar:grammar-1",
-   direction: null,
-   answer: expect.objectContaining({
-    kind: "review",
-    itemType: "grammar",
-    result: "known",
-    answeredAt: pending.payload.answeredAt,
-   }),
-   scorePercent: null,
-   responseMs: null,
-  });
+  expect(practice.save).toHaveBeenCalledWith(
+   {
+    attemptId,
+    surface: "review",
+    contentId: "grammar:grammar-1",
+    direction: null,
+    answer: expect.objectContaining({
+     kind: "review",
+     itemType: "grammar",
+     result: "known",
+     answeredAt: pending.payload.answeredAt,
+    }),
+    scorePercent: null,
+    responseMs: null,
+   },
+   { expectedOwnerId: ownerUserId },
+  );
   expect(localDb.deleteIf).toHaveBeenCalledOnce();
   expect(result).toEqual({ status: "synced", syncedCount: 1, pendingCount: 0 });
  });
@@ -111,5 +126,38 @@ describe("review attempt outbox", () => {
 
   expect(practice.save).not.toHaveBeenCalled();
   expect(result).toEqual({ status: "pending", syncedCount: 0, pendingCount: 1 });
+ });
+
+ it("stops drain and preserves pending queue without failure marking on 412 owner mismatch", async () => {
+  const pending = await enqueueReviewAttempt(ownerUserId, {
+   itemType: "vocab",
+   itemId: "word-1",
+   result: "known",
+  });
+  const syncing: PendingReviewAttemptMutation = {
+   ...pending,
+   status: "syncing",
+   attemptCount: 1,
+   updatedAt: "2026-08-20T05:00:01.000Z",
+  };
+
+  localDb.listMatching.mockResolvedValueOnce([pending]).mockResolvedValueOnce([pending]);
+  localDb.replaceIf.mockResolvedValueOnce(syncing);
+  practice.save.mockRejectedValueOnce(
+   new practice.ApiError("Request owner no longer matches the authenticated session", 412),
+  );
+
+  const result = await syncPendingReviewAttempts(ownerUserId);
+
+  expect(practice.save).toHaveBeenCalledWith(expect.any(Object), { expectedOwnerId: ownerUserId });
+  // Should NOT mark failed or delete the mutation
+  expect(localDb.deleteIf).not.toHaveBeenCalled();
+  expect(result).toEqual({
+   status: "error",
+   syncedCount: 0,
+   pendingCount: 1,
+   error: "Request owner no longer matches the authenticated session",
+   isOwnerMismatch: true,
+  });
  });
 });

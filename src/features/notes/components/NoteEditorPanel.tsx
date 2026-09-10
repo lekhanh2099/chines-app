@@ -47,7 +47,9 @@ import {
  useNoteFolders,
  useUpdateNoteLibraryMetadata,
 } from "@/features/notes/hooks/useNoteLibrary";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
+import { saveNoteDraft } from "@/features/notes/local/note-draft-store";
 import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
 import { useRouter } from "@/i18n/navigation";
 import { focusModeStore } from "@/stores/focus-mode-store";
@@ -123,6 +125,8 @@ export function NoteEditorPanel({
  } = useNoteDetail(noteId);
 
  const { closeTab, updateTabTitle } = noteTabsStore.actions;
+ const { userId } = useClientSession();
+ const [isDirty, setIsDirty] = useState(false);
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const noteFoldersQuery = useNoteFolders();
  const { createMutation: createFolderMutation } = useNoteFolderMutations();
@@ -174,30 +178,59 @@ export function NoteEditorPanel({
  const handleChange = useCallback(
   (json: JsonObject) => {
    pendingContentRef.current = json;
+   setIsDirty(true);
+   if (userId) {
+    void saveNoteDraft(userId, noteId, {
+     content: json,
+     readingContent: pendingReadingRef.current ?? note?.reading_content,
+    });
+   }
    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
    saveTimerRef.current = setTimeout(() => {
     if (pendingContentRef.current) {
      saveContent(pendingContentRef.current);
      pendingContentRef.current = null;
+     setIsDirty(false);
     }
    }, 1000);
   },
-  [saveContent],
+  [note?.reading_content, noteId, saveContent, userId],
  );
 
  const handleReadingChange = useCallback(
   (json: JsonObject) => {
    pendingReadingRef.current = json;
+   setIsDirty(true);
+   if (userId) {
+    void saveNoteDraft(userId, noteId, {
+     content: pendingContentRef.current ?? note?.content ?? {},
+     readingContent: json,
+    });
+   }
    if (readingSaveTimerRef.current) clearTimeout(readingSaveTimerRef.current);
    readingSaveTimerRef.current = setTimeout(() => {
     if (pendingReadingRef.current) {
      saveReadingContent(pendingReadingRef.current);
      pendingReadingRef.current = null;
+     setIsDirty(false);
     }
    }, 1000);
   },
-  [saveReadingContent],
+  [note?.content, noteId, saveReadingContent, userId],
  );
+
+ useEffect(() => {
+  const handleBeforeUnload = () => {
+   if (pendingContentRef.current && userId) {
+    void saveNoteDraft(userId, noteId, {
+     content: pendingContentRef.current,
+     readingContent: pendingReadingRef.current ?? note?.reading_content,
+    });
+   }
+  };
+  window.addEventListener("beforeunload", handleBeforeUnload);
+  return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+ }, [note?.reading_content, noteId, userId]);
 
  const handleToggleSplitView = useCallback(() => {
   toggleSplitView(noteId);
@@ -384,13 +417,14 @@ export function NoteEditorPanel({
   ],
  );
 
- const displaySaveStatus: SaveStatus = isSaving
-  ? "saving"
-  : saveStatus === "success"
-    ? "saved"
-    : saveStatus === "error"
-      ? "error"
-      : "idle";
+ const displaySaveStatus: SaveStatus =
+  isSaving || isDirty
+   ? "saving"
+   : saveStatus === "success"
+     ? "saved"
+     : saveStatus === "error"
+       ? "error"
+       : "idle";
 
  const noteContent = importedContent ?? note?.content ?? null;
  const readingContent =

@@ -63,8 +63,8 @@ export function NotesWorkspace() {
  const notes = notesQuery.data ?? emptyNotes;
  const folders = foldersQuery.data ?? emptyFolders;
  const lessonLookup = useMemo(
-  () => buildLessonLookup(catalogQuery.data.lessons),
-  [catalogQuery.data.lessons],
+  () => buildLessonLookup(catalogQuery.data?.lessons ?? []),
+  [catalogQuery.data?.lessons],
  );
  const folderNames = useMemo(
   () => new Map(folders.map((folder) => [folder.id, folder.name])),
@@ -125,18 +125,18 @@ export function NotesWorkspace() {
 
  if (isNewAction) return <NewNoteStarter />;
 
- if (notesQuery.isPending || foldersQuery.isPending || catalogQuery.isPending) {
+ if (notesQuery.isPending || foldersQuery.isPending) {
   return <NotesWorkspaceSkeleton />;
  }
 
- if (notesQuery.isError || foldersQuery.isError || catalogQuery.isError) {
+ if (notesQuery.isError || foldersQuery.isError) {
   return (
    <div className="p-4 sm:p-6">
     <QueryErrorCard
      title={t("loadError.title")}
      description={t("loadError.description")}
      onRetry={() => {
-      void Promise.all([notesQuery.refetch(), foldersQuery.refetch(), catalogQuery.refetch()]);
+      void Promise.all([notesQuery.refetch(), foldersQuery.refetch()]);
      }}
     />
    </div>

@@ -14,17 +14,18 @@ import {
 } from "@/features/hanzihome/utils/learning-state";
 
 import { mergeLearningStateAfterConflict } from "./learning-state-conflict-merge";
+import type { ReviewAttemptInput } from "./review-attempt-outbox";
 import {
- clearPendingLearningStateMutation,
- enqueueLearningStateSync,
+ acknowledgeLearningStateSyncAtomic,
+ captureLearningStateGeneration,
+ commitCleanRemoteRefreshAtomic,
  listPendingLearningStateMutations,
- markLearningStateMutationFailed,
+ markLearningStateMutationFailedAtomic,
  markLearningStateMutationSyncing,
  readLocalLearningState,
- readPendingLearningStateMutation,
- replacePendingLearningStateMutation,
+ rebaseLearningStateMutationAtomic,
+ saveLearningStateAtomic,
  writeLocalLearningState,
- type PendingLearningStateMutation,
 } from "./learning-state-local-store";
 
 export { mergeLearningStateAfterConflict };
@@ -97,22 +98,19 @@ export async function saveLearningStateLocalFirst(
  ownerUserId: string,
  baseState: UserLearningState,
  state: UserLearningState,
+ options?: {
+  reviewAttempt?: {
+   attemptId: string;
+   input: ReviewAttemptInput;
+  };
+ },
 ): Promise<void> {
- const normalized = normalizeLearningState(state);
- const local = await readLocalLearningState(ownerUserId).catch(() => null);
-
- await writeLocalLearningState({
+ await saveLearningStateAtomic({
   ownerUserId,
-  state: normalized,
-  lastSyncedState: local?.lastSyncedState,
-  remoteUpdatedAt: local?.remoteUpdatedAt,
+  baseState,
+  nextState: state,
+  reviewAttempt: options?.reviewAttempt,
  });
- await enqueueLearningStateSync(
-  ownerUserId,
-  normalizeLearningState(local?.lastSyncedState ?? baseState),
-  normalized,
-  local?.remoteUpdatedAt ?? null,
- );
 }
 
 export async function refreshLearningStateFromRemoteIfClean(
@@ -124,20 +122,19 @@ export async function refreshLearningStateFromRemoteIfClean(
  if (Date.now() - runtime.lastRemoteRefreshAt < remoteRefreshCooldownMs) return null;
 
  const inFlight = (async () => {
-  const pending = await readPendingLearningStateMutation(ownerUserId);
-  if (pending) return null;
+  const captured = await captureLearningStateGeneration(ownerUserId);
+  if (captured.hasPending) return null;
 
   try {
    const remote = await fetchHanziHomeLearningState(ownerUserId);
    const remoteState = normalizeLearningState(remote.state);
-   await writeLocalLearningState({
+   const committed = await commitCleanRemoteRefreshAtomic({
     ownerUserId,
-    state: remoteState,
-    lastSyncedState: remoteState,
+    capturedLocalUpdatedAt: captured.localUpdatedAt,
+    remoteState,
     remoteUpdatedAt: remote.updatedAt,
-    lastSyncedAt: new Date().toISOString(),
    });
-   return remoteState;
+   return committed ? remoteState : null;
   } finally {
    runtime.lastRemoteRefreshAt = Date.now();
   }
@@ -147,18 +144,6 @@ export async function refreshLearningStateFromRemoteIfClean(
 
  runtime.remoteRefreshInFlight = inFlight;
  return inFlight;
-}
-
-function shouldApplySyncResult(
- current: Nullable<PendingLearningStateMutation>,
- syncing: PendingLearningStateMutation,
-) {
- return Boolean(
-  current &&
-  current.ownerUserId === syncing.ownerUserId &&
-  current.id === syncing.id &&
-  current.updatedAt === syncing.updatedAt,
- );
 }
 
 export async function syncPendingLearningStateMutations(
@@ -244,11 +229,12 @@ async function syncPendingLearningStateMutationsOnce(
      local: activeMutation.payload,
      remote: remoteState,
     });
-    const rebasedMutation = await replacePendingLearningStateMutation({
-     mutation: activeMutation,
+    const rebasedMutation = await rebaseLearningStateMutationAtomic({
+     ownerUserId,
+     expectedMutationUpdatedAt: activeMutation.updatedAt,
      baseState: remoteState,
-     state: mergedState,
-     expectedUpdatedAt: remote.updatedAt,
+     mergedState,
+     remoteUpdatedAt: remote.updatedAt,
     });
     // A newer local edit appeared while the conflict was being fetched/merged.
     // Leave that newer generation untouched; the outer drain loop will send it.
@@ -257,34 +243,23 @@ async function syncPendingLearningStateMutationsOnce(
     saved = await saveHanziHomeLearningState(mergedState, remote.updatedAt, ownerUserId);
    }
    const savedState = normalizeLearningState(saved.state);
-   const currentMutation = await readPendingLearningStateMutation(ownerUserId);
-
-   if (shouldApplySyncResult(currentMutation, activeMutation)) {
-    const cleared = await clearPendingLearningStateMutation(ownerUserId, activeMutation.updatedAt);
-    if (cleared) {
-     await writeLocalLearningState({
-      ownerUserId,
-      state: savedState,
-      lastSyncedState: savedState,
-      remoteUpdatedAt: saved.updatedAt,
-      lastSyncedAt: new Date().toISOString(),
-     });
-     latestState = savedState;
-     syncedCount++;
-    }
+   const acknowledged = await acknowledgeLearningStateSyncAtomic({
+    ownerUserId,
+    expectedMutationUpdatedAt: activeMutation.updatedAt,
+    savedState,
+    remoteUpdatedAt: saved.updatedAt,
+   });
+   if (acknowledged) {
+    latestState = savedState;
+    syncedCount++;
    }
   } catch (error) {
-   const currentMutation = await readPendingLearningStateMutation(ownerUserId);
    const message = errorMessage(error);
-
-   if (shouldApplySyncResult(currentMutation, activeMutation)) {
-    // Failure marking is itself compare-and-replace, so a newer generation that
-    // appears after the read above cannot be overwritten by the stale failure.
-    await markLearningStateMutationFailed({
-     mutation: activeMutation,
-     error: message,
-    });
-   }
+   await markLearningStateMutationFailedAtomic({
+    ownerUserId,
+    expectedMutationUpdatedAt: activeMutation.updatedAt,
+    error: message,
+   });
 
    const remaining = await listPendingLearningStateMutations(ownerUserId).catch(() => []);
    return {

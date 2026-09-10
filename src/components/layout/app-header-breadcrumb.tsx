@@ -89,12 +89,7 @@ export function AppHeaderBreadcrumbLink({
 
  return (
   <BreadcrumbLink asChild>
-   <Link
-    href={href}
-    prefetch={false}
-    title={title}
-    className={cn(headerBreadcrumbItemClassName, className)}
-   >
+   <Link href={href} title={title} className={cn(headerBreadcrumbItemClassName, className)}>
     {content}
    </Link>
   </BreadcrumbLink>

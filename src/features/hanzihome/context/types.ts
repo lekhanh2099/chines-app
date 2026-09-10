@@ -28,9 +28,11 @@ export type DraggedModule = {
 export type NullableDraggedModule = DraggedModule | null;
 
 export type LearningSyncStatus = "synced" | "pending" | "syncing" | "error";
+export type DurabilityStatus = "durable" | "memory-only" | "failed";
 
 export type LearningSyncUiState = {
  status: LearningSyncStatus;
+ durability?: DurabilityStatus;
  pendingCount: number;
  lastError: string | null;
  isOnline: boolean;

@@ -2,7 +2,10 @@
 
 import { z } from "zod";
 
-import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
+import {
+ PracticeAttemptApiError,
+ savePracticeAttempt,
+} from "@/features/hanzihome/practice/practice-attempt-api";
 import { reviewResultSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 
 import {
@@ -13,10 +16,10 @@ import {
  replaceInStoreIf,
 } from "./hanzihome-local-db";
 
-const reviewItemTypeSchema = z.enum(["vocab", "grammar", "radical"]);
-const pendingReviewAttemptStatusSchema = z.enum(["pending", "syncing", "failed"]);
+export const reviewItemTypeSchema = z.enum(["vocab", "grammar", "radical"]);
+export const pendingReviewAttemptStatusSchema = z.enum(["pending", "syncing", "failed"]);
 
-const pendingReviewAttemptMutationSchema = z.object({
+export const pendingReviewAttemptMutationSchema = z.object({
  id: z.string().min(1),
  ownerUserId: z.string().min(1),
  type: z.literal("review_attempt.append"),
@@ -46,12 +49,40 @@ export type ReviewAttemptSyncResult = {
  syncedCount: number;
  pendingCount: number;
  error?: string;
+ isOwnerMismatch?: boolean;
 };
 
 const inFlightByOwner = new Map<string, Promise<ReviewAttemptSyncResult>>();
 
-function mutationId(ownerUserId: string, attemptId: string) {
+export function reviewAttemptMutationId(ownerUserId: string, attemptId: string) {
  return `review_attempt:${ownerUserId}:${attemptId}`;
+}
+
+export function buildPendingReviewAttemptMutation({
+ ownerUserId,
+ attemptId,
+ input,
+ now = new Date().toISOString(),
+}: {
+ ownerUserId: string;
+ attemptId: string;
+ input: ReviewAttemptInput;
+ now?: string;
+}): PendingReviewAttemptMutation {
+ return pendingReviewAttemptMutationSchema.parse({
+  id: reviewAttemptMutationId(ownerUserId, attemptId),
+  ownerUserId,
+  type: "review_attempt.append",
+  status: "pending",
+  attemptId,
+  payload: {
+   ...input,
+   answeredAt: now,
+  },
+  createdAt: now,
+  updatedAt: now,
+  attemptCount: 0,
+ });
 }
 
 function isSameGeneration(
@@ -72,22 +103,13 @@ function isBrowserOnline() {
 export async function enqueueReviewAttempt(
  ownerUserId: string,
  input: ReviewAttemptInput,
+ existingAttemptId?: string,
 ): Promise<PendingReviewAttemptMutation> {
- const attemptId = crypto.randomUUID();
- const now = new Date().toISOString();
- const mutation = pendingReviewAttemptMutationSchema.parse({
-  id: mutationId(ownerUserId, attemptId),
+ const attemptId = existingAttemptId ?? crypto.randomUUID();
+ const mutation = buildPendingReviewAttemptMutation({
   ownerUserId,
-  type: "review_attempt.append",
-  status: "pending",
   attemptId,
-  payload: {
-   ...input,
-   answeredAt: now,
-  },
-  createdAt: now,
-  updatedAt: now,
-  attemptCount: 0,
+  input,
  });
  await putInStore(HANZIHOME_LOCAL_STORES.pendingMutations, mutation);
  return mutation;
@@ -164,23 +186,36 @@ async function drainReviewAttempts(ownerUserId: string): Promise<ReviewAttemptSy
   const active = await markSyncing(pending);
   if (!active) continue;
   try {
-   await savePracticeAttempt({
-    attemptId: active.attemptId,
-    surface: "review",
-    contentId: `${active.payload.itemType}:${active.payload.itemId}`,
-    direction: null,
-    answer: {
-     kind: "review",
-     itemType: active.payload.itemType,
-     result: active.payload.result,
-     ...(active.payload.label ? { label: active.payload.label } : {}),
-     answeredAt: active.payload.answeredAt,
+   await savePracticeAttempt(
+    {
+     attemptId: active.attemptId,
+     surface: "review",
+     contentId: `${active.payload.itemType}:${active.payload.itemId}`,
+     direction: null,
+     answer: {
+      kind: "review",
+      itemType: active.payload.itemType,
+      result: active.payload.result,
+      ...(active.payload.label ? { label: active.payload.label } : {}),
+      answeredAt: active.payload.answeredAt,
+     },
+     scorePercent: null,
+     responseMs: null,
     },
-    scorePercent: null,
-    responseMs: null,
-   });
+    { expectedOwnerId: active.ownerUserId },
+   );
    if (await clearMutation(active)) syncedCount += 1;
   } catch (error) {
+   if (error instanceof PracticeAttemptApiError && error.status === 412) {
+    const remaining = await listPendingReviewAttemptMutations(ownerUserId);
+    return {
+     status: "error",
+     syncedCount,
+     pendingCount: remaining.length,
+     error: error.message,
+     isOwnerMismatch: true,
+    };
+   }
    const message = error instanceof Error ? error.message : "Không lưu được lịch sử ôn tập.";
    await markFailed(active, message);
    const remaining = await listPendingReviewAttemptMutations(ownerUserId);

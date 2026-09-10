@@ -26,8 +26,11 @@ import {
 } from "@/features/hanzihome/utils/learning-state";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
+export type DurabilityStatus = "durable" | "memory-only" | "failed";
+
 type LearningStateSyncUiState = {
  status: LearningStateSyncStatus;
+ durability: DurabilityStatus;
  pendingCount: number;
  lastError: string | null;
  isOnline: boolean;
@@ -41,6 +44,7 @@ type ReviewItem = Pick<UserLearningState["reviewHistory"][number], "type" | "id"
 
 const defaultSyncUiState: LearningStateSyncUiState = {
  status: "synced",
+ durability: "durable",
  pendingCount: 0,
  lastError: null,
  isOnline: true,
@@ -216,7 +220,12 @@ export function useLearningState() {
  const updateState = useCallback(
   (
    recipe: (state: UserLearningState) => UserLearningState,
-   afterLocalSave?: () => Promise<void>,
+   options?: {
+    reviewAttempt?: {
+     attemptId: string;
+     input: ReviewAttemptInput;
+    };
+   },
   ) => {
    const current = normalizeLearningState(
     queryClient.getQueryData<UserLearningState>(queryKey) ?? query.data ?? emptyLearningState,
@@ -229,6 +238,7 @@ export function useLearningState() {
    updateOwnerSyncUiState(userId, (value) => ({
     ...value,
     status: "pending",
+    durability: "memory-only",
     pendingCount: Math.max(1, value.pendingCount),
     lastError: null,
    }));
@@ -237,8 +247,13 @@ export function useLearningState() {
    const nextWrite = previous
     .catch(() => undefined)
     .then(async () => {
-     await saveLearningStateLocalFirst(userId, current, nextState);
-     await afterLocalSave?.();
+     await saveLearningStateLocalFirst(userId, current, nextState, {
+      reviewAttempt: options?.reviewAttempt,
+     });
+     updateOwnerSyncUiState(userId, (value) => ({
+      ...value,
+      durability: "durable",
+     }));
     });
    learningStateWriteChains.set(userId, nextWrite);
 
@@ -250,6 +265,7 @@ export function useLearningState() {
      updateOwnerSyncUiState(userId, (value) => ({
       ...value,
       status: "error",
+      durability: "failed",
       pendingCount: Math.max(1, value.pendingCount),
       lastError: message,
      }));
@@ -269,15 +285,23 @@ export function useLearningState() {
    updateOwnerSyncUiState(userId, (value) => ({
     ...value,
     status: "pending",
+    durability: "memory-only",
     pendingCount: Math.max(1, value.pendingCount),
     lastError: null,
    }));
    void enqueueReviewAttempt(userId, reviewAttemptInput(item, result))
-    .then(() => (item.type === "radical" ? syncLearningState(queryClient, userId) : undefined))
+    .then(() => {
+     updateOwnerSyncUiState(userId, (value) => ({
+      ...value,
+      durability: "durable",
+     }));
+     return item.type === "radical" ? syncLearningState(queryClient, userId) : undefined;
+    })
     .catch((error: unknown) => {
      updateOwnerSyncUiState(userId, (value) => ({
       ...value,
       status: "error",
+      durability: "failed",
       pendingCount: Math.max(1, value.pendingCount),
       lastError: error instanceof Error ? error.message : "Could not queue review evidence.",
      }));
@@ -296,6 +320,7 @@ export function useLearningState() {
     return;
    }
 
+   const attemptId = crypto.randomUUID();
    const status = reviewResultToLearningStatus(result);
    updateState(
     (current) => ({
@@ -311,8 +336,11 @@ export function useLearningState() {
           grammar: { ...current.progress.grammar, [item.id]: nextProgress(status) },
          },
     }),
-    async () => {
-     await enqueueReviewAttempt(userId, attemptInput);
+    {
+     reviewAttempt: {
+      attemptId,
+      input: attemptInput,
+     },
     },
    );
   },
@@ -327,6 +355,7 @@ export function useLearningState() {
    isError: query.isError || syncUiState.status === "error",
    isOnline: syncUiState.isOnline,
    syncStatus: syncUiState.status,
+   durability: syncUiState.durability,
    pendingSyncCount: syncUiState.pendingCount,
    lastSyncError: syncUiState.lastError,
    retrySync,

@@ -23,7 +23,6 @@ export function VocabAggregateRow({ item }: { item: AggregateVocabItem }) {
      lessonNumber: item.lessonNumber,
      module: "vocab",
     })}
-    prefetch={false}
    >
     <div className="min-w-0">
      <HanziText as="p" size="card" variant="pageTitle" tone="default" weight="black" leading="none">

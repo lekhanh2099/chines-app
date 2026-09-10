@@ -19,6 +19,7 @@ const { mockLearningState } = vi.hoisted(() => ({
   isError: false,
   isOnline: true,
   syncStatus: "synced",
+  durability: "durable",
   pendingSyncCount: 0,
   lastSyncError: null,
   retrySync: async () => ({ status: "synced", syncedCount: 0, pendingCount: 0 }),

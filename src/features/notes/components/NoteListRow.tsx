@@ -45,6 +45,11 @@ import { Typography } from "@/components/ui/typography";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
 import { useUpdateNoteLibraryMetadata } from "@/features/notes/hooks/useNoteLibrary";
 import { useDeleteNoteFromList } from "@/features/notes/hooks/useNotesList";
+import { useQueryClient } from "@tanstack/react-query";
+import { useClientSession } from "@/components/providers/QueryProvider";
+import { getNoteById } from "@/services/notes.service";
+import { noteQueryKeys } from "@/features/notes/query-keys";
+import { getNoteDraft } from "@/features/notes/local/note-draft-store";
 import { Link } from "@/i18n/navigation";
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
 import { noteTabsStore } from "@/stores/note-tabs-store";
@@ -132,10 +137,46 @@ export function NoteListRow({
   }
  };
 
+ const { supabase, userId } = useClientSession();
+ const queryClient = useQueryClient();
+
+ const handlePrefetch = () => {
+  if (!userId) return;
+  void queryClient.prefetchQuery({
+   queryKey: noteQueryKeys.detail(userId, note.id),
+   queryFn: async () => {
+    const serverNote = await getNoteById(supabase, note.id, userId);
+    if (!serverNote) return null;
+    try {
+     const localDraft = await getNoteDraft(userId, note.id);
+     if (localDraft) {
+      const serverTime = new Date(serverNote.updated_at).getTime();
+      if (localDraft.updatedAt > serverTime) {
+       return {
+        ...serverNote,
+        content: localDraft.content,
+        reading_content: localDraft.readingContent ?? serverNote.reading_content,
+       };
+      }
+     }
+    } catch {
+     // Fall back to server note
+    }
+    return serverNote;
+   },
+   staleTime: 60 * 1000,
+  });
+ };
+
  return (
   <>
    <article className="group grid grid-cols-[minmax(0,1fr)_auto] border-b border-border-default transition-colors last:border-b-0 hover:bg-bg-subtle/70">
-    <Link href={`/notes/${note.id}`} className="min-w-0 px-3 py-3 sm:px-4 lg:px-5 lg:py-4">
+    <Link
+     href={`/notes/${note.id}`}
+     onMouseEnter={handlePrefetch}
+     onPointerDown={handlePrefetch}
+     className="min-w-0 px-3 py-3 sm:px-4 lg:px-5 lg:py-4"
+    >
      <div className="flex min-w-0 items-start gap-3">
       <IconTile tone={getContextTone(context.kind)} size="sm" className="translate-y-0.5">
        {getContextIcon(context.kind)}

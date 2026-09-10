@@ -30,6 +30,7 @@ const { mockLearningState, learningStateMock, checkboxItemMock, radioGroupMock, 
    isError: false,
    isOnline: true,
    syncStatus: "synced",
+   durability: "durable",
    pendingSyncCount: 0,
    lastSyncError: null,
    retrySync: vi.fn<ReturnType<typeof useLearningState>["retrySync"]>(async () => ({

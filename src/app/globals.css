@@ -2221,3 +2221,69 @@ select {
   opacity 0.4s,
   box-shadow 0.2s !important;
 }
+
+/* Navigation top progress indicator */
+@keyframes nav-progress-bar {
+ 0% {
+  left: -35%;
+  right: 100%;
+ }
+ 60% {
+  left: 100%;
+  right: -90%;
+ }
+ 100% {
+  left: 100%;
+  right: -90%;
+ }
+}
+
+@keyframes nav-progress-bar-short {
+ 0% {
+  left: -200%;
+  right: 100%;
+ }
+ 60% {
+  left: 107%;
+  right: -8%;
+ }
+ 100% {
+  left: 107%;
+  right: -8%;
+ }
+}
+
+.nav-progress-line {
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 2.5px;
+ overflow: hidden;
+ pointer-events: none;
+ z-index: 9999;
+ background-color: var(--theme-primary-soft, oklch(0.565 0.205 258 / 0.15));
+}
+
+.nav-progress-line::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ background-color: var(--theme-primary, #6366f1);
+ will-change: left, right;
+ animation: nav-progress-bar 1.8s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.nav-progress-line::after {
+ content: "";
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ background-color: var(--theme-primary, #6366f1);
+ will-change: left, right;
+ animation: nav-progress-bar-short 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+ animation-delay: 0.95s;
+}

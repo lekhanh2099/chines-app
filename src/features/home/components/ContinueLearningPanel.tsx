@@ -16,7 +16,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
   <section aria-labelledby="continue-learning-title">
    {lesson ? (
     <ActionCard padding="lg" asChild className="grid w-full gap-4">
-     <Link href={lesson.href} prefetch={false}>
+     <Link href={lesson.href}>
       <span className="flex min-w-0 items-start justify-between gap-3">
        <span className="grid min-w-0 gap-1">
         <Typography

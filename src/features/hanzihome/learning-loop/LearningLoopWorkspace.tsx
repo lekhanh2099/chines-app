@@ -13,7 +13,11 @@ import { Typography } from "@/components/ui/typography";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
-import { fetchLearningLoopItems, rateLearningLoopItem } from "./learning-loop-api";
+import {
+ fetchLearningLoopItems,
+ rateLearningLoopItem,
+ type LearningLoopItemRow,
+} from "./learning-loop-api";
 
 export function LearningLoopWorkspace() {
  const t = useTranslations("LearningLoop");
@@ -36,11 +40,40 @@ export function LearningLoopWorkspace() {
    }
    return rateLearningLoopItem(input);
   },
-  onSuccess: async () => {
+  onMutate: async (input) => {
    setError(null);
-   await queryClient.invalidateQueries({ queryKey: learningLoopKey });
+   await queryClient.cancelQueries({ queryKey: learningLoopKey });
+   const previous = queryClient.getQueryData<LearningLoopItemRow[]>(learningLoopKey) || [];
+   const targetIndex = previous.findIndex((item) => item.id === input.itemId);
+   const targetItem = previous[targetIndex];
+   queryClient.setQueryData<LearningLoopItemRow[]>(
+    learningLoopKey,
+    previous.filter((item) => item.id !== input.itemId),
+   );
+   return { targetItem, targetIndex };
   },
-  onError: (caught: Error) => setError(caught.message),
+  onSuccess: () => {
+   setError(null);
+   void queryClient.invalidateQueries({ queryKey: learningLoopKey });
+  },
+  onError: (caught: Error, _variables, context) => {
+   setError(caught.message);
+   if (context?.targetItem) {
+    queryClient.setQueryData<LearningLoopItemRow[]>(learningLoopKey, (current) => {
+     if (!current) return [context.targetItem];
+     if (current.some((item) => item.id === context.targetItem.id)) return current;
+     const copy = [...current];
+     const insertAt =
+      typeof context.targetIndex === "number" &&
+      context.targetIndex >= 0 &&
+      context.targetIndex <= copy.length
+       ? context.targetIndex
+       : 0;
+     copy.splice(insertAt, 0, context.targetItem);
+     return copy;
+    });
+   }
+  },
  });
  const item = useMemo(() => query.data?.[0] ?? null, [query.data]);
 

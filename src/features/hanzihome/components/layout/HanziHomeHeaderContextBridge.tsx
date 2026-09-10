@@ -20,6 +20,8 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import { useQueryClient } from "@tanstack/react-query";
+import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
 import { getLessonRouteValue } from "@/features/hanzihome/utils/lesson-route";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { headerToolbarStore } from "@/stores/header-toolbar-store";
@@ -39,6 +41,7 @@ export function HanziHomeHeaderContextBridge({
  lessons: HanziHomeLesson[];
 }) {
  const router = useRouter();
+ const queryClient = useQueryClient();
  const searchParams = useSearchParams();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const searchParamsString = searchParams.toString();
@@ -76,6 +79,8 @@ export function HanziHomeHeaderContextBridge({
        const lesson = lessons.find((item) => item.id === lessonId);
        if (!lesson) return;
 
+       prefetchHanziHomeLessonResources(queryClient, lesson.id);
+
        const nextParams = new URLSearchParams(searchParamsString);
        const currentModule = nextParams.get("module");
        nextParams.set("courseId", selectedCourseId);
@@ -111,6 +116,7 @@ export function HanziHomeHeaderContextBridge({
   [
    focusModeEnabled,
    lessons,
+   queryClient,
    router,
    searchParamsString,
    selectedCourseId,

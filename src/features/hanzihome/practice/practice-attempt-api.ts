@@ -25,20 +25,43 @@ const practiceAttemptCountResponseSchema = z.strictObject({
 
 export type PracticeAttemptPayload = z.output<typeof practiceAttemptPayloadSchema>;
 
-export async function savePracticeAttempt(input: PracticeAttemptPayload) {
+export class PracticeAttemptApiError extends Error {
+ constructor(
+  message: string,
+  readonly status: number,
+  readonly code?: string,
+ ) {
+  super(message);
+  this.name = "PracticeAttemptApiError";
+ }
+}
+
+export async function savePracticeAttempt(
+ input: PracticeAttemptPayload,
+ options?: { expectedOwnerId?: string },
+) {
  const payload = practiceAttemptPayloadSchema.parse(input);
+ const headers: Record<string, string> = { "Content-Type": "application/json" };
+ if (options?.expectedOwnerId) {
+  headers["X-HanziHome-Owner-Id"] = options.expectedOwnerId;
+ }
+
  const response = await fetch("/api/hanzihome/practice/attempts", {
   method: "POST",
-  headers: { "Content-Type": "application/json" },
+  headers,
   body: JSON.stringify(payload),
  });
  const value = await response.json().catch(() => null);
  if (!response.ok) {
-  throw new Error(
+  const message =
    value && typeof value === "object" && "error" in value && typeof value.error === "string"
     ? value.error
-    : "Không lưu được lịch sử luyện tập.",
-  );
+    : "Không lưu được lịch sử luyện tập.";
+  const code =
+   value && typeof value === "object" && "code" in value && typeof value.code === "string"
+    ? value.code
+    : undefined;
+  throw new PracticeAttemptApiError(message, response.status, code);
  }
  return practiceAttemptResponseSchema.parse(value).attempt;
 }

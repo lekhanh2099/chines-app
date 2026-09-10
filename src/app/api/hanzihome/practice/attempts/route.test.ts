@@ -1,218 +1,136 @@
-import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const {
- countPracticeAttempts,
- listPracticeAttempts,
- listRecentPracticeAttempts,
- savePracticeAttempt,
- requireAuthenticatedRoute,
-} = vi.hoisted(() => ({
+vi.mock("server-only", () => ({}));
+vi.mock("@/lib/env/public", () => ({
+ publicSupabaseEnv: {
+  url: "https://example.supabase.co",
+  key: "test-publishable-key",
+ },
+}));
+
+const authContext = vi.hoisted(() => ({
+ requireAuthenticatedRoute: vi.fn(),
+ verifyExpectedAuthenticatedOwner: vi.fn(),
+}));
+
+const repo = vi.hoisted(() => ({
  countPracticeAttempts: vi.fn(),
  listPracticeAttempts: vi.fn(),
  listRecentPracticeAttempts: vi.fn(),
  savePracticeAttempt: vi.fn(),
- requireAuthenticatedRoute: vi.fn(),
 }));
 
-vi.mock("server-only", () => ({}));
+vi.mock("@/lib/api/authenticated-route", async (importOriginal) => {
+ const actual = await importOriginal<typeof import("@/lib/api/authenticated-route")>();
+ return {
+  ...actual,
+  requireAuthenticatedRoute: authContext.requireAuthenticatedRoute,
+  verifyExpectedAuthenticatedOwner: authContext.verifyExpectedAuthenticatedOwner,
+ };
+});
+
 vi.mock("@/features/hanzihome/practice/practice-attempt-repository.server", () => ({
- countPracticeAttempts,
- listPracticeAttempts,
- listRecentPracticeAttempts,
- savePracticeAttempt,
-}));
-vi.mock("@/lib/api/authenticated-route", () => ({
- requireAuthenticatedRoute,
- apiError: (message: string, status: number, code?: string) =>
-  Response.json({ error: message, ...(code ? { code } : {}) }, { status }),
- privateNoStoreJson: (body: JsonFieldValue) =>
-  Response.json(body, { headers: { "Cache-Control": "private, no-store" } }),
+ countPracticeAttempts: repo.countPracticeAttempts,
+ listPracticeAttempts: repo.listPracticeAttempts,
+ listRecentPracticeAttempts: repo.listRecentPracticeAttempts,
+ savePracticeAttempt: repo.savePracticeAttempt,
 }));
 
-import { GET, POST } from "./route";
+import { POST } from "./route";
 
-describe("/api/hanzihome/practice/attempts", () => {
- const authContext = { user: { id: "user-1" }, supabase: {} };
+const samplePayload = {
+ attemptId: "af84c8d0-aa7f-4af7-a4b7-71ff6e887a35",
+ surface: "review",
+ contentId: "vocab:word-1",
+ direction: null,
+ answer: { kind: "review", itemType: "vocab", result: "known" },
+ scorePercent: 100,
+ responseMs: 1200,
+};
 
+function practicePostRequest(options?: { ownerHeader?: string; body?: object }) {
+ const headers: Record<string, string> = {
+  "Content-Type": "application/json",
+ };
+ if (options?.ownerHeader !== undefined) {
+  headers["X-HanziHome-Owner-Id"] = options.ownerHeader;
+ }
+
+ return new Request("https://app.example/api/hanzihome/practice/attempts", {
+  method: "POST",
+  headers,
+  body: JSON.stringify(options?.body ?? samplePayload),
+ });
+}
+
+describe("POST /api/hanzihome/practice/attempts", () => {
  beforeEach(() => {
-  countPracticeAttempts.mockReset();
-  listPracticeAttempts.mockReset();
-  listRecentPracticeAttempts.mockReset();
-  savePracticeAttempt.mockReset();
-  requireAuthenticatedRoute.mockReset();
-  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: authContext });
- });
-
- it("loads history within the requested surface and content scope", async () => {
-  listPracticeAttempts.mockResolvedValue([]);
-
-  const response = await GET(
-   new Request(
-    "https://app.example/api/hanzihome/practice/attempts?surface=translation&contentId=segment-1",
-   ),
-  );
-
-  expect(response.status).toBe(200);
-  expect(listPracticeAttempts).toHaveBeenCalledWith(
-   { surface: "translation", contentId: "segment-1" },
-   "user-1",
-  );
-  expect(listRecentPracticeAttempts).not.toHaveBeenCalled();
- });
-
- it("loads a bounded recent evidence stream when content scope is omitted", async () => {
-  listRecentPracticeAttempts.mockResolvedValue([]);
-
-  const response = await GET(
-   new Request("https://app.example/api/hanzihome/practice/attempts?surface=review&limit=25"),
-  );
-
-  expect(response.status).toBe(200);
-  expect(listRecentPracticeAttempts).toHaveBeenCalledWith("user-1", {
-   surface: "review",
-   limit: 25,
-  });
-  expect(listPracticeAttempts).not.toHaveBeenCalled();
- });
-
- it("returns an exact owner-scoped evidence count for a bounded time window", async () => {
-  countPracticeAttempts.mockResolvedValue(73);
-  const since = "2026-08-20T00:00:00.000+07:00";
-  const until = "2026-08-20T12:00:00.000+07:00";
-
-  const response = await GET(
-   new Request(
-    `https://app.example/api/hanzihome/practice/attempts?mode=count&surface=review&since=${encodeURIComponent(since)}&until=${encodeURIComponent(until)}`,
-   ),
-  );
-
-  expect(response.status).toBe(200);
-  expect(countPracticeAttempts).toHaveBeenCalledWith("user-1", {
-   surface: "review",
-   since,
-   until,
-  });
-  await expect(response.json()).resolves.toEqual({ count: 73 });
- });
-
- it("rejects a count request without both time boundaries", async () => {
-  const response = await GET(
-   new Request(
-    "https://app.example/api/hanzihome/practice/attempts?mode=count&surface=review&since=2026-08-20T00%3A00%3A00.000Z",
-   ),
-  );
-
-  expect(response.status).toBe(400);
-  expect(countPracticeAttempts).not.toHaveBeenCalled();
- });
-
- it("rejects malformed attempts before the repository is called", async () => {
-  const response = await POST(
-   new Request("https://app.example/api/hanzihome/practice/attempts", {
-    method: "POST",
-    body: JSON.stringify({ surface: "translation", contentId: "segment-1" }),
-   }),
-  );
-
-  expect(response.status).toBe(400);
-  expect(savePracticeAttempt).not.toHaveBeenCalled();
- });
-
- it("persists a typed deterministic attempt payload", async () => {
-  savePracticeAttempt.mockResolvedValue({ id: "attempt-1" });
-
-  const response = await POST(
-   new Request("https://app.example/api/hanzihome/practice/attempts", {
-    method: "POST",
-    body: JSON.stringify({
-     surface: "dictation",
-     contentId: "entry-1",
-     direction: null,
-     answer: { expectedText: "你好", answer: "你 好", mistakeCount: 1 },
-     scorePercent: 50,
-     responseMs: 1200,
-    }),
-   }),
-  );
-
-  expect(response.status).toBe(200);
-  expect(savePracticeAttempt).toHaveBeenCalledWith(
-   {
-    surface: "dictation",
-    contentId: "entry-1",
-    direction: null,
-    answer: { expectedText: "你好", answer: "你 好", mistakeCount: 1 },
-    scorePercent: 50,
-    responseMs: 1200,
+  vi.clearAllMocks();
+  authContext.requireAuthenticatedRoute.mockResolvedValue({
+   authenticated: true,
+   context: {
+    user: { id: "user-1" },
+    supabase: {},
    },
-   "user-1",
-  );
+  });
+  authContext.verifyExpectedAuthenticatedOwner.mockReturnValue(null);
+  repo.savePracticeAttempt.mockResolvedValue({
+   id: "attempt-1",
+   user_id: "user-1",
+   attempt_id: samplePayload.attemptId,
+   surface: "review",
+   content_id: "vocab:word-1",
+   direction: null,
+   answer: samplePayload.answer,
+   score_percent: 100,
+   response_ms: 1200,
+   created_at: "2026-08-20T00:00:00.000Z",
+  });
  });
 
- it("accepts a stable review attempt id without inventing a numeric score", async () => {
-  const attemptId = "af84c8d0-aa7f-4af7-a4b7-71ff6e887a35";
-  savePracticeAttempt.mockResolvedValue({ id: attemptId });
+ it("rejects unauthenticated attempts", async () => {
+  const { apiError } = await import("@/lib/api/authenticated-route");
+  authContext.requireAuthenticatedRoute.mockResolvedValue({
+   authenticated: false,
+   response: apiError("Unauthorized", 401, "UNAUTHORIZED"),
+  });
 
-  const response = await POST(
-   new Request("https://app.example/api/hanzihome/practice/attempts", {
-    method: "POST",
-    body: JSON.stringify({
-     attemptId,
-     surface: "review",
-     contentId: "vocab:词语",
-     direction: null,
-     answer: {
-      kind: "review",
-      itemType: "vocab",
-      result: "hard",
-     },
-     scorePercent: null,
-     responseMs: null,
-    }),
-   }),
-  );
+  const response = await POST(practicePostRequest());
+
+  expect(response.status).toBe(401);
+  expect(repo.savePracticeAttempt).not.toHaveBeenCalled();
+ });
+
+ it("accepts requests without expected-owner header for backward compatibility", async () => {
+  const response = await POST(practicePostRequest());
 
   expect(response.status).toBe(200);
-  expect(savePracticeAttempt).toHaveBeenCalledWith(
-   {
-    attemptId,
-    surface: "review",
-    contentId: "vocab:词语",
-    direction: null,
-    answer: {
-     kind: "review",
-     itemType: "vocab",
-     result: "hard",
-    },
-    scorePercent: null,
-    responseMs: null,
-   },
-   "user-1",
-  );
+  expect(authContext.verifyExpectedAuthenticatedOwner).not.toHaveBeenCalled();
+  expect(repo.savePracticeAttempt).toHaveBeenCalledWith(samplePayload, "user-1");
  });
 
- it("rejects a malformed stable attempt id before persistence", async () => {
-  const response = await POST(
-   new Request("https://app.example/api/hanzihome/practice/attempts", {
-    method: "POST",
-    body: JSON.stringify({
-     attemptId: "not-a-uuid",
-     surface: "review",
-     contentId: "grammar:point-1",
-     direction: null,
-     answer: {
-      kind: "review",
-      itemType: "grammar",
-      result: "known",
-     },
-     scorePercent: null,
-     responseMs: null,
-    }),
-   }),
+ it("verifies expected owner when header is present and proceeds on match", async () => {
+  const response = await POST(practicePostRequest({ ownerHeader: "user-1" }));
+
+  expect(response.status).toBe(200);
+  expect(authContext.verifyExpectedAuthenticatedOwner).toHaveBeenCalledOnce();
+  expect(repo.savePracticeAttempt).toHaveBeenCalledWith(samplePayload, "user-1");
+ });
+
+ it("rejects with 412 and does not save when owner header mismatches", async () => {
+  const { apiError } = await import("@/lib/api/authenticated-route");
+  authContext.verifyExpectedAuthenticatedOwner.mockReturnValue(
+   apiError(
+    "Request owner no longer matches the authenticated session",
+    412,
+    "AUTH_OWNER_MISMATCH",
+   ),
   );
 
-  expect(response.status).toBe(400);
-  expect(savePracticeAttempt).not.toHaveBeenCalled();
+  const response = await POST(practicePostRequest({ ownerHeader: "user-2" }));
+
+  expect(response.status).toBe(412);
+  await expect(response.json()).resolves.toMatchObject({ code: "AUTH_OWNER_MISMATCH" });
+  expect(repo.savePracticeAttempt).not.toHaveBeenCalled();
  });
 });

@@ -55,7 +55,7 @@ export function HanziHomeLibraryHome() {
      actions={
       <>
        <Button type="button" variant="outline" size="toolbar" asChild>
-        <Link href="/html-artifacts" prefetch={false}>
+        <Link href="/html-artifacts">
          <FileCode2 data-icon="inline-start" />
          Tệp HTML
         </Link>

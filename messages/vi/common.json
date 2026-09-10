@@ -17,5 +17,18 @@
   "vi": "Tiếng Việt",
   "en": "English",
   "zh-CN": "简体中文"
+ },
+ "syncStatus": {
+  "localSavePending": "Đang lưu trên máy...",
+  "durablySavedOffline": "Đã lưu offline",
+  "syncing": "Đang đồng bộ...",
+  "syncError": "Chưa đồng bộ",
+  "localStorageFailed": "Lỗi lưu trên máy",
+  "cachedSnapshot": "Bản lưu offline",
+  "offlineUnavailableTitle": "Chưa có sẵn offline",
+  "offlineUnavailableDescription": "Bài học này chưa được tải về máy. Vui lòng kết nối mạng để tải bài học.",
+  "retry": "Thử lại",
+  "offline": "Offline",
+  "synced": "Đã đồng bộ"
  }
 }

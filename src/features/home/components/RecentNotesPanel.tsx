@@ -24,9 +24,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
      description={t("notes.description")}
      action={
       <Button variant="link" size="inline" asChild>
-       <Link href="/notes" prefetch={false}>
-        {t("notes.viewAll")}
-       </Link>
+       <Link href="/notes">{t("notes.viewAll")}</Link>
       </Button>
      }
     />
@@ -37,7 +35,6 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
        <Link
         key={note.id}
         href={`/notes/${note.id}`}
-        prefetch={false}
         className="group flex items-center gap-3 py-3 first:pt-0 last:pb-0"
        >
         <IconTile size="sm" tone="neutral">
@@ -76,9 +73,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
       description={t("notes.emptyDescription")}
       actions={
        <Button asChild size="compact">
-        <Link href="/notes?action=new" prefetch={false}>
-         {t("notes.create")}
-        </Link>
+        <Link href="/notes?action=new">{t("notes.create")}</Link>
        </Button>
       }
      />

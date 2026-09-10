@@ -17,5 +17,18 @@
   "vi": "越南语",
   "en": "英语",
   "zh-CN": "简体中文"
+ },
+ "syncStatus": {
+  "localSavePending": "正在保存到本地...",
+  "durablySavedOffline": "已离线保存",
+  "syncing": "正在同步...",
+  "syncError": "未同步",
+  "localStorageFailed": "本地存储失败",
+  "cachedSnapshot": "离线快照",
+  "offlineUnavailableTitle": "离线不可用",
+  "offlineUnavailableDescription": "该课程尚未下载到本地。请连接网络以加载。",
+  "retry": "重试",
+  "offline": "离线",
+  "synced": "已同步"
  }
 }

@@ -14,13 +14,18 @@
 - [Repository skill inventory and audit scorecard](agent/skill-inventory.md)
 - [Developer API v1 guide](developer-api.md)
 
+## Active implementation plan
+
+- [Immediate interaction, durable local-first learning and offline lesson cache](refactors/immediate-interaction-local-first.md)
+  — approved scope, mandatory clean-code rules, checkpoint checklist and execution evidence.
+
 ## Historical product context
 
 The documents under `docs/hanzihome/` describe earlier local JSON product directions. They remain useful for UX intent, but they do not override `AGENTS.md`, the current architecture, migrations, or runtime contracts.
 
 ## Historical implementation records
 
-Documents under `docs/refactors/` record named implementation checkpoints.
+Apart from the explicitly active plan above, documents under `docs/refactors/` record named implementation checkpoints.
 Their branch names, status lines, command results, and file lists describe
 those checkpoints rather than the current checkout. Use `AGENTS.md`, the
 current architecture documents above, current source, and migrations for

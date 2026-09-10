@@ -391,7 +391,6 @@ function SelectedLessonContentPreview({
            lessonNumber: lesson.lessonNumber,
            module: "overview",
           })}
-          prefetch={false}
          >
           Mở bài
          </Link>

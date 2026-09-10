@@ -60,12 +60,17 @@ async function parseJsonResponse<T>(response: Response, schema: z.ZodType<T>): P
  return parsed.data;
 }
 
-async function fetchJson<T>(url: string, schema: z.ZodType<T>): Promise<T> {
+async function fetchJson<T>(
+ url: string,
+ schema: z.ZodType<T>,
+ options?: { signal?: AbortSignal },
+): Promise<T> {
  const response = await fetch(url, {
   cache: "no-store",
   headers: {
    Accept: "application/json",
   },
+  signal: options?.signal,
  });
 
  return parseJsonResponse(response, schema);
@@ -103,12 +108,14 @@ export async function fetchHanziHomeCourseLessons(courseId: string): Promise<Han
 
 export async function fetchHanziHomeLessonDetail(
  lessonId: string,
+ options?: { signal?: AbortSignal },
 ): Promise<Nullable<z.output<typeof lessonApiResponseSchema>["lesson"]>> {
  if (!lessonId) return null;
 
  const payload = await fetchJson(
   `/api/hanzihome/lessons/${encodeURIComponent(lessonId)}`,
   lessonApiResponseSchema,
+  options,
  );
 
  return payload.lesson;
@@ -116,11 +123,13 @@ export async function fetchHanziHomeLessonDetail(
 
 export async function fetchHanziHomeLessonVocabulary(
  lessonId: string,
+ options?: { signal?: AbortSignal },
 ): Promise<Nullable<z.output<typeof lessonVocabularyApiResponseSchema>["resource"]>> {
  if (!lessonId) return null;
  const payload = await fetchJson(
   `/api/hanzihome/lessons/${encodeURIComponent(lessonId)}/vocabulary`,
   lessonVocabularyApiResponseSchema,
+  options,
  );
  return payload.resource;
 }

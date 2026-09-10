@@ -19,6 +19,8 @@ import {
 import type {
  CreateHtmlArtifactFolderPayload,
  CreateHtmlArtifactPayload,
+ HtmlArtifactFolder,
+ HtmlArtifactSummary,
  UpdateHtmlArtifactFolderPayload,
  UpdateHtmlArtifactPayload,
  UpdateHtmlArtifactRuntimeStatePayload,
@@ -26,6 +28,11 @@ import type {
 import { z } from "zod";
 
 type NullableText = z.infer<z.ZodNullable<z.ZodString>>;
+
+type HtmlArtifactsData = {
+ items: HtmlArtifactSummary[];
+ folders: HtmlArtifactFolder[];
+};
 
 export function useHtmlArtifactsQuery() {
  return useQuery({
@@ -76,9 +83,15 @@ export function useCreateHtmlArtifactMutation() {
 
  return useMutation({
   mutationFn: (input: CreateHtmlArtifactPayload) => createHtmlArtifact(input),
-  onSuccess: async (artifact) => {
+  onSuccess: (artifact) => {
    queryClient.setQueryData([...htmlArtifactsQueryKey, artifact.id], artifact);
-   await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });
+   queryClient.setQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey, (old) => {
+    if (!old) return { items: [artifact], folders: [] };
+    return {
+     ...old,
+     items: [artifact, ...old.items.filter((item) => item.id !== artifact.id)],
+    };
+   });
   },
  });
 }
@@ -88,8 +101,14 @@ export function useCreateHtmlArtifactFolderMutation() {
 
  return useMutation({
   mutationFn: (input: CreateHtmlArtifactFolderPayload) => createHtmlArtifactFolder(input),
-  onSuccess: async () => {
-   await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });
+  onSuccess: (folder) => {
+   queryClient.setQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey, (old) => {
+    if (!old) return { items: [], folders: [folder] };
+    return {
+     ...old,
+     folders: [...old.folders.filter((item) => item.id !== folder.id), folder],
+    };
+   });
   },
  });
 }
@@ -100,8 +119,14 @@ export function useUpdateHtmlArtifactFolderMutation() {
  return useMutation({
   mutationFn: ({ folderId, input }: { folderId: string; input: UpdateHtmlArtifactFolderPayload }) =>
    updateHtmlArtifactFolder({ folderId, input }),
-  onSuccess: async () => {
-   await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });
+  onSuccess: (folder) => {
+   queryClient.setQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey, (old) => {
+    if (!old) return { items: [], folders: [folder] };
+    return {
+     ...old,
+     folders: old.folders.map((item) => (item.id === folder.id ? folder : item)),
+    };
+   });
   },
  });
 }
@@ -111,8 +136,36 @@ export function useDeleteHtmlArtifactFolderMutation() {
 
  return useMutation({
   mutationFn: (folderId: string) => deleteHtmlArtifactFolder(folderId),
-  onSuccess: async () => {
-   await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });
+  onMutate: async (folderId) => {
+   await queryClient.cancelQueries({ queryKey: htmlArtifactsQueryKey });
+   const previous = queryClient.getQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey);
+   const deletedFolder = previous?.folders.find((f) => f.id === folderId);
+   const targetIndex = previous?.folders.findIndex((f) => f.id === folderId);
+   if (previous) {
+    queryClient.setQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey, {
+     ...previous,
+     folders: previous.folders.filter((f) => f.id !== folderId),
+    });
+   }
+   return { deletedFolder, targetIndex };
+  },
+  onError: (_error, _variables, context) => {
+   const deletedFolder = context?.deletedFolder;
+   if (deletedFolder) {
+    queryClient.setQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey, (old) => {
+     if (!old) return { items: [], folders: [deletedFolder] };
+     if (old.folders.some((f) => f.id === deletedFolder.id)) return old;
+     const copy = [...old.folders];
+     const insertAt =
+      typeof context.targetIndex === "number" &&
+      context.targetIndex >= 0 &&
+      context.targetIndex <= copy.length
+       ? context.targetIndex
+       : copy.length;
+     copy.splice(insertAt, 0, deletedFolder);
+     return { ...old, folders: copy };
+    });
+   }
   },
  });
 }
@@ -123,9 +176,15 @@ export function useUpdateHtmlArtifactMutation() {
  return useMutation({
   mutationFn: ({ artifactId, input }: { artifactId: string; input: UpdateHtmlArtifactPayload }) =>
    updateHtmlArtifact({ artifactId, input }),
-  onSuccess: async (artifact) => {
+  onSuccess: (artifact) => {
    queryClient.setQueryData([...htmlArtifactsQueryKey, artifact.id], artifact);
-   await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });
+   queryClient.setQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey, (old) => {
+    if (!old) return { items: [artifact], folders: [] };
+    return {
+     ...old,
+     items: old.items.map((item) => (item.id === artifact.id ? artifact : item)),
+    };
+   });
   },
  });
 }
@@ -135,9 +194,39 @@ export function useDeleteHtmlArtifactMutation() {
 
  return useMutation({
   mutationFn: (artifactId: string) => deleteHtmlArtifact(artifactId),
-  onSuccess: async (_result, artifactId) => {
+  onMutate: async (artifactId) => {
+   await queryClient.cancelQueries({ queryKey: htmlArtifactsQueryKey });
+   const previous = queryClient.getQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey);
+   const deletedItem = previous?.items.find((item) => item.id === artifactId);
+   const targetIndex = previous?.items.findIndex((item) => item.id === artifactId);
+   if (previous) {
+    queryClient.setQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey, {
+     ...previous,
+     items: previous.items.filter((item) => item.id !== artifactId),
+    });
+   }
+   return { deletedItem, targetIndex };
+  },
+  onSuccess: (_result, artifactId) => {
    queryClient.removeQueries({ queryKey: [...htmlArtifactsQueryKey, artifactId] });
-   await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });
+  },
+  onError: (_error, _variables, context) => {
+   const deletedItem = context?.deletedItem;
+   if (deletedItem) {
+    queryClient.setQueryData<HtmlArtifactsData>(htmlArtifactsQueryKey, (old) => {
+     if (!old) return { items: [deletedItem], folders: [] };
+     if (old.items.some((item) => item.id === deletedItem.id)) return old;
+     const copy = [...old.items];
+     const insertAt =
+      typeof context.targetIndex === "number" &&
+      context.targetIndex >= 0 &&
+      context.targetIndex <= copy.length
+       ? context.targetIndex
+       : copy.length;
+     copy.splice(insertAt, 0, deletedItem);
+     return { ...old, items: copy };
+    });
+   }
   },
  });
 }

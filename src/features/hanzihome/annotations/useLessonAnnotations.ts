@@ -28,11 +28,12 @@ export function useLessonAnnotations(lessonId: string) {
   onMutate: async ({ anchor, noteText }) => {
    await queryClient.cancelQueries({ queryKey });
    const previous = queryClient.getQueryData<LessonTextAnnotation[]>(queryKey) || [];
+   const tempId = `optimistic-${crypto.randomUUID()}`;
    const now = new Date().toISOString();
    queryClient.setQueryData<LessonTextAnnotation[]>(queryKey, [
     ...previous,
     {
-     id: `optimistic-${crypto.randomUUID()}`,
+     id: tempId,
      lessonId: anchor.lessonId,
      nodeType: anchor.nodeType,
      nodeId: anchor.nodeId,
@@ -48,13 +49,24 @@ export function useLessonAnnotations(lessonId: string) {
      updatedAt: now,
     },
    ]);
-   return { previous };
+   return { tempId };
+  },
+  onSuccess: (savedAnnotation, _variables, context) => {
+   queryClient.setQueryData<LessonTextAnnotation[]>(queryKey, (current) => {
+    if (!current) return [savedAnnotation];
+    return current.map((item) => (item.id === context?.tempId ? savedAnnotation : item));
+   });
   },
   onError: (_error, _variables, context) => {
-   queryClient.setQueryData(queryKey, context?.previous || []);
+   if (context?.tempId) {
+    queryClient.setQueryData<LessonTextAnnotation[]>(queryKey, (current) => {
+     if (!current) return [];
+     return current.filter((item) => item.id !== context.tempId);
+    });
+   }
   },
-  onSettled: () => queryClient.invalidateQueries({ queryKey }),
  });
+
  const noteMutation = useMutation({
   mutationFn: async ({ annotationId, noteText }: { annotationId: string; noteText: string }) => {
    return updateLessonAnnotationNote({ annotationId, noteText });
@@ -62,6 +74,7 @@ export function useLessonAnnotations(lessonId: string) {
   onMutate: async ({ annotationId, noteText }) => {
    await queryClient.cancelQueries({ queryKey });
    const previous = queryClient.getQueryData<LessonTextAnnotation[]>(queryKey) || [];
+   const target = previous.find((item) => item.id === annotationId);
    queryClient.setQueryData<LessonTextAnnotation[]>(
     queryKey,
     previous.map((annotation) =>
@@ -70,28 +83,67 @@ export function useLessonAnnotations(lessonId: string) {
       : annotation,
     ),
    );
-   return { previous };
+   return {
+    annotationId,
+    prevNoteText: target?.noteText,
+    prevUpdatedAt: target?.updatedAt,
+   };
+  },
+  onSuccess: (savedAnnotation) => {
+   queryClient.setQueryData<LessonTextAnnotation[]>(queryKey, (current) => {
+    if (!current) return [];
+    return current.map((item) => (item.id === savedAnnotation.id ? savedAnnotation : item));
+   });
   },
   onError: (_error, _variables, context) => {
-   queryClient.setQueryData(queryKey, context?.previous || []);
+   if (context && context.prevNoteText !== undefined) {
+    queryClient.setQueryData<LessonTextAnnotation[]>(queryKey, (current) => {
+     if (!current) return [];
+     return current.map((item) =>
+      item.id === context.annotationId
+       ? {
+          ...item,
+          noteText: context.prevNoteText ?? "",
+          updatedAt: context.prevUpdatedAt ?? item.updatedAt,
+         }
+       : item,
+     );
+    });
+   }
   },
-  onSettled: () => queryClient.invalidateQueries({ queryKey }),
  });
+
  const deleteMutation = useMutation({
   mutationFn: (annotationId: string) => deleteLessonAnnotation(annotationId),
   onMutate: async (annotationId) => {
    await queryClient.cancelQueries({ queryKey });
    const previous = queryClient.getQueryData<LessonTextAnnotation[]>(queryKey) || [];
+   const target = previous.find((annotation) => annotation.id === annotationId);
+   const targetIndex = previous.findIndex((annotation) => annotation.id === annotationId);
    queryClient.setQueryData<LessonTextAnnotation[]>(
     queryKey,
     previous.filter((annotation) => annotation.id !== annotationId),
    );
-   return { previous };
+   return { deletedAnnotation: target, index: targetIndex };
   },
   onError: (_error, _variables, context) => {
-   queryClient.setQueryData(queryKey, context?.previous || []);
+   const deleted = context?.deletedAnnotation;
+   if (deleted) {
+    queryClient.setQueryData<LessonTextAnnotation[]>(queryKey, (current) => {
+     if (!current) return [deleted];
+     if (current.some((item) => item.id === deleted.id)) {
+      return current;
+     }
+     const copy = [...current];
+     const insertAt =
+      typeof context.index === "number" && context.index >= 0 && context.index <= copy.length
+       ? context.index
+       : copy.length;
+     copy.splice(insertAt, 0, deleted);
+     return copy;
+    });
+   }
   },
-  onSettled: () => queryClient.invalidateQueries({ queryKey }),
  });
 
  return {

@@ -23,11 +23,14 @@ import {
  ThemePaletteSchema,
 } from "@/components/layout/theme-contract";
 
+import { PwaServiceWorkerRegister } from "@/components/layout/PwaServiceWorkerRegister";
+
 const themeBootstrapScript = `(function(){try{var modes=${JSON.stringify(ThemeModeSchema.options)};var palettes=${JSON.stringify(ThemePaletteSchema.options)};var mode=localStorage.getItem(${JSON.stringify(THEME_MODE_STORAGE_KEY)});var palette=localStorage.getItem(${JSON.stringify(THEME_PALETTE_STORAGE_KEY)});if(!modes.includes(mode))mode=${JSON.stringify(DEFAULT_THEME_MODE)};if(!palettes.includes(palette))palette=${JSON.stringify(DEFAULT_THEME_PALETTE)};var theme=mode==="system"?(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):mode;var root=document.documentElement;root.setAttribute("data-theme",theme);root.setAttribute("data-theme-mode",mode);root.setAttribute("data-palette",palette);root.classList.toggle("dark",theme==="dark")}catch{}})()`;
 
 export const metadata: Metadata = {
  title: "HanziHome — Chinese Learning Workspace",
  description: "A focused workspace for learning Chinese with HanziHome.",
+ manifest: "/manifest.webmanifest",
  icons: {
   icon: "/favicon.svg",
   shortcut: "/favicon.svg",
@@ -64,6 +67,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
      <ThemeProvider>
       <TooltipProvider>
        <QueryProvider>
+        <PwaServiceWorkerRegister />
         <MandarinTtsProvider>
          <VocabInspectorProvider>{children}</VocabInspectorProvider>
         </MandarinTtsProvider>
