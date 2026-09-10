@@ -1,5 +1,5 @@
 // HanziHome Service Worker — PWA & Safe Static Cache
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const STATIC_CACHE = `hanzihome-static-${CACHE_VERSION}`;
 const PAGES_CACHE = `hanzihome-pages-${CACHE_VERSION}`;
 
@@ -73,6 +73,12 @@ self.addEventListener("fetch", (event) => {
      );
     }),
   );
+  return;
+ }
+
+ // Bypass Next.js dynamic dev chunks on localhost so Fast Refresh works seamlessly
+ const isLocalhost = url.hostname === "localhost" || url.hostname === "127.0.0.1";
+ if (isLocalhost && url.pathname.startsWith("/_next/")) {
   return;
  }
 

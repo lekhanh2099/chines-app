@@ -24,6 +24,7 @@ import {
 } from "@/components/layout/theme-contract";
 
 import { PwaServiceWorkerRegister } from "@/components/layout/PwaServiceWorkerRegister";
+import { AutoSyncReconnectBridge } from "@/features/hanzihome/components/layout/AutoSyncReconnectBridge";
 
 const themeBootstrapScript = `(function(){try{var modes=${JSON.stringify(ThemeModeSchema.options)};var palettes=${JSON.stringify(ThemePaletteSchema.options)};var mode=localStorage.getItem(${JSON.stringify(THEME_MODE_STORAGE_KEY)});var palette=localStorage.getItem(${JSON.stringify(THEME_PALETTE_STORAGE_KEY)});if(!modes.includes(mode))mode=${JSON.stringify(DEFAULT_THEME_MODE)};if(!palettes.includes(palette))palette=${JSON.stringify(DEFAULT_THEME_PALETTE)};var theme=mode==="system"?(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):mode;var root=document.documentElement;root.setAttribute("data-theme",theme);root.setAttribute("data-theme-mode",mode);root.setAttribute("data-palette",palette);root.classList.toggle("dark",theme==="dark")}catch{}})()`;
 
@@ -68,6 +69,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
       <TooltipProvider>
        <QueryProvider>
         <PwaServiceWorkerRegister />
+        <AutoSyncReconnectBridge />
         <MandarinTtsProvider>
          <VocabInspectorProvider>{children}</VocabInspectorProvider>
         </MandarinTtsProvider>

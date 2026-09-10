@@ -27,6 +27,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 
 import { BookCrudActions } from "./BookCrudActions";
 import { LessonCrudActions } from "./LessonCrudActions";
+import { CourseOfflineDownloadButton } from "@/features/hanzihome/offline-pack/CourseOfflineDownloadButton";
 
 export function CourseCard({
  course,
@@ -139,6 +140,7 @@ export function CourseCard({
      </div>
 
      {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
+     <CourseOfflineDownloadButton courseId={course.id} lessonIds={bookLessons.map((l) => l.id)} />
      <Button asChild size="toolbar" aria-label={`Mở ${effectiveLesson?.titleZh || "bài học"}`}>
       <Link
        href={href}

@@ -4,6 +4,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { z } from "zod";
 
 import { buildCacheKey, getCachedAudio, setCachedAudio } from "@/lib/tts-cache";
+import {
+ isOfflineSpeechSupported,
+ speakChineseOffline,
+} from "@/features/hanzihome/speech/offline-speech-fallback";
 import type { JsonFieldValue } from "@/types/json";
 
 export const TTSVoiceSchema = z.object({
@@ -351,6 +355,38 @@ export function useTTS() {
     playBlob(blob, runId, text, onComplete, synthesisRate);
    } catch (error) {
     if (controller.signal.aborted || playbackRunRef.current !== runId) return;
+
+    if (isOfflineSpeechSupported()) {
+     try {
+      setState((prev) => ({ ...prev, isLoading: false, isSpeaking: true, error: null }));
+      setSpeakingText(text);
+      const speechResult = await speakChineseOffline(text, {
+       rate: synthesisRate,
+       onEnd: () => {
+        if (playbackRunRef.current !== runId) return;
+        setState({ isSpeaking: false, isPaused: false, isLoading: false, error: null });
+        setSpeakingText(null);
+        setSpeakingRequestText(null);
+        onComplete?.();
+        settlePlayback(true);
+       },
+       onError: (speechError) => {
+        if (playbackRunRef.current !== runId) return;
+        setState({
+         isSpeaking: false,
+         isPaused: false,
+         isLoading: false,
+         error: speechError.message,
+        });
+        settlePlayback(false, speechError);
+       },
+      });
+      if (speechResult.completed || speechResult.cancelled) return;
+     } catch {
+      // Fall through to standard error handling
+     }
+    }
+
     setSpeakingText(null);
     setSpeakingRequestText(null);
     setProgress(0);

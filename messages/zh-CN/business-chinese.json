@@ -26,5 +26,7 @@
   "revealHanzi": "显示汉字",
   "revealPinyin": "显示拼音",
   "revealMeaning": "显示释义"
- }
+ },
+ "offlineReady": "已离线就绪",
+ "offlineDescription": "此教材已内置于应用程序中，可随时离线学习。"
 }

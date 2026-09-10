@@ -24,10 +24,12 @@ import {
  AppHeaderBreadcrumbSeparator,
 } from "@/components/layout/app-header-breadcrumb";
 import { scrollAppContentToElement } from "@/components/layout/app-scroll";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/separator";
+import { CloudCheck } from "lucide-react";
 import {
  Select,
  SelectContent,
@@ -1130,6 +1132,15 @@ function BusinessChineseStudyWorkspaceContent({
      <div className="shrink-0 xl:hidden">
       <WorkspaceToolbar>
        <div className="min-w-0 flex-1">{viewSelector}</div>
+       <Badge
+        variant="success"
+        size="sm"
+        className="cursor-default gap-1 shrink-0"
+        title={t("offlineDescription")}
+       >
+        <CloudCheck data-icon="inline-start" />
+        <span className="hidden sm:inline">{t("offlineReady")}</span>
+       </Badge>
       </WorkspaceToolbar>
      </div>
      <Tabs
@@ -1154,13 +1165,24 @@ function BusinessChineseStudyWorkspaceContent({
           className={activeView === "text" ? "hidden sm:block" : undefined}
          >
           <div className="grid min-w-0 gap-2">
-           <Typography variant="overline" tone="muted">
-            {lesson.bookLabel} ·{" "}
-            {t("lessonPosition", {
-             lesson: lesson.number,
-             count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
-            })}
-           </Typography>
+           <div className="flex flex-wrap items-center justify-between gap-2">
+            <Typography variant="overline" tone="muted">
+             {lesson.bookLabel} ·{" "}
+             {t("lessonPosition", {
+              lesson: lesson.number,
+              count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
+             })}
+            </Typography>
+            <Badge
+             variant="success"
+             size="sm"
+             className="cursor-default gap-1 shrink-0"
+             title={t("offlineDescription")}
+            >
+             <CloudCheck data-icon="inline-start" />
+             <span>{t("offlineReady")}</span>
+            </Badge>
+           </div>
            {activeView !== "text" && activeView !== "all" ? (
             <BusinessChineseText
              pronunciationId={`${lesson.id}:title`}

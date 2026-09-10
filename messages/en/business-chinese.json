@@ -26,5 +26,7 @@
   "revealHanzi": "Show Hanzi",
   "revealPinyin": "Show pinyin",
   "revealMeaning": "Show meaning"
- }
+ },
+ "offlineReady": "Offline ready",
+ "offlineDescription": "This textbook is built into the application and is always available offline."
 }

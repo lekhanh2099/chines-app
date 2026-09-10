@@ -177,6 +177,27 @@ export async function readContentCache<T>(params: {
  return parsed.data;
 }
 
+export async function hasContentCache(
+ ownerId: string,
+ resourceType: ContentCacheResourceType,
+ resourceId: string,
+): Promise<boolean> {
+ const safeOwner = ownerId.trim();
+ const safeId = resourceId.trim();
+ if (!safeOwner || !resourceType || !safeId) return false;
+ try {
+  const key = buildContentCacheKey(safeOwner, resourceType, safeId);
+  const existing = await readFromStore(
+   HANZIHOME_LOCAL_STORES.contentCache,
+   key,
+   ContentCacheRecordBaseSchema,
+  );
+  return existing !== null;
+ } catch {
+  return false;
+ }
+}
+
 export async function getContentCacheGeneration(
  ownerId: string,
  resourceType: ContentCacheResourceType,

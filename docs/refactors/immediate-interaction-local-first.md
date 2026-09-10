@@ -46,8 +46,36 @@ These rules are mandatory, not suggestions.
 - [x] Phase 8 — Sync/offline UX normalization and complete core acceptance.
 - [x] Phase 9 — Separate Notes audit after core stability; not part of core completion.
 - [x] Phase 10 — PWA/full offline cold boot; separate approval, do not start automatically.
+- [x] Phase 11 — Offline Classroom Study Pack, Bulk Course Pre-cache & Auto-sync Reconnection.
 
 ### Execution evidence — 2026-09-10
+
+- Phase 11 implementation complete and verified:
+  - **Storage Persistence & Quota Utility** (`src/lib/storage/storage-persistence.ts`):
+    - Implemented `navigator.storage.persist()` request and quota inspection utilities.
+    - Added unit test suite `storage-persistence.test.ts` (7 tests passed).
+  - **Core Course Offline Pack Downloader** (`src/features/hanzihome/offline-pack/course-offline-pack.service.ts`):
+    - Implemented bulk download with bounded concurrency (max 2 parallel downloads to protect from rate-limiting/429), cooperative cancellation via `AbortSignal`, progress reporting callback, status inspection, and eviction.
+    - Added unit test suite `course-offline-pack.service.test.ts` (10 tests passed).
+  - **Web Speech API Offline Pronunciation Fallback** (`src/features/hanzihome/speech/offline-speech-fallback.ts`):
+    - Transparently falls back to device Chinese voice (`zh-CN`/`zh-TW`) in `src/hooks/useTTS.ts` when offline or when remote TTS service fails.
+    - Zero type assertions, 8 tests passed in `offline-speech-fallback.test.ts`.
+  - **Global Auto-Sync Reconnection Bridge** (`src/features/hanzihome/components/layout/AutoSyncReconnectBridge.tsx`):
+    - Listens for online events, syncs pending review attempts via `syncPendingReviewAttempts()`, invalidates queries using authoritative query keys (`hanzihomeQueryKeys`), and shows non-intrusive toast notifications.
+    - Mounted inside root `QueryProvider` in `src/app/[locale]/layout.tsx`. Tested in `AutoSyncReconnectBridge.test.tsx` (2 tests passed).
+  - **UI Integration & Full i18n Parity**:
+    - Built `CourseOfflineDownloadButton.tsx` and reactive hook `useCourseOfflinePack.ts`.
+    - Converted download button into a compact icon-only variant with accessible text (`<span className="sr-only">`), preventing squishing of the course card lesson Select dropdown.
+    - Added static textbook offline indicator badge (`Đã sẵn sàng offline`) to `BusinessChineseStudyWorkspace.tsx` across both desktop and mobile toolbars.
+    - Verified strict UI standards compliance with `scripts/check-ui-standards.mjs` (0 violations).
+    - Full translations added for `Common.offlinePack` and `BusinessChinese.offlineReady` across `vi`, `en`, and `zh-CN`.
+  - **Verification & Quality Gate**:
+    - All 226 test files (1,156 tests) passed.
+    - `npm run typecheck` passed (0 errors).
+    - `npm run lint` passed (0 warnings, 0 errors on 1259 files).
+    - `npm run format:check` passed (1403 files).
+    - `npm run source:check`, `npm run route:check`, `npm run ui:check`, `npm run api:check`, `npm run check:hanzihome:perf` all passed.
+    - `npm run build` passed with all static/dynamic routes compiling cleanly.
 
 - Phase 10 implementation complete and verified:
   - **Native Web App Manifest** (`src/app/manifest.ts`):
@@ -2016,7 +2044,114 @@ Background Sync is optional enhancement, not correctness dependency.
 
 ---
 
-# 53. Universal pre-push gate
+# 53. Phase 11 — Offline Classroom Study Pack, Bulk Course Pre-cache & Auto-sync Reconnection
+
+### 11.0. User journey & scenario definition
+
+Target user journey:
+
+```text
+At home (Online)
+→ User opens HanziHome Course Overview or Course Card.
+→ User clicks "Tải học offline" (Download Course for Offline).
+→ Client streams and persists all lesson details, vocabulary, grammar, and metadata for that course into owner-scoped `lesson_content_v2` in IndexedDB.
+→ Live progress indicator displays percentage and lesson count (e.g., "Tải 12/12 bài học thành công").
+→ Client invokes `navigator.storage.persist()` to guard against browser storage eviction (especially iOS/macOS Safari 7-day inactivity eviction).
+
+In classroom (Offline / Airplane mode)
+→ User launches web app or installed PWA.
+→ Service Worker serves application shell with zero network access.
+→ Every downloaded lesson in that course opens with 0ms latency from `lesson_content_v2` in IndexedDB.
+→ User flips flashcards, completes exercises, reviews vocabulary, and edits Notes.
+→ All interactive actions persist durably in `learning_state`, `note_drafts`, and `review_attempts_outbox`.
+→ Audio pronunciation fallback: If network TTS is unreachable, pronunciation automatically falls back to browser-native Web Speech API (`SpeechSynthesis`) with `zh-CN` voice, preventing dead audio buttons or error modals.
+
+Returning home (Reconnected to Wi-Fi)
+→ Global `online` event listener detects network recovery.
+→ Debounces 1500ms to confirm network stability, then automatically flushes `review_attempts_outbox` to Supabase.
+→ Invalidates query cache (`['learning-state']`, `['hanzihome', 'catalog']`) to merge remote state safely with Lamport concurrency checks.
+→ Displays non-blocking, truthful feedback toast: "Đã kết nối lại. Đã đồng bộ [N] kết quả học lên máy chủ."
+```
+
+### 11.1. Core architectural owners & additions
+
+1. **Course Offline Pack Downloader Service** (`src/features/hanzihome/offline-pack/course-offline-pack.service.ts`):
+   - `downloadCourseOfflinePack({ courseId, userId, onProgress, signal })`:
+     - Resolves the complete lesson catalog for the targeted course using `catalogQuery` cache or cached catalog metadata.
+     - Compares lesson list against existing `lesson_content_v2` records (`getContentCacheMetadata`) to skip already cached and up-to-date lessons.
+     - Implements a bounded concurrency pool (maximum 2 parallel requests) to avoid HTTP 429 rate limiting on backend API endpoints.
+     - Fetches `lessonDetail` and `lessonVocabulary` for remaining lessons.
+     - Validates payloads against authoritative Zod schemas (`HanziHomeLessonDetailResponseSchema`, `HanziHomeLessonVocabularyResponseSchema`).
+     - Durably writes each lesson using `writeContentCache` with Lamport generation tracking.
+     - Emits granular progress telemetry: `{ totalLessons, completedLessons, currentTitle, percent }`.
+     - Supports cooperative cancellation via standard `AbortSignal`.
+   - `getCourseOfflineStatus({ courseId, userId, lessonIds })`:
+     - Evaluates whether a course is `'fully_cached'`, `'partially_cached'`, or `'not_cached'`.
+     - Returns `{ status, cachedCount, totalCount, estimatedBytes }`.
+   - `evictCourseOfflinePack({ courseId, userId, lessonIds })`:
+     - Allows users to selectively purge downloaded course data to reclaim disk space.
+
+2. **Persistent Storage & Quota Management** (`src/lib/storage/storage-persistence.ts`):
+   - `requestStoragePersistence()`:
+     - Invokes `navigator.storage.persist()` if supported.
+     - Logs diagnostic state (`persisted: boolean`).
+     - Guards IndexedDB data from aggressive browser storage reclamation (Safari/WebKit 7-day storage cap).
+   - `getStorageQuotaEstimate()`:
+     - Queries `navigator.storage.estimate()` returning `{ usedBytes, quotaBytes, percentUsed }`.
+
+3. **Offline Pronunciation Fallback via Web Speech API** (`src/features/hanzihome/speech/offline-speech-fallback.ts`):
+   - `speakChineseOffline(text, options)`:
+     - Activates when `!navigator.onLine` or when remote TTS fetch fails with a transient network error.
+     - Queries `window.speechSynthesis.getVoices()` for local Chinese voices (`zh-CN`, `zh`, `cmn-Hans-CN`).
+     - Synthesizes speech locally on-device with zero network latency.
+     - Graceful degradation: returns safe fallback status if SpeechSynthesis is unsupported or unavailable.
+
+4. **Global Reconnection Auto-sync Bridge** (`src/components/layout/AutoSyncReconnectBridge.tsx`):
+   - Mounted at root `LocaleLayout`.
+   - Subscribes to `window.addEventListener('online', handleOnline)`.
+   - Debounces 1500ms for connection stability.
+   - Automatically executes `flushReviewAttemptsOutbox(userId, { immediate: true })`.
+   - Invalidates `['learning-state']` and `['hanzihome', 'catalog']` queries gracefully.
+   - Shows a subtle, accessible status toast: `reconnectSyncSuccess`.
+
+5. **UI Integration & Course Card Indicators** (`CourseCard.tsx`, `CourseHeader.tsx`):
+   - Adds an offline download action button on Course Cards and Course headers.
+   - Renders live download progress indicator: `Đang tải ({percent}%)...`.
+   - Renders persistent status badge: `Đã sẵn sàng offline` (`Offline ready`).
+
+6. **i18n Localization Parity** (`messages/vi/common.json`, `messages/en/common.json`, `messages/zh-CN/common.json`):
+   - Add localized keys under `Common.offlinePack`:
+     - `downloadCourse`: "Tải học offline" / "Download for offline" / "下载离线课程"
+     - `downloading`: "Đang tải ({percent}%)..." / "Downloading ({percent}%)..." / "正在下载 ({percent}%)..."
+     - `downloadReady`: "Đã sẵn sàng offline" / "Offline ready" / "已离线就绪"
+     - `reconnectSyncSuccess`: "Đã kết nối lại. Đã đồng bộ {count} kết quả học." / "Reconnected. Synced {count} learning records." / "已重新连接。已同步 {count} 条学习记录。"
+     - `storagePersisted`: "Bộ nhớ offline đã được bảo vệ" / "Offline storage persisted" / "离线存储已受保护"
+     - `storageQuota`: "Dung lượng đã dùng: {usedMB} MB / {quotaMB} MB" / "Storage used: {usedMB} MB / {quotaMB} MB" / "已用空间: {usedMB} MB / {quotaMB} MB"
+
+### 11.2. Checkpoints breakdown
+
+- [x] Checkpoint 11.1: Storage persistence & quota utility (`src/lib/storage/storage-persistence.ts` + tests) — **PASS** (7 tests passed, typecheck 0 errors, oxlint 0 warnings).
+- [x] Checkpoint 11.2: Core Course Offline Pack Downloader (`course-offline-pack.service.ts` + unit tests with bounded concurrency and progress reporting) — **PASS** (10 tests passed, bounded concurrency=2 verified, cancellation verified, source-check passed).
+- [x] Checkpoint 11.3: Web Speech API offline pronunciation fallback (`offline-speech-fallback.ts` + tests) — **PASS** (8 tests passed, useTTS integration verified, source-check passed).
+- [x] Checkpoint 11.4: Global auto-sync reconnection bridge (`AutoSyncReconnectBridge.tsx` + tests) — **PASS** (mounted in root layout, authoritative query keys, source-check passed).
+- [x] Checkpoint 11.5: UI integration in `CourseCard`, Course Overview, and Library with full i18n parity (vi/en/zh-CN) — **PASS** (`CourseOfflineDownloadButton.tsx` + `CourseCard.tsx` + `CourseCard.test.tsx` + UI standards verified).
+- [x] Checkpoint 11.6: End-to-end simulated offline classroom verification in browser subagent + full quality gate (`npm run check` pipeline: build, typecheck, lint, source:check, route:check, ui:check, api:check, perf:check) — **PASS**.
+
+### 11.3. Invariants & Acceptance Gate
+
+```text
+Zero type assertion or explicit any
+Max concurrency = 2 for bulk fetch (anti-throttling)
+No plain text secrets in local storage
+Offline audio fallback does not throw or block UI
+Offline auto-sync does not overwrite newer local state
+All new UI copy localized in vi, en, zh-CN
+Pass npm run check & all quality gates
+```
+
+---
+
+# 54. Universal pre-push gate
 
 Every production phase must satisfy:
 
@@ -2061,7 +2196,7 @@ because repo policy does not allow claiming completion without executable verifi
 
 ---
 
-# 54. Rollback policy on `main`
+# 55. Rollback policy on `main`
 
 Every phase must be one coherent checkpoint so rollback is straightforward.
 
@@ -2081,7 +2216,7 @@ Do not begin Phase N+1 while Phase N is red.
 
 ---
 
-# 55. Verification matrix
+# 56. Verification matrix
 
 Minimum UI viewports required by repo:
 
@@ -2157,7 +2292,7 @@ same-route search-param navigation
 
 ---
 
-# 56. Critical acceptance scenarios
+# 57. Critical acceptance scenarios
 
 ### Atomic offline action
 
@@ -2338,7 +2473,7 @@ Tab B code v2
 
 ---
 
-# 57. Core Definition of Done
+# 58. Core Definition of Done
 
 Core scope is complete after Phase 8 only when all are true:
 
@@ -2428,7 +2563,7 @@ Full browser-restart/hard-refresh offline operation is **not** included in core 
 
 ---
 
-# 58. Freeze rule
+# 59. Freeze rule
 
 Architecture above is the implementation baseline.
 

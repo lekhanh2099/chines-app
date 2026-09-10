@@ -30,5 +30,14 @@
   "retry": "重试",
   "offline": "离线",
   "synced": "已同步"
+ },
+ "offlinePack": {
+  "downloadCourse": "下载离线课程",
+  "downloading": "正在下载 ({percent}%)...",
+  "downloadReady": "已离线就绪",
+  "reconnectSyncSuccess": "已重新连接。已同步 {count} 条学习记录。",
+  "storagePersisted": "离线存储已受保护",
+  "storageQuota": "离线空间: {usedMB} MB / {quotaMB} MB",
+  "staticCourseReady": "此教材已内置于应用程序中，可随时离线学习。"
  }
 }

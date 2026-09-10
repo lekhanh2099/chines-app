@@ -30,5 +30,14 @@
   "retry": "Retry",
   "offline": "Offline",
   "synced": "Synced"
+ },
+ "offlinePack": {
+  "downloadCourse": "Download for offline",
+  "downloading": "Downloading ({percent}%)...",
+  "downloadReady": "Offline ready",
+  "reconnectSyncSuccess": "Reconnected. Synced {count} learning records.",
+  "storagePersisted": "Offline storage protected",
+  "storageQuota": "Offline storage: {usedMB} MB / {quotaMB} MB",
+  "staticCourseReady": "This textbook is built into the application and is always available offline."
  }
 }

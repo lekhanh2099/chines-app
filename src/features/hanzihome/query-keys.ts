@@ -20,6 +20,12 @@ export const hanzihomeQueryKeys = {
  ],
  courseLessonsRoot: ["hanzihome", "course-lessons"],
  courseLessons: (courseId: string) => ["hanzihome", "course-lessons", courseId],
+ courseOfflineStatus: (courseId: string, userId: UserScope) => [
+  "hanzihome",
+  "course-offline-status",
+  courseId,
+  userId,
+ ],
  lessonDetail: (lessonId: string | null) => ["hanzihome", "lesson-detail", lessonId],
  lessonResource: (lessonId: string, resource: LessonResourceKind) => [
   "hanzihome",

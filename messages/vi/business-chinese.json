@@ -26,5 +26,7 @@
   "revealHanzi": "Hiện Hán tự",
   "revealPinyin": "Hiện pinyin",
   "revealMeaning": "Hiện nghĩa"
- }
+ },
+ "offlineReady": "Đã sẵn sàng offline",
+ "offlineDescription": "Giáo trình này đã được tích hợp sẵn trong ứng dụng, có thể học ngoại tuyến mọi lúc."
 }
