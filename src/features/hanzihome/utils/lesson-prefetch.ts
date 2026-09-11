@@ -6,7 +6,7 @@ import {
  loadLessonVocabularyWithCache,
 } from "@/features/hanzihome/local/lesson-content-cache";
 
-const lessonResourceStaleTime = Infinity;
+export const lessonResourceStaleTime = 5 * 60 * 1000;
 
 /**
  * Opportunistically prefetches only above-the-fold destination-required lesson resources.

@@ -9,6 +9,7 @@ import {
  HANZIHOME_LOCAL_STORES,
  putInStore,
  readFromStore,
+ replaceInStoreIf,
 } from "./hanzihome-local-db";
 
 export const ContentCacheResourceTypeSchema = z.enum(["lesson_detail", "lesson_vocab", "catalog"]);
@@ -43,8 +44,8 @@ export type ContentCacheRecord<T = JsonFieldValue> = {
  data: T;
 };
 
-export const MAX_CACHE_ENTRIES_PER_OWNER = 50;
-export const TARGET_CACHE_ENTRIES_PER_OWNER = 40;
+export const MAX_CACHE_ENTRIES_PER_OWNER = 250;
+export const TARGET_CACHE_ENTRIES_PER_OWNER = 200;
 
 export function buildContentCacheKey(
  ownerId: string,
@@ -116,11 +117,14 @@ export async function writeContentCache<T extends JsonFieldValue>(params: {
 
  await putInStore(HANZIHOME_LOCAL_STORES.contentCache, record);
 
+ const effectiveMax = params.maxEntries ?? MAX_CACHE_ENTRIES_PER_OWNER;
+ const effectiveTarget = Math.floor(effectiveMax * 0.8);
+
  // Perform bounded eviction if needed
  await pruneContentCacheForOwner({
   ownerId,
-  maxEntries: params.maxEntries ?? MAX_CACHE_ENTRIES_PER_OWNER,
-  targetEntries: TARGET_CACHE_ENTRIES_PER_OWNER,
+  maxEntries: effectiveMax,
+  targetEntries: effectiveTarget,
  }).catch(() => {
   // Non-fatal: eviction failure should not fail write
  });
@@ -162,17 +166,22 @@ export async function readContentCache<T>(params: {
   return null;
  }
 
- // Update lastAccessedAt and accessCount in background
+ // Update lastAccessedAt and accessCount atomically without clobbering concurrent writes or resurrecting deletes
  const now = Date.now();
- const updatedRecord: ContentCacheRecord = {
-  ...rawRecord,
-  metadata: {
-   ...rawRecord.metadata,
-   lastAccessedAt: now,
-   accessCount: rawRecord.metadata.accessCount + 1,
-  },
- };
- putInStore(HANZIHOME_LOCAL_STORES.contentCache, updatedRecord).catch(() => {});
+ replaceInStoreIf(
+  HANZIHOME_LOCAL_STORES.contentCache,
+  key,
+  ContentCacheRecordBaseSchema,
+  (current) => current.metadata.generation === rawRecord.metadata.generation,
+  (current) => ({
+   ...current,
+   metadata: {
+    ...current.metadata,
+    lastAccessedAt: now,
+    accessCount: current.metadata.accessCount + 1,
+   },
+  }),
+ ).catch(() => {});
 
  return parsed.data;
 }
@@ -237,18 +246,21 @@ export async function bumpContentCacheGeneration(
   );
   if (!existing) return 0;
 
-  const now = Date.now();
-  const nextGeneration = existing.metadata.generation + 1;
-  const updatedRecord: ContentCacheRecord = {
-   ...existing,
-   metadata: {
-    ...existing.metadata,
-    lastAccessedAt: now,
-    generation: nextGeneration,
-   },
-  };
-  await putInStore(HANZIHOME_LOCAL_STORES.contentCache, updatedRecord);
-  return nextGeneration;
+  const updated = await replaceInStoreIf(
+   HANZIHOME_LOCAL_STORES.contentCache,
+   key,
+   ContentCacheRecordBaseSchema,
+   (current) => current.metadata.generation === existing.metadata.generation,
+   (current) => ({
+    ...current,
+    metadata: {
+     ...current.metadata,
+     lastAccessedAt: Date.now(),
+     generation: current.metadata.generation + 1,
+    },
+   }),
+  );
+  return updated?.metadata.generation ?? existing.metadata.generation;
  } catch {
   return 0;
  }

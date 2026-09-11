@@ -14,6 +14,7 @@ import {
 import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
 import {
  BasePopover as Popover,
  BasePopoverPopup,
@@ -72,6 +73,7 @@ export function useReaderSelectionActions({
  const queryClient = useQueryClient();
  const tts = useSharedMandarinTts();
  const { openInspector } = useVocabInspector();
+ const { userId } = useClientSession();
  const [selection, setSelection] = useState<ReaderSurfaceSelection | null>(null);
  const [mode, setMode] = useState<SelectionMode>("quick");
  const [noteDraft, setNoteDraft] = useState("");
@@ -145,23 +147,30 @@ export function useReaderSelectionActions({
   );
  const saveAnnotation = (annotationType: "highlight" | "note") => {
   if (saving || !selection || selection.start === null || selection.end === null) return;
+  if (!userId) {
+   setSaveError("Vui lòng đăng nhập để lưu ghi chú/đánh dấu.");
+   return;
+  }
   setSaving(true);
   setSaveError("");
   const request = openedAnnotation
-   ? updateReaderAnnotation(openedAnnotation, noteDraft)
-   : createReaderAnnotation({
-      documentId: documentModel.id,
-      paragraphId: selection.segment.id,
-      assetId: null,
-      annotationType,
-      pageNumber: null,
-      startOffset: selection.start,
-      endOffset: selection.end,
-      selectedText: selection.text,
-      noteText: annotationType === "note" ? noteDraft : "",
-      color: annotationType === "note" ? "yellow" : "green",
-      payload: {},
-     });
+   ? updateReaderAnnotation(openedAnnotation, noteDraft, userId)
+   : createReaderAnnotation(
+      {
+       documentId: documentModel.id,
+       paragraphId: selection.segment.id,
+       assetId: null,
+       annotationType,
+       pageNumber: null,
+       startOffset: selection.start,
+       endOffset: selection.end,
+       selectedText: selection.text,
+       noteText: annotationType === "note" ? noteDraft : "",
+       color: annotationType === "note" ? "yellow" : "green",
+       payload: {},
+      },
+      userId,
+     );
   void request
    .then((savedAnnotation) => {
     queryClient.setQueriesData<readonly ReaderAnnotationRow[]>(
@@ -222,7 +231,7 @@ export function useReaderSelectionActions({
   if (saving) return;
   setSaving(true);
   setSaveError("");
-  void deleteReaderAnnotation(annotationId, revision, documentModel.id)
+  void deleteReaderAnnotation(annotationId, revision, documentModel.id, userId ?? undefined)
    .then(() => {
     queryClient.setQueriesData<readonly ReaderAnnotationRow[]>(
      { queryKey: ["hanzihome", "reader", "annotations"] },

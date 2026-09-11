@@ -65,9 +65,14 @@ function generateClientUuid(): string {
  });
 }
 
-export async function fetchReaderAnnotations(documentId: string): Promise<ReaderAnnotationRow[]> {
+export async function fetchReaderAnnotations(
+ userId: string | null | undefined,
+ documentId: string,
+): Promise<ReaderAnnotationRow[]> {
+ if (!userId || !documentId) return [];
+
  const localAnnotations =
-  typeof window !== "undefined" ? await getLocalReaderAnnotations(documentId) : [];
+  typeof window !== "undefined" ? await getLocalReaderAnnotations(userId, documentId) : [];
 
  if (typeof navigator !== "undefined" && !navigator.onLine) {
   return localAnnotations;
@@ -78,17 +83,20 @@ export async function fetchReaderAnnotations(documentId: string): Promise<Reader
    `/api/reading/annotations?documentId=${encodeURIComponent(documentId)}`,
    { cache: "no-store" },
   );
-  const payload = await response.json().catch(() => null);
-  if (response.status === 401) return localAnnotations;
+  if (response.status === 401 || response.status === 403 || response.status === 412) {
+   // A1 Security Invariant: Do NOT silently fallback to private data on auth errors
+   return [];
+  }
   if (!response.ok) return localAnnotations;
 
+  const payload = await response.json().catch(() => null);
   const parsed = listAnnotationResponseSchema.safeParse(payload);
   if (!parsed.success) return localAnnotations;
 
   const serverAnnotations = parsed.data.annotations;
 
   if (typeof window !== "undefined") {
-   const pending = await getPendingAnnotationMutations();
+   const pending = await getPendingAnnotationMutations(userId);
    const pendingCreates: ReaderAnnotationRow[] = [];
    const pendingDeletes = new Set<string>();
 
@@ -116,13 +124,17 @@ export async function fetchReaderAnnotations(documentId: string): Promise<Reader
 
 export async function createReaderAnnotation(
  input: ReaderAnnotationInput,
+ userId: string,
 ): Promise<ReaderAnnotationRow> {
+ if (!userId) {
+  throw new Error("User ID is required to create a reader annotation");
+ }
  const payload = annotationFieldsSchema.parse(input);
  const now = new Date().toISOString();
  const optimisticId = generateClientUuid();
  const optimistic: ReaderAnnotationRow = {
   id: optimisticId,
-  user_id: "00000000-0000-4000-8000-000000000000",
+  user_id: userId,
   document_id: payload.documentId,
   paragraph_id: payload.paragraphId,
   asset_id: payload.assetId,
@@ -150,6 +162,7 @@ export async function createReaderAnnotation(
     id: `reader_annotation:create:${optimisticId}`,
     type: "reader_annotation.create",
     status: "pending",
+    userId,
     tempId: optimisticId,
     documentId: payload.documentId,
     annotation: optimistic,
@@ -174,6 +187,7 @@ export async function createReaderAnnotation(
      id: `reader_annotation:create:${optimisticId}`,
      type: "reader_annotation.create",
      status: "pending",
+     userId,
      tempId: optimisticId,
      documentId: payload.documentId,
      annotation: optimistic,
@@ -202,6 +216,7 @@ export async function createReaderAnnotation(
     id: `reader_annotation:create:${optimisticId}`,
     type: "reader_annotation.create",
     status: "pending",
+    userId,
     tempId: optimisticId,
     documentId: payload.documentId,
     annotation: optimistic,
@@ -218,18 +233,28 @@ export async function deleteReaderAnnotation(
  annotationId: string,
  expectedRevision: number,
  documentId = "",
+ userId?: string,
 ): Promise<void> {
+ let hadPendingCreate = false;
  if (typeof window !== "undefined") {
   await deleteLocalReaderAnnotation(annotationId);
-  await cancelPendingMutationsForAnnotation(annotationId);
+  const cancelResult = await cancelPendingMutationsForAnnotation(annotationId, userId);
+  hadPendingCreate = cancelResult?.hadPendingCreate ?? false;
+ }
+
+ // If the annotation only existed locally as an un-synced create mutation,
+ // do not enqueue a delete mutation since it never reached the server.
+ if (hadPendingCreate) {
+  return;
  }
 
  if (typeof navigator !== "undefined" && !navigator.onLine) {
-  if (typeof window !== "undefined") {
+  if (typeof window !== "undefined" && userId) {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:delete:${annotationId}`,
     type: "reader_annotation.delete",
     status: "pending",
+    userId,
     annotationId,
     documentId,
     expectedRevision,
@@ -247,11 +272,12 @@ export async function deleteReaderAnnotation(
    headers: { "Content-Type": "application/json" },
    body: JSON.stringify({ expectedRevision }),
   });
-  if (!response.ok && response.status !== 404 && typeof window !== "undefined") {
+  if (!response.ok && response.status !== 404 && typeof window !== "undefined" && userId) {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:delete:${annotationId}`,
     type: "reader_annotation.delete",
     status: "pending",
+    userId,
     annotationId,
     documentId,
     expectedRevision,
@@ -261,11 +287,12 @@ export async function deleteReaderAnnotation(
    });
   }
  } catch {
-  if (typeof window !== "undefined") {
+  if (typeof window !== "undefined" && userId) {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:delete:${annotationId}`,
     type: "reader_annotation.delete",
     status: "pending",
+    userId,
     annotationId,
     documentId,
     expectedRevision,
@@ -280,13 +307,14 @@ export async function deleteReaderAnnotation(
 export async function updateReaderAnnotation(
  annotation: ReaderAnnotationRow,
  noteText: string,
+ userId?: string,
 ): Promise<ReaderAnnotationRow> {
  const now = new Date().toISOString();
+ const effectiveUserId = userId ?? annotation.user_id;
  const updated: ReaderAnnotationRow = {
   ...annotation,
   note_text: noteText,
   updated_at: now,
-  revision: annotation.revision + 1,
  };
 
  if (typeof window !== "undefined") {
@@ -299,10 +327,12 @@ export async function updateReaderAnnotation(
     id: `reader_annotation:update:${annotation.id}`,
     type: "reader_annotation.update",
     status: "pending",
+    userId: effectiveUserId,
     annotationId: annotation.id,
     documentId: annotation.document_id,
     noteText,
     expectedRevision: annotation.revision,
+    annotation: updated,
     createdAt: now,
     updatedAt: now,
     attemptCount: 0,
@@ -328,43 +358,44 @@ export async function updateReaderAnnotation(
     expectedRevision: annotation.revision,
    }),
   });
-  const value = await response.json().catch(() => null);
-  if (!response.ok) {
-   if (typeof window !== "undefined") {
-    await enqueuePendingAnnotationMutation({
-     id: `reader_annotation:update:${annotation.id}`,
-     type: "reader_annotation.update",
-     status: "pending",
-     annotationId: annotation.id,
-     documentId: annotation.document_id,
-     noteText,
-     expectedRevision: annotation.revision,
-     createdAt: now,
-     updatedAt: now,
-     attemptCount: 0,
-    });
-   }
+  if (!response.ok && typeof window !== "undefined") {
+   await enqueuePendingAnnotationMutation({
+    id: `reader_annotation:update:${annotation.id}`,
+    type: "reader_annotation.update",
+    status: "pending",
+    userId: effectiveUserId,
+    annotationId: annotation.id,
+    documentId: annotation.document_id,
+    noteText,
+    expectedRevision: annotation.revision,
+    annotation: updated,
+    createdAt: now,
+    updatedAt: now,
+    attemptCount: 0,
+   });
    return updated;
   }
-
+  const value = await response.json().catch(() => null);
   const parsed = createAnnotationResponseSchema.safeParse(value);
   if (!parsed.success) return updated;
 
-  const canonical = parsed.data.annotation;
+  const serverAnnotation = parsed.data.annotation;
   if (typeof window !== "undefined") {
-   await saveLocalReaderAnnotation(canonical);
+   await saveLocalReaderAnnotation(serverAnnotation);
   }
-  return canonical;
+  return serverAnnotation;
  } catch {
   if (typeof window !== "undefined") {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:update:${annotation.id}`,
     type: "reader_annotation.update",
     status: "pending",
+    userId: effectiveUserId,
     annotationId: annotation.id,
     documentId: annotation.document_id,
     noteText,
     expectedRevision: annotation.revision,
+    annotation: updated,
     createdAt: now,
     updatedAt: now,
     attemptCount: 0,
@@ -374,12 +405,12 @@ export async function updateReaderAnnotation(
  }
 }
 
-export async function syncPendingReaderAnnotations(): Promise<{
+export async function syncPendingReaderAnnotations(userId: string): Promise<{
  syncedCount: number;
  errorCount: number;
 }> {
- if (typeof window === "undefined") return { syncedCount: 0, errorCount: 0 };
- const pending = await getPendingAnnotationMutations();
+ if (typeof window === "undefined" || !userId) return { syncedCount: 0, errorCount: 0 };
+ const pending = await getPendingAnnotationMutations(userId);
  if (pending.length === 0) return { syncedCount: 0, errorCount: 0 };
 
  let syncedCount = 0;
@@ -424,7 +455,15 @@ export async function syncPendingReaderAnnotations(): Promise<{
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+       paragraphId: mutation.annotation?.paragraph_id ?? null,
+       assetId: mutation.annotation?.asset_id ?? null,
+       color: mutation.annotation?.color ?? "yellow",
+       pageNumber: mutation.annotation?.page_number ?? null,
+       startOffset: mutation.annotation?.start_offset ?? null,
+       endOffset: mutation.annotation?.end_offset ?? null,
+       selectedText: mutation.annotation?.selected_text ?? "",
        noteText: mutation.noteText,
+       payload: mutation.annotation?.payload ?? {},
        expectedRevision: mutation.expectedRevision,
       }),
      },

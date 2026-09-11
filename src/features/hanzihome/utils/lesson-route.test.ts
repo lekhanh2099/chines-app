@@ -7,7 +7,7 @@ import {
  getLessonRouteValue,
  type LessonRouteSummary,
 } from "./lesson-route";
-import { prefetchHanziHomeLessonResources } from "./lesson-prefetch";
+import { lessonResourceStaleTime, prefetchHanziHomeLessonResources } from "./lesson-prefetch";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 describe("HanziHome lesson-route utilities", () => {
@@ -69,14 +69,14 @@ describe("prefetchHanziHomeLessonResources", () => {
   expect(prefetchSpy).toHaveBeenCalledWith(
    expect.objectContaining({
     queryKey: hanzihomeQueryKeys.lessonDetail("test-lesson-id"),
-    staleTime: Infinity,
+    staleTime: lessonResourceStaleTime,
    }),
   );
 
   expect(prefetchSpy).toHaveBeenCalledWith(
    expect.objectContaining({
     queryKey: hanzihomeQueryKeys.lessonResource("test-lesson-id", "vocabulary"),
-    staleTime: Infinity,
+    staleTime: lessonResourceStaleTime,
    }),
   );
  });

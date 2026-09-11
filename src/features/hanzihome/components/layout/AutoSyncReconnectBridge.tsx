@@ -40,12 +40,25 @@ export function AutoSyncReconnectBridge(): null {
        });
        toast.success(t("offlinePack.reconnectSyncSuccess", { count: result.syncedCount }));
       }
-     }
 
-     const annotationResult = await syncPendingReaderAnnotations();
-     if (annotationResult.syncedCount > 0) {
+      const annotationResult = await syncPendingReaderAnnotations(user.id);
+      if (annotationResult.syncedCount > 0) {
+       void queryClient.invalidateQueries({
+        queryKey: hanzihomeQueryKeys.readerAnnotations(user.id),
+       });
+      }
+
+      // Revalidate active on-screen lesson resources that may have hydrated from an offline snapshot
       void queryClient.invalidateQueries({
-       queryKey: hanzihomeQueryKeys.readerAnnotations(null),
+       predicate: (query) => {
+        const key = query.queryKey;
+        return (
+         Array.isArray(key) &&
+         key[0] === "hanzihome" &&
+         (key[1] === "lesson-detail" || key[1] === "lesson-resource")
+        );
+       },
+       refetchType: "active",
       });
      }
     } catch {

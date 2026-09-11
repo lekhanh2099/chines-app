@@ -44,8 +44,8 @@ export function useReaderStudyState(
  } = progress;
  const annotationsQuery = useQuery({
   queryKey: hanzihomeQueryKeys.readerAnnotations(ownerUserId, resource.document.id),
-  queryFn: () => fetchReaderAnnotations(resource.document.id),
-  enabled: hasSession && stateOwner !== "reader",
+  queryFn: () => fetchReaderAnnotations(ownerUserId, resource.document.id),
+  enabled: hasSession && Boolean(ownerUserId) && stateOwner !== "reader",
   staleTime: 60_000,
   retry: false,
   refetchOnWindowFocus: false,

@@ -167,30 +167,24 @@ function LessonDropdownRow({
   <div
    className={cn(
     "group relative flex min-h-10 w-full items-center justify-between gap-2 rounded-lg py-1.5 pr-2 pl-2.5 transition-colors select-none",
-    isCurrent ? "bg-accent/60 font-medium text-foreground" : "text-text-primary hover:bg-accent/40",
+    isCurrent ? "bg-accent/60 font-medium text-foreground" : "text-foreground hover:bg-accent/40",
    )}
   >
-   <button
-    type="button"
-    className="flex min-w-0 flex-1 cursor-pointer items-center gap-2 text-left outline-none focus-visible:underline"
-    onClick={onSelectLesson}
-   >
-    {isBookmarked ? (
-     <Bookmark className="h-3.5 w-3.5 shrink-0 fill-current text-amber-500" />
-    ) : null}
-    <span className="truncate text-sm">{item.title}</span>
-    {isCurrent ? <Check className="ml-auto size-4 shrink-0 text-primary" /> : null}
-   </button>
    <Button
     type="button"
     variant="ghost"
+    className="min-w-0 flex-1 justify-start gap-2 text-left"
+    onClick={onSelectLesson}
+   >
+    {isBookmarked ? <Bookmark className="size-3.5 shrink-0 fill-current text-primary" /> : null}
+    <span className="truncate text-sm">{item.title}</span>
+    {isCurrent ? <Check className="ml-auto size-4 shrink-0 text-primary" /> : null}
+   </Button>
+   <Button
+    type="button"
+    variant={isBookmarked ? "warning" : "ghost"}
     size="icon-toolbar"
-    className={cn(
-     "h-7 w-7 shrink-0 transition-opacity",
-     isBookmarked
-      ? "bg-amber-500/10 text-amber-500 opacity-100 hover:bg-amber-500/15 hover:text-amber-600"
-      : "text-text-muted opacity-40 hover:bg-bg-subtle hover:text-amber-500 group-hover:opacity-100",
-    )}
+    className="shrink-0 transition-opacity"
     onClick={(event) => {
      event.stopPropagation();
      event.preventDefault();
@@ -200,10 +194,7 @@ function LessonDropdownRow({
     aria-label={bookmarkAriaLabel}
    >
     <Bookmark
-     className={cn(
-      "h-4 w-4 transition-colors",
-      isBookmarked ? "fill-current text-amber-500" : "text-current",
-     )}
+     className={cn("size-4 transition-colors", isBookmarked ? "fill-current" : "text-current")}
     />
    </Button>
   </div>
@@ -258,34 +249,33 @@ function BusinessChineseLessonSelector({
  return (
   <DropdownMenu open={open} onOpenChange={setOpen}>
    <DropdownMenuTrigger asChild>
-    <button
+    <Button
      type="button"
+     variant="ghost"
      disabled={focusModeEnabled}
      aria-label={t("lessonSelectLabel")}
      className={cn(
-      "inline-flex h-11 min-h-11 cursor-pointer items-center justify-between gap-1.5 rounded-lg border border-transparent bg-transparent px-1.5 text-sm font-bold text-text-primary shadow-none transition-colors hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle disabled:cursor-not-allowed disabled:opacity-50 sm:h-8 sm:min-h-8 sm:px-2 [&_svg]:text-text-muted",
-      focusRingClassName,
-      "w-[min(11rem,44vw)] md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
+      "w-[min(11rem,44vw)] justify-between md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
      )}
     >
      <span className="flex min-w-0 items-center gap-1.5 truncate">
       {isCurrentLessonBookmarked ? (
-       <Bookmark className="h-3.5 w-3.5 shrink-0 fill-current text-amber-500" />
+       <Bookmark className="size-3.5 shrink-0 fill-current text-primary" />
       ) : null}
       <span className="truncate">{lesson.title}</span>
      </span>
-     <ChevronDown className="size-4 shrink-0 text-text-muted" />
-    </button>
+     <ChevronDown className="size-4 shrink-0 text-muted-foreground" />
+    </Button>
    </DropdownMenuTrigger>
    <DropdownMenuContent
     align="start"
-    className="min-w-[min(28rem,calc(100vw-2rem))] max-h-[min(24rem,var(--radix-dropdown-menu-content-available-height))] p-1"
+    className="max-h-[min(24rem,var(--radix-dropdown-menu-content-available-height))] min-w-[min(28rem,calc(100vw-2rem))]"
    >
     {bookmarkedLessons.length > 0 ? (
      <>
       <DropdownMenuGroup>
-       <DropdownMenuLabel className="flex items-center gap-1.5 font-semibold text-amber-600 dark:text-amber-400">
-        <Bookmark className="h-3.5 w-3.5 fill-current" />
+       <DropdownMenuLabel className="flex items-center gap-1.5 font-semibold text-primary">
+        <Bookmark className="size-3.5 fill-current" />
         <span>{t("semesterBookmarksCount", { count: bookmarkedLessons.length })}</span>
        </DropdownMenuLabel>
        {bookmarkedLessons.map((item) => (
@@ -1179,8 +1169,8 @@ function BusinessChineseStudyWorkspaceContent({
  const [annotationError, setAnnotationError] = useState("");
  const annotationsQuery = useQuery({
   queryKey: hanzihomeQueryKeys.readerAnnotations(userId, textReaderDocument.id),
-  queryFn: () => fetchReaderAnnotations(textReaderDocument.id),
-  enabled: isResolved,
+  queryFn: () => fetchReaderAnnotations(userId, textReaderDocument.id),
+  enabled: isResolved && Boolean(userId),
   staleTime: 60_000,
   retry: false,
   refetchOnWindowFocus: false,
@@ -1342,23 +1332,15 @@ function BusinessChineseStudyWorkspaceContent({
        <WorkspaceToolbar>
         <div className="min-w-0 flex-1">{viewSelector}</div>
         <Button
-         variant="ghost"
+         variant={isLessonBookmarked ? "warning" : "ghost"}
          size="sm"
-         className={cn(
-          "gap-1 shrink-0 px-2 font-medium transition-colors",
-          isLessonBookmarked
-           ? "bg-amber-500/10 text-amber-600 hover:bg-amber-500/15 dark:text-amber-400"
-           : "text-text-muted hover:text-text-primary",
-         )}
+         className="gap-1 shrink-0"
          onClick={handleToggleCurrentLessonBookmark}
          title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
          aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
         >
          <Bookmark
-          className={cn(
-           "h-3.5 w-3.5",
-           isLessonBookmarked ? "fill-current text-amber-500" : "text-text-muted",
-          )}
+          className={cn("size-3.5", isLessonBookmarked ? "fill-current" : "text-muted-foreground")}
          />
          <span className="hidden sm:inline">
           {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
@@ -1407,22 +1389,17 @@ function BusinessChineseStudyWorkspaceContent({
              </Typography>
              <div className="flex items-center gap-2">
               <Button
-               variant="ghost"
+               variant={isLessonBookmarked ? "warning" : "ghost"}
                size="sm"
-               className={cn(
-                "gap-1.5 font-medium transition-colors",
-                isLessonBookmarked
-                 ? "bg-amber-500/10 text-amber-600 hover:bg-amber-500/15 dark:text-amber-400"
-                 : "text-text-muted hover:text-text-primary",
-               )}
+               className="gap-1.5"
                onClick={handleToggleCurrentLessonBookmark}
                title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
                aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
               >
                <Bookmark
                 className={cn(
-                 "h-3.5 w-3.5",
-                 isLessonBookmarked ? "fill-current text-amber-500" : "text-text-muted",
+                 "size-3.5",
+                 isLessonBookmarked ? "fill-current" : "text-muted-foreground",
                 )}
                />
                <span>{isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}</span>

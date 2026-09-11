@@ -117,6 +117,44 @@ describe("note-draft-store", () => {
   expect(draft).toBeNull();
  });
 
+ it("A6 Invariant: preserves newer draft when clearNoteDraft called with older in-flight timestamp", async () => {
+  // 1. Initial draft created
+  await saveNoteDraft("user-1", "note-preserve", {
+   content: { version: "old" },
+  });
+
+  const initialDraft = await getNoteDraft("user-1", "note-preserve");
+  expect(initialDraft).not.toBeNull();
+  const initialUpdatedAt = initialDraft?.updatedAt ?? 0;
+
+  // 2. Simulate user typing a newer draft while mutation was in flight
+  await new Promise((resolve) => setTimeout(resolve, 10));
+  await saveNoteDraft("user-1", "note-preserve", {
+   content: { version: "newer in-flight edit" },
+  });
+
+  const newerDraft = await getNoteDraft("user-1", "note-preserve");
+  expect(newerDraft?.updatedAt).toBeGreaterThan(initialUpdatedAt);
+
+  // 3. In-flight mutation completes and attempts to clear with its initial timestamp
+  const clearResult = await clearNoteDraft("user-1", "note-preserve", initialUpdatedAt);
+  expect(clearResult).toBe(false);
+
+  // 4. Invariant: Newer draft is preserved!
+  const preservedDraft = await getNoteDraft("user-1", "note-preserve");
+  expect(preservedDraft).not.toBeNull();
+  expect(preservedDraft?.content).toEqual({ version: "newer in-flight edit" });
+
+  // 5. Subsequent save of the newer draft clears it successfully
+  const finalClearResult = await clearNoteDraft(
+   "user-1",
+   "note-preserve",
+   preservedDraft?.updatedAt,
+  );
+  expect(finalClearResult).toBe(true);
+  expect(await getNoteDraft("user-1", "note-preserve")).toBeNull();
+ });
+
  it("returns false and null gracefully when userId or noteId is empty", async () => {
   const saveRes = await saveNoteDraft("", "note-1", { content: {} });
   expect(saveRes).toBe(false);

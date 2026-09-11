@@ -164,7 +164,11 @@ export async function getNoteDraft(
  }
 }
 
-export async function clearNoteDraft(userId: string, noteId: string): Promise<boolean> {
+export async function clearNoteDraft(
+ userId: string,
+ noteId: string,
+ ifUpdatedAtOrOlder?: number,
+): Promise<boolean> {
  if (!userId || !noteId) return false;
 
  const key = createDraftKey(userId, noteId);
@@ -173,9 +177,28 @@ export async function clearNoteDraft(userId: string, noteId: string): Promise<bo
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
    const store = tx.objectStore(DRAFTS_STORE);
-   const req = store.delete(key);
+   const req = store.get(key);
 
-   req.onsuccess = () => resolve(true);
+   req.onsuccess = () => {
+    if (!req.result) {
+     resolve(true);
+     return;
+    }
+    const parsed = NoteDraftRecordSchema.safeParse(req.result);
+    if (!parsed.success) {
+     store.delete(key);
+     resolve(true);
+     return;
+    }
+    // Invariant: If draft was updated after this mutation was initiated, preserve it
+    if (ifUpdatedAtOrOlder !== undefined && parsed.data.updatedAt > ifUpdatedAtOrOlder) {
+     resolve(false);
+     return;
+    }
+    store.delete(key);
+    resolve(true);
+   };
+
    req.onerror = () => {
     logger.error("[NoteDraftStore] Error deleting draft:", req.error);
     resolve(false);

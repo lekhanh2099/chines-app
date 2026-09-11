@@ -66,9 +66,10 @@ export function useNoteDetail(noteId: string) {
  const saveContentMutation = useMutation({
   mutationFn: async (content: JsonObject) => {
    requireUser();
+   const mutationStartedAt = Date.now();
    const success = await updateNoteContent(supabase, noteId, content);
    if (!success) throw new Error("Failed to save content");
-   return content;
+   return { content, mutationStartedAt };
   },
   onMutate: async (content: JsonObject) => {
    await queryClient.cancelQueries({ queryKey: detailKey });
@@ -87,9 +88,9 @@ export function useNoteDetail(noteId: string) {
     queryClient.setQueryData(detailKey, context.previousNote);
    }
   },
-  onSuccess: async () => {
+  onSuccess: async (data) => {
    if (userId && noteId) {
-    await clearNoteDraft(userId, noteId);
+    await clearNoteDraft(userId, noteId, data.mutationStartedAt);
    }
   },
  });

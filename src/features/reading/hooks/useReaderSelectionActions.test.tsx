@@ -11,6 +11,14 @@ import { useReaderSelectionActions } from "./useReaderSelectionActions";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type { ReaderAnnotationRow } from "../model/reading-annotation.schemas";
 
+vi.mock("@/components/providers/QueryProvider", () => ({
+ useClientSession: () => ({
+  supabase: {},
+  userId: "user-1",
+  isResolved: true,
+ }),
+}));
+
 const sampleDocument: ReaderDocumentModel = {
  id: "doc-1",
  language: "zh-CN",

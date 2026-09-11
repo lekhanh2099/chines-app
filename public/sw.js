@@ -1,7 +1,6 @@
 // HanziHome Service Worker — PWA & Safe Static Cache
-const CACHE_VERSION = "v5";
+const CACHE_VERSION = "v6";
 const STATIC_CACHE = `hanzihome-static-${CACHE_VERSION}`;
-const PAGES_CACHE = `hanzihome-pages-${CACHE_VERSION}`;
 
 const PRECACHE_ASSETS = ["/favicon.svg"];
 const PRECACHE_ROUTES = [
@@ -12,30 +11,16 @@ const PRECACHE_ROUTES = [
 ];
 
 /**
- * Pre-caches an HTML page along with all linked _next/static CSS and JS assets.
- * This guarantees that when an iPad or mobile device is offline and reloads,
- * both the HTML App Shell AND all stylesheets/scripts are 100% available in cache.
+ * Pre-caches public static assets (CSS, JS) linked in route pages.
+ * Safe PWA Principle: Never cache dynamic/authenticated HTML in shared caches.
  */
-async function precachePageAndAssets(pagesCache, staticCache, route) {
+async function precacheRouteAssets(staticCache, route) {
  try {
   const res = await fetch(route);
   if (res.status !== 200) return;
   const text = await res.text();
-  const headers = new Headers(res.headers);
-  headers.delete("vary");
-  headers.delete("Vary");
-  headers.delete("content-encoding");
-  headers.delete("content-length");
-  headers.set("Content-Type", "text/html; charset=utf-8");
-  const cleanResponse = new Response(text, {
-   status: res.status,
-   statusText: res.statusText,
-   headers,
-  });
-  await pagesCache.put(route, cleanResponse.clone());
-  await pagesCache.put(self.location.origin + route, cleanResponse);
 
-  // Extract all _next/static stylesheets and scripts embedded in the HTML
+  // Extract only _next/static stylesheets and scripts embedded in the HTML
   const assetMatches = text.matchAll(/(?:href|src)="(\/_next\/static\/[^"]+)"/g);
   const assetUrls = Array.from(new Set(Array.from(assetMatches, (m) => m[1])));
   await Promise.allSettled(
@@ -61,10 +46,8 @@ self.addEventListener("install", (event) => {
   (async () => {
    const staticCache = await caches.open(STATIC_CACHE);
    await staticCache.addAll(PRECACHE_ASSETS);
-
-   const pagesCache = await caches.open(PAGES_CACHE);
    await Promise.allSettled(
-    PRECACHE_ROUTES.map((route) => precachePageAndAssets(pagesCache, staticCache, route)),
+    PRECACHE_ROUTES.map((route) => precacheRouteAssets(staticCache, route)),
    );
   })(),
  );
@@ -76,7 +59,8 @@ self.addEventListener("activate", (event) => {
   caches.keys().then((keys) => {
    return Promise.all(
     keys.map((key) => {
-     if (key !== STATIC_CACHE && key !== PAGES_CACHE) {
+     // Delete old static caches and any legacy shared pages caches
+     if (key !== STATIC_CACHE) {
       return caches.delete(key);
      }
      return Promise.resolve(true);
@@ -90,13 +74,11 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("message", (event) => {
  if (event.data && event.data.type === "WARMUP_OFFLINE_CACHE") {
   const routes = Array.isArray(event.data.routes) ? event.data.routes : [];
-  caches.open(PAGES_CACHE).then((pagesCache) => {
-   caches.open(STATIC_CACHE).then((staticCache) => {
-    routes.forEach((route) => {
-     if (typeof route === "string" && route.startsWith("/")) {
-      precachePageAndAssets(pagesCache, staticCache, route);
-     }
-    });
+  caches.open(STATIC_CACHE).then((staticCache) => {
+   routes.forEach((route) => {
+    if (typeof route === "string" && route.startsWith("/")) {
+     precacheRouteAssets(staticCache, route);
+    }
    });
   });
  }
@@ -299,59 +281,20 @@ self.addEventListener("fetch", (event) => {
   return;
  }
 
- // 1. Navigation requests: Network-first with comprehensive App Shell fallback
+ // 1. Navigation requests: Network-first with neutral offline launcher fallback
  if (request.mode === "navigate") {
   event.respondWith(
    (async () => {
     try {
-     const networkResponse = await fetch(request);
-     if (networkResponse.status === 200) {
-      caches.open(PAGES_CACHE).then((pagesCache) => {
-       caches.open(STATIC_CACHE).then((staticCache) => {
-        precachePageAndAssets(pagesCache, staticCache, url.pathname);
-       });
-      });
-     }
-     return networkResponse;
+     return await fetch(request);
     } catch {
-     // Network failed (device is offline): search PAGES_CACHE
-     const pagesCache = await caches.open(PAGES_CACHE);
-
-     // 1a. Try exact match (url pathname or full URL, ignoring Vary)
-     let cached =
-      (await pagesCache.match(url.pathname, { ignoreVary: true, ignoreSearch: true })) ||
-      (await pagesCache.match(request, { ignoreVary: true, ignoreSearch: true })) ||
-      (await pagesCache.match(request.url, { ignoreVary: true, ignoreSearch: true }));
-
-     if (cached) return cached;
-
-     // 1b. Try parent textbook route
-     const pathname = url.pathname;
-     if (pathname.includes("/han-thuong-mai")) {
-      cached = await pagesCache.match("/vi/hsk/han-thuong-mai", { ignoreVary: true });
-     } else if (pathname.includes("/nhip-cau-han-ngu")) {
-      cached = await pagesCache.match("/vi/hsk/nhip-cau-han-ngu", { ignoreVary: true });
-     } else if (pathname.includes("/doc-hieu")) {
-      cached = await pagesCache.match("/vi/hsk/doc-hieu", { ignoreVary: true });
-     }
-
-     if (cached) return cached;
-
-     // 1c. Try primary HanziHome library
-     cached = await pagesCache.match("/vi/hanzihome", { ignoreVary: true });
-     if (cached) return cached;
-
-     // 1d. Try ANY cached HTML page in PAGES_CACHE
-     const keys = await pagesCache.keys();
-     if (keys.length > 0) {
-      const anyHtmlKey = keys.find((k) => !k.url.includes(".")) || keys[0];
-      const fallbackAppShell = await pagesCache.match(anyHtmlKey, { ignoreVary: true });
-      if (fallbackAppShell) return fallbackAppShell;
-     }
-
-     // 1e. True cold offline launcher as last resort
+     // Network failed (offline): return neutral offline launcher shell
+     // Zero private user data, prevents any cross-account cache leakage.
      return new Response(getOfflineLauncherHtml(), {
-      headers: { "Content-Type": "text/html; charset=utf-8" },
+      headers: {
+       "Content-Type": "text/html; charset=utf-8",
+       "Cache-Control": "no-store",
+      },
      });
     }
    })(),
@@ -359,25 +302,13 @@ self.addEventListener("fetch", (event) => {
   return;
  }
 
- // 2. Next.js RSC requests (client-side routing): Network-first with cache fallback
+ // 2. Next.js RSC requests (client-side routing): Network-first without caching private state
  const isRscRequest = url.searchParams.has("_rsc") || request.headers.get("RSC") === "1";
  if (isRscRequest) {
   event.respondWith(
-   fetch(request)
-    .then((response) => {
-     if (response.status === 200) {
-      const clone = response.clone();
-      caches.open(PAGES_CACHE).then((cache) => {
-       cache.put(request, clone);
-      });
-     }
-     return response;
-    })
-    .catch(async () => {
-     const cached = await caches.match(request, { ignoreSearch: false, ignoreVary: true });
-     if (cached) return cached;
-     return new Response("", { status: 503, statusText: "Offline" });
-    }),
+   fetch(request).catch(() => {
+    return new Response("", { status: 503, statusText: "Offline" });
+   }),
   );
   return;
  }

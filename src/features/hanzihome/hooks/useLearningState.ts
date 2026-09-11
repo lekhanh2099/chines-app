@@ -55,6 +55,31 @@ const learningStateSyncStore = createStore<LearningStateSyncStoreState>({
 });
 const learningStateWriteChains = new Map<string, Promise<void>>();
 
+type FailedLearningStateWriteIntent = {
+ baseState: UserLearningState;
+ nextState: UserLearningState;
+ reviewAttempt?: {
+  attemptId: string;
+  input: ReviewAttemptInput;
+ };
+};
+
+type FailedReviewEvidenceIntent = {
+ attemptId: string;
+ input: ReviewAttemptInput;
+};
+
+const failedWriteIntents = new Map<string, FailedLearningStateWriteIntent[]>();
+const failedReviewIntents = new Map<string, FailedReviewEvidenceIntent[]>();
+
+export function getLearningStateSyncState(ownerUserId: string): LearningStateSyncUiState {
+ return learningStateSyncStore.state.byOwner.get(ownerUserId) ?? defaultSyncUiState;
+}
+
+function getOwnerSyncUiState(ownerUserId: string): LearningStateSyncUiState {
+ return getLearningStateSyncState(ownerUserId);
+}
+
 function getBrowserOnlineState() {
  return typeof window === "undefined" ? true : navigator.onLine;
 }
@@ -206,14 +231,81 @@ export function useLearningState() {
   () => normalizeLearningState(query.data ?? emptyLearningState),
   [query.data],
  );
- const retrySync = useCallback(() => {
+ const retrySync = useCallback(async (): Promise<LearningStateSyncResult> => {
   if (!userId) {
-   return Promise.resolve<LearningStateSyncResult>({
+   return {
     status: "synced",
     syncedCount: 0,
     pendingCount: 0,
-   });
+   };
   }
+
+  // 1. Recover and persist failed in-memory write intents to local IndexedDB
+  const pendingWrites = failedWriteIntents.get(userId);
+  if (pendingWrites && pendingWrites.length > 0) {
+   failedWriteIntents.delete(userId);
+   for (const [index, intent] of pendingWrites.entries()) {
+    try {
+     await saveLearningStateLocalFirst(userId, intent.baseState, intent.nextState, {
+      reviewAttempt: intent.reviewAttempt,
+     });
+    } catch (writeErr) {
+     const remaining = failedWriteIntents.get(userId) ?? [];
+     failedWriteIntents.set(userId, [...pendingWrites.slice(index), ...remaining]);
+     const message =
+      writeErr instanceof Error ? writeErr.message : "Could not save learning state locally.";
+     updateOwnerSyncUiState(userId, (value) => ({
+      ...value,
+      status: "error",
+      durability: "failed",
+      lastError: message,
+     }));
+     return {
+      status: "error",
+      syncedCount: 0,
+      pendingCount: Math.max(1, getOwnerSyncUiState(userId).pendingCount),
+      error: message,
+     };
+    }
+   }
+  }
+
+  // 2. Recover and enqueue failed review evidence to outbox
+  const pendingReviews = failedReviewIntents.get(userId);
+  if (pendingReviews && pendingReviews.length > 0) {
+   failedReviewIntents.delete(userId);
+   for (const [index, review] of pendingReviews.entries()) {
+    try {
+     await enqueueReviewAttempt(userId, review.input, review.attemptId);
+    } catch (reviewErr) {
+     const remaining = failedReviewIntents.get(userId) ?? [];
+     failedReviewIntents.set(userId, [...pendingReviews.slice(index), ...remaining]);
+     const message =
+      reviewErr instanceof Error ? reviewErr.message : "Could not queue review evidence.";
+     updateOwnerSyncUiState(userId, (value) => ({
+      ...value,
+      status: "error",
+      durability: "failed",
+      lastError: message,
+     }));
+     return {
+      status: "error",
+      syncedCount: 0,
+      pendingCount: Math.max(1, getOwnerSyncUiState(userId).pendingCount),
+      error: message,
+     };
+    }
+   }
+  }
+
+  // 3. Mark local state as durable
+  updateOwnerSyncUiState(userId, (value) => ({
+   ...value,
+   durability: "durable",
+   lastError: null,
+  }));
+
+  // 4. Drain from durable storage to remote
   return syncLearningState(queryClient, userId);
  }, [queryClient, userId]);
 
@@ -262,6 +354,14 @@ export function useLearningState() {
     .catch((error: unknown) => {
      const message =
       error instanceof Error ? error.message : "Could not save learning state locally.";
+     const userFailed = failedWriteIntents.get(userId) ?? [];
+     userFailed.push({
+      baseState: current,
+      nextState,
+      reviewAttempt: options?.reviewAttempt,
+     });
+     failedWriteIntents.set(userId, userFailed);
+
      updateOwnerSyncUiState(userId, (value) => ({
       ...value,
       status: "error",
@@ -282,6 +382,8 @@ export function useLearningState() {
  const queueReviewEvidence = useCallback(
   (item: ReviewItem, result: ReviewResult) => {
    if (!userId) return;
+   const input = reviewAttemptInput(item, result);
+   const attemptId = crypto.randomUUID();
    updateOwnerSyncUiState(userId, (value) => ({
     ...value,
     status: "pending",
@@ -289,7 +391,7 @@ export function useLearningState() {
     pendingCount: Math.max(1, value.pendingCount),
     lastError: null,
    }));
-   void enqueueReviewAttempt(userId, reviewAttemptInput(item, result))
+   void enqueueReviewAttempt(userId, input, attemptId)
     .then(() => {
      updateOwnerSyncUiState(userId, (value) => ({
       ...value,
@@ -298,6 +400,13 @@ export function useLearningState() {
      return item.type === "radical" ? syncLearningState(queryClient, userId) : undefined;
     })
     .catch((error: unknown) => {
+     const userFailed = failedReviewIntents.get(userId) ?? [];
+     userFailed.push({
+      attemptId,
+      input,
+     });
+     failedReviewIntents.set(userId, userFailed);
+
      updateOwnerSyncUiState(userId, (value) => ({
       ...value,
       status: "error",

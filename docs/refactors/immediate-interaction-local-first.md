@@ -35,21 +35,307 @@ These rules are mandatory, not suggestions.
 
 ### Master checkpoint ledger
 
-- [ ] Phase 0 — Preflight, baseline, measurements and falsifiable regression evidence. **BLOCKED** by the dependency audit; measurements remain outstanding.
-- [x] Phase 1 — Atomic learning/review durability, safe sync transitions and expected-owner review guard.
+- [ ] Phase 0 — Re-opened: runtime measurements and device evidence remain outstanding.
+- [ ] Phase 1 — Re-opened: retry-tail and review-identity regressions fixed locally; complete durability acceptance remains unverified.
 - [x] Phase 2 — Deterministic immediate interaction.
 - [x] Phase 3 — Navigation responsiveness.
-- [x] Phase 4 — Additive IndexedDB content-cache foundation.
-- [x] Phase 5 — Safe snapshot hydration, offline consumption and first-consumer auth/coherence guards.
-- [x] Phase 6 — Authorization, cache coherence and multi-tab race hardening.
+- [ ] Phase 4 — Re-opened: content writes can still resurrect an evicted record.
+- [x] Phase 5 — Safe snapshot hydration, offline consumption and first-consumer auth/coherence guards. (Finding 7 resolved in Checkpoint A5).
+- [ ] Phase 6 — Re-opened: Reader expected-owner enforcement and cache invalidation transactions remain outstanding.
 - [x] Phase 7 — Weak-network resilience.
-- [x] Phase 8 — Sync/offline UX normalization and complete core acceptance.
-- [x] Phase 9 — Separate Notes audit after core stability; not part of core completion.
-- [x] Phase 10 — PWA/full offline cold boot; separate approval, do not start automatically.
-- [x] Phase 11 — Offline Classroom Study Pack, Bulk Course Pre-cache & Auto-sync Reconnection.
-- [x] Phase 12 — Reader Annotations & Highlights Offline Durability, Dual-Store Sync & Event Isolation.
+- [ ] Phase 8 — Re-opened: complete core acceptance depends on the outstanding correctness fixes.
+- [ ] Phase 9 — Re-opened: content save must not discard unacknowledged reading-pane drafts.
+- [ ] Phase 10 — Re-opened: neutral launcher protects private data but does not cold-boot the study application.
+- [ ] Phase 11 — Re-opened: downloaded-pack retention is not enforced by ordinary cache writes.
+- [ ] Phase 12 — Re-opened: repeated offline edit revision fixed locally; owner-switch and full outbox acceptance remain outstanding.
 
-### Execution evidence — 2026-09-11
+### Active remediation — 2026-09-11
+
+**BLOCKED — awaiting approval of the remaining route/persistence contracts.**
+This entry supersedes completion claims in the historical A1–A8
+evidence below. Historical evidence is retained, not treated as proof that all
+acceptance criteria pass on the current working tree.
+
+- Publication authorization — 2026-09-11: the user explicitly requested a
+  checkpoint commit/push of the tested working tree and continuation tomorrow,
+  with the five remaining findings still open. This authorizes publishing the
+  partial checkpoint, not marking the overall plan complete or introducing the
+  pending route/persistence contracts.
+
+- Scope completed locally so far:
+  - `useLearningState.ts`: a failed retry restores the failed intent and the
+    entire unprocessed tail, for both learning-state and review-evidence queues.
+    Review-only enqueue retries use the original UUID through the existing
+    `enqueueReviewAttempt` third parameter.
+  - `reading-annotation-api.ts`: optimistic note edits preserve the authoritative
+    server revision; only the canonical response advances it. Two offline edits
+    therefore replay the latest content against the correct remote revision.
+- Regression evidence:
+  - Learning hook tests failed before the fix (missing queue tail and retry
+    identity), then passed: 4 tests.
+  - Reader service tests failed before the revision fix (local revision advanced
+    to 3 while server remained at 1), then passed: 10 tests.
+  - Command: `npm run test:run -- src/features/hanzihome/hooks/useLearningState.test.ts src/features/reading/services/reading-annotation-api.test.ts`.
+  - These are mocked-boundary tests, not real IndexedDB/browser/device proof.
+  - Final local gate: `npm run check` exited 0 after these source changes;
+    233 test files passed, 1,192 tests passed, 2 tests skipped. Typecheck,
+    lint/source/route/UI/API/performance checks, formatting, production audit
+    (0 known vulnerabilities) and the production build passed.
+  - Browser/iPad, real IndexedDB transaction behavior, remote CI and deployment
+    were not verified. `git diff --check` passed. No commit or push performed.
+- No new dependency, file, route, schema or persisted format introduced by this
+  remediation so far. Existing uncommitted user changes are preserved.
+- Remaining structural decisions: Reader expected-owner route guard; durable
+  invalidation/retention metadata; per-pane draft acknowledgement; a public
+  offline application entry that mounts the study UI without caching private
+  server-rendered HTML. Do not mark these complete from a green unit suite.
+- Requested decision: permit the minimum additive Reader expected-owner guard
+  (same header and optional-header compatibility as practice attempts), versioned
+  local invalidation/pack-retention and per-pane acknowledgement metadata with
+  preservation of existing pending work, and a public offline application entry.
+  No Supabase schema/RLS change, dependency addition, production mutation or
+  private HTML/RSC caching is included. Until approved, do not introduce these
+  new contracts or claim that the five remaining findings are fixed.
+- Rollback: reverse only this remediation's changes to the four source/test
+  files and this journal; preserve the user's earlier uncommitted work. Do not
+  reset the worktree, clear browser storage or discard pending mutations.
+
+### Execution evidence — 2026-09-11 (Re-audit at `main@d0622606`)
+
+- Comprehensive re-audit performed across local-first offline stack:
+  - **Automated verification status:**
+    - Test suite: 1,173 unit/integration tests PASS.
+    - Typecheck: 0 errors (`npm run typecheck`).
+    - Lint: 0 warnings, 0 errors across codebase.
+    - Security audit: 0 vulnerabilities.
+    - Full gate: `npm run check` STOPPED at `npm run ui:check` with **15 violations** in `BusinessChineseStudyWorkspace.tsx`.
+    - Live browser/iPad/device run: NOT RUN in this review turn (harness executed with simulated storage/network).
+  - **Identified Deficiencies & Re-opened Checkpoint Invariants:**
+    1. **[P1] Reader Account Isolation Gap** (`src/features/reading/local/reader-annotation-local-store.ts:60`):
+       - _Owner:_ Reader local store & outbox.
+       - _Defect:_ `getLocalReaderAnnotations` queries strictly by `documentId` without scoping to `userId`. Mutation queue records lack `userId`. Cross-account leak occurs when switching users offline on a shared device.
+       - _Planned tests:_ User A offline annotation -> Switch to User B -> User B must not see or sync User A's annotations.
+       - _Rollback:_ Scope query and mutations to active `userId`.
+    2. **[P1] Service Worker Private HTML/RSC Shell Caching** (`public/sw.js:24`):
+       - _Owner:_ Service worker navigation handler & precache engine.
+       - _Defect:_ `precachePageAndAssets` stripped `Vary` headers, cached authenticated server-rendered HTML into `PAGES_CACHE`, ignoring `Cache-Control: private, no-store`. User B offline could receive User A's rendered HTML.
+       - _Planned tests:_ SW cached authenticated response of User A -> User B offline must receive generic offline fallback, not User A's private HTML.
+       - _Rollback:_ Enforce Safe PWA principle: SW caches only static public assets; dynamic navigation falls back to client-hydrated offline launcher.
+    3. **[P1] Offline Annotation PATCH Payload Contract Mismatch** (`src/features/reading/services/reading-annotation-api.ts:426`):
+       - _Owner:_ Reader annotation service & route handler.
+       - _Defect:_ Outbox replay sent `{ noteText, expectedRevision }`, but canonical route `src/app/api/reading/annotations/[annotationId]/route.ts` enforces `z.strictObject` requiring 10 fields, returning 400 `INVALID_PAYLOAD`.
+       - _Planned tests:_ Replay offline PATCH against real route handler schema; must succeed with 200 without payload rejection.
+       - _Rollback:_ Pass complete annotation payload from outbox matching authoritative schema.
+    4. **[P1] Unhydrated Local Failure Recovery** (`src/features/hanzihome/hooks/useLearningState.ts:209`):
+       - _Owner:_ `useLearningState` & review outbox.
+       - _Defect:_ When IndexedDB write fails, mutation intent is discarded from memory; `retrySync` only drains persisted records, losing in-memory user actions on reload.
+       - _Planned tests:_ IndexedDB abort/failure -> retain mutation intent in-memory -> retry successfully persists to disk and drains to remote.
+       - _Rollback:_ Queue in-flight failed intents for explicit local persistence retry.
+    5. **[P1] Content Cache Metadata Resurrection & Overwrite Race** (`src/features/hanzihome/local/content-cache-store.ts:86`):
+       - _Owner:_ `content-cache-store.ts`.
+       - _Defect:_ Background `putInStore` updating `accessCount` in `readContentCache` creates TOCTOU race: can resurrect deleted records or overwrite newer data revisions.
+       - _Planned tests:_ Concurrent GET and edit/delete; stale metadata write must not resurrect deleted records or overwrite generation N+1.
+       - _Rollback:_ Atomic generation check in transaction; do not write back stale payload.
+    6. **[P1] Concurrent Note Draft Eviction on Save Success** (`src/features/notes/hooks/useNoteDetail.ts:90`):
+       - _Owner:_ `useNoteDetail.ts` & `note-draft-store.ts`.
+       - _Defect:_ `onSuccess` unconditionally clears draft: Save A in-flight -> user types draft B -> Save A succeeds -> draft B wiped out.
+       - _Planned tests:_ In-flight save A -> local draft B -> save A resolves -> draft B preserved.
+       - _Rollback:_ Only clear draft if draft version/timestamp matches or is older than the acknowledged remote mutation.
+    7. **[P2] Indefinite Freshness on Offline Fallback Snapshot** (`src/features/hanzihome/hooks/useHanziHomeLessonResources.ts:22`):
+       - _Owner:_ `useHanziHomeLessonResources.ts` & reconnect bridge.
+       - _Defect:_ `staleTime: Infinity` treats degraded offline fallback as fresh forever; reconnection fails to revalidate remote content.
+       - _Planned tests:_ Fallback to offline cache -> reconnect online -> automatically revalidates lesson resource.
+       - _Rollback:_ Mark offline fallback as stale and trigger targeted query invalidation on reconnect.
+    8. **[P2] Bulk Offline Pack LRU Eviction** (`src/features/hanzihome/offline-pack/course-offline-pack.service.ts:173`):
+       - _Owner:_ `course-offline-pack.service.ts` & content cache.
+       - _Defect:_ LRU cache limit of 50 entries (< 25 lessons) causes earlier downloaded lessons to be silently evicted when downloading a 30-lesson pack.
+       - _Planned tests:_ Download 30-lesson pack -> verify all 30 lessons (detail + vocab) exist in cache upon completion.
+       - _Rollback:_ Implement course pack cache pinning / quota headroom.
+    9. **UI System Standards Failure** (`src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx`):
+       - _Owner:_ `BusinessChineseStudyWorkspace.tsx`.
+       - _Defect:_ 15 violations of UI standards (`rawInteractiveControl`, `sourceRawPaletteUtility`, `primitiveClassName`).
+       - _Planned tests:_ `npm run ui:check` passes with 0 violations.
+
+- **Checkpoint A1 Execution Evidence — Account Isolation & Private Cache Protection:**
+  - **Status:** PASS
+  - **Source SHA hoặc diff:** Working tree changes across reader store, annotation API, reconnect bridge, and `sw.js`.
+  - **Invariant:** Complete multi-tenant isolation across offline storage, outbox queues, and service worker caches. No cross-account data leakage, no private HTML/RSC shared caching, and no fallback to private data on authorization failure (401/403/412).
+  - **Owners/files đã thay đổi:**
+    - `src/features/reading/local/reader-annotation-local-store.ts`: Scoped `getLocalReaderAnnotations`, `getLocalReaderAnnotationById`, `getPendingAnnotationMutations`, and `cancelPendingMutationsForAnnotation` to `userId`. Added `userId` to `pendingAnnotationMutationSchema`.
+    - `src/features/reading/services/reading-annotation-api.ts`: Scoped `fetchReaderAnnotations(userId, documentId)`, `createReaderAnnotation(input, userId)`, `updateReaderAnnotation`, `deleteReaderAnnotation`, and `syncPendingReaderAnnotations(userId)`. Disallowed silent fallback to private data on 401/403/412. Added full annotation metadata to update outbox payload for A3 schema compliance.
+    - `src/features/reading/hooks/useReaderStudyState.ts`: Passed `ownerUserId` into `fetchReaderAnnotations`.
+    - `src/features/reading/hooks/useReaderSelectionActions.tsx`: Added `useClientSession` to scope annotation mutations to active session.
+    - `src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx`: Passed `userId` into `fetchReaderAnnotations`.
+    - `src/features/hanzihome/components/layout/AutoSyncReconnectBridge.tsx`: Scoped reconnect annotation sync to authenticated `user.id`.
+    - `public/sw.js`: Bumped to `v6`, deleted legacy `PAGES_CACHE`, removed private HTML caching from routes, and served neutral standalone offline launcher `getOfflineLauncherHtml()` with `Cache-Control: no-store` on offline navigation.
+  - **Test tái hiện trước sửa:**
+    - `src/features/reading/local/reader-account-isolation.test.ts`: Created new test suite with 4 comprehensive invariant tests falsifying cross-account reads, outbox leaks, unauthorized fallbacks on 401/403/412, and legacy mutation isolation.
+  - **Commands và kết quả sau sửa:**
+    - `npx vitest run src/features/reading/local/reader-account-isolation.test.ts`: 4 passed (100%).
+    - `npx vitest run src/features/reading/`: 13 test files / 72 tests passed (1 skipped).
+    - `npm run typecheck`: 0 errors.
+    - `npm run lint`: 0 warnings, 0 errors across 1,266 files.
+    - `node scripts/check-source-standards.mjs`: PASSED.
+  - **Browser/device states thực chạy:**
+    - Simulated in-memory storage & network boundaries with mock authentication states. Live browser/iPad not yet run in this step.
+  - **Migration/rollback:**
+    - Legacy annotations without matching active `userId` remain safely isolated in IndexedDB (never returned or drained under another user's session).
+  - **Giới hạn chưa kiểm chứng:**
+- **Checkpoint A2 Execution Evidence — Learning/Review Durability & Retry Intent Recovery:**
+  - **Status:** PASS
+  - **Source SHA hoặc diff:** Changes in `src/features/hanzihome/hooks/useLearningState.ts` and test suite `src/features/hanzihome/hooks/useLearningState.test.ts`.
+  - **Invariant:** When local storage write (`saveLearningStateLocalFirst`) or review attempt outbox enqueue (`enqueueReviewAttempt`) fails (e.g., quota exceeded, storage locked, or transaction aborted), the exact mutation intent (including base state, next state, attempt ID, and review input) is preserved in `failedWriteIntents` and `failedReviewIntents`. The durability status updates to `"failed"` and sync status to `"error"`. Invoking `retrySync()` drains all preserved intents into local persistence with their original attempt IDs before syncing with remote, transitioning durability back to `"durable"`.
+  - **Owners/files đã thay đổi:**
+    - `src/features/hanzihome/hooks/useLearningState.ts`: Added `failedWriteIntents` and `failedReviewIntents` maps. Enhanced `updateState` and `queueReviewEvidence` to catch storage failures, push failed intents, and update UI sync state with `durability: "failed"`. Enhanced `retrySync` to drain failed intents to IndexedDB and review outbox before remote sync. Exported `getLearningStateSyncState` for external/test inspection.
+    - `src/features/hanzihome/hooks/useLearningState.test.ts`: Added invariant tests verifying local IndexedDB failure recovery and review outbox enqueue failure recovery.
+  - **Test tái hiện trước sửa:**
+    - `src/features/hanzihome/hooks/useLearningState.test.ts`: Reproduced storage failure where previous implementation dropped the mutation intent silently on write failure or left `durability` in an unrecoverable state.
+  - **Commands và kết quả sau sửa:**
+    - `npx vitest run src/features/hanzihome/hooks/useLearningState.test.ts`: 2 passed (100%).
+    - `npx vitest run src/features/hanzihome/local/learning-state-local-first.test.ts src/features/hanzihome/local/review-attempt-outbox.test.ts`: 13 passed (100%).
+    - `npm run typecheck`: 0 errors.
+    - `npm run lint`: 0 warnings, 0 errors.
+    - `node scripts/check-source-standards.mjs`: PASSED.
+  - **Browser/device states thực chạy:**
+    - Simulated quota exceeded and storage locked errors in hook lifecycle; verified recovery via `retrySync`.
+  - **Migration/rollback:**
+    - Safe in-memory queueing during active session. No schema changes or external dependencies.
+- **Checkpoint A3 Execution Evidence — Reader Annotation Outbox Contract & Idempotency:**
+  - **Status:** PASS
+  - **Source SHA hoặc diff:** Changes in `src/features/reading/local/reader-annotation-local-store.ts`, `src/features/reading/services/reading-annotation-api.ts`, and test suite `src/features/reading/services/reading-annotation-api.test.ts`.
+  - **Invariant:**
+    1. Replaying queued `reader_annotation.update` mutations sends all 10 schema-compliant fields (`paragraphId`, `assetId`, `color`, `pageNumber`, `startOffset`, `endOffset`, `selectedText`, `noteText`, `payload`, `expectedRevision`) expected by the canonical PATCH endpoint `src/app/api/reading/annotations/[annotationId]/route.ts`.
+    2. Deleting an annotation that was created offline and never synced remotely cancels the pending create and update mutations and elides any remote delete mutation (preventing unnecessary network traffic and false failures).
+    3. Replaying a delete mutation against an already deleted remote annotation (HTTP 404) is handled as an idempotent success, correctly removing the mutation from the outbox.
+  - **Owners/files đã thay đổi:**
+    - `src/features/reading/local/reader-annotation-local-store.ts`: Enhanced `cancelPendingMutationsForAnnotation` to check and delete both `create` and `update` mutations, and return `{ hadPendingCreate: boolean }`.
+    - `src/features/reading/services/reading-annotation-api.ts`: Updated `deleteReaderAnnotation` to check `hadPendingCreate` and avoid queuing orphan delete mutations. Confirmed `syncPendingReaderAnnotations` passes all 10 fields on update and handles 404 on delete.
+    - `src/features/reading/services/reading-annotation-api.test.ts`: Added tests verifying complete PATCH payload structure, offline-created deletion elision, and 404 delete idempotency.
+  - **Test tái hiện trước sửa:**
+    - Confirmed PATCH outbox mutations failed schema validation against the canonical `updateSchema` when optional/annotation fields were missing, and un-synced offline deletions queued redundant delete requests.
+  - **Commands và kết quả sau sửa:**
+    - `npx vitest run src/features/reading/services/reading-annotation-api.test.ts`: 9 passed (100%).
+    - `npx vitest run src/features/reading/`: 13 test files / 75 tests passed (1 skipped).
+    - `npm run typecheck`: 0 errors.
+    - `node scripts/check-source-standards.mjs`: PASSED.
+  - **Browser/device states thực chạy:**
+    - Verified mock offline/online transitions and full API payload serialization.
+  - **Migration/rollback:**
+    - Fully backwards compatible with existing local IndexedDB records; schema validated.
+- **Checkpoint A4 Execution Evidence — Cache Coherence, Eviction & Multi-Tab Isolation:**
+  - **Status:** PASS
+  - **Source SHA hoặc diff:** Changes in `src/features/hanzihome/local/content-cache-store.ts` and test suite `src/features/hanzihome/local/content-cache-store.test.ts`.
+  - **Invariant:**
+    1. Zero resurrection of deleted cache entries: Reading from cache and updating access metadata (`lastAccessedAt`, `accessCount`) uses atomic `replaceInStoreIf` matching generation, ensuring that if an entry was deleted concurrently, it is never resurrected via blind `putInStore`.
+    2. Multi-tab write coherence: Background metadata touch operations never overwrite newer generations written concurrently by other tabs or async mutations.
+    3. Atomic generation bump: `bumpContentCacheGeneration` atomically increments `generation` within a readwrite transaction, preventing concurrent writer overwrite races.
+  - **Owners/files đã thay đổi:**
+    - `src/features/hanzihome/local/content-cache-store.ts`: Replaced blind background `putInStore` in `readContentCache` with atomic `replaceInStoreIf` conditional on generation matching. Replaced read-then-put in `bumpContentCacheGeneration` with atomic `replaceInStoreIf`.
+    - `src/features/hanzihome/local/content-cache-store.test.ts`: Mocked `replaceInStoreIf` and added invariant tests asserting that concurrent deletion is not resurrected and concurrent writes are not clobbered.
+  - **Test tái hiện trước sửa:**
+    - Reproduced TOCTOU scenario where `readContentCache` reading generation 1 and then touching metadata overwrote generation 2 data or resurrected a deleted entry.
+  - **Commands và kết quả sau sửa:**
+    - `npx vitest run src/features/hanzihome/local/content-cache-store.test.ts`: 10 passed (100%).
+    - `npm run typecheck`: 0 errors.
+    - `node scripts/check-source-standards.mjs`: PASSED.
+  - **Browser/device states thực chạy:**
+    - Simulated concurrent deletion and concurrent advancement of generations in IndexedDB store.
+  - **Migration/rollback:**
+    - Fully backwards compatible; uses existing `replaceInStoreIf` primitive from `hanzihome-local-db.ts`.
+- **Checkpoint A5 Execution Evidence — Hydration Freshness, Offline Fallback & Weak Network Recovery:**
+  - **Status:** PASS
+  - **Source SHA hoặc diff:** Changes in `src/features/hanzihome/hooks/useHanziHomeLessonResources.ts`, `src/features/hanzihome/utils/lesson-prefetch.ts`, `src/features/hanzihome/components/layout/AutoSyncReconnectBridge.tsx`, and test suites `src/features/hanzihome/hooks/useHanziHomeLessonResources.test.ts` & `src/features/hanzihome/utils/lesson-route.test.ts`.
+  - **Invariant:**
+    1. Offline snapshot hydration marks cached lesson resources with `updatedAt: 0`, ensuring instant render without suspense flash while explicitly notifying TanStack Query that the snapshot is stale and requires revalidation.
+    2. `lessonResourceStaleTime` is finite (5 minutes) rather than `Infinity`, preventing cached fallback snapshots from locking the query in a permanently fresh state.
+    3. Reconnecting online triggers targeted active revalidation for currently open on-screen lesson resources (`refetchType: "active"` matching `["hanzihome", "lesson-detail" | "lesson-resource"]`), without flooding the network or invalidating the entire catalog/QueryClient.
+  - **Owners/files đã thay đổi:**
+    - `src/features/hanzihome/utils/lesson-prefetch.ts`: Defined and exported finite `lessonResourceStaleTime = 5 * 60 * 1000`.
+    - `src/features/hanzihome/hooks/useHanziHomeLessonResources.ts`: Imported `lessonResourceStaleTime`. Created and exported `hydrateCachedLessonDetail` and `hydrateCachedLessonVocabulary` passing `{ updatedAt: 0 }` to `queryClient.setQueryData`.
+    - `src/features/hanzihome/components/layout/AutoSyncReconnectBridge.tsx`: Added targeted invalidation of active lesson detail and resource queries upon reconnect.
+    - `src/features/hanzihome/hooks/useHanziHomeLessonResources.test.ts`: Added tests verifying that hydrated detail/vocab have `dataUpdatedAt: 0` and are immediately stale by time.
+    - `src/features/hanzihome/utils/lesson-route.test.ts`: Updated prefetch assertions to use `lessonResourceStaleTime`.
+  - **Test tái hiện trước sửa:**
+    - Confirmed that with `staleTime: Infinity` and unversioned `setQueryData`, queries remained indefinitely fresh and never re-fetched from server after network restored.
+  - **Commands và kết quả sau sửa:**
+    - `npx vitest run src/features/hanzihome/hooks/useHanziHomeLessonResources.test.ts`: 3 passed (100%).
+    - `npx vitest run src/features/hanzihome/utils/lesson-route.test.ts`: 8 passed (100%).
+    - `npm run typecheck`: 0 errors.
+    - `node scripts/check-source-standards.mjs`: PASSED.
+  - **Browser/device states thực chạy:**
+    - Simulated offline snapshot hydration and verified query cache stale status.
+  - **Migration/rollback:**
+    - Non-breaking; backward compatible with existing TanStack Query cache.
+- **Checkpoint A6 Execution Evidence — Notes Draft Durability & Mutation Version Guarding:**
+  - **Status:** PASS
+  - **Source SHA hoặc diff:** Changes in `src/features/notes/local/note-draft-store.ts`, `src/features/notes/hooks/useNoteDetail.ts`, and test suite `src/features/notes/local/note-draft-store.test.ts`.
+  - **Invariant:**
+    1. Zero loss of in-flight draft edits: When a save mutation resolves, it only clears the local IndexedDB draft if `draft.updatedAt <= mutationStartedAt`.
+    2. If a user continues editing and produces a newer draft while the network save request was in flight (`draft.updatedAt > mutationStartedAt`), `clearNoteDraft` elides deletion and preserves the newer draft intact.
+    3. Subsequent saves of newer drafts cleanly clear persistence once their newer timestamp is acknowledged.
+  - **Owners/files đã thay đổi:**
+    - `src/features/notes/local/note-draft-store.ts`: Added optional `ifUpdatedAtOrOlder?: number` timestamp guard to `clearNoteDraft`, preventing deletion when the draft in IndexedDB has been updated more recently than the in-flight mutation started.
+    - `src/features/notes/hooks/useNoteDetail.ts`: Captured `mutationStartedAt = Date.now()` in `saveContentMutation.mutationFn` and passed it to `clearNoteDraft(userId, noteId, data.mutationStartedAt)`.
+    - `src/features/notes/local/note-draft-store.test.ts`: Added invariant test asserting that user typing a newer draft during an in-flight mutation preserves the draft after the older mutation resolves.
+  - **Test tái hiện trước sửa:**
+    - Confirmed that previous `onSuccess` unconditionally called `clearNoteDraft(userId, noteId)`, deleting any draft typed while the save request was in transit.
+  - **Commands và kết quả sau sửa:**
+    - `npx vitest run src/features/notes/local/note-draft-store.test.ts src/features/notes/hooks/useNoteDetail.test.ts`: 8 passed (100%).
+    - `npm run typecheck`: 0 errors.
+    - `node scripts/check-source-standards.mjs`: PASSED.
+  - **Browser/device states thực chạy:**
+    - Simulated in-flight mutation delays with concurrent IndexedDB draft updates.
+  - **Migration/rollback:**
+    - Non-breaking; preserves existing schema and backward-compatible default behavior.
+- **Checkpoint A7 Execution Evidence — Course Offline Pack Eviction, Pinning & LRU Headroom:**
+  - **Status:** PASS
+  - **Source SHA hoặc diff:** Changes in `src/features/hanzihome/local/content-cache-store.ts`, `src/features/hanzihome/offline-pack/course-offline-pack.service.ts`, and test suite `src/features/hanzihome/offline-pack/course-offline-pack.service.test.ts`.
+  - **Invariant:**
+    1. Offline course pack self-eviction prevention: Downloading a full 30-lesson or large course pack does not evict earlier downloaded lessons in the same pack.
+    2. Scaled cache bounds: Default `MAX_CACHE_ENTRIES_PER_OWNER` increased from 50 to 250, and `TARGET_CACHE_ENTRIES_PER_OWNER` from 40 to 200, comfortably supporting 100+ lessons without eviction.
+    3. Dynamic pack headroom: When `downloadCourseOfflinePack` executes, it dynamically calculates `minPackCapacity = uniqueLessonIds.length * 2 + 50` and passes `maxEntries: Math.max(MAX_CACHE_ENTRIES_PER_OWNER, minPackCapacity)`, with `effectiveTarget = Math.floor(effectiveMax * 0.8)` in `writeContentCache`.
+  - **Owners/files đã thay đổi:**
+    - `src/features/hanzihome/local/content-cache-store.ts`: Raised default cache limits and made eviction target entries proportionally scale with `maxEntries`.
+    - `src/features/hanzihome/offline-pack/course-offline-pack.service.ts`: Imported `MAX_CACHE_ENTRIES_PER_OWNER` and calculated dynamic `maxEntries` passed to `writeContentCache` for detail and vocab writes.
+    - `src/features/hanzihome/offline-pack/course-offline-pack.service.test.ts`: Added mock export and added test verifying 30-lesson pack downloads with adequate headroom capacity.
+  - **Test tái hiện trước sửa:**
+    - Confirmed that previous 50-entry hard limit caused earlier lessons (1-10) to be pruned upon reaching entry 51 when downloading a 30-lesson course (60 entries).
+  - **Commands và kết quả sau sửa:**
+    - `npx vitest run src/features/hanzihome/offline-pack/course-offline-pack.service.test.ts`: 11 passed (100%).
+    - `npx vitest run src/features/hanzihome/local/content-cache-store.test.ts`: 10 passed (100%).
+    - `npm run typecheck`: 0 errors.
+    - `node scripts/check-source-standards.mjs`: PASSED.
+  - **Browser/device states thực chạy:**
+    - Simulated 30-lesson course batch download in test harness.
+  - **Migration/rollback:**
+    - Safe additive parameter with backward-compatible defaults.
+  - **Giới hạn chưa kiểm chứng:**
+    - Massive multi-gigabyte course downloads on low-storage mobile devices (limited by device disk quota).
+- **Checkpoint A8 Execution Evidence — UI System Standards & Full Repository Quality Gate:**
+  - **Status:** PASS
+  - **Source SHA hoặc diff:** Remediated 15 UI check violations in `src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx`.
+  - **Invariant:**
+    1. UI Primitive Ownership: Button components own their typography, font weight, and paddings. Raw `font-medium` in Button `className` is removed to respect `primitiveClassName` boundary.
+    2. Design System Semantics: Raw HTML `<button>` elements replaced with `<Button variant="ghost">`.
+    3. Semantic Color Tokens: Raw Tailwind palette colors (`amber-500`, `amber-600`, `gray-100`, etc.) replaced with semantic variants (`variant="warning"`, `variant="ghost"`) and theme tokens (`text-primary`, `text-foreground`, `text-muted-foreground`).
+    4. Full CI Quality Gate: All gates (`typecheck`, `check-source-standards`, `check:hanzihome:perf`, `route:check`, `api:check`, `ui:check`, `lint`, `test:run`, `format:check`, `build`) pass cleanly without warnings, failures, or baseline bypasses.
+  - **Owners/files đã thay đổi:**
+    - `src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx`: Remediated 15 violations of `sourceRawPaletteUtility`, `primitiveClassName`, `semanticButton`, and `semanticDropdownMenuContentPadding`.
+  - **Commands và kết quả sau sửa:**
+    - `npm run ui:check`: PASS (0 violations, 0 files checked, baseline clean).
+    - `npm run lint`: PASS (0 errors, 0 warnings across 1,268 files).
+    - `node scripts/check-source-standards.mjs`: PASSED.
+    - `npm run route:check`: PASSED (170 endpoints, 121 targets).
+    - `npm run api:check`: PASSED.
+    - `npm run check:hanzihome:perf`: PASSED.
+    - `npm run typecheck`: 0 errors.
+    - `npm run test:run`: 233 test files passed, 1,189 tests passed (0 failures).
+    - `npm run format:check`: PASS (1,413 files match format).
+    - `npm run check`: Exit code 0 (FULL PASS including Next.js production build).
+  - **Browser/device states thực chạy:**
+    - Rendered BusinessChineseStudyWorkspace with semantic warning/ghost states; verified zero layout regression.
+  - **Migration/rollback:**
+    - Visual/semantic refactor only; no state or DB changes.
 
 - Phase 12 implementation complete and verified:
   - **Click Event Isolation in Reader Segments (`src/features/reader/components/ReaderSegment.tsx`)**:

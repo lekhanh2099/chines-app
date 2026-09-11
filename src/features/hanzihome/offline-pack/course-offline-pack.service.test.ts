@@ -25,6 +25,7 @@ vi.mock("../local/content-cache-store", () => ({
  hasContentCache: vi.fn(),
  writeContentCache: vi.fn().mockResolvedValue({ written: true, generation: 1 }),
  deleteContentCache: vi.fn().mockResolvedValue(undefined),
+ MAX_CACHE_ENTRIES_PER_OWNER: 250,
 }));
 
 vi.mock("../repositories/hanzihome-content-api-client", () => ({
@@ -178,6 +179,37 @@ describe("course-offline-pack.service", () => {
    expect(result.success).toBe(false);
    expect(result.downloadedCount).toBe(1);
    expect(result.failedCount).toBe(1);
+  });
+
+  it("A7 Invariant: downloads 30-lesson pack with headroom capacity preventing earlier lessons from being evicted", async () => {
+   vi.mocked(hasContentCache).mockResolvedValue(false);
+   vi.mocked(fetchHanziHomeLessonDetail).mockImplementation(async (id) => createMockDetail(id));
+   vi.mocked(fetchHanziHomeLessonVocabulary).mockImplementation(async (id) => createMockVocab(id));
+
+   const thirtyLessonIds = Array.from({ length: 30 }, (_, i) => `lesson-${i + 1}`);
+
+   const result = await downloadCourseOfflinePack({
+    courseId,
+    userId,
+    lessonIds: thirtyLessonIds,
+   });
+
+   expect(result.success).toBe(true);
+   expect(result.downloadedCount).toBe(30);
+
+   // 30 lessons * 2 resources (detail + vocab) = 60 writes
+   expect(writeContentCache).toHaveBeenCalledTimes(60);
+
+   // Verify that writeContentCache is called with a maxEntries capacity sufficient for all 30 lessons (>= 60 entries)
+   expect(writeContentCache).toHaveBeenLastCalledWith(
+    expect.objectContaining({
+     ownerId: userId,
+     maxEntries: expect.any(Number),
+    }),
+   );
+
+   const lastCallArgs = vi.mocked(writeContentCache).mock.calls[0]?.[0];
+   expect(lastCallArgs?.maxEntries).toBeGreaterThanOrEqual(60);
   });
  });
 

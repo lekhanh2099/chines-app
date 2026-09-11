@@ -43,6 +43,24 @@ vi.mock("./hanzihome-local-db", () => ({
   getStoreMap(name).set(key, value);
   return Promise.resolve();
  }),
+ replaceInStoreIf: vi.fn(
+  (
+   name: string,
+   key: string,
+   _schema: unknown,
+   matches: (val: unknown) => boolean,
+   replace: (val: unknown) => unknown,
+  ) => {
+   const map = getStoreMap(name);
+   const current = map.get(key);
+   if (current === undefined || !matches(current)) {
+    return Promise.resolve(null);
+   }
+   const next = replace(current);
+   map.set(key, next);
+   return Promise.resolve(next);
+  },
+ ),
  getAllFromStoreMatching: vi.fn((name: string) => {
   return Promise.resolve(Array.from(getStoreMap(name).values()));
  }),
@@ -337,5 +355,69 @@ describe("content-cache-store", () => {
 
   const readGen = await getContentCacheGeneration("user-123", "lesson_detail", "lesson-99");
   expect(readGen).toBe(2);
+ });
+
+ it("A4 Invariant: readContentCache does not resurrect deleted entries or clobber newer generations", async () => {
+  await writeContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "lesson-1",
+   data: sampleLessonData,
+  });
+
+  const storeMap = getStoreMap("content_cache");
+  const key = "user-123:lesson_detail:lesson-1";
+
+  // Case 1: Entry is deleted concurrently after readFromStore but before metadata update
+  // Simulate readContentCache read, then concurrent deletion
+  const cached = await readContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "lesson-1",
+   schema: sampleLessonSchema,
+  });
+  expect(cached).toEqual(sampleLessonData);
+
+  // Now explicitly delete
+  await deleteContentCache("user-123", "lesson_detail", "lesson-1");
+  expect(storeMap.has(key)).toBe(false);
+
+  // Verify that background touch does not resurrect the deleted entry
+  await new Promise((resolve) => setTimeout(resolve, 10));
+  expect(storeMap.has(key)).toBe(false);
+
+  // Case 2: Concurrent write advances generation, background touch does not clobber
+  await writeContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "lesson-1",
+   data: { ...sampleLessonData, title: "Version 1" },
+  });
+
+  // Start a read
+  const v1Read = await readContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "lesson-1",
+   schema: sampleLessonSchema,
+  });
+  expect(v1Read?.title).toBe("Version 1");
+
+  // Another tab writes Version 2
+  await writeContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "lesson-1",
+   data: { ...sampleLessonData, title: "Version 2" },
+  });
+
+  // Verify store retains Version 2 and was not overwritten by stale Version 1 touch
+  const current = await readContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "lesson-1",
+   schema: sampleLessonSchema,
+  });
+  expect(current?.title).toBe("Version 2");
  });
 });

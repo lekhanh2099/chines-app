@@ -2,6 +2,7 @@ import { requestStoragePersistence } from "@/lib/storage/storage-persistence";
 import {
  deleteContentCache,
  hasContentCache,
+ MAX_CACHE_ENTRIES_PER_OWNER,
  writeContentCache,
 } from "../local/content-cache-store";
 import {
@@ -142,6 +143,9 @@ export async function downloadCourseOfflinePack(
 
  reportProgress();
 
+ const minPackCapacity = uniqueLessonIds.length * 2 + 50;
+ const maxEntries = Math.max(MAX_CACHE_ENTRIES_PER_OWNER, minPackCapacity);
+
  await runBoundedPool(
   uniqueLessonIds,
   MAX_CONCURRENT_DOWNLOADS,
@@ -176,6 +180,7 @@ export async function downloadCourseOfflinePack(
       resourceType: "lesson_detail",
       resourceId: lessonId,
       data: detail,
+      maxEntries,
      });
     }
 
@@ -185,6 +190,7 @@ export async function downloadCourseOfflinePack(
       resourceType: "lesson_vocab",
       resourceId: lessonId,
       data: vocab,
+      maxEntries,
      });
     }
 

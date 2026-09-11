@@ -98,18 +98,33 @@ describe("reader-annotation-local-store", () => {
   localDb.delete.mockResolvedValue(undefined);
  });
 
- it("retrieves and sorts active annotations for a specific document", async () => {
+ it("retrieves and sorts active annotations for a specific document and user", async () => {
+  const userBAnnotation: ReaderAnnotationRow = {
+   ...sampleAnnotation1,
+   id: "44444444-4444-4444-8444-444444444444",
+   user_id: "12345678-1234-4234-8234-123456789abc",
+  };
+
   localDb.listMatching.mockResolvedValue([
    sampleAnnotation1,
    sampleAnnotation2,
    otherDocAnnotation,
+   userBAnnotation,
   ]);
 
-  const result = await getLocalReaderAnnotations("doc-1");
-  expect(result).toHaveLength(2);
-  // Sorted by start_offset ascending: index 0 (start 0), index 1 (start 5)
-  expect(result[0]?.id).toBe(sampleAnnotation2.id);
-  expect(result[1]?.id).toBe(sampleAnnotation1.id);
+  const resultA = await getLocalReaderAnnotations(sampleAnnotation1.user_id, "doc-1");
+  expect(resultA).toHaveLength(2);
+  expect(resultA[0]?.id).toBe(sampleAnnotation2.id);
+  expect(resultA[1]?.id).toBe(sampleAnnotation1.id);
+
+  // User B only receives their own annotations
+  const resultB = await getLocalReaderAnnotations(userBAnnotation.user_id, "doc-1");
+  expect(resultB).toHaveLength(1);
+  expect(resultB[0]?.id).toBe(userBAnnotation.id);
+
+  // Unauthenticated user receives empty array
+  const resultAnon = await getLocalReaderAnnotations(null, "doc-1");
+  expect(resultAnon).toEqual([]);
  });
 
  it("saves a local annotation into the store", async () => {
@@ -122,11 +137,12 @@ describe("reader-annotation-local-store", () => {
   expect(localDb.delete).toHaveBeenCalledWith("reader_annotations", sampleAnnotation1.id);
  });
 
- it("enqueues and reads pending mutations", async () => {
+ it("enqueues and reads pending mutations scoped to user", async () => {
   const mutation: PendingAnnotationMutation = {
    id: "reader_annotation:create:11111111-1111-4111-8111-111111111111",
    type: "reader_annotation.create",
    status: "pending",
+   userId: sampleAnnotation1.user_id,
    tempId: sampleAnnotation1.id,
    documentId: sampleAnnotation1.document_id,
    annotation: sampleAnnotation1,
@@ -135,11 +151,17 @@ describe("reader-annotation-local-store", () => {
    attemptCount: 0,
   };
 
+  const otherUserMutation: PendingAnnotationMutation = {
+   ...mutation,
+   id: "reader_annotation:create:other",
+   userId: "other-user-uuid",
+  };
+
   await enqueuePendingAnnotationMutation(mutation);
   expect(localDb.put).toHaveBeenCalledWith("pending_mutations", mutation);
 
-  localDb.listMatching.mockResolvedValue([mutation]);
-  const mutations = await getPendingAnnotationMutations();
+  localDb.listMatching.mockResolvedValue([mutation, otherUserMutation]);
+  const mutations = await getPendingAnnotationMutations(sampleAnnotation1.user_id);
   expect(mutations).toEqual([mutation]);
 
   await removePendingAnnotationMutation(mutation.id);

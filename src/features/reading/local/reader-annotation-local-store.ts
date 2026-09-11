@@ -20,6 +20,7 @@ export const pendingAnnotationMutationSchema = z.discriminatedUnion("type", [
   id: z.string().min(1),
   type: z.literal("reader_annotation.create"),
   status: z.enum(["pending", "syncing", "failed"]),
+  userId: z.string().min(1),
   tempId: z.string().min(1),
   documentId: z.string().min(1),
   annotation: readerAnnotationRowSchema,
@@ -32,10 +33,12 @@ export const pendingAnnotationMutationSchema = z.discriminatedUnion("type", [
   id: z.string().min(1),
   type: z.literal("reader_annotation.update"),
   status: z.enum(["pending", "syncing", "failed"]),
+  userId: z.string().min(1),
   annotationId: z.string().min(1),
   documentId: z.string().min(1),
   noteText: z.string(),
   expectedRevision: z.number().int().nonnegative(),
+  annotation: readerAnnotationRowSchema.optional(),
   createdAt: z.iso.datetime({ offset: true }),
   updatedAt: z.iso.datetime({ offset: true }),
   attemptCount: z.number().int().nonnegative(),
@@ -45,6 +48,7 @@ export const pendingAnnotationMutationSchema = z.discriminatedUnion("type", [
   id: z.string().min(1),
   type: z.literal("reader_annotation.delete"),
   status: z.enum(["pending", "syncing", "failed"]),
+  userId: z.string().min(1),
   annotationId: z.string().min(1),
   documentId: z.string().min(1),
   expectedRevision: z.number().int().nonnegative(),
@@ -58,8 +62,10 @@ export const pendingAnnotationMutationSchema = z.discriminatedUnion("type", [
 export type PendingAnnotationMutation = z.output<typeof pendingAnnotationMutationSchema>;
 
 export async function getLocalReaderAnnotations(
+ userId: string | null | undefined,
  documentId: string,
 ): Promise<ReaderAnnotationRow[]> {
+ if (!userId || !documentId) return [];
  try {
   const all = await getAllFromStoreMatching(
    HANZIHOME_LOCAL_STORES.readerAnnotations,
@@ -68,6 +74,7 @@ export async function getLocalReaderAnnotations(
   return all
    .filter(
     (item) =>
+     item.user_id === userId &&
      item.document_id === documentId &&
      item.deleted_at === null &&
      item.start_offset !== null &&
@@ -81,13 +88,17 @@ export async function getLocalReaderAnnotations(
 
 export async function getLocalReaderAnnotationById(
  annotationId: string,
+ userId?: string,
 ): Promise<ReaderAnnotationRow | null> {
  try {
-  return await readFromStore(
+  const record = await readFromStore(
    HANZIHOME_LOCAL_STORES.readerAnnotations,
    annotationId,
    readerAnnotationRowSchema,
   );
+  if (!record) return null;
+  if (userId && record.user_id !== userId) return null;
+  return record;
  } catch {
   return null;
  }
@@ -131,13 +142,16 @@ export async function enqueuePendingAnnotationMutation(
  }
 }
 
-export async function getPendingAnnotationMutations(): Promise<PendingAnnotationMutation[]> {
+export async function getPendingAnnotationMutations(
+ userId?: string,
+): Promise<PendingAnnotationMutation[]> {
  try {
   const all = await getAllFromStoreMatching(
    HANZIHOME_LOCAL_STORES.pendingMutations,
    pendingAnnotationMutationSchema,
   );
-  return all.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
+  const filtered = userId ? all.filter((item) => item.userId === userId) : all;
+  return filtered.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
  } catch {
   return [];
  }
@@ -151,15 +165,31 @@ export async function removePendingAnnotationMutation(id: string): Promise<void>
  }
 }
 
-export async function cancelPendingMutationsForAnnotation(annotationId: string): Promise<void> {
+export async function cancelPendingMutationsForAnnotation(
+ annotationId: string,
+ userId?: string,
+): Promise<{ hadPendingCreate: boolean }> {
+ let hadPendingCreate = false;
  try {
+  const createId = `reader_annotation:create:${annotationId}`;
+  const updateId = `reader_annotation:update:${annotationId}`;
+  const createItem = await readFromStore(
+   HANZIHOME_LOCAL_STORES.pendingMutations,
+   createId,
+   pendingAnnotationMutationSchema,
+  );
+  if (createItem && (!userId || createItem.userId === userId)) {
+   hadPendingCreate = true;
+   await deleteFromStore(HANZIHOME_LOCAL_STORES.pendingMutations, createId);
+  }
   await deleteFromStoreIf(
    HANZIHOME_LOCAL_STORES.pendingMutations,
-   `reader_annotation:create:${annotationId}`,
+   updateId,
    pendingAnnotationMutationSchema,
-   () => true,
+   (record) => !userId || record.userId === userId,
   );
  } catch {
   // Non-fatal
  }
+ return { hadPendingCreate };
 }
