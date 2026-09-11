@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import { BusinessChineseStudyWorkspace } from "@/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace";
 import {
- getTextbookCatalog,
+ getTextbookCatalogForBookKeys,
  getBusinessChineseLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
@@ -18,7 +18,7 @@ export default async function BusinessChinesePage({
   Number.isInteger(requestedLesson) && requestedLesson >= 1 && requestedLesson <= 10
    ? requestedLesson
    : 1;
- const catalog = getTextbookCatalog();
+ const catalog = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
  const lesson = getBusinessChineseLesson(selectedBookKey, selectedLessonNumber);
  if (!lesson) notFound();
 

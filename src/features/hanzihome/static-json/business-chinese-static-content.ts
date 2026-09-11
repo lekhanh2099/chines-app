@@ -150,6 +150,10 @@ export function getTextbookCatalog() {
  }));
 }
 
+export function getTextbookCatalogForBookKeys(bookKeys: readonly TextbookLesson["bookKey"][]) {
+ return getTextbookCatalog().filter((book) => bookKeys.includes(book.key));
+}
+
 export function getTextbookLesson(bookKey: TextbookLesson["bookKey"], lessonNumber: number) {
  return (
   textbookBooks

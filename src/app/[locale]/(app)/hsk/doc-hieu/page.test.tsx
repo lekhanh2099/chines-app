@@ -7,7 +7,7 @@ vi.mock("@/features/hanzihome/components/business-chinese/BusinessChineseStudyWo
 }));
 
 import {
- getTextbookCatalog,
+ getTextbookCatalogForBookKeys,
  getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
@@ -57,15 +57,15 @@ describe("ReadingComprehensionPage", () => {
   expect(result).toHaveProperty("props.lesson", getTextbookLesson("doc-hieu", 1));
  });
 
- it("passes all four books as summaries without unrelated lesson detail", async () => {
+ it("passes the scoped textbook book as summary without unrelated lesson detail", async () => {
   const result = await ReadingComprehensionPage({
    searchParams: Promise.resolve({ lesson: "2" }),
   });
-  const catalog = getTextbookCatalog();
+  const catalog = getTextbookCatalogForBookKeys(["doc-hieu"]);
 
   expect(result).toHaveProperty("props.books", catalog);
-  expect(catalog.map((book) => book.key)).toEqual(["tm2", "tm3", "nhip-cau", "doc-hieu"]);
-  expect(catalog.map((book) => book.lessons.length)).toEqual([10, 10, 15, 18]);
+  expect(catalog.map((book) => book.key)).toEqual(["doc-hieu"]);
+  expect(catalog.map((book) => book.lessons.length)).toEqual([18]);
   for (const book of catalog) {
    expect(Object.keys(book).toSorted()).toEqual(["id", "key", "label", "lessons"]);
    for (const lesson of book.lessons) {

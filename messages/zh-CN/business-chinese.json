@@ -30,5 +30,10 @@
   "revealMeaning": "显示释义"
  },
  "offlineReady": "已离线就绪",
- "offlineDescription": "此教材已内置于应用程序中，可随时离线学习。"
+ "offlineDescription": "此教材已内置于应用程序中，可随时离线学习。",
+ "semesterBookmarks": "本学期书签",
+ "semesterBookmarksCount": "本学期书签 ({count})",
+ "bookmarkLesson": "标记为本学期课程",
+ "unbookmarkLesson": "取消标记",
+ "bookmarked": "已标记"
 }

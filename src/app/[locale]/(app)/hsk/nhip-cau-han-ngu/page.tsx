@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import { BusinessChineseStudyWorkspace } from "@/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace";
 import {
- getTextbookCatalog,
+ getTextbookCatalogForBookKeys,
  getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
@@ -19,6 +19,10 @@ export default async function ChineseBridgePage({
  if (!lesson) notFound();
 
  return (
-  <BusinessChineseStudyWorkspace key={lesson.id} books={getTextbookCatalog()} lesson={lesson} />
+  <BusinessChineseStudyWorkspace
+   key={lesson.id}
+   books={getTextbookCatalogForBookKeys(["nhip-cau"])}
+   lesson={lesson}
+  />
  );
 }

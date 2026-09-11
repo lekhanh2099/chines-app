@@ -30,5 +30,10 @@
   "revealMeaning": "Show meaning"
  },
  "offlineReady": "Offline ready",
- "offlineDescription": "This textbook is built into the application and is always available offline."
+ "offlineDescription": "This textbook is built into the application and is always available offline.",
+ "semesterBookmarks": "Semester Bookmarks",
+ "semesterBookmarksCount": "Semester Bookmarks ({count})",
+ "bookmarkLesson": "Bookmark for this semester",
+ "unbookmarkLesson": "Remove bookmark",
+ "bookmarked": "Bookmarked"
 }

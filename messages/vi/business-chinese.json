@@ -30,5 +30,10 @@
   "revealMeaning": "Hiện nghĩa"
  },
  "offlineReady": "Đã sẵn sàng offline",
- "offlineDescription": "Giáo trình này đã được tích hợp sẵn trong ứng dụng, có thể học ngoại tuyến mọi lúc."
+ "offlineDescription": "Giáo trình này đã được tích hợp sẵn trong ứng dụng, có thể học ngoại tuyến mọi lúc.",
+ "semesterBookmarks": "Bài học kỳ này",
+ "semesterBookmarksCount": "Bài học kỳ này ({count})",
+ "bookmarkLesson": "Đánh dấu bài học kỳ này",
+ "unbookmarkLesson": "Bỏ đánh dấu bài học",
+ "bookmarked": "Đã đánh dấu"
 }

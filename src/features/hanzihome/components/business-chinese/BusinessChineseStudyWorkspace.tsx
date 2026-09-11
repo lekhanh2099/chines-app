@@ -40,13 +40,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/separator";
-import { CloudCheck } from "lucide-react";
+import { Bookmark, CloudCheck } from "lucide-react";
 import {
  Select,
  SelectContent,
  SelectGroup,
  SelectItem,
  SelectLabel,
+ SelectSeparator,
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
@@ -84,6 +85,7 @@ import { fetchReaderAnnotations } from "@/features/reading/services/reading-anno
 import { parseReaderSourceTarget } from "@/features/reading/model/reading-source-target";
 import { useReaderSelectionActions } from "@/features/reading/hooks/useReaderSelectionActions";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { Reader } from "@/features/reader/components/Reader";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
@@ -150,7 +152,16 @@ function BusinessChineseHeaderContextBridge({
  const t = useTranslations("BusinessChinese");
  const router = useLocalizedRouter();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
+ const { state: learningState } = useLearningState();
+ const bookmarkedLessonIds = learningState.bookmarks.lessons;
  const selectedBook = books.find((book) => book.key === lesson.bookKey);
+
+ const allLessons = useMemo(() => books.flatMap((book) => book.lessons), [books]);
+ const bookmarkedLessons = useMemo(() => {
+  if (!bookmarkedLessonIds || bookmarkedLessonIds.length === 0) return [];
+  return allLessons.filter((item) => bookmarkedLessonIds.includes(item.id));
+ }, [allLessons, bookmarkedLessonIds]);
+
  const content = useMemo(
   () => (
    <AppHeaderBreadcrumb
@@ -178,11 +189,10 @@ function BusinessChineseHeaderContextBridge({
      <Select
       value={lesson.id}
       disabled={focusModeEnabled}
-      onValueChange={(lessonId) => {
+      onValueChange={(rawLessonId) => {
        if (focusModeEnabled) return;
-       const selectedLesson = books
-        .flatMap((book) => book.lessons)
-        .find((item) => item.id === lessonId);
+       const lessonId = rawLessonId.startsWith("pinned:") ? rawLessonId.slice(7) : rawLessonId;
+       const selectedLesson = allLessons.find((item) => item.id === lessonId);
        if (!selectedLesson) return;
        router.push(buildTextbookHref(selectedLesson.bookKey, selectedLesson.number), {
         scroll: false,
@@ -197,14 +207,41 @@ function BusinessChineseHeaderContextBridge({
        <SelectValue />
       </SelectTrigger>
       <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
+       {bookmarkedLessons.length > 0 ? (
+        <>
+         <SelectGroup>
+          <SelectLabel className="flex items-center gap-1.5 font-semibold text-amber-600 dark:text-amber-400">
+           <Bookmark className="h-3.5 w-3.5 fill-current" />
+           <span>{t("semesterBookmarksCount", { count: bookmarkedLessons.length })}</span>
+          </SelectLabel>
+          {bookmarkedLessons.map((item) => (
+           <SelectItem key={`pinned-${item.id}`} value={`pinned:${item.id}`}>
+            <span className="flex items-center gap-2">
+             <Bookmark className="h-3.5 w-3.5 fill-current text-amber-500 shrink-0" />
+             <span className="truncate">{item.title}</span>
+            </span>
+           </SelectItem>
+          ))}
+         </SelectGroup>
+         <SelectSeparator />
+        </>
+       ) : null}
        {books.map((book) => (
         <SelectGroup key={book.id}>
          <SelectLabel>{book.label}</SelectLabel>
-         {book.lessons.map((item) => (
-          <SelectItem key={item.id} value={item.id}>
-           {item.title}
-          </SelectItem>
-         ))}
+         {book.lessons.map((item) => {
+          const isItemBookmarked = Boolean(bookmarkedLessonIds?.includes(item.id));
+          return (
+           <SelectItem key={item.id} value={item.id}>
+            <span className="flex items-center gap-2">
+             {isItemBookmarked ? (
+              <Bookmark className="h-3.5 w-3.5 fill-current text-amber-500 shrink-0" />
+             ) : null}
+             <span className="truncate">{item.title}</span>
+            </span>
+           </SelectItem>
+          );
+         })}
         </SelectGroup>
        ))}
       </SelectContent>
@@ -212,7 +249,19 @@ function BusinessChineseHeaderContextBridge({
     </AppHeaderBreadcrumbItem>
    </AppHeaderBreadcrumb>
   ),
-  [books, focusModeEnabled, lesson.bookKey, lesson.bookLabel, lesson.id, router, selectedBook, t],
+  [
+   allLessons,
+   bookmarkedLessonIds,
+   bookmarkedLessons,
+   books,
+   focusModeEnabled,
+   lesson.bookKey,
+   lesson.bookLabel,
+   lesson.id,
+   router,
+   selectedBook,
+   t,
+  ],
  );
 
  useEffect(() => {
@@ -1004,6 +1053,8 @@ function BusinessChineseStudyWorkspaceContent({
 }) {
  const t = useTranslations("BusinessChinese");
  const displayMode = businessChineseDisplayMode;
+ const { state: learningState, toggleBookmark } = useLearningState();
+ const isLessonBookmarked = (learningState.bookmarks.lessons ?? []).includes(lesson.id);
  const textReaderDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, "text"),
   [lesson],
@@ -1174,6 +1225,29 @@ function BusinessChineseStudyWorkspaceContent({
       <div className="shrink-0 xl:hidden">
        <WorkspaceToolbar>
         <div className="min-w-0 flex-1">{viewSelector}</div>
+        <Button
+         variant="ghost"
+         size="sm"
+         className={cn(
+          "gap-1 shrink-0 px-2 font-medium transition-colors",
+          isLessonBookmarked
+           ? "bg-amber-500/10 text-amber-600 hover:bg-amber-500/15 dark:text-amber-400"
+           : "text-text-muted hover:text-text-primary",
+         )}
+         onClick={() => toggleBookmark("lessons", lesson.id)}
+         title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+         aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+        >
+         <Bookmark
+          className={cn(
+           "h-3.5 w-3.5",
+           isLessonBookmarked ? "fill-current text-amber-500" : "text-text-muted",
+          )}
+         />
+         <span className="hidden sm:inline">
+          {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
+         </span>
+        </Button>
         <Badge
          variant="success"
          size="sm"
@@ -1215,15 +1289,38 @@ function BusinessChineseStudyWorkspaceContent({
                count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
               })}
              </Typography>
-             <Badge
-              variant="success"
-              size="sm"
-              className="cursor-default gap-1 shrink-0"
-              title={t("offlineDescription")}
-             >
-              <CloudCheck data-icon="inline-start" />
-              <span>{t("offlineReady")}</span>
-             </Badge>
+             <div className="flex items-center gap-2">
+              <Button
+               variant="ghost"
+               size="sm"
+               className={cn(
+                "gap-1.5 font-medium transition-colors",
+                isLessonBookmarked
+                 ? "bg-amber-500/10 text-amber-600 hover:bg-amber-500/15 dark:text-amber-400"
+                 : "text-text-muted hover:text-text-primary",
+               )}
+               onClick={() => toggleBookmark("lessons", lesson.id)}
+               title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+               aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+              >
+               <Bookmark
+                className={cn(
+                 "h-3.5 w-3.5",
+                 isLessonBookmarked ? "fill-current text-amber-500" : "text-text-muted",
+                )}
+               />
+               <span>{isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}</span>
+              </Button>
+              <Badge
+               variant="success"
+               size="sm"
+               className="cursor-default gap-1 shrink-0"
+               title={t("offlineDescription")}
+              >
+               <CloudCheck data-icon="inline-start" />
+               <span>{t("offlineReady")}</span>
+              </Badge>
+             </div>
             </div>
             {activeView !== "text" && activeView !== "all" ? (
              <BusinessChineseText

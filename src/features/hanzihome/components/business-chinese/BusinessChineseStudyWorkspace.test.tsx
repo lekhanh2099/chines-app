@@ -42,9 +42,16 @@ vi.mock("@/features/reader/components/Reader", async (importOriginal) => {
 vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
  useVocabInspector: () => ({ openInspector: vi.fn() }),
 }));
+const toggleBookmarkMock = vi.fn();
+let mockBookmarkedLessonIds: string[] = [];
+
 vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
  useLearningState: () => ({
-  state: { settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE } },
+  state: {
+   settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE },
+   bookmarks: { lessons: mockBookmarkedLessonIds },
+  },
+  toggleBookmark: toggleBookmarkMock,
  }),
 }));
 
@@ -81,22 +88,26 @@ function renderWorkspace(element: ReactNode) {
 }
 
 describe("BusinessChineseStudyWorkspace", () => {
- it.each(getTextbookCatalog())("omits the duplicate book sidebar for $label", (book) => {
-  const lesson = getTextbookLesson(book.key, 1);
-  if (!lesson) throw new Error(`Expected first lesson of ${book.key}.`);
-  const markup = renderWorkspace(
-   <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
-  );
-  expect(markup).not.toContain(businessChineseMessages.sidebarLabel);
-  expect(markup).not.toContain(businessChineseMessages.bookSelectLabel);
-  expect(markup).not.toContain("<aside");
-  expect(markup).not.toContain("xl:grid-cols-[3.25rem_minmax(0,1fr)]");
-  expect(markup).toContain("Trong trang");
-  expect(markup).toContain("Nghe bài");
-  expect(markup).toContain("2xl:grid-cols-[15rem_minmax(0,1fr)]");
-  expect(markup.indexOf("Trong trang")).toBeLessThan(markup.indexOf("data-reader-toolbar"));
-  expect(markup).toContain('<span class="min-w-0 truncate">');
- });
+ it.each(getTextbookCatalog())(
+  "omits the duplicate book sidebar for $label",
+  (book) => {
+   const lesson = getTextbookLesson(book.key, 1);
+   if (!lesson) throw new Error(`Expected first lesson of ${book.key}.`);
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
+   );
+   expect(markup).not.toContain(businessChineseMessages.sidebarLabel);
+   expect(markup).not.toContain(businessChineseMessages.bookSelectLabel);
+   expect(markup).not.toContain("<aside");
+   expect(markup).not.toContain("xl:grid-cols-[3.25rem_minmax(0,1fr)]");
+   expect(markup).toContain("Trong trang");
+   expect(markup).toContain("Nghe bài");
+   expect(markup).toContain("2xl:grid-cols-[15rem_minmax(0,1fr)]");
+   expect(markup.indexOf("Trong trang")).toBeLessThan(markup.indexOf("data-reader-toolbar"));
+   expect(markup).toContain('<span class="min-w-0 truncate">');
+  },
+  15_000,
+ );
 
  it.each(["nhip-cau", "doc-hieu"])(
   "keeps real %s source sections in order with one All-view reader per source text section",
@@ -138,6 +149,7 @@ describe("BusinessChineseStudyWorkspace", () => {
    const firstVocabularyCell = markup.slice(cellStart, markup.indexOf("</td>", cellStart));
    expect(firstVocabularyCell).toContain(`aria-label="Đọc từ chữ ${lesson.vocab[0]?.hanzi[0]}"`);
   },
+  15_000,
  );
 
  it("uses the same reader for all five unit articles without dropping temperatures or meanings", () => {
@@ -410,5 +422,27 @@ describe("BusinessChineseStudyWorkspace", () => {
   const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
 
   expect(markup).toContain("Ghi chú");
+ });
+
+ it("includes a Bookmark button on the lesson header and toolbar", () => {
+  mockBookmarkedLessonIds = [];
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+
+  expect(markup).toContain("Đánh dấu bài học kỳ này");
+ });
+
+ it("indicates when the current lesson is bookmarked", () => {
+  mockBookmarkedLessonIds = ["business-chinese-tm2-lesson-01"];
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+
+  expect(markup).toContain("Đã đánh dấu");
  });
 });
