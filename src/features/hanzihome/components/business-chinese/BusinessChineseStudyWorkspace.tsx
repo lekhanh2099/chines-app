@@ -7,6 +7,7 @@ import {
  useContext,
  useEffect,
  useMemo,
+ useRef,
  useState,
  type KeyboardEvent,
  type MouseEvent,
@@ -232,6 +233,18 @@ function BusinessChineseLessonSelector({
 
  const isCurrentLessonBookmarked = Boolean(bookmarkedLessonIds?.includes(lesson.id));
 
+ const lastClickRef = useRef<Record<string, number>>({});
+ const handleToggleLessonBookmark = useCallback(
+  (lessonId: string) => {
+   const now = Date.now();
+   const last = lastClickRef.current[lessonId] ?? 0;
+   if (now - last < 400) return;
+   lastClickRef.current[lessonId] = now;
+   toggleBookmark("lessons", lessonId);
+  },
+  [toggleBookmark],
+ );
+
  const handleSelectLesson = useCallback(
   (targetLesson: TextbookBookSummary["lessons"][number]) => {
    setOpen(false);
@@ -282,7 +295,7 @@ function BusinessChineseLessonSelector({
          isCurrent={item.id === lesson.id}
          isBookmarked={true}
          onSelectLesson={() => handleSelectLesson(item)}
-         onToggleBookmark={() => toggleBookmark("lessons", item.id)}
+         onToggleBookmark={() => handleToggleLessonBookmark(item.id)}
          bookmarkAriaLabel={t("unbookmarkLesson")}
         />
        ))}
@@ -302,7 +315,7 @@ function BusinessChineseLessonSelector({
          isCurrent={item.id === lesson.id}
          isBookmarked={isItemBookmarked}
          onSelectLesson={() => handleSelectLesson(item)}
-         onToggleBookmark={() => toggleBookmark("lessons", item.id)}
+         onToggleBookmark={() => handleToggleLessonBookmark(item.id)}
          bookmarkAriaLabel={isItemBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
         />
        );
@@ -1151,6 +1164,13 @@ function BusinessChineseStudyWorkspaceContent({
  const displayMode = businessChineseDisplayMode;
  const { state: learningState, toggleBookmark } = useLearningState();
  const isLessonBookmarked = (learningState.bookmarks.lessons ?? []).includes(lesson.id);
+ const lastBookmarkClickRef = useRef(0);
+ const handleToggleCurrentLessonBookmark = useCallback(() => {
+  const now = Date.now();
+  if (now - lastBookmarkClickRef.current < 400) return;
+  lastBookmarkClickRef.current = now;
+  toggleBookmark("lessons", lesson.id);
+ }, [lesson.id, toggleBookmark]);
  const textReaderDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, "text"),
   [lesson],
@@ -1330,7 +1350,7 @@ function BusinessChineseStudyWorkspaceContent({
            ? "bg-amber-500/10 text-amber-600 hover:bg-amber-500/15 dark:text-amber-400"
            : "text-text-muted hover:text-text-primary",
          )}
-         onClick={() => toggleBookmark("lessons", lesson.id)}
+         onClick={handleToggleCurrentLessonBookmark}
          title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
          aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
         >
@@ -1395,7 +1415,7 @@ function BusinessChineseStudyWorkspaceContent({
                  ? "bg-amber-500/10 text-amber-600 hover:bg-amber-500/15 dark:text-amber-400"
                  : "text-text-muted hover:text-text-primary",
                )}
-               onClick={() => toggleBookmark("lessons", lesson.id)}
+               onClick={handleToggleCurrentLessonBookmark}
                title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
                aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
               >
