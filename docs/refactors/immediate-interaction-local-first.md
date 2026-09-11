@@ -47,6 +47,29 @@ These rules are mandatory, not suggestions.
 - [x] Phase 9 — Separate Notes audit after core stability; not part of core completion.
 - [x] Phase 10 — PWA/full offline cold boot; separate approval, do not start automatically.
 - [x] Phase 11 — Offline Classroom Study Pack, Bulk Course Pre-cache & Auto-sync Reconnection.
+- [x] Phase 12 — Reader Annotations & Highlights Offline Durability, Dual-Store Sync & Event Isolation.
+
+### Execution evidence — 2026-09-11
+
+- Phase 12 implementation complete and verified:
+  - **Click Event Isolation in Reader Segments (`src/features/reader/components/ReaderSegment.tsx`)**:
+    - **Root cause:** The outer ReaderSegment container attached an `onClick` handler triggering TTS `commands.speakSegment(segment.id)`. Any interactive sub-components inside `<mark>` tags (annotation pills, pronunciation popovers, personal note badges) bubbled click events to the segment, triggering unwanted audio playback when users simply wanted to interact with an annotation or note.
+    - **Fix:** In `ReaderSegment.tsx`, added `e.stopPropagation()` on interactive annotation buttons/badges.
+  - **Dual-Store Synchronization on Annotation Mutations (`src/features/reading/hooks/useReaderSelectionActions.tsx`)**:
+    - **Root cause:** Reader annotations are consumed by two distinct state owners:
+      1. TanStack Query cache (`hanzihomeQueryKeys.readerAnnotations(userId, documentId)`)
+      2. Active Reader runtime state (`readerStore.annotations` managed via `readerCommands.removeAnnotation(id)` / `addAnnotation`)
+         Calling only `queryClient.invalidateQueries()` left stale annotations in the active `Reader` session's store, causing deleted highlights to remain visible on screen until the component unmounted.
+    - **Fix:** Implemented immediate optimistic removal in `handleDelete` via `readerCommands.removeAnnotation(annotationId)`, ensuring instant visual deletion from the active reader surface alongside query cache invalidation.
+  - **Paragraph-Level Annotation Scoping (`src/features/hanzihome/components/reading/ContextualReaderText.tsx`)**:
+    - **Root cause:** `ContextualReaderText` previously matched annotations solely by `selected_text`. If a common word was annotated in paragraph 1, identical words in subsequent paragraphs were erroneously highlighted as well.
+    - **Fix:** Added strict paragraph-level scoping: `item.paragraph_id === paragraphId && item.selected_text === text`.
+  - **Offline Persistence & Outbox Sync for Reader Annotations (`src/features/reading/local/reader-annotation-local-store.ts` & `src/features/reading/services/reading-annotation-api.ts`)**:
+    - Built typed IndexedDB storage: `reader_annotations` store in `hanzihome-local-db` with schema versioning.
+    - Read strategy: Network-first with instant fallback to IndexedDB snapshot when offline or on network failure.
+    - Write/Delete strategy: Write/delete from local IndexedDB immediately for instant UI feedback; if offline or network throws, enqueue mutation into outbox queue `reader_annotation_queue` for reconnection drain.
+    - 404 handling: Gracefully handles already-deleted annotations on remote without throwing.
+    - Added unit test suites: `reader-annotation-local-store.test.ts` (148 lines) and `reading-annotation-api.test.ts` (184 lines), 100% PASS.
 
 ### Execution evidence — 2026-09-10
 
