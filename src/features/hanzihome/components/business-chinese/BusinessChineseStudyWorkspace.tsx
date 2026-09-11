@@ -40,14 +40,19 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/separator";
-import { Bookmark, CloudCheck } from "lucide-react";
+import { Bookmark, Check, ChevronDown, CloudCheck } from "lucide-react";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuGroup,
+ DropdownMenuLabel,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
  Select,
  SelectContent,
- SelectGroup,
  SelectItem,
- SelectLabel,
- SelectSeparator,
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
@@ -142,6 +147,173 @@ function isChineseOnlyText(value: string) {
  return value.replace(nonChineseTextPattern, "").trim().length === value.trim().length;
 }
 
+function LessonDropdownRow({
+ item,
+ isCurrent,
+ isBookmarked,
+ onSelectLesson,
+ onToggleBookmark,
+ bookmarkAriaLabel,
+}: {
+ item: TextbookBookSummary["lessons"][number];
+ isCurrent: boolean;
+ isBookmarked: boolean;
+ onSelectLesson: () => void;
+ onToggleBookmark: () => void;
+ bookmarkAriaLabel: string;
+}) {
+ return (
+  <div
+   className={cn(
+    "group relative flex min-h-10 w-full items-center justify-between gap-2 rounded-lg py-1.5 pr-2 pl-2.5 transition-colors select-none",
+    isCurrent ? "bg-accent/60 font-medium text-foreground" : "text-text-primary hover:bg-accent/40",
+   )}
+  >
+   <button
+    type="button"
+    className="flex min-w-0 flex-1 cursor-pointer items-center gap-2 text-left outline-none focus-visible:underline"
+    onClick={onSelectLesson}
+   >
+    {isBookmarked ? (
+     <Bookmark className="h-3.5 w-3.5 shrink-0 fill-current text-amber-500" />
+    ) : null}
+    <span className="truncate text-sm">{item.title}</span>
+    {isCurrent ? <Check className="ml-auto size-4 shrink-0 text-primary" /> : null}
+   </button>
+   <Button
+    type="button"
+    variant="ghost"
+    size="icon-toolbar"
+    className={cn(
+     "h-7 w-7 shrink-0 transition-opacity",
+     isBookmarked
+      ? "bg-amber-500/10 text-amber-500 opacity-100 hover:bg-amber-500/15 hover:text-amber-600"
+      : "text-text-muted opacity-40 hover:bg-bg-subtle hover:text-amber-500 group-hover:opacity-100",
+    )}
+    onClick={(event) => {
+     event.stopPropagation();
+     event.preventDefault();
+     onToggleBookmark();
+    }}
+    title={bookmarkAriaLabel}
+    aria-label={bookmarkAriaLabel}
+   >
+    <Bookmark
+     className={cn(
+      "h-4 w-4 transition-colors",
+      isBookmarked ? "fill-current text-amber-500" : "text-current",
+     )}
+    />
+   </Button>
+  </div>
+ );
+}
+
+function BusinessChineseLessonSelector({
+ books,
+ lesson,
+ focusModeEnabled,
+}: {
+ books: TextbookBookSummary[];
+ lesson: TextbookLesson;
+ focusModeEnabled: boolean;
+}) {
+ const t = useTranslations("BusinessChinese");
+ const router = useLocalizedRouter();
+ const [open, setOpen] = useState(false);
+ const { state: learningState, toggleBookmark } = useLearningState();
+ const bookmarkedLessonIds = learningState.bookmarks.lessons;
+
+ const allLessons = useMemo(() => books.flatMap((book) => book.lessons), [books]);
+ const bookmarkedLessons = useMemo(() => {
+  if (!bookmarkedLessonIds || bookmarkedLessonIds.length === 0) return [];
+  return allLessons.filter((item) => bookmarkedLessonIds.includes(item.id));
+ }, [allLessons, bookmarkedLessonIds]);
+
+ const isCurrentLessonBookmarked = Boolean(bookmarkedLessonIds?.includes(lesson.id));
+
+ const handleSelectLesson = useCallback(
+  (targetLesson: TextbookBookSummary["lessons"][number]) => {
+   setOpen(false);
+   router.push(buildTextbookHref(targetLesson.bookKey, targetLesson.number), {
+    scroll: false,
+   });
+  },
+  [router],
+ );
+
+ return (
+  <DropdownMenu open={open} onOpenChange={setOpen}>
+   <DropdownMenuTrigger asChild>
+    <button
+     type="button"
+     disabled={focusModeEnabled}
+     aria-label={t("lessonSelectLabel")}
+     className={cn(
+      "inline-flex h-11 min-h-11 cursor-pointer items-center justify-between gap-1.5 rounded-lg border border-transparent bg-transparent px-1.5 text-sm font-bold text-text-primary shadow-none transition-colors hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle disabled:cursor-not-allowed disabled:opacity-50 sm:h-8 sm:min-h-8 sm:px-2 [&_svg]:text-text-muted",
+      focusRingClassName,
+      "w-[min(11rem,44vw)] md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
+     )}
+    >
+     <span className="flex min-w-0 items-center gap-1.5 truncate">
+      {isCurrentLessonBookmarked ? (
+       <Bookmark className="h-3.5 w-3.5 shrink-0 fill-current text-amber-500" />
+      ) : null}
+      <span className="truncate">{lesson.title}</span>
+     </span>
+     <ChevronDown className="size-4 shrink-0 text-text-muted" />
+    </button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent
+    align="start"
+    className="min-w-[min(28rem,calc(100vw-2rem))] max-h-[min(24rem,var(--radix-dropdown-menu-content-available-height))] p-1"
+   >
+    {bookmarkedLessons.length > 0 ? (
+     <>
+      <DropdownMenuGroup>
+       <DropdownMenuLabel className="flex items-center gap-1.5 font-semibold text-amber-600 dark:text-amber-400">
+        <Bookmark className="h-3.5 w-3.5 fill-current" />
+        <span>{t("semesterBookmarksCount", { count: bookmarkedLessons.length })}</span>
+       </DropdownMenuLabel>
+       {bookmarkedLessons.map((item) => (
+        <LessonDropdownRow
+         key={`pinned-${item.id}`}
+         item={item}
+         isCurrent={item.id === lesson.id}
+         isBookmarked={true}
+         onSelectLesson={() => handleSelectLesson(item)}
+         onToggleBookmark={() => toggleBookmark("lessons", item.id)}
+         bookmarkAriaLabel={t("unbookmarkLesson")}
+        />
+       ))}
+      </DropdownMenuGroup>
+      <DropdownMenuSeparator />
+     </>
+    ) : null}
+    {books.map((book) => (
+     <DropdownMenuGroup key={book.id}>
+      <DropdownMenuLabel>{book.label}</DropdownMenuLabel>
+      {book.lessons.map((item) => {
+       const isItemBookmarked = Boolean(bookmarkedLessonIds?.includes(item.id));
+       return (
+        <LessonDropdownRow
+         key={item.id}
+         item={item}
+         isCurrent={item.id === lesson.id}
+         isBookmarked={isItemBookmarked}
+         onSelectLesson={() => handleSelectLesson(item)}
+         onToggleBookmark={() => toggleBookmark("lessons", item.id)}
+         bookmarkAriaLabel={isItemBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+        />
+       );
+      })}
+     </DropdownMenuGroup>
+    ))}
+   </DropdownMenuContent>
+  </DropdownMenu>
+ );
+}
+
 function BusinessChineseHeaderContextBridge({
  books,
  lesson,
@@ -150,17 +322,8 @@ function BusinessChineseHeaderContextBridge({
  lesson: TextbookLesson;
 }) {
  const t = useTranslations("BusinessChinese");
- const router = useLocalizedRouter();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
- const { state: learningState } = useLearningState();
- const bookmarkedLessonIds = learningState.bookmarks.lessons;
  const selectedBook = books.find((book) => book.key === lesson.bookKey);
-
- const allLessons = useMemo(() => books.flatMap((book) => book.lessons), [books]);
- const bookmarkedLessons = useMemo(() => {
-  if (!bookmarkedLessonIds || bookmarkedLessonIds.length === 0) return [];
-  return allLessons.filter((item) => bookmarkedLessonIds.includes(item.id));
- }, [allLessons, bookmarkedLessonIds]);
 
  const content = useMemo(
   () => (
@@ -186,82 +349,15 @@ function BusinessChineseHeaderContextBridge({
     </AppHeaderBreadcrumbItem>
     <AppHeaderBreadcrumbSeparator className="hidden 2xl:flex" />
     <AppHeaderBreadcrumbItem className="min-w-0">
-     <Select
-      value={lesson.id}
-      disabled={focusModeEnabled}
-      onValueChange={(rawLessonId) => {
-       if (focusModeEnabled) return;
-       const lessonId = rawLessonId.startsWith("pinned:") ? rawLessonId.slice(7) : rawLessonId;
-       const selectedLesson = allLessons.find((item) => item.id === lessonId);
-       if (!selectedLesson) return;
-       router.push(buildTextbookHref(selectedLesson.bookKey, selectedLesson.number), {
-        scroll: false,
-       });
-      }}
-     >
-      <SelectTrigger
-       aria-label={t("lessonSelectLabel")}
-       variant="breadcrumb"
-       className="w-[min(11rem,44vw)] md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72"
-      >
-       <SelectValue />
-      </SelectTrigger>
-      <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-       {bookmarkedLessons.length > 0 ? (
-        <>
-         <SelectGroup>
-          <SelectLabel className="flex items-center gap-1.5 font-semibold text-amber-600 dark:text-amber-400">
-           <Bookmark className="h-3.5 w-3.5 fill-current" />
-           <span>{t("semesterBookmarksCount", { count: bookmarkedLessons.length })}</span>
-          </SelectLabel>
-          {bookmarkedLessons.map((item) => (
-           <SelectItem key={`pinned-${item.id}`} value={`pinned:${item.id}`}>
-            <span className="flex items-center gap-2">
-             <Bookmark className="h-3.5 w-3.5 fill-current text-amber-500 shrink-0" />
-             <span className="truncate">{item.title}</span>
-            </span>
-           </SelectItem>
-          ))}
-         </SelectGroup>
-         <SelectSeparator />
-        </>
-       ) : null}
-       {books.map((book) => (
-        <SelectGroup key={book.id}>
-         <SelectLabel>{book.label}</SelectLabel>
-         {book.lessons.map((item) => {
-          const isItemBookmarked = Boolean(bookmarkedLessonIds?.includes(item.id));
-          return (
-           <SelectItem key={item.id} value={item.id}>
-            <span className="flex items-center gap-2">
-             {isItemBookmarked ? (
-              <Bookmark className="h-3.5 w-3.5 fill-current text-amber-500 shrink-0" />
-             ) : null}
-             <span className="truncate">{item.title}</span>
-            </span>
-           </SelectItem>
-          );
-         })}
-        </SelectGroup>
-       ))}
-      </SelectContent>
-     </Select>
+     <BusinessChineseLessonSelector
+      books={books}
+      lesson={lesson}
+      focusModeEnabled={focusModeEnabled}
+     />
     </AppHeaderBreadcrumbItem>
    </AppHeaderBreadcrumb>
   ),
-  [
-   allLessons,
-   bookmarkedLessonIds,
-   bookmarkedLessons,
-   books,
-   focusModeEnabled,
-   lesson.bookKey,
-   lesson.bookLabel,
-   lesson.id,
-   router,
-   selectedBook,
-   t,
-  ],
+  [books, focusModeEnabled, lesson, selectedBook, t],
  );
 
  useEffect(() => {
