@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import { HanyuLessonSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 
+import { getTextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+
 import {
  clampTranslationIndex,
  createTranslationAttempt,
@@ -14,6 +16,7 @@ import {
  translationSourceText,
  translationSegmentSchema,
  translationSegmentsFromLesson,
+ translationSegmentsFromTextbook,
  dictationSourcesFromLesson,
 } from "./translation-practice";
 
@@ -113,8 +116,20 @@ describe("HanziHome translation practice", () => {
         order: 1,
         title: "段落",
         paragraphs: [
-         { id: "p-2", order: 2, zh: "第二句", pinyin: "dì èr jù", vi: "Câu hai" },
-         { id: "p-1", order: 1, zh: "第一句", pinyin: "dì yī jù", vi: "Câu một" },
+         {
+          id: "p-2",
+          order: 2,
+          zh: "第二句",
+          pinyin: "dì èr jù",
+          vi: "Câu hai",
+         },
+         {
+          id: "p-1",
+          order: 1,
+          zh: "第一句",
+          pinyin: "dì yī jù",
+          vi: "Câu một",
+         },
         ],
        },
        {
@@ -139,7 +154,10 @@ describe("HanziHome translation practice", () => {
         type: "fill_blank",
         order: 1,
         title: "Điền từ",
-        instruction: { zh: "用合适的词填空。", vi: "Điền từ thích hợp." },
+        instruction: {
+         zh: "用合适的词填空。",
+         vi: "Điền từ thích hợp.",
+        },
         questions: [
          {
           id: "exercise-question-1",
@@ -236,29 +254,85 @@ describe("HanziHome translation practice", () => {
     id: "reading-1:reading-text-1",
     label: "Bài đọc thêm · 段落",
     entries: [
-     { id: "reading-1:reading-text-1:p-1", zh: "第一句", pinyin: "dì yī jù", vi: "Câu một" },
-     { id: "reading-1:reading-text-1:p-2", zh: "第二句", pinyin: "dì èr jù", vi: "Câu hai" },
+     {
+      id: "reading-1:reading-text-1:p-1",
+      zh: "第一句",
+      pinyin: "dì yī jù",
+      vi: "Câu một",
+     },
+     {
+      id: "reading-1:reading-text-1:p-2",
+      zh: "第二句",
+      pinyin: "dì èr jù",
+      vi: "Câu hai",
+     },
     ],
    },
    {
     id: "reading-1:reading-text-2",
     label: "Bài đọc thêm · Đoạn đơn",
-    entries: [{ id: "reading-1:reading-text-2", zh: "你好", pinyin: "nǐ hǎo", vi: "Xin chào" }],
+    entries: [
+     {
+      id: "reading-1:reading-text-2",
+      zh: "你好",
+      pinyin: "nǐ hǎo",
+      vi: "Xin chào",
+     },
+    ],
    },
    {
     id: "exercise-1:exercise-item-1",
     label: "Bài tập 1 · Điền từ",
     entries: [
-     { id: "exercise-1:exercise-item-1:exercise-question-1", zh: "他是学生。", pinyin: "", vi: "" },
+     {
+      id: "exercise-1:exercise-item-1:exercise-question-1",
+      zh: "他是学生。",
+      pinyin: "",
+      vi: "",
+     },
     ],
    },
    {
     id: "exercise-1:exercise-item-2",
     label: "Bài tập 2 · Chọn đáp án",
     entries: [
-     { id: "exercise-1:exercise-item-2:exercise-question-2", zh: "正确答案", pinyin: "", vi: "" },
+     {
+      id: "exercise-1:exercise-item-2:exercise-question-2",
+      zh: "正确答案",
+      pinyin: "",
+      vi: "",
+     },
     ],
    },
   ]);
+ });
+
+ it("extracts bilingual translation segments from textbook lessons", () => {
+  const tm2Lesson = getTextbookLesson("tm2", 1);
+  const tm2Segments = translationSegmentsFromTextbook(tm2Lesson);
+  expect(tm2Segments).toHaveLength(14);
+  expect(tm2Segments[0]).toEqual({
+   id: "business-chinese-tm2-lesson-01-section-03-block-001",
+   order: 1,
+   sourceLabel: "BÀI KHÓA CHÍNH (主课文)",
+   zh: "订购真丝面料",
+   pinyin: "",
+   vi: "Đặt mua vải lụa tơ tằm",
+  });
+
+  const nhipCauLesson = getTextbookLesson("nhip-cau", 1);
+  const nhipCauSegments = translationSegmentsFromTextbook(nhipCauLesson);
+  expect(nhipCauSegments).toHaveLength(38);
+  expect(nhipCauSegments[0]?.zh).toContain("1989年10月30日");
+  expect(nhipCauSegments[0]?.vi).toContain("Ngày 30 tháng 10 năm 1989");
+
+  const docHieuLesson = getTextbookLesson("doc-hieu", 1);
+  const docHieuSegments = translationSegmentsFromTextbook(docHieuLesson);
+  expect(docHieuSegments).toHaveLength(28);
+  expect(docHieuSegments[0]?.sourceLabel).toBe("BÀI 1: 天气预报 (Dự báo thời tiết)");
+
+  const tm3Lesson = getTextbookLesson("tm3", 1);
+  expect(translationSegmentsFromTextbook(tm3Lesson)).toEqual([]);
+  expect(translationSegmentsFromTextbook(undefined)).toEqual([]);
  });
 });

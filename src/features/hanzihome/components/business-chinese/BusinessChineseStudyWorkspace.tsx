@@ -112,6 +112,9 @@ import type {
  TextbookBookSummary,
  TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { TextbookNoteAccessCard } from "./TextbookNoteAccessCard";
+import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
+import { translationSegmentsFromTextbook } from "@/features/hanzihome/practice/translation-practice";
 import { useRouter as useLocalizedRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { focusModeStore } from "@/stores/focus-mode-store";
@@ -457,7 +460,9 @@ function BusinessChineseMixedText({
         tabIndex={0}
         aria-label={
          needsPronunciationReview
-          ? t("inspectUnconfirmedPinyin", { character: grapheme.segment })
+          ? t("inspectUnconfirmedPinyin", {
+             character: grapheme.segment,
+            })
           : t("inspectPinyin", { character: grapheme.segment })
         }
         title={glyph.alternatives.length > 1 ? glyph.alternatives.join(", ") : undefined}
@@ -914,9 +919,14 @@ export function BusinessChineseStudyWorkspace({
 }) {
  const searchParams = useSearchParams();
  const sourceTarget = parseReaderSourceTarget(new URLSearchParams(searchParams.toString()));
- const [activeView, setActiveView] = useState(
-  sourceTarget?.documentId === `${lesson.id}:text` ? "text" : "all",
- );
+ const tabParam = searchParams.get("tab");
+ const initialView =
+  tabParam === "notes" || tabParam === "translation"
+   ? tabParam
+   : sourceTarget?.documentId === `${lesson.id}:text`
+     ? "text"
+     : "all";
+ const [activeView, setActiveView] = useState(initialView);
  const readerDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, activeView),
   [activeView, lesson],
@@ -952,7 +962,10 @@ function BusinessChineseReader({
  document: ReaderDocumentModel;
  services?: ReaderServices;
 }) {
- const integration = useLessonReader({ document, displayMode: businessChineseDisplayMode });
+ const integration = useLessonReader({
+  document,
+  displayMode: businessChineseDisplayMode,
+ });
  return (
   <Reader
    data={integration.data}
@@ -1102,6 +1115,7 @@ function BusinessChineseStudyWorkspaceContent({
    contentSections.filter((section) => activeView === "all" || section.category === activeView),
   [activeView, contentSections],
  );
+ const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
  const tabs = useMemo(
   () =>
    [
@@ -1109,11 +1123,17 @@ function BusinessChineseStudyWorkspaceContent({
     { key: "overview", label: t("tabs.overview") },
     { key: "core", label: t("tabs.core") },
     { key: "text", label: t("tabs.text") },
+    { key: "notes", label: t("tabs.notes") },
+    { key: "translation", label: t("tabs.translation") },
     { key: "vocab", label: t("tabs.vocab") },
     { key: "grammar", label: t("tabs.grammar") },
     { key: "practice", label: t("tabs.practice") },
    ].filter(
-    (tab) => tab.key === "all" || contentSections.some((section) => section.category === tab.key),
+    (tab) =>
+     tab.key === "all" ||
+     tab.key === "notes" ||
+     tab.key === "translation" ||
+     contentSections.some((section) => section.category === tab.key),
    ),
   [contentSections, t],
  );
@@ -1238,7 +1258,13 @@ function BusinessChineseStudyWorkspaceContent({
 
           {activeView === "text" ? readerContent : null}
 
-          {activeView !== "text" ? (
+          {activeView === "notes" ? <TextbookNoteAccessCard lesson={lesson} /> : null}
+
+          {activeView === "translation" ? (
+           <LessonTranslationWorkspace segments={translationSegments} displayMode={displayMode} />
+          ) : null}
+
+          {activeView !== "text" && activeView !== "notes" && activeView !== "translation" ? (
            <div
             className={cn(
              "grid min-w-0 gap-3",
@@ -1253,6 +1279,30 @@ function BusinessChineseStudyWorkspaceContent({
               <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
              ) : null}
              <div className="grid min-w-0 gap-6">
+              {activeView === "practice" && translationSegments.length > 0 ? (
+               <Card
+                variant="subtle"
+                padding="sm"
+                className="flex flex-wrap items-center justify-between gap-3"
+               >
+                <div className="flex items-center gap-2">
+                 <Badge variant="accent" size="sm" casing="natural">
+                  Luyện dịch
+                 </Badge>
+                 <Typography variant="bodySmall" tone="secondary">
+                  Luyện dịch hai chiều câu và đoạn văn của bài này.
+                 </Typography>
+                </div>
+                <Button
+                 type="button"
+                 size="sm"
+                 variant="outline"
+                 onClick={() => onActiveViewChange("translation")}
+                >
+                 Mở Luyện dịch ({translationSegments.length} đoạn)
+                </Button>
+               </Card>
+              ) : null}
               {visibleSections.map((section, index) => (
                <Fragment key={section.id}>
                 {section.category === "text" ? (

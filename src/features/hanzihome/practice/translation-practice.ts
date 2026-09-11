@@ -9,6 +9,11 @@ import { fillQuestionBlank } from "@/features/hanzihome/components/lesson-overvi
 import { buildExerciseQuestionViewModel } from "@/features/hanzihome/components/lesson-overview/exercise-section/question-view-model";
 import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { ReadingTextItemSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
+import {
+ splitDialogueTurn,
+ stripLeadingEmoji,
+} from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { calculateChineseAccuracy, calculateTranslationSimilarity } from "./text-comparison";
 
 const lessonPracticeReadingTextSchema = ReadingTextItemSchema.pick({
@@ -373,7 +378,14 @@ export function translationSegmentsFromLesson(sourceLesson: HanyuLesson | undefi
  return lessonPracticeSegmentsFromLesson(sourceLesson)
   .filter((segment) => segment.vi.trim())
   .map(({ id, order, sourceLabel, zh, pinyin, vi }) =>
-   translationSegmentSchema.parse({ id, order, sourceLabel, zh, pinyin, vi }),
+   translationSegmentSchema.parse({
+    id,
+    order,
+    sourceLabel,
+    zh,
+    pinyin,
+    vi,
+   }),
   );
 }
 
@@ -403,4 +415,54 @@ export function dictationSourcesFromLesson(sourceLesson: HanyuLesson | undefined
  }
 
  return [...sources.values()];
+}
+
+export function translationSegmentsFromTextbook(
+ lesson: TextbookLesson | null | undefined,
+): TranslationSegment[] {
+ if (!lesson) return [];
+ const segments: TranslationSegment[] = [];
+ let order = 1;
+
+ const pairedTranslations = new Map<string, string>();
+ const translationIndex = lesson.sections.findIndex((s) => s.title.includes("DỊCH BÀI KHÓA"));
+ const sourceSection = translationIndex > 0 ? lesson.sections[translationIndex - 1] : undefined;
+ const translationSection = translationIndex >= 0 ? lesson.sections[translationIndex] : undefined;
+ if (sourceSection && translationSection) {
+  sourceSection.blocks.forEach((block, index) => {
+   const trans = translationSection.blocks[index];
+   if (trans?.text) pairedTranslations.set(block.id, trans.text);
+  });
+ }
+
+ for (const section of lesson.sections) {
+  if (section.title.includes("DỊCH BÀI KHÓA")) continue;
+  const label = stripLeadingEmoji(section.title) || "Bài khóa";
+
+  for (const block of section.blocks) {
+   if (block.type === "table") continue;
+   const rawZh = block.text?.trim() ?? "";
+   const rawVi = (block.translation ?? pairedTranslations.get(block.id) ?? "").trim();
+   if (!rawZh || !rawVi) continue;
+
+   const zhTurn = splitDialogueTurn(rawZh);
+   const viTurn = splitDialogueTurn(rawVi);
+   const cleanZh = zhTurn.content || rawZh;
+   const cleanVi = viTurn.content || rawVi;
+   if (!cleanZh.trim() || !cleanVi.trim()) continue;
+
+   segments.push(
+    translationSegmentSchema.parse({
+     id: block.id,
+     order: order++,
+     sourceLabel: label,
+     zh: cleanZh,
+     pinyin: "",
+     vi: cleanVi,
+    }),
+   );
+  }
+ }
+
+ return segments;
 }

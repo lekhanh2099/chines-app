@@ -25,22 +25,33 @@ import {
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
-import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
+import type { JsonObject } from "@/types/json";
 
 import { LessonReadingPane } from "./LessonReadingPane";
 import { NotePaneToggle } from "./NotePaneToggle";
 import { PersonalNotePane } from "./PersonalNotePane";
-import { createLessonReadingContent } from "./lessonNoteContent";
 import type { MobileNotePane } from "./types";
+
+const defaultEmptyNoteContent: JsonObject = {
+ root: {
+  children: [],
+  direction: "ltr",
+  format: "",
+  indent: 0,
+  type: "root",
+  version: 1,
+ },
+};
 
 export function LessonSplitNoteEditor({
  noteId,
  fillHeight = false,
+ defaultReadingContent,
 }: {
  noteId: string;
  fillHeight?: boolean;
+ defaultReadingContent?: JsonObject;
 }) {
- const { lesson } = useHanziHomeRuntime();
  const [mobilePane, setMobilePane] = useState<MobileNotePane>("note");
  const [readOnly, setReadOnly] = useState(false);
  const [toolbarVisible, setToolbarVisible] = useState(true);
@@ -60,13 +71,13 @@ export function LessonSplitNoteEditor({
 
  if (!note) {
   return (
-   <div className="rounded-xl border border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
+   <div className="rounded-xl border border-border-default bg-bg-subtle p-4 font-semibold text-text-muted">
     Không tìm thấy note đã gắn với bài này.
    </div>
   );
  }
 
- const readingContent = note.reading_content ?? createLessonReadingContent(lesson);
+ const readingContent = note.reading_content ?? defaultReadingContent ?? defaultEmptyNoteContent;
  const content = note.content;
  const splitEnabled = note.split_view_enabled ?? true;
 

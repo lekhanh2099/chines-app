@@ -1,5 +1,6 @@
 import type { JsonObject } from "@/types/json";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import { z } from "zod";
 
@@ -84,6 +85,51 @@ export function createPersonalNoteContent(lesson: HanziHomeLesson): JsonObject {
   root: {
    children: [
     heading(`Ghi chú: ${lesson.title}`),
+    paragraph(""),
+    paragraph("Những điểm dễ quên: "),
+    paragraph(""),
+    paragraph("Câu mẫu tự đặt: "),
+    paragraph(""),
+    paragraph("Lỗi sai của mình: "),
+   ],
+   direction: "ltr",
+   format: "",
+   indent: 0,
+   type: "root",
+   version: 1,
+  },
+ };
+}
+
+export function createTextbookReadingContent(lesson: TextbookLesson): JsonObject {
+ const vocabLines = lesson.vocab.slice(0, 25).map((word, index) => {
+  return `${index + 1}. ${word.hanzi} — ${word.pinyin} — ${word.meaning}`;
+ });
+
+ return {
+  root: {
+   children: [
+    heading(`${lesson.bookLabel} · Bài ${lesson.number}: ${lesson.title}`, "h1"),
+    paragraph(""),
+    heading("Từ vựng trọng tâm"),
+    ...(vocabLines.length > 0
+     ? vocabLines.map(paragraph)
+     : [paragraph("Chưa có từ vựng trong bài này.")]),
+   ],
+   direction: "ltr",
+   format: "",
+   indent: 0,
+   type: "root",
+   version: 1,
+  },
+ };
+}
+
+export function createTextbookPersonalNoteContent(lesson: TextbookLesson): JsonObject {
+ return {
+  root: {
+   children: [
+    heading(`Ghi chú: ${lesson.bookLabel} · Bài ${lesson.number} · ${lesson.title}`),
     paragraph(""),
     paragraph("Những điểm dễ quên: "),
     paragraph(""),

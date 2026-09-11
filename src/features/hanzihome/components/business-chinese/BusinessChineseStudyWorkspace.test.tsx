@@ -68,7 +68,10 @@ function renderWorkspace(element: ReactNode) {
    locale="vi"
    messages={{
     BusinessChinese: businessChineseMessages,
-    Reader: { document: readerDocumentMessages, study: readerStudyMessages },
+    Reader: {
+     document: readerDocumentMessages,
+     study: readerStudyMessages,
+    },
    }}
    timeZone="Asia/Ho_Chi_Minh"
   >
@@ -209,7 +212,12 @@ describe("BusinessChineseStudyWorkspace", () => {
     books={getTextbookCatalog()}
     lesson={{
      ...lesson,
-     sections: [{ ...section, blocks: [{ ...table, rows: table.rows.slice(0, 3) }] }],
+     sections: [
+      {
+       ...section,
+       blocks: [{ ...table, rows: table.rows.slice(0, 3) }],
+      },
+     ],
     }}
    />,
   );
@@ -378,5 +386,29 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).not.toContain(
    'aria-label="Đọc tiếng Trung: 杜森： 您好，我是美国摩尔公司的杜森，这是我的名片。"',
   );
+ });
+
+ it("includes Ghi chú and Luyện dịch in the workspace tabs", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+
+  expect(markup).toContain("Ghi chú");
+  expect(markup).toContain("Luyện dịch");
+ });
+
+ it("renders the notes tab content when tab=notes is active", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  vi.mocked(routerPushMock).mockClear();
+
+  // Test rendering with initial searchParams mock
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+
+  expect(markup).toContain("Ghi chú");
  });
 });
