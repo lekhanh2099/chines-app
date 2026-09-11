@@ -34,6 +34,7 @@ import {
  deleteReaderAnnotation,
  updateReaderAnnotation,
 } from "@/features/reading/services/reading-annotation-api";
+import type { ReaderStateBootstrap } from "@/features/reading/services/reading-state-api";
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
@@ -173,6 +174,21 @@ export function useReaderSelectionActions({
        : [...current, savedAnnotation];
      },
     );
+    queryClient.setQueriesData<ReaderStateBootstrap | null>(
+     { queryKey: ["hanzihome", "reader", "state"] },
+     (current) => {
+      if (!current) return current;
+      const exists = current.annotations.some((item) => item.id === savedAnnotation.id);
+      return {
+       ...current,
+       annotations: exists
+        ? current.annotations.map((item) =>
+           item.id === savedAnnotation.id ? savedAnnotation : item,
+          )
+        : [...current.annotations, savedAnnotation],
+      };
+     },
+    );
     if (annotationType === "highlight") {
      const now = new Date().toISOString();
      void upsertLearningLoopItem({
@@ -206,11 +222,21 @@ export function useReaderSelectionActions({
   if (saving) return;
   setSaving(true);
   setSaveError("");
-  void deleteReaderAnnotation(annotationId, revision)
+  void deleteReaderAnnotation(annotationId, revision, documentModel.id)
    .then(() => {
     queryClient.setQueriesData<readonly ReaderAnnotationRow[]>(
      { queryKey: ["hanzihome", "reader", "annotations"] },
      (current) => (current ? current.filter((item) => item.id !== annotationId) : []),
+    );
+    queryClient.setQueriesData<ReaderStateBootstrap | null>(
+     { queryKey: ["hanzihome", "reader", "state"] },
+     (current) =>
+      current
+       ? {
+          ...current,
+          annotations: current.annotations.filter((item) => item.id !== annotationId),
+         }
+       : current,
     );
     clear();
     return invalidateAnnotations();

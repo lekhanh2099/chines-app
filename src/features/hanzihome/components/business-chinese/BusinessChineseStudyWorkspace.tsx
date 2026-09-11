@@ -352,6 +352,7 @@ function BusinessChineseText({
    pinyinPresentation="ruby"
    sourcePinyin={sourcePinyin}
    activeCharacterIndex={activeCharacterIndex}
+   paragraphId={pronunciationId}
    readerAnnotations={annotationsContext?.readerAnnotations}
    onOpenReaderAnnotation={annotationsContext?.onOpenReaderAnnotation}
    onGlyphClick={

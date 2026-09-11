@@ -88,7 +88,6 @@ export async function fetchReaderAnnotations(documentId: string): Promise<Reader
   const serverAnnotations = parsed.data.annotations;
 
   if (typeof window !== "undefined") {
-   await saveLocalReaderAnnotations(serverAnnotations);
    const pending = await getPendingAnnotationMutations();
    const pendingCreates: ReaderAnnotationRow[] = [];
    const pendingDeletes = new Set<string>();
@@ -102,9 +101,11 @@ export async function fetchReaderAnnotations(documentId: string): Promise<Reader
    }
 
    const filteredServer = serverAnnotations.filter((item) => !pendingDeletes.has(item.id));
-   return [...filteredServer, ...pendingCreates].sort(
+   const result = [...filteredServer, ...pendingCreates].sort(
     (a, b) => (a.start_offset ?? 0) - (b.start_offset ?? 0),
    );
+   await saveLocalReaderAnnotations(result);
+   return result;
   }
 
   return serverAnnotations;
@@ -216,6 +217,7 @@ export async function createReaderAnnotation(
 export async function deleteReaderAnnotation(
  annotationId: string,
  expectedRevision: number,
+ documentId = "",
 ): Promise<void> {
  if (typeof window !== "undefined") {
   await deleteLocalReaderAnnotation(annotationId);
@@ -229,7 +231,7 @@ export async function deleteReaderAnnotation(
     type: "reader_annotation.delete",
     status: "pending",
     annotationId,
-    documentId: "",
+    documentId,
     expectedRevision,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -245,13 +247,13 @@ export async function deleteReaderAnnotation(
    headers: { "Content-Type": "application/json" },
    body: JSON.stringify({ expectedRevision }),
   });
-  if (!response.ok && typeof window !== "undefined") {
+  if (!response.ok && response.status !== 404 && typeof window !== "undefined") {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:delete:${annotationId}`,
     type: "reader_annotation.delete",
     status: "pending",
     annotationId,
-    documentId: "",
+    documentId,
     expectedRevision,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -265,7 +267,7 @@ export async function deleteReaderAnnotation(
     type: "reader_annotation.delete",
     status: "pending",
     annotationId,
-    documentId: "",
+    documentId,
     expectedRevision,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),

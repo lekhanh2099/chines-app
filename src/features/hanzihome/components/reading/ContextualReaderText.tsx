@@ -31,6 +31,7 @@ type ContextualReaderTextProps = {
  pinyinPresentation?: "ruby" | "paragraph";
  sourcePinyin?: string;
  annotationTarget?: ComponentProps<typeof ProgressiveStudyText>["annotationTarget"];
+ paragraphId?: string;
  readerAnnotations?: readonly ReaderAnnotationRow[];
  onOpenReaderAnnotation?: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
  onGlyphClick?: (start: number, end: number) => void;
@@ -46,6 +47,7 @@ export function ContextualReaderText({
  pinyinPresentation = "ruby",
  sourcePinyin,
  annotationTarget,
+ paragraphId,
  readerAnnotations = [],
  onOpenReaderAnnotation,
  onGlyphClick,
@@ -85,6 +87,9 @@ export function ContextualReaderText({
   );
   const readerAnnotation = readerAnnotations.find(
    (candidate) =>
+    (paragraphId === undefined ||
+     candidate.paragraph_id === null ||
+     candidate.paragraph_id === paragraphId) &&
     candidate.start_offset !== null &&
     candidate.end_offset !== null &&
     candidate.start_offset <= grapheme.index &&
