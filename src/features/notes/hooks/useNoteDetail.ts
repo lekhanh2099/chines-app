@@ -16,7 +16,11 @@ import {
 } from "@/services/notes.service";
 import type { NoteCategory } from "@/types/database";
 import { noteQueryKeys } from "@/features/notes/query-keys";
-import { clearNoteDraft, getNoteDraft } from "@/features/notes/local/note-draft-store";
+import {
+ clearNoteContentDraft,
+ clearNoteReadingContentDraft,
+ getNoteDraft,
+} from "@/features/notes/local/note-draft-store";
 
 type ReadingContent = Parameters<typeof updateReadingContent>[2];
 
@@ -45,11 +49,18 @@ export function useNoteDetail(noteId: string) {
     const localDraft = await getNoteDraft(userId, noteId);
     if (localDraft) {
      const serverTime = new Date(serverNote.updated_at).getTime();
-     if (localDraft.updatedAt > serverTime) {
+     const contentUpdatedAt = localDraft.contentUpdatedAt ?? localDraft.updatedAt;
+     const readingContentUpdatedAt = localDraft.readingContentUpdatedAt ?? localDraft.updatedAt;
+     const useContentDraft = localDraft.content !== null && contentUpdatedAt > serverTime;
+     const useReadingDraft =
+      localDraft.readingContent !== undefined && readingContentUpdatedAt > serverTime;
+     if (useContentDraft || useReadingDraft) {
       return {
        ...serverNote,
-       content: localDraft.content,
-       reading_content: localDraft.readingContent ?? serverNote.reading_content,
+       content: useContentDraft ? localDraft.content : serverNote.content,
+       reading_content: useReadingDraft
+        ? (localDraft.readingContent ?? serverNote.reading_content)
+        : serverNote.reading_content,
       };
      }
     }
@@ -90,7 +101,7 @@ export function useNoteDetail(noteId: string) {
   },
   onSuccess: async (data) => {
    if (userId && noteId) {
-    await clearNoteDraft(userId, noteId, data.mutationStartedAt);
+    await clearNoteContentDraft(userId, noteId, data.mutationStartedAt);
    }
   },
  });
@@ -146,19 +157,23 @@ export function useNoteDetail(noteId: string) {
  const saveReadingContentMutation = useMutation({
   mutationFn: async (readingContent: ReadingContent) => {
    requireUser();
+   const mutationStartedAt = Date.now();
    const success = await updateReadingContent(supabase, noteId, readingContent);
    if (!success) throw new Error("Failed to save reading content");
-   return readingContent;
+   return { readingContent, mutationStartedAt };
   },
-  onSuccess: (readingContent) => {
+  onSuccess: async (data) => {
    queryClient.setQueryData(detailKey, (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
 
     return {
      ...old,
-     reading_content: readingContent,
+     reading_content: data.readingContent,
     };
    });
+   if (userId && noteId) {
+    await clearNoteReadingContentDraft(userId, noteId, data.mutationStartedAt);
+   }
   },
  });
 

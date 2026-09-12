@@ -6,6 +6,8 @@ const localDb = vi.hoisted(() => ({
  listMatching: vi.fn(),
  put: vi.fn(),
  read: vi.fn(),
+ request: vi.fn(),
+ transaction: vi.fn(),
 }));
 
 vi.mock("@/features/hanzihome/local/hanzihome-local-db", () => ({
@@ -18,6 +20,8 @@ vi.mock("@/features/hanzihome/local/hanzihome-local-db", () => ({
  getAllFromStoreMatching: localDb.listMatching,
  putInStore: localDb.put,
  readFromStore: localDb.read,
+ promisifyRequest: localDb.request,
+ runInLocalTransaction: localDb.transaction,
 }));
 
 import {
@@ -31,6 +35,33 @@ import {
  syncPendingReaderAnnotations,
 } from "../services/reading-annotation-api";
 import type { ReaderAnnotationRow } from "../model/reading-annotation.schemas";
+
+type PendingMutationTransactionStores = {
+ pending_mutations: {
+  get: (id: string) => { result: PendingAnnotationMutation | undefined };
+  put: (value: PendingAnnotationMutation) => void;
+  delete: (id: string) => void;
+ };
+};
+
+function createEmptyPendingMutationTransaction() {
+ return async <T>(
+  _stores: string[],
+  _mode: string,
+  operation: (stores: PendingMutationTransactionStores) => Promise<T> | T,
+ ): Promise<T> =>
+  operation({
+   pending_mutations: {
+    get: (_id: string) => ({ result: undefined }),
+    put: (value: PendingAnnotationMutation) => {
+     localDb.put("pending_mutations", value);
+    },
+    delete: (id: string) => {
+     localDb.delete("pending_mutations", id);
+    },
+   },
+  });
+}
 
 const userAId = "11111111-aaaa-4111-8111-111111111111";
 const userBId = "22222222-bbbb-4222-8222-222222222222";
@@ -81,6 +112,10 @@ describe("A1 — Multi-tenant Reader Account & Cache Isolation", () => {
   vi.stubGlobal("window", {});
   localDb.put.mockResolvedValue(undefined);
   localDb.delete.mockResolvedValue(undefined);
+  localDb.request.mockImplementation(<T>(request: { result: T }) =>
+   Promise.resolve(request.result),
+  );
+  localDb.transaction.mockImplementation(createEmptyPendingMutationTransaction());
  });
 
  it("Invariant 1: User A creates annotation offline -> switch to User B -> User B must not see or sync User A data", async () => {

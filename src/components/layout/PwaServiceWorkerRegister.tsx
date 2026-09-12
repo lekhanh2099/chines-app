@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { logger } from "@/lib/logger";
 
 export function PwaServiceWorkerRegister() {
+ const { isResolved, userId } = useClientSession();
+
  useEffect(() => {
   if (typeof window === "undefined" || !("serviceWorker" in navigator)) {
    return;
@@ -58,19 +61,51 @@ export function PwaServiceWorkerRegister() {
     });
   };
 
-  navigator.serviceWorker.addEventListener("controllerchange", () => {
+  const handleControllerChange = () => {
    if (navigator.serviceWorker.controller) {
     sendWarmup(navigator.serviceWorker.controller);
    }
-  });
+  };
+
+  navigator.serviceWorker.addEventListener("controllerchange", handleControllerChange);
 
   if (document.readyState === "complete") {
    handleLoad();
-  } else {
-   window.addEventListener("load", handleLoad);
-   return () => window.removeEventListener("load", handleLoad);
+   return () => {
+    navigator.serviceWorker.removeEventListener("controllerchange", handleControllerChange);
+   };
   }
+
+  window.addEventListener("load", handleLoad);
+  return () => {
+   window.removeEventListener("load", handleLoad);
+   navigator.serviceWorker.removeEventListener("controllerchange", handleControllerChange);
+  };
  }, []);
+
+ useEffect(() => {
+  if (!isResolved || typeof window === "undefined" || !("serviceWorker" in navigator)) {
+   return;
+  }
+
+  let active = true;
+  const sendOwner = (worker: ServiceWorker | null) => {
+   if (!active || !worker) return;
+   worker.postMessage({ type: "SET_OFFLINE_OWNER", ownerId: userId });
+  };
+  const handleControllerChange = () => sendOwner(navigator.serviceWorker.controller);
+
+  sendOwner(navigator.serviceWorker.controller);
+  navigator.serviceWorker.addEventListener("controllerchange", handleControllerChange);
+  void navigator.serviceWorker.ready
+   .then((registration) => sendOwner(registration.active))
+   .catch(() => {});
+
+  return () => {
+   active = false;
+   navigator.serviceWorker.removeEventListener("controllerchange", handleControllerChange);
+  };
+ }, [isResolved, userId]);
 
  return null;
 }

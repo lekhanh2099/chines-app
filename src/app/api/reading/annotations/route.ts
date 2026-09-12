@@ -10,6 +10,7 @@ import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
+ verifyExpectedAuthenticatedOwner,
 } from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
@@ -43,6 +44,8 @@ const createSchema = z
 export async function GET(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
  const parsed = querySchema.safeParse({
   documentId: new URL(request.url).searchParams.get("documentId"),
  });
@@ -59,6 +62,8 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
  const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = createSchema.safeParse(body);
  if (!parsed.success) return apiError("Invalid annotation payload", 400, "INVALID_PAYLOAD");

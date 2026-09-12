@@ -23,9 +23,10 @@ vi.mock("@/lib/storage/storage-persistence", () => ({
 
 vi.mock("../local/content-cache-store", () => ({
  hasContentCache: vi.fn(),
+ getContentCacheGeneration: vi.fn().mockResolvedValue(0),
+ pinContentCache: vi.fn().mockResolvedValue(true),
  writeContentCache: vi.fn().mockResolvedValue({ written: true, generation: 1 }),
  deleteContentCache: vi.fn().mockResolvedValue(undefined),
- MAX_CACHE_ENTRIES_PER_OWNER: 250,
 }));
 
 vi.mock("../repositories/hanzihome-content-api-client", () => ({
@@ -181,7 +182,7 @@ describe("course-offline-pack.service", () => {
    expect(result.failedCount).toBe(1);
   });
 
-  it("A7 Invariant: downloads 30-lesson pack with headroom capacity preventing earlier lessons from being evicted", async () => {
+  it("A7 Invariant: marks every downloaded resource as offline-pack pinned", async () => {
    vi.mocked(hasContentCache).mockResolvedValue(false);
    vi.mocked(fetchHanziHomeLessonDetail).mockImplementation(async (id) => createMockDetail(id));
    vi.mocked(fetchHanziHomeLessonVocabulary).mockImplementation(async (id) => createMockVocab(id));
@@ -200,16 +201,16 @@ describe("course-offline-pack.service", () => {
    // 30 lessons * 2 resources (detail + vocab) = 60 writes
    expect(writeContentCache).toHaveBeenCalledTimes(60);
 
-   // Verify that writeContentCache is called with a maxEntries capacity sufficient for all 30 lessons (>= 60 entries)
+   // Pinned resources are excluded from ordinary LRU eviction after download.
    expect(writeContentCache).toHaveBeenLastCalledWith(
     expect.objectContaining({
      ownerId: userId,
-     maxEntries: expect.any(Number),
+     pin: true,
     }),
    );
 
    const lastCallArgs = vi.mocked(writeContentCache).mock.calls[0]?.[0];
-   expect(lastCallArgs?.maxEntries).toBeGreaterThanOrEqual(60);
+   expect(lastCallArgs?.pin).toBe(true);
   });
  });
 

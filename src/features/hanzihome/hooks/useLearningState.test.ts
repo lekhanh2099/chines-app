@@ -169,7 +169,7 @@ describe("A2 — Learning/Review Durability and Retry Intent Recovery", () => {
   expect(getLearningStateSyncState("test-user-123").durability).toBe("durable");
  });
 
- it("retains every failed learning intent when the first retry fails again", async () => {
+ it("A2 Invariant: retries failed intents in order without letting the first stale state erase the second", async () => {
   localFirst.save.mockRejectedValue(new Error("Storage unavailable"));
   let retry = () => Promise.resolve();
   function Actions() {
@@ -190,8 +190,22 @@ describe("A2 — Learning/Review Durability and Retry Intent Recovery", () => {
   localFirst.save.mockResolvedValue(undefined);
   await retry();
   expect(localFirst.save).toHaveBeenCalledTimes(5);
-  expect(localFirst.save.mock.calls[3]).toEqual(localFirst.save.mock.calls[0]);
-  expect(localFirst.save.mock.calls[4]).toEqual(localFirst.save.mock.calls[1]);
+  const retriedA = localFirst.save.mock.calls[3];
+  const retriedB = localFirst.save.mock.calls[4];
+  expect(retriedA?.[1]).toEqual(retriedB?.[1]);
+  expect(retriedA?.[2]).toEqual(retriedB?.[2]);
+  expect(retriedA?.[2]).toEqual(
+   expect.objectContaining({
+    progress: expect.objectContaining({
+     vocab: expect.objectContaining({
+      "retry-a": expect.any(Object),
+      "retry-b": expect.any(Object),
+     }),
+    }),
+   }),
+  );
+  expect(retriedA?.[3]).toEqual(localFirst.save.mock.calls[0]?.[3]);
+  expect(retriedB?.[3]).toEqual(localFirst.save.mock.calls[1]?.[3]);
  });
 
  it("retains all review intents and their identities across repeated local failures", async () => {

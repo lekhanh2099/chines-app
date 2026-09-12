@@ -1,8 +1,15 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { clearNoteDraft, closeNotesDraftDb, getNoteDraft, saveNoteDraft } from "./note-draft-store";
+import {
+ clearNoteContentDraft,
+ clearNoteDraft,
+ closeNotesDraftDb,
+ getNoteDraft,
+ saveNoteDraft,
+ type NoteDraftRecord,
+} from "./note-draft-store";
 
 describe("note-draft-store", () => {
- const inMemoryDrafts = new Map<string, unknown>();
+ const inMemoryDrafts = new Map<string, NoteDraftRecord>();
 
  type AsyncEventCallback = (() => void) | null;
  type MockRequest<T> = {
@@ -26,7 +33,7 @@ describe("note-draft-store", () => {
   closeNotesDraftDb();
 
   const mockStore = {
-   put: vi.fn((value: { key: string }) => {
+   put: vi.fn((value: NoteDraftRecord) => {
     inMemoryDrafts.set(value.key, value);
     const req = createMockRequest<void>();
     setTimeout(() => req.onsuccess?.(), 0);
@@ -34,7 +41,7 @@ describe("note-draft-store", () => {
    }),
    get: vi.fn((key: string) => {
     const result = inMemoryDrafts.get(key) ?? null;
-    const req = createMockRequest<unknown>(result);
+    const req = createMockRequest<NoteDraftRecord | null>(result);
     setTimeout(() => req.onsuccess?.(), 0);
     return req;
    }),
@@ -153,6 +160,45 @@ describe("note-draft-store", () => {
   );
   expect(finalClearResult).toBe(true);
   expect(await getNoteDraft("user-1", "note-preserve")).toBeNull();
+ });
+
+ it("A6 Invariant: content acknowledgement preserves an older unsaved reading draft", async () => {
+  await saveNoteDraft("user-1", "note-split", {
+   content: { value: "content draft" },
+   readingContent: { value: "reading draft" },
+  });
+
+  const contentSaveStartedAt = Date.now();
+  await new Promise((resolve) => setTimeout(resolve, 10));
+  await saveNoteDraft("user-1", "note-split", {
+   content: { value: "server content" },
+   readingContent: { value: "reading still unsaved" },
+   readingContentUpdatedAt: Date.now(),
+  });
+
+  expect(await clearNoteContentDraft("user-1", "note-split", contentSaveStartedAt)).toBe(true);
+  expect(await getNoteDraft("user-1", "note-split")).toMatchObject({
+   content: null,
+   readingContent: { value: "reading still unsaved" },
+  });
+ });
+
+ it("keeps an existing pre-pane draft's reading content after content acknowledgement", async () => {
+  inMemoryDrafts.set("user-1:legacy-note", {
+   key: "user-1:legacy-note",
+   userId: "user-1",
+   noteId: "legacy-note",
+   content: { value: "content draft" },
+   readingContent: { value: "legacy reading draft" },
+   updatedAt: 100,
+  });
+
+  expect(await clearNoteContentDraft("user-1", "legacy-note", 100)).toBe(true);
+  expect(await getNoteDraft("user-1", "legacy-note")).toMatchObject({
+   content: null,
+   readingContent: { value: "legacy reading draft" },
+   readingContentUpdatedAt: 100,
+  });
  });
 
  it("returns false and null gracefully when userId or noteId is empty", async () => {

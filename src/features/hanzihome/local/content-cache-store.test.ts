@@ -1,15 +1,41 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { z } from "zod";
+import type { JsonFieldValue } from "@/types/json";
+import type { ContentCacheRecord } from "./content-cache-store";
 
-const storage = new Map<string, Map<string, unknown>>();
+type CachedRecord = ContentCacheRecord<JsonFieldValue>;
+
+type ContentCacheMockStore = {
+ get: (key: string) => { result: CachedRecord | null };
+ put: (value: CachedRecord) => void;
+ delete: (key: string) => void;
+};
+
+type ContentCacheMockStores = {
+ content_cache: ContentCacheMockStore;
+};
+
+const storage = new Map<string, Map<string, CachedRecord>>();
 
 function getStoreMap(name: string) {
  let map = storage.get(name);
  if (!map) {
-  map = new Map<string, unknown>();
+  map = new Map<string, CachedRecord>();
   storage.set(name, map);
  }
  return map;
+}
+
+function createContentCacheStore(name: string): ContentCacheMockStore {
+ return {
+  get: (key: string) => ({ result: getStoreMap(name).get(key) ?? null }),
+  put: (value: CachedRecord) => {
+   getStoreMap(name).set(value.key, value);
+  },
+  delete: (key: string) => {
+   getStoreMap(name).delete(key);
+  },
+ };
 }
 
 vi.mock("./hanzihome-local-db", () => ({
@@ -18,38 +44,16 @@ vi.mock("./hanzihome-local-db", () => ({
   pendingMutations: "pending_mutations",
   contentCache: "content_cache",
  },
- deleteFromStore: vi.fn((name: string, key: string) => {
-  getStoreMap(name).delete(key);
-  return Promise.resolve();
- }),
- deleteFromStoreIf: vi.fn(
-  (name: string, _key: string, _schema: unknown, matches: (val: unknown) => boolean) => {
-   const map = getStoreMap(name);
-   let deleted = false;
-   for (const [k, v] of map.entries()) {
-    if (matches(v)) {
-     map.delete(k);
-     deleted = true;
-    }
-   }
-   return Promise.resolve(deleted);
-  },
- ),
  readFromStore: vi.fn((name: string, key: string) => {
   return Promise.resolve(getStoreMap(name).get(key) ?? null);
- }),
- putInStore: vi.fn((name: string, value: { key?: string; id?: string }) => {
-  const key = value.key ?? value.id ?? "";
-  getStoreMap(name).set(key, value);
-  return Promise.resolve();
  }),
  replaceInStoreIf: vi.fn(
   (
    name: string,
    key: string,
-   _schema: unknown,
-   matches: (val: unknown) => boolean,
-   replace: (val: unknown) => unknown,
+   _schema: z.ZodType<CachedRecord>,
+   matches: (value: CachedRecord) => boolean,
+   replace: (value: CachedRecord) => CachedRecord,
   ) => {
    const map = getStoreMap(name);
    const current = map.get(key);
@@ -64,7 +68,17 @@ vi.mock("./hanzihome-local-db", () => ({
  getAllFromStoreMatching: vi.fn((name: string) => {
   return Promise.resolve(Array.from(getStoreMap(name).values()));
  }),
- openHanziHomeLocalDb: vi.fn(() => Promise.resolve({})),
+ promisifyRequest: vi.fn(<T>(request: { result: T }) => Promise.resolve(request.result)),
+ runInLocalTransaction: vi.fn(
+  async <T>(
+   _storeNames: string[],
+   _mode: string,
+   operation: (stores: ContentCacheMockStores) => Promise<T> | T,
+  ): Promise<T> =>
+   operation({
+    content_cache: createContentCacheStore("content_cache"),
+   }),
+ ),
 }));
 
 import {
@@ -75,6 +89,8 @@ import {
  deleteContentCache,
  getContentCacheFootprint,
  getContentCacheGeneration,
+ hasContentCache,
+ pinContentCache,
  pruneContentCacheForOwner,
  readContentCache,
  writeContentCache,
@@ -171,6 +187,8 @@ describe("content-cache-store", () => {
     lastAccessedAt: Date.now(),
     byteSize: 10,
     accessCount: 1,
+    generation: 1,
+    isPinned: false,
    },
    data: { wrongField: true }, // Missing required fields
   });
@@ -184,8 +202,12 @@ describe("content-cache-store", () => {
 
   // Returns null safely
   expect(result).toBeNull();
-  // Self-healing purged the invalid entry
-  expect(storeMap.has(corruptKey)).toBe(false);
+  // Self-healing leaves a generation tombstone so a late response cannot revive it.
+  expect(storeMap.get(corruptKey)).toEqual(
+   expect.objectContaining({
+    metadata: expect.objectContaining({ deletedAt: expect.any(Number) }),
+   }),
+  );
  });
 
  it("deletes cached content individually and for entire owner", async () => {
@@ -244,6 +266,8 @@ describe("content-cache-store", () => {
      lastAccessedAt: 1000 + i * 100,
      byteSize: 100,
      accessCount: 1,
+     generation: 1,
+     isPinned: false,
     },
     data: { id: `lesson-${i}`, title: `Lesson ${i}`, words: [] },
    });
@@ -257,9 +281,17 @@ describe("content-cache-store", () => {
   });
 
   expect(evictedCount).toBe(2);
-  // Oldest items (lesson-1 and lesson-2) should be evicted
-  expect(storeMap.has("user-123:lesson_detail:lesson-1")).toBe(false);
-  expect(storeMap.has("user-123:lesson_detail:lesson-2")).toBe(false);
+  // Oldest items (lesson-1 and lesson-2) should be evicted behind tombstones.
+  expect(storeMap.get("user-123:lesson_detail:lesson-1")).toEqual(
+   expect.objectContaining({
+    metadata: expect.objectContaining({ deletedAt: expect.any(Number) }),
+   }),
+  );
+  expect(storeMap.get("user-123:lesson_detail:lesson-2")).toEqual(
+   expect.objectContaining({
+    metadata: expect.objectContaining({ deletedAt: expect.any(Number) }),
+   }),
+  );
   // Newer items should remain
   expect(storeMap.has("user-123:lesson_detail:lesson-3")).toBe(true);
   expect(storeMap.has("user-123:lesson_detail:lesson-4")).toBe(true);
@@ -365,9 +397,6 @@ describe("content-cache-store", () => {
    data: sampleLessonData,
   });
 
-  const storeMap = getStoreMap("content_cache");
-  const key = "user-123:lesson_detail:lesson-1";
-
   // Case 1: Entry is deleted concurrently after readFromStore but before metadata update
   // Simulate readContentCache read, then concurrent deletion
   const cached = await readContentCache({
@@ -380,11 +409,11 @@ describe("content-cache-store", () => {
 
   // Now explicitly delete
   await deleteContentCache("user-123", "lesson_detail", "lesson-1");
-  expect(storeMap.has(key)).toBe(false);
+  expect(await hasContentCache("user-123", "lesson_detail", "lesson-1")).toBe(false);
 
   // Verify that background touch does not resurrect the deleted entry
   await new Promise((resolve) => setTimeout(resolve, 10));
-  expect(storeMap.has(key)).toBe(false);
+  expect(await hasContentCache("user-123", "lesson_detail", "lesson-1")).toBe(false);
 
   // Case 2: Concurrent write advances generation, background touch does not clobber
   await writeContentCache({
@@ -419,5 +448,51 @@ describe("content-cache-store", () => {
    schema: sampleLessonSchema,
   });
   expect(current?.title).toBe("Version 2");
+ });
+
+ it("A5 Invariant: deletion tombstone rejects a late response that began before eviction", async () => {
+  await writeContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "lesson-1",
+   data: sampleLessonData,
+  });
+  const startedGeneration = await getContentCacheGeneration(
+   "user-123",
+   "lesson_detail",
+   "lesson-1",
+  );
+
+  await deleteContentCache("user-123", "lesson_detail", "lesson-1");
+  const lateWrite = await writeContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "lesson-1",
+   data: { ...sampleLessonData, title: "Stale response" },
+   incomingGeneration: startedGeneration,
+  });
+
+  expect(lateWrite.written).toBe(false);
+  expect(await hasContentCache("user-123", "lesson_detail", "lesson-1")).toBe(false);
+ });
+
+ it("A7 Invariant: ordinary cache writes do not evict an offline-pack-pinned lesson", async () => {
+  await writeContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "offline-lesson",
+   data: sampleLessonData,
+  });
+  expect(await pinContentCache("user-123", "lesson_detail", "offline-lesson")).toBe(true);
+
+  await writeContentCache({
+   ownerId: "user-123",
+   resourceType: "lesson_detail",
+   resourceId: "ordinary-lesson",
+   data: { ...sampleLessonData, id: "ordinary-lesson" },
+   maxEntries: 1,
+  });
+
+  expect(await hasContentCache("user-123", "lesson_detail", "offline-lesson")).toBe(true);
  });
 });

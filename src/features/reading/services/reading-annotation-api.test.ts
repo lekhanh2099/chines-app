@@ -9,6 +9,13 @@ const localStore = vi.hoisted(() => ({
  getPendingAnnotationMutations: vi.fn(),
  removePendingAnnotationMutation: vi.fn(),
  cancelPendingMutationsForAnnotation: vi.fn(),
+ markPendingAnnotationMutationSyncing: vi.fn(),
+ markPendingAnnotationMutationFailed: vi.fn(),
+ acknowledgePendingAnnotationCreate: vi.fn(),
+ acknowledgePendingAnnotationUpdate: vi.fn(),
+ acknowledgePendingAnnotationDelete: vi.fn(),
+ acknowledgeLocalReaderAnnotationCreate: vi.fn(),
+ saveLocalReaderAnnotationIfCurrent: vi.fn(),
 }));
 
 vi.mock("../local/reader-annotation-local-store", () => ({
@@ -20,6 +27,13 @@ vi.mock("../local/reader-annotation-local-store", () => ({
  getPendingAnnotationMutations: localStore.getPendingAnnotationMutations,
  removePendingAnnotationMutation: localStore.removePendingAnnotationMutation,
  cancelPendingMutationsForAnnotation: localStore.cancelPendingMutationsForAnnotation,
+ markPendingAnnotationMutationSyncing: localStore.markPendingAnnotationMutationSyncing,
+ markPendingAnnotationMutationFailed: localStore.markPendingAnnotationMutationFailed,
+ acknowledgePendingAnnotationCreate: localStore.acknowledgePendingAnnotationCreate,
+ acknowledgePendingAnnotationUpdate: localStore.acknowledgePendingAnnotationUpdate,
+ acknowledgePendingAnnotationDelete: localStore.acknowledgePendingAnnotationDelete,
+ acknowledgeLocalReaderAnnotationCreate: localStore.acknowledgeLocalReaderAnnotationCreate,
+ saveLocalReaderAnnotationIfCurrent: localStore.saveLocalReaderAnnotationIfCurrent,
 }));
 
 import {
@@ -66,6 +80,19 @@ describe("reading-annotation-api offline resiliency", () => {
   localStore.getPendingAnnotationMutations.mockResolvedValue([]);
   localStore.removePendingAnnotationMutation.mockResolvedValue(undefined);
   localStore.cancelPendingMutationsForAnnotation.mockResolvedValue(undefined);
+  localStore.markPendingAnnotationMutationSyncing.mockImplementation(async (mutation) => mutation);
+  localStore.markPendingAnnotationMutationFailed.mockResolvedValue(null);
+  localStore.acknowledgePendingAnnotationCreate.mockResolvedValue({
+   applied: true,
+   localAnnotation: mockAnnotation,
+  });
+  localStore.acknowledgePendingAnnotationUpdate.mockResolvedValue(true);
+  localStore.acknowledgePendingAnnotationDelete.mockResolvedValue(true);
+  localStore.acknowledgeLocalReaderAnnotationCreate.mockResolvedValue({
+   applied: true,
+   localAnnotation: mockAnnotation,
+  });
+  localStore.saveLocalReaderAnnotationIfCurrent.mockResolvedValue(true);
  });
 
  afterEach(() => {
@@ -207,7 +234,10 @@ describe("reading-annotation-api offline resiliency", () => {
    syncedCount: 1,
    errorCount: 0,
   });
-  expect(localStore.saveLocalReaderAnnotation).toHaveBeenLastCalledWith(canonical);
+  expect(localStore.acknowledgePendingAnnotationUpdate).toHaveBeenLastCalledWith(
+   expect.objectContaining({ id: pending[0]?.id }),
+   canonical,
+  );
   expect(fetchMock).toHaveBeenCalledWith(
    `/api/reading/annotations/${original.id}`,
    expect.objectContaining({
@@ -228,6 +258,7 @@ describe("reading-annotation-api offline resiliency", () => {
  });
 
  it("replays outbox mutations during syncPendingReaderAnnotations for specified user upon reconnect", async () => {
+  vi.stubGlobal("navigator", { onLine: true });
   localStore.getPendingAnnotationMutations.mockResolvedValue([
    {
     id: "mut-1",
@@ -253,10 +284,13 @@ describe("reading-annotation-api offline resiliency", () => {
   expect(syncResult.syncedCount).toBe(1);
   expect(syncResult.errorCount).toBe(0);
   expect(localStore.getPendingAnnotationMutations).toHaveBeenCalledWith("user-1");
-  expect(localStore.removePendingAnnotationMutation).toHaveBeenCalledWith("mut-1");
+  expect(localStore.acknowledgePendingAnnotationDelete).toHaveBeenCalledWith(
+   expect.objectContaining({ id: "mut-1" }),
+  );
  });
 
  it("replays reader_annotation.update sending complete schema-compliant PATCH payload (A3 Invariant)", async () => {
+  vi.stubGlobal("navigator", { onLine: true });
   localStore.getPendingAnnotationMutations.mockResolvedValue([
    {
     id: "mut-update-1",
@@ -279,6 +313,8 @@ describe("reading-annotation-api offline resiliency", () => {
     JSON.stringify({
      annotation: {
       ...mockAnnotation,
+      id: "11111111-1111-4111-8111-111111111111",
+      user_id: "22222222-2222-4222-8222-222222222222",
       note_text: "Updated note text",
       revision: 2,
      },
@@ -294,13 +330,19 @@ describe("reading-annotation-api offline resiliency", () => {
   const syncResult = await syncPendingReaderAnnotations("user-1");
   expect(syncResult.syncedCount).toBe(1);
   expect(syncResult.errorCount).toBe(0);
-  expect(localStore.removePendingAnnotationMutation).toHaveBeenCalledWith("mut-update-1");
+  expect(localStore.acknowledgePendingAnnotationUpdate).toHaveBeenCalledWith(
+   expect.objectContaining({ id: "mut-update-1" }),
+   expect.objectContaining({ revision: 2 }),
+  );
 
   expect(fetchMock).toHaveBeenCalledWith(
    "/api/reading/annotations/ann-1",
    expect.objectContaining({
     method: "PATCH",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+     "Content-Type": "application/json",
+     "X-HanziHome-Owner-Id": "user-1",
+    },
     body: JSON.stringify({
      paragraphId: "p-1",
      assetId: null,
@@ -333,6 +375,7 @@ describe("reading-annotation-api offline resiliency", () => {
  });
 
  it("handles 404 on delete replay as idempotent success (A3 Invariant)", async () => {
+  vi.stubGlobal("navigator", { onLine: true });
   localStore.getPendingAnnotationMutations.mockResolvedValue([
    {
     id: "mut-del-1",
@@ -357,6 +400,175 @@ describe("reading-annotation-api offline resiliency", () => {
   const syncResult = await syncPendingReaderAnnotations("user-1");
   expect(syncResult.syncedCount).toBe(1);
   expect(syncResult.errorCount).toBe(0);
-  expect(localStore.removePendingAnnotationMutation).toHaveBeenCalledWith("mut-del-1");
+  expect(localStore.acknowledgePendingAnnotationDelete).toHaveBeenCalledWith(
+   expect.objectContaining({ id: "mut-del-1" }),
+  );
+ });
+
+ it("stops an owner A drain when the authenticated session has become owner B", async () => {
+  const mutation: PendingAnnotationMutation = {
+   id: "mut-owner-a",
+   type: "reader_annotation.create",
+   status: "pending",
+   userId: "user-a",
+   tempId: "11111111-1111-4111-8111-111111111111",
+   documentId: "doc-1",
+   annotation: {
+    ...mockAnnotation,
+    id: "11111111-1111-4111-8111-111111111111",
+    user_id: "user-a",
+   },
+   createdAt: "2026-09-10T00:00:00.000Z",
+   updatedAt: "2026-09-10T00:00:00.000Z",
+   attemptCount: 0,
+  };
+  const active = {
+   ...mutation,
+   status: "syncing",
+   updatedAt: "2026-09-10T00:00:01.000Z",
+   attemptCount: 1,
+  };
+
+  vi.stubGlobal("navigator", { onLine: true });
+  localStore.getPendingAnnotationMutations.mockResolvedValue([mutation]);
+  localStore.markPendingAnnotationMutationSyncing.mockResolvedValue(active);
+  const fetchMock = vi
+   .fn()
+   .mockResolvedValue(
+    new Response(JSON.stringify({ code: "AUTH_OWNER_MISMATCH" }), { status: 412 }),
+   );
+  vi.stubGlobal("fetch", fetchMock);
+
+  await expect(syncPendingReaderAnnotations("user-a")).resolves.toEqual({
+   syncedCount: 0,
+   errorCount: 1,
+   isOwnerMismatch: true,
+  });
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/reading/annotations",
+   expect.objectContaining({
+    headers: {
+     "Content-Type": "application/json",
+     "X-HanziHome-Owner-Id": "user-a",
+    },
+   }),
+  );
+  expect(localStore.markPendingAnnotationMutationFailed).toHaveBeenCalledWith(
+   active,
+   "Reader annotation owner changed.",
+  );
+  expect(localStore.acknowledgePendingAnnotationCreate).not.toHaveBeenCalled();
+ });
+
+ it("does not apply an old edit acknowledgement after a newer local edit replaces it", async () => {
+  const mutation: PendingAnnotationMutation = {
+   id: "mut-stale-edit",
+   type: "reader_annotation.update",
+   status: "pending",
+   userId: "user-1",
+   annotationId: "11111111-1111-4111-8111-111111111111",
+   documentId: "doc-1",
+   noteText: "First edit",
+   expectedRevision: 1,
+   annotation: {
+    ...mockAnnotation,
+    id: "11111111-1111-4111-8111-111111111111",
+    user_id: "22222222-2222-4222-8222-222222222222",
+   },
+   createdAt: "2026-09-10T00:00:00.000Z",
+   updatedAt: "2026-09-10T00:00:00.000Z",
+   attemptCount: 0,
+  };
+  const active = {
+   ...mutation,
+   status: "syncing",
+   updatedAt: "2026-09-10T00:00:01.000Z",
+   attemptCount: 1,
+  };
+  const canonical = {
+   ...active.annotation,
+   note_text: "First edit",
+   revision: 2,
+  };
+
+  vi.stubGlobal("navigator", { onLine: true });
+  localStore.getPendingAnnotationMutations.mockResolvedValue([mutation]);
+  localStore.markPendingAnnotationMutationSyncing.mockResolvedValue(active);
+  localStore.acknowledgePendingAnnotationUpdate.mockResolvedValue(false);
+  vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({ annotation: canonical })));
+
+  await expect(syncPendingReaderAnnotations("user-1")).resolves.toEqual({
+   syncedCount: 0,
+   errorCount: 0,
+  });
+  expect(localStore.acknowledgePendingAnnotationUpdate).toHaveBeenCalledWith(active, canonical);
+ });
+
+ it("does not replay an update against a temporary id after its create acknowledgement remaps it", async () => {
+  const tempId = "11111111-1111-4111-8111-111111111111";
+  const create: PendingAnnotationMutation = {
+   id: "reader_annotation:create:" + tempId,
+   type: "reader_annotation.create",
+   status: "pending",
+   userId: "user-1",
+   tempId,
+   documentId: "doc-1",
+   annotation: {
+    ...mockAnnotation,
+    id: tempId,
+    user_id: "22222222-2222-4222-8222-222222222222",
+   },
+   createdAt: "2026-09-10T00:00:00.000Z",
+   updatedAt: "2026-09-10T00:00:00.000Z",
+   attemptCount: 0,
+  };
+  const update: PendingAnnotationMutation = {
+   id: "reader_annotation:update:" + tempId,
+   type: "reader_annotation.update",
+   status: "pending",
+   userId: "user-1",
+   annotationId: tempId,
+   documentId: "doc-1",
+   noteText: "Edited while offline",
+   expectedRevision: 1,
+   annotation: { ...create.annotation, note_text: "Edited while offline" },
+   createdAt: "2026-09-10T00:00:01.000Z",
+   updatedAt: "2026-09-10T00:00:01.000Z",
+   attemptCount: 0,
+  };
+  const activeCreate = {
+   ...create,
+   status: "syncing",
+   updatedAt: "2026-09-10T00:00:02.000Z",
+   attemptCount: 1,
+  };
+  const canonical = {
+   ...create.annotation,
+   id: "33333333-3333-4333-8333-333333333333",
+   revision: 2,
+  };
+
+  vi.stubGlobal("navigator", { onLine: true });
+  localStore.getPendingAnnotationMutations.mockResolvedValue([create, update]);
+  localStore.markPendingAnnotationMutationSyncing.mockImplementation(
+   async (mutation: PendingAnnotationMutation) => (mutation.id === create.id ? activeCreate : null),
+  );
+  localStore.acknowledgePendingAnnotationCreate.mockResolvedValue({
+   applied: true,
+   localAnnotation: { ...canonical, note_text: update.noteText },
+  });
+  const fetchMock = vi.fn().mockResolvedValue(Response.json({ annotation: canonical }));
+  vi.stubGlobal("fetch", fetchMock);
+
+  await expect(syncPendingReaderAnnotations("user-1")).resolves.toEqual({
+   syncedCount: 1,
+   errorCount: 0,
+  });
+  expect(localStore.acknowledgePendingAnnotationCreate).toHaveBeenCalledWith(
+   activeCreate,
+   canonical,
+  );
+  expect(fetchMock).toHaveBeenCalledTimes(1);
+  expect(fetchMock).toHaveBeenCalledWith("/api/reading/annotations", expect.any(Object));
  });
 });

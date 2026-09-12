@@ -240,33 +240,55 @@ export function useLearningState() {
    };
   }
 
-  // 1. Recover and persist failed in-memory write intents to local IndexedDB
-  const pendingWrites = failedWriteIntents.get(userId);
-  if (pendingWrites && pendingWrites.length > 0) {
-   failedWriteIntents.delete(userId);
-   for (const [index, intent] of pendingWrites.entries()) {
-    try {
-     await saveLearningStateLocalFirst(userId, intent.baseState, intent.nextState, {
-      reviewAttempt: intent.reviewAttempt,
-     });
-    } catch (writeErr) {
-     const remaining = failedWriteIntents.get(userId) ?? [];
-     failedWriteIntents.set(userId, [...pendingWrites.slice(index), ...remaining]);
-     const message =
-      writeErr instanceof Error ? writeErr.message : "Could not save learning state locally.";
-     updateOwnerSyncUiState(userId, (value) => ({
-      ...value,
-      status: "error",
-      durability: "failed",
-      lastError: message,
-     }));
-     return {
-      status: "error",
-      syncedCount: 0,
-      pendingCount: Math.max(1, getOwnerSyncUiState(userId).pendingCount),
-      error: message,
-     };
+  // 1. Recover in the same owner write chain as fresh actions. Every failed
+  // intent keeps its review evidence, while state replay uses the latest
+  // optimistic snapshot so an older retry cannot overwrite a newer action.
+  const previous = learningStateWriteChains.get(userId) ?? Promise.resolve();
+  const retryWrites = previous
+   .catch(() => undefined)
+   .then(async () => {
+    let pendingWrites = failedWriteIntents.get(userId);
+    while (pendingWrites && pendingWrites.length > 0) {
+     failedWriteIntents.delete(userId);
+     for (const [index, intent] of pendingWrites.entries()) {
+      const latestState = normalizeLearningState(
+       queryClient.getQueryData<UserLearningState>(queryKey) ?? intent.nextState,
+      );
+      try {
+       await saveLearningStateLocalFirst(userId, latestState, latestState, {
+        reviewAttempt: intent.reviewAttempt,
+       });
+      } catch (writeErr) {
+       const remaining = failedWriteIntents.get(userId) ?? [];
+       failedWriteIntents.set(userId, [...pendingWrites.slice(index), ...remaining]);
+       throw writeErr;
+      }
+     }
+     pendingWrites = failedWriteIntents.get(userId);
     }
+   });
+  learningStateWriteChains.set(userId, retryWrites);
+
+  try {
+   await retryWrites;
+  } catch (writeErr) {
+   const message =
+    writeErr instanceof Error ? writeErr.message : "Could not save learning state locally.";
+   updateOwnerSyncUiState(userId, (value) => ({
+    ...value,
+    status: "error",
+    durability: "failed",
+    lastError: message,
+   }));
+   return {
+    status: "error",
+    syncedCount: 0,
+    pendingCount: Math.max(1, getOwnerSyncUiState(userId).pendingCount),
+    error: message,
+   };
+  } finally {
+   if (learningStateWriteChains.get(userId) === retryWrites) {
+    learningStateWriteChains.delete(userId);
    }
   }
 
@@ -307,7 +329,7 @@ export function useLearningState() {
 
   // 4. Drain from durable storage to remote
   return syncLearningState(queryClient, userId);
- }, [queryClient, userId]);
+ }, [queryClient, queryKey, userId]);
 
  const updateState = useCallback(
   (

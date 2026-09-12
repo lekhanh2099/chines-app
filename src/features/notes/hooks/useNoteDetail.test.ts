@@ -7,10 +7,23 @@ import { useNoteDetail } from "./useNoteDetail";
 import type { NoteDetail } from "@/services/notes.service";
 import type { NoteDraftRecord } from "@/features/notes/local/note-draft-store";
 
-const mockGetNoteById = vi.fn();
-const mockUpdateNoteContent = vi.fn();
-const mockGetNoteDraft = vi.fn();
-const mockClearNoteDraft = vi.fn();
+const noteMocks = vi.hoisted(() => ({
+ clearContentDraft: vi.fn(),
+ clearReadingDraft: vi.fn(),
+ deleteNote: vi.fn().mockResolvedValue(true),
+ getDraft: vi.fn(),
+ getNoteById: vi.fn(),
+ updateCategory: vi.fn().mockResolvedValue(true),
+ updateContent: vi.fn(),
+ updateReadingContent: vi.fn().mockResolvedValue(true),
+ updateSplitViewEnabled: vi.fn().mockResolvedValue(true),
+ updateTitle: vi.fn().mockResolvedValue(true),
+}));
+
+const mockGetNoteById = noteMocks.getNoteById;
+const mockUpdateNoteContent = noteMocks.updateContent;
+const mockGetNoteDraft = noteMocks.getDraft;
+const mockClearNoteDraft = noteMocks.clearContentDraft;
 
 vi.mock("@/components/providers/QueryProvider", () => ({
  useClientSession: () => ({
@@ -21,18 +34,19 @@ vi.mock("@/components/providers/QueryProvider", () => ({
 }));
 
 vi.mock("@/services/notes.service", () => ({
- getNoteById: (...args: unknown[]) => mockGetNoteById(...args),
- updateNoteContent: (...args: unknown[]) => mockUpdateNoteContent(...args),
- updateNoteTitle: vi.fn().mockResolvedValue(true),
- updateNoteCategory: vi.fn().mockResolvedValue(true),
- deleteNote: vi.fn().mockResolvedValue(true),
- updateReadingContent: vi.fn().mockResolvedValue(true),
- updateSplitViewEnabled: vi.fn().mockResolvedValue(true),
+ getNoteById: noteMocks.getNoteById,
+ updateNoteContent: noteMocks.updateContent,
+ updateNoteTitle: noteMocks.updateTitle,
+ updateNoteCategory: noteMocks.updateCategory,
+ deleteNote: noteMocks.deleteNote,
+ updateReadingContent: noteMocks.updateReadingContent,
+ updateSplitViewEnabled: noteMocks.updateSplitViewEnabled,
 }));
 
 vi.mock("@/features/notes/local/note-draft-store", () => ({
- getNoteDraft: (...args: unknown[]) => mockGetNoteDraft(...args),
- clearNoteDraft: (...args: unknown[]) => mockClearNoteDraft(...args),
+ getNoteDraft: noteMocks.getDraft,
+ clearNoteContentDraft: noteMocks.clearContentDraft,
+ clearNoteReadingContentDraft: noteMocks.clearReadingDraft,
 }));
 
 function createFixtureNote(overrides?: Partial<NoteDetail>): NoteDetail {

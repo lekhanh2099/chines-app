@@ -1,8 +1,9 @@
 import { requestStoragePersistence } from "@/lib/storage/storage-persistence";
 import {
  deleteContentCache,
+ getContentCacheGeneration,
  hasContentCache,
- MAX_CACHE_ENTRIES_PER_OWNER,
+ pinContentCache,
  writeContentCache,
 } from "../local/content-cache-store";
 import {
@@ -143,9 +144,6 @@ export async function downloadCourseOfflinePack(
 
  reportProgress();
 
- const minPackCapacity = uniqueLessonIds.length * 2 + 50;
- const maxEntries = Math.max(MAX_CACHE_ENTRIES_PER_OWNER, minPackCapacity);
-
  await runBoundedPool(
   uniqueLessonIds,
   MAX_CONCURRENT_DOWNLOADS,
@@ -155,12 +153,22 @@ export async function downloadCourseOfflinePack(
    const title = lessonTitlesMap.get(lessonId);
 
    try {
-    const [hasDetail, hasVocab] = await Promise.all([
+    const [hasDetail, hasVocab, detailGeneration, vocabGeneration] = await Promise.all([
      hasContentCache(userId, "lesson_detail", lessonId),
      hasContentCache(userId, "lesson_vocab", lessonId),
+     getContentCacheGeneration(userId, "lesson_detail", lessonId),
+     getContentCacheGeneration(userId, "lesson_vocab", lessonId),
     ]);
 
-    if (hasDetail && hasVocab) {
+    const [detailPinned, vocabPinned] = await Promise.all([
+     hasDetail ? pinContentCache(userId, "lesson_detail", lessonId) : Promise.resolve(false),
+     hasVocab ? pinContentCache(userId, "lesson_vocab", lessonId) : Promise.resolve(false),
+    ]);
+
+    const detailReady = hasDetail && detailPinned;
+    const vocabReady = hasVocab && vocabPinned;
+
+    if (detailReady && vocabReady) {
      skippedCount += 1;
      completedLessons += 1;
      reportProgress(title);
@@ -168,8 +176,8 @@ export async function downloadCourseOfflinePack(
     }
 
     const [detail, vocab] = await Promise.all([
-     hasDetail ? null : fetchHanziHomeLessonDetail(lessonId, { signal }),
-     hasVocab ? null : fetchHanziHomeLessonVocabulary(lessonId, { signal }),
+     detailReady ? null : fetchHanziHomeLessonDetail(lessonId, { signal }),
+     vocabReady ? null : fetchHanziHomeLessonVocabulary(lessonId, { signal }),
     ]);
 
     if (signal?.aborted) return;
@@ -180,7 +188,8 @@ export async function downloadCourseOfflinePack(
       resourceType: "lesson_detail",
       resourceId: lessonId,
       data: detail,
-      maxEntries,
+      incomingGeneration: detailGeneration,
+      pin: true,
      });
     }
 
@@ -190,7 +199,8 @@ export async function downloadCourseOfflinePack(
       resourceType: "lesson_vocab",
       resourceId: lessonId,
       data: vocab,
-      maxEntries,
+      incomingGeneration: vocabGeneration,
+      pin: true,
      });
     }
 

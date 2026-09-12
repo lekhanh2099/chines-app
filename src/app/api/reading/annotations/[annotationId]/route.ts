@@ -10,6 +10,7 @@ import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
+ verifyExpectedAuthenticatedOwner,
 } from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
@@ -33,6 +34,8 @@ const deleteSchema = z.strictObject({ expectedRevision: z.number().int().nonnega
 export async function PATCH(request: Request, context: RouteContext) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
  const { annotationId } = await context.params;
  const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = updateSchema.safeParse(body);
@@ -50,6 +53,8 @@ export async function PATCH(request: Request, context: RouteContext) {
 export async function DELETE(request: Request, context: RouteContext) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
  const { annotationId } = await context.params;
  const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = deleteSchema.safeParse(body);

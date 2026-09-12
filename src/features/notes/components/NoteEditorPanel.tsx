@@ -183,6 +183,7 @@ export function NoteEditorPanel({
     void saveNoteDraft(userId, noteId, {
      content: json,
      readingContent: pendingReadingRef.current ?? note?.reading_content,
+     contentUpdatedAt: Date.now(),
     });
    }
    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
@@ -205,6 +206,7 @@ export function NoteEditorPanel({
     void saveNoteDraft(userId, noteId, {
      content: pendingContentRef.current ?? note?.content ?? {},
      readingContent: json,
+     readingContentUpdatedAt: Date.now(),
     });
    }
    if (readingSaveTimerRef.current) clearTimeout(readingSaveTimerRef.current);
@@ -225,6 +227,7 @@ export function NoteEditorPanel({
     void saveNoteDraft(userId, noteId, {
      content: pendingContentRef.current,
      readingContent: pendingReadingRef.current ?? note?.reading_content,
+     contentUpdatedAt: Date.now(),
     });
    }
   };

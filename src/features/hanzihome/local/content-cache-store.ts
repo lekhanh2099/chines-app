@@ -3,13 +3,12 @@
 import { z } from "zod";
 import { JsonValueSchema, type JsonFieldValue } from "@/types/json";
 import {
- deleteFromStore,
- deleteFromStoreIf,
  getAllFromStoreMatching,
  HANZIHOME_LOCAL_STORES,
- putInStore,
+ promisifyRequest,
  readFromStore,
  replaceInStoreIf,
+ runInLocalTransaction,
 } from "./hanzihome-local-db";
 
 export const ContentCacheResourceTypeSchema = z.enum(["lesson_detail", "lesson_vocab", "catalog"]);
@@ -22,6 +21,8 @@ export const ContentCacheMetadataSchema = z.object({
  byteSize: z.number(),
  accessCount: z.number(),
  generation: z.number().int().nonnegative().default(1),
+ isPinned: z.boolean().default(false),
+ deletedAt: z.number().int().nonnegative().optional(),
 });
 
 export type ContentCacheMetadata = z.infer<typeof ContentCacheMetadataSchema>;
@@ -46,6 +47,12 @@ export type ContentCacheRecord<T = JsonFieldValue> = {
 
 export const MAX_CACHE_ENTRIES_PER_OWNER = 250;
 export const TARGET_CACHE_ENTRIES_PER_OWNER = 200;
+
+function isDeletedContentCacheRecord(
+ record: z.output<typeof ContentCacheRecordBaseSchema>,
+): boolean {
+ return record.metadata.deletedAt !== undefined;
+}
 
 export function buildContentCacheKey(
  ownerId: string,
@@ -78,44 +85,51 @@ export async function writeContentCache<T extends JsonFieldValue>(params: {
  data: T;
  incomingGeneration?: number;
  maxEntries?: number;
+ pin?: boolean;
 }): Promise<{ written: boolean; generation: number }> {
  const { ownerId, resourceType, resourceId, data, incomingGeneration } = params;
  const key = buildContentCacheKey(ownerId, resourceType, resourceId);
- const now = Date.now();
  const byteSize = estimateContentByteSize(data);
 
- const existing = await readFromStore(
-  HANZIHOME_LOCAL_STORES.contentCache,
-  key,
-  ContentCacheRecordBaseSchema,
+ const writeResult = await runInLocalTransaction(
+  [HANZIHOME_LOCAL_STORES.contentCache],
+  "readwrite",
+  async (stores) => {
+   const cacheStore = stores[HANZIHOME_LOCAL_STORES.contentCache];
+   const rawExisting = await promisifyRequest(cacheStore.get(key));
+   const parsedExisting = ContentCacheRecordBaseSchema.safeParse(rawExisting);
+   const existing = parsedExisting.success ? parsedExisting.data : null;
+   const currentGeneration = existing?.metadata.generation ?? 0;
+
+   // The generation comparison and content write must share one transaction:
+   // an eviction tombstone can otherwise be overtaken by a late fetch response.
+   if (incomingGeneration !== undefined && currentGeneration > incomingGeneration) {
+    return { written: false, generation: currentGeneration };
+   }
+
+   const now = Date.now();
+   const nextGeneration = Math.max(currentGeneration, incomingGeneration ?? currentGeneration) + 1;
+   const record: ContentCacheRecord<T> = {
+    key,
+    ownerId,
+    resourceType,
+    resourceId,
+    metadata: {
+     cachedAt: existing?.metadata.cachedAt ?? now,
+     lastAccessedAt: now,
+     byteSize,
+     accessCount: (existing?.metadata.accessCount ?? 0) + 1,
+     generation: nextGeneration,
+     isPinned: params.pin ?? existing?.metadata.isPinned ?? false,
+    },
+    data,
+   };
+   cacheStore.put(record);
+   return { written: true, generation: nextGeneration };
+  },
  );
 
- const currentGeneration = existing?.metadata.generation ?? 0;
-
- // Stale resurrection guard:
- // If incomingGeneration is specified, reject writes if cache has advanced past this generation.
- if (existing && incomingGeneration !== undefined && currentGeneration > incomingGeneration) {
-  return { written: false, generation: currentGeneration };
- }
-
- const nextGeneration = Math.max(currentGeneration, incomingGeneration ?? currentGeneration) + 1;
-
- const record: ContentCacheRecord<T> = {
-  key,
-  ownerId,
-  resourceType,
-  resourceId,
-  metadata: {
-   cachedAt: existing?.metadata.cachedAt ?? now,
-   lastAccessedAt: now,
-   byteSize,
-   accessCount: (existing?.metadata.accessCount ?? 0) + 1,
-   generation: nextGeneration,
-  },
-  data,
- };
-
- await putInStore(HANZIHOME_LOCAL_STORES.contentCache, record);
+ if (!writeResult.written) return writeResult;
 
  const effectiveMax = params.maxEntries ?? MAX_CACHE_ENTRIES_PER_OWNER;
  const effectiveTarget = Math.floor(effectiveMax * 0.8);
@@ -129,7 +143,34 @@ export async function writeContentCache<T extends JsonFieldValue>(params: {
   // Non-fatal: eviction failure should not fail write
  });
 
- return { written: true, generation: nextGeneration };
+ return writeResult;
+}
+
+export async function pinContentCache(
+ ownerId: string,
+ resourceType: ContentCacheResourceType,
+ resourceId: string,
+): Promise<boolean> {
+ const key = buildContentCacheKey(ownerId, resourceType, resourceId);
+ try {
+  return await runInLocalTransaction(
+   [HANZIHOME_LOCAL_STORES.contentCache],
+   "readwrite",
+   async (stores) => {
+    const cacheStore = stores[HANZIHOME_LOCAL_STORES.contentCache];
+    const rawExisting = await promisifyRequest(cacheStore.get(key));
+    const parsedExisting = ContentCacheRecordBaseSchema.safeParse(rawExisting);
+    if (!parsedExisting.success || isDeletedContentCacheRecord(parsedExisting.data)) return false;
+    cacheStore.put({
+     ...parsedExisting.data,
+     metadata: { ...parsedExisting.data.metadata, isPinned: true },
+    });
+    return true;
+   },
+  );
+ } catch {
+  return false;
+ }
 }
 
 export async function readContentCache<T>(params: {
@@ -159,10 +200,12 @@ export async function readContentCache<T>(params: {
   return null;
  }
 
+ if (isDeletedContentCacheRecord(rawRecord)) return null;
+
  const parsed = schema.safeParse(rawRecord.data);
  if (!parsed.success) {
   // Corrupted or drifted payload: safe self-healing by purging the bad entry
-  await deleteFromStore(HANZIHOME_LOCAL_STORES.contentCache, key).catch(() => {});
+  await deleteContentCache(ownerId, resourceType, resourceId).catch(() => {});
   return null;
  }
 
@@ -201,7 +244,7 @@ export async function hasContentCache(
    key,
    ContentCacheRecordBaseSchema,
   );
-  return existing !== null;
+  return existing !== null && !isDeletedContentCacheRecord(existing);
  } catch {
   return false;
  }
@@ -239,28 +282,45 @@ export async function bumpContentCacheGeneration(
 
  try {
   const key = buildContentCacheKey(safeOwner, resourceType, safeId);
-  const existing = await readFromStore(
-   HANZIHOME_LOCAL_STORES.contentCache,
-   key,
-   ContentCacheRecordBaseSchema,
+  return await runInLocalTransaction(
+   [HANZIHOME_LOCAL_STORES.contentCache],
+   "readwrite",
+   async (stores) => {
+    const cacheStore = stores[HANZIHOME_LOCAL_STORES.contentCache];
+    const rawExisting = await promisifyRequest(cacheStore.get(key));
+    const parsedExisting = ContentCacheRecordBaseSchema.safeParse(rawExisting);
+    const existing = parsedExisting.success ? parsedExisting.data : null;
+    const now = Date.now();
+    const generation = (existing?.metadata.generation ?? 0) + 1;
+    const record: ContentCacheRecord<JsonFieldValue> = existing
+     ? {
+        ...existing,
+        metadata: {
+         ...existing.metadata,
+         lastAccessedAt: now,
+         generation,
+        },
+       }
+     : {
+        key,
+        ownerId,
+        resourceType,
+        resourceId,
+        metadata: {
+         cachedAt: now,
+         lastAccessedAt: now,
+         byteSize: 0,
+         accessCount: 0,
+         generation,
+         isPinned: false,
+         deletedAt: now,
+        },
+        data: null,
+       };
+    cacheStore.put(record);
+    return generation;
+   },
   );
-  if (!existing) return 0;
-
-  const updated = await replaceInStoreIf(
-   HANZIHOME_LOCAL_STORES.contentCache,
-   key,
-   ContentCacheRecordBaseSchema,
-   (current) => current.metadata.generation === existing.metadata.generation,
-   (current) => ({
-    ...current,
-    metadata: {
-     ...current.metadata,
-     lastAccessedAt: Date.now(),
-     generation: current.metadata.generation + 1,
-    },
-   }),
-  );
-  return updated?.metadata.generation ?? existing.metadata.generation;
  } catch {
   return 0;
  }
@@ -274,12 +334,20 @@ export async function bumpLessonCacheGenerations(
  if (!safeLessonId) return;
 
  try {
+  if (ownerId) {
+   await Promise.all([
+    bumpContentCacheGeneration(ownerId, "lesson_detail", safeLessonId),
+    bumpContentCacheGeneration(ownerId, "lesson_vocab", safeLessonId),
+   ]);
+   return;
+  }
+
   const allEntries = await getAllFromStoreMatching(
    HANZIHOME_LOCAL_STORES.contentCache,
    ContentCacheRecordBaseSchema,
   );
   for (const entry of allEntries) {
-   if (entry.resourceId === safeLessonId && (!ownerId || entry.ownerId === ownerId)) {
+   if (entry.resourceId === safeLessonId) {
     await bumpContentCacheGeneration(entry.ownerId, entry.resourceType, entry.resourceId).catch(
      () => {},
     );
@@ -296,25 +364,40 @@ export async function deleteContentCache(
  resourceId: string,
 ): Promise<void> {
  const key = buildContentCacheKey(ownerId, resourceType, resourceId);
- await deleteFromStore(HANZIHOME_LOCAL_STORES.contentCache, key);
+ await runInLocalTransaction([HANZIHOME_LOCAL_STORES.contentCache], "readwrite", async (stores) => {
+  const cacheStore = stores[HANZIHOME_LOCAL_STORES.contentCache];
+  const rawExisting = await promisifyRequest(cacheStore.get(key));
+  const parsedExisting = ContentCacheRecordBaseSchema.safeParse(rawExisting);
+  const existing = parsedExisting.success ? parsedExisting.data : null;
+  const now = Date.now();
+  const tombstone: ContentCacheRecord<null> = {
+   key,
+   ownerId,
+   resourceType,
+   resourceId,
+   metadata: {
+    cachedAt: existing?.metadata.cachedAt ?? now,
+    lastAccessedAt: now,
+    byteSize: 0,
+    accessCount: existing?.metadata.accessCount ?? 0,
+    generation: (existing?.metadata.generation ?? 0) + 1,
+    isPinned: false,
+    deletedAt: now,
+   },
+   data: null,
+  };
+  cacheStore.put(tombstone);
+ });
 }
 
 export async function clearContentCacheForOwner(ownerId: string): Promise<void> {
- await deleteFromStoreIf(
-  HANZIHOME_LOCAL_STORES.contentCache,
-  "",
-  ContentCacheRecordBaseSchema,
-  (record) => record.ownerId === ownerId,
- );
-
- // Also prune any lingering items matching ownerId by scanning all entries
  const allEntries = await getAllFromStoreMatching(
   HANZIHOME_LOCAL_STORES.contentCache,
   ContentCacheRecordBaseSchema,
  );
  for (const entry of allEntries) {
-  if (entry.ownerId === ownerId) {
-   await deleteFromStore(HANZIHOME_LOCAL_STORES.contentCache, entry.key).catch(() => {});
+  if (entry.ownerId === ownerId && !isDeletedContentCacheRecord(entry)) {
+   await deleteContentCache(entry.ownerId, entry.resourceType, entry.resourceId).catch(() => {});
   }
  }
 }
@@ -331,7 +414,7 @@ export async function getContentCacheFootprint(
  let totalBytes = 0;
 
  for (const entry of allEntries) {
-  if (entry.ownerId === ownerId) {
+  if (entry.ownerId === ownerId && !isDeletedContentCacheRecord(entry)) {
    entryCount++;
    totalBytes += entry.metadata.byteSize;
   }
@@ -351,7 +434,9 @@ export async function pruneContentCacheForOwner(params: {
   ContentCacheRecordBaseSchema,
  );
 
- const ownerEntries = allEntries.filter((entry) => entry.ownerId === ownerId);
+ const ownerEntries = allEntries.filter(
+  (entry) => entry.ownerId === ownerId && !isDeletedContentCacheRecord(entry),
+ );
 
  if (ownerEntries.length <= maxEntries) {
   return 0;
@@ -361,12 +446,14 @@ export async function pruneContentCacheForOwner(params: {
  ownerEntries.sort((a, b) => a.metadata.lastAccessedAt - b.metadata.lastAccessedAt);
 
  const entriesToEvictCount = ownerEntries.length - targetEntries;
- const candidates = ownerEntries.slice(0, Math.max(1, entriesToEvictCount));
+ const candidates = ownerEntries
+  .filter((entry) => !entry.metadata.isPinned)
+  .slice(0, Math.max(1, entriesToEvictCount));
 
  let evicted = 0;
  for (const item of candidates) {
-  await deleteFromStore(HANZIHOME_LOCAL_STORES.contentCache, item.key).catch(() => {});
-  evicted++;
+  await deleteContentCache(item.ownerId, item.resourceType, item.resourceId).catch(() => {});
+  evicted += 1;
  }
 
  return evicted;

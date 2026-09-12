@@ -1,6 +1,11 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
+
+vi.mock("@/components/providers/QueryProvider", () => ({
+ useClientSession: () => ({ isResolved: false, userId: null }),
+}));
+
 import { PwaServiceWorkerRegister } from "./PwaServiceWorkerRegister";
 
 describe("PwaServiceWorkerRegister", () => {
