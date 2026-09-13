@@ -2903,3 +2903,63 @@ phase boundaries
 Any contradiction requiring those architectural contracts to change must be documented with concrete repository/runtime evidence before proceeding.
 
 This is the version to freeze and implement against.
+
+## Authorized addendum — three concurrent sign-in sessions (2026-09-13)
+
+The user approved a hard limit of three browser/profile sessions and live
+application to Supabase `chines-app` (`pdrzkirlhbkmfpbcsujp`). This is separate
+from lesson-resume synchronization and does not close the offline audit findings.
+
+- [x] Supabase enforcement checkpoint — migration applied and live Auth verified.
+- [x] Local app implementation checkpoint — localized errors, local logout and full gate passed.
+- [ ] App deployment acceptance — NOT VERIFIED; Git push is authorized, but remote CI/deployment acceptance remains unverified.
+- Owner: Supabase `auth.sessions`; no duplicate device registry or physical-device fingerprint.
+- New sign-ins are serialized per user inside the token-issuance transaction;
+  a fourth admission returns `HANZIHOME_SESSION_LIMIT_REACHED` (403).
+- Existing sessions are preserved, including legacy accounts already above
+  three; token refresh, MFA and email-change tokens retain their claims.
+- A normal logout affects only the current session, freeing one slot.
+- Migration: `20260913090000_limit_concurrent_auth_sessions.sql`; no table rewrite,
+  no learning-data changes, no new dependency. Hook execution is Auth-only.
+- Verified starting live configuration: hook disabled, single-session disabled,
+  timebox/inactivity disabled, JWT lifetime 3600s. Local/remote migrations matched.
+- SQL admission/ownership/expiry/grant checks passed in rollback-only transactions,
+  both before application and via `supabase db query --linked --file
+supabase/tests/auth_session_limit.test.sql` after application. The first role
+  simulation failed because managed Postgres disallows `SET ROLE
+supabase_auth_admin`; privilege assertions and real Auth issuance verified
+  that boundary without changing role memberships.
+- `supabase db push --linked --dry-run` selected only this migration;
+  `supabase db push --linked --yes` applied it. Migration list readback matches.
+- `SUPABASE_PROJECT_REF=pdrzkirlhbkmfpbcsujp npm run types:supabase` and
+  `types:supabase:check` passed. Generated PostgREST version/template differences
+  come from the installed generator, not handwritten contract edits.
+- Targeted callback/confirmation/message tests: 30 passed. Rendered login form
+  tests: 3 passed using real messages for vi/en/zh-CN and asserted error toast
+  arguments. No real browser/physical-device UI test was run.
+- `npm run check` passed: lint, architecture/route/UI/API/performance checks,
+  typecheck, 1211 tests passed / 2 skipped, format, audit (0 vulnerabilities),
+  production build. Initial test typing and script reachability failures were
+  corrected at their owners; no rule or gate was disabled. Full diff and
+  `git diff --check` passed.
+- First live probe immediately after the configuration PATCH admitted 4/4;
+  enforcement was disabled again immediately. After enabling with management
+  readback and a 15-second propagation interval, live Auth passed concurrent
+  3/4 admission, no token for the rejected session, refresh at the cap, forbidden
+  client RPC access, local logout preserving other sessions and slot reuse.
+  Each disposable account and its sessions were removed after probing.
+- Final live readback: hook enabled at
+  `pg-functions://postgres/public/hanzihome_limit_auth_sessions`, single-session
+  false, timebox/inactivity zero. No unrelated Auth configuration changed.
+- Advisors: 50 pre-existing warnings (38 authenticated GraphQL exposure,
+  11 authenticated security-definer functions, 1 leaked-password protection).
+  No finding names the new hook; unrelated warnings remain out of scope.
+- Rollback: PATCH only `hook_custom_access_token_enabled: false` and
+  `hook_custom_access_token_uri: null` through the Supabase Management API for
+  this exact project. Keep the inert migration/function to preserve history.
+  Do not change unrelated Auth settings or revoke existing sessions.
+- Remaining rollout limit: the deployed frontend still has its previous logout
+  behavior and generic login error until this code is deployed. Do not claim
+  that the live logout button is local-only yet. OAuth/OTP denial is covered by
+  SQL and callback tests, not a live Google/email login. Physical-device resume
+  and the previous Reader/Notes sync findings are separate and unresolved here.

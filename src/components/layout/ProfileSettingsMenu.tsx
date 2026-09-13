@@ -71,7 +71,7 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
  const showAvatar = Boolean(profile.avatarUrl && failedAvatarUrl !== profile.avatarUrl);
 
  const handleLogout = async () => {
-  const { error } = await supabase.auth.signOut();
+  const { error } = await supabase.auth.signOut({ scope: "local" });
 
   if (error) {
    toast.error(tShell("profile.logoutFailed"), { description: error.message });

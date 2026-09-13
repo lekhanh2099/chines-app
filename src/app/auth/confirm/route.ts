@@ -26,7 +26,15 @@ export async function GET(request: Request) {
  const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type });
 
  if (error) {
-  return NextResponse.redirect(loginErrorUrl(url.origin, next, "confirmation_failed"));
+  return NextResponse.redirect(
+   loginErrorUrl(
+    url.origin,
+    next,
+    error.message.includes("HANZIHOME_SESSION_LIMIT_REACHED")
+     ? "session_limit"
+     : "confirmation_failed",
+   ),
+  );
  }
 
  return NextResponse.redirect(new URL(next, url.origin));

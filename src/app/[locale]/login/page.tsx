@@ -109,8 +109,9 @@ export default function LoginPage() {
   const url = new URL(window.location.href);
   if (!url.searchParams.has("authError")) return;
 
-  toast.error(t("google.loginFailed"), {
-   description: t("google.sessionFailed"),
+  const sessionLimitReached = url.searchParams.get("authError") === "session_limit";
+  toast.error(t(sessionLimitReached ? "toast.loginFailed" : "google.loginFailed"), {
+   description: t(sessionLimitReached ? "toast.sessionLimitReached" : "google.sessionFailed"),
   });
   url.searchParams.delete("authError");
   window.history.replaceState({}, "", `${url.pathname}${url.search}`);
@@ -155,7 +156,11 @@ export default function LoginPage() {
 
     if (error) {
      toast.error(t("toast.loginFailed"), {
-      description: t("toast.invalidCredentials"),
+      description: t(
+       error.message.includes("HANZIHOME_SESSION_LIMIT_REACHED")
+        ? "toast.sessionLimitReached"
+        : "toast.invalidCredentials",
+      ),
      });
      return;
     }

@@ -60,4 +60,14 @@ describe("GET /auth/confirm", () => {
    "https://app.example/vi/login?authError=confirmation_failed",
   );
  });
+
+ it("preserves the session-limit reason after email verification", async () => {
+  verifyOtp.mockResolvedValue({ error: new Error("HANZIHOME_SESSION_LIMIT_REACHED") });
+  const response = await GET(
+   new Request("https://app.example/auth/confirm?token_hash=limited&type=magiclink&next=%2Fzh-CN"),
+  );
+  expect(response.headers.get("location")).toBe(
+   "https://app.example/zh-CN/login?authError=session_limit",
+  );
+ });
 });

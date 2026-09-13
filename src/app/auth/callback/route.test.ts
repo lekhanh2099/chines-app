@@ -47,6 +47,18 @@ describe("GET /auth/callback", () => {
   );
  });
 
+ it("preserves the session-limit reason and locale after OAuth exchange", async () => {
+  exchangeCodeForSession.mockResolvedValue({
+   error: new Error("HANZIHOME_SESSION_LIMIT_REACHED"),
+  });
+  const response = await GET(
+   new Request("https://app.example/auth/callback?code=limited&next=%2Fen%2Fhanzihome"),
+  );
+  expect(response.headers.get("location")).toBe(
+   "https://app.example/en/login?authError=session_limit",
+  );
+ });
+
  it("does not redirect an exchanged session to an external origin", async () => {
   exchangeCodeForSession.mockResolvedValue({ error: null });
 
