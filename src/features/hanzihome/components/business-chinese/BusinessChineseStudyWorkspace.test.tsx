@@ -147,6 +147,7 @@ describe("BusinessChineseStudyWorkspace", () => {
    const cellStart = markup.indexOf(`id="${vocabularyTable.id}:row:0:cell:${hanziColumn}"`);
    expect(cellStart).toBeGreaterThan(-1);
    const firstVocabularyCell = markup.slice(cellStart, markup.indexOf("</td>", cellStart));
+   expect(firstVocabularyCell).toContain("font-size:clamp(1.375rem, 4vw, 1.75rem)");
    expect(firstVocabularyCell).toContain(`aria-label="Đọc từ chữ ${lesson.vocab[0]?.hanzi[0]}"`);
   },
   15_000,
@@ -238,6 +239,8 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("báitiān");
   expect(markup).toContain("Bạch thiên");
   expect(markup).toContain("ban ngày");
+  expect(markup).toContain("px-4 py-3");
+  expect(markup).toMatch(/data-variant="body"[^>]*lang="zh-Latn-pinyin"[^>]*>báitiān<\/span>/);
   expect(markup).not.toContain("Chưa học");
  });
 

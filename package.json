@@ -24,7 +24,7 @@
   "data:hanzihome:studio:import:preview": "node --experimental-strip-types scripts/hanzihome-studio-import.ts",
   "data:hanzihome:studio:check": "node --experimental-strip-types scripts/hanzihome-studio-inventory.ts",
   "data:hanzihome:studio:assets:check": "node --experimental-strip-types scripts/hanzihome-studio-inventory.ts --check-assets --destination .",
-  "dev": "next dev -p 3001",
+  "dev": "npx supabase start >/dev/null && npx supabase db push --local --yes && eval \"$(npx supabase status -o env)\" && export NEXT_PUBLIC_SUPABASE_URL=\"$API_URL\" NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=\"$PUBLISHABLE_KEY\" NEXT_PUBLIC_SUPABASE_ANON_KEY=\"$ANON_KEY\" SUPABASE_SECRET_KEY=\"$SECRET_KEY\" SUPABASE_SERVICE_ROLE_KEY=\"$SERVICE_ROLE_KEY\" && npm run e2e:seed && next dev -p 3001",
   "build": "next build --webpack",
   "format": "oxfmt --write .",
   "format:check": "oxfmt --check .",

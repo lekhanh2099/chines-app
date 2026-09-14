@@ -688,6 +688,7 @@ function BusinessChineseTable({
  const hanziColumnIndex = headers.findIndex((header) =>
   /tiếng trung|giản thể|hán tự|từ vựng|^từ$/iu.test(header),
  );
+ const isVocabularyTable = hanziColumnIndex >= 0 && pinyinColumnIndex >= 0;
  const visibleColumnIndexes = headers
   .map((header, index) => ({ header, index }))
   .filter(({ header }) => displayMode.showMeaning || !/tiếng việt|nghĩa|hán việt/iu.test(header))
@@ -725,13 +726,17 @@ function BusinessChineseTable({
          <th
           key={`${block.id}-header-${cellIndex}`}
           scope="col"
-          className="border-b border-border-default px-3 py-2 align-top"
+          className={cn(
+           "border-b border-border-default align-top",
+           isVocabularyTable ? "px-4 py-3" : "px-3 py-2",
+          )}
          >
           <BusinessChineseText
            pronunciationId={`${block.id}:header:${cellIndex}`}
            text={headers[cellIndex] ?? ""}
            displayMode={displayMode}
-           variant="label"
+           variant={isVocabularyTable ? "body" : "label"}
+           weight={isVocabularyTable ? "black" : undefined}
            compactHanzi
           />
          </th>
@@ -745,9 +750,18 @@ function BusinessChineseTable({
          className="border-b border-border-default last:border-b-0"
         >
          {visibleColumnIndexes.map((cellIndex) => (
-          <td key={`${block.id}-row-${rowIndex}-cell-${cellIndex}`} className="px-3 py-2 align-top">
+          <td
+           key={`${block.id}-row-${rowIndex}-cell-${cellIndex}`}
+           className={cn("align-top", isVocabularyTable ? "px-4 py-3" : "px-3 py-2")}
+          >
            {cellIndex === pinyinColumnIndex ? (
-            <PinyinText as="span" tone="secondary" weight="semibold" wrapping="preWrap">
+            <PinyinText
+             as="span"
+             variant={isVocabularyTable ? "body" : "bodySmall"}
+             tone="secondary"
+             weight="semibold"
+             wrapping="preWrap"
+            >
              {row[cellIndex] ?? ""}
             </PinyinText>
            ) : (
@@ -760,8 +774,8 @@ function BusinessChineseTable({
                ? row[pinyinColumnIndex]
                : undefined
              }
-             variant="bodySmall"
-             compactHanzi={headers.length !== 2}
+             variant={isVocabularyTable ? "body" : "bodySmall"}
+             compactHanzi={!isVocabularyTable && headers.length !== 2}
             />
            )}
           </td>
