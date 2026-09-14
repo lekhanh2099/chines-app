@@ -144,6 +144,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
 
  useEffect(() => {
   if (!activeNoteId) return;
+  if (noteTabsStore.get().activeNoteId !== activeNoteId) return;
   const expected = `/notes/${activeNoteId}`;
   if (pathname !== expected) {
    router.replace(expected, { scroll: false });
