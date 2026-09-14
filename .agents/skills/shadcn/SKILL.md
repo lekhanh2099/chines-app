@@ -1,6 +1,6 @@
 ---
 name: shadcn
-description: Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI, including chat interfaces. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for "shadcn init", "create an app with --preset", or "switch to --preset".
+description: Inspect shadcn registries, upstream component updates and presets when explicitly invoked. Use for registry add/update, shadcn init or preset work; ordinary use or styling of local components follows the repository UI contract.
 allowed-tools: Bash(npx shadcn@latest *), Bash(pnpm dlx shadcn@latest *), Bash(bunx --bun shadcn@latest *)
 ---
 
@@ -14,7 +14,6 @@ In `chines-app`, root/nested `AGENTS.md`, local component source,
 `docs/ui/component-contracts.md` and `docs/ui/component-inventory.md` override
 every generic recommendation in this skill. A registry component that is not
 installed and locally approved is not an existing project contract.
-Read `docs/agent/skill-authoring.md` before applying this workflow.
 
 Use the repository's `EmptyState`, form adapters and current selection controls.
 Do not require `Alert`, `Empty`, standardized `Skeleton`, `FieldGroup` or
@@ -22,18 +21,12 @@ Do not require `Alert`, `Empty`, standardized `Skeleton`, `FieldGroup` or
 a different canonical component. Use the CLI to inspect upstream APIs; do not
 let upstream composition create a parallel local UI system.
 
-## Tier routing
+## Repository verification
 
-- **Fast:** inspect one existing primitive and its consumers; no registry,
-  dependency, or shared API mutation; a local source/contract check is enough.
-- **Subsystem:** add or extend one approved component/pattern with several
-  consumers; use CLI diff, consumer search, targeted tests and UI checks.
-- **Full:** overwrite a primitive, change a preset/dependency, migrate a
-  primitive family, or affect multiple surfaces; require confirmation and the
-  full repository gate.
-
-Start with local inventory and installed source. Escalate when the proposed
-change crosses a primitive boundary, dependency, registry, or shared consumer.
+Use root `AGENTS.md` tiers. Registry/upstream changes add CLI dry-run/diff and
+consumer evidence to the applicable tests and rendered UI checks. Preset,
+dependency and primitive-family migrations require the full gate and existing
+confirmation policy. Start with local inventory and installed source.
 
 > **IMPORTANT:** Run all CLI commands using the project's package runner: `npx shadcn@latest`, `pnpm dlx shadcn@latest`, or `bunx --bun shadcn@latest` — based on the project's `packageManager`. Examples below use `npx shadcn@latest` but substitute the correct runner for the project.
 

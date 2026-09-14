@@ -1,7 +1,7 @@
 # Frontend Structure and Ownership
 
-This document describes the current target architecture for `chines-app`. It is
-not a generic React folder template.
+This is the canonical directory and generic state-ownership contract for
+`chines-app`. Domain-specific invariants remain in the nearest `AGENTS.md`.
 
 ## 1. Dependency direction
 
@@ -167,6 +167,10 @@ Owns cross-feature client state only.
 Before adding a store, prove the value has multiple non-local consumers or must
 survive feature boundaries.
 
+### `scripts`
+
+Owns CI/release checks, audits and import tooling.
+
 ## 3. Server and client boundaries
 
 - Server Components are the default in App Router.
@@ -176,6 +180,7 @@ survive feature boundaries.
   child needs state.
 - Browser APIs and client stores stay below a Client boundary.
 - Route handlers validate input and derive trusted identity server-side.
+- External data and IDs are validated/normalized once at their owning boundary.
 
 ## Installed dependency authority
 
@@ -186,6 +191,8 @@ upstream examples do not override the installed contract.
 
 ## 4. State ownership matrix
 
+One value has one authoritative owner:
+
 | State                             | Owner                          |
 | --------------------------------- | ------------------------------ |
 | Route, deep link, browser history | Next.js route/search params    |
@@ -195,6 +202,17 @@ upstream examples do not override the installed contract.
 | Cross-feature preference          | existing scoped TanStack Store |
 | Derived filters/options/counts    | pure calculation               |
 | Browser persistence               | versioned storage adapter      |
+
+Do not mirror Query/Form/Store/route state into local state without an explicit
+editable-draft or external bridge contract. Do not synchronize two owners
+bidirectionally, use effects for pure derivation, or repair rendering with
+timeouts, random keys or force-render. Broad cache invalidation must not hide
+unclear ownership. Loading, empty and error states remain distinct.
+
+Every state-writing effect must synchronize a real external system,
+subscription or imperative bridge and be idempotent: repeating the same
+authoritative inputs cannot keep producing state changes. Browser persistence
+uses versioned schemas and safe parsing/migration at its owning boundary.
 
 ## 5. Extraction rules
 
@@ -247,4 +265,5 @@ Before moving a file or changing a shared API:
 4. Classify the change as additive or breaking.
 5. Add a compatibility path when migration cannot be atomic.
 6. Migrate by surface, not repository-wide replacement.
-7. Verify affected interactions and run `npm run check`.
+7. Verify affected consumers/interactions using the tier defined in root
+   `AGENTS.md`; shared migrations and breaking contracts require the full gate.

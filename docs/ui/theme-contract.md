@@ -29,6 +29,10 @@ src/components/ui/**           -> visual primitive anatomy
 Hanzi and the current learning unit dominate. Immediate study actions come second.
 Pinyin, Vietnamese meaning, metadata, source and settings are supporting layers.
 
+Light mode uses a pale cool canvas and near-paper work surface; dark mode uses
+deep navy layers. Establish hierarchy with borders, spacing and typography
+without surrounding every group with another hairline border.
+
 The app is a reading/practice workspace, not an analytics dashboard. Prefer authored
 document composition, whitespace and a small number of meaningful surfaces over grids
 of equal-weight cards, KPI tiles, decorative hero panels or nested card stacks.
@@ -83,6 +87,27 @@ Study Workspace hierarchy.
 Every palette defines light and dark states. Palette changes may alter the canonical
 source theme roles, but semantic warning/success/danger meaning must remain legible and
 interaction state may not depend on color alone.
+
+Light/dark mode owns neutral card/popover/input/elevated foundations, generic
+control/shell surfaces, borders and base text. The accent palette owns restrained
+outer-canvas tint, perceptible low-chroma base-surface tint, primary/accent,
+focus rings, selected/active navigation and brand-oriented chart emphasis.
+Semantic success/warning/danger/info/purple meanings remain palette-independent.
+
+Application surfaces use the `surface-system.css` ladder: canvas, subtle, base,
+raised, plus hover/selected. `surface-base` stays visibly related to the canvas
+but lighter/calmer so Card/Header/Sidebar do not become unrelated white islands.
+Hover and selected backgrounds derive from low-chroma `--accent`, not
+high-chroma `--primary`; primary owns selected text/icons/borders, focus and
+primary actions. Palettes must not redefine raw `--card`, Popover/Dialog/input,
+border/text foundations or semantic status colors, and must preserve readable
+contrast in both light and dark definitions.
+
+Active text and icons use palette emphasis. Typography nested in an active
+Button/Menu item inherits the primitive's active color rather than resetting
+to normal body text. Add palettes through `ThemePaletteSchema`,
+`THEME_PALETTE_META` and `theme-palettes.css`, preserving the existing theme
+owner rather than adding a feature store or palette class system.
 
 ## 5. Geometry and motion
 

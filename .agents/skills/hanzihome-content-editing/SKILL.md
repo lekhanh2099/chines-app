@@ -1,208 +1,75 @@
 ---
 name: hanzihome-content-editing
-description: Implement, debug, review, or design HanziHome lesson content loading, rendering, editing, forms, Supabase persistence, query invalidation, import normalization, vocab, grammar, exercises, reading, radicals, notes, stable child IDs, or field/node-level saves. Use for any non-trivial change under src/features/hanzihome that touches study data or edit behavior.
+description: Trace and change HanziHome content loading, rendering, node-level editing, import and persistence. Use when lesson data or edit contracts are affected, not for styling, copy-only changes or unrelated UI state.
 metadata:
   author: chines-app
-  version: "2.1"
+  version: "3.0"
   compatibility: chines-app HanziHome; Supabase; TanStack Query; TanStack Form; Zod
 ---
 
 # HanziHome Content Editing
 
-## 1. Required context
+[`HanziHome AGENTS.md`](../../../src/features/hanzihome/AGENTS.md) owns the
+Study/Edit/Debug, vocabulary, learning-state, identity and persistence
+invariants. Read it with the affected implementation; do not load a general
+frontend workflow as a prerequisite.
 
-Read:
+## Trace the content contract
 
-```bash
-cat AGENTS.md
-cat src/features/hanzihome/AGENTS.md
-git status --short
-```
-
-Also load `frontend-feature-workflow`.
-
-Read `docs/agent/skill-authoring.md`.
-
-Load `frontend-ui-system` when the task changes UI.
-
-## 2. Classify mode and entity
-
-State:
-
-- Study, Debug/Audit, Edit, API, DB, Import or Query;
-- content family;
-- rendered node;
-- database/write target;
-- stable identity;
-- parent-child relationship;
-- current query keys.
-
-Do not start with a large parent dialog or full-object payload.
-
-### Verification tier
-
-- **Fast:** one node, mapper, or query owner; no shared write contract; a
-  deterministic boundary test can reproduce the failure.
-- **Subsystem:** a lesson resource, renderer family, query invalidation,
-  import/bulk-edit path, or several consumers share the affected contract.
-- **Full:** schema, migration, persisted format, authorization, or
-  multi-surface study/edit behavior is involved.
-
-Start with the smallest deterministic proof and escalate when sibling,
-authorization, data-shape, or persistence evidence crosses the local boundary.
-
-## 3. Trace the contract
+Identify mode (Study, Debug/Audit, Edit, API, DB, Import or Query), content family,
+rendered node, stable identity, parent relationship, query key and write target.
 
 ```text
 Supabase/import payload
 → schema/normalizer
 → repository/query
-→ view model
-→ renderer
-→ editable node
-→ form adapter
-→ smallest save route
-→ smallest invalidation
+→ view model/renderer
+→ editable node/form
+→ smallest owning save
+→ smallest correct invalidation
 ```
 
-Identify unsupported or guessed shapes before coding.
+Start from the smallest editable node, not a large parent dialog or full-object
+payload. Inspect unsupported shapes before editing.
 
-### Vocabulary source invariant
+For vocabulary, follow the canonical row and lesson resource/query cache from
+the subtree contract through mini-grid, workspace, review and editor consumers.
+For learning-state fields, inspect every existing owner before adding state,
+progress, mastery, review or settings. Persisted writes require an expected
+remote version and deterministic conflict-rebase proof. Trace the single
+app-level sync agent and consumer enqueue path when retry behavior changes.
+HanziHome query keys belong in `src/features/hanzihome/query-keys.ts`.
 
-For vocabulary work, trace and preserve this ownership:
+## Editing and import
 
-```text
-hanzihome_vocab_items
-→ hanzihome_vocab_examples / hanzihome_vocab_detail_sections
-→ dedicated lesson vocabulary resource and query cache
-→ mini-grid / workspace / review / editor
-```
+Trace the validated node payload, ownership/parent checks, update and sibling
+isolation. If seed-edit policy or the write target is unclear, use the subtree
+stop conditions. Import/bulk edit requires complete validation, count/identity
+reconciliation and a preview/diff before persistence; preview is evidence,
+not write authorization.
 
-Vocabulary lesson sections contain metadata and ordering only. Persist
-`payload.items` as `[]`; never hydrate and write those derived mini-grid items
-back to the section row.
+Exercise persistence needs a family-specific inventory before editing support:
+metadata, instruction, questions/items, choices, word bank, answer/key,
+acceptable answers, explanations, refs, dialogue, sample answers, cloze
+segments/answers and matching sides/matches. Do not generalize one exercise
+shape to all families.
 
-One active word or phrase is unique within its lesson by
-`(lesson_id, word, pinyin)`. The same vocabulary may intentionally recur in a
-different lesson. Before adding or importing an item, reuse the existing
-lesson-scoped canonical row or report a conflict; do not create a second source
-or weaken the unique key.
+## Context and verification
 
-### Learning-state ownership invariant
+Use root skill routing for additional concerns. UI contracts are in
+[`component-contracts.md`](../../../docs/ui/component-contracts.md), rendered
+checks in [`ui-verification.md`](../../../docs/ui/ui-verification.md), and
+interface copy/navigation in [`i18n.md`](../../../docs/architecture/i18n.md).
+Load only the affected sections.
 
-Inventory every existing owner before adding a field named `state`,
-`progress`, `mastery`, `review` or `settings`:
+Use root verification tiers and applicable existing data scripts. Verify the
+changed node against representative real lesson data, unchanged siblings,
+conflict handling, invalidation and intact Study Mode. For learning-state
+changes, prove unrelated remote changes survive conflict rebase and consumers
+do not install duplicate retry listeners. Report unsupported shapes and any
+unverified persistence boundary. Schema, persisted-format, authorization and
+multi-surface changes require the full gate; a local node fix uses targeted
+proof unless its affected contract is broader.
 
-```text
-course mastery       → user_learning_state.progress
-saved vocab + SRS    → user_vocab_progress
-due practice queue   → hanzihome_learning_loop_items
-attempt evidence     → hanzihome_practice_attempts
-display preference   → user_learning_state.settings
-Reader progress      → completion + exercise answers only
-```
-
-These records have different identities and product meanings. Do not mirror or
-silently synchronize them. Derive UI labels and summaries from the owning
-record.
-
-Mount online/focus learning-state synchronization once at the app boundary.
-Consumer hooks read the shared query/store and enqueue writes; they MUST NOT
-install their own retry listeners. Persisted learning-state writes require an
-expected remote version and deterministic conflict rebase tests.
-
-All HanziHome query keys belong in
-`src/features/hanzihome/query-keys.ts`. Shared `src/components/**` modules MUST
-NOT import feature implementations.
-
-## 4. Persistence
-
-Normal edit:
-
-```text
-one rendered node
-→ one validated node payload
-→ one smallest owning update
-```
-
-MUST NOT:
-
-- replace child arrays for a small edit;
-- trust client identity;
-- skip ownership/parent verification;
-- mutate seed artifacts from the app;
-- silently edit shared seed rows;
-- use array index as durable identity.
-
-STOP AND CONFIRM when the ownership or seed-edit policy is unclear.
-
-### Import and bulk edit
-
-Validate the complete input at the owning boundary, reconcile record counts and
-stable identities, then produce a preview/diff before persistence. Leave
-mismatches untouched and report them. Preview is evidence, not write
-authorization.
-
-## 5. Exercises
-
-Exercise persistence is high risk.
-
-Before editing support, inventory:
-
-- metadata;
-- instruction;
-- questions/items;
-- choices;
-- word bank;
-- answer/answer key;
-- acceptable answers;
-- explanations;
-- refs;
-- dialogue;
-- sample answers;
-- cloze segments/answers;
-- matching sides and matches.
-
-Do not generalize one exercise shape to all families.
-
-## 6. Verification
-
-Run applicable data scripts plus:
-
-```bash
-npm run check
-```
-
-Verify:
-
-- one field/node save does not modify siblings;
-- mutation conflict behavior;
-- smallest correct invalidation;
-- representative real lesson data;
-- Study Mode remains intact;
-- unsupported shapes are reported.
-- course mastery, saved-vocab SRS and practice queue remain distinct;
-- Reader progress does not persist lesson display preferences;
-- only one learning-state sync agent owns browser retry listeners;
-- conflicting learning-state writes preserve unrelated remote changes.
-
-## 7. Handoff
-
-Report:
-
-```text
-Mode:
-Entity/node:
-Precedent used:
-Read contract:
-Write contract:
-Data flow:
-Stable ID:
-Query invalidation:
-Sibling preservation:
-Invariant protected:
-Tier selected:
-Checks:
-Unsupported shapes:
-Residual data risk:
-```
+The handoff adds the entity/node, read/write owner, stable ID, sibling evidence
+and residual data risk to the root completion requirements.

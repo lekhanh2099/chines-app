@@ -2,17 +2,25 @@
 
 Repository skills route work; they do not duplicate the complete policy kernel.
 
+Read this document only when creating, editing or auditing skills/instructions.
+Application skills must not require it as runtime preflight.
+
 ## Authority
 
-Use this order:
+Follow the authority order in [`AGENTS.md`](../../AGENTS.md). That file owns
+generic verification tiers, confirmation routing and completion requirements.
 
-1. explicit user requirements;
-2. nearest applicable `AGENTS.md`, then root `AGENTS.md`;
-3. local generated types, schemas, installed docs, contracts and source;
-4. repository skills and domain docs;
-5. bundled, vendor or generic guidance.
+Canonical domain owners:
 
-Local repository truth overrides conflicting vendor recommendations.
+- generic state/directory architecture: `docs/architecture/frontend-structure.md`;
+- UI semantics and interaction: `docs/ui/component-contracts.md`;
+- UI implementation status: `docs/ui/component-inventory.md`;
+- theme: `docs/ui/theme-contract.md`;
+- rendered evidence: `docs/ui/ui-verification.md`;
+- interface copy/navigation: `docs/architecture/i18n.md`;
+- HanziHome invariants: `src/features/hanzihome/AGENTS.md`;
+- database invariants: `supabase/AGENTS.md`;
+- risk/confirmation details: `docs/agent/risk-confirmation.md`.
 
 ## Canonical structure
 
@@ -21,29 +29,38 @@ Codex UI metadata belongs at `.agents/skills/<skill-name>/agents/openai.yaml`.
 Use `policy.allow_implicit_invocation: false` when a skill must only run after
 explicit invocation.
 
-Every repository skill defines:
+Each skill contains only the guidance needed for its actual capability:
 
 - exact triggers and exclusions;
-- required local context;
-- a decision tree for fast, subsystem and full paths;
-- domain invariants owned by that skill;
-- stop/confirmation conditions;
-- targeted and escalated verification;
-- evidence required in the handoff.
+- which existing contract sections to read for each concern;
+- non-obvious domain procedure, inputs and evidence;
+- domain-specific stop conditions and verification where the shared policy
+  does not already cover them.
 
-Skills link to shared policy instead of copying long lists of type, scope, risk,
-diff or completion rules.
+Do not require every skill to repeat a tier matrix, state ownership table,
+type rules, preflight report or handoff template. Link to the owner instead.
+Retain a short reminder when it prevents a concrete misuse, without redefining
+the underlying policy. Keep detailed migration procedures where order matters.
+
+Skills are not a default dependency chain. Root routing selects relevant skills
+directly. Use existing canonical docs instead of creating skill-local copies;
+references and vendor material are read only for the requested concern.
 
 ## Workflow
 
-1. Inspect the owner, direct consumers, authoritative contract and closest
-   precedent.
-2. Reproduce the regression or state the missing contract.
-3. Select the smallest verification tier that can falsify the change.
-4. Implement the smallest coherent diff.
-5. Audit the complete diff and run targeted proof before escalation.
-6. Report precedent, contract, data/state flow, protected invariant, rejected
-   broader abstraction and residual risk.
+Before changing routing, inspect root/nested instructions, skill descriptions,
+invocation metadata and references. Keep existing names/paths unless a rename
+has a concrete benefit and every caller is migrated.
+
+Before deleting repeated text, map each invariant to its canonical owner. Move
+unique domain knowledge there first. Update the root routing and inventory in
+the same change so they do not continue to request a retired workflow.
+
+Verify references and test representative task routing, including tasks that
+must not activate the skill. For behavioral comparisons, use the same tasks,
+model and environment before/after and record actual outcomes, loaded context,
+scope changes, unnecessary pauses and checks selected. A manual routing review
+or byte count is not a model-performance benchmark.
 
 ## Learning from code
 
@@ -57,14 +74,6 @@ serve as production tutorials.
 Review a skill when its dependency family, local contract, referenced command,
 inventory status or architecture owner changes. Broken references, stale
 commands and conflicts with local source are release-blocking skill defects.
-
-## Agent update cadence
-
-For work that takes longer than one tool call, report only new evidence or a
-decision at these points: scope/preflight, root-cause discovery, before a
-high-risk mutation, after targeted proof, and before the full gate. A long
-running command should receive a status update within approximately one minute
-when new output is available. Do not send unchanged progress messages.
 
 ## Review scorecard
 

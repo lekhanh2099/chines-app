@@ -25,24 +25,47 @@ Local repository truth always overrides remembered framework/library behavior.
 
 ## 1. Load only relevant instructions
 
-Before a non-trivial task:
+Read the nearest nested `AGENTS.md` for each target file, the implementation,
+direct consumers and the closest local precedent. An isolated fix that preserves
+architecture does not require a general workflow skill.
 
-1. Read this file.
-2. Read the nearest nested `AGENTS.md` for every target file.
-3. Read the matching skill:
-   - general React/Next/state/forms/queries/refactor: `.agents/skills/frontend-feature-workflow/SKILL.md`;
-   - UI/UX/design-system/responsive/accessibility: `.agents/skills/frontend-ui-system/SKILL.md`;
-   - broad UI/UX audit/research heuristics: read `.agents/skills/frontend-ui-system/SKILL.md` first, then `.agents/skills/ui-ux-pro-max/SKILL.md`; local UI contracts remain authoritative;
-   - HanziHome content/data/editing: `.agents/skills/hanzihome-content-editing/SKILL.md`;
-   - regression/test review: `.agents/skills/hanzihome-test-review/SKILL.md`;
-   - Supabase migrations/RLS/generated types: `.agents/skills/hanzihome-supabase-migration/SKILL.md`;
-   - shadcn component work: `.agents/skills/shadcn/SKILL.md`;
-   - Radix/Base investigation: `.agents/skills/migrate-radix-to-base/SKILL.md`.
-4. For UI work also read `docs/ui/component-contracts.md` and `docs/ui/ui-verification.md`.
-5. For architecture/state ownership read `docs/architecture/frontend-structure.md`.
-6. For high-risk work read `docs/agent/risk-confirmation.md`.
+Load a skill only for its matching task:
 
-Do not load every repository document for every task.
+- state/query/cache ownership, feature boundaries or server/client architecture:
+  `.agents/skills/frontend-feature-workflow/SKILL.md`;
+- UI design, implementation or interaction review:
+  `.agents/skills/frontend-ui-system/SKILL.md`;
+- HanziHome content loading, rendering, editing or import:
+  `.agents/skills/hanzihome-content-editing/SKILL.md`;
+- requested HanziHome regression/coverage review:
+  `.agents/skills/hanzihome-test-review/SKILL.md`;
+- Supabase migration, RLS, generated types or drift:
+  `.agents/skills/hanzihome-supabase-migration/SKILL.md`;
+- explicit `$shadcn` invocation for registry/upstream component work:
+  `.agents/skills/shadcn/SKILL.md`;
+- requested broad UX audit or UX research:
+  `.agents/skills/ui-ux-pro-max/SKILL.md`;
+- requested Radix-to-Base investigation or migration:
+  `.agents/skills/migrate-radix-to-base/SKILL.md`.
+
+Skills are not prerequisites for each other. When a task spans domains, select
+each relevant skill directly; do not load a general skill just because another
+skill is in use. Copy-only changes and isolated test additions use the relevant
+contract and source without a UI or general workflow skill.
+
+Canonical details are loaded by concern, using only the affected sections:
+
+- architecture/state: `docs/architecture/frontend-structure.md`;
+- UI semantics/ownership: `docs/ui/component-contracts.md`;
+- component existence/status: `docs/ui/component-inventory.md`;
+- theme/palette: `docs/ui/theme-contract.md`;
+- rendered UI evidence: `docs/ui/ui-verification.md`;
+- navigation, locale or interface copy: `docs/architecture/i18n.md`;
+- high-risk work: `docs/agent/risk-confirmation.md`;
+- creating, editing or auditing skills/instructions only:
+  `docs/agent/skill-authoring.md`.
+
+Do not reread unchanged instructions already loaded in the task.
 
 ## 2. Verified project truth
 
@@ -59,20 +82,8 @@ For Next.js behavior, inspect the installed version-matched docs under `node_mod
 
 ## 3. Repository boundaries
 
-```text
-src/app/                 routes, layouts, route handlers, thin composition
-src/components/ui/       low-level reusable UI primitives
-src/components/patterns/ reusable cross-feature interaction patterns
-src/components/form/     TanStack Form adapters
-src/components/layout/   app shell and cross-route layout
-src/features/<feature>/  feature UI, behavior, hooks and schemas
-src/lib/                 infrastructure/framework-agnostic helpers
-src/services/            data/service orchestration
-src/stores/              truly cross-feature client state
-scripts/                 CI/release/audit/import tooling
-```
-
-Rules:
+Directory responsibilities and state ownership are defined in
+`docs/architecture/frontend-structure.md`. Global invariants:
 
 - Route pages stay thin.
 - Feature behavior stays in its feature.
@@ -81,66 +92,21 @@ Rules:
 - External/untrusted data is validated or normalized at its owning boundary.
 - Generated files are not edited manually unless the generator contract is understood.
 - Do not create a new global architecture layer without proving the current model cannot express the requirement.
+- One value has one authoritative state owner; do not introduce a second owner.
 
-## 4. State ownership
-
-One value has one authoritative owner:
-
-```text
-URL/shareable navigation -> route/search params
-server/remote state       -> TanStack Query
-form state                -> TanStack Form
-cross-feature client UI   -> scoped TanStack Store
-local transient UI        -> local React state
-pure derivation           -> compute from current inputs
-persisted browser state   -> versioned schema + safe parsing/migration
-```
-
-Do not:
-
-- mirror Query/Form/Store/route values into local state;
-- use `useEffect` for pure derivation;
-- synchronize two state owners bidirectionally;
-- repair rendering with timeout/random keys/force-render;
-- hide error/loading/empty behind one fallback value.
-
-Every state-writing effect must represent a real external-system/subscription/imperative bridge and be idempotent.
-
-## 5. UI component boundary
+## 4. UI component boundary
 
 Feature/layout code uses project components before custom controls.
 
 Primitive-library imports from `radix-ui`, `@radix-ui/*`, or `@base-ui/react*` belong inside `src/components/ui/**` or a documented integration adapter.
 
-Before adding UI:
-
-```text
-need
--> existing primitive?
--> existing pattern/composite?
--> missing stable reusable contract?
--> use | extend | create | justified local exception
-```
-
 Application headings/body/captions use `Typography`. HanziHome learner content uses its feature-owned Hanzi/Pinyin/translation typography. Do not use learner typography as a generic badge, pill or surface wrapper.
 
-### `className` ownership
+Component selection, visual `className` ownership and accessibility behavior
+follow `docs/ui/component-contracts.md`. Features must not repair primitive
+visuals or create a parallel component system.
 
-Shared primitives own:
-
-- visual tokens;
-- border/radius/background/shadow;
-- internal spacing/density;
-- typography;
-- focus/hover/active/disabled behavior;
-- overlay stack;
-- internal icon sizing.
-
-Feature call sites may own parent layout, width constraints, placement, responsive visibility, external spacing and scroll constraints.
-
-If a visual variation repeats, extend the semantic owner with a typed API instead of repairing it at call sites.
-
-## 6. TypeScript and runtime contracts
+## 5. TypeScript and runtime contracts
 
 TypeScript is the primary static contract. Zod is the runtime-boundary contract, not a replacement for ordinary TypeScript modeling.
 
@@ -191,22 +157,7 @@ When types conflict, fix the authoritative owner/query/schema/service/store/call
 
 `scripts/check-source-standards.mjs` intentionally checks only machine-detectable high-value rules: unsafe explicit `any`, unconstrained Zod escape hatches, assertions, non-null assertions, TypeScript suppressions, client/server import boundaries, deprecated Zod APIs, and unreachable owned modules. It does not ban normal TypeScript unions or properly narrowed `unknown`.
 
-## 7. UI/accessibility minimum
-
-Interactive work preserves:
-
-- correct button/link semantics;
-- keyboard operation and visible focus;
-- explicit selected/toggle state;
-- Dialog/Menu/Select semantics;
-- loading/empty/error/disabled states;
-- touch targets appropriate for iPad/mobile;
-- no accidental horizontal overflow;
-- Chinese language/font metadata where required.
-
-Do not add ARIA to compensate for the wrong interaction model.
-
-## 8. Working method
+## 6. Working method
 
 ### Workflow tiers
 
@@ -215,6 +166,11 @@ Use the smallest verification tier that can falsify the change:
 - **Fast path**: one local owner, targeted lint/type/test or direct reproduction.
 - **Subsystem path**: feature/shared additive contract, targeted checks plus affected consumers/states.
 - **Full path**: dependency/schema/public API/persisted state/shared migration/multi-surface/release work, ending with `npm run check`.
+
+This is the canonical tier definition. Skills and domain docs add the evidence
+needed for their domain; they do not require the full gate merely because an
+application file changed. Read-only review does not authorize live probes or
+mutations.
 
 `npm run check` is deliberately a full CI/release gate. It is not a pre-commit hook and not the first feedback loop for a small edit.
 
@@ -240,7 +196,7 @@ implementations, temporary migration scaffolding or safety-critical TODOs.
 Never weaken types, schemas, tests or gates to obtain a pass. Preserve unrelated
 user changes and report out-of-scope blockers instead of cleaning them up.
 
-## 9. Risk and confirmation
+## 7. Risk and confirmation
 
 Read `docs/agent/risk-confirmation.md` for high-risk work.
 
@@ -252,24 +208,19 @@ STOP AND CONFIRM before unapproved:
 - destructive Git operations, merge or production deployment;
 - deleting code whose reachability/data compatibility is uncertain.
 
-Do not ask for confirmation merely to avoid investigation.
+Routine reversible choices resolved by repository evidence and local precedent
+do not require confirmation. Preserve authorization already given by the user;
+do not ask for confirmation merely to avoid investigation.
 
-## 10. Verification and completion language
+## 8. Verification and completion language
 
 Use targeted checks during implementation. Use `npm run check` for full-path completion, PR/CI, or release preparation.
 
 Do not report a check as passed unless it actually ran. For visual claims, state the rendered viewport/state. If the environment cannot execute a required check, state that limitation directly.
 
-Non-trivial handoff should identify:
-
-```text
-Scope:
-Root cause / contract gap:
-Authoritative owner:
-State/data flow:
-Files changed:
-Behavior preserved / intentionally changed:
-Checks actually run:
-UI states actually rendered:
-Residual risk / unverified states:
-```
+Keep the handoff proportional to the change: what changed and why, the precedent
+and files involved, checks actually run, and remaining limitations. State
+whether new files, abstractions, dependencies or contracts were introduced.
+Add owner/data flow for architecture work, rendered states for UI claims, and
+target/data impact/rollback for database work. Do not require an empty reporting
+template for a small fix.

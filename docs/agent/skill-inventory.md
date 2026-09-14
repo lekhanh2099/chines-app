@@ -1,6 +1,6 @@
 # Repository skill inventory and audit scorecard
 
-Updated: 2026-08-25
+Updated: 2026-09-14
 
 This is the current-checkout inventory for repository skills. The canonical
 policy kernel remains [`AGENTS.md`](../../AGENTS.md); this document records
@@ -12,42 +12,57 @@ Repository skills live under `.agents/skills/<skill-name>/`. Each skill owns a
 
 ## Authority and routing
 
-```text
-user request
-→ nearest AGENTS.md
-→ generated types / schemas / installed docs / local source
-→ repository skills and domain docs
-→ vendor guidance
-```
+Root [`AGENTS.md`](../../AGENTS.md) owns authority and task routing. Skills add
+domain capability; they do not form a prerequisite chain. Canonical policy and
+domain owners are listed in [`skill-authoring.md`](skill-authoring.md), which
+is read only for instruction/skill maintenance.
 
 ## Skill inventory
 
-| Skill                                                                                        | Owner and trigger surface                                         | Local contract / precedent                                           | Evidence model                                                          |
-| -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [`frontend-feature-workflow`](../../.agents/skills/frontend-feature-workflow/SKILL.md)       | React/Next routes, state, forms, queries, APIs, refactors         | `AGENTS.md`, installed Next docs, feature owners, TanStack contracts | Fast/subsystem/full; targeted proof before full gate                    |
-| [`frontend-ui-system`](../../.agents/skills/frontend-ui-system/SKILL.md)                     | Components, responsive UI, accessibility, visual consistency      | UI contracts, local primitives, viewport evidence                    | Fast/subsystem/full visual verification                                 |
-| [`ui-ux-pro-max`](../../.agents/skills/ui-ux-pro-max/SKILL.md)                               | Broad UI/UX audits and secondary research heuristics              | `frontend-ui-system`, product/UI contracts, pinned upstream adapter  | Source + rendered audit evidence; local contracts win on conflict       |
-| [`hanzihome-content-editing`](../../.agents/skills/hanzihome-content-editing/SKILL.md)       | Lesson content, renderers, editing, import, vocab and persistence | Supabase rows, Zod schemas, stable child IDs                         | Read/write, preview/diff and sibling-isolation evidence                 |
-| [`hanzihome-test-review`](../../.agents/skills/hanzihome-test-review/SKILL.md)               | Regression, renderer/API/state/edit/migration tests               | Coverage matrix, real payload shapes, lowest reproducing boundary    | Protected invariant and false-confidence reporting                      |
-| [`hanzihome-supabase-migration`](../../.agents/skills/hanzihome-supabase-migration/SKILL.md) | Migrations, RLS, RPCs, generated types and drift                  | Migration history, generated types, repository queries               | Target, drift, lock, rollback/forward-fix and live-environment evidence |
-| [`shadcn`](../../.agents/skills/shadcn/SKILL.md)                                             | Registry/component installation or upstream component work        | Local component inventory/source overrides generic registry guidance | CLI diff, consumer sweep and UI evidence                                |
-| [`migrate-radix-to-base`](../../.agents/skills/migrate-radix-to-base/SKILL.md)               | Radix-to-Base investigation or approved migration                 | Installed types, shadcn golden pairs, consumer props                 | Confirmation, behavior delta and manual interaction evidence            |
+| Skill                                                                                        | Owner and trigger surface                                         | Local contract / precedent                                          | Evidence model                                                          |
+| -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [`frontend-feature-workflow`](../../.agents/skills/frontend-feature-workflow/SKILL.md)       | State/cache ownership and frontend architecture decisions         | `frontend-structure.md`, owner/consumer source, installed contracts | Root tier plus owner/consumer regression proof                          |
+| [`frontend-ui-system`](../../.agents/skills/frontend-ui-system/SKILL.md)                     | UI composition, interaction and responsive/design-system work     | Concern-specific canonical UI docs and local primitives             | Root tier plus affected rendered states                                 |
+| [`ui-ux-pro-max`](../../.agents/skills/ui-ux-pro-max/SKILL.md)                               | Requested broad UX audits and UX research                         | Product/UI contracts and pinned upstream adapter                    | Source and rendered findings separated from inference                   |
+| [`hanzihome-content-editing`](../../.agents/skills/hanzihome-content-editing/SKILL.md)       | Lesson content, renderers, editing, import, vocab and persistence | Supabase rows, Zod schemas, stable child IDs                        | Read/write, preview/diff and sibling-isolation evidence                 |
+| [`hanzihome-test-review`](../../.agents/skills/hanzihome-test-review/SKILL.md)               | Requested regression/coverage work; not isolated test maintenance | Coverage matrix, real payloads, lowest reproducing boundary         | Protected invariant and false-confidence reporting                      |
+| [`hanzihome-supabase-migration`](../../.agents/skills/hanzihome-supabase-migration/SKILL.md) | Migrations, RLS, RPCs, generated types and drift                  | Migration history, generated types, repository queries              | Target, drift, lock, rollback/forward-fix and live-environment evidence |
+| [`shadcn`](../../.agents/skills/shadcn/SKILL.md)                                             | Explicit invocation for registry/upstream/preset work             | Local inventory/source overrides registry guidance                  | CLI diff, consumer sweep and UI evidence                                |
+| [`migrate-radix-to-base`](../../.agents/skills/migrate-radix-to-base/SKILL.md)               | Radix-to-Base investigation or approved migration                 | Installed types, shadcn golden pairs, consumer props                | Confirmation, behavior delta and manual interaction evidence            |
 
-## Shared engineering contract
+Existing skill names/paths are retained. `shadcn/agents/openai.yaml` disables
+implicit invocation. Other invocation metadata is unchanged; narrow
+descriptions and root routing determine their task scope.
 
-- Use authoritative generated/library/Zod contracts at real boundaries; do not
-  add casts, suppressions, fake guards or compatibility layers to hide a
-  mismatch.
-- Normal TypeScript unions/discriminated unions remain valid internal modeling.
-- `unknown` is valid at a genuine untrusted/library boundary when narrowed
-  before domain/UI use; explicit `any` remains prohibited.
-- Choose the smallest verification tier that can falsify the change.
-- Production code teaches through ownership, names, direct data flow and
-  invariant-focused tests.
-- `npm run source:check` enforces high-value machine-detectable source rules.
-- `npm run ui:check` enforces project-specific UI ownership rules.
-- `npm run check` is the complete CI/release gate and is intentionally not a
-  pre-commit hook.
+## Routing review scenarios
+
+The 2026-09-14 instruction review compared these paths with `main@a0a6ba9`.
+Previously, the general skill matched any non-trivial `src/` task, content
+required it as a prerequisite, six skills loaded authoring policy, and several
+skills required the full gate for app-code completion. The current paths below
+were reviewed against the root and skill text; they are not measured agent
+runs or a model-performance benchmark.
+
+Root/nearest subtree instructions and affected source apply to every row.
+Additional skills are selected only when the actual task crosses their concern.
+
+| Task                                | Skill/context selected                              | Evidence scope                                               |
+| ----------------------------------- | --------------------------------------------------- | ------------------------------------------------------------ |
+| Local UI spacing regression         | UI skill; relevant component/verification sections  | Affected viewport and targeted check                         |
+| Shared primitive additive change    | UI skill; component contract and consumers          | Affected consumers and interactions                          |
+| Query/state-owner bug               | Architecture workflow; state contract               | Producer/write path and deterministic regression             |
+| Interface copy only                 | i18n contract; no UI/general skill                  | Parity plus real consumer in all three locales               |
+| HanziHome vocabulary edit           | Content skill; HanziHome subtree                    | Canonical row, node save and sibling isolation               |
+| Requested regression review         | Test-review skill and coverage matrix               | Lowest boundary reproducing the failure                      |
+| Read-only Supabase migration review | Migration skill and Supabase contract               | Migration/drift evidence; no live mutation                   |
+| Explicit shadcn registry add        | shadcn skill and local inventory                    | Dry-run/diff, consumers, applicable checks and authorization |
+| Requested Radix-to-Base migration   | Migration skill and relevant golden-pair references | Baseline, consumers, behavior deltas and full gate           |
+| Requested broad UX audit            | UX audit skill and affected UI/product contracts    | Rendered findings separated from source/inference            |
+
+Isolated nonvisual fixes and test maintenance do not activate the general
+workflow or a broad audit. Instruction changes preserve the commands and
+executable gates below. Compare actual runs under the same model/environment
+before claiming improvements to correctness, context usage or task latency.
 
 ## Gate responsibilities
 

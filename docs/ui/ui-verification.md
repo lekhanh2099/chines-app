@@ -2,12 +2,9 @@
 
 A visual or interaction task is not complete after typecheck.
 
-Use the smallest applicable tier:
-
-- Fast: render the affected state and viewport for a local regression.
-- Subsystem: verify affected responsive, keyboard and state variants.
-- Full: verify shared primitive or multi-surface consumers and run the full
-  repository gate.
+Select the verification tier from root `AGENTS.md`. For a local regression,
+render the affected state/viewport. Broaden to responsive, keyboard and state
+variants when affected, and inspect consumers for shared primitive changes.
 
 Logic-only work that makes no visual or interaction claim does not require the
 full viewport matrix.
@@ -31,7 +28,9 @@ Inspect every affected surface in relevant states:
 
 ## 2. Required viewports
 
-At minimum:
+For responsive or multi-surface work, use the affected viewports below. A local
+regression uses its affected viewport; this is not a mandatory full matrix for
+every visual edit.
 
 ```text
 Desktop: 1440 × 900
@@ -142,6 +141,12 @@ Verify:
 - Home contains continuation/recent-work content and does not duplicate the global sitemap as large navigation cards;
 - Home loading skeleton matches current hierarchy.
 
+For Home layout work, verify a narrow phone, iPad portrait, a
+Sidebar-constrained tablet/landscape width and desktop.
+Check section order, long note/activity labels, bottom navigation clearance and
+whether the first viewport has a coherent hierarchy without artificial dead
+space. The viewport width alone does not prove usable content width.
+
 ### Gear, profile and settings hub
 
 - Gear and avatar triggers work with mouse, keyboard and touch where rendered;
@@ -155,6 +160,9 @@ Verify:
 - logout is visually/semantically destructive.
 
 ### HanziHome reader quick settings
+
+For touch reader-control changes, render the open settings on a narrow phone
+and iPad portrait, and verify the wide-desktop menu separately.
 
 - the quick reader control is available from the lesson workspace toolbar only;
 - font/size/reveal/visibility menu groups expose current state;
@@ -242,6 +250,11 @@ Verify:
 - prompt dirty/saved state remains correct after reset/save/error fallback;
 - model Select and save/reset controls work with keyboard and disabled states.
 
+For theme work, render Settings and one content-heavy learning surface in both
+light and dark mode and switch every palette. Check canvas/base/subtle/raised
+separation, hover/selected coherence, palette-independent semantic states,
+selected/focus/primary text emphasis and computed contrast separately.
+
 ### Global search
 
 - `Cmd/Ctrl+K` opens from any authenticated route;
@@ -264,22 +277,10 @@ Verify:
 
 ## 6. Evidence in handoff
 
-For UI tasks report:
-
-```text
-Environment:
-Authentication state:
-Rendered routes:
-Viewports:
-Mouse/touch interactions:
-Keyboard interactions:
-Loading/empty/error/destructive states:
-Console warnings/errors:
-Failed network requests:
-Repository checks:
-Deployment/build status:
-Known unverified states:
-```
+Follow the root handoff rule. For each visual claim identify the environment,
+authentication, route, viewport and relevant interaction/state actually
+rendered. Report console/network issues, checks and remaining unverified states.
+Do not require empty fields for interactions outside the changed scope.
 
 A successful deploy/build is compile evidence, not proof of the responsive or
 keyboard matrix. Do not claim a UI issue is fixed when only JSX/CSS was

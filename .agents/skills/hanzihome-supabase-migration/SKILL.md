@@ -11,8 +11,8 @@ Keep schema history reproducible and preserve the study/edit flow while database
 
 ## Preflight
 
-1. Read root `AGENTS.md`, `supabase/AGENTS.md`,
-   `docs/agent/skill-authoring.md`, and accepted ADRs.
+1. Read root `AGENTS.md`, `supabase/AGENTS.md`, the affected HanziHome subtree
+   contract and relevant accepted ADRs.
 2. Inspect related migrations, live generated types, server repository queries, route authorization, and tests.
 3. State the exact local, branch, staging, or production target. Inspect
    migration drift and define ownership (`seed`, `custom`, or `user_override`),
@@ -36,17 +36,16 @@ Keep schema history reproducible and preserve the study/edit flow while database
 
 Read [references/migration-review.md](references/migration-review.md) before approval.
 
-## Verification tiers
+## Verification
 
-- **Fast:** read-only migration/contract review with no file, schema, or live
-  target mutation; static drift and ownership evidence is sufficient.
-- **Subsystem:** one local migration plus generated types, repository queries,
-  authorization and focused tests are affected.
-- **Full:** live drift, RLS/RPC, production authorization, populated-table
-  locking, generated-contract refresh, or release verification is involved.
+Use root verification tiers. A read-only review reports the inspected migration,
+ownership and drift evidence without applying changes. Actual schema/RLS/RPC or
+generated-contract changes require the full repository gate plus the relevant
+database checks; static checks alone do not prove a live environment.
 
-Database mutations always escalate to the full risk path when the target,
-authorization, rollback/forward-fix, or existing-row impact is not explicit.
+Stop before database mutation when target, authorization, rollback/forward-fix
+or existing-row impact is unclear. Credentialed probes are explicit live
+operations, not generic CI prerequisites.
 
 ## Output
 

@@ -130,23 +130,8 @@ The shared store carries interaction state, not duplicated server/domain data.
 
 ## 4. State ownership
 
-Use one authoritative owner:
-
-```text
-URL/shareable navigation     -> route/search params
-server/cache state           -> TanStack Query
-form/validation/dirty state  -> TanStack Form
-cross-feature client UI      -> scoped TanStack Store
-transient local interaction  -> local React state
-pure derivation              -> compute from authoritative inputs
-```
-
-Do not mirror Query, Form, Store or route state into local React state without a
-real draft/bridge contract.
-
-Every state-writing effect must synchronize an external/ownership boundary and
-must be idempotent. Running it again with the same authoritative input must not
-continue producing state changes.
+Follow the [generic state-ownership contract](../architecture/frontend-structure.md#4-state-ownership-matrix).
+UI composition does not transfer ownership of query, form or navigation state.
 
 ## 5. `className` ownership
 
@@ -237,6 +222,11 @@ composition primitive. `mx-auto`/`ml-auto`/`mr-auto` remain valid alignment tool
 small horizontal margin remains valid inside true inline text flow where a parent
 layout gap cannot represent the typography.
 
+Standalone settings choices keep touch-sized targets even inside a grid. A
+44px target may contain a smaller 28–32px avatar/icon; do not enlarge visible
+chrome or shrink the hit area merely to make a phone header compact. Do not
+replace child margins with meaningless padding just to satisfy a checker.
+
 ## 8. Button
 
 Preferred semantic sizes:
@@ -314,13 +304,27 @@ of pills.
 General application text uses `Typography`.
 
 HanziHome Chinese text, pinyin, reading-size and learner typography use
-`HanziText`, `ReaderHanziText`, `AdaptiveStudyText`, `PinyinText`,
+`HanziText`, `ReaderHanziText`, `LearnerHanziText`, `AdaptiveStudyText`, `PinyinText`,
 `TranslationText`, `StudyInstructionText` or `HanziFontPreview`.
+
+The selected Hanzi reader font owns normal learner text across authenticated
+learning surfaces. Use `HanziAwareText` / `HanziInlineText` for mixed
+Vietnamese/Chinese text and `HanziFontPreview` for explicit font samples. Do not
+force a different font locally or use a Traditional-Chinese-only fallback for
+Mainland `zh-CN` content. System names such as Kaiti do not guarantee delivery
+across platforms: exact matching requires an appropriate Simplified-Chinese
+asset; otherwise use a Simplified-Chinese-capable font already delivered by
+the app before generic serif/sans-serif. HanziWriter stroke glyphs are vector
+data and do not follow CSS font selection.
 
 ## 11. Dialog and destructive actions
 
 Every dialog requires a title, managed focus, Escape behavior, focus return and
 an explicit async state when applicable.
+
+Overlay elevation uses the shared ladder: modal backdrop `100`, modal content
+`101`, menu/select/popover/floating content `120`, tooltip `130`. Feature code
+does not repair z-index locally.
 
 A destructive user-facing action requires either:
 
@@ -335,6 +339,10 @@ A permanent red delete cluster is not the default editing UI.
 DropdownMenu is the action/function list contract and owns managed focus,
 arrow-key navigation, typeahead, disabled/destructive states, submenus and focus
 return.
+
+Never nest interactive controls such as `button > button`. A click-anywhere
+card containing TTS/menu/buttons uses sibling interaction layers or a
+non-interactive Card with explicit actions.
 
 Popover is for non-menu contextual interactive content.
 
@@ -359,6 +367,21 @@ Font choices preview the actual Hanzi font.
 Use Switch for full settings-page boolean rows. Use menu checkbox/radio items
 inside compact menus.
 
+Reading settings preview font, size, reveal behavior, pinyin, meaning and
+answers live. On tablet/wide screens the preview may sit beside controls; on
+narrow screens it follows in document flow.
+
+### Touch overlays
+
+Wide pointer layouts may use shallow DropdownMenu submenus. Phone and iPad
+portrait preference flows use one modal Sheet/Dialog with the choices inside,
+even when a desktop submenu would physically fit. The active modal owns focus,
+scroll, dismissal and safe-area handling and disables/covers bottom navigation.
+Do not leave a parent menu visible beside a child panel. Constrain floating
+content to the viewport; if several levels are necessary, keep navigation in
+the same modal rather than lateral overlays. A fake Back flow is unnecessary
+when all choices fit in one surface.
+
 ## 14. Navigation and Home information architecture
 
 The global Sidebar owns the application sitemap. Home MUST NOT recreate the
@@ -378,6 +401,40 @@ current location is never hidden. User-opened unrelated groups may stay open.
 
 HanziHome module navigation is contextual and remains inside the feature.
 
+### Responsive shell and Home
+
+Persistent Sidebar starts at `lg`; below it, quick navigation and a
+full-navigation Sheet keep every global route reachable. iPad portrait around
+820px is a tablet workspace. Breakpoints must account for the width consumed
+by Sidebar: do not enable feature columns at the same breakpoint unless both
+remain readable. Home stays one-column on portrait/Sidebar-constrained tablet
+layouts; split main/attention content only when the content area is wide enough.
+
+Page/section headers let text and actions wrap. Mobile rows protect their
+primary label with `min-w-0`; secondary badges/actions can move below it.
+Stack short Home activity surfaces when columns create a dead zone; do not
+stretch cards to artificial heights or expose opaque activity IDs to learners.
+
+Phone chrome prioritizes orientation and the next action. Bottom quick
+navigation is icon-first with accessible names, active `aria-current`, 44px
+targets and only necessary safe-area/padding height. Header route context gets
+flexible width; routine utilities use ghost/icon chrome. Low-frequency Settings
+may move to `Thêm` on phones while staying directly available at wider widths.
+Avoid crowding title, status pills, contextual menu, search, settings and profile
+into one phone row. A saved indicator may disappear after success, but saving
+and error states remain observable.
+
+### Mobile reading surfaces
+
+Diagnose inherited desktop spacing, imported inline font sizes, wide code/tables
+and reading measure before shrinking fonts. Phone read-only rich text may
+normalize imported font sizes without modifying persisted content; edit mode
+preserves the stored formatting. Keep body text readable and adjust relative
+heading scale/spacing. Wrap long code when horizontal preservation has no
+semantic purpose, contain table overflow, and remove redundant nested insets
+on narrow screens. A long read-only action list uses a modal Sheet with
+touch-sized rows rather than a small floating Popover.
+
 ## 15. SegmentedControl and Tabs
 
 Use SegmentedControl for compact pressed single-choice sets such as view mode,
@@ -386,6 +443,9 @@ active pane or module selection. It owns active/inactive Button grammar and
 
 Use Tabs only for true tab/panel semantics. Do not hand-build partial
 `role="tab"` implementations without complete keyboard and panel relationships.
+
+Finite required choices wrap or use a grid rather than relying on sideways
+discovery.
 
 ## 16. Select
 
@@ -428,6 +488,11 @@ primitives.
 Feature code uses semantic tokens and must not introduce raw palette/gradient
 recipes to solve local visual problems.
 
+Product hierarchy, theme foundations and palette ownership follow
+[`theme-contract.md`](theme-contract.md). Do not add motion solely for polish:
+it must convey hierarchy, feedback, state change or spatial continuity, retain
+a static/instant reduced-motion path and remain outside authoritative state.
+
 ## 19. shadcn workflow
 
 Before add/update:
@@ -444,21 +509,28 @@ addition or breaking API migration.
 
 ## 20. Feature checklist
 
-Before JSX:
+Before JSX, resolve the user goal, primary action, information hierarchy,
+affected states and existing primitive/pattern/feature composition. Choose
+use, extend, create or a justified local exception from source and consumers.
+Do not create a second visual language for an existing control.
 
-```text
-User goal:
-Primary action:
-Information hierarchy:
-States:
-State owner:
-Existing primitive:
-Existing pattern:
-Missing contract:
-Responsive behavior:
-Keyboard behavior:
-Risk:
-```
+A user-authorized UX refactor may change flow when evidence shows duplicated
+navigation, hidden state, unnecessary steps or weak orientation. Identify the
+friction, transitions/owners and back/deep-link behavior first. Existing JSX
+alone is not a preservation requirement; a nicer layout alone is not permission
+to change flow or data semantics.
+
+For broad visual redesign, start from `PRODUCT.md`, the rendered surface and
+brand assets. State the learner/session context, existing visual language,
+references/anti-references and whether the user authorized evolution or an
+overhaul. Preserve routes/navigation labels, localized copy meaning, working
+keyboard/focus/touch/contrast behavior, analytics names/element IDs, form field
+names/order and public-page metadata/structured data/share contracts unless
+explicitly in scope. Visual redesign does not authorize database, API,
+authorization, persisted state or business-rule changes.
+
+Interface copy and its rendered checks follow
+[`i18n.md`](../architecture/i18n.md).
 
 After implementation:
 
@@ -469,12 +541,14 @@ After implementation:
 - no inaccessible custom interaction;
 - no blank loading/initial state;
 - no hard-coded shell-height subtraction;
-- server state stays in TanStack Query;
-- form state stays in TanStack Form;
-- cross-feature client interaction stays in scoped TanStack Store;
-- URL/shareable state stays in route/search params;
-- desktop/iPad/mobile are actually rendered when visual behavior changes;
+- state stays with its authoritative owner;
+- rendered evidence follows the affected scope in `ui-verification.md`;
 - component choice and residual risk are documented in handoff.
+
+Preserve semantic buttons/links, explicit toggle/selection state, keyboard and
+visible focus, loading/empty/error/disabled states, touch targets and Chinese
+language/font metadata. Do not add ARIA to compensate for the wrong interaction
+model. Errors do not use the empty/no-results presentation.
 
 ## App scroll ownership
 

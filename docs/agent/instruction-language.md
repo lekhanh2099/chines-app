@@ -61,14 +61,6 @@ List the route, feature or surface. Do not expand beyond this scope.
 Current problem:
 Describe the observable failure, not an assumed implementation cause.
 
-Required preflight:
-- Read AGENTS.md and the nearest nested AGENTS.md.
-- Read the matching skills.
-- Inspect existing UI primitives/patterns and direct consumers.
-- Trace data and state ownership.
-- State root cause or missing contract.
-- Classify risk.
-
 Constraints:
 List behavior that must remain unchanged.
 
@@ -79,29 +71,14 @@ states.
 Definition of done:
 List executable checks and manual flows.
 
-Verification tier:
-Choose fast, subsystem or full and state the evidence that would require
-escalation.
-
-Confirmation:
-Stop only for decisions required by `docs/agent/risk-confirmation.md`.
-
-Output:
-Before coding, report:
-1. verified current behavior;
-2. files and consumers involved;
-3. existing component contract;
-4. proposed smallest coherent change;
-5. risk and confirmation requirement.
-
-After coding, report:
-1. precedent and authoritative contract;
-2. data/state flow and invariant protected;
-3. files changed and behavior preserved;
-4. checks and UI/browser evidence;
-5. broader abstraction rejected;
-6. residual risks and unverified states.
+Risk boundary, when relevant:
+State which risky operations this request explicitly authorizes or forbids.
 ```
+
+The agent derives inspection, skill selection and verification from root
+`AGENTS.md` and the affected contracts. The requester does not need to repeat
+that procedure. Completion follows the root reporting rule, with evidence
+proportional to the task.
 
 ## 4. Claim-evidence ledger
 

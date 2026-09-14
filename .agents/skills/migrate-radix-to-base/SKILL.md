@@ -16,7 +16,6 @@ policy override this vendor workflow. Investigation and a migration proposal
 come first. STOP AND CONFIRM before creating a branch, installing/removing a
 dependency, overwriting a wrapper, creating migration report files, committing,
 or starting a broad migration.
-Read `docs/agent/skill-authoring.md` before applying this workflow.
 
 ## Preflight (always)
 
@@ -34,19 +33,13 @@ Read `docs/agent/skill-authoring.md` before applying this workflow.
    mutation requires confirmation; Radix packages are removed only after the
    last approved component is migrated.
 
-## Tier routing
+## Repository verification
 
-- **Fast:** investigate one wrapper or consumer without changing dependencies,
-  files, or public props; installed `.d.ts` and a focused typecheck are enough.
-- **Subsystem:** migrate one approved primitive family with known consumers;
-  use the golden pair, consumer sweep, targeted checks and manual interaction
-  evidence.
-- **Full:** change `components.json`, dependencies, shared APIs, or multiple
-  primitive families; require explicit confirmation, baseline comparison and
-  the full repository gate.
-
-Investigation may stay fast, but any mutation of a wrapper, branch, dependency,
-report file, commit, or broad migration follows the confirmation policy.
+Root `AGENTS.md` owns verification tiers. Read-only investigation uses installed
+types and focused checks. An approved primitive migration adds the golden pair,
+consumer sweep, baseline comparison and interaction evidence, ending with the
+full gate for the shared migration. Wrapper, branch, dependency, report-file,
+commit and broad migration actions retain the confirmation policy above.
 
 ## Strategy: golden pair first, transformation engine second
 

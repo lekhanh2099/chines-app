@@ -1,6 +1,6 @@
 ---
 name: hanzihome-test-review
-description: Review and improve HanziHome tests against real data, state, renderer, API, edit, and Supabase contracts. Use for coverage audits, regression-test requests, query loading/error behavior, lesson renderer shapes, node-level mutations, ownership checks, migration verification, or CI readiness.
+description: Review HanziHome regression coverage and test quality against real content, query, edit, API and Supabase contracts. Use for requested coverage audits, regression-test work or CI-readiness reviews; skip isolated test maintenance and non-test changes.
 ---
 
 # HanziHome Test Review
@@ -11,8 +11,8 @@ Judge coverage by protected behavior and failure modes, not test-file count or a
 
 ## Workflow
 
-1. Read root `AGENTS.md`, `docs/agent/skill-authoring.md`, the changed files,
-   their call sites, and current tests.
+1. Read the affected HanziHome subtree contract, changed files, their call
+   sites and current tests; root `AGENTS.md` owns the generic workflow.
 2. Map the change onto [references/coverage-matrix.md](references/coverage-matrix.md).
 3. Identify the highest-risk unproven contract: state transition, response validation, renderer shape, node isolation, authorization, or migration invariant.
 4. Add the smallest deterministic test at the lowest boundary that still
@@ -20,20 +20,9 @@ Judge coverage by protected behavior and failure modes, not test-file count or a
    fail for that regression; otherwise use hook/component, route/database, or a
    focused end-to-end flow.
 5. Use representative real shapes and sparse/error variants. Do not assert fabricated fixtures that cannot occur in the app.
-6. Run targeted tests first. Escalate to subsystem checks, then run
-   `npm run check` for app-code completion or the full path.
-
-## Verification tiers
-
-- **Fast:** a schema, mapper, selector, or deterministic boundary test can
-  reproduce the failure without changing a shared contract.
-- **Subsystem:** a hook, component, route, renderer family, query cache, or
-  edit flow needs stateful proof across several local consumers.
-- **Full:** a migration, authorization contract, persisted format, shared API,
-  or release/CI claim requires repository-wide verification.
-
-Select the lowest tier that can falsify the change, then escalate when the
-consumer graph or risk classification crosses that boundary.
+6. Run the targeted reproducer first. Use root verification tiers and escalate
+   when the affected contract requires it; an application-file edit alone does
+   not require `npm run check`.
 
 ## Required assertions by change type
 
@@ -45,7 +34,7 @@ consumer graph or risk classification crosses that boundary.
 
 ## Output
 
-List the precedent, authoritative contract, reproduced failure, protected
-invariant, behaviors already covered, false-confidence tests, new tests added,
-selected tier, commands/results, manual checks still required, and remaining
-risk by severity.
+Follow the root handoff rule. Include the reproduced failure/protected
+invariant, existing coverage or false-confidence tests that affect the result,
+and any remaining manual or database proof. Rank review findings by evidenced
+impact rather than test count.

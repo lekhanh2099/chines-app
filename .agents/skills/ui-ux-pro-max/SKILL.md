@@ -1,13 +1,13 @@
 ---
 name: ui-ux-pro-max
-description: Secondary UI/UX audit intelligence for chines-app, adapted from nextlevelbuilder/ui-ux-pro-max-skill. Use for broad UI audits, accessibility, touch interaction, responsive layout, typography/color, forms, navigation, motion and runtime UX quality after loading the local frontend-ui-system contract.
+description: Secondary UX audit and research guidance for chines-app. Use for requested broad UX audits or UX research; skip routine component, styling and isolated accessibility fixes. Local UI contracts override upstream heuristics.
 metadata:
   author: chines-app
   compatibility: chines-app; Next.js App Router; React; Tailwind CSS 4; local shadcn-style primitives
   upstream: nextlevelbuilder/ui-ux-pro-max-skill
   upstream_path: .claude/skills/ui-ux-pro-max/SKILL.md
   upstream_ref: a38d04c3d5c298c851dbe5e6ee1965ee3de42cb5
-  version: "1.0"
+  version: "1.1"
 ---
 
 # UI/UX Pro Max — chines-app adapter
@@ -17,27 +17,11 @@ without replacing the product-specific design system already owned by this repos
 
 ## 1. Authority and required context
 
-Before using this skill, read:
-
-```text
-AGENTS.md
-PRODUCT.md
-.agents/skills/frontend-ui-system/SKILL.md
-docs/ui/component-contracts.md
-docs/ui/ui-verification.md
-docs/architecture/frontend-structure.md
-```
-
-Authority is always:
-
-```text
-explicit user requirement
--> nearest AGENTS.md / root AGENTS.md
--> local source, generated contracts and project docs
--> frontend-ui-system and other project skills
--> this adapted audit skill
--> generic upstream guidance
-```
+Follow root `AGENTS.md` authority and verification tiers. Read `PRODUCT.md` and
+the affected sections of `docs/ui/component-contracts.md` and
+`docs/ui/ui-verification.md`. Read `docs/ui/theme-contract.md` for visual-system
+or palette work, and `docs/architecture/frontend-structure.md` only when state
+or feature ownership is affected. No other skill is a prerequisite.
 
 If upstream advice conflicts with a local component, token, state, scroll, typography,
 responsive or interaction contract, keep the local contract. Do not create a second
