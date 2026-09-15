@@ -5,7 +5,9 @@ import type { ReaderSegment } from "@/features/reader/model/reader-document.type
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import {
  analyzeContextualPronunciation,
+ formatContextualReadingPinyin,
  formatContextualSpokenPinyin,
+ getContextualReadingUnits,
  type PronunciationOverride,
 } from "@/lib/pronunciation/contextual-pronunciation";
 import { ReaderPronunciationReviewPopover } from "@/features/reading/components/ReaderPronunciationReviewPopover";
@@ -45,16 +47,25 @@ export function useReaderSessionPronunciation(
   () =>
    segments.map((segment) => {
     const analysis = analyses.get(segment.id);
-    return analysis &&
-     (autoDetectPinyin ||
-      analysis.glyphs.some((glyph) => glyph.evidence.includes("manual-override")))
+    if (analysis === undefined) return segment;
+    if (autoDetectPinyin) return { ...segment, pinyin: formatContextualReadingPinyin(analysis) };
+    return analysis.glyphs.some((glyph) => glyph.evidence.includes("manual-override"))
      ? { ...segment, pinyin: formatContextualSpokenPinyin(analysis) }
      : segment;
    }),
   [segments, analyses, autoDetectPinyin],
  );
+ const readingUnitsBySegmentId = useMemo(() => {
+  const result = new Map<string, ReturnType<typeof getContextualReadingUnits>>();
+  if (!autoDetectPinyin) return result;
+  for (const [segmentId, analysis] of analyses) {
+   result.set(segmentId, getContextualReadingUnits(analysis));
+  }
+  return result;
+ }, [analyses, autoDetectPinyin]);
  const service: ReaderServices["pronunciationReview"] = {
   analyses,
+  readingUnitsBySegmentId,
   onInspect: (input) => {
    const index = segments.findIndex((segment) => segment.id === input.segmentId);
    const segment = segments[index];

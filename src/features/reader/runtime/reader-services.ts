@@ -4,6 +4,7 @@ import type { ReaderSegment, ReaderSection } from "../model/reader-document.type
 import type {
  ContextualPronunciationAnalysis,
  ContextualPronunciationGlyph,
+ ContextualReadingUnit,
 } from "@/lib/pronunciation/contextual-pronunciation";
 import type { ReaderSpeechService } from "./reader-speech";
 import type { ReaderSelection } from "./reader-selection";
@@ -20,8 +21,8 @@ export type ReaderServices = {
  toolbar?: {
   stickyOffset?: "none" | "page" | "tabs";
   actions?: ReactNode;
-  hideContentDisplay?: boolean;
   hideAdvancedTools?: boolean;
+  hideContentDisplay?: boolean;
  };
  renderReader?: (input: { content: ReactNode }) => ReactNode;
  renderTools?: (input: { content: ReactNode }) => ReactNode;
@@ -37,6 +38,7 @@ export type ReaderServices = {
  };
  pronunciationReview?: {
   analyses: ReadonlyMap<string, ContextualPronunciationAnalysis>;
+  readingUnitsBySegmentId: ReadonlyMap<string, readonly ContextualReadingUnit[]>;
   onInspect: (target: {
    segmentId: string;
    analysis: ContextualPronunciationAnalysis;

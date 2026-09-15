@@ -157,6 +157,17 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain('<rt class="select-none');
  });
 
+ it("retains per-glyph ruby when source mode uses aligned pinyin", () => {
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analyzeContextualPronunciation({ text: "中国", sourcePinyin: "Zhōngguó" })}
+    displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+   />,
+  );
+
+  expect(markup.match(/<ruby/g)).toHaveLength(2);
+ });
+
  it("keeps paragraph-mode glyph playback keyboard reachable", () => {
   const markup = renderReaderText(
    <ContextualReaderText
@@ -283,6 +294,39 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain("guó");
   expect(markup).not.toContain(">hǎo<");
   expect(markup).toContain("<ruby");
+ });
+
+ it("groups contextual ruby by reading unit while retaining every Hanzi glyph", () => {
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analyzeContextualPronunciation({ text: "他不太伤心。" })}
+    displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, autoDetectPinyin: true }}
+    onGlyphClick={() => undefined}
+    onGlyphInspect={() => undefined}
+   />,
+  );
+
+  expect(markup.match(/<ruby/g)).toHaveLength(4);
+  expect(markup).toContain("他");
+  expect(markup).toContain("伤");
+  expect(markup).toContain("心");
+  expect(markup).toContain("shāng");
+  expect(markup).toContain("xīn");
+  expect(markup).toContain('aria-label="Đọc từ chữ 伤"');
+  expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 心"');
+ });
+
+ it("uses grouped pinyin when auto detection renders the paragraph presentation", () => {
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analyzeContextualPronunciation({ text: "他不太伤心。" })}
+    displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, autoDetectPinyin: true }}
+    pinyinPresentation="paragraph"
+   />,
+  );
+
+  expect(markup).toContain("tā bú tài shāngxīn。");
+  expect(markup).not.toContain("tā bú tài shāng xīn。");
  });
 
  it("renders a manual pinyin override instead of the original aligned source line", () => {

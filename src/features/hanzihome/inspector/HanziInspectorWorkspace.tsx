@@ -16,7 +16,7 @@ import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import {
  analyzeContextualPronunciation,
- formatContextualSpokenPinyin,
+ formatContextualReadingPinyin,
  type ContextualPronunciationAnalysis,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { ContextualReaderText } from "@/features/hanzihome/components/reading/ContextualReaderText";
@@ -55,8 +55,8 @@ export function HanziInspectorWorkspace() {
  useEffect(() => () => requestRef.current?.abort(), []);
 
  const analyzedText = analysis?.normalizedText ?? "";
- const spokenPinyin = useMemo(
-  () => (analysis === null ? "" : formatContextualSpokenPinyin(analysis)),
+ const readingPinyin = useMemo(
+  () => (analysis === null ? "" : formatContextualReadingPinyin(analysis)),
   [analysis],
  );
 
@@ -230,12 +230,12 @@ export function HanziInspectorWorkspace() {
         {t("result.contextReading")}
        </Typography>
        <Typography variant="bodySmall" tone="muted" lang="zh-Latn-pinyin">
-        {spokenPinyin || t("result.unresolvedReading")}
+        {readingPinyin || t("result.unresolvedReading")}
        </Typography>
       </div>
       <ContextualReaderText
        analysis={analysis}
-       displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showPinyin: true }}
+       displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, autoDetectPinyin: true, showPinyin: true }}
        className="max-w-full overflow-x-auto"
       />
       {analysis.unresolved.length > 0 ? (

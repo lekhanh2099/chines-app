@@ -57,7 +57,7 @@ export function ReaderOutline() {
     hideIcon
     aria-label={commandLabels("openOutline")}
     title={t("aria")}
-    className="w-11"
+    className="w-9 justify-center"
     disabled={items.length === 0}
     ref={(element) => {
      if (element) registry.setOutlineTrigger(element);

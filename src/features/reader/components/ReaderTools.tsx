@@ -2,16 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
-import {
- BookOpen,
- ChevronDown,
- Focus,
- Languages,
- ListEnd,
- Repeat2,
- Settings2,
- SlidersHorizontal,
-} from "lucide-react";
+import { BookOpen, Focus, Languages, ListEnd, Repeat2, Settings2, Square } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +11,8 @@ import {
  DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuLabel,
+ DropdownMenuRadioGroup,
+ DropdownMenuRadioItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -41,8 +34,11 @@ import {
  useReaderStore,
 } from "../runtime/reader-context";
 
+const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];
+
 export function ReaderTools() {
  const t = useTranslations("Reader.study.chrome.tools");
+ const commandLabels = useTranslations("Reader.study.chrome.commands");
  const commands = useReaderCommands();
  const { speech } = useReaderServices();
  const { value: display, onChange } = useReaderDisplay();
@@ -51,6 +47,8 @@ export function ReaderTools() {
  const auto = useReaderSelector((state) => state.playback.autoAdvance);
  const focus = useReaderSelector((state) => state.ui.focusMode);
  const empty = useReaderSelector((state) => state.content.segmentIds.length === 0);
+ const rate = useReaderSelector((state) => state.playback.rate);
+ const playbackStatus = useReaderSelector((state) => state.playback.status);
  const [open, setOpen] = useState(false);
  const trigger = useRef<HTMLButtonElement>(null);
 
@@ -58,10 +56,14 @@ export function ReaderTools() {
   <>
    <DropdownMenu>
     <DropdownMenuTrigger asChild>
-     <Button ref={trigger} type="button" variant="outline" size="toolbar" aria-label={t("title")}>
-      <SlidersHorizontal data-icon="inline-start" />
-      <span>{t("title")}</span>
-      <ChevronDown data-icon="inline-end" />
+     <Button
+      ref={trigger}
+      type="button"
+      variant="outline"
+      size="icon-toolbar"
+      aria-label={t("title")}
+     >
+      <Settings2 />
      </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" width="md">
@@ -70,6 +72,28 @@ export function ReaderTools() {
        <BookOpen />
        <span>{t("playAll")}</span>
       </DropdownMenuItem>
+     ) : null}
+     {speech ? (
+      <DropdownMenuItem disabled={playbackStatus === "idle"} onSelect={commands.stop}>
+       <Square />
+       <span>{commandLabels("stopReading")}</span>
+      </DropdownMenuItem>
+     ) : null}
+     {speech ? (
+      <>
+       <DropdownMenuLabel>{commandLabels("rate")}</DropdownMenuLabel>
+       <DropdownMenuRadioGroup
+        value={String(rate)}
+        onValueChange={(value) => commands.setRate(Number(value))}
+       >
+        {readerRateOptions.map((option) => (
+         <DropdownMenuRadioItem key={option} value={String(option)}>
+          {option.toFixed(2)}x
+         </DropdownMenuRadioItem>
+        ))}
+       </DropdownMenuRadioGroup>
+       <DropdownMenuSeparator />
+      </>
      ) : null}
      {speech ? (
       <DropdownMenuCheckboxItem

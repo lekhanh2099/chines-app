@@ -4,7 +4,10 @@ import { createRoot } from "react-dom/client";
 
 import { loadAppMessages } from "@/i18n/messages";
 import type { AppLocale } from "@/i18n/config";
-import { analyzeContextualPronunciation } from "@/lib/pronunciation/contextual-pronunciation";
+import {
+ analyzeContextualPronunciation,
+ getContextualReadingUnits,
+} from "@/lib/pronunciation/contextual-pronunciation";
 import { Typography } from "@/components/ui/typography";
 import { scrollAppContentToElement } from "@/components/layout/app-scroll";
 import "@/app/globals.css";
@@ -137,6 +140,10 @@ function createHarness() {
    withAnnotations = false,
   ) {
    const messages = await loadAppMessages(locale);
+   const sourceAnalysis = analyzeContextualPronunciation({
+    text: "你好。",
+    sourcePinyin: "nǐ hǎo",
+   });
    root.render(
     <StrictMode>
      <NextIntlClientProvider locale={locale} messages={messages}>
@@ -161,12 +168,34 @@ function createHarness() {
          : undefined,
         pronunciationReview: withAnnotations
          ? {
-            analyses: new Map([
-             ["source", analyzeContextualPronunciation({ text: "你好。", sourcePinyin: "nǐ hǎo" })],
+            analyses: new Map([["source", sourceAnalysis]]),
+            readingUnitsBySegmentId: new Map([
+             ["source", getContextualReadingUnits(sourceAnalysis)],
             ]),
             onInspect: (target) => reviews.push(target.glyph.text),
            }
          : undefined,
+       }}
+      />
+     </NextIntlClientProvider>
+    </StrictMode>,
+   );
+  },
+  async grouped() {
+   const messages = await loadAppMessages("vi");
+   const analysis = analyzeContextualPronunciation({ text: "他不太伤心。" });
+   root.render(
+    <StrictMode>
+     <NextIntlClientProvider locale="vi" messages={messages}>
+      <Reader
+       data={[{ id: "grouped", zh: "他不太伤心。" }]}
+       services={{
+        lookup: (selection) => lookups.push(selection.text),
+        pronunciationReview: {
+         analyses: new Map([["grouped", analysis]]),
+         readingUnitsBySegmentId: new Map([["grouped", getContextualReadingUnits(analysis)]]),
+         onInspect: (target) => reviews.push(target.glyph.text),
+        },
        }}
       />
      </NextIntlClientProvider>

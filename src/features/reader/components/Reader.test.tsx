@@ -4,6 +4,10 @@ import { describe, expect, it } from "vitest";
 
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
+import {
+ analyzeContextualPronunciation,
+ getContextualReadingUnits,
+} from "@/lib/pronunciation/contextual-pronunciation";
 import { Reader } from "./Reader";
 import { defaultReaderDisplay } from "../model/reader-display";
 import { useReaderSelector } from "../runtime/reader-context";
@@ -99,6 +103,7 @@ describe("standalone Reader facade", () => {
    expect(html).toContain(messages.Reader.study.chrome.tools.showPinyin);
    expect(html).toContain(messages.Reader.study.chrome.tools.showTranslation);
    expect(html).not.toContain(messages.Reader.study.chrome.tools.playAll);
+   expect(html).toContain("overflow-x-auto");
    expect(html).not.toContain("Reader.study.");
    expect(html).toContain('data-reader-segment="source"');
   },
@@ -134,5 +139,30 @@ describe("standalone Reader facade", () => {
   expect(html).toContain("zài jiàn");
   expect(html).toContain("Visible meaning");
   expect(html.match(/data-reader-segment="same"/g)).toHaveLength(2);
+ });
+
+ it("renders grouped ruby through the Reader runtime while glyph controls stay addressable", async () => {
+  const messages = await loadAppMessages("vi");
+  const analysis = analyzeContextualPronunciation({ text: "他不太伤心。" });
+  const html = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages}>
+    <Reader
+     data={[{ id: "grouped", zh: "他不太伤心。" }]}
+     services={{
+      pronunciationReview: {
+       analyses: new Map([["grouped", analysis]]),
+       readingUnitsBySegmentId: new Map([["grouped", getContextualReadingUnits(analysis)]]),
+       onInspect: () => undefined,
+      },
+     }}
+    />
+   </NextIntlClientProvider>,
+  );
+
+  expect(html.match(/<ruby/g)).toHaveLength(4);
+  expect(html).toContain("shāng");
+  expect(html).toContain("xīn");
+  expect(html).toContain('aria-label="Kiểm tra pinyin chữ 伤"');
+  expect(html).toContain('aria-label="Kiểm tra pinyin chữ 心"');
  });
 });

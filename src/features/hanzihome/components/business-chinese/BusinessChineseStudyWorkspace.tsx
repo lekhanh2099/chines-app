@@ -41,7 +41,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/separator";
-import { Bookmark, Check, ChevronDown, CloudCheck } from "lucide-react";
+import { Bookmark, Check, ChevronDown, CloudCheck, Tags } from "lucide-react";
 import {
  DropdownMenu,
  DropdownMenuContent,
@@ -58,8 +58,10 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
+import type { SegmentedControlItem } from "@/components/ui/segmented-control";
 import { Typography, type TypographyProps } from "@/components/ui/typography";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
+import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import {
  containsHanziText,
  HanziAwareText,
@@ -68,6 +70,8 @@ import {
  ReaderHanziText,
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { LessonPreviewCard } from "@/features/hanzihome/components/lesson-overview/overview/LessonPreviewCard";
+import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { getActiveCharacterIndex } from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
@@ -790,6 +794,67 @@ function BusinessChineseTable({
  );
 }
 
+function isCanonicalVocabularyTable(
+ block: TextbookLesson["sections"][number]["blocks"][number],
+ vocabulary: TextbookLesson["vocab"],
+) {
+ const headers = block.rows[0] ?? [];
+ const pinyinColumnIndex = headers.findIndex((header) => /pinyin/iu.test(header));
+ const hanziColumnIndex = headers.findIndex((header) =>
+  /tiếng trung|giản thể|hán tự|từ vựng|^từ$/iu.test(header),
+ );
+ const rows = block.rows.slice(1);
+
+ return (
+  hanziColumnIndex >= 0 &&
+  pinyinColumnIndex >= 0 &&
+  rows.length === vocabulary.length &&
+  vocabulary.every(
+   (item, index) =>
+    rows[index]?.[hanziColumnIndex] === item.hanzi &&
+    rows[index]?.[pinyinColumnIndex] === item.pinyin,
+  )
+ );
+}
+
+function TextbookVocabularyPreview({
+ vocabulary,
+ onOpenVocabulary,
+}: {
+ vocabulary: TextbookLesson["vocab"];
+ onOpenVocabulary?: () => void;
+}) {
+ const t = useTranslations("BusinessChinese");
+
+ return (
+  <LessonPreviewCard
+   icon={Tags}
+   eyebrow={t("vocabularyPreview.eyebrow")}
+   title={t("vocabularyPreview.title", { count: vocabulary.length })}
+   actionLabel={onOpenVocabulary ? t("vocabularyPreview.open") : undefined}
+   onAction={onOpenVocabulary}
+  >
+   <div
+    className={cn(
+     "grid gap-2 sm:grid-cols-2",
+     onOpenVocabulary && "max-h-80 overflow-y-auto pr-1 scrollbar-soft",
+    )}
+   >
+    {vocabulary.map((word) => (
+     <VocabPreviewRow
+      key={word.id}
+      hanzi={word.hanzi}
+      pinyin={word.pinyin}
+      hanviet={word.hanviet}
+      category={word.pos}
+      meaning={word.meaning}
+     />
+    ))}
+   </div>
+  </LessonPreviewCard>
+ );
+}
+
 function BusinessChineseExercise({
  block,
  displayMode,
@@ -948,25 +1013,36 @@ function BusinessChineseSection({
  section,
  displayMode,
  translations,
+ canonicalVocabularyTableIds,
+ vocabularyPreview,
 }: {
  section: TextbookLesson["sections"][number];
  displayMode: LessonDisplayMode;
  translations: ReadonlyMap<string, string>;
+ canonicalVocabularyTableIds: readonly string[];
+ vocabularyPreview?: ReactNode;
 }) {
+ const visibleBlocks = section.blocks.filter(
+  (block) => !canonicalVocabularyTableIds.includes(block.id),
+ );
+
  return (
   <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4">
-   <header>
-    <SpeakableBusinessChineseText
-     pronunciationId={`${section.id}:title`}
-     text={stripLeadingEmoji(section.title)}
-     displayMode={displayMode}
-     variant="sectionTitle"
-     weight="black"
-     compactHanzi
-    />
-   </header>
+   {visibleBlocks.length > 0 ? (
+    <header>
+     <SpeakableBusinessChineseText
+      pronunciationId={`${section.id}:title`}
+      text={stripLeadingEmoji(section.title)}
+      displayMode={displayMode}
+      variant="sectionTitle"
+      weight="black"
+      compactHanzi
+     />
+    </header>
+   ) : null}
    <div className="grid min-w-0 gap-4">
-    {section.blocks.map((block) => {
+    {vocabularyPreview}
+    {visibleBlocks.map((block) => {
      if (block.type === "table") {
       return <BusinessChineseTable key={block.id} block={block} displayMode={displayMode} />;
      }
@@ -1079,6 +1155,7 @@ export function BusinessChineseStudyWorkspace({
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
 }) {
+ const t = useTranslations("BusinessChinese");
  const searchParams = useSearchParams();
  const sourceTarget = parseReaderSourceTarget(new URLSearchParams(searchParams.toString()));
  const tabParam = searchParams.get("tab");
@@ -1094,6 +1171,62 @@ export function BusinessChineseStudyWorkspace({
   [activeView, lesson],
  );
 
+ const { state: learningState, toggleBookmark } = useLearningState();
+ const isLessonBookmarked = (learningState.bookmarks.lessons ?? []).includes(lesson.id);
+ const lastBookmarkClickRef = useRef(0);
+ const handleToggleCurrentLessonBookmark = useCallback(() => {
+  const now = Date.now();
+  if (now - lastBookmarkClickRef.current < 400) return;
+  lastBookmarkClickRef.current = now;
+  toggleBookmark("lessons", lesson.id);
+ }, [lesson.id, toggleBookmark]);
+
+ const contentSections = useMemo(
+  () =>
+   lesson.sections
+    .filter((section) => !section.title.includes("DỊCH BÀI KHÓA"))
+    .filter((section) => section.blocks.length > 0),
+  [lesson.sections],
+ );
+
+ const tabs = useMemo<SegmentedControlItem<string>[]>(
+  () =>
+   [
+    { key: "all", label: t("tabs.all") },
+    { key: "overview", label: t("tabs.overview") },
+    { key: "core", label: t("tabs.core") },
+    { key: "text", label: t("tabs.text") },
+    { key: "notes", label: t("tabs.notes") },
+    { key: "translation", label: t("tabs.translation") },
+    { key: "vocab", label: t("tabs.vocab") },
+    { key: "grammar", label: t("tabs.grammar") },
+    { key: "practice", label: t("tabs.practice") },
+   ].filter(
+    (tab) =>
+     tab.key === "all" ||
+     tab.key === "notes" ||
+     tab.key === "translation" ||
+     (tab.key === "vocab" && lesson.vocab.length > 0) ||
+     contentSections.some((section) => section.category === tab.key),
+   ),
+  [contentSections, lesson.vocab.length, t],
+ );
+
+ const navMenu = (
+  <BusinessChineseWorkspaceNavMenu
+   tabs={tabs}
+   activeView={activeView}
+   onActiveViewChange={setActiveView}
+   isLessonBookmarked={isLessonBookmarked}
+   onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
+   bookmarkLabel={t("bookmarkLesson")}
+   bookmarkedLabel={t("bookmarked")}
+   offlineReadyLabel={t("offlineReady")}
+   offlineDescription={t("offlineDescription")}
+   menuLabel={t("tabsLabel")}
+  />
+ );
+
  return (
   <MandarinTtsProvider>
    <ReaderPronunciationSessionProvider key={lesson.id}>
@@ -1101,12 +1234,19 @@ export function BusinessChineseStudyWorkspace({
      key={readerDocument.id}
      document={readerDocument}
      services={{
+      toolbar: {
+       actions: navMenu,
+      },
       renderReader: ({ content }) => (
        <BusinessChineseStudyWorkspaceContent
         books={books}
         lesson={lesson}
         activeView={activeView}
         onActiveViewChange={setActiveView}
+        tabs={tabs}
+        isLessonBookmarked={isLessonBookmarked}
+        onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
+        navMenu={navMenu}
         readerContent={content}
        />
       ),
@@ -1156,25 +1296,24 @@ function BusinessChineseStudyWorkspaceContent({
  lesson,
  activeView,
  onActiveViewChange,
+ tabs,
+ isLessonBookmarked,
+ onToggleLessonBookmark,
+ navMenu,
  readerContent,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
  activeView: string;
  onActiveViewChange: (value: string) => void;
+ tabs: SegmentedControlItem<string>[];
+ isLessonBookmarked: boolean;
+ onToggleLessonBookmark: () => void;
+ navMenu: ReactNode;
  readerContent: ReactNode;
 }) {
  const t = useTranslations("BusinessChinese");
  const displayMode = businessChineseDisplayMode;
- const { state: learningState, toggleBookmark } = useLearningState();
- const isLessonBookmarked = (learningState.bookmarks.lessons ?? []).includes(lesson.id);
- const lastBookmarkClickRef = useRef(0);
- const handleToggleCurrentLessonBookmark = useCallback(() => {
-  const now = Date.now();
-  if (now - lastBookmarkClickRef.current < 400) return;
-  lastBookmarkClickRef.current = now;
-  toggleBookmark("lessons", lesson.id);
- }, [lesson.id, toggleBookmark]);
  const textReaderDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, "text"),
   [lesson],
@@ -1281,33 +1420,21 @@ function BusinessChineseStudyWorkspaceContent({
   () => sourceSections.filter((section) => section.blocks.length > 0),
   [sourceSections],
  );
+ const canonicalVocabularyTableIds = useMemo(
+  () =>
+   contentSections.flatMap((section) =>
+    section.blocks
+     .filter((block) => isCanonicalVocabularyTable(block, lesson.vocab))
+     .map((block) => block.id),
+   ),
+  [contentSections, lesson.vocab],
+ );
  const visibleSections = useMemo(
   () =>
    contentSections.filter((section) => activeView === "all" || section.category === activeView),
   [activeView, contentSections],
  );
  const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
- const tabs = useMemo(
-  () =>
-   [
-    { key: "all", label: t("tabs.all") },
-    { key: "overview", label: t("tabs.overview") },
-    { key: "core", label: t("tabs.core") },
-    { key: "text", label: t("tabs.text") },
-    { key: "notes", label: t("tabs.notes") },
-    { key: "translation", label: t("tabs.translation") },
-    { key: "vocab", label: t("tabs.vocab") },
-    { key: "grammar", label: t("tabs.grammar") },
-    { key: "practice", label: t("tabs.practice") },
-   ].filter(
-    (tab) =>
-     tab.key === "all" ||
-     tab.key === "notes" ||
-     tab.key === "translation" ||
-     contentSections.some((section) => section.category === tab.key),
-   ),
-  [contentSections, t],
- );
  const intro = lesson.intro.join(" ");
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
  const selectSection = (sectionId: string) => {
@@ -1316,20 +1443,6 @@ function BusinessChineseStudyWorkspaceContent({
    block: "start",
   });
  };
- const viewSelector = (
-  <Select value={activeView} onValueChange={onActiveViewChange}>
-   <SelectTrigger aria-label={t("tabsLabel")} width="full" size="sm">
-    <SelectValue />
-   </SelectTrigger>
-   <SelectContent>
-    {tabs.map((tab) => (
-     <SelectItem key={tab.key} value={tab.key}>
-      {tab.label}
-     </SelectItem>
-    ))}
-   </SelectContent>
-  </Select>
- );
 
  return (
   <BusinessChineseAnnotationsContext.Provider
@@ -1342,35 +1455,18 @@ function BusinessChineseStudyWorkspaceContent({
     <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
     <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
      <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
-      <div className="shrink-0 xl:hidden">
-       <WorkspaceToolbar>
-        <div className="min-w-0 flex-1">{viewSelector}</div>
-        <Button
-         variant={isLessonBookmarked ? "warning" : "ghost"}
-         size="sm"
-         className="gap-1 shrink-0"
-         onClick={handleToggleCurrentLessonBookmark}
-         title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-         aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-        >
-         <Bookmark
-          className={cn("size-3.5", isLessonBookmarked ? "fill-current" : "text-muted-foreground")}
-         />
-         <span className="hidden sm:inline">
-          {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
-         </span>
-        </Button>
-        <Badge
-         variant="success"
-         size="sm"
-         className="cursor-default gap-1 shrink-0"
-         title={t("offlineDescription")}
-        >
-         <CloudCheck data-icon="inline-start" />
-         <span className="hidden sm:inline">{t("offlineReady")}</span>
-        </Badge>
-       </WorkspaceToolbar>
-      </div>
+      {activeView !== "text" && activeView !== "all" ? (
+       <div className="shrink-0 xl:hidden">
+        <WorkspaceToolbar>
+         <div className="flex min-w-0 flex-1 items-center gap-2">
+          <Typography variant="bodySmall" weight="bold" clamp="one">
+           {tabs.find((tab) => tab.key === activeView)?.label ?? t("tabsLabel")}
+          </Typography>
+         </div>
+         {navMenu}
+        </WorkspaceToolbar>
+       </div>
+      ) : null}
       <Tabs
        value={activeView}
        items={tabs}
@@ -1405,8 +1501,8 @@ function BusinessChineseStudyWorkspaceContent({
               <Button
                variant={isLessonBookmarked ? "warning" : "ghost"}
                size="sm"
-               className="gap-1.5"
-               onClick={handleToggleCurrentLessonBookmark}
+               className="gap-1.5 shrink-0"
+               onClick={onToggleLessonBookmark}
                title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
                aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
               >
@@ -1416,7 +1512,9 @@ function BusinessChineseStudyWorkspaceContent({
                  isLessonBookmarked ? "fill-current" : "text-muted-foreground",
                 )}
                />
-               <span>{isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}</span>
+               <span className="hidden sm:inline">
+                {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
+               </span>
               </Button>
               <Badge
                variant="success"
@@ -1425,7 +1523,7 @@ function BusinessChineseStudyWorkspaceContent({
                title={t("offlineDescription")}
               >
                <CloudCheck data-icon="inline-start" />
-               <span>{t("offlineReady")}</span>
+               <span className="hidden sm:inline">{t("offlineReady")}</span>
               </Badge>
              </div>
             </div>
@@ -1483,6 +1581,16 @@ function BusinessChineseStudyWorkspaceContent({
               <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
              ) : null}
              <div className="grid min-w-0 gap-6">
+              {lesson.vocab.length > 0 &&
+              canonicalVocabularyTableIds.length === 0 &&
+              (activeView === "all" || activeView === "vocab") ? (
+               <TextbookVocabularyPreview
+                vocabulary={lesson.vocab}
+                onOpenVocabulary={
+                 activeView === "all" ? () => onActiveViewChange("vocab") : undefined
+                }
+               />
+              ) : null}
               {activeView === "practice" && translationSegments.length > 0 ? (
                <Card
                 variant="subtle"
@@ -1531,6 +1639,9 @@ function BusinessChineseStudyWorkspaceContent({
                   }}
                   services={{
                    ...annotationServices,
+                   toolbar: {
+                    actions: index === 0 ? navMenu : undefined,
+                   },
                    renderSection: ({ section: readerSection, content }) => (
                     <div id={readerSection.id}>{content}</div>
                    ),
@@ -1542,6 +1653,17 @@ function BusinessChineseStudyWorkspaceContent({
                    section={section}
                    displayMode={displayMode}
                    translations={pairedTranslations}
+                   canonicalVocabularyTableIds={canonicalVocabularyTableIds}
+                   vocabularyPreview={
+                    section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
+                     <TextbookVocabularyPreview
+                      vocabulary={lesson.vocab}
+                      onOpenVocabulary={
+                       activeView === "all" ? () => onActiveViewChange("vocab") : undefined
+                      }
+                     />
+                    ) : undefined
+                   }
                   />
                  </Card>
                 )}

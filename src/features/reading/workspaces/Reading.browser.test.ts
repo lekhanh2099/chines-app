@@ -157,11 +157,14 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     await browserExpect(
      page.getByRole("button", { name: messages.Reader.study.shadowing.start, exact: true }),
     ).toBeVisible();
-    await page.getByRole("button", { name: chrome.tools.showPinyin, exact: true }).click();
+    await page.getByRole("button", { name: chrome.tools.title, exact: true }).click();
+    await page.getByRole("menuitem", { name: "Hiển thị lớp học", exact: true }).hover();
+    await page.getByRole("menuitemcheckbox", { name: chrome.tools.pinyin, exact: true }).click();
     expect((await page.evaluate(() => window.readingHarness.snapshot())).display.showPinyin).toBe(
      false,
     );
-    await page.getByRole("button", { name: chrome.tools.showPinyin, exact: true }).click();
+    await page.getByRole("menuitemcheckbox", { name: chrome.tools.pinyin, exact: true }).click();
+    await page.keyboard.press("Escape");
     const openAnnotation = page.locator(
      `[data-reader-segment="${paragraph.id}"] .reading-highlight`,
     );

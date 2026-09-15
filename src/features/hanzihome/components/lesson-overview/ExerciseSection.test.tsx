@@ -488,7 +488,10 @@ describe("ReadingCard", () => {
   expect(html).toContain("Đoạn 1 / 3");
   expect(html).toContain("Nghe bài");
   expect(html).toContain("Công cụ học");
-  expect(html).toContain("Tốc độ đọc");
+  expect(html).toContain('data-reader-group="navigation"');
+  expect(html).toContain('data-reader-group="playback"');
+  expect(html).toContain('data-reader-group="tools"');
+  expect(html).toContain('data-reader-group="display"');
   expect(html).toContain("Mở mục lục đoạn");
   expect(html).toContain("<ruby");
   expect(html).toContain('aria-label="Pinyin chữ 个 cần kiểm tra"');

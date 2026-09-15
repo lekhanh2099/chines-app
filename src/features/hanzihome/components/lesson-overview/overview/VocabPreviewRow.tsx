@@ -1,8 +1,18 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
-import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
-export function VocabPreviewRow({ word }: { word: HanziHomeVocabItem }) {
+export function VocabPreviewRow({
+ hanzi,
+ pinyin,
+ hanviet,
+ category,
+ meaning,
+}: {
+ hanzi: string;
+ pinyin: string;
+ hanviet: string;
+ category: string;
+ meaning: string;
+}) {
  return (
   <div className="min-w-0 rounded-xl border border-border-default bg-bg-subtle p-3 grid gap-1">
    <div className="flex min-w-0 items-baseline gap-2">
@@ -13,10 +23,10 @@ export function VocabPreviewRow({ word }: { word: HanziHomeVocabItem }) {
      clamp="one"
      lang="zh-CN"
     >
-     {word.hanzi}
+     {hanzi}
     </StudyInstructionText>
     <StudyInstructionText tone="primary" weight="bold" clamp="one">
-     {word.pinyin}
+     {pinyin}
     </StudyInstructionText>
    </div>
    <StudyInstructionText
@@ -27,10 +37,10 @@ export function VocabPreviewRow({ word }: { word: HanziHomeVocabItem }) {
     tracking="wide"
     transform="uppercase"
    >
-    {word.meaning.hanviet || word.category}
+    {hanviet || category}
    </StudyInstructionText>
    <StudyInstructionText tone="secondary" weight="semibold" clamp="two">
-    {getVocabDisplayMeaning(word)}
+    {meaning}
    </StudyInstructionText>
   </div>
  );

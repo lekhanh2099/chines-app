@@ -24,6 +24,10 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 import {
+ formatContextualReadingPinyin,
+ getContextualReadingUnits,
+} from "@/lib/pronunciation/contextual-pronunciation";
+import {
  createTranslationAttempt,
  scoreTranslationAttempt,
  translationReferenceText,
@@ -97,9 +101,22 @@ export function ReaderDocumentStudy({
  const speech = useMandarinReaderSpeechService();
  const learning = useLearningState();
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
+ const data = useMemo(
+  () =>
+   displayMode.autoDetectPinyin
+    ? {
+       ...study.documentModel,
+       segments: study.documentModel.segments.map((segment) => {
+        const analysis = study.analysisBySegmentId.get(segment.id);
+        return analysis ? { ...segment, pinyin: formatContextualReadingPinyin(analysis) } : segment;
+       }),
+      }
+    : study.documentModel,
+  [displayMode.autoDetectPinyin, study.analysisBySegmentId, study.documentModel],
+ );
  return (
   <Reader
-   data={study.documentModel}
+   data={data}
    display={{
     value: {
      showPinyin: displayMode.showPinyin,
@@ -314,6 +331,14 @@ function ReaderDocumentStudyContent({
   const next = translationSegments[translationActiveIndex + offset];
   if (next) selectTranslationSegment(next.id);
  };
+ const readingUnitsBySegmentId = useMemo(() => {
+  const result = new Map<string, ReturnType<typeof getContextualReadingUnits>>();
+  if (!displayMode.autoDetectPinyin) return result;
+  for (const [segmentId, analysis] of study.analysisBySegmentId) {
+   result.set(segmentId, getContextualReadingUnits(analysis));
+  }
+  return result;
+ }, [displayMode.autoDetectPinyin, study.analysisBySegmentId]);
 
  const readerServices: ReaderServices = {
   ...services,
@@ -363,6 +388,7 @@ function ReaderDocumentStudyContent({
   },
   pronunciationReview: {
    analyses: study.analysisBySegmentId,
+   readingUnitsBySegmentId,
    onInspect: (target) => {
     const index = study.documentModel.segments.findIndex(
      (segment) => segment.id === target.segmentId,

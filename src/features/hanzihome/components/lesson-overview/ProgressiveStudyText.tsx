@@ -17,7 +17,7 @@ import type { ResolvedLessonTextAnnotation } from "@/features/hanzihome/annotati
 import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
 import {
  analyzeContextualPronunciation,
- formatContextualSpokenPinyin,
+ formatContextualReadingPinyin,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 
 import type { LessonDisplayMode } from "./types";
@@ -83,7 +83,7 @@ export function ProgressiveStudyText({
   [pinyin, zh],
  );
  const contextualPinyin = useMemo(
-  () => formatContextualSpokenPinyin(contextualPronunciation),
+  () => formatContextualReadingPinyin(contextualPronunciation),
   [contextualPronunciation],
  );
  const displayPinyin = displayMode.autoDetectPinyin ? contextualPinyin : pinyin;

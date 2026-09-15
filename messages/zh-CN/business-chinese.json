@@ -9,6 +9,11 @@
  "lessonMeta": "{sections} 个内容部分 · {vocab} 个生词",
  "sectionCount": "{count} 个部分",
  "vocabCount": "{count} 个词",
+ "vocabularyPreview": {
+  "eyebrow": "本课词汇",
+  "title": "{count} 个重点词",
+  "open": "打开词汇"
+ },
  "tabs": {
   "all": "完整课文",
   "overview": "概览",

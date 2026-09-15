@@ -10,7 +10,14 @@ import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
-import { formatContextualSpokenPinyin } from "@/lib/pronunciation/contextual-pronunciation";
+import {
+ formatContextualPinyinRange,
+ formatContextualReadingPinyin,
+ formatContextualReadingUnitPinyin,
+ formatContextualSpokenPinyin,
+ shouldSeparatePinyinSyllables,
+ type ContextualReadingUnit,
+} from "@/lib/pronunciation/contextual-pronunciation";
 import { captureReaderSelection } from "../runtime/reader-selection";
 import { getReaderTypographyStyle } from "./reader-typography";
 import { nextAvailableRevealStage, type RevealStage } from "../model/progressive-reveal";
@@ -50,6 +57,10 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   () => new Map(analysis?.glyphs.map((glyph) => [glyph.start, glyph]) ?? []),
   [analysis],
  );
+ const readingUnits =
+  analysis === undefined
+   ? []
+   : (services.pronunciationReview?.readingUnitsBySegmentId.get(segmentId) ?? []);
  const annotations =
   services.annotations?.items.filter((item) => item.segmentId === segmentId) ?? [];
  const register = useCallback(
@@ -63,6 +74,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   analysis !== undefined &&
   (!segment.pinyin ||
    segment.pinyin === formatContextualSpokenPinyin(analysis) ||
+   segment.pinyin === formatContextualReadingPinyin(analysis) ||
    analysis.sourcePinyinStatus === "aligned" ||
    analysis.glyphs.some((glyph) => glyph.evidence.includes("manual-override")));
  const nextStage = nextAvailableRevealStage(stage, {
@@ -76,6 +88,176 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   if (services.annotations) services.annotations.onSelection(selection);
   else services.lookup?.(selection);
  };
+ const renderGrapheme = (grapheme: Intl.SegmentData, index: number, includePinyin = true) => {
+  const glyph = glyphs.get(grapheme.index);
+  const annotation = annotations.find(
+   (item) =>
+    item.start <= grapheme.index &&
+    item.end >= grapheme.index + grapheme.segment.length &&
+    segment.zh.slice(item.start, item.end) === item.text,
+  );
+  const playable =
+   Boolean(annotation) || (Boolean(services.speech) && /\p{Script=Han}/u.test(grapheme.segment));
+  const currentOffset = Math.min(
+   segment.zh.length - 1,
+   startOffset + (segment.zh.length - startOffset) * progress,
+  );
+  const highlighted =
+   status !== "idle" &&
+   grapheme.index <= currentOffset &&
+   currentOffset < grapheme.index + grapheme.segment.length;
+  const play = (element: HTMLElement, event?: React.SyntheticEvent) => {
+   event?.stopPropagation();
+   if (annotation) {
+    services.annotations?.onOpen(annotation, element.getBoundingClientRect());
+    return;
+   }
+   if (window.getSelection()?.isCollapsed === false) return;
+   commands.playFromCharacter(segmentId, grapheme.index);
+  };
+  const hanzi = (
+   <span
+    key={grapheme.index}
+    className={cn(
+     playable && focusRingClassName,
+     playable && "cursor-pointer rounded-sm",
+     highlighted && "reading-progress-highlight",
+     annotation && "reading-highlight",
+    )}
+    role={playable ? "button" : undefined}
+    tabIndex={playable ? 0 : undefined}
+    aria-label={
+     annotation
+      ? textLabels("openAnnotation", { text: annotation.text })
+      : playable
+        ? textLabels("playFromCharacter", { character: grapheme.segment })
+        : undefined
+    }
+    aria-current={highlighted ? "true" : undefined}
+    onClick={playable ? (event) => play(event.currentTarget, event) : undefined}
+    onKeyDown={
+     playable
+      ? (event) => {
+         if (event.key !== "Enter" && event.key !== " ") return;
+         event.preventDefault();
+         play(event.currentTarget, event);
+        }
+      : undefined
+    }
+   >
+    {grapheme.segment}
+   </span>
+  );
+  if (!includePinyin || !inlinePinyin || !display.showPinyin || !glyph?.spokenPinyin || !analysis)
+   return hanzi;
+  const needsPronunciationReview =
+   glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
+  const inspect = (element: HTMLElement) =>
+   services.pronunciationReview?.onInspect({
+    segmentId,
+    analysis,
+    glyph,
+    rect: element.getBoundingClientRect(),
+   });
+  return (
+   <ruby key={grapheme.index}>
+    {hanzi}
+    <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
+     <span
+      role="button"
+      tabIndex={0}
+      className={cn(
+       "cursor-pointer rounded-sm",
+       focusRingClassName,
+       needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
+      )}
+      aria-label={textLabels(
+       needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",
+       { character: grapheme.segment },
+      )}
+      onClick={(event) => {
+       event.stopPropagation();
+       inspect(event.currentTarget);
+      }}
+      onKeyDown={(event) => {
+       if (event.key !== "Enter" && event.key !== " ") return;
+       event.preventDefault();
+       event.stopPropagation();
+       inspect(event.currentTarget);
+      }}
+     >
+      {glyph.spokenPinyin}
+     </span>
+    </rt>
+   </ruby>
+  );
+ };
+ const renderReadingUnit = (unit: ContextualReadingUnit) => {
+  const unitGraphemes = graphemes.filter(
+   (grapheme) => grapheme.index >= unit.start && grapheme.index < unit.end,
+  );
+  const unitPinyin =
+   inlinePinyin && display.showPinyin && analysis && unit.type === "hanzi"
+    ? formatContextualReadingUnitPinyin(analysis, unit)
+    : null;
+  if (unitPinyin === null || analysis === undefined) {
+   return unitGraphemes.map((grapheme) => renderGrapheme(grapheme, graphemes.indexOf(grapheme)));
+  }
+
+  let previousPinyin = "";
+  return (
+   <ruby key={unit.id}>
+    {unitGraphemes.map((grapheme) => renderGrapheme(grapheme, graphemes.indexOf(grapheme), false))}
+    <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
+     {unitGraphemes.map((grapheme) => {
+      const glyph = glyphs.get(grapheme.index);
+      if (glyph === undefined) return null;
+      const pinyin = formatContextualPinyinRange(analysis, glyph.start, glyph.end);
+      const separator = shouldSeparatePinyinSyllables(previousPinyin, pinyin) ? "'" : "";
+      previousPinyin = pinyin;
+      const needsPronunciationReview =
+       glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
+      const inspect = (element: HTMLElement) =>
+       services.pronunciationReview?.onInspect({
+        segmentId,
+        analysis,
+        glyph,
+        rect: element.getBoundingClientRect(),
+       });
+      return (
+       <span
+        key={`${glyph.start}:${glyph.end}`}
+        role="button"
+        tabIndex={0}
+        className={cn(
+         "cursor-pointer rounded-sm",
+         focusRingClassName,
+         needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
+        )}
+        aria-label={textLabels(
+         needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",
+         { character: grapheme.segment },
+        )}
+        onClick={(event) => {
+         event.stopPropagation();
+         inspect(event.currentTarget);
+        }}
+        onKeyDown={(event) => {
+         if (event.key !== "Enter" && event.key !== " ") return;
+         event.preventDefault();
+         event.stopPropagation();
+         inspect(event.currentTarget);
+        }}
+       >
+        {separator}
+        {pinyin}
+       </span>
+      );
+     })}
+    </rt>
+   </ruby>
+  );
+ };
  const hanziContent = (
   <LearnerHanziText
    as={segment.kind === "heading" ? "h3" : "p"}
@@ -87,111 +269,9 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
    aria-hidden={tapMode && stage !== 0}
   >
    {services.speech || annotations.length > 0 || inlinePinyin
-    ? graphemes.map((grapheme) => {
-       const glyph = glyphs.get(grapheme.index);
-       const annotation = annotations.find(
-        (item) =>
-         item.start <= grapheme.index &&
-         item.end >= grapheme.index + grapheme.segment.length &&
-         segment.zh.slice(item.start, item.end) === item.text,
-       );
-       const playable =
-        Boolean(annotation) ||
-        (Boolean(services.speech) && /\p{Script=Han}/u.test(grapheme.segment));
-       const currentOffset = Math.min(
-        segment.zh.length - 1,
-        startOffset + (segment.zh.length - startOffset) * progress,
-       );
-       const highlighted =
-        status !== "idle" &&
-        grapheme.index <= currentOffset &&
-        currentOffset < grapheme.index + grapheme.segment.length;
-       const play = (element: HTMLElement, event?: React.SyntheticEvent) => {
-        event?.stopPropagation();
-        if (annotation) {
-         services.annotations?.onOpen(annotation, element.getBoundingClientRect());
-         return;
-        }
-        if (window.getSelection()?.isCollapsed === false) return;
-        commands.playFromCharacter(segmentId, grapheme.index);
-       };
-       const hanzi = (
-        <span
-         key={grapheme.index}
-         className={cn(
-          playable && focusRingClassName,
-          playable && "cursor-pointer rounded-sm",
-          highlighted && "reading-progress-highlight",
-          annotation && "reading-highlight",
-         )}
-         role={playable ? "button" : undefined}
-         tabIndex={playable ? 0 : undefined}
-         aria-label={
-          annotation
-           ? textLabels("openAnnotation", { text: annotation.text })
-           : playable
-             ? textLabels("playFromCharacter", { character: grapheme.segment })
-             : undefined
-         }
-         aria-current={highlighted ? "true" : undefined}
-         onClick={playable ? (event) => play(event.currentTarget, event) : undefined}
-         onKeyDown={
-          playable
-           ? (event) => {
-              if (event.key !== "Enter" && event.key !== " ") return;
-              event.preventDefault();
-              play(event.currentTarget, event);
-             }
-           : undefined
-         }
-        >
-         {grapheme.segment}
-        </span>
-       );
-       if (!inlinePinyin || !display.showPinyin || !glyph?.spokenPinyin || !analysis) return hanzi;
-       const needsPronunciationReview =
-        glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
-       const inspect = (element: HTMLElement) =>
-        services.pronunciationReview?.onInspect({
-         segmentId,
-         analysis,
-         glyph,
-         rect: element.getBoundingClientRect(),
-        });
-       return (
-        <ruby key={grapheme.index}>
-         {hanzi}
-         <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
-          <span
-           role="button"
-           tabIndex={0}
-           className={cn(
-            "cursor-pointer rounded-sm",
-            focusRingClassName,
-            needsPronunciationReview &&
-             "text-warning underline decoration-dotted underline-offset-2",
-           )}
-           aria-label={textLabels(
-            needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",
-            { character: grapheme.segment },
-           )}
-           onClick={(event) => {
-            event.stopPropagation();
-            inspect(event.currentTarget);
-           }}
-           onKeyDown={(event) => {
-            if (event.key !== "Enter" && event.key !== " ") return;
-            event.preventDefault();
-            event.stopPropagation();
-            inspect(event.currentTarget);
-           }}
-          >
-           {glyph.spokenPinyin}
-          </span>
-         </rt>
-        </ruby>
-       );
-      })
+    ? readingUnits.length > 0
+     ? readingUnits.map(renderReadingUnit)
+     : graphemes.map((grapheme, index) => renderGrapheme(grapheme, index))
     : segment.zh}
   </LearnerHanziText>
  );

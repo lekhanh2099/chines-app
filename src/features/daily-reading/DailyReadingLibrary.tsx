@@ -22,7 +22,7 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  analyzeContextualPronunciation,
- formatContextualSpokenPinyin,
+ formatContextualReadingPinyin,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import type { JsonFieldValue } from "@/types/json";
@@ -624,7 +624,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
        </HanziText>
        {displayMode.showPinyin && titlePronunciation !== null ? (
         <PinyinText as="p" variant="bodySmall" tone="accent">
-         {formatContextualSpokenPinyin(titlePronunciation)}
+         {formatContextualReadingPinyin(titlePronunciation)}
         </PinyinText>
        ) : null}
        {translation !== null ? (
@@ -673,7 +673,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
        ...readerDocument,
        segments: pronunciation.segments,
        ...(titlePronunciation
-        ? { titlePinyin: formatContextualSpokenPinyin(titlePronunciation) }
+        ? { titlePinyin: formatContextualReadingPinyin(titlePronunciation) }
         : {}),
       }}
       display={{
@@ -716,7 +716,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
           </div>
           {displayMode.showPinyin && pronunciation !== null ? (
            <PinyinText as="p" variant="caption" tone="accent">
-            {formatContextualSpokenPinyin(pronunciation)}
+            {formatContextualReadingPinyin(pronunciation)}
            </PinyinText>
           ) : null}
           <Typography variant="bodySmall" weight="semibold">

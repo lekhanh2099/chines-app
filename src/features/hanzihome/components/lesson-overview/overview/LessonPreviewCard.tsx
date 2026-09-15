@@ -17,8 +17,8 @@ export function LessonPreviewCard({
  icon: LucideIcon;
  eyebrow: string;
  title: string;
- actionLabel: string;
- onAction: () => void;
+ actionLabel?: string;
+ onAction?: () => void;
  children: ReactNode;
 }) {
  return (
@@ -45,9 +45,11 @@ export function LessonPreviewCard({
       </div>
      </div>
 
-     <Button type="button" variant="outline" size="toolbar" onClick={onAction}>
-      {actionLabel}
-     </Button>
+     {actionLabel && onAction ? (
+      <Button type="button" variant="outline" size="toolbar" onClick={onAction}>
+       {actionLabel}
+      </Button>
+     ) : null}
     </div>
 
     {children}

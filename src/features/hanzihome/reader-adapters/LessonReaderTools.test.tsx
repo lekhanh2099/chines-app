@@ -80,7 +80,7 @@ describe("ReaderTools", () => {
   expect(markup).toContain("Tự nhận diện pinyin");
  });
 
- it("keeps one full toolbar immediately before the reader document", () => {
+ it("keeps one toolbar immediately before the reader document", () => {
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider
     locale="vi"
@@ -99,15 +99,20 @@ describe("ReaderTools", () => {
    </NextIntlClientProvider>,
   );
   expect(markup.indexOf("data-reader-toolbar")).toBeLessThan(markup.indexOf("data-reader-content"));
-  expect(markup).toContain("Đoạn 1 / 14");
+  expect(markup).toContain('data-reader-group="navigation"');
+  expect(markup).toContain('data-reader-group="playback"');
+  expect(markup).toContain('data-reader-group="tools"');
+  expect(markup).not.toContain('data-reader-group="display"');
+  expect(markup).toContain(">Đoạn 1 / 14</span>");
+  expect(markup).toContain(">Nghe bài</span>");
   expect(markup).toContain('aria-label="Nghe bài"');
   expect(markup).toContain('aria-label="Công cụ học"');
   expect(markup.match(/data-reader-toolbar/g)).toHaveLength(1);
   expect(markup).toContain('aria-label="Đoạn trước"');
   expect(markup).toContain('aria-label="Đoạn sau"');
   expect(markup).toContain('aria-label="Nghe lại đoạn"');
-  expect(markup).toContain('aria-label="Dừng đọc"');
-  expect(markup).toContain('aria-label="Tốc độ đọc"');
+  expect(markup).toContain("Dừng đọc");
+  expect(markup).toContain("Tốc độ đọc");
  });
  it("uses the desktop dropdown for mouse and trackpad input regardless of viewport width", () => {
   pointerState.coarse = false;

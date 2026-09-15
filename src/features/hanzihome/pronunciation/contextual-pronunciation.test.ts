@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import {
  analyzeContextualPronunciation,
  formatContextualPinyinRange,
+ formatContextualReadingPinyin,
  formatContextualSpokenPinyin,
+ getContextualReadingUnits,
 } from "./contextual-pronunciation";
 
 describe("HanziHome contextual pronunciation", () => {
@@ -176,6 +178,56 @@ describe("HanziHome contextual pronunciation", () => {
  it("formats contextual spoken pinyin without losing punctuation", () => {
   const analysis = analyzeContextualPronunciation({ text: "一个人。" });
   expect(formatContextualSpokenPinyin(analysis)).toBe("yí gè rén。");
+ });
+
+ it.each([
+  ["他不太伤心。", ["他", "不", "太", "伤心", "。"], "tā bú tài shāngxīn。"],
+  ["我不知道怎么回答。", ["我", "不", "知道", "怎么", "回答", "。"], "wǒ bù zhīdào zěnme huídá。"],
+  ["一个人。", ["一", "个", "人", "。"], "yí gè rén。"],
+  ["我得去上课。", ["我", "得", "去", "上课", "。"], "wǒ děi qù shàngkè。"],
+  ["听得入迷", ["听", "得", "入迷"], "tīng de rùmí"],
+  ["很好的朋友", ["很", "好", "的", "朋友"], "hěn hǎo de péngyǒu"],
+ ])("groups reviewed reading units for %s", (text, units, pinyin) => {
+  const analysis = analyzeContextualPronunciation({ text });
+  expect(getContextualReadingUnits(analysis).map((unit) => unit.text)).toEqual(units);
+  expect(formatContextualReadingPinyin(analysis)).toBe(pinyin);
+ });
+
+ it("keeps source-selected readings while grouping auto pinyin", () => {
+  const analysis = analyzeContextualPronunciation({
+   text: "他不太伤心。",
+   sourcePinyin: "tā bù tài shāng xīn。",
+  });
+  expect(analysis.sourcePinyinStatus).toBe("aligned");
+  expect(formatContextualReadingPinyin(analysis)).toBe("tā bù tài shāngxīn。");
+ });
+
+ it("keeps pinyin separators in the annotation layer", () => {
+  const analysis = analyzeContextualPronunciation({ text: "西安女儿。" });
+  expect(getContextualReadingUnits(analysis).map((unit) => unit.text)).toEqual([
+   "西安",
+   "女儿",
+   "。",
+  ]);
+  expect(formatContextualReadingPinyin(analysis)).toBe("xī'ān nǚ'ér。");
+  expect(analysis.normalizedText).toBe("西安女儿。");
+ });
+
+ it("preserves non-Hanzi source text while grouping Hanzi units", () => {
+  const analysis = analyzeContextualPronunciation({ text: "HSK 4，2026年。" });
+  expect(formatContextualReadingPinyin(analysis)).toBe("HSK 4，2026nián。");
+ });
+
+ it("keeps pronunciation review tokens independent from reading units", () => {
+  const analysis = analyzeContextualPronunciation({ text: "我得去上课。" });
+  expect(analysis.tokens.map((token) => token.text)).toEqual(["我得去", "上", "课", "。"]);
+  expect(getContextualReadingUnits(analysis).map((unit) => unit.text)).toEqual([
+   "我",
+   "得",
+   "去",
+   "上课",
+   "。",
+  ]);
  });
 
  it("formats the selected pinyin range for the Reader selection toolbar", () => {

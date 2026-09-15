@@ -9,6 +9,11 @@
  "lessonMeta": "{sections} content sections · {vocab} new words",
  "sectionCount": "{count} sections",
  "vocabCount": "{count} words",
+ "vocabularyPreview": {
+  "eyebrow": "Lesson vocabulary",
+  "title": "{count} core words",
+  "open": "Open vocabulary"
+ },
  "tabs": {
   "all": "Full lesson",
   "overview": "Overview",

@@ -9,6 +9,11 @@
  "lessonMeta": "{sections} mục nội dung · {vocab} từ mới",
  "sectionCount": "{count} mục",
  "vocabCount": "{count} từ",
+ "vocabularyPreview": {
+  "eyebrow": "Từ vựng bài này",
+  "title": "{count} từ chính",
+  "open": "Mở từ vựng"
+ },
  "tabs": {
   "all": "Toàn bài",
   "overview": "Tổng quan",

@@ -2964,41 +2964,56 @@ supabase_auth_admin`; privilege assertions and real Auth issuance verified
   SQL and callback tests, not a live Google/email login. Physical-device resume
   and the previous Reader/Notes sync findings are separate and unresolved here.
 
-### Development/production Supabase isolation (2026-09-14)
+### Development backend continuity correction (2026-09-15)
 
-- [x] Local development isolation checkpoint — PASS.
-- Problem: `.env.local` pointed `next dev` at production Supabase, so development
-  logins consumed the same three-session allowance and local work could mutate
-  production user data.
-- Invariant: `npm run dev` starts and migrates the repository-owned local
-  Supabase stack, then supplies Next.js with the local URL plus both the current
-  and legacy public/server credentials through `process.env`. Next.js gives
-  those values precedence over `.env.local`; no development Auth or data request
-  reaches project `pdrzkirlhbkmfpbcsujp`.
-- The existing CI local-Supabase export and `scripts/e2e/seed-fixtures.mjs` are
-  the implementation precedents. The two deterministic fixture accounts are
-  refreshed on each start so development login does not depend on production.
-- Production keeps the approved three-session rejecting hook unchanged. The
-  abandoned replace-oldest migration was never applied remotely and is removed
-  from the implementation.
-- Scope: `package.json`, `README.md` and this plan. No application route, Auth
-  hook, schema, generated type, dependency or persistence contract changes.
-- Rollback: restore the previous `dev` command. The isolated local Supabase
-  volume can remain; no production state needs repair.
+- [x] Localhost/production data-continuity checkpoint — PASS.
+- Problem: the 2026-09-14 development-isolation change replaced the Supabase
+  project configured in `.env.local` with a separate local Auth/database. Google
+  then displayed the same human identity, but Supabase issued a different user ID;
+  the localhost Notes workspace correctly returned zero rows instead of the 21
+  production notes. That isolation contradicted the required development flow.
+- Invariant: `npm run dev` uses the Supabase project configured in `.env.local`,
+  so localhost and the deployed frontend resolve the same authenticated user ID,
+  RLS ownership and live user data. Localhost must not copy, mirror or proxy
+  production-owned rows through a separate local user.
+- Session consequence: a localhost login is a real session in the configured
+  Supabase project and counts toward the approved three-session limit. A separate
+  local JWT cannot access the same RLS-owned rows without adding an unsafe
+  privileged bridge or a second synchronization architecture; neither is allowed.
+- Implementation: restore the established `next dev -p 3001` command and normal
+  Next.js `.env.local` loading. Remove the unused local Google-provider wiring and
+  fixture startup path. Preserve the development-only locale static-param guard
+  because it independently prevents concurrent Next dev manifest corruption;
+  production still prerenders all supported locales.
+- Scope: `package.json`, `README.md`, the locale layout regression and this plan.
+  The local Supabase config and environment example were inspected and left at
+  their established values. No schema, migration, dependency, route, RLS or Auth
+  hook change.
+- Acceptance:
+  - localhost and production use the same Supabase endpoint and authenticated
+    user ID;
+  - localhost Notes loads the same 21 current production notes;
+  - Google login and authenticated API requests succeed without a route 500;
+  - the production three-session hook remains enabled and unchanged;
+  - `npm run check` passes on final source.
+- Rollback: restore the local-Supabase environment override in `npm run dev`.
+  This deliberately returns to isolated test data and must not be described as
+  production data continuity.
+- Production Auth operation: after explicit confirmation, exactly one stale
+  session created on 2026-09-13 and never refreshed was revoked. No user or note
+  row was deleted. Active sessions changed from three to two, then returned to
+  three after the verified localhost Google login.
 - Final evidence:
-  - `npm run dev` started the local stack, confirmed migrations were current,
-    refreshed both fixture accounts and served Next.js on port 3001.
-  - The generated development server/client chunks contained
-    `http://127.0.0.1:54321` and did not contain the production Supabase URL.
-  - Direct password login and local logout passed for the fixture account;
-    `/vi/login` and the three HSK course routes returned HTTP 200.
-  - The original rollback-only Auth session regression passed. Local DB lint
-    and both security/performance advisors reported no errors.
-  - Local and linked migration readback stop at
-    `20260913090000_limit_concurrent_auth_sessions.sql`; no replacement migration
-    or production Auth change remains.
-  - `npm run check` passed: lint, source/UI/API/performance checks, TypeScript,
-    1,213 tests with two skipped, format, zero audit vulnerabilities and the
-    production Next.js build.
-- Local email/password Auth is ready through the fixture accounts. Google OAuth
-  remains a production integration and was not copied into local Supabase.
+  - `npm run dev` starts only `next dev -p 3001` and reports `.env.local` as the
+    loaded environment; it no longer starts, migrates or seeds local Supabase.
+  - A real Chrome Google login completed through the linked production Supabase
+    callback, redirected to localhost and rendered `/vi/notes` with `21 GHI CHÚ`,
+    the same current note titles and counts as production.
+  - Production Management API readback kept the custom access-token hook enabled
+    at `pg-functions://postgres/public/hanzihome_limit_auth_sessions`, with
+    single-session, timebox and inactivity settings unchanged.
+  - Production session readback showed three active sessions after login.
+  - Targeted locale-layout and Auth callback/URL tests passed: 3 files, 10 tests.
+  - `npm run check` passed: lint, source/route/UI/API/performance checks,
+    typecheck, 1,229 tests passed / 3 skipped, format, zero audit vulnerabilities
+    and the production Next.js build. `git diff --check` passed.

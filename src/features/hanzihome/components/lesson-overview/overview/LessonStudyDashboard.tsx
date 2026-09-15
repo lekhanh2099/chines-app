@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { EditableNodeWrapper } from "@/features/hanzihome/editing";
 import type { StudyModule } from "@/features/hanzihome/context/types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import type { BookSection } from "@/features/hanzihome/components/lesson-overview/types";
 import { asRecord, stringValue } from "@/features/hanzihome/components/lesson-overview/utils";
 
@@ -111,7 +112,14 @@ export function LessonStudyDashboard({
       >
        <div className="grid max-h-80 gap-2 overflow-y-auto pr-1 sm:grid-cols-2">
         {lesson.vocab.map((word) => (
-         <VocabPreviewRow key={word.runtimeId} word={word} />
+         <VocabPreviewRow
+          key={word.runtimeId}
+          hanzi={word.hanzi}
+          pinyin={word.pinyin}
+          hanviet={word.meaning.hanviet}
+          category={word.category}
+          meaning={getVocabDisplayMeaning(word)}
+         />
         ))}
        </div>
       </LessonPreviewCard>

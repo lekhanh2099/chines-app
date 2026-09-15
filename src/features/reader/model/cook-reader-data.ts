@@ -1,6 +1,6 @@
 import {
  analyzeContextualPronunciation,
- formatContextualSpokenPinyin,
+ formatContextualReadingPinyin,
  CONTEXTUAL_PRONUNCIATION_MAX_TEXT_LENGTH,
 } from "@/lib/pronunciation/contextual-pronunciation";
 import {
@@ -53,7 +53,7 @@ function generatePinyin(text: string): string {
  for (const [index, part] of chunks.entries()) {
   const previous = chunks[index - 1];
   if (previous && /\p{Script=Han}$/u.test(previous) && /^\p{Script=Han}/u.test(part)) result += " ";
-  result += formatContextualSpokenPinyin(analyzeContextualPronunciation({ text: part }));
+  result += formatContextualReadingPinyin(analyzeContextualPronunciation({ text: part }));
  }
  return result;
 }

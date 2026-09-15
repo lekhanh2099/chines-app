@@ -8,6 +8,83 @@ import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 
 it.runIf(process.env.READER_BROWSER_TEST === "1")(
+ "renders grouped ruby and routes a later syllable to its own review target",
+ async () => {
+  const server = await createServer({
+   configFile: false,
+   resolve: { alias: { "@": fileURLToPath(new URL("../../../", import.meta.url)) } },
+   esbuild: { jsx: "automatic" },
+   server: { host: "127.0.0.1", port: 0 },
+   plugins: [
+    {
+     name: "reader-grouped-ruby-test-page",
+     configureServer(instance) {
+      instance.middlewares.use("/reader-grouped-ruby-test", async (_request, response) => {
+       response.setHeader("Content-Type", "text/html");
+       response.end(
+        await instance.transformIndexHtml(
+         "/reader-grouped-ruby-test",
+         '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><script type="module" src="/src/features/reader/runtime/Reader.browser.fixture.tsx"></script></body></html>',
+        ),
+       );
+      });
+     },
+    },
+   ],
+  });
+  await server.listen();
+  try {
+   const url = server.resolvedUrls?.local[0];
+   if (!url) throw new Error("Reader grouped-ruby fixture server did not start");
+   const browser = await chromium.launch({ headless: true });
+   try {
+    const page = await browser.newPage();
+    await page.goto(`${url}reader-grouped-ruby-test`);
+    await page.waitForFunction(() => Boolean(window.readerHarness));
+    await page.evaluate(() => window.readerHarness.grouped());
+    await browserExpect(page.locator("ruby")).toHaveCount(4);
+    expect(
+     await page.locator("[data-reader-source]").evaluate((source) => {
+      const copy = source.cloneNode(true);
+      if (!(copy instanceof HTMLElement)) return "";
+      copy.querySelectorAll("rt, rp").forEach((node) => node.remove());
+      return copy.textContent;
+     }),
+    ).toBe("他不太伤心。");
+    await page.locator("[data-reader-source]").evaluate((source) => {
+     const range = document.createRange();
+     range.selectNodeContents(source);
+     const selection = window.getSelection();
+     selection?.removeAllRanges();
+     selection?.addRange(range);
+     source.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
+    });
+    expect((await page.evaluate(() => window.readerHarness.snapshot())).lookups).toEqual([
+     "他不太伤心。",
+    ]);
+    await page.getByRole("button", { name: "Kiểm tra pinyin chữ 心", exact: true }).click();
+    expect((await page.evaluate(() => window.readerHarness.snapshot())).reviews).toEqual(["心"]);
+    for (const viewport of [
+     { width: 390, height: 844 },
+     { width: 820, height: 1180 },
+     { width: 1440, height: 900 },
+    ]) {
+     await page.setViewportSize(viewport);
+     expect(
+      await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+     ).toBe(true);
+    }
+   } finally {
+    await browser.close();
+   }
+  } finally {
+   await server.close();
+  }
+ },
+ 60_000,
+);
+
+it.runIf(process.env.READER_BROWSER_TEST === "1")(
  "mounts isolated Reader with StrictMode and real DOM subscriptions",
  async () => {
   const server = await createServer({
@@ -129,8 +206,10 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
       ),
      );
      await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(100);
-     await page.getByRole("button", { name: "Hiện pinyin", exact: true }).click();
+     await page.getByRole("button", { name: "Công cụ học", exact: true }).click();
+     await page.getByRole("menuitemcheckbox", { name: "Pinyin", exact: true }).click();
      await browserExpect(page.locator('[lang="zh-Latn-pinyin"]')).toHaveCount(0);
+     await page.keyboard.press("Escape");
      await page.getByRole("button", { name: "Đoạn sau", exact: true }).click();
      await browserExpect(page.locator('[data-reader-segment="segment-1"]')).toHaveAttribute(
       "data-active",
@@ -192,6 +271,10 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      );
      const toolsButton = touch.getByRole("button", { name: labels.title, exact: true });
      await toolsButton.tap();
+     await browserExpect(touch.getByRole("menu")).toHaveCount(1);
+     await touch
+      .getByRole("menuitem", { name: `${labels.font} / ${labels.size}`, exact: true })
+      .tap();
      await browserExpect(touch.getByRole("dialog")).toHaveCount(1);
      await browserExpect(
       touch.getByRole("heading", { name: labels.font, exact: true }),
@@ -204,9 +287,11 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      await touch.getByRole("button", { name: labels.revealModes.tap, exact: true }).tap();
      await touch.keyboard.press("Escape");
      await browserExpect(toolsButton).toBeFocused();
+     await toolsButton.tap();
      await browserExpect(
-      touch.getByRole("button", { name: labels.showPinyin, exact: true }),
+      touch.getByRole("menuitemcheckbox", { name: labels.pinyin, exact: true }),
      ).toBeDisabled();
+     await touch.keyboard.press("Escape");
      await touch.getByRole("button", { name: labels.revealNext, exact: true }).tap();
      await browserExpect(touch.locator("[data-reader-source]")).toBeHidden();
      await browserExpect(touch.locator('[lang="zh-Latn-pinyin"]')).toHaveText("nǐ hǎo");
@@ -249,7 +334,7 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
       true,
      ),
     );
-    await browserExpect(page.locator("ruby")).toHaveCount(2);
+    await browserExpect(page.locator("ruby")).toHaveCount(1);
     await page.getByRole("button", { name: "Mở ghi chú cho 你", exact: true }).click();
     await page.getByRole("button", { name: "Pinyin chữ 好 cần kiểm tra", exact: true }).click();
     expect((await page.evaluate(() => window.readerHarness.snapshot())).annotationActions).toEqual([

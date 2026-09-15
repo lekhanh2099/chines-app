@@ -15,20 +15,10 @@ npm run dev
 ```
 
 The app runs at [http://localhost:3001](http://localhost:3001). `npm run dev`
-starts the repository's Supabase stack, applies pending local migrations and
-overrides every Supabase URL/public/server credential with the local values
-before starting Next.js. The supported development command therefore never
-consumes a production Auth session or writes to the production database, even
-when `.env.local` contains production credentials for a local release build.
-
-The local stack is seeded with these development-only accounts on each start:
-
-- `hanzihome-e2e-a@example.test`
-- `hanzihome-e2e-b@example.test`
-- Password for both: `HanziHome-E2E!2026`
-
-The accounts and their data exist only in the local Supabase volume. Keep any
-Supabase secret/service-role key server-only.
+uses the Supabase project configured in `.env.local`, so localhost resolves the
+same authenticated user and live user-owned data as production. A localhost
+login is therefore a real session in that project and counts toward the same
+three-session limit. Keep Supabase secret/service-role keys server-only.
 
 ## Verification
 

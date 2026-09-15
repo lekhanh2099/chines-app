@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import {
  BookOpen,
  ChevronLeft,
@@ -16,7 +14,6 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
 import {
  Select,
  SelectContent,
@@ -24,14 +21,15 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { Typography } from "@/components/ui/typography";
 import {
  useReaderCommands,
  useReaderDisplay,
  useReaderSelector,
  useReaderServices,
 } from "../runtime/reader-context";
-import { ReaderTools } from "./ReaderTools";
 import { ReaderOutline } from "./ReaderOutline";
+import { ReaderTools } from "./ReaderTools";
 
 export function ReaderToolbar() {
  const t = useTranslations("Reader.study.chrome.commands");
@@ -80,15 +78,27 @@ export function ReaderToolbar() {
        : undefined
    }
   >
-   <div className="flex min-w-0 flex-wrap items-center gap-3" data-reader-toolbar>
-    {/* Nhóm 1: Điều hướng nội dung (luôn có) */}
-    <div className="flex items-center gap-1" data-reader-group="navigation">
-     <Typography variant="caption" weight="medium" className="whitespace-nowrap px-1 select-none">
+   <div
+    className="flex min-w-0 items-center gap-1.5 overflow-x-auto scrollbar-none"
+    data-reader-toolbar
+   >
+    {/* Nhóm 1: Điều hướng đoạn */}
+    <div
+     className="flex shrink-0 items-center gap-1"
+     data-reader-group="navigation"
+     aria-label={t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
+    >
+     <Typography
+      variant="caption"
+      weight="medium"
+      tone="muted"
+      className="hidden md:inline whitespace-nowrap px-1 select-none"
+     >
       {t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
      </Typography>
      <Button
       variant="ghost"
-      size="icon"
+      size="icon-toolbar"
       aria-label={t("previous")}
       disabled={index === 0 || segmentCount === 0}
       onClick={commands.previous}
@@ -97,7 +107,7 @@ export function ReaderToolbar() {
      </Button>
      <Button
       variant="ghost"
-      size="icon"
+      size="icon-toolbar"
       aria-label={t("restart")}
       disabled={segmentCount === 0 || !speech}
       onClick={commands.restartCurrent}
@@ -106,43 +116,46 @@ export function ReaderToolbar() {
      </Button>
      <Button
       variant="ghost"
-      size="icon"
+      size="icon-toolbar"
       aria-label={t("next")}
       disabled={segmentCount === 0 || index >= segmentCount - 1}
       onClick={commands.next}
      >
       <ChevronRight />
      </Button>
+     <ReaderOutline />
     </div>
 
-    {/* Nhóm 2: Phát âm thanh (luôn có) */}
-    <div className="flex items-center gap-1" data-reader-group="playback">
-     {speech ? (
-      <>
-       <Button
-        size="touch"
-        aria-label={label}
-        disabled={
-         segmentCount === 0 ||
-         (status === "playing" && !speech.pause) ||
-         (status === "paused" && !speech.resume)
-        }
-        onClick={playback}
-       >
-        <PlaybackIcon />
-        <span>{label}</span>
-       </Button>
+    {/* Nhóm 2: Phát âm thanh */}
+    {speech ? (
+     <div className="flex shrink-0 items-center gap-1" data-reader-group="playback">
+      <Button
+       size="toolbar"
+       className="w-9 justify-center sm:w-auto"
+       aria-label={label}
+       disabled={
+        segmentCount === 0 ||
+        (status === "playing" && !speech.pause) ||
+        (status === "paused" && !speech.resume)
+       }
+       onClick={playback}
+      >
+       <PlaybackIcon data-icon="inline-start" />
+       <span className="hidden sm:inline">{label}</span>
+      </Button>
+      {status !== "idle" ? (
        <Button
         variant="ghost"
-        size="icon"
+        size="icon-toolbar"
         aria-label={t("stopReading")}
-        disabled={status === "idle"}
         onClick={commands.stop}
        >
         <Square className="size-3.5 fill-current" />
        </Button>
+      ) : null}
+      <div className="hidden md:flex items-center">
        <Select value={String(rate)} onValueChange={(value) => commands.setRate(Number(value))}>
-        <SelectTrigger aria-label={t("rate")} size="sm" className="w-[5.5rem]">
+        <SelectTrigger aria-label={t("rate")} size="sm" className="w-[4.75rem]">
          <SelectValue />
         </SelectTrigger>
         <SelectContent>
@@ -153,22 +166,21 @@ export function ReaderToolbar() {
          ))}
         </SelectContent>
        </Select>
-      </>
-     ) : null}
-     <ReaderOutline />
-    </div>
+      </div>
+     </div>
+    ) : null}
 
-    {/* Nhóm 3: Hiển thị nội dung (chỉ hiển thị nếu có) */}
+    {/* Nhóm 3: Quick Toggles (Pinyin, Bản dịch) - Hiển thị trực tiếp từ màn hình md trở lên */}
     {showContentDisplay ? (
-     <div className="flex items-center gap-1" data-reader-group="display">
+     <div className="hidden md:flex shrink-0 items-center gap-1" data-reader-group="display">
       {hasPinyin ? (
        <Button
-        variant={display.showPinyin ? "active" : "outline"}
+        variant={display?.showPinyin ? "active" : "outline"}
         size="toolbar"
         aria-label={toolsLabels("showPinyin")}
-        aria-pressed={display.showPinyin}
-        disabled={display.revealMode === "tap"}
-        onClick={() => onDisplayChange?.({ ...display, showPinyin: !display.showPinyin })}
+        aria-pressed={display?.showPinyin}
+        disabled={display?.revealMode === "tap"}
+        onClick={() => onDisplayChange?.({ ...display, showPinyin: !display?.showPinyin })}
        >
         <Languages data-icon="inline-start" />
         <span>{toolsLabels("pinyin")}</span>
@@ -176,12 +188,12 @@ export function ReaderToolbar() {
       ) : null}
       {hasTranslation ? (
        <Button
-        variant={display.showMeaning ? "active" : "outline"}
+        variant={display?.showMeaning ? "active" : "outline"}
         size="toolbar"
         aria-label={toolsLabels("showTranslation")}
-        aria-pressed={display.showMeaning}
-        disabled={display.revealMode === "tap"}
-        onClick={() => onDisplayChange?.({ ...display, showMeaning: !display.showMeaning })}
+        aria-pressed={display?.showMeaning}
+        disabled={display?.revealMode === "tap"}
+        onClick={() => onDisplayChange?.({ ...display, showMeaning: !display?.showMeaning })}
        >
         <BookOpen data-icon="inline-start" />
         <span>{toolsLabels("translation")}</span>
@@ -190,14 +202,17 @@ export function ReaderToolbar() {
      </div>
     ) : null}
 
-    {/* Nhóm 4: Tính năng nâng cao (chỉ hiển thị nếu có) */}
+    {/* Nhóm 4: Tính năng nâng cao */}
     {showAdvancedTools ? (
-     <div className="flex items-center gap-1" data-reader-group="tools">
+     <div className="flex shrink-0 items-center" data-reader-group="tools">
       {renderTools ? renderTools({ content: <ReaderTools /> }) : <ReaderTools />}
      </div>
     ) : null}
 
-    {toolbar?.actions}
+    {/* Nhóm 5: Menu chuyển tab trên mobile/tablet (Ẩn trên màn hình lớn xl vì đã có thanh Tabs phía trên) */}
+    {toolbar?.actions ? (
+     <div className="ml-auto flex shrink-0 items-center gap-1.5 xl:hidden">{toolbar.actions}</div>
+    ) : null}
    </div>
    {error ? (
     <Typography role="alert" tone="danger" wrapping="breakWords">

@@ -7,13 +7,13 @@ describe("Reader cooker", () => {
   const content = cookReaderData([{ id: "long", zh }], { pronunciation: "generate-missing" });
   expect(content.segmentIds).toEqual(["long"]);
   expect(content.segmentsById.long?.zh).toBe(zh);
-  expect(content.segmentsById.long?.pinyin).toBe("zhōng guó。".repeat(800));
+  expect(content.segmentsById.long?.pinyin).toBe("zhōngguó。".repeat(800));
  });
 
  it("keeps supplementary characters intact across pronunciation batches", () => {
   const zh = "A".repeat(1999) + "😀中国。";
   const content = cookReaderData([{ id: "unicode", zh }], { pronunciation: "generate-missing" });
-  expect(content.segmentsById.unicode?.pinyin).toBe("A".repeat(1999) + "😀zhōng guó。");
+  expect(content.segmentsById.unicode?.pinyin).toBe("A".repeat(1999) + "😀zhōngguó。");
  });
  it("splits raw sentences and paragraphs with punctuation and stable line endings", () => {
   const first = cookReaderData("你好！再见？\r\n\r\n中国。");

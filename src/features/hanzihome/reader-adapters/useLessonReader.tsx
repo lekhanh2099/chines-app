@@ -3,7 +3,7 @@
 import { useMemo, useState, type ReactNode } from "react";
 import {
  analyzeContextualPronunciation,
- formatContextualSpokenPinyin,
+ formatContextualReadingPinyin,
 } from "@/lib/pronunciation/contextual-pronunciation";
 import { containsHanziText } from "../components/lesson-overview/hanzi-typography";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
@@ -57,7 +57,7 @@ export function useLessonReader({
    titlePinyin:
     document.titlePinyin ||
     (displayMode.autoDetectPinyin && document.title && containsHanziText(document.title)
-     ? formatContextualSpokenPinyin(analyzeContextualPronunciation({ text: document.title }))
+     ? formatContextualReadingPinyin(analyzeContextualPronunciation({ text: document.title }))
      : undefined),
    segments: pronunciation.segments,
   }),

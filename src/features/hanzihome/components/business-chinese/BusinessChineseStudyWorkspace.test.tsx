@@ -135,20 +135,10 @@ describe("BusinessChineseStudyWorkspace", () => {
     );
    }
    expect(readers.slice(1).every((reader) => !reader.title && !reader.titleVi)).toBe(true);
-   expect(markup.match(/>Nghe bài</g)).toHaveLength(textSections.length);
+   expect(markup.match(/data-reader-toolbar/g)).toHaveLength(textSections.length);
 
-   const vocabularyTable = lesson.sections
-    .find((section) => section.category === "vocab")
-    ?.blocks.find((block) => block.type === "table");
-   if (!vocabularyTable) throw new Error("Expected the source vocabulary table.");
-   const hanziColumn = vocabularyTable.rows[0]?.findIndex(
-    (header) => header === "Hán tự" || header === "Từ",
-   );
-   const cellStart = markup.indexOf(`id="${vocabularyTable.id}:row:0:cell:${hanziColumn}"`);
-   expect(cellStart).toBeGreaterThan(-1);
-   const firstVocabularyCell = markup.slice(cellStart, markup.indexOf("</td>", cellStart));
-   expect(firstVocabularyCell).toContain("font-size:clamp(1.375rem, 4vw, 1.75rem)");
-   expect(firstVocabularyCell).toContain(`aria-label="Đọc từ chữ ${lesson.vocab[0]?.hanzi[0]}"`);
+   expect(markup).toContain("Từ vựng bài này");
+   expect(markup).toContain(`${lesson.vocab.length} từ chính`);
   },
   15_000,
  );
@@ -214,35 +204,42 @@ describe("BusinessChineseStudyWorkspace", () => {
   );
  });
 
- it("renders authoritative Excel columns and supplied pinyin through the existing vocabulary table", () => {
-  const lesson = getTextbookLesson("doc-hieu", 1);
-  if (!lesson) throw new Error("Expected Đọc hiểu unit 1.");
-  const section = lesson.sections.find((item) => item.category === "vocab");
-  const table = section?.blocks.find((block) => block.type === "table");
-  if (!section || !table) throw new Error("Expected the Excel vocabulary table.");
-  const markup = renderWorkspace(
-   <BusinessChineseStudyWorkspace
-    books={getTextbookCatalog()}
-    lesson={{
-     ...lesson,
-     sections: [
-      {
-       ...section,
-       blocks: [{ ...table, rows: table.rows.slice(0, 3) }],
-      },
-     ],
-    }}
-   />,
-  );
+ it.each(getTextbookCatalog())(
+  "renders $label vocabulary from the canonical lesson list as cards",
+  (book) => {
+   const lesson = getTextbookLesson(book.key, 1);
+   if (!lesson) throw new Error(`Expected first lesson of ${book.key}.`);
+   const section = lesson.sections.find((item) =>
+    item.blocks.some(
+     (block) =>
+      block.type === "table" &&
+      block.rows.length === lesson.vocab.length + 1 &&
+      block.rows[1]?.includes(lesson.vocab[0]?.hanzi ?? ""),
+    ),
+   );
+   if (!section) throw new Error(`Expected canonical vocabulary source for ${book.key}.`);
+   const firstWord = lesson.vocab[0];
+   if (!firstWord) throw new Error(`Expected vocabulary for ${book.key}.`);
 
-  for (const header of table.rows[0] ?? []) expect(markup).toContain(header);
-  expect(markup).toContain("báitiān");
-  expect(markup).toContain("Bạch thiên");
-  expect(markup).toContain("ban ngày");
-  expect(markup).toContain("px-4 py-3");
-  expect(markup).toMatch(/data-variant="body"[^>]*lang="zh-Latn-pinyin"[^>]*>báitiān<\/span>/);
-  expect(markup).not.toContain("Chưa học");
- });
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={getTextbookCatalog()}
+     lesson={{ ...lesson, sections: [section] }}
+    />,
+   );
+
+   expect(markup).toContain("Từ vựng bài này");
+   expect(markup).toContain(`${lesson.vocab.length} từ chính`);
+   expect(markup).toContain("Mở từ vựng");
+   expect(markup).toContain(firstWord.hanzi);
+   expect(markup).toContain(firstWord.pinyin);
+   expect(markup).toContain(firstWord.hanviet || firstWord.pos);
+   expect(markup).toContain(firstWord.meaning);
+   expect(markup).toContain("max-h-80");
+   expect(markup).not.toContain(">STT<");
+  },
+  15_000,
+ );
 
  it.each([
   { unit: 1, promptCells: 3 },
