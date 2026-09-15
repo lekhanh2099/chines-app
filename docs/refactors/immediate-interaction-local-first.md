@@ -3017,3 +3017,11 @@ supabase_auth_admin`; privilege assertions and real Auth issuance verified
   - `npm run check` passed: lint, source/route/UI/API/performance checks,
     typecheck, 1,229 tests passed / 3 skipped, format, zero audit vulnerabilities
     and the production Next.js build. `git diff --check` passed.
+
+- Production Auth operation (2026-09-15):
+  - Target: the explicitly confirmed production account.
+  - Action: revoked exactly two stale sessions, created on 2026-09-12 and
+    2026-09-15, from `auth.sessions`.
+  - Result: active sessions reduced from three to one while retaining the current
+    active session, freeing two concurrent admission slots for iPad and other
+    devices. No user or application data was modified.

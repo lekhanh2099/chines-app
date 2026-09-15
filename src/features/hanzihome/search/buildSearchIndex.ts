@@ -282,17 +282,39 @@ function buildLessonNavigationItems(lesson: HanziHomeLesson) {
 }
 
 function buildRadicalItems(radicals: StaticRadicalData[]) {
- return radicals.map((radical) => {
+ return (radicals ?? []).map((radical) => {
   const record = asRecord(radical);
-  const title = text(record, "radical") || text(record, "character");
+  const radicalChar = radical.radical || text(record, "radical") || text(record, "character");
+  const radicalId = radical.id || text(record, "id") || radicalChar;
+  const nameVi =
+   radical.nameVi ||
+   text(record, "nameVi") ||
+   text(record, "name_vi") ||
+   text(record, "meaning_vi");
+  const title = radicalChar || radicalId;
+  const subtitle = nameVi ? `Bộ thủ · ${nameVi}` : "Bộ thủ";
+
+  const bodyParts = [
+   radicalChar,
+   nameVi,
+   radical.coreMeaning?.modern,
+   radical.coreMeaning?.history,
+   radical.recognition,
+   ...(radical.variants ?? []).map((v) => `${v.form} ${v.note}`),
+   ...(radical.relatedComponents ?? []).map((c) => `${c.form} ${c.note}`),
+   ...(radical.distinguish ?? []),
+   stringsFromValue(record).join(" "),
+  ];
+  const body = bodyParts.filter(Boolean).join(" ");
+
   return createItem({
-   id: `radical:${text(record, "id") || title}`,
+   id: `radical:${radicalId}`,
    kind: "radical",
    title,
-   subtitle: `Bộ thủ · ${text(record, "nameVi") || text(record, "meaning_vi")}`,
-   body: stringsFromValue(record).join(" "),
+   subtitle,
+   body,
    module: "radicals",
-   targetId: text(record, "id"),
+   targetId: radicalId,
    href: "/radicals",
   });
  });

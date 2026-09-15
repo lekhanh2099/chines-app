@@ -46,9 +46,18 @@ export type HanziHomeSearchOptions = {
  activeLessonBoost?: boolean;
 };
 
+export type HanziHomeSearchCategory =
+ | "all"
+ | "vocab"
+ | "grammar"
+ | "lesson"
+ | "exercise"
+ | "radical";
+
 export type HanziHomeSearchResult = {
  item: HanziHomeSearchIndexItem;
  score: number;
+ matchedSnippet?: string;
 };
 
 export const HanziHomeSearchNavigationIntentSchema = z.object({

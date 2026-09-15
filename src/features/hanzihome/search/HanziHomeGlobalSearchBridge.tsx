@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
+import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
@@ -14,6 +15,7 @@ import {
  setHanziHomeSearchNavigationIntent,
 } from "@/features/hanzihome/search/searchNavigationStore";
 import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
+import { prefetchHanziHomeSearchIndex } from "@/features/hanzihome/search/useHanziHomeSearchIndex";
 import { findLessonByRouteParam } from "@/features/hanzihome/utils/lesson-route";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { containsChinese } from "@/lib/chinese-utils";
@@ -24,7 +26,26 @@ export function HanziHomeGlobalSearchBridge() {
  const pathname = usePathname();
  const router = useRouter();
  const searchParams = useSearchParams();
+ const queryClient = useQueryClient();
  const open = useSelector(globalSearchStore, (state) => state.open);
+
+ useEffect(() => {
+  if (typeof window === "undefined") return;
+
+  const scheduleIdle =
+   window.requestIdleCallback || ((callback: () => void) => window.setTimeout(callback, 1000));
+  const cancelIdle = window.cancelIdleCallback || ((handle: number) => window.clearTimeout(handle));
+
+  const handle = scheduleIdle(() => {
+   void prefetchHanziHomeSearchIndex(queryClient);
+  });
+
+  return () => {
+   if (typeof handle === "number") {
+    cancelIdle(handle);
+   }
+  };
+ }, [queryClient]);
  const query = useSelector(globalSearchStore, (state) => state.query);
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { openInspector } = useVocabInspector();

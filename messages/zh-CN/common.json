@@ -5,6 +5,7 @@
   "retry": "重试",
   "settings": "设置",
   "signOut": "退出登录",
+  "signOutOthers": "退出其他设备",
   "listen": "播放",
   "stop": "停止"
  },

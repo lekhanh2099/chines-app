@@ -104,7 +104,9 @@
   "missingEmail": "Chưa có email",
   "defaultName": "Bạn",
   "logoutFailed": "Đăng xuất thất bại",
-  "logoutSuccess": "Đã đăng xuất"
+  "logoutSuccess": "Đã đăng xuất",
+  "logoutOthersFailed": "Không thể đăng xuất các thiết bị khác",
+  "logoutOthersSuccess": "Đã đăng xuất các thiết bị khác"
  },
  "localeSwitcher": {
   "label": "Đổi ngôn ngữ giao diện"

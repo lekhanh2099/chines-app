@@ -104,7 +104,9 @@
   "missingEmail": "暂无邮箱",
   "defaultName": "你",
   "logoutFailed": "退出登录失败",
-  "logoutSuccess": "已退出登录"
+  "logoutSuccess": "已退出登录",
+  "logoutOthersFailed": "退出其他设备失败",
+  "logoutOthersSuccess": "已退出所有其他设备"
  },
  "localeSwitcher": {
   "label": "切换界面语言"

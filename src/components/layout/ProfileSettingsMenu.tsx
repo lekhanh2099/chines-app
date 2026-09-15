@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import type { User } from "@supabase/supabase-js";
 import { useQueryClient } from "@tanstack/react-query";
-import { LogOut, Mail, ShieldCheck } from "lucide-react";
+import { LaptopMinimal, LogOut, Mail, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
@@ -69,6 +69,18 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
  });
  const [failedAvatarUrl, setFailedAvatarUrl] = useState<string | null>(null);
  const showAvatar = Boolean(profile.avatarUrl && failedAvatarUrl !== profile.avatarUrl);
+
+ const handleLogoutOthers = async () => {
+  const { error } = await supabase.auth.signOut({ scope: "others" });
+
+  if (error) {
+   toast.error(tShell("profile.logoutOthersFailed"), { description: error.message });
+   return;
+  }
+
+  setOpen(false);
+  toast.success(tShell("profile.logoutOthersSuccess"));
+ };
 
  const handleLogout = async () => {
   const { error } = await supabase.auth.signOut({ scope: "local" });
@@ -159,7 +171,18 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
        <LocaleSwitcher size="sm" />
       </div>
 
-      <div className="p-2">
+      <div className="grid gap-1 p-2">
+       <Button
+        type="button"
+        variant="menu"
+        size="menu"
+        align="start"
+        className="w-full"
+        onClick={handleLogoutOthers}
+       >
+        <LaptopMinimal data-icon="inline-start" />
+        {tCommon("actions.signOutOthers")}
+       </Button>
        <Button
         type="button"
         variant="menuDestructive"

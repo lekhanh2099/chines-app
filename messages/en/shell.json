@@ -103,8 +103,10 @@
   "title": "Profile",
   "missingEmail": "No email available",
   "defaultName": "You",
-  "logoutFailed": "Sign out failed",
-  "logoutSuccess": "Signed out"
+  "logoutFailed": "Failed to sign out",
+  "logoutSuccess": "Signed out",
+  "logoutOthersFailed": "Failed to sign out other devices",
+  "logoutOthersSuccess": "Signed out of all other devices"
  },
  "localeSwitcher": {
   "label": "Change interface language"

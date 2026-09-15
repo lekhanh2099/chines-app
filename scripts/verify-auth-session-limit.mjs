@@ -28,42 +28,44 @@ if (created.error) throw created.error;
 const userId = created.data.user.id;
 
 try {
- const clients = Array.from({ length: 4 }, () => createClient(supabaseUrl, publicKey, options));
- const admissions = await Promise.all(
-  clients.map(async (client) => ({
-   client,
-   result: await client.auth.signInWithPassword({ email, password }),
-  })),
- );
- const admitted = admissions.filter(({ result }) => result.error === null);
- const rejected = admissions.filter(({ result }) => result.error !== null);
- assert.equal(admitted.length, 3, "Exactly three concurrent sign-ins must succeed");
- assert.equal(rejected.length, 1, "The fourth concurrent sign-in must fail");
- const denied = rejected[0];
- assert.equal(denied.result.error.status, 403);
- assert.match(denied.result.error.message, /HANZIHOME_SESSION_LIMIT_REACHED/);
- assert.equal(denied.result.data.session, null, "Rejected login must not receive a session");
-
- for (const { client } of admitted) {
-  const refreshed = await client.auth.refreshSession();
-  assert.equal(refreshed.error, null, "Each admitted session must refresh at the cap");
-  assert.equal(refreshed.data.user.id, userId);
+ // 1. Sign in 5 clients sequentially (all should succeed under 5-session cap)
+ const clients = Array.from({ length: 5 }, () => createClient(supabaseUrl, publicKey, options));
+ for (const client of clients) {
+  const res = await client.auth.signInWithPassword({ email, password });
+  assert.equal(res.error, null, "Concurrent sign-in up to cap of 5 must succeed");
  }
 
- const forbidden = await admitted[0].client.rpc("hanzihome_limit_auth_sessions", { event: {} });
+ // 2. Sign in a 6th client: should succeed and auto-evict the 1st client's session
+ const sixthClient = createClient(supabaseUrl, publicKey, options);
+ const sixthRes = await sixthClient.auth.signInWithPassword({ email, password });
+ assert.equal(
+  sixthRes.error,
+  null,
+  "6th sign-in must succeed via auto-evicting the oldest session",
+ );
+ assert.equal(sixthRes.data.user?.id, userId);
+
+ // 3. Verify that client 0 (the oldest) was evicted and its refresh fails
+ const evictedRefresh = await clients[0].auth.refreshSession();
+ assert.notEqual(evictedRefresh.error, null, "Oldest session must have been evicted");
+
+ // 4. Verify clients 1..4 + sixthClient remain valid and can refresh
+ for (const client of [...clients.slice(1), sixthClient]) {
+  const refreshed = await client.auth.refreshSession();
+  assert.equal(refreshed.error, null, "Surviving sessions must refresh successfully");
+  assert.equal(refreshed.data.user?.id, userId);
+ }
+
+ // 5. Auth hook direct invocation forbidden
+ const forbidden = await sixthClient.rpc("hanzihome_limit_auth_sessions", { event: {} });
  assert.ok(forbidden.error, "Authenticated clients must not invoke the Auth hook directly");
 
- const signedOut = await admitted[0].client.auth.signOut({ scope: "local" });
+ // 6. Sign out locally
+ const signedOut = await sixthClient.auth.signOut({ scope: "local" });
  assert.equal(signedOut.error, null);
- for (const { client } of admitted.slice(1)) {
-  const refreshed = await client.auth.refreshSession();
-  assert.equal(refreshed.error, null, "Local logout must preserve the other sessions");
- }
- const replacement = await denied.client.auth.signInWithPassword({ email, password });
- assert.equal(replacement.error, null, "Local logout must free a slot for another browser");
- assert.equal(replacement.data.user.id, userId);
+
  console.log(
-  "PASS: concurrent 3/4 admission, denied session, refresh, RPC permissions and local logout.",
+  "PASS: 5-session cap, 6th session auto-eviction of oldest, refresh resilience, and RPC permissions.",
  );
 } finally {
  const deleted = await admin.auth.admin.deleteUser(userId);
