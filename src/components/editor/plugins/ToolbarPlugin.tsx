@@ -2,7 +2,6 @@
 
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import {
  Dialog,
  DialogBody,
@@ -531,6 +530,149 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
  );
 }
 
+/* ── Align Dropdown ── */
+
+function AlignDropdown({
+ format,
+ isEditable,
+ onFormat,
+ onIndent,
+ onOutdent,
+}: {
+ format: ElementFormatType;
+ isEditable: boolean;
+ onFormat: (type: ElementFormatType) => void;
+ onIndent: () => void;
+ onOutdent: () => void;
+}) {
+ const formatIcon =
+  format === "center" ? (
+   <AlignCenter />
+  ) : format === "right" ? (
+   <AlignRight />
+  ) : format === "justify" ? (
+   <AlignJustify />
+  ) : (
+   <AlignLeft />
+  );
+
+ return (
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     disabled={!isEditable}
+     onMouseDown={pf}
+     variant="ghost"
+     size="icon-toolbar"
+     title="Căn lề và thụt dòng"
+     aria-label="Căn lề và thụt dòng"
+    >
+     {formatIcon}
+     <ChevronDown data-icon="inline-end" />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="start">
+    <DropdownMenuItem
+     tone={format === "left" ? "accent" : "default"}
+     onSelect={() => onFormat("left")}
+    >
+     <AlignLeft />
+     Căn trái
+    </DropdownMenuItem>
+    <DropdownMenuItem
+     tone={format === "center" ? "accent" : "default"}
+     onSelect={() => onFormat("center")}
+    >
+     <AlignCenter />
+     Căn giữa
+    </DropdownMenuItem>
+    <DropdownMenuItem
+     tone={format === "right" ? "accent" : "default"}
+     onSelect={() => onFormat("right")}
+    >
+     <AlignRight />
+     Căn phải
+    </DropdownMenuItem>
+    <DropdownMenuItem
+     tone={format === "justify" ? "accent" : "default"}
+     onSelect={() => onFormat("justify")}
+    >
+     <AlignJustify />
+     Căn đều hai bên
+    </DropdownMenuItem>
+    <Separator />
+    <DropdownMenuItem onSelect={onOutdent}>
+     <Outdent />
+     Giảm thụt lề
+    </DropdownMenuItem>
+    <DropdownMenuItem onSelect={onIndent}>
+     <Indent />
+     Tăng thụt lề
+    </DropdownMenuItem>
+   </DropdownMenuContent>
+  </DropdownMenu>
+ );
+}
+
+/* ── List Dropdown ── */
+
+function ListDropdown({
+ blockType,
+ isEditable,
+ onSelect,
+}: {
+ blockType: string;
+ isEditable: boolean;
+ onSelect: (type: "bullet" | "number" | "check") => void;
+}) {
+ const isList = blockType === "bullet" || blockType === "number" || blockType === "check";
+ const listIcon =
+  blockType === "number" ? <ListOrdered /> : blockType === "check" ? <ListChecks /> : <List />;
+
+ return (
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     disabled={!isEditable}
+     onMouseDown={pf}
+     variant={isList ? "active" : "ghost"}
+     size="icon-toolbar"
+     title="Danh sách"
+     aria-label="Danh sách"
+    >
+     {listIcon}
+     <ChevronDown data-icon="inline-end" />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="start">
+    <DropdownMenuItem
+     tone={blockType === "bullet" ? "accent" : "default"}
+     onSelect={() => onSelect("bullet")}
+    >
+     <List />
+     Danh sách dấu đầu dòng
+    </DropdownMenuItem>
+    <DropdownMenuItem
+     tone={blockType === "number" ? "accent" : "default"}
+     onSelect={() => onSelect("number")}
+    >
+     <ListOrdered />
+     Danh sách số thứ tự
+    </DropdownMenuItem>
+    <DropdownMenuItem
+     tone={blockType === "check" ? "accent" : "default"}
+     onSelect={() => onSelect("check")}
+    >
+     <ListChecks />
+     Danh sách kiểm tra (Checklist)
+    </DropdownMenuItem>
+   </DropdownMenuContent>
+  </DropdownMenu>
+ );
+}
+
 /* ════════════════════════════════════════════════════════
    Main Plugin
    ════════════════════════════════════════════════════════ */
@@ -694,12 +836,10 @@ export default function ToolbarPlugin() {
     ════════════════════════════════════════════════════════ */
 
  return (
-  <Card
+  <div
    role="group"
    aria-label="Công cụ định dạng ghi chú"
-   variant="section"
-   padding="sm"
-   className="flex flex-nowrap items-center gap-1 overflow-x-auto md:flex-wrap"
+   className="toolbar flex flex-nowrap items-center gap-1 overflow-x-auto"
    onMouseDown={pf}
   >
    {/* ── Undo / Redo ── */}
@@ -823,84 +963,26 @@ export default function ToolbarPlugin() {
    />
    <Divider />
 
-   {/* ── Alignment ── */}
-   <ToolbarButton
-    active={elementFormat === "left"}
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")}
-    title="Left Align"
-   >
-    <AlignLeft />
-   </ToolbarButton>
-   <ToolbarButton
-    active={elementFormat === "center"}
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")}
-    title="Center Align"
-   >
-    <AlignCenter />
-   </ToolbarButton>
-   <ToolbarButton
-    active={elementFormat === "right"}
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right")}
-    title="Right Align"
-   >
-    <AlignRight />
-   </ToolbarButton>
-   <ToolbarButton
-    active={elementFormat === "justify"}
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")}
-    title="Justify"
-   >
-    <AlignJustify />
-   </ToolbarButton>
-   <ToolbarButton
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)}
-    title="Outdent"
-   >
-    <Outdent />
-   </ToolbarButton>
-   <ToolbarButton
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)}
-    title="Indent"
-   >
-    <Indent />
-   </ToolbarButton>
+   {/* ── Alignment & Indent ── */}
+   <AlignDropdown
+    format={elementFormat}
+    isEditable={isEditable}
+    onFormat={(fmt) => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, fmt)}
+    onIndent={() => editor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)}
+    onOutdent={() => editor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)}
+   />
    <Divider />
 
    {/* ── Lists ── */}
-   <ToolbarButton
-    active={blockType === "bullet"}
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)}
-    title="Bullet List"
-   >
-    <List />
-   </ToolbarButton>
-   <ToolbarButton
-    active={blockType === "number"}
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)}
-    title="Numbered List"
-   >
-    <ListOrdered />
-   </ToolbarButton>
-   <ToolbarButton
-    active={blockType === "check"}
-    disabled={!isEditable}
-    onClick={() => editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)}
-    title="Check List"
-   >
-    <ListChecks />
-   </ToolbarButton>
+   <ListDropdown
+    blockType={blockType}
+    isEditable={isEditable}
+    onSelect={(type) => handleBlockFormat(type)}
+   />
    <Divider />
 
    {/* ── + Insert Dropdown ── */}
    <InsertDropdown editor={editor} isEditable={isEditable} />
-  </Card>
+  </div>
  );
 }

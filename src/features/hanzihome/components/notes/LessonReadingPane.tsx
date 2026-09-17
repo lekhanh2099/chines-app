@@ -27,9 +27,6 @@ export function LessonReadingPane({
 
  return (
   <section className={className}>
-   <div className="border-b border-info/20 bg-info-subtle px-4 py-2 text-xs font-black uppercase tracking-wide text-info-text">
-    Bài đọc
-   </div>
    <div className="lesson-note-pane-content">
     <Editor
      key={`lesson-reading-${noteId}`}

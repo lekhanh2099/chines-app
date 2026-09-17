@@ -1444,6 +1444,39 @@ function BusinessChineseStudyWorkspaceContent({
   });
  };
 
+ const desktopTabActions = (
+  <>
+   <Button
+    variant="ghost"
+    size="sm"
+    className="gap-1.5 shrink-0"
+    onClick={onToggleLessonBookmark}
+    title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+    aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+   >
+    <Bookmark
+     className={cn(
+      "size-3.5",
+      isLessonBookmarked ? "fill-warning text-warning" : "text-muted-foreground",
+     )}
+    />
+    <span className={cn(isLessonBookmarked && "font-semibold text-warning-text")}>
+     {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
+    </span>
+   </Button>
+   <Badge
+    variant="success"
+    size="sm"
+    casing="natural"
+    className="cursor-default gap-1 shrink-0"
+    title={t("offlineDescription")}
+   >
+    <CloudCheck data-icon="inline-start" />
+    <span>{t("offlineReady")}</span>
+   </Badge>
+  </>
+ );
+
  return (
   <BusinessChineseAnnotationsContext.Provider
    value={{
@@ -1455,6 +1488,15 @@ function BusinessChineseStudyWorkspaceContent({
     <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
     <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
      <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
+      <Typography as="h1" variant="pageTitle" className="sr-only">
+       {lesson.bookLabel} ·{" "}
+       {t("lessonPosition", {
+        lesson: lesson.number,
+        count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
+       })}
+       {" · "}
+       {lesson.title}
+      </Typography>
       {activeView !== "text" && activeView !== "all" ? (
        <div className="shrink-0 xl:hidden">
         <WorkspaceToolbar>
@@ -1463,7 +1505,23 @@ function BusinessChineseStudyWorkspaceContent({
            {tabs.find((tab) => tab.key === activeView)?.label ?? t("tabsLabel")}
           </Typography>
          </div>
-         {navMenu}
+         <div className="flex shrink-0 items-center gap-1.5">
+          <Button
+           variant={isLessonBookmarked ? "warning" : "ghost"}
+           size="icon-toolbar"
+           onClick={onToggleLessonBookmark}
+           title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+           aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+          >
+           <Bookmark
+            className={cn(
+             "size-4",
+             isLessonBookmarked ? "fill-current text-warning" : "text-muted-foreground",
+            )}
+           />
+          </Button>
+          {navMenu}
+         </div>
         </WorkspaceToolbar>
        </div>
       ) : null}
@@ -1471,6 +1529,7 @@ function BusinessChineseStudyWorkspaceContent({
        value={activeView}
        items={tabs}
        onValueChange={onActiveViewChange}
+       actions={desktopTabActions}
        aria-label={t("tabsLabel")}
        className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden xl:grid-rows-[auto_minmax(0,1fr)]"
        listClassName="hanzihome-liquid-toolbar hidden xl:flex"
@@ -1483,51 +1542,9 @@ function BusinessChineseStudyWorkspaceContent({
             {annotationError || annotationsQuery.error?.message}
            </Typography>
           ) : null}
-          <Card
-           variant="section"
-           padding="md"
-           className={activeView === "text" ? "hidden sm:block" : undefined}
-          >
-           <div className="grid min-w-0 gap-2">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-             <Typography variant="overline" tone="muted">
-              {lesson.bookLabel} ·{" "}
-              {t("lessonPosition", {
-               lesson: lesson.number,
-               count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
-              })}
-             </Typography>
-             <div className="flex items-center gap-2">
-              <Button
-               variant={isLessonBookmarked ? "warning" : "ghost"}
-               size="sm"
-               className="gap-1.5 shrink-0"
-               onClick={onToggleLessonBookmark}
-               title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-               aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-              >
-               <Bookmark
-                className={cn(
-                 "size-3.5",
-                 isLessonBookmarked ? "fill-current" : "text-muted-foreground",
-                )}
-               />
-               <span className="hidden sm:inline">
-                {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
-               </span>
-              </Button>
-              <Badge
-               variant="success"
-               size="sm"
-               className="cursor-default gap-1 shrink-0"
-               title={t("offlineDescription")}
-              >
-               <CloudCheck data-icon="inline-start" />
-               <span className="hidden sm:inline">{t("offlineReady")}</span>
-              </Badge>
-             </div>
-            </div>
-            {activeView !== "text" && activeView !== "all" ? (
+          {activeView === "overview" ? (
+           <Card variant="section" padding="md">
+            <div className="grid min-w-0 gap-2">
              <BusinessChineseText
               pronunciationId={`${lesson.id}:title`}
               text={lessonTitle.source}
@@ -1535,28 +1552,25 @@ function BusinessChineseStudyWorkspaceContent({
               variant="pageTitle"
               weight="black"
              />
-            ) : null}
-            {activeView !== "text" &&
-            activeView !== "all" &&
-            lessonTitle.translation &&
-            displayMode.showMeaning ? (
-             <TranslationText variant="sectionTitle" tone="secondary" weight="black">
-              {lessonTitle.translation}
-             </TranslationText>
-            ) : null}
-            {intro ? (
-             <Typography variant="bodySmall" tone="secondary">
-              {intro}
+             {lessonTitle.translation && displayMode.showMeaning ? (
+              <TranslationText variant="sectionTitle" tone="secondary" weight="black">
+               {lessonTitle.translation}
+              </TranslationText>
+             ) : null}
+             {intro ? (
+              <Typography variant="bodySmall" tone="secondary">
+               {intro}
+              </Typography>
+             ) : null}
+             <Typography variant="caption" tone="muted">
+              {t("lessonMeta", {
+               sections: contentSections.length,
+               vocab: lesson.vocab.length,
+              })}
              </Typography>
-            ) : null}
-            <Typography variant="caption" tone="muted">
-             {t("lessonMeta", {
-              sections: contentSections.length,
-              vocab: lesson.vocab.length,
-             })}
-            </Typography>
-           </div>
-          </Card>
+            </div>
+           </Card>
+          ) : null}
 
           {activeView === "text" ? readerContent : null}
 

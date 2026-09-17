@@ -41,10 +41,13 @@ import {
 import { usePathname } from "next/navigation";
 import { toast } from "sonner";
 
-import { BasePopover as Popover, BasePopoverPositioner } from "@/components/ui/base-popover";
+import {
+ BasePopover as Popover,
+ BasePopoverPositioner,
+ BasePopoverPopup,
+} from "@/components/ui/base-popover";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import {
  DropdownMenu,
  DropdownMenuContent,
@@ -562,116 +565,143 @@ export default function EditorFloatingMenu() {
      collisionPadding={12}
      positionMethod="fixed"
     >
-     <Popover.Popup
+     <BasePopoverPopup
+      variant={showChineseLookup ? "lookupWide" : "default"}
       initialFocus={false}
       finalFocus={false}
       onMouseDown={preserveEditorSelection}
       data-no-inspector
-      style={{ maxWidth: "calc(100vw - 1rem)" }}
      >
-      <div className="grid max-w-3xl gap-2">
+      <div className="grid gap-1.5 p-2">
        {showChineseLookup ? (
-        <SmartLookupSummary
-         smartLoading={smartLoading}
-         smartError={smartError}
-         error={error}
-         smartData={smartData}
-         smartMode={smartMode}
-        />
+        <>
+         <SmartLookupSummary
+          smartLoading={smartLoading}
+          smartError={smartError}
+          error={error}
+          smartData={smartData}
+          smartMode={smartMode}
+         />
+         <div className="flex items-center justify-between gap-1 border-b border-border-default/40 pb-1.5">
+          <div className="flex items-center gap-1">
+           <Button
+            variant="ghost"
+            size="icon-toolbar"
+            onMouseDown={preserveEditorSelection}
+            onClick={handleSave}
+            disabled={isSaving || !smartData || smartData.isSaved}
+            aria-label={smartData?.isSaved ? "Đã lưu" : "Lưu vào kho ôn tập"}
+            title={smartData?.isSaved ? "Đã lưu" : "Lưu"}
+           >
+            {isSaving ? (
+             <Loader2 className="animate-spin" />
+            ) : smartData?.isSaved ? (
+             <Check className="text-success-text" />
+            ) : (
+             <BookmarkPlus />
+            )}
+           </Button>
+           <Button
+            variant="ghost"
+            size="icon-toolbar"
+            onMouseDown={preserveEditorSelection}
+            onClick={handleSpeak}
+            disabled={!detailTarget && !selectedText}
+            aria-label="Nghe selection"
+            title="Nghe"
+           >
+            <Volume2 />
+           </Button>
+           <Button
+            variant={showNote ? "warning" : "ghost"}
+            size="icon-toolbar"
+            aria-pressed={showNote}
+            onMouseDown={preserveEditorSelection}
+            onClick={handleToggleNote}
+            aria-label="Ghi chú quan trọng"
+            title="Ghi chú quan trọng"
+           >
+            <NotebookPen />
+           </Button>
+           <Button
+            variant="ghost"
+            size="toolbar"
+            onMouseDown={preserveEditorSelection}
+            onClick={(event) => {
+             preserveEditorSelection(event);
+             if (!detailTarget) return;
+             openDetailDrawer({
+              text: detailTarget,
+              contextSentence,
+              mode: smartMode,
+             });
+             setIsViewportHidden(true);
+            }}
+            disabled={!detailTarget && !selectedText}
+           >
+            Chi tiết
+            <ChevronRight data-icon="inline-end" />
+           </Button>
+          </div>
+
+          <div className="flex items-center gap-1">
+           <Button
+            variant={showLinkSearch ? "active" : "ghost"}
+            size="icon-toolbar"
+            aria-pressed={showLinkSearch}
+            onMouseDown={preserveEditorSelection}
+            onClick={handleToggleLinkSearch}
+            aria-label="Liên kết ghi chú"
+            title="Liên kết ghi chú (Ctrl+K)"
+           >
+            <Link2 />
+           </Button>
+           <Button
+            variant={showInlineNote ? "warning" : "ghost"}
+            size="icon-toolbar"
+            aria-pressed={showInlineNote}
+            onMouseDown={preserveEditorSelection}
+            onClick={handleToggleInlineNote}
+            aria-label="Ghi chú nhanh"
+            title="Ghi chú nhanh"
+           >
+            <StickyNote />
+           </Button>
+          </div>
+         </div>
+        </>
        ) : null}
 
-       <Card variant="subtle" padding="sm" className="grid gap-2">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-         <div className="flex flex-wrap items-center gap-1">
-          {showChineseLookup ? (
+       <div className="grid gap-1.5">
+        <div className="flex items-center justify-between gap-2 overflow-x-auto scrollbar-none py-0.5">
+         <div className="flex items-center gap-1">
+          {!showChineseLookup ? (
            <>
             <Button
-             variant="ghost"
+             variant={showLinkSearch ? "active" : "ghost"}
              size="icon-toolbar"
+             aria-pressed={showLinkSearch}
              onMouseDown={preserveEditorSelection}
-             onClick={handleSave}
-             disabled={isSaving || !smartData || smartData.isSaved}
-             aria-label={smartData?.isSaved ? "Đã lưu" : "Lưu vào kho ôn tập"}
-             title={smartData?.isSaved ? "Đã lưu" : "Lưu"}
+             onClick={handleToggleLinkSearch}
+             aria-label="Liên kết ghi chú"
+             title="Liên kết ghi chú (Ctrl+K)"
             >
-             {isSaving ? (
-              <Loader2 className="animate-spin" />
-             ) : smartData?.isSaved ? (
-              <Check className="text-success-text" />
-             ) : (
-              <BookmarkPlus />
-             )}
+             <Link2 />
             </Button>
             <Button
-             variant="ghost"
+             variant={showInlineNote ? "warning" : "ghost"}
              size="icon-toolbar"
+             aria-pressed={showInlineNote}
              onMouseDown={preserveEditorSelection}
-             onClick={handleSpeak}
-             disabled={!detailTarget && !selectedText}
-             aria-label="Nghe selection"
-             title="Nghe"
+             onClick={handleToggleInlineNote}
+             aria-label="Ghi chú nhanh"
+             title="Ghi chú nhanh"
             >
-             <Volume2 />
+             <StickyNote />
             </Button>
-            <Button
-             variant={showNote ? "warning" : "ghost"}
-             size="icon-toolbar"
-             aria-pressed={showNote}
-             onMouseDown={preserveEditorSelection}
-             onClick={handleToggleNote}
-             aria-label="Ghi chú important"
-             title="Ghi chú important"
-            >
-             <NotebookPen />
-            </Button>
-            <Button
-             variant="ghost"
-             size="toolbar"
-             onMouseDown={preserveEditorSelection}
-             onClick={(event) => {
-              preserveEditorSelection(event);
-              if (!detailTarget) return;
-              openDetailDrawer({
-               text: detailTarget,
-               contextSentence,
-               mode: smartMode,
-              });
-              setIsViewportHidden(true);
-             }}
-             disabled={!detailTarget && !selectedText}
-            >
-             Chi tiết
-             <ChevronRight data-icon="inline-end" />
-            </Button>
+            <Separator orientation="vertical" className="h-5" />
            </>
           ) : null}
-         </div>
-
-         <div className="flex flex-wrap items-center justify-end gap-1">
-          <Button
-           variant={showLinkSearch ? "active" : "ghost"}
-           size="icon-toolbar"
-           aria-pressed={showLinkSearch}
-           onMouseDown={preserveEditorSelection}
-           onClick={handleToggleLinkSearch}
-           aria-label="Liên kết ghi chú"
-           title="Liên kết ghi chú (Ctrl+K)"
-          >
-           <Link2 />
-          </Button>
-          <Button
-           variant={showInlineNote ? "warning" : "ghost"}
-           size="icon-toolbar"
-           aria-pressed={showInlineNote}
-           onMouseDown={preserveEditorSelection}
-           onClick={handleToggleInlineNote}
-           aria-label="Ghi chú nhanh"
-           title="Ghi chú nhanh"
-          >
-           <StickyNote />
-          </Button>
-
-          <Separator orientation="vertical" className="h-5" />
 
           <DropdownMenu>
            <DropdownMenuTrigger asChild>
@@ -687,7 +717,7 @@ export default function EditorFloatingMenu() {
              </Typography>
             </Button>
            </DropdownMenuTrigger>
-           <DropdownMenuContent align="end" width="md">
+           <DropdownMenuContent align="start" width="md">
             <DropdownMenuRadioGroup
              value={fontFamily || DEFAULT_FONT_VALUE}
              onValueChange={(value) => applyFontFamily(value === DEFAULT_FONT_VALUE ? "" : value)}
@@ -705,36 +735,61 @@ export default function EditorFloatingMenu() {
            </DropdownMenuContent>
           </DropdownMenu>
 
-          {QUICK_HANZI_FONT_FAMILIES.map(([value, label]) => (
-           <Button
-            key={`quick-${label}`}
-            type="button"
-            variant={fontFamily === value ? "active" : "surface"}
-            size="compact"
-            style={{ fontFamily: value }}
-            onMouseDown={preserveEditorSelection}
-            onClick={(event) => {
-             preserveEditorSelection(event);
-             applyFontFamily(value);
-            }}
-            title={label}
-           >
-            {label.replace("FZKTPY", "")}
-           </Button>
-          ))}
+          <div className="flex items-center gap-0.5">
+           {QUICK_HANZI_FONT_FAMILIES.map(([value, label]) => (
+            <Button
+             key={`quick-${label}`}
+             type="button"
+             variant={fontFamily === value ? "active" : "surface"}
+             size="compact"
+             style={{ fontFamily: value }}
+             onMouseDown={preserveEditorSelection}
+             onClick={(event) => {
+              preserveEditorSelection(event);
+              applyFontFamily(value);
+             }}
+             title={label}
+            >
+             {label.replace("FZKTPY", "")}
+            </Button>
+           ))}
+          </div>
+         </div>
 
-          <Separator orientation="vertical" className="h-5" />
+         <div className="flex items-center gap-0.5">
+          <FormatButton
+           active={isSubscript}
+           onClick={() => formatText("subscript")}
+           title="Subscript (x₂)"
+          >
+           <Subscript />
+          </FormatButton>
+          <FormatButton
+           active={isSuperscript}
+           onClick={() => formatText("superscript")}
+           title="Superscript (x²)"
+          >
+           <Superscript />
+          </FormatButton>
+         </div>
+        </div>
 
-          <FormatButton active={isBold} onClick={() => formatText("bold")} title="Bold">
+        <div className="flex items-center justify-between gap-1 border-t border-border-default/40 pt-1.5 overflow-x-auto scrollbar-none">
+         <div className="flex items-center gap-0.5">
+          <FormatButton active={isBold} onClick={() => formatText("bold")} title="Bold (Ctrl+B)">
            <Bold />
           </FormatButton>
-          <FormatButton active={isItalic} onClick={() => formatText("italic")} title="Italic">
+          <FormatButton
+           active={isItalic}
+           onClick={() => formatText("italic")}
+           title="Italic (Ctrl+I)"
+          >
            <Italic />
           </FormatButton>
           <FormatButton
            active={isUnderline}
            onClick={() => formatText("underline")}
-           title="Underline"
+           title="Underline (Ctrl+U)"
           >
            <Underline />
           </FormatButton>
@@ -745,168 +800,159 @@ export default function EditorFloatingMenu() {
           >
            <Strikethrough />
           </FormatButton>
-          <FormatButton
-           active={isSubscript}
-           onClick={() => formatText("subscript")}
-           title="Subscript"
-          >
-           <Subscript />
-          </FormatButton>
-          <FormatButton
-           active={isSuperscript}
-           onClick={() => formatText("superscript")}
-           title="Superscript"
-          >
-           <Superscript />
-          </FormatButton>
+
           <Separator orientation="vertical" className="h-5" />
+
           <FormatButton active={isHighlight} onClick={toggleHighlight} title="Highlight">
            <Highlighter />
           </FormatButton>
           <FormatButton active={isCode} onClick={() => formatText("code")} title="Inline Code">
            <Code />
           </FormatButton>
+         </div>
+
+         <div className="flex items-center gap-0.5">
           <FormatButton onClick={clearFormatting} title="Clear Formatting">
            <RemoveFormatting />
           </FormatButton>
          </div>
         </div>
+       </div>
 
-        {showNote ? (
-         <Card variant="subtle" padding="sm" className="grid gap-2">
-          <div className="flex items-center justify-between gap-2">
-           <Badge variant="warning">Important</Badge>
-           <Button
-            variant="ghost"
-            size="toolbar"
-            onMouseDown={preserveEditorSelection}
-            onClick={handleSaveNote}
-            disabled={isSaving || !smartData}
-           >
-            <Save data-icon="inline-start" />
-            Lưu note
-           </Button>
-          </div>
-          <Textarea
-           ref={noteTextareaRef}
-           value={noteDraft}
-           onMouseDown={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            requestAnimationFrame(() => noteTextareaRef.current?.focus());
-           }}
-           onClick={(event) => event.stopPropagation()}
-           onChange={(event) => setNoteDraft(event.target.value)}
-           density="compact"
-           surface="transparent"
-           className="w-full"
-           placeholder="Ghi chú nhanh..."
-          />
-         </Card>
-        ) : null}
-
-        {showLinkSearch ? (
-         <Card variant="subtle" padding="sm" className="grid gap-2">
-          <Typography
-           variant="caption"
-           tone="accent"
-           weight="semibold"
-           className="flex items-center gap-2"
+       {showNote ? (
+        <div className="grid gap-2 rounded-lg bg-bg-card/70 p-2 border border-border-default/40">
+         <div className="flex items-center justify-between gap-2">
+          <Badge variant="warning">Important</Badge>
+          <Button
+           variant="ghost"
+           size="toolbar"
+           onMouseDown={preserveEditorSelection}
+           onClick={handleSaveNote}
+           disabled={isSaving || !smartData}
           >
-           <Search className="size-4" />
-           Liên kết ghi chú
-          </Typography>
-          <Input
-           ref={linkSearchInputRef}
-           type="text"
-           value={linkSearchQuery}
-           onMouseDown={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            requestAnimationFrame(() => linkSearchInputRef.current?.focus());
-           }}
-           onClick={(event) => event.stopPropagation()}
-           onChange={(event) => void handleLinkSearch(event.target.value)}
-           onKeyDown={(event) => {
-            if (event.key === "Escape") setShowLinkSearch(false);
-            if (event.key === "Enter" && linkSearchResults.length > 0) {
-             event.preventDefault();
-             handleInsertNoteLink(linkSearchResults[0]);
-            }
-           }}
-           placeholder="Tìm theo tiêu đề ghi chú..."
-           surface="field"
-           className="w-full"
-          />
-          {isSearching ? (
-           <Typography variant="caption" tone="accent" className="flex items-center gap-2">
-            <Loader2 className="animate-spin" />
-            Đang tìm...
-           </Typography>
-          ) : null}
-          {!isSearching && linkSearchResults.length > 0 ? (
-           <div className="flex max-h-36 flex-col gap-0.5 overflow-y-auto scrollbar-soft">
-            {linkSearchResults.map((note) => (
-             <Button
-              key={note.id}
-              onMouseDown={preserveEditorSelection}
-              onClick={(event) => {
-               preserveEditorSelection(event);
-               handleInsertNoteLink(note);
-              }}
-              variant="menu"
-              size="menu"
-              align="start"
-              className="w-full"
-             >
-              {note.title}
-             </Button>
-            ))}
-           </div>
-          ) : null}
-          {!isSearching && linkSearchQuery && linkSearchResults.length === 0 ? (
-           <Typography as="p" variant="caption" tone="muted">
-            Không tìm thấy ghi chú nào
-           </Typography>
-          ) : null}
-         </Card>
-        ) : null}
+           <Save data-icon="inline-start" />
+           Lưu note
+          </Button>
+         </div>
+         <Textarea
+          ref={noteTextareaRef}
+          value={noteDraft}
+          onMouseDown={(event) => {
+           event.preventDefault();
+           event.stopPropagation();
+           requestAnimationFrame(() => noteTextareaRef.current?.focus());
+          }}
+          onClick={(event) => event.stopPropagation()}
+          onChange={(event) => setNoteDraft(event.target.value)}
+          density="compact"
+          surface="transparent"
+          className="w-full"
+          placeholder="Ghi chú nhanh..."
+         />
+        </div>
+       ) : null}
 
-        {showInlineNote ? (
-         <Card variant="subtle" padding="sm" className="grid gap-2">
-          <div className="flex items-center justify-between gap-2">
-           <Badge variant="info">Ghi chú nhanh</Badge>
-           <Button
-            variant="ghost"
-            size="toolbar"
-            onMouseDown={preserveEditorSelection}
-            onClick={handleSaveInlineNote}
-            disabled={!inlineNoteDraft.trim()}
-           >
-            <Save data-icon="inline-start" />
-            Lưu
-           </Button>
-          </div>
-          <Textarea
-           ref={inlineNoteTextareaRef}
-           value={inlineNoteDraft}
-           onMouseDown={(event) => {
+       {showLinkSearch ? (
+        <div className="grid gap-2 rounded-lg bg-bg-card/70 p-2 border border-border-default/40">
+         <Typography
+          variant="caption"
+          tone="accent"
+          weight="semibold"
+          className="flex items-center gap-2"
+         >
+          <Search className="size-4" />
+          Liên kết ghi chú
+         </Typography>
+         <Input
+          ref={linkSearchInputRef}
+          type="text"
+          value={linkSearchQuery}
+          onMouseDown={(event) => {
+           event.preventDefault();
+           event.stopPropagation();
+           requestAnimationFrame(() => linkSearchInputRef.current?.focus());
+          }}
+          onClick={(event) => event.stopPropagation()}
+          onChange={(event) => void handleLinkSearch(event.target.value)}
+          onKeyDown={(event) => {
+           if (event.key === "Escape") setShowLinkSearch(false);
+           if (event.key === "Enter" && linkSearchResults.length > 0) {
             event.preventDefault();
-            event.stopPropagation();
-            requestAnimationFrame(() => inlineNoteTextareaRef.current?.focus());
-           }}
-           onClick={(event) => event.stopPropagation()}
-           onChange={(event) => setInlineNoteDraft(event.target.value)}
-           density="compact"
-           surface="transparent"
-           className="w-full"
-           placeholder="Ghim ghi chú lại... (vd: tra thêm ví dụ, phát âm đặc biệt)"
-          />
-         </Card>
-        ) : null}
-       </Card>
+            handleInsertNoteLink(linkSearchResults[0]);
+           }
+          }}
+          placeholder="Tìm theo tiêu đề ghi chú..."
+          surface="field"
+          className="w-full"
+         />
+         {isSearching ? (
+          <Typography variant="caption" tone="accent" className="flex items-center gap-2">
+           <Loader2 className="animate-spin" />
+           Đang tìm...
+          </Typography>
+         ) : null}
+         {!isSearching && linkSearchResults.length > 0 ? (
+          <div className="flex max-h-36 flex-col gap-0.5 overflow-y-auto scrollbar-soft">
+           {linkSearchResults.map((note) => (
+            <Button
+             key={note.id}
+             onMouseDown={preserveEditorSelection}
+             onClick={(event) => {
+              preserveEditorSelection(event);
+              handleInsertNoteLink(note);
+             }}
+             variant="menu"
+             size="menu"
+             align="start"
+             className="w-full"
+            >
+             {note.title}
+            </Button>
+           ))}
+          </div>
+         ) : null}
+         {!isSearching && linkSearchQuery && linkSearchResults.length === 0 ? (
+          <Typography as="p" variant="caption" tone="muted">
+           Không tìm thấy ghi chú nào
+          </Typography>
+         ) : null}
+        </div>
+       ) : null}
+
+       {showInlineNote ? (
+        <div className="grid gap-2 rounded-lg bg-bg-card/70 p-2 border border-border-default/40">
+         <div className="flex items-center justify-between gap-2">
+          <Badge variant="info">Ghi chú nhanh</Badge>
+          <Button
+           variant="ghost"
+           size="toolbar"
+           onMouseDown={preserveEditorSelection}
+           onClick={handleSaveInlineNote}
+           disabled={!inlineNoteDraft.trim()}
+          >
+           <Save data-icon="inline-start" />
+           Lưu
+          </Button>
+         </div>
+         <Textarea
+          ref={inlineNoteTextareaRef}
+          value={inlineNoteDraft}
+          onMouseDown={(event) => {
+           event.preventDefault();
+           event.stopPropagation();
+           requestAnimationFrame(() => inlineNoteTextareaRef.current?.focus());
+          }}
+          onClick={(event) => event.stopPropagation()}
+          onChange={(event) => setInlineNoteDraft(event.target.value)}
+          density="compact"
+          surface="transparent"
+          className="w-full"
+          placeholder="Ghim ghi chú lại... (vd: tra thêm ví dụ, phát âm đặc biệt)"
+         />
+        </div>
+       ) : null}
       </div>
-     </Popover.Popup>
+     </BasePopoverPopup>
     </BasePopoverPositioner>
    </Popover.Portal>
   </Popover.Root>
@@ -928,159 +974,93 @@ function SmartLookupSummary({
 }) {
  if (smartLoading) {
   return (
-   <Card variant="subtle" padding="md" className="flex items-center justify-center gap-2">
-    <Loader2 className="animate-spin text-accent-text" />
-    <Typography tone="muted">Đang tra...</Typography>
-   </Card>
+   <div className="flex items-center justify-center gap-2 rounded-lg bg-bg-card/70 py-2.5 px-3 border border-border-default/40">
+    <Loader2 className="size-3.5 animate-spin text-accent-text" />
+    <Typography variant="caption" tone="muted">
+     Đang tra cứu từ điển AI...
+    </Typography>
+   </div>
   );
  }
 
  if (smartError) {
   return (
-   <Card variant="subtle" padding="md" role="alert">
-    <Typography as="p" variant="bodySmall" tone="danger" weight="semibold">
+   <div className="rounded-lg bg-bg-card/70 p-2 border border-border-default/40" role="alert">
+    <Typography as="p" variant="caption" tone="danger" weight="semibold">
      {error instanceof Error ? error.message : "Không thể tải dữ liệu"}
     </Typography>
-   </Card>
+   </div>
   );
  }
 
  if (!smartData) return null;
 
+ const wordPos = smartData.definitions[0]?.pos || smartData.entry.ai_analysis?.word_type;
+ const wordMeaning =
+  smartData.meaning_summary ||
+  smartData.definitions[0]?.meaning ||
+  smartData.definitions[0]?.text ||
+  smartData.entry.meaning ||
+  "Chưa có nghĩa";
+
  if (smartMode === "word") {
   return (
-   <Card variant="subtle" padding="md" className="grid gap-3">
-    <div className="grid gap-1 text-center">
-     <Typography as="p" variant="sectionTitle" tone="default" weight="bold">
-      {smartData.entry.hanzi}
-     </Typography>
-     {smartData.entry.pinyin ? (
-      <Typography as="p" tone="accent" weight="semibold">
-       {smartData.entry.pinyin}
+   <div className="grid gap-1.5 rounded-lg bg-bg-card/70 p-2.5 border border-border-default/40">
+    <div className="flex items-baseline justify-between gap-2">
+     <div className="flex items-baseline gap-2">
+      <Typography as="span" variant="sectionTitle" tone="default" weight="bold">
+       {smartData.entry.hanzi}
       </Typography>
-     ) : null}
-    </div>
-
-    {smartData.runtimeReceipt ? (
-     <div className="flex flex-wrap justify-center gap-1.5">
-      <Badge variant="default" size="sm" casing="natural">
-       {smartData.runtimeReceipt.provider}
-      </Badge>
-      <Badge variant="default" size="sm" casing="natural">
-       {smartData.runtimeReceipt.model}
-      </Badge>
-      <Badge variant="default" size="sm" casing="natural">
-       {smartData.runtimeReceipt.keyLabel}
-      </Badge>
+      {smartData.entry.pinyin ? (
+       <Typography as="span" variant="bodySmall" tone="accent" weight="semibold">
+        {smartData.entry.pinyin}
+       </Typography>
+      ) : null}
+      {wordPos ? (
+       <Badge variant="default" size="sm" casing="natural">
+        {wordPos}
+       </Badge>
+      ) : null}
      </div>
-    ) : null}
-
-    <Separator />
-
-    <div className="grid gap-3 sm:grid-cols-3">
-     <LookupFact
-      label="Từ loại"
-      value={smartData.definitions[0]?.pos || smartData.entry.ai_analysis?.word_type || "Chưa rõ"}
-     />
-     <LookupFact label="Pinyin" value={smartData.entry.pinyin || "Chưa rõ"} tone="accent" />
-     <LookupFact
-      label="Nghĩa"
-      value={
-       smartData.meaning_summary ||
-       smartData.definitions[0]?.meaning ||
-       smartData.definitions[0]?.text ||
-       smartData.entry.meaning ||
-       "Chưa có nghĩa"
-      }
-     />
     </div>
 
-    <Separator />
+    <Typography as="p" variant="caption" tone="secondary" leading="standard" clamp="two">
+     {wordMeaning}
+    </Typography>
 
-    <div className="grid gap-1 text-center">
-     <Typography as="p" tone="secondary" weight="medium" leading="standard">
-      {smartData.meaning_summary ||
-       smartData.definitions[0]?.meaning ||
-       smartData.definitions[0]?.text ||
-       smartData.entry.meaning ||
-       "Chưa có nghĩa cho selection này"}
+    {smartData.definitions[1] ? (
+     <Typography as="p" variant="caption" tone="muted" leading="compact" clamp="one">
+      2. {smartData.definitions[1].meaning || smartData.definitions[1].text}
      </Typography>
-     {smartData.definitions[1] ? (
-      <Typography as="p" variant="caption" tone="muted" leading="compact">
-       {smartData.definitions[1].meaning || smartData.definitions[1].text}
-      </Typography>
-     ) : null}
-    </div>
-   </Card>
+    ) : null}
+   </div>
   );
  }
 
  return (
-  <Card variant="subtle" padding="md" className="grid gap-3">
-   <div className="grid gap-1 text-center">
-    <Typography as="p" tone="default" weight="semibold" leading="standard">
+  <div className="grid gap-1.5 rounded-lg bg-bg-card/70 p-2.5 border border-border-default/40">
+   <div className="flex items-baseline gap-2">
+    <Typography as="span" variant="bodySmall" tone="default" weight="bold">
      {smartData.selection}
     </Typography>
     {smartData.entry.pinyin ? (
-     <Typography as="p" variant="caption" tone="muted">
+     <Typography as="span" variant="caption" tone="muted">
       {smartData.entry.pinyin}
      </Typography>
     ) : null}
    </div>
 
-   {smartData.runtimeReceipt ? (
-    <div className="flex flex-wrap justify-center gap-1.5">
-     <Badge variant="default" size="sm" casing="natural">
-      {smartData.runtimeReceipt.provider}
-     </Badge>
-     <Badge variant="default" size="sm" casing="natural">
-      {smartData.runtimeReceipt.model}
-     </Badge>
-     <Badge variant="default" size="sm" casing="natural">
-      {smartData.runtimeReceipt.keyLabel}
-     </Badge>
-    </div>
+   {smartData.translation ? (
+    <Typography as="p" variant="caption" tone="secondary" leading="standard">
+     {smartData.translation}
+    </Typography>
    ) : null}
-
-   <Separator />
-
-   <LookupFact label="Dịch nghĩa" value={smartData.translation || "Chưa có bản dịch cho câu này"} />
 
    {smartData.grammar_points[0]?.explanation ? (
-    <>
-     <Separator />
-     <LookupFact label="Ngữ pháp" value={smartData.grammar_points[0].explanation} />
-    </>
+    <Typography as="p" variant="caption" tone="muted" leading="compact">
+     Ngữ pháp: {smartData.grammar_points[0].explanation}
+    </Typography>
    ) : null}
-  </Card>
- );
-}
-
-function LookupFact({
- label,
- value,
- tone = "secondary",
-}: {
- label: string;
- value: string;
- tone?: React.ComponentProps<typeof Typography>["tone"];
-}) {
- return (
-  <section className="grid gap-1">
-   <Typography
-    as="p"
-    variant="overline"
-    tone="muted"
-    weight="semibold"
-    scale="micro"
-    tracking="loose"
-    transform="uppercase"
-   >
-    {label}
-   </Typography>
-   <Typography as="p" tone={tone} weight="semibold" leading="standard">
-    {value}
-   </Typography>
-  </section>
+  </div>
  );
 }

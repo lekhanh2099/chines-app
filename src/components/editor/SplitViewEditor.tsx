@@ -14,7 +14,6 @@ import { useSelector } from "@tanstack/react-store";
 import { Editor } from "./Editor";
 import { ResizableDivider } from "./ResizableDivider";
 import { splitViewStore } from "@/stores/split-view-store";
-import { BookOpen, FileText } from "lucide-react";
 import { z } from "zod";
 
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
@@ -67,10 +66,6 @@ export function SplitViewEditor({
   <div ref={containerRef} className="split-view-container" style={splitStyle}>
    {/* Left Pane — Reading / Lesson Passage */}
    <div className="split-view-pane split-view-pane-left">
-    <div className="split-view-pane-header">
-     <BookOpen className="w-3.5 h-3.5" />
-     <span>Bài đọc</span>
-    </div>
     <div className="split-view-pane-content">
      <Editor
       initialContent={readingContent}
@@ -87,10 +82,6 @@ export function SplitViewEditor({
 
    {/* Right Pane — Personal Notes */}
    <div className="split-view-pane split-view-pane-right">
-    <div className="split-view-pane-header">
-     <FileText className="w-3.5 h-3.5" />
-     <span>Ghi chú</span>
-    </div>
     <div className="split-view-pane-content">
      <Editor
       initialContent={noteContent}

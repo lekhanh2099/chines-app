@@ -206,7 +206,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
 
   let previousPinyin = "";
   return (
-   <ruby key={unit.id}>
+   <ruby key={unit.id} className="whitespace-nowrap">
     {unitGraphemes.map((grapheme) => renderGrapheme(grapheme, graphemes.indexOf(grapheme), false))}
     <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
      {unitGraphemes.map((grapheme) => {
@@ -262,6 +262,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   <LearnerHanziText
    as={segment.kind === "heading" ? "h3" : "p"}
    variant={segment.kind === "heading" ? "sectionTitle" : "body"}
+   leading="learner"
    wrapping="preWrap"
    style={getReaderTypographyStyle(display)}
    data-reader-source

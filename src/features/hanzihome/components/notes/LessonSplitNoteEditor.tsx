@@ -198,7 +198,7 @@ export function LessonSplitNoteEditor({
       className={
        fillHeight
         ? "note-editor-split-panel hidden min-h-0 flex-1 overflow-hidden lg:grid lg:grid-cols-2"
-        : "note-editor-split-panel hidden h-136 overflow-hidden lg:grid lg:grid-cols-2"
+        : "note-editor-split-panel hidden h-[calc(100dvh-17rem)] min-h-[36rem] max-h-[58rem] overflow-hidden lg:grid lg:grid-cols-2"
       }
      >
       <LessonReadingPane
@@ -222,7 +222,7 @@ export function LessonSplitNoteEditor({
       className={
        fillHeight
         ? "note-editor-split-panel min-h-0 flex-1 overflow-hidden lg:hidden"
-        : "note-editor-split-panel h-112 overflow-hidden lg:hidden"
+        : "note-editor-split-panel h-[calc(100dvh-18rem)] min-h-[30rem] overflow-hidden lg:hidden"
       }
      >
       {mobilePane === "reading" ? (
@@ -249,7 +249,9 @@ export function LessonSplitNoteEditor({
    ) : (
     <div
      className={
-      fillHeight ? "note-editor-scroll min-h-0 flex-1" : "note-editor-scroll h-112 sm:h-136"
+      fillHeight
+       ? "note-editor-scroll min-h-0 flex-1"
+       : "note-editor-scroll h-[calc(100dvh-18rem)] min-h-[30rem] lg:h-[calc(100dvh-17rem)] lg:min-h-[36rem] lg:max-h-[58rem]"
      }
     >
      <PersonalNotePane
@@ -294,7 +296,7 @@ function LessonSplitNoteEditorSkeleton({ fillHeight }: { fillHeight: boolean }) 
     className={
      fillHeight
       ? "grid min-h-0 flex-1 overflow-hidden rounded-xl border border-border-default bg-bg-primary lg:grid-cols-2"
-      : "grid min-h-112 overflow-hidden rounded-xl border border-border-default bg-bg-primary lg:grid-cols-2"
+      : "grid h-[calc(100dvh-17rem)] min-h-[36rem] max-h-[58rem] overflow-hidden rounded-xl border border-border-default bg-bg-primary lg:grid-cols-2"
     }
    >
     {Array.from({ length: 2 }, (_, paneIndex) => (

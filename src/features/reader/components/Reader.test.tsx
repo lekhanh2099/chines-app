@@ -165,4 +165,31 @@ describe("standalone Reader facade", () => {
   expect(html).toContain('aria-label="Kiểm tra pinyin chữ 伤"');
   expect(html).toContain('aria-label="Kiểm tra pinyin chữ 心"');
  });
+
+ it("keeps every grouped ruby unit intact when a long passage wraps", async () => {
+  const messages = await loadAppMessages("vi");
+  const analysis = analyzeContextualPronunciation({
+   text: "一位北京的大学生收到了井冈山少年的一封信，由此引出下面一个感人的故事。",
+  });
+  const rubyUnitCount = getContextualReadingUnits(analysis).filter(
+   (unit) => unit.type === "hanzi",
+  ).length;
+  const html = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages}>
+    <Reader
+     data={[{ id: "wrapped", zh: analysis.normalizedText }]}
+     services={{
+      pronunciationReview: {
+       analyses: new Map([["wrapped", analysis]]),
+       readingUnitsBySegmentId: new Map([["wrapped", getContextualReadingUnits(analysis)]]),
+       onInspect: () => undefined,
+      },
+     }}
+    />
+   </NextIntlClientProvider>,
+  );
+
+  expect(html.match(/<ruby class="whitespace-nowrap"/g)).toHaveLength(rubyUnitCount);
+  expect(html).toContain("leading-[1.7]");
+ });
 });

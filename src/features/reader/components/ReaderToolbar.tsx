@@ -2,6 +2,7 @@
 
 import {
  BookOpen,
+ ChevronDown,
  ChevronLeft,
  ChevronRight,
  Languages,
@@ -15,12 +16,12 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuRadioGroup,
+ DropdownMenuRadioItem,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Typography } from "@/components/ui/typography";
 import {
  useReaderCommands,
@@ -154,18 +155,32 @@ export function ReaderToolbar() {
        </Button>
       ) : null}
       <div className="hidden md:flex items-center">
-       <Select value={String(rate)} onValueChange={(value) => commands.setRate(Number(value))}>
-        <SelectTrigger aria-label={t("rate")} size="sm" className="w-[4.75rem]">
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent>
-         {[0.75, 0.9, 1, 1.1, 1.25].map((option) => (
-          <SelectItem key={option} value={String(option)}>
-           {option.toFixed(2)}x
-          </SelectItem>
-         ))}
-        </SelectContent>
-       </Select>
+       <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+         <Button
+          variant="outline"
+          size="toolbar"
+          className="gap-1"
+          aria-label={t("rate")}
+          title={t("rate")}
+         >
+          <span className="font-mono">{rate === 1 ? "1.0x" : `${rate}x`}</span>
+          <ChevronDown className="size-3 text-muted-foreground" />
+         </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="center" width="content" density="compact">
+         <DropdownMenuRadioGroup
+          value={String(rate)}
+          onValueChange={(value) => commands.setRate(Number(value))}
+         >
+          {[0.75, 0.9, 1, 1.1, 1.25].map((option) => (
+           <DropdownMenuRadioItem key={option} value={String(option)}>
+            {option === 1 ? "1.0x" : `${option}x`}
+           </DropdownMenuRadioItem>
+          ))}
+         </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+       </DropdownMenu>
       </div>
      </div>
     ) : null}
