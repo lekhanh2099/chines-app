@@ -2907,7 +2907,7 @@ This is the version to freeze and implement against.
 ## Authorized addendum — three concurrent sign-in sessions (2026-09-13)
 
 The user approved a hard limit of three browser/profile sessions and live
-application to Supabase `chines-app` (`pdrzkirlhbkmfpbcsujp`). This is separate
+application to its Supabase project (`your-project-ref`). This is separate
 from lesson-resume synchronization and does not close the offline audit findings.
 
 - [x] Supabase enforcement checkpoint — migration applied and live Auth verified.
@@ -2931,7 +2931,7 @@ supabase_auth_admin`; privilege assertions and real Auth issuance verified
   that boundary without changing role memberships.
 - `supabase db push --linked --dry-run` selected only this migration;
   `supabase db push --linked --yes` applied it. Migration list readback matches.
-- `SUPABASE_PROJECT_REF=pdrzkirlhbkmfpbcsujp npm run types:supabase` and
+- `SUPABASE_PROJECT_REF=your-project-ref npm run types:supabase` and
   `types:supabase:check` passed. Generated PostgREST version/template differences
   come from the installed generator, not handwritten contract edits.
 - Targeted callback/confirmation/message tests: 30 passed. Rendered login form
