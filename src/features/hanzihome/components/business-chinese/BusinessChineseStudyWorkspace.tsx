@@ -126,7 +126,11 @@ import type {
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { TextbookNoteAccessCard } from "./TextbookNoteAccessCard";
 import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
-import { translationSegmentsFromTextbook } from "@/features/hanzihome/practice/translation-practice";
+import { LessonDictationWorkspace } from "@/features/hanzihome/practice/LessonDictationWorkspace";
+import {
+ dictationSourcesFromTextbook,
+ translationSegmentsFromTextbook,
+} from "@/features/hanzihome/practice/translation-practice";
 import { useRouter as useLocalizedRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { focusModeStore } from "@/stores/focus-mode-store";
@@ -1160,7 +1164,7 @@ export function BusinessChineseStudyWorkspace({
  const sourceTarget = parseReaderSourceTarget(new URLSearchParams(searchParams.toString()));
  const tabParam = searchParams.get("tab");
  const initialView =
-  tabParam === "notes" || tabParam === "translation"
+  tabParam === "notes" || tabParam === "translation" || tabParam === "dictation"
    ? tabParam
    : sourceTarget?.documentId === `${lesson.id}:text`
      ? "text"
@@ -1189,6 +1193,8 @@ export function BusinessChineseStudyWorkspace({
   [lesson.sections],
  );
 
+ const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
+
  const tabs = useMemo<SegmentedControlItem<string>[]>(
   () =>
    [
@@ -1198,6 +1204,7 @@ export function BusinessChineseStudyWorkspace({
     { key: "text", label: t("tabs.text") },
     { key: "notes", label: t("tabs.notes") },
     { key: "translation", label: t("tabs.translation") },
+    { key: "dictation", label: t("tabs.dictation") },
     { key: "vocab", label: t("tabs.vocab") },
     { key: "grammar", label: t("tabs.grammar") },
     { key: "practice", label: t("tabs.practice") },
@@ -1206,10 +1213,11 @@ export function BusinessChineseStudyWorkspace({
      tab.key === "all" ||
      tab.key === "notes" ||
      tab.key === "translation" ||
+     (tab.key === "dictation" && dictationSources.length > 0) ||
      (tab.key === "vocab" && lesson.vocab.length > 0) ||
      contentSections.some((section) => section.category === tab.key),
    ),
-  [contentSections, lesson.vocab.length, t],
+  [contentSections, dictationSources.length, lesson.vocab.length, t],
  );
 
  const navMenu = (
@@ -1435,6 +1443,7 @@ function BusinessChineseStudyWorkspaceContent({
   [activeView, contentSections],
  );
  const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
+ const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
  const intro = lesson.intro.join(" ");
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
  const selectSection = (sectionId: string) => {
@@ -1580,7 +1589,18 @@ function BusinessChineseStudyWorkspaceContent({
            <LessonTranslationWorkspace segments={translationSegments} displayMode={displayMode} />
           ) : null}
 
-          {activeView !== "text" && activeView !== "notes" && activeView !== "translation" ? (
+          {activeView === "dictation" ? (
+           <LessonDictationWorkspace
+            sources={dictationSources}
+            titleVi={lesson.title}
+            titleZh={lesson.bookLabel}
+           />
+          ) : null}
+
+          {activeView !== "text" &&
+          activeView !== "notes" &&
+          activeView !== "translation" &&
+          activeView !== "dictation" ? (
            <div
             className={cn(
              "grid min-w-0 gap-3",
@@ -1626,6 +1646,30 @@ function BusinessChineseStudyWorkspaceContent({
                  onClick={() => onActiveViewChange("translation")}
                 >
                  Mở Luyện dịch ({translationSegments.length} đoạn)
+                </Button>
+               </Card>
+              ) : null}
+              {activeView === "practice" && dictationSources.length > 0 ? (
+               <Card
+                variant="subtle"
+                padding="sm"
+                className="flex flex-wrap items-center justify-between gap-3"
+               >
+                <div className="flex items-center gap-2">
+                 <Badge variant="purple" size="sm" casing="natural">
+                  Nghe chép
+                 </Badge>
+                 <Typography variant="bodySmall" tone="secondary">
+                  Luyện nghe chép chính tả từng câu ngắn trong bài.
+                 </Typography>
+                </div>
+                <Button
+                 type="button"
+                 size="sm"
+                 variant="outline"
+                 onClick={() => onActiveViewChange("dictation")}
+                >
+                 Mở Nghe chép ({dictationSources.reduce((acc, s) => acc + s.entries.length, 0)} câu)
                 </Button>
                </Card>
               ) : null}

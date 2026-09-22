@@ -1,17 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState, type KeyboardEventHandler } from "react";
+import { Pause, Play, Repeat2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import {
  createListeningHotkeyHandlers,
  resolveListeningShortcut,
  runListeningShortcutAction,
+ useListeningHotkeys,
 } from "@/features/hanzihome/listening/useListeningHotkeys";
 
 import {
@@ -41,6 +44,9 @@ function tokenTone(
 export function StudioDictationEditor({
  entry,
  index,
+ isLoading,
+ isPaused,
+ isSpeaking,
  total,
  onAttempt,
  onNext,
@@ -53,18 +59,22 @@ export function StudioDictationEditor({
  entry: ListeningTranscriptEntry;
  index: number;
  total: number;
+ isLoading?: boolean;
+ isPaused?: boolean;
+ isSpeaking?: boolean;
  onAttempt: (attempt: DictationAttempt) => void;
  onNext: () => void;
  onPlayToggle: () => void;
  onPrevious: () => void;
  onRepeat: () => void;
- onStop: () => void;
- onToggleLoop: () => void;
+ onStop?: () => void;
+ onToggleLoop?: () => void;
 }) {
  const [answers, setAnswers] = useState<Record<string, string>>({});
  const [attempts, setAttempts] = useState<Record<string, DictationAttempt[]>>({});
  const [checked, setChecked] = useState<Record<string, boolean>>({});
  const textareaRef = useRef<HTMLTextAreaElement>(null);
+ const autoNextTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  const answer = answers[entry.id] ?? "";
  const history = attempts[entry.id] ?? [];
  const attempt = history.at(-1);
@@ -74,8 +84,33 @@ export function StudioDictationEditor({
  const summary = isChecked ? summarizeDictationDiff(diff) : null;
 
  useEffect(() => {
+  return () => {
+   if (autoNextTimerRef.current !== null) {
+    clearTimeout(autoNextTimerRef.current);
+    autoNextTimerRef.current = null;
+   }
+  };
+ }, [entry.id]);
+
+ useEffect(() => {
   if (!isChecked) textareaRef.current?.focus();
  }, [entry.id, isChecked]);
+
+ const handlePrevious = () => {
+  if (autoNextTimerRef.current !== null) {
+   clearTimeout(autoNextTimerRef.current);
+   autoNextTimerRef.current = null;
+  }
+  onPrevious();
+ };
+
+ const handleNext = () => {
+  if (autoNextTimerRef.current !== null) {
+   clearTimeout(autoNextTimerRef.current);
+   autoNextTimerRef.current = null;
+  }
+  onNext();
+ };
 
  const checkCurrent = () => {
   if (!answer.trim()) return;
@@ -86,18 +121,57 @@ export function StudioDictationEditor({
   }));
   setChecked((current) => ({ ...current, [entry.id]: true }));
   onAttempt(nextAttempt);
+
+  if (nextAttempt.score === 100 && index < total - 1) {
+   if (autoNextTimerRef.current !== null) {
+    clearTimeout(autoNextTimerRef.current);
+   }
+   autoNextTimerRef.current = setTimeout(() => {
+    onNext();
+   }, 900);
+  }
  };
 
  const editAgain = () => {
+  if (autoNextTimerRef.current !== null) {
+   clearTimeout(autoNextTimerRef.current);
+   autoNextTimerRef.current = null;
+  }
   setChecked((current) => ({ ...current, [entry.id]: false }));
  };
 
  const confirmOrEdit = () => {
-  if (isChecked) editAgain();
-  else checkCurrent();
+  if (isChecked) {
+   if (attempt?.score === 100 && index < total - 1) {
+    handleNext();
+   } else {
+    editAgain();
+   }
+  } else {
+   checkCurrent();
+  }
  };
 
+ const controlTapRef = useRef<{ downTime: number; comboUsed: boolean } | null>(null);
+
+ useListeningHotkeys({
+  enabled: true,
+  onConfirm: confirmOrEdit,
+  onNext: handleNext,
+  onPrevious: handlePrevious,
+  onPlayToggle,
+  onRepeat,
+  onStop,
+  onToggleLoop,
+ });
+
  const onEditorKeyDown: KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
+  if (event.key === "Control") {
+   controlTapRef.current = { downTime: event.timeStamp, comboUsed: false };
+  } else if (controlTapRef.current) {
+   controlTapRef.current.comboUsed = true;
+  }
+
   if (event.defaultPrevented) return;
   if (event.nativeEvent.isComposing && !event.altKey) return;
   const action = resolveListeningShortcut(event.nativeEvent, true);
@@ -106,9 +180,9 @@ export function StudioDictationEditor({
    action,
    createListeningHotkeyHandlers({
     onConfirm: confirmOrEdit,
-    onNext,
+    onNext: handleNext,
     onPlayToggle,
-    onPrevious,
+    onPrevious: handlePrevious,
     onRepeat,
     onStop,
     onToggleLoop,
@@ -117,6 +191,16 @@ export function StudioDictationEditor({
   if (!handled) return;
   event.preventDefault();
   event.stopPropagation();
+ };
+
+ const onEditorKeyUp: KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
+  if (event.key === "Control" && controlTapRef.current) {
+   const { downTime, comboUsed } = controlTapRef.current;
+   controlTapRef.current = null;
+   if (!comboUsed && event.timeStamp - downTime < 600) {
+    onPlayToggle();
+   }
+  }
  };
 
  return (
@@ -148,14 +232,24 @@ export function StudioDictationEditor({
 
    {isChecked ? (
     <Card variant="subtle" padding="md" className="grid gap-3">
-     <Typography as="div" variant="body" lang="zh-CN" wrapping="breakWords">
+     <Typography
+      as="div"
+      variant="sectionTitle"
+      weight="medium"
+      leading="relaxed"
+      tracking="wide"
+      wrapping="breakWords"
+      lang="zh-CN"
+     >
       {diff.map((token, tokenIndex) => (
-       <Typography
-        as="span"
+       <span
         key={`${entry.id}:${tokenIndex}:${token.kind}:${token.value}`}
-        variant="body"
-        tone={tokenTone(token.kind)}
-        className={token.kind === "missing" ? "line-through" : undefined}
+        className={cn(
+         tokenTone(token.kind) === "success" && "text-success-text",
+         tokenTone(token.kind) === "warning" && "text-warning-text",
+         tokenTone(token.kind) === "danger" && "text-danger-text",
+         token.kind === "missing" && "line-through opacity-75",
+        )}
         title={
          token.expected && token.actual && token.expected !== token.actual
           ? `Đúng: ${token.expected}`
@@ -163,7 +257,7 @@ export function StudioDictationEditor({
         }
        >
         {token.kind === "missing" ? `(${token.expected})` : token.value}
-       </Typography>
+       </span>
       ))}
      </Typography>
      {summary ? (
@@ -201,7 +295,7 @@ export function StudioDictationEditor({
        Bạn nghe được gì?
       </Typography>
       <Typography variant="caption" tone="accent" weight="black">
-       6 hoặc Ctrl/⌘ + Enter để kiểm tra
+       Control phát/dừng · Ctrl/⌘ R nghe lại · Ctrl/⌘ ↵ kiểm tra · Ctrl/⌘ ←/→ chuyển câu
       </Typography>
      </div>
      <Textarea
@@ -209,15 +303,15 @@ export function StudioDictationEditor({
       value={answer}
       density="comfortable"
       surface="field"
-      rows={7}
-      lang="zh-CN"
+      rows={6}
       aria-label={`Câu trả lời nghe chép phần ${index + 1}`}
-      aria-keyshortcuts="1 2 3 4 5 6 Escape Control+Enter Meta+Enter"
+      aria-keyshortcuts="1 2 3 4 5 6 Escape Control Control+Enter Meta+Enter Control+KeyR Meta+KeyR Control+ArrowLeft Meta+ArrowLeft Control+ArrowRight Meta+ArrowRight"
       autoCapitalize="off"
       autoCorrect="off"
       spellCheck={false}
       placeholder="Nghe và chép lại bằng chữ Hán…"
       onKeyDown={onEditorKeyDown}
+      onKeyUp={onEditorKeyUp}
       onChange={(event) => {
        setAnswers((current) => ({ ...current, [entry.id]: event.target.value }));
        setChecked((current) => ({ ...current, [entry.id]: false }));
@@ -232,7 +326,15 @@ export function StudioDictationEditor({
       <Typography variant="overline" tone="accent" weight="black">
        Đáp án
       </Typography>
-      <Typography variant="body" lang="zh-CN" wrapping="preWrap">
+      <Typography
+       as="p"
+       variant="body"
+       weight="medium"
+       leading="relaxed"
+       tracking="wide"
+       wrapping="preWrap"
+       lang="zh-CN"
+      >
        {target}
       </Typography>
       {entry.transcript.full.pinyin ? (
@@ -253,19 +355,59 @@ export function StudioDictationEditor({
    ) : null}
 
    <div className="flex flex-col items-stretch justify-between gap-3 border-t border-border-default pt-4 sm:flex-row sm:items-center">
-    <Button type="button" disabled={!isChecked && !answer.trim()} onClick={confirmOrEdit}>
-     {isChecked ? "Sửa lại" : "Kiểm tra"}
-     <Badge size="sm" casing="natural">
-      6 · Ctrl/⌘ ↵
-     </Badge>
-    </Button>
-    {total > 1 ? (
-     <div className="flex gap-2 sm:ms-auto">
-      <Button type="button" variant="ghost" disabled={index === 0} onClick={onPrevious}>
-       ← Phần trước
+    <div className="flex flex-wrap items-center gap-2">
+     {onPlayToggle ? (
+      <Button type="button" variant="outline" disabled={isLoading} onClick={onPlayToggle}>
+       {isSpeaking && !isPaused ? (
+        <Pause data-icon="inline-start" />
+       ) : (
+        <Play data-icon="inline-start" />
+       )}
+       {isLoading
+        ? "Đang chuẩn bị"
+        : isSpeaking && !isPaused
+          ? "Tạm dừng"
+          : isPaused
+            ? "Tiếp tục"
+            : "Nghe phần này"}
+       <Badge size="sm" casing="natural">
+        {isChecked ? "2 · Control" : "Control"}
+       </Badge>
       </Button>
-      <Button type="button" variant="ghost" disabled={index >= total - 1} onClick={onNext}>
+     ) : null}
+     {onRepeat ? (
+      <Button type="button" variant="ghost" onClick={onRepeat}>
+       <Repeat2 data-icon="inline-start" />
+       Nghe lại
+       <Badge size="sm" casing="natural">
+        {isChecked ? "3 · Ctrl/⌘ R" : "Ctrl/⌘ R"}
+       </Badge>
+      </Button>
+     ) : null}
+     <Button type="button" disabled={!isChecked && !answer.trim()} onClick={confirmOrEdit}>
+      {isChecked
+       ? attempt?.score === 100 && index < total - 1
+        ? "Phần sau"
+        : "Sửa lại"
+       : "Kiểm tra"}
+      <Badge size="sm" casing="natural">
+       {isChecked ? "6 · Ctrl/⌘ ↵" : "Ctrl/⌘ ↵"}
+      </Badge>
+     </Button>
+    </div>
+    {total > 1 ? (
+     <div className="flex flex-wrap gap-2 sm:ms-auto">
+      <Button type="button" variant="ghost" disabled={index === 0} onClick={handlePrevious}>
+       ← Phần trước
+       <Badge size="sm" casing="natural">
+        {isChecked ? "1 · Ctrl/⌘ ←" : "Ctrl/⌘ ←"}
+       </Badge>
+      </Button>
+      <Button type="button" variant="ghost" disabled={index >= total - 1} onClick={handleNext}>
        Phần sau →
+       <Badge size="sm" casing="natural">
+        {isChecked ? "4 · Ctrl/⌘ →" : "Ctrl/⌘ →"}
+       </Badge>
       </Button>
      </div>
     ) : null}

@@ -8,11 +8,10 @@ import { Card } from "@/components/ui/card";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
-import {
- ReaderHanziText,
- PinyinText,
- TranslationText,
-} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { TranslationText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { ContextualReaderText } from "@/features/hanzihome/components/reading/ContextualReaderText";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
+import { analyzeContextualPronunciation } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 
@@ -43,9 +42,35 @@ export function LessonTranslationWorkspace({
  const [activeIndex, setActiveIndex] = useState(0);
  const [direction, setDirection] = useState<TranslationDirection>("zh-vi");
  const [state, setState] = useState<TranslationPracticeState>(emptyTranslationPracticeState);
+ const [showPinyin, setShowPinyin] = useState(displayMode.showPinyin);
  const [attemptSaveError, setAttemptSaveError] = useState("");
  const startedAtRef = useRef<Record<string, number>>({});
  const segment = segments[activeIndex];
+
+ const effectiveDisplayMode = useMemo<LessonDisplayMode>(
+  () => ({
+   ...displayMode,
+   autoDetectPinyin: displayMode.autoDetectPinyin ?? true,
+   showPinyin,
+  }),
+  [displayMode, showPinyin],
+ );
+
+ const sourceAnalysis = useMemo(() => {
+  if (!segment || direction !== "zh-vi") return null;
+  return analyzeContextualPronunciation({
+   text: segment.zh,
+   sourcePinyin: segment.pinyin.trim() ? segment.pinyin : null,
+  });
+ }, [direction, segment]);
+
+ const referenceAnalysis = useMemo(() => {
+  if (!segment || direction !== "vi-zh") return null;
+  return analyzeContextualPronunciation({
+   text: segment.zh,
+   sourcePinyin: segment.pinyin.trim() ? segment.pinyin : null,
+  });
+ }, [direction, segment]);
 
  if (!segment) {
   return (
@@ -180,38 +205,41 @@ export function LessonTranslationWorkspace({
    <div className="grid min-w-0 gap-3 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
     <Card variant="section" padding="md" className="grid min-w-0 content-start gap-3">
      <div className="flex items-center justify-between gap-2 text-sm text-foreground-muted">
-      <span>Đoạn {segment.order}</span>
-      <span>{Array.from(sourceText).length} ký tự</span>
+      <div className="flex items-center gap-2">
+       <span>Đoạn {segment.order}</span>
+       <span>·</span>
+       <span>{Array.from(sourceText).length} ký tự</span>
+      </div>
+      {direction === "zh-vi" ? (
+       <div className="flex items-center gap-1.5">
+        <Button
+         type="button"
+         variant={showPinyin ? "active" : "outline"}
+         size="compact"
+         onClick={() => setShowPinyin((prev) => !prev)}
+         aria-label={showPinyin ? "Ẩn pinyin" : "Hiện pinyin"}
+        >
+         Pinyin
+        </Button>
+        <MandarinSpeakButton text={sourceText} />
+       </div>
+      ) : null}
      </div>
-     {direction === "zh-vi" ? (
-      <ReaderHanziText displayMode={displayMode} size="lg" leading="relaxed" wrapping="preWrap">
-       {sourceText}
-      </ReaderHanziText>
+     {direction === "zh-vi" && sourceAnalysis ? (
+      <div className="min-w-0">
+       <ContextualReaderText
+        analysis={sourceAnalysis}
+        displayMode={effectiveDisplayMode}
+        showPinyin={showPinyin}
+        pinyinPresentation="ruby"
+        sourcePinyin={segment.pinyin}
+       />
+      </div>
      ) : (
       <Typography as="p" variant="body" wrapping="preWrap" leading="relaxed">
        {sourceText}
       </Typography>
      )}
-     {direction === "zh-vi" && segment.pinyin ? (
-      <Card asChild variant="subtle" padding="none">
-       <details className="grid gap-2">
-        <summary className="cursor-pointer list-none px-3 py-2.5 [&::-webkit-details-marker]:hidden">
-         <Typography as="span" variant="bodySmall" tone="muted" weight="black">
-          Xem pinyin khi bí
-         </Typography>
-        </summary>
-        <PinyinText
-         variant="bodySmall"
-         tone="accent"
-         weight="semibold"
-         wrapping="preWrap"
-         className="border-t border-border-default px-3 pb-3"
-        >
-         {segment.pinyin}
-        </PinyinText>
-       </details>
-      </Card>
-     ) : null}
      <Typography as="p" variant="caption" tone="muted">
       Bản dịch tham chiếu sẽ hiện sau khi bạn kiểm tra câu trả lời.
      </Typography>
@@ -261,9 +289,29 @@ export function LessonTranslationWorkspace({
        <Typography as="p" variant="bodySmall" weight="black">
         Điểm: {score ?? 0}/100
        </Typography>
-       <TranslationText variant="bodySmall" tone="muted">
-        Đáp án tham chiếu: {referenceText}
-       </TranslationText>
+       <div className="flex items-start justify-between gap-2">
+        <div className="grid min-w-0 flex-1 gap-1">
+         <Typography as="p" variant="caption" tone="muted" weight="bold">
+          Đáp án tham chiếu:
+         </Typography>
+         {direction === "vi-zh" && referenceAnalysis ? (
+          <div className="min-w-0">
+           <ContextualReaderText
+            analysis={referenceAnalysis}
+            displayMode={effectiveDisplayMode}
+            showPinyin={showPinyin}
+            pinyinPresentation="ruby"
+            sourcePinyin={segment.pinyin}
+           />
+          </div>
+         ) : (
+          <TranslationText variant="bodySmall" tone="muted">
+           {referenceText}
+          </TranslationText>
+         )}
+        </div>
+        {direction === "vi-zh" ? <MandarinSpeakButton text={referenceText} /> : null}
+       </div>
       </Card>
      ) : null}
     </Card>

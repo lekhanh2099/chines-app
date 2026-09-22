@@ -40,6 +40,16 @@ const shortcutCases: ShortcutCase[] = [
  [event("Escape", "Escape"), ListeningShortcutAction.Stop],
  [event("Enter", "Enter", { ctrlKey: true }), ListeningShortcutAction.Confirm],
  [event("Enter", "Enter", { metaKey: true }), ListeningShortcutAction.Confirm],
+ [event("ArrowLeft", "ArrowLeft", { ctrlKey: true }), ListeningShortcutAction.Previous],
+ [event("ArrowLeft", "ArrowLeft", { metaKey: true }), ListeningShortcutAction.Previous],
+ [event("ArrowRight", "ArrowRight", { ctrlKey: true }), ListeningShortcutAction.Next],
+ [event("ArrowRight", "ArrowRight", { metaKey: true }), ListeningShortcutAction.Next],
+ [event("BracketLeft", "[", { ctrlKey: true }), ListeningShortcutAction.Previous],
+ [event("BracketRight", "]", { ctrlKey: true }), ListeningShortcutAction.Next],
+ [event("KeyR", "r", { ctrlKey: true }), ListeningShortcutAction.Repeat],
+ [event("KeyR", "r", { metaKey: true }), ListeningShortcutAction.Repeat],
+ [event("Space", " ", { ctrlKey: true }), ListeningShortcutAction.PlayToggle],
+ [event("Space", " ", { metaKey: true }), ListeningShortcutAction.PlayToggle],
 ];
 
 describe("resolveListeningShortcut", () => {
@@ -47,20 +57,35 @@ describe("resolveListeningShortcut", () => {
   expect(resolveListeningShortcut(shortcutEvent, false)).toBe(action);
  });
 
- it("keeps normal typing untouched in editable controls", () => {
+ it("keeps normal typing untouched in editable controls, including numbers and space", () => {
   expect(resolveListeningShortcut(event("Space", " "), true)).toBeNull();
   expect(resolveListeningShortcut(event("KeyR", "r"), true)).toBeNull();
+  expect(resolveListeningShortcut(event("Digit1", "1"), true)).toBeNull();
+  expect(resolveListeningShortcut(event("Digit2", "2"), true)).toBeNull();
+  expect(resolveListeningShortcut(event("Digit3", "3"), true)).toBeNull();
+  expect(resolveListeningShortcut(event("Digit4", "4"), true)).toBeNull();
+  expect(resolveListeningShortcut(event("Digit5", "5"), true)).toBeNull();
+  expect(resolveListeningShortcut(event("Digit6", "6"), true)).toBeNull();
  });
 
- it("still accepts numbered shortcuts and confirm while editing", () => {
-  expect(resolveListeningShortcut(event("Digit2", "2"), true)).toBe(
-   ListeningShortcutAction.PlayToggle,
-  );
-  expect(resolveListeningShortcut(event("Digit6", "6"), true)).toBe(
-   ListeningShortcutAction.Confirm,
-  );
+ it("still accepts modifier confirm, repeat, play/pause and navigation while editing", () => {
   expect(resolveListeningShortcut(event("Enter", "Enter", { ctrlKey: true }), true)).toBe(
    ListeningShortcutAction.Confirm,
+  );
+  expect(resolveListeningShortcut(event("ArrowLeft", "ArrowLeft", { ctrlKey: true }), true)).toBe(
+   ListeningShortcutAction.Previous,
+  );
+  expect(resolveListeningShortcut(event("ArrowRight", "ArrowRight", { metaKey: true }), true)).toBe(
+   ListeningShortcutAction.Next,
+  );
+  expect(resolveListeningShortcut(event("BracketRight", "]", { ctrlKey: true }), true)).toBe(
+   ListeningShortcutAction.Next,
+  );
+  expect(resolveListeningShortcut(event("KeyR", "r", { ctrlKey: true }), true)).toBe(
+   ListeningShortcutAction.Repeat,
+  );
+  expect(resolveListeningShortcut(event("Space", " ", { ctrlKey: true }), true)).toBe(
+   ListeningShortcutAction.PlayToggle,
   );
  });
 

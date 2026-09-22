@@ -1,7 +1,5 @@
 "use client";
 
-import { Pause, Play, Repeat2 } from "lucide-react";
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -137,36 +135,13 @@ export function StudioDictationPracticePanel({
    ) : null}
 
    <div className="grid min-w-0 gap-3 border-t border-border-default pt-4">
-    <div className="flex flex-wrap items-center justify-between gap-3">
-     <div className="grid gap-1">
+    {entry.title ? (
+     <div className="flex flex-wrap items-center justify-between gap-3">
       <Typography variant="bodySmall" weight="black">
-       {entry.title || `Phần ${activeIndex + 1}`}
-      </Typography>
-      <Typography variant="caption" tone="muted">
-       {Array.from(text).length} ký tự
+       {entry.title}
       </Typography>
      </div>
-     <div className="flex flex-wrap items-center gap-2">
-      <Button type="button" disabled={isLoading} onClick={onPlayToggle}>
-       {isSpeaking && !isPaused ? (
-        <Pause data-icon="inline-start" />
-       ) : (
-        <Play data-icon="inline-start" />
-       )}
-       {isLoading
-        ? "Đang chuẩn bị"
-        : isSpeaking && !isPaused
-          ? "Tạm dừng"
-          : isPaused
-            ? "Tiếp tục"
-            : "Nghe phần này"}
-      </Button>
-      <Button type="button" variant="ghost" onClick={onRepeat}>
-       <Repeat2 data-icon="inline-start" />
-       Nghe lại
-      </Button>
-     </div>
-    </div>
+    ) : null}
 
     {scriptMode === "pinyin" ? (
      <Card variant="subtle" padding="sm">
@@ -187,6 +162,9 @@ export function StudioDictationPracticePanel({
      entry={entry}
      index={activeIndex}
      total={entries.length}
+     isLoading={isLoading}
+     isPaused={isPaused}
+     isSpeaking={isSpeaking}
      onAttempt={onAttempt}
      onPrevious={onPrevious}
      onPlayToggle={onPlayToggle}

@@ -109,12 +109,34 @@ export function resolveListeningShortcut(
 ): ListeningShortcutAction | null {
  const modifier = event.ctrlKey || event.metaKey;
  if (modifier && event.key === "Enter") return ListeningShortcutAction.Confirm;
+ if (
+  modifier &&
+  (event.key === "ArrowRight" || event.key === "]" || event.code === "BracketRight")
+ ) {
+  return ListeningShortcutAction.Next;
+ }
+ if (modifier && (event.key === "ArrowLeft" || event.key === "[" || event.code === "BracketLeft")) {
+  return ListeningShortcutAction.Previous;
+ }
+ if (
+  (modifier || event.altKey) &&
+  (event.key.toLocaleLowerCase("en") === "r" || event.code === "KeyR")
+ ) {
+  return ListeningShortcutAction.Repeat;
+ }
+ if ((modifier || event.altKey) && (event.code === "Space" || event.key === " ")) {
+  return ListeningShortcutAction.PlayToggle;
+ }
  if (event.key === "Escape") return ListeningShortcutAction.Stop;
+
+ // While editing in an input/textarea, all plain keys (including numbers 1-6, Space, letters)
+ // must be passed through so the user can type numbers (e.g. 1989年, 10月, 30日)
+ // and use IME candidate selection without shortcut collisions.
+ if (editable && !event.altKey) return null;
 
  const numberShortcut = resolveNumberShortcut(event);
  if (numberShortcut !== null) return numberShortcut;
 
- if (editable && !event.altKey) return null;
  if (event.code === "Space" || event.key === " ") return ListeningShortcutAction.PlayToggle;
  if (event.key === "ArrowLeft") return ListeningShortcutAction.Previous;
  if (event.key === "ArrowRight") return ListeningShortcutAction.Next;
@@ -168,7 +190,19 @@ export function useListeningHotkeys({
  useEffect(() => {
   if (!enabled) return;
 
+  let controlDownTime = 0;
+  let controlComboUsed = false;
+  let isControlActive = false;
+
   const handleKeyDown = (event: KeyboardEvent) => {
+   if (event.key === "Control") {
+    isControlActive = true;
+    controlDownTime = event.timeStamp;
+    controlComboUsed = false;
+   } else if (isControlActive) {
+    controlComboUsed = true;
+   }
+
    if (event.defaultPrevented || event.isComposing || isEditableTarget(event.target)) return;
    const action = resolveListeningShortcut(event, false);
    if (action === null) return;
@@ -188,7 +222,23 @@ export function useListeningHotkeys({
    event.preventDefault();
   };
 
+  const handleKeyUp = (event: KeyboardEvent) => {
+   if (event.defaultPrevented) return;
+   if (event.key === "Control" && isControlActive) {
+    const isTap = !controlComboUsed && event.timeStamp - controlDownTime < 600;
+    isControlActive = false;
+    if (isTap && !isEditableTarget(event.target)) {
+     onPlayToggle();
+     event.preventDefault();
+    }
+   }
+  };
+
   document.addEventListener("keydown", handleKeyDown, true);
-  return () => document.removeEventListener("keydown", handleKeyDown, true);
+  document.addEventListener("keyup", handleKeyUp, true);
+  return () => {
+   document.removeEventListener("keydown", handleKeyDown, true);
+   document.removeEventListener("keyup", handleKeyUp, true);
+  };
  }, [enabled, onConfirm, onNext, onPlayToggle, onPrevious, onRepeat, onStop, onToggleLoop]);
 }

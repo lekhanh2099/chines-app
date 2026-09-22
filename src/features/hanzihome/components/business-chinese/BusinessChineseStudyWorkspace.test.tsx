@@ -409,6 +409,7 @@ describe("BusinessChineseStudyWorkspace", () => {
 
   expect(markup).toContain("Ghi chú");
   expect(markup).toContain("Luyện dịch");
+  expect(markup).toContain("Nghe chép");
  });
 
  it("renders the notes tab content when tab=notes is active", () => {

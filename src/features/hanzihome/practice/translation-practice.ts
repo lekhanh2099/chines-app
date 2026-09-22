@@ -13,7 +13,12 @@ import {
  splitDialogueTurn,
  stripLeadingEmoji,
 } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
+import { containsHanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import {
+ analyzeContextualPronunciation,
+ formatContextualReadingPinyin,
+} from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { calculateChineseAccuracy, calculateTranslationSimilarity } from "./text-comparison";
 
 const lessonPracticeReadingTextSchema = ReadingTextItemSchema.pick({
@@ -389,15 +394,32 @@ export function translationSegmentsFromLesson(sourceLesson: HanyuLesson | undefi
   );
 }
 
-export function dictationSourcesFromLesson(sourceLesson: HanyuLesson | undefined) {
- const sources = new Map<
-  string,
-  {
-   id: string;
-   label: string;
-   entries: Array<{ id: string; zh: string; pinyin: string; vi: string }>;
+export type DictationSource = {
+ id: string;
+ label: string;
+ entries: Array<{ id: string; zh: string; pinyin: string; vi: string }>;
+};
+
+export function splitChineseSentences(text: string): string[] {
+ const sentences: string[] = [];
+ let current = "";
+ for (const char of text) {
+  current += char;
+  if (char === "。" || char === "！" || char === "？" || char === "\n") {
+   const trimmed = current.trim();
+   if (trimmed) sentences.push(trimmed);
+   current = "";
   }
- >();
+ }
+ const remaining = current.trim();
+ if (remaining) sentences.push(remaining);
+ return sentences.length > 0 ? sentences : [text.trim()];
+}
+
+export function dictationSourcesFromLesson(
+ sourceLesson: HanyuLesson | undefined,
+): DictationSource[] {
+ const sources = new Map<string, DictationSource>();
 
  for (const segment of lessonPracticeSegmentsFromLesson(sourceLesson)) {
   const source = sources.get(segment.sourceKey) ?? {
@@ -415,6 +437,81 @@ export function dictationSourcesFromLesson(sourceLesson: HanyuLesson | undefined
  }
 
  return [...sources.values()];
+}
+
+export function dictationSourcesFromTextbook(
+ lesson: TextbookLesson | null | undefined,
+): DictationSource[] {
+ if (!lesson) return [];
+ const sources: DictationSource[] = [];
+
+ const pairedTranslations = new Map<string, string>();
+ const translationIndex = lesson.sections.findIndex((s) => s.title.includes("DỊCH BÀI KHÓA"));
+ const sourceSection = translationIndex > 0 ? lesson.sections[translationIndex - 1] : undefined;
+ const translationSection = translationIndex >= 0 ? lesson.sections[translationIndex] : undefined;
+ if (sourceSection && translationSection) {
+  sourceSection.blocks.forEach((block, index) => {
+   const trans = translationSection.blocks[index];
+   if (trans?.text) pairedTranslations.set(block.id, trans.text);
+  });
+ }
+
+ for (const section of lesson.sections) {
+  if (section.title.includes("DỊCH BÀI KHÓA")) continue;
+  const label = stripLeadingEmoji(section.title) || section.title || "Bài khóa";
+  const entries: Array<{ id: string; zh: string; pinyin: string; vi: string }> = [];
+
+  for (const block of section.blocks) {
+   if (block.type === "table") continue;
+   const rawZh = block.text?.trim() ?? "";
+   if (!rawZh) continue;
+
+   const zhTurn = splitDialogueTurn(rawZh);
+   const cleanZh = zhTurn.content || rawZh;
+   if (!cleanZh.trim() || !containsHanziText(cleanZh)) continue;
+
+   const rawVi = (block.translation ?? pairedTranslations.get(block.id) ?? "").trim();
+   const viTurn = splitDialogueTurn(rawVi);
+   const cleanVi = viTurn.content || rawVi;
+
+   const sentences = splitChineseSentences(cleanZh);
+   if (sentences.length <= 1) {
+    const pinyin = formatContextualReadingPinyin(
+     analyzeContextualPronunciation({ text: cleanZh, sourcePinyin: null }),
+    );
+    entries.push({
+     id: block.id,
+     zh: cleanZh,
+     pinyin,
+     vi: cleanVi,
+    });
+   } else {
+    for (const [index, sentence] of sentences.entries()) {
+     const trimmed = sentence.trim();
+     if (!trimmed) continue;
+     const pinyin = formatContextualReadingPinyin(
+      analyzeContextualPronunciation({ text: trimmed, sourcePinyin: null }),
+     );
+     entries.push({
+      id: `${block.id}:sentence-${index + 1}`,
+      zh: trimmed,
+      pinyin,
+      vi: index === 0 ? cleanVi : "",
+     });
+    }
+   }
+  }
+
+  if (entries.length > 0) {
+   sources.push({
+    id: section.id,
+    label,
+    entries,
+   });
+  }
+ }
+
+ return sources;
 }
 
 export function translationSegmentsFromTextbook(
@@ -451,13 +548,17 @@ export function translationSegmentsFromTextbook(
    const cleanVi = viTurn.content || rawVi;
    if (!cleanZh.trim() || !cleanVi.trim()) continue;
 
+   const segmentPinyin = formatContextualReadingPinyin(
+    analyzeContextualPronunciation({ text: cleanZh, sourcePinyin: null }),
+   );
+
    segments.push(
     translationSegmentSchema.parse({
      id: block.id,
      order: order++,
      sourceLabel: label,
      zh: cleanZh,
-     pinyin: "",
+     pinyin: segmentPinyin,
      vi: cleanVi,
     }),
    );

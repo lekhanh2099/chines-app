@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Typography } from "@/components/ui/typography";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
+import { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
@@ -21,16 +22,27 @@ import type { DictationAttempt } from "@/features/dictation/dictation-session";
 import { StudioDictationPracticePanel } from "@/features/dictation/StudioDictationPracticePanel";
 import { StudioDictationReferencePanel } from "@/features/dictation/StudioDictationReferencePanel";
 import type { StudioDictationScriptMode } from "@/features/dictation/StudioDictationSettingsMenu";
-import { dictationSourcesFromLesson } from "./translation-practice";
+import { dictationSourcesFromLesson, type DictationSource } from "./translation-practice";
+
+export type LessonDictationWorkspaceProps = {
+ sourceLesson?: HanyuLesson;
+ sources?: DictationSource[];
+ titleVi?: string;
+ titleZh?: string;
+};
 
 export function LessonDictationWorkspace({
  sourceLesson,
-}: {
- sourceLesson: HanyuLesson | undefined;
-}) {
+ sources: explicitSources,
+ titleVi,
+ titleZh,
+}: LessonDictationWorkspaceProps) {
  const tts = useSharedMandarinTts();
  const { stop } = tts;
- const sources = useMemo(() => dictationSourcesFromLesson(sourceLesson), [sourceLesson]);
+ const sources = useMemo(
+  () => explicitSources ?? dictationSourcesFromLesson(sourceLesson),
+  [explicitSources, sourceLesson],
+ );
  const [selectedSourceId, setSelectedSourceId] = useState("");
  const [activeIndex, setActiveIndex] = useState(0);
  const [checkedEntryIds, setCheckedEntryIds] = useState<Set<string>>(() => new Set());
@@ -149,6 +161,16 @@ export function LessonDictationWorkspace({
   setCheckedEntryIds((current) => new Set(current).add(attempt.entryId));
  };
 
+ useListeningHotkeys({
+  enabled: entries.length > 0,
+  onPrevious: () => selectEntry(Math.max(0, effectiveActiveIndex - 1)),
+  onPlayToggle: togglePlayback,
+  onRepeat: () => playEntry(effectiveActiveIndex),
+  onNext: () => selectEntry(Math.min(entries.length - 1, effectiveActiveIndex + 1)),
+  onToggleLoop: () => changeLoopCurrent(!loopCurrentRef.current),
+  onStop: tts.stop,
+ });
+
  if (!selectedSource) {
   return (
    <Card variant="section" padding="lg">
@@ -205,7 +227,7 @@ export function LessonDictationWorkspace({
      rate={tts.rate}
      scriptMode={scriptMode}
      selectedVoiceName={tts.selectedVoiceName}
-     showSettings={false}
+     showSettings={true}
      voices={tts.voices}
      onAttempt={recordAttempt}
      onAutoAdvanceChange={changeAutoAdvance}
@@ -226,8 +248,8 @@ export function LessonDictationWorkspace({
       entries={entries}
       isPlaybackActive={tts.isLoading || tts.isPaused || tts.isSpeaking}
       sourceLabel={selectedSource.label}
-      titleVi={sourceLesson?.lesson.title.vi || selectedSource.label}
-      titleZh={sourceLesson?.lesson.title.zh || selectedSource.label}
+      titleVi={titleVi || sourceLesson?.lesson.title.vi || selectedSource.label}
+      titleZh={titleZh || sourceLesson?.lesson.title.zh || selectedSource.label}
      />
     </aside>
    </div>

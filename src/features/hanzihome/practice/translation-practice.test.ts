@@ -18,6 +18,7 @@ import {
  translationSegmentsFromLesson,
  translationSegmentsFromTextbook,
  dictationSourcesFromLesson,
+ dictationSourcesFromTextbook,
 } from "./translation-practice";
 
 const segment = translationSegmentSchema.parse({
@@ -316,7 +317,7 @@ describe("HanziHome translation practice", () => {
    order: 1,
    sourceLabel: "BÀI KHÓA CHÍNH (主课文)",
    zh: "订购真丝面料",
-   pinyin: "",
+   pinyin: "dìnggòu zhēn sī miàn liào",
    vi: "Đặt mua vải lụa tơ tằm",
   });
 
@@ -324,15 +325,34 @@ describe("HanziHome translation practice", () => {
   const nhipCauSegments = translationSegmentsFromTextbook(nhipCauLesson);
   expect(nhipCauSegments).toHaveLength(38);
   expect(nhipCauSegments[0]?.zh).toContain("1989年10月30日");
+  expect(nhipCauSegments[0]?.pinyin).toBeTruthy();
   expect(nhipCauSegments[0]?.vi).toContain("Ngày 30 tháng 10 năm 1989");
 
   const docHieuLesson = getTextbookLesson("doc-hieu", 1);
   const docHieuSegments = translationSegmentsFromTextbook(docHieuLesson);
   expect(docHieuSegments).toHaveLength(28);
   expect(docHieuSegments[0]?.sourceLabel).toBe("BÀI 1: 天气预报 (Dự báo thời tiết)");
+  expect(docHieuSegments[0]?.pinyin).toBeTruthy();
 
   const tm3Lesson = getTextbookLesson("tm3", 1);
   expect(translationSegmentsFromTextbook(tm3Lesson)).toEqual([]);
   expect(translationSegmentsFromTextbook(undefined)).toEqual([]);
+ });
+
+ it("extracts dictation sources and splits into short sentences for textbook lessons", () => {
+  const nhipCauLesson = getTextbookLesson("nhip-cau", 1);
+  const nhipCauSources = dictationSourcesFromTextbook(nhipCauLesson);
+  expect(nhipCauSources.length).toBeGreaterThan(0);
+  expect(nhipCauSources[0]?.entries.length).toBeGreaterThan(0);
+  expect(nhipCauSources[0]?.entries[0]?.zh).toBeTruthy();
+  expect(nhipCauSources[0]?.entries[0]?.pinyin).toBeTruthy();
+
+  const tm2Lesson = getTextbookLesson("tm2", 1);
+  const tm2Sources = dictationSourcesFromTextbook(tm2Lesson);
+  expect(tm2Sources.length).toBeGreaterThan(0);
+  expect(tm2Sources[0]?.entries[0]?.zh).toBe("订购真丝面料");
+  expect(tm2Sources[0]?.entries[0]?.pinyin).toBe("dìnggòu zhēn sī miàn liào");
+
+  expect(dictationSourcesFromTextbook(undefined)).toEqual([]);
  });
 });
