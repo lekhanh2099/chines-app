@@ -3,9 +3,10 @@
 import { useQueryClient } from "@tanstack/react-query";
 import {
  BookmarkPlus,
- Highlighter,
+ ChevronLeft,
  Info,
  Languages,
+ MoreHorizontal,
  Play,
  StickyNote,
  Trash2,
@@ -25,7 +26,6 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
-import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { formatContextualPinyinRange } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
@@ -48,7 +48,7 @@ import type {
  ReaderPronunciationAnalysis,
 } from "@/features/reading/hooks/useReaderStudyState";
 
-type SelectionMode = "quick" | "note";
+type SelectionMode = "quick" | "note" | "more";
 export type HighlightColor = "yellow" | "green" | "blue" | "pink";
 
 export const HIGHLIGHT_COLORS: ReadonlyArray<{
@@ -125,16 +125,12 @@ export function useReaderSelectionActions({
   setOpenedAnnotation(undefined);
   window.getSelection()?.removeAllRanges();
  }, []);
- const handleSelection = useCallback(
-  (next: ReaderSurfaceSelection) => {
-   selectSegment(next.segment.id, "scroll");
-   setSelection(next);
-   setMode("quick");
-   setNoteDraft("");
-   setOpenedAnnotation(undefined);
-  },
-  [selectSegment],
- );
+ const handleSelection = useCallback((next: ReaderSurfaceSelection) => {
+  setSelection(next);
+  setMode("quick");
+  setNoteDraft("");
+  setOpenedAnnotation(undefined);
+ }, []);
  const handleOpenAnnotation = (annotation: ReaderAnnotationRow, rect: DOMRect) => {
   const index = documentModel.segments.findIndex(
    (segment) => segment.id === annotation.paragraph_id,
@@ -355,7 +351,7 @@ export function useReaderSelectionActions({
       positionMethod="fixed"
      >
       <BasePopoverPopup
-       variant="lookup"
+       variant={mode === "quick" ? "actions" : "lookup"}
        initialFocus={false}
        finalFocus={false}
        data-no-inspector
@@ -364,226 +360,287 @@ export function useReaderSelectionActions({
         event.preventDefault();
        }}
       >
-       <div className="grid gap-3 p-3">
-        <div className="flex items-start justify-between gap-2">
-         <div className="grid min-w-0 gap-0.5">
-          <Typography as="strong" variant="cardTitle" lang="zh-CN" clamp="one">
-           {selection.text}
-          </Typography>
-          <PinyinText variant="caption" tone="muted">
-           {selectedPinyin || t("missingPinyin")}
-          </PinyinText>
+       {mode === "quick" ? (
+        <div className="flex items-center gap-1">
+         {/* Nhóm 4 chấm màu tròn pastel */}
+         <div className="flex items-center gap-1.5 px-1" role="group" aria-label="Tô màu">
+          {HIGHLIGHT_COLORS.map(({ color, label, swatchStyle }) => {
+           const isCurrent = openedAnnotation
+            ? openedAnnotation.color === color
+            : selectedColor === color;
+           return (
+            <Button
+             key={color}
+             type="button"
+             variant="swatch"
+             size="icon-xs"
+             style={swatchStyle}
+             aria-pressed={isCurrent}
+             aria-label={`Màu ${label}`}
+             title={`Tô màu ${label}`}
+             disabled={saving}
+             onClick={() => {
+              setSelectedColor(color);
+              if (openedAnnotation) {
+               saveAnnotation(openedAnnotation.annotation_type, color);
+              } else {
+               saveAnnotation("highlight", color);
+              }
+             }}
+            >
+             <span className="sr-only">{label}</span>
+            </Button>
+           );
+          })}
          </div>
+
+         <div className="h-4 w-px bg-border-default/80" />
+
+         {/* Nút Ghi chú */}
          <Button
           type="button"
-          size="icon-sm"
+          size="icon-xs"
           variant="ghost"
-          aria-label={t("closeAria")}
-          onClick={clear}
+          title={t("note")}
+          aria-label={t("note")}
+          onClick={() => setMode("note")}
          >
-          <X aria-hidden="true" />
+          <StickyNote className="size-3.5" />
          </Button>
-        </div>
-        {mode === "quick" ? (
-         <>
-          <Typography variant="bodySmall" tone="muted">
-           {vocabulary?.meaning || t("missingMeaning")}
-          </Typography>
-          <div className="flex items-center justify-between gap-2 border-y border-border-default py-2">
-           <div className="flex items-center gap-2" role="group" aria-label="Chọn màu đánh dấu">
-            {HIGHLIGHT_COLORS.map(({ color, label, swatchStyle }) => {
-             const isCurrent = openedAnnotation
-              ? openedAnnotation.color === color
-              : selectedColor === color;
-             return (
-              <Button
-               key={color}
-               type="button"
-               variant="swatch"
-               size="icon"
-               style={swatchStyle}
-               aria-pressed={isCurrent}
-               aria-label={`Màu ${label}`}
-               title={`Màu ${label}`}
-               disabled={saving}
-               onClick={() => {
-                setSelectedColor(color);
-                if (openedAnnotation) {
-                 saveAnnotation(openedAnnotation.annotation_type, color);
-                } else {
-                 saveAnnotation("highlight", color);
-                }
-               }}
-              >
-               <span className="sr-only">{label}</span>
-              </Button>
-             );
-            })}
-           </div>
-           {openedAnnotation ? (
-            <Button
-             type="button"
-             size="sm"
-             variant="menuDestructive"
-             disabled={saving}
-             onClick={() => removeAnnotation(openedAnnotation.id, openedAnnotation.revision)}
-            >
-             <Trash2 className="size-3.5" />
-             {notesT("delete")}
-            </Button>
-           ) : null}
-          </div>
-          <div className="grid grid-cols-3 gap-1" role="toolbar" aria-label={t("actionsAria")}>
-           <Button
-            type="button"
-            size="sm"
-            variant="ghost"
-            onClick={() => {
-             openInspector(selection.text, { anchorRect: selection.rect });
-             clear();
-            }}
-           >
-            <Languages data-icon="inline-start" />
-            {t("lookup")}
-           </Button>
-           <Button
-            type="button"
-            size="sm"
-            variant="ghost"
-            disabled={saving || selection.start === null || selection.end === null}
-            onClick={() => saveAnnotation("highlight", selectedColor)}
-           >
-            <Highlighter data-icon="inline-start" />
-            {t("highlight")}
-           </Button>
-           <Button type="button" size="sm" variant="ghost" onClick={() => setMode("note")}>
-            <StickyNote data-icon="inline-start" />
-            {t("note")}
-           </Button>
-          </div>
-         </>
-        ) : (
-         <>
-          <div className="flex items-center justify-between gap-2 pb-1">
-           <Typography variant="caption" tone="muted" weight="semibold">
-            Màu ghi chú
-           </Typography>
-           <div className="flex items-center gap-1.5" role="group" aria-label="Màu ghi chú">
-            {HIGHLIGHT_COLORS.map(({ color, label, swatchStyle }) => {
-             const isCurrent = openedAnnotation
-              ? openedAnnotation.color === color
-              : selectedColor === color;
-             return (
-              <Button
-               key={color}
-               type="button"
-               variant="swatch"
-               size="icon"
-               style={swatchStyle}
-               aria-pressed={isCurrent}
-               aria-label={`Màu ${label}`}
-               title={`Màu ${label}`}
-               disabled={saving}
-               onClick={() => {
-                setSelectedColor(color);
-                if (openedAnnotation) {
-                 saveAnnotation(openedAnnotation.annotation_type, color);
-                }
-               }}
-              >
-               <span className="sr-only">{label}</span>
-              </Button>
-             );
-            })}
-           </div>
-          </div>
-          <Textarea
-           value={noteDraft}
-           onChange={(event) => setNoteDraft(event.target.value)}
-           placeholder={t("notePlaceholder")}
-           aria-label={t("noteAria")}
-           rows={2}
-          />
-          <div className="flex justify-end gap-2">
-           {openedAnnotation ? (
-            <Button
-             type="button"
-             size="sm"
-             variant="ghost"
-             disabled={saving}
-             onClick={() => removeAnnotation(openedAnnotation.id, openedAnnotation.revision)}
-            >
-             {notesT("delete")}
-            </Button>
-           ) : null}
-           <Button
-            type="button"
-            size="sm"
-            variant="ghost"
-            onClick={() => (openedAnnotation ? clear() : setMode("quick"))}
-           >
-            {t("cancel")}
-           </Button>
-           <Button
-            type="button"
-            size="sm"
-            disabled={
-             saving || !noteDraft.trim() || selection.start === null || selection.end === null
-            }
-            onClick={() => saveAnnotation("note", selectedColor)}
-           >
-            {t("saveNote")}
-           </Button>
-          </div>
-         </>
-        )}
-        <div className="flex flex-wrap gap-1 border-t border-border-default pt-2">
+
+         {/* Nút Tra từ */}
          <Button
           type="button"
-          size="sm"
+          size="icon-xs"
           variant="ghost"
-          onClick={() => {
-           stop();
-           tts.speakSequence([selection.text]);
-          }}
-         >
-          <Volume2 data-icon="inline-start" />
-          {t("listen")}
-         </Button>
-         {playFromCharacter && selection.start !== null ? (
-          <Button
-           type="button"
-           size="sm"
-           variant="ghost"
-           onClick={() => {
-            stop();
-            selectSegment(selection.segment.id, "scroll");
-            playFromCharacter(selection.segment.id, selection.start ?? 0);
-            clear();
-           }}
-          >
-           <Play data-icon="inline-start" />
-           {t("playFromHere")}
-          </Button>
-         ) : null}
-         <Button type="button" size="sm" variant="ghost" onClick={addToReview}>
-          <BookmarkPlus data-icon="inline-start" />
-          {t("review")}
-         </Button>
-         <Button
-          type="button"
-          size="sm"
-          variant="ghost"
+          title={t("lookup")}
+          aria-label={t("lookup")}
           onClick={() => {
            openInspector(selection.text, { anchorRect: selection.rect });
            clear();
           }}
          >
-          <Info data-icon="inline-start" />
-          {t("understand")}
+          <Languages className="size-3.5" />
+         </Button>
+
+         {/* Nút Nghe phát âm */}
+         <Button
+          type="button"
+          size="icon-xs"
+          variant="ghost"
+          title={t("listen")}
+          aria-label={t("listen")}
+          onClick={() => {
+           stop();
+           tts.speakSequence([selection.text]);
+          }}
+         >
+          <Volume2 className="size-3.5" />
+         </Button>
+
+         {/* Nút Xóa nhanh nếu là annotation có sẵn */}
+         {openedAnnotation ? (
+          <Button
+           type="button"
+           size="icon-xs"
+           variant="destructive"
+           title={notesT("delete")}
+           aria-label={notesT("delete")}
+           disabled={saving}
+           onClick={() => removeAnnotation(openedAnnotation.id, openedAnnotation.revision)}
+          >
+           <Trash2 className="size-3.5" />
+          </Button>
+         ) : null}
+
+         {/* Nút Thao tác khác (...) */}
+         <Button
+          type="button"
+          size="icon-xs"
+          variant="ghost"
+          title="Thao tác khác"
+          aria-label="Thao tác khác"
+          onClick={() => setMode("more")}
+         >
+          <MoreHorizontal className="size-3.5" />
+         </Button>
+
+         {/* Nút Đóng */}
+         <Button
+          type="button"
+          size="icon-xs"
+          variant="ghost"
+          title={t("closeAria")}
+          aria-label={t("closeAria")}
+          onClick={clear}
+         >
+          <X className="size-3.5" />
          </Button>
         </div>
-       </div>
+       ) : mode === "more" ? (
+        <div className="grid gap-2 p-2.5 w-60">
+         <div className="flex items-center justify-between gap-1 pb-1 border-b border-border-default">
+          <div className="flex items-center gap-1 min-w-0">
+           <Button
+            type="button"
+            size="icon-xs"
+            variant="ghost"
+            title="Trở lại"
+            aria-label="Trở lại"
+            onClick={() => setMode("quick")}
+           >
+            <ChevronLeft className="size-3.5" />
+           </Button>
+           <Typography as="span" variant="bodySmall" weight="bold" clamp="one">
+            {selection.text}
+           </Typography>
+          </div>
+          <Button
+           type="button"
+           size="icon-xs"
+           variant="ghost"
+           aria-label={t("closeAria")}
+           onClick={clear}
+          >
+           <X className="size-3.5" />
+          </Button>
+         </div>
+
+         <div className="grid gap-0.5">
+          {playFromCharacter && selection.start !== null ? (
+           <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            align="start"
+            onClick={() => {
+             stop();
+             selectSegment(selection.segment.id, "scroll");
+             playFromCharacter(selection.segment.id, selection.start ?? 0);
+             clear();
+            }}
+           >
+            <Play className="size-3.5" />
+            {t("playFromHere")}
+           </Button>
+          ) : null}
+
+          <Button type="button" size="sm" variant="ghost" align="start" onClick={addToReview}>
+           <BookmarkPlus className="size-3.5" />
+           {t("review")}
+          </Button>
+
+          <Button
+           type="button"
+           size="sm"
+           variant="ghost"
+           align="start"
+           onClick={() => {
+            openInspector(selection.text, { anchorRect: selection.rect });
+            clear();
+           }}
+          >
+           <Info className="size-3.5" />
+           {t("understand")}
+          </Button>
+
+          {openedAnnotation ? (
+           <Button
+            type="button"
+            size="sm"
+            variant="menuDestructive"
+            align="start"
+            disabled={saving}
+            onClick={() => removeAnnotation(openedAnnotation.id, openedAnnotation.revision)}
+           >
+            <Trash2 className="size-3.5" />
+            {notesT("delete")}
+           </Button>
+          ) : null}
+         </div>
+        </div>
+       ) : (
+        <div className="grid gap-2.5 p-3 w-72">
+         <div className="flex items-center justify-between gap-1 pb-1">
+          <div className="flex items-center gap-1.5" role="group" aria-label="Màu ghi chú">
+           {HIGHLIGHT_COLORS.map(({ color, label, swatchStyle }) => {
+            const isCurrent = openedAnnotation
+             ? openedAnnotation.color === color
+             : selectedColor === color;
+            return (
+             <Button
+              key={color}
+              type="button"
+              variant="swatch"
+              size="icon-xs"
+              style={swatchStyle}
+              aria-pressed={isCurrent}
+              aria-label={`Màu ${label}`}
+              title={`Màu ${label}`}
+              disabled={saving}
+              onClick={() => {
+               setSelectedColor(color);
+               if (openedAnnotation) {
+                saveAnnotation(openedAnnotation.annotation_type, color);
+               }
+              }}
+             >
+              <span className="sr-only">{label}</span>
+             </Button>
+            );
+           })}
+          </div>
+          <Button
+           type="button"
+           size="icon-xs"
+           variant="ghost"
+           aria-label={t("closeAria")}
+           onClick={() => (openedAnnotation ? clear() : setMode("quick"))}
+          >
+           <X className="size-3.5" />
+          </Button>
+         </div>
+         <Textarea
+          value={noteDraft}
+          onChange={(event) => setNoteDraft(event.target.value)}
+          placeholder={t("notePlaceholder")}
+          aria-label={t("noteAria")}
+          rows={2}
+          autoFocus
+         />
+         <div className="flex justify-end gap-1.5 pt-1">
+          {openedAnnotation ? (
+           <Button
+            type="button"
+            size="sm"
+            variant="destructive"
+            disabled={saving}
+            onClick={() => removeAnnotation(openedAnnotation.id, openedAnnotation.revision)}
+           >
+            {notesT("delete")}
+           </Button>
+          ) : null}
+          <Button
+           type="button"
+           size="sm"
+           variant="ghost"
+           onClick={() => (openedAnnotation ? clear() : setMode("quick"))}
+          >
+           {t("cancel")}
+          </Button>
+          <Button
+           type="button"
+           size="sm"
+           disabled={
+            saving || !noteDraft.trim() || selection.start === null || selection.end === null
+           }
+           onClick={() => saveAnnotation("note", selectedColor)}
+          >
+           {t("saveNote")}
+          </Button>
+         </div>
+        </div>
+       )}
       </BasePopoverPopup>
      </BasePopoverPositioner>
     </Popover.Portal>
