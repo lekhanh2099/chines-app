@@ -13,6 +13,7 @@ import type {
  DOMConversionMap,
  DOMConversionOutput,
  DOMExportOutput,
+ LexicalNode,
  NodeKey,
  SerializedLexicalNode,
  Spread,
@@ -203,4 +204,8 @@ export function $createPinyinNode(
  forceShow: boolean = false,
 ): PinyinNode {
  return new PinyinNode(chinese, pinyin, forceShow);
+}
+
+export function $isPinyinNode(node: LexicalNode | null | undefined): node is PinyinNode {
+ return node instanceof PinyinNode;
 }

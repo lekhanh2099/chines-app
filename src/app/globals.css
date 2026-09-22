@@ -1879,14 +1879,75 @@ hr.editor-hr.selected {
 
 /* ── Reading highlight styles ── */
 .reading-highlight {
- background-color: rgba(147, 197, 253, 0.4);
+ background-color: rgba(250, 204, 21, 0.4);
  border-radius: 2px;
  cursor: pointer;
+ user-select: text;
+ -webkit-user-select: text;
  transition: background-color 0.15s ease;
 }
 
 .reading-highlight:hover {
- background-color: rgba(147, 197, 253, 0.6);
+ background-color: rgba(250, 204, 21, 0.6);
+}
+
+.reading-highlight[data-color="yellow"] {
+ background-color: rgba(250, 204, 21, 0.4);
+}
+.reading-highlight[data-color="yellow"]:hover {
+ background-color: rgba(250, 204, 21, 0.6);
+}
+
+.reading-highlight[data-color="green"] {
+ background-color: rgba(74, 222, 128, 0.4);
+}
+.reading-highlight[data-color="green"]:hover {
+ background-color: rgba(74, 222, 128, 0.6);
+}
+
+.reading-highlight[data-color="blue"] {
+ background-color: rgba(147, 197, 253, 0.45);
+}
+.reading-highlight[data-color="blue"]:hover {
+ background-color: rgba(147, 197, 253, 0.65);
+}
+
+.reading-highlight[data-color="pink"] {
+ background-color: rgba(244, 114, 182, 0.4);
+}
+.reading-highlight[data-color="pink"]:hover {
+ background-color: rgba(244, 114, 182, 0.6);
+}
+
+.dark .reading-highlight {
+ background-color: rgba(234, 179, 8, 0.3);
+}
+.dark .reading-highlight:hover {
+ background-color: rgba(234, 179, 8, 0.45);
+}
+.dark .reading-highlight[data-color="yellow"] {
+ background-color: rgba(234, 179, 8, 0.3);
+}
+.dark .reading-highlight[data-color="yellow"]:hover {
+ background-color: rgba(234, 179, 8, 0.45);
+}
+.dark .reading-highlight[data-color="green"] {
+ background-color: rgba(34, 197, 94, 0.3);
+}
+.dark .reading-highlight[data-color="green"]:hover {
+ background-color: rgba(34, 197, 94, 0.45);
+}
+.dark .reading-highlight[data-color="blue"] {
+ background-color: rgba(59, 130, 246, 0.35);
+}
+.dark .reading-highlight[data-color="blue"]:hover {
+ background-color: rgba(59, 130, 246, 0.5);
+}
+.dark .reading-highlight[data-color="pink"] {
+ background-color: rgba(236, 72, 153, 0.3);
+}
+.dark .reading-highlight[data-color="pink"]:hover {
+ background-color: rgba(236, 72, 153, 0.45);
 }
 
 .reading-progress-highlight {

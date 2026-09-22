@@ -25,6 +25,6 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
  matcher: [
-  "/((?!_next/static|_next/image|_vercel/|\\.well-known/workflow/|fonts/|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map|txt|woff|woff2|ttf|otf|ttc)$).*)",
+  "/((?!_next/static|_next/image|_vercel/|\\.well-known/workflow/|fonts/|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map|txt|webmanifest|woff|woff2|ttf|otf|ttc)$).*)",
  ],
 };

@@ -114,9 +114,11 @@ export function ContextualReaderText({
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
      className={cn(
+      "select-text",
       (annotation || readerAnnotation) && "reading-highlight",
       index === activeCharacterIndex && "reading-progress-highlight",
      )}
+     data-color={readerAnnotation?.color || (annotation ? "yellow" : undefined)}
      aria-current={index === activeCharacterIndex ? "true" : undefined}
     >
      {grapheme.segment}
@@ -129,6 +131,7 @@ export function ContextualReaderText({
   const pinyinInteractive = Boolean(onGlyphInspect);
   const activateHanzi = (element: HTMLElement, event?: React.SyntheticEvent) => {
    event?.stopPropagation();
+   if (window.getSelection()?.isCollapsed === false) return;
    if (annotation) {
     annotationContext?.openAnnotation(annotation);
     return;
@@ -137,7 +140,6 @@ export function ContextualReaderText({
     onOpenReaderAnnotation?.(readerAnnotation, element.getBoundingClientRect());
     return;
    }
-   if (window.getSelection()?.isCollapsed === false) return;
    onGlyphClick?.(glyph.start, glyph.end);
   };
   const activatePinyin = (element: HTMLElement, event?: React.SyntheticEvent) => {
@@ -156,11 +158,11 @@ export function ContextualReaderText({
   };
   const hanziClassName = hanziInteractive
    ? cn(
-      "cursor-pointer rounded-sm",
+      "cursor-pointer rounded-sm select-text",
       focusRingClassName,
       (annotation || readerAnnotation) && "reading-highlight",
      )
-   : undefined;
+   : "select-text";
   const pinyinClassName = pinyinInteractive
    ? cn("cursor-pointer rounded-sm", focusRingClassName)
    : undefined;
@@ -179,11 +181,14 @@ export function ContextualReaderText({
     : t("inspectPinyin", { character: grapheme.segment })
    : undefined;
 
+  const annotationColor = readerAnnotation?.color || (annotation ? "yellow" : undefined);
+
   if (resolvedPinyinPresentation === "paragraph") {
    return (
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
      className={cn(hanziClassName, active && "reading-progress-highlight")}
+     data-color={annotationColor}
      onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget, event) : undefined}
      onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
      role={hanziInteractive ? "button" : undefined}
@@ -201,6 +206,7 @@ export function ContextualReaderText({
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
      className={cn(hanziClassName, active && "reading-progress-highlight")}
+     data-color={annotationColor}
      onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget, event) : undefined}
      onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
      role={hanziInteractive ? "button" : undefined}
@@ -222,6 +228,7 @@ export function ContextualReaderText({
    >
     <span
      className={hanziClassName}
+     data-color={annotationColor}
      onClick={hanziInteractive ? (event) => activateHanzi(event.currentTarget, event) : undefined}
      onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
      role={hanziInteractive ? "button" : undefined}

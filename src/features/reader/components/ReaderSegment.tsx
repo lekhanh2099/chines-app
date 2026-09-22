@@ -108,11 +108,11 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
    currentOffset < grapheme.index + grapheme.segment.length;
   const play = (element: HTMLElement, event?: React.SyntheticEvent) => {
    event?.stopPropagation();
+   if (window.getSelection()?.isCollapsed === false) return;
    if (annotation) {
     services.annotations?.onOpen(annotation, element.getBoundingClientRect());
     return;
    }
-   if (window.getSelection()?.isCollapsed === false) return;
    commands.playFromCharacter(segmentId, grapheme.index);
   };
   const hanzi = (
@@ -120,10 +120,11 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
     key={grapheme.index}
     className={cn(
      playable && focusRingClassName,
-     playable && "cursor-pointer rounded-sm",
+     playable && "cursor-pointer rounded-sm select-text",
      highlighted && "reading-progress-highlight",
      annotation && "reading-highlight",
     )}
+    data-color={annotation?.color}
     role={playable ? "button" : undefined}
     tabIndex={playable ? 0 : undefined}
     aria-label={

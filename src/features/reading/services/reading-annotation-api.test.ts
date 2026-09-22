@@ -257,6 +257,33 @@ describe("reading-annotation-api offline resiliency", () => {
   );
  });
 
+ it("updates annotation color when online", async () => {
+  vi.stubGlobal("navigator", { onLine: true });
+  const original: ReaderAnnotationRow = {
+   ...mockAnnotation,
+   id: "33333333-3333-4333-8333-333333333333",
+   user_id: "11111111-1111-4111-8111-111111111111",
+   color: "yellow",
+  };
+  const updatedCanonical: ReaderAnnotationRow = {
+   ...original,
+   color: "pink",
+   note_text: "new note",
+   revision: 2,
+  };
+  const fetchMock = vi.fn().mockResolvedValue(Response.json({ annotation: updatedCanonical }));
+  vi.stubGlobal("fetch", fetchMock);
+
+  const result = await updateReaderAnnotation(original, "new note", original.user_id, "pink");
+  expect(result.color).toBe("pink");
+  expect(fetchMock).toHaveBeenCalledWith(
+   `/api/reading/annotations/${original.id}`,
+   expect.objectContaining({
+    body: expect.stringContaining('"color":"pink"'),
+   }),
+  );
+ });
+
  it("replays outbox mutations during syncPendingReaderAnnotations for specified user upon reconnect", async () => {
   vi.stubGlobal("navigator", { onLine: true });
   localStore.getPendingAnnotationMutations.mockResolvedValue([

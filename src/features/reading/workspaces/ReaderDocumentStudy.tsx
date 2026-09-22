@@ -370,6 +370,7 @@ function ReaderDocumentStudyContent({
          text: annotation.selected_text,
          start: annotation.start_offset,
          end: annotation.end_offset,
+         color: annotation.color,
         },
        ]
      : [],

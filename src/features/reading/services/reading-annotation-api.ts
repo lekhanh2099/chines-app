@@ -355,11 +355,14 @@ export async function updateReaderAnnotation(
  annotation: ReaderAnnotationRow,
  noteText: string,
  userId?: string,
+ color?: ReaderAnnotationRow["color"],
 ): Promise<ReaderAnnotationRow> {
  const now = new Date().toISOString();
  const effectiveUserId = userId ?? annotation.user_id;
+ const resolvedColor = color ?? annotation.color;
  const updated: ReaderAnnotationRow = {
   ...annotation,
+  color: resolvedColor,
   note_text: noteText,
   updated_at: now,
  };
@@ -395,7 +398,7 @@ export async function updateReaderAnnotation(
    body: JSON.stringify({
     paragraphId: annotation.paragraph_id,
     assetId: annotation.asset_id,
-    color: annotation.color,
+    color: resolvedColor,
     pageNumber: annotation.page_number,
     startOffset: annotation.start_offset,
     endOffset: annotation.end_offset,

@@ -8,10 +8,11 @@ import {
  Languages,
  Play,
  StickyNote,
+ Trash2,
  Volume2,
  X,
 } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useCallback, useState, type CSSProperties } from "react";
 import { useTranslations } from "next-intl";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
@@ -48,6 +49,34 @@ import type {
 } from "@/features/reading/hooks/useReaderStudyState";
 
 type SelectionMode = "quick" | "note";
+export type HighlightColor = "yellow" | "green" | "blue" | "pink";
+
+export const HIGHLIGHT_COLORS: ReadonlyArray<{
+ color: HighlightColor;
+ label: string;
+ swatchStyle: CSSProperties;
+}> = [
+ {
+  color: "yellow",
+  label: "Vàng",
+  swatchStyle: { backgroundColor: "var(--color-warning)" },
+ },
+ {
+  color: "green",
+  label: "Xanh lá",
+  swatchStyle: { backgroundColor: "var(--color-success)" },
+ },
+ {
+  color: "blue",
+  label: "Xanh biển",
+  swatchStyle: { backgroundColor: "var(--color-info)" },
+ },
+ {
+  color: "pink",
+  label: "Hồng",
+  swatchStyle: { backgroundColor: "var(--color-purple)" },
+ },
+];
 
 export function useReaderSelectionActions({
  document: documentModel,
@@ -76,6 +105,7 @@ export function useReaderSelectionActions({
  const { userId } = useClientSession();
  const [selection, setSelection] = useState<ReaderSurfaceSelection | null>(null);
  const [mode, setMode] = useState<SelectionMode>("quick");
+ const [selectedColor, setSelectedColor] = useState<HighlightColor>("yellow");
  const [noteDraft, setNoteDraft] = useState("");
  const [openedAnnotation, setOpenedAnnotation] = useState<ReaderAnnotationRow>();
  const [saving, setSaving] = useState(false);
@@ -120,8 +150,9 @@ export function useReaderSelectionActions({
    rect,
   });
   setOpenedAnnotation(annotation);
+  setSelectedColor(annotation.color);
   setNoteDraft(annotation.note_text);
-  setMode("note");
+  setMode(annotation.annotation_type === "note" ? "note" : "quick");
  };
  const invalidateAnnotations = () =>
   queryClient.invalidateQueries({
@@ -145,16 +176,21 @@ export function useReaderSelectionActions({
    },
    documentModel.source.href,
   );
- const saveAnnotation = (annotationType: "highlight" | "note") => {
+ const saveAnnotation = (
+  annotationType: ReaderAnnotationRow["annotation_type"],
+  color?: HighlightColor,
+ ) => {
   if (saving || !selection || selection.start === null || selection.end === null) return;
   if (!userId) {
    setSaveError("Vui lòng đăng nhập để lưu ghi chú/đánh dấu.");
    return;
   }
+  const resolvedColor = color ?? selectedColor ?? (annotationType === "note" ? "yellow" : "green");
+  setSelectedColor(resolvedColor);
   setSaving(true);
   setSaveError("");
   const request = openedAnnotation
-   ? updateReaderAnnotation(openedAnnotation, noteDraft, userId)
+   ? updateReaderAnnotation(openedAnnotation, noteDraft, userId, resolvedColor)
    : createReaderAnnotation(
       {
        documentId: documentModel.id,
@@ -166,7 +202,7 @@ export function useReaderSelectionActions({
        endOffset: selection.end,
        selectedText: selection.text,
        noteText: annotationType === "note" ? noteDraft : "",
-       color: annotationType === "note" ? "yellow" : "green",
+       color: resolvedColor,
        payload: {},
       },
       userId,
@@ -353,6 +389,50 @@ export function useReaderSelectionActions({
           <Typography variant="bodySmall" tone="muted">
            {vocabulary?.meaning || t("missingMeaning")}
           </Typography>
+          <div className="flex items-center justify-between gap-2 border-y border-border-default py-2">
+           <div className="flex items-center gap-2" role="group" aria-label="Chọn màu đánh dấu">
+            {HIGHLIGHT_COLORS.map(({ color, label, swatchStyle }) => {
+             const isCurrent = openedAnnotation
+              ? openedAnnotation.color === color
+              : selectedColor === color;
+             return (
+              <Button
+               key={color}
+               type="button"
+               variant="swatch"
+               size="icon"
+               style={swatchStyle}
+               aria-pressed={isCurrent}
+               aria-label={`Màu ${label}`}
+               title={`Màu ${label}`}
+               disabled={saving}
+               onClick={() => {
+                setSelectedColor(color);
+                if (openedAnnotation) {
+                 saveAnnotation(openedAnnotation.annotation_type, color);
+                } else {
+                 saveAnnotation("highlight", color);
+                }
+               }}
+              >
+               <span className="sr-only">{label}</span>
+              </Button>
+             );
+            })}
+           </div>
+           {openedAnnotation ? (
+            <Button
+             type="button"
+             size="sm"
+             variant="menuDestructive"
+             disabled={saving}
+             onClick={() => removeAnnotation(openedAnnotation.id, openedAnnotation.revision)}
+            >
+             <Trash2 className="size-3.5" />
+             {notesT("delete")}
+            </Button>
+           ) : null}
+          </div>
           <div className="grid grid-cols-3 gap-1" role="toolbar" aria-label={t("actionsAria")}>
            <Button
             type="button"
@@ -371,7 +451,7 @@ export function useReaderSelectionActions({
             size="sm"
             variant="ghost"
             disabled={saving || selection.start === null || selection.end === null}
-            onClick={() => saveAnnotation("highlight")}
+            onClick={() => saveAnnotation("highlight", selectedColor)}
            >
             <Highlighter data-icon="inline-start" />
             {t("highlight")}
@@ -384,6 +464,39 @@ export function useReaderSelectionActions({
          </>
         ) : (
          <>
+          <div className="flex items-center justify-between gap-2 pb-1">
+           <Typography variant="caption" tone="muted" weight="semibold">
+            Màu ghi chú
+           </Typography>
+           <div className="flex items-center gap-1.5" role="group" aria-label="Màu ghi chú">
+            {HIGHLIGHT_COLORS.map(({ color, label, swatchStyle }) => {
+             const isCurrent = openedAnnotation
+              ? openedAnnotation.color === color
+              : selectedColor === color;
+             return (
+              <Button
+               key={color}
+               type="button"
+               variant="swatch"
+               size="icon"
+               style={swatchStyle}
+               aria-pressed={isCurrent}
+               aria-label={`Màu ${label}`}
+               title={`Màu ${label}`}
+               disabled={saving}
+               onClick={() => {
+                setSelectedColor(color);
+                if (openedAnnotation) {
+                 saveAnnotation(openedAnnotation.annotation_type, color);
+                }
+               }}
+              >
+               <span className="sr-only">{label}</span>
+              </Button>
+             );
+            })}
+           </div>
+          </div>
           <Textarea
            value={noteDraft}
            onChange={(event) => setNoteDraft(event.target.value)}
@@ -417,7 +530,7 @@ export function useReaderSelectionActions({
             disabled={
              saving || !noteDraft.trim() || selection.start === null || selection.end === null
             }
-            onClick={() => saveAnnotation("note")}
+            onClick={() => saveAnnotation("note", selectedColor)}
            >
             {t("saveNote")}
            </Button>

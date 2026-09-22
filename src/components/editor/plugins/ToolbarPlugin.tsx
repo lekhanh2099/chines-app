@@ -85,10 +85,13 @@ import {
  Underline,
  Strikethrough,
  Code,
+ Eye,
+ EyeOff,
  AlignLeft,
  AlignCenter,
  AlignRight,
  AlignJustify,
+ Languages,
  List,
  ListOrdered,
  ListChecks,
@@ -101,8 +104,15 @@ import {
  Outdent,
  Table,
  SeparatorHorizontal,
+ Sparkles,
+ Trash2,
 } from "lucide-react";
 import { FONT_FAMILIES } from "../toolbar-options";
+import {
+ autoDetectPinyinInDocument,
+ removeAllPinyinFromDocument,
+ toggleGlobalPinyinVisibility,
+} from "../utils/pinyin-editor-actions";
 
 /* ── Constants ── */
 
@@ -527,6 +537,66 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
     <InsertTableDialog editor={editor} onClose={() => setShowTableDialog(false)} />
    ) : null}
   </>
+ );
+}
+
+/* ── Pinyin Dropdown ── */
+
+function PinyinToolbarDropdown({
+ editor,
+ isEditable,
+}: {
+ editor: LexicalEditor;
+ isEditable: boolean;
+}) {
+ const [isPinyinVisible, setIsPinyinVisible] = useState(true);
+
+ const handleAutoDetect = () => {
+  autoDetectPinyinInDocument(editor);
+ };
+
+ const handleToggleVisibility = () => {
+  const visible = toggleGlobalPinyinVisibility(editor);
+  setIsPinyinVisible(visible);
+ };
+
+ const handleRemoveAll = () => {
+  removeAllPinyinFromDocument(editor);
+ };
+
+ return (
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     disabled={!isEditable}
+     onMouseDown={pf}
+     variant="ghost"
+     size="toolbar"
+     title="Công cụ Pinyin (nhận diện & gắn phiên âm cho tiếng Trung)"
+     aria-label="Công cụ Pinyin"
+    >
+     <Languages data-icon="inline-start" />
+     Pinyin
+     <ChevronDown data-icon="inline-end" />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="start">
+    <DropdownMenuItem onSelect={handleAutoDetect}>
+     <Sparkles />
+     Tự động tạo Pinyin (chỉ tiếng Trung)
+    </DropdownMenuItem>
+    <DropdownMenuItem onSelect={handleToggleVisibility}>
+     {isPinyinVisible ? <EyeOff /> : <Eye />}
+     {isPinyinVisible ? "Ẩn Pinyin toàn bài" : "Hiện Pinyin toàn bài"}
+    </DropdownMenuItem>
+    <Separator />
+    <DropdownMenuItem tone="destructive" onSelect={handleRemoveAll}>
+     <Trash2 />
+     Gỡ bỏ toàn bộ Pinyin
+    </DropdownMenuItem>
+   </DropdownMenuContent>
+  </DropdownMenu>
  );
 }
 
@@ -983,6 +1053,10 @@ export default function ToolbarPlugin() {
 
    {/* ── + Insert Dropdown ── */}
    <InsertDropdown editor={editor} isEditable={isEditable} />
+   <Divider />
+
+   {/* ── Pinyin Dropdown ── */}
+   <PinyinToolbarDropdown editor={editor} isEditable={isEditable} />
   </div>
  );
 }

@@ -15,6 +15,7 @@ export const readerAnnotationSchema = z.strictObject({
  text: z.string().min(1),
  start: z.number().int().nonnegative(),
  end: z.number().int().positive(),
+ color: z.enum(["yellow", "green", "blue", "pink"]).optional(),
 });
 export type ReaderAnnotation = z.output<typeof readerAnnotationSchema>;
 export type ReaderServices = {

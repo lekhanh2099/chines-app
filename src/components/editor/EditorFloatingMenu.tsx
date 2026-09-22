@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { $getSelectionStyleValueForProperty, $patchStyleText } from "@lexical/selection";
+import { $patchStyleText } from "@lexical/selection";
 import { mergeRegister } from "@lexical/utils";
 import {
  $getSelection,
@@ -24,6 +24,7 @@ import {
  Code,
  Highlighter,
  Italic,
+ Languages,
  Link2,
  Loader2,
  NotebookPen,
@@ -34,7 +35,6 @@ import {
  Strikethrough,
  Subscript,
  Superscript,
- Type,
  Underline,
  Volume2,
 } from "lucide-react";
@@ -48,13 +48,6 @@ import {
 } from "@/components/ui/base-popover";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
- DropdownMenu,
- DropdownMenuContent,
- DropdownMenuRadioGroup,
- DropdownMenuRadioItem,
- DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
@@ -62,13 +55,13 @@ import { Typography } from "@/components/ui/typography";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
-import { extractChinese } from "@/lib/chinese-utils";
+import { containsChinese, extractChinese } from "@/lib/chinese-utils";
 import type { NoteListItem } from "@/services/notes.service";
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { $createInternalLinkNode } from "./nodes/InternalLinkNode";
 import { $createInlineNoteNode } from "./nodes/InlineNoteNode";
-import { FONT_FAMILIES, QUICK_HANZI_FONT_FAMILIES } from "./toolbar-options";
+import { $isSelectionInsidePinyin, applyPinyinToSelection } from "./utils/pinyin-editor-actions";
 
 type SelectionAnchor = {
  getBoundingClientRect: () => DOMRect;
@@ -81,7 +74,6 @@ type DraftSelection = {
 };
 
 const DEBOUNCE_DELAY = 500;
-const DEFAULT_FONT_VALUE = "__default__";
 const EDITOR_HIGHLIGHT_COLOR = "var(--warning-subtle)";
 
 function preserveEditorSelection(event: React.SyntheticEvent) {
@@ -143,7 +135,7 @@ export default function EditorFloatingMenu() {
  const [isSuperscript, setIsSuperscript] = useState(false);
  const [isCode, setIsCode] = useState(false);
  const [isHighlight, setIsHighlight] = useState(false);
- const [fontFamily, setFontFamily] = useState("");
+ const [isPinyinActive, setIsPinyinActive] = useState(false);
  const selectionAnchorRef = useRef<SelectionAnchor>(null);
  const noteTextareaRef = useRef<HTMLTextAreaElement>(null);
  const linkSearchInputRef = useRef<HTMLInputElement>(null);
@@ -233,7 +225,7 @@ export default function EditorFloatingMenu() {
   setLinkSearchResults([]);
   setShowInlineNote(false);
   setInlineNoteDraft("");
-  setFontFamily("");
+  setIsPinyinActive(false);
   selectionAnchorRef.current = null;
  }, []);
 
@@ -272,7 +264,7 @@ export default function EditorFloatingMenu() {
   setIsSubscript(selection.hasFormat("subscript"));
   setIsSuperscript(selection.hasFormat("superscript"));
   setIsCode(selection.hasFormat("code"));
-  setFontFamily($getSelectionStyleValueForProperty(selection, "font-family", ""));
+  setIsPinyinActive($isSelectionInsidePinyin());
 
   if ($isTextNode(anchorNode)) {
    setIsHighlight(anchorNode.getStyle().includes("background-color"));
@@ -376,14 +368,6 @@ export default function EditorFloatingMenu() {
    });
   },
   [editor],
- );
-
- const applyFontFamily = useCallback(
-  (value: string) => {
-   applyInlineStyle({ "font-family": value || null });
-   setFontFamily(value);
-  },
-  [applyInlineStyle],
  );
 
  const toggleHighlight = useCallback(() => {
@@ -703,57 +687,29 @@ export default function EditorFloatingMenu() {
            </>
           ) : null}
 
-          <DropdownMenu>
-           <DropdownMenuTrigger asChild>
-            <Button
-             variant={fontFamily ? "active" : "ghost"}
-             size="compact"
-             onMouseDown={preserveEditorSelection}
-             title="Đổi font chữ"
-            >
-             <Type data-icon="inline-start" />
-             <Typography variant="caption" weight="semibold" clamp="one" className="max-w-24">
-              {FONT_FAMILIES.find(([value]) => value === fontFamily)?.[1] || "Font"}
-             </Typography>
-            </Button>
-           </DropdownMenuTrigger>
-           <DropdownMenuContent align="start" width="md">
-            <DropdownMenuRadioGroup
-             value={fontFamily || DEFAULT_FONT_VALUE}
-             onValueChange={(value) => applyFontFamily(value === DEFAULT_FONT_VALUE ? "" : value)}
-            >
-             {FONT_FAMILIES.map(([value, label]) => (
-              <DropdownMenuRadioItem
-               key={value || DEFAULT_FONT_VALUE}
-               value={value || DEFAULT_FONT_VALUE}
-               style={value ? { fontFamily: value } : undefined}
-              >
-               {label}
-              </DropdownMenuRadioItem>
-             ))}
-            </DropdownMenuRadioGroup>
-           </DropdownMenuContent>
-          </DropdownMenu>
-
-          <div className="flex items-center gap-0.5">
-           {QUICK_HANZI_FONT_FAMILIES.map(([value, label]) => (
-            <Button
-             key={`quick-${label}`}
-             type="button"
-             variant={fontFamily === value ? "active" : "surface"}
-             size="compact"
-             style={{ fontFamily: value }}
-             onMouseDown={preserveEditorSelection}
-             onClick={(event) => {
-              preserveEditorSelection(event);
-              applyFontFamily(value);
-             }}
-             title={label}
-            >
-             {label.replace("FZKTPY", "")}
-            </Button>
-           ))}
-          </div>
+          <Button
+           variant={isPinyinActive ? "active" : "ghost"}
+           size="compact"
+           disabled={!containsChinese(draftSelection.text || selectedText) && !isPinyinActive}
+           onMouseDown={preserveEditorSelection}
+           onClick={(event) => {
+            preserveEditorSelection(event);
+            applyPinyinToSelection(editor);
+           }}
+           aria-label="Pinyin (Ruby)"
+           title={
+            isPinyinActive
+             ? "Gỡ bỏ Pinyin (Ruby)"
+             : containsChinese(draftSelection.text || selectedText)
+               ? "Gắn Pinyin (Ruby) cho chữ Hán"
+               : "Chỉ áp dụng Pinyin cho chữ Hán"
+           }
+          >
+           <Languages data-icon="inline-start" />
+           <Typography variant="caption" weight="bold">
+            Pinyin
+           </Typography>
+          </Button>
          </div>
 
          <div className="flex items-center gap-0.5">

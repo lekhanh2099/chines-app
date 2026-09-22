@@ -337,7 +337,9 @@ function AnnotatedText({
      onOpenReaderAnnotation?.(annotation, event.currentTarget.getBoundingClientRect());
     }}
    >
-    <mark className="reading-highlight rounded-sm">{annotation.selected_text}</mark>
+    <mark className="reading-highlight rounded-sm" data-color={annotation.color}>
+     {annotation.selected_text}
+    </mark>
    </Button>,
   );
   cursor = annotation.end_offset;
@@ -357,10 +359,13 @@ function AnnotatedText({
     aria-label={`Mở ghi chú cho ${annotatedText}`}
     onClick={(event) => {
      event.stopPropagation();
+     if (window.getSelection()?.isCollapsed === false) return;
      onOpen(annotation);
     }}
    >
-    <mark className="reading-highlight rounded-sm">{annotatedText}</mark>
+    <mark className="reading-highlight rounded-sm" data-color="yellow">
+     {annotatedText}
+    </mark>
    </Button>,
   );
   cursor = annotation.resolvedEndOffset;
