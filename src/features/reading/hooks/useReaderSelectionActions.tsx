@@ -131,25 +131,28 @@ export function useReaderSelectionActions({
   setNoteDraft("");
   setOpenedAnnotation(undefined);
  }, []);
- const handleOpenAnnotation = (annotation: ReaderAnnotationRow, rect: DOMRect) => {
-  const index = documentModel.segments.findIndex(
-   (segment) => segment.id === annotation.paragraph_id,
-  );
-  const segment = documentModel.segments[index];
-  if (!segment) return;
-  setSelection({
-   segment,
-   index,
-   text: annotation.selected_text,
-   start: annotation.start_offset,
-   end: annotation.end_offset,
-   rect,
-  });
-  setOpenedAnnotation(annotation);
-  setSelectedColor(annotation.color);
-  setNoteDraft(annotation.note_text);
-  setMode(annotation.annotation_type === "note" ? "note" : "quick");
- };
+ const handleOpenAnnotation = useCallback(
+  (annotation: ReaderAnnotationRow, rect: DOMRect) => {
+   const index = documentModel.segments.findIndex(
+    (segment) => segment.id === annotation.paragraph_id,
+   );
+   const segment = documentModel.segments[index];
+   if (!segment) return;
+   setSelection({
+    segment,
+    index,
+    text: annotation.selected_text,
+    start: annotation.start_offset,
+    end: annotation.end_offset,
+    rect,
+   });
+   setOpenedAnnotation(annotation);
+   setSelectedColor(annotation.color);
+   setNoteDraft(annotation.note_text);
+   setMode(annotation.annotation_type === "note" ? "note" : "quick");
+  },
+  [documentModel.segments],
+ );
  const invalidateAnnotations = () =>
   queryClient.invalidateQueries({
    queryKey:
@@ -312,13 +315,21 @@ export function useReaderSelectionActions({
    .catch((reviewError: Error) => setSaveError(reviewError.message));
   clear();
  };
- const anchor = useCallback(
-  () =>
-   selection
-    ? { getBoundingClientRect: () => selection.rect, contextElement: document.body }
-    : null,
-  [selection],
- );
+ const anchor = useCallback(() => {
+  if (!selection) return null;
+  return {
+   getBoundingClientRect: () => {
+    const sel = window.getSelection();
+    if (sel && !sel.isCollapsed && sel.rangeCount > 0) {
+     const range = sel.getRangeAt(0);
+     const rect = range.getBoundingClientRect();
+     if (rect.width > 0 && rect.height > 0) return rect;
+    }
+    return selection.rect;
+   },
+   contextElement: document.body,
+  };
+ }, [selection]);
 
  const popover = (
   <Popover.Root
@@ -346,12 +357,12 @@ export function useReaderSelectionActions({
       anchor={anchor}
       side="top"
       align="center"
-      sideOffset={10}
+      sideOffset={8}
       collisionPadding={8}
       positionMethod="fixed"
      >
       <BasePopoverPopup
-       variant={mode === "quick" ? "actions" : "lookup"}
+       variant={mode === "quick" ? "actions" : "default"}
        initialFocus={false}
        finalFocus={false}
        data-no-inspector
@@ -478,7 +489,7 @@ export function useReaderSelectionActions({
          </Button>
         </div>
        ) : mode === "more" ? (
-        <div className="grid gap-2 p-2.5 w-60">
+        <div className="grid gap-1.5 p-2 w-52">
          <div className="flex items-center justify-between gap-1 pb-1 border-b border-border-default">
           <div className="flex items-center gap-1 min-w-0">
            <Button
@@ -510,7 +521,7 @@ export function useReaderSelectionActions({
           {playFromCharacter && selection.start !== null ? (
            <Button
             type="button"
-            size="sm"
+            size="compact"
             variant="ghost"
             align="start"
             onClick={() => {
@@ -525,14 +536,14 @@ export function useReaderSelectionActions({
            </Button>
           ) : null}
 
-          <Button type="button" size="sm" variant="ghost" align="start" onClick={addToReview}>
+          <Button type="button" size="compact" variant="ghost" align="start" onClick={addToReview}>
            <BookmarkPlus className="size-3.5" />
            {t("review")}
           </Button>
 
           <Button
            type="button"
-           size="sm"
+           size="compact"
            variant="ghost"
            align="start"
            onClick={() => {
@@ -547,7 +558,7 @@ export function useReaderSelectionActions({
           {openedAnnotation ? (
            <Button
             type="button"
-            size="sm"
+            size="compact"
             variant="menuDestructive"
             align="start"
             disabled={saving}

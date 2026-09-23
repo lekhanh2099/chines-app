@@ -3,6 +3,7 @@
 import {
  createContext,
  Fragment,
+ memo,
  useCallback,
  useContext,
  useEffect,
@@ -1013,7 +1014,7 @@ function BusinessChineseTextBlock({
  );
 }
 
-function BusinessChineseSection({
+const BusinessChineseSection = memo(function BusinessChineseSection({
  section,
  displayMode,
  translations,
@@ -1081,7 +1082,7 @@ function BusinessChineseSection({
    </div>
   </section>
  );
-}
+});
 
 function MobileSectionNavigation({
  sections,
@@ -1265,7 +1266,7 @@ export function BusinessChineseStudyWorkspace({
  );
 }
 
-function BusinessChineseReader({
+const BusinessChineseReader = memo(function BusinessChineseReader({
  document,
  services,
 }: {
@@ -1297,7 +1298,7 @@ function BusinessChineseReader({
    }}
   />
  );
-}
+});
 
 function BusinessChineseStudyWorkspaceContent({
  books,
@@ -1362,7 +1363,11 @@ function BusinessChineseStudyWorkspaceContent({
  const readerCommands = useReaderCommands();
  const { actions: readerActions } = useReaderStore();
  const parentServices = useReaderServices();
- const selection = useReaderSelectionActions({
+ const {
+  handleOpenAnnotation,
+  handleSelection,
+  popover: selectionPopover,
+ } = useReaderSelectionActions({
   selectSegment: readerActions.selectSegment,
   stop: readerCommands.stop,
   playFromCharacter: readerCommands.playFromCharacter,
@@ -1373,39 +1378,97 @@ function BusinessChineseStudyWorkspaceContent({
   setSaveError: setAnnotationError,
  });
  const focusMode = useReaderSelector((state) => state.ui.focusMode);
- const annotationServices: ReaderServices = {
-  annotations: {
-   items: (annotationsQuery.data ?? []).flatMap((annotation) =>
-    annotation.paragraph_id !== null &&
-    annotation.start_offset !== null &&
-    annotation.end_offset !== null &&
-    annotation.end_offset > annotation.start_offset &&
-    annotation.selected_text.length > 0
-     ? [
-        {
-         id: annotation.id,
-         segmentId: annotation.paragraph_id,
-         text: annotation.selected_text,
-         start: annotation.start_offset,
-         end: annotation.end_offset,
-         color: annotation.color,
-        },
-       ]
-     : [],
-   ),
-   onOpen: (annotation, rect) => {
-    const source = annotationsQuery.data?.find((item) => item.id === annotation.id);
-    if (source) selection.handleOpenAnnotation(source, rect);
+
+ const sectionDocuments = useMemo(() => {
+  const map = new Map<string, ReaderDocumentModel>();
+  for (const section of textReaderDocument.sections) {
+   map.set(section.id, {
+    ...textReaderDocument,
+    id: `${textReaderDocument.id}:${section.id}`,
+    title: section.id === textReaderDocument.sections[0]?.id ? textReaderDocument.title : undefined,
+    titleVi:
+     section.id === textReaderDocument.sections[0]?.id ? textReaderDocument.titleVi : undefined,
+    sections: textReaderDocument.sections.filter(
+     (readerSection) => readerSection.id === section.id,
+    ),
+    segments: textReaderDocument.segments.filter((segment) => segment.sectionId === section.id),
+   });
+  }
+  return map;
+ }, [textReaderDocument]);
+
+ const renderReaderSection = useCallback(
+  ({ section: readerSection, content }: { section: { id: string }; content: ReactNode }) => (
+   <div id={readerSection.id}>{content}</div>
+  ),
+  [],
+ );
+
+ const annotationServices: ReaderServices = useMemo(
+  () => ({
+   annotations: {
+    items: (annotationsQuery.data ?? []).flatMap((annotation) =>
+     annotation.paragraph_id !== null &&
+     annotation.start_offset !== null &&
+     annotation.end_offset !== null &&
+     annotation.end_offset > annotation.start_offset &&
+     annotation.selected_text.length > 0
+      ? [
+         {
+          id: annotation.id,
+          segmentId: annotation.paragraph_id,
+          text: annotation.selected_text,
+          start: annotation.start_offset,
+          end: annotation.end_offset,
+          color: annotation.color,
+         },
+        ]
+      : [],
+    ),
+    onOpen: (annotation, rect) => {
+     const source = annotationsQuery.data?.find((item) => item.id === annotation.id);
+     if (source) handleOpenAnnotation(source, rect);
+    },
+    onSelection: (target) => {
+     const index = textReaderDocument.segments.findIndex(
+      (segment) => segment.id === target.segmentId,
+     );
+     const segment = textReaderDocument.segments[index];
+     if (segment) handleSelection({ ...target, segment, index });
+    },
    },
-   onSelection: (target) => {
-    const index = textReaderDocument.segments.findIndex(
-     (segment) => segment.id === target.segmentId,
-    );
-    const segment = textReaderDocument.segments[index];
-    if (segment) selection.handleSelection({ ...target, segment, index });
-   },
-  },
- };
+  }),
+  [annotationsQuery.data, handleOpenAnnotation, handleSelection, textReaderDocument],
+ );
+
+ const firstSectionServices = useMemo<ReaderServices>(
+  () => ({
+   ...annotationServices,
+   toolbar: { actions: navMenu },
+   renderSection: renderReaderSection,
+  }),
+  [annotationServices, navMenu, renderReaderSection],
+ );
+
+ const otherSectionServices = useMemo<ReaderServices>(
+  () => ({
+   ...annotationServices,
+   renderSection: renderReaderSection,
+  }),
+  [annotationServices, renderReaderSection],
+ );
+ const annotationsContextValue = useMemo<BusinessChineseAnnotationsContextValue>(
+  () => ({
+   readerAnnotations: annotationsQuery.data ?? [],
+   onOpenReaderAnnotation: handleOpenAnnotation,
+  }),
+  [annotationsQuery.data, handleOpenAnnotation],
+ );
+ const readerServicesValue = useMemo<ReaderServices>(
+  () => ({ ...parentServices, ...annotationServices }),
+  [parentServices, annotationServices],
+ );
+
  const pairedTranslations = useMemo(() => {
   const translations = new Map<string, string>();
   const translationIndex = lesson.sections.findIndex((section) =>
@@ -1488,13 +1551,8 @@ function BusinessChineseStudyWorkspaceContent({
  );
 
  return (
-  <BusinessChineseAnnotationsContext.Provider
-   value={{
-    readerAnnotations: annotationsQuery.data ?? [],
-    onOpenReaderAnnotation: selection.handleOpenAnnotation,
-   }}
-  >
-   <ReaderServicesContext.Provider value={{ ...parentServices, ...annotationServices }}>
+  <BusinessChineseAnnotationsContext.Provider value={annotationsContextValue}>
+   <ReaderServicesContext.Provider value={readerServicesValue}>
     <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
     <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
      <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
@@ -1678,33 +1736,8 @@ function BusinessChineseStudyWorkspaceContent({
                <Fragment key={section.id}>
                 {section.category === "text" ? (
                  <BusinessChineseReader
-                  document={{
-                   ...textReaderDocument,
-                   id: `${textReaderDocument.id}:${section.id}`,
-                   title:
-                    section.id === textReaderDocument.sections[0]?.id
-                     ? textReaderDocument.title
-                     : undefined,
-                   titleVi:
-                    section.id === textReaderDocument.sections[0]?.id
-                     ? textReaderDocument.titleVi
-                     : undefined,
-                   sections: textReaderDocument.sections.filter(
-                    (readerSection) => readerSection.id === section.id,
-                   ),
-                   segments: textReaderDocument.segments.filter(
-                    (segment) => segment.sectionId === section.id,
-                   ),
-                  }}
-                  services={{
-                   ...annotationServices,
-                   toolbar: {
-                    actions: index === 0 ? navMenu : undefined,
-                   },
-                   renderSection: ({ section: readerSection, content }) => (
-                    <div id={readerSection.id}>{content}</div>
-                   ),
-                  }}
+                  document={sectionDocuments.get(section.id) ?? textReaderDocument}
+                  services={index === 0 ? firstSectionServices : otherSectionServices}
                  />
                 ) : (
                  <Card variant="section" padding="md">
@@ -1737,7 +1770,7 @@ function BusinessChineseStudyWorkspaceContent({
         </div>
        </TabsContent>
       </Tabs>
-      {selection.popover}
+      {selectionPopover}
      </div>
     </div>
    </ReaderServicesContext.Provider>

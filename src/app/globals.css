@@ -1626,23 +1626,15 @@ hr.editor-hr.selected {
  background-color: var(--theme-primary-soft);
 }
 
-/* Each character gets its own ruby block - inline-block perfectly aligns baseline */
+/* Let native ruby layout reserve space for each character's Pinyin. */
 .pinyin-ruby {
- display: inline-block;
- position: relative;
  margin: 0 1px;
  text-align: center;
  vertical-align: baseline;
- line-height: inherit;
 }
 
 /* Pinyin annotation text rendered above character */
 .pinyin-rt {
- display: block;
- position: absolute;
- bottom: 100%;
- left: 50%;
- transform: translateX(-50%);
  font-size: 0.55em;
  line-height: 1;
  color: #64748b; /* Slate-500 */
@@ -1651,7 +1643,6 @@ hr.editor-hr.selected {
  user-select: none;
  white-space: nowrap;
  pointer-events: none;
- margin-bottom: 2px;
 }
 
 /* Code block inside Lexical — covered by .editor-code above */
@@ -1675,6 +1666,9 @@ hr.editor-hr.selected {
 .global-pinyin-hidden .pinyin-rt {
  opacity: 0;
  visibility: hidden;
+}
+.global-pinyin-hidden .pinyin-rt:not(.force-visible) {
+ display: none;
 }
 
 /* Local force-show override: PinyinNode with forceShow=true */
