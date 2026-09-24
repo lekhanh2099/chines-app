@@ -11,6 +11,7 @@ import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.type
 import { ReadingTextItemSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import {
  splitDialogueTurn,
+ splitTrailingTranslation,
  stripLeadingEmoji,
 } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
 import { containsHanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
@@ -463,16 +464,31 @@ export function dictationSourcesFromTextbook(
 
   for (const block of section.blocks) {
    if (block.type === "table") continue;
-   const rawZh = block.text?.trim() ?? "";
-   if (!rawZh) continue;
+   const blockText = block.text?.trim() ?? "";
+   if (!blockText) continue;
+
+   let rawZh = blockText;
+   let rawVi = "";
+
+   if (block.translation !== undefined) {
+    rawVi = block.translation.trim();
+   } else {
+    rawVi = (pairedTranslations.get(block.id) ?? "").trim();
+    if (!rawVi) {
+     const inline = splitTrailingTranslation(blockText);
+     if (inline.translation) {
+      rawZh = inline.source;
+      rawVi = inline.translation;
+     }
+    }
+   }
 
    const zhTurn = splitDialogueTurn(rawZh);
-   const cleanZh = zhTurn.content || rawZh;
-   if (!cleanZh.trim() || !containsHanziText(cleanZh)) continue;
+   const cleanZh = (zhTurn.content || rawZh).trim();
+   if (!cleanZh || !containsHanziText(cleanZh)) continue;
 
-   const rawVi = (block.translation ?? pairedTranslations.get(block.id) ?? "").trim();
    const viTurn = splitDialogueTurn(rawVi);
-   const cleanVi = viTurn.content || rawVi;
+   const cleanVi = (viTurn.content || rawVi).trim();
 
    const sentences = splitChineseSentences(cleanZh);
    if (sentences.length <= 1) {
@@ -534,19 +550,37 @@ export function translationSegmentsFromTextbook(
 
  for (const section of lesson.sections) {
   if (section.title.includes("DỊCH BÀI KHÓA")) continue;
+  if (section.category !== "text") continue;
   const label = stripLeadingEmoji(section.title) || "Bài khóa";
 
   for (const block of section.blocks) {
    if (block.type === "table") continue;
-   const rawZh = block.text?.trim() ?? "";
-   const rawVi = (block.translation ?? pairedTranslations.get(block.id) ?? "").trim();
+   const blockText = block.text?.trim() ?? "";
+   if (!blockText) continue;
+
+   let rawZh = blockText;
+   let rawVi = "";
+
+   if (block.translation !== undefined) {
+    rawVi = block.translation.trim();
+   } else {
+    rawVi = (pairedTranslations.get(block.id) ?? "").trim();
+    if (!rawVi) {
+     const inline = splitTrailingTranslation(blockText);
+     if (inline.translation) {
+      rawZh = inline.source;
+      rawVi = inline.translation;
+     }
+    }
+   }
+
    if (!rawZh || !rawVi) continue;
 
    const zhTurn = splitDialogueTurn(rawZh);
    const viTurn = splitDialogueTurn(rawVi);
-   const cleanZh = zhTurn.content || rawZh;
-   const cleanVi = viTurn.content || rawVi;
-   if (!cleanZh.trim() || !cleanVi.trim()) continue;
+   const cleanZh = (zhTurn.content || rawZh).trim();
+   const cleanVi = (viTurn.content || rawVi).trim();
+   if (!cleanZh || !cleanVi || !containsHanziText(cleanZh)) continue;
 
    const segmentPinyin = formatContextualReadingPinyin(
     analyzeContextualPronunciation({ text: cleanZh, sourcePinyin: null }),

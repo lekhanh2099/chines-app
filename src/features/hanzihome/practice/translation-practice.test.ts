@@ -335,7 +335,17 @@ describe("HanziHome translation practice", () => {
   expect(docHieuSegments[0]?.pinyin).toBeTruthy();
 
   const tm3Lesson = getTextbookLesson("tm3", 1);
-  expect(translationSegmentsFromTextbook(tm3Lesson)).toEqual([]);
+  const tm3Segments = translationSegmentsFromTextbook(tm3Lesson);
+  expect(tm3Segments).toHaveLength(27);
+  expect(tm3Segments[0]).toEqual({
+   id: "business-chinese-tm3-lesson-01-section-03-block-003",
+   order: 1,
+   sourceLabel: "BÀI KHÓA CHÍNH (主课文)",
+   zh: "李允美是一位在中国工作的韩国人，她到中国工商银行开户并询问汇款的事情。",
+   pinyin:
+    "lǐ yǔn měi shì yíwèi zài zhōngguó gōngzuò de hánguó rén，tādào zhōngguó gōngshāng yínháng kāi hù bìng xúnwèn huìkuǎn de shìqíng。",
+   vi: "Lý Doãn Mỹ là một người Hàn Quốc đang làm việc ở Trung Quốc, cô đến Ngân hàng Công thương Trung Quốc để mở tài khoản và hỏi về việc chuyển tiền.",
+  });
   expect(translationSegmentsFromTextbook(undefined)).toEqual([]);
  });
 
