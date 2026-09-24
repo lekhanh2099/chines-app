@@ -7,7 +7,7 @@ import {
 } from "lexical";
 import { describe, expect, it } from "vitest";
 
-import { $isPinyinNode, PinyinNode } from "../nodes/PinyinNode";
+import { $createPinyinNode, $isPinyinNode, PinyinNode } from "../nodes/PinyinNode";
 import {
  autoDetectPinyinInDocument,
  generatePinyinForChinese,
@@ -19,6 +19,22 @@ describe("pinyin-editor-actions", () => {
   expect(generatePinyinForChinese("宣布")).toBe("xuān bù");
   expect(generatePinyinForChinese("希望工程")).toBe("xī wàng gōng chéng");
   expect(generatePinyinForChinese("生词解释")).toBe("shēng cí jiě shì");
+  expect(generatePinyinForChinese("你看得懂吗")).toBe("nǐ kàn de dǒng ma");
+  expect(generatePinyinForChinese("我得去学校")).toBe("wǒ děi qù xué xiào");
+  expect(generatePinyinForChinese("跑得很快")).toBe("pǎo de hěn kuài");
+  expect(generatePinyinForChinese("慢慢地走")).toBe("màn màn de zǒu");
+  expect(generatePinyinForChinese("睡不着")).toBe("shuì bu zháo");
+  expect(generatePinyinForChinese("还给你")).toBe("huán gěi nǐ");
+ });
+
+ it("supports mutating pinyin on PinyinNode via setPinyin", () => {
+  const editor = createEditor({ nodes: [PinyinNode] });
+  editor.update(() => {
+   const node = $createPinyinNode("得", "de");
+   expect(node.getPinyin()).toBe("de");
+   node.setPinyin("děi");
+   expect(node.getPinyin()).toBe("děi");
+  });
  });
 
  it("auto-detects Chinese in document and wraps only Chinese into PinyinNode", () => {
