@@ -1,6 +1,10 @@
 import { convert, pinyin, polyphonic } from "pinyin-pro";
 import { z } from "zod";
 
+import { POLYPHONIC_DICTIONARY, ensurePinyinEngineInitialized } from "./pinyin-engine";
+
+ensurePinyinEngineInitialized();
+
 const readingKeySchema = z.string().regex(/^[a-zv]+[1-5]$/u);
 const tokenTypeSchema = z.enum(["hanzi", "latin", "number", "punctuation", "whitespace", "other"]);
 const evidenceSchema = z.enum([
@@ -44,13 +48,23 @@ export type PronunciationDictionaryEntry = {
  priority: number;
 };
 
+const engineEntries: PronunciationDictionaryEntry[] = Object.entries(POLYPHONIC_DICTIONARY).map(
+ ([text, pinyin], index) => ({
+  id: `polyphonic-engine-${index}`,
+  text,
+  pinyin,
+  priority: text.length * 10,
+ }),
+);
+
 // Phrase readings missing from pinyin-pro's built-in dictionary. Keep 得 scoped
 // to a complete context: a character-wide replacement would break 得到 and 得去.
 const contextualPhraseDictionary: PronunciationDictionaryEntry[] = [
- { id: "complement-listen", text: "听得入迷", pinyin: "tīng de rù mí", priority: 0 },
- { id: "complement-play", text: "吹得不比", pinyin: "chuī de bù bǐ", priority: 0 },
- { id: "complement-solid", text: "坚固得", pinyin: "jiān gù de", priority: 0 },
- { id: "modal-must-go", text: "我得去", pinyin: "wǒ děi qù", priority: 0 },
+ { id: "complement-listen", text: "听得入迷", pinyin: "tīng de rù mí", priority: 100 },
+ { id: "complement-play", text: "吹得不比", pinyin: "chuī de bù bǐ", priority: 100 },
+ { id: "complement-solid", text: "坚固得", pinyin: "jiān gù de", priority: 100 },
+ { id: "modal-must-go", text: "我得去", pinyin: "wǒ děi qù", priority: 100 },
+ ...engineEntries,
 ];
 
 export type PronunciationOverride = z.output<typeof requestSchema>["overrides"][number];

@@ -175,6 +175,27 @@ describe("HanziHome contextual pronunciation", () => {
   expect(autoDetected.glyphs[0]?.spokenReadingKey).toBe("yi2");
  });
 
+ it("resolves 还款 phrases to huán even without source pinyin", () => {
+  const sentence = analyzeContextualPronunciation({
+   text: "谢谢。我想再了解一下还款方式。",
+  });
+  const huanGlyph = sentence.glyphs.find((glyph) => glyph.text === "还");
+  const kuanGlyph = sentence.glyphs.find((glyph) => glyph.text === "款");
+  expect(huanGlyph?.spokenPinyin).toBe("huán");
+  expect(huanGlyph?.lexicalReadingKey).toBe("huan2");
+  expect(kuanGlyph?.spokenPinyin).toBe("kuǎn");
+ });
+
+ it("distinguishes 还 (hái) vs 还 (huán) in complex sentences", () => {
+  const sentence = analyzeContextualPronunciation({
+   text: "银行职员还介绍了两种还款方式。",
+  });
+  const huanGlyphs = sentence.glyphs.filter((glyph) => glyph.text === "还");
+  expect(huanGlyphs).toHaveLength(2);
+  expect(huanGlyphs[0]?.spokenPinyin).toBe("hái");
+  expect(huanGlyphs[1]?.spokenPinyin).toBe("huán");
+ });
+
  it("formats contextual spoken pinyin without losing punctuation", () => {
   const analysis = analyzeContextualPronunciation({ text: "一个人。" });
   expect(formatContextualSpokenPinyin(analysis)).toBe("yí gè rén。");

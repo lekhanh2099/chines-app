@@ -42,6 +42,9 @@ describe("pinyin-engine", () => {
   it("resolves 还 (huán vs hái)", () => {
    expect(generateSmartPinyin("还给你").pinyin).toBe("huán gěi nǐ");
    expect(generateSmartPinyin("还钱").pinyin).toBe("huán qián");
+   expect(generateSmartPinyin("还款方式").pinyin).toBe("huán kuǎn fāng shì");
+   expect(generateSmartPinyin("提前还贷").pinyin).toBe("tí qián huán dài");
+   expect(generateSmartPinyin("还本付息").pinyin).toBe("huán běn fù xī");
    expect(generateSmartPinyin("还有很多").pinyin).toBe("hái yǒu hěn duō");
   });
 
