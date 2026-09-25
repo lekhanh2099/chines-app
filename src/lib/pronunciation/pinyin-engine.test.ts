@@ -69,6 +69,57 @@ describe("pinyin-engine", () => {
    expect(generateSmartPinyin("中国工商银行").pinyin).toBe("zhōng guó gōng shāng yín háng");
    expect(generateSmartPinyin("骑自行车").pinyin).toBe("qí zì xíng chē");
   });
+
+  it("resolves high-frequency HSK polyphones: 乐, 调, 中, 相, 背, 传, 弹, 应, 折", () => {
+   expect(generateSmartPinyin("听音乐").pinyin).toBe("tīng yīn yuè");
+   expect(generateSmartPinyin("一支乐队").pinyin).toBe("yì zhī yuè duì");
+   expect(generateSmartPinyin("祝你快乐").pinyin).toBe("zhù nǐ kuài lè");
+
+   expect(generateSmartPinyin("市场调查").pinyin).toBe("shì chǎng diào chá");
+   expect(generateSmartPinyin("调整计划").pinyin).toBe("tiáo zhěng jì huà");
+   expect(generateSmartPinyin("打开空调").pinyin).toBe("dǎ kāi kōng tiáo");
+
+   expect(generateSmartPinyin("买彩票中奖").pinyin).toBe("mǎi cǎi piào zhòng jiǎng");
+   expect(generateSmartPinyin("食物中毒").pinyin).toBe("shí wù zhòng dú");
+   expect(generateSmartPinyin("来到中国").pinyin).toBe("lái dào zhōng guó");
+
+   expect(generateSmartPinyin("照相馆").pinyin).toBe("zhào xiàng guǎn");
+   expect(generateSmartPinyin("互相帮助").pinyin).toBe("hù xiāng bāng zhù");
+
+   expect(generateSmartPinyin("背着背包").pinyin).toBe("bēi zhe bēi bāo");
+   expect(generateSmartPinyin("背景音乐").pinyin).toBe("bèi jǐng yīn yuè");
+
+   expect(generateSmartPinyin("名人自传").pinyin).toBe("míng rén zì zhuàn");
+   expect(generateSmartPinyin("传统文化").pinyin).toBe("chuán tǒng wén huà");
+
+   expect(generateSmartPinyin("弹吉他").pinyin).toBe("tán jí tā");
+   expect(generateSmartPinyin("子弹飞").pinyin).toBe("zǐ dàn fēi");
+
+   expect(generateSmartPinyin("应该做").pinyin).toBe("yīng gāi zuò");
+   expect(generateSmartPinyin("适应环境").pinyin).toBe("shì yìng huán jìng");
+
+   expect(generateSmartPinyin("商场打折").pinyin).toBe("shāng chǎng dǎ zhé");
+   expect(generateSmartPinyin("打八折").pinyin).toBe("dǎ bā zhé");
+  });
+
+  it("resolves dynamic contextual grammar rules: 只, 为, 长, 还", () => {
+   expect(generateSmartPinyin("一只猫").pinyin).toBe("yì zhī māo");
+   expect(generateSmartPinyin("两只鸟").pinyin).toBe("liǎng zhī niǎo");
+   expect(generateSmartPinyin("只要你来").pinyin).toBe("zhǐ yào nǐ lái");
+   expect(generateSmartPinyin("只能这样").pinyin).toBe("zhǐ néng zhè yàng");
+
+   expect(generateSmartPinyin("为了大家").pinyin).toBe("wèi le dà jiā");
+   expect(generateSmartPinyin("为你服务").pinyin).toBe("wèi nǐ fú wù");
+   expect(generateSmartPinyin("成为朋友").pinyin).toBe("chéng wéi péng yǒu");
+   expect(generateSmartPinyin("我认为对").pinyin).toBe("wǒ rèn wéi duì");
+
+   expect(generateSmartPinyin("腿很长").pinyin).toBe("tuǐ hěn cháng");
+   expect(generateSmartPinyin("李校长").pinyin).toBe("lǐ xiào zhǎng");
+
+   expect(generateSmartPinyin("还我钱").pinyin).toBe("huán wǒ qián");
+   expect(generateSmartPinyin("有借有还").pinyin).toBe("yǒu jiè yǒu huán");
+   expect(generateSmartPinyin("他还活着").pinyin).toBe("tā hái huó zhe");
+  });
  });
 
  describe("Polyphonic character detection", () => {

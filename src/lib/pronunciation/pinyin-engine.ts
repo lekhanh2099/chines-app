@@ -364,6 +364,200 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  和气: "hé qi",
  和睦: "hé mù",
  和牌: "hú pái",
+
+ // ── 乐 (yuè / lè) ──
+ 音乐: "yīn yuè",
+ 乐队: "yuè duì",
+ 乐器: "yuè qì",
+ 奏乐: "zòu yuè",
+ 乐曲: "yuè qǔ",
+ 民乐: "mín yuè",
+ 器乐: "qì yuè",
+ 声乐: "shēng yuè",
+ 快乐: "kuài lè",
+ 乐观: "lè guān",
+ 乐趣: "lè qù",
+ 可乐: "kě lè",
+ 享乐: "xiǎng lè",
+ 玩乐: "wán lè",
+
+ // ── 调 (diào / tiáo) ──
+ 调查: "diào chá",
+ 调动: "diào dòng",
+ 调课: "diào kè",
+ 声调: "shēng diào",
+ 音调: "yīn diào",
+ 语调: "yǔ diào",
+ 调换: "diào huàn",
+ 腔调: "qiāng diào",
+ 低调: "dī diào",
+ 强调: "qiáng diào",
+ 调整: "tiáo zhěng",
+ 调节: "tiáo jié",
+ 调料: "tiáo liào",
+ 调皮: "tiáo pí",
+ 烹调: "pēng tiáo",
+ 协调: "xié tiáo",
+
+ // ── 中 (zhōng / zhòng) ──
+ 中奖: "zhòng jiǎng",
+ 看中: "kàn zhòng",
+ 猜中: "cāi zhòng",
+ 击中: "jī zhòng",
+ 中毒: "zhòng dú",
+ 中暑: "zhòng shǔ",
+ 中选: "zhòng xuǎn",
+ 中弹: "zhòng dàn",
+ 中国: "zhōng guó",
+ 中文: "zhōng wén",
+ 中间: "zhōng jiān",
+ 中心: "zhōng xīn",
+ 中学: "zhōng xué",
+
+ // ── 相 (xiāng / xiàng) ──
+ 照相: "zhào xiàng",
+ 照相机: "zhào xiàng jī",
+ 相片: "xiàng piàn",
+ 首相: "shǒu xiàng",
+ 相貌: "xiàng mào",
+ 真相: "zhēn xiàng",
+ 相声: "xiàng sheng",
+ 相信: "xiāng xìn",
+ 互相: "hù xiāng",
+ 相互: "xiāng hù",
+ 相当: "xiāng dāng",
+ 相反: "xiāng fǎn",
+ 相同: "xiāng tóng",
+ 相处: "xiāng chǔ",
+
+ // ── 背 (bēi / bèi) ──
+ 背着: "bēi zhe",
+ 背包: "bēi bāo",
+ 背黑锅: "bēi hēi guō",
+ 背景: "bèi jǐng",
+ 背后: "bèi hòu",
+ 背诵: "bèi sòng",
+ 背影: "bèi yǐng",
+ 后背: "hòu bèi",
+ 靠背: "kào bèi",
+
+ // ── 传 (chuán / zhuàn) ──
+ 自传: "zì zhuàn",
+ 传记: "zhuàn jì",
+ 外传: "wài zhuàn",
+ 传说: "chuán shuō",
+ 传统: "chuán tǒng",
+ 传播: "chuán bō",
+ 宣传: "xuān chuán",
+ 流传: "liú chuán",
+ 传递: "chuán dì",
+
+ // ── 弹 (tán / dàn) ──
+ 弹吉他: "tán jí tā",
+ 弹钢琴: "tán gāng qín",
+ 弹琴: "tán qín",
+ 弹力: "tán lì",
+ 弹性: "tán xìng",
+ 反弹: "fǎn tán",
+ 子弹: "zǐ dàn",
+ 炸弹: "zhà dàn",
+ 导弹: "dǎo dàn",
+ 炮弹: "pào dàn",
+
+ // ── 应 (yīng / yìng) ──
+ 应该: "yīng gāi",
+ 应当: "yīng dāng",
+ 应有尽有: "yīng yǒu jìn yǒu",
+ 答应: "dā ying",
+ 应用: "yìng yòng",
+ 适应: "shì yìng",
+ 应聘: "yìng pìn",
+ 反应: "fǎn yìng",
+ 应付: "yìng fu",
+ 回应: "huí yìng",
+
+ // ── 折 (zhé / shé) ──
+ 打折: "dǎ zhé",
+ 打八折: "dǎ bā zhé",
+ 打九折: "dǎ jiǔ zhé",
+ 打五折: "dǎ wǔ zhé",
+ 折扣: "zhé kòu",
+ 折磨: "zhé mó",
+ 折断: "zhé duàn",
+ 折本: "shé běn",
+
+ // ── 省 (shěng / xǐng) ──
+ 省钱: "shěng qián",
+ 节省: "jié shěng",
+ 省心: "shěng xīn",
+ 省份: "shěng fèn",
+ 广东省: "guǎng dōng shěng",
+ 省长: "shěng zhǎng",
+ 反省: "fǎn xǐng",
+ 自省: "zì xǐng",
+ 省悟: "xǐng wù",
+
+ // ── 转 (zhuǎn / zhuàn) ──
+ 转变: "zhuǎn biàn",
+ 转告: "zhuǎn gào",
+ 转账: "zhuǎn zhàng",
+ 转身: "zhuǎn shēn",
+ 转弯: "zhuǎn wān",
+ 转向: "zhuǎn xiàng",
+ 打转: "dǎ zhuàn",
+ 旋转: "xuán zhuàn",
+ 转动: "zhuàn dòng",
+ 转圈: "zhuàn quān",
+
+ // ── 盛 (shèng / chéng) ──
+ 盛开: "shèng kāi",
+ 茂盛: "mào shèng",
+ 盛大: "shèng dà",
+ 盛行: "shèng xíng",
+ 盛情: "shèng qíng",
+ 盛饭: "chéng fàn",
+ 盛汤: "chéng tāng",
+
+ // ── 落 (luò / là) ──
+ 落下: "luò xià",
+ 落后: "luò hòu",
+ 降落: "jiàng luò",
+ 落地: "luò dì",
+ 角落: "jiǎo luò",
+ 丢三落四: "diū sān là sì",
+ 落在家里: "là zài jiā lǐ",
+
+ // ── 累 (lèi / lěi) ──
+ 太累: "tài lèi",
+ 很累: "hěn lèi",
+ 劳累: "láo lèi",
+ 累坏了: "lèi huài le",
+ 积累: "jī lěi",
+ 累积: "lěi jī",
+ 日积月累: "rì jī yuè lěi",
+
+ // ── 只 (zhī / zhǐ) ──
+ 只有: "zhǐ yǒu",
+ 只要: "zhǐ yào",
+ 只是: "zhǐ shì",
+ 只能: "zhǐ néng",
+ 只想: "zhǐ xiǎng",
+ 一只: "yì zhī",
+ 两只: "liǎng zhī",
+ 几只: "jǐ zhī",
+
+ // ── 为 (wèi / wéi) ──
+ 为了: "wèi le",
+ 因为: "yīn wèi",
+ 为什么: "wèi shén me",
+ 为你: "wèi nǐ",
+ 为我: "wèi wǒ",
+ 为大家: "wèi dà jiā",
+ 为人民: "wèi rén mín",
+ 认为: "rèn wéi",
+ 以为: "yǐ wéi",
+ 成为: "chéng wéi",
+ 作为: "zuò wéi",
 };
 
 let isEngineInitialized = false;
@@ -534,9 +728,182 @@ const NOUN_PREFIXES_BEFORE_DI = new Set([
  "随",
 ]);
 
+const NUMBERS_BEFORE_ZHI = new Set([
+ "一",
+ "两",
+ "三",
+ "四",
+ "五",
+ "六",
+ "七",
+ "八",
+ "九",
+ "十",
+ "几",
+ "半",
+ "每",
+ "这",
+ "那",
+]);
+
+const NOUNS_AFTER_ZHI = new Set([
+ "猫",
+ "狗",
+ "鸟",
+ "鸡",
+ "鸭",
+ "兔",
+ "羊",
+ "猪",
+ "牛",
+ "虎",
+ "狼",
+ "手",
+ "脚",
+ "眼",
+ "耳",
+ "臂",
+ "鞋",
+ "袜",
+ "船",
+ "箭",
+]);
+
+const VERBS_AFTER_ZHI_ADVERB = new Set([
+ "有",
+ "要",
+ "是",
+ "能",
+ "想",
+ "会",
+ "需",
+ "肯",
+ "看",
+ "听",
+ "说",
+ "做",
+ "去",
+ "见",
+ "怕",
+ "剩",
+ "可",
+ "好",
+ "留",
+ "知",
+ "爱",
+ "求",
+ "懂",
+]);
+
+const VERBS_BEFORE_WEI = new Set([
+ "成",
+ "认",
+ "作",
+ "以",
+ "变",
+ "称",
+ "视",
+ "行",
+ "无",
+ "敢",
+ "互",
+ "改",
+ "化",
+ "定",
+]);
+
+const TARGETS_AFTER_WEI = new Set([
+ "我",
+ "你",
+ "他",
+ "她",
+ "您",
+ "它",
+ "咱",
+ "谁",
+ "人",
+ "大",
+ "民",
+ "何",
+ "什",
+ "了",
+ "友",
+ "国",
+ "公",
+]);
+
+const DEGREE_BEFORE_CHANG = new Set(["很", "太", "真", "最", "更", "好", "多", "挺", "不"]);
+
+const NOUNS_AFTER_CHANG = new Set(["度", "短", "久", "远", "年", "期", "江", "城", "沙", "路"]);
+
+const TITLES_BEFORE_ZHANG = new Set([
+ "校",
+ "家",
+ "班",
+ "市",
+ "省",
+ "院",
+ "局",
+ "科",
+ "部",
+ "队",
+ "处",
+ "行",
+ "排",
+ "连",
+ "营",
+ "团",
+ "师",
+ "军",
+ "县",
+ "乡",
+ "村",
+ "组",
+]);
+
+const VERBS_AFTER_ZHANG = new Set(["大", "成", "高", "胖", "出", "得"]);
+
+const TARGETS_AFTER_HUAN = new Set([
+ "我",
+ "你",
+ "他",
+ "她",
+ "谁",
+ "钱",
+ "书",
+ "债",
+ "贷",
+ "款",
+ "清",
+ "给",
+ "愿",
+ "礼",
+]);
+
+const ADVERB_AFTER_HAI = new Set([
+ "有",
+ "是",
+ "要",
+ "会",
+ "能",
+ "想",
+ "在",
+ "没",
+ "好",
+ "行",
+ "算",
+ "真",
+ "得",
+ "差",
+ "可",
+ "记",
+ "爱",
+]);
+
 /**
  * Apply grammatical contextual rules across syllables in single-pass O(N).
- * Handles structural particle "得" (de vs děi), "地" (de vs dì), and "倒" (dào vs dǎo).
+ * Handles structural particle "得" (de vs děi), "地" (de vs dì), "倒" (dào vs dǎo),
+ * and dynamic polyphones "只", "为", "长", "还".
  */
 export function applyGrammarHeuristics(
  chineseChars: readonly string[],
@@ -596,6 +963,46 @@ export function applyGrammarHeuristics(
     (next === "杯" && nextNext)
    ) {
     syllables[i] = "dào";
+   }
+  } else if (char === "只") {
+   const prev = chineseChars[i - 1];
+   const next = chineseChars[i + 1];
+
+   if ((prev && NUMBERS_BEFORE_ZHI.has(prev)) || (next && NOUNS_AFTER_ZHI.has(next))) {
+    syllables[i] = "zhī";
+   } else if (next && VERBS_AFTER_ZHI_ADVERB.has(next)) {
+    syllables[i] = "zhǐ";
+   }
+  } else if (char === "为") {
+   const prev = chineseChars[i - 1];
+   const next = chineseChars[i + 1];
+
+   if (prev && VERBS_BEFORE_WEI.has(prev)) {
+    syllables[i] = "wéi";
+   } else if (next && TARGETS_AFTER_WEI.has(next)) {
+    syllables[i] = "wèi";
+   }
+  } else if (char === "长") {
+   const prev = chineseChars[i - 1];
+   const next = chineseChars[i + 1];
+
+   if ((prev && DEGREE_BEFORE_CHANG.has(prev)) || (next && NOUNS_AFTER_CHANG.has(next))) {
+    syllables[i] = "cháng";
+   } else if ((prev && TITLES_BEFORE_ZHANG.has(prev)) || (next && VERBS_AFTER_ZHANG.has(next))) {
+    syllables[i] = "zhǎng";
+   }
+  } else if (char === "还") {
+   const prev = chineseChars[i - 1];
+   const prevPrev = chineseChars[i - 2];
+   const prev3 = chineseChars[i - 3];
+   const next = chineseChars[i + 1];
+
+   if (prev3 === "有" && prevPrev === "借" && prev === "有") {
+    syllables[i] = "huán";
+   } else if (next && TARGETS_AFTER_HUAN.has(next)) {
+    syllables[i] = "huán";
+   } else if (next && ADVERB_AFTER_HAI.has(next)) {
+    syllables[i] = "hái";
    }
   }
  }
