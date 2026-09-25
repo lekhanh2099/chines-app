@@ -2,7 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useCallback } from "react";
-import { pinyin as getPinyin } from "pinyin-pro";
+import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { z } from "zod";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
@@ -42,7 +42,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   queryKey: detailKey,
   enabled: enabled && isResolved,
   queryFn: async () => {
-   const pinyinText = getPinyin(chineseText);
+   const pinyinText = generateSmartPinyin(chineseText).pinyin;
 
    if (!userId) {
     const vocab: VocabData = {

@@ -1,6 +1,6 @@
 import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
-import { pinyin as getPinyin } from "pinyin-pro";
+import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { z } from "zod";
 import {
  applyServerTimingHeaders,
@@ -159,7 +159,7 @@ export async function POST(request: NextRequest) {
      {
       id: cachedWord.id,
       hanzi: cachedWord.hanzi,
-      pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
+      pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || generateSmartPinyin(lookupText).pinyin,
       sino_vietnamese:
        cachedWord.sino_vietnamese ||
        cachedAnalysis.sino_vietnamese ||
@@ -250,7 +250,7 @@ export async function POST(request: NextRequest) {
    buildLookupResponse(
     {
      hanzi: lookupText,
-     pinyin: aiLookup.data.pinyin || getPinyin(lookupText),
+     pinyin: aiLookup.data.pinyin || generateSmartPinyin(lookupText).pinyin,
      sino_vietnamese: aiLookup.data.sino_vietnamese || aiLookup.data.han_viet || undefined,
      meaning: getPrimaryMeaning(aiLookup.data, ""),
      ai_analysis: aiLookup.data,

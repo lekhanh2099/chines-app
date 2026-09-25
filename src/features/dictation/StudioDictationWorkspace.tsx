@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { pinyin as getPinyin } from "pinyin-pro";
+import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -59,7 +59,7 @@ function externalDictationEntry(
  id: string,
  text: string,
  title: string,
- pinyin = getPinyin(text, { toneType: "symbol" }),
+ pinyin = generateSmartPinyin(text).pinyin,
 ): ListeningTranscriptEntry {
  return {
   id,

@@ -1,6 +1,6 @@
 import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
-import { pinyin as getPinyin } from "pinyin-pro";
+import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
     id: cachedData.id,
     dictionary_id: cachedData.dictionary_id,
     hanzi: cachedData.hanzi,
-    pinyin: cachedData.pinyin || getPinyin(lookupText),
+    pinyin: cachedData.pinyin || generateSmartPinyin(lookupText).pinyin,
     sino_vietnamese: cachedData.sino_vietnamese || null,
     meaning: cachedData.meaning,
     analysis: cachedData.ai_analysis || {},
@@ -146,7 +146,7 @@ export async function POST(request: NextRequest) {
     id: cachedWord.id,
     dictionary_id: undefined,
     hanzi: cachedWord.hanzi,
-    pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
+    pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || generateSmartPinyin(lookupText).pinyin,
     sino_vietnamese:
      cachedWord.sino_vietnamese ||
      cachedAnalysis.sino_vietnamese ||
@@ -176,7 +176,7 @@ export async function POST(request: NextRequest) {
      id: cachedWord.id,
      dictionary_id: undefined,
      hanzi: cachedWord.hanzi,
-     pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
+     pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || generateSmartPinyin(lookupText).pinyin,
      sino_vietnamese:
       cachedWord.sino_vietnamese ||
       cachedAnalysis.sino_vietnamese ||
@@ -223,7 +223,7 @@ export async function POST(request: NextRequest) {
      id: cachedWord.id,
      dictionary_id: undefined,
      hanzi: cachedWord.hanzi,
-     pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
+     pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || generateSmartPinyin(lookupText).pinyin,
      sino_vietnamese:
       cachedWord.sino_vietnamese ||
       cachedAnalysis.sino_vietnamese ||
@@ -261,7 +261,7 @@ export async function POST(request: NextRequest) {
    id: undefined,
    dictionary_id: undefined,
    hanzi: lookupText,
-   pinyin: aiLookup.data.pinyin || getPinyin(lookupText),
+   pinyin: aiLookup.data.pinyin || generateSmartPinyin(lookupText).pinyin,
    sino_vietnamese: aiLookup.data.sino_vietnamese || aiLookup.data.han_viet || null,
    meaning: getPrimaryMeaning(aiLookup.data, ""),
    analysis: aiLookup.data,

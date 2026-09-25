@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { pinyin as getPinyin } from "pinyin-pro";
+import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { z } from "zod";
 
 import { createClient } from "@/lib/supabase/client";
@@ -42,7 +42,7 @@ function parseLookupResponse(payload: z.output<typeof basicLookupResponseSchema>
 }
 
 async function fetchInspectorVocab(selectedText: string, lessonId: string, signal: AbortSignal) {
- const pinyin = getPinyin(selectedText);
+ const pinyin = generateSmartPinyin(selectedText).pinyin;
  try {
   const response = await fetch("/api/lookup/basic", {
    method: "POST",

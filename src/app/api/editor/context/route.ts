@@ -1,6 +1,6 @@
 import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
-import { pinyin as getPinyin } from "pinyin-pro";
+import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { createClient } from "@/lib/supabase/server";
 import { extractChinese } from "@/lib/chinese-utils";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
@@ -168,7 +168,7 @@ export async function POST(request: NextRequest) {
     cachedDictionaryVocab?.pinyin ||
     existing?.pinyin ||
     existingAnalysis.pinyin ||
-    getPinyin(lookupText),
+    generateSmartPinyin(lookupText).pinyin,
    sino_vietnamese:
     cachedDictionaryVocab?.sino_vietnamese ||
     existing?.sino_vietnamese ||
@@ -283,7 +283,7 @@ export async function POST(request: NextRequest) {
 
  let translation = cachedTranslation;
  let grammarPoints = cachedGrammar;
- let pinyin = existing?.pinyin || getPinyin(sentenceText);
+ let pinyin = existing?.pinyin || generateSmartPinyin(sentenceText).pinyin;
 
  if (!translation && grammarPoints.length === 0) {
   const startedAt = performance.now();

@@ -1,6 +1,6 @@
 import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
-import { pinyin as getPinyin } from "pinyin-pro";
+import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { z } from "zod";
 import {
  applyServerTimingHeaders,
@@ -190,7 +190,7 @@ export async function POST(request: NextRequest) {
    const cachedVocab = getBasicVocabData({
     id: cachedWord.id,
     hanzi: cachedWord.hanzi,
-    pinyin: cachedWord.pinyin || getPinyin(lookupText),
+    pinyin: cachedWord.pinyin || generateSmartPinyin(lookupText).pinyin,
     sino_vietnamese: cachedWord.sino_vietnamese || undefined,
     meaning: getPrimaryMeaning(getVocabularyAnalysis(cachedWord), cachedWord.meaning || ""),
     ai_analysis: getVocabularyAnalysis(cachedWord),
@@ -248,7 +248,7 @@ export async function POST(request: NextRequest) {
     const fallbackVocab = getBasicVocabData({
      id: cachedWord.id,
      hanzi: cachedWord.hanzi,
-     pinyin: cachedWord.pinyin || getPinyin(lookupText),
+     pinyin: cachedWord.pinyin || generateSmartPinyin(lookupText).pinyin,
      sino_vietnamese: cachedWord.sino_vietnamese || undefined,
      meaning: getPrimaryMeaning(getVocabularyAnalysis(cachedWord), cachedWord.meaning || ""),
      ai_analysis: getVocabularyAnalysis(cachedWord),
@@ -276,7 +276,7 @@ export async function POST(request: NextRequest) {
 
   const basicVocab = getBasicVocabData({
    hanzi: lookupText,
-   pinyin: basicLookup.data.pinyin || getPinyin(lookupText),
+   pinyin: basicLookup.data.pinyin || generateSmartPinyin(lookupText).pinyin,
    sino_vietnamese: basicLookup.data.sino_vietnamese || basicLookup.data.han_viet || undefined,
    meaning: getPrimaryMeaning(basicLookup.data, basicLookup.data.meaning_summary || ""),
    ai_analysis: basicLookup.data,
