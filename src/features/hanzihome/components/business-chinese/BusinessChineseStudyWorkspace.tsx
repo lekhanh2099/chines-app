@@ -1603,7 +1603,7 @@ function BusinessChineseStudyWorkspaceContent({
        listClassName="hanzihome-liquid-toolbar hidden xl:flex"
       >
        <TabsContent value={activeView} className="min-h-0 overflow-hidden">
-        <div className="relative h-full min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">
+        <div className="relative h-full min-h-0 min-w-0 overflow-y-auto overflow-x-hidden pr-1 scrollbar-soft">
          <div className="grid min-w-0 gap-3 pb-4">
           {annotationError || annotationsQuery.error ? (
            <Typography variant="bodySmall" tone="danger" role="alert">

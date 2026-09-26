@@ -120,7 +120,7 @@ export function AppScrollViewport({ children, className }: AppScrollViewportProp
   <main
    id="main-content"
    className={cn(
-    "relative min-h-0 min-w-0 w-full flex-1 overflow-y-auto overscroll-y-contain",
+    "relative min-h-0 min-w-0 w-full flex-1 overflow-y-auto overflow-x-hidden overscroll-y-contain",
     className,
    )}
    data-app-scroll-container=""

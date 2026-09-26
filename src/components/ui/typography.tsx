@@ -101,8 +101,8 @@ const typographyVariants = cva("", {
   wrapping: {
    normal: "",
    preLine: "whitespace-pre-line",
-   preWrap: "whitespace-pre-wrap",
-   breakWords: "break-words",
+   preWrap: "whitespace-pre-wrap break-words [overflow-wrap:anywhere] [line-break:anywhere]",
+   breakWords: "break-words [overflow-wrap:anywhere] [line-break:anywhere]",
    breakAll: "break-all",
   },
   stateTone: {
