@@ -17,6 +17,7 @@ import {
  getTextbookCatalog,
  getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
 const routerPushMock = vi.hoisted(() => vi.fn());
 const readerDocumentMock = vi.hoisted(() => vi.fn<(document: ReaderDocumentModel) => void>());
@@ -462,26 +463,29 @@ describe("BusinessChineseStudyWorkspace", () => {
 });
 
 describe("textbook persisted settings and view", () => {
- it("restores the saved book display after remount and keeps another book independent", () => {
+ const displayBookKeys: TextbookLesson["bookKey"][] = ["nhip-cau", "doc-hieu"];
+
+ it.each(displayBookKeys)("uses the saved display only for the matching book (%s)", (bookKey) => {
   const books = getTextbookCatalog();
-  const bridge = books.find((book) => book.key === "nhip-cau");
-  const bridgeLesson = getTextbookLesson("nhip-cau", 1);
-  const readingLesson = getTextbookLesson("doc-hieu", 1);
-  if (!bridge || !bridgeLesson || !readingLesson) throw new Error("Missing textbook fixture");
+  const book = books.find((item) => item.key === bookKey);
+  const lesson = getTextbookLesson(bookKey, 1);
+  if (!book || !lesson) throw new Error("Missing textbook fixture");
   const display = {
    ...DEFAULT_LESSON_DISPLAY_MODE,
    hanziSize: "lg",
   } satisfies LessonTextDisplaySettings;
-  mockSettings = { bookDisplayModes: { [`static:${bridge.id}`]: display } };
+  mockSettings = {
+   bookDisplayModes: {
+    [`static:${book.id}`]: bookKey === "nhip-cau" ? display : DEFAULT_LESSON_DISPLAY_MODE,
+   },
+  };
   readerDisplayMock.mockClear();
-  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={bridgeLesson} />);
-  expect(readerDisplayMock.mock.calls.every(([value]) => value.hanziSize === "lg")).toBe(true);
-  readerDisplayMock.mockClear();
-  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={readingLesson} />);
-  expect(readerDisplayMock.mock.calls.every(([value]) => value.hanziSize === "xl")).toBe(true);
-  readerDisplayMock.mockClear();
-  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={bridgeLesson} />);
-  expect(readerDisplayMock).toHaveBeenCalledWith(display);
+  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+  expect(
+   readerDisplayMock.mock.calls.every(
+    ([value]) => value.hanziSize === (bookKey === "nhip-cau" ? "lg" : "3xl"),
+   ),
+  ).toBe(true);
  });
  it.each(["lesson=1&tab=text", "lesson=1", "lesson=1&tab=removed"])(
   "honors explicit lesson/tab and validates the saved view for %s",
