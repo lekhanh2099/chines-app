@@ -483,31 +483,28 @@ describe("textbook persisted settings and view", () => {
   renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={bridgeLesson} />);
   expect(readerDisplayMock).toHaveBeenCalledWith(display);
  });
- it("honors text URL over saved tab and falls back for an unavailable tab", () => {
-  const books = getTextbookCatalog();
-  const book = books.find((item) => item.key === "nhip-cau");
-  const lesson = getTextbookLesson("nhip-cau", 1);
-  if (!book || !lesson) throw new Error("Missing textbook fixture");
-  mockSettings = {
-   bookResume: { [`static:${book.id}`]: { lessonId: lesson.id, module: "vocab" } },
-  };
-  mockParams = new URLSearchParams("lesson=1&tab=text");
-  readerDocumentMock.mockClear();
-  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
-  expect(
-   readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson.id}:text`),
-  ).toBe(true);
-  mockParams = new URLSearchParams("lesson=1");
-  expect(
-   renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />),
-  ).toContain(
-   `aria-label="${businessChineseMessages.tabsLabel}: ${businessChineseMessages.tabs.all}"`,
-  );
-  mockParams = new URLSearchParams("lesson=1&tab=removed");
-  readerDocumentMock.mockClear();
-  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
-  expect(markup).toContain(
-   `aria-label="${businessChineseMessages.tabsLabel}: ${businessChineseMessages.tabs.all}"`,
-  );
- });
+ it.each(["lesson=1&tab=text", "lesson=1", "lesson=1&tab=removed"])(
+  "honors explicit lesson/tab and validates the saved view for %s",
+  (query) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "nhip-cau");
+   const lesson = getTextbookLesson("nhip-cau", 1);
+   if (!book || !lesson) throw new Error("Missing textbook fixture");
+   mockSettings = {
+    bookResume: { [`static:${book.id}`]: { lessonId: lesson.id, module: "vocab" } },
+   };
+   mockParams = new URLSearchParams(query);
+   readerDocumentMock.mockClear();
+   const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+   if (mockParams.get("tab") === "text") {
+    expect(
+     readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson.id}:text`),
+    ).toBe(true);
+   } else {
+    expect(markup).toContain(
+     `aria-label="${businessChineseMessages.tabsLabel}: ${businessChineseMessages.tabs.all}"`,
+    );
+   }
+  },
+ );
 });
