@@ -1,6 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
+import {
+ emptyLearningState,
+ defaultTextbookDisplaySettings,
+ defaultLessonTextDisplaySettings,
+} from "@/features/hanzihome/utils/learning-state";
 import type { UserLearningState } from "@/features/hanzihome/types";
 import type { PendingLearningStateMutation } from "./learning-state-local-store";
 
@@ -316,5 +320,86 @@ describe("learning-state local-first sync", () => {
 
   expect(merged.settings.lastLessonId).toBe("local-lesson");
   expect(merged.settings.density).toBe("compact");
+ });
+});
+
+describe("per-book settings conflict rebase", () => {
+ it("preserves independent books and merges display fields without splitting resume targets", () => {
+  const base: UserLearningState = {
+   ...emptyLearningState,
+   settings: {
+    bookDisplayModes: { "catalog:a": defaultLessonTextDisplaySettings },
+    bookResume: { "catalog:a": { lessonId: "a1", module: "overview" } },
+   },
+  };
+  const local: UserLearningState = {
+   ...base,
+   settings: {
+    bookDisplayModes: { "catalog:a": { ...defaultLessonTextDisplaySettings, hanziSize: "xl" } },
+    bookResume: { "catalog:a": { lessonId: "a2", module: "lessonText" } },
+   },
+  };
+  const remote: UserLearningState = {
+   ...base,
+   settings: {
+    bookDisplayModes: {
+     "catalog:a": { ...defaultLessonTextDisplaySettings, showMeaning: true },
+     "static:b": { ...defaultLessonTextDisplaySettings, hanziFont: "system" },
+    },
+    bookResume: {
+     "catalog:a": { lessonId: "a3", module: "vocab" },
+     "static:b": { lessonId: "b2", module: "text" },
+    },
+   },
+  };
+  const merged = mergeLearningStateAfterConflict({ base, local, remote });
+  expect(merged.settings.bookDisplayModes?.["catalog:a"]).toMatchObject({
+   hanziSize: "xl",
+   showMeaning: true,
+  });
+  expect(merged.settings.bookDisplayModes?.["static:b"]).toEqual(
+   remote.settings.bookDisplayModes?.["static:b"],
+  );
+  expect(merged.settings.bookResume).toEqual({
+   "catalog:a": { lessonId: "a2", module: "lessonText" },
+   "static:b": { lessonId: "b2", module: "text" },
+  });
+ });
+ it("retains untouched remote resume changes and legacy settings", () => {
+  const remote: UserLearningState = {
+   ...emptyLearningState,
+   settings: {
+    lessonTextDisplayMode: defaultLessonTextDisplaySettings,
+    bookResume: { "static:b": { lessonId: "b2", module: "notes" } },
+   },
+  };
+  expect(
+   mergeLearningStateAfterConflict({ base: emptyLearningState, local: emptyLearningState, remote })
+    .settings,
+  ).toMatchObject(remote.settings);
+ });
+});
+
+it("merges first-time textbook preferences against the actual inherited defaults", () => {
+ const local: UserLearningState = {
+  ...emptyLearningState,
+  settings: {
+   bookDisplayModes: {
+    "static:new": { ...defaultTextbookDisplaySettings, showMeaning: false },
+   },
+  },
+ };
+ const remote: UserLearningState = {
+  ...emptyLearningState,
+  settings: {
+   bookDisplayModes: {
+    "static:new": { ...defaultTextbookDisplaySettings, hanziSize: "3xl" },
+   },
+  },
+ };
+ const merged = mergeLearningStateAfterConflict({ base: emptyLearningState, local, remote });
+ expect(merged.settings.bookDisplayModes?.["static:new"]).toMatchObject({
+  showMeaning: false,
+  hanziSize: "3xl",
  });
 });

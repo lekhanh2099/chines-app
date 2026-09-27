@@ -7,11 +7,15 @@
  },
  "continueLearning": {
   "title": "继续学习",
-  "description": "返回你上次学习的课程和具体内容。",
+  "description": "选择教材系列，按分册继续上次学习的课程。",
   "recentLesson": "最近学习",
   "startHanziHome": "开始使用 HanziHome",
   "lesson": "第 {number} 课：{title}",
-  "unavailable": "目前没有可用课程。"
+  "unavailable": "目前没有可用课程。",
+  "resume": "继续学习",
+  "start": "开始学习",
+  "books": "{count} 册",
+  "catalogUnavailable": "课程目录暂时无法加载，其他教材仍可使用。"
  },
  "modules": {
   "overview": "概览",
@@ -69,5 +73,10 @@
   "emptyTitle": "没有最近笔记",
   "emptyDescription": "需要保存学习内容时，可以创建一条笔记。",
   "create": "创建笔记"
+ },
+ "textbookModules": {
+  "all": "整课",
+  "core": "核心内容",
+  "translation": "翻译练习"
  }
 }

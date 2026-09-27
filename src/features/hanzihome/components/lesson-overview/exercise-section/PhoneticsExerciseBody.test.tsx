@@ -6,6 +6,10 @@ import { ExerciseSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema
 import { DEFAULT_LESSON_DISPLAY_MODE } from "../types";
 import { PhoneticsExerciseBody } from "./PhoneticsExerciseBody";
 
+vi.mock("@/features/hanzihome/hooks/useHanziHomeLessonResources", () => ({
+ useHanziHomeLessonDetailResource: () => ({ data: undefined }),
+}));
+
 vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
  useVocabInspector: () => ({ openInspector: vi.fn() }),
 }));

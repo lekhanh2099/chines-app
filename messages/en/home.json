@@ -7,11 +7,15 @@
  },
  "continueLearning": {
   "title": "Continue learning",
-  "description": "Return to the exact lesson and content you were following.",
+  "description": "Choose a textbook series and resume each book where you left off.",
   "recentLesson": "Recently studied",
   "startHanziHome": "Start HanziHome",
   "lesson": "Lesson {number}: {title}",
-  "unavailable": "No lesson is available yet."
+  "unavailable": "No lesson is available yet.",
+  "resume": "Continue",
+  "start": "Start",
+  "books": "{count} books",
+  "catalogUnavailable": "The lesson catalog could not be loaded. Other textbooks are still available."
  },
  "modules": {
   "overview": "Overview",
@@ -69,5 +73,10 @@
   "emptyTitle": "No recent notes",
   "emptyDescription": "Create a note when you want to keep something from your studies.",
   "create": "Create note"
+ },
+ "textbookModules": {
+  "all": "Full lesson",
+  "core": "Core content",
+  "translation": "Translation practice"
  }
 }

@@ -15,10 +15,12 @@ import {
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { useRecentNotes } from "@/features/notes/hooks/useRecentNotes";
 import { fetchHomeLearningOverview } from "@/features/home/home-learning-overview-api";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { buildHomeCourseGroups } from "@/features/home/home-dashboard.utils";
 import { buildHomeRecentActivity } from "@/features/home/home-dashboard.utils";
 import type { HomeDashboardModel } from "@/features/home/types";
 
-export function useHomeDashboard(): HomeDashboardModel {
+export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboardModel {
  const t = useTranslations("Home");
  const { userId, isResolved } = useClientSession();
  const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: true });
@@ -57,12 +59,6 @@ export function useHomeDashboard(): HomeDashboardModel {
  });
 
  return useMemo(() => {
-  const lastLessonId = learning.state.settings.lastLessonId;
-  const recentLesson = catalog.lessons.find((lesson) => lesson.id === lastLessonId);
-  const fallbackLesson = catalog.lessons[0] ?? null;
-  const lesson = recentLesson ?? fallbackLesson;
-  const course = lesson ? catalog.courses.find((item) => item.id === lesson.courseId) : null;
-  const lastModule = learning.state.settings.lastModule ?? "overview";
   const progressItems = [
    ...Object.values(learning.state.progress.vocab ?? {}),
    ...Object.values(learning.state.progress.grammar ?? {}),
@@ -92,18 +88,8 @@ export function useHomeDashboard(): HomeDashboardModel {
   });
 
   return {
-   lesson:
-    lesson && lesson.courseId
-     ? {
-        href: `/hanzihome?courseId=${lesson.courseId}&lesson=${lesson.lessonNumber}&module=${lastModule}`,
-        title: lesson.title,
-        titleZh: lesson.titleZh,
-        courseTitle: course?.title ?? lesson.courseTitle ?? "HanziHome",
-        lessonNumber: lesson.lessonNumber,
-        module: lastModule,
-        isRecent: Boolean(recentLesson),
-       }
-     : null,
+   courses: buildHomeCourseGroups(catalog, textbooks, learning.state.settings),
+   catalogUnavailable: catalogQuery.isError,
    learningPulse: {
     trackedCount: progressItems.length,
     reviewCount,
@@ -128,8 +114,9 @@ export function useHomeDashboard(): HomeDashboardModel {
       learningOverviewQuery.isPending)),
   };
  }, [
-  catalog.courses,
-  catalog.lessons,
+  textbooks,
+  catalog,
+  catalogQuery.isError,
   catalogQuery.isPending,
   learning.isLoading,
   learning.state,

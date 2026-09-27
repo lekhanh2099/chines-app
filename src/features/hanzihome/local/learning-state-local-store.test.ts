@@ -1,6 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { emptyLearningState, nextProgress } from "@/features/hanzihome/utils/learning-state";
+import {
+ emptyLearningState,
+ nextProgress,
+ defaultTextbookDisplaySettings,
+} from "@/features/hanzihome/utils/learning-state";
 import type { UserLearningState } from "@/features/hanzihome/types";
 
 // In-memory simulated storage for IndexedDB transactions
@@ -315,4 +319,27 @@ describe("learning-state-local-store atomic operations", () => {
   const stateRecord = await readLocalLearningState(ownerUserId);
   expect(stateRecord?.state.settings.lastLessonId).toBe("lesson-remote");
  });
+});
+
+it("round-trips book settings and resume through durable storage without crossing owners", async () => {
+ const settings: UserLearningState["settings"] = {
+  bookDisplayModes: {
+   "static:bridge": { ...defaultTextbookDisplaySettings, hanziSize: "lg" },
+  },
+  bookResume: {
+   "static:bridge": { lessonId: "bridge-2", module: "grammar" },
+  },
+ };
+ await saveLearningStateAtomic({
+  ownerUserId: "book-owner-a",
+  baseState: emptyLearningState,
+  nextState: { ...emptyLearningState, settings },
+ });
+ const reloaded = await readLocalLearningState("book-owner-a");
+ expect(reloaded?.state.settings).toEqual(settings);
+ expect((await readPendingLearningStateMutation("book-owner-a"))?.payload.settings).toEqual(
+  settings,
+ );
+ expect(await readLocalLearningState("book-owner-b")).toBeNull();
+ expect(await readPendingLearningStateMutation("book-owner-b")).toBeNull();
 });

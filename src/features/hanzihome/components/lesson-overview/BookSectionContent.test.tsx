@@ -11,6 +11,10 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 
+vi.mock("@/features/hanzihome/hooks/useHanziHomeLessonResources", () => ({
+ useHanziHomeLessonDetailResource: () => ({ data: undefined }),
+}));
+
 vi.mock("next/navigation", () => ({ useSearchParams: () => new URLSearchParams() }));
 
 function renderToStaticMarkup(element: ReactNode) {

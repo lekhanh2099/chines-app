@@ -7,7 +7,7 @@ import { ContinueLearningPanel } from "@/features/home/components/ContinueLearni
 import { HomeLearningPulse } from "@/features/home/components/HomeLearningPulse";
 import { RecentLearningActivityPanel } from "@/features/home/components/RecentLearningActivityPanel";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
-import type { HomeDashboardModel } from "@/features/home/types";
+import type { HomeLessonTarget } from "@/features/home/types";
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 
@@ -23,7 +23,7 @@ const lesson = {
  lessonNumber: 1,
  module: "vocab",
  isRecent: true,
-} satisfies NonNullable<HomeDashboardModel["lesson"]>;
+} satisfies HomeLessonTarget;
 
 const localeCases = [
  { locale: "vi", heading: "Học tiếp", module: "Từ vựng", lesson: "Bài 1: 你好" },
@@ -41,7 +41,10 @@ describe("Home messages", () => {
   const messages = await loadAppMessages(testCase.locale);
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider locale={testCase.locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <ContinueLearningPanel lesson={lesson} />
+    <ContinueLearningPanel
+     courses={[{ id: "course", title: "HSK 1", books: [{ id: "book", title: "HSK 1", lesson }] }]}
+     unavailable={false}
+    />
    </NextIntlClientProvider>,
   );
 

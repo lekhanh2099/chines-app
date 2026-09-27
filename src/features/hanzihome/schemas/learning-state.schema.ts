@@ -44,6 +44,16 @@ export const progressItemSchema = z.object({
  lastReviewedAt: z.string().optional(),
 });
 
+const lessonTextDisplayModeSchema = z.object({
+ showPinyin: z.boolean(),
+ autoDetectPinyin: z.boolean().optional().default(false),
+ showMeaning: z.boolean(),
+ showAnswers: z.boolean(),
+ hanziFont: hanziReaderFontSchema,
+ hanziSize: hanziReaderSizeSchema,
+ revealMode: lessonTextRevealModeSchema.optional().default("always"),
+});
+
 export const userLearningStateSchema = z.object({
  settings: z
   .object({
@@ -52,16 +62,16 @@ export const userLearningStateSchema = z.object({
    lastModule: moduleSchema.optional(),
    density: z.enum(["comfortable", "compact", "focus"]).optional(),
    vocabDetailTab: z.string().optional(),
-   lessonTextDisplayMode: z
-    .object({
-     showPinyin: z.boolean(),
-     autoDetectPinyin: z.boolean().optional().default(false),
-     showMeaning: z.boolean(),
-     showAnswers: z.boolean(),
-     hanziFont: hanziReaderFontSchema,
-     hanziSize: hanziReaderSizeSchema,
-     revealMode: lessonTextRevealModeSchema.optional().default("always"),
-    })
+   lessonTextDisplayMode: lessonTextDisplayModeSchema.optional(),
+   bookDisplayModes: z.record(z.string(), lessonTextDisplayModeSchema).optional(),
+   bookResume: z
+    .record(
+     z.string(),
+     z.object({
+      lessonId: z.string().min(1),
+      module: z.string().min(1),
+     }),
+    )
     .optional(),
   })
   .default({}),

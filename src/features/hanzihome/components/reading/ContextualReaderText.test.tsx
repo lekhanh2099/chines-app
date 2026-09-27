@@ -316,6 +316,7 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain("xīn");
   expect(markup).toContain('aria-label="Đọc từ chữ 伤"');
   expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 心"');
+  expect(markup.match(/<ruby class="whitespace-nowrap"/g)).toHaveLength(4);
  });
 
  it("uses grouped pinyin when auto detection renders the paragraph presentation", () => {

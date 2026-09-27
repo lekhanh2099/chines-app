@@ -18,7 +18,7 @@ import { ListeningDictationWorkspace } from "@/features/hanzihome/listening/List
 import { LessonAnnotationProvider } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { getBookSections } from "@/features/hanzihome/components/lesson-overview/utils";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import { lessonDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { TextbookSectionCard } from "@/features/hanzihome/components/lesson-text/TextbookSectionCard";
 
 export function LessonModuleContent({
@@ -119,9 +119,7 @@ export function LessonModuleContent({
         "sections",
         lesson.sourceLesson?.lesson.sections.findIndex((item) => item.id === section.id) ?? -1,
        ]}
-       displayMode={
-        runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE
-       }
+       displayMode={lessonDisplaySettings(runtime.learningState, runtime.lesson)}
        interactiveReading={false}
        readingMode={false}
       />

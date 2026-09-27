@@ -1,13 +1,15 @@
+import type { ReaderDisplayAdapter } from "@/features/reader/model/reader-display";
 import type { ComponentProps, ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import type { UserLearningState, LessonTextDisplaySettings } from "@/features/hanzihome/types";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import {
  getBusinessChineseCatalog,
@@ -19,6 +21,16 @@ import {
 const routerPushMock = vi.hoisted(() => vi.fn());
 const readerDocumentMock = vi.hoisted(() => vi.fn<(document: ReaderDocumentModel) => void>());
 
+const readerDisplayMock = vi.hoisted(() =>
+ vi.fn<(display: ReaderDisplayAdapter["value"]) => void>(),
+);
+let mockParams = new URLSearchParams();
+let mockSettings: UserLearningState["settings"] = {};
+afterEach(() => {
+ mockParams = new URLSearchParams();
+ mockSettings = {};
+});
+
 vi.mock("@/components/providers/QueryProvider", () => ({
  useClientSession: () => ({ userId: null, isResolved: true }),
 }));
@@ -28,6 +40,7 @@ vi.mock("@/features/reader/components/Reader", async (importOriginal) => {
  return {
   ...actual,
   Reader: (props: ComponentProps<typeof actual.Reader>) => {
+   if (props.display) readerDisplayMock(props.display.value);
    if (
     typeof props.data === "object" &&
     "segments" in props.data &&
@@ -48,7 +61,7 @@ let mockBookmarkedLessonIds: string[] = [];
 vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
  useLearningState: () => ({
   state: {
-   settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE },
+   settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE, ...mockSettings },
    bookmarks: { lessons: mockBookmarkedLessonIds },
   },
   toggleBookmark: toggleBookmarkMock,
@@ -56,7 +69,7 @@ vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
 }));
 
 vi.mock("next/navigation", () => ({
- useSearchParams: () => new URLSearchParams(),
+ useSearchParams: () => mockParams,
 }));
 
 vi.mock("@/i18n/navigation", () => ({
@@ -445,5 +458,56 @@ describe("BusinessChineseStudyWorkspace", () => {
   const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
 
   expect(markup).toContain("Đã đánh dấu");
+ });
+});
+
+describe("textbook persisted settings and view", () => {
+ it("restores the saved book display after remount and keeps another book independent", () => {
+  const books = getTextbookCatalog();
+  const bridge = books.find((book) => book.key === "nhip-cau");
+  const bridgeLesson = getTextbookLesson("nhip-cau", 1);
+  const readingLesson = getTextbookLesson("doc-hieu", 1);
+  if (!bridge || !bridgeLesson || !readingLesson) throw new Error("Missing textbook fixture");
+  const display = {
+   ...DEFAULT_LESSON_DISPLAY_MODE,
+   hanziSize: "lg",
+  } satisfies LessonTextDisplaySettings;
+  mockSettings = { bookDisplayModes: { [`static:${bridge.id}`]: display } };
+  readerDisplayMock.mockClear();
+  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={bridgeLesson} />);
+  expect(readerDisplayMock.mock.calls.every(([value]) => value.hanziSize === "lg")).toBe(true);
+  readerDisplayMock.mockClear();
+  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={readingLesson} />);
+  expect(readerDisplayMock.mock.calls.every(([value]) => value.hanziSize === "xl")).toBe(true);
+  readerDisplayMock.mockClear();
+  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={bridgeLesson} />);
+  expect(readerDisplayMock).toHaveBeenCalledWith(display);
+ });
+ it("honors text URL over saved tab and falls back for an unavailable tab", () => {
+  const books = getTextbookCatalog();
+  const book = books.find((item) => item.key === "nhip-cau");
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  if (!book || !lesson) throw new Error("Missing textbook fixture");
+  mockSettings = {
+   bookResume: { [`static:${book.id}`]: { lessonId: lesson.id, module: "vocab" } },
+  };
+  mockParams = new URLSearchParams("lesson=1&tab=text");
+  readerDocumentMock.mockClear();
+  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+  expect(
+   readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson.id}:text`),
+  ).toBe(true);
+  mockParams = new URLSearchParams("lesson=1");
+  expect(
+   renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />),
+  ).toContain(
+   `aria-label="${businessChineseMessages.tabsLabel}: ${businessChineseMessages.tabs.all}"`,
+  );
+  mockParams = new URLSearchParams("lesson=1&tab=removed");
+  readerDocumentMock.mockClear();
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+  expect(markup).toContain(
+   `aria-label="${businessChineseMessages.tabsLabel}: ${businessChineseMessages.tabs.all}"`,
+  );
  });
 });

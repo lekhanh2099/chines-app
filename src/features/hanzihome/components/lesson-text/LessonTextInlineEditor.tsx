@@ -24,7 +24,7 @@ import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 import type { StudyModule } from "@/features/hanzihome/context/types";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import { lessonDisplaySettings, lessonBookKey } from "@/features/hanzihome/utils/learning-state";
 import {
  lessonTextToReaderDocument,
  type LessonReaderEditBinding,
@@ -156,8 +156,7 @@ function LessonTextWorkspace({
  const runtime = useHanziHomeRuntime();
  const { lesson } = runtime;
  const actions = useHanziHomeFeatureActions();
- const displayMode =
-  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
+ const displayMode = lessonDisplaySettings(runtime.learningState, runtime.lesson);
  const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
  const readingItems = useMemo(
   () => sourceSections.flatMap((section) => (section.type === "reading" ? section.items : [])),
@@ -229,6 +228,7 @@ function LessonTextWorkspace({
 
  const integration = useLessonReader({
   document: lessonReader.document,
+  bookKey: lessonBookKey(lesson),
   lessonId: editable ? lesson.id : undefined,
   displayMode: editable ? undefined : displayMode,
   menuContent: readerToolsMenuContent,

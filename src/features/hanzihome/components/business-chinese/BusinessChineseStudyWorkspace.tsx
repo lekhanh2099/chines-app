@@ -61,6 +61,8 @@ import {
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import type { SegmentedControlItem } from "@/components/ui/segmented-control";
 import { Typography, type TypographyProps } from "@/components/ui/typography";
+import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
+import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import {
@@ -142,16 +144,6 @@ const chineseGraphemeSegmenter = new Intl.Segmenter("zh-CN", {
  granularity: "grapheme",
 });
 const nonChineseTextPattern = /[^\p{Script=Han}\p{Number}\p{Punctuation}\p{Separator}\p{Symbol}]/gu;
-
-const businessChineseDisplayMode: LessonDisplayMode = {
- showPinyin: true,
- autoDetectPinyin: true,
- showMeaning: true,
- showAnswers: false,
- hanziFont: "kaiti",
- hanziSize: "xl",
- revealMode: "always",
-};
 
 function isChineseOnlyText(value: string) {
  return value.replace(nonChineseTextPattern, "").trim().length === value.trim().length;
@@ -1163,20 +1155,18 @@ export function BusinessChineseStudyWorkspace({
  const t = useTranslations("BusinessChinese");
  const searchParams = useSearchParams();
  const sourceTarget = parseReaderSourceTarget(new URLSearchParams(searchParams.toString()));
- const tabParam = searchParams.get("tab");
- const initialView =
-  tabParam === "notes" || tabParam === "translation" || tabParam === "dictation"
-   ? tabParam
-   : sourceTarget?.documentId === `${lesson.id}:text`
-     ? "text"
-     : "all";
- const [activeView, setActiveView] = useState(initialView);
- const readerDocument = useMemo(
-  () => buildBusinessChineseReaderDocument(lesson, activeView),
-  [activeView, lesson],
- );
-
- const { state: learningState, toggleBookmark } = useLearningState();
+ const router = useLocalizedRouter();
+ const learning = useLearningState();
+ const learningState = learning.state;
+ const { toggleBookmark } = learning;
+ const book = books.find((item) => item.key === lesson.bookKey);
+ const bookKey = `static:${book?.id ?? lesson.bookKey}`;
+ const resume = learningState.settings.bookResume?.[bookKey];
+ const resumeLesson = book?.lessons.find((item) => item.id === resume?.lessonId);
+ const shouldRestoreLesson =
+  !searchParams.has("lesson") && resumeLesson && resumeLesson.id !== lesson.id;
+ const displayMode =
+  learningState.settings.bookDisplayModes?.[bookKey] ?? defaultTextbookDisplaySettings;
  const isLessonBookmarked = (learningState.bookmarks.lessons ?? []).includes(lesson.id);
  const lastBookmarkClickRef = useRef(0);
  const handleToggleCurrentLessonBookmark = useCallback(() => {
@@ -1221,6 +1211,51 @@ export function BusinessChineseStudyWorkspace({
   [contentSections, dictationSources.length, lesson.vocab.length, t],
  );
 
+ const requestedView =
+  searchParams.get("tab") ??
+  (sourceTarget?.documentId === `${lesson.id}:text`
+   ? "text"
+   : !searchParams.has("lesson") && resume?.lessonId === lesson.id
+     ? resume.module
+     : "all");
+ const activeView = tabs.find((item) => item.key === requestedView)?.key ?? "all";
+ const readerDocument = useMemo(
+  () => buildBusinessChineseReaderDocument(lesson, activeView),
+  [activeView, lesson],
+ );
+ const setActiveView = (value: string) => {
+  const params = new URLSearchParams(searchParams.toString());
+  params.set("lesson", String(lesson.number));
+  params.set("tab", value);
+  router.push(`${buildTextbookHref(lesson.bookKey, lesson.number).split("?")[0]}?${params}`, {
+   scroll: false,
+  });
+ };
+ useEffect(() => {
+  if (learning.isLoading) return;
+  if (shouldRestoreLesson) {
+   router.replace(
+    `${buildTextbookHref(lesson.bookKey, resumeLesson.number)}&tab=${encodeURIComponent(searchParams.get("tab") ?? resume?.module ?? "all")}`,
+   );
+   return;
+  }
+  if (resume?.lessonId !== lesson.id || resume.module !== activeView) {
+   learning.updateSettings({
+    bookResume: { [bookKey]: { lessonId: lesson.id, module: activeView } },
+   });
+  }
+ }, [
+  learning,
+  shouldRestoreLesson,
+  resumeLesson,
+  resume,
+  router,
+  lesson,
+  activeView,
+  bookKey,
+  searchParams,
+ ]);
+
  const navMenu = (
   <BusinessChineseWorkspaceNavMenu
    tabs={tabs}
@@ -1236,12 +1271,15 @@ export function BusinessChineseStudyWorkspace({
   />
  );
 
+ if (learning.isLoading || shouldRestoreLesson) return <HanziHomeWorkspaceLoading />;
+
  return (
   <MandarinTtsProvider>
    <ReaderPronunciationSessionProvider key={lesson.id}>
     <BusinessChineseReader
      key={readerDocument.id}
      document={readerDocument}
+     bookKey={bookKey}
      services={{
       toolbar: {
        actions: navMenu,
@@ -1257,6 +1295,8 @@ export function BusinessChineseStudyWorkspace({
         onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
         navMenu={navMenu}
         readerContent={content}
+        bookKey={bookKey}
+        displayMode={displayMode}
        />
       ),
      }}
@@ -1268,14 +1308,17 @@ export function BusinessChineseStudyWorkspace({
 
 const BusinessChineseReader = memo(function BusinessChineseReader({
  document,
+ bookKey,
  services,
 }: {
  document: ReaderDocumentModel;
+ bookKey: string;
  services?: ReaderServices;
 }) {
  const integration = useLessonReader({
   document,
-  displayMode: businessChineseDisplayMode,
+  displayMode: defaultTextbookDisplaySettings,
+  bookKey,
  });
  return (
   <Reader
@@ -1310,6 +1353,8 @@ function BusinessChineseStudyWorkspaceContent({
  onToggleLessonBookmark,
  navMenu,
  readerContent,
+ bookKey,
+ displayMode,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
@@ -1320,9 +1365,10 @@ function BusinessChineseStudyWorkspaceContent({
  onToggleLessonBookmark: () => void;
  navMenu: ReactNode;
  readerContent: ReactNode;
+ bookKey: string;
+ displayMode: LessonDisplayMode;
 }) {
  const t = useTranslations("BusinessChinese");
- const displayMode = businessChineseDisplayMode;
  const textReaderDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, "text"),
   [lesson],
@@ -1736,6 +1782,7 @@ function BusinessChineseStudyWorkspaceContent({
                <Fragment key={section.id}>
                 {section.category === "text" ? (
                  <BusinessChineseReader
+                  bookKey={bookKey}
                   document={sectionDocuments.get(section.id) ?? textReaderDocument}
                   services={index === 0 ? firstSectionServices : otherSectionServices}
                  />

@@ -37,6 +37,7 @@ vi.mock("@/components/providers/QueryProvider", () => ({
 import { getLearningStateSyncState, useLearningState } from "./useLearningState";
 import {
  emptyLearningState,
+ defaultLessonTextDisplaySettings,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
 
@@ -58,6 +59,38 @@ describe("A2 — Learning/Review Durability and Retry Intent Recovery", () => {
    status: "synced",
    syncedCount: 1,
    pendingCount: 0,
+  });
+ });
+
+ it("queues independent per-book changes through the same owner without replacing siblings", async () => {
+  localFirst.save.mockResolvedValue(undefined);
+  function Actions() {
+   const learning = useLearningState();
+   learning.updateSettings({
+    bookDisplayModes: { "catalog:a": { ...defaultLessonTextDisplaySettings, hanziSize: "xl" } },
+   });
+   learning.updateSettings({
+    bookDisplayModes: { "static:a": { ...defaultLessonTextDisplaySettings, showMeaning: true } },
+   });
+   learning.updateSettings({ bookResume: { "catalog:a": { lessonId: "a1", module: "vocab" } } });
+   learning.updateSettings({
+    bookResume: { "static:a": { lessonId: "static-a2", module: "text" } },
+   });
+   return null;
+  }
+  renderToStaticMarkup(
+   createElement(QueryClientProvider, { client: queryClient }, createElement(Actions)),
+  );
+  await vi.waitFor(() => expect(localFirst.save).toHaveBeenCalledTimes(4));
+  expect(localFirst.save.mock.calls[3]?.[0]).toBe("test-user-123");
+  expect(localFirst.save.mock.calls[3]?.[2]).toMatchObject({
+   settings: {
+    bookDisplayModes: { "catalog:a": { hanziSize: "xl" }, "static:a": { showMeaning: true } },
+    bookResume: {
+     "catalog:a": { lessonId: "a1", module: "vocab" },
+     "static:a": { lessonId: "static-a2", module: "text" },
+    },
+   },
   });
  });
 

@@ -1,5 +1,7 @@
 "use client";
 
+import { lessonDisplaySettings, lessonBookKey } from "@/features/hanzihome/utils/learning-state";
+
 import {
  AlertTriangle,
  Columns2,
@@ -46,10 +48,7 @@ import { moduleMeta, tabsForLesson } from "@/features/hanzihome/components/layou
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
 import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/DebugRawDataPanel";
 import { HanziHomeEditingDialogShell } from "@/features/hanzihome/editing";
-import {
- DEFAULT_LESSON_DISPLAY_MODE,
- type LessonDisplayMode,
-} from "@/features/hanzihome/components/lesson-overview/types";
+import { type LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import {
@@ -254,19 +253,18 @@ export function ModuleSplitWorkspaceContent() {
    </DropdownMenuItem>
   </HanziHomeDeveloperTools>
  );
- const readOnlyDisplayMode =
-  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
- const readingSettingsTrigger = runtime.readOnly ? (
+ const readOnlyDisplayMode = lessonDisplaySettings(runtime.learningState, runtime.lesson);
+ const readingSettingsTrigger = (
   <HanziHomeReadingSettingsTrigger
    displayMode={readOnlyDisplayMode}
    onDisplayModeChange={(updates: Partial<LessonDisplayMode>) => {
     runtime.updateLearningSettings({
-     lessonTextDisplayMode: { ...readOnlyDisplayMode, ...updates },
+     bookDisplayModes: {
+      [lessonBookKey(runtime.lesson)]: { ...readOnlyDisplayMode, ...updates },
+     },
     });
    }}
   />
- ) : (
-  <HanziHomeReadingSettingsTrigger />
  );
  const readerToolsMenuContent = runtime.readOnly ? (
   <>

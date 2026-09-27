@@ -11,9 +11,11 @@ import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
 import { useHomeDashboard } from "@/features/home/hooks/useHomeDashboard";
 import { useTranslations } from "next-intl";
 
-export function HomeDashboard() {
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+
+export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] }) {
  const t = useTranslations("Home");
- const dashboard = useHomeDashboard();
+ const dashboard = useHomeDashboard(textbooks);
 
  if (dashboard.isLoading) return <HomeDashboardSkeleton />;
 
@@ -24,7 +26,10 @@ export function HomeDashboard() {
 
     <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.75fr)] xl:items-start">
      <div className="grid min-w-0 gap-4 sm:gap-5">
-      <ContinueLearningPanel lesson={dashboard.lesson} />
+      <ContinueLearningPanel
+       courses={dashboard.courses}
+       unavailable={dashboard.catalogUnavailable}
+      />
       <RecentNotesPanel notes={dashboard.recentNotes} />
       <RecentLearningActivityPanel items={dashboard.recentActivity} />
      </div>

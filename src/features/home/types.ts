@@ -1,4 +1,4 @@
-import type { HanziHomeModule, ReviewResult } from "@/features/hanzihome/types";
+import type { ReviewResult, UserLearningState } from "@/features/hanzihome/types";
 import type { NoteListItem } from "@/services/notes.service";
 
 export type HomeLessonTarget = {
@@ -7,8 +7,14 @@ export type HomeLessonTarget = {
  titleZh: string;
  courseTitle: string;
  lessonNumber: number;
- module: HanziHomeModule;
+ module: NonNullable<UserLearningState["settings"]["bookResume"]>[string]["module"];
  isRecent: boolean;
+};
+
+export type HomeCourseGroup = {
+ id: string;
+ title: string;
+ books: { id: string; title: string; lesson: HomeLessonTarget | null }[];
 };
 
 export type HomeLearningPulse = {
@@ -33,7 +39,8 @@ export type HomeRecentActivityItem = {
 };
 
 export type HomeDashboardModel = {
- lesson: HomeLessonTarget | null;
+ courses: HomeCourseGroup[];
+ catalogUnavailable: boolean;
  learningPulse: HomeLearningPulse;
  recentActivity: HomeRecentActivityItem[];
  recentNotes: NoteListItem[];

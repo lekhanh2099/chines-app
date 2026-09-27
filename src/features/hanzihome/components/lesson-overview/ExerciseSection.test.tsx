@@ -22,6 +22,10 @@ import type { AppLocale } from "@/i18n/config";
 import { SampleRetelling } from "./reading-section/SampleRetelling";
 import { PassageCard } from "./PassageCard";
 
+vi.mock("@/features/hanzihome/hooks/useHanziHomeLessonResources", () => ({
+ useHanziHomeLessonDetailResource: () => ({ data: undefined }),
+}));
+
 vi.mock("next/navigation", () => ({
  useSearchParams: () => new URLSearchParams(),
 }));

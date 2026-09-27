@@ -494,7 +494,18 @@ export function useLearningState() {
    updateSettings: (settings: Partial<UserLearningState["settings"]>) =>
     updateState((current) => ({
      ...current,
-     settings: { ...current.settings, ...settings },
+     settings: {
+      ...current.settings,
+      ...settings,
+      ...(settings.bookDisplayModes
+       ? {
+          bookDisplayModes: { ...current.settings.bookDisplayModes, ...settings.bookDisplayModes },
+         }
+       : {}),
+      ...(settings.bookResume
+       ? { bookResume: { ...current.settings.bookResume, ...settings.bookResume } }
+       : {}),
+     },
     })),
 
    updateVocabProgress: (id: string, status: LearningStatus) =>

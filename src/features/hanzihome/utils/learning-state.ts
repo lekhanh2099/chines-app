@@ -1,4 +1,5 @@
 import type {
+ HanziHomeLesson,
  LearningProgressItem,
  LearningStatus,
  LessonTextDisplaySettings,
@@ -19,6 +20,13 @@ export const defaultLessonTextDisplaySettings: LessonTextDisplaySettings = {
  hanziFont: "kaiti",
  hanziSize: "3xl",
  revealMode: "always",
+};
+
+export const defaultTextbookDisplaySettings: LessonTextDisplaySettings = {
+ ...defaultLessonTextDisplaySettings,
+ autoDetectPinyin: true,
+ showMeaning: true,
+ hanziSize: "xl",
 };
 
 export const emptyLearningState: UserLearningState = {
@@ -66,4 +74,20 @@ export function nextProgress(status: LearningStatus): LearningProgressItem {
   level: levelByStatus[status],
   lastReviewedAt: new Date().toISOString(),
  };
+}
+
+// Catalog IDs and static corpus IDs belong to separate namespaces.
+export function lessonBookKey(lesson: Pick<HanziHomeLesson, "bookId" | "courseId">): string {
+ return lesson.bookId ? `catalog:${lesson.bookId}` : `catalog-course:${lesson.courseId ?? ""}`;
+}
+
+export function lessonDisplaySettings(
+ state: UserLearningState,
+ lesson: Pick<HanziHomeLesson, "bookId" | "courseId">,
+): LessonTextDisplaySettings {
+ return (
+  state.settings.bookDisplayModes?.[lessonBookKey(lesson)] ??
+  state.settings.lessonTextDisplayMode ??
+  defaultLessonTextDisplaySettings
+ );
 }

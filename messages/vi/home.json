@@ -7,11 +7,15 @@
  },
  "continueLearning": {
   "title": "Học tiếp",
-  "description": "Quay lại đúng bài và nội dung bạn đang theo dõi.",
+  "description": "Chọn bộ giáo trình, mở từng quyển và tiếp tục đúng bài đang học.",
   "recentLesson": "Bài vừa học",
   "startHanziHome": "Bắt đầu HanziHome",
   "lesson": "Bài {number}: {title}",
-  "unavailable": "Chưa có bài học khả dụng."
+  "unavailable": "Chưa có bài học khả dụng.",
+  "resume": "Tiếp tục",
+  "start": "Bắt đầu",
+  "books": "{count} quyển",
+  "catalogUnavailable": "Chưa tải được danh sách Bài học. Các giáo trình khác vẫn khả dụng."
  },
  "modules": {
   "overview": "Tổng quan",
@@ -69,5 +73,10 @@
   "emptyTitle": "Chưa có ghi chú gần đây",
   "emptyDescription": "Tạo một ghi chú khi cần giữ lại nội dung đang học.",
   "create": "Tạo ghi chú"
+ },
+ "textbookModules": {
+  "all": "Toàn bài",
+  "core": "Nội dung chính",
+  "translation": "Luyện dịch"
  }
 }

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 
+import { lessonBookKey } from "@/features/hanzihome/utils/learning-state";
 import { Typography } from "@/components/ui/typography";
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
 import { RadicalWorkspaceSkeleton } from "@/features/hanzihome/components/RadicalWorkspaceSkeleton";
@@ -45,9 +46,6 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
  const lessonNumberFromUrl = searchParams.get("lesson");
  const legacyLessonIdFromUrl = searchParams.get("lessonId");
  const bookIdFromUrl = searchParams.get("bookId");
- const [activeModule, setActiveModule] = useState<HanziHomeModule>(
-  () => moduleFromUrl || learning.state.settings.lastModule || "overview",
- );
  const courseCatalog = useMemo(
   () => ({
    courses: catalogData.courses,
@@ -86,9 +84,22 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   legacyLessonIdFromUrl,
   bookIdFromUrl,
  );
- const lessonFromLastState = courseLessons.find((item) => item.id === lastLessonId);
- const fallbackLesson = courseLessons[0] ?? null;
- const selectedLesson = lessonFromUrl || lessonFromLastState || fallbackLesson;
+ const legacyLesson = courseLessons.find((item) => item.id === lastLessonId);
+ const selectedBookId = bookIdFromUrl ?? legacyLesson?.bookId ?? courseLessons[0]?.bookId;
+ const bookLessons = courseLessons.filter(
+  (item) => !selectedBookId || item.bookId === selectedBookId,
+ );
+ const bookKey = lessonBookKey({ bookId: selectedBookId, courseId: selectedCourseId });
+ const resume = learning.state.settings.bookResume?.[bookKey];
+ const savedLesson = bookLessons.find((item) => item.id === resume?.lessonId);
+ const legacyBookLesson = bookLessons.find((item) => item.id === lastLessonId);
+ const hasExplicitLesson = lessonNumberFromUrl !== null || legacyLessonIdFromUrl !== null;
+ const selectedLesson =
+  lessonFromUrl ??
+  (hasExplicitLesson
+   ? bookLessons[0]
+   : (savedLesson ?? (resume ? undefined : legacyBookLesson) ?? bookLessons[0])) ??
+  null;
  const lessonId = selectedLesson?.id || "";
  const matchingSearchIntent =
   searchNavigationIntent &&
@@ -97,7 +108,15 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
     searchNavigationIntent.lessonNumber === selectedLesson?.lessonNumber))
    ? searchNavigationIntent
    : null;
- const resolvedActiveModule = forcedModule ?? matchingSearchIntent?.module ?? activeModule;
+ const savedModule =
+  resume?.lessonId === selectedLesson?.id ? parseHanziHomeModule(resume?.module) : null;
+ const legacyModule =
+  legacyBookLesson?.id === selectedLesson?.id ? learning.state.settings.lastModule : null;
+ const resolvedActiveModule =
+  forcedModule ??
+  matchingSearchIntent?.module ??
+  moduleFromUrl ??
+  (hasExplicitLesson ? "overview" : (savedModule ?? (resume ? null : legacyModule) ?? "overview"));
 
  useEffect(() => {
   if (learning.isLoading || !selectedLesson || !selectedCourseId) return;
@@ -115,7 +134,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
  }, [learning, selectedCourseId, selectedLesson]);
 
  useEffect(() => {
-  if (!selectedLesson || resolvedActiveModule === "radicals") return;
+  if (learning.isLoading || !selectedLesson || resolvedActiveModule === "radicals") return;
 
   const hasCanonicalLesson =
    lessonNumberFromUrl === getLessonRouteValue(selectedLesson.lessonNumber);
@@ -130,8 +149,10 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   else nextParams.delete("bookId");
   nextParams.set("lesson", getLessonRouteValue(selectedLesson.lessonNumber));
   nextParams.delete("lessonId");
+  nextParams.set("module", resolvedActiveModule);
   router.replace(`/hanzihome?${nextParams.toString()}`);
  }, [
+  learning.isLoading,
   resolvedActiveModule,
   bookIdFromUrl,
   legacyLessonIdFromUrl,
@@ -148,13 +169,22 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   isListeningLesson,
  });
 
+ useEffect(() => {
+  if (learning.isLoading || !selectedLesson || resolvedActiveModule === "radicals") return;
+  const key = lessonBookKey(selectedLesson);
+  const current = learning.state.settings.bookResume?.[key];
+  if (current?.lessonId === selectedLesson.id && current.module === activeLessonModule) return;
+  learning.updateSettings({
+   bookResume: { [key]: { lessonId: selectedLesson.id, module: activeLessonModule } },
+  });
+ }, [learning, selectedLesson, activeLessonModule, resolvedActiveModule]);
+
  const activeLessonDetail = useHanziHomeLesson(lessonId);
  const lesson = resolvedActiveModule === "radicals" ? null : activeLessonDetail.lesson;
  const selectedCourse = courseCatalog.courses.find((course) => course.id === selectedCourseId);
 
  const selectModule = (nextModule: HanziHomeModule) => {
   clearHanziHomeSearchNavigationIntent();
-  setActiveModule(nextModule);
   learning.updateSettings({ lastModule: nextModule });
 
   if (nextModule === "radicals") {
@@ -171,7 +201,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   }
   nextParams.delete("lessonId");
   nextParams.set("module", nextModule);
-  router.replace(`/hanzihome?${nextParams.toString()}`, { scroll: false });
+  router.push(`/hanzihome?${nextParams.toString()}`, { scroll: false });
  };
 
  const markVocab = (id: string, status: LearningStatus) => {
@@ -204,7 +234,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
    activeLessonDetail.isError ||
    (!isCourseLessonsLoading && !selectedCourse));
 
- if (isLessonWorkspaceLoading) return <HanziHomeWorkspaceLoading />;
+ if (learning.isLoading || isLessonWorkspaceLoading) return <HanziHomeWorkspaceLoading />;
  if (isRadicalsLoading) return <RadicalWorkspaceSkeleton />;
 
  if (catalogQuery.isError || hasLessonWorkspaceError) {

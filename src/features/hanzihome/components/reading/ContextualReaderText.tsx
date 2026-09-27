@@ -277,7 +277,7 @@ export function ContextualReaderText({
 
   let previousPinyin = "";
   return (
-   <ruby key={unit.id}>
+   <ruby key={unit.id} className="whitespace-nowrap">
     {unitGraphemes.map((grapheme) => renderGrapheme(grapheme, graphemes.indexOf(grapheme), false))}
     <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
      {unitGraphemes.map((grapheme) => {

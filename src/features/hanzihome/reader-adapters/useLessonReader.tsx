@@ -19,12 +19,15 @@ import {
  DEFAULT_LESSON_DISPLAY_MODE,
  type LessonDisplayMode,
 } from "../components/lesson-overview/types";
+import { useHanziHomeLessonDetailResource } from "../hooks/useHanziHomeLessonResources";
+import { lessonBookKey } from "../utils/learning-state";
 import { LessonReaderTools } from "./LessonReaderTools";
 
 export function useLessonReader({
  document,
  lessonId,
  annotationNodeType,
+ bookKey,
  displayMode: initialDisplayMode,
  menuContent,
  sheetContent,
@@ -32,16 +35,27 @@ export function useLessonReader({
  document: ReaderDocumentModel;
  lessonId?: string;
  annotationNodeType?: string;
+ bookKey?: string;
  displayMode?: LessonDisplayMode;
  menuContent?: ReactNode;
  sheetContent?: ReactNode;
 }) {
  const learning = useLearningState();
+ const lesson = useHanziHomeLessonDetailResource(bookKey ? "" : (lessonId ?? ""));
+ const resolvedBookKey = bookKey ?? (lesson.data ? lessonBookKey(lesson.data) : undefined);
  const [localDisplay, setLocalDisplay] = useState(initialDisplayMode);
  const displayMode =
-  localDisplay ?? learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
+  (resolvedBookKey ? learning.state.settings.bookDisplayModes?.[resolvedBookKey] : undefined) ??
+  localDisplay ??
+  learning.state.settings.lessonTextDisplayMode ??
+  DEFAULT_LESSON_DISPLAY_MODE;
  const updateDisplay = (updates: Partial<LessonDisplayMode>) => {
-  if (localDisplay) setLocalDisplay({ ...localDisplay, ...updates });
+  if (learning.isLoading || (lessonId && !resolvedBookKey)) return;
+  if (resolvedBookKey)
+   learning.updateSettings({
+    bookDisplayModes: { [resolvedBookKey]: { ...displayMode, ...updates } },
+   });
+  else if (localDisplay) setLocalDisplay({ ...localDisplay, ...updates });
   else learning.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...updates } });
  };
  const speech = useMandarinReaderSpeechService();

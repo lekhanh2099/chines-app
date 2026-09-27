@@ -3,6 +3,7 @@ import {
  analyzeContextualPronunciation,
  formatContextualPinyinRange,
  formatContextualReadingPinyin,
+ formatContextualReadingUnitPinyin,
  formatContextualSpokenPinyin,
  getContextualReadingUnits,
 } from "./contextual-pronunciation";
@@ -212,6 +213,20 @@ describe("HanziHome contextual pronunciation", () => {
   const analysis = analyzeContextualPronunciation({ text });
   expect(getContextualReadingUnits(analysis).map((unit) => unit.text)).toEqual(units);
   expect(formatContextualReadingPinyin(analysis)).toBe(pinyin);
+ });
+
+ it("keeps textbook compound words together when ICU splits their characters", () => {
+  const analysis = analyzeContextualPronunciation({ text: "下班骑自行车回家，冰激凌" });
+  const units = getContextualReadingUnits(analysis);
+  const bicycle = units.find((unit) => unit.text === "自行车");
+  const iceCream = units.find((unit) => unit.text === "冰激凌");
+
+  expect(units.map((unit) => unit.text)).toEqual(["下班", "骑", "自行车", "回家", "，", "冰激凌"]);
+  if (bicycle === undefined || iceCream === undefined) {
+   throw new Error("Expected both textbook compound words to have reading units.");
+  }
+  expect(formatContextualReadingUnitPinyin(analysis, bicycle)).toBe("zìxíngchē");
+  expect(formatContextualReadingUnitPinyin(analysis, iceCream)).not.toBeNull();
  });
 
  it("keeps source-selected readings while grouping auto pinyin", () => {

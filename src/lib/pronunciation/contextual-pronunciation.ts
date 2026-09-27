@@ -125,6 +125,8 @@ const wordSegmenter = new Intl.Segmenter("zh-CN", { granularity: "word" });
 // constrained to the reviewed learner corpus; the contextual engine remains
 // the authority for every glyph's reading.
 const orthographicWords = [
+ "自行车",
+ "冰激凌",
  "不太",
  "一双",
  "一个",

@@ -5,6 +5,7 @@ import type {
 } from "@/features/hanzihome/types";
 import {
  defaultLessonTextDisplaySettings,
+ defaultTextbookDisplaySettings,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
 
@@ -169,6 +170,30 @@ export function mergeLearningStateAfterConflict({
   local.settings.lessonTextDisplayMode,
   remote.settings.lessonTextDisplayMode,
  );
+
+ const bookDisplayModes = { ...remote.settings.bookDisplayModes };
+ for (const [key, localDisplay] of Object.entries(local.settings.bookDisplayModes ?? {})) {
+  const inherited = key.startsWith("static:")
+   ? defaultTextbookDisplaySettings
+   : (base.settings.lessonTextDisplayMode ?? defaultLessonTextDisplaySettings);
+  const baseDisplay = base.settings.bookDisplayModes?.[key] ?? inherited;
+  const display = mergeLessonTextDisplayMode(
+   baseDisplay,
+   localDisplay,
+   remote.settings.bookDisplayModes?.[key] ?? baseDisplay,
+  );
+  if (display) bookDisplayModes[key] = display;
+ }
+ if (Object.keys(bookDisplayModes).length) settings.bookDisplayModes = bookDisplayModes;
+ const bookResume = { ...remote.settings.bookResume };
+ for (const [key, target] of Object.entries(local.settings.bookResume ?? {})) {
+  const previous = base.settings.bookResume?.[key];
+  if (previous?.lessonId !== target.lessonId || previous?.module !== target.module) {
+   // Lesson and module are one navigation target, never independently merged.
+   bookResume[key] = target;
+  }
+ }
+ if (Object.keys(bookResume).length) settings.bookResume = bookResume;
 
  const vocab = mergeProgressMap(
   base.progress.vocab ?? {},

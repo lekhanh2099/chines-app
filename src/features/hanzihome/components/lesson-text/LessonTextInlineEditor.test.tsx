@@ -33,6 +33,7 @@ const { frameMock, readerMock, sectionCardMock } = vi.hoisted(() => ({
 }));
 
 vi.mock("@/features/hanzihome/hooks/useHanziHomeLessonResources", () => ({
+ useHanziHomeLessonDetailResource: () => ({ data: lesson }),
  useHanziHomeLessonSections: () => null,
 }));
 vi.mock(
