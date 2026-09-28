@@ -415,71 +415,64 @@ export function LessonTranslationWorkspace({
  return (
   <div className="grid min-w-0 gap-3">
    <Card variant="section" padding="md" className="grid gap-3">
-    <div className="flex flex-wrap items-start justify-between gap-3">
-     <div className="grid gap-1">
-      <Badge variant="accent" className="justify-self-start" casing="natural">
+    <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
+     <div className="flex flex-wrap items-center gap-2">
+      <Badge variant="accent" casing="natural">
        Luyện dịch
       </Badge>
-      <Typography as="h2" variant="sectionTitle" weight="black">
+      <Typography as="h2" variant="cardTitle" weight="black">
        Luyện dịch hai chiều
       </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       Dịch theo từng đoạn, kiểm tra với đáp án tham chiếu và lưu tiến độ luyện tập.
-      </Typography>
-     </div>
-     <Badge casing="natural">
-      {completedCount}/{segments.length} đoạn
-     </Badge>
-    </div>
-
-    <SegmentedControl
-     value={direction}
-     items={[
-      { key: "zh-vi", label: "Tiếng Trung → Tiếng Việt" },
-      { key: "vi-zh", label: "Tiếng Việt → Tiếng Trung" },
-     ]}
-     onChange={(nextDirection) => {
-      setDirection(nextDirection);
-      setAttemptSaveError("");
-     }}
-     aria-label="Hướng dịch"
-    />
-
-    <div className="flex flex-wrap items-center justify-between gap-2" aria-live="polite">
-     <div className="grid gap-0.5">
-      <Typography as="p" variant="overline" tone="muted" weight="black">
-       ĐANG LÀM
-      </Typography>
-      <Typography as="p" variant="bodySmall" weight="black">
+      <span className="hidden text-border-strong sm:inline">·</span>
+      <Typography variant="caption" tone="muted" className="hidden md:inline">
        {segment.sourceLabel}
       </Typography>
      </div>
-     <Badge casing="natural">
-      Đoạn {segment.order}/{segments.length}
-     </Badge>
+
+     <div className="flex items-center gap-2 self-stretch sm:self-auto">
+      <SegmentedControl
+       value={direction}
+       items={[
+        { key: "zh-vi", label: "Trung → Việt" },
+        { key: "vi-zh", label: "Việt → Trung" },
+       ]}
+       onChange={(nextDirection) => {
+        setDirection(nextDirection);
+        setAttemptSaveError("");
+       }}
+       aria-label="Hướng dịch"
+      />
+      <Badge casing="natural" className="shrink-0">
+       {completedCount}/{segments.length}
+      </Badge>
+     </div>
     </div>
 
-    <div className="grid grid-cols-5 gap-2 sm:grid-cols-8" aria-label="Đoạn dịch">
-     {segments.map((candidate, index) => (
-      <Button
-       key={candidate.id}
-       type="button"
-       size="sm"
-       variant={
-        index === activeIndex
-         ? "active"
-         : state.checked[`${candidate.id}:${direction}`] === true
-           ? "success"
-           : "outline"
-       }
-       aria-current={index === activeIndex ? "step" : undefined}
-       aria-label={`Chọn ${candidate.sourceLabel}, đoạn ${candidate.order}`}
-       title={candidate.sourceLabel}
-       onClick={() => move(index)}
-      >
-       {candidate.order}
-      </Button>
-     ))}
+    <div
+     className="flex flex-wrap items-center gap-1.5 border-t border-border-default pt-2.5"
+     aria-label="Đoạn dịch"
+    >
+     <span className="text-xs font-semibold text-foreground-muted">
+      Đoạn {segment.order}/{segments.length}:
+     </span>
+     {segments.map((candidate, index) => {
+      const isChecked = state.checked[`${candidate.id}:${direction}`] === true;
+      const isActive = index === activeIndex;
+      return (
+       <Button
+        key={candidate.id}
+        type="button"
+        size="compact"
+        variant={isActive ? "active" : isChecked ? "success" : "outline"}
+        aria-current={isActive ? "step" : undefined}
+        aria-label={`Chọn ${candidate.sourceLabel}, đoạn ${candidate.order}`}
+        title={`${candidate.sourceLabel} · Đoạn ${candidate.order}`}
+        onClick={() => move(index)}
+       >
+        {candidate.order}
+       </Button>
+      );
+     })}
     </div>
    </Card>
 
