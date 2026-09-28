@@ -381,7 +381,7 @@ function BusinessChineseHeaderContextBridge({
 function BusinessChineseText({
  pronunciationId,
  text,
- displayMode,
+ displayMode: propDisplayMode,
  sourcePinyin,
  variant = "bodySmall",
  weight,
@@ -389,12 +389,19 @@ function BusinessChineseText({
 }: {
  pronunciationId: string;
  text: string;
- displayMode: LessonDisplayMode;
+ displayMode?: LessonDisplayMode;
  sourcePinyin?: string;
  variant?: TypographyProps<"div">["variant"];
  weight?: TypographyProps<"div">["weight"];
  compactHanzi?: boolean;
 }) {
+ const displayMode = useMemo(
+  () => ({
+   ...defaultTextbookDisplaySettings,
+   ...propDisplayMode,
+  }),
+  [propDisplayMode],
+ );
  const annotationsContext = useContext(BusinessChineseAnnotationsContext);
  const pronunciationSessionActions = useReaderPronunciationSessionActions();
  const pronunciationOverrides = useReaderPronunciationSessionOverrides(pronunciationId);
@@ -439,7 +446,8 @@ function BusinessChineseText({
   [compactHanzi, displayMode],
  );
  const canShowPinyin =
-  displayMode.showPinyin && (displayMode.autoDetectPinyin || Boolean(sourcePinyin?.trim()));
+  Boolean(displayMode?.showPinyin) &&
+  (Boolean(displayMode?.autoDetectPinyin) || Boolean(sourcePinyin?.trim()));
  const playbackStartCharacterIndex = Array.from(text.slice(0, playbackStartOffset)).length;
  const activeCharacterIndex =
   playbackProgress >= 0
@@ -906,7 +914,7 @@ function BusinessChineseTextBlock({
  pronunciationId,
  text,
  translation,
- displayMode,
+ displayMode: propDisplayMode,
  compactHanzi = false,
  variant,
  weight,
@@ -914,11 +922,18 @@ function BusinessChineseTextBlock({
  pronunciationId: string;
  text: string;
  translation?: string;
- displayMode: LessonDisplayMode;
+ displayMode?: LessonDisplayMode;
  compactHanzi?: boolean;
  variant?: TypographyProps<"div">["variant"];
  weight?: TypographyProps<"div">["weight"];
 }) {
+ const displayMode = useMemo(
+  () => ({
+   ...defaultTextbookDisplaySettings,
+   ...propDisplayMode,
+  }),
+  [propDisplayMode],
+ );
  const t = useTranslations("BusinessChinese");
  const [revealStage, setRevealStage] = useState(0);
  const inlineText = splitTrailingTranslation(text);
@@ -1165,8 +1180,13 @@ export function BusinessChineseStudyWorkspace({
  const resumeLesson = book?.lessons.find((item) => item.id === resume?.lessonId);
  const shouldRestoreLesson =
   !searchParams.has("lesson") && resumeLesson && resumeLesson.id !== lesson.id;
- const displayMode =
-  learningState.settings.bookDisplayModes?.[bookKey] ?? defaultTextbookDisplaySettings;
+ const displayMode: LessonDisplayMode = useMemo(
+  () => ({
+   ...defaultTextbookDisplaySettings,
+   ...(learningState.settings.bookDisplayModes?.[bookKey] ?? {}),
+  }),
+  [bookKey, learningState.settings.bookDisplayModes],
+ );
  const isLessonBookmarked = (learningState.bookmarks.lessons ?? []).includes(lesson.id);
  const lastBookmarkClickRef = useRef(0);
  const handleToggleCurrentLessonBookmark = useCallback(() => {

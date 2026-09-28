@@ -62,6 +62,7 @@ describe("LessonTranslationWorkspace", () => {
   expect(markup).toContain('aria-label="Đọc: 你好，很高兴认识你。"');
   expect(markup).toContain("Ctrl/⌘ ↵ kiểm tra · Ctrl/⌘ ←/→ chuyển đoạn");
   expect(markup).toContain("Bản dịch của bạn");
+  expect(markup).toContain("Xem đáp án");
  });
 
  it("renders empty state card when segments are empty", () => {

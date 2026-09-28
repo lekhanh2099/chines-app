@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Check, Copy } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -45,6 +46,22 @@ function tokenTone(kind: TranslationDiffKind): "success" | "warning" | "danger" 
  if (kind === "match") return "success";
  if (kind === "missing") return "warning";
  return "danger";
+}
+
+function segmentButtonVariant({
+ isActive,
+ isChecked,
+ score,
+}: {
+ isActive: boolean;
+ isChecked: boolean;
+ score: number | null;
+}): "active" | "success" | "warning" | "destructive" | "outline" {
+ if (isActive) return "active";
+ if (!isChecked || score === null) return "outline";
+ if (score === 100) return "success";
+ if (score >= 70) return "warning";
+ return "destructive";
 }
 
 type TranslationDiffTokensProps = {
@@ -193,6 +210,17 @@ function TranslationEvaluationCard({
  const badgeVariant = translationScoreBadgeVariant(score);
  const badgeLabel = translationScoreLabel(score);
 
+ const [copiedText, setCopiedText] = useState<string | null>(null);
+ const copied = copiedText === referenceText;
+
+ const handleCopy = () => {
+  if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+   void navigator.clipboard.writeText(referenceText);
+   setCopiedText(referenceText);
+   setTimeout(() => setCopiedText(null), 2000);
+  }
+ };
+
  return (
   <Card variant="subtle" padding="md" className="grid gap-3.5">
    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border-default pb-2.5">
@@ -227,7 +255,20 @@ function TranslationEvaluationCard({
      <Typography as="p" variant="caption" tone="muted" weight="bold">
       Đáp án tham chiếu:
      </Typography>
-     {direction === "vi-zh" ? <MandarinSpeakButton text={referenceText} /> : null}
+     <div className="flex items-center gap-1.5">
+      <Button
+       type="button"
+       variant="ghost"
+       size="compact"
+       onClick={handleCopy}
+       aria-label={copied ? "Đã sao chép đáp án" : "Sao chép đáp án"}
+       title={copied ? "Đã sao chép" : "Sao chép đáp án"}
+      >
+       {copied ? <Check /> : <Copy />}
+       <span>{copied ? "Đã chép" : "Sao chép"}</span>
+      </Button>
+      {direction === "vi-zh" ? <MandarinSpeakButton text={referenceText} /> : null}
+     </div>
     </div>
     {direction === "vi-zh" && referenceAnalysis ? (
      <div className="min-w-0">
@@ -267,13 +308,20 @@ export type LessonTranslationWorkspaceProps = {
 
 export function LessonTranslationWorkspace({
  segments: rawSegments,
- displayMode = DEFAULT_LESSON_DISPLAY_MODE,
+ displayMode: propDisplayMode = DEFAULT_LESSON_DISPLAY_MODE,
 }: LessonTranslationWorkspaceProps) {
  const segments = useMemo(() => orderedTranslationSegments(rawSegments), [rawSegments]);
  const [activeIndex, setActiveIndex] = useState(0);
  const [direction, setDirection] = useState<TranslationDirection>("zh-vi");
  const [state, setState] = useState<TranslationPracticeState>(emptyTranslationPracticeState);
  const [attemptHistory, setAttemptHistory] = useState<Record<string, TranslationAttempt[]>>({});
+ const displayMode = useMemo<LessonDisplayMode>(
+  () => ({
+   ...DEFAULT_LESSON_DISPLAY_MODE,
+   ...propDisplayMode,
+  }),
+  [propDisplayMode],
+ );
  const [showPinyin, setShowPinyin] = useState(displayMode.showPinyin);
  const [attemptSaveError, setAttemptSaveError] = useState("");
  const startedAtRef = useRef<Record<string, number>>({});
@@ -377,20 +425,40 @@ export function LessonTranslationWorkspace({
   [segments.length],
  );
 
- const handleEditorKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-  if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-   event.preventDefault();
-   if (draft.trim()) {
-    checkAnswer();
+ useEffect(() => {
+  textareaRef.current?.focus();
+ }, [activeIndex, direction]);
+
+ useEffect(() => {
+  const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+   const isModifier = event.ctrlKey || event.metaKey;
+   if (isModifier && event.key === "Enter") {
+    event.preventDefault();
+    if (!checked) {
+     if (draft.trim()) {
+      checkAnswer();
+     }
+    } else if (score === 100 && activeIndex < segments.length - 1) {
+     move(activeIndex + 1);
+    } else {
+     editAgain();
+    }
+    return;
    }
-  } else if ((event.ctrlKey || event.metaKey) && event.key === "ArrowLeft") {
-   event.preventDefault();
-   if (activeIndex > 0) move(activeIndex - 1);
-  } else if ((event.ctrlKey || event.metaKey) && event.key === "ArrowRight") {
-   event.preventDefault();
-   if (activeIndex < segments.length - 1) move(activeIndex + 1);
-  }
- };
+
+   if (isModifier && (event.key === "ArrowLeft" || event.key === "ArrowRight")) {
+    event.preventDefault();
+    if (event.key === "ArrowLeft" && activeIndex > 0) {
+     move(activeIndex - 1);
+    } else if (event.key === "ArrowRight" && activeIndex < segments.length - 1) {
+     move(activeIndex + 1);
+    }
+   }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+  return () => window.removeEventListener("keydown", handleKeyDown);
+ }, [checked, draft, score, activeIndex, segments.length, checkAnswer, move, editAgain]);
 
  const diff = useMemo(() => {
   if (!checked || !referenceText) return [];
@@ -456,17 +524,26 @@ export function LessonTranslationWorkspace({
       Đoạn {segment.order}/{segments.length}:
      </span>
      {segments.map((candidate, index) => {
-      const isChecked = state.checked[`${candidate.id}:${direction}`] === true;
+      const candidateKey = `${candidate.id}:${direction}`;
+      const isChecked = state.checked[candidateKey] === true;
+      const candidateDraft = state.drafts[candidateKey] ?? "";
+      const candidateScore = isChecked
+       ? scoreTranslationAttempt(candidate, direction, candidateDraft)
+       : null;
       const isActive = index === activeIndex;
       return (
        <Button
         key={candidate.id}
         type="button"
         size="compact"
-        variant={isActive ? "active" : isChecked ? "success" : "outline"}
+        variant={segmentButtonVariant({
+         isActive,
+         isChecked,
+         score: candidateScore,
+        })}
         aria-current={isActive ? "step" : undefined}
         aria-label={`Chọn ${candidate.sourceLabel}, đoạn ${candidate.order}`}
-        title={`${candidate.sourceLabel} · Đoạn ${candidate.order}`}
+        title={`${candidate.sourceLabel} · Đoạn ${candidate.order}${candidateScore !== null ? ` (${candidateScore}%)` : ""}`}
         onClick={() => move(index)}
        >
         {candidate.order}
@@ -532,7 +609,6 @@ export function LessonTranslationWorkspace({
       ref={textareaRef}
       value={draft}
       onChange={(event) => updateDraft(event.target.value)}
-      onKeyDown={handleEditorKeyDown}
       placeholder={direction === "zh-vi" ? "Nhập bản dịch tiếng Việt…" : "Nhập câu tiếng Trung…"}
       aria-label="Câu trả lời dịch"
       className="min-h-36"
@@ -541,9 +617,38 @@ export function LessonTranslationWorkspace({
       spellCheck={false}
      />
      <div className="flex flex-wrap items-center gap-2">
-      <Button type="button" disabled={!draft.trim()} onClick={checkAnswer}>
-       Kiểm tra
-      </Button>
+      {!checked ? (
+       <>
+        <Button type="button" disabled={!draft.trim()} onClick={checkAnswer}>
+         Kiểm tra
+        </Button>
+        {!draft.trim() ? (
+         <Button type="button" variant="ghost" onClick={checkAnswer}>
+          Xem đáp án
+         </Button>
+        ) : null}
+       </>
+      ) : score === 100 && activeIndex < segments.length - 1 ? (
+       <>
+        <Button type="button" onClick={() => move(activeIndex + 1)}>
+         Đoạn tiếp theo
+        </Button>
+        <Button type="button" variant="ghost" onClick={editAgain}>
+         Sửa lại
+        </Button>
+       </>
+      ) : (
+       <>
+        <Button type="button" onClick={editAgain}>
+         Sửa lại
+        </Button>
+        {draft.trim() ? (
+         <Button type="button" variant="outline" onClick={checkAnswer}>
+          Kiểm tra lại
+         </Button>
+        ) : null}
+       </>
+      )}
       <Button
        type="button"
        variant="outline"
@@ -560,11 +665,6 @@ export function LessonTranslationWorkspace({
       >
        Đoạn sau
       </Button>
-      {checked && score !== null ? (
-       <Button type="button" variant="ghost" size="sm" onClick={editAgain}>
-        Sửa lại
-       </Button>
-      ) : null}
      </div>
      {attemptSaveError ? (
       <Typography as="p" variant="caption" tone="danger">
