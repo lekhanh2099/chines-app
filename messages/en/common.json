@@ -40,5 +40,20 @@
   "storagePersisted": "Offline storage protected",
   "storageQuota": "Offline storage: {usedMB} MB / {quotaMB} MB",
   "staticCourseReady": "This textbook is built into the application and is always available offline."
+ },
+ "library": {
+  "title": "HanziHome Learning Library",
+  "description": "Select curriculum, level, and volume to open your lesson.",
+  "loadErrorTitle": "Failed to load HanziHome library",
+  "loadErrorDescription": "Course data is currently unavailable. Please check your connection and retry.",
+  "htmlFiles": "HTML Files",
+  "statCourse": "Curriculum",
+  "statBook": "Volume",
+  "statLesson": "Lessons",
+  "statGrammar": "Grammar Points",
+  "courseSeriesHeading": "Curriculum Series",
+  "courseSeriesDescription": "Each series is divided by level; the volume is the final interaction unit for selecting lessons.",
+  "noCoursesTitle": "No curriculum available",
+  "noCoursesDescription": "Course data is not yet available in the HanziHome library."
  }
 }

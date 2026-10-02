@@ -8,6 +8,7 @@ import { HomeDashboardSkeleton } from "@/features/home/components/HomeDashboardS
 import { HomeLearningPulse } from "@/features/home/components/HomeLearningPulse";
 import { RecentLearningActivityPanel } from "@/features/home/components/RecentLearningActivityPanel";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
+import { TodayFocusWidget } from "@/features/home/components/TodayFocusWidget";
 import { useHomeDashboard } from "@/features/home/hooks/useHomeDashboard";
 import { useTranslations } from "next-intl";
 
@@ -21,8 +22,10 @@ export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] 
 
  return (
   <PageContainer>
-   <div className="grid w-full min-w-0 gap-4 sm:gap-5">
+   <div className="grid w-full min-w-0 gap-5 sm:gap-6">
     <PageHeader title={t("page.title")} description={t("page.description")} />
+
+    <TodayFocusWidget courses={dashboard.courses} pulse={dashboard.learningPulse} />
 
     <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.75fr)] xl:items-start">
      <div className="grid min-w-0 gap-4 sm:gap-5">

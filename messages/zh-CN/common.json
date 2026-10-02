@@ -40,5 +40,20 @@
   "storagePersisted": "离线存储已受保护",
   "storageQuota": "离线空间: {usedMB} MB / {quotaMB} MB",
   "staticCourseReady": "此教材已内置于应用程序中，可随时离线学习。"
+ },
+ "library": {
+  "title": "汉字之家学习文库",
+  "description": "选择教材、级别与分册，开启对应课程学习。",
+  "loadErrorTitle": "无法加载汉字之家文库",
+  "loadErrorDescription": "教材数据当前不可用，请检查网络连接后重试。",
+  "htmlFiles": "HTML 文件",
+  "statCourse": "教材",
+  "statBook": "分册",
+  "statLesson": "课文",
+  "statGrammar": "语法点",
+  "courseSeriesHeading": "教材系列",
+  "courseSeriesDescription": "各系列按级别划分，分册为选课交互单元。",
+  "noCoursesTitle": "暂无教材",
+  "noCoursesDescription": "汉字之家文库中暂无课程数据。"
  }
 }

@@ -21,6 +21,7 @@ export type TTSVoice = z.infer<typeof TTSVoiceSchema>;
 
 const DEFAULT_RATE = 1;
 const MAX_TTS_TEXT_LENGTH = 10_000;
+export const DEFAULT_MANDARIN_VOICE = "zh-CN-XiaoxiaoNeural";
 
 const ttsPlaybackResultSchema = z.strictObject({ completed: z.boolean(), cancelled: z.boolean() });
 type TTSPlaybackOptions = {
@@ -430,8 +431,7 @@ export function useTTS() {
 
    const availableVoices = await loadVoices();
    if (playbackRunRef.current !== runId) return;
-   const voiceName = selectedVoiceName || availableVoices[0]?.shortName || "";
-   if (!voiceName) return;
+   const voiceName = selectedVoiceName || availableVoices[0]?.shortName || DEFAULT_MANDARIN_VOICE;
 
    sequenceSegmentsRef.current = [];
    sequenceIndexRef.current = 0;
@@ -477,8 +477,7 @@ export function useTTS() {
    }
 
    const availableVoices = await loadVoices();
-   const voiceName = selectedVoiceName || availableVoices[0]?.shortName || "";
-   if (!voiceName) return null;
+   const voiceName = selectedVoiceName || availableVoices[0]?.shortName || DEFAULT_MANDARIN_VOICE;
 
    const cacheKey = buildCacheKey(normalizedText, voiceName, rate);
    const cached = await getCachedAudio(cacheKey);
@@ -632,8 +631,7 @@ export function useTTS() {
 
    void loadVoices().then((availableVoices) => {
     if (playbackRunRef.current !== runId) return;
-    const voiceName = selectedVoiceName || availableVoices[0]?.shortName || "";
-    if (!voiceName) return;
+    const voiceName = selectedVoiceName || availableVoices[0]?.shortName || DEFAULT_MANDARIN_VOICE;
 
     sequenceSegmentsRef.current = normalizedSegments;
     sequenceIndexRef.current = 0;

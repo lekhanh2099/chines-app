@@ -30,6 +30,7 @@ let mockSettings: UserLearningState["settings"] = {};
 afterEach(() => {
  mockParams = new URLSearchParams();
  mockSettings = {};
+ mockIsLoading = false;
 });
 
 vi.mock("@/components/providers/QueryProvider", () => ({
@@ -58,9 +59,11 @@ vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
 }));
 const toggleBookmarkMock = vi.fn();
 let mockBookmarkedLessonIds: string[] = [];
+let mockIsLoading = false;
 
 vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
  useLearningState: () => ({
+  isLoading: mockIsLoading,
   state: {
    settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE, ...mockSettings },
    bookmarks: { lessons: mockBookmarkedLessonIds },
@@ -511,4 +514,34 @@ describe("textbook persisted settings and view", () => {
    }
   },
  );
+
+ it("renders lesson immediately even when learning state is loading (offline readiness)", () => {
+  const books = getTextbookCatalog();
+  const lesson = getTextbookLesson("nhip-cau", 2);
+  if (!lesson) throw new Error("Missing textbook fixture");
+  mockIsLoading = true;
+  mockParams = new URLSearchParams("lesson=2&tab=text");
+  readerDocumentMock.mockClear();
+
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+  expect(markup).not.toContain('sr-only">Đang tải bài học');
+  expect(
+   readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson.id}:text`),
+  ).toBe(true);
+ });
+
+ it("resolves lesson 2 dynamically from searchParams when initialLesson is lesson 1", () => {
+  const books = getTextbookCatalog();
+  const lesson1 = getTextbookLesson("nhip-cau", 1);
+  const lesson2 = getTextbookLesson("nhip-cau", 2);
+  if (!lesson1 || !lesson2) throw new Error("Missing textbook fixture");
+  mockParams = new URLSearchParams("lesson=2&tab=text");
+  readerDocumentMock.mockClear();
+
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson1} />);
+  expect(markup).not.toContain('sr-only">Đang tải bài học');
+  expect(
+   readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson2.id}:text`),
+  ).toBe(true);
+ });
 });

@@ -33,7 +33,6 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
   enabled: isResolved && userId !== null,
   queryFn: fetchHomeLearningOverview,
   staleTime: 30_000,
-  refetchOnMount: "always",
  });
  const reviewAttemptsQuery = useQuery({
   queryKey: hanzihomeQueryKeys.practiceAttemptsRecent(userId, "review"),
@@ -41,7 +40,6 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
   queryFn: () =>
    userId ? fetchRecentPracticeAttempts({ surface: "review", limit: 50 }) : Promise.resolve([]),
   staleTime: 30_000,
-  refetchOnMount: "always",
  });
  const reviewTodayCountQuery = useQuery({
   queryKey: hanzihomeQueryKeys.practiceAttemptsCount(userId, "review", todayStart),
@@ -55,7 +53,6 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
       })
     : Promise.resolve(0),
   staleTime: 30_000,
-  refetchOnMount: "always",
  });
 
  return useMemo(() => {

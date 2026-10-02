@@ -51,7 +51,15 @@ export function Sheet({
  );
 }
 
-export function SheetHeader({ title, onClose }: { title: string; onClose: () => void }) {
+export function SheetHeader({
+ title,
+ onClose,
+ closeLabel = "Close",
+}: {
+ title: string;
+ onClose: () => void;
+ closeLabel?: string;
+}) {
  return (
   <div className="flex min-w-0 shrink-0 items-center justify-between gap-3 border-b border-border-default px-4 py-4 sm:px-5">
    <DialogPrimitive.Title className="min-w-0 break-words text-xl font-black text-text-primary sm:text-2xl">
@@ -64,7 +72,7 @@ export function SheetHeader({ title, onClose }: { title: string; onClose: () => 
      size="icon-round"
      onClick={onClose}
      className="shrink-0"
-     aria-label="Đóng"
+     aria-label={closeLabel}
     >
      <X />
     </Button>

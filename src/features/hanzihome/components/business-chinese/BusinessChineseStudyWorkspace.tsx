@@ -3,7 +3,6 @@
 import {
  createContext,
  Fragment,
- memo,
  useCallback,
  useContext,
  useEffect,
@@ -42,22 +41,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/separator";
-import { Bookmark, Check, ChevronDown, CloudCheck, Tags } from "lucide-react";
-import {
- DropdownMenu,
- DropdownMenuContent,
- DropdownMenuGroup,
- DropdownMenuLabel,
- DropdownMenuSeparator,
- DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
+import { Bookmark, CloudCheck, Tags } from "lucide-react";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import type { SegmentedControlItem } from "@/components/ui/segmented-control";
 import { Typography, type TypographyProps } from "@/components/ui/typography";
@@ -65,10 +49,14 @@ import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layou
 import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
+import { BusinessChineseLessonSelector } from "./BusinessChineseLessonSelector";
+import {
+ DesktopSectionNavigation,
+ MobileSectionNavigation,
+} from "./BusinessChineseSectionNavigation";
 import {
  containsHanziText,
  HanziAwareText,
- HanziInlineText,
  PinyinText,
  ReaderHanziText,
  TranslationText,
@@ -99,6 +87,7 @@ import { parseReaderSourceTarget } from "@/features/reading/model/reading-source
 import { useReaderSelectionActions } from "@/features/reading/hooks/useReaderSelectionActions";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { useIsLessonCached } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 import { Reader } from "@/features/reader/components/Reader";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
@@ -123,9 +112,11 @@ import {
  useReaderStore,
  useReaderSelector,
 } from "@/features/reader/runtime/reader-context";
-import type {
- TextbookBookSummary,
- TextbookLesson,
+import {
+ getTextbookCatalogForBookKeys,
+ getTextbookLesson,
+ type TextbookBookSummary,
+ type TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { TextbookNoteAccessCard } from "./TextbookNoteAccessCard";
 import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
@@ -147,175 +138,6 @@ const nonChineseTextPattern = /[^\p{Script=Han}\p{Number}\p{Punctuation}\p{Separ
 
 function isChineseOnlyText(value: string) {
  return value.replace(nonChineseTextPattern, "").trim().length === value.trim().length;
-}
-
-function LessonDropdownRow({
- item,
- isCurrent,
- isBookmarked,
- onSelectLesson,
- onToggleBookmark,
- bookmarkAriaLabel,
-}: {
- item: TextbookBookSummary["lessons"][number];
- isCurrent: boolean;
- isBookmarked: boolean;
- onSelectLesson: () => void;
- onToggleBookmark: () => void;
- bookmarkAriaLabel: string;
-}) {
- return (
-  <div
-   className={cn(
-    "group relative flex min-h-10 w-full items-center justify-between gap-2 rounded-lg py-1.5 pr-2 pl-2.5 transition-colors select-none",
-    isCurrent ? "bg-accent/60 font-medium text-foreground" : "text-foreground hover:bg-accent/40",
-   )}
-  >
-   <Button
-    type="button"
-    variant="ghost"
-    className="min-w-0 flex-1 justify-start gap-2 text-left"
-    onClick={onSelectLesson}
-   >
-    {isBookmarked ? <Bookmark className="size-3.5 shrink-0 fill-current text-primary" /> : null}
-    <span className="truncate text-sm">{item.title}</span>
-    {isCurrent ? <Check className="ml-auto size-4 shrink-0 text-primary" /> : null}
-   </Button>
-   <Button
-    type="button"
-    variant={isBookmarked ? "warning" : "ghost"}
-    size="icon-toolbar"
-    className="shrink-0 transition-opacity"
-    onClick={(event) => {
-     event.stopPropagation();
-     event.preventDefault();
-     onToggleBookmark();
-    }}
-    title={bookmarkAriaLabel}
-    aria-label={bookmarkAriaLabel}
-   >
-    <Bookmark
-     className={cn("size-4 transition-colors", isBookmarked ? "fill-current" : "text-current")}
-    />
-   </Button>
-  </div>
- );
-}
-
-function BusinessChineseLessonSelector({
- books,
- lesson,
- focusModeEnabled,
-}: {
- books: TextbookBookSummary[];
- lesson: TextbookLesson;
- focusModeEnabled: boolean;
-}) {
- const t = useTranslations("BusinessChinese");
- const router = useLocalizedRouter();
- const [open, setOpen] = useState(false);
- const { state: learningState, toggleBookmark } = useLearningState();
- const bookmarkedLessonIds = learningState.bookmarks.lessons;
-
- const allLessons = useMemo(() => books.flatMap((book) => book.lessons), [books]);
- const bookmarkedLessons = useMemo(() => {
-  if (!bookmarkedLessonIds || bookmarkedLessonIds.length === 0) return [];
-  return allLessons.filter((item) => bookmarkedLessonIds.includes(item.id));
- }, [allLessons, bookmarkedLessonIds]);
-
- const isCurrentLessonBookmarked = Boolean(bookmarkedLessonIds?.includes(lesson.id));
-
- const lastClickRef = useRef<Record<string, number>>({});
- const handleToggleLessonBookmark = useCallback(
-  (lessonId: string) => {
-   const now = Date.now();
-   const last = lastClickRef.current[lessonId] ?? 0;
-   if (now - last < 400) return;
-   lastClickRef.current[lessonId] = now;
-   toggleBookmark("lessons", lessonId);
-  },
-  [toggleBookmark],
- );
-
- const handleSelectLesson = useCallback(
-  (targetLesson: TextbookBookSummary["lessons"][number]) => {
-   setOpen(false);
-   router.push(buildTextbookHref(targetLesson.bookKey, targetLesson.number), {
-    scroll: false,
-   });
-  },
-  [router],
- );
-
- return (
-  <DropdownMenu open={open} onOpenChange={setOpen}>
-   <DropdownMenuTrigger asChild>
-    <Button
-     type="button"
-     variant="ghost"
-     disabled={focusModeEnabled}
-     aria-label={t("lessonSelectLabel")}
-     className={cn(
-      "w-[min(11rem,44vw)] justify-between md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
-     )}
-    >
-     <span className="flex min-w-0 items-center gap-1.5 truncate">
-      {isCurrentLessonBookmarked ? (
-       <Bookmark className="size-3.5 shrink-0 fill-current text-primary" />
-      ) : null}
-      <span className="truncate">{lesson.title}</span>
-     </span>
-     <ChevronDown className="size-4 shrink-0 text-muted-foreground" />
-    </Button>
-   </DropdownMenuTrigger>
-   <DropdownMenuContent
-    align="start"
-    className="max-h-[min(24rem,var(--radix-dropdown-menu-content-available-height))] min-w-[min(28rem,calc(100vw-2rem))]"
-   >
-    {bookmarkedLessons.length > 0 ? (
-     <>
-      <DropdownMenuGroup>
-       <DropdownMenuLabel className="flex items-center gap-1.5 font-semibold text-primary">
-        <Bookmark className="size-3.5 fill-current" />
-        <span>{t("semesterBookmarksCount", { count: bookmarkedLessons.length })}</span>
-       </DropdownMenuLabel>
-       {bookmarkedLessons.map((item) => (
-        <LessonDropdownRow
-         key={`pinned-${item.id}`}
-         item={item}
-         isCurrent={item.id === lesson.id}
-         isBookmarked={true}
-         onSelectLesson={() => handleSelectLesson(item)}
-         onToggleBookmark={() => handleToggleLessonBookmark(item.id)}
-         bookmarkAriaLabel={t("unbookmarkLesson")}
-        />
-       ))}
-      </DropdownMenuGroup>
-      <DropdownMenuSeparator />
-     </>
-    ) : null}
-    {books.map((book) => (
-     <DropdownMenuGroup key={book.id}>
-      <DropdownMenuLabel>{book.label}</DropdownMenuLabel>
-      {book.lessons.map((item) => {
-       const isItemBookmarked = Boolean(bookmarkedLessonIds?.includes(item.id));
-       return (
-        <LessonDropdownRow
-         key={item.id}
-         item={item}
-         isCurrent={item.id === lesson.id}
-         isBookmarked={isItemBookmarked}
-         onSelectLesson={() => handleSelectLesson(item)}
-         onToggleBookmark={() => handleToggleLessonBookmark(item.id)}
-         bookmarkAriaLabel={isItemBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-        />
-       );
-      })}
-     </DropdownMenuGroup>
-    ))}
-   </DropdownMenuContent>
-  </DropdownMenu>
- );
 }
 
 function BusinessChineseHeaderContextBridge({
@@ -1021,7 +843,7 @@ function BusinessChineseTextBlock({
  );
 }
 
-const BusinessChineseSection = memo(function BusinessChineseSection({
+function BusinessChineseSection({
  section,
  displayMode,
  translations,
@@ -1089,80 +911,10 @@ const BusinessChineseSection = memo(function BusinessChineseSection({
    </div>
   </section>
  );
-});
-
-function MobileSectionNavigation({
- sections,
- onSelect,
-}: {
- sections: TextbookLesson["sections"];
- onSelect: (sectionId: string) => void;
-}) {
- const t = useTranslations("BusinessChinese");
-
- return (
-  <div className="2xl:hidden">
-   <Select onValueChange={onSelect}>
-    <SelectTrigger aria-label={t("tocLabel")} width="full">
-     <SelectValue placeholder={t("tocLabel")} />
-    </SelectTrigger>
-    <SelectContent>
-     {sections.map((section) => (
-      <SelectItem key={section.id} value={section.id}>
-       {stripLeadingEmoji(section.title)}
-      </SelectItem>
-     ))}
-    </SelectContent>
-   </Select>
-  </div>
- );
 }
-
-function DesktopSectionNavigation({
- sections,
- onSelect,
-}: {
- sections: TextbookLesson["sections"];
- onSelect: (sectionId: string) => void;
-}) {
- const t = useTranslations("BusinessChinese");
-
- return (
-  <Card
-   variant="section"
-   padding="sm"
-   className="hidden min-w-0 self-start 2xl:sticky 2xl:top-0 2xl:block"
-  >
-   <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-2">
-    <Typography variant="overline" tone="muted">
-     {t("tocLabel")}
-    </Typography>
-    <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-1">
-     {sections.map((section) => (
-      <Button
-       key={section.id}
-       type="button"
-       variant="navigation"
-       size="menu"
-       align="start"
-       className="min-w-0 w-full"
-       title={stripLeadingEmoji(section.title)}
-       onClick={() => onSelect(section.id)}
-      >
-       <span className="min-w-0 truncate">
-        <HanziInlineText text={stripLeadingEmoji(section.title)} />
-       </span>
-      </Button>
-     ))}
-    </div>
-   </div>
-  </Card>
- );
-}
-
 export function BusinessChineseStudyWorkspace({
- books,
- lesson,
+ books: initialBooks,
+ lesson: initialLesson,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
@@ -1174,12 +926,47 @@ export function BusinessChineseStudyWorkspace({
  const learning = useLearningState();
  const learningState = learning.state;
  const { toggleBookmark } = learning;
+
+ const currentPath = typeof window !== "undefined" ? window.location.pathname : "";
+ const detectedBookKey: TextbookLesson["bookKey"] = currentPath.includes("/doc-hieu")
+  ? "doc-hieu"
+  : currentPath.includes("/han-thuong-mai")
+    ? "tm3"
+    : currentPath.includes("/nhip-cau")
+      ? "nhip-cau"
+      : initialLesson.bookKey;
+
+ const requestedLessonNumber =
+  typeof searchParams.get("lesson") === "string" ? Number(searchParams.get("lesson")) : null;
+
+ const lesson = useMemo(() => {
+  const targetNumber =
+   requestedLessonNumber && Number.isInteger(requestedLessonNumber)
+    ? requestedLessonNumber
+    : detectedBookKey !== initialLesson.bookKey
+      ? 1
+      : initialLesson.number;
+
+  if (detectedBookKey !== initialLesson.bookKey || targetNumber !== initialLesson.number) {
+   const resolved = getTextbookLesson(detectedBookKey, targetNumber);
+   if (resolved) return resolved;
+  }
+  return initialLesson;
+ }, [detectedBookKey, initialLesson, requestedLessonNumber]);
+
+ const books = useMemo(() => {
+  if (initialBooks.some((b) => b.key === lesson.bookKey)) return initialBooks;
+  return getTextbookCatalogForBookKeys([lesson.bookKey]);
+ }, [initialBooks, lesson.bookKey]);
+
  const book = books.find((item) => item.key === lesson.bookKey);
  const bookKey = `static:${book?.id ?? lesson.bookKey}`;
  const resume = learningState.settings.bookResume?.[bookKey];
  const resumeLesson = book?.lessons.find((item) => item.id === resume?.lessonId);
  const shouldRestoreLesson =
-  !searchParams.has("lesson") && resumeLesson && resumeLesson.id !== lesson.id;
+  !searchParams.has("lesson") &&
+  !learning.isLoading &&
+  Boolean(resumeLesson && resumeLesson.id !== lesson.id);
  const displayMode: LessonDisplayMode = useMemo(
   () => ({
    ...defaultTextbookDisplaySettings,
@@ -1231,8 +1018,10 @@ export function BusinessChineseStudyWorkspace({
   [contentSections, dictationSources.length, lesson.vocab.length, t],
  );
 
+ const [optimisticTab, setOptimisticTab] = useState<string | null>(null);
+ const activeTabParam = optimisticTab ?? searchParams.get("tab");
  const requestedView =
-  searchParams.get("tab") ??
+  activeTabParam ??
   (sourceTarget?.documentId === `${lesson.id}:text`
    ? "text"
    : !searchParams.has("lesson") && resume?.lessonId === lesson.id
@@ -1244,6 +1033,7 @@ export function BusinessChineseStudyWorkspace({
   [activeView, lesson],
  );
  const setActiveView = (value: string) => {
+  setOptimisticTab(value);
   const params = new URLSearchParams(searchParams.toString());
   params.set("lesson", String(lesson.number));
   params.set("tab", value);
@@ -1253,7 +1043,7 @@ export function BusinessChineseStudyWorkspace({
  };
  useEffect(() => {
   if (learning.isLoading) return;
-  if (shouldRestoreLesson) {
+  if (shouldRestoreLesson && resumeLesson) {
    router.replace(
     `${buildTextbookHref(lesson.bookKey, resumeLesson.number)}&tab=${encodeURIComponent(searchParams.get("tab") ?? resume?.module ?? "all")}`,
    );
@@ -1291,7 +1081,7 @@ export function BusinessChineseStudyWorkspace({
   />
  );
 
- if (learning.isLoading || shouldRestoreLesson) return <HanziHomeWorkspaceLoading />;
+ if (shouldRestoreLesson) return <HanziHomeWorkspaceLoading />;
 
  return (
   <MandarinTtsProvider>
@@ -1326,7 +1116,7 @@ export function BusinessChineseStudyWorkspace({
  );
 }
 
-const BusinessChineseReader = memo(function BusinessChineseReader({
+function BusinessChineseReader({
  document,
  bookKey,
  services,
@@ -1361,7 +1151,7 @@ const BusinessChineseReader = memo(function BusinessChineseReader({
    }}
   />
  );
-});
+}
 
 function BusinessChineseStudyWorkspaceContent({
  books,
@@ -1389,6 +1179,7 @@ function BusinessChineseStudyWorkspaceContent({
  displayMode: LessonDisplayMode;
 }) {
  const t = useTranslations("BusinessChinese");
+ const isLessonOfflineReady = useIsLessonCached(lesson.id);
  const textReaderDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, "text"),
   [lesson],
@@ -1603,16 +1394,18 @@ function BusinessChineseStudyWorkspaceContent({
      {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
     </span>
    </Button>
-   <Badge
-    variant="success"
-    size="sm"
-    casing="natural"
-    className="cursor-default gap-1 shrink-0"
-    title={t("offlineDescription")}
-   >
-    <CloudCheck data-icon="inline-start" />
-    <span>{t("offlineReady")}</span>
-   </Badge>
+   {isLessonOfflineReady ? (
+    <Badge
+     variant="success"
+     size="sm"
+     casing="natural"
+     className="cursor-default gap-1 shrink-0"
+     title={t("offlineDescription")}
+    >
+     <CloudCheck data-icon="inline-start" />
+     <span>{t("offlineReady")}</span>
+    </Badge>
+   ) : null}
   </>
  );
 

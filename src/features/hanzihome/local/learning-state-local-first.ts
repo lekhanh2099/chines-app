@@ -76,6 +76,8 @@ export async function loadLearningStateLocalFirst(ownerUserId: string): Promise<
  const local = await readLocalLearningState(ownerUserId).catch(() => null);
  if (local) return normalizeLearningState(local.state);
 
+ if (!isBrowserOnline()) return normalizeLearningState(emptyLearningState);
+
  try {
   const remote = await fetchHanziHomeLearningState(ownerUserId);
   const remoteState = normalizeLearningState(remote.state);

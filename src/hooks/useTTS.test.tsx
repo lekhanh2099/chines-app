@@ -296,4 +296,23 @@ describe("useTTS terminal lifecycle", () => {
   expect(audio.pause).not.toHaveBeenCalled();
   tts.stop();
  });
+
+ it("falls back to DEFAULT_MANDARIN_VOICE when voices are empty offline in legacy speak", async () => {
+  const tts = controller();
+  fetchAudio.mockImplementation(async (url, init) => {
+   if (init?.method === "POST") {
+    return new Response(new Blob(["mock-audio"]), { status: 200 });
+   }
+   return Response.json([]); // Empty voices list (simulating offline)
+  });
+  void tts.speak("你好");
+  await activeAudio();
+  expect(fetchAudio).toHaveBeenCalledWith(
+   "/api/tts",
+   expect.objectContaining({
+    body: JSON.stringify({ text: "你好", voice: "zh-CN-XiaoxiaoNeural", rate: 1 }),
+   }),
+  );
+  tts.stop();
+ });
 });

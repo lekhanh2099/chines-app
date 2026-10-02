@@ -70,6 +70,7 @@ function DialogContent({
  className,
  children,
  showCloseButton = true,
+ closeLabel = "Close",
  size,
  placement,
  scrollMode,
@@ -78,6 +79,7 @@ function DialogContent({
 }: React.ComponentProps<typeof DialogPrimitive.Content> &
  VariantProps<typeof dialogContentVariants> & {
   showCloseButton?: boolean;
+  closeLabel?: string;
  }) {
  return (
   <DialogPortal>
@@ -99,7 +101,7 @@ function DialogContent({
        variant="ghost"
        size="icon-toolbar"
        className="absolute right-3 top-3"
-       aria-label="Đóng dialog"
+       aria-label={closeLabel}
       >
        <X />
       </Button>

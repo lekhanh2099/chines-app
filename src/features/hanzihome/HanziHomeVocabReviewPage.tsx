@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 import { useQueries } from "@tanstack/react-query";
 import { ArrowLeft } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
 import { Button } from "@/components/ui/button";
@@ -33,6 +34,7 @@ export function HanziHomeVocabReviewPage({
 }: {
  reviewLessonsParam: string | null;
 }) {
+ const t = useTranslations("Dictionary.vocabReview");
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const lessonTokens = useMemo(
   () => parseReviewLessonTokensParam(reviewLessonsParam),
@@ -65,7 +67,7 @@ export function HanziHomeVocabReviewPage({
  const activeReviewTitle = formatSelectedLessonsLabel(
   lessons.map((lesson) => ({
    id: lesson.id,
-   title: lesson.title || lesson.titleZh || "Bài học",
+   title: lesson.title || lesson.titleZh || t("lessonFallback"),
    titleZh: lesson.titleZh,
    lessonNumber: lesson.lessonNumber,
   })),
@@ -99,14 +101,14 @@ export function HanziHomeVocabReviewPage({
   <div className="hanzihome-static-page min-w-0">
    <div className="grid min-w-0 gap-4">
     <PageHeader
-     eyebrow="Ôn tập"
-     title="Ôn từ vựng"
-     description={activeReviewTitle || "Chọn bài ở màn tổng hợp từ để bắt đầu ôn."}
+     eyebrow={t("eyebrow")}
+     title={t("title")}
+     description={activeReviewTitle || t("defaultDescription")}
      actions={
       <Button asChild variant="outline">
        <Link href="/vocab">
         <ArrowLeft data-icon="inline-start" />
-        Về tổng hợp từ
+        {t("backToVocab")}
        </Link>
       </Button>
      }
@@ -114,11 +116,11 @@ export function HanziHomeVocabReviewPage({
 
     {lessonIds.length === 0 ? (
      <EmptyState
-      title="Chưa chọn bài để ôn"
-      description="Về màn tổng hợp từ, tick một hoặc nhiều bài rồi bấm bắt đầu ôn."
+      title={t("noLessonSelectedTitle")}
+      description={t("noLessonSelectedDescription")}
       actions={
        <Button asChild>
-        <Link href="/vocab">Chọn bài ôn</Link>
+        <Link href="/vocab">{t("selectLessonsAction")}</Link>
        </Button>
       }
      />
@@ -140,8 +142,8 @@ export function HanziHomeVocabReviewPage({
       learningState={learning.state}
       initialMode="vocab"
       availableModes={["vocab"]}
-      title="Ôn flashcard từ vựng"
-      description={activeReviewTitle || "Bài đang chọn"}
+      title={t("flashcardTitle")}
+      description={activeReviewTitle || t("selectedLesson")}
       onAnswer={answerReview}
       onToggleBookmark={(scope, id) => learning.toggleBookmark(scope, id)}
       getItemLesson={(item) => lessonByReviewItemId.get(`${item.type}:${item.id}`) ?? null}

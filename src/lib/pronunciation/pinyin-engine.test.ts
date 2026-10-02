@@ -110,7 +110,7 @@ describe("pinyin-engine", () => {
 
    expect(generateSmartPinyin("为了大家").pinyin).toBe("wèi le dà jiā");
    expect(generateSmartPinyin("为你服务").pinyin).toBe("wèi nǐ fú wù");
-   expect(generateSmartPinyin("成为朋友").pinyin).toBe("chéng wéi péng yǒu");
+   expect(generateSmartPinyin("成为朋友").pinyin).toBe("chéng wéi péng you");
    expect(generateSmartPinyin("我认为对").pinyin).toBe("wǒ rèn wéi duì");
 
    expect(generateSmartPinyin("腿很长").pinyin).toBe("tuǐ hěn cháng");
@@ -119,6 +119,15 @@ describe("pinyin-engine", () => {
    expect(generateSmartPinyin("还我钱").pinyin).toBe("huán wǒ qián");
    expect(generateSmartPinyin("有借有还").pinyin).toBe("yǒu jiè yǒu huán");
    expect(generateSmartPinyin("他还活着").pinyin).toBe("tā hái huó zhe");
+  });
+
+  it("resolves high-frequency neutral tone words (轻声)", () => {
+   expect(generateSmartPinyin("你的名字").pinyin).toBe("nǐ de míng zi");
+   expect(generateSmartPinyin("我明白").pinyin).toBe("wǒ míng bai");
+   expect(generateSmartPinyin("买东西").pinyin).toBe("mǎi dōng xi");
+   expect(generateSmartPinyin("小孩子").pinyin).toBe("xiǎo hái zi");
+   expect(generateSmartPinyin("穿衣服").pinyin).toBe("chuān yī fu");
+   expect(generateSmartPinyin("谢谢你").pinyin).toBe("xiè xie nǐ");
   });
  });
 

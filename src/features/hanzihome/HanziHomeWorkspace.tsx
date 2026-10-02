@@ -234,9 +234,6 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
    activeLessonDetail.isError ||
    (!isCourseLessonsLoading && !selectedCourse));
 
- if (learning.isLoading || isLessonWorkspaceLoading) return <HanziHomeWorkspaceLoading />;
- if (isRadicalsLoading) return <RadicalWorkspaceSkeleton />;
-
  if (catalogQuery.isError || hasLessonWorkspaceError) {
   const isOffline = !learning.isOnline;
   return (
@@ -248,6 +245,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
       ? tSync("offlineUnavailableDescription")
       : "Dữ liệu bài học hiện không khả dụng. Thử tải lại trang hoặc quay về thư viện."
     }
+    showLibraryLink
     onRetry={() => {
      void Promise.all([
       catalogQuery.refetch(),
@@ -258,6 +256,9 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
    />
   );
  }
+
+ if (learning.isLoading || isLessonWorkspaceLoading) return <HanziHomeWorkspaceLoading />;
+ if (isRadicalsLoading) return <RadicalWorkspaceSkeleton />;
 
  if (!lesson && resolvedActiveModule !== "radicals") {
   return (

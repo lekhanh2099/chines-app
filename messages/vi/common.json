@@ -40,5 +40,20 @@
   "storagePersisted": "Bộ nhớ offline đã được bảo vệ",
   "storageQuota": "Dung lượng offline: {usedMB} MB / {quotaMB} MB",
   "staticCourseReady": "Giáo trình này đã được tích hợp sẵn trong ứng dụng, có thể học ngoại tuyến mọi lúc."
+ },
+ "library": {
+  "title": "Thư viện học HanziHome",
+  "description": "Chọn giáo trình, cấp độ, quyển rồi mở đúng bài bạn muốn học.",
+  "loadErrorTitle": "Không tải được thư viện HanziHome",
+  "loadErrorDescription": "Dữ liệu giáo trình hiện không khả dụng. Hãy kiểm tra kết nối rồi thử lại.",
+  "htmlFiles": "Tệp HTML",
+  "statCourse": "Giáo trình",
+  "statBook": "Quyển",
+  "statLesson": "Bài học",
+  "statGrammar": "Điểm ngữ pháp",
+  "courseSeriesHeading": "Các bộ giáo trình",
+  "courseSeriesDescription": "Mỗi bộ được chia theo cấp độ; quyển học là đơn vị tương tác cuối cùng để chọn bài.",
+  "noCoursesTitle": "Chưa có giáo trình",
+  "noCoursesDescription": "Dữ liệu khóa học chưa khả dụng trong thư viện HanziHome."
  }
 }

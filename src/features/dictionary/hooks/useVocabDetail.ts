@@ -1,7 +1,6 @@
 "use client";
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useCallback } from "react";
 import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { z } from "zod";
 
@@ -24,6 +23,7 @@ const saveSrsResponseSchema = z.object({
  dictionaryId: z.string().nullable(),
  contextSchemaAvailable: z.boolean(),
  noteSchemaAvailable: z.boolean(),
+ offlineQueued: z.boolean().optional(),
 });
 
 /**
@@ -129,29 +129,42 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   }) => {
    if (!userId) throw new Error("Not authenticated");
 
-   const response = await fetch("/api/dictionary/srs", {
-    method: "POST",
-    headers: {
-     "Content-Type": "application/json",
-     "X-HanziHome-Owner-Id": userId,
-    },
-    body: JSON.stringify({
-     hanzi: payload.vocabData.hanzi,
-     contextSentence: payload.options?.contextSentence,
-     contextTranslation: payload.options?.contextTranslation,
-     personalNote: payload.options?.personalNote,
-     personalNoteMode: payload.options?.personalNoteMode,
-    }),
-   });
+   try {
+    const response = await fetch("/api/dictionary/srs", {
+     method: "POST",
+     headers: {
+      "Content-Type": "application/json",
+      "X-HanziHome-Owner-Id": userId,
+     },
+     body: JSON.stringify({
+      hanzi: payload.vocabData.hanzi,
+      contextSentence: payload.options?.contextSentence,
+      contextTranslation: payload.options?.contextTranslation,
+      personalNote: payload.options?.personalNote,
+      personalNoteMode: payload.options?.personalNoteMode,
+     }),
+    });
 
-   if (!response.ok) throw new Error("Save failed");
-   const result = saveSrsResponseSchema.parse(await response.json());
+    if (!response.ok) throw new Error("Save failed");
+    const result = saveSrsResponseSchema.parse(await response.json());
 
-   if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
-    throw new Error("Database chua co cot personal_note. Hay dong bo schema truoc.");
+    if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
+     throw new Error("Database chua co cot personal_note. Hay dong bo schema truoc.");
+    }
+
+    return result;
+   } catch (error) {
+    if (typeof navigator !== "undefined" && !navigator.onLine) {
+     return {
+      vocabId: payload.vocabData.hanzi,
+      dictionaryId: null,
+      contextSchemaAvailable: true,
+      noteSchemaAvailable: true,
+      offlineQueued: true,
+     };
+    }
+    throw error;
    }
-
-   return result;
   },
   onSuccess: (_result, variables) => {
    const payload = variables;
@@ -172,11 +185,10 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   },
  });
 
- const hasAiData = useCallback(() => {
-  const ai = query.data?.vocab?.ai_analysis;
-  if (!ai) return false;
-  return !!(
-   getNormalizedDefinitions(ai, query.data?.vocab?.meaning || "").length ||
+ const ai = query.data?.vocab?.ai_analysis;
+ const hasAiData = Boolean(
+  ai &&
+  (getNormalizedDefinitions(ai, query.data?.vocab?.meaning || "").length ||
    ai.examples?.length ||
    ai.components?.length ||
    ai.etymology ||
@@ -186,13 +198,10 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
    ai.collocations?.length ||
    ai.vn_trap ||
    ai.common_mistakes ||
-   ai.radical
-  );
- }, [query.data]);
+   ai.radical),
+ );
 
- const hasDeepAiData = useCallback(() => {
-  return hasInspectorDeepDiveData(query.data?.vocab?.ai_analysis);
- }, [query.data]);
+ const hasDeepAiData = Boolean(hasInspectorDeepDiveData(query.data?.vocab?.ai_analysis));
 
  return {
   vocabData: query.data?.vocab ?? null,

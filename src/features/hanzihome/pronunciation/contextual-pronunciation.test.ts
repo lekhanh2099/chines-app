@@ -208,7 +208,8 @@ describe("HanziHome contextual pronunciation", () => {
   ["一个人。", ["一", "个", "人", "。"], "yí gè rén。"],
   ["我得去上课。", ["我", "得", "去", "上课", "。"], "wǒ děi qù shàngkè。"],
   ["听得入迷", ["听", "得", "入迷"], "tīng de rùmí"],
-  ["很好的朋友", ["很", "好", "的", "朋友"], "hěn hǎo de péngyǒu"],
+  ["很好的朋友", ["很", "好", "的", "朋友"], "hěn hǎo de péngyou"],
+  ["我明白", ["我", "明白"], "wǒ míngbai"],
  ])("groups reviewed reading units for %s", (text, units, pinyin) => {
   const analysis = analyzeContextualPronunciation({ text });
   expect(getContextualReadingUnits(analysis).map((unit) => unit.text)).toEqual(units);

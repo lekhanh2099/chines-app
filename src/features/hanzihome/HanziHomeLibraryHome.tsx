@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BookOpen, FileCode2, GraduationCap, LibraryBig, Rows3 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { EmptyState } from "@/components/patterns/empty-state";
@@ -22,6 +23,7 @@ import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanE
 import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
 
 export function HanziHomeLibraryHome() {
+ const t = useTranslations("Common.library");
  const [editMode, setEditMode] = useState(false);
  const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: true });
  const catalogData = catalogQuery.data;
@@ -38,8 +40,8 @@ export function HanziHomeLibraryHome() {
   return (
    <PageContainer>
     <QueryErrorCard
-     title="Không tải được thư viện HanziHome"
-     description="Dữ liệu giáo trình hiện không khả dụng. Hãy kiểm tra kết nối rồi thử lại."
+     title={t("loadErrorTitle")}
+     description={t("loadErrorDescription")}
      onRetry={() => void catalogQuery.refetch()}
     />
    </PageContainer>
@@ -50,14 +52,14 @@ export function HanziHomeLibraryHome() {
   <PageContainer>
    <div className="grid w-full min-w-0 gap-6">
     <PageHeader
-     title="Thư viện học HanziHome"
-     description="Chọn giáo trình, cấp độ, quyển rồi mở đúng bài bạn muốn học."
+     title={t("title")}
+     description={t("description")}
      actions={
       <>
        <Button type="button" variant="outline" size="toolbar" asChild>
         <Link href="/html-artifacts">
          <FileCode2 data-icon="inline-start" />
-         Tệp HTML
+         {t("htmlFiles")}
         </Link>
        </Button>
        {canEdit ? (
@@ -74,10 +76,14 @@ export function HanziHomeLibraryHome() {
 
     <Card variant="subtle" padding="sm">
      <div className="grid grid-cols-2 gap-x-3 gap-y-2 xl:grid-cols-4">
-      <LibraryStat icon={LibraryBig} label="Giáo trình" value={libraryStats.courseCount} />
-      <LibraryStat icon={Rows3} label="Quyển" value={libraryStats.bookCount} />
-      <LibraryStat icon={BookOpen} label="Bài học" value={libraryStats.lessonCount} />
-      <LibraryStat icon={GraduationCap} label="Điểm ngữ pháp" value={libraryStats.grammarCount} />
+      <LibraryStat icon={LibraryBig} label={t("statCourse")} value={libraryStats.courseCount} />
+      <LibraryStat icon={Rows3} label={t("statBook")} value={libraryStats.bookCount} />
+      <LibraryStat icon={BookOpen} label={t("statLesson")} value={libraryStats.lessonCount} />
+      <LibraryStat
+       icon={GraduationCap}
+       label={t("statGrammar")}
+       value={libraryStats.grammarCount}
+      />
      </div>
     </Card>
 
@@ -86,18 +92,18 @@ export function HanziHomeLibraryHome() {
     <section aria-labelledby="course-library-heading" className="grid gap-3">
      <div className="grid min-w-0 gap-1">
       <Typography as="h2" variant="sectionTitle" id="course-library-heading" weight="black">
-       Các bộ giáo trình
+       {t("courseSeriesHeading")}
       </Typography>
       <Typography as="p" variant="bodySmall" tone="muted">
-       Mỗi bộ được chia theo cấp độ; quyển học là đơn vị tương tác cuối cùng để chọn bài.
+       {t("courseSeriesDescription")}
       </Typography>
      </div>
 
      {courses.length === 0 ? (
       <EmptyState
        surface="subtle"
-       title="Chưa có giáo trình"
-       description="Dữ liệu khóa học chưa khả dụng trong thư viện HanziHome."
+       title={t("noCoursesTitle")}
+       description={t("noCoursesDescription")}
       />
      ) : (
       <div className="grid gap-4">

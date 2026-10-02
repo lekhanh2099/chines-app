@@ -8,10 +8,12 @@ export function QueryErrorCard({
  title,
  description,
  onRetry,
+ retryLabel = "Thử tải lại",
 }: {
  title: string;
  description: string;
  onRetry: () => void;
+ retryLabel?: string;
 }) {
  return (
   <Card role="alert" variant="subtle" padding="lg" className="grid gap-3">
@@ -24,7 +26,7 @@ export function QueryErrorCard({
     </Typography>
    </div>
    <Button type="button" variant="surfaceCard" onClick={onRetry}>
-    Thử tải lại
+    {retryLabel}
    </Button>
   </Card>
  );

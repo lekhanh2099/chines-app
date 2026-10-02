@@ -6,6 +6,12 @@ import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import {
+ playCharacterCompleteSound,
+ playStrokeMistakeSound,
+ playStrokeSuccessSound,
+ triggerHaptic,
+} from "@/lib/audio/sound-effects";
 
 type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
 type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
@@ -130,7 +136,17 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
 
   setQuizMode(true);
   void writerRef.current.value.quiz({
+   onCorrectStroke: () => {
+    playStrokeSuccessSound();
+    triggerHaptic("stroke");
+   },
+   onMistake: () => {
+    playStrokeMistakeSound();
+    triggerHaptic("mistake");
+   },
    onComplete: () => {
+    playCharacterCompleteSound();
+    triggerHaptic("success");
     toast.success(t("correct"));
     setQuizMode(false);
    },

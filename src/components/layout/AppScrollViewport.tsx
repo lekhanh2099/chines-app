@@ -27,7 +27,7 @@ type AppScrollViewportProps = {
 export function AppScrollViewport({ children, className }: AppScrollViewportProps) {
  const pathname = usePathname();
  const searchParams = useSearchParams();
- const routeKey = `${pathname}?${searchParams.toString()}`;
+ const page = searchParams.get("page");
  const viewportRef = useRef<HTMLElement>(null);
 
  useLayoutEffect(() => {
@@ -37,6 +37,11 @@ export function AppScrollViewport({ children, className }: AppScrollViewportProp
   viewport.dataset.readerChrome = "visible";
   viewport.scrollTo({ behavior: "auto", left: 0, top: 0 });
   updateAppScrollState(viewport);
+ }, [pathname, page]);
+
+ useLayoutEffect(() => {
+  const viewport = viewportRef.current;
+  if (viewport === null) return undefined;
 
   const scrollPositions = new WeakMap<HTMLElement, number>();
   let scrollTarget = viewport;
@@ -114,7 +119,7 @@ export function AppScrollViewport({ children, className }: AppScrollViewportProp
    document.removeEventListener("keydown", revealChrome);
    if (animationFrameId !== null) window.cancelAnimationFrame(animationFrameId);
   };
- }, [routeKey]);
+ }, []);
 
  return (
   <main

@@ -126,7 +126,16 @@ export function getErrorHttpStatus(error: unknown): number | null {
  return null;
 }
 
-export const DEFAULT_CONTENT_READ_TIMEOUT_MS = 8000;
+export const DEFAULT_CONTENT_READ_TIMEOUT_MS = 3500;
+
+function isDefinitelyOffline(): boolean {
+ return (
+  typeof window !== "undefined" &&
+  typeof navigator !== "undefined" &&
+  navigator.onLine === false &&
+  process.env.NODE_ENV !== "test"
+ );
+}
 
 export function createBoundedTimeoutSignal(
  callerSignal?: AbortSignal,
@@ -180,6 +189,15 @@ export async function loadLessonDetailWithCache(params: {
   LESSON_DETAIL_RESOURCE_TYPE,
   lessonId,
  );
+
+ if (isDefinitelyOffline()) {
+  if (queryClient) {
+   const inMemory = queryClient.getQueryData<HanziHomeLesson | null>(queryKey);
+   if (inMemory) return inMemory;
+  }
+  const localSnapshot = await readCachedLessonDetail(ownerId, lessonId);
+  if (localSnapshot) return localSnapshot;
+ }
 
  const { signal, cleanup } = createBoundedTimeoutSignal(callerSignal, timeoutMs);
 
@@ -242,6 +260,15 @@ export async function loadLessonVocabularyWithCache(params: {
   LESSON_VOCAB_RESOURCE_TYPE,
   lessonId,
  );
+
+ if (isDefinitelyOffline()) {
+  if (queryClient) {
+   const inMemory = queryClient.getQueryData<LessonVocabularyListResource | null>(queryKey);
+   if (inMemory) return inMemory;
+  }
+  const localSnapshot = await readCachedLessonVocabulary(ownerId, lessonId);
+  if (localSnapshot) return localSnapshot;
+ }
 
  const { signal, cleanup } = createBoundedTimeoutSignal(callerSignal, timeoutMs);
 

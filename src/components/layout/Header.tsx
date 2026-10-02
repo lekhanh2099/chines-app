@@ -1,7 +1,7 @@
 "use client";
 
-import { type FormEvent, type ReactNode, useEffect } from "react";
-import { Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
+import { type FormEvent, type ReactNode, useEffect, useSyncExternalStore } from "react";
+import { Languages, LockKeyhole, Moon, Search, Settings, Sun, WifiOff } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
 import { useTranslations } from "next-intl";
 import { useSelector } from "@tanstack/react-store";
@@ -334,6 +334,7 @@ function HeaderUtilityArea({
    ) : null}
 
    {focusModeEnabled ? <FocusModePill /> : null}
+   <OfflinePill />
 
    <DropdownMenu>
     <DropdownMenuTrigger asChild>
@@ -404,6 +405,45 @@ function FocusModePill() {
   >
    <LockKeyhole />
    {t("header.focusModeShort")}
+  </Badge>
+ );
+}
+
+function subscribeOnlineStatus(callback: () => void) {
+ window.addEventListener("online", callback);
+ window.addEventListener("offline", callback);
+ return () => {
+  window.removeEventListener("online", callback);
+  window.removeEventListener("offline", callback);
+ };
+}
+
+function getOnlineSnapshot() {
+ return navigator.onLine;
+}
+
+function getServerOnlineSnapshot() {
+ return true;
+}
+
+function OfflinePill() {
+ const isOnline = useSyncExternalStore(
+  subscribeOnlineStatus,
+  getOnlineSnapshot,
+  getServerOnlineSnapshot,
+ );
+
+ if (isOnline) return null;
+
+ return (
+  <Badge
+   variant="warning"
+   size="sm"
+   className="gap-1 animate-in fade-in duration-300"
+   title="Đang dùng dữ liệu ngoại tuyến"
+  >
+   <WifiOff />
+   <span className="hidden md:inline">Ngoại tuyến</span>
   </Badge>
  );
 }

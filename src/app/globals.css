@@ -7,7 +7,9 @@
 
 @font-face {
  font-family: "HanziHome Kaiti";
- src: url("/fonts/gkai00mp.ttf") format("truetype");
+ src:
+  url("/fonts/gkai00mp.woff2") format("woff2"),
+  url("/fonts/gkai00mp.ttf") format("truetype");
  font-display: swap;
  font-style: normal;
  font-weight: 400;
@@ -15,43 +17,57 @@
 
 @font-face {
  font-family: "FZKTPY01";
- src: url("/fonts/FZKTPY01.ttf") format("truetype");
+ src:
+  url("/fonts/FZKTPY01.woff2") format("woff2"),
+  url("/fonts/FZKTPY01.ttf") format("truetype");
  font-display: swap;
 }
 
 @font-face {
  font-family: "FZKTPY02";
- src: url("/fonts/FZKTPY02.ttf") format("truetype");
+ src:
+  url("/fonts/FZKTPY02.woff2") format("woff2"),
+  url("/fonts/FZKTPY02.ttf") format("truetype");
  font-display: swap;
 }
 
 @font-face {
  font-family: "FZKTPY03";
- src: url("/fonts/FZKTPY03.ttf") format("truetype");
+ src:
+  url("/fonts/FZKTPY03.woff2") format("woff2"),
+  url("/fonts/FZKTPY03.ttf") format("truetype");
  font-display: swap;
 }
 
 @font-face {
  font-family: "FZKTPY04";
- src: url("/fonts/FZKTPY04.ttf") format("truetype");
+ src:
+  url("/fonts/FZKTPY04.woff2") format("woff2"),
+  url("/fonts/FZKTPY04.ttf") format("truetype");
  font-display: swap;
 }
 
 @font-face {
  font-family: "FZKTPY05";
- src: url("/fonts/FZKTPY05.ttf") format("truetype");
+ src:
+  url("/fonts/FZKTPY05.woff2") format("woff2"),
+  url("/fonts/FZKTPY05.ttf") format("truetype");
  font-display: swap;
 }
 
 @font-face {
  font-family: "FZKTPY06";
- src: url("/fonts/FZKTPY06.ttf") format("truetype");
+ src:
+  url("/fonts/FZKTPY06.woff2") format("woff2"),
+  url("/fonts/FZKTPY06.ttf") format("truetype");
  font-display: swap;
 }
 
 @font-face {
  font-family: "Popular Xingkai";
- src: url("/fonts/STXingkai.ttf") format("truetype");
+ src:
+  url("/fonts/STXingkai.woff2") format("woff2"),
+  url("/fonts/STXingkai.ttf") format("truetype");
  font-display: swap;
 }
 

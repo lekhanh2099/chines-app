@@ -75,6 +75,7 @@ function DailyTranslationPanel({
  resource: ReaderDocumentResource;
  canPersistAttempts: boolean;
 }) {
+ const t = useTranslations("DailyReading");
  const segments = useMemo(
   () =>
    resource.paragraphs
@@ -82,12 +83,12 @@ function DailyTranslationPanel({
     .map((paragraph, index) => ({
      id: paragraph.id,
      order: index + 1,
-     sourceLabel: "Bài đọc hôm nay",
+     sourceLabel: t("header.eyebrow"),
      zh: paragraph.zh,
      pinyin: paragraph.pinyin,
      vi: paragraph.vi,
     })),
-  [resource.paragraphs],
+  [resource.paragraphs, t],
  );
  const [activeIndex, setActiveIndex] = useState(0);
  const [direction, setDirection] = useState<TranslationDirection>("zh-vi");

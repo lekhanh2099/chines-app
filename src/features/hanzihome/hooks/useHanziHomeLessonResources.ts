@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { type QueryClient, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
@@ -136,4 +136,26 @@ export function useHanziHomeLessonVocabulary(lessonId: string) {
    return failureCount < 2;
   },
  });
+}
+
+export function useIsLessonCached(lessonId: string): boolean {
+ const { user } = useClientSession();
+ const ownerId = user?.id ?? "anonymous";
+ const [isCached, setIsCached] = useState(false);
+
+ useEffect(() => {
+  if (!lessonId) return;
+  let active = true;
+  void readCachedLessonDetail(ownerId, lessonId).then((cached) => {
+   if (active) {
+    setIsCached(Boolean(cached));
+   }
+  });
+
+  return () => {
+   active = false;
+  };
+ }, [lessonId, ownerId]);
+
+ return isCached;
 }

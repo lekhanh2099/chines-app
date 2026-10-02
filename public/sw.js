@@ -1,5 +1,5 @@
 // HanziHome Service Worker — PWA & Safe Static Cache
-const CACHE_VERSION = "v7";
+const CACHE_VERSION = "v11";
 const STATIC_CACHE = `hanzihome-static-${CACHE_VERSION}`;
 const OFFLINE_OWNER_CACHE = "hanzihome-offline-owner";
 const OFFLINE_OWNER_CACHE_PATH = "/__hanzihome-offline-owner";
@@ -20,6 +20,26 @@ async function precacheRouteAssets(staticCache, route) {
  try {
   const res = await fetch(route);
   if (res.status !== 200) return;
+  // Cache the route HTML shell itself for offline React app mount
+  await staticCache.put(route, res.clone());
+  await staticCache.put(self.location.origin + route, res.clone());
+  await staticCache.put("/__app_shell", res.clone());
+  await staticCache.put(self.location.origin + "/__app_shell", res.clone());
+
+  // Also pre-cache the Next.js RSC payload for client-side navigation
+  try {
+   const rscRes = await fetch(route, { headers: { RSC: "1" } });
+   if (rscRes.status === 200) {
+    await staticCache.put(new Request(route, { headers: { RSC: "1" } }), rscRes.clone());
+    await staticCache.put(
+     new Request(self.location.origin + route, { headers: { RSC: "1" } }),
+     rscRes,
+    );
+   }
+  } catch {
+   // Ignore transient RSC error
+  }
+
   const text = await res.text();
 
   // Extract only _next/static stylesheets and scripts embedded in the HTML
@@ -61,12 +81,15 @@ self.addEventListener("activate", (event) => {
   caches.keys().then((keys) => {
    return Promise.all(
     keys.map((key) => {
-     // Keep the per-browser owner marker. It lets the offline reader shell
-     // select only the authenticated user's owner-scoped IndexedDB records.
-     if (key !== STATIC_CACHE && key !== OFFLINE_OWNER_CACHE) {
-      return caches.delete(key);
+     // Keep the per-browser owner marker and existing static caches as offline safety net
+     if (
+      key === STATIC_CACHE ||
+      key === OFFLINE_OWNER_CACHE ||
+      key.startsWith("hanzihome-static-")
+     ) {
+      return Promise.resolve(true);
      }
-     return Promise.resolve(true);
+     return caches.delete(key);
     }),
    );
   }),
@@ -130,14 +153,14 @@ function getOfflineLauncherHtml() {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 24px 16px;
     }
     .card {
-      background-color: #131d38;
+      background-color: #0f172a;
       border: 1px solid #1e293b;
       border-radius: 16px;
-      padding: 32px 24px;
-      max-width: 440px;
+      padding: 32px 28px;
+      max-width: 560px;
       width: 100%;
       text-align: center;
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
@@ -154,14 +177,14 @@ function getOfflineLauncherHtml() {
       margin-bottom: 20px;
     }
     h1 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       margin-bottom: 8px;
       color: #f8fafc;
     }
     p {
       font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.6;
       color: #94a3b8;
       margin-bottom: 24px;
     }
@@ -207,106 +230,118 @@ function getOfflineLauncherHtml() {
       color: #64748b;
       margin-bottom: 12px;
       font-weight: 600;
+      text-align: left;
     }
     .nav-links {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
     .nav-link {
-      background: #0f172a;
-      border: 1px solid #1e293b;
-      border-radius: 8px;
-      padding: 10px 8px;
-      font-size: 13px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
       color: #38bdf8;
       text-decoration: none;
-      font-weight: 500;
-      transition: background 0.15s;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+    .nav-link:hover {
+      background: #334155;
+      border-color: #38bdf8;
     }
     .nav-link:active {
-      background: #1e293b;
+      transform: scale(0.98);
     }
     .status-badge {
       display: none;
-      margin-top: 18px;
+      margin-top: 20px;
       font-size: 12px;
       color: #4ade80;
       background: rgba(34, 197, 94, 0.1);
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 20px;
       border: 1px solid rgba(34, 197, 94, 0.2);
     }
     .offline-lessons {
       display: grid;
-      gap: 10px;
-      margin-top: 18px;
+      gap: 12px;
+      margin-top: 16px;
       text-align: left;
     }
     .offline-lessons h2 {
       font-size: 14px;
+      font-weight: 600;
       color: #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
     .offline-lesson-list {
       display: grid;
-      gap: 8px;
+      gap: 10px;
+      max-height: 280px;
+      overflow-y: auto;
+      padding-right: 4px;
     }
     .offline-lesson-button {
       width: 100%;
       border: 1px solid #1e293b;
-      border-radius: 8px;
-      background: #0f172a;
+      border-radius: 10px;
+      background: #131d38;
       color: #e0f2fe;
       cursor: pointer;
       font: inherit;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 12px;
+      padding: 12px 16px;
       text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: all 0.15s ease;
+    }
+    .offline-lesson-button:hover {
+      background: #1e293b;
+      border-color: #38bdf8;
+      transform: translateY(-1px);
+    }
+    .offline-lesson-button:active {
+      transform: translateY(0);
     }
     .offline-lesson-button:focus-visible {
       outline: 2px solid #38bdf8;
       outline-offset: 2px;
     }
+    .offline-lesson-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .offline-lesson-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #f8fafc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     .offline-lesson-subtitle {
       color: #94a3b8;
-      display: block;
-      font-size: 12px;
-      font-weight: 500;
-      margin-top: 4px;
-    }
-    .offline-reader {
-      display: grid;
-      gap: 12px;
-      margin-top: 8px;
-      text-align: left;
-    }
-    .offline-reader h2 {
-      color: #f8fafc;
-      font-size: 18px;
-      line-height: 1.4;
-    }
-    .offline-reader h3 {
-      color: #bae6fd;
-      font-size: 14px;
-      margin-top: 12px;
-    }
-    .offline-line {
-      border-left: 2px solid #334155;
-      padding-left: 12px;
-    }
-    .offline-hanzi {
-      color: #f8fafc;
-      font-size: 19px;
-      line-height: 1.65;
-    }
-    .offline-pinyin, .offline-translation, .offline-speaker {
-      color: #cbd5e1;
       font-size: 13px;
-      line-height: 1.55;
+      font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .offline-pinyin, .offline-speaker {
-      color: #94a3b8;
+    .offline-lesson-arrow {
+      color: #38bdf8;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -320,7 +355,7 @@ function getOfflineLauncherHtml() {
       </svg>
     </div>
     <h1 id="offlineTitle">Chế độ ngoại tuyến</h1>
-    <p id="offlineDescription">Đang mở các bài học đã được lưu trên máy.</p>
+    <p id="offlineDescription">Chọn một bài học đã tải hoặc chuyển sang giáo trình để tiếp tục học với đầy đủ giao diện, tra từ điển và phát âm.</p>
 
     <div class="btn-group">
       <button class="btn btn-primary" onclick="window.location.reload()">
@@ -331,7 +366,7 @@ function getOfflineLauncherHtml() {
       </button>
     </div>
 
-    <div id="courseLinksTitle" class="links-title">Giáo trình có sẵn trên máy</div>
+    <div id="courseLinksTitle" class="links-title">Giáo trình trên máy</div>
     <div class="nav-links">
       <a class="nav-link" href="/vi/hanzihome">Thư viện</a>
       <a class="nav-link" href="/vi/hsk/han-thuong-mai">Hán thương mại</a>
@@ -342,15 +377,10 @@ function getOfflineLauncherHtml() {
     <section id="offlineLessons" class="offline-lessons" hidden>
       <h2 id="offlineLessonsHeading">Bài đã tải</h2>
       <div id="offlineLessonList" class="offline-lesson-list"></div>
-      <article id="offlineReader" class="offline-reader" hidden>
-        <button id="offlineBack" class="btn btn-secondary" type="button">← Danh sách bài đã tải</button>
-        <h2 id="offlineReaderTitle"></h2>
-        <div id="offlineReaderContent"></div>
-      </article>
     </section>
 
     <div id="statusBadge" class="status-badge">
-      ✓ Đã sẵn sàng dữ liệu ngoại tuyến trong máy
+      ✓ Dữ liệu ngoại tuyến đã sẵn sàng trong máy
     </div>
   </div>
 
@@ -362,13 +392,8 @@ function getOfflineLauncherHtml() {
       var cacheStoreName = "content_cache";
       var title = document.getElementById("offlineTitle");
       var description = document.getElementById("offlineDescription");
-      var courseLinksTitle = document.getElementById("courseLinksTitle");
-      var courseLinks = document.querySelector(".nav-links");
       var lessons = document.getElementById("offlineLessons");
       var lessonList = document.getElementById("offlineLessonList");
-      var reader = document.getElementById("offlineReader");
-      var readerTitle = document.getElementById("offlineReaderTitle");
-      var readerContent = document.getElementById("offlineReaderContent");
 
       function text(value) {
         return typeof value === "string" ? value.trim() : "";
@@ -425,129 +450,68 @@ function getOfflineLauncherHtml() {
         ]);
       }
 
-      function appendText(parent, tagName, className, value) {
-        var element = document.createElement(tagName);
-        element.className = className;
-        element.textContent = value;
-        parent.appendChild(element);
-      }
-
-      function appendLine(lines, value) {
-        var item = record(value);
-        if (!item) return;
-        var hanzi = firstText([item.zh, item.text]);
-        var pinyin = text(item.pinyin);
-        var translation = firstText([item.vi, item.en]);
-        if (!hanzi && !pinyin && !translation) return;
-        lines.push({
-          speaker: text(item.speaker),
-          hanzi: hanzi,
-          pinyin: pinyin,
-          translation: translation,
-        });
-      }
-
-      function lessonLines(entry) {
+      function getLessonUrl(entry) {
         var data = lessonData(entry);
-        var source = sourceLesson(data);
-        var lines = [];
+        var resourceId = text(entry && entry.resourceId).toLowerCase();
+        var courseId = text(data && data.courseId).toLowerCase();
+        var bookId = text(data && data.bookId).toLowerCase();
+        var lessonNum = (data && data.lessonNumber) || 1;
 
-        if (source) {
-          list(source.sections).forEach(function(sectionValue) {
-            var section = record(sectionValue);
-            if (!section || section.type !== "text") return;
-            var sectionTitle = firstText([section.title_vi, section.title]);
-            if (sectionTitle) lines.push({ heading: sectionTitle });
-            list(section.blocks).forEach(function(blockValue) {
-              var block = record(blockValue);
-              if (!block) return;
-              var blockTitle = firstText([block.title_vi, block.title]);
-              if (blockTitle) lines.push({ heading: blockTitle });
-              list(block.paragraphs).forEach(function(paragraph) {
-                appendLine(lines, paragraph);
-              });
-              list(block.lines).forEach(function(line) {
-                appendLine(lines, line);
-              });
-              list(block.scenes).forEach(function(sceneValue) {
-                var scene = record(sceneValue);
-                if (!scene) return;
-                var sceneSummary = text(scene.summary_vi);
-                if (sceneSummary) lines.push({ translation: sceneSummary });
-                list(scene.lines).forEach(function(line) {
-                  appendLine(lines, line);
-                });
-              });
-            });
-          });
+        if (resourceId.includes("doc-hieu") || courseId.includes("doc-hieu") || bookId.includes("doc-hieu")) {
+          return "/vi/hsk/doc-hieu?lesson=" + lessonNum;
         }
-
-        if (lines.length > 0) return lines;
-        var notes = record(data && data.notes);
-        var fallback = firstText([
-          notes && notes.lessonTextMarkdown,
-          notes && notes.readingMarkdown,
-        ]);
-        return fallback ? [{ hanzi: fallback, pinyin: "", translation: "" }] : [];
-      }
-
-      function showLesson(entry) {
-        var lines = lessonLines(entry);
-        lessonList.hidden = true;
-        reader.hidden = false;
-        readerTitle.textContent = lessonTitle(entry);
-        readerContent.replaceChildren();
-
-        if (lines.length === 0) {
-          appendText(
-            readerContent,
-            "p",
-            "offline-translation",
-            "Bài này đã được tải nhưng chưa có phần văn bản nào để đọc ngoại tuyến.",
-          );
-          return;
+        if (resourceId.includes("nhip-cau") || courseId.includes("nhip-cau") || bookId.includes("nhip-cau")) {
+          return "/vi/hsk/nhip-cau-han-ngu?lesson=" + lessonNum;
         }
-
-        lines.forEach(function(line) {
-          if (line.heading) {
-            appendText(readerContent, "h3", "", line.heading);
-            return;
-          }
-          var lineElement = document.createElement("div");
-          lineElement.className = "offline-line";
-          if (line.speaker) appendText(lineElement, "p", "offline-speaker", line.speaker);
-          if (line.hanzi) appendText(lineElement, "p", "offline-hanzi", line.hanzi);
-          if (line.pinyin) appendText(lineElement, "p", "offline-pinyin", line.pinyin);
-          if (line.translation) {
-            appendText(lineElement, "p", "offline-translation", line.translation);
-          }
-          readerContent.appendChild(lineElement);
-        });
+        if (resourceId.includes("han-thuong-mai") || resourceId.includes("tm") || courseId.includes("han-thuong-mai") || bookId.includes("tm")) {
+          return "/vi/hsk/han-thuong-mai?lesson=" + lessonNum;
+        }
+        var id = text(data && data.id) || text(entry && entry.resourceId);
+        if (courseId && id) {
+          return "/vi/hanzihome?courseId=" + encodeURIComponent(courseId) + "&lessonId=" + encodeURIComponent(id);
+        }
+        if (id) {
+          return "/vi/hanzihome?lessonId=" + encodeURIComponent(id);
+        }
+        return "/vi/hanzihome";
       }
 
       function showLessonList(entries) {
         lessons.hidden = false;
         lessonList.hidden = false;
-        reader.hidden = true;
         lessonList.replaceChildren();
-        courseLinksTitle.hidden = true;
-        courseLinks.hidden = true;
         document.getElementById("statusBadge").style.display = "inline-block";
 
         entries.forEach(function(entry) {
           var button = document.createElement("button");
           button.type = "button";
           button.className = "offline-lesson-button";
-          button.textContent = lessonTitle(entry);
+
+          var info = document.createElement("div");
+          info.className = "offline-lesson-info";
+
+          var titleEl = document.createElement("span");
+          titleEl.className = "offline-lesson-title";
+          titleEl.textContent = lessonTitle(entry);
+          info.appendChild(titleEl);
+
           var subtitle = lessonSubtitle(entry);
           if (subtitle && subtitle !== lessonTitle(entry)) {
             var subtitleElement = document.createElement("span");
             subtitleElement.className = "offline-lesson-subtitle";
             subtitleElement.textContent = subtitle;
-            button.appendChild(subtitleElement);
+            info.appendChild(subtitleElement);
           }
+          button.appendChild(info);
+
+          var arrow = document.createElement("span");
+          arrow.className = "offline-lesson-arrow";
+          arrow.textContent = "→";
+          button.appendChild(arrow);
+
+          var targetUrl = getLessonUrl(entry);
           button.addEventListener("click", function() {
-            showLesson(entry);
+            window.location.href = targetUrl;
           });
           lessonList.appendChild(button);
         });
@@ -609,10 +573,6 @@ function getOfflineLauncherHtml() {
           });
       }
 
-      document.getElementById("offlineBack").addEventListener("click", function() {
-        reader.hidden = true;
-        lessonList.hidden = false;
-      });
       window.addEventListener("online", function() {
         window.location.reload();
       });
@@ -635,7 +595,7 @@ function getOfflineLauncherHtml() {
             return;
           }
           description.textContent =
-            "Bạn có thể đọc các bài đã tải mà không cần kết nối mạng.";
+            "Chọn một bài học đã lưu trên máy để mở giao diện học tập hoàn chỉnh.";
           showLessonList(entries);
         })
         .catch(function() {
@@ -668,15 +628,79 @@ self.addEventListener("fetch", (event) => {
   return;
  }
 
- // 1. Navigation requests: Network-first with an owner-scoped offline reader fallback
+ // 1. Navigation requests: Network-first with App Shell cache fallback
  if (request.mode === "navigate") {
   event.respondWith(
    (async () => {
     try {
-     return await fetch(request);
+     const networkResponse = await fetch(request);
+     if (networkResponse.status === 200) {
+      const cache = await caches.open(STATIC_CACHE);
+      await cache.put(request, networkResponse.clone());
+      await cache.put(url.pathname, networkResponse.clone());
+      await cache.put(self.location.origin + url.pathname, networkResponse.clone());
+      await cache.put("/__app_shell", networkResponse.clone());
+      await cache.put(self.location.origin + "/__app_shell", networkResponse.clone());
+     }
+     return networkResponse;
     } catch {
-     // The shell reads only content_cache rows whose owner matches the last
-     // authenticated owner marker. Authenticated HTML/RSC stays uncached.
+     // 1. Exact request match
+     const cachedResponse = await caches.match(request);
+     if (cachedResponse) return cachedResponse;
+
+     // 2. Pathname variants
+     const pathnameVariants = [
+      url.pathname,
+      self.location.origin + url.pathname,
+      url.pathname.startsWith("/vi/")
+       ? url.pathname
+       : "/vi" + (url.pathname.startsWith("/") ? url.pathname : "/" + url.pathname),
+      self.location.origin +
+       (url.pathname.startsWith("/vi/")
+        ? url.pathname
+        : "/vi" + (url.pathname.startsWith("/") ? url.pathname : "/" + url.pathname)),
+      url.pathname.replace(/^\/(?:vi|en|zh-CN)/, ""),
+     ];
+     for (const p of pathnameVariants) {
+      const match = await caches.match(p);
+      if (match) return match;
+     }
+
+     // 3. Fallback to master App Shell
+     const appShell = await caches.match("/__app_shell");
+     if (appShell) return appShell;
+     const fullAppShell = await caches.match(self.location.origin + "/__app_shell");
+     if (fullAppShell) return fullAppShell;
+
+     // 4. Fallback to ANY cached App Shell from PRECACHE_ROUTES
+     for (const candidate of PRECACHE_ROUTES) {
+      const shell = await caches.match(candidate);
+      if (shell) return shell;
+      const fullShell = await caches.match(self.location.origin + candidate);
+      if (fullShell) return fullShell;
+     }
+
+     // 4. Scan all cached HTML pages across all static caches
+     const allKeys = await caches.keys();
+     for (const key of allKeys) {
+      if (key.startsWith("hanzihome-static-")) {
+       const openCache = await caches.open(key);
+       const requests = await openCache.keys();
+       for (const r of requests) {
+        if (r.url.includes("/vi/") || r.url.includes("/hsk/")) {
+         const resp = await openCache.match(r);
+         if (resp && resp.status === 200) {
+          const contentType = resp.headers.get("content-type");
+          if (contentType && contentType.includes("text/html")) {
+           return resp;
+          }
+         }
+        }
+       }
+      }
+     }
+
+     // Last resort fallback
      return new Response(getOfflineLauncherHtml(), {
       headers: {
        "Content-Type": "text/html; charset=utf-8",
@@ -689,13 +713,42 @@ self.addEventListener("fetch", (event) => {
   return;
  }
 
- // 2. Next.js RSC requests (client-side routing): Network-first without caching private state
+ // 2. Next.js RSC requests (client-side routing): Network-first with cache fallback
  const isRscRequest = url.searchParams.has("_rsc") || request.headers.get("RSC") === "1";
  if (isRscRequest) {
   event.respondWith(
-   fetch(request).catch(() => {
-    return new Response("", { status: 503, statusText: "Offline" });
-   }),
+   (async () => {
+    try {
+     const networkResponse = await fetch(request);
+     if (networkResponse.status === 200) {
+      const cache = await caches.open(STATIC_CACHE);
+      await cache.put(request, networkResponse.clone());
+      await cache.put(
+       new Request(url.pathname, { headers: { RSC: "1" } }),
+       networkResponse.clone(),
+      );
+     }
+     return networkResponse;
+    } catch {
+     const cachedRsc = await caches.match(request);
+     if (cachedRsc) return cachedRsc;
+
+     const pathnameRsc = await caches.match(new Request(url.pathname, { headers: { RSC: "1" } }));
+     if (pathnameRsc) return pathnameRsc;
+
+     const originPathRsc = await caches.match(
+      new Request(self.location.origin + url.pathname, { headers: { RSC: "1" } }),
+     );
+     if (originPathRsc) return originPathRsc;
+
+     for (const candidateRoute of PRECACHE_ROUTES) {
+      const rscMatch = await caches.match(new Request(candidateRoute, { headers: { RSC: "1" } }));
+      if (rscMatch) return rscMatch;
+     }
+
+     return new Response("", { status: 503, statusText: "Offline" });
+    }
+   })(),
   );
   return;
  }

@@ -4,6 +4,12 @@ import { useEffect, useId, useRef } from "react";
 import { PenLine, Play, RotateCcw } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+ playCharacterCompleteSound,
+ playStrokeMistakeSound,
+ playStrokeSuccessSound,
+ triggerHaptic,
+} from "@/lib/audio/sound-effects";
 
 type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
 type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
@@ -98,6 +104,24 @@ export function HanziStrokeWriter({
   };
  }, [autoPlay, character, size, targetId]);
 
+ const startQuizWithFeedback = () => {
+  if (!writerRef.current?.quiz) return;
+  void writerRef.current.quiz({
+   onCorrectStroke: () => {
+    playStrokeSuccessSound();
+    triggerHaptic("stroke");
+   },
+   onMistake: () => {
+    playStrokeMistakeSound();
+    triggerHaptic("mistake");
+   },
+   onComplete: () => {
+    playCharacterCompleteSound();
+    triggerHaptic("success");
+   },
+  });
+ };
+
  return (
   <div
    className={["inline-grid gap-3", className].join(" ")}
@@ -130,7 +154,7 @@ export function HanziStrokeWriter({
       Nét viết
      </Button>
 
-     <Button type="button" variant="outline" onClick={() => writerRef.current?.quiz()}>
+     <Button type="button" variant="outline" onClick={startQuizWithFeedback}>
       <PenLine className="h-4 w-4" />
       Tập viết
      </Button>
@@ -143,7 +167,7 @@ export function HanziStrokeWriter({
      variant="ghost"
      className="hidden"
      data-hanzi-quiz-trigger
-     onClick={() => writerRef.current?.quiz()}
+     onClick={startQuizWithFeedback}
     />
    )}
   </div>
