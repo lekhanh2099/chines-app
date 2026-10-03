@@ -5,12 +5,12 @@ import { Eye, Type, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Separator } from "@/components/ui/separator";
-import { Switch } from "@/components/ui/switch";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Separator } from "@/components/ui/layout/separator";
+import { Switch } from "@/components/ui/forms/switch";
+import { Typography } from "@/components/ui/display/typography";
 import { cn } from "@/lib/utils";
 
 import { HanziFontPreview, ReaderHanziText, StudyInstructionText } from "./hanzi-typography";

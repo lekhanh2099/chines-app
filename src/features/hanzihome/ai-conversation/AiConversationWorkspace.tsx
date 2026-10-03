@@ -8,10 +8,10 @@ import { useTranslations } from "next-intl";
 import { z } from "zod";
 
 import { useAppForm } from "@/components/form";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Avatar, AvatarFallback } from "@/components/ui/display/avatar";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import {
  Dialog,
  DialogBody,
@@ -20,7 +20,7 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import {
  DropdownMenu,
  DropdownMenuCheckboxItem,
@@ -28,14 +28,14 @@ import {
  DropdownMenuItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
-import { fetchManagedApiKeys } from "@/features/settings/api-key-manager.client";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Label } from "@/components/ui/forms/label";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
+import { fetchManagedApiKeys } from "@/features/settings/services/api-key-manager.client";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import { getApiKeyModelOptions } from "@/lib/api-key-models";
-import { aiTaskSessionOverrideSchema } from "@/lib/ai-task-contract";
+import { getApiKeyModelOptions } from "@/lib/ai/api-key-models";
+import { aiTaskSessionOverrideSchema } from "@/lib/ai/ai-task-contract";
 
 import {
  archiveAiConversation,
@@ -47,27 +47,30 @@ import {
  sendPersistedAiConversationMessage,
  updateAiConversationMemoryPolicy,
  updateAiConversationSettings,
-} from "./ai-conversation-api";
-import { AiConversationHistorySheet } from "./AiConversationHistorySheet";
+} from "./services/ai-conversation-api";
+import { AiConversationHistorySheet } from "./components/AiConversationHistorySheet";
 import {
  AiConversationMessageBubble,
  AiConversationTypingBubble,
-} from "./AiConversationMessageBubble";
-import { deriveAiConversationRelationshipBand } from "./ai-conversation-relationship";
+} from "./components/AiConversationMessageBubble";
+import { deriveAiConversationRelationshipBand } from "./model/ai-conversation-relationship";
 import {
  aiConversationModeSchema,
  aiConversationSettingsUpdateSchema,
  type AiConversationMode,
  type AiConversationSession,
  type AiConversationSettingsUpdate,
-} from "./ai-conversation-session.schemas";
+} from "./model/ai-conversation-session.schemas";
 import {
  aiConversationCorrectionStyleSchema,
  aiConversationLearnerLevelSchema,
  aiConversationReplyModeSchema,
  type AiConversationMessage,
-} from "./ai-conversation.schemas";
-import { AiConversationRuntimeMenu, AUTO_RUNTIME_KEY_ID } from "./AiConversationRuntimeMenu";
+} from "./model/ai-conversation.schemas";
+import {
+ AiConversationRuntimeMenu,
+ AUTO_RUNTIME_KEY_ID,
+} from "./components/AiConversationRuntimeMenu";
 
 const RUNTIME_OVERRIDE_STORAGE_PREFIX = "hanzihome.ai-conversation.runtime-override.v2";
 const SESSION_QUERY_ROOT = ["hanzihome", "ai-conversation", "session"];

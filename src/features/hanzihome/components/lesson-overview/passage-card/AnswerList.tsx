@@ -1,5 +1,5 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import type { ClozeAnswer } from "./types";
 
 export function AnswerList({

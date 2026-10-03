@@ -3,11 +3,11 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Typography } from "@/components/ui/display/typography";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
 import type {

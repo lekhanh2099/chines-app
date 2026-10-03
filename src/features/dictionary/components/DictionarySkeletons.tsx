@@ -1,4 +1,4 @@
-import { PageContainer } from "@/components/layout/page-container";
+import { PageContainer } from "@/components/layout/workspace/page-container";
 
 export function DictionarySrsSkeleton() {
  return (

@@ -4,7 +4,7 @@ import { useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 
 import { lessonBookKey } from "@/features/hanzihome/utils/learning-state";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
 import { RadicalWorkspaceSkeleton } from "@/features/hanzihome/components/RadicalWorkspaceSkeleton";
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";

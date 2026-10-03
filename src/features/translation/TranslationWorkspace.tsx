@@ -6,12 +6,12 @@ import { Mic, Square } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import {
  ReaderHanziText,
  PinyinText,

@@ -3,9 +3,9 @@
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 
-import { PageContainer } from "@/components/layout/page-container";
-import { Badge } from "@/components/ui/badge";
-import { Typography } from "@/components/ui/typography";
+import { PageContainer } from "@/components/layout/workspace/page-container";
+import { Badge } from "@/components/ui/display/badge";
+import { Typography } from "@/components/ui/display/typography";
 import { NotebookContent } from "@/features/notebook/components/NotebookContent";
 import { NotebookSectionGuide } from "@/features/notebook/components/NotebookSectionGuide";
 import { NotebookToolbar } from "@/features/notebook/components/NotebookToolbar";

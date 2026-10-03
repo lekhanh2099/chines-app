@@ -5,10 +5,13 @@ import { useQuery } from "@tanstack/react-query";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { SegmentedControl, type SegmentedControlItem } from "@/components/ui/segmented-control";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import {
+ SegmentedControl,
+ type SegmentedControlItem,
+} from "@/components/ui/forms/segmented-control";
 import {
  Select,
  SelectContent,
@@ -16,9 +19,9 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { useHanziHomeListeningLesson } from "@/features/hanzihome/listening/useHanziHomeListeningLesson";
 import { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";

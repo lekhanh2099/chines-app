@@ -1,8 +1,8 @@
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Typography } from "@/components/ui/typography";
+import { Checkbox } from "@/components/ui/forms/checkbox";
+import { Typography } from "@/components/ui/display/typography";
 
 type ControlledCheckboxProps = {
  checked?: never;

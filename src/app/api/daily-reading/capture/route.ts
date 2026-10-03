@@ -5,13 +5,13 @@ import type { JsonFieldValue } from "@/types/json";
 import {
  dailyReadingErrorResponseSchema,
  type DailyReadingErrorCode,
-} from "@/features/daily-reading/daily-reading.schemas";
-import { captureDailyReadingArticle } from "@/features/daily-reading/daily-reading-capture.server";
-import { formatDailyReadingSourceReport } from "@/features/daily-reading/daily-reading-source.server";
+} from "@/features/daily-reading/model/daily-reading.schemas";
+import { captureDailyReadingArticle } from "@/features/daily-reading/source/daily-reading-capture.server";
+import { formatDailyReadingSourceReport } from "@/features/daily-reading/source/daily-reading-source.server";
 import {
  dailyReadingCaptureRequestSchema,
  dailyReadingCaptureResponseSchema,
-} from "@/features/daily-reading/daily-reading.schemas";
+} from "@/features/daily-reading/model/daily-reading.schemas";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

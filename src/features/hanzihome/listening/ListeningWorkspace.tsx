@@ -3,10 +3,10 @@
 import { useMemo, useState } from "react";
 import { Headphones } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Spinner } from "@/components/ui/spinner";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Spinner } from "@/components/ui/feedback/spinner";
 import {
  ReaderHanziText,
  StudyInstructionText,

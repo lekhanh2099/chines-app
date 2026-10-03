@@ -3,9 +3,9 @@
 import { useMemo, useState } from "react";
 import { BookOpen, GraduationCap, Search } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { Input } from "@/components/ui/forms/input";
 import {
  Select,
  SelectContent,
@@ -13,7 +13,7 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/forms/select";
 import { StructuredGrammarContent } from "@/features/hanzihome/components/grammar/StructuredGrammarContent";
 import { HskGrammarHeaderContextBridge } from "@/features/hanzihome/components/grammar/HskGrammarHeaderContextBridge";
 import {

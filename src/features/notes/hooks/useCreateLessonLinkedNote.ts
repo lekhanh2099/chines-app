@@ -9,7 +9,7 @@ import {
  linkNoteToLessonTarget,
  type CreateNoteInput,
  type LessonNoteRelationType,
-} from "@/services/notes.service";
+} from "@/services/notes/notes.service";
 
 type CreateLessonLinkedNoteInput = CreateNoteInput & {
  lessonId: string;

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { z } from "zod";
 
-import { buildCacheKey, getCachedAudio, setCachedAudio } from "@/lib/tts-cache";
+import { buildCacheKey, getCachedAudio, setCachedAudio } from "@/lib/audio/tts-cache";
 import {
  isOfflineSpeechSupported,
  speakChineseOffline,

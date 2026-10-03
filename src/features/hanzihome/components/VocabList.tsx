@@ -1,7 +1,7 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
-import { Typography } from "@/components/ui/typography";
+import { Label } from "@/components/ui/forms/label";
+import { Typography } from "@/components/ui/display/typography";
 import { useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
 import {
  Bookmark,
@@ -13,10 +13,10 @@ import {
  Search,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Chip } from "@/components/ui/chip";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Chip } from "@/components/ui/actions/chip";
+import { Input } from "@/components/ui/forms/input";
 import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
 import { learningStatusSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";

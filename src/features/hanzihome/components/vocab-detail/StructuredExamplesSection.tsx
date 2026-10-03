@@ -4,7 +4,7 @@ import {
  PinyinText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { BookOpen } from "lucide-react";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";

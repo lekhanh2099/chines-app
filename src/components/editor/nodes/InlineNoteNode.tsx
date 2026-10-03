@@ -1,4 +1,4 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 /**
  * InlineNoteNode — Custom Lexical DecoratorNode for inline annotations.
  *
@@ -8,7 +8,7 @@ import { Typography } from "@/components/ui/typography";
  */
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { FloatingLayer } from "@/components/ui/floating-layer";
+import { FloatingLayer } from "@/components/ui/overlays/floating-layer";
 import type {
  DOMConversionMap,
  DOMConversionOutput,

@@ -4,7 +4,7 @@ import { Focus, Headphones, ListEnd, Play, Repeat2, Settings2, Square } from "lu
 import { useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuCheckboxItem,
@@ -15,11 +15,11 @@ import {
  DropdownMenuRadioItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dropdown-menu";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Separator } from "@/components/ui/layout/separator";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import { Typography } from "@/components/ui/display/typography";
 import { HanziHomeReadingQuickSettingsMenu } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";

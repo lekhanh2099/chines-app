@@ -1,6 +1,6 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
+import { Label } from "@/components/ui/forms/label";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ErrorInput } from "@/types/error";
 import { JsonValueSchema, type JsonObject } from "@/types/json";
@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import { z, ZodError } from "zod";
 
 import { useAppForm } from "@/components/form";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { focusWithinRingClassName } from "@/components/ui/focus-ring";
 import {
  Dialog,
@@ -22,8 +22,8 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
-import { Tabs } from "@/components/ui/tabs";
+} from "@/components/ui/overlays/dialog";
+import { Tabs } from "@/components/ui/navigation/tabs";
 import {
  HanziHomeMutationError,
  isHanziHomeMutationConflict,

@@ -1,13 +1,13 @@
 "use client";
 
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import type { JsonFieldValue } from "@/types/json";
 import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import Link from "next/link";
 import { Layers3 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";

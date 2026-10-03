@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { MarkdownParagraph } from "./MarkdownParagraph";
 import { renderMarkdownInline } from "./markdown-inline";
 import { z } from "zod";

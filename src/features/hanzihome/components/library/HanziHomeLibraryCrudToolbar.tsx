@@ -2,7 +2,7 @@
 
 import { Pencil, X } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
 import { CreateBookDialog } from "./CreateBookDialog";
 import { CreateCourseDialog } from "./CreateCourseDialog";

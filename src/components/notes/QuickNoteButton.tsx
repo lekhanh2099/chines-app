@@ -7,13 +7,13 @@ import { Loader2, Zap } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { useRouter } from "@/i18n/navigation";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { createClient } from "@/lib/supabase/client";
-import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor-document";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor/editor-document";
 import { cn } from "@/lib/utils";
-import { focusModeStore } from "@/stores/focus-mode-store";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
 
 type QuickNoteVariant = ComponentProps<typeof Button>["variant"];
 

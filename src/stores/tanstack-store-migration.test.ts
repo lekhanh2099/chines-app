@@ -8,15 +8,15 @@ vi.mock("@/lib/supabase/client", () => ({
  }),
 }));
 
-import { appShellStore } from "./app-shell-store";
-import { dictionaryLookupStore } from "./dictionary-lookup-store";
-import { focusModeStore, isFocusNavigationAllowed } from "./focus-mode-store";
-import { headerToolbarStore } from "./header-toolbar-store";
-import { inspectorStore } from "./inspector-store";
-import { noteTabsStore } from "./note-tabs-store";
-import { sidebarStore } from "./sidebar-store";
-import { splitViewStore } from "./split-view-store";
-import { vocabDetailDrawerStore } from "./vocab-detail-drawer-store";
+import { appShellStore } from "./shell/app-shell-store";
+import { dictionaryLookupStore } from "./dictionary/dictionary-lookup-store";
+import { focusModeStore, isFocusNavigationAllowed } from "./shell/focus-mode-store";
+import { headerToolbarStore } from "./shell/header-toolbar-store";
+import { inspectorStore } from "./dictionary/inspector-store";
+import { noteTabsStore } from "./notes/note-tabs-store";
+import { sidebarStore } from "./shell/sidebar-store";
+import { splitViewStore } from "./notes/split-view-store";
+import { vocabDetailDrawerStore } from "./dictionary/vocab-detail-drawer-store";
 
 function createStorage(): Storage {
  const values = new Map<string, string>();

@@ -3,11 +3,11 @@
 import { Eye, Type, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Separator } from "@/components/ui/separator";
-import { Switch } from "@/components/ui/switch";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Separator } from "@/components/ui/layout/separator";
+import { Switch } from "@/components/ui/forms/switch";
+import { Typography } from "@/components/ui/display/typography";
 import { HanziFontPreview } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  fontOptions,

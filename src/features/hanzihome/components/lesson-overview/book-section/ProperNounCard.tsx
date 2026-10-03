@@ -1,7 +1,7 @@
 import type { JsonFieldValue } from "@/types/json";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import { RawDataDetails } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";

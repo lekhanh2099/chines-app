@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/display/badge";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import type { VocabularyItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { EditableNodePath } from "@/features/hanzihome/editing";

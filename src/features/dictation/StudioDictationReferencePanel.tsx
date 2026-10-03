@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Typography } from "@/components/ui/display/typography";
 import {
  HanziText,
  PinyinText,

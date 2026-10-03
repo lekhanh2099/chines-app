@@ -45,20 +45,20 @@ import {
  BasePopover as Popover,
  BasePopoverPositioner,
  BasePopoverPopup,
-} from "@/components/ui/base-popover";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/base-popover";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Input } from "@/components/ui/forms/input";
+import { Separator } from "@/components/ui/layout/separator";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
-import { containsChinese, extractChinese } from "@/lib/chinese-utils";
-import type { NoteListItem } from "@/services/notes.service";
-import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
-import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
+import { containsChinese, extractChinese } from "@/lib/text/chinese-utils";
+import type { NoteListItem } from "@/services/notes/notes.service";
+import { dictionaryLookupStore } from "@/stores/dictionary/dictionary-lookup-store";
+import { vocabDetailDrawerStore } from "@/stores/dictionary/vocab-detail-drawer-store";
 import { $createInternalLinkNode } from "./nodes/InternalLinkNode";
 import { $createInlineNoteNode } from "./nodes/InlineNoteNode";
 import { $isSelectionInsidePinyin, applyPinyinToSelection } from "./utils/pinyin-editor-actions";

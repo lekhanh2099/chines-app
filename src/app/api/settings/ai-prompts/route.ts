@@ -1,12 +1,12 @@
 import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { normalizeGeminiModel } from "@/lib/gemini-models";
+import { normalizeGeminiModel } from "@/lib/ai/gemini-models";
 import { createClient } from "@/lib/supabase/server";
 import {
  getUserAiPromptSettings,
  upsertUserAiPromptSettings,
-} from "@/services/ai-prompt-settings.service";
+} from "@/services/ai/ai-prompt-settings.service";
 
 const aiPromptSettingsSchema = z.object({
  wordLookupPrompt: z.string().trim().min(1).max(8000),

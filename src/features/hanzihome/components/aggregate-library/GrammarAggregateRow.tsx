@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { ActionCard } from "@/components/ui/action-card";
-import { Typography } from "@/components/ui/typography";
+import { ActionCard } from "@/components/ui/actions/action-card";
+import { Typography } from "@/components/ui/display/typography";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import type { AggregateGrammarItem } from "./aggregate-utils";

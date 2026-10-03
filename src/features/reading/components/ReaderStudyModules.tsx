@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 import type {
  ReaderAnnotation,

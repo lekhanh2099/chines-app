@@ -9,12 +9,12 @@ import {
  verifyExpectedAuthenticatedOwner,
 } from "@/lib/api/authenticated-route";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role.server";
-import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import { resolveAiAnalysisRuntime } from "@/services/ai/ai-analysis-runtime.service";
 import {
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
-} from "@/services/ai-runtime.service";
-import { analyzeHanziBasicDetailed } from "@/services/ai.service";
+} from "@/services/ai/ai-runtime.service";
+import { analyzeHanziBasicDetailed } from "@/services/ai/ai.service";
 import {
  getDictionaryEntryByHeadword,
  getPrimaryMeaning,
@@ -22,7 +22,7 @@ import {
  getVocabularyAnalysis,
  normalizeDictionaryHeadword,
  upsertDictionaryEntry,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 import { PersonalNoteModeSchema } from "@/types/database";
 
 export const dynamic = "force-dynamic";

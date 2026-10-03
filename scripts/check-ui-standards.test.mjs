@@ -237,7 +237,7 @@ describe("UI standards guard", () => {
  it("allows primitive implementation details inside the UI owner boundary", () => {
   expect(
    inspectUiSource({
-    file: "src/components/ui/button.tsx",
+    file: "src/components/ui/actions/button.tsx",
     source: 'export function Button() { return <button className="bg-primary px-4" />; }',
     isUiOwner: true,
    }),
@@ -257,7 +257,7 @@ describe("UI standards guard", () => {
  it("allows overlay elevation inside the UI primitive boundary", () => {
   expect(
    inspectUiSource({
-    file: "src/components/ui/dialog.tsx",
+    file: "src/components/ui/overlays/dialog.tsx",
     source: 'export function Dialog() { return <div className="shadow-theme-lg" />; }',
     isUiOwner: true,
    }),

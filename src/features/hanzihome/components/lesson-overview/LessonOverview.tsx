@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/layout/card";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import { LessonStudyDashboard } from "@/features/hanzihome/components/lesson-overview/overview/LessonStudyDashboard";
 import { getBookSections } from "@/features/hanzihome/components/lesson-overview/utils";

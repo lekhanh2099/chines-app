@@ -1,9 +1,9 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import { ListeningShortcutLegend } from "@/features/hanzihome/listening/ListeningShortcutLegend";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import type { TTSVoice } from "@/hooks/useTTS";

@@ -1,14 +1,14 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
+import { Label } from "@/components/ui/forms/label";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useId } from "react";
 import { Pause, Play, Square, Volume2 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { IconTile } from "@/components/ui/icon-tile";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Checkbox } from "@/components/ui/forms/checkbox";
+import { IconTile } from "@/components/ui/display/icon-tile";
 import {
  Select,
  SelectContent,
@@ -16,8 +16,8 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
+} from "@/components/ui/forms/select";
+import { Separator } from "@/components/ui/layout/separator";
 
 import type { useTTS } from "@/hooks/useTTS";
 

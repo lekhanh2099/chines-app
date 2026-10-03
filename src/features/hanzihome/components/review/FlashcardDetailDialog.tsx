@@ -2,9 +2,9 @@
 
 import { Bookmark } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import {
  Dialog,
  DialogBody,
@@ -12,7 +12,7 @@ import {
  DialogDescription,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import { GrammarPointReader } from "@/features/hanzihome/components/grammar/GrammarPointReader";
 import {
  HanziText,

@@ -1,4 +1,4 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 
 type Props = React.ComponentProps<"h2">;
 

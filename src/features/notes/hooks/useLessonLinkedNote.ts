@@ -5,7 +5,10 @@ import { z } from "zod";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
 import { noteQueryKeys } from "@/features/notes/query-keys";
-import { getNoteByLessonNoteLink, type LessonNoteRelationType } from "@/services/notes.service";
+import {
+ getNoteByLessonNoteLink,
+ type LessonNoteRelationType,
+} from "@/services/notes/notes.service";
 
 export function useLessonLinkedNote(
  lessonId: z.input<z.ZodOptional<z.ZodNullable<z.ZodString>>>,

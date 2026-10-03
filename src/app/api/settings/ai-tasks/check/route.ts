@@ -2,21 +2,21 @@ import type { JsonFieldValue } from "@/types/json";
 
 import { z } from "zod";
 
-import { generateAiConversationMemoryEmbedding } from "@/features/hanzihome/ai-conversation/ai-conversation-embedding.server";
-import { probeApiKeyModel } from "@/features/settings/api-key-discovery.server";
-import { aiTaskRuntimeCheckResponseSchema } from "@/features/settings/ai-task-settings.schema";
+import { generateAiConversationMemoryEmbedding } from "@/features/hanzihome/ai-conversation/memory/ai-conversation-embedding.server";
+import { probeApiKeyModel } from "@/features/settings/server/api-key-discovery.server";
+import { aiTaskRuntimeCheckResponseSchema } from "@/features/settings/model/ai-task-settings.schema";
 import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
 } from "@/lib/api/authenticated-route";
-import { aiTaskIdSchema } from "@/lib/ai-task-contract";
+import { aiTaskIdSchema } from "@/lib/ai/ai-task-contract";
 import {
  getAiRuntimeReceipt,
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime,
-} from "@/services/ai-runtime.service";
+} from "@/services/ai/ai-runtime.service";
 
 const requestSchema = z.strictObject({ taskId: aiTaskIdSchema });
 

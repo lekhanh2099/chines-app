@@ -9,8 +9,8 @@ import { z } from "zod";
 
 import { JsonObjectSchema } from "@/types/json";
 import { useAppForm } from "@/components/form";
-import { Button } from "@/components/ui/button";
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/actions/button";
+import { DropdownMenuItem } from "@/components/ui/overlays/dropdown-menu";
 import {
  Dialog,
  DialogBody,
@@ -20,7 +20,7 @@ import {
  DialogHeader,
  DialogTitle,
  DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import type { EditingToolsPresentation } from "@/features/hanzihome/context/types";
 import { createCanonicalContent } from "@/features/hanzihome/editing/direct-save";

@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useNoteDetail } from "./useNoteDetail";
-import type { NoteDetail } from "@/services/notes.service";
+import type { NoteDetail } from "@/services/notes/notes.service";
 import type { NoteDraftRecord } from "@/features/notes/local/note-draft-store";
 
 const noteMocks = vi.hoisted(() => ({
@@ -33,7 +33,7 @@ vi.mock("@/components/providers/QueryProvider", () => ({
  }),
 }));
 
-vi.mock("@/services/notes.service", () => ({
+vi.mock("@/services/notes/notes.service", () => ({
  getNoteById: noteMocks.getNoteById,
  updateNoteContent: noteMocks.updateContent,
  updateNoteTitle: noteMocks.updateTitle,

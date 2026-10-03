@@ -8,8 +8,8 @@
 import { JsonObjectSchema, JsonValueSchema } from "@/types/json";
 import { z } from "zod";
 import type { Tables } from "@/types/supabase.generated";
-import { ApiKeyProviderSchema } from "@/lib/api-key-providers";
-import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
+import { ApiKeyProviderSchema } from "@/lib/ai/api-key-providers";
+import { aiRuntimeReceiptSchema } from "@/lib/ai/ai-task-contract";
 
 export type DbUserAiPromptSettings = Tables<"user_ai_prompt_settings">;
 

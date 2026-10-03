@@ -1,7 +1,7 @@
 import { SearchX } from "lucide-react";
 
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/layout/card";
 import { useTranslations } from "next-intl";
 
 export function NotebookEmptyState() {

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { cn } from "@/lib/utils";
 
 export function HomeSectionHeader({

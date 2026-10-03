@@ -10,7 +10,7 @@ vi.mock("@/lib/api/authenticated-route", () => ({
  apiError: (message: string, status: number, code: string) =>
   Response.json({ error: message, code }, { status }),
 }));
-vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-persistence.server", () => ({
+vi.mock("@/features/hanzihome/ai-conversation/server/ai-conversation-persistence.server", () => ({
  AiConversationPersistenceConfigurationError: class AiConversationPersistenceConfigurationError extends Error {},
  AiConversationPersistenceNotReadyError: class AiConversationPersistenceNotReadyError extends Error {},
  AiConversationPersistenceRequestError: class AiConversationPersistenceRequestError extends Error {
@@ -18,7 +18,7 @@ vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-persistence.server
   readonly code = "PERSISTENCE_ERROR";
  },
 }));
-vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-stream-turn.server", () => ({
+vi.mock("@/features/hanzihome/ai-conversation/server/ai-conversation-stream-turn.server", () => ({
  createPersistedAiConversationTurnStream: mocks.createPersistedAiConversationTurnStream,
 }));
 

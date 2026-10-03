@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { DailyReading } from "@/features/daily-reading/daily-reading.schemas";
+import type { DailyReading } from "@/features/daily-reading/model/daily-reading.schemas";
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),
@@ -14,12 +14,12 @@ vi.mock("@/lib/api/authenticated-route", () => ({
  requireAuthenticatedRoute: mocks.requireAuthenticatedRoute,
  privateNoStoreJson: (body: object, init?: ResponseInit) => Response.json(body, init),
 }));
-vi.mock("@/services/ai-runtime.service", () => ({
+vi.mock("@/services/ai/ai-runtime.service", () => ({
  recordUserAiRuntimeActivity: mocks.recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
-vi.mock("@/features/daily-reading/daily-reading-enrichment.server", () => ({
+vi.mock("@/features/daily-reading/enrichment/daily-reading-enrichment.server", () => ({
  generateDailyReadingEnrichment: mocks.generateDailyReadingEnrichment,
 }));
 

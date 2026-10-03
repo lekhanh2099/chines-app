@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef } from "react";
 import { PenLine, Play, RotateCcw } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  playCharacterCompleteSound,
  playStrokeMistakeSound,

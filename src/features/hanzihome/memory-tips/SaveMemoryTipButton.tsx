@@ -3,8 +3,8 @@
 import { Lightbulb } from "lucide-react";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
+import { Button } from "@/components/ui/actions/button";
+import { Spinner } from "@/components/ui/feedback/spinner";
 import { isDuplicateMemoryTipError, MemoryTipsApiError } from "./memory-tip-api";
 import type { CreateMemoryTipPayload } from "./memory-tip.schema";
 import { useCreateMemoryTipMutation } from "./useMemoryTips";

@@ -14,7 +14,7 @@ import {
  recordUserAiRuntimeReceiptActivity,
  recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime,
-} from "@/services/ai-runtime.service";
+} from "@/services/ai/ai-runtime.service";
 import {
  attachWorkflowRunToDailyReadingJobs,
  completeDailyReadingEnrichmentJob,
@@ -24,19 +24,19 @@ import {
  deleteDailyReadingEnrichmentJobs,
  findReusableDailyReadingEnrichmentJob,
  listDailyReadingEnrichmentJobs,
-} from "@/features/daily-reading/daily-reading-enrichment-jobs.server";
+} from "@/features/daily-reading/enrichment/daily-reading-enrichment-jobs.server";
 import {
  dailyReadingEnrichmentJobRequestSchema,
  dailyReadingEnrichmentJobsResponseSchema,
  dailyReadingEnrichmentJobsQueryResponseSchema,
  type DailyReadingEnrichmentJobModuleRequest,
-} from "@/features/daily-reading/daily-reading-enrichment.schemas";
-import type { DailyReadingEnrichmentModule } from "@/features/daily-reading/daily-reading.schemas";
+} from "@/features/daily-reading/enrichment/daily-reading-enrichment.schemas";
+import type { DailyReadingEnrichmentModule } from "@/features/daily-reading/model/daily-reading.schemas";
 import {
  dailyReadingEnrichmentWorkflow,
  type DailyReadingEnrichmentWorkflowInput,
-} from "@/features/daily-reading/daily-reading-enrichment.workflow";
-import type { AiTaskId } from "@/lib/ai-task-contract";
+} from "@/features/daily-reading/enrichment/daily-reading-enrichment.workflow";
+import type { AiTaskId } from "@/lib/ai/ai-task-contract";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

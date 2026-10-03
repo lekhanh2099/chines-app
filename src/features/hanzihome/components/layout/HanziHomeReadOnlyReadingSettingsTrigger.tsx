@@ -3,13 +3,13 @@
 import { Settings2 } from "lucide-react";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";
 

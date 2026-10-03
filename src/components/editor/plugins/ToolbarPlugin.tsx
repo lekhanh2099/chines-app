@@ -1,7 +1,7 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/forms/label";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogBody,
@@ -10,7 +10,7 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import {
  DropdownMenu,
  DropdownMenuContent,
@@ -18,9 +18,9 @@ import {
  DropdownMenuRadioGroup,
  DropdownMenuRadioItem,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Input } from "@/components/ui/forms/input";
+import { Separator } from "@/components/ui/layout/separator";
 /**
  * ToolbarPlugin — Playground-style toolbar for the Lexical editor.
  *

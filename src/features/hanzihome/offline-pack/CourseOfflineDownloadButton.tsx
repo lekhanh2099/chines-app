@@ -3,9 +3,9 @@
 import { CloudCheck, Download, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/overlays/tooltip";
 
 import { useCourseOfflinePack } from "./useCourseOfflinePack";
 

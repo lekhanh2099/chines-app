@@ -401,12 +401,12 @@ acceptance criteria pass on the current working tree.
       - Strictly excludes `/api/**`, `supabase.co`, and private auth endpoints.
       - Intercepts navigation requests (`mode: 'navigate'`) with network-first and cache-fallback strategy for full offline cold boot.
     - Automatic cache lifecycle management: deletes old versioned caches upon activation (`activate` event) and claims clients immediately.
-  - **Client PWA Registration** (`src/components/layout/PwaServiceWorkerRegister.tsx`):
+  - **Client PWA Registration** (`src/components/layout/runtime/PwaServiceWorkerRegister.tsx`):
     - Created isolated client component that registers `/sw.js` safely after the window `load` event, avoiding any degradation of initial LCP/FCP.
     - Mounted cleanly within root `LocaleLayout`.
   - **Testing & Quality Gates**:
     - `src/app/manifest.test.ts` (1 test) — **PASS**.
-    - `src/components/layout/PwaServiceWorkerRegister.test.tsx` (2 tests) — **PASS**.
+    - `src/components/layout/runtime/PwaServiceWorkerRegister.test.tsx` (2 tests) — **PASS**.
     - Full features & app test suite: 142 test files / 709 tests — **ALL PASS**.
     - `node scripts/check-source-standards.mjs` — **PASS**.
     - `npm run typecheck` — **PASS** (0 errors).
@@ -565,8 +565,8 @@ acceptance criteria pass on the current working tree.
   - Added scoped instant loading boundary:
     - `src/app/[locale]/(app)/hanzihome/loading.tsx`: streams `HanziHomeWorkspaceLoading` during cold and dynamic segment navigations.
   - Audited and eliminated unconditional `prefetch={false}` across core navigation links:
-    - `src/components/layout/Sidebar.tsx`: restored Next.js route prefetching on all primary sidebar nav items, dropdown items, logo, and mobile bottom bar links.
-    - `src/components/layout/app-header-breadcrumb.tsx`: restored route prefetching on top breadcrumb links.
+    - `src/components/layout/navigation/Sidebar.tsx`: restored Next.js route prefetching on all primary sidebar nav items, dropdown items, logo, and mobile bottom bar links.
+    - `src/components/layout/header/app-header-breadcrumb.tsx`: restored route prefetching on top breadcrumb links.
     - `src/features/home/components/ContinueLearningPanel.tsx`: restored route prefetching.
     - `src/features/home/components/RecentNotesPanel.tsx`: restored route prefetching on notes links.
     - `src/features/home/components/HomeLearningPulse.tsx`: restored route prefetching on dictionary review button.
@@ -586,13 +586,13 @@ acceptance criteria pass on the current working tree.
     - `HanziHomeHeaderContextBridge.tsx`: triggers prefetch on fast-switcher lesson selection.
   - Preserved URL ownership and legacy redirects: canonical search params (`courseId`, `bookId`, `lesson`, `module`) maintained; `?module=radicals` redirect and UUID fallback preserved.
   - Implemented 0ms link-local pending navigation feedback & scoped skeletons:
-    - `src/stores/navigation-pending-store.ts`: TanStack Store managing instantaneous pending navigation feedback (`startNavigation` and `finishNavigation` with safe timeout reset).
-    - `src/components/layout/Header.tsx`: instant top navigation progress indicator (`.nav-progress-line` via CSS indeterminate animation) displaying upon click and clearing immediately when route updates (`pathname` / `searchParams`).
-    - `src/components/layout/Sidebar.tsx`: wired `startNavigation` into all desktop nav links, collapsed dropdowns, logo, and mobile bottom bar links.
+    - `src/stores/shell/navigation-pending-store.ts`: TanStack Store managing instantaneous pending navigation feedback (`startNavigation` and `finishNavigation` with safe timeout reset).
+    - `src/components/layout/header/Header.tsx`: instant top navigation progress indicator (`.nav-progress-line` via CSS indeterminate animation) displaying upon click and clearing immediately when route updates (`pathname` / `searchParams`).
+    - `src/components/layout/navigation/Sidebar.tsx`: wired `startNavigation` into all desktop nav links, collapsed dropdowns, logo, and mobile bottom bar links.
     - `src/app/[locale]/(app)/hsk/loading.tsx`: scoped loading boundary streaming `HanziHomeWorkspaceLoading` for HSK textbook routes.
   - Comprehensive unit test suite added:
     - `src/features/hanzihome/utils/lesson-route.test.ts` (8 tests) — **PASS**.
-    - `src/stores/navigation-pending-store.test.ts` (3 tests) — **PASS**.
+    - `src/stores/shell/navigation-pending-store.test.ts` (3 tests) — **PASS**.
   - Subtree test suite: `npm run test:run -- src/features/hanzihome/ src/stores/ src/components/layout/` — **PASS**, 84 files / 453 tests.
   - Full quality gates:
     - `node scripts/check-source-standards.mjs` — **PASS** (zero assertions/suppressions).

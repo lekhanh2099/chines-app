@@ -12,7 +12,7 @@ import {
  AppHeaderBreadcrumbItem,
  AppHeaderBreadcrumbLink,
  AppHeaderBreadcrumbSeparator,
-} from "@/components/layout/app-header-breadcrumb";
+} from "@/components/layout/header/app-header-breadcrumb";
 import { NoteEditorPanel } from "@/features/notes/components/NoteEditorPanel";
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
 import { NoteTabBar } from "@/components/notes/NoteTabBar";
@@ -23,14 +23,14 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Typography } from "@/components/ui/display/typography";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import type { NoteListItem } from "@/services/notes.service";
-import { focusModeStore } from "@/stores/focus-mode-store";
-import { headerToolbarStore } from "@/stores/header-toolbar-store";
-import { noteTabsStore } from "@/stores/note-tabs-store";
+import type { NoteListItem } from "@/services/notes/notes.service";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
+import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
+import { noteTabsStore } from "@/stores/notes/note-tabs-store";
 
 const OpenNoteTabDetailSchema = z.object({
  noteId: z.string(),

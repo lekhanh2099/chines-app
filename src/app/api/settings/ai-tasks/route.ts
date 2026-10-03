@@ -2,14 +2,14 @@ import type { JsonFieldValue } from "@/types/json";
 
 import { z } from "zod";
 
-import { getApiKeyModelOptions, isApiKeyModelSupported } from "@/lib/api-key-models";
-import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
+import { getApiKeyModelOptions, isApiKeyModelSupported } from "@/lib/ai/api-key-models";
+import { getApiKeyProviderLabel } from "@/lib/ai/api-key-providers";
 import {
  AI_TASK_REGISTRY,
  AI_SEMANTIC_MEMORY_MODEL,
  aiTaskAssignmentSchema,
  getAiTaskDefinition,
-} from "@/lib/ai-task-contract";
+} from "@/lib/ai/ai-task-contract";
 import {
  apiError,
  privateNoStoreJson,
@@ -19,14 +19,14 @@ import {
  AiTaskStorageNotReadyError,
  listUserAiTaskAssignments,
  upsertUserAiTaskAssignment,
-} from "@/services/ai-task-routing.service";
+} from "@/services/ai/ai-task-routing.service";
 import {
  getAiRuntimeCapabilitiesForProvider,
  getAiTaskRuntimePreviewsFromInventory,
  getUserAiTaskRuntimePreview,
  loadUserAiRuntimeInventory,
-} from "@/services/ai-runtime.service";
-import { listUserApiKeys } from "@/services/user-api-keys.service";
+} from "@/services/ai/ai-runtime.service";
+import { listUserApiKeys } from "@/services/ai/user-api-keys.service";
 
 const updateTaskSchema = aiTaskAssignmentSchema;
 

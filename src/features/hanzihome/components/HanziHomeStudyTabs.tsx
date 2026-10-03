@@ -3,8 +3,11 @@
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { SegmentedControl, type SegmentedControlSurface } from "@/components/ui/segmented-control";
+import { Badge } from "@/components/ui/display/badge";
+import {
+ SegmentedControl,
+ type SegmentedControlSurface,
+} from "@/components/ui/forms/segmented-control";
 
 export type HanziHomeStudyTab<T extends string> = {
  key: T;

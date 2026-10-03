@@ -5,9 +5,9 @@ import { Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { LearnerHanziText } from "@/components/patterns/learner-text";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 import {

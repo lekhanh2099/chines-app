@@ -4,7 +4,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { Bookmark, Check, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuContent,
@@ -12,7 +12,7 @@ import {
  DropdownMenuLabel,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/overlays/dropdown-menu";
 import { useRouter as useLocalizedRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";

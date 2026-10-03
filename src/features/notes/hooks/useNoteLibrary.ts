@@ -11,7 +11,7 @@ import {
  updateNoteFolder,
  updateNoteLibraryMetadata,
  type NoteFolder,
-} from "@/services/notes.service";
+} from "@/services/notes/notes.service";
 
 type CreateNoteFolderMutationInput = Parameters<typeof createNoteFolder>[2];
 type UpdateNoteFolderMutationInput = {

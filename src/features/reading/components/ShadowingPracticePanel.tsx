@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Mic, Square, Star, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Input } from "@/components/ui/forms/input";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";

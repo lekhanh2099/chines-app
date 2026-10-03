@@ -1,7 +1,7 @@
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
-import { OptionSelect } from "@/components/ui/option-select";
+import { OptionSelect } from "@/components/ui/forms/option-select";
 import type { IOption } from "@/types/option";
 
 type ControlledSelectProps = {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/forms/textarea";
 import { useId, type ComponentProps, type ReactNode } from "react";
 
 import { useFieldContext } from "@/components/form/form-context";

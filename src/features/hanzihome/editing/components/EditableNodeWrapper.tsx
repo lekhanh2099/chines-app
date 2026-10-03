@@ -13,7 +13,7 @@ import { ArrowDown, ArrowUp, Trash2 } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { cn } from "@/lib/utils";
 import { SoftDeleteConfirmDialog } from "./SoftDeleteConfirmDialog";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";

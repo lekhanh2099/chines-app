@@ -6,7 +6,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReactNode } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 
 type LessonModuleSidebarItemProps = {
  selected: boolean;

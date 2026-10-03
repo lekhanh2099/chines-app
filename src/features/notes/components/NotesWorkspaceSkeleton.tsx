@@ -1,4 +1,4 @@
-import { WorkspaceCommandHeader } from "@/components/layout/workspace-command-header";
+import { WorkspaceCommandHeader } from "@/components/layout/workspace/workspace-command-header";
 
 export function NotesWorkspaceSkeleton() {
  return (

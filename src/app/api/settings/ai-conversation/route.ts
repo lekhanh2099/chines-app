@@ -12,7 +12,7 @@ import {
  AiConversationSettingsPersistenceConfigurationError,
  AiConversationSettingsPersistenceNotReadyError,
  AiConversationSettingsPersistenceRequestError,
-} from "@/features/settings/ai-conversation-settings-persistence.server";
+} from "@/features/settings/server/ai-conversation-settings-persistence.server";
 import {
  aiConversationAccountPreferencesSchema,
  aiConversationManagedMemoryListSchema,
@@ -23,7 +23,7 @@ import {
  aiConversationMemoryResolveSchema,
  aiConversationMemoryResolvedResponseSchema,
  aiConversationSettingsOverviewSchema,
-} from "@/features/settings/ai-conversation-settings.schema";
+} from "@/features/settings/model/ai-conversation-settings.schema";
 import { logger } from "@/lib/logger";
 import { createClient } from "@/lib/supabase/server";
 

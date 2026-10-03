@@ -1,16 +1,16 @@
 import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { AiConversationContextState } from "@/features/hanzihome/ai-conversation/ai-conversation-context.server";
+import type { AiConversationContextState } from "@/features/hanzihome/ai-conversation/server/ai-conversation-context.server";
 import type {
  AiConversationPersistedMessage,
  AiConversationSession,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
+} from "@/features/hanzihome/ai-conversation/model/ai-conversation-session.schemas";
 import {
  DEFAULT_AI_CONVERSATION_PROFILE,
  type AiConversationMessage,
-} from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
-import type { ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
+} from "@/features/hanzihome/ai-conversation/model/ai-conversation.schemas";
+import type { ResolvedUserAiRuntime } from "@/services/ai/ai-runtime.service";
 
 const mocks = vi.hoisted(() => {
  class PersistenceConfigurationError extends Error {}
@@ -55,10 +55,10 @@ const mocks = vi.hoisted(() => {
 });
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-health.server", () => ({
+vi.mock("@/features/hanzihome/ai-conversation/server/ai-conversation-health.server", () => ({
  checkPersonalConversationRuntime: mocks.checkPersonalConversationRuntime,
 }));
-vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-persistence.server", () => ({
+vi.mock("@/features/hanzihome/ai-conversation/server/ai-conversation-persistence.server", () => ({
  AiConversationPersistenceConfigurationError: mocks.PersistenceConfigurationError,
  AiConversationPersistenceNotReadyError: mocks.PersistenceNotReadyError,
  AiConversationPersistenceRequestError: mocks.PersistenceRequestError,
@@ -75,16 +75,19 @@ vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-persistence.server
  updateAiConversationMemoryPolicy: mocks.updateAiConversationMemoryPolicy,
  updateAiConversationSettings: mocks.updateAiConversationSettings,
 }));
-vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-stream-provider.server", () => ({
- streamAiConversationProviderReply: mocks.streamAiConversationProviderReply,
-}));
-vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-turn.server", () => ({
+vi.mock(
+ "@/features/hanzihome/ai-conversation/server/ai-conversation-stream-provider.server",
+ () => ({
+  streamAiConversationProviderReply: mocks.streamAiConversationProviderReply,
+ }),
+);
+vi.mock("@/features/hanzihome/ai-conversation/server/ai-conversation-turn.server", () => ({
  generatePersistedAiConversationTurn: mocks.generatePersistedAiConversationTurn,
 }));
-vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-post-turn.workflow", () => ({
+vi.mock("@/features/hanzihome/ai-conversation/server/ai-conversation-post-turn.workflow", () => ({
  dispatchAiConversationPostTurnWorkflow: mocks.dispatchAiConversationPostTurnWorkflow,
 }));
-vi.mock("@/services/ai-runtime.service", () => ({
+vi.mock("@/services/ai/ai-runtime.service", () => ({
  classifyAiRuntimeOperationFailure: mocks.classifyAiRuntimeOperationFailure,
  recordUserAiRuntimeActivity: mocks.recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,

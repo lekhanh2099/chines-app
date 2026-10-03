@@ -1,7 +1,7 @@
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/forms/input";
 
 type ControlledCalendarProps = {
  value?: never;

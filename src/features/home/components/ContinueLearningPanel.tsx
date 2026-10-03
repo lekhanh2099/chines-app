@@ -1,11 +1,11 @@
 import { BookOpenCheck, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { ActionCard } from "@/components/ui/action-card";
-import { Card } from "@/components/ui/card";
+import { ActionCard } from "@/components/ui/actions/action-card";
+import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Typography } from "@/components/ui/typography";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Typography } from "@/components/ui/display/typography";
 import { HomeArrowIcon } from "@/features/home/components/HomePrimitives";
 import type { HomeDashboardModel } from "@/features/home/types";
 import { parseHanziHomeModule } from "@/features/hanzihome/workspace-modules";

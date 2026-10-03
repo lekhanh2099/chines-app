@@ -2,8 +2,8 @@
 
 import { Pencil, X } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { DropdownMenuCheckboxItem } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/actions/button";
+import { DropdownMenuCheckboxItem } from "@/components/ui/overlays/dropdown-menu";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import type { EditingToolsPresentation } from "@/features/hanzihome/context/types";

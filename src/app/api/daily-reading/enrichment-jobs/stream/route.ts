@@ -4,8 +4,8 @@ import { getRun } from "workflow/api";
 import {
  DailyReadingEnrichmentJobStorageError,
  listDailyReadingEnrichmentJobs,
-} from "@/features/daily-reading/daily-reading-enrichment-jobs.server";
-import { dailyReadingTranslationProgressStream } from "@/features/daily-reading/daily-reading-enrichment.workflow";
+} from "@/features/daily-reading/enrichment/daily-reading-enrichment-jobs.server";
+import { dailyReadingTranslationProgressStream } from "@/features/daily-reading/enrichment/daily-reading-enrichment.workflow";
 import { apiError, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
 
 export const runtime = "nodejs";

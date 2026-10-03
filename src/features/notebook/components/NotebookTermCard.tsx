@@ -1,10 +1,10 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { LearnerHanziText } from "@/components/patterns/learner-text";
 import { CircleAlert, Sparkles } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { Separator } from "@/components/ui/layout/separator";
 import { NotebookDeepDive } from "@/features/notebook/components/NotebookDeepDive";
 import { getNotebookDeepDive } from "@/features/notebook/data/notebookDeepDiveData";
 import type { NotebookItem } from "@/features/notebook/types";

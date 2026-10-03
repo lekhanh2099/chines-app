@@ -54,19 +54,43 @@ Owns:
 - feature query keys;
 - feature-specific server/data contracts.
 
-A feature may contain internal folders such as:
+Organize a feature by product responsibility, then by implementation role when
+the group needs further separation. Keep workspace/page entries at the feature
+root, or in the existing `workspaces/` pattern for multiple reading surfaces.
+Keep tests next to their implementation.
 
-```text
-components/
-hooks/
-schemas/
-editing/
-search/
-listening/
-memory-tips/
-```
+| Folder          | Responsibility                                           |
+| --------------- | -------------------------------------------------------- |
+| `components/`   | Feature UI below the workspace/page entry.               |
+| `hooks/`        | React hooks and query/interaction integration.           |
+| `model/`        | Domain types, schemas, policies and pure derived models. |
+| `services/`     | Client API/transport integration.                        |
+| `repositories/` | Canonical data reads and writes.                         |
+| `server/`       | Server orchestration, provider calls and workflows.      |
+| `local/`        | Browser persistence, locks and persisted-data migration. |
+| `runtime/`      | Runtime stores, selectors and lifecycle agents.          |
 
-Do not force every feature into an identical folder tree.
+Use a product group such as `source/`, `enrichment/`, `memory/`, `editing/` or
+`listening/` when it owns a distinct part of the feature. A small product group
+may keep its related files together; split it by role when responsibilities
+become difficult to follow. Preserve `.server`/`.client` boundaries within
+product groups.
+
+Create only folders with current owners and consumers. Do not force every
+feature into an identical folder tree or split a coherent group by file count
+alone. Existing feature-local `schemas/` directories remain valid owners;
+relocation must preserve their contracts and consumers.
+
+Cross-feature consumers use the feature's explicit entry, domain/service
+contract, or an explicitly shared feature UI contract such as
+`settings/components/AddApiKeyDialog`. A barrel file is not required, and must
+not mix server-only modules with client exports. Directory moves preserve state
+ownership, public behavior, routes and persistence formats.
+
+Concrete precedents are `src/features/reading` for workspaces, models,
+repositories, services and local persistence, and `src/features/reader` for
+generic model/runtime/component separation. The same rule is applied to
+`daily-reading`, `hanzihome/ai-conversation` and `settings`.
 
 ### `src/components/ui`
 
@@ -87,6 +111,26 @@ Examples:
 
 This is the only normal source boundary allowed to import Radix/Base UI
 primitive packages directly.
+
+Group primitives by their interaction or presentation responsibility:
+
+| Folder        | Existing owners                                                  |
+| ------------- | ---------------------------------------------------------------- |
+| `actions/`    | Button, IconButton, ActionCard and Chip.                         |
+| `forms/`      | Input, selection controls, Label and Field anatomy.              |
+| `navigation/` | Breadcrumb and content-panel Tabs.                               |
+| `overlays/`   | Dialog, Sheet, DropdownMenu, Popover, Tooltip and FloatingLayer. |
+| `display/`    | Typography, Badge, Avatar, IconTile and DataTable.               |
+| `layout/`     | Card, PageHeader, Separator and Resizable.                       |
+| `feedback/`   | Spinner and QueryErrorCard.                                      |
+
+The shared `focus-ring.ts` recipe stays at the UI root because controls across
+groups use it. Import the concrete module directly; do not add root forwarding
+files or a barrel that combines client and server-compatible primitives.
+`components.json` keeps `aliases.ui` at this boundary. Registry output must be
+reviewed against the grouped local source before applying it; place additions
+in the matching group and update their consumers instead of duplicating an
+existing primitive at the root.
 
 Primitive props describe stable visual or interaction contracts:
 
@@ -141,6 +185,19 @@ Layout components may compose patterns and primitives. They do not own feature
 business data except route-context composition explicitly assigned to the app
 shell.
 
+| Folder        | Responsibility                                                 |
+| ------------- | -------------------------------------------------------------- |
+| `header/`     | Header, breadcrumb, profile menu and locale switcher.          |
+| `navigation/` | Sidebar/mobile navigation, route map, logo and focus guard.    |
+| `scroll/`     | AppScrollViewport, scroll positioning and chrome scroll state. |
+| `theme/`      | ThemeProvider and the persisted theme contract.                |
+| `runtime/`    | AppToaster and PWA service-worker lifecycle integration.       |
+| `workspace/`  | Page/section composition, command header and panel controls.   |
+
+Tests stay next to the corresponding owner. Moving Header or navigation must
+not move feature search data, route toolbar registrations or scroll ownership
+into those components.
+
 ### `src/lib`
 
 Owns infrastructure and framework-agnostic helpers:
@@ -154,11 +211,25 @@ Owns infrastructure and framework-agnostic helpers:
 
 Do not place feature behavior in `lib` merely to share it.
 
+Use infrastructure groups such as `ai/`, `api/`, `audio/`, `auth/`, `editor/`,
+`env/`, `pronunciation/`, `query/`, `schema/`, `security/`, `storage/`, `supabase/`
+and `text/`. AI contracts/model catalogs remain separate from provider/data
+orchestration in `src/services/ai`. Encryption stays in `security/`; browser
+storage adapters stay in `storage/`. The cross-cutting `logger.ts` and `utils.ts`
+remain at the root. Directory grouping does not make a server module safe to
+import from a client.
+
 ### `src/services`
 
 Owns server/data orchestration that spans repositories or external providers.
 
 Services MUST NOT import Client Components.
+
+Group current services by domain: `ai/` owns AI runtime, task routing, prompt
+settings, provider calls and API-key persistence; `notes/` owns note data;
+`vocab/` owns vocabulary/dictionary data. Preserve each service's exported
+contract and existing server-only boundary. Do not split an existing service's
+business logic solely to populate subfolders.
 
 ### `src/stores`
 
@@ -166,6 +237,13 @@ Owns cross-feature client state only.
 
 Before adding a store, prove the value has multiple non-local consumers or must
 survive feature boundaries.
+
+Group stores by the interaction they own: `shell/` for chrome, focus, toolbar,
+sidebar and pending navigation; `search/` for global search interaction;
+`dictionary/` for lookup, inspector and vocabulary detail interaction;
+`notes/` for note tabs and split view. The cross-store migration test remains at
+the root. These folders preserve the existing cross-feature state owners and
+storage keys; they are not new stores or copies of feature/query state.
 
 ### `scripts`
 

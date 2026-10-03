@@ -1,8 +1,8 @@
 "use client";
 
-import { ActionCard } from "@/components/ui/action-card";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { ActionCard } from "@/components/ui/actions/action-card";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { useFlashcardControls } from "@/features/hanzihome/hooks/useFlashcardControls";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";

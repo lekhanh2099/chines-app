@@ -10,7 +10,7 @@ import {
  getBrowserStorage,
  readVersionedStorage,
  writeVersionedStorage,
-} from "@/lib/versioned-storage";
+} from "@/lib/storage/versioned-storage";
 import type { MemoryTip } from "./memory-tip.schema";
 
 const recentIdsStorageKey = "hanzihome.memoryTips.recentIds";

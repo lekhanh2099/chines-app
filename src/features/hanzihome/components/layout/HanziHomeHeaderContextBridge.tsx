@@ -10,7 +10,7 @@ import {
  AppHeaderBreadcrumbLink,
  AppHeaderBreadcrumbPage,
  AppHeaderBreadcrumbSeparator,
-} from "@/components/layout/app-header-breadcrumb";
+} from "@/components/layout/header/app-header-breadcrumb";
 import {
  Select,
  SelectContent,
@@ -18,13 +18,13 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/forms/select";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { useQueryClient } from "@tanstack/react-query";
 import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
 import { getLessonRouteValue } from "@/features/hanzihome/utils/lesson-route";
-import { focusModeStore } from "@/stores/focus-mode-store";
-import { headerToolbarStore } from "@/stores/header-toolbar-store";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
+import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
 import { useRouter } from "@/i18n/navigation";
 
 const HEADER_OWNER_ID = "hanzihome-lesson";

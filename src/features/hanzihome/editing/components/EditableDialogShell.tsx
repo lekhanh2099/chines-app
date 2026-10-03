@@ -5,7 +5,7 @@ import { RotateCcw } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogBody,
@@ -14,7 +14,7 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanzihomeFeatureContext";
 import { useHanziHomeActiveEditableNode } from "@/features/hanzihome/context/selectors";

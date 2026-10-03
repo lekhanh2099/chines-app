@@ -1,7 +1,7 @@
 "use client";
 
-import { PageContainer } from "@/components/layout/page-container";
-import { PageHeader } from "@/components/ui/page-header";
+import { PageContainer } from "@/components/layout/workspace/page-container";
+import { PageHeader } from "@/components/ui/layout/page-header";
 import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import { ContinueLearningPanel } from "@/features/home/components/ContinueLearningPanel";
 import { HomeDashboardSkeleton } from "@/features/home/components/HomeDashboardSkeleton";

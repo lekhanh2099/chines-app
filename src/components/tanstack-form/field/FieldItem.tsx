@@ -1,5 +1,5 @@
-import { Label } from "@/components/ui/label";
-import { Typography } from "@/components/ui/typography";
+import { Label } from "@/components/ui/forms/label";
+import { Typography } from "@/components/ui/display/typography";
 import type { AnyFieldApi } from "@tanstack/react-form";
 import { FieldInfo } from "./FieldInfo";
 

@@ -3,14 +3,14 @@
 import type { DragEvent, ReactNode } from "react";
 import { Ellipsis } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/overlays/dropdown-menu";
 import {
  Select,
  SelectContent,
@@ -18,7 +18,7 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/forms/select";
 import type {
  DraggedModule,
  NullableDraggedModule,

@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { z } from "zod";
@@ -8,10 +8,10 @@ import { useClientSession } from "@/components/providers/QueryProvider";
 import { useAppForm } from "@/components/tanstack-form/hooks/form";
 import { TextField } from "@/components/tanstack-form/field/TextField";
 import { PasswordField } from "@/components/tanstack-form/field/PasswordField";
-import { Button } from "@/components/ui/button";
-import { FieldGroup } from "@/components/ui/field";
-import { Spinner } from "@/components/ui/spinner";
-import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
+import { Button } from "@/components/ui/actions/button";
+import { FieldGroup } from "@/components/ui/forms/field";
+import { Spinner } from "@/components/ui/feedback/spinner";
+import { LocaleSwitcher } from "@/components/layout/header/LocaleSwitcher";
 import {
  defaultAppLocale,
  isAppLocale,

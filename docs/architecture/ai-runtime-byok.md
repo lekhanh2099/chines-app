@@ -25,7 +25,7 @@ User-facing provider keys must not come from `GEMINI_API_KEY`, `DEEPSEEK_API_KEY
 
 ## Runtime authority
 
-`src/services/ai-runtime.service.ts` owns provider selection.
+`src/services/ai/ai-runtime.service.ts` owns provider selection.
 
 A server feature requests a capability rather than selecting a provider directly:
 
@@ -63,7 +63,7 @@ A missing key is a recoverable product state, not a reason to silently switch to
 
 ## Compatibility adapters
 
-Some older structured-analysis functions still accept a `UserApiKeyCredential` record. `src/services/ai-analysis-runtime.service.ts` is the temporary compatibility bridge for those callers:
+Some older structured-analysis functions still accept a `UserApiKeyCredential` record. `src/services/ai/ai-analysis-runtime.service.ts` is the temporary compatibility bridge for those callers:
 
 1. resolve the requested capability through `ai-runtime.service`;
 2. recover only the exact selected credential record;

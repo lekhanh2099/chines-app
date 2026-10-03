@@ -7,13 +7,13 @@ import { useSearchParams } from "next/navigation";
 import { z } from "zod";
 
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { PageHeader } from "@/components/ui/page-header";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { PageHeader } from "@/components/ui/layout/page-header";
+import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
+import { Typography } from "@/components/ui/display/typography";
 import { useClientSession } from "@/components/providers/QueryProvider";
 import {
  HanziText,
@@ -29,7 +29,7 @@ import {
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
-import { DailyReadingGrammarPanel } from "@/features/daily-reading/DailyReadingGrammarPanel";
+import { DailyReadingGrammarPanel } from "@/features/daily-reading/components/DailyReadingGrammarPanel";
 import { ReaderDocumentStudy } from "@/features/reading/workspaces/ReaderDocumentStudy";
 import { ReaderExercisePanel } from "@/features/reading/components/ReaderExercisePanel";
 import { ReaderTranslationPracticePanel } from "@/features/reading/components/ReaderTranslationPracticePanel";

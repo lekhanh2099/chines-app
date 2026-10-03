@@ -15,22 +15,22 @@ import { type ComponentProps, type ReactNode } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { PageContainer } from "@/components/layout/page-container";
-import { ActionCard } from "@/components/ui/action-card";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Label } from "@/components/ui/label";
-import { PageHeader } from "@/components/ui/page-header";
-import { Separator } from "@/components/ui/separator";
-import { Switch } from "@/components/ui/switch";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
-import { Typography } from "@/components/ui/typography";
+import { PageContainer } from "@/components/layout/workspace/page-container";
+import { ActionCard } from "@/components/ui/actions/action-card";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Label } from "@/components/ui/forms/label";
+import { PageHeader } from "@/components/ui/layout/page-header";
+import { Separator } from "@/components/ui/layout/separator";
+import { Switch } from "@/components/ui/forms/switch";
+import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
+import { Typography } from "@/components/ui/display/typography";
 import { Link, useRouter } from "@/i18n/navigation";
-import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
-import { focusModeStore } from "@/stores/focus-mode-store";
+import { dictionaryLookupStore } from "@/stores/dictionary/dictionary-lookup-store";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
 
 import { AiSettingsWorkspace } from "./AiSettingsWorkspace";
-import { AppearanceSettingsSection } from "./AppearanceSettingsSection";
+import { AppearanceSettingsSection } from "./components/AppearanceSettingsSection";
 
 export const SettingsSectionSchema = z.enum(["app", "reading", "ai", "management"]);
 const SettingsSectionParamSchema = z.string().optional();

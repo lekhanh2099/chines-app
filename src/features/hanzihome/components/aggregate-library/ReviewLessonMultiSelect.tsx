@@ -1,10 +1,10 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Input } from "@/components/ui/input";
-import { Typography } from "@/components/ui/typography";
+import { Input } from "@/components/ui/forms/input";
+import { Typography } from "@/components/ui/display/typography";
 import { useMemo, useState } from "react";
 import { Check, ChevronDown, RotateCcw, Search, X } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import type { AggregateKind } from "./aggregate-utils";
 import { formatLessonHeading } from "./aggregate-utils";
 

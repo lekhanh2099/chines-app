@@ -6,8 +6,8 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import { useAppForm } from "@/components/form";
-import { Button } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
+import { Button } from "@/components/ui/actions/button";
+import { Spinner } from "@/components/ui/feedback/spinner";
 import {
  Dialog,
  DialogBody,
@@ -17,7 +17,7 @@ import {
  DialogHeader,
  DialogTitle,
  DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import {
  createMemoryTipPayloadSchema,
  memoryTipSchema,

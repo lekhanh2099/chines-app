@@ -5,14 +5,14 @@ import { Search, Square, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { Input } from "@/components/ui/forms/input";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { JsonValueSchema } from "@/types/json";
-import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
+import { aiRuntimeReceiptSchema } from "@/lib/ai/ai-task-contract";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import {
  analyzeContextualPronunciation,

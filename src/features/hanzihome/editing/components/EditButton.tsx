@@ -2,7 +2,7 @@
 
 import { Pencil } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 
 export function EditButton({ onClick, label = "Sửa" }: { onClick: () => void; label?: string }) {
  return (

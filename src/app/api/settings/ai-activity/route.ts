@@ -1,11 +1,11 @@
 import { z } from "zod";
 
-import { ApiKeyProviderSchema } from "@/lib/api-key-providers";
+import { ApiKeyProviderSchema } from "@/lib/ai/api-key-providers";
 import {
  aiActivityCursorSchema,
  aiActivityStatusSchema,
  aiTaskIdSchema,
-} from "@/lib/ai-task-contract";
+} from "@/lib/ai/ai-task-contract";
 import {
  apiError,
  privateNoStoreJson,
@@ -16,7 +16,7 @@ import {
  clearUserAiActivityEvents,
  listUserAiActivityEvents,
  listUserAiActivitySummary,
-} from "@/services/ai-task-routing.service";
+} from "@/services/ai/ai-task-routing.service";
 
 const activityQuerySchema = z.strictObject({
  taskId: aiTaskIdSchema.optional(),

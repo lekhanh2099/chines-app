@@ -2,10 +2,10 @@
 
 import { ArrowRight, CheckCircle2, Flame, PlayCircle, Repeat2, Sparkles, Zap } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import type { HomeDashboardModel } from "@/features/home/types";
 import { Link } from "@/i18n/navigation";
 

@@ -1,10 +1,10 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { LearnerHanziText } from "@/components/patterns/learner-text";
 import { ArrowLeftRight, CircleAlert } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Separator } from "@/components/ui/separator";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Separator } from "@/components/ui/layout/separator";
 import type { NotebookComparisonItem, NotebookItem } from "@/features/notebook/types";
 import { useTranslations } from "next-intl";
 

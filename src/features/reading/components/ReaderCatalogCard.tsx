@@ -1,9 +1,9 @@
 "use client";
 import type { ComponentProps } from "react";
 import { ChevronRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import { HanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Link } from "@/i18n/navigation";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";

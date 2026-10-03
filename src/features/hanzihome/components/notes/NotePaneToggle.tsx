@@ -1,7 +1,7 @@
 "use client";
 
 import type { MobileNotePane } from "./types";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 
 const mobileNotePanes: MobileNotePane[] = ["reading", "note"];
 

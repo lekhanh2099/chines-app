@@ -21,10 +21,10 @@ import {
  BasePopover as Popover,
  BasePopoverPopup,
  BasePopoverPositioner,
-} from "@/components/ui/base-popover";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/base-popover";
+import { Button } from "@/components/ui/actions/button";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";

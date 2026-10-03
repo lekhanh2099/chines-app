@@ -7,14 +7,14 @@ import {
  discoverApiKeyModels,
  probeApiKeyModel,
  type ApiKeyProviderSelection,
-} from "@/features/settings/api-key-discovery.server";
-import { isApiKeyModelSupported } from "@/lib/api-key-models";
-import type { AiTaskAssignment } from "@/lib/ai-task-contract";
+} from "@/features/settings/server/api-key-discovery.server";
+import { isApiKeyModelSupported } from "@/lib/ai/api-key-models";
+import type { AiTaskAssignment } from "@/lib/ai/ai-task-contract";
 import {
  AUTO_API_KEY_PROVIDER,
  ApiKeyProviderSchema,
  getApiKeyProviderLabel,
-} from "@/lib/api-key-providers";
+} from "@/lib/ai/api-key-providers";
 import { createClient } from "@/lib/supabase/server";
 import {
  createUserApiKey,
@@ -24,16 +24,16 @@ import {
  listUserApiKeys,
  moveUserApiKey,
  updateUserApiKey,
-} from "@/services/user-api-keys.service";
+} from "@/services/ai/user-api-keys.service";
 import {
  AiTaskStorageNotReadyError,
  listAssignedTasksForKey,
  listUserAiTaskAssignments,
-} from "@/services/ai-task-routing.service";
+} from "@/services/ai/ai-task-routing.service";
 import {
  DailyReadingEnrichmentJobStorageError,
  listActiveDailyReadingJobsForKey,
-} from "@/features/daily-reading/daily-reading-enrichment-jobs.server";
+} from "@/features/daily-reading/enrichment/daily-reading-enrichment-jobs.server";
 
 async function assignedKeyConflict(userId: string, keyId: string) {
  try {

@@ -13,16 +13,16 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuRadioGroup,
  DropdownMenuRadioItem,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Typography } from "@/components/ui/display/typography";
 import {
  useReaderCommands,
  useReaderDisplay,

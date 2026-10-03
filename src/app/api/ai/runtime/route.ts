@@ -1,6 +1,6 @@
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
-import { aiRuntimeWithTaskRuntimesResponseSchema } from "@/lib/ai-task-contract";
-import { getUserAiRuntimeOverview } from "@/services/ai-runtime.service";
+import { aiRuntimeWithTaskRuntimesResponseSchema } from "@/lib/ai/ai-task-contract";
+import { getUserAiRuntimeOverview } from "@/services/ai/ai-runtime.service";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

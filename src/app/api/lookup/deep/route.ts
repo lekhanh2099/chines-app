@@ -7,17 +7,17 @@ import {
  isAbortError,
  throwIfAborted,
  type ServerTimingMetric,
-} from "@/lib/request-utils";
+} from "@/lib/api/request-utils";
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
-import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import { resolveAiAnalysisRuntime } from "@/services/ai/ai-analysis-runtime.service";
 import {
  getAiRuntimeReceipt,
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
-} from "@/services/ai-runtime.service";
-import { analyzeHanziDetailed } from "@/services/ai.service";
-import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
+} from "@/services/ai/ai-runtime.service";
+import { analyzeHanziDetailed } from "@/services/ai/ai.service";
+import { getUserAiPromptSettings } from "@/services/ai/ai-prompt-settings.service";
 import {
  getDictionaryEntryByHeadword,
  getPrimaryMeaning,
@@ -26,7 +26,7 @@ import {
  hasInspectorDeepDiveData,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 import type { VocabData } from "@/types/database";
 
 const deepLookupSchema = z.object({

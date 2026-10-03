@@ -3,9 +3,9 @@
 import { Eye, RefreshCcw, Type } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import {
  DropdownMenuCheckboxItem,
  DropdownMenuItem,
@@ -16,9 +16,9 @@ import {
  DropdownMenuSub,
  DropdownMenuSubContent,
  DropdownMenuSubTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Spinner } from "@/components/ui/spinner";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Spinner } from "@/components/ui/feedback/spinner";
+import { Typography } from "@/components/ui/display/typography";
 import { HanziFontPreview } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  LessonReadingSettings,

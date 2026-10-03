@@ -6,7 +6,7 @@ import { getReaderDocument, listReaderDocuments } from "../repositories/reading-
 import { loadAppMessages } from "@/i18n/messages";
 import type { ReaderAnnotationRow } from "../model/reading-annotation.schemas";
 import type {} from "./Reading.browser.fixture";
-import { dailyReadingSchema } from "@/features/daily-reading/daily-reading.schemas";
+import { dailyReadingSchema } from "@/features/daily-reading/model/daily-reading.schemas";
 
 vi.mock("server-only", () => ({}));
 

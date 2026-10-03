@@ -8,8 +8,8 @@ import { RotateCcw, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/actions/button";
+import { DropdownMenuItem } from "@/components/ui/overlays/dropdown-menu";
 import {
  Dialog,
  DialogBody,
@@ -18,7 +18,7 @@ import {
  DialogHeader,
  DialogTitle,
  DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import {
  purgeDeletedCanonicalContent,
  restoreCanonicalContent,

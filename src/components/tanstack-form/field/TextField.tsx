@@ -3,7 +3,7 @@ import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 import { IOptionValueSchema } from "@/types/option";
 import { z } from "zod";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/forms/input";
 
 type TextFieldOwnedProps = {
  required?: never;

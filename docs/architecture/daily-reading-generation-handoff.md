@@ -52,7 +52,7 @@ Internal safety/quality bounds remain application-owned. User settings never exp
 
 ## Source acquisition
 
-`src/features/hanzihome/reader/daily-reading/daily-reading-source.server.ts` owns discovery orchestration.
+`src/features/daily-reading/source/daily-reading-source.server.ts` owns discovery orchestration.
 
 Discovery uses reviewed official RSS/listing sources plus bounded GDELT discovery. Metadata ranking is not the final selection authority. The collector extracts multiple candidates and reranks the validated content.
 

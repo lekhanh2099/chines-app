@@ -1,6 +1,6 @@
-import { PageContainer } from "@/components/layout/page-container";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { PageContainer } from "@/components/layout/workspace/page-container";
+import { Card } from "@/components/ui/layout/card";
+import { Separator } from "@/components/ui/layout/separator";
 import { useTranslations } from "next-intl";
 
 export function HomeDashboardSkeleton() {

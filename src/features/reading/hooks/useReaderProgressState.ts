@@ -14,7 +14,7 @@ import {
 import {
  fetchDailyReadingState,
  saveDailyReadingState,
-} from "@/features/daily-reading/daily-reading-state-api";
+} from "@/features/daily-reading/services/daily-reading-state-api";
 import {
  fetchPersonalLearningState,
  savePersonalLearningState,

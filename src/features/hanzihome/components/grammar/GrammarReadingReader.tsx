@@ -1,6 +1,6 @@
 import { HanziAwareText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
-import { Card } from "@/components/ui/card";
+import { Typography } from "@/components/ui/display/typography";
+import { Card } from "@/components/ui/layout/card";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 
 import type { GrammarReading } from "./grammar-reading";

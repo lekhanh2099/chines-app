@@ -9,7 +9,7 @@ import {
  getBasicVocabData,
  getVocabByHanzi,
  getVocabularyAnalysis,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 import { aiAnalysisSchema } from "@/types/database";
 import { dictionaryQueryKeys } from "../query-keys";
 

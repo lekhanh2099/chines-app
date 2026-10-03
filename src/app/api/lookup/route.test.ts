@@ -15,17 +15,17 @@ vi.mock("server-only", () => ({}));
 vi.mock("@/lib/supabase/server", () => ({
  createClient: vi.fn(async () => ({ auth: { getUser: mocks.getUser } })),
 }));
-vi.mock("@/services/ai-analysis-runtime.service", () => ({
+vi.mock("@/services/ai/ai-analysis-runtime.service", () => ({
  resolveAiAnalysisRuntime: mocks.resolveAiAnalysisRuntime,
 }));
-vi.mock("@/services/ai-prompt-settings.service", () => ({
+vi.mock("@/services/ai/ai-prompt-settings.service", () => ({
  getUserAiPromptSettings: mocks.getUserAiPromptSettings,
 }));
-vi.mock("@/services/ai.service", () => ({
+vi.mock("@/services/ai/ai.service", () => ({
  analyzeHanziDetailed: mocks.analyzeHanziDetailed,
  analyzeSentenceDetailed: mocks.analyzeSentenceDetailed,
 }));
-vi.mock("@/services/vocab.service", () => ({
+vi.mock("@/services/vocab/vocab.service", () => ({
  getDictionaryEntryByHeadword: mocks.getDictionaryEntryByHeadword,
  mapDictionaryEntryToVocabData: (entry: { id: string; headword: string }) => ({
   id: undefined,

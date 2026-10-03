@@ -1,4 +1,4 @@
-import { PageContainer } from "@/components/layout/page-container";
+import { PageContainer } from "@/components/layout/workspace/page-container";
 import { HskWorkspace } from "./HskWorkspace";
 import {
  getReaderDocument,

@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
-import { getRecentUserNotes } from "@/services/notes.service";
+import { getRecentUserNotes } from "@/services/notes/notes.service";
 import { noteQueryKeys } from "@/features/notes/query-keys";
 
 export function useRecentNotes(limit = 3) {

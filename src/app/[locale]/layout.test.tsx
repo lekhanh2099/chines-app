@@ -3,13 +3,13 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { appLocales } from "@/i18n/config";
 import { generateStaticParams } from "./layout";
 
-vi.mock("@/components/layout/AppToaster", () => ({ AppToaster: vi.fn() }));
-vi.mock("@/components/layout/PwaServiceWorkerRegister", () => ({
+vi.mock("@/components/layout/runtime/AppToaster", () => ({ AppToaster: vi.fn() }));
+vi.mock("@/components/layout/runtime/PwaServiceWorkerRegister", () => ({
  PwaServiceWorkerRegister: vi.fn(),
 }));
-vi.mock("@/components/layout/ThemeProvider", () => ({ ThemeProvider: vi.fn() }));
+vi.mock("@/components/layout/theme/ThemeProvider", () => ({ ThemeProvider: vi.fn() }));
 vi.mock("@/components/providers/QueryProvider", () => ({ QueryProvider: vi.fn() }));
-vi.mock("@/components/ui/tooltip", () => ({ TooltipProvider: vi.fn() }));
+vi.mock("@/components/ui/overlays/tooltip", () => ({ TooltipProvider: vi.fn() }));
 vi.mock("@/features/dictionary/components/VocabInspectorProvider", () => ({
  VocabInspectorProvider: vi.fn(),
 }));

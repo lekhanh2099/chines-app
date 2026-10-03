@@ -20,16 +20,16 @@ const mocks = vi.hoisted(() => ({
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/lib/supabase/server", () => ({ createClient: mocks.createClient }));
-vi.mock("@/features/settings/api-key-discovery.server", () => ({
+vi.mock("@/features/settings/server/api-key-discovery.server", () => ({
  discoverApiKeyModels: mocks.discoverApiKeyModels,
  probeApiKeyModel: mocks.probeApiKeyModel,
 }));
-vi.mock("@/services/ai-task-routing.service", () => ({
+vi.mock("@/services/ai/ai-task-routing.service", () => ({
  AiTaskStorageNotReadyError: class AiTaskStorageNotReadyError extends Error {},
  listAssignedTasksForKey: mocks.listAssignedTasksForKey,
  listUserAiTaskAssignments: mocks.listUserAiTaskAssignments,
 }));
-vi.mock("@/services/user-api-keys.service", () => ({
+vi.mock("@/services/ai/user-api-keys.service", () => ({
  createUserApiKey: mocks.createUserApiKey,
  deleteUserApiKey: mocks.deleteUserApiKey,
  getUserApiKeysSchemaStatus: mocks.getUserApiKeysSchemaStatus,
@@ -38,7 +38,7 @@ vi.mock("@/services/user-api-keys.service", () => ({
  moveUserApiKey: mocks.moveUserApiKey,
  updateUserApiKey: mocks.updateUserApiKey,
 }));
-vi.mock("@/features/daily-reading/daily-reading-enrichment-jobs.server", () => ({
+vi.mock("@/features/daily-reading/enrichment/daily-reading-enrichment-jobs.server", () => ({
  DailyReadingEnrichmentJobStorageError: class DailyReadingEnrichmentJobStorageError extends Error {},
  listActiveDailyReadingJobsForKey: mocks.listActiveDailyReadingJobsForKey,
 }));

@@ -8,10 +8,10 @@ import { Code2, Loader2, Save, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import type { z } from "zod";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { focusWithinRingClassName } from "@/components/ui/focus-ring";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/forms/input";
+import { Label } from "@/components/ui/forms/label";
 import {
  Select,
  SelectContent,
@@ -19,8 +19,8 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Typography } from "@/components/ui/display/typography";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { cn } from "@/lib/utils";
 import { formatHtmlSource } from "../html-artifact-display-utils";

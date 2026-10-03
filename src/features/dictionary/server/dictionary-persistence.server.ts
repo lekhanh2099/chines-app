@@ -2,7 +2,7 @@ import "server-only";
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 
-import { mapDictionaryEntryToVocabData } from "@/services/vocab.service";
+import { mapDictionaryEntryToVocabData } from "@/services/vocab/vocab.service";
 import type { DbDictionaryCore, PersonalNoteMode, VocabData } from "@/types/database";
 import type { Database } from "@/types/supabase.generated";
 

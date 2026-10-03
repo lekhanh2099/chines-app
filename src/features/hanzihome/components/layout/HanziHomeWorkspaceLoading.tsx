@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/layout/card";
 
 export function HanziHomeWorkspaceLoading() {
  return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { BookSectionContent } from "@/features/hanzihome/components/LessonOverview";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import {

@@ -3,11 +3,11 @@
 import { BookCopy, BookOpenCheck, Headphones, LibraryBig, Shapes } from "lucide-react";
 
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Separator } from "@/components/ui/separator";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Separator } from "@/components/ui/layout/separator";
+import { Typography } from "@/components/ui/display/typography";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
 import { CourseCrudActions } from "@/features/hanzihome/components/library/CourseCrudActions";
 import type {

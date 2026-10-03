@@ -6,10 +6,10 @@ import { RotateCcw, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 

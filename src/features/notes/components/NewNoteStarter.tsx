@@ -6,11 +6,11 @@ import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { useRouter } from "@/i18n/navigation";
-import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor-document";
-import { focusModeStore } from "@/stores/focus-mode-store";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor/editor-document";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
 
 export function NewNoteStarter() {
  const t = useTranslations("Notes");

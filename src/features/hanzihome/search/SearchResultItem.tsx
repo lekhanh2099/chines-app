@@ -1,9 +1,9 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Typography } from "@/components/ui/display/typography";
 import { cn } from "@/lib/utils";
 import {
  BookOpen,

@@ -5,8 +5,8 @@ import { FileText } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Typography } from "@/components/ui/typography";
-import type { NoteFolder, NoteListItem } from "@/services/notes.service";
+import { Typography } from "@/components/ui/display/typography";
+import type { NoteFolder, NoteListItem } from "@/services/notes/notes.service";
 
 import type { LessonLookup } from "./noteContext";
 import { NoteCreateDialog } from "./NoteCreateDialog";

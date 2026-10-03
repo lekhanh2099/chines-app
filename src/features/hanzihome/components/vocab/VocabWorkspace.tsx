@@ -14,8 +14,8 @@ import { getVocabItemKey, getVocabSearchText } from "@/features/hanzihome/utils/
 import { EditableNodeWrapper, type NullableEditableNodePath } from "@/features/hanzihome/editing";
 import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/VocabBulkEditDialog";
 import { useHanziHomeLessonVocabulary } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 
 type VocabWorkspaceProps = {
  compact?: boolean;

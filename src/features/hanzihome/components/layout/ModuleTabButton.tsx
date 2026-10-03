@@ -2,7 +2,7 @@
 
 import type { DragEvent } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import type {
  DraggedModule,
  NullableDraggedModule,

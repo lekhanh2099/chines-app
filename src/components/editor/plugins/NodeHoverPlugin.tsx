@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 /**
  * NodeHoverPlugin — Shows a floating tooltip when hovering over
  * InternalLinkNode elements in the editor.
@@ -11,7 +11,7 @@ import { Typography } from "@/components/ui/typography";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { createPortal } from "react-dom";
-import { FloatingLayer } from "@/components/ui/floating-layer";
+import { FloatingLayer } from "@/components/ui/overlays/floating-layer";
 
 type TooltipState = {
  noteTitle: string;

@@ -17,16 +17,16 @@ vi.mock("@/lib/api/authenticated-route", () => ({
   Response.json({ error: message, ...(code ? { code } : {}) }, { status }),
  privateNoStoreJson: (body: object, init?: ResponseInit) => Response.json(body, init),
 }));
-vi.mock("@/services/ai-task-routing.service", () => ({
+vi.mock("@/services/ai/ai-task-routing.service", () => ({
  AiTaskStorageNotReadyError: class AiTaskStorageNotReadyError extends Error {},
  listUserAiTaskAssignments: mocks.listUserAiTaskAssignments,
  upsertUserAiTaskAssignment: mocks.upsertUserAiTaskAssignment,
 }));
-vi.mock("@/services/user-api-keys.service", () => ({
+vi.mock("@/services/ai/user-api-keys.service", () => ({
  listUserApiKeys: mocks.listUserApiKeys,
 }));
-vi.mock("@/services/ai-runtime.service", async (importOriginal) => {
- const original = await importOriginal<typeof import("@/services/ai-runtime.service")>();
+vi.mock("@/services/ai/ai-runtime.service", async (importOriginal) => {
+ const original = await importOriginal<typeof import("@/services/ai/ai-runtime.service")>();
  return {
   ...original,
   getAiTaskRuntimePreviewsFromInventory: mocks.getAiTaskRuntimePreviewsFromInventory,

@@ -3,12 +3,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Check, Copy } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { TranslationText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { ContextualReaderText } from "@/features/hanzihome/components/reading/ContextualReaderText";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";

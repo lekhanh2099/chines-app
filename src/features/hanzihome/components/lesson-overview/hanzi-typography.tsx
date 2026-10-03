@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { z } from "zod";
 
-import { Typography, type TypographyProps } from "@/components/ui/typography";
+import { Typography, type TypographyProps } from "@/components/ui/display/typography";
 import type { HanziReaderFont, LessonDisplayMode } from "./types";
 import {
  getReaderFontFamily,

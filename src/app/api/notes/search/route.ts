@@ -1,6 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { NextRequest, NextResponse } from "next/server";
-import { searchNotesByTitle } from "@/services/notes.service";
+import { searchNotesByTitle } from "@/services/notes/notes.service";
 
 /**
  * GET /api/notes/search?q=<query>

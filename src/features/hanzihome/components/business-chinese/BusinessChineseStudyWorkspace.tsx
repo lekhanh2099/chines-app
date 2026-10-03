@@ -34,17 +34,17 @@ import {
  AppHeaderBreadcrumbLink,
  AppHeaderBreadcrumbPage,
  AppHeaderBreadcrumbSeparator,
-} from "@/components/layout/app-header-breadcrumb";
-import { scrollAppContentToElement } from "@/components/layout/app-scroll";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+} from "@/components/layout/header/app-header-breadcrumb";
+import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/ui/layout/separator";
 import { Bookmark, CloudCheck, Tags } from "lucide-react";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
-import type { SegmentedControlItem } from "@/components/ui/segmented-control";
-import { Typography, type TypographyProps } from "@/components/ui/typography";
+import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
+import type { SegmentedControlItem } from "@/components/ui/forms/segmented-control";
+import { Typography, type TypographyProps } from "@/components/ui/display/typography";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
@@ -127,8 +127,8 @@ import {
 } from "@/features/hanzihome/practice/translation-practice";
 import { useRouter as useLocalizedRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { focusModeStore } from "@/stores/focus-mode-store";
-import { headerToolbarStore } from "@/stores/header-toolbar-store";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
+import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
 
 const headerOwnerId = "business-chinese-study";
 const chineseGraphemeSegmenter = new Intl.Segmenter("zh-CN", {

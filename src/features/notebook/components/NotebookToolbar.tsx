@@ -12,11 +12,11 @@ import {
  TableProperties,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { SegmentedControl } from "@/components/ui/segmented-control";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Input } from "@/components/ui/forms/input";
+import { Label } from "@/components/ui/forms/label";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
 import type {
  NotebookGroup,
  NotebookSectionId,

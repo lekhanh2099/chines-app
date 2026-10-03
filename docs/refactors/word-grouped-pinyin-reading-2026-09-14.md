@@ -256,7 +256,7 @@ CP3a/CP3b là các phần nhỏ để review, không được kết luận featu
 - `src/features/hanzihome/reader-adapters/useLessonReader.tsx`.
 - `src/features/reader/runtime/reader-services.ts` theo contract đã chốt CP0.
 - `src/features/reading/workspaces/ReaderDocumentStudy.tsx`, `src/features/reader/components/ReaderSegment.tsx`, `src/features/reader/components/Reader.test.tsx`.
-- `src/features/hanzihome/inspector/HanziInspectorWorkspace.tsx`, `src/features/daily-reading/DailyReadingLibrary.tsx`: chỉ generated reading presentation được kiểm kê.
+- `src/features/hanzihome/inspector/HanziInspectorWorkspace.tsx`, `src/features/daily-reading/components/DailyReadingLibrary.tsx`: chỉ generated reading presentation được kiểm kê.
 - `src/features/reader/runtime/Reader.browser.fixture.tsx`: cập nhật producer service contract nếu CP0 chọn phương án đề xuất.
 
 - [x] Progressive đổi riêng auto path; source raw line, visibility, meaning, tap sizing và TTS handlers giữ nguyên.

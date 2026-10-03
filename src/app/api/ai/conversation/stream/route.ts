@@ -4,9 +4,9 @@ import {
  AiConversationPersistenceConfigurationError,
  AiConversationPersistenceNotReadyError,
  AiConversationPersistenceRequestError,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-persistence.server";
-import { aiConversationTurnRequestSchema } from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
-import { createPersistedAiConversationTurnStream } from "@/features/hanzihome/ai-conversation/ai-conversation-stream-turn.server";
+} from "@/features/hanzihome/ai-conversation/server/ai-conversation-persistence.server";
+import { aiConversationTurnRequestSchema } from "@/features/hanzihome/ai-conversation/model/ai-conversation-session.schemas";
+import { createPersistedAiConversationTurnStream } from "@/features/hanzihome/ai-conversation/server/ai-conversation-stream-turn.server";
 import { apiError, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
 import { logger } from "@/lib/logger";
 import type { JsonFieldValue } from "@/types/json";

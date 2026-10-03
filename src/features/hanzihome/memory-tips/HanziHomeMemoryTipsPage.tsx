@@ -4,21 +4,21 @@ import { useState } from "react";
 import { Lightbulb, MoreHorizontal, Pencil, Pin, PinOff, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
-import { PageContainer } from "@/components/layout/page-container";
+import { PageContainer } from "@/components/layout/workspace/page-container";
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { PageHeader } from "@/components/ui/page-header";
-import { QueryErrorCard } from "@/components/ui/query-error-card";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dropdown-menu";
+import { PageHeader } from "@/components/ui/layout/page-header";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
+import { Typography } from "@/components/ui/display/typography";
 import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
 import { MemoryTipsSkeleton } from "@/features/hanzihome/memory-tips/MemoryTipsSkeleton";
 import { MemoryTipDialog } from "./MemoryTipDialog";

@@ -2,8 +2,8 @@ import type { JsonFieldValue } from "@/types/json";
 
 import { z } from "zod";
 
-import { checkPersonalConversationRuntime } from "@/features/hanzihome/ai-conversation/ai-conversation-health.server";
-import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/ai-conversation-output";
+import { checkPersonalConversationRuntime } from "@/features/hanzihome/ai-conversation/server/ai-conversation-health.server";
+import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/model/ai-conversation-output";
 import {
  AiConversationPersistenceConfigurationError,
  AiConversationPersistenceNotReadyError,
@@ -20,8 +20,8 @@ import {
  loadRecentAiConversationMessages,
  updateAiConversationMemoryPolicy,
  updateAiConversationSettings,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-persistence.server";
-import { dispatchAiConversationPostTurnWorkflow } from "@/features/hanzihome/ai-conversation/ai-conversation-post-turn.workflow";
+} from "@/features/hanzihome/ai-conversation/server/ai-conversation-persistence.server";
+import { dispatchAiConversationPostTurnWorkflow } from "@/features/hanzihome/ai-conversation/server/ai-conversation-post-turn.workflow";
 import {
  aiConversationArchiveResponseSchema,
  aiConversationHistorySchema,
@@ -32,15 +32,15 @@ import {
  aiConversationSettingsUpdateSchema,
  aiConversationTurnRequestSchema,
  aiConversationTurnResponseSchema,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
-import { streamAiConversationProviderReply } from "@/features/hanzihome/ai-conversation/ai-conversation-stream-provider.server";
-import { generatePersistedAiConversationTurn } from "@/features/hanzihome/ai-conversation/ai-conversation-turn.server";
+} from "@/features/hanzihome/ai-conversation/model/ai-conversation-session.schemas";
+import { streamAiConversationProviderReply } from "@/features/hanzihome/ai-conversation/server/ai-conversation-stream-provider.server";
+import { generatePersistedAiConversationTurn } from "@/features/hanzihome/ai-conversation/server/ai-conversation-turn.server";
 import {
  aiConversationRequestSchema,
  aiConversationResponseSchema,
  type AiConversationMessage,
  type AiConversationProfile,
-} from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
+} from "@/features/hanzihome/ai-conversation/model/ai-conversation.schemas";
 import {
  apiError,
  privateNoStoreJson,
@@ -53,7 +53,7 @@ import {
  recordUserAiTaskBlockedActivity,
  resolveUserAiRuntime,
  resolveUserAiTaskRuntime,
-} from "@/services/ai-runtime.service";
+} from "@/services/ai/ai-runtime.service";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

@@ -27,16 +27,16 @@ import {
 import { useTranslations } from "next-intl";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Input } from "@/components/ui/forms/input";
+import { Typography } from "@/components/ui/display/typography";
 import {
  BasePopover as Popover,
  BasePopoverPopup,
  BasePopoverPositioner,
-} from "@/components/ui/base-popover";
+} from "@/components/ui/overlays/base-popover";
 import { cn } from "@/lib/utils";
 
 import {

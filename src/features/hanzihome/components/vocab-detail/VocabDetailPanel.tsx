@@ -4,11 +4,11 @@ import {
  HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";

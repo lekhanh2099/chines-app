@@ -15,22 +15,22 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { SectionHeader } from "@/components/layout/section-header";
-import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { SectionHeader } from "@/components/layout/workspace/section-header";
+import { SectionWrapper } from "@/components/layout/workspace/section-wrapper";
 import { LearnerHanziText } from "@/components/patterns/learner-text";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { IconButton } from "@/components/ui/icon-button";
-import { Separator } from "@/components/ui/separator";
-import { Spinner } from "@/components/ui/spinner";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { IconButton } from "@/components/ui/actions/icon-button";
+import { Separator } from "@/components/ui/layout/separator";
+import { Spinner } from "@/components/ui/feedback/spinner";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import type { DictionaryWordReadyViewModel, ExampleItem } from "@/features/dictionary/types";
 import { useTTS } from "@/hooks/useTTS";
 import { Link } from "@/i18n/navigation";
-import { getNormalizedRadicals } from "@/services/vocab.service";
+import { getNormalizedRadicals } from "@/services/vocab/vocab.service";
 
 type DictionarySectionProps = {
  viewModel: DictionaryWordReadyViewModel;

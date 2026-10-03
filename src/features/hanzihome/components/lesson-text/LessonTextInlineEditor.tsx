@@ -3,8 +3,8 @@
 import { FileText, Layers } from "lucide-react";
 import { useCallback, useMemo, type ReactNode } from "react";
 
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import { TextbookSectionCard } from "@/features/hanzihome/components/lesson-text/TextbookSectionCard";
 import {
  LessonModuleFrame,

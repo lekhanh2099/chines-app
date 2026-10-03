@@ -14,7 +14,7 @@ import {
  Save,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuCheckboxItem,
@@ -23,7 +23,7 @@ import {
  DropdownMenuLabel,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/overlays/dropdown-menu";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
 import type { JsonObject } from "@/types/json";
 

@@ -4,10 +4,10 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
  getClientAiPromptSettingsFingerprint,
  loadClientAiPromptSettings,
-} from "@/lib/ai-prompt-settings-client";
+} from "@/lib/ai/ai-prompt-settings-client";
 import { useClientSession } from "@/components/providers/QueryProvider";
-import { extractChinese, isChineseOnlyText } from "@/lib/chinese-utils";
-import { enqueueSelectionLookup } from "@/lib/selection-lookup-queue";
+import { extractChinese, isChineseOnlyText } from "@/lib/text/chinese-utils";
+import { enqueueSelectionLookup } from "@/lib/api/selection-lookup-queue";
 import { JsonValueSchema } from "@/types/json";
 import {
  PersonalNoteModeSchema,

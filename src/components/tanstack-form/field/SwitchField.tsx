@@ -1,9 +1,9 @@
-import { Label } from "@/components/ui/label";
+import { Label } from "@/components/ui/forms/label";
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
-import { Switch } from "@/components/ui/switch";
-import { Typography } from "@/components/ui/typography";
+import { Switch } from "@/components/ui/forms/switch";
+import { Typography } from "@/components/ui/display/typography";
 
 type ControlledSwitchProps = {
  checked?: never;

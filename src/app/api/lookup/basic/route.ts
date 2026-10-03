@@ -7,16 +7,16 @@ import {
  isAbortError,
  throwIfAborted,
  type ServerTimingMetric,
-} from "@/lib/request-utils";
+} from "@/lib/api/request-utils";
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
-import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import { resolveAiAnalysisRuntime } from "@/services/ai/ai-analysis-runtime.service";
 import {
  getAiRuntimeReceipt,
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
-} from "@/services/ai-runtime.service";
-import { analyzeHanziBasicDetailed } from "@/services/ai.service";
+} from "@/services/ai/ai-runtime.service";
+import { analyzeHanziBasicDetailed } from "@/services/ai/ai.service";
 import {
  getBasicVocabData,
  getDictionaryEntryByHeadword,
@@ -25,7 +25,7 @@ import {
  getVocabByHanzi,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 import type { VocabData } from "@/types/database";
 
 const basicLookupSchema = z.object({

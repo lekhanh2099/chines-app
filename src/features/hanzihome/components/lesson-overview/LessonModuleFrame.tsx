@@ -4,15 +4,15 @@ import { type ReactNode, useEffect, useRef, useState } from "react";
 import { Check, ListTree, PanelLeftOpen } from "lucide-react";
 import { z } from "zod";
 
-import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
+import { PanelToggleButton } from "@/components/layout/workspace/panel-toggle-button";
 import {
  BasePopover as Popover,
  BasePopoverPopup,
  BasePopoverPositioner,
-} from "@/components/ui/base-popover";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+} from "@/components/ui/overlays/base-popover";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import {
  Select,
  SelectContent,
@@ -20,9 +20,9 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
+} from "@/components/ui/forms/select";
+import { Separator } from "@/components/ui/layout/separator";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import {
  HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
  HanziHomeCommandBarPortal,

@@ -5,12 +5,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import type { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import { DropdownMenu, DropdownMenuContent } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent } from "@/components/ui/overlays/dropdown-menu";
 import type {
  DropdownMenuCheckboxItem,
  DropdownMenuItem,
  DropdownMenuRadioGroup,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/overlays/dropdown-menu";
 
 const { mockLearningState, learningStateMock, checkboxItemMock, radioGroupMock, menuItemMock } =
  vi.hoisted(() => ({
@@ -47,7 +47,7 @@ const { mockLearningState, learningStateMock, checkboxItemMock, radioGroupMock, 
   } satisfies ReturnType<typeof useLearningState>,
  }));
 
-vi.mock("@/components/ui/dropdown-menu", () => {
+vi.mock("@/components/ui/overlays/dropdown-menu", () => {
  const passthrough = ({ children }: { children?: ReactNode }) => children;
 
  return {

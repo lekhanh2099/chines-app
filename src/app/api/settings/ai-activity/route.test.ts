@@ -14,7 +14,7 @@ vi.mock("@/lib/api/authenticated-route", () => ({
   Response.json({ error: message, ...(code ? { code } : {}) }, { status }),
  privateNoStoreJson: (body: object, init?: ResponseInit) => Response.json(body, init),
 }));
-vi.mock("@/services/ai-task-routing.service", () => ({
+vi.mock("@/services/ai/ai-task-routing.service", () => ({
  AiTaskStorageNotReadyError: class AiTaskStorageNotReadyError extends Error {},
  clearUserAiActivityEvents: mocks.clearUserAiActivityEvents,
  listUserAiActivityEvents: mocks.listUserAiActivityEvents,

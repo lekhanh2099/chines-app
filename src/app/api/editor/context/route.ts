@@ -2,10 +2,10 @@ import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { createClient } from "@/lib/supabase/server";
-import { extractChinese } from "@/lib/chinese-utils";
-import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
-import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
-import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.service";
+import { extractChinese } from "@/lib/text/chinese-utils";
+import { resolveAiAnalysisRuntime } from "@/services/ai/ai-analysis-runtime.service";
+import { getUserAiPromptSettings } from "@/services/ai/ai-prompt-settings.service";
+import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai/ai.service";
 import {
  getDictionaryEntryByHeadword,
  getUserVocabProgressRecord,
@@ -18,7 +18,7 @@ import {
  isGenericEnglishFallbackAnalysis,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 import type {
  PersonalNoteMode,
  SmartSelectionMode,
@@ -26,13 +26,13 @@ import type {
  VocabData,
 } from "@/types/database";
 import { SmartSelectionModeSchema } from "@/types/database";
-import { GeminiModelIdSchema } from "@/lib/gemini-models";
-import type { AiRuntimeReceipt } from "@/lib/ai-task-contract";
+import { GeminiModelIdSchema } from "@/lib/ai/gemini-models";
+import type { AiRuntimeReceipt } from "@/lib/ai/ai-task-contract";
 import {
  getAiRuntimeReceipt,
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
-} from "@/services/ai-runtime.service";
+} from "@/services/ai/ai-runtime.service";
 import { z } from "zod";
 
 const MAX_SELECTION_LENGTH = 120;

@@ -20,7 +20,7 @@ import {
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogBody,
@@ -29,24 +29,24 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Field, FieldLabel } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Field, FieldLabel } from "@/components/ui/forms/field";
+import { Input } from "@/components/ui/forms/input";
 import {
  Select,
  SelectContent,
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Typography } from "@/components/ui/display/typography";
 import { useNoteFolderMutations } from "@/features/notes/hooks/useNoteLibrary";
 import {
  buildNoteFolderTree,
@@ -54,8 +54,8 @@ import {
  type NoteFolderTreeNode,
  type NoteLibraryView,
 } from "@/features/notes/note-library-utils";
-import type { NoteFolder, NoteFolderColor, NoteListItem } from "@/services/notes.service";
-import { NoteFolderColorSchema } from "@/services/notes.service";
+import type { NoteFolder, NoteFolderColor, NoteListItem } from "@/services/notes/notes.service";
+import { NoteFolderColorSchema } from "@/services/notes/notes.service";
 
 type FolderDialogState =
  | { mode: "create"; parentId: string | null }

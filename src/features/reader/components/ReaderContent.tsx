@@ -4,7 +4,7 @@ import { Fragment, memo } from "react";
 import { useTranslations } from "next-intl";
 
 import { LearnerHanziText } from "@/components/patterns/learner-text";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { useReaderDisplay, useReaderSelector, useReaderServices } from "../runtime/reader-context";
 import { ReaderSegment } from "./ReaderSegment";
 import { getReaderTypographyStyle } from "./reader-typography";

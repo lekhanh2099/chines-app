@@ -30,8 +30,8 @@ vi.mock("@/features/notes/components/NoteEditorPanel", () => ({
 vi.mock("@/components/notes/NoteTabBar", () => ({ NoteTabBar: () => null }));
 
 import { NoteTabContainer } from "./NoteTabContainer";
-import { headerToolbarStore } from "@/stores/header-toolbar-store";
-import { noteTabsStore } from "@/stores/note-tabs-store";
+import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
+import { noteTabsStore } from "@/stores/notes/note-tabs-store";
 
 function createStorage(): Storage {
  const values = new Map<string, string>();

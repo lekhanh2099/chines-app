@@ -9,7 +9,7 @@ import { useState } from "react";
 
 import { HanziStrokeWriter } from "@/features/hanzihome/components/HanziStrokeWriter";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
 type VocabWritingCueProps = {

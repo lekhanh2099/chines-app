@@ -1,10 +1,10 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { BookOpenCheck, ListChecks } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Separator } from "@/components/ui/separator";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Separator } from "@/components/ui/layout/separator";
 import type { NotebookSection } from "@/features/notebook/types";
 import { useTranslations } from "next-intl";
 

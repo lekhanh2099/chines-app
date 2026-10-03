@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState, type KeyboardEventHandler } from "react";
 import { Pause, Play, Repeat2 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { cn } from "@/lib/utils";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import {

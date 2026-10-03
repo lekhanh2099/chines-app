@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { Typography, type TypographyProps } from "@/components/ui/typography";
+import { Typography, type TypographyProps } from "@/components/ui/display/typography";
 import { cn } from "@/lib/utils";
 
 const LearnerTextElementSchema = z.enum(["span", "p", "h2", "h3", "strong"]);

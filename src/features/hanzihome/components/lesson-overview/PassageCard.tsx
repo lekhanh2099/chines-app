@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/layout/card";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { useState } from "react";
 import { Reader } from "@/features/reader/components/Reader";

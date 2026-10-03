@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { buildCacheKey } from "@/lib/tts-cache";
+import { buildCacheKey } from "@/lib/audio/tts-cache";
 import { splitTtsStudioText, ttsClipDraftSchema, ttsClipRowSchema } from "./tts-studio.schemas";
 
 describe("HanziHome TTS Studio contracts", () => {

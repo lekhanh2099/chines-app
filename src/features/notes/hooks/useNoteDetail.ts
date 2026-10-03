@@ -13,7 +13,7 @@ import {
  deleteNote,
  updateReadingContent,
  updateSplitViewEnabled,
-} from "@/services/notes.service";
+} from "@/services/notes/notes.service";
 import type { NoteCategory } from "@/types/database";
 import { noteQueryKeys } from "@/features/notes/query-keys";
 import {

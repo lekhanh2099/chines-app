@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import { BookOpen, Focus, Languages, ListEnd, Repeat2, Settings2, Square } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuCheckboxItem,
@@ -15,12 +15,12 @@ import {
  DropdownMenuRadioItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { Switch } from "@/components/ui/switch";
-import { Typography } from "@/components/ui/typography";
-import { SegmentedControl } from "@/components/ui/segmented-control";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Separator } from "@/components/ui/layout/separator";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import { Switch } from "@/components/ui/forms/switch";
+import { Typography } from "@/components/ui/display/typography";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
 import {
  readerFontSchema,
  readerSizeSchema,

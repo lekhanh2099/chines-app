@@ -1,6 +1,6 @@
-import { Label } from "@/components/ui/label";
-import { OptionSelect } from "@/components/ui/option-select";
-import { Typography } from "@/components/ui/typography";
+import { Label } from "@/components/ui/forms/label";
+import { OptionSelect } from "@/components/ui/forms/option-select";
+import { Typography } from "@/components/ui/display/typography";
 
 const allFilterOptionValue = "__all__";
 

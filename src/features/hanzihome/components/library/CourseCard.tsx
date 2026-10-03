@@ -4,18 +4,18 @@ import { useMemo, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, BookMarked } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
 import {
  Select,
  SelectContent,
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Typography } from "@/components/ui/display/typography";
 import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
 import type {
  HanziHomeCatalogCourse,

@@ -1,4 +1,4 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import type { AnyFieldApi } from "@tanstack/react-form";
 
 export function FieldInfo({

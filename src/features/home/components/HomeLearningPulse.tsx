@@ -1,11 +1,11 @@
 import type { ComponentProps, ReactNode } from "react";
 import { Bookmark, CheckCircle2, FileText, History, Repeat2, Workflow } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Separator } from "@/components/ui/separator";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Separator } from "@/components/ui/layout/separator";
+import { Typography } from "@/components/ui/display/typography";
 import type { HomeDashboardModel } from "@/features/home/types";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";

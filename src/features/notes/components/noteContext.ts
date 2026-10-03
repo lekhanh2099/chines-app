@@ -1,5 +1,5 @@
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
-import type { NoteDetail, NoteLinkSummary, NoteListItem } from "@/services/notes.service";
+import type { NoteDetail, NoteLinkSummary, NoteListItem } from "@/services/notes/notes.service";
 import type { JsonFieldValue } from "@/types/json";
 
 type NoteWithContextMap = {

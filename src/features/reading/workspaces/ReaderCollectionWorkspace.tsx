@@ -6,10 +6,10 @@ import { BookOpen } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Typography } from "@/components/ui/display/typography";
 import { ReaderCatalogCard } from "@/features/reading/components/ReaderCatalogCard";
 import { usePathname } from "@/i18n/navigation";
 import { JsonObjectSchema } from "@/types/json";

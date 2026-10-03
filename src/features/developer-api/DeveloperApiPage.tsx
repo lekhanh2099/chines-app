@@ -15,15 +15,15 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-import { PageContainer } from "@/components/layout/page-container";
+import { PageContainer } from "@/components/layout/workspace/page-container";
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Chip } from "@/components/ui/chip";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { PageHeader } from "@/components/ui/page-header";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Chip } from "@/components/ui/actions/chip";
+import { Input } from "@/components/ui/forms/input";
+import { Label } from "@/components/ui/forms/label";
+import { PageHeader } from "@/components/ui/layout/page-header";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import {
  Select,
@@ -31,9 +31,9 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Separator } from "@/components/ui/layout/separator";
+import { Typography } from "@/components/ui/display/typography";
 
 import {
  currentApiInventory,

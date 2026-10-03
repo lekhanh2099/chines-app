@@ -5,7 +5,7 @@ import { PenTool, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  playCharacterCompleteSound,
  playStrokeMistakeSound,

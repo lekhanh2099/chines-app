@@ -12,7 +12,7 @@ import {
  getNormalizedRelatedCompounds,
  getNormalizedRadicals,
  getNormalizedSynonyms,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 import type {
  DictionaryPageViewModel,
  DictionaryWordReadyViewModel,

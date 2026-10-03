@@ -18,8 +18,8 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogClose,
@@ -28,7 +28,7 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import {
  DropdownMenu,
  DropdownMenuContent,
@@ -39,20 +39,20 @@ import {
  DropdownMenuSubContent,
  DropdownMenuSubTrigger,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dropdown-menu";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Typography } from "@/components/ui/display/typography";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
 import { useUpdateNoteLibraryMetadata } from "@/features/notes/hooks/useNoteLibrary";
 import { useDeleteNoteFromList } from "@/features/notes/hooks/useNotesList";
 import { useQueryClient } from "@tanstack/react-query";
 import { useClientSession } from "@/components/providers/QueryProvider";
-import { getNoteById } from "@/services/notes.service";
+import { getNoteById } from "@/services/notes/notes.service";
 import { noteQueryKeys } from "@/features/notes/query-keys";
 import { getNoteDraft } from "@/features/notes/local/note-draft-store";
 import { Link } from "@/i18n/navigation";
-import type { NoteFolder, NoteListItem } from "@/services/notes.service";
-import { noteTabsStore } from "@/stores/note-tabs-store";
+import type { NoteFolder, NoteListItem } from "@/services/notes/notes.service";
+import { noteTabsStore } from "@/stores/notes/note-tabs-store";
 import { ReadingStatusSchema, type ReadingStatus } from "@/types/database";
 
 import type { LessonLookup } from "./noteContext";

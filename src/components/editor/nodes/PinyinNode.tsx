@@ -22,7 +22,7 @@ import { DecoratorNode, $getNodeByKey } from "lexical";
 import { useCallback, useContext, useEffect, useState, type JSX } from "react";
 import { LexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { getPolyphonicAlternatives } from "@/lib/pronunciation/pinyin-engine";
 
 /* ── Serialized shape (stored in Supabase JSONB) ── */

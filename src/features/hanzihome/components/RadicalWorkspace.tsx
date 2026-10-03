@@ -1,18 +1,18 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { useMemo, useState } from "react";
 import { ArrowRight, LayoutGrid, List, Pencil, Search, X } from "lucide-react";
 
-import { ActionCard } from "@/components/ui/action-card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Chip } from "@/components/ui/chip";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Input } from "@/components/ui/input";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
+import { ActionCard } from "@/components/ui/actions/action-card";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Chip } from "@/components/ui/actions/chip";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Input } from "@/components/ui/forms/input";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import {
  HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
  HanziHomeCommandBarPortal,

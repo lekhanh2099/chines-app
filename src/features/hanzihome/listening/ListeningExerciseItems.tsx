@@ -3,15 +3,15 @@
 import { useMemo, useState } from "react";
 import { Pencil, Play } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Input } from "@/components/ui/input";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Checkbox } from "@/components/ui/forms/checkbox";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Input } from "@/components/ui/forms/input";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import {
  StudyInstructionText,
  ReaderHanziText,

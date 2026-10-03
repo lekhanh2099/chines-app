@@ -6,15 +6,15 @@ import { Upload } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/actions/button";
+import { Input } from "@/components/ui/forms/input";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { useNoteFolderMutations, useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
 import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
 import { useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import type { NoteFolder } from "@/services/notes.service";
-import { focusModeStore } from "@/stores/focus-mode-store";
+import type { NoteFolder } from "@/services/notes/notes.service";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
 
 export function NoteImportButton({
  className,

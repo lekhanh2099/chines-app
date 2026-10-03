@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
-import type { NoteListItem } from "@/services/notes.service";
+import type { NoteListItem } from "@/services/notes/notes.service";
 import {
  buildLessonLookup,
  getNoteContext,

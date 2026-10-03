@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import { useAppForm } from "@/components/form";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogBody,
@@ -18,7 +18,7 @@ import {
  DialogHeader,
  DialogTitle,
  DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import { createCanonicalContent } from "@/features/hanzihome/editing/direct-save";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeEditableRecordMeta } from "@/features/hanzihome/types";

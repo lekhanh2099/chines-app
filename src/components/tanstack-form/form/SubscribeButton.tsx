@@ -1,6 +1,6 @@
 import { Loader2 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { useFormContext } from "../hooks/form-context";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {

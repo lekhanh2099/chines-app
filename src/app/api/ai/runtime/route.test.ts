@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { aiRuntimeReadinessResponseSchema } from "@/lib/ai-runtime-contract";
+import { aiRuntimeReadinessResponseSchema } from "@/lib/ai/ai-runtime-contract";
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),
@@ -12,7 +12,7 @@ vi.mock("@/lib/api/authenticated-route", () => ({
  privateNoStoreJson: (body: object, init?: ResponseInit) => Response.json(body, init),
 }));
 
-vi.mock("@/services/ai-runtime.service", () => ({
+vi.mock("@/services/ai/ai-runtime.service", () => ({
  getUserAiRuntimeOverview: mocks.getUserAiRuntimeOverview,
 }));
 

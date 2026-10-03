@@ -1,12 +1,12 @@
 import { createClient } from "@/lib/supabase/server";
-import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import { resolveAiAnalysisRuntime } from "@/services/ai/ai-analysis-runtime.service";
 import {
  getAiRuntimeReceipt,
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
-} from "@/services/ai-runtime.service";
-import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
-import { analyzeHanziDetailed } from "@/services/ai.service";
+} from "@/services/ai/ai-runtime.service";
+import { getUserAiPromptSettings } from "@/services/ai/ai-prompt-settings.service";
+import { analyzeHanziDetailed } from "@/services/ai/ai.service";
 import {
  getDictionaryEntryByHeadword,
  getVocabByHanzi,
@@ -14,7 +14,7 @@ import {
  getVocabularyAnalysis,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 

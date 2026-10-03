@@ -73,7 +73,7 @@ flowchart TD
   - _Đã xử lý:_ SW chuyển sang chiến lược Network-First with Cache Fallback (`caches.match(request)` $\to$ `caches.match(url.pathname)` $\to$ `caches.match("/vi/hanzihome")`). React App luôn được giữ mount trên DOM, bảo toàn toàn bộ state, router, theme và layout.
 - [x] **Bước 1.2: Persistent Audio Cache & Default Voice Fallback trong `useTTS.ts`**
   - _Trước đây:_ Khi offline, `voiceName` bị bỏ trống rỗng `""` khiến `speak()`, `generateAudio()` và `speakSequence()` bị silent abort, không phát ra bất kỳ âm thanh nào.
-  - _Đã xử lý:_ Định nghĩa `DEFAULT_MANDARIN_VOICE = "zh-CN-XiaoxiaoNeural"`, fallback an toàn ở mọi điểm phát âm, kết hợp cùng IndexedDB audio cache (`src/lib/tts-cache.ts`) lưu trữ và tái sử dụng audio blob offline.
+  - _Đã xử lý:_ Định nghĩa `DEFAULT_MANDARIN_VOICE = "zh-CN-XiaoxiaoNeural"`, fallback an toàn ở mọi điểm phát âm, kết hợp cùng IndexedDB audio cache (`src/lib/audio/tts-cache.ts`) lưu trữ và tái sử dụng audio blob offline.
 - [x] **Bước 1.3: Sửa Badge Sẵn Sàng Ngoại Tuyến (`BusinessChineseStudyWorkspace.tsx`)**
   - _Trước đây:_ Badge `<CloudCheck /> Sẵn sàng ngoại tuyến` bị **hardcode `true`** trên giao diện dù chưa có dữ liệu nào được lưu trong máy.
   - _Đã xử lý:_ Tạo hook `useIsLessonCached(lessonId)` trong `useHanziHomeLessonResources.ts`, truy vấn thực tế trạng thái IndexedDB: chỉ hiển thị badge xanh khi bài học đã được cache đầy đủ; ẩn hoàn toàn khi chưa cache.
@@ -96,7 +96,7 @@ flowchart TD
 - `src/features/dictionary/hooks/useTTS.ts`
 - `src/features/dictionary/services/offline-speech-fallback.ts`
 - `src/features/dictionary/hooks/useVocabDetail.ts`
-- `src/components/layout/Header.tsx` (thêm connection indicator)
+- `src/components/layout/header/Header.tsx` (thêm connection indicator)
 
 ### 1.5. Tiêu chí nghiệm thu (Acceptance Criteria / DoD)
 
@@ -112,7 +112,7 @@ flowchart TD
 
 ### 2.1. Bản chất vấn đề & Tại sao phải làm (The "Why")
 
-1. **Scroll Reset Bug ([AppScrollViewport.tsx:L30](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/AppScrollViewport.tsx#L30)):**
+1. **Scroll Reset Bug ([AppScrollViewport.tsx:L30](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/scroll/AppScrollViewport.tsx#L30)):**
    - _Phân tích logic:_
      ```typescript
      const routeKey = `${pathname}?${searchParams.toString()}`;
@@ -168,7 +168,7 @@ flowchart TD
 
 ### 2.3. Files tác động
 
-- `src/components/layout/AppScrollViewport.tsx`
+- `src/components/layout/scroll/AppScrollViewport.tsx`
 - `src/app/globals.css`
 - `public/fonts/*`
 - `src/features/dictionary/hooks/useVocabDetail.ts`
@@ -325,7 +325,7 @@ graph TD
 
 ### 4.4. Files tác động
 
-- `src/components/layout/Sidebar.tsx`
+- `src/components/layout/navigation/Sidebar.tsx`
 - `src/app/[locale]/page.tsx` hoặc `src/features/home/components/HomePage.tsx`
 - `src/features/srs/components/TodaySRSReviewWidget.tsx` (Component mới)
 - `src/features/srs/hooks/useDueSRSCards.ts`
@@ -374,8 +374,8 @@ graph TD
 
 ### 5.3. Files tác động
 
-- `src/components/ui/dialog.tsx`
-- `src/components/ui/sheet.tsx`
+- `src/components/ui/overlays/dialog.tsx`
+- `src/components/ui/overlays/sheet.tsx`
 - `src/messages/vi.json`
 - `src/messages/en.json`
 - Các components thuộc `src/features/dictionary/*` và `src/features/hanzihome/*`

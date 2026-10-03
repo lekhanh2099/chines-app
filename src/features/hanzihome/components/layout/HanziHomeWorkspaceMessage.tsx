@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { PageHeader } from "@/components/ui/page-header";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { PageHeader } from "@/components/ui/layout/page-header";
 
 export function HanziHomeWorkspaceMessage({
  eyebrow,

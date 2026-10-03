@@ -4,9 +4,9 @@ import type { ComponentProps } from "react";
 import { useEffect, useRef, useState } from "react";
 import { Code2, FileCode2, Maximize2, Minimize2, PanelRightClose } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Typography } from "@/components/ui/display/typography";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { cn } from "@/lib/utils";
 import type { JsonFieldValue } from "@/types/json";

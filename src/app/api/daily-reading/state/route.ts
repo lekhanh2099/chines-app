@@ -4,7 +4,7 @@ import { z } from "zod";
 import {
  getDailyReadingState,
  saveDailyReadingState,
-} from "@/features/daily-reading/daily-reading-state-repository.server";
+} from "@/features/daily-reading/repositories/daily-reading-state-repository.server";
 import {
  apiError,
  privateNoStoreJson,

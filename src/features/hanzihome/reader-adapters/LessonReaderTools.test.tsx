@@ -20,7 +20,7 @@ vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
  },
 }));
 
-vi.mock("@/components/ui/dropdown-menu", () => {
+vi.mock("@/components/ui/overlays/dropdown-menu", () => {
  const passthrough = ({ children }: { children?: ReactNode }) => children;
 
  return {

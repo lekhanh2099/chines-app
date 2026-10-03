@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { useMemo, useState } from "react";
 import { z } from "zod";
 

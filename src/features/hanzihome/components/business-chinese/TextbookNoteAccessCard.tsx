@@ -4,8 +4,8 @@ import { useMemo } from "react";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import { LinkedContentSkeleton } from "@/features/hanzihome/components/LinkedContentSkeleton";
 import { LessonSplitNoteEditor } from "@/features/hanzihome/components/notes/LessonSplitNoteEditor";
 import {

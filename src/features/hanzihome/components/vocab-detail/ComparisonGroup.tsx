@@ -1,5 +1,5 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 type ComparisonRow = { key: string; title: string; body?: string; example?: string };
 
 export function ComparisonGroup({ title, rows }: { title: string; rows: ComparisonRow[] }) {

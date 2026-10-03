@@ -45,7 +45,7 @@ import {
 } from "lexical";
 import type { InitialConfigType } from "@lexical/react/LexicalComposer";
 import { logger } from "@/lib/logger";
-import { toLexicalEditorState } from "@/lib/editor-document";
+import { toLexicalEditorState } from "@/lib/editor/editor-document";
 
 import { PinyinNode } from "./nodes/PinyinNode";
 import { InternalLinkNode } from "./nodes/InternalLinkNode";
@@ -79,8 +79,8 @@ const AUTO_LINK_MATCHERS = [
 ];
 
 const SAFE_HTML_IMPORT = buildImportMap({
- span: (node) => {
-  const defaultImporter = TextNode.importDOM()?.span?.(node);
+ span: () => {
+  const defaultImporter = TextNode.prototype.$config().text?.importDOM.span();
   if (!defaultImporter) return null;
 
   return {

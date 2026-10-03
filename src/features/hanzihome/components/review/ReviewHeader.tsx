@@ -1,15 +1,15 @@
 "use client";
 
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
-import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/display/typography";
+import { Button } from "@/components/ui/actions/button";
 import {
  Select,
  SelectContent,
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/forms/select";
 import type { ReviewDeckMode } from "@/features/hanzihome/hooks/useVocabReviewSession";
 import { deckModeOptions } from "./reviewDeckModes";
 

@@ -3,13 +3,13 @@
 import { ArrowLeft, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { PageContainer } from "@/components/layout/page-container";
-import { SectionHeader } from "@/components/layout/section-header";
+import { PageContainer } from "@/components/layout/workspace/page-container";
+import { SectionHeader } from "@/components/layout/workspace/section-header";
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Spinner } from "@/components/ui/spinner";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Spinner } from "@/components/ui/feedback/spinner";
+import { Typography } from "@/components/ui/display/typography";
 import { DictionaryCharacterSidebar } from "@/features/dictionary/components/DictionaryCharacterSidebar";
 import { DictionaryWordSkeleton } from "@/features/dictionary/components/DictionarySkeletons";
 import {

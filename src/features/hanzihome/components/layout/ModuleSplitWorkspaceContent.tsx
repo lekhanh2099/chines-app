@@ -14,16 +14,16 @@ import {
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { DropdownMenuItem } from "@/components/ui/overlays/dropdown-menu";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuLabel,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/overlays/dropdown-menu";
 import {
  Select,
  SelectContent,
@@ -31,9 +31,13 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+} from "@/components/ui/forms/select";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import {
+ ResizableHandle,
+ ResizablePanel,
+ ResizablePanelGroup,
+} from "@/components/ui/layout/resizable";
 import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
 import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import {

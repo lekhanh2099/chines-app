@@ -2,19 +2,19 @@
 
 import { useTranslations } from "next-intl";
 
-import { SectionHeader } from "@/components/layout/section-header";
-import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Separator } from "@/components/ui/separator";
-import { Typography } from "@/components/ui/typography";
+import { SectionHeader } from "@/components/layout/workspace/section-header";
+import { SectionWrapper } from "@/components/layout/workspace/section-wrapper";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Separator } from "@/components/ui/layout/separator";
+import { Typography } from "@/components/ui/display/typography";
 import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import type { StructureComponent } from "@/features/dictionary/types";
 import { Link } from "@/i18n/navigation";
-import { getNormalizedRadicals } from "@/services/vocab.service";
+import { getNormalizedRadicals } from "@/services/vocab/vocab.service";
 
 type DictionaryCharacterSidebarProps = {
  characters: string[];

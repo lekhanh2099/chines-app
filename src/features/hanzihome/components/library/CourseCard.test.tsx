@@ -32,7 +32,7 @@ vi.mock("@/i18n/navigation", () => ({
  useRouter: () => ({ push: vi.fn(), prefetch: vi.fn() }),
 }));
 
-vi.mock("@/components/ui/tooltip", () => ({
+vi.mock("@/components/ui/overlays/tooltip", () => ({
  Tooltip: ({ children }: { children: React.ReactNode }) => createElement("div", null, children),
  TooltipTrigger: ({ children }: { children: React.ReactNode }) =>
   createElement("div", null, children),

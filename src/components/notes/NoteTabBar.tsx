@@ -5,16 +5,16 @@ import { useSelector } from "@tanstack/react-store";
 import { ChevronLeft, ChevronRight, Ellipsis, FileText, Plus, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Tabs } from "@/components/ui/tabs";
-import { noteTabsStore } from "@/stores/note-tabs-store";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Tabs } from "@/components/ui/navigation/tabs";
+import { noteTabsStore } from "@/stores/notes/note-tabs-store";
 
 export function NoteTabBar({
  leading,

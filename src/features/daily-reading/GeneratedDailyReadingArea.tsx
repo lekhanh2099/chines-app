@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import {
  DailyReadingLibrary,
  DailyReadingView,
-} from "@/features/daily-reading/DailyReadingLibrary";
+} from "@/features/daily-reading/components/DailyReadingLibrary";
 
 export function GeneratedDailyReadingArea() {
  const router = useRouter();

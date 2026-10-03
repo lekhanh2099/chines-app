@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
 import {
  Select,
  SelectContent,
@@ -11,8 +11,8 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Typography } from "@/components/ui/display/typography";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { jsonValueSchema } from "@/lib/json-schema";
+import { jsonValueSchema } from "@/lib/schema/json-schema";
 import { EditableEntityTypeSchema } from "@/features/hanzihome/editing/store/types";
 
 export const canonicalEntityTypeSchema = z.enum([

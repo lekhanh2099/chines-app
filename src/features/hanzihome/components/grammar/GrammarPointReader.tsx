@@ -5,11 +5,11 @@ import {
  HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { Bookmark } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import { StructuredGrammarContent } from "@/features/hanzihome/components/grammar/StructuredGrammarContent";
 import type {

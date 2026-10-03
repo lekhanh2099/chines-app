@@ -3,14 +3,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
-import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import { resolveAiAnalysisRuntime } from "@/services/ai/ai-analysis-runtime.service";
 import {
  getAiRuntimeReceipt,
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
-} from "@/services/ai-runtime.service";
-import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.service";
-import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
+} from "@/services/ai/ai-runtime.service";
+import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai/ai.service";
+import { getUserAiPromptSettings } from "@/services/ai/ai-prompt-settings.service";
 import {
  getDictionaryEntryByHeadword,
  mapDictionaryEntryToVocabData,
@@ -20,7 +20,7 @@ import {
  getVocabularyAnalysis,
  hasDetailedVocabAnalysis,
  isGenericEnglishFallbackAnalysis,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 
 const lookupSchema = z.object({
  text: z.string().trim().min(1).max(120),

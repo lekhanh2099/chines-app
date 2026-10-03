@@ -6,14 +6,14 @@ import { BookmarkPlus, Check, Loader2, Save, Volume2, VolumeOff } from "lucide-r
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Chip } from "@/components/ui/chip";
-import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Chip } from "@/components/ui/actions/chip";
+import { Separator } from "@/components/ui/layout/separator";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import {
  HanziAwareText,
  HanziText,
@@ -21,7 +21,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
-import { extractChinese } from "@/lib/chinese-utils";
+import { extractChinese } from "@/lib/text/chinese-utils";
 import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
 import {
  getNormalizedAntonyms,
@@ -29,8 +29,8 @@ import {
  getNormalizedRelatedCompounds,
  getNormalizedRadicals,
  getNormalizedSynonyms,
-} from "@/services/vocab.service";
-import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
+} from "@/services/vocab/vocab.service";
+import { vocabDetailDrawerStore } from "@/stores/dictionary/vocab-detail-drawer-store";
 import type { SmartSelectionMode } from "@/types/database";
 
 const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;

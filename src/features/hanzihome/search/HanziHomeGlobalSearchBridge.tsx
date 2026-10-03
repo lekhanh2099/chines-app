@@ -18,9 +18,9 @@ import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types
 import { prefetchHanziHomeSearchIndex } from "@/features/hanzihome/search/useHanziHomeSearchIndex";
 import { findLessonByRouteParam } from "@/features/hanzihome/utils/lesson-route";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { containsChinese } from "@/lib/chinese-utils";
-import { focusModeStore } from "@/stores/focus-mode-store";
-import { globalSearchStore } from "@/stores/global-search-store";
+import { containsChinese } from "@/lib/text/chinese-utils";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
+import { globalSearchStore } from "@/stores/search/global-search-store";
 
 export function HanziHomeGlobalSearchBridge() {
  const pathname = usePathname();

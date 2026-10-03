@@ -5,12 +5,12 @@ import { BookOpen, Check, ChevronRight, FileText, Play, type LucideIcon } from "
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { PageHeader } from "@/components/ui/page-header";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { PageHeader } from "@/components/ui/layout/page-header";
+import { Typography } from "@/components/ui/display/typography";
 import { HanziAwareText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { JsonObjectSchema } from "@/types/json";

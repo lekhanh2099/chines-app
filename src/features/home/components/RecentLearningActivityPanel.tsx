@@ -2,10 +2,10 @@ import type { ComponentProps } from "react";
 import { History } from "lucide-react";
 import { useFormatter, useNow, useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Typography } from "@/components/ui/display/typography";
 import { HomeSectionHeader } from "@/features/home/components/HomePrimitives";
 import type { HomeDashboardModel } from "@/features/home/types";
 

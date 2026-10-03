@@ -11,9 +11,9 @@ import {
  DropdownMenuRadioItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Button } from "@/components/ui/actions/button";
+import { Typography } from "@/components/ui/display/typography";
 import {
  contentEditingEnabled,
  developerToolsEnabled,

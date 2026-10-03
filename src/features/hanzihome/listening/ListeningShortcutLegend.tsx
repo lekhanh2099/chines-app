@@ -7,9 +7,9 @@ import {
  BasePopoverPopup,
  BasePopoverPositioner,
  BasePopoverTrigger,
-} from "@/components/ui/base-popover";
-import { Badge } from "@/components/ui/badge";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/base-popover";
+import { Badge } from "@/components/ui/display/badge";
+import { Typography } from "@/components/ui/display/typography";
 
 type ShortcutLegendItem = readonly [key: string, label: string];
 

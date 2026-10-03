@@ -5,21 +5,21 @@ import { Filter, Library } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
-import { WorkspaceCommandHeader } from "@/components/layout/workspace-command-header";
+import { WorkspaceCommandHeader } from "@/components/layout/workspace/workspace-command-header";
 import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { QueryErrorCard } from "@/components/ui/query-error-card";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Input } from "@/components/ui/forms/input";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import {
  Select,
  SelectContent,
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import { Typography } from "@/components/ui/display/typography";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
@@ -28,7 +28,7 @@ import {
  matchesNoteLibraryView,
  type NoteLibraryView,
 } from "@/features/notes/note-library-utils";
-import type { NoteFolder, NoteListItem } from "@/services/notes.service";
+import type { NoteFolder, NoteListItem } from "@/services/notes/notes.service";
 import { NoteCategorySchema, type NoteCategory } from "@/types/database";
 
 import { NewNoteStarter } from "./NewNoteStarter";

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Tabs, TabsContent } from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/lesson-text/LessonTextInlineEditor";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 

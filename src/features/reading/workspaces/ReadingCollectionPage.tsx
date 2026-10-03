@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { PageContainer } from "@/components/layout/page-container";
+import { PageContainer } from "@/components/layout/workspace/page-container";
 import { ReaderCollectionWorkspace } from "./ReaderCollectionWorkspace";
 import {
  getReaderDocument,

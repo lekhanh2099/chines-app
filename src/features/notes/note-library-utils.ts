@@ -1,4 +1,4 @@
-import type { NoteFolder, NoteListItem } from "@/services/notes.service";
+import type { NoteFolder, NoteListItem } from "@/services/notes/notes.service";
 import type { NoteCategory } from "@/types/database";
 import type { JsonObject } from "./note-export.schema";
 

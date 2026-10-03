@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { aiConversationAccountPreferencesSchema } from "@/features/settings/ai-conversation-settings.schema";
+import { aiConversationAccountPreferencesSchema } from "@/features/settings/model/ai-conversation-settings.schema";
 
 const {
  createClient,
@@ -27,10 +27,10 @@ vi.mock("@/lib/env/public", () => ({
 }));
 vi.mock("@/lib/env/server", () => ({ getSupabaseServerSecret: () => "test-service-role-key" }));
 vi.mock("@/lib/supabase/server", () => ({ createClient }));
-vi.mock("@/features/settings/ai-conversation-settings-persistence.server", async () => {
+vi.mock("@/features/settings/server/ai-conversation-settings-persistence.server", async () => {
  const actual = await vi.importActual<
-  typeof import("@/features/settings/ai-conversation-settings-persistence.server")
- >("@/features/settings/ai-conversation-settings-persistence.server");
+  typeof import("@/features/settings/server/ai-conversation-settings-persistence.server")
+ >("@/features/settings/server/ai-conversation-settings-persistence.server");
  return {
   ...actual,
   loadAiConversationSettingsOverview,

@@ -1,9 +1,9 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { GraduationCap, Headphones, Tags } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import { EditableNodeWrapper } from "@/features/hanzihome/editing";
 import type { StudyModule } from "@/features/hanzihome/context/types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";

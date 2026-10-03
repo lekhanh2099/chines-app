@@ -1,8 +1,8 @@
 "use client";
 
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { Typography } from "@/components/ui/typography";
+import { Checkbox } from "@/components/ui/forms/checkbox";
+import { Label } from "@/components/ui/forms/label";
+import { Typography } from "@/components/ui/display/typography";
 import { useId, type ReactNode } from "react";
 
 import { useFieldContext } from "@/components/form/form-context";

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { ReaderCollectionWorkspace } from "@/features/reading/workspaces/ReaderCollectionWorkspace";
 import {
  getReaderDocument,

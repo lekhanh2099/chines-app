@@ -4,8 +4,8 @@ import { StudyInstructionText } from "@/features/hanzihome/components/lesson-ove
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { VocabReviewPanel } from "./VocabReviewPanel";
 import { useHanziHomeLessonVocabulary } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 
 export function LessonVocabReviewPanel() {
  const runtime = useHanziHomeRuntime();

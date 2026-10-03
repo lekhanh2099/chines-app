@@ -24,13 +24,13 @@ vi.mock("@/features/dictionary/server/dictionary-persistence.server", () => ({
  syncDictionaryEntryToLegacyCacheAsServer: mocks.syncDictionaryEntryToLegacyCacheAsServer,
  upsertLegacyVocabularyCacheAsServer: mocks.upsertLegacyVocabularyCacheAsServer,
 }));
-vi.mock("@/services/ai-analysis-runtime.service", () => ({
+vi.mock("@/services/ai/ai-analysis-runtime.service", () => ({
  resolveAiAnalysisRuntime: mocks.resolveAiAnalysisRuntime,
 }));
-vi.mock("@/services/ai.service", () => ({
+vi.mock("@/services/ai/ai.service", () => ({
  analyzeHanziBasicDetailed: mocks.analyzeHanziBasicDetailed,
 }));
-vi.mock("@/services/vocab.service", () => ({
+vi.mock("@/services/vocab/vocab.service", () => ({
  getBasicVocabData: (value: object) => value,
  getDictionaryEntryByHeadword: mocks.getDictionaryEntryByHeadword,
  getPrimaryMeaning: (_analysis: { meaning_summary?: string }, fallback: string) =>

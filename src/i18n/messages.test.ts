@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { AI_TASK_REGISTRY } from "@/lib/ai-task-contract";
+import { AI_TASK_REGISTRY } from "@/lib/ai/ai-task-contract";
 
 import type { AppLocale } from "./config";
 import { loadAppMessages } from "./messages";

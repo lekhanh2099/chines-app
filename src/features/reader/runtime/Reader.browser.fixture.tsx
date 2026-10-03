@@ -8,8 +8,8 @@ import {
  analyzeContextualPronunciation,
  getContextualReadingUnits,
 } from "@/lib/pronunciation/contextual-pronunciation";
-import { Typography } from "@/components/ui/typography";
-import { scrollAppContentToElement } from "@/components/layout/app-scroll";
+import { Typography } from "@/components/ui/display/typography";
+import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import "@/app/globals.css";
 import { Reader } from "../components/Reader";
 import { cookReaderData } from "../model/cook-reader-data";

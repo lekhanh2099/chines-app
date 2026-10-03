@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
 import {
  DataTable,
  DataTableBody,
@@ -12,9 +12,9 @@ import {
  DataTableHead,
  DataTableHeader,
  DataTableRow,
-} from "@/components/ui/data-table";
-import { Input } from "@/components/ui/input";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/display/data-table";
+import { Input } from "@/components/ui/forms/input";
+import { Typography } from "@/components/ui/display/typography";
 import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";

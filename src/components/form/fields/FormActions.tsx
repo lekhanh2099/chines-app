@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
+import { Button } from "@/components/ui/actions/button";
+import { Spinner } from "@/components/ui/feedback/spinner";
 import { useFormContext } from "@/components/form/form-context";
 import { cn } from "@/lib/utils";
 

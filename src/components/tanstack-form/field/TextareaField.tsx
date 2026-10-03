@@ -1,7 +1,7 @@
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/forms/textarea";
 
 type ControlledTextareaProps = {
  value?: never;

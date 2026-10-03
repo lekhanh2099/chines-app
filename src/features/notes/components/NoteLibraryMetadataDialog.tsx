@@ -5,7 +5,7 @@ import { Settings2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogBody,
@@ -15,22 +15,22 @@ import {
  DialogHeader,
  DialogTitle,
  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
+} from "@/components/ui/overlays/dialog";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/forms/field";
+import { Input } from "@/components/ui/forms/input";
 import {
  Select,
  SelectContent,
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/forms/select";
 import {
  useNoteFolders,
  useUpdateNoteLibraryMetadata,
 } from "@/features/notes/hooks/useNoteLibrary";
 import { normalizeReadingUrl } from "@/features/notes/note-library-utils";
-import type { NoteDetail } from "@/services/notes.service";
+import type { NoteDetail } from "@/services/notes/notes.service";
 import { ReadingStatusSchema } from "@/types/database";
 
 type NoteLibraryMetadataTarget = {

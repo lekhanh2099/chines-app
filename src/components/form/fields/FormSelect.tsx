@@ -4,7 +4,7 @@ import { useId, type ReactNode } from "react";
 
 import { useFieldContext } from "@/components/form/form-context";
 import { FieldShell, getDescribedBy, getFieldError } from "@/components/form/fields/field-utils";
-import { OptionSelect } from "@/components/ui/option-select";
+import { OptionSelect } from "@/components/ui/forms/option-select";
 import type { IOption } from "@/types/option";
 import { IOptionValueSchema } from "@/types/option";
 import { z } from "zod";

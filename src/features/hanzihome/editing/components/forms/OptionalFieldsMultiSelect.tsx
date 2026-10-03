@@ -8,12 +8,12 @@ import {
  BasePopoverPopup,
  BasePopoverPositioner,
  BasePopoverTrigger,
-} from "@/components/ui/base-popover";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/base-popover";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Input } from "@/components/ui/forms/input";
+import { Separator } from "@/components/ui/layout/separator";
+import { Typography } from "@/components/ui/display/typography";
 
 export type OptionalFieldGroup = {
  label: string;

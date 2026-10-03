@@ -1,7 +1,7 @@
 import type * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { cn } from "@/lib/utils";
 
 const emptyStateVariants = cva("grid w-full justify-items-center text-center", {

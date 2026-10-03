@@ -15,7 +15,7 @@ import {
  type CanonicalMutationOperation,
 } from "@/features/hanzihome/schemas/canonical-content.schema";
 import { createClient } from "@/lib/supabase/server";
-import { jsonValueSchema } from "@/lib/json-schema";
+import { jsonValueSchema } from "@/lib/schema/json-schema";
 
 type MutationRpcError = {
  code?: string;

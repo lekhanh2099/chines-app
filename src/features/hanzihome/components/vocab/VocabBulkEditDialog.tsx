@@ -1,6 +1,6 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
+import { Label } from "@/components/ui/forms/label";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/json";
 import { useDeferredValue, useMemo, useState, type ComponentProps } from "react";
@@ -9,8 +9,8 @@ import { keepPreviousData, useQuery, useQueryClient } from "@tanstack/react-quer
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/actions/button";
+import { Checkbox } from "@/components/ui/forms/checkbox";
 import {
  Dialog,
  DialogBody,
@@ -19,16 +19,16 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Tabs } from "@/components/ui/tabs";
+} from "@/components/ui/overlays/dialog";
+import { Input } from "@/components/ui/forms/input";
+import { Tabs } from "@/components/ui/navigation/tabs";
 import {
  Select,
  SelectContent,
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/forms/select";
 import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanzihomeFeatureContext";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { saveEditableNodeDirectly } from "@/features/hanzihome/editing/direct-save";

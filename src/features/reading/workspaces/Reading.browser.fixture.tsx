@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { PageContainer } from "@/components/layout/page-container";
+import { PageContainer } from "@/components/layout/workspace/page-container";
 import { TextSectionView } from "@/features/hanzihome/components/lesson-overview/TextSection";
 import { TextSectionSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import { StrictMode, useSyncExternalStore, type ReactNode } from "react";
@@ -15,9 +15,9 @@ import type { ReaderSpeechService } from "@/features/reader/runtime/reader-speec
 import { readerDocumentResponseSchema } from "../model/reading-document.schemas";
 import { ReaderDocumentStudy } from "./ReaderDocumentStudy";
 import { HskWorkspace } from "@/features/hsk/HskWorkspace";
-import { DailyReadingView } from "@/features/daily-reading/DailyReadingLibrary";
-import { saveDailyReadingArticle } from "@/features/daily-reading/daily-reading-storage.client";
-import type { DailyReading } from "@/features/daily-reading/daily-reading.schemas";
+import { DailyReadingView } from "@/features/daily-reading/components/DailyReadingLibrary";
+import { saveDailyReadingArticle } from "@/features/daily-reading/local/daily-reading-storage.client";
+import type { DailyReading } from "@/features/daily-reading/model/daily-reading.schemas";
 import { readerDocumentRowSchema } from "../model/reading-resource.schemas";
 import "@/app/globals.css";
 

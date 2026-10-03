@@ -5,17 +5,17 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { SegmentedControl } from "@/components/ui/segmented-control";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Input } from "@/components/ui/forms/input";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { MandarinTtsControls } from "@/features/hanzihome/listening/MandarinTtsControls";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
-import { buildCacheKey } from "@/lib/tts-cache";
+import { buildCacheKey } from "@/lib/audio/tts-cache";
 
 import {
  splitTtsStudioText,

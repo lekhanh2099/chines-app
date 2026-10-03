@@ -9,7 +9,7 @@ import {
  type LexicalEditor,
  type LexicalNode,
 } from "lexical";
-import { containsChinese } from "@/lib/chinese-utils";
+import { containsChinese } from "@/lib/text/chinese-utils";
 import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { toast } from "sonner";
 import { $createPinyinNode, $isPinyinNode, type PinyinNode } from "../nodes/PinyinNode";

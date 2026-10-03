@@ -7,7 +7,7 @@ import { cookReaderData } from "@/features/reader/model/cook-reader-data";
 import { createReaderStore } from "@/features/reader/runtime/reader-store";
 import { createReaderPlayback } from "@/features/reader/runtime/reader-playback";
 
-vi.mock("@/lib/tts-cache", () => ({
+vi.mock("@/lib/audio/tts-cache", () => ({
  buildCacheKey: (text: string, voice: string, rate: number) => `${voice}:${rate}:${text}`,
  getCachedAudio: async () => null,
  setCachedAudio: async () => {},

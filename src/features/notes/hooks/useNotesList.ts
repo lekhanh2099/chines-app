@@ -7,7 +7,7 @@ import {
  deleteNote as deleteNoteRecord,
  getUserNotes,
  getNotesByCategory,
-} from "@/services/notes.service";
+} from "@/services/notes/notes.service";
 import { noteQueryKeys } from "@/features/notes/query-keys";
 import type { NoteCategory } from "@/types/database";
 

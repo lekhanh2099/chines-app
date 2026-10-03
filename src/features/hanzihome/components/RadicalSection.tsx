@@ -1,4 +1,4 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 

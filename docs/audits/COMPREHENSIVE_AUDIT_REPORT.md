@@ -65,7 +65,7 @@ pie title Hiện trạng Chất lượng Hệ thống
 
 ## 2. ĐÁNH GIÁ CHUYÊN SÂU CHẾ ĐỘ HỌC NGOẠI TUYẾN & CÁC LỖI UI OFFLINE
 
-Chế độ học ngoại tuyến (Offline Learning) là tính năng tối quan trọng của một ứng dụng ngôn ngữ di động, vì người học thường học trên xe buýt, tàu điện ngầm, hoặc khi đi máy bay. Qua rà soát chi tiết [public/sw.js](file:///Users/hagenlee/Desktop/Person/chines-app/public/sw.js), [PwaServiceWorkerRegister.tsx](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/PwaServiceWorkerRegister.tsx), các local store và giao diện thực tế, hệ thống Offline hiện tại đang tồn tại **8 lỗi và nghịch lý kiến trúc nghiêm trọng**:
+Chế độ học ngoại tuyến (Offline Learning) là tính năng tối quan trọng của một ứng dụng ngôn ngữ di động, vì người học thường học trên xe buýt, tàu điện ngầm, hoặc khi đi máy bay. Qua rà soát chi tiết [public/sw.js](file:///Users/hagenlee/Desktop/Person/chines-app/public/sw.js), [PwaServiceWorkerRegister.tsx](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/runtime/PwaServiceWorkerRegister.tsx), các local store và giao diện thực tế, hệ thống Offline hiện tại đang tồn tại **8 lỗi và nghịch lý kiến trúc nghiêm trọng**:
 
 ### 2.1. "Cái bẫy" Service Worker: Biến React App thành trang HTML thô sơ
 
@@ -262,7 +262,7 @@ Service tải bài học ngoại tuyến tại [course-offline-pack.service.ts](
 
 ### 2.8. Thiếu vắng hoàn toàn UI trạng thái kết nối (Connection Status Awareness)
 
-- Khắp toàn bộ App Shell, [Header.tsx](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/Header.tsx) và [Sidebar.tsx](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/Sidebar.tsx) không hề có bất kỳ một biểu tượng, thanh bar hay badge nào hiển thị trạng thái:
+- Khắp toàn bộ App Shell, [Header.tsx](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/header/Header.tsx) và [Sidebar.tsx](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/navigation/Sidebar.tsx) không hề có bất kỳ một biểu tượng, thanh bar hay badge nào hiển thị trạng thái:
   - 🟢 **Trực tuyến (Online)**
   - 🟡 **Ngoại tuyến (Offline - Đang dùng dữ liệu trên máy)**
   - 🔵 **Đang đồng bộ (Syncing - Còn 5 thao tác chờ đẩy lên đám mây)**
@@ -274,7 +274,7 @@ Service tải bài học ngoại tuyến tại [course-offline-pack.service.ts](
 
 ### 3.1. Lỗi giật nảy Scroll Viewport khi đổi Query Param
 
-- **File:** [AppScrollViewport.tsx](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/AppScrollViewport.tsx#L28-L38)
+- **File:** [AppScrollViewport.tsx](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/layout/scroll/AppScrollViewport.tsx#L28-L38)
 - **Code hiện trạng:**
   ```typescript
   const pathname = usePathname();
@@ -433,13 +433,13 @@ Mặc dù app có `next-intl` hỗ trợ 3 ngôn ngữ (`vi`, `en`, `zh-CN`), qu
 
 ### 5.2. Hardcode trong cả UI Primitives dùng chung
 
-Tại [src/components/ui/dialog.tsx:L102](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/ui/dialog.tsx#L102):
+Tại [src/components/ui/overlays/dialog.tsx:L102](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/ui/overlays/dialog.tsx#L102):
 
 ```tsx
 aria-label="Đóng dialog"
 ```
 
-Tại [src/components/ui/sheet.tsx:L67](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/ui/sheet.tsx#L67):
+Tại [src/components/ui/overlays/sheet.tsx:L67](file:///Users/hagenlee/Desktop/Person/chines-app/src/components/ui/overlays/sheet.tsx#L67):
 
 ```tsx
 aria-label="Đóng"

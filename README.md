@@ -6,7 +6,14 @@ The product flow is Course → Book/Volume → Lesson → Module. Supabase norma
 
 ## Local setup
 
-Requirements: Node.js 22 or newer and npm 11.
+Requirements: Node.js 22.22.2 or newer and npm 12.2.0 (pinned in `packageManager` and CI).
+
+The shared control CSS variants live in `src/app/globals.css`; the shadcn CLI is
+used on demand with `npx shadcn@latest`, rather than installed with the app.
+`packageExtensions` marks only the unused NestJS adapter's `@swc/cli` peer as
+optional. Next.js workflows still use the published `workflow` runtime and
+`workflow/next` integration. npm 12 records this repair in the lockfile, and
+`allowScripts` pins the native dependency install scripts used by this project.
 
 ```bash
 cp .env.example .env.local

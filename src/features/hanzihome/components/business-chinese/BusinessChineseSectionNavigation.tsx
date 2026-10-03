@@ -2,16 +2,16 @@
 
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import {
  Select,
  SelectContent,
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Typography } from "@/components/ui/display/typography";
 import { HanziInlineText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { stripLeadingEmoji } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";

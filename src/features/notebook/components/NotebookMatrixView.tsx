@@ -1,6 +1,6 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { LearnerHanziText } from "@/components/patterns/learner-text";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/layout/card";
 import type { NotebookItem } from "@/features/notebook/types";
 import { useTranslations } from "next-intl";
 

@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import {
  getScrollContainerForTarget,
  scrollAppContentToElement,
-} from "@/components/layout/app-scroll";
+} from "@/components/layout/scroll/app-scroll";
 
 import { useReaderRegistry, useReaderSelector, useReaderStore } from "./reader-context";
 

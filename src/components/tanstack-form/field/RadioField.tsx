@@ -1,9 +1,9 @@
-import { Label } from "@/components/ui/label";
+import { Label } from "@/components/ui/forms/label";
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Typography } from "@/components/ui/typography";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/forms/radio-group";
+import { Typography } from "@/components/ui/display/typography";
 
 type ControlledRadioProps = {
  value?: never;

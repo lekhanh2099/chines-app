@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { List } from "lucide-react";
 
-import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/forms/select";
 import {
  useReaderCommands,
  useReaderRegistry,

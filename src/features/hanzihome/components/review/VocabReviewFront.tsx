@@ -2,7 +2,7 @@
 
 import { BookOpen } from "lucide-react";
 
-import { IconTile } from "@/components/ui/icon-tile";
+import { IconTile } from "@/components/ui/display/icon-tile";
 import {
  HanziText,
  StudyInstructionText,

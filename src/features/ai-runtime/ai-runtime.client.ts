@@ -3,7 +3,7 @@ import type { JsonFieldValue } from "@/types/json";
 import {
  aiRuntimeWithTaskRuntimesResponseSchema,
  type AiRuntimeWithTaskRuntimesResponse,
-} from "@/lib/ai-task-contract";
+} from "@/lib/ai/ai-task-contract";
 
 export const aiRuntimeQueryKey = ["ai-runtime", "readiness"];
 

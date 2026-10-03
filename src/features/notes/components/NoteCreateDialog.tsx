@@ -7,7 +7,7 @@ import { BookOpenText, ChevronDown, FilePlus2, NotebookPen } from "lucide-react"
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogBody,
@@ -16,15 +16,15 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui/overlays/dialog";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui/forms/field";
+import { Input } from "@/components/ui/forms/input";
 import {
  Select,
  SelectContent,
@@ -32,15 +32,15 @@ import {
  SelectItem,
  SelectTrigger,
  SelectValue,
-} from "@/components/ui/select";
-import { Spinner } from "@/components/ui/spinner";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/forms/select";
+import { Spinner } from "@/components/ui/feedback/spinner";
+import { Typography } from "@/components/ui/display/typography";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { useRouter } from "@/i18n/navigation";
-import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor-document";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor/editor-document";
 import { cn } from "@/lib/utils";
-import type { NoteFolder } from "@/services/notes.service";
-import { focusModeStore } from "@/stores/focus-mode-store";
+import type { NoteFolder } from "@/services/notes/notes.service";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { NoteCategorySchema, ReadingStatusSchema } from "@/types/database";
 import type { NoteCategory, ReadingStatus } from "@/types/database";
 

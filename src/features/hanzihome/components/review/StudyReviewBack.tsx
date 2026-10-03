@@ -6,9 +6,9 @@ import {
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Lightbulb, Sigma } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Separator } from "@/components/ui/layout/separator";
 import { VocabWritingCue } from "@/features/hanzihome/components/VocabWritingCue";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";

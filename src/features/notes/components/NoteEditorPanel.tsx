@@ -27,7 +27,7 @@ import { toast } from "sonner";
 import { Editor } from "@/components/editor/Editor";
 import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogClose,
@@ -36,11 +36,11 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dialog";
+import { Input } from "@/components/ui/forms/input";
+import { Separator } from "@/components/ui/layout/separator";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import { Typography } from "@/components/ui/display/typography";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
 import {
  useNoteFolderMutations,
@@ -52,9 +52,9 @@ import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
 import { saveNoteDraft } from "@/features/notes/local/note-draft-store";
 import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
 import { useRouter } from "@/i18n/navigation";
-import { focusModeStore } from "@/stores/focus-mode-store";
-import { noteTabsStore } from "@/stores/note-tabs-store";
-import { splitViewStore } from "@/stores/split-view-store";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
+import { noteTabsStore } from "@/stores/notes/note-tabs-store";
+import { splitViewStore } from "@/stores/notes/split-view-store";
 import type { JsonFieldValue, JsonObject } from "@/types/json";
 
 interface NoteEditorPanelProps {

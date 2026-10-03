@@ -1,13 +1,13 @@
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { Clock3, FileText } from "lucide-react";
 import { useFormatter, useNow, useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
 import { HomeArrowIcon, HomeSectionHeader } from "@/features/home/components/HomePrimitives";
-import type { NoteListItem } from "@/services/notes.service";
+import type { NoteListItem } from "@/services/notes/notes.service";
 import { Link } from "@/i18n/navigation";
 
 export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {

@@ -5,7 +5,7 @@ import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { z } from "zod";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
-import { extractChinese } from "@/lib/chinese-utils";
+import { extractChinese } from "@/lib/text/chinese-utils";
 import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
 import {
  getVocabWithProgress,
@@ -13,7 +13,7 @@ import {
  getNormalizedDefinitions,
  getNormalizedRelatedCompounds,
  hasInspectorDeepDiveData,
-} from "@/services/vocab.service";
+} from "@/services/vocab/vocab.service";
 import { GenerateVocabResponseSchema } from "@/types/database";
 import type { VocabData, AiAnalysis, PersonalNoteMode } from "@/types/database";
 

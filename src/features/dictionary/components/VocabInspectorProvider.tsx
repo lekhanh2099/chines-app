@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { usePathname } from "next/navigation";
@@ -8,17 +8,17 @@ import {
  BasePopover as Popover,
  BasePopoverPopup,
  BasePopoverPositioner,
-} from "@/components/ui/base-popover";
+} from "@/components/ui/overlays/base-popover";
 import { useClientSession } from "@/components/providers/QueryProvider";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { VocabDetailDrawer } from "@/features/dictionary/components/VocabDetailDrawer";
-import { containsChinese } from "@/lib/chinese-utils";
+import { containsChinese } from "@/lib/text/chinese-utils";
 import { useInspectorLookup } from "@/features/dictionary/hooks/useInspectorLookup";
 import { logger } from "@/lib/logger";
-import { getPrimaryMeaning } from "@/services/vocab.service";
-import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
-import { inspectorStore } from "@/stores/inspector-store";
-import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
+import { getPrimaryMeaning } from "@/services/vocab/vocab.service";
+import { vocabDetailDrawerStore } from "@/stores/dictionary/vocab-detail-drawer-store";
+import { inspectorStore } from "@/stores/dictionary/inspector-store";
+import { dictionaryLookupStore } from "@/stores/dictionary/dictionary-lookup-store";
 import { useTTS } from "@/hooks/useTTS";
 import type { VocabData } from "@/types/database";
 import {

@@ -1,5 +1,5 @@
 import type { ReviewResult, UserLearningState } from "@/features/hanzihome/types";
-import type { NoteListItem } from "@/services/notes.service";
+import type { NoteListItem } from "@/services/notes/notes.service";
 
 export type HomeLessonTarget = {
  href: string;

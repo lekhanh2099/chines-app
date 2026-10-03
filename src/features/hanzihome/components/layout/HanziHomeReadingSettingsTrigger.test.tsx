@@ -40,7 +40,7 @@ vi.mock("@/features/hanzihome/HanziHomeReadingSettingsSection", () => ({
  HanziHomeReadingQuickSettingsMenu: () => <div>Desktop reader menu</div>,
 }));
 
-vi.mock("@/components/ui/dropdown-menu", () => {
+vi.mock("@/components/ui/overlays/dropdown-menu", () => {
  const passthrough = ({ children }: { children?: ReactNode }) => children;
  return {
   DropdownMenu: passthrough,
@@ -51,7 +51,7 @@ vi.mock("@/components/ui/dropdown-menu", () => {
  };
 });
 
-vi.mock("@/components/ui/sheet", () => ({
+vi.mock("@/components/ui/overlays/sheet", () => ({
  Sheet: ({ children }: { children?: ReactNode }) => <div data-testid="sheet">{children}</div>,
  SheetHeader: ({ title }: { title: string }) => <div>{title}</div>,
  SheetBody: ({ children }: { children?: ReactNode }) => <div>{children}</div>,

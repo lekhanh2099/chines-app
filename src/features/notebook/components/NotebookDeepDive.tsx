@@ -1,9 +1,9 @@
 import { ChevronDown } from "lucide-react";
 import { NOTEBOOK_DEEP_DIVE_SOURCE_LABELS } from "@/features/notebook/data/notebookDeepDiveData";
 import type { NotebookDeepDive } from "@/features/notebook/types";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/display/badge";
 import { focusRingClassName } from "@/components/ui/focus-ring";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/ui/display/typography";
 import { useTranslations } from "next-intl";
 
 export function NotebookDeepDive({ deepDive }: { deepDive: NotebookDeepDive }) {

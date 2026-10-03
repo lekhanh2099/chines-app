@@ -4,17 +4,17 @@ import Link from "next/link";
 import { Settings2 } from "lucide-react";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Sheet, SheetBody, SheetFooter, SheetHeader } from "@/components/ui/sheet";
-import { Spinner } from "@/components/ui/spinner";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dropdown-menu";
+import { Sheet, SheetBody, SheetFooter, SheetHeader } from "@/components/ui/overlays/sheet";
+import { Spinner } from "@/components/ui/feedback/spinner";
+import { Typography } from "@/components/ui/display/typography";
 import { HanziHomeReadingQuickSettingsMenu } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { HanziHomeReadOnlyReadingSettingsTrigger } from "@/features/hanzihome/components/layout/HanziHomeReadOnlyReadingSettingsTrigger";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";

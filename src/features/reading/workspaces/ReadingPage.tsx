@@ -1,4 +1,4 @@
-import { PageContainer } from "@/components/layout/page-container";
+import { PageContainer } from "@/components/layout/workspace/page-container";
 import { resolveReadingDocumentHref } from "../navigation/reading-route-registry";
 import { ReaderWorkspace } from "@/features/reading/workspaces/ReaderWorkspace";
 import {

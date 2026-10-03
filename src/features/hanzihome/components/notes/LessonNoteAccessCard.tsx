@@ -1,11 +1,11 @@
 "use client";
 
 import { useMemo } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/layout/card";
 import { LinkedContentSkeleton } from "@/features/hanzihome/components/LinkedContentSkeleton";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useCreateLessonLinkedNote } from "@/features/notes/hooks/useCreateLessonLinkedNote";

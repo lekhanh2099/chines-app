@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
 import { noteQueryKeys } from "@/features/notes/query-keys";
-import { createNote, type CreateNoteInput } from "@/services/notes.service";
+import { createNote, type CreateNoteInput } from "@/services/notes/notes.service";
 
 /**
  * Hook: Create a new note.

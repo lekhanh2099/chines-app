@@ -13,10 +13,10 @@ import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useState } from "react";
 import { toast } from "sonner";
 
-import ApiKeyManagerSection from "@/features/settings/ApiKeyManagerSection";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import ApiKeyManagerSection from "@/features/settings/components/ApiKeyManagerSection";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
 import {
  Dialog,
  DialogBody,
@@ -25,35 +25,35 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
-import type { SegmentedControlItem } from "@/components/ui/segmented-control";
-import { Spinner } from "@/components/ui/spinner";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dialog";
+import type { SegmentedControlItem } from "@/components/ui/forms/segmented-control";
+import { Spinner } from "@/components/ui/feedback/spinner";
+import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
+import { Textarea } from "@/components/ui/forms/textarea";
+import { Typography } from "@/components/ui/display/typography";
 import { useRouter } from "@/i18n/navigation";
 import {
  ClientAiPromptSettingsSchema,
  loadClientAiPromptSettings,
  saveClientAiPromptSettings,
  type ClientAiPromptSettings,
-} from "@/lib/ai-prompt-settings-client";
+} from "@/lib/ai/ai-prompt-settings-client";
 import {
  DEFAULT_SENTENCE_LOOKUP_PROMPT,
  DEFAULT_WORD_LOOKUP_PROMPT,
  SENTENCE_PLACEHOLDER,
  WORD_PLACEHOLDER,
-} from "@/lib/ai-prompts";
-import { DEFAULT_GEMINI_MODEL } from "@/lib/gemini-models";
+} from "@/lib/ai/ai-prompts";
+import { DEFAULT_GEMINI_MODEL } from "@/lib/ai/gemini-models";
 
-import { AiConversationSettingsSection } from "./AiConversationSettingsSection";
-import { AiActivitySettings } from "./AiActivitySettings";
-import { AiTaskSettingsSection } from "./AiTaskSettingsSection";
+import { AiConversationSettingsSection } from "./components/AiConversationSettingsSection";
+import { AiActivitySettings } from "./components/AiActivitySettings";
+import { AiTaskSettingsSection } from "./components/AiTaskSettingsSection";
 import {
  AiSettingsPanelSchema,
  type AiSettingsPanel,
  resolveAiSettingsPanel,
-} from "./ai-settings-navigation";
+} from "./model/ai-settings-navigation";
 
 type AiSettingsWorkspaceProps = {
  panelValue?: string;

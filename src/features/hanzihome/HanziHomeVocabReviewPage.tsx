@@ -7,10 +7,10 @@ import { ArrowLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { PageHeader } from "@/components/ui/page-header";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { PageHeader } from "@/components/ui/layout/page-header";
+import { Typography } from "@/components/ui/display/typography";
 import {
  combineReviewLessons,
  formatSelectedLessonsLabel,

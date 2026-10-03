@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { ActionCard } from "@/components/ui/action-card";
-import { Badge } from "@/components/ui/badge";
+import { ActionCard } from "@/components/ui/actions/action-card";
+import { Badge } from "@/components/ui/display/badge";
 import {
  HanziText,
  StudyInstructionText,

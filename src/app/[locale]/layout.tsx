@@ -7,11 +7,11 @@ import "../globals.css";
 import "../theme-palettes.css";
 import "../surface-system.css";
 import "../responsive-system.css";
-import { ThemeProvider } from "@/components/layout/ThemeProvider";
-import { AppToaster } from "@/components/layout/AppToaster";
+import { ThemeProvider } from "@/components/layout/theme/ThemeProvider";
+import { AppToaster } from "@/components/layout/runtime/AppToaster";
 import { VocabInspectorProvider } from "@/features/dictionary/components/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { TooltipProvider } from "@/components/ui/overlays/tooltip";
 import { MandarinTtsProvider } from "@/features/speech/MandarinTtsProvider";
 import { routing } from "@/i18n/routing";
 import {
@@ -21,9 +21,9 @@ import {
  THEME_PALETTE_STORAGE_KEY,
  ThemeModeSchema,
  ThemePaletteSchema,
-} from "@/components/layout/theme-contract";
+} from "@/components/layout/theme/theme-contract";
 
-import { PwaServiceWorkerRegister } from "@/components/layout/PwaServiceWorkerRegister";
+import { PwaServiceWorkerRegister } from "@/components/layout/runtime/PwaServiceWorkerRegister";
 import { AutoSyncReconnectBridge } from "@/features/hanzihome/components/layout/AutoSyncReconnectBridge";
 
 const themeBootstrapScript = `(function(){try{var modes=${JSON.stringify(ThemeModeSchema.options)};var palettes=${JSON.stringify(ThemePaletteSchema.options)};var mode=localStorage.getItem(${JSON.stringify(THEME_MODE_STORAGE_KEY)});var palette=localStorage.getItem(${JSON.stringify(THEME_PALETTE_STORAGE_KEY)});if(!modes.includes(mode))mode=${JSON.stringify(DEFAULT_THEME_MODE)};if(!palettes.includes(palette))palette=${JSON.stringify(DEFAULT_THEME_PALETTE)};var theme=mode==="system"?(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):mode;var root=document.documentElement;root.setAttribute("data-theme",theme);root.setAttribute("data-theme-mode",mode);root.setAttribute("data-palette",palette);root.classList.toggle("dark",theme==="dark")}catch{}})()`;

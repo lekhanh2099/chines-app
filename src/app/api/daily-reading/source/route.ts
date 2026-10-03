@@ -7,11 +7,11 @@ import {
  dailyReadingSourcePreviewRequestSchema,
  dailyReadingSourcePreviewResponseSchema,
  type DailyReadingErrorCode,
-} from "@/features/daily-reading/daily-reading.schemas";
+} from "@/features/daily-reading/model/daily-reading.schemas";
 import {
  discoverDailyReadingSource,
  formatDailyReadingSourceReport,
-} from "@/features/daily-reading/daily-reading-source.server";
+} from "@/features/daily-reading/source/daily-reading-source.server";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

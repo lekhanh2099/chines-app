@@ -8,31 +8,31 @@ override generic shadcn or vendor guidance.
 
 ## Canonical primitives
 
-| Contract         | Source                                    | Status                   | Intended use                                  |
-| ---------------- | ----------------------------------------- | ------------------------ | --------------------------------------------- |
-| Button           | `src/components/ui/button.tsx`            | canonical                | commands, CTAs, icon actions, navigation rows |
-| Dialog           | `src/components/ui/dialog.tsx`            | canonical                | modal tasks                                   |
-| DropdownMenu     | `src/components/ui/dropdown-menu.tsx`     | canonical                | action/checkbox/radio menus                   |
-| Tooltip          | `src/components/ui/tooltip.tsx`           | canonical                | supplementary hints                           |
-| Select           | `src/components/ui/select.tsx`            | canonical                | single-value selection; breadcrumb variant    |
-| OptionSelect     | `src/components/ui/option-select.tsx`     | canonical adapter        | string option arrays                          |
-| RadioGroup       | `src/components/ui/radio-group.tsx`       | canonical                | exclusive selection                           |
-| Switch           | `src/components/ui/switch.tsx`            | canonical                | boolean settings                              |
-| Chip             | `src/components/ui/chip.tsx`              | canonical                | interactive compact token                     |
-| Badge            | `src/components/ui/badge.tsx`             | canonical                | static status/category                        |
-| Typography       | `src/components/ui/typography.tsx`        | canonical                | application text hierarchy                    |
-| Avatar           | `src/components/ui/avatar.tsx`            | canonical                | profile image/fallback                        |
-| IconTile         | `src/components/ui/icon-tile.tsx`         | canonical                | decorative icon tile                          |
-| Sheet            | `src/components/ui/sheet.tsx`             | canonical                | responsive side/bottom panels                 |
-| Popover          | `src/components/ui/base-popover.tsx`      | canonical                | contextual non-menu content                   |
-| Card             | `src/components/ui/card.tsx`              | canonical                | section/subtle/interactive surfaces           |
-| Input            | `src/components/ui/input.tsx`             | canonical                | text input + density                          |
-| Textarea         | `src/components/ui/textarea.tsx`          | canonical                | multiline input                               |
-| Checkbox         | `src/components/ui/checkbox.tsx`          | canonical                | independent boolean selection                 |
-| Separator        | `src/components/ui/separator.tsx`         | canonical                | semantic separation                           |
-| PageHeader       | `src/components/ui/page-header.tsx`       | canonical                | page heading/description/meta/actions         |
-| Tabs             | `src/components/ui/tabs.tsx`              | canonical local contract | real content-panel tabs                       |
-| SegmentedControl | `src/components/ui/segmented-control.tsx` | canonical                | compact pressed single-choice set             |
+| Contract         | Source                                          | Status                   | Intended use                                  |
+| ---------------- | ----------------------------------------------- | ------------------------ | --------------------------------------------- |
+| Button           | `src/components/ui/actions/button.tsx`          | canonical                | commands, CTAs, icon actions, navigation rows |
+| Dialog           | `src/components/ui/overlays/dialog.tsx`         | canonical                | modal tasks                                   |
+| DropdownMenu     | `src/components/ui/overlays/dropdown-menu.tsx`  | canonical                | action/checkbox/radio menus                   |
+| Tooltip          | `src/components/ui/overlays/tooltip.tsx`        | canonical                | supplementary hints                           |
+| Select           | `src/components/ui/forms/select.tsx`            | canonical                | single-value selection; breadcrumb variant    |
+| OptionSelect     | `src/components/ui/forms/option-select.tsx`     | canonical adapter        | string option arrays                          |
+| RadioGroup       | `src/components/ui/forms/radio-group.tsx`       | canonical                | exclusive selection                           |
+| Switch           | `src/components/ui/forms/switch.tsx`            | canonical                | boolean settings                              |
+| Chip             | `src/components/ui/actions/chip.tsx`            | canonical                | interactive compact token                     |
+| Badge            | `src/components/ui/display/badge.tsx`           | canonical                | static status/category                        |
+| Typography       | `src/components/ui/display/typography.tsx`      | canonical                | application text hierarchy                    |
+| Avatar           | `src/components/ui/display/avatar.tsx`          | canonical                | profile image/fallback                        |
+| IconTile         | `src/components/ui/display/icon-tile.tsx`       | canonical                | decorative icon tile                          |
+| Sheet            | `src/components/ui/overlays/sheet.tsx`          | canonical                | responsive side/bottom panels                 |
+| Popover          | `src/components/ui/overlays/base-popover.tsx`   | canonical                | contextual non-menu content                   |
+| Card             | `src/components/ui/layout/card.tsx`             | canonical                | section/subtle/interactive surfaces           |
+| Input            | `src/components/ui/forms/input.tsx`             | canonical                | text input + density                          |
+| Textarea         | `src/components/ui/forms/textarea.tsx`          | canonical                | multiline input                               |
+| Checkbox         | `src/components/ui/forms/checkbox.tsx`          | canonical                | independent boolean selection                 |
+| Separator        | `src/components/ui/layout/separator.tsx`        | canonical                | semantic separation                           |
+| PageHeader       | `src/components/ui/layout/page-header.tsx`      | canonical                | page heading/description/meta/actions         |
+| Tabs             | `src/components/ui/navigation/tabs.tsx`         | canonical local contract | real content-panel tabs                       |
+| SegmentedControl | `src/components/ui/forms/segmented-control.tsx` | canonical                | compact pressed single-choice set             |
 
 ## Canonical patterns
 

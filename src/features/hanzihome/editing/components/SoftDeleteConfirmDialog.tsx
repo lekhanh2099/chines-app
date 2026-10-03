@@ -3,7 +3,7 @@
 import { type ReactElement, useState } from "react";
 import { Trash2 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogBody,
@@ -14,8 +14,8 @@ import {
  DialogHeader,
  DialogTitle,
  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/dialog";
+import { Typography } from "@/components/ui/display/typography";
 
 type SoftDeleteConfirmDialogProps = {
  itemLabel: string;

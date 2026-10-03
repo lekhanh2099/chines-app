@@ -1,4 +1,4 @@
-import { DEFAULT_GEMINI_MODEL, type GeminiModelId } from "@/lib/gemini-models";
+import { DEFAULT_GEMINI_MODEL, type GeminiModelId } from "@/lib/ai/gemini-models";
 import { z } from "zod";
 
 export const ProviderNameSchema = z.enum(["Gemini", "DeepSeek", "OpenAI"]);

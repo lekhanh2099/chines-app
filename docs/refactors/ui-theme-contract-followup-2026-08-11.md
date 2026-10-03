@@ -22,7 +22,7 @@ the neutral reading canvas, Card, Popover/Dialog or border hierarchy.
 
 ## Theme architecture
 
-Added `src/components/layout/theme-contract.ts` as the runtime owner for:
+Added `src/components/layout/theme/theme-contract.ts` as the runtime owner for:
 
 ```text
 mode    -> system | light | dark

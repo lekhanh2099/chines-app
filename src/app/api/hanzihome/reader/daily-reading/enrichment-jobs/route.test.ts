@@ -23,13 +23,13 @@ vi.mock("@/lib/api/authenticated-route", () => ({
   Response.json({ error: message, ...(code ? { code } : {}) }, { status }),
  privateNoStoreJson: (body: object, init?: ResponseInit) => Response.json(body, init),
 }));
-vi.mock("@/services/ai-runtime.service", () => ({
+vi.mock("@/services/ai/ai-runtime.service", () => ({
  getAiRuntimeReceipt: mocks.getAiRuntimeReceipt,
  recordUserAiRuntimeReceiptActivity: mocks.recordUserAiRuntimeReceiptActivity,
  recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
-vi.mock("@/features/daily-reading/daily-reading-enrichment-jobs.server", () => ({
+vi.mock("@/features/daily-reading/enrichment/daily-reading-enrichment-jobs.server", () => ({
  attachWorkflowRunToDailyReadingJobs: mocks.attachWorkflowRunToDailyReadingJobs,
  completeDailyReadingEnrichmentJob: mocks.completeDailyReadingEnrichmentJob,
  createDailyReadingEnrichmentJobs: mocks.createDailyReadingEnrichmentJobs,
@@ -38,7 +38,7 @@ vi.mock("@/features/daily-reading/daily-reading-enrichment-jobs.server", () => (
  findReusableDailyReadingEnrichmentJob: mocks.findReusableDailyReadingEnrichmentJob,
  listDailyReadingEnrichmentJobs: mocks.listDailyReadingEnrichmentJobs,
 }));
-vi.mock("@/features/daily-reading/daily-reading-enrichment.workflow", () => ({
+vi.mock("@/features/daily-reading/enrichment/daily-reading-enrichment.workflow", () => ({
  dailyReadingEnrichmentWorkflow: vi.fn(),
 }));
 

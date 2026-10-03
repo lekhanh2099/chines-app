@@ -1,20 +1,20 @@
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
-import type { AiTaskId } from "@/lib/ai-task-contract";
+import type { AiTaskId } from "@/lib/ai/ai-task-contract";
 import {
  resolveUserAiTaskRuntime,
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
  type UserAiTaskRuntimeResolution,
-} from "@/services/ai-runtime.service";
+} from "@/services/ai/ai-runtime.service";
 import type { JsonFieldValue } from "@/types/json";
 
 import {
  dailyReadingEnrichmentRequestSchema,
  dailyReadingEnrichmentResponseSchema,
  type DailyReadingEnrichmentResponse,
-} from "@/features/daily-reading/daily-reading-enrichment.schemas";
-import { generateDailyReadingEnrichment } from "@/features/daily-reading/daily-reading-enrichment.server";
-import type { DailyReadingEnrichmentModule } from "@/features/daily-reading/daily-reading.schemas";
+} from "@/features/daily-reading/enrichment/daily-reading-enrichment.schemas";
+import { generateDailyReadingEnrichment } from "@/features/daily-reading/enrichment/daily-reading-enrichment.server";
+import type { DailyReadingEnrichmentModule } from "@/features/daily-reading/model/daily-reading.schemas";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

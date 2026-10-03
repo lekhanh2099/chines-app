@@ -8,16 +8,19 @@ import { Code2, FileCode2, Folder, PanelRightOpen, PlugZap } from "lucide-react"
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
-import { SegmentedControl, type SegmentedControlItem } from "@/components/ui/segmented-control";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/actions/button";
+import {
+ SegmentedControl,
+ type SegmentedControlItem,
+} from "@/components/ui/forms/segmented-control";
+import { Typography } from "@/components/ui/display/typography";
 import {
  ResizableHandle,
  ResizablePanel,
  ResizablePanelGroup,
  usePanelRef,
-} from "@/components/ui/resizable";
-import { appShellStore } from "@/stores/app-shell-store";
+} from "@/components/ui/layout/resizable";
+import { appShellStore } from "@/stores/shell/app-shell-store";
 import { getHtmlArtifactApiErrorMessage as getApiErrorMessage } from "./html-artifact-display-utils";
 import {
  hasFolderDescendant,

@@ -1,4 +1,4 @@
-import { extractChinese } from "@/lib/chinese-utils";
+import { extractChinese } from "@/lib/text/chinese-utils";
 import type { ExampleItem } from "@/features/dictionary/types";
 
 export const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;

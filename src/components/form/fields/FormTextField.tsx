@@ -2,7 +2,7 @@
 
 import { useId, type InputHTMLAttributes, type ReactNode } from "react";
 
-import { Input, type InputProps } from "@/components/ui/input";
+import { Input, type InputProps } from "@/components/ui/forms/input";
 import { useFieldContext } from "@/components/form/form-context";
 import { FieldShell, getDescribedBy, getFieldError } from "@/components/form/fields/field-utils";
 

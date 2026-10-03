@@ -2,7 +2,7 @@
 
 import { Bookmark, Check, CloudCheck, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
  DropdownMenuLabel,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/overlays/dropdown-menu";
 
 export type BusinessChineseNavTab<T extends string = string> = {
  key: T;

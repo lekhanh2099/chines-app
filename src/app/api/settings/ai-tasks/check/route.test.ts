@@ -17,13 +17,13 @@ vi.mock("@/lib/api/authenticated-route", () => ({
   Response.json({ error: message, ...(code ? { code } : {}) }, { status }),
  privateNoStoreJson: (body: object, init?: ResponseInit) => Response.json(body, init),
 }));
-vi.mock("@/features/settings/api-key-discovery.server", () => ({
+vi.mock("@/features/settings/server/api-key-discovery.server", () => ({
  probeApiKeyModel: mocks.probeApiKeyModel,
 }));
-vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-embedding.server", () => ({
+vi.mock("@/features/hanzihome/ai-conversation/memory/ai-conversation-embedding.server", () => ({
  generateAiConversationMemoryEmbedding: mocks.generateAiConversationMemoryEmbedding,
 }));
-vi.mock("@/services/ai-runtime.service", () => ({
+vi.mock("@/services/ai/ai-runtime.service", () => ({
  getAiRuntimeReceipt: mocks.getAiRuntimeReceipt,
  recordUserAiRuntimeActivity: mocks.recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,

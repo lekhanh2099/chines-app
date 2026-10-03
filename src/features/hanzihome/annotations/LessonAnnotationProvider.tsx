@@ -1,7 +1,7 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/forms/label";
+import { Textarea } from "@/components/ui/forms/textarea";
 import { parseErrorLike, type ErrorInput } from "@/types/error";
 import {
  createContext,
@@ -21,8 +21,8 @@ import {
  BasePopover as Popover,
  BasePopoverPopup,
  BasePopoverPositioner,
-} from "@/components/ui/base-popover";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui/overlays/base-popover";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogBody,
@@ -32,8 +32,8 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
-import { containsChinese } from "@/lib/chinese-utils";
+} from "@/components/ui/overlays/dialog";
+import { containsChinese } from "@/lib/text/chinese-utils";
 
 import { createAnnotationAnchor, resolveAnnotationAnchor } from "./annotation-anchor";
 import {

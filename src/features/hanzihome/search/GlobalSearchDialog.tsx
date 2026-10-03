@@ -13,19 +13,19 @@ import {
  X,
 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
  DialogContent,
  DialogDescription,
  DialogHeader,
  DialogTitle,
-} from "@/components/ui/dialog";
-import { IconTile } from "@/components/ui/icon-tile";
-import { Input } from "@/components/ui/input";
-import { Typography } from "@/components/ui/typography";
-import { containsChinese } from "@/lib/chinese-utils";
+} from "@/components/ui/overlays/dialog";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Input } from "@/components/ui/forms/input";
+import { Typography } from "@/components/ui/display/typography";
+import { containsChinese } from "@/lib/text/chinese-utils";
 
 import { searchHanziHomeIndex } from "./searchHanziHomeIndex";
 import { SearchResultItem } from "./SearchResultItem";

@@ -18,7 +18,7 @@ vi.mock("@/components/providers/QueryProvider", () => ({
   isResolved: true,
  }),
 }));
-vi.mock("@/components/layout/LocaleSwitcher", () => ({ LocaleSwitcher: () => null }));
+vi.mock("@/components/layout/header/LocaleSwitcher", () => ({ LocaleSwitcher: () => null }));
 vi.mock("sonner", () => ({ toast: { error: vi.fn(), success: vi.fn() } }));
 vi.mock("@/components/tanstack-form/hooks/form", async (importOriginal) => {
  const original = await importOriginal<typeof import("@/components/tanstack-form/hooks/form")>();

@@ -3,8 +3,8 @@ import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { IconButton } from "@/components/ui/icon-button";
-import { Input } from "@/components/ui/input";
+import { IconButton } from "@/components/ui/actions/icon-button";
+import { Input } from "@/components/ui/forms/input";
 import { useTranslations } from "next-intl";
 
 type ControlledPasswordProps = {

@@ -3,12 +3,12 @@
 import { ArrowLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { PageContainer } from "@/components/layout/page-container";
-import { SectionHeader } from "@/components/layout/section-header";
-import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { buttonVariants } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import { PageContainer } from "@/components/layout/workspace/page-container";
+import { SectionHeader } from "@/components/layout/workspace/section-header";
+import { SectionWrapper } from "@/components/layout/workspace/section-wrapper";
+import { buttonVariants } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import type { DictionarySentenceViewModel } from "@/features/dictionary/types";
 import { HANZI_CHAR_REGEX } from "@/features/dictionary/utils";
 import { Link } from "@/i18n/navigation";

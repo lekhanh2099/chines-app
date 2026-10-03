@@ -1,12 +1,12 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
-import { Typography } from "@/components/ui/typography";
+import { Label } from "@/components/ui/forms/label";
+import { Typography } from "@/components/ui/display/typography";
 import { useId, type ReactNode } from "react";
 
 import { useFieldContext } from "@/components/form/form-context";
 import { getDescribedBy, getFieldError } from "@/components/form/fields/field-utils";
-import { Switch } from "@/components/ui/switch";
+import { Switch } from "@/components/ui/forms/switch";
 import { cn } from "@/lib/utils";
 
 type FormSwitchProps = {

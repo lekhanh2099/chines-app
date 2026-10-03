@@ -1,13 +1,13 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 
-import type { OptionSelectProps } from "@/components/ui/option-select";
+import type { OptionSelectProps } from "@/components/ui/forms/option-select";
 
 const { mockOptionSelect } = vi.hoisted(() => ({
  mockOptionSelect: vi.fn<(props: OptionSelectProps) => void>(),
 }));
 
-vi.mock("@/components/ui/option-select", () => ({
+vi.mock("@/components/ui/forms/option-select", () => ({
  OptionSelect: (props: OptionSelectProps) => {
   mockOptionSelect(props);
   return <span />;

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { jsonValueSchema } from "@/lib/json-schema";
+import { jsonValueSchema } from "@/lib/schema/json-schema";
 import type { Json } from "@/types/supabase.generated";
 
 export const JsonValueSchema = jsonValueSchema;

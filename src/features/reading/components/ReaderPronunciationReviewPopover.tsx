@@ -7,10 +7,10 @@ import {
  BasePopover as Popover,
  BasePopoverPopup,
  BasePopoverPositioner,
-} from "@/components/ui/base-popover";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Typography } from "@/components/ui/typography";
+} from "@/components/ui/overlays/base-popover";
+import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
+import { Typography } from "@/components/ui/display/typography";
 import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { formatContextualReading } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 
