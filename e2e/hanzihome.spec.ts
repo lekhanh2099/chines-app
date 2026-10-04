@@ -198,6 +198,15 @@ test("surfaces a revision conflict when remote state changes", async ({ page }) 
 });
 
 test("keeps Reader completion explicit and exercises microphone shadowing", async ({ page }) => {
+ // Reproduce runners without a usable platform speech voice.
+ await page.addInitScript(() => {
+  window.speechSynthesis.speak = (utterance) => {
+   utterance.onerror?.call(
+    utterance,
+    new SpeechSynthesisErrorEvent("error", { utterance, error: "synthesis-failed" }),
+   );
+  };
+ });
  await resetReaderProgress();
  await page.context().grantPermissions(["microphone"], { origin: new URL(baseURL).origin });
  await login(page, accountA);
@@ -206,19 +215,33 @@ test("keeps Reader completion explicit and exercises microphone shadowing", asyn
  await page.getByRole("button", { name: "Đánh dấu đã học xong" }).click();
  await expect(page.getByText("Đã hoàn thành", { exact: true })).toBeVisible();
 
+ // The shadowing panel follows the active paragraph; select its bottom-page context first.
+ await page.getByRole("combobox", { name: "Mở mục lục đoạn", exact: true }).click();
+ await page.getByRole("option").last().click();
  await page.getByRole("button", { name: "Shadowing", exact: true }).click();
  await expect(page.getByRole("button", { name: "Bắt đầu shadowing", exact: true })).toBeVisible();
- await page.route("**/api/tts**", (route) => route.abort());
- await page.getByRole("slider", { name: "Khoảng chờ shadowing", exact: true }).focus();
- await page.keyboard.press("End");
- await page.getByRole("button", { name: "Bắt đầu shadowing", exact: true }).click();
- await expect(page.getByText(/^Đang ghi [1-9]\d*s$/u)).toBeVisible();
- await page.getByRole("button", { name: "Dừng ghi", exact: true }).click();
- await expect(page.getByText("Bản ghi trong phiên này", { exact: true })).toBeVisible();
- await expect(page.locator('audio[aria-label="Bản ghi shadowing"]')).toHaveAttribute(
-  "src",
-  /^blob:/u,
- );
+ // Keep provider completion independent of the platform's offline speech voices.
+ let releaseSpeechRequest = () => {};
+ const pendingSpeechRequest = new Promise<void>((resolve) => {
+  releaseSpeechRequest = resolve;
+ });
+ await page.route("**/api/tts**", async (route) => {
+  await pendingSpeechRequest;
+  await route.abort();
+ });
+ try {
+  await page.getByRole("button", { name: "Bắt đầu shadowing", exact: true }).click();
+  await expect(page.getByText(/^Đang ghi [1-9]\d*s$/u)).toBeVisible();
+  await page.getByRole("button", { name: "Dừng ghi", exact: true }).click();
+  await expect(page.getByText("Bản ghi trong phiên này", { exact: true })).toBeVisible();
+  await expect(page.locator('audio[aria-label="Bản ghi shadowing"]')).toHaveAttribute(
+   "src",
+   /^blob:/u,
+  );
+ } finally {
+  releaseSpeechRequest();
+  await page.unrouteAll({ behavior: "wait" });
+ }
 });
 
 test("retains failed PDF strokes and persists the retried snapshot across reload and page switches", async ({
