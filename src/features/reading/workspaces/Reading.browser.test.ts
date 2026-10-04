@@ -139,7 +139,14 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(
      resource.paragraphs.length,
     );
+    const navigationSettled = page.locator("[data-app-scroll-viewport]").evaluate(
+     (container) =>
+      new Promise<void>((resolve) => {
+       container.addEventListener("scrollend", () => resolve(), { once: true });
+      }),
+    );
     await page.getByRole("button", { name: chrome.commands.next, exact: true }).click();
+    await navigationSettled;
     await browserExpect(page.locator(`[data-reader-segment="${second.id}"]`)).toHaveAttribute(
      "data-active",
      "true",
