@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
+
 import { useMemo, useState } from "react";
 import { Headphones } from "lucide-react";
 
@@ -24,11 +27,11 @@ import { MandarinTtsControls } from "./MandarinTtsControls";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
 import { itemsForListeningSection } from "./listening.view-model";
-import { listeningCategoryLabels } from "./listening.labels";
 import { LISTENING_CATEGORIES } from "./listening.types";
 import { z } from "zod";
 
 export function ListeningWorkspace() {
+ const t = useTranslations("Listening");
  const runtime = useHanziHomeRuntime();
  const displayMode = lessonDisplaySettings(runtime.learningState, runtime.lesson);
  const tts = useSharedMandarinTts();
@@ -65,13 +68,25 @@ export function ListeningWorkspace() {
    <Card variant="default" padding="lg" className="flex min-h-64 items-center justify-center gap-2">
     <Spinner />
     <StudyInstructionText as="span" tone="muted" weight="bold">
-     Đang tải bài luyện nghe…
+     {t("loading")}
     </StudyInstructionText>
    </Card>
   );
  }
 
- if (query.isError || !bundle || !selectedSection) {
+ if (query.isError) {
+  return (
+   <QueryErrorCard
+    title={t("loadError")}
+    description={t("loadErrorHelp")}
+    retryLabel={t("retry")}
+    onRetry={() => {
+     void query.refetch();
+    }}
+   />
+  );
+ }
+ if (!bundle || !selectedSection) {
   return (
    <Card
     variant="default"
@@ -79,15 +94,20 @@ export function ListeningWorkspace() {
     className="grid min-h-64 place-content-center gap-2 text-center"
    >
     <StudyInstructionText tone="default" weight="black">
-     Không tải được bài luyện nghe
+     {t("emptyTitle")}
     </StudyInstructionText>
     <StudyInstructionText variant="bodySmall" tone="muted">
-     {query.error?.message ?? "Bài này chưa có dữ liệu nghe."}
+     {t("empty")}
     </StudyInstructionText>
    </Card>
   );
  }
 
+ const categoryLabels = new Map([
+  ["listening_comprehension", t("categories.listening_comprehension")],
+  ["pronunciation", t("categories.pronunciation")],
+  ["extra_practice", t("categories.extra_practice")],
+ ]);
  const sidebar = (
   <div className="grid content-start gap-2">
    {LISTENING_CATEGORIES.map((category) => {
@@ -102,7 +122,7 @@ export function ListeningWorkspace() {
        scale="micro"
        className="px-1 pt-2"
       >
-       {listeningCategoryLabels[category]}
+       {categoryLabels.get(category)}
       </StudyInstructionText>
       {sections.map((section, index) => (
        <LessonModuleSidebarItem
@@ -122,10 +142,10 @@ export function ListeningWorkspace() {
 
  return (
   <LessonModuleFrame
-   title="Luyện nghe"
+   title={t("title")}
    subtitle={`${bundle.lesson.titleZh}${bundle.lesson.titleVi ? ` · ${bundle.lesson.titleVi}` : ""}`}
-   sidebarLabel="Đề mục"
-   sidebarSummary={`${bundle.sections.length} nhóm`}
+   sidebarLabel={t("sidebar")}
+   sidebarSummary={t("groups", { count: bundle.sections.length })}
    sidebarOpen={sidebarOpen}
    onSidebarOpenChange={setSidebarOpen}
    sidebarSelectionKey={selectedSection.id}
@@ -147,7 +167,7 @@ export function ListeningWorkspace() {
      ))}
     </>
    }
-   actions={<Badge variant="purple">{selectedItems.length} câu</Badge>}
+   actions={<Badge variant="purple">{t("sentences", { count: selectedItems.length })}</Badge>}
   >
    <div className="grid gap-2.5">
     <MandarinTtsControls
@@ -167,12 +187,12 @@ export function ListeningWorkspace() {
      aria-pressed={showScript}
      onClick={() => setShowScript((current) => !current)}
     >
-     {showScript ? "Ẩn toàn bộ script" : "Hiện toàn bộ script"}
+     {showScript ? t("hideAllScript") : t("showAllScript")}
     </Button>
 
     <Card variant="section" padding="md" className="grid gap-1.5">
      <Badge variant="purple" className="justify-self-start">
-      Bài luyện nghe
+      {t("lesson")}
      </Badge>
      <ReaderHanziText as="h2" displayMode={displayMode} size="lg" leading="relaxed">
       {selectedSection.titleZh}

@@ -19,7 +19,6 @@ vi.mock("@/i18n/navigation", () => ({
 
 vi.mock("@/features/reading/pdf/PdfReaderWorkspace", () => ({
  PdfReaderWorkspace: () => null,
- pdfAssetIdForDocument: () => null,
 }));
 
 vi.mock("@/features/reading/workspaces/ReaderDocumentStudy", () => ({

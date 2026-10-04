@@ -1,8 +1,9 @@
 "use client";
 
 import { Download, LoaderCircle } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
+import { useMemo, useState } from "react";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
 import { Badge } from "@/components/ui/display/badge";
@@ -15,33 +16,34 @@ import { Textarea } from "@/components/ui/forms/textarea";
 import { Typography } from "@/components/ui/display/typography";
 import { MandarinTtsControls } from "@/features/hanzihome/listening/MandarinTtsControls";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
-import { buildCacheKey } from "@/lib/audio/tts-cache";
 
+import { splitTtsStudioText, type TtsSegmentMode } from "./tts-studio.schemas";
+
+import { useTtsLibrary } from "./useTtsLibrary";
+import { useTtsStudioSave } from "./useTtsStudioSave";
+import { useTtsStudioPlayback } from "./useTtsStudioPlayback";
 import {
- splitTtsStudioText,
- ttsClipResponseSchema,
- ttsClipDraftSchema,
- ttsFolderResponseSchema,
- ttsLibraryResponseSchema,
- type TtsClipRow,
- type TtsFolderRow,
- type TtsSegmentMode,
-} from "./tts-studio.schemas";
+ ttsActiveSegmentIndex,
+ ttsClipDownloadFilename,
+ ttsStudioTextSummary,
+} from "./tts-studio-utils";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 
-const ttsRatePresets = [
- { label: "Tự nhiên", rate: 1 },
- { label: "Luyện nghe chậm", rate: 0.9 },
- { label: "Hội thoại trẻ", rate: 1.1 },
- { label: "Thuyết minh", rate: 0.75 },
-];
 const ttsSampleText =
  "学习语言不能只怕出错。越怕开口说，就越没有机会进步。\n每天听一点、说一点，慢慢地就会越来越自然。";
 
 export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string }) {
+ const t = useTranslations("TtsStudio");
+ const ttsRatePresets = [
+  { label: t("natural"), rate: 1 },
+  { label: t("slow"), rate: 0.9 },
+  { label: t("conversation"), rate: 1.1 },
+  { label: t("narration"), rate: 0.75 },
+ ];
  const tts = useSharedMandarinTts();
  const searchParams = useSearchParams();
  const requestedText = searchParams.get("text") ?? "";
- const { generateAudio, pause, resume, speakSequence, stop } = tts;
+ const { speakSequence } = tts;
  const [text, setText] = useState(() => requestedText || sourceText || ttsSampleText);
  const [workspaceTab, setWorkspaceTab] = useState<"compose" | "library">("compose");
  const [title, setTitle] = useState("");
@@ -51,238 +53,61 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
  const [loopCurrent, setLoopCurrent] = useState(false);
  const [folderName, setFolderName] = useState("");
  const [folderId, setFolderId] = useState<string | null>(null);
- const [folders, setFolders] = useState<TtsFolderRow[]>([]);
- const [clips, setClips] = useState<TtsClipRow[]>([]);
- const [saveError, setSaveError] = useState("");
- const [audioUrl, setAudioUrl] = useState<string | null>(null);
- const [isGenerating, setIsGenerating] = useState(false);
- const playbackRunRef = useRef(0);
- const loopCurrentRef = useRef(false);
- const segments = useMemo(() => splitTtsStudioText(text, mode), [mode, text]);
- const effectiveActiveSegmentIndex = Math.min(activeSegmentIndex, Math.max(0, segments.length - 1));
- const sentenceCount = useMemo(() => splitTtsStudioText(text, "sentence").length, [text]);
- const paragraphCount = useMemo(() => splitTtsStudioText(text, "paragraph").length, [text]);
- const characterCount = Array.from(text).length;
- const estimatedDurationSeconds = Math.max(0, Math.round(characterCount / 4));
- const estimatedDuration = `${Math.floor(estimatedDurationSeconds / 60)}:${String(
-  estimatedDurationSeconds % 60,
- ).padStart(2, "0")}`;
-
- useEffect(() => {
-  loopCurrentRef.current = loopCurrent;
- }, [loopCurrent]);
-
- useEffect(() => {
-  playbackRunRef.current += 1;
-  stop();
- }, [mode, stop, text]);
-
- const playSegments = useCallback(() => {
-  if (segments.length === 0) return;
-  playbackRunRef.current += 1;
-  const runId = playbackRunRef.current;
-  const play = () => {
-   if (playbackRunRef.current !== runId) return;
-   speakSequence(segments, () => {
-    if (playbackRunRef.current !== runId || !loopCurrentRef.current) return;
-    play();
-   });
-  };
-  play();
- }, [segments, speakSequence]);
-
- const playSegmentAt = useCallback(
-  (index: number) => {
-   const segment = segments[index];
-   if (segment === undefined) return;
-   playbackRunRef.current += 1;
-   const runId = playbackRunRef.current;
-   const play = (currentIndex: number) => {
-    const currentSegment = segments[currentIndex];
-    if (currentSegment === undefined || playbackRunRef.current !== runId) return;
-    setActiveSegmentIndex(currentIndex);
-    speakSequence([currentSegment], () => {
-     if (playbackRunRef.current !== runId) return;
-     if (loopCurrentRef.current) {
-      play(currentIndex);
-      return;
-     }
-     if (autoAdvance && currentIndex < segments.length - 1) {
-      play(currentIndex + 1);
-     }
-    });
-   };
-   play(index);
-  },
-  [autoAdvance, segments, speakSequence],
- );
-
- const stopPlayback = useCallback(() => {
-  playbackRunRef.current += 1;
-  stop();
- }, [stop]);
-
- useEffect(() => {
-  if (workspaceTab !== "library") return;
-  let cancelled = false;
-  void fetch("/api/hanzihome/tts/library", { cache: "no-store" })
-   .then(async (response) => {
-    if (!response.ok) throw new Error("Không tải được thư viện giọng đọc.");
-    const parsed = ttsLibraryResponseSchema.safeParse(await response.json());
-    if (!parsed.success) throw new Error("Dữ liệu thư viện giọng đọc không hợp lệ.");
-    if (!cancelled) {
-     setFolders(parsed.data.folders);
-     setClips(parsed.data.clips);
-    }
-   })
-   .catch((error: Error) => {
-    if (!cancelled) setSaveError(error.message);
-   });
-  return () => {
-   cancelled = true;
-  };
- }, [workspaceTab]);
-
- useEffect(
-  () => () => {
-   if (audioUrl) URL.revokeObjectURL(audioUrl);
-  },
-  [audioUrl],
- );
-
- useEffect(() => {
-  const onKeyDown = (event: KeyboardEvent) => {
-   const target = event.target;
-   const isTextEntry = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement;
-   if (isTextEntry) {
-    if (event.key === "Escape") {
-     stopPlayback();
-     return;
-    }
-    if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-     event.preventDefault();
-     playSegments();
-    }
-    return;
-   }
-   if (
-    event.defaultPrevented ||
-    event.altKey ||
-    event.ctrlKey ||
-    event.metaKey ||
-    event.shiftKey ||
-    event.isComposing ||
-    (target instanceof HTMLElement &&
-     target.closest(
-      "a, button, input, textarea, select, [contenteditable='true'], [role='button'], [role='combobox'], [role='menuitem'], [role='option'], [role='tab']",
-     ))
-   )
-    return;
-   if (event.key === "Escape") {
-    stopPlayback();
-    return;
-   }
-   if (event.key === " ") {
-    event.preventDefault();
-    if (tts.isSpeaking) pause();
-    else if (tts.isPaused) resume();
-    else playSegments();
-    return;
-   }
-   if (event.key.toLowerCase() === "r") {
-    event.preventDefault();
-    playSegments();
-   }
-  };
-
-  window.addEventListener("keydown", onKeyDown);
-  return () => window.removeEventListener("keydown", onKeyDown);
- }, [pause, playSegments, resume, stopPlayback, tts.isPaused, tts.isSpeaking]);
-
- const saveFolder = async () => {
-  const name = folderName.trim();
-  if (!name) return;
-  setSaveError("");
-  try {
-   const response = await fetch("/api/hanzihome/tts/library", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "folder", name }),
-   });
-   const parsed = ttsFolderResponseSchema.safeParse(await response.json());
-   if (!response.ok || !parsed.success) throw new Error("Không lưu được thư mục giọng đọc.");
-   setFolders((current) => [parsed.data.folder, ...current]);
-   setFolderId(parsed.data.folder.id);
+ const libraryQuery = useTtsLibrary(workspaceTab === "library" || folderId !== null);
+ const folders = libraryQuery.data?.folders ?? [];
+ const clips = libraryQuery.data?.clips ?? [];
+ const {
+  audioUrl,
+  isGenerating,
+  saveError,
+  saveFolder,
+  saveClip,
+  generatePreview,
+  resetPreview,
+  hasText,
+  isSavingClip,
+  isCreatingFolder,
+ } = useTtsStudioSave({
+  text,
+  title,
+  folderName,
+  folderId,
+  selectedVoice: tts.selectedVoice,
+  rate: tts.rate,
+  generateAudio: tts.generateAudio,
+  onFolderCreated: (folder) => {
+   setFolderId(folder.id);
    setFolderName("");
-  } catch (error) {
-   setSaveError(error instanceof Error ? error.message : "Không lưu được thư mục giọng đọc.");
-  }
- };
-
- const generatePreview = async () => {
-  if (!text.trim() || !tts.selectedVoice) return;
-  setSaveError("");
-  setIsGenerating(true);
-  const blob = await generateAudio(text);
-  setIsGenerating(false);
-  if (!blob) {
-   setSaveError(tts.error ?? "Không tạo được âm thanh cho bản ghi.");
-   return;
-  }
-  setAudioUrl(URL.createObjectURL(blob));
- };
-
- const saveClip = async () => {
-  setSaveError("");
-  if (!tts.selectedVoice || !text.trim()) return;
-
-  const result = ttsClipDraftSchema.safeParse({
-   folderId,
-   title: title.trim(),
-   text: text.trim(),
-   voice: tts.selectedVoice.shortName,
-   rate: tts.rate,
-   cacheKey: buildCacheKey(text.trim(), tts.selectedVoice.shortName, tts.rate),
-  });
-  if (!result.success) {
-   setSaveError("Không thể tạo bản ghi với thiết lập hiện tại.");
-   return;
-  }
-
-  setIsGenerating(true);
-  const blob = await generateAudio(text);
-  setIsGenerating(false);
-  if (!blob) {
-   setSaveError(tts.error ?? "Không tạo được âm thanh cho bản ghi.");
-   return;
-  }
-  setAudioUrl(URL.createObjectURL(blob));
-  try {
-   const response = await fetch("/api/hanzihome/tts/library", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "clip", draft: result.data }),
-   });
-   const saved = ttsClipResponseSchema.safeParse(await response.json());
-   if (!response.ok || !saved.success) throw new Error("Không lưu được bản ghi âm.");
-   setClips((current) => [
-    saved.data.clip,
-    ...current.filter((clip) => clip.id !== saved.data.clip.id),
-   ]);
-  } catch (error) {
-   setSaveError(error instanceof Error ? error.message : "Không lưu được bản ghi âm.");
-  }
- };
-
- const openClip = (clip: TtsClipRow) => {
-  stopPlayback();
-  setWorkspaceTab("compose");
-  setText(clip.text);
-  setTitle(clip.title);
-  setFolderId(clip.folder_id);
-  tts.setSelectedVoiceName(clip.voice);
-  tts.setRate(clip.rate);
- };
+  },
+ });
+ const segments = useMemo(() => splitTtsStudioText(text, mode), [mode, text]);
+ const effectiveActiveSegmentIndex = ttsActiveSegmentIndex(activeSegmentIndex, segments.length);
+ const { characterCount, sentenceCount, paragraphCount, estimatedDuration } = useMemo(
+  () => ttsStudioTextSummary(text),
+  [text],
+ );
+ const { playSegments, playSegmentAt, stopPlayback, openClip } = useTtsStudioPlayback({
+  text,
+  mode,
+  segments,
+  autoAdvance,
+  loopCurrent,
+  speakSequence,
+  stop: tts.stop,
+  pause: tts.pause,
+  resume: tts.resume,
+  isSpeaking: tts.isSpeaking,
+  isPaused: tts.isPaused,
+  onSelect: setActiveSegmentIndex,
+  setSelectedVoiceName: tts.setSelectedVoiceName,
+  setRate: tts.setRate,
+  onOpenClip: (clip) => {
+   setWorkspaceTab("compose");
+   setText(clip.text);
+   setTitle(clip.title);
+   setFolderId(clip.folder_id);
+  },
+ });
 
  return (
   <div className="grid min-w-0 gap-3">
@@ -290,12 +115,10 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
       <Typography as="h1" variant="pageTitle" weight="black">
-       Soạn nội dung, nghe thử, rồi xuất MP3
+       {t("heading")}
       </Typography>
       <Typography as="p" variant="body" tone="muted">
-       {sourceText
-        ? "Nội dung được nạp từ Bài khóa và Bài đọc thêm của bài hiện tại; bạn có thể chỉnh trước khi nghe."
-        : "Một luồng chính. Thư viện audio được tách riêng để màn hình soạn không biến thành bảng điều khiển."}
+       {sourceText ? t("sourceDescription") : t("description")}
       </Typography>
      </div>
     </div>
@@ -304,11 +127,11 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
    <Tabs
     value={workspaceTab}
     items={[
-     { key: "compose", label: "Soạn & nghe" },
-     { key: "library", label: "Thư viện" },
+     { key: "compose", label: t("compose") },
+     { key: "library", label: t("library") },
     ]}
     onValueChange={setWorkspaceTab}
-    aria-label="Không gian tạo giọng đọc"
+    aria-label={t("workspaceAria")}
    >
     <TabsContent value="compose" className="pt-4 sm:pt-5">
      {workspaceTab === "compose" ? (
@@ -317,24 +140,24 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
         <div className="flex flex-wrap items-start justify-between gap-3">
          <div className="grid gap-1">
           <Typography as="p" variant="overline" tone="accent" weight="black">
-           BƯỚC 1
+           {t("step", { number: 1 })}
           </Typography>
           <Typography as="h2" variant="sectionTitle" weight="black">
-           Nội dung cần đọc
+           {t("contentTitle")}
           </Typography>
           <Typography as="p" variant="bodySmall" tone="muted">
-           Xuống dòng để chia đoạn; dùng dấu câu để chia câu.
+           {t("contentHelp")}
           </Typography>
          </div>
-         <div className="flex flex-wrap gap-2" aria-label="Tóm tắt nội dung giọng đọc">
+         <div className="flex flex-wrap gap-2" aria-label={t("summaryAria")}>
           <Badge casing="natural" size="lg">
-           {characterCount} ký tự
+           {t("characters", { count: characterCount })}
           </Badge>
           <Badge casing="natural" size="lg">
-           {paragraphCount} đoạn
+           {t("paragraphs", { count: paragraphCount })}
           </Badge>
           <Badge casing="natural" size="lg">
-           {sentenceCount} câu
+           {t("sentences", { count: sentenceCount })}
           </Badge>
           <Badge casing="natural" size="lg">
            ≈ {estimatedDuration}
@@ -345,8 +168,8 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
         <Textarea
          value={text}
          onChange={(event) => setText(event.target.value)}
-         placeholder="Dán đoạn tiếng Trung vào đây…"
-         aria-label="Nội dung cần tạo giọng đọc"
+         placeholder={t("textPlaceholder")}
+         aria-label={t("textAria")}
          maxLength={10000}
          className="min-h-64"
         />
@@ -354,10 +177,10 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
         <Card variant="subtle" padding="sm" className="flex flex-wrap items-center gap-2">
          <div className="grid gap-0.5">
           <Typography as="span" variant="caption" tone="accent" weight="black">
-           BƯỚC 2
+           {t("step", { number: 2 })}
           </Typography>
           <Typography as="span" variant="caption" tone="muted" weight="black">
-           Chọn tốc độ đọc
+           {t("rateTitle")}
           </Typography>
          </div>
          {ttsRatePresets.map((preset) => (
@@ -377,7 +200,7 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
        <Card asChild variant="default" padding="none">
         <details>
          <summary className="cursor-pointer list-none px-3 py-3 text-sm font-bold text-text-primary [&::-webkit-details-marker]:hidden">
-          Tùy chỉnh giọng đọc
+          {t("voiceSettings")}
          </summary>
          <div className="border-t border-border-default p-3">
           <MandarinTtsControls text={text} tts={tts} onPlayAll={playSegments} />
@@ -388,32 +211,32 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
        <section className="grid gap-3">
         <div className="grid gap-1">
          <Typography as="p" variant="overline" tone="accent" weight="black">
-          BƯỚC 3
+          {t("step", { number: 3 })}
          </Typography>
          <Typography as="h2" variant="sectionTitle" weight="black">
-          Nghe theo câu hoặc đoạn
+          {t("listenTitle")}
          </Typography>
         </div>
         <Card variant="subtle" padding="sm" className="grid gap-3">
          <div className="flex flex-wrap items-center justify-between gap-2">
           <Typography as="span" variant="overline" tone="accent" weight="black">
-           NGHE THỬ
+           {t("preview")}
           </Typography>
           <Typography as="span" variant="caption" tone="muted" weight="black">
            {segments.length === 0
-            ? "Chưa có nội dung"
-            : `Câu ${effectiveActiveSegmentIndex + 1} / ${segments.length}`}
+            ? t("noContent")
+            : t("progress", { current: effectiveActiveSegmentIndex + 1, total: segments.length })}
           </Typography>
          </div>
          <div className="grid gap-2">
           <SegmentedControl
            value={mode}
            items={[
-            { key: "sentence", label: "Theo câu" },
-            { key: "paragraph", label: "Theo đoạn" },
+            { key: "sentence", label: t("sentenceMode") },
+            { key: "paragraph", label: t("paragraphMode") },
            ]}
            onChange={setMode}
-           aria-label="Chế độ chia đoạn"
+           aria-label={t("modeAria")}
           />
           <div className="flex flex-wrap items-center gap-2">
            <Button
@@ -423,7 +246,7 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
             aria-pressed={loopCurrent}
             onClick={() => setLoopCurrent((current) => !current)}
            >
-            Lặp
+            {t("loop")}
            </Button>
            <Button
             type="button"
@@ -432,17 +255,17 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
             aria-pressed={autoAdvance}
             onClick={() => setAutoAdvance((current) => !current)}
            >
-            Tự chuyển
+            {t("autoAdvance")}
            </Button>
           </div>
          </div>
-         <div className="flex flex-wrap gap-2" aria-label="Chọn câu nghe thử">
+         <div className="flex flex-wrap gap-2" aria-label={t("segmentGroupAria")}>
           {segments.map((segment, index) => (
            <Button
             key={`${index}:${segment}`}
             type="button"
             size="icon"
-            aria-label={`Chọn mục nghe thử ${index + 1}`}
+            aria-label={t("segmentAria", { number: index + 1 })}
             variant={index === effectiveActiveSegmentIndex ? "active" : "outline"}
             onClick={() => setActiveSegmentIndex(index)}
            >
@@ -465,7 +288,7 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
             disabled={tts.isLoading}
             onClick={() => playSegmentAt(effectiveActiveSegmentIndex)}
            >
-            {tts.isSpeaking ? "Đang đọc" : "Nghe"}
+            {tts.isSpeaking ? t("speaking") : t("listen")}
            </Button>
           </Card>
          ) : null}
@@ -480,7 +303,7 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
             playSegmentAt(Math.max(0, effectiveActiveSegmentIndex - 1));
            }}
           >
-           Trước
+           {t("previous")}
           </Button>
           <Button
            type="button"
@@ -489,7 +312,7 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
            disabled={segments.length === 0}
            onClick={() => playSegmentAt(effectiveActiveSegmentIndex)}
           >
-           Phát lại
+           {t("replay")}
           </Button>
           <Button
            type="button"
@@ -501,11 +324,11 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
             playSegmentAt(Math.min(segments.length - 1, effectiveActiveSegmentIndex + 1));
            }}
           >
-           Sau
+           {t("next")}
           </Button>
          </div>
          <Typography as="span" variant="caption" tone="muted">
-          Space: tạm dừng/tiếp tục · R: phát lại · Esc: dừng
+          {t("shortcuts")}
          </Typography>
         </Card>
        </section>
@@ -513,11 +336,11 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
        <div className="flex flex-wrap gap-2 border-t border-border pt-4">
         <Button
          type="button"
-         disabled={!text.trim() || isGenerating}
+         disabled={!hasText || isGenerating}
          onClick={() => void generatePreview()}
         >
          {isGenerating ? <LoaderCircle className="animate-spin" data-icon="inline-start" /> : null}
-         Tạo MP3 toàn bài
+         {t("generateMp3")}
         </Button>
         <Button
          type="button"
@@ -527,75 +350,73 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
           stopPlayback();
           setText("");
           setTitle("");
-          setAudioUrl(null);
-          setSaveError("");
+          resetPreview();
          }}
         >
-         Xóa nội dung
+         {t("clear")}
         </Button>
        </div>
 
-       {audioUrl !== null || saveError ? (
+       {audioUrl || saveError ? (
         <Card variant="subtle" padding="md" className="grid gap-3">
          <div className="grid gap-1">
           <Typography as="h3" variant="cardTitle" weight="black">
-           Lưu bản ghi vào thư viện
+           {t("saveTitle")}
           </Typography>
           <Typography as="p" variant="bodySmall" tone="muted">
-           Âm thanh được tạo theo giọng và tốc độ bạn đã chọn; thư mục và bản ghi được lưu cùng tài
-           khoản.
+           {t("saveHelp")}
           </Typography>
          </div>
          <Input
           value={title}
           onChange={(event) => setTitle(event.target.value)}
-          placeholder="Tên bản ghi"
-          aria-label="Tên bản ghi âm"
+          placeholder={t("clipPlaceholder")}
+          aria-label={t("clipAria")}
          />
          <div className="flex flex-wrap gap-2">
           <Button
            type="button"
-           disabled={!text.trim() || !tts.selectedVoice || isGenerating}
+           disabled={!hasText || !tts.selectedVoice || isGenerating || isSavingClip}
            onClick={() => void saveClip()}
           >
            {isGenerating ? (
             <LoaderCircle className="animate-spin" data-icon="inline-start" />
            ) : null}
-           Lưu bản ghi
+           {t("saveClip")}
           </Button>
           <Button
            type="button"
            variant="outline"
-           disabled={!text.trim() || !tts.selectedVoice || isGenerating}
+           disabled={!hasText || !tts.selectedVoice || isGenerating}
            onClick={() => void generatePreview()}
           >
-           Tạo audio
+           {t("generateAudio")}
           </Button>
           <Input
            value={folderName}
            onChange={(event) => setFolderName(event.target.value)}
-           placeholder="Tên thư mục mới"
-           aria-label="Tên thư mục giọng đọc mới"
+           placeholder={t("folderPlaceholder")}
+           aria-label={t("folderAria")}
            className="max-w-xs"
           />
           <Button
            type="button"
            variant="outline"
-           disabled={!folderName.trim()}
+           disabled={!folderName.trim() || isCreatingFolder}
            onClick={() => void saveFolder()}
           >
-           Tạo thư mục
+           {t("createFolder")}
           </Button>
          </div>
          {folders.length > 0 ? (
-          <div className="flex flex-wrap gap-2" aria-label="Thư mục giọng đọc">
+          <div className="flex flex-wrap gap-2" aria-label={t("foldersAria")}>
            <Button
             type="button"
             size="sm"
             variant={folderId === null ? "active" : "outline"}
             onClick={() => setFolderId(null)}
            >
-            Chưa phân loại
+            {t("uncategorized")}
            </Button>
            {folders.map((folder) => (
             <Button
@@ -619,9 +440,9 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
           <div className="flex min-w-0 flex-wrap items-center gap-2">
            <audio controls preload="none" src={audioUrl} className="min-w-0 max-w-full" />
            <Button type="button" variant="outline" size="sm" asChild>
-            <a href={audioUrl} download={`${title.trim() || "hanzihome-tts"}.mp3`}>
+            <a href={audioUrl} download={ttsClipDownloadFilename(title)}>
              <Download data-icon="inline-start" />
-             Tải audio
+             {t("download")}
             </a>
            </Button>
           </div>
@@ -636,11 +457,26 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
      {workspaceTab === "library" ? (
       <Card variant="section" padding="md" className="grid gap-2">
        <Typography as="h3" variant="cardTitle" weight="black">
-        Thư viện bản ghi
+        {t("libraryTitle")}
        </Typography>
-       {clips.length === 0 ? (
+       {libraryQuery.isPending ? (
+        <Typography variant="bodySmall" tone="muted">
+         {t("loading")}
+        </Typography>
+       ) : null}
+       {libraryQuery.isError ? (
+        <QueryErrorCard
+         title={t("loadError")}
+         description={t("loadErrorHelp")}
+         retryLabel={t("retry")}
+         onRetry={() => {
+          void libraryQuery.refetch();
+         }}
+        />
+       ) : null}
+       {!libraryQuery.isPending && !libraryQuery.isError && clips.length === 0 ? (
         <Typography as="p" variant="bodySmall" tone="muted">
-         Chưa có bản ghi nào. Hãy chuyển sang mục Soạn & nghe để tạo bản ghi đầu tiên.
+         {t("emptyLibrary")}
         </Typography>
        ) : null}
        {clips.map((clip) => (
@@ -652,7 +488,7 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
         >
          <div className="grid min-w-0 gap-0.5">
           <Typography as="p" variant="bodySmall" weight="black" clamp="one">
-           {clip.title || "Bản ghi chưa đặt tên"}
+           {clip.title || t("untitled")}
           </Typography>
           <Typography as="p" variant="caption" tone="muted" clamp="two">
            {clip.text}
@@ -665,14 +501,14 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
            variant="outline"
            onClick={() => speakSequence([clip.text])}
           >
-           Phát
+           {t("play")}
           </Button>
           <Button type="button" size="sm" variant="outline" onClick={() => openClip(clip)}>
-           Mở bản ghi
+           {t("open")}
           </Button>
           <Button type="button" size="sm" variant="outline" asChild>
            <Link href={`/dictation?clipId=${encodeURIComponent(clip.id)}`} prefetch={false}>
-            Luyện chép chính tả
+            {t("dictation")}
            </Link>
           </Button>
          </div>

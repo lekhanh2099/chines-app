@@ -224,9 +224,9 @@ export function ReaderToolbar() {
      </div>
     ) : null}
 
-    {/* Nhóm 5: Menu chuyển tab trên mobile/tablet (Ẩn trên màn hình lớn xl vì đã có thanh Tabs phía trên) */}
+    {/* Nhóm 5: Công cụ của workspace */}
     {toolbar?.actions ? (
-     <div className="ml-auto flex shrink-0 items-center gap-1.5 xl:hidden">{toolbar.actions}</div>
+     <div className="ml-auto flex shrink-0 items-center gap-1.5">{toolbar.actions}</div>
     ) : null}
    </div>
    {error ? (

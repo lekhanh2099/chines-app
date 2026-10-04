@@ -61,6 +61,14 @@ export function appendPdfStrokePoint(stroke: PdfStroke, point: PdfPoint): PdfStr
  return { ...stroke, points: [...stroke.points, point] };
 }
 
+export function updateStrokeAtId(
+ strokes: readonly PdfStroke[],
+ id: PdfStroke["id"],
+ point: PdfPoint,
+) {
+ return strokes.map((stroke) => (stroke.id === id ? appendPdfStrokePoint(stroke, point) : stroke));
+}
+
 export function pdfStrokePath(stroke: PdfStroke): string {
  const path = stroke.points
   .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x * 1000} ${point.y * 1000}`)

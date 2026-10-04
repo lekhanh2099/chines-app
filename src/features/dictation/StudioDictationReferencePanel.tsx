@@ -1,5 +1,12 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import {
+ dictationEntryText,
+ dictationEntryPinyin,
+ dictationEntryMeaning,
+} from "./dictation-workspace-utils";
+
 import { useState } from "react";
 
 import { Badge } from "@/components/ui/display/badge";
@@ -14,21 +21,6 @@ import {
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 
 type DictationReferenceMode = "hanzi" | "pinyin" | "meaning";
-
-function entryHanzi(entry: ListeningTranscriptEntry) {
- const lines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
- return lines.length > 0 ? lines.join("\n") : entry.transcript.full.zh;
-}
-
-function entryPinyin(entry: ListeningTranscriptEntry) {
- const lines = entry.transcript.lines.map((line) => line.pinyin.trim()).filter(Boolean);
- return lines.length > 0 ? lines.join("\n") : entry.transcript.full.pinyin;
-}
-
-function entryMeaning(entry: ListeningTranscriptEntry) {
- const lines = entry.transcript.lines.map((line) => line.vi?.trim() ?? "").filter(Boolean);
- return lines.length > 0 ? lines.join("\n") : (entry.transcript.full.vi ?? "");
-}
 
 export function StudioDictationReferencePanel({
  activeIndex,
@@ -45,6 +37,7 @@ export function StudioDictationReferencePanel({
  titleVi: string;
  titleZh: string;
 }) {
+ const t = useTranslations("Dictation");
  const [mode, setMode] = useState<DictationReferenceMode>("meaning");
  const visibleMode: DictationReferenceMode = isPlaybackActive ? "hanzi" : mode;
 
@@ -53,7 +46,7 @@ export function StudioDictationReferencePanel({
    <div className="grid min-w-0 gap-2">
     <div className="flex flex-wrap items-center gap-2">
      <Badge variant="warning" casing="natural">
-      Bài đang học
+      {t("currentLesson")}
      </Badge>
      <Typography variant="caption" tone="muted" weight="black" clamp="one">
       {sourceLabel}
@@ -68,33 +61,33 @@ export function StudioDictationReferencePanel({
      </Typography>
     </div>
     <Typography variant="bodySmall" tone="muted" leading="relaxed">
-     Mở chữ Hán, pinyin hoặc nghĩa tiếng Việt của nội dung đã chọn.
+     {t("referenceHelp")}
     </Typography>
    </div>
 
    <SegmentedControl<DictationReferenceMode>
     value={visibleMode}
     items={[
-     { key: "hanzi", label: "Bài khóa" },
-     { key: "pinyin", label: "Pinyin" },
-     { key: "meaning", label: "Nghĩa" },
+     { key: "hanzi", label: t("textTab") },
+     { key: "pinyin", label: t("pinyinTab") },
+     { key: "meaning", label: t("meaning") },
     ]}
     onChange={setMode}
-    aria-label="Nội dung tham chiếu chép chính tả"
+    aria-label={t("referenceAria")}
    />
 
    <div className="grid min-w-0 gap-4 overflow-y-auto overscroll-contain xl:max-h-[60dvh]">
     {entries.map((entry, index) => {
      const active = index === activeIndex;
-     const hanzi = entryHanzi(entry);
-     const pinyin = entryPinyin(entry);
-     const meaning = entryMeaning(entry);
+     const hanzi = dictationEntryText(entry);
+     const pinyin = dictationEntryPinyin(entry);
+     const meaning = dictationEntryMeaning(entry);
 
      return (
       <div key={entry.id} className="grid min-w-0 gap-1.5">
        {entries.length > 1 ? (
         <Typography variant="caption" tone={active ? "accent" : "muted"} weight="black">
-         Phần {index + 1}
+         {t("part", { number: index + 1 })}
         </Typography>
        ) : null}
        {visibleMode === "hanzi" ? (
@@ -115,7 +108,7 @@ export function StudioDictationReferencePanel({
          leading="relaxed"
          wrapping="preWrap"
         >
-         {pinyin || "Phần này chưa có pinyin."}
+         {pinyin || t("noPinyin")}
         </PinyinText>
        ) : null}
        {visibleMode === "meaning" ? (
@@ -125,7 +118,7 @@ export function StudioDictationReferencePanel({
          leading="relaxed"
          wrapping="preWrap"
         >
-         {meaning || "Phần này chưa có nghĩa tiếng Việt."}
+         {meaning || t("noMeaning")}
         </TranslationText>
        ) : null}
       </div>

@@ -28,6 +28,10 @@ async function loadViMessages() {
   home,
   notebook,
   businessChinese,
+  ttsStudio,
+  dictation,
+  listening,
+  radicals,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -55,6 +59,10 @@ async function loadViMessages() {
   import("../../messages/vi/home.json"),
   import("../../messages/vi/notebook.json"),
   import("../../messages/vi/business-chinese.json"),
+  import("../../messages/vi/tts-studio.json"),
+  import("../../messages/vi/dictation.json"),
+  import("../../messages/vi/listening.json"),
+  import("../../messages/vi/radicals.json"),
  ]);
 
  return {
@@ -80,6 +88,10 @@ async function loadViMessages() {
   Home: home.default,
   Notebook: notebook.default,
   BusinessChinese: businessChinese.default,
+  TtsStudio: ttsStudio.default,
+  Dictation: dictation.default,
+  Listening: listening.default,
+  Radicals: radicals.default,
  };
 }
 
@@ -113,6 +125,10 @@ async function loadEnMessages(): Promise<AppMessages> {
   home,
   notebook,
   businessChinese,
+  ttsStudio,
+  dictation,
+  listening,
+  radicals,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -140,6 +156,10 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/home.json"),
   import("../../messages/en/notebook.json"),
   import("../../messages/en/business-chinese.json"),
+  import("../../messages/en/tts-studio.json"),
+  import("../../messages/en/dictation.json"),
+  import("../../messages/en/listening.json"),
+  import("../../messages/en/radicals.json"),
  ]);
 
  return {
@@ -165,6 +185,10 @@ async function loadEnMessages(): Promise<AppMessages> {
   Home: home.default,
   Notebook: notebook.default,
   BusinessChinese: businessChinese.default,
+  TtsStudio: ttsStudio.default,
+  Dictation: dictation.default,
+  Listening: listening.default,
+  Radicals: radicals.default,
  };
 }
 
@@ -196,6 +220,10 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   home,
   notebook,
   businessChinese,
+  ttsStudio,
+  dictation,
+  listening,
+  radicals,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -223,6 +251,10 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/home.json"),
   import("../../messages/zh-CN/notebook.json"),
   import("../../messages/zh-CN/business-chinese.json"),
+  import("../../messages/zh-CN/tts-studio.json"),
+  import("../../messages/zh-CN/dictation.json"),
+  import("../../messages/zh-CN/listening.json"),
+  import("../../messages/zh-CN/radicals.json"),
  ]);
 
  return {
@@ -248,6 +280,10 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   Home: home.default,
   Notebook: notebook.default,
   BusinessChinese: businessChinese.default,
+  TtsStudio: ttsStudio.default,
+  Dictation: dictation.default,
+  Listening: listening.default,
+  Radicals: radicals.default,
  };
 }
 

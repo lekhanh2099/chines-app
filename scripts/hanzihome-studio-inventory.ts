@@ -667,7 +667,7 @@ export const studioInventoryBaseline = {
   vocabulary: 343,
   exerciseGroups: 69,
   exerciseItems: 291,
-  pinyinSourceRejected: 28,
+  pinyinSourceRejected: 21,
   pinyinUnresolved: 0,
  },
  hskReadingPassages: 50,

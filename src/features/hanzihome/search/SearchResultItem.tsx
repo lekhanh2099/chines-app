@@ -1,5 +1,9 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import type { ComponentProps } from "react";
+import { splitSearchHighlight } from "./searchHanziHomeIndex";
+
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import { IconTile } from "@/components/ui/display/icon-tile";
@@ -19,57 +23,48 @@ import {
 import type { HanziHomeSearchIndexItem } from "./types";
 
 type KindConfigEntry = {
- label: string;
  icon: typeof BookOpen;
- tileTone: "accent" | "neutral" | "info" | "success" | "warning";
- badgeVariant: "default" | "accent" | "warning" | "danger" | "success" | "info" | "purple";
+ tileTone: NonNullable<ComponentProps<typeof IconTile>["tone"]>;
+ badgeVariant: NonNullable<ComponentProps<typeof Badge>["variant"]>;
 };
 
 const kindConfig: Record<HanziHomeSearchIndexItem["kind"], KindConfigEntry> = {
  vocab: {
-  label: "Từ vựng",
   icon: Languages,
   tileTone: "accent",
   badgeVariant: "accent",
  },
  grammar: {
-  label: "Ngữ pháp",
   icon: GraduationCap,
   tileTone: "info",
   badgeVariant: "purple",
  },
  lesson_text: {
-  label: "Bài khóa",
   icon: BookText,
   tileTone: "info",
   badgeVariant: "info",
  },
  section: {
-  label: "Đề mục",
   icon: BookOpen,
   tileTone: "info",
   badgeVariant: "default",
  },
  exercise: {
-  label: "Bài tập",
   icon: SquareCheckBig,
   tileTone: "warning",
   badgeVariant: "warning",
  },
  radical: {
-  label: "Bộ thủ",
   icon: Shapes,
   tileTone: "accent",
   badgeVariant: "accent",
  },
  note: {
-  label: "Ghi chú",
   icon: NotebookPen,
   tileTone: "neutral",
   badgeVariant: "default",
  },
  navigation: {
-  label: "Điều hướng",
   icon: Library,
   tileTone: "neutral",
   badgeVariant: "default",
@@ -85,22 +80,8 @@ function HighlightedText({
  query?: string;
  className?: string;
 }) {
- if (!query || !query.trim() || !text) {
-  return <span className={className}>{text}</span>;
- }
-
- const trimmed = query.trim();
- const lowerText = text.toLowerCase();
- const lowerQuery = trimmed.toLowerCase();
- const index = lowerText.indexOf(lowerQuery);
-
- if (index === -1) {
-  return <span className={className}>{text}</span>;
- }
-
- const before = text.slice(0, index);
- const match = text.slice(index, index + trimmed.length);
- const after = text.slice(index + trimmed.length);
+ const { before, match, after } = splitSearchHighlight(text, query ?? "");
+ if (!match) return <span className={className}>{text}</span>;
 
  return (
   <span className={className}>
@@ -132,6 +113,7 @@ export function SearchResultItem({
  onSelect,
  onOpen,
 }: SearchResultItemProps) {
+ const t = useTranslations("Shell.search");
  const config = kindConfig[item.kind];
  const Icon = config.icon;
  const isVocabOrRadical = item.kind === "vocab" || item.kind === "radical";
@@ -171,7 +153,7 @@ export function SearchResultItem({
       </span>
      </Typography>
      <Badge size="sm" variant={config.badgeVariant} className="shrink-0">
-      {config.label}
+      {t(`kinds.${item.kind}`)}
      </Badge>
     </span>
 

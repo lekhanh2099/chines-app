@@ -5,7 +5,7 @@
  "deleteError": "Không thể xóa ghi chú.",
  "exported": "Đã export ghi chú.",
  "imported": "Đã import vào ghi chú hiện tại.",
- "importError": "File import không đúng định dạng ghi chú.",
+ "importError": "Không thể hoàn tất import; hãy kiểm tra nội dung đã lưu và thử lại.",
  "notFound": "Không tìm thấy ghi chú.",
  "options": "Tùy chọn ghi chú",
  "editMode": "Chuyển sang chỉnh sửa",

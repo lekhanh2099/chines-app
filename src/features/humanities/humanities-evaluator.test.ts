@@ -3,6 +3,44 @@ import { describe, expect, it } from "vitest";
 import { evaluateHumanitiesAnswer } from "@/features/humanities/humanities-evaluator";
 
 describe("HanziHome Humanities evaluator", () => {
+ it("preserves separate realizations and weights even when incoming units share an ID", () => {
+  const result = evaluateHumanitiesAnswer("Sáng thứ năm", {
+   mode: "translation",
+   direction: "zh-vi",
+   informationUnits: [
+    {
+     id: "time",
+     type: "time",
+     canonicalMeaningVi: "thứ Năm",
+     required: true,
+     weight: 1,
+     acceptedRealizations: ["sáng thứ năm"],
+    },
+    {
+     id: "time",
+     type: "time",
+     canonicalMeaningVi: "thứ Sáu",
+     required: true,
+     weight: 3,
+     acceptedRealizations: ["sáng thứ sáu"],
+    },
+   ],
+   rubric: [
+    { id: "terms", labelVi: "Thuật ngữ", weight: 100, deterministic: true },
+    { id: "style", labelVi: "Văn phong", weight: 10, deterministic: false },
+   ],
+   references: [{ id: "reference", text: "Bản tham khảo" }],
+   preparationSeconds: null,
+   maxRecordingSeconds: null,
+   replayPolicy: null,
+   replayLimit: null,
+   noteTakingAllowed: null,
+  });
+  expect(result.score).toBe(25);
+  expect(result.evidenceCoverage).toBe(25);
+  expect(result.unitResults.map((unit) => unit.status)).toEqual(["covered", "missing"]);
+  expect(result.unresolvedDimensionIds).toEqual(["style"]);
+ });
  it("scores required information units deterministically", () => {
   const result = evaluateHumanitiesAnswer("Chiều thứ tư chuyển sang 9 giờ sáng thứ năm.", {
    mode: "translation",

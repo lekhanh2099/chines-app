@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useDeferredValue, useId, useMemo, useState } from "react";
 import {
  BookOpenCheck,
@@ -24,21 +25,27 @@ import {
 } from "@/components/ui/overlays/dialog";
 import { IconTile } from "@/components/ui/display/icon-tile";
 import { Input } from "@/components/ui/forms/input";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import { Typography } from "@/components/ui/display/typography";
 import { containsChinese } from "@/lib/text/chinese-utils";
 
-import { searchHanziHomeIndex } from "./searchHanziHomeIndex";
+import {
+ countSearchResultCategories,
+ filterSearchResultCategory,
+ selectSearchNavigationItems,
+ searchHanziHomeIndex,
+} from "./searchHanziHomeIndex";
 import { SearchResultItem } from "./SearchResultItem";
 import type { HanziHomeSearchCategory, HanziHomeSearchIndexItem } from "./types";
 import { useHanziHomeSearchIndex } from "./useHanziHomeSearchIndex";
 
-const CATEGORIES: Array<{ id: HanziHomeSearchCategory; label: string }> = [
- { id: "all", label: "Tất cả" },
- { id: "vocab", label: "Từ vựng" },
- { id: "grammar", label: "Ngữ pháp" },
- { id: "exercise", label: "Bài tập" },
- { id: "lesson", label: "Bài học" },
- { id: "radical", label: "Bộ thủ" },
+const CATEGORIES: HanziHomeSearchCategory[] = [
+ "all",
+ "vocab",
+ "grammar",
+ "exercise",
+ "lesson",
+ "radical",
 ];
 
 type GlobalSearchDialogProps = {
@@ -62,6 +69,7 @@ export function GlobalSearchDialog({
  onOpenResult,
  onDirectLookup,
 }: GlobalSearchDialogProps) {
+ const t = useTranslations("Shell.search");
  const [selectedIndex, setSelectedIndex] = useState(0);
  const [selectedCategory, setSelectedCategory] = useState<HanziHomeSearchCategory>("all");
  const listboxId = useId();
@@ -79,51 +87,15 @@ export function GlobalSearchDialog({
   [courseId, deferredQuery, lessonId, searchIndex.data],
  );
 
- const categoryCounts = useMemo(() => {
-  const counts: Record<HanziHomeSearchCategory, number> = {
-   all: allResults.length,
-   vocab: 0,
-   grammar: 0,
-   exercise: 0,
-   lesson: 0,
-   radical: 0,
-  };
-
-  for (const { item } of allResults) {
-   if (item.kind === "vocab") counts.vocab++;
-   else if (item.kind === "grammar") counts.grammar++;
-   else if (item.kind === "exercise") counts.exercise++;
-   else if (item.kind === "radical") counts.radical++;
-   else counts.lesson++;
-  }
-
-  return counts;
- }, [allResults]);
-
- const visibleResults = useMemo(() => {
-  if (selectedCategory === "all") return allResults;
-  if (selectedCategory === "vocab") return allResults.filter((r) => r.item.kind === "vocab");
-  if (selectedCategory === "grammar") return allResults.filter((r) => r.item.kind === "grammar");
-  if (selectedCategory === "exercise") return allResults.filter((r) => r.item.kind === "exercise");
-  if (selectedCategory === "radical") return allResults.filter((r) => r.item.kind === "radical");
-  return allResults.filter(
-   (r) =>
-    r.item.kind === "lesson_text" ||
-    r.item.kind === "section" ||
-    r.item.kind === "navigation" ||
-    r.item.kind === "note",
-  );
- }, [allResults, selectedCategory]);
-
- const initialNavigationItems = useMemo(() => {
-  return (searchIndex.data ?? [])
-   .filter(
-    (item) =>
-     item.kind === "navigation" &&
-     (!item.lessonId || item.lessonId === lessonId || item.courseId === courseId),
-   )
-   .slice(0, 10);
- }, [courseId, lessonId, searchIndex.data]);
+ const categoryCounts = useMemo(() => countSearchResultCategories(allResults), [allResults]);
+ const visibleResults = useMemo(
+  () => filterSearchResultCategory(allResults, selectedCategory),
+  [allResults, selectedCategory],
+ );
+ const initialNavigationItems = useMemo(
+  () => selectSearchNavigationItems(searchIndex.data ?? [], { courseId, lessonId }),
+  [courseId, lessonId, searchIndex.data],
+ );
 
  const trimmedQuery = query.trim();
  const isSearching = trimmedQuery.length > 0;
@@ -139,11 +111,11 @@ export function GlobalSearchDialog({
  };
 
  const cycleCategory = (direction: 1 | -1) => {
-  const currentIndex = CATEGORIES.findIndex((c) => c.id === selectedCategory);
+  const currentIndex = CATEGORIES.findIndex((category) => category === selectedCategory);
   const nextIndex = (currentIndex + direction + CATEGORIES.length) % CATEGORIES.length;
   const nextCategory = CATEGORIES[nextIndex];
   if (nextCategory) {
-   setSelectedCategory(nextCategory.id);
+   setSelectedCategory(nextCategory);
    setSelectedIndex(0);
   }
  };
@@ -189,10 +161,8 @@ export function GlobalSearchDialog({
     aria-describedby="hanzihome-search-description"
    >
     <DialogHeader className="sr-only">
-     <DialogTitle>Tìm kiếm toàn diện HanziHome</DialogTitle>
-     <DialogDescription id="hanzihome-search-description">
-      Tìm kiếm từ vựng, ngữ pháp, bài khóa, bài tập, bộ thủ và điều hướng bài học.
-     </DialogDescription>
+     <DialogTitle>{t("title")}</DialogTitle>
+     <DialogDescription id="hanzihome-search-description">{t("description")}</DialogDescription>
     </DialogHeader>
 
     {/* Search Input Bar */}
@@ -203,9 +173,9 @@ export function GlobalSearchDialog({
       value={query}
       onChange={(event) => handleQueryChange(event.target.value)}
       onKeyDown={handleKeyDown}
-      placeholder="Tìm Hán tự, pinyin, nghĩa, ngữ pháp, bài tập..."
+      placeholder={t("placeholder")}
       role="combobox"
-      aria-label="Tìm toàn bộ HanziHome"
+      aria-label={t("inputAria")}
       aria-autocomplete="list"
       aria-controls={listboxId}
       aria-expanded={open}
@@ -225,7 +195,7 @@ export function GlobalSearchDialog({
         variant="ghost"
         size="icon-xs"
         onClick={() => handleQueryChange("")}
-        aria-label="Xóa tìm kiếm"
+        aria-label={t("clear")}
        >
         <X />
        </Button>
@@ -240,21 +210,21 @@ export function GlobalSearchDialog({
     {/* Category Filter Tabs */}
     <div className="flex items-center gap-1 overflow-x-auto border-b border-border-default bg-bg-subtle/40 px-3 py-1.5 scrollbar-none">
      {CATEGORIES.map((cat) => {
-      const isSelected = selectedCategory === cat.id;
-      const count = categoryCounts[cat.id];
+      const isSelected = selectedCategory === cat;
+      const count = categoryCounts[cat];
 
       return (
        <Button
-        key={cat.id}
+        key={cat}
         type="button"
         variant={isSelected ? "active" : "ghost"}
         size="compact"
         onClick={() => {
-         setSelectedCategory(cat.id);
+         setSelectedCategory(cat);
          setSelectedIndex(0);
         }}
        >
-        <span>{cat.label}</span>
+        <span>{t(`categories.${cat}`)}</span>
         {isSearching && count > 0 ? (
          <Badge size="sm" variant={isSelected ? "default" : "default"}>
           {count}
@@ -282,14 +252,17 @@ export function GlobalSearchDialog({
        <span className="grid min-w-0 gap-0.5">
         <span className="flex items-center gap-2">
          <Typography as="span" variant="label" tone="default" weight="bold">
-          Tra từ điển “<span className="font-hanzi text-primary">{trimmedQuery}</span>”
+          {t.rich("lookupTitle", {
+           term: trimmedQuery,
+           hanzi: (chunks) => <span className="font-hanzi text-primary">{chunks}</span>,
+          })}
          </Typography>
          <Badge size="sm" variant="accent">
-          Từ điển
+          {t("dictionary")}
          </Badge>
         </span>
         <Typography as="span" variant="bodySmall" tone="muted" weight="medium">
-         Mở bảng phân tích chữ Hán, bộ thủ, pinyin và ví dụ ngữ cảnh
+         {t("lookupDescription")}
         </Typography>
        </span>
        <kbd className="rounded border border-border-default bg-bg-subtle px-2 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
@@ -299,12 +272,23 @@ export function GlobalSearchDialog({
      </div>
     ) : null}
 
+    {searchIndex.isError ? (
+     <QueryErrorCard
+      title={t("loadError")}
+      description={t("loadErrorDescription")}
+      retryLabel={t("retry")}
+      onRetry={() => {
+       void searchIndex.refetch();
+      }}
+     />
+    ) : null}
+
     {/* Results List */}
     <div
      id={listboxId}
      className="flex min-h-0 flex-1 flex-col gap-1 overscroll-contain overflow-y-auto px-2 py-2 scrollbar-soft"
      role="listbox"
-     aria-label="Kết quả tìm kiếm HanziHome"
+     aria-label={t("resultsAria")}
     >
      {isSearching ? (
       <>
@@ -321,14 +305,13 @@ export function GlobalSearchDialog({
         />
        ))}
 
-       {!searchIndex.isLoading && visibleResults.length === 0 && (
+       {!searchIndex.isLoading && !searchIndex.isError && visibleResults.length === 0 && (
         <div className="grid gap-2 px-4 py-12 text-center">
          <Typography variant="label" tone="default" weight="bold">
-          Không tìm thấy nội dung phù hợp trong mục &ldquo;
-          {CATEGORIES.find((c) => c.id === selectedCategory)?.label}&rdquo;.
+          {t("empty", { category: t(`categories.${selectedCategory}`) })}
          </Typography>
          <Typography variant="bodySmall" tone="muted" weight="medium">
-          Thử chọn tab &ldquo;Tất cả&rdquo;, hoặc nhập Hán tự, pinyin không dấu, nghĩa tiếng Việt.
+          {t("emptyDescription")}
          </Typography>
         </div>
        )}
@@ -338,7 +321,7 @@ export function GlobalSearchDialog({
        <div className="px-2 py-1.5">
         <Typography variant="overline" tone="muted" className="flex items-center gap-1.5">
          <Compass className="size-3.5" />
-         Truy cập nhanh
+         {t("quickAccess")}
         </Typography>
        </div>
 
@@ -362,7 +345,7 @@ export function GlobalSearchDialog({
          className="justify-start gap-2"
         >
          <Shapes className="size-3.5 text-accent-text" />
-         <span>214 Bộ thủ</span>
+         <span>{t("shortcuts.radicals")}</span>
         </Button>
         <Button
          type="button"
@@ -372,7 +355,7 @@ export function GlobalSearchDialog({
          className="justify-start gap-2"
         >
          <GraduationCap className="size-3.5 text-info-text" />
-         <span>Ngữ pháp</span>
+         <span>{t("categories.grammar")}</span>
         </Button>
         <Button
          type="button"
@@ -382,7 +365,7 @@ export function GlobalSearchDialog({
          className="justify-start gap-2"
         >
          <Languages className="size-3.5 text-accent-text" />
-         <span>Từ vựng</span>
+         <span>{t("categories.vocab")}</span>
         </Button>
         <Button
          type="button"
@@ -392,7 +375,7 @@ export function GlobalSearchDialog({
          className="justify-start gap-2"
         >
          <NotebookPen className="size-3.5 text-text-secondary" />
-         <span>Ghi chú</span>
+         <span>{t("kinds.note")}</span>
         </Button>
        </div>
       </>
@@ -406,26 +389,26 @@ export function GlobalSearchDialog({
        <kbd className="rounded border border-border-default bg-bg-card px-1.5 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
         ↑↓
        </kbd>
-       <span>Di chuyển</span>
+       <span>{t("move")}</span>
       </span>
       <span className="flex items-center gap-1">
        <kbd className="rounded border border-border-default bg-bg-card px-1.5 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
         ↵
        </kbd>
-       <span>Chọn</span>
+       <span>{t("select")}</span>
       </span>
       <span className="flex items-center gap-1">
        <kbd className="rounded border border-border-default bg-bg-card px-1.5 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
         Tab
        </kbd>
-       <span>Đổi danh mục</span>
+       <span>{t("changeCategory")}</span>
       </span>
      </div>
      <span className="flex items-center gap-1">
       <kbd className="rounded border border-border-default bg-bg-card px-1.5 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
        Esc
       </kbd>
-      <span>Đóng</span>
+      <span>{t("close")}</span>
      </span>
     </div>
    </DialogContent>

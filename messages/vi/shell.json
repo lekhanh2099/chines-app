@@ -110,5 +110,47 @@
  },
  "localeSwitcher": {
   "label": "Đổi ngôn ngữ giao diện"
+ },
+ "search": {
+  "title": "Tìm kiếm HanziHome",
+  "description": "Tìm từ vựng, ngữ pháp, bài học và ghi chú trong HanziHome.",
+  "placeholder": "Tìm từ vựng, ngữ pháp, bài học…",
+  "inputAria": "Tìm kiếm HanziHome",
+  "clear": "Xóa tìm kiếm",
+  "resultsAria": "Kết quả tìm kiếm",
+  "lookupTitle": "Tra từ điển “<hanzi>{term}</hanzi>”",
+  "dictionary": "Từ điển",
+  "lookupDescription": "Xem nghĩa, pinyin và ví dụ của từ hoặc câu này",
+  "quickAccess": "Truy cập nhanh",
+  "shortcuts": {
+   "radicals": "214 bộ thủ"
+  },
+  "move": "Di chuyển",
+  "select": "Chọn",
+  "changeCategory": "Đổi mục",
+  "close": "Đóng",
+  "empty": "Không tìm thấy kết quả trong mục {category}",
+  "emptyDescription": "Thử từ khóa khác hoặc chọn mục khác.",
+  "loadError": "Không thể tải chỉ mục tìm kiếm",
+  "loadErrorDescription": "Kiểm tra kết nối rồi thử lại.",
+  "retry": "Thử lại",
+  "categories": {
+   "all": "Tất cả",
+   "vocab": "Từ vựng",
+   "grammar": "Ngữ pháp",
+   "exercise": "Bài tập",
+   "lesson": "Bài học",
+   "radical": "Bộ thủ"
+  },
+  "kinds": {
+   "vocab": "Từ vựng",
+   "grammar": "Ngữ pháp",
+   "lesson_text": "Bài khóa",
+   "section": "Đề mục",
+   "exercise": "Bài tập",
+   "radical": "Bộ thủ",
+   "note": "Ghi chú",
+   "navigation": "Điều hướng"
+  }
  }
 }

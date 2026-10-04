@@ -1,6 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const baseURL = process.env.E2E_BASE_URL ?? "http://127.0.0.1:3001";
+const serverPort = new URL(baseURL).port || "3001";
 
 export default defineConfig({
  testDir: "./e2e",
@@ -21,9 +22,9 @@ export default defineConfig({
   },
  },
  webServer: {
-  command: "npm run build && npm run start -- -p 3001",
+  command: `npm run build && npm run start -- -p ${serverPort}`,
   url: baseURL,
-  reuseExistingServer: !process.env.CI,
+  reuseExistingServer: !process.env.CI && !process.env.E2E_BASE_URL,
   timeout: 300_000,
   stdout: "ignore",
   stderr: "pipe",

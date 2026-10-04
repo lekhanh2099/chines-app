@@ -145,6 +145,7 @@
   "openOriginal": "Open original PDF",
   "fullscreen": "Fullscreen",
   "annotationError": "PDF notes could not be loaded; new strokes will stay in this session.",
+  "annotationSaveError": "PDF notes were not saved. Strokes remain in this session; retry saving.",
   "pan": "Pan PDF",
   "pen": "Pen",
   "highlighter": "Highlighter",

@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 export function RadicalWorkspaceSkeleton() {
+ const t = useTranslations("Radicals");
  return (
   <div
    className="h-full min-h-0 overflow-y-auto scrollbar-soft"
@@ -51,7 +54,7 @@ export function RadicalWorkspaceSkeleton() {
     </div>
    </div>
 
-   <span className="sr-only">Đang tải bộ thủ</span>
+   <span className="sr-only">{t("loading")}</span>
   </div>
  );
 }

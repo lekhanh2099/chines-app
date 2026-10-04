@@ -12,57 +12,21 @@ import { IconTile } from "@/components/ui/display/icon-tile";
 import { Typography } from "@/components/ui/display/typography";
 import { ReaderCatalogCard } from "@/features/reading/components/ReaderCatalogCard";
 import { usePathname } from "@/i18n/navigation";
-import { JsonObjectSchema } from "@/types/json";
 
-import {
- PdfReaderWorkspace,
- pdfAssetIdForDocument,
-} from "@/features/reading/pdf/PdfReaderWorkspace";
+import { PdfReaderWorkspace } from "@/features/reading/pdf/PdfReaderWorkspace";
 import { ReaderDocumentStudy } from "@/features/reading/workspaces/ReaderDocumentStudy";
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 import type { ReaderPdfAsset } from "@/features/reading/model/reading-assets.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
 
+import {
+ groupReaderCollectionDocuments,
+ metadataText,
+ metadataNumber,
+ reinforcementPdfAssetId,
+} from "./reader-collection-utils";
+
 type ReaderCollectionKind = Exclude<ReaderDocumentRow["kind"], "hsk">;
-
-type ReaderDocumentGroup = {
- id: string;
- title: string;
- subtitle: string;
- description: string;
- documents: ReaderDocumentRow[];
-};
-
-function metadataText(document: ReaderDocumentRow, key: string) {
- const value = document.source_metadata[key];
- return typeof value === "string" ? value : null;
-}
-
-function metadataNumber(document: ReaderDocumentRow, key: string) {
- const value = document.source_metadata[key];
- if (typeof value === "number") return value;
- const counts = JsonObjectSchema.safeParse(document.source_metadata.counts);
- const nestedValue = counts.success ? counts.data[key] : undefined;
- return typeof nestedValue === "number" ? nestedValue : null;
-}
-
-function sourceOrder(document: ReaderDocumentRow) {
- const sourceId = metadataText(document, "source_id");
- if (sourceId === null) return Number.MAX_SAFE_INTEGER;
- const match = /(?:mock|reinforcement)-0*(\d+)$/u.exec(sourceId);
- return match === null ? Number.MAX_SAFE_INTEGER : Number(match[1]);
-}
-
-function reinforcementPdfAssetId(
- document: ReaderDocumentRow,
- assets: ReadonlyArray<ReaderPdfAsset>,
-) {
- const resourceFile = metadataText(document, "resource_file");
- const pdfPage = metadataNumber(document, "pdf_page");
- return resourceFile !== null && pdfPage !== null
-  ? pdfAssetIdForDocument(resourceFile, pdfPage, assets)
-  : null;
-}
 
 export function ReaderCollectionWorkspace({
  kind,
@@ -112,51 +76,17 @@ export function ReaderCollectionWorkspace({
  const selectedDocumentId = requestedDocumentId || slugDocumentId;
  const collectionPath =
   initialDocumentSlug.length > 0 ? pathname.replace(/\/[^/]+$/u, "") : pathname;
- const unitGroups = useMemo<ReaderDocumentGroup[]>(() => {
-  const groups = new Map<string, ReaderDocumentGroup>();
-  for (const document of documents) {
-   const id = document.unit_id ?? "other";
-   const firstDocument = (kind === "reinforcement" ? unitReferenceDocuments : documents)?.find(
-    (candidate) =>
-     candidate.unit_id === id && (kind !== "reinforcement" || candidate.kind === "core"),
-   );
-   const groupTitle =
-    id === "other"
-     ? t("otherDocuments")
-     : t("unitTitle", {
-        id: id.replace(/^U/u, ""),
-        title: metadataText(firstDocument ?? document, "unit_title_zh") ?? "Reader",
-       });
-   const subtitle = metadataText(firstDocument ?? document, "unit_title_vi") ?? "";
-   const groupDescription = metadataText(firstDocument ?? document, "unit_focus_vi") ?? "";
-   const group = groups.get(id) ?? {
-    id,
-    title: groupTitle,
-    subtitle,
-    description: groupDescription,
-    documents: [],
-   };
-   group.documents.push(document);
-   groups.set(id, group);
-  }
-  return [...groups.values()]
-   .sort((left, right) => {
-    if (left.id === "other") return 1;
-    if (right.id === "other") return -1;
-    return left.id.localeCompare(right.id, undefined, { numeric: true });
-   })
-   .map((group) => ({
-    ...group,
-    documents:
-     kind === "reinforcement"
-      ? group.documents.toSorted((left, right) => sourceOrder(left) - sourceOrder(right))
-      : group.documents.toSorted(
-         (left, right) =>
-          (left.reading_number ?? Number.MAX_SAFE_INTEGER) -
-          (right.reading_number ?? Number.MAX_SAFE_INTEGER),
-        ),
-   }));
- }, [documents, kind, t, unitReferenceDocuments]);
+ const unitGroups = useMemo(
+  () =>
+   groupReaderCollectionDocuments(
+    kind,
+    documents,
+    unitReferenceDocuments,
+    t("otherDocuments"),
+    (id, title) => t("unitTitle", { id, title }),
+   ),
+  [documents, kind, t, unitReferenceDocuments],
+ );
  const resource = selectedDocumentId.length > 0 ? initialResource : null;
  const reinforcementUnitReference =
   kind === "reinforcement" && resource !== null

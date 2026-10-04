@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
+
 import { useMemo, useRef, useState } from "react";
 import { z } from "zod";
 import { Headphones, Keyboard, Play } from "lucide-react";
@@ -28,13 +31,12 @@ import {
  createDictationAttempt,
  type DictationAttempt,
 } from "@/features/dictation/dictation-session";
-import { savePracticeAttempt } from "../practice/practice-attempt-api";
-import { upsertLearningLoopItem } from "../learning-loop/learning-loop-api";
+import { useDictationAttempts } from "@/features/dictation/useDictationAttempts";
+import { dictationEntryText } from "@/features/dictation/dictation-workspace-utils";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
 import { MandarinTtsControls } from "./MandarinTtsControls";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
-import { listeningCategoryLabels } from "./listening.labels";
 import { LISTENING_CATEGORIES } from "./listening.types";
 import {
  itemsForListeningSection,
@@ -42,11 +44,6 @@ import {
  type ListeningTranscriptEntry,
 } from "./listening.view-model";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
-
-function dictationText(entry: ListeningTranscriptEntry) {
- const spokenLines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
- return spokenLines.length > 0 ? spokenLines.join("\n") : entry.transcript.full.zh;
-}
 
 export function DictationCards({
  entries,
@@ -67,6 +64,7 @@ export function DictationCards({
  passageText: string;
  activeEntryId?: string;
 }) {
+ const t = useTranslations("Listening");
  const [answers, setAnswers] = useState<Record<string, string>>({});
  const [attemptHistory, setAttemptHistory] = useState<Record<string, DictationAttempt[]>>({});
  const [dirtyAnswers, setDirtyAnswers] = useState<Record<string, boolean>>({});
@@ -83,7 +81,7 @@ export function DictationCards({
     const history = attemptHistory[entry.id] ?? [];
     const attempt = history.at(-1);
     const isChecked = attempt !== undefined && !dirtyAnswers[entry.id];
-    const expectedText = dictationText(entry);
+    const expectedText = dictationEntryText(entry);
     const score = isChecked ? (attempt?.score ?? null) : null;
     const diff = isChecked ? buildDictationDiff(expectedText, answer) : [];
     const showTranscript = revealed[entry.id] ?? isChecked;
@@ -98,10 +96,10 @@ export function DictationCards({
        </IconTile>
        <div className="min-w-0 flex-1">
         <StudyInstructionText variant="label" tone="default" weight="black">
-         Câu {index + 1}
+         {t("question", { number: index + 1 })}
         </StudyInstructionText>
         <StudyInstructionText variant="caption" tone="muted" weight="semibold" clamp="one">
-         Nghe → chép → kiểm tra
+         {t("dictationSteps")}
         </StudyInstructionText>
        </div>
        <Button
@@ -122,7 +120,7 @@ export function DictationCards({
            visibleEntries.forEach((candidate) => {
             startedAtRef.current[candidate.id] ??= startedAt;
            });
-           onSpeakSequence(entries.map(dictationText));
+           onSpeakSequence(entries.map(dictationEntryText));
            return;
           }
           startedAtRef.current[entry.id] ??= startedAt;
@@ -132,10 +130,10 @@ export function DictationCards({
        >
         <Play data-icon="inline-start" />
         {playbackMode === "sentence"
-         ? "Nghe câu"
+         ? t("listenSentence")
          : playbackMode === "paragraph"
-           ? "Nghe đoạn"
-           : "Nghe toàn bài"}
+           ? t("listenParagraph")
+           : t("listenPassage")}
        </Button>
       </div>
 
@@ -145,8 +143,8 @@ export function DictationCards({
        lang="zh-CN"
        density="compact"
        surface="field"
-       aria-label={`Bài chép chính tả đoạn ${index + 1}`}
-       placeholder="Nghe và chép lại bằng chữ Hán…"
+       aria-label={t("dictationQuestion", { number: index + 1 })}
+       placeholder={t("dictationPlaceholder")}
        onChange={(event) => {
         const value = event.target.value;
         startedAtRef.current[entry.id] ??= Date.now();
@@ -174,7 +172,7 @@ export function DictationCards({
          onAttempt(nextAttempt);
         }}
        >
-        Kiểm tra
+        {t("check")}
        </Button>
        <Button
         type="button"
@@ -182,19 +180,19 @@ export function DictationCards({
         size="toolbar"
         onClick={() => setRevealed((current) => ({ ...current, [entry.id]: !current[entry.id] }))}
        >
-        {showTranscript ? "Ẩn script" : "Xem script"}
+        {showTranscript ? t("hideScript") : t("viewScript")}
        </Button>
        {score !== null ? (
         <div className="flex flex-wrap items-center gap-2">
          <Badge variant={score === 100 ? "success" : score >= 70 ? "warning" : "danger"}>
-          {score === 100 ? "Chính xác" : `Đúng ${score}%`}
+          {score === 100 ? t("exact") : t("score", { score })}
          </Badge>
          <Typography as="span" variant="caption" tone="muted">
-          Lần thử {history.length}
+          {t("attempt", { count: history.length })}
          </Typography>
          {history.length > 1 ? (
           <Typography as="span" variant="caption" tone="muted">
-           Điểm: {history.map((item) => `${item.score}%`).join(" → ")}
+           {t("scores", { values: history.map((item) => `${item.score}%`).join(" → ") })}
           </Typography>
          ) : null}
         </div>
@@ -204,7 +202,7 @@ export function DictationCards({
       {score !== null && diff.length > 0 ? (
        <div className="grid gap-1 rounded-control border border-border bg-surface-muted p-3">
         <StudyInstructionText variant="caption" tone="muted" weight="black">
-         So sánh câu trả lời
+         {t("comparison")}
         </StudyInstructionText>
         <Typography as="p" variant="bodySmall" lang="zh-CN" className="flex flex-wrap gap-x-0.5">
          {diff.map((token, tokenIndex) => (
@@ -213,7 +211,7 @@ export function DictationCards({
            key={`${token.kind}:${tokenIndex}:${token.value}`}
            title={
             token.expected && token.actual && token.expected !== token.actual
-             ? `Đúng: ${token.expected}`
+             ? t("expected", { value: token.expected })
              : undefined
            }
            className={
@@ -247,6 +245,7 @@ export function DictationCards({
 }
 
 export function ListeningDictationWorkspace() {
+ const t = useTranslations("Listening");
  const runtime = useHanziHomeRuntime();
  const displayMode = lessonDisplaySettings(runtime.learningState, runtime.lesson);
  const tts = useSharedMandarinTts();
@@ -254,7 +253,7 @@ export function ListeningDictationWorkspace() {
  const [selectedSectionId, setSelectedSectionId] =
   useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [playbackMode, setPlaybackMode] = useState<"sentence" | "passage">("sentence");
- const [attemptSaveError, setAttemptSaveError] = useState("");
+ const { persistAttempt, attemptSaveError } = useDictationAttempts();
  const [sidebarOpen, setSidebarOpen] = useState(true);
  const bundle = query.data;
  const selectedSection =
@@ -267,73 +266,51 @@ export function ListeningDictationWorkspace() {
   () => (selectedSection ? transcriptsForListeningSection(selectedSection, selectedItems) : []),
   [selectedItems, selectedSection],
  );
- const playAllText = transcriptEntries.map(dictationText).join("\n");
-
- const persistAttempt = (attempt: DictationAttempt) => {
-  setAttemptSaveError("");
-  void savePracticeAttempt({
-   surface: "dictation",
-   contentId: attempt.entryId,
-   direction: null,
-   answer: {
-    expectedText: attempt.expectedText,
-    answer: attempt.answer,
-    mistakeCount: attempt.mistakeCount,
-   },
-   scorePercent: attempt.score,
-   responseMs: attempt.responseMs,
-  }).catch((error: Error) => setAttemptSaveError(error.message));
-  if (attempt.mistakeCount > 0) {
-   const now = new Date().toISOString();
-   void upsertLearningLoopItem({
-    id: `dictation:${attempt.entryId}`,
-    stable_key: `dictation:${attempt.entryId}`,
-    kind: "dictation_mistake",
-    source_id: attempt.entryId,
-    source_href: "/dictation",
-    title_zh: "Dictation mistake",
-    title_vi: "Ôn lại lỗi chính tả",
-    prompt_zh: attempt.expectedText,
-    pinyin: "",
-    meaning_vi: "",
-    user_answer: attempt.answer,
-    error_key: `mistakes:${attempt.mistakeCount}`,
-    state: "new",
-    due_at: now,
-    interval_days: 0,
-    correct_streak: 0,
-    lapse_count: 0,
-    revision: 0,
-   }).catch((error: Error) => setAttemptSaveError(error.message));
-  }
- };
+ const playAllText = transcriptEntries.map(dictationEntryText).join("\n");
 
  if (query.isPending) {
   return (
    <Card variant="default" padding="lg" className="flex min-h-64 items-center justify-center gap-2">
     <Spinner />
     <StudyInstructionText as="span" tone="muted" weight="bold">
-     Đang tải bài nghe chép…
+     {t("dictationLoading")}
     </StudyInstructionText>
    </Card>
   );
  }
 
- if (query.isError || !bundle || !selectedSection) {
+ if (query.isError) {
+  return (
+   <QueryErrorCard
+    title={t("loadError")}
+    description={t("loadErrorHelp")}
+    retryLabel={t("retry")}
+    onRetry={() => {
+     void query.refetch();
+    }}
+   />
+  );
+ }
+ if (!bundle || !selectedSection) {
   return (
    <Card variant="default" padding="lg" className="grid min-h-64 place-content-center">
     <div className="grid gap-1 text-center">
      <StudyInstructionText tone="default" weight="black">
-      Không tải được bài nghe chép
+      {t("emptyTitle")}
      </StudyInstructionText>
      <StudyInstructionText variant="bodySmall" tone="muted">
-      {query.error?.message ?? "Bài này chưa có dữ liệu nghe."}
+      {t("empty")}
      </StudyInstructionText>
     </div>
    </Card>
   );
  }
 
+ const categoryLabels = new Map([
+  ["listening_comprehension", t("categories.listening_comprehension")],
+  ["pronunciation", t("categories.pronunciation")],
+  ["extra_practice", t("categories.extra_practice")],
+ ]);
  const sidebar = (
   <div className="grid content-start gap-2">
    {LISTENING_CATEGORIES.map((category) => {
@@ -348,7 +325,7 @@ export function ListeningDictationWorkspace() {
        scale="micro"
        className="px-1 pt-2"
       >
-       {listeningCategoryLabels[category]}
+       {categoryLabels.get(category)}
       </StudyInstructionText>
       {sections.map((section, index) => (
        <LessonModuleSidebarItem
@@ -368,10 +345,10 @@ export function ListeningDictationWorkspace() {
 
  return (
   <LessonModuleFrame
-   title="Nghe chép"
-   subtitle="Nghe nhiều lần, chép lại bằng chữ Hán rồi đối chiếu với script."
-   sidebarLabel="Đề mục"
-   sidebarSummary={`${bundle.sections.length} nhóm`}
+   title={t("dictation")}
+   subtitle={t("dictationSubtitle")}
+   sidebarLabel={t("sidebar")}
+   sidebarSummary={t("groups", { count: bundle.sections.length })}
    sidebarOpen={sidebarOpen}
    onSidebarOpenChange={setSidebarOpen}
    sidebarSelectionKey={selectedSection.id}
@@ -393,16 +370,12 @@ export function ListeningDictationWorkspace() {
      ))}
     </>
    }
-   actions={<Badge variant="purple">{transcriptEntries.length} đoạn</Badge>}
+   actions={<Badge variant="purple">{t("paragraphs", { count: transcriptEntries.length })}</Badge>}
   >
    <div className="grid gap-2.5">
-    <div
-     className="flex flex-wrap items-center gap-2"
-     role="group"
-     aria-label="Chế độ phát dictation"
-    >
+    <div className="flex flex-wrap items-center gap-2" role="group" aria-label={t("playbackMode")}>
      <StudyInstructionText variant="caption" tone="muted" weight="black">
-      Phát lại:
+      {t("replayLabel")}
      </StudyInstructionText>
      <Button
       type="button"
@@ -411,7 +384,7 @@ export function ListeningDictationWorkspace() {
       aria-pressed={playbackMode === "sentence"}
       onClick={() => setPlaybackMode("sentence")}
      >
-      Theo câu
+      {t("sentenceMode")}
      </Button>
      <Button
       type="button"
@@ -420,13 +393,13 @@ export function ListeningDictationWorkspace() {
       aria-pressed={playbackMode === "passage"}
       onClick={() => setPlaybackMode("passage")}
      >
-      Theo đoạn
+      {t("paragraphMode")}
      </Button>
     </div>
     <MandarinTtsControls text={playAllText} tts={tts} />
     {attemptSaveError ? (
      <StudyInstructionText variant="caption" tone="danger">
-      {attemptSaveError}
+      {t("saveError")}
      </StudyInstructionText>
     ) : null}
 
@@ -435,7 +408,7 @@ export function ListeningDictationWorkspace() {
       <Headphones className="size-5 shrink-0 translate-y-0.5 text-primary" />
       <div className="grid min-w-0 gap-1">
        <Badge variant="purple" className="justify-self-start">
-        Bài nghe chép
+        {t("dictationLesson")}
        </Badge>
        <ReaderHanziText as="h2" displayMode={displayMode} size="lg" leading="relaxed">
         {selectedSection.titleZh}
@@ -464,10 +437,10 @@ export function ListeningDictationWorkspace() {
      <Card variant="subtle" padding="lg">
       <div className="grid gap-1 text-center">
        <StudyInstructionText tone="default" weight="black">
-        Phần này chưa có script để nghe chép.
+        {t("noDictationTranscript")}
        </StudyInstructionText>
        <StudyInstructionText variant="bodySmall" tone="muted">
-        Chọn đề mục khác có nội dung ghi âm.
+        {t("chooseOther")}
        </StudyInstructionText>
       </div>
      </Card>

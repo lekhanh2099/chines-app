@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { useMemo, useState } from "react";
 import { Pencil, Play } from "lucide-react";
 
@@ -22,6 +24,14 @@ import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import { z } from "zod";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
+import {
+ splitListeningStress,
+ isListeningBlankCorrect,
+ isListeningChoiceCorrect,
+ isListeningBooleanCorrect,
+ isListeningMatchingCorrect,
+ groupListeningShadowingItems,
+} from "./listening-exercise-utils";
 import type {
  ListeningExerciseType,
  ListeningRuntimeItem,
@@ -56,6 +66,7 @@ function ExerciseAudioButton({
  transcriptText?: string;
  onSpeak: (text: string) => void;
 }) {
+ const t = useTranslations("Listening");
  const text = [transcriptText?.trim(), promptText?.trim()].filter(Boolean).join("\n");
  if (!text) return null;
 
@@ -65,28 +76,13 @@ function ExerciseAudioButton({
    variant="surface"
    size="toolbar"
    className="justify-self-start shrink-0"
-   title="Phát nội dung nghe trước, sau đó đọc câu hỏi"
+   title={t("audioHelp")}
    onClick={() => onSpeak(text)}
   >
    <Play data-icon="inline-start" />
-   {transcriptText ? "Nghe câu" : "Đọc câu hỏi"}
+   {transcriptText ? t("listenSentence") : t("readQuestion")}
   </Button>
  );
-}
-
-function typeLabel(type: ListeningExerciseType) {
- const labels: Record<ListeningExerciseType, string> = {
-  single_choice: "Chọn đáp án",
-  short_answer: "Trả lời câu hỏi",
-  oral_response: "Tự nói / tự viết",
-  true_false: "Đúng / sai",
-  matching: "Nối",
-  same_different: "Giống / khác",
-  shadowing: "Đọc theo",
-  stress_choice: "Trọng âm câu đáp",
-  fill_blank: "Điền chỗ trống",
- };
- return labels[type];
 }
 
 function ItemHeader({
@@ -98,6 +94,18 @@ function ItemHeader({
  type: ListeningExerciseType;
  onEdit?: () => void;
 }) {
+ const t = useTranslations("Listening");
+ const typeLabels = new Map([
+  ["single_choice", t("exerciseTypes.single_choice")],
+  ["short_answer", t("exerciseTypes.short_answer")],
+  ["oral_response", t("exerciseTypes.oral_response")],
+  ["true_false", t("exerciseTypes.true_false")],
+  ["matching", t("exerciseTypes.matching")],
+  ["same_different", t("exerciseTypes.same_different")],
+  ["shadowing", t("exerciseTypes.shadowing")],
+  ["stress_choice", t("exerciseTypes.stress_choice")],
+  ["fill_blank", t("exerciseTypes.fill_blank")],
+ ]);
  return (
   <div className="flex items-center gap-2">
    <IconTile size="sm">
@@ -105,7 +113,7 @@ function ItemHeader({
      {index + 1}
     </Typography>
    </IconTile>
-   <span className="sr-only">Câu {index + 1}.</span>
+   <span className="sr-only">{t("question", { number: index + 1 })}.</span>
    <StudyInstructionText
     variant="overline"
     tone="successStrong"
@@ -113,7 +121,7 @@ function ItemHeader({
     tracking="wide"
     transform="uppercase"
    >
-    {typeLabel(type)}
+    {typeLabels.get(type)}
    </StudyInstructionText>
    {onEdit ? (
     <Button
@@ -121,8 +129,8 @@ function ItemHeader({
      variant="outline"
      size="icon-toolbar"
      className="ml-auto"
-     aria-label="Sửa câu luyện nghe"
-     title="Sửa câu luyện nghe"
+     aria-label={t("editQuestion")}
+     title={t("editQuestion")}
      onClick={onEdit}
     >
      <Pencil />
@@ -133,22 +141,16 @@ function ItemHeader({
 }
 
 function StressText({ text, stress }: { text: string; stress?: string[] }) {
- if (!stress?.length) return text;
- const markers = stress.filter(Boolean).toSorted((left, right) => right.length - left.length);
- const pattern = new RegExp(
-  `(${markers.map((item) => item.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")).join("|")})`,
-  "gu",
- );
- return text.split(pattern).map((part, index) =>
-  markers.includes(part) ? (
+ return splitListeningStress(text, stress).map((part, index) =>
+  part.stressed ? (
    <mark
-    key={`${part}:${index}`}
+    key={`${part.text}:${index}`}
     className="rounded bg-warning-subtle px-0.5 text-inherit underline"
    >
-    {part}
+    {part.text}
    </mark>
   ) : (
-   part
+   part.text
   ),
  );
 }
@@ -181,11 +183,12 @@ function ChoiceItems({
  onToggleScript: (itemId: string) => void;
  onEditItem?: ListeningItemEditHandler;
 }) {
+ const t = useTranslations("Listening");
  return items.map((item, index) => {
   const selected = selections[item.id];
   const correct = item.answer?.type === "choice" ? item.answer.value : undefined;
   const isChecked = checked[item.id] ?? false;
-  const isCorrect = isChecked && selected === correct;
+  const isCorrect = isChecked && isListeningChoiceCorrect(item, selected ?? "");
   const transcriptText = item.transcript?.full.zh ?? sharedTranscript?.full.zh;
   const hasPlayableText = Boolean(transcriptText?.trim() || item.promptZh?.trim());
   const revealScript =
@@ -202,7 +205,7 @@ function ChoiceItems({
     <div lang="zh-CN" className="grid items-start gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
      <div className="grid gap-1">
       <ReaderHanziText displayMode={displayMode} tone="default" leading="relaxed">
-       {item.promptZh ?? "Nghe và chọn đáp án đúng"}
+       {item.promptZh ?? t("choosePrompt")}
       </ReaderHanziText>
       {revealMeaning && item.metadata.promptVi ? (
        <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
@@ -216,7 +219,11 @@ function ChoiceItems({
       onSpeak={onSpeak}
      />
     </div>
-    <div role="radiogroup" aria-label={`Câu ${index + 1}`} className="grid gap-2 sm:grid-cols-2">
+    <div
+     role="radiogroup"
+     aria-label={t("question", { number: index + 1 })}
+     className="grid gap-2 sm:grid-cols-2"
+    >
      {item.options.map((option) => {
       const isSelected = selected === option.key;
       const optionIsCorrect = isChecked && correct === option.key;
@@ -271,10 +278,10 @@ function ChoiceItems({
       disabled={!selected || correct === undefined}
       onClick={() => onCheck(item.id)}
      >
-      Kiểm tra
+      {t("check")}
      </Button>
-     {!hasPlayableText ? <Badge variant="warning">Chưa có nội dung nghe</Badge> : null}
-     {correct === undefined ? <Badge variant="warning">Chưa có đáp án kiểm tra</Badge> : null}
+     {!hasPlayableText ? <Badge variant="warning">{t("noAudio")}</Badge> : null}
+     {correct === undefined ? <Badge variant="warning">{t("noAnswer")}</Badge> : null}
      {item.transcript ? (
       <Button
        type="button"
@@ -282,7 +289,7 @@ function ChoiceItems({
        size="toolbar"
        onClick={() => onToggleScript(item.id)}
       >
-       {revealScript ? "Ẩn script" : "Hiện script"}
+       {revealScript ? t("hideScript") : t("showScript")}
       </Button>
      ) : null}
      {isChecked ? (
@@ -292,7 +299,7 @@ function ChoiceItems({
        tone={isCorrect ? "successStrong" : "danger"}
        weight="bold"
       >
-       {isCorrect ? "✓ Chính xác" : `✕ Chưa đúng · đáp án ${correct ?? "—"}`}
+       {isCorrect ? t("correct") : t("incorrectAnswer", { answer: correct ?? "—" })}
       </StudyInstructionText>
      ) : null}
     </div>
@@ -338,6 +345,7 @@ function AnswerItems({
  onSpeak: (text: string) => void;
  onEditItem?: ListeningItemEditHandler;
 }) {
+ const t = useTranslations("Listening");
  return items.map((item, index) => (
   <Card key={item.id} variant="section" padding="md" className="grid gap-3">
    <ItemHeader
@@ -366,14 +374,14 @@ function AnswerItems({
     value={answers[item.id] ?? ""}
     placeholder={
      exerciseType === AnswerExerciseTypeSchema.enum.oral_response
-      ? "Soạn câu trả lời hoặc dàn ý để tự nói…"
-      : "Nhập câu trả lời bằng tiếng Trung…"
+      ? t("oralPlaceholder")
+      : t("answerPlaceholder")
     }
     onChange={(event) => onAnswer(item.id, event.target.value)}
    />
    {exerciseType === "oral_response" ? (
     <Badge variant="default" casing="natural" className="justify-self-start">
-     Không chấm tự động; nội dung chỉ giữ trong phiên học này.
+     {t("oralHelp")}
     </Badge>
    ) : (
     <Button
@@ -383,7 +391,7 @@ function AnswerItems({
      className="justify-self-start"
      onClick={() => onReveal(item.id)}
     >
-     {revealed[item.id] ? "Ẩn đáp án gợi ý" : "Xem đáp án gợi ý"}
+     {revealed[item.id] ? t("hideSample") : t("showSample")}
     </Button>
    )}
    {revealed[item.id] && item.metadata.sampleAnswerZh ? (
@@ -395,7 +403,7 @@ function AnswerItems({
       tracking="wide"
       transform="uppercase"
      >
-      Đáp án gợi ý
+      {t("sample")}
      </StudyInstructionText>
      <ReaderHanziText displayMode={displayMode} tone="default">
       {item.metadata.sampleAnswerZh}
@@ -440,11 +448,11 @@ function BooleanItems({
  onSpeak: (text: string) => void;
  onEditItem?: ListeningItemEditHandler;
 }) {
+ const t = useTranslations("Listening");
  return items.map((item, index) => {
   const selected = selections[item.id];
-  const expected = item.answer?.type === "boolean" ? String(item.answer.value) : "";
   const isChecked = checked[item.id] ?? false;
-  const isCorrect = isChecked && selected === expected;
+  const isCorrect = isChecked && isListeningBooleanCorrect(item, selected ?? "");
   const sameDifferent = exerciseType === BooleanExerciseTypeSchema.enum.same_different;
   return (
    <Card key={item.id} variant="section" padding="md" className="grid gap-3">
@@ -467,20 +475,20 @@ function BooleanItems({
      <SegmentedControl<string>
       value={selected ?? ""}
       items={[
-       { key: "true", label: sameDifferent ? "✓ Giống" : "✓ Đúng" },
-       { key: "false", label: sameDifferent ? "✕ Khác" : "✕ Sai" },
+       { key: "true", label: sameDifferent ? t("same") : t("true") },
+       { key: "false", label: sameDifferent ? t("different") : t("false") },
       ]}
       onChange={(value) => onSelect(item.id, value)}
       density="toolbar"
-      aria-label={`Chọn đáp án câu ${index + 1}`}
+      aria-label={t("selectAnswer", { number: index + 1 })}
       className="justify-self-start"
      />
      <Button type="button" size="toolbar" disabled={!selected} onClick={() => onCheck(item.id)}>
-      Kiểm tra
+      {t("check")}
      </Button>
      {sameDifferent ? (
       <Button type="button" variant="outline" size="toolbar" onClick={() => onReveal(item.id)}>
-       {revealed[item.id] ? "Ẩn script" : "Xem script"}
+       {revealed[item.id] ? t("hideScript") : t("viewScript")}
       </Button>
      ) : null}
      {isChecked ? (
@@ -490,7 +498,7 @@ function BooleanItems({
        tone={isCorrect ? "successStrong" : "danger"}
        weight="bold"
       >
-       {isCorrect ? "✓ Chính xác" : "✕ Chưa đúng"}
+       {isCorrect ? t("correct") : t("incorrect")}
       </StudyInstructionText>
      ) : null}
     </div>
@@ -535,11 +543,11 @@ function FillBlankItems({
  onSpeak: (text: string) => void;
  onEditItem?: ListeningItemEditHandler;
 }) {
+ const t = useTranslations("Listening");
  return items.map((item, index) => {
-  const value = (answers[item.id] ?? "").trim();
   const accepted = item.metadata.acceptedAnswers ?? [];
   const isChecked = checked[item.id] ?? false;
-  const isCorrect = isChecked && accepted.includes(value);
+  const isCorrect = isChecked && isListeningBlankCorrect(item, answers[item.id] ?? "");
   const parts = item.metadata.promptParts ?? [item.promptZh ?? "", ""];
   return (
    <Card key={item.id} variant="section" padding="md" className="grid gap-3">
@@ -561,7 +569,7 @@ function FillBlankItems({
      </StudyInstructionText>
      <Input
       value={answers[item.id] ?? ""}
-      aria-label={`Đáp án câu ${index + 1}`}
+      aria-label={t("answerAria", { number: index + 1 })}
       validation={isChecked ? (isCorrect ? "success" : "danger") : "none"}
       className="w-28"
       onChange={(event) => onAnswer(item.id, event.target.value)}
@@ -577,7 +585,7 @@ function FillBlankItems({
     />
     <div className="flex items-center gap-2">
      <Button type="button" size="toolbar" onClick={() => onCheck(item.id)}>
-      Kiểm tra
+      {t("check")}
      </Button>
      {isChecked ? (
       <StudyInstructionText
@@ -586,7 +594,7 @@ function FillBlankItems({
        tone={isCorrect ? "successStrong" : "danger"}
        weight="bold"
       >
-       {isCorrect ? "✓ Chính xác" : `✕ ${item.metadata.answerDisplay ?? accepted[0] ?? ""}`}
+       {isCorrect ? t("correct") : `✕ ${item.metadata.answerDisplay ?? accepted[0] ?? ""}`}
       </StudyInstructionText>
      ) : null}
     </div>
@@ -606,15 +614,9 @@ function ShadowingItems({
  onSpeak: (text: string) => void;
  onEditItem?: ListeningItemEditHandler;
 }) {
+ const t = useTranslations("Listening");
  const [done, setDone] = useState<Record<string, boolean>>({});
- const groups = useMemo(() => {
-  const grouped = new Map<string, ListeningRuntimeItem[]>();
-  for (const item of items) {
-   const key = item.metadata.groupId ?? "shadowing";
-   grouped.set(key, [...(grouped.get(key) ?? []), item]);
-  }
-  return [...grouped.entries()];
- }, [items]);
+ const groups = useMemo(() => groupListeningShadowingItems(items), [items]);
 
  return groups.map(([groupId, groupItems]) => (
   <Card key={groupId} variant="section" padding="md" className="grid gap-2">
@@ -628,7 +630,7 @@ function ShadowingItems({
     >
      <Checkbox
       checked={done[item.id] ?? false}
-      aria-label={`Đánh dấu đã luyện: ${item.promptZh ?? item.id}`}
+      aria-label={t("markPracticed", { text: item.promptZh ?? item.id })}
       onCheckedChange={(checked) =>
        setDone((current) => ({ ...current, [item.id]: checked === true }))
       }
@@ -650,8 +652,8 @@ function ShadowingItems({
         type="button"
         variant="outline"
         size="icon-toolbar"
-        aria-label="Sửa câu luyện nghe"
-        title="Sửa câu luyện nghe"
+        aria-label={t("editQuestion")}
+        title={t("editQuestion")}
         onClick={() => onEditItem(item)}
        >
         <Pencil />
@@ -664,7 +666,7 @@ function ShadowingItems({
        onClick={() => onSpeak(item.promptZh ?? "")}
       >
        <Play data-icon="inline-start" />
-       Đọc theo
+       {t("shadowing")}
       </Button>
      </span>
     </div>
@@ -686,17 +688,13 @@ function MatchingItem({
  onSpeak: (text: string) => void;
  onEditItem?: ListeningItemEditHandler;
 }) {
+ const t = useTranslations("Listening");
  const left = item.metadata.left ?? [];
  const right = item.metadata.right ?? [];
  const [activeLeft, setActiveLeft] = useState(left[0]?.id ?? "");
  const [assignments, setAssignments] = useState<Record<string, string>>({});
  const [checked, setChecked] = useState(false);
- const expected =
-  item.answer?.type === "matching"
-   ? new Map(item.answer.pairs.map((pair) => [pair.right, pair.left]))
-   : new Map<string, string>();
- const isCorrect =
-  checked && right.every((rightItem) => assignments[rightItem.id] === expected.get(rightItem.id));
+ const isCorrect = checked && isListeningMatchingCorrect(item, assignments);
 
  return (
   <Card variant="section" padding="md" className="grid gap-3">
@@ -752,7 +750,7 @@ function MatchingItem({
         ) : null}
        </ReaderHanziText>
        <Badge variant="purple" casing="natural">
-        {left.find((candidate) => candidate.id === assignments[entry.id])?.textVi ?? "Chưa nối"}
+        {left.find((candidate) => candidate.id === assignments[entry.id])?.textVi ?? t("unmatched")}
        </Badge>
       </Button>
      ))}
@@ -765,10 +763,18 @@ function MatchingItem({
      disabled={right.some((entry) => !assignments[entry.id])}
      onClick={() => setChecked(true)}
     >
-     Kiểm tra
+     {t("check")}
     </Button>
-    <Button type="button" variant="outline" size="toolbar" onClick={() => setAssignments({})}>
-     Làm lại
+    <Button
+     type="button"
+     variant="outline"
+     size="toolbar"
+     onClick={() => {
+      setAssignments({});
+      setChecked(false);
+     }}
+    >
+     {t("reset")}
     </Button>
     {checked ? (
      <StudyInstructionText
@@ -777,7 +783,7 @@ function MatchingItem({
       tone={isCorrect ? "successStrong" : "danger"}
       weight="bold"
      >
-      {isCorrect ? "✓ Nối chính xác" : "✕ Còn cặp chưa đúng"}
+      {isCorrect ? t("matched") : t("matchIncorrect")}
      </StudyInstructionText>
     ) : null}
    </div>
@@ -786,6 +792,7 @@ function MatchingItem({
 }
 
 export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
+ const t = useTranslations("Listening");
  const editMode = useHanziHomeEditMode();
  const { openEditableNode } = useHanziHomeFeatureActions();
  const [selections, setSelections] = useState<Record<string, string>>({});
@@ -803,8 +810,10 @@ export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
   setSelections((current) => ({ ...current, [itemId]: value }));
   setChecked((current) => ({ ...current, [itemId]: false }));
  };
- const updateAnswer = (itemId: string, value: string) =>
+ const updateAnswer = (itemId: string, value: string) => {
   setAnswers((current) => ({ ...current, [itemId]: value }));
+  setChecked((current) => ({ ...current, [itemId]: false }));
+ };
  const checkItem = (itemId: string) => setChecked((current) => ({ ...current, [itemId]: true }));
  const revealItem = (itemId: string) =>
   setRevealed((current) => ({ ...current, [itemId]: !current[itemId] }));
@@ -821,7 +830,7 @@ export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
       parentEntityId: props.lessonId,
       path: ["listening", "items", item.id],
       value: item,
-      label: `Sửa câu nghe: ${item.promptZh ?? item.id}`,
+      label: t("editLabel", { text: item.promptZh ?? item.id }),
      });
     }
   : undefined;
@@ -837,7 +846,7 @@ export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
       className="justify-self-start"
       onClick={() => setSharedScriptVisible((current) => !current)}
      >
-      {revealSharedScript ? "Ẩn script của đoạn" : "Hiện script của đoạn"}
+      {revealSharedScript ? t("hideSharedScript") : t("showSharedScript")}
      </Button>
      {revealSharedScript ? (
       <ListeningTranscriptBlock

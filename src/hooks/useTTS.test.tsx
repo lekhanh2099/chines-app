@@ -245,6 +245,32 @@ describe("useTTS terminal lifecycle", () => {
   await expect(tts.speakWithLifecycle("你好", { rate: 1 })).rejects.toThrow("TTS API 503");
  });
 
+ it("preserves the login-required error when voice discovery returns 401 and allows retry", async () => {
+  const tts = controller();
+  fetchAudio.mockResolvedValueOnce(new Response(null, { status: 401 }));
+  await expect(tts.speakWithLifecycle("你好", { rate: 1 })).rejects.toThrow("đăng nhập lại");
+  expect(audioInstances).toHaveLength(0);
+  expect(fetchAudio).toHaveBeenCalledTimes(1);
+  const pending = tts.speakWithLifecycle("你好", { rate: 1 });
+  const audio = await activeAudio();
+  audio.onended();
+  await expect(pending).resolves.toEqual({ completed: true, cancelled: false });
+ });
+
+ it("reports login-required when a session is rejected during synthesis", async () => {
+  fetchAudio.mockImplementation(async (_url, init) =>
+   init?.method === "POST"
+    ? new Response(null, { status: 401 })
+    : Response.json([
+       { name: "Voice", shortName: "zh-CN-Voice", gender: "Female", locale: "zh-CN" },
+      ]),
+  );
+  await expect(controller().speakWithLifecycle("你好", { rate: 1 })).rejects.toThrow(
+   "đăng nhập lại",
+  );
+  expect(audioInstances).toHaveLength(0);
+ });
+
  it("keeps legacy speak startup semantics and cancels the preceding lifecycle", async () => {
   const tts = controller();
   const pending = tts.speakWithLifecycle("一", { rate: 1 });

@@ -3,6 +3,7 @@
 import { Label } from "@/components/ui/forms/label";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useId } from "react";
+import { useTranslations } from "next-intl";
 import { Pause, Play, Square, Volume2 } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
@@ -50,6 +51,7 @@ export function MandarinTtsControls({
  showTranslationAfterCheck,
  onShowTranslationAfterCheckChange,
 }: MandarinTtsControlsProps) {
+ const t = useTranslations("TtsStudio");
  const hideScriptId = useId();
  const showTranslationId = useId();
  const loadVoices = tts.loadVoices;
@@ -65,10 +67,10 @@ export function MandarinTtsControls({
      </IconTile>
      <div className="min-w-0">
       <StudyInstructionText variant="label" tone="default" weight="black">
-       Thiết lập nghe
+       {t("controlsTitle")}
       </StudyInstructionText>
       <StudyInstructionText variant="caption" tone="muted" weight="medium" leading="relaxed">
-       {tts.error ?? "Giọng Mandarin zh-CN từ Microsoft Edge Read Aloud."}
+       {tts.error ? t("generateError") : t("provider")}
       </StudyInstructionText>
      </div>
     </div>
@@ -83,10 +85,10 @@ export function MandarinTtsControls({
      >
       <SelectTrigger
        size="sm"
-       aria-label="Chọn giọng Mandarin"
+       aria-label={t("voiceAria")}
        className="min-w-52 max-w-full sm:min-w-64"
       >
-       <SelectValue placeholder="Chọn giọng Mandarin zh-CN" />
+       <SelectValue placeholder={t("voicePlaceholder")} />
       </SelectTrigger>
       <SelectContent align="end">
        <SelectGroup>
@@ -106,7 +108,7 @@ export function MandarinTtsControls({
        if (option) tts.setRate(option.rate);
       }}
      >
-      <SelectTrigger size="sm" aria-label="Chọn tốc độ đọc" className="w-24">
+      <SelectTrigger size="sm" aria-label={t("rateTitle")} className="w-24">
        <SelectValue />
       </SelectTrigger>
       <SelectContent align="end">
@@ -128,7 +130,7 @@ export function MandarinTtsControls({
       onClick={() => (onPlayAll ? onPlayAll() : tts.speakSequence(text.split("\n")))}
      >
       <Play data-icon="inline-start" />
-      Phát cả phần
+      {t("playAll")}
      </Button>
      <Button
       type="button"
@@ -138,7 +140,7 @@ export function MandarinTtsControls({
       onClick={tts.isPaused ? tts.resume : tts.pause}
      >
       {tts.isPaused ? <Play data-icon="inline-start" /> : <Pause data-icon="inline-start" />}
-      {tts.isPaused ? "Tiếp tục" : "Tạm dừng"}
+      {tts.isPaused ? t("resume") : t("pause")}
      </Button>
      <Button
       type="button"
@@ -148,7 +150,7 @@ export function MandarinTtsControls({
       onClick={tts.stop}
      >
       <Square data-icon="inline-start" />
-      Dừng
+      {t("stop")}
      </Button>
     </div>
    </div>
@@ -169,7 +171,7 @@ export function MandarinTtsControls({
         checked={hideScriptBeforeCheck}
         onCheckedChange={(checked) => onHideScriptBeforeCheckChange(checked === true)}
        />
-       Ẩn script trước khi làm
+       {t("hideScript")}
       </Label>
       <Label
        htmlFor={showTranslationId}
@@ -183,7 +185,7 @@ export function MandarinTtsControls({
         checked={showTranslationAfterCheck}
         onCheckedChange={(checked) => onShowTranslationAfterCheckChange(checked === true)}
        />
-       Hiện bản dịch sau khi kiểm tra
+       {t("showTranslation")}
       </Label>
      </div>
     </>

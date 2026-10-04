@@ -4,7 +4,7 @@ import { renderToStaticMarkup as renderMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 
-import { getActiveCharacterIndex, ProgressiveStudyText } from "./ProgressiveStudyText";
+import { ProgressiveStudyText } from "./ProgressiveStudyText";
 import {
  nextAvailableRevealStage,
  nextRevealStage,
@@ -20,13 +20,6 @@ function renderToStaticMarkup(element: ReactNode) {
 }
 
 describe("progressive study text", () => {
- it("maps audio progress to the character currently being read", () => {
-  expect(getActiveCharacterIndex(6, 0, 6, 0)).toBe(0);
-  expect(getActiveCharacterIndex(6, 0, 6, 0.5)).toBe(3);
-  expect(getActiveCharacterIndex(6, 2, 4, 0)).toBe(2);
-  expect(getActiveCharacterIndex(6, 2, 4, 0.75)).toBe(5);
- });
-
  it("cycles Hanzi to Pinyin to meaning and back to Hanzi", () => {
   expect(nextRevealStage(0)).toBe(1);
   expect(nextRevealStage(1)).toBe(2);

@@ -7,7 +7,7 @@ export {
  formatContextualReading,
  formatContextualSpokenPinyin,
  shouldSeparatePinyinSyllables,
-} from "@/lib/pronunciation/contextual-pronunciation";
+} from "../../../lib/pronunciation/contextual-pronunciation.ts";
 export type {
  ContextualPronunciationRequest,
  ContextualReadingUnit,
@@ -18,4 +18,4 @@ export type {
  ContextualPronunciationGlyph,
  ContextualPronunciationToken,
  ContextualPronunciationAnalysis,
-} from "@/lib/pronunciation/contextual-pronunciation";
+} from "../../../lib/pronunciation/contextual-pronunciation.ts";

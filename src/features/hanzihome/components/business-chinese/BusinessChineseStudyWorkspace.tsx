@@ -14,10 +14,8 @@ import {
  type ReactNode,
 } from "react";
 import { useSelector } from "@tanstack/react-store";
-import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useClientSession } from "@/components/providers/QueryProvider";
 import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
 
 type BusinessChineseAnnotationsContextValue = {
@@ -64,7 +62,7 @@ import {
 import { LessonPreviewCard } from "@/features/hanzihome/components/lesson-overview/overview/LessonPreviewCard";
 import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
-import { getActiveCharacterIndex } from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
+import { getActiveCharacterIndex } from "@/features/hanzihome/components/lesson-overview/progressive-study-text-utils";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { MandarinTtsProvider } from "@/features/speech/MandarinTtsProvider";
 import {
@@ -82,10 +80,8 @@ import {
  splitDialogueTurn,
  getChineseSpeechSegments,
 } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
-import { fetchReaderAnnotations } from "@/features/reading/services/reading-annotation-api";
 import { parseReaderSourceTarget } from "@/features/reading/model/reading-source-target";
 import { useReaderSelectionActions } from "@/features/reading/hooks/useReaderSelectionActions";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { useIsLessonCached } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 import { Reader } from "@/features/reader/components/Reader";
@@ -130,16 +126,30 @@ import { cn } from "@/lib/utils";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
 
+import {
+ businessChineseTableColumns,
+ businessChineseContentSections,
+ businessChineseSourceSections,
+ businessChineseTabAvailable,
+ businessChineseVocabularyTableIds,
+ businessChineseVisibleBlocks,
+ businessChineseVisibleSections,
+ businessChineseReaderVocabulary,
+ businessChinesePronunciationAnalyses,
+ businessChineseSectionDocuments,
+ businessChineseReaderAnnotations,
+ businessChineseDictationCount,
+ isChineseOnlyText,
+ pairedTextbookTranslations,
+ splitBusinessChineseExercise,
+} from "./business-chinese-study-utils";
+
+import { useBusinessChineseReaderAnnotations } from "./useBusinessChineseReaderAnnotations";
+
 const headerOwnerId = "business-chinese-study";
 const chineseGraphemeSegmenter = new Intl.Segmenter("zh-CN", {
  granularity: "grapheme",
 });
-const nonChineseTextPattern = /[^\p{Script=Han}\p{Number}\p{Punctuation}\p{Separator}\p{Symbol}]/gu;
-
-function isChineseOnlyText(value: string) {
- return value.replace(nonChineseTextPattern, "").trim().length === value.trim().length;
-}
-
 function BusinessChineseHeaderContextBridge({
  books,
  lesson,
@@ -514,17 +524,8 @@ function BusinessChineseTable({
  const t = useTranslations("BusinessChinese");
  const [revealed, setRevealed] = useState(false);
  const answerVisible = displayMode.showAnswers || revealed;
- const headers = block.rows[0] ?? [];
- const pinyinColumnIndex = headers.findIndex((header) => /pinyin/iu.test(header));
- const hanziColumnIndex = headers.findIndex((header) =>
-  /tiếng trung|giản thể|hán tự|từ vựng|^từ$/iu.test(header),
- );
- const isVocabularyTable = hanziColumnIndex >= 0 && pinyinColumnIndex >= 0;
- const visibleColumnIndexes = headers
-  .map((header, index) => ({ header, index }))
-  .filter(({ header }) => displayMode.showMeaning || !/tiếng việt|nghĩa|hán việt/iu.test(header))
-  .filter(({ index }) => answerVisible || !block.answerColumnIndexes?.includes(index))
-  .map(({ index }) => index);
+ const { headers, pinyinColumnIndex, hanziColumnIndex, isVocabularyTable, visibleColumnIndexes } =
+  businessChineseTableColumns(block, displayMode, answerVisible);
 
  return (
   <div className="grid min-w-0 gap-2">
@@ -621,29 +622,6 @@ function BusinessChineseTable({
  );
 }
 
-function isCanonicalVocabularyTable(
- block: TextbookLesson["sections"][number]["blocks"][number],
- vocabulary: TextbookLesson["vocab"],
-) {
- const headers = block.rows[0] ?? [];
- const pinyinColumnIndex = headers.findIndex((header) => /pinyin/iu.test(header));
- const hanziColumnIndex = headers.findIndex((header) =>
-  /tiếng trung|giản thể|hán tự|từ vựng|^từ$/iu.test(header),
- );
- const rows = block.rows.slice(1);
-
- return (
-  hanziColumnIndex >= 0 &&
-  pinyinColumnIndex >= 0 &&
-  rows.length === vocabulary.length &&
-  vocabulary.every(
-   (item, index) =>
-    rows[index]?.[hanziColumnIndex] === item.hanzi &&
-    rows[index]?.[pinyinColumnIndex] === item.pinyin,
-  )
- );
-}
-
 function TextbookVocabularyPreview({
  vocabulary,
  onOpenVocabulary,
@@ -691,9 +669,7 @@ function BusinessChineseExercise({
 }) {
  const t = useTranslations("BusinessChinese");
  const [revealed, setRevealed] = useState(false);
- const separatorIndex = block.text.indexOf("→");
- const prompt = block.text.slice(0, separatorIndex).trim();
- const answer = block.text.slice(separatorIndex + 1).trim();
+ const { prompt, answer } = splitBusinessChineseExercise(block.text);
  const answerVisible = displayMode.showAnswers || revealed;
 
  return (
@@ -856,9 +832,7 @@ function BusinessChineseSection({
  canonicalVocabularyTableIds: readonly string[];
  vocabularyPreview?: ReactNode;
 }) {
- const visibleBlocks = section.blocks.filter(
-  (block) => !canonicalVocabularyTableIds.includes(block.id),
- );
+ const visibleBlocks = businessChineseVisibleBlocks(section, canonicalVocabularyTableIds);
 
  return (
   <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4">
@@ -984,10 +958,7 @@ export function BusinessChineseStudyWorkspace({
  }, [lesson.id, toggleBookmark]);
 
  const contentSections = useMemo(
-  () =>
-   lesson.sections
-    .filter((section) => !section.title.includes("DỊCH BÀI KHÓA"))
-    .filter((section) => section.blocks.length > 0),
+  () => businessChineseContentSections(lesson.sections),
   [lesson.sections],
  );
 
@@ -1006,14 +977,13 @@ export function BusinessChineseStudyWorkspace({
     { key: "vocab", label: t("tabs.vocab") },
     { key: "grammar", label: t("tabs.grammar") },
     { key: "practice", label: t("tabs.practice") },
-   ].filter(
-    (tab) =>
-     tab.key === "all" ||
-     tab.key === "notes" ||
-     tab.key === "translation" ||
-     (tab.key === "dictation" && dictationSources.length > 0) ||
-     (tab.key === "vocab" && lesson.vocab.length > 0) ||
-     contentSections.some((section) => section.category === tab.key),
+   ].filter((tab) =>
+    businessChineseTabAvailable(
+     tab.key,
+     contentSections,
+     dictationSources.length,
+     lesson.vocab.length,
+    ),
    ),
   [contentSections, dictationSources.length, lesson.vocab.length, t],
  );
@@ -1184,37 +1154,14 @@ function BusinessChineseStudyWorkspaceContent({
   () => buildBusinessChineseReaderDocument(lesson, "text"),
   [lesson],
  );
- const { userId, isResolved } = useClientSession();
  const [annotationError, setAnnotationError] = useState("");
- const annotationsQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerAnnotations(userId, textReaderDocument.id),
-  queryFn: () => fetchReaderAnnotations(userId, textReaderDocument.id),
-  enabled: isResolved && Boolean(userId),
-  staleTime: 60_000,
-  retry: false,
-  refetchOnWindowFocus: false,
- });
+ const annotationsQuery = useBusinessChineseReaderAnnotations(textReaderDocument.id);
  const readerVocabulary = useMemo(
-  () =>
-   lesson.vocab.map((item) => ({
-    id: item.id,
-    word: item.hanzi,
-    pinyin: item.pinyin,
-    meaning: item.meaning,
-   })),
+  () => businessChineseReaderVocabulary(lesson.vocab),
   [lesson.vocab],
  );
  const analysisBySegmentId = useMemo(
-  () =>
-   new Map(
-    textReaderDocument.segments.map((segment) => [
-     segment.id,
-     analyzeContextualPronunciation({
-      text: segment.zh,
-      sourcePinyin: segment.pinyin ?? null,
-     }),
-    ]),
-   ),
+  () => businessChinesePronunciationAnalyses(textReaderDocument),
   [textReaderDocument],
  );
  const readerCommands = useReaderCommands();
@@ -1236,23 +1183,10 @@ function BusinessChineseStudyWorkspaceContent({
  });
  const focusMode = useReaderSelector((state) => state.ui.focusMode);
 
- const sectionDocuments = useMemo(() => {
-  const map = new Map<string, ReaderDocumentModel>();
-  for (const section of textReaderDocument.sections) {
-   map.set(section.id, {
-    ...textReaderDocument,
-    id: `${textReaderDocument.id}:${section.id}`,
-    title: section.id === textReaderDocument.sections[0]?.id ? textReaderDocument.title : undefined,
-    titleVi:
-     section.id === textReaderDocument.sections[0]?.id ? textReaderDocument.titleVi : undefined,
-    sections: textReaderDocument.sections.filter(
-     (readerSection) => readerSection.id === section.id,
-    ),
-    segments: textReaderDocument.segments.filter((segment) => segment.sectionId === section.id),
-   });
-  }
-  return map;
- }, [textReaderDocument]);
+ const sectionDocuments = useMemo(
+  () => businessChineseSectionDocuments(textReaderDocument),
+  [textReaderDocument],
+ );
 
  const renderReaderSection = useCallback(
   ({ section: readerSection, content }: { section: { id: string }; content: ReactNode }) => (
@@ -1264,24 +1198,7 @@ function BusinessChineseStudyWorkspaceContent({
  const annotationServices: ReaderServices = useMemo(
   () => ({
    annotations: {
-    items: (annotationsQuery.data ?? []).flatMap((annotation) =>
-     annotation.paragraph_id !== null &&
-     annotation.start_offset !== null &&
-     annotation.end_offset !== null &&
-     annotation.end_offset > annotation.start_offset &&
-     annotation.selected_text.length > 0
-      ? [
-         {
-          id: annotation.id,
-          segmentId: annotation.paragraph_id,
-          text: annotation.selected_text,
-          start: annotation.start_offset,
-          end: annotation.end_offset,
-          color: annotation.color,
-         },
-        ]
-      : [],
-    ),
+    items: businessChineseReaderAnnotations(annotationsQuery.data ?? []),
     onOpen: (annotation, rect) => {
      const source = annotationsQuery.data?.find((item) => item.id === annotation.id);
      if (source) handleOpenAnnotation(source, rect);
@@ -1326,41 +1243,24 @@ function BusinessChineseStudyWorkspaceContent({
   [parentServices, annotationServices],
  );
 
- const pairedTranslations = useMemo(() => {
-  const translations = new Map<string, string>();
-  const translationIndex = lesson.sections.findIndex((section) =>
-   section.title.includes("DỊCH BÀI KHÓA"),
-  );
-  const sourceSection = translationIndex > 0 ? lesson.sections[translationIndex - 1] : undefined;
-  const translationSection = translationIndex >= 0 ? lesson.sections[translationIndex] : undefined;
-  if (!sourceSection || !translationSection) return translations;
-
-  sourceSection.blocks.forEach((block, index) => {
-   const translation = translationSection.blocks[index];
-   if (translation?.text) translations.set(block.id, translation.text);
-  });
-  return translations;
- }, [lesson.sections]);
+ const pairedTranslations = useMemo(
+  () => pairedTextbookTranslations(lesson.sections),
+  [lesson.sections],
+ );
  const sourceSections = useMemo(
-  () => lesson.sections.filter((section) => !section.title.includes("DỊCH BÀI KHÓA")),
+  () => businessChineseSourceSections(lesson.sections),
   [lesson.sections],
  );
  const contentSections = useMemo(
-  () => sourceSections.filter((section) => section.blocks.length > 0),
+  () => businessChineseContentSections(sourceSections),
   [sourceSections],
  );
  const canonicalVocabularyTableIds = useMemo(
-  () =>
-   contentSections.flatMap((section) =>
-    section.blocks
-     .filter((block) => isCanonicalVocabularyTable(block, lesson.vocab))
-     .map((block) => block.id),
-   ),
+  () => businessChineseVocabularyTableIds(contentSections, lesson.vocab),
   [contentSections, lesson.vocab],
  );
  const visibleSections = useMemo(
-  () =>
-   contentSections.filter((section) => activeView === "all" || section.category === activeView),
+  () => businessChineseVisibleSections(contentSections, activeView),
   [activeView, contentSections],
  );
  const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
@@ -1587,7 +1487,7 @@ function BusinessChineseStudyWorkspaceContent({
                  variant="outline"
                  onClick={() => onActiveViewChange("dictation")}
                 >
-                 Mở Nghe chép ({dictationSources.reduce((acc, s) => acc + s.entries.length, 0)} câu)
+                 Mở Nghe chép ({businessChineseDictationCount(dictationSources)} câu)
                 </Button>
                </Card>
               ) : null}

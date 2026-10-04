@@ -86,21 +86,17 @@ export function VocabDetailDrawer() {
   if (!smartData) return;
 
   try {
-   const result = await detailQuery.saveSelection({
+   await detailQuery.saveSelection({
     personalNote: noteDraft,
     personalNoteMode: "important",
    });
-   if (result.offlineQueued) {
-    toast.success(t("saveOfflineSuccess"));
-   } else {
-    toast.success(
-     mode === "sentence"
-      ? t("saveSentenceSuccess")
-      : t("saveWordSuccess", { word: smartData.entry.hanzi }),
-    );
-   }
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : t("saveError"));
+   toast.success(
+    mode === "sentence"
+     ? t("saveSentenceSuccess")
+     : t("saveWordSuccess", { word: smartData.entry.hanzi }),
+   );
+  } catch {
+   toast.error(t("saveError"));
   }
  };
 

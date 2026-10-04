@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import type { MutationStatus } from "@tanstack/react-query";
 import { useSelector } from "@tanstack/react-store";
 import { createPortal } from "react-dom";
 import {
@@ -40,53 +41,20 @@ import {
 import { Input } from "@/components/ui/forms/input";
 import { Separator } from "@/components/ui/layout/separator";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import { Typography } from "@/components/ui/display/typography";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
-import {
- useNoteFolderMutations,
- useNoteFolders,
- useUpdateNoteLibraryMetadata,
-} from "@/features/notes/hooks/useNoteLibrary";
-import { useClientSession } from "@/components/providers/QueryProvider";
-import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
-import { saveNoteDraft } from "@/features/notes/local/note-draft-store";
-import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
+import { useNoteEditor } from "@/features/notes/hooks/useNoteEditor";
 import { useRouter } from "@/i18n/navigation";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { noteTabsStore } from "@/stores/notes/note-tabs-store";
-import { splitViewStore } from "@/stores/notes/split-view-store";
-import type { JsonFieldValue, JsonObject } from "@/types/json";
+import { selectNoteSplitView, splitViewStore } from "@/stores/notes/split-view-store";
 
 interface NoteEditorPanelProps {
  noteId: string;
  isVisible: boolean;
  mobileHeaderActionsContainer?: HTMLElement | null;
  desktopActionsContainer?: HTMLElement | null;
-}
-
-type SaveStatus = "idle" | "saving" | "saved" | "error";
-
-function createDownloadFileName(title: string): string {
- const slug = title
-  .trim()
-  .toLowerCase()
-  .replace(/[^\p{L}\p{N}]+/gu, "-")
-  .replace(/^-+|-+$/g, "")
-  .slice(0, 64);
-
- return `${slug || "note"}.json`;
-}
-
-function downloadJsonFile(fileName: string, value: JsonFieldValue) {
- const blob = new Blob([JSON.stringify(value, null, 2)], { type: "application/json" });
- const url = URL.createObjectURL(blob);
- const link = document.createElement("a");
- link.href = url;
- link.download = fileName;
- document.body.appendChild(link);
- link.click();
- link.remove();
- URL.revokeObjectURL(url);
 }
 
 const noteEditorActionButtonClassName = "shrink-0 rounded-full";
@@ -110,39 +78,36 @@ export function NoteEditorPanel({
 }: NoteEditorPanelProps) {
  const t = useTranslations("Notes.editor");
  const common = useTranslations("Common");
+ const notesLabels = useTranslations("Notes");
  const {
   note,
   isLoading,
-  saveContent,
-  isSaving,
-  saveStatus,
-  saveReadingContent,
+  error,
+  refetch,
+  handleChange,
+  handleReadingChange,
+  importNote,
+  exportNote,
+  retrySave,
+  isImporting,
+  importVersion,
+  noteContent,
+  readingContent,
+  displaySaveStatus,
   updateSplitView,
-  updateTitle,
-  updateCategory,
   deleteNote: deleteNoteMutation,
   isDeleting,
- } = useNoteDetail(noteId);
+ } = useNoteEditor(noteId);
 
  const { closeTab, updateTabTitle } = noteTabsStore.actions;
- const { userId } = useClientSession();
- const [isDirty, setIsDirty] = useState(false);
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
- const noteFoldersQuery = useNoteFolders();
- const { createMutation: createFolderMutation } = useNoteFolderMutations();
- const updateLibraryMetadataMutation = useUpdateNoteLibraryMetadata();
- const activeNotes = useSelector(splitViewStore, (state) => state.activeNotes);
- const isSplitView = activeNotes[noteId] ?? false;
+ const isSplitView = useSelector(splitViewStore, selectNoteSplitView(noteId));
  const { toggleSplitView } = splitViewStore.actions;
  const router = useRouter();
 
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
  const [mobileActionsOpen, setMobileActionsOpen] = useState(false);
  const [metadataOpen, setMetadataOpen] = useState(false);
- const [importedContent, setImportedContent] = useState<JsonObject | null>(null);
- const [importedReadingContent, setImportedReadingContent] = useState<
-  JsonObject | null | undefined
- >(undefined);
  const isMobileViewport = useSyncExternalStore(
   subscribeToMobileViewport,
   getMobileViewportSnapshot,
@@ -151,11 +116,6 @@ export function NoteEditorPanel({
  const [readOnlyOverride, setReadOnlyOverride] = useState<boolean | null>(null);
  const isReadOnlyMode = readOnlyOverride ?? isMobileViewport;
  const [isToolbarVisible, setIsToolbarVisible] = useState(true);
- const [importVersion, setImportVersion] = useState(0);
- const saveTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
- const pendingContentRef = useRef<JsonObject>(null);
- const readingSaveTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
- const pendingReadingRef = useRef<JsonObject>(null);
  const importInputRef = useRef<HTMLInputElement>(null);
  const splitViewSynced = useRef(false);
 
@@ -175,72 +135,17 @@ export function NoteEditorPanel({
   }
  }, [note, noteId, setSplitView]);
 
- const handleChange = useCallback(
-  (json: JsonObject) => {
-   pendingContentRef.current = json;
-   setIsDirty(true);
-   if (userId) {
-    void saveNoteDraft(userId, noteId, {
-     content: json,
-     readingContent: pendingReadingRef.current ?? note?.reading_content,
-     contentUpdatedAt: Date.now(),
-    });
-   }
-   if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-   saveTimerRef.current = setTimeout(() => {
-    if (pendingContentRef.current) {
-     saveContent(pendingContentRef.current);
-     pendingContentRef.current = null;
-     setIsDirty(false);
-    }
-   }, 1000);
-  },
-  [note?.reading_content, noteId, saveContent, userId],
- );
-
- const handleReadingChange = useCallback(
-  (json: JsonObject) => {
-   pendingReadingRef.current = json;
-   setIsDirty(true);
-   if (userId) {
-    void saveNoteDraft(userId, noteId, {
-     content: pendingContentRef.current ?? note?.content ?? {},
-     readingContent: json,
-     readingContentUpdatedAt: Date.now(),
-    });
-   }
-   if (readingSaveTimerRef.current) clearTimeout(readingSaveTimerRef.current);
-   readingSaveTimerRef.current = setTimeout(() => {
-    if (pendingReadingRef.current) {
-     saveReadingContent(pendingReadingRef.current);
-     pendingReadingRef.current = null;
-     setIsDirty(false);
-    }
-   }, 1000);
-  },
-  [note?.content, noteId, saveReadingContent, userId],
- );
-
- useEffect(() => {
-  const handleBeforeUnload = () => {
-   if (pendingContentRef.current && userId) {
-    void saveNoteDraft(userId, noteId, {
-     content: pendingContentRef.current,
-     readingContent: pendingReadingRef.current ?? note?.reading_content,
-     contentUpdatedAt: Date.now(),
-    });
-   }
-  };
-  window.addEventListener("beforeunload", handleBeforeUnload);
-  return () => window.removeEventListener("beforeunload", handleBeforeUnload);
- }, [note?.reading_content, noteId, userId]);
-
  const handleToggleSplitView = useCallback(() => {
+  if (isImporting) return;
   toggleSplitView(noteId);
   const nextState = !isSplitView;
-  updateSplitView(nextState);
-  toast.success(nextState ? t("splitEnabled") : t("splitDisabled"));
- }, [isSplitView, noteId, t, toggleSplitView, updateSplitView]);
+  void updateSplitView(nextState).then(
+   () => toast.success(nextState ? t("splitEnabled") : t("splitDisabled")),
+   () => {
+    toast.error(t("save.error"));
+   },
+  );
+ }, [isImporting, isSplitView, noteId, t, toggleSplitView, updateSplitView]);
 
  useEffect(() => {
   const handler = (event: KeyboardEvent) => {
@@ -253,17 +158,8 @@ export function NoteEditorPanel({
   return () => document.removeEventListener("keydown", handler);
  }, [handleToggleSplitView, isVisible]);
 
- useEffect(() => {
-  return () => {
-   if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-   if (pendingContentRef.current) saveContent(pendingContentRef.current);
-   if (readingSaveTimerRef.current) clearTimeout(readingSaveTimerRef.current);
-   if (pendingReadingRef.current) saveReadingContent(pendingReadingRef.current);
-  };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
- }, []); // oxlint-disable-line react-hooks-eslint/exhaustive-deps
-
  const handleDelete = useCallback(async () => {
+  if (isImporting) return;
   try {
    await deleteNoteMutation();
    toast.success(t("deleted"));
@@ -272,130 +168,22 @@ export function NoteEditorPanel({
   } catch {
    toast.error(t("deleteError"));
   }
- }, [closeTab, deleteNoteMutation, noteId, t]);
+ }, [closeTab, deleteNoteMutation, isImporting, noteId, t]);
 
  const handleExport = useCallback(() => {
-  if (!note) return;
-
-  const folder = note.folder_id
-   ? noteFoldersQuery.data?.find((item) => item.id === note.folder_id)
-   : null;
-  const parentFolder = folder?.parentId
-   ? noteFoldersQuery.data?.find((item) => item.id === folder.parentId)
-   : null;
-
-  downloadJsonFile(createDownloadFileName(note.title), {
-   version: 2,
-   exportedAt: new Date().toISOString(),
-   note: {
-    title: note.title,
-    tags: note.tags ?? [],
-    category: note.category,
-    content: importedContent ?? note.content,
-    readingContent:
-     importedReadingContent !== undefined ? importedReadingContent : note.reading_content,
-    splitViewEnabled: note.split_view_enabled,
-    readingStatus: note.reading_status,
-    folder: folder
-     ? {
-        name: folder.name,
-        parentName: parentFolder?.name ?? null,
-        color: folder.color,
-       }
-     : null,
-    source: note.source_url
-     ? {
-        url: note.source_url,
-        host: note.source_host,
-        label: note.source_label,
-        author: note.source_author,
-        publishedAt: note.source_published_at,
-        capturedAt: note.source_captured_at,
-       }
-     : null,
-   },
-  });
-  toast.success(t("exported"));
- }, [importedContent, importedReadingContent, note, noteFoldersQuery.data, t]);
-
- const currentNoteTitle = note?.title;
- const currentNoteCategory = note?.category;
+  try {
+   exportNote();
+   toast.success(t("exported"));
+  } catch {
+   toast.error(t("save.error"));
+  }
+ }, [exportNote, t]);
 
  const handleImportFile = useCallback(
   async (file: File) => {
+   if (isImporting) return;
    try {
-    const rawPayload: JsonFieldValue = JSON.parse(await file.text());
-    const importedPayload = normalizeImportedNotePayload(rawPayload);
-    const hasLibraryMetadata =
-     typeof rawPayload === "object" &&
-     rawPayload !== null &&
-     "version" in rawPayload &&
-     rawPayload.version === 2;
-    const nextContent = importedPayload.note.content;
-    const nextReadingContent = importedPayload.note.readingContent ?? null;
-
-    setImportedContent(nextContent);
-    setImportedReadingContent(nextReadingContent);
-    setImportVersion((version) => version + 1);
-    saveContent(nextContent);
-    saveReadingContent(nextReadingContent);
-
-    if (importedPayload.note.title && importedPayload.note.title !== currentNoteTitle) {
-     updateTitle(importedPayload.note.title);
-     updateTabTitle(noteId, importedPayload.note.title);
-    }
-
-    if (importedPayload.note.category && importedPayload.note.category !== currentNoteCategory) {
-     updateCategory(importedPayload.note.category);
-    }
-
-    if (typeof importedPayload.note.splitViewEnabled === "boolean") {
-     updateSplitView(importedPayload.note.splitViewEnabled);
-    }
-
-    if (hasLibraryMetadata) {
-     let importedFolderId: string | null | undefined;
-     if (importedPayload.note.folder) {
-      const folderSpec = importedPayload.note.folder;
-      let parentId: string | null = null;
-      if (folderSpec.parentName) {
-       const existingParent = noteFoldersQuery.data?.find(
-        (folder) => folder.parentId === null && folder.name === folderSpec.parentName,
-       );
-       parentId =
-        existingParent?.id ??
-        (
-         await createFolderMutation.mutateAsync({
-          name: folderSpec.parentName,
-          color: folderSpec.color,
-         })
-        ).id;
-      }
-
-      const existingFolder = noteFoldersQuery.data?.find(
-       (folder) => folder.parentId === parentId && folder.name === folderSpec.name,
-      );
-      importedFolderId =
-       existingFolder?.id ??
-       (
-        await createFolderMutation.mutateAsync({
-         name: folderSpec.name,
-         parentId,
-         color: folderSpec.color,
-        })
-       ).id;
-     } else if (importedPayload.note.folder === null) {
-      importedFolderId = null;
-     }
-
-     await updateLibraryMetadataMutation.mutateAsync({
-      noteId,
-      folderId: importedFolderId,
-      readingStatus: importedPayload.note.readingStatus ?? null,
-      source: importedPayload.note.source ?? null,
-     });
-    }
-
+    await importNote(file);
     toast.success(t("imported"));
    } catch {
     toast.error(t("importError"));
@@ -403,35 +191,12 @@ export function NoteEditorPanel({
     if (importInputRef.current) importInputRef.current.value = "";
    }
   },
-  [
-   createFolderMutation,
-   currentNoteCategory,
-   currentNoteTitle,
-   noteFoldersQuery.data,
-   noteId,
-   saveContent,
-   saveReadingContent,
-   t,
-   updateCategory,
-   updateLibraryMetadataMutation,
-   updateSplitView,
-   updateTabTitle,
-   updateTitle,
-  ],
+  [importNote, isImporting, t],
  );
 
- const displaySaveStatus: SaveStatus =
-  isSaving || isDirty
-   ? "saving"
-   : saveStatus === "success"
-     ? "saved"
-     : saveStatus === "error"
-       ? "error"
-       : "idle";
-
- const noteContent = importedContent ?? note?.content ?? null;
- const readingContent =
-  importedReadingContent !== undefined ? importedReadingContent : (note?.reading_content ?? null);
+ const handleRetrySave = () => {
+  void retrySave().catch(() => toast.error(t("save.error")));
+ };
  const editModeLabel = isReadOnlyMode ? t("editMode") : t("viewMode");
  const toolbarLabel = isToolbarVisible ? t("hideToolbar") : t("showToolbar");
  const splitLabel = isSplitView ? t("disableSplit") : t("enableSplit");
@@ -444,6 +209,15 @@ export function NoteEditorPanel({
   >
    {isLoading ? (
     <NoteEditorSkeleton splitView={isSplitView} />
+   ) : error ? (
+    <QueryErrorCard
+     title={notesLabels("loadError.title")}
+     description={notesLabels("loadError.description")}
+     retryLabel={common("actions.retry")}
+     onRetry={() => {
+      void refetch();
+     }}
+    />
    ) : !note ? (
     <div className="flex h-full items-center justify-center">
      <Typography as="p" tone="muted">
@@ -466,7 +240,7 @@ export function NoteEditorPanel({
      {mobileHeaderActionsContainer && isVisible
       ? createPortal(
          <div className="flex items-center gap-0.5 xl:hidden">
-          <SaveStatusBadge status={displaySaveStatus} />
+          <SaveStatusBadge status={displaySaveStatus} onRetry={handleRetrySave} />
           <Button
            type="button"
            variant="ghost"
@@ -488,7 +262,7 @@ export function NoteEditorPanel({
      {desktopActionsContainer && isVisible
       ? createPortal(
          <div className="hidden min-w-max items-center gap-2 xl:flex">
-          <SaveStatusBadge status={displaySaveStatus} />
+          <SaveStatusBadge status={displaySaveStatus} onRetry={handleRetrySave} />
           <Button
            type="button"
            variant={!isReadOnlyMode ? "active" : "outline"}
@@ -517,6 +291,7 @@ export function NoteEditorPanel({
            type="button"
            variant={isSplitView ? "active" : "outline"}
            size="icon-sm"
+           disabled={isImporting}
            onClick={handleToggleSplitView}
            title={splitTitle}
            aria-label={splitLabel}
@@ -528,6 +303,7 @@ export function NoteEditorPanel({
            type="button"
            variant="outline"
            size="icon-sm"
+           disabled={isImporting}
            onClick={() => importInputRef.current?.click()}
            title={t("import")}
            aria-label={t("import")}
@@ -669,6 +445,7 @@ export function NoteEditorPanel({
          size="touch"
          align="start"
          className="w-full"
+         disabled={isImporting}
          onClick={() => {
           setMobileActionsOpen(false);
           requestAnimationFrame(() => importInputRef.current?.click());
@@ -758,7 +535,7 @@ export function NoteEditorPanel({
         <Button
          type="button"
          variant="destructive"
-         disabled={isDeleting}
+         disabled={isDeleting || isImporting}
          onClick={() => void handleDelete()}
         >
          {isDeleting ? <Loader2 className="animate-spin" /> : <Trash2 />}
@@ -777,7 +554,7 @@ export function NoteEditorPanel({
         readingContent={readingContent}
         onNoteChange={handleChange}
         onReadingChange={handleReadingChange}
-        readOnly={isReadOnlyMode}
+        readOnly={isReadOnlyMode || isImporting}
         toolbarVisible={isToolbarVisible}
        />
       </div>
@@ -787,7 +564,7 @@ export function NoteEditorPanel({
         key={`note-${importVersion}`}
         initialContent={noteContent}
         onChange={handleChange}
-        readOnly={isReadOnlyMode}
+        readOnly={isReadOnlyMode || isImporting}
         toolbarVisible={isToolbarVisible}
        />
       </div>
@@ -798,18 +575,19 @@ export function NoteEditorPanel({
  );
 }
 
-function SaveStatusBadge({ status }: { status: SaveStatus }) {
+function SaveStatusBadge({ status, onRetry }: { status: MutationStatus; onRetry: () => void }) {
  const t = useTranslations("Notes.editor.save");
+ const common = useTranslations("Common");
  if (status === "idle") return null;
 
  const config = {
-  saving: {
+  pending: {
    icon: <Cloud className="h-3.5 w-3.5 animate-pulse" />,
    label: t("saving"),
    className: "text-text-muted",
    visibility: "flex",
   },
-  saved: {
+  success: {
    icon: <Check className="h-3.5 w-3.5" />,
    label: t("saved"),
    className: "text-success",
@@ -833,6 +611,11 @@ function SaveStatusBadge({ status }: { status: SaveStatus }) {
   >
    {current.icon}
    <span className="hidden xl:inline">{current.label}</span>
+   {status === "error" ? (
+    <Button type="button" variant="ghost" size="sm" onClick={onRetry}>
+     {common("actions.retry")}
+    </Button>
+   ) : null}
   </div>
  );
 }

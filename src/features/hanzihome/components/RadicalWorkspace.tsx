@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { Typography } from "@/components/ui/display/typography";
 import { useMemo, useState } from "react";
 import { ArrowRight, LayoutGrid, List, Pencil, Search, X } from "lucide-react";
@@ -29,6 +31,13 @@ import { cn } from "@/lib/utils";
 import { z } from "zod";
 
 import { RadicalEditDialog } from "./RadicalEditDialog";
+import {
+ StrokeFilterSchema,
+ type StrokeFilter,
+ countRadicalStrokeFilters,
+ countRadicalSupportingItems,
+ filterRadicals,
+} from "./radical-workspace-utils";
 
 type RadicalWorkspaceProps = {
  radicals: StaticRadicalData[];
@@ -36,45 +45,22 @@ type RadicalWorkspaceProps = {
 
 const RadicalViewSchema = z.enum(["grid", "list"]);
 type RadicalView = z.infer<typeof RadicalViewSchema>;
-const StrokeFilterSchema = z.enum(["all", "1", "2", "3", "4", "5-6", "7+"]);
-type StrokeFilter = z.infer<typeof StrokeFilterSchema>;
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
-const strokeFilters: Array<{ value: StrokeFilter; label: string }> = [
- { value: StrokeFilterSchema.enum.all, label: "Tất cả" },
- { value: "1", label: "1 nét" },
- { value: "2", label: "2 nét" },
- { value: "3", label: "3 nét" },
- { value: "4", label: "4 nét" },
- { value: "5-6", label: "5–6 nét" },
- { value: "7+", label: "7+ nét" },
-];
-
-function matchesStrokeFilter(strokes: StaticRadicalData["strokes"], filter: StrokeFilter) {
- if (filter === "all") return true;
- if (strokes == null) return false;
- if (filter === "5-6") return strokes >= 5 && strokes <= 6;
- if (filter === "7+") return strokes >= 7;
- return strokes === Number(filter);
-}
-
-function radicalSearchText(radical: StaticRadicalData) {
- return [
-  radical.radical,
-  radical.nameVi ?? "",
-  radical.coreMeaning.history ?? "",
-  radical.coreMeaning.modern ?? "",
-  radical.recognition ?? "",
-  radical.variants.map((variant) => `${variant.form} ${variant.note}`).join(" "),
-  radical.relatedComponents?.map((component) => `${component.form} ${component.note}`).join(" ") ??
-   "",
-  radical.groups?.map((group) => `${group.name} ${group.chars.join(" ")}`).join(" ") ?? "",
- ]
-  .join(" ")
-  .toLowerCase();
-}
-
 export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
+ const t = useTranslations("Radicals");
+ const strokeFilters = useMemo(
+  () => [
+   { value: StrokeFilterSchema.enum.all, label: t("all") },
+   { value: StrokeFilterSchema.enum["1"], label: t("strokes", { count: 1 }) },
+   { value: StrokeFilterSchema.enum["2"], label: t("strokes", { count: 2 }) },
+   { value: StrokeFilterSchema.enum["3"], label: t("strokes", { count: 3 }) },
+   { value: StrokeFilterSchema.enum["4"], label: t("strokes", { count: 4 }) },
+   { value: StrokeFilterSchema.enum["5-6"], label: t("strokes", { count: "5–6" }) },
+   { value: StrokeFilterSchema.enum["7+"], label: t("strokes", { count: "7+" }) },
+  ],
+  [t],
+ );
  const searchIntent = useHanziHomeSearchNavigationIntent();
  const canEdit = useHanziHomeCanEdit();
  const intentRadicalId =
@@ -87,25 +73,11 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
  const [editMode, setEditMode] = useState(false);
  const [editingRadical, setEditingRadical] = useState<Nullable<StaticRadicalData>>(null);
 
- const filterCounts = useMemo(
-  () =>
-   new Map(
-    strokeFilters.map((filter) => [
-     filter.value,
-     radicals.filter((radical) => matchesStrokeFilter(radical.strokes, filter.value)).length,
-    ]),
-   ),
-  [radicals],
+ const filterCounts = useMemo(() => countRadicalStrokeFilters(radicals), [radicals]);
+ const visibleRadicals = useMemo(
+  () => filterRadicals(radicals, searchValue, strokeFilter),
+  [radicals, searchValue, strokeFilter],
  );
-
- const visibleRadicals = useMemo(() => {
-  const keyword = searchValue.trim().toLowerCase();
-  return radicals.filter(
-   (radical) =>
-    matchesStrokeFilter(radical.strokes, strokeFilter) &&
-    (!keyword || radicalSearchText(radical).includes(keyword)),
-  );
- }, [radicals, searchValue, strokeFilter]);
 
  const selectedRadical = useMemo(
   () => radicals.find((radical) => radical.id === selectedId) ?? null,
@@ -121,7 +93,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
   return (
    <Card padding="lg">
     <StudyInstructionText tone="muted" weight="semibold">
-     Chưa có dữ liệu bộ thủ.
+     {t("empty")}
     </StudyInstructionText>
    </Card>
   );
@@ -136,8 +108,8 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
       variant={editMode ? "active" : "outline"}
       size="icon-toolbar"
       onClick={() => setEditMode((current) => !current)}
-      title={editMode ? "Tắt chế độ sửa bộ thủ" : "Bật chế độ sửa bộ thủ"}
-      aria-label={editMode ? "Tắt chế độ sửa bộ thủ" : "Bật chế độ sửa bộ thủ"}
+      title={editMode ? t("editOff") : t("editOn")}
+      aria-label={editMode ? t("editOff") : t("editOn")}
      >
       {editMode ? <X /> : <Pencil />}
      </Button>
@@ -156,10 +128,10 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
          tone="default"
          weight="black"
         >
-         Lọc theo số nét
+         {t("filterTitle")}
         </Typography>
         <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
-         Duyệt {radicals.length} bộ thủ theo độ phức tạp hoặc tìm theo tên và ý nghĩa.
+         {t("filterHelp", { count: radicals.length })}
         </StudyInstructionText>
        </div>
        <div className="relative min-w-0 lg:w-80">
@@ -167,8 +139,8 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
         <Input
          value={searchValue}
          onChange={(event) => setSearchValue(event.target.value)}
-         placeholder="Tìm bộ thủ, tên, nghĩa..."
-         aria-label="Tìm bộ thủ"
+         placeholder={t("searchPlaceholder")}
+         aria-label={t("searchAria")}
          adornment="start"
         />
        </div>
@@ -207,22 +179,22 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
          weight="black"
         >
          {strokeFilter === "all"
-          ? "Tất cả bộ thủ"
+          ? t("allRadicals")
           : strokeFilters.find((filter) => filter.value === strokeFilter)?.label}
         </Typography>
         <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
-         {visibleRadicals.length} kết quả
+         {t("results", { count: visibleRadicals.length })}
         </StudyInstructionText>
        </div>
        <SegmentedControl<RadicalView>
         value={view}
         items={[
-         { key: RadicalViewSchema.enum.grid, label: "Lưới", icon: LayoutGrid },
-         { key: RadicalViewSchema.enum.list, label: "Danh sách", icon: List },
+         { key: RadicalViewSchema.enum.grid, label: t("grid"), icon: LayoutGrid },
+         { key: RadicalViewSchema.enum.list, label: t("list"), icon: List },
         ]}
         onChange={setView}
         density="toolbar"
-        aria-label="Kiểu hiển thị bộ thủ"
+        aria-label={t("viewAria")}
         className="w-auto"
        />
       </div>
@@ -246,10 +218,10 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
       ) : (
        <Card variant="subtle" padding="lg" className="grid gap-1">
         <StudyInstructionText tone="default" weight="semibold" align="center">
-         Không có bộ thủ phù hợp.
+         {t("noMatches")}
         </StudyInstructionText>
         <StudyInstructionText variant="bodySmall" tone="muted" align="center">
-         Thử đổi số nét hoặc từ khóa tìm kiếm.
+         {t("noMatchesHelp")}
         </StudyInstructionText>
        </Card>
       )}
@@ -261,7 +233,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
     {selectedRadical ? (
      <>
       <SheetHeader
-       title={`${selectedRadical.radical} · ${selectedRadical.nameVi || "Chưa có tên"}`}
+       title={`${selectedRadical.radical} · ${selectedRadical.nameVi || t("unnamed")}`}
        onClose={() => setDetailOpen(false)}
       />
       <SheetBody>
@@ -295,10 +267,8 @@ function RadicalBrowseCard({
  compact: boolean;
  onOpen: () => void;
 }) {
- const supportingCount =
-  radical.variants.length +
-  (radical.relatedComponents?.length ?? 0) +
-  (radical.groups?.reduce((total, group) => total + group.chars.length, 0) ?? 0);
+ const t = useTranslations("Radicals");
+ const supportingCount = countRadicalSupportingItems(radical);
 
  return (
   <ActionCard
@@ -319,7 +289,7 @@ function RadicalBrowseCard({
     </IconTile>
     {compact ? null : (
      <Badge variant="info" size="sm">
-      {radical.strokes ?? "?"} nét
+      {t("strokes", { count: radical.strokes ?? "?" })}
      </Badge>
     )}
    </div>
@@ -327,19 +297,19 @@ function RadicalBrowseCard({
    <div className="grid min-w-0 gap-2">
     <div className="flex flex-wrap items-center gap-2">
      <Typography as="h3" variant="cardTitle" tone="default" weight="black" clamp="one">
-      {radical.nameVi || "Chưa có tên"}
+      {radical.nameVi || t("unnamed")}
      </Typography>
      {compact ? (
       <Badge variant="info" size="sm">
-       {radical.strokes ?? "?"} nét
+       {t("strokes", { count: radical.strokes ?? "?" })}
       </Badge>
      ) : null}
     </div>
     <StudyInstructionText variant="bodySmall" tone="muted" clamp="two" leading="relaxed">
-     {radical.coreMeaning.modern || radical.recognition || "Chưa có mô tả."}
+     {radical.coreMeaning.modern || radical.recognition || t("noDescription")}
     </StudyInstructionText>
     <StudyInstructionText variant="caption" tone="muted" weight="semibold">
-     #{radical.index} · {supportingCount} mục liên quan
+     #{radical.index} · {t("relatedCount", { count: supportingCount })}
     </StudyInstructionText>
    </div>
 
@@ -350,7 +320,7 @@ function RadicalBrowseCard({
     weight="bold"
     className="flex items-center gap-1.5"
    >
-    Xem chi tiết
+    {t("details")}
     <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
    </Typography>
   </ActionCard>

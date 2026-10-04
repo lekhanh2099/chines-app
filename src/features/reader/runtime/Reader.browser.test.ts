@@ -12,6 +12,8 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
  async () => {
   const server = await createServer({
    configFile: false,
+   cacheDir: "node_modules/.vite/reader-browser",
+   optimizeDeps: { entries: ["src/features/reader/runtime/Reader.browser.fixture.tsx"] },
    resolve: { alias: { "@": fileURLToPath(new URL("../../../", import.meta.url)) } },
    esbuild: { jsx: "automatic" },
    server: { host: "127.0.0.1", port: 0 },
@@ -89,6 +91,8 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
  async () => {
   const server = await createServer({
    configFile: false,
+   cacheDir: "node_modules/.vite/reader-browser",
+   optimizeDeps: { entries: ["src/features/reader/runtime/Reader.browser.fixture.tsx"] },
    resolve: { alias: { "@": fileURLToPath(new URL("../../../", import.meta.url)) } },
    esbuild: { jsx: "automatic" },
    server: { host: "127.0.0.1", port: 0 },
@@ -219,7 +223,11 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
       "data-workspace-active",
       "segment-1",
      );
-     const outline = page.getByRole("combobox", { name: "Mục lục bài đọc", exact: true });
+     const messages = await loadAppMessages("vi");
+     const outline = page.getByRole("combobox", {
+      name: messages.Reader.study.chrome.commands.openOutline,
+      exact: true,
+     });
      await browserExpect(outline).toHaveAttribute("aria-expanded", "false");
      expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
@@ -316,7 +324,13 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(30);
     await page.evaluate(() => window.readerHarness.scrollWithDefaultOptions("viewport-20"));
     expect(await page.evaluate(() => window.scrollY)).toBe(0);
-    await page.getByRole("button", { name: "Mục lục bài đọc", exact: true }).click();
+    const messages = await loadAppMessages("vi");
+    await page
+     .getByRole("combobox", {
+      name: messages.Reader.study.chrome.commands.openOutline,
+      exact: true,
+     })
+     .click();
     await page.getByRole("option").nth(20).click();
     await browserExpect(page.locator('[data-reader-segment="viewport-20"]')).toHaveAttribute(
      "data-active",
@@ -360,11 +374,17 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     await firstReader.getByRole("button", { name: "Hiện pinyin", exact: true }).click();
     await browserExpect(firstReader.locator('[lang="zh-Latn-pinyin"]')).toHaveCount(0);
     await browserExpect(secondReader.locator('[lang="zh-Latn-pinyin"]')).toHaveText("zài jiàn");
-    await firstReader.getByRole("button", { name: "Nghe bài", exact: true }).click();
-    await secondReader.getByRole("button", { name: "Nghe bài", exact: true }).click();
+    await firstReader
+     .locator("[data-reader-toolbar]")
+     .getByRole("button", { name: "Nghe bài", exact: true })
+     .click();
+    await secondReader
+     .locator("[data-reader-toolbar]")
+     .getByRole("button", { name: "Nghe bài", exact: true })
+     .click();
     await browserExpect(
      firstReader.getByRole("button", { name: "Dừng đọc", exact: true }),
-    ).toBeDisabled();
+    ).toHaveCount(0);
     await browserExpect(
      secondReader.getByRole("button", { name: "Dừng đọc", exact: true }),
     ).toBeEnabled();

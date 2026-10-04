@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Typography } from "@/components/ui/display/typography";
 import { Pencil } from "lucide-react";
 
@@ -18,6 +19,7 @@ type RadicalDetailPanelProps = {
 };
 
 export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailPanelProps) {
+ const t = useTranslations("Radicals");
  const relatedComponents = radical.relatedComponents ?? [];
  const groups = radical.groups ?? [];
 
@@ -33,7 +35,7 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
       onClick={onEdit}
      >
       <Pencil />
-      Sửa bộ thủ này
+      {t("editThis")}
      </Button>
     </div>
    ) : null}
@@ -48,25 +50,23 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
     <div className="grid min-w-0 gap-2">
      <div className="flex flex-wrap items-center gap-2">
       <Badge>#{radical.index}</Badge>
-      <Badge variant="info">{radical.strokes ?? "?"} nét</Badge>
+      <Badge variant="info">{t("strokes", { count: radical.strokes ?? "?" })}</Badge>
      </div>
      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-      {radical.nameVi || "Chưa có tên"}
+      {radical.nameVi || t("unnamed")}
      </Typography>
     </div>
    </div>
 
-   <RadicalSection title="Ý nghĩa cốt lõi">
-    <StudyInstructionText>
-     {radical.coreMeaning.modern || "Chưa có mô tả hiện đại."}
-    </StudyInstructionText>
+   <RadicalSection title={t("coreMeaning")}>
+    <StudyInstructionText>{radical.coreMeaning.modern || t("noModern")}</StudyInstructionText>
     {radical.coreMeaning.history ? (
      <StudyInstructionText tone="muted">{radical.coreMeaning.history}</StudyInstructionText>
     ) : null}
    </RadicalSection>
 
    {radical.variants.length > 0 ? (
-    <RadicalSection title="Biến thể">
+    <RadicalSection title={t("variants")}>
      <div className="flex flex-wrap gap-2">
       {radical.variants.map((variant) => (
        <Badge key={`${variant.form}-${variant.note}`} variant="purple" size="lg">
@@ -81,7 +81,7 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
    ) : null}
 
    {relatedComponents.length > 0 ? (
-    <RadicalSection title="Thành phần liên quan" className="lg:col-span-2">
+    <RadicalSection title={t("related")} className="lg:col-span-2">
      <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
       {relatedComponents.map((component) => (
        <div
@@ -100,14 +100,12 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
     </RadicalSection>
    ) : null}
 
-   <RadicalSection title="Nhận diện">
-    <StudyInstructionText>
-     {radical.recognition || "Chưa có ghi chú nhận diện."}
-    </StudyInstructionText>
+   <RadicalSection title={t("recognition")}>
+    <StudyInstructionText>{radical.recognition || t("noRecognition")}</StudyInstructionText>
    </RadicalSection>
 
    {radical.distinguish.length > 0 ? (
-    <RadicalSection title="Phân biệt">
+    <RadicalSection title={t("distinguish")}>
      <ul className="grid gap-2">
       {radical.distinguish.map((item) => (
        <li key={item}>{item}</li>
@@ -117,7 +115,7 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
    ) : null}
 
    {groups.length > 0 ? (
-    <RadicalSection title="Nhóm chữ thường gặp" className="lg:col-span-2">
+    <RadicalSection title={t("groups")} className="lg:col-span-2">
      <div className="grid gap-3">
       {groups.map((group) => (
        <div key={group.name} className="grid gap-2">

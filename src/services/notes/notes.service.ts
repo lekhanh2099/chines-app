@@ -185,22 +185,28 @@ async function getLessonNoteLinksForNotes(
  const linksByNoteId = new Map<string, NoteLinkSummary[]>();
  if (noteIds.length === 0) return linksByNoteId;
 
- const { data, error } = await supabase
-  .from("lesson_note_links")
-  .select("note_id, target_type, target_key, relation_type, updated_at")
-  .eq("user_id", userId)
-  .in("note_id", noteIds);
-
- if (error) {
-  logger.error("[NotesService] fetch lesson note links error:", error);
-  return linksByNoteId;
- }
-
- for (const row of LessonNoteLinkRowSchema.array().parse(data ?? [])) {
-  const link = toNoteLinkSummary(row);
-  const existingLinks = linksByNoteId.get(link.noteId) ?? [];
-  existingLinks.push(link);
-  linksByNoteId.set(link.noteId, existingLinks);
+ const pageSize = 1000;
+ const noteBatchSize = 200;
+ for (let batchStart = 0; batchStart < noteIds.length; batchStart += noteBatchSize) {
+  const batch = noteIds.slice(batchStart, batchStart + noteBatchSize);
+  for (let from = 0; ; from += pageSize) {
+   const { data, error } = await supabase
+    .from("lesson_note_links")
+    .select("note_id, target_type, target_key, relation_type, updated_at")
+    .eq("user_id", userId)
+    .in("note_id", batch)
+    .order("id", { ascending: true })
+    .range(from, from + pageSize - 1);
+   if (error) throw error;
+   const rows = LessonNoteLinkRowSchema.array().parse(data ?? []);
+   for (const row of rows) {
+    const link = toNoteLinkSummary(row);
+    const existingLinks = linksByNoteId.get(link.noteId) ?? [];
+    existingLinks.push(link);
+    linksByNoteId.set(link.noteId, existingLinks);
+   }
+   if (rows.length < pageSize) break;
+  }
  }
 
  return linksByNoteId;
@@ -232,18 +238,22 @@ export async function getUserNotes(
  supabase: AppSupabaseClient,
  userId: string,
 ): Promise<NoteListItem[]> {
- const { data, error } = await supabase
-  .from("notes")
-  .select(noteListSelect)
-  .eq("user_id", userId)
-  .order("updated_at", { ascending: false });
-
- if (error) {
-  logger.error("[NotesService] fetch error:", error);
-  throw error;
+ const notes: NoteListRow[] = [];
+ const pageSize = 1000;
+ for (let from = 0; ; from += pageSize) {
+  const { data, error } = await supabase
+   .from("notes")
+   .select(noteListSelect)
+   .eq("user_id", userId)
+   .order("updated_at", { ascending: false })
+   .order("id", { ascending: true })
+   .range(from, from + pageSize - 1);
+  if (error) throw error;
+  const rows = NoteListRowSchema.array().parse(data ?? []);
+  notes.push(...rows);
+  if (rows.length < pageSize) break;
  }
-
- return attachLessonLinks(supabase, userId, NoteListRowSchema.array().parse(data || []));
+ return attachLessonLinks(supabase, userId, notes);
 }
 
 /** Fetch a bounded list for lightweight dashboard surfaces. */
@@ -273,19 +283,23 @@ export async function getNotesByCategory(
  userId: string,
  category: NoteCategory,
 ): Promise<NoteListItem[]> {
- const { data, error } = await supabase
-  .from("notes")
-  .select(noteListSelect)
-  .eq("user_id", userId)
-  .eq("category", category)
-  .order("updated_at", { ascending: false });
-
- if (error) {
-  logger.error("[NotesService] fetch by category error:", error);
-  throw error;
+ const notes: NoteListRow[] = [];
+ const pageSize = 1000;
+ for (let from = 0; ; from += pageSize) {
+  const { data, error } = await supabase
+   .from("notes")
+   .select(noteListSelect)
+   .eq("user_id", userId)
+   .eq("category", category)
+   .order("updated_at", { ascending: false })
+   .order("id", { ascending: true })
+   .range(from, from + pageSize - 1);
+  if (error) throw error;
+  const rows = NoteListRowSchema.array().parse(data ?? []);
+  notes.push(...rows);
+  if (rows.length < pageSize) break;
  }
-
- return attachLessonLinks(supabase, userId, NoteListRowSchema.array().parse(data || []));
+ return attachLessonLinks(supabase, userId, notes);
 }
 
 /** Fetch a single note by ID */
@@ -303,7 +317,7 @@ export async function getNoteById(
 
  if (error) {
   logger.error("[NotesService] fetch by ID error:", error);
-  return null;
+  throw error;
  }
 
  if (!data) {
@@ -363,16 +377,18 @@ export async function updateNoteContent(
  noteId: string,
  content: JsonObject,
 ): Promise<boolean> {
- const { error } = await supabase
+ const { data, error } = await supabase
   .from("notes")
   .update({ content, updated_at: new Date().toISOString() })
-  .eq("id", noteId);
+  .eq("id", noteId)
+  .select("id")
+  .maybeSingle();
 
  if (error) {
   logger.error("[NotesService] update content error:", error);
   return false;
  }
- return true;
+ return data !== null;
 }
 
 /** Update note title */
@@ -381,16 +397,18 @@ export async function updateNoteTitle(
  noteId: string,
  title: string,
 ): Promise<boolean> {
- const { error } = await supabase
+ const { data, error } = await supabase
   .from("notes")
   .update({ title, updated_at: new Date().toISOString() })
-  .eq("id", noteId);
+  .eq("id", noteId)
+  .select("id")
+  .maybeSingle();
 
  if (error) {
   logger.error("[NotesService] update title error:", error);
   return false;
  }
- return true;
+ return data !== null;
 }
 
 /** Update note category */
@@ -399,27 +417,34 @@ export async function updateNoteCategory(
  noteId: string,
  category: NoteCategory,
 ): Promise<boolean> {
- const { error } = await supabase
+ const { data, error } = await supabase
   .from("notes")
   .update({ category, updated_at: new Date().toISOString() })
-  .eq("id", noteId);
+  .eq("id", noteId)
+  .select("id")
+  .maybeSingle();
 
  if (error) {
   logger.error("[NotesService] update category error:", error);
   return false;
  }
- return true;
+ return data !== null;
 }
 
 /** Delete a note */
 export async function deleteNote(supabase: AppSupabaseClient, noteId: string): Promise<boolean> {
- const { error } = await supabase.from("notes").delete().eq("id", noteId);
+ const { data, error } = await supabase
+  .from("notes")
+  .delete()
+  .eq("id", noteId)
+  .select("id")
+  .maybeSingle();
 
  if (error) {
   logger.error("[NotesService] delete error:", error);
   return false;
  }
- return true;
+ return data !== null;
 }
 
 /** Update reading content (split view left pane) */
@@ -428,19 +453,21 @@ export async function updateReadingContent(
  noteId: string,
  readingContent: DbNote["reading_content"],
 ): Promise<boolean> {
- const { error } = await supabase
+ const { data, error } = await supabase
   .from("notes")
   .update({
    reading_content: readingContent,
    updated_at: new Date().toISOString(),
   })
-  .eq("id", noteId);
+  .eq("id", noteId)
+  .select("id")
+  .maybeSingle();
 
  if (error) {
   logger.error("[NotesService] update reading content error:", error);
   return false;
  }
- return true;
+ return data !== null;
 }
 
 /** Update split view enabled state */
@@ -449,16 +476,18 @@ export async function updateSplitViewEnabled(
  noteId: string,
  enabled: boolean,
 ): Promise<boolean> {
- const { error } = await supabase
+ const { data, error } = await supabase
   .from("notes")
   .update({ split_view_enabled: enabled, updated_at: new Date().toISOString() })
-  .eq("id", noteId);
+  .eq("id", noteId)
+  .select("id")
+  .maybeSingle();
 
  if (error) {
   logger.error("[NotesService] update split view state error:", error);
   return false;
  }
- return true;
+ return data !== null;
 }
 
 /** Search notes by title (for link-to-note feature) */
@@ -487,17 +516,23 @@ export async function getNoteFolders(
  supabase: AppSupabaseClient,
  userId: string,
 ): Promise<NoteFolder[]> {
- const { data, error } = await supabase
-  .from("note_folders")
-  .select("id, user_id, parent_id, name, color, position, created_at, updated_at")
-  .eq("user_id", userId)
-  .order("position", { ascending: true })
-  .order("name", { ascending: true });
-
- if (error) throw error;
- return NoteFolderRowSchema.array()
-  .parse(data ?? [])
-  .map(toNoteFolder);
+ const folders: NoteFolder[] = [];
+ const pageSize = 1000;
+ for (let from = 0; ; from += pageSize) {
+  const { data, error } = await supabase
+   .from("note_folders")
+   .select("id, user_id, parent_id, name, color, position, created_at, updated_at")
+   .eq("user_id", userId)
+   .order("position", { ascending: true })
+   .order("name", { ascending: true })
+   .order("id", { ascending: true })
+   .range(from, from + pageSize - 1);
+  if (error) throw error;
+  const rows = NoteFolderRowSchema.array().parse(data ?? []);
+  folders.push(...rows.map(toNoteFolder));
+  if (rows.length < pageSize) break;
+ }
+ return folders;
 }
 
 export async function createNoteFolder(
@@ -569,8 +604,14 @@ export async function updateNoteLibraryMetadata(
   changes.source_captured_at = input.source?.capturedAt ?? null;
  }
 
- const { error } = await supabase.from("notes").update(changes).eq("id", noteId);
+ const { data, error } = await supabase
+  .from("notes")
+  .update(changes)
+  .eq("id", noteId)
+  .select("id")
+  .maybeSingle();
  if (error) throw error;
+ if (!data) throw new Error("Note metadata was not saved");
 }
 
 /* ══════════════════════════════════════════

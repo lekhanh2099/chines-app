@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
+import ttsStudioMessages from "../../../../../messages/vi/tts-studio.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
@@ -92,6 +93,7 @@ function renderWorkspace(element: ReactNode) {
    locale="vi"
    messages={{
     BusinessChinese: businessChineseMessages,
+    TtsStudio: ttsStudioMessages,
     Reader: {
      document: readerDocumentMessages,
      study: readerStudyMessages,

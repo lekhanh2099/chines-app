@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import { dictationEntryText } from "./dictation-workspace-utils";
+
 import { useEffect, useRef, useState, type KeyboardEventHandler } from "react";
 import { Pause, Play, Repeat2 } from "lucide-react";
 
@@ -27,11 +30,6 @@ import {
 } from "@/features/dictation/dictation-session";
 
 type DictationTokenTone = "success" | "warning" | "danger";
-
-function expectedText(entry: ListeningTranscriptEntry) {
- const lines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
- return lines.length > 0 ? lines.join("\n") : entry.transcript.full.zh;
-}
 
 function tokenTone(
  kind: ReturnType<typeof buildDictationDiff>[number]["kind"],
@@ -70,6 +68,7 @@ export function StudioDictationEditor({
  onStop?: () => void;
  onToggleLoop?: () => void;
 }) {
+ const t = useTranslations("Dictation");
  const [answers, setAnswers] = useState<Record<string, string>>({});
  const [attempts, setAttempts] = useState<Record<string, DictationAttempt[]>>({});
  const [checked, setChecked] = useState<Record<string, boolean>>({});
@@ -79,7 +78,7 @@ export function StudioDictationEditor({
  const history = attempts[entry.id] ?? [];
  const attempt = history.at(-1);
  const isChecked = checked[entry.id] === true && attempt !== undefined;
- const target = expectedText(entry);
+ const target = dictationEntryText(entry);
  const diff = isChecked ? buildDictationDiff(target, answer) : [];
  const summary = isChecked ? summarizeDictationDiff(diff) : null;
 
@@ -208,11 +207,13 @@ export function StudioDictationEditor({
    <div className="flex flex-wrap items-start justify-between gap-3">
     <div className="grid gap-1">
      <Typography as="h3" variant="cardTitle" weight="black">
-      Phần {index + 1}/{total}
+      {t("partProgress", { current: index + 1, total })}
      </Typography>
      <Typography variant="caption" tone="muted">
-      {Array.from(target).length} ký tự · điểm tốt nhất{" "}
-      {Math.max(0, ...history.map((item) => item.score))}%
+      {t("answerSummary", {
+       count: Array.from(target).length,
+       score: Math.max(0, ...history.map((item) => item.score)),
+      })}
      </Typography>
     </div>
     {isChecked ? (
@@ -224,7 +225,7 @@ export function StudioDictationEditor({
        {attempt.score}%
       </Badge>
       <Button type="button" size="sm" variant="ghost" onClick={editAgain}>
-       Sửa lại
+       {t("editAgain")}
       </Button>
      </div>
     ) : null}
@@ -252,7 +253,7 @@ export function StudioDictationEditor({
         )}
         title={
          token.expected && token.actual && token.expected !== token.actual
-          ? `Đúng: ${token.expected}`
+          ? t("expected", { value: token.expected })
           : undefined
         }
        >
@@ -263,26 +264,26 @@ export function StudioDictationEditor({
      {summary ? (
       <div className="flex flex-wrap gap-2">
        <Badge variant="success" casing="natural">
-        Đúng {summary.correct}
+        {t("correct", { count: summary.correct })}
        </Badge>
        {summary.replaced > 0 ? (
         <Badge variant="danger" casing="natural">
-         Thay {summary.replaced}
+         {t("replaced", { count: summary.replaced })}
         </Badge>
        ) : null}
        {summary.missing > 0 ? (
         <Badge variant="warning" casing="natural">
-         Thiếu {summary.missing}
+         {t("missing", { count: summary.missing })}
         </Badge>
        ) : null}
        {summary.extra > 0 ? (
         <Badge variant="danger" casing="natural">
-         Thừa {summary.extra}
+         {t("extra", { count: summary.extra })}
         </Badge>
        ) : null}
        {summary.transposed > 0 ? (
         <Badge variant="warning" casing="natural">
-         Đảo {summary.transposed}
+         {t("transposed", { count: summary.transposed })}
         </Badge>
        ) : null}
       </div>
@@ -292,10 +293,10 @@ export function StudioDictationEditor({
     <div className="grid gap-2">
      <div className="flex flex-wrap items-center justify-between gap-2">
       <Typography variant="bodySmall" weight="black">
-       Bạn nghe được gì?
+       {t("answerPrompt")}
       </Typography>
       <Typography variant="caption" tone="accent" weight="black">
-       Control phát/dừng · Ctrl/⌘ R nghe lại · Ctrl/⌘ ↵ kiểm tra · Ctrl/⌘ ←/→ chuyển câu
+       {t("editorShortcuts")}
       </Typography>
      </div>
      <Textarea
@@ -304,12 +305,12 @@ export function StudioDictationEditor({
       density="comfortable"
       surface="field"
       rows={6}
-      aria-label={`Câu trả lời nghe chép phần ${index + 1}`}
+      aria-label={t("answerAria", { number: index + 1 })}
       aria-keyshortcuts="1 2 3 4 5 6 Escape Control Control+Enter Meta+Enter Control+KeyR Meta+KeyR Control+ArrowLeft Meta+ArrowLeft Control+ArrowRight Meta+ArrowRight"
       autoCapitalize="off"
       autoCorrect="off"
       spellCheck={false}
-      placeholder="Nghe và chép lại bằng chữ Hán…"
+      placeholder={t("answerPlaceholder")}
       onKeyDown={onEditorKeyDown}
       onKeyUp={onEditorKeyUp}
       onChange={(event) => {
@@ -324,7 +325,7 @@ export function StudioDictationEditor({
     <div className="grid gap-3 md:grid-cols-2">
      <Card variant="subtle" padding="md" className="grid content-start gap-2">
       <Typography variant="overline" tone="accent" weight="black">
-       Đáp án
+       {t("answerTitle")}
       </Typography>
       <Typography
        as="p"
@@ -345,10 +346,10 @@ export function StudioDictationEditor({
      </Card>
      <Card variant="subtle" padding="md" className="grid content-start gap-2">
       <Typography variant="overline" tone="success" weight="black">
-       Nghĩa
+       {t("meaning")}
       </Typography>
       <Typography variant="bodySmall" tone="muted" wrapping="preWrap">
-       {entry.transcript.full.vi ?? "Chưa có bản dịch cho phần này."}
+       {entry.transcript.full.vi ?? t("noTranslation")}
       </Typography>
      </Card>
     </div>
@@ -364,12 +365,12 @@ export function StudioDictationEditor({
         <Play data-icon="inline-start" />
        )}
        {isLoading
-        ? "Đang chuẩn bị"
+        ? t("preparing")
         : isSpeaking && !isPaused
-          ? "Tạm dừng"
+          ? t("pause")
           : isPaused
-            ? "Tiếp tục"
-            : "Nghe phần này"}
+            ? t("resume")
+            : t("listenPart")}
        <Badge size="sm" casing="natural">
         {isChecked ? "2 · Control" : "Control"}
        </Badge>
@@ -378,7 +379,7 @@ export function StudioDictationEditor({
      {onRepeat ? (
       <Button type="button" variant="ghost" onClick={onRepeat}>
        <Repeat2 data-icon="inline-start" />
-       Nghe lại
+       {t("replay")}
        <Badge size="sm" casing="natural">
         {isChecked ? "3 · Ctrl/⌘ R" : "Ctrl/⌘ R"}
        </Badge>
@@ -387,9 +388,9 @@ export function StudioDictationEditor({
      <Button type="button" disabled={!isChecked && !answer.trim()} onClick={confirmOrEdit}>
       {isChecked
        ? attempt?.score === 100 && index < total - 1
-        ? "Phần sau"
-        : "Sửa lại"
-       : "Kiểm tra"}
+        ? t("nextPart")
+        : t("editAgain")
+       : t("check")}
       <Badge size="sm" casing="natural">
        {isChecked ? "6 · Ctrl/⌘ ↵" : "Ctrl/⌘ ↵"}
       </Badge>
@@ -398,13 +399,13 @@ export function StudioDictationEditor({
     {total > 1 ? (
      <div className="flex flex-wrap gap-2 sm:ms-auto">
       <Button type="button" variant="ghost" disabled={index === 0} onClick={handlePrevious}>
-       ← Phần trước
+       {t("previousArrow")}
        <Badge size="sm" casing="natural">
         {isChecked ? "1 · Ctrl/⌘ ←" : "Ctrl/⌘ ←"}
        </Badge>
       </Button>
       <Button type="button" variant="ghost" disabled={index >= total - 1} onClick={handleNext}>
-       Phần sau →
+       {t("nextArrow")}
        <Badge size="sm" casing="natural">
         {isChecked ? "4 · Ctrl/⌘ →" : "Ctrl/⌘ →"}
        </Badge>

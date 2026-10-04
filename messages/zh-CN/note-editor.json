@@ -5,7 +5,7 @@
  "deleteError": "无法删除笔记。",
  "exported": "笔记已导出。",
  "imported": "已导入到当前笔记。",
- "importError": "导入文件不是有效的笔记格式。",
+ "importError": "导入未完成，请检查已保存的内容后重试。",
  "notFound": "未找到笔记。",
  "options": "笔记选项",
  "editMode": "切换到编辑模式",

@@ -23,7 +23,6 @@ const saveSrsResponseSchema = z.object({
  dictionaryId: z.string().nullable(),
  contextSchemaAvailable: z.boolean(),
  noteSchemaAvailable: z.boolean(),
- offlineQueued: z.boolean().optional(),
 });
 
 /**
@@ -129,42 +128,29 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   }) => {
    if (!userId) throw new Error("Not authenticated");
 
-   try {
-    const response = await fetch("/api/dictionary/srs", {
-     method: "POST",
-     headers: {
-      "Content-Type": "application/json",
-      "X-HanziHome-Owner-Id": userId,
-     },
-     body: JSON.stringify({
-      hanzi: payload.vocabData.hanzi,
-      contextSentence: payload.options?.contextSentence,
-      contextTranslation: payload.options?.contextTranslation,
-      personalNote: payload.options?.personalNote,
-      personalNoteMode: payload.options?.personalNoteMode,
-     }),
-    });
+   const response = await fetch("/api/dictionary/srs", {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json",
+     "X-HanziHome-Owner-Id": userId,
+    },
+    body: JSON.stringify({
+     hanzi: payload.vocabData.hanzi,
+     contextSentence: payload.options?.contextSentence,
+     contextTranslation: payload.options?.contextTranslation,
+     personalNote: payload.options?.personalNote,
+     personalNoteMode: payload.options?.personalNoteMode,
+    }),
+   });
 
-    if (!response.ok) throw new Error("Save failed");
-    const result = saveSrsResponseSchema.parse(await response.json());
+   if (!response.ok) throw new Error("Save failed");
+   const result = saveSrsResponseSchema.parse(await response.json());
 
-    if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
-     throw new Error("Database chua co cot personal_note. Hay dong bo schema truoc.");
-    }
-
-    return result;
-   } catch (error) {
-    if (typeof navigator !== "undefined" && !navigator.onLine) {
-     return {
-      vocabId: payload.vocabData.hanzi,
-      dictionaryId: null,
-      contextSchemaAvailable: true,
-      noteSchemaAvailable: true,
-      offlineQueued: true,
-     };
-    }
-    throw error;
+   if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
+    throw new Error("Database chua co cot personal_note. Hay dong bo schema truoc.");
    }
+
+   return result;
   },
   onSuccess: (_result, variables) => {
    const payload = variables;

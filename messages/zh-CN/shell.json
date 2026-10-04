@@ -110,5 +110,47 @@
  },
  "localeSwitcher": {
   "label": "切换界面语言"
+ },
+ "search": {
+  "title": "搜索 HanziHome",
+  "description": "搜索 HanziHome 中的词汇、语法、课程和笔记。",
+  "placeholder": "搜索词汇、语法、课程…",
+  "inputAria": "搜索 HanziHome",
+  "clear": "清除搜索",
+  "resultsAria": "搜索结果",
+  "lookupTitle": "查询“<hanzi>{term}</hanzi>”",
+  "dictionary": "词典",
+  "lookupDescription": "查看这个词或句子的释义、拼音和例句",
+  "quickAccess": "快捷访问",
+  "shortcuts": {
+   "radicals": "214 个部首"
+  },
+  "move": "移动",
+  "select": "选择",
+  "changeCategory": "切换分类",
+  "close": "关闭",
+  "empty": "{category}中没有结果",
+  "emptyDescription": "请尝试其他关键词或分类。",
+  "loadError": "无法加载搜索索引",
+  "loadErrorDescription": "请检查网络连接后重试。",
+  "retry": "重试",
+  "categories": {
+   "all": "全部",
+   "vocab": "词汇",
+   "grammar": "语法",
+   "exercise": "练习",
+   "lesson": "课程",
+   "radical": "部首"
+  },
+  "kinds": {
+   "vocab": "词汇",
+   "grammar": "语法",
+   "lesson_text": "课文",
+   "section": "章节",
+   "exercise": "练习",
+   "radical": "部首",
+   "note": "笔记",
+   "navigation": "导航"
+  }
  }
 }

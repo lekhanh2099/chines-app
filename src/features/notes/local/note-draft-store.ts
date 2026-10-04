@@ -97,6 +97,8 @@ export async function saveNoteDraft(
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
+   tx.oncomplete = () => resolve(true);
+   tx.onabort = () => resolve(false);
    const store = tx.objectStore(DRAFTS_STORE);
    const getRequest = store.get(key);
 
@@ -146,7 +148,6 @@ export async function saveNoteDraft(
      logger.error("[NoteDraftStore] Failed to save draft:", putRequest.error);
      resolve(false);
     };
-    putRequest.onsuccess = () => resolve(true);
    };
    getRequest.onerror = () => {
     logger.error("[NoteDraftStore] Failed to read current draft:", getRequest.error);
@@ -164,6 +165,7 @@ export async function clearNoteContentDraft(
  userId: string,
  noteId: string,
  ifUpdatedAtOrOlder: number,
+ acknowledgedContent: NoteDraftRecord["content"],
 ): Promise<boolean> {
  if (!userId || !noteId) return false;
 
@@ -172,29 +174,31 @@ export async function clearNoteContentDraft(
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
+   tx.oncomplete = () => resolve(true);
+   tx.onabort = () => resolve(false);
    const store = tx.objectStore(DRAFTS_STORE);
    const request = store.get(key);
 
    request.onsuccess = () => {
     if (!request.result) {
-     resolve(true);
      return;
     }
     const parsed = NoteDraftRecordSchema.safeParse(request.result);
     if (!parsed.success) {
      store.delete(key);
-     resolve(true);
      return;
     }
     const contentUpdatedAt = parsed.data.contentUpdatedAt ?? parsed.data.updatedAt;
-    if (contentUpdatedAt > ifUpdatedAtOrOlder) {
+    if (
+     contentUpdatedAt > ifUpdatedAtOrOlder ||
+     JSON.stringify(parsed.data.content) !== JSON.stringify(acknowledgedContent)
+    ) {
      resolve(false);
      return;
     }
 
     if (parsed.data.readingContent === undefined) {
      store.delete(key);
-     resolve(true);
      return;
     }
 
@@ -206,7 +210,6 @@ export async function clearNoteContentDraft(
      readingContentUpdatedAt,
      updatedAt: readingContentUpdatedAt,
     });
-    resolve(true);
    };
    request.onerror = () => {
     logger.error("[NoteDraftStore] Error acknowledging content draft:", request.error);
@@ -224,6 +227,7 @@ export async function clearNoteReadingContentDraft(
  userId: string,
  noteId: string,
  ifUpdatedAtOrOlder: number,
+ acknowledgedContent: NoteDraftRecord["readingContent"],
 ): Promise<boolean> {
  if (!userId || !noteId) return false;
 
@@ -232,29 +236,31 @@ export async function clearNoteReadingContentDraft(
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
+   tx.oncomplete = () => resolve(true);
+   tx.onabort = () => resolve(false);
    const store = tx.objectStore(DRAFTS_STORE);
    const request = store.get(key);
 
    request.onsuccess = () => {
     if (!request.result) {
-     resolve(true);
      return;
     }
     const parsed = NoteDraftRecordSchema.safeParse(request.result);
     if (!parsed.success) {
      store.delete(key);
-     resolve(true);
      return;
     }
     const readingUpdatedAt = parsed.data.readingContentUpdatedAt ?? parsed.data.updatedAt;
-    if (readingUpdatedAt > ifUpdatedAtOrOlder) {
+    if (
+     readingUpdatedAt > ifUpdatedAtOrOlder ||
+     JSON.stringify(parsed.data.readingContent) !== JSON.stringify(acknowledgedContent)
+    ) {
      resolve(false);
      return;
     }
 
     if (parsed.data.content === null) {
      store.delete(key);
-     resolve(true);
      return;
     }
 
@@ -266,7 +272,6 @@ export async function clearNoteReadingContentDraft(
      contentUpdatedAt,
      updatedAt: contentUpdatedAt,
     });
-    resolve(true);
    };
    request.onerror = () => {
     logger.error("[NoteDraftStore] Error acknowledging reading draft:", request.error);
@@ -333,18 +338,18 @@ export async function clearNoteDraft(
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
+   tx.oncomplete = () => resolve(true);
+   tx.onabort = () => resolve(false);
    const store = tx.objectStore(DRAFTS_STORE);
    const req = store.get(key);
 
    req.onsuccess = () => {
     if (!req.result) {
-     resolve(true);
      return;
     }
     const parsed = NoteDraftRecordSchema.safeParse(req.result);
     if (!parsed.success) {
      store.delete(key);
-     resolve(true);
      return;
     }
     // Invariant: If draft was updated after this mutation was initiated, preserve it
@@ -353,7 +358,6 @@ export async function clearNoteDraft(
      return;
     }
     store.delete(key);
-    resolve(true);
    };
 
    req.onerror = () => {

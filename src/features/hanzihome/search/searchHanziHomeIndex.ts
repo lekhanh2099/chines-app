@@ -1,9 +1,68 @@
 import { normalizeSearchText } from "./normalize";
 import type {
+ HanziHomeSearchCategory,
  HanziHomeSearchIndexItem,
  HanziHomeSearchOptions,
  HanziHomeSearchResult,
 } from "./types";
+
+function resultCategory(item: HanziHomeSearchIndexItem): HanziHomeSearchCategory {
+ if (
+  item.kind === "vocab" ||
+  item.kind === "grammar" ||
+  item.kind === "exercise" ||
+  item.kind === "radical"
+ )
+  return item.kind;
+ return "lesson";
+}
+
+export function countSearchResultCategories(results: readonly HanziHomeSearchResult[]) {
+ const counts: Record<HanziHomeSearchCategory, number> = {
+  all: results.length,
+  vocab: 0,
+  grammar: 0,
+  exercise: 0,
+  lesson: 0,
+  radical: 0,
+ };
+ for (const result of results) counts[resultCategory(result.item)] += 1;
+ return counts;
+}
+
+export function filterSearchResultCategory(
+ results: readonly HanziHomeSearchResult[],
+ category: HanziHomeSearchCategory,
+) {
+ return category === "all"
+  ? results
+  : results.filter((result) => resultCategory(result.item) === category);
+}
+
+export function selectSearchNavigationItems(
+ index: readonly HanziHomeSearchIndexItem[],
+ options: HanziHomeSearchOptions,
+) {
+ return index
+  .filter(
+   (item) =>
+    item.kind === "navigation" &&
+    (!item.lessonId || item.lessonId === options.lessonId || item.courseId === options.courseId),
+  )
+  .slice(0, 10);
+}
+
+export function splitSearchHighlight(text: string, rawQuery: string) {
+ const query = rawQuery.trim();
+ const index = query ? text.toLowerCase().indexOf(query.toLowerCase()) : -1;
+ return index < 0
+  ? { before: text, match: "", after: "" }
+  : {
+     before: text.slice(0, index),
+     match: text.slice(index, index + query.length),
+     after: text.slice(index + query.length),
+    };
+}
 
 type NormalizedCacheEntry = {
  title: string;
@@ -81,8 +140,10 @@ function scoreItem(
   }
  }
 
- if (options.lessonId && item.lessonId === options.lessonId) score += 120;
- if (options.courseId && item.courseId === options.courseId) score += 40;
+ if (score > 0) {
+  if (options.lessonId && item.lessonId === options.lessonId) score += 120;
+  if (options.courseId && item.courseId === options.courseId) score += 40;
+ }
 
  return { score, matchedSnippet };
 }

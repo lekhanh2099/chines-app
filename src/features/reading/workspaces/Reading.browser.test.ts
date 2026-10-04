@@ -27,6 +27,8 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
   const fixture = fileURLToPath(new URL("./Reading.browser.fixture.tsx", import.meta.url));
   const server = await createServer({
    configFile: false,
+   cacheDir: "node_modules/.vite/reading-browser",
+   optimizeDeps: { entries: [fixture] },
    resolve: {
     alias: [
      ...[
@@ -158,7 +160,6 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      page.getByRole("button", { name: messages.Reader.study.shadowing.start, exact: true }),
     ).toBeVisible();
     await page.getByRole("button", { name: chrome.tools.title, exact: true }).click();
-    await page.getByRole("menuitem", { name: "Hiển thị lớp học", exact: true }).hover();
     await page.getByRole("menuitemcheckbox", { name: chrome.tools.pinyin, exact: true }).click();
     expect((await page.evaluate(() => window.readingHarness.snapshot())).display.showPinyin).toBe(
      false,
@@ -199,7 +200,7 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     await page.getByRole("button", { name: chrome.commands.stopReading, exact: true }).click();
     await browserExpect(
      page.getByRole("button", { name: chrome.commands.stopReading, exact: true }),
-    ).toBeDisabled();
+    ).toHaveCount(0);
     await page.goto(
      url +
       "reading-test?source=reader-highlight&document=" +
@@ -225,7 +226,7 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
      ).toBe(true);
-     const outline = page.getByRole("combobox", { name: chrome.outline.aria, exact: true });
+     const outline = page.getByRole("combobox", { name: chrome.commands.openOutline, exact: true });
      await browserExpect(outline).toHaveAttribute("aria-expanded", "false");
     }
     await page.evaluate(() => window.readingHarness.mountHsk());
@@ -298,7 +299,7 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     });
     await page.evaluate((article) => window.readingHarness.mountDaily(article), daily);
     await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(3);
-    await browserExpect(page.locator('[aria-label^="Kiểm tra pinyin chữ"]')).toHaveCount(0);
+    await browserExpect(page.locator('[aria-label^="Kiểm tra pinyin chữ"]').first()).toBeVisible();
     await page.evaluate((article) => window.readingHarness.mountDaily(article, true), daily);
     await page.getByRole("button", { name: chrome.commands.next, exact: true }).click();
     await browserExpect(page.locator('[data-reader-segment="source-p2"]')).toHaveAttribute(

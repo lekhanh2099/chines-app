@@ -22,6 +22,11 @@ import {
 
 import type { LessonDisplayMode } from "./types";
 import {
+ getActiveCharacterIndex,
+ progressiveStudyTextRanges,
+ progressiveReadingCharacters,
+} from "./progressive-study-text-utils";
+import {
  nextAvailableRevealStage,
  shouldAdvanceReveal,
  type RevealStage,
@@ -257,23 +262,6 @@ export function ProgressiveStudyText({
  );
 }
 
-export function getActiveCharacterIndex(
- characterCount: number,
- startIndex: number,
- activeCharacterCount: number,
- progress: number,
-) {
- if (characterCount === 0 || startIndex < 0 || activeCharacterCount <= 0) return -1;
-
- const boundedProgress = Number.isFinite(progress) ? Math.min(1, Math.max(0, progress)) : 0;
- const offset = Math.min(
-  activeCharacterCount - 1,
-  Math.floor(boundedProgress * activeCharacterCount),
- );
-
- return Math.min(characterCount - 1, startIndex + offset);
-}
-
 function AnnotatedText({
  text,
  annotations,
@@ -312,18 +300,13 @@ function AnnotatedText({
  if (!annotations.length && !readerAnnotations.length) return text;
 
  const output: ReactNode[] = [];
- let cursor = 0;
- for (const annotation of [...readerAnnotations].sort(
-  (left, right) => (left.start_offset ?? 0) - (right.start_offset ?? 0),
- )) {
-  if (
-   annotation.start_offset === null ||
-   annotation.end_offset === null ||
-   annotation.start_offset < cursor ||
-   text.slice(annotation.start_offset, annotation.end_offset) !== annotation.selected_text
-  )
-   continue;
-  output.push(text.slice(cursor, annotation.start_offset));
+ const { readerRanges, lessonRanges, trailingText } = progressiveStudyTextRanges(
+  text,
+  readerAnnotations,
+  annotations,
+ );
+ for (const { before, text: annotatedText, annotation } of readerRanges) {
+  output.push(before);
   output.push(
    <Button
     key={annotation.id}
@@ -338,18 +321,13 @@ function AnnotatedText({
     }}
    >
     <mark className="reading-highlight rounded-sm" data-color={annotation.color}>
-     {annotation.selected_text}
+     {annotatedText}
     </mark>
    </Button>,
   );
-  cursor = annotation.end_offset;
  }
- for (const annotation of [...annotations].sort(
-  (left, right) => left.resolvedStartOffset - right.resolvedStartOffset,
- )) {
-  if (annotation.resolvedStartOffset < cursor) continue;
-  output.push(text.slice(cursor, annotation.resolvedStartOffset));
-  const annotatedText = text.slice(annotation.resolvedStartOffset, annotation.resolvedEndOffset);
+ for (const { before, text: annotatedText, annotation } of lessonRanges) {
+  output.push(before);
   output.push(
    <Button
     key={annotation.id}
@@ -368,9 +346,8 @@ function AnnotatedText({
     </mark>
    </Button>,
   );
-  cursor = annotation.resolvedEndOffset;
  }
- output.push(text.slice(cursor));
+ output.push(trailingText);
  return output;
 }
 
@@ -389,19 +366,7 @@ function InteractiveReadingText({
  activeCharacterIndex: number;
  onSpeakFrom: (index: number) => void;
 }) {
- const sortedAnnotations = [...annotations].sort(
-  (left, right) => left.resolvedStartOffset - right.resolvedStartOffset,
- );
- let characterOffset = 0;
-
- return Array.from(text).map((character, index) => {
-  const startOffset = characterOffset;
-  characterOffset += character.length;
-  const endOffset = characterOffset;
-  const annotation = sortedAnnotations.find(
-   (candidate) =>
-    candidate.resolvedStartOffset <= startOffset && candidate.resolvedEndOffset >= endOffset,
-  );
+ return progressiveReadingCharacters(text, annotations).map(({ character, index, annotation }) => {
   const active = index === activeCharacterIndex;
   const className = cn(annotation && "reading-highlight", active && "reading-progress-highlight");
 

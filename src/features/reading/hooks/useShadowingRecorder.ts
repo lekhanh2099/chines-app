@@ -52,6 +52,7 @@ export function useShadowingRecorder() {
  const audioUrlRef = useRef<string | null>(null);
  const mountedRef = useRef(true);
  const requestIdRef = useRef(0);
+ const lastDurationDispatchRef = useRef(0);
 
  const stopTimer = useCallback(() => {
   if (timerRef.current === null) return;
@@ -72,6 +73,7 @@ export function useShadowingRecorder() {
 
  const clear = useCallback(() => {
   releaseAudioUrl();
+  lastDurationDispatchRef.current = 0;
   setState((current) => ({
    ...current,
    audioBlob: null,
@@ -99,6 +101,7 @@ export function useShadowingRecorder() {
   releaseStream();
   releaseAudioUrl();
   chunksRef.current = [];
+  lastDurationDispatchRef.current = 0;
   setState((current) => ({
    ...current,
    audioBlob: null,
@@ -172,10 +175,10 @@ export function useShadowingRecorder() {
    const startedAt = Date.now();
    timerRef.current = window.setInterval(() => {
     if (!mountedRef.current) return;
-    setState((current) => ({
-     ...current,
-     durationSeconds: Math.max(0, Math.round((Date.now() - startedAt) / 1_000)),
-    }));
+    const durationSeconds = Math.max(0, Math.round((Date.now() - startedAt) / 1_000));
+    if (lastDurationDispatchRef.current === durationSeconds) return;
+    lastDurationDispatchRef.current = durationSeconds;
+    setState((current) => ({ ...current, durationSeconds }));
    }, 500);
    setState((current) => ({ ...current, isRecording: true, isRequesting: false }));
    return true;

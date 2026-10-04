@@ -5,7 +5,7 @@
  "deleteError": "Unable to delete the note.",
  "exported": "Note exported.",
  "imported": "Imported into the current note.",
- "importError": "The import file is not a valid note export.",
+ "importError": "The import could not be completed. Check the saved content and retry.",
  "notFound": "Note not found.",
  "options": "Note options",
  "editMode": "Switch to edit mode",

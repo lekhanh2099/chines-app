@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { Square, Volume2 } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
@@ -31,6 +33,7 @@ export function MandarinSpeakButton({
  onStop?: () => void;
  onFinish?: () => void;
 }) {
+ const t = useTranslations("TtsStudio");
  const tts = useSharedMandarinTts();
  const isCoarsePointer = useCoarsePointer();
  const normalizedText = text.trim();
@@ -41,7 +44,9 @@ export function MandarinSpeakButton({
  const requestActive = (tts.isSpeaking || tts.isLoading) && tts.speakingRequestText === requestText;
  const active = activeOverride ?? requestActive;
  const unavailable = !requestText;
- const accessibleLabel = active ? "Dừng đọc" : actionLabel || `Đọc tiếng Trung: ${normalizedText}`;
+ const accessibleLabel = active
+  ? t("stopReading")
+  : actionLabel || t("readChinese", { text: normalizedText });
 
  return (
   <Button
@@ -50,13 +55,7 @@ export function MandarinSpeakButton({
    size={actionLabel ? "toolbar" : touchTarget || isCoarsePointer ? "icon" : "icon-xs"}
    className={cn("shrink-0", className)}
    disabled={disabled || (!active && unavailable)}
-   title={
-    disabled
-     ? "Tạm khóa trong chế độ đọc"
-     : unavailable
-       ? (tts.error ?? "Chưa có nội dung để đọc")
-       : accessibleLabel
-   }
+   title={disabled ? t("disabledReading") : unavailable ? t("noReadingContent") : accessibleLabel}
    aria-label={accessibleLabel}
    aria-pressed={active}
    onClick={() => {
@@ -71,7 +70,9 @@ export function MandarinSpeakButton({
    }}
   >
    {active ? <Square /> : <Volume2 />}
-   {actionLabel ? <span className="hidden sm:inline">{active ? "Dừng" : actionLabel}</span> : null}
+   {actionLabel ? (
+    <span className="hidden sm:inline">{active ? t("stop") : actionLabel}</span>
+   ) : null}
   </Button>
  );
 }

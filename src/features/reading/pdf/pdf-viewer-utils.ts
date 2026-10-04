@@ -1,4 +1,24 @@
 import type { PdfPoint } from "@/features/reading/pdf/pdf-annotations";
+import type { ReaderPdfAsset } from "@/features/reading/model/reading-assets.schemas";
+
+export function pdfAssetIdForDocument(
+ resourceFile: ReaderPdfAsset["resourceFile"],
+ pdfPage: ReaderPdfAsset["pdfPage"],
+ assets: ReadonlyArray<ReaderPdfAsset>,
+) {
+ const asset = assets.find(
+  (candidate) => candidate.resourceFile === resourceFile && candidate.pdfPage === pdfPage,
+ );
+ return asset?.id ?? null;
+}
+
+export function pdfHref(asset: ReaderPdfAsset) {
+ return `/resources/${asset.resourceFile}#page=${asset.pdfPage}`;
+}
+
+export function importedPdfAssetId(asset: ReaderPdfAsset) {
+ return `hanzihome-studio-asset:public/resources/${asset.resourceFile}`;
+}
 
 export const PDF_BASE_PAGE_WIDTH_REM = 45;
 export const PDF_MIN_ZOOM = 60;

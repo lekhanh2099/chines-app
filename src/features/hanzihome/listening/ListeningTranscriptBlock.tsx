@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Play } from "lucide-react";
 
 import { Badge } from "@/components/ui/display/badge";
@@ -24,6 +25,7 @@ export function ListeningTranscriptBlock({
  onSpeak: (text: string) => void;
  onSpeakSequence: (segments: string[]) => void;
 }) {
+ const t = useTranslations("Listening");
  const speakerById = new Map(transcript.speakers.map((speaker) => [speaker.id, speaker]));
 
  return (
@@ -36,14 +38,17 @@ export function ListeningTranscriptBlock({
      tracking="wide"
      transform="uppercase"
     >
-     Script đáp án
+     {t("transcript")}
     </StudyInstructionText>
     <div className="flex items-center gap-2">
-     <Badge variant="default">{transcript.mode === "dialogue" ? "Hội thoại" : "Độc thoại"}</Badge>
+     <Badge variant="default">
+      {transcript.mode === "dialogue" ? t("dialogue") : t("monologue")}
+     </Badge>
      <Button
       type="button"
       variant="outline"
       size="toolbar"
+      aria-label={t("playTranscript")}
       onClick={() =>
        onSpeakSequence(
         transcript.lines.length > 0
@@ -111,8 +116,8 @@ export function ListeningTranscriptBlock({
          type="button"
          variant="ghost"
          size="icon-toolbar"
-         aria-label={`Đọc dòng ${line.order}`}
-         title={`Đọc dòng ${line.order}`}
+         aria-label={t("readLine", { number: line.order })}
+         title={t("readLine", { number: line.order })}
          onClick={() => onSpeak(line.zh)}
         >
          <Play />

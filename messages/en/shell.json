@@ -110,5 +110,47 @@
  },
  "localeSwitcher": {
   "label": "Change interface language"
+ },
+ "search": {
+  "title": "Search HanziHome",
+  "description": "Search vocabulary, grammar, lessons and notes in HanziHome.",
+  "placeholder": "Search vocabulary, grammar, lessons…",
+  "inputAria": "Search HanziHome",
+  "clear": "Clear search",
+  "resultsAria": "Search results",
+  "lookupTitle": "Look up “<hanzi>{term}</hanzi>”",
+  "dictionary": "Dictionary",
+  "lookupDescription": "View meanings, pinyin and examples for this word or sentence",
+  "quickAccess": "Quick access",
+  "shortcuts": {
+   "radicals": "214 radicals"
+  },
+  "move": "Move",
+  "select": "Select",
+  "changeCategory": "Change category",
+  "close": "Close",
+  "empty": "No results in {category}",
+  "emptyDescription": "Try another search term or category.",
+  "loadError": "Unable to load the search index",
+  "loadErrorDescription": "Check your connection and try again.",
+  "retry": "Retry",
+  "categories": {
+   "all": "All",
+   "vocab": "Vocabulary",
+   "grammar": "Grammar",
+   "exercise": "Exercises",
+   "lesson": "Lessons",
+   "radical": "Radicals"
+  },
+  "kinds": {
+   "vocab": "Vocabulary",
+   "grammar": "Grammar",
+   "lesson_text": "Lesson text",
+   "section": "Section",
+   "exercise": "Exercise",
+   "radical": "Radical",
+   "note": "Note",
+   "navigation": "Navigation"
+  }
  }
 }

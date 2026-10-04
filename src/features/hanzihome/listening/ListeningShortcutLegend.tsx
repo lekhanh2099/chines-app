@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { Keyboard } from "lucide-react";
 
 import {
@@ -13,25 +15,6 @@ import { Typography } from "@/components/ui/display/typography";
 
 type ShortcutLegendItem = readonly [key: string, label: string];
 
-const editingShortcuts: ShortcutLegendItem[] = [
- ["Control", "Phát / tạm dừng"],
- ["Ctrl/⌘ R", "Nghe lại"],
- ["Ctrl/⌘ ↵", "Kiểm tra đáp án"],
- ["Ctrl/⌘ →", "Chuyển sang phần sau"],
- ["Ctrl/⌘ ←", "Quay lại phần trước"],
- ["Esc", "Dừng phát âm"],
-];
-
-const generalShortcuts: ShortcutLegendItem[] = [
- ["1 / ←", "Phần trước"],
- ["2 / Control / Space", "Phát / tạm dừng"],
- ["3 / Ctrl/⌘ R / R", "Nghe lại"],
- ["4 / →", "Phần sau"],
- ["5 / L", "Bật / tắt lặp"],
- ["6 / Ctrl/⌘ ↵", "Kiểm tra / Sửa lại"],
- ["Esc", "Dừng phát"],
-];
-
 function ShortcutKey({ children }: { children: string }) {
  return (
   <kbd>
@@ -43,11 +26,31 @@ function ShortcutKey({ children }: { children: string }) {
 }
 
 export function ListeningShortcutLegend() {
+ const t = useTranslations("Dictation");
+ const editingShortcuts: ShortcutLegendItem[] = [
+  ["Control", t("playPause")],
+  ["Ctrl/⌘ R", t("replay")],
+  ["Ctrl/⌘ ↵", t("checkAnswer")],
+  ["Ctrl/⌘ →", t("goNext")],
+  ["Ctrl/⌘ ←", t("goPrevious")],
+  ["Esc", t("stopSpeech")],
+ ];
+
+ const generalShortcuts: ShortcutLegendItem[] = [
+  ["1 / ←", t("previousPart")],
+  ["2 / Control / Space", t("playPause")],
+  ["3 / Ctrl/⌘ R / R", t("replay")],
+  ["4 / →", t("nextPart")],
+  ["5 / L", t("toggleLoop")],
+  ["6 / Ctrl/⌘ ↵", t("checkEdit")],
+  ["Esc", t("stopPlayback")],
+ ];
+
  return (
   <Popover.Root modal={false}>
-   <BasePopoverTrigger aria-label="Xem phím tắt nghe chép">
+   <BasePopoverTrigger aria-label={t("shortcutAria")}>
     <Keyboard data-icon="inline-start" />
-    Phím tắt
+    {t("shortcuts")}
    </BasePopoverTrigger>
    <Popover.Portal>
     <BasePopoverPositioner
@@ -61,7 +64,7 @@ export function ListeningShortcutLegend() {
       <div className="grid w-80 gap-3">
        <div className="grid gap-1.5">
         <Typography as="h3" variant="bodySmall" weight="black">
-         Khi đang gõ trong ô chép
+         {t("editingShortcuts")}
         </Typography>
         <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-1.5">
          {editingShortcuts.map(([key, label]) => (
@@ -74,13 +77,13 @@ export function ListeningShortcutLegend() {
          ))}
         </div>
         <Typography as="p" variant="caption" tone="muted" scale="fine" emphasis="italic">
-         Phím số 0–9 dùng để gõ năm, tháng, ngày và chọn từ IME bình thường.
+         {t("numberHelp")}
         </Typography>
        </div>
 
        <div className="grid gap-1.5 border-t border-border-default pt-2">
         <Typography as="h3" variant="bodySmall" weight="black">
-         Khi ở ngoài ô gõ (xem kết quả / duyệt bài)
+         {t("generalShortcuts")}
         </Typography>
         <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-1.5">
          {generalShortcuts.map(([key, label]) => (

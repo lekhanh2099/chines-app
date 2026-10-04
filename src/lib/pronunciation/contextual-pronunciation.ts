@@ -1,7 +1,7 @@
 import { convert, pinyin, polyphonic } from "pinyin-pro";
 import { z } from "zod";
 
-import { POLYPHONIC_DICTIONARY, ensurePinyinEngineInitialized } from "./pinyin-engine";
+import { POLYPHONIC_DICTIONARY, ensurePinyinEngineInitialized } from "./pinyin-engine.ts";
 
 ensurePinyinEngineInitialized();
 

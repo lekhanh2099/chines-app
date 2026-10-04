@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { Mic, Square } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -20,47 +19,28 @@ import {
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import {
- fetchPracticeAttempts,
- savePracticeAttempt,
-} from "@/features/hanzihome/practice/practice-attempt-api";
-import {
- createTranslationAttempt,
  scoreTranslationAttempt,
  type TranslationDirection,
 } from "@/features/hanzihome/practice/translation-practice";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HumanitiesDocumentResource } from "@/features/humanities/model/humanities-resource.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
 import { useShadowingRecorder } from "@/features/reading/hooks/useShadowingRecorder";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
-import {
- evaluateHumanitiesAnswer,
- type HumanitiesEvaluationResult,
-} from "@/features/humanities/humanities-evaluator";
+import { type HumanitiesEvaluationResult } from "@/features/humanities/humanities-evaluator";
 import {
  humanitiesPracticeContent,
  type HumanitiesPracticeTrack,
 } from "@/features/humanities/humanities-practice-content";
 
-function sourceKind(resource: HumanitiesDocumentResource["document"]): string {
- const value = resource.source_metadata.source_kind;
- return typeof value === "string" ? value : "humanities";
-}
-
-function courseModuleOrder(track: HumanitiesPracticeTrack, lessonIndex: number): number {
- if (track === "translation") {
-  if (lessonIndex === 1) return 1;
-  if (lessonIndex <= 6) return 6;
-  if (lessonIndex <= 10) return 7;
-  if (lessonIndex <= 15) return 8;
-  return 9;
- }
- if (lessonIndex === 1) return 1;
- if (lessonIndex <= 3) return 10;
- if (lessonIndex <= 5) return 11;
- return 12;
-}
+import {
+ createTranslationSubmission,
+ translationCourseModuleOrder,
+ translationResourceSegments,
+ translationSourceKind,
+ translationTrackDocuments,
+} from "./translation-workspace-utils";
+import { useTranslationAttempts } from "./useTranslationAttempts";
 
 type HumanitiesUnitMark = "kept" | "partial" | "missed" | "unsure";
 const interpretingMarks = [
@@ -96,7 +76,6 @@ export function TranslationWorkspace({
  const [interpretingNotes, setInterpretingNotes] = useState("");
  const [learnerTranscript, setLearnerTranscript] = useState("");
  const [unitMarks, setUnitMarks] = useState<Record<string, HumanitiesUnitMark>>({});
- const [saveError, setSaveError] = useState("");
  const startedAtRef = useRef<Record<string, number>>({});
  const lastRecordingRef = useRef<Blob | null>(null);
  const recorder = useShadowingRecorder();
@@ -129,15 +108,7 @@ export function TranslationWorkspace({
   router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
  };
  const segments = useMemo(
-  () =>
-   resource?.paragraphs.map((paragraph) => ({
-    id: paragraph.id,
-    order: paragraph.paragraph_order,
-    sourceLabel: "Bài đọc Humanities",
-    zh: paragraph.zh,
-    pinyin: paragraph.pinyin,
-    vi: paragraph.vi,
-   })) ?? [],
+  () => (resource ? translationResourceSegments(resource) : []),
   [resource],
  );
  const segment = segments[activeIndex];
@@ -152,12 +123,9 @@ export function TranslationWorkspace({
  const preparationRemaining =
   preparationState.key === preparationKey ? preparationState.remaining : preparationLimit;
  const key = segment ? `${segment.id}:${direction}` : "";
- const historyQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.practiceAttempts("translation", segment?.id ?? ""),
-  queryFn: () => fetchPracticeAttempts({ surface: "translation", contentId: segment?.id ?? "" }),
-  enabled: segment !== undefined,
-  staleTime: 0,
- });
+ const { historyQuery, submitAttempt, saveError, clearSaveError } = useTranslationAttempts(
+  segment?.id ?? "",
+ );
  const draft = key ? (drafts[key] ?? "") : "";
  const backTranslation = key ? (backTranslations[key] ?? "") : "";
  const isChecked = key ? checked[key] === true : false;
@@ -186,7 +154,7 @@ export function TranslationWorkspace({
   if (!isInterpreting || segment === undefined || recorder.audioBlob === null) return;
   if (lastRecordingRef.current === recorder.audioBlob) return;
   lastRecordingRef.current = recorder.audioBlob;
-  void savePracticeAttempt({
+  submitAttempt({
    surface: "translation",
    contentId: segment.id,
    direction,
@@ -199,7 +167,7 @@ export function TranslationWorkspace({
    },
    scorePercent: null,
    responseMs: recorder.durationSeconds * 1_000,
-  }).catch((error: Error) => setSaveError(error.message));
+  });
  }, [
   direction,
   interpretingNotes,
@@ -209,6 +177,7 @@ export function TranslationWorkspace({
   recorder.durationSeconds,
   segment,
   unitMarks,
+  submitAttempt,
  ]);
 
  const updateDraft = (value: string) => {
@@ -224,33 +193,21 @@ export function TranslationWorkspace({
   if (!segment || !key || !draft.trim()) return;
   const startedAt = startedAtRef.current[key];
   const responseMs = startedAt === undefined ? null : Math.max(0, submittedAt - startedAt);
-  const attempt = createTranslationAttempt(segment, direction, draft, responseMs);
-  const evaluationResult =
-   humanitiesEvaluation === undefined
-    ? null
-    : evaluateHumanitiesAnswer(draft, humanitiesEvaluation);
+  const { payload, evaluationResult } = createTranslationSubmission(
+   segment,
+   direction,
+   draft,
+   responseMs,
+   humanitiesEvaluation,
+  );
   delete startedAtRef.current[key];
   setHumanitiesResult(evaluationResult);
   setChecked((current) => ({ ...current, [key]: true }));
-  setSaveError("");
-  void savePracticeAttempt({
-   surface: "translation",
-   contentId: segment.id,
-   direction,
-   answer: {
-    answer: attempt.answer,
-    reference:
-     humanitiesEvaluation?.references[0]?.text ?? (direction === "zh-vi" ? segment.vi : segment.zh),
-    missingUnitIds: evaluationResult?.missingRequiredUnitIds ?? [],
-   },
-   scorePercent: evaluationResult?.score ?? attempt.score,
-   responseMs: attempt.responseMs,
-  })
-   .then(() => historyQuery.refetch())
-   .catch((error: Error) => setSaveError(error.message));
+  clearSaveError();
+  submitAttempt(payload);
  };
 
- const trackDocuments = initialDocuments.filter((document) => sourceKind(document) === activeTrack);
+ const trackDocuments = translationTrackDocuments(initialDocuments, activeTrack);
  if (trackDocuments.length === 0) {
   return (
    <Typography variant="bodySmall" tone="muted">
@@ -468,7 +425,7 @@ export function TranslationWorkspace({
           className="w-full text-left"
          >
           {t("guide.moduleLesson", {
-           module: courseModuleOrder(activeTrack, lessonIndex),
+           module: translationCourseModuleOrder(activeTrack, lessonIndex),
            lesson: lessonIndex,
            total: trackDocuments.length,
           })}
@@ -521,7 +478,7 @@ export function TranslationWorkspace({
     <div className="grid gap-1">
      <Badge variant="purple" className="justify-self-start">
       {t("detail.moduleLesson", {
-       module: courseModuleOrder(activeTrack, selectedLessonIndex),
+       module: translationCourseModuleOrder(activeTrack, selectedLessonIndex),
        lesson: selectedLessonIndex,
        total: trackDocuments.length,
       })}
@@ -671,7 +628,7 @@ export function TranslationWorkspace({
       {t("source.segment", {
        order: segment.order,
        total: segments.length,
-       source: sourceKind(resource.document),
+       source: translationSourceKind(resource.document),
       })}
      </Typography>
      {direction === "zh-vi" ? (
@@ -758,16 +715,14 @@ export function TranslationWorkspace({
        disabled={!draft.trim()}
        onClick={() => {
         if (!segment || !draft.trim()) return;
-        void savePracticeAttempt({
+        submitAttempt({
          surface: "translation",
          contentId: segment.id,
          direction,
          answer: { answer: draft, reference: null, missingUnitIds: [] },
          scorePercent: null,
          responseMs: null,
-        })
-         .then(() => historyQuery.refetch())
-         .catch((error: Error) => setSaveError(error.message));
+        });
        }}
       >
        {t("answer.saveRevision")}
@@ -851,14 +806,14 @@ export function TranslationWorkspace({
              onClick={() => {
               const nextMarks = { ...unitMarks, [unit.id]: mark };
               setUnitMarks(nextMarks);
-              void savePracticeAttempt({
+              submitAttempt({
                surface: "translation",
                contentId: segment.id,
                direction,
                answer: { kind: "interpreting-self-mark", unitMarks: nextMarks },
                scorePercent: null,
                responseMs: null,
-              }).catch((error: Error) => setSaveError(error.message));
+              });
              }}
             >
              {markLabel(mark)}

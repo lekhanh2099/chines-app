@@ -21,6 +21,7 @@ export type TTSVoice = z.infer<typeof TTSVoiceSchema>;
 
 const DEFAULT_RATE = 1;
 const MAX_TTS_TEXT_LENGTH = 10_000;
+const TTS_AUTH_ERROR_MESSAGE = "Phiên đăng nhập không hợp lệ. Hãy đăng nhập lại để dùng giọng đọc.";
 export const DEFAULT_MANDARIN_VOICE = "zh-CN-XiaoxiaoNeural";
 
 const ttsPlaybackResultSchema = z.strictObject({ completed: z.boolean(), cancelled: z.boolean() });
@@ -86,6 +87,7 @@ export function useTTS() {
  const generationAbortControllerRef = useRef<AbortController>(null);
  const voiceLoadControllerRef = useRef<AbortController>(null);
  const voiceLoadPromiseRef = useRef<Promise<TTSVoice[]> | null>(null);
+ const voiceLoadErrorRef = useRef<Error>(null);
  const playbackRunRef = useRef(0);
  const sequenceSegmentsRef = useRef<string[]>([]);
  const sequenceIndexRef = useRef(0);
@@ -178,9 +180,11 @@ export function useTTS() {
 
   const controller = new AbortController();
   voiceLoadControllerRef.current = controller;
+  voiceLoadErrorRef.current = null;
   const promise = (async () => {
    try {
     const response = await fetch("/api/tts", { signal: controller.signal });
+    if (response.status === 401) throw new Error(TTS_AUTH_ERROR_MESSAGE);
     if (!response.ok) throw new Error(`TTS voices API ${response.status}`);
 
     const voicePayload: JsonFieldValue = await response.json();
@@ -195,9 +199,12 @@ export function useTTS() {
     return nextVoices;
    } catch (error) {
     if (controller.signal.aborted) return [];
+    const failure =
+     error instanceof Error ? error : new Error("Không tải được giọng Mandarin zh-CN");
+    voiceLoadErrorRef.current = failure;
     setState((current) => ({
      ...current,
-     error: error instanceof Error ? error.message : "Không tải được giọng Mandarin zh-CN",
+     error: failure.message,
     }));
     return [];
    }
@@ -348,6 +355,7 @@ export function useTTS() {
      }),
      signal: controller.signal,
     });
+    if (response.status === 401) throw new Error(TTS_AUTH_ERROR_MESSAGE);
     if (!response.ok) throw new Error(`TTS API ${response.status}`);
 
     const blob = await response.blob();
@@ -357,7 +365,10 @@ export function useTTS() {
    } catch (error) {
     if (controller.signal.aborted || playbackRunRef.current !== runId) return;
 
-    if (isOfflineSpeechSupported()) {
+    if (
+     isOfflineSpeechSupported() &&
+     !(error instanceof Error && error.message === TTS_AUTH_ERROR_MESSAGE)
+    ) {
      try {
       setState((prev) => ({ ...prev, isLoading: false, isSpeaking: true, error: null }));
       setSpeakingText(text);
@@ -498,6 +509,7 @@ export function useTTS() {
      }),
      signal: controller.signal,
     });
+    if (response.status === 401) throw new Error(TTS_AUTH_ERROR_MESSAGE);
     if (!response.ok) throw new Error(`TTS API ${response.status}`);
 
     const blob = await response.blob();
@@ -595,7 +607,9 @@ export function useTTS() {
      .then(async (availableVoices) => {
       if (playbackRunRef.current !== runId) return;
       const voiceName = selectedVoiceName || availableVoices[0]?.shortName;
-      if (!voiceName) throw new Error("Không tải được giọng Mandarin zh-CN");
+      if (!voiceName) {
+       throw voiceLoadErrorRef.current ?? new Error("Không tải được giọng Mandarin zh-CN");
+      }
       await playNextSequenceSegment(runId, voiceName);
      })
      .catch((error) => {

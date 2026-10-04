@@ -60,7 +60,7 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
  const tCommon = useTranslations("Common");
  const tShell = useTranslations("Shell");
  const queryClient = useQueryClient();
- const { supabase } = useClientSession();
+ const { supabase, isResolved } = useClientSession();
  const [open, setOpen] = useState(false);
  const profile = getProfile(user, {
   missingEmail: tShell("profile.missingEmail"),
@@ -101,6 +101,7 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
  return (
   <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
    <Popover.Trigger
+    disabled={!isResolved}
     render={
      <Button variant={focusModeEnabled ? "warning" : "ghost"} size="icon" className="shrink-0" />
     }

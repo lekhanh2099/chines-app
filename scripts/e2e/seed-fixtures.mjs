@@ -7,6 +7,9 @@ const required = (name) => {
 };
 
 const supabaseUrl = required("NEXT_PUBLIC_SUPABASE_URL");
+if (!["127.0.0.1", "localhost", "[::1]"].includes(new URL(supabaseUrl).hostname)) {
+ throw new Error("E2E fixtures require a local Supabase target");
+}
 const serviceRoleKey = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
 if (!serviceRoleKey) throw new Error("Missing SUPABASE_SECRET_KEY or SUPABASE_SERVICE_ROLE_KEY");
 

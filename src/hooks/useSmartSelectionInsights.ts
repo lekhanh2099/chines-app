@@ -23,7 +23,6 @@ const saveSrsResponseSchema = z.object({
  dictionaryId: z.string().nullable(),
  contextSchemaAvailable: z.boolean(),
  noteSchemaAvailable: z.boolean(),
- offlineQueued: z.boolean().optional(),
 });
 
 function resolveMode(selection: string): SmartSelectionMode {
@@ -100,42 +99,29 @@ export function useSmartSelectionInsights(
    const personalNoteMode = payload?.personalNoteMode
     ? PersonalNoteModeSchema.parse(payload.personalNoteMode)
     : undefined;
-   try {
-    const response = await fetch("/api/dictionary/srs", {
-     method: "POST",
-     headers: {
-      "Content-Type": "application/json",
-      "X-HanziHome-Owner-Id": userId,
-     },
-     body: JSON.stringify({
-      hanzi: query.data.entry.hanzi,
-      contextSentence: query.data.context_sentence,
-      personalNote: payload?.personalNote,
-      personalNoteMode,
-     }),
-    });
+   const response = await fetch("/api/dictionary/srs", {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json",
+     "X-HanziHome-Owner-Id": userId,
+    },
+    body: JSON.stringify({
+     hanzi: query.data.entry.hanzi,
+     contextSentence: query.data.context_sentence,
+     personalNote: payload?.personalNote,
+     personalNoteMode,
+    }),
+   });
 
-    if (!response.ok) throw new Error("Không thể lưu selection vào kho ôn tập");
-    const result = saveSrsResponseSchema.parse(await response.json());
-    if (payload?.personalNote?.trim() && !result.noteSchemaAvailable) {
-     throw new Error(
-      "Database chưa có cột personal_note. Chạy migration user_vocab_progress trước.",
-     );
-    }
-
-    return result;
-   } catch (error) {
-    if (typeof navigator !== "undefined" && !navigator.onLine) {
-     return {
-      vocabId: query.data.entry.hanzi,
-      dictionaryId: null,
-      contextSchemaAvailable: true,
-      noteSchemaAvailable: true,
-      offlineQueued: true,
-     };
-    }
-    throw error;
+   if (!response.ok) throw new Error("Không thể lưu selection vào kho ôn tập");
+   const result = saveSrsResponseSchema.parse(await response.json());
+   if (payload?.personalNote?.trim() && !result.noteSchemaAvailable) {
+    throw new Error(
+     "Database chưa có cột personal_note. Chạy migration user_vocab_progress trước.",
+    );
    }
+
+   return result;
   },
   onSuccess: (_result, payload) => {
    queryClient.setQueryData<typeof query.data>(queryKey, (old) =>

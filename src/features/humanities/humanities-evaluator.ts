@@ -52,10 +52,9 @@ function categoryForUnit(type: string): "meaning" | "complete" | "logic" | "term
 }
 
 function matchedRealization(
- answer: string,
+ normalizedAnswer: string,
  acceptedRealizations: readonly string[],
 ): string | null {
- const normalizedAnswer = normalizeEvaluationText(answer);
  return (
   acceptedRealizations.find((realization) => {
    const normalizedRealization = normalizeEvaluationText(realization);
@@ -68,8 +67,9 @@ export function evaluateHumanitiesAnswer(
  answer: string,
  evaluation: ReaderHumanitiesEvaluation,
 ): HumanitiesEvaluationResult {
+ const normalizedAnswer = normalizeEvaluationText(answer);
  const unitResults = evaluation.informationUnits.map((unit) => {
-  const matched = matchedRealization(answer, unit.acceptedRealizations);
+  const matched = matchedRealization(normalizedAnswer, unit.acceptedRealizations);
   return evaluationUnitResultSchema.parse({
    unitId: unit.id,
    status: matched !== null ? "covered" : unit.required ? "missing" : "unresolved",
@@ -83,17 +83,18 @@ export function evaluateHumanitiesAnswer(
   });
  });
  const requiredUnits = evaluation.informationUnits.filter((unit) => unit.required);
- const requiredWeight = requiredUnits.reduce((sum, unit) => sum + unit.weight, 0);
- const coveredRequiredUnits = requiredUnits.filter(
-  (unit) => matchedRealization(answer, unit.acceptedRealizations) !== null,
+ const coveredUnits = new Set(
+  evaluation.informationUnits.filter((_unit, index) => unitResults[index]?.status === "covered"),
  );
+ const requiredWeight = requiredUnits.reduce((sum, unit) => sum + unit.weight, 0);
+ const coveredRequiredUnits = requiredUnits.filter((unit) => coveredUnits.has(unit));
  const coveredWeight = coveredRequiredUnits.reduce((sum, unit) => sum + unit.weight, 0);
  const categories = new Map<string, { earned: number; possible: number }>();
  for (const unit of requiredUnits) {
   const category = categoryForUnit(unit.type);
   const current = categories.get(category) ?? { earned: 0, possible: 0 };
   current.possible += unit.weight;
-  if (matchedRealization(answer, unit.acceptedRealizations) !== null) current.earned += unit.weight;
+  if (coveredUnits.has(unit)) current.earned += unit.weight;
   categories.set(category, current);
  }
  const dimensionScores = evaluation.rubric.map((dimension) => {

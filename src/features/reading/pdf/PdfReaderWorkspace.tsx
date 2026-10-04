@@ -25,7 +25,6 @@ import {
  type WheelEvent,
 } from "react";
 import { useTranslations } from "next-intl";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -40,16 +39,14 @@ import {
 import { cn } from "@/lib/utils";
 
 import {
- appendPdfStrokePoint,
  createPdfStroke,
  erasePdfStrokesAtPoint,
- pdfAnnotationPayloadSchema,
  pdfStrokePath,
  type PdfDrawingTool,
- type PdfPoint,
  type PdfStroke,
+ updateStrokeAtId,
 } from "@/features/reading/pdf/pdf-annotations";
-import { fetchPdfAnnotation, savePdfAnnotation } from "@/features/reading/pdf/pdf-annotation-api";
+import { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
 import {
  clampPdfZoom,
  nextPdfZoom,
@@ -58,35 +55,13 @@ import {
  pdfPageWidthRem,
  previousPdfZoom,
  normalizedPdfPoint,
+ pdfHref,
+ importedPdfAssetId,
 } from "@/features/reading/pdf/pdf-viewer-utils";
 import type { ReaderPdfAsset } from "@/features/reading/model/reading-assets.schemas";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 type PdfEditorTool = PdfDrawingTool | "eraser";
 
-export function pdfAssetIdForDocument(
- resourceFile: string,
- pdfPage: number,
- assets: ReadonlyArray<ReaderPdfAsset>,
-): string | null {
- const asset = assets.find(
-  (candidate) => candidate.resourceFile === resourceFile && candidate.pdfPage === pdfPage,
- );
- return asset?.id ?? null;
-}
-
 const PEN_COLORS = ["#ef4444", "#2563eb", "#16a34a", "#f59e0b", "#111827"];
-
-function pdfHref(asset: ReaderPdfAsset) {
- return `/resources/${asset.resourceFile}#page=${asset.pdfPage}`;
-}
-
-function importedPdfAssetId(asset: ReaderPdfAsset) {
- return `hanzihome-studio-asset:public/resources/${asset.resourceFile}`;
-}
-
-function updateStrokeAtId(strokes: readonly PdfStroke[], id: string, point: PdfPoint) {
- return strokes.map((stroke) => (stroke.id === id ? appendPdfStrokePoint(stroke, point) : stroke));
-}
 
 type PdfReaderWorkspaceProps = {
  initialAssetId?: string;
@@ -238,16 +213,9 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
  const pageRef = useRef<HTMLDivElement>(null);
  const activeStrokeRef = useRef("");
  const pinchDistanceRef = useRef<number | null>(null);
- const revisionRef = useRef(0);
- const pendingSaveRef = useRef<PdfStroke[] | null>(null);
- const savingRef = useRef(false);
- const queryClient = useQueryClient();
- const assetId = importedPdfAssetId(asset);
- const annotationQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerPdfAnnotation(assetId, asset.pdfPage),
-  queryFn: () => fetchPdfAnnotation({ assetId, pageNumber: asset.pdfPage }),
-  staleTime: 0,
- });
+ const common = useTranslations("Common");
+ const { strokes, replaceStrokes, retrySave, saveFailed, isSaving, loadFailed, retryLoad } =
+  usePdfAnnotations({ assetId: importedPdfAssetId(asset), pageNumber: asset.pdfPage });
  const [zoom, setZoom] = useState(100);
  const [fitToContainer, setFitToContainer] = useState(true);
  const [isFullscreen, setIsFullscreen] = useState(false);
@@ -257,48 +225,8 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
  const [color, setColor] = useState(PEN_COLORS[0] ?? "#ef4444");
  const [width, setWidth] = useState(4);
  const [eraserSize, setEraserSize] = useState(24);
- const [localStrokes, setLocalStrokes] = useState<PdfStroke[] | null>(null);
  const [past, setPast] = useState<PdfStroke[][]>([]);
  const [future, setFuture] = useState<PdfStroke[][]>([]);
- const [saveError, setSaveError] = useState("");
- const remoteStrokes = annotationQuery.data?.payload.strokes ?? [];
- const strokes = localStrokes ?? remoteStrokes;
-
- useEffect(() => {
-  if (annotationQuery.isSuccess) revisionRef.current = annotationQuery.data?.revision ?? 0;
- }, [annotationQuery.data, annotationQuery.isSuccess]);
-
- useEffect(() => {
-  if (!annotationQuery.isSuccess || localStrokes === null) return;
-  pendingSaveRef.current = localStrokes;
-  if (savingRef.current) return;
-  savingRef.current = true;
-  void (async () => {
-   while (pendingSaveRef.current !== null) {
-    const snapshot = pendingSaveRef.current;
-    pendingSaveRef.current = null;
-    try {
-     const saved = await savePdfAnnotation({
-      assetId,
-      pageNumber: asset.pdfPage,
-      payload: pdfAnnotationPayloadSchema.parse({ strokes: snapshot }),
-      expectedRevision: revisionRef.current,
-     });
-     revisionRef.current = saved?.revision ?? revisionRef.current;
-     queryClient.setQueryData(
-      hanzihomeQueryKeys.readerPdfAnnotation(assetId, asset.pdfPage),
-      saved,
-     );
-     setSaveError("");
-    } catch (error) {
-     pendingSaveRef.current = null;
-     setSaveError(error instanceof Error ? error.message : t("annotationError"));
-    }
-   }
-   savingRef.current = false;
-  })();
- }, [annotationQuery.isSuccess, asset.pdfPage, assetId, localStrokes, queryClient, t]);
-
  useEffect(() => {
   const syncFullscreen = () => setIsFullscreen(document.fullscreenElement === viewerRef.current);
   document.addEventListener("fullscreenchange", syncFullscreen);
@@ -309,25 +237,24 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
   setPast((current) => [...current, strokes]);
   setFuture([]);
  };
- const replaceStrokes = (next: PdfStroke[]) => setLocalStrokes(next);
  const undo = () => {
   const previous = past.at(-1);
   if (!previous) return;
   setPast((current) => current.slice(0, -1));
   setFuture((current) => [strokes, ...current]);
-  setLocalStrokes(previous);
+  replaceStrokes(previous);
  };
  const redo = () => {
   const next = future[0];
   if (!next) return;
   setFuture((current) => current.slice(1));
   setPast((current) => [...current, strokes]);
-  setLocalStrokes(next);
+  replaceStrokes(next);
  };
  const clear = () => {
   if (!strokes.length) return;
   checkpoint();
-  setLocalStrokes([]);
+  replaceStrokes([]);
  };
  const toggleFullscreen = async () => {
   const element = viewerRef.current;
@@ -494,14 +421,23 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
     </div>
    </header>
 
-   {annotationQuery.isError ? (
-    <Typography as="p" variant="caption" tone="danger" className="px-3 pt-2 sm:px-4">
-     {t("annotationError")}
-    </Typography>
-   ) : saveError ? (
-    <Typography as="p" variant="caption" tone="danger" className="px-3 pt-2 sm:px-4">
-     {saveError}
-    </Typography>
+   {loadFailed || saveFailed ? (
+    <div role="alert" className="flex items-center gap-2 px-3 pt-2 sm:px-4">
+     <Typography as="p" variant="caption" tone="danger">
+      {t(loadFailed ? "annotationError" : "annotationSaveError")}
+     </Typography>
+     <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      disabled={isSaving}
+      onClick={() => {
+       void (loadFailed ? retryLoad() : retrySave()).catch(() => {});
+      }}
+     >
+      {common("actions.retry")}
+     </Button>
+    </div>
    ) : null}
 
    <div

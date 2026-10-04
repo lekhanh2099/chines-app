@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { searchHanziHomeIndex } from "./searchHanziHomeIndex";
-import type { HanziHomeSearchIndexItem } from "./types";
+import {
+ countSearchResultCategories,
+ filterSearchResultCategory,
+ searchHanziHomeIndex,
+ selectSearchNavigationItems,
+ splitSearchHighlight,
+} from "./searchHanziHomeIndex";
+import type { HanziHomeSearchIndexItem, HanziHomeSearchKind, HanziHomeSearchResult } from "./types";
 
 const mockIndex: HanziHomeSearchIndexItem[] = [
  {
@@ -77,5 +83,114 @@ describe("searchHanziHomeIndex", () => {
   const results = searchHanziHomeIndex(mockIndex, "cau chu ba");
   expect(results.length).toBe(1);
   expect(results[0].item.id).toBe("grammar-1");
+ });
+
+ it("does not turn a course or lesson boost into a match for an unrelated query", () => {
+  expect(
+   searchHanziHomeIndex(mockIndex, "missing-phrase", {
+    courseId: "course-1",
+    lessonId: "lesson-1",
+    includeGlobal: true,
+   }),
+  ).toEqual([]);
+ });
+});
+
+describe("search result presentation data", () => {
+ const kinds: HanziHomeSearchKind[] = [
+  "vocab",
+  "grammar",
+  "exercise",
+  "radical",
+  "lesson_text",
+  "section",
+  "note",
+  "navigation",
+ ];
+ const results: HanziHomeSearchResult[] = kinds.map((kind) => ({
+  item: { id: kind, kind, title: kind, searchText: kind },
+  score: 1,
+ }));
+
+ it("counts every kind once and keeps all lesson-related kinds in the existing category", () => {
+  expect(countSearchResultCategories(results)).toEqual({
+   all: 8,
+   vocab: 1,
+   grammar: 1,
+   exercise: 1,
+   radical: 1,
+   lesson: 4,
+  });
+  expect(filterSearchResultCategory(results, "all")).toBe(results);
+  expect(filterSearchResultCategory(results, "lesson").map((result) => result.item.kind)).toEqual([
+   "lesson_text",
+   "section",
+   "note",
+   "navigation",
+  ]);
+  expect(filterSearchResultCategory(results, "radical").map((result) => result.item.id)).toEqual([
+   "radical",
+  ]);
+  expect(countSearchResultCategories([]).all).toBe(0);
+ });
+
+ it("includes global and current-course navigation while preserving order and the ten-item bound", () => {
+  const items: HanziHomeSearchIndexItem[] = [
+   { id: "excluded-kind", kind: "vocab", title: "词", searchText: "词" },
+   {
+    id: "other-course",
+    kind: "navigation",
+    title: "Other",
+    searchText: "",
+    courseId: "other",
+    lessonId: "other",
+   },
+   {
+    id: "current-lesson",
+    kind: "navigation",
+    title: "Lesson",
+    searchText: "",
+    lessonId: "lesson-1",
+   },
+   {
+    id: "current-course",
+    kind: "navigation",
+    title: "Course",
+    searchText: "",
+    courseId: "course-1",
+    lessonId: "lesson-2",
+   },
+   ...Array.from({ length: 12 }, (_, index): HanziHomeSearchIndexItem => ({
+    id: `global-${index}`,
+    kind: "navigation",
+    title: "Global",
+    searchText: "",
+   })),
+  ];
+  const selected = selectSearchNavigationItems(items, {
+   courseId: "course-1",
+   lessonId: "lesson-1",
+  });
+  expect(selected.map((item) => item.id)).toEqual([
+   "current-lesson",
+   "current-course",
+   ...Array.from({ length: 8 }, (_, index) => `global-${index}`),
+  ]);
+  expect(items).toHaveLength(16);
+ });
+
+ it("returns original Unicode text around the first case-insensitive match", () => {
+  expect(splitSearchHighlight("学习中文，中文很好", " 中文 ")).toEqual({
+   before: "学习",
+   match: "中文",
+   after: "，中文很好",
+  });
+  expect(splitSearchHighlight("Learn Hanzi", "HANZI")).toEqual({
+   before: "Learn ",
+   match: "Hanzi",
+   after: "",
+  });
+  expect(splitSearchHighlight("你好", " ")).toEqual({ before: "你好", match: "", after: "" });
+  expect(splitSearchHighlight("你好", "再见")).toEqual({ before: "你好", match: "", after: "" });
  });
 });

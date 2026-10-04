@@ -145,6 +145,7 @@
   "openOriginal": "打开原始 PDF",
   "fullscreen": "全屏",
   "annotationError": "无法加载 PDF 笔记；新的笔画会保留在本次学习中。",
+  "annotationSaveError": "PDF 笔记未保存。笔画仍保留在本次会话中，请重试保存。",
   "pan": "移动 PDF",
   "pen": "画笔",
   "highlighter": "荧光笔",

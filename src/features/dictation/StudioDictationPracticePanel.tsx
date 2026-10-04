@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import { dictationEntryText } from "./dictation-workspace-utils";
+
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
@@ -14,11 +17,6 @@ import {
  StudioDictationSettingsMenu,
  type StudioDictationScriptMode,
 } from "@/features/dictation/StudioDictationSettingsMenu";
-
-function entryText(entry: ListeningTranscriptEntry) {
- const lines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
- return lines.length > 0 ? lines.join("\n") : entry.transcript.full.zh;
-}
 
 export function StudioDictationPracticePanel({
  activeIndex,
@@ -73,25 +71,24 @@ export function StudioDictationPracticePanel({
  onStop: () => void;
  onVoiceChange: (next: string) => void;
 }) {
+ const t = useTranslations("Dictation");
  const entry = entries[activeIndex];
  if (!entry) return null;
- const text = entryText(entry);
+ const text = dictationEntryText(entry);
 
  return (
   <Card variant="section" padding="md" className="grid content-start self-start gap-4">
    <header className="flex flex-col items-start justify-between gap-3 border-b border-border-default pb-3 sm:flex-row sm:items-center">
     <div className="grid gap-1">
      <Typography as="h3" variant="cardTitle" weight="black">
-      Luyện nghe chép
+      {t("practiceTitle")}
      </Typography>
      <Typography variant="caption" tone="muted">
-      Nghe → chép → kiểm tra. Đáp án chỉ hiện sau khi chấm hoặc khi bạn chủ động bật gợi ý.
+      {t("practiceHelp")}
      </Typography>
     </div>
     <div className="flex flex-wrap items-center gap-2 self-end sm:self-auto">
-     <Badge casing="natural">
-      {checkedCount}/{entries.length} đã chấm
-     </Badge>
+     <Badge casing="natural">{t("checked", { count: checkedCount, total: entries.length })}</Badge>
      {showSettings ? (
       <>
        <ListeningShortcutLegend />
@@ -116,7 +113,7 @@ export function StudioDictationPracticePanel({
    {entries.length > 1 ? (
     <div
      className="grid grid-cols-5 items-start gap-2 sm:grid-cols-8 md:grid-cols-10"
-     aria-label="Chọn phần nghe"
+     aria-label={t("segmentAria")}
     >
      {entries.map((candidate, index) => (
       <Button
@@ -146,7 +143,7 @@ export function StudioDictationPracticePanel({
     {scriptMode === "pinyin" ? (
      <Card variant="subtle" padding="sm">
       <Typography variant="bodySmall" tone="accent" wrapping="preWrap">
-       {entry.transcript.full.pinyin || "Phần này chưa có pinyin."}
+       {entry.transcript.full.pinyin || t("noPinyin")}
       </Typography>
      </Card>
     ) : null}

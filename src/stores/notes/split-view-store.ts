@@ -77,6 +77,7 @@ export const splitViewStore = createStore<
 
   setSplitView: (noteId, enabled) => {
    setState((state) => {
+    if ((state.activeNotes[noteId] ?? false) === enabled) return state;
     const activeNotes = { ...state.activeNotes, [noteId]: enabled };
     saveState(activeNotes, state.dividerPositions);
     return { ...state, activeNotes };
@@ -86,6 +87,7 @@ export const splitViewStore = createStore<
   setDividerPosition: (noteId, percent) => {
    const clamped = Math.min(70, Math.max(30, percent));
    setState((state) => {
+    if ((state.dividerPositions[noteId] ?? DEFAULT_SPLIT) === clamped) return state;
     const dividerPositions = { ...state.dividerPositions, [noteId]: clamped };
     saveState(state.activeNotes, dividerPositions);
     return { ...state, dividerPositions };
@@ -96,3 +98,12 @@ export const splitViewStore = createStore<
   getDividerPosition: (noteId) => get().dividerPositions[noteId] ?? DEFAULT_SPLIT,
  }),
 );
+
+export function selectNoteSplitView(noteId: string) {
+ return (state: ReturnType<typeof splitViewStore.get>) => state.activeNotes[noteId] ?? false;
+}
+
+export function selectNoteDividerPosition(noteId: string) {
+ return (state: ReturnType<typeof splitViewStore.get>) =>
+  state.dividerPositions[noteId] ?? DEFAULT_SPLIT;
+}

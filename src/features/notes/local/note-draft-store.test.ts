@@ -10,6 +10,8 @@ import {
 
 describe("note-draft-store", () => {
  const inMemoryDrafts = new Map<string, NoteDraftRecord>();
+ let abortNextTransaction = false;
+ const writeRequestSucceeded = vi.fn<() => void>();
 
  type AsyncEventCallback = (() => void) | null;
  type MockRequest<T> = {
@@ -30,39 +32,79 @@ describe("note-draft-store", () => {
 
  beforeEach(() => {
   inMemoryDrafts.clear();
+  abortNextTransaction = false;
+  writeRequestSucceeded.mockClear();
   closeNotesDraftDb();
 
+  const transactions: ReturnType<typeof createMockTx>[] = [];
   const mockStore = {
    put: vi.fn((value: NoteDraftRecord) => {
     inMemoryDrafts.set(value.key, value);
     const req = createMockRequest<void>();
-    setTimeout(() => req.onsuccess?.(), 0);
+    const tx = transactions.at(-1);
+    if (tx) tx.pendingRequests += 1;
+    setTimeout(() => {
+     writeRequestSucceeded();
+     req.onsuccess?.();
+     if (tx) {
+      tx.pendingRequests -= 1;
+      if (tx.pendingRequests === 0)
+       setTimeout(() => (abortNextTransaction ? tx.onabort() : tx.oncomplete()), 0);
+     }
+    }, 0);
     return req;
    }),
    get: vi.fn((key: string) => {
     const result = inMemoryDrafts.get(key) ?? null;
     const req = createMockRequest<NoteDraftRecord | null>(result);
-    setTimeout(() => req.onsuccess?.(), 0);
+    const tx = transactions.at(-1);
+    if (tx) tx.pendingRequests += 1;
+    setTimeout(() => {
+     req.onsuccess?.();
+     if (tx) {
+      tx.pendingRequests -= 1;
+      if (tx.pendingRequests === 0)
+       setTimeout(() => (abortNextTransaction ? tx.onabort() : tx.oncomplete()), 0);
+     }
+    }, 0);
     return req;
    }),
    delete: vi.fn((key: string) => {
     inMemoryDrafts.delete(key);
     const req = createMockRequest<void>();
-    setTimeout(() => req.onsuccess?.(), 0);
+    const tx = transactions.at(-1);
+    if (tx) tx.pendingRequests += 1;
+    setTimeout(() => {
+     req.onsuccess?.();
+     if (tx) {
+      tx.pendingRequests -= 1;
+      if (tx.pendingRequests === 0)
+       setTimeout(() => (abortNextTransaction ? tx.onabort() : tx.oncomplete()), 0);
+     }
+    }, 0);
     return req;
    }),
   };
 
-  const mockTx = {
-   objectStore: vi.fn(() => mockStore),
-   onerror: null,
-  };
+  function createMockTx() {
+   return {
+    pendingRequests: 0,
+    objectStore: () => mockStore,
+    onerror: null,
+    oncomplete: vi.fn<() => void>(),
+    onabort: vi.fn<() => void>(),
+   };
+  }
 
   const mockDb = {
    objectStoreNames: {
     contains: vi.fn(() => true),
    },
-   transaction: vi.fn(() => mockTx),
+   transaction: vi.fn(() => {
+    const tx = createMockTx();
+    transactions.push(tx);
+    return tx;
+   }),
    close: vi.fn(),
   };
 
@@ -95,6 +137,14 @@ describe("note-draft-store", () => {
   expect(draft?.noteId).toBe("note-123");
   expect(draft?.content).toEqual({ root: { children: [] } });
   expect(typeof draft?.updatedAt).toBe("number");
+ });
+
+ it("does not acknowledge a write request whose transaction aborts after request success", async () => {
+  abortNextTransaction = true;
+  await expect(
+   saveNoteDraft("user-1", "note-abort", { content: { text: "not committed" } }),
+  ).resolves.toBe(false);
+  expect(writeRequestSucceeded).toHaveBeenCalledOnce();
  });
 
  it("isolates drafts between different users", async () => {
@@ -176,7 +226,11 @@ describe("note-draft-store", () => {
    readingContentUpdatedAt: Date.now(),
   });
 
-  expect(await clearNoteContentDraft("user-1", "note-split", contentSaveStartedAt)).toBe(true);
+  expect(
+   await clearNoteContentDraft("user-1", "note-split", contentSaveStartedAt, {
+    value: "content draft",
+   }),
+  ).toBe(true);
   expect(await getNoteDraft("user-1", "note-split")).toMatchObject({
    content: null,
    readingContent: { value: "reading still unsaved" },
@@ -193,7 +247,9 @@ describe("note-draft-store", () => {
    updatedAt: 100,
   });
 
-  expect(await clearNoteContentDraft("user-1", "legacy-note", 100)).toBe(true);
+  expect(
+   await clearNoteContentDraft("user-1", "legacy-note", 100, { value: "content draft" }),
+  ).toBe(true);
   expect(await getNoteDraft("user-1", "legacy-note")).toMatchObject({
    content: null,
    readingContent: { value: "legacy reading draft" },

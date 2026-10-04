@@ -44,7 +44,8 @@ export async function savePdfAnnotation(input: PdfAnnotationPayloadInput) {
   body: JSON.stringify(payload),
  });
  const value = await response.json().catch(() => null);
- if (response.status === 401) return null;
  if (!response.ok) throw new Error("Không lưu được ghi chú PDF.");
- return annotationResponseSchema.parse(value).annotation;
+ const annotation = annotationResponseSchema.parse(value).annotation;
+ if (!annotation) throw new Error("Server chưa xác nhận ghi chú PDF.");
+ return annotation;
 }

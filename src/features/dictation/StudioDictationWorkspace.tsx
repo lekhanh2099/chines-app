@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
+import { useTranslations } from "next-intl";
+
+import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -24,10 +26,6 @@ import { Textarea } from "@/components/ui/forms/textarea";
 import { Typography } from "@/components/ui/display/typography";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { useHanziHomeListeningLesson } from "@/features/hanzihome/listening/useHanziHomeListeningLesson";
-import { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";
-import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
-import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { DictationAttempt } from "@/features/dictation/dictation-session";
 import { StudioDictationPracticePanel } from "@/features/dictation/StudioDictationPracticePanel";
 import { StudioDictationReferencePanel } from "@/features/dictation/StudioDictationReferencePanel";
@@ -35,46 +33,25 @@ import type { StudioDictationScriptMode } from "@/features/dictation/StudioDicta
 import {
  itemsForListeningSection,
  transcriptsForListeningSection,
- type ListeningTranscriptEntry,
 } from "@/features/hanzihome/listening/listening.view-model";
-import { ttsLibraryResponseSchema } from "@/features/hanzihome/tts/tts-studio.schemas";
+import { useTtsLibrary } from "@/features/hanzihome/tts/useTtsLibrary";
+import {
+ dictationBookOptions,
+ dictationLessonSelection,
+ dictationReaderDocumentId,
+ readerDictationEntries,
+ customDictationEntries,
+ dictationLessonLabel,
+ externalDictationEntry,
+ READER_DICTATION_BOOK_ID,
+} from "./dictation-workspace-utils";
+import { useDictationAttempts } from "./useDictationAttempts";
+import { useDictationPlayback } from "./useDictationPlayback";
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
-const READER_DICTATION_BOOK_ID = "hanzihome-reader-course";
 type DictationSource = "lesson" | "library" | "custom" | "reader";
-
-function dictationEntryText(entry: ListeningTranscriptEntry) {
- const spokenLines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
- return spokenLines.length > 0 ? spokenLines.join("\n") : entry.transcript.full.zh;
-}
-
-function dictationLessonLabel(lesson: HanziHomeLesson) {
- const textMatch = lesson.id.match(/-text-(\d+)$/u);
- if (textMatch !== null) {
-  return `第${lesson.lessonNumber}课 · 课文 ${textMatch[1]} · ${lesson.titleZh}`;
- }
- return `第${lesson.lessonNumber}课 · ${lesson.titleZh}`;
-}
-
-function externalDictationEntry(
- id: string,
- text: string,
- title: string,
- pinyin = generateSmartPinyin(text).pinyin,
-): ListeningTranscriptEntry {
- return {
-  id,
-  title,
-  transcript: {
-   mode: "monologue",
-   speakers: [{ id: "learner-source", labelZh: "练习", labelVi: "Bài luyện", voice: "neutral" }],
-   lines: [{ order: 1, speakerId: "learner-source", zh: text, pinyin }],
-   full: { zh: text, pinyin },
-  },
- };
-}
 
 export function StudioDictationWorkspace({
  initialReaderDocuments,
@@ -87,6 +64,7 @@ export function StudioDictationWorkspace({
  initialReaderCourseResource: ReaderDocumentResource | null;
  initialDictationLessons: ReadonlyArray<HanziHomeLesson>;
 }) {
+ const t = useTranslations("Dictation");
  const tts = useSharedMandarinTts();
  const router = useRouter();
  const pathname = usePathname();
@@ -107,84 +85,43 @@ export function StudioDictationWorkspace({
  const [playbackMode, setPlaybackMode] = useState<"sentence" | "paragraph" | "passage">("sentence");
  const [modeConfirmed, setModeConfirmed] = useState(false);
  const [practiceStarted, setPracticeStarted] = useState(false);
- const [activeEntryId, setActiveEntryId] = useState("");
  const [checkedEntryIds, setCheckedEntryIds] = useState<Set<string>>(() => new Set());
- const [attemptSaveError, setAttemptSaveError] = useState("");
- const [loopCurrent, setLoopCurrent] = useState(false);
- const [autoAdvance, setAutoAdvance] = useState(false);
+ const { persistAttempt: saveAttempt, attemptSaveError } = useDictationAttempts();
  const [scriptMode, setScriptMode] = useState<StudioDictationScriptMode>("hidden");
- const loopCurrentRef = useRef(false);
- const autoAdvanceRef = useRef(false);
- const { loadVoices } = tts;
- useEffect(() => {
-  void loadVoices();
- }, [loadVoices]);
- const ttsLibraryQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.ttsLibrary,
-  queryFn: async () => {
-   const response = await fetch("/api/hanzihome/tts/library", { cache: "no-store" });
-   const payload = await response.json().catch(() => null);
-   if (!response.ok) throw new Error("Không tải được thư viện giọng đọc.");
-   return ttsLibraryResponseSchema.parse(payload);
-  },
-  enabled: sourceType === "library",
-  staleTime: 30_000,
- });
- const bookOptions = useMemo(() => {
-  const books = new Map<
-   string,
-   { id: string; title: string; volumes: Array<{ id: string; title: string }> }
-  >();
-  for (const lesson of initialDictationLessons) {
-   if (!lesson.bookId || !lesson.bookTitle) continue;
-   const id = lesson.bookId.replace(/-volume-\d+$/u, "");
-   const current = books.get(id) ?? {
-    id,
-    title: lesson.bookTitle.replace(/（[上下]）$/u, ""),
-    volumes: [],
-   };
-   if (!current.volumes.some((volume) => volume.id === lesson.bookId)) {
-    current.volumes.push({ id: lesson.bookId, title: lesson.bookTitle });
-   }
-   books.set(id, current);
-  }
-  return [
-   ...books.values(),
-   { id: READER_DICTATION_BOOK_ID, title: "Bài đọc giáo trình", volumes: [] },
-  ]
-   .map((book) => {
-    const hskLevel = book.id.match(/:book:hsk([3-6])$/u)?.[1];
-    return {
-     ...book,
-     title: hskLevel === undefined ? book.title : `HSK ${hskLevel}`,
-     volumes: book.volumes.sort((left, right) => left.title.localeCompare(right.title)),
-    };
-   })
-   .sort((left, right) => {
-    const leftLevel = Number.parseInt(left.id.match(/:book:hsk([3-6])$/u)?.[1] ?? "99", 10);
-    const rightLevel = Number.parseInt(right.id.match(/:book:hsk([3-6])$/u)?.[1] ?? "99", 10);
-    return leftLevel - rightLevel || left.title.localeCompare(right.title);
-   });
- }, [initialDictationLessons]);
- const selectedBookId = selectedBookIdState || bookOptions[0]?.id || "";
- const selectedBook = bookOptions.find((book) => book.id === selectedBookId);
- const isReaderCoursePack = selectedBookId === READER_DICTATION_BOOK_ID;
- const selectedVolumeId = isReaderCoursePack
-  ? ""
-  : selectedVolumeIdState || selectedBook?.volumes[0]?.id || "";
- const visibleLessons = initialDictationLessons.filter(
-  (lesson) => lesson.bookId === selectedVolumeId,
+ const ttsLibraryQuery = useTtsLibrary(sourceType === "library");
+ const bookOptions = useMemo(
+  () => dictationBookOptions(initialDictationLessons),
+  [initialDictationLessons],
  );
- const selectedLessonId = visibleLessons.some((lesson) => lesson.id === selectedLessonIdState)
-  ? selectedLessonIdState
-  : (visibleLessons[0]?.id ?? "");
- const selectedReaderDocumentId = initialReaderDocuments.some(
-  (document) => document.id === selectedReaderDocumentIdState,
- )
-  ? selectedReaderDocumentIdState
-  : initialReaderDocuments.some((document) => document.id === requestedReaderDocumentId)
-    ? requestedReaderDocumentId
-    : (initialReaderDocuments[0]?.id ?? "");
+ const {
+  selectedBookId,
+  selectedBook,
+  isReaderCoursePack,
+  selectedVolumeId,
+  visibleLessons,
+  selectedLessonId,
+ } = useMemo(
+  () =>
+   dictationLessonSelection(
+    initialDictationLessons,
+    bookOptions,
+    selectedBookIdState,
+    selectedVolumeIdState,
+    selectedLessonIdState,
+   ),
+  [
+   initialDictationLessons,
+   bookOptions,
+   selectedBookIdState,
+   selectedVolumeIdState,
+   selectedLessonIdState,
+  ],
+ );
+ const selectedReaderDocumentId = dictationReaderDocumentId(
+  initialReaderDocuments,
+  selectedReaderDocumentIdState,
+  requestedReaderDocumentId,
+ );
  const selectedReaderResource =
   isReaderCoursePack && selectedReaderDocumentId === requestedReaderDocumentId
    ? initialReaderCourseResource
@@ -217,23 +154,13 @@ export function StudioDictationWorkspace({
  );
  const sourceEntries = useMemo(() => {
   if (sourceType === "reader") {
-   return (initialReaderResource?.paragraphs ?? []).map((paragraph) =>
-    externalDictationEntry(
-     `reader:${paragraph.id}`,
-     paragraph.zh,
-     paragraph.vi || `Đoạn ${paragraph.paragraph_order}`,
-     paragraph.pinyin,
-    ),
+   return readerDictationEntries(initialReaderResource?.paragraphs ?? [], (number) =>
+    t("paragraph", { number }),
    );
   }
   if (sourceType === "lesson" && isReaderCoursePack) {
-   return (selectedReaderResource?.paragraphs ?? []).map((paragraph) =>
-    externalDictationEntry(
-     `reader:${paragraph.id}`,
-     paragraph.zh,
-     paragraph.vi || `Đoạn ${paragraph.paragraph_order}`,
-     paragraph.pinyin,
-    ),
+   return readerDictationEntries(selectedReaderResource?.paragraphs ?? [], (number) =>
+    t("paragraph", { number }),
    );
   }
   if (sourceType === "lesson") return transcriptEntries;
@@ -242,10 +169,7 @@ export function StudioDictationWorkspace({
     ? []
     : [externalDictationEntry(`tts:${selectedClip.id}`, selectedClip.text, selectedClip.title)];
   }
-  const text = customText.trim();
-  return text.length === 0
-   ? []
-   : [externalDictationEntry("custom:dictation", text, "Nội dung đã dán")];
+  return customDictationEntries(customText, t("pasted"));
  }, [
   customText,
   initialReaderResource?.paragraphs,
@@ -254,158 +178,61 @@ export function StudioDictationWorkspace({
   selectedClip,
   sourceType,
   transcriptEntries,
+  t,
  ]);
+ const {
+  effectiveActiveEntryIndex,
+  loopCurrent,
+  autoAdvance,
+  resetPlayback,
+  selectTransportEntry,
+  playTransport,
+  toggleTransportPlayback,
+  changeTransportLoop,
+  changeTransportAutoAdvance,
+ } = useDictationPlayback({
+  entries: sourceEntries,
+  enabled: practiceStarted,
+  playWholePassage: playbackMode === "passage",
+  loadVoices: tts.loadVoices,
+  stop: tts.stop,
+  speakSequence: tts.speakSequence,
+  pause: tts.pause,
+  resume: tts.resume,
+  isLoading: tts.isLoading,
+  isPaused: tts.isPaused,
+  isSpeaking: tts.isSpeaking,
+ });
  const resetPracticeFlow = () => {
-  tts.stop();
-  loopCurrentRef.current = false;
-  autoAdvanceRef.current = false;
-  setLoopCurrent(false);
-  setAutoAdvance(false);
+  resetPlayback();
   setScriptMode("hidden");
   setModeConfirmed(false);
   setPracticeStarted(false);
-  setActiveEntryId("");
   setCheckedEntryIds(new Set());
  };
 
- const effectiveActiveEntryId = sourceEntries.some((entry) => entry.id === activeEntryId)
-  ? activeEntryId
-  : (sourceEntries[0]?.id ?? "");
- const effectiveActiveEntryIndex = Math.max(
-  0,
-  sourceEntries.findIndex((entry) => entry.id === effectiveActiveEntryId),
- );
- const selectTransportEntry = (index: number) => {
-  const nextEntry = sourceEntries[index];
-  if (!nextEntry) return;
-  tts.stop();
-  setActiveEntryId(nextEntry.id);
- };
- const playTransport = () => {
-  const activeEntry = sourceEntries[effectiveActiveEntryIndex];
-  const playbackTexts =
-   playbackMode === "passage"
-    ? sourceEntries.map(dictationEntryText).filter(Boolean)
-    : activeEntry
-      ? [dictationEntryText(activeEntry)].filter(Boolean)
-      : [];
-  if (playbackTexts.length === 0) return;
-
-  const play = () => {
-   tts.speakSequence(playbackTexts, () => {
-    if (loopCurrentRef.current) {
-     play();
-     return;
-    }
-    if (autoAdvanceRef.current && effectiveActiveEntryIndex < sourceEntries.length - 1) {
-     const nextIndex = effectiveActiveEntryIndex + 1;
-     const nextEntry = sourceEntries[nextIndex];
-     if (!nextEntry) return;
-     setActiveEntryId(nextEntry.id);
-     tts.speakSequence([dictationEntryText(nextEntry)]);
-    }
-   });
-  };
-  play();
- };
- const toggleTransportPlayback = () => {
-  if (tts.isLoading) return;
-  if (tts.isPaused) {
-   tts.resume();
-   return;
-  }
-  if (tts.isSpeaking) {
-   tts.pause();
-   return;
-  }
-  playTransport();
- };
- const changeTransportLoop = (next: boolean) => {
-  loopCurrentRef.current = next;
-  setLoopCurrent(next);
-  if (next) {
-   autoAdvanceRef.current = false;
-   setAutoAdvance(false);
-  }
- };
- const changeTransportAutoAdvance = (next: boolean) => {
-  autoAdvanceRef.current = next;
-  setAutoAdvance(next);
-  if (next) {
-   loopCurrentRef.current = false;
-   setLoopCurrent(false);
-  }
- };
- const toggleTransportLoop = () => changeTransportLoop(!loopCurrentRef.current);
- useListeningHotkeys({
-  enabled: practiceStarted,
-  onPrevious: () => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1)),
-  onPlayToggle: toggleTransportPlayback,
-  onRepeat: playTransport,
-  onNext: () =>
-   selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1)),
-  onToggleLoop: toggleTransportLoop,
-  onStop: tts.stop,
- });
-
  const persistAttempt = (attempt: DictationAttempt) => {
   setCheckedEntryIds((current) => new Set(current).add(attempt.entryId));
-  setAttemptSaveError("");
-  void savePracticeAttempt({
-   surface: "dictation",
-   contentId: attempt.entryId,
-   direction: null,
-   answer: {
-    expectedText: attempt.expectedText,
-    answer: attempt.answer,
-    mistakeCount: attempt.mistakeCount,
-   },
-   scorePercent: attempt.score,
-   responseMs: attempt.responseMs,
-  }).catch((error: Error) => setAttemptSaveError(error.message));
-  if (attempt.mistakeCount > 0) {
-   const now = new Date().toISOString();
-   void upsertLearningLoopItem({
-    id: `dictation:${attempt.entryId}`,
-    stable_key: `dictation:${attempt.entryId}`,
-    kind: "dictation_mistake",
-    source_id: attempt.entryId,
-    source_href: "/dictation",
-    title_zh: "Dictation mistake",
-    title_vi: "Ôn lại lỗi chính tả",
-    prompt_zh: attempt.expectedText,
-    pinyin: "",
-    meaning_vi: "",
-    user_answer: attempt.answer,
-    error_key: `mistakes:${attempt.mistakeCount}`,
-    state: "new",
-    due_at: now,
-    interval_days: 0,
-    correct_streak: 0,
-    lapse_count: 0,
-    revision: 0,
-   }).catch((error: Error) => setAttemptSaveError(error.message));
-  }
+  saveAttempt(attempt);
  };
 
  const sourceOptions: SegmentedControlItem<DictationSource>[] = [
-  { key: "lesson", label: "Bài học / bài đọc HSK" },
-  { key: "library", label: "Từ thư viện giọng đọc" },
-  { key: "custom", label: "Dán nội dung" },
+  { key: "lesson", label: t("lessonSource") },
+  { key: "library", label: t("librarySource") },
+  { key: "custom", label: t("customSource") },
  ];
  if (requestedDocumentId.length > 0) {
-  sourceOptions.unshift({ key: "reader", label: "Bài đọc hiện tại" });
+  sourceOptions.unshift({ key: "reader", label: t("readerSource") });
  }
 
  return (
   <div className="grid min-w-0 gap-4">
    <div className="grid gap-1">
     <Typography as="h1" variant="pageTitle" weight="black">
-     Phòng chép chính tả
+     {t("heading")}
     </Typography>
     <Typography as="p" variant="body" tone="muted">
-     Chọn bài HSK 3–6 theo giáo trình, tập và bài; hoặc dùng bản giọng đọc đã lưu hay nội dung tự
-     dán để luyện nghe chép chính tả.
+     {t("description")}
     </Typography>
    </div>
 
@@ -413,29 +240,26 @@ export function StudioDictationWorkspace({
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div className="grid gap-1">
       <Typography as="span" variant="caption" tone="muted" className="block">
-       {practiceStarted
-        ? "Bước 3 · Luyện nghe chép"
-        : modeConfirmed
-          ? "Bước 2 · Chọn chế độ"
-          : "Bước 1 · Chọn nội dung"}
+       {practiceStarted ? t("stepPractice") : modeConfirmed ? t("stepMode") : t("stepSource")}
       </Typography>
       <Typography as="h2" variant="cardTitle" weight="black">
-       Chọn bài nghe chép
+       {t("chooseContent")}
       </Typography>
      </div>
      {sourceType === "lesson" ? (
       <Badge casing="natural">
-       {isReaderCoursePack ? initialReaderDocuments.length : visibleLessons.length} bài
+       {t("lessons", {
+        count: isReaderCoursePack ? initialReaderDocuments.length : visibleLessons.length,
+       })}
       </Badge>
      ) : null}
     </div>
     <Typography variant="bodySmall" tone="muted">
-     Chọn bộ, tập và bài. Khu luyện chỉ mở sau khi xác nhận để giao diện không trộn phần chọn bài
-     với phần học.
+     {t("sourceHelp")}
     </Typography>
     {initialDictationLessons.length === 0 ? (
      <Typography variant="bodySmall" tone="muted">
-      Chưa có nội dung chép chính tả trong thư viện.
+      {t("emptyContent")}
      </Typography>
     ) : (
      <div className="grid gap-3">
@@ -448,13 +272,13 @@ export function StudioDictationWorkspace({
        }}
        density="touch"
        layout="wrap"
-       aria-label="Nguồn nghe chép"
+       aria-label={t("sourceAria")}
       />
       {sourceType === "lesson" ? (
        <>
-        <div className="grid gap-2" aria-label="Chọn bộ nghe chép">
+        <div className="grid gap-2" aria-label={t("bookAria")}>
          <Typography variant="caption" tone="muted" weight="black">
-          Bộ bài
+          {t("books")}
          </Typography>
          <div className="flex flex-wrap gap-2">
           {bookOptions.map((book) => (
@@ -472,13 +296,13 @@ export function StudioDictationWorkspace({
              resetPracticeFlow();
             }}
            >
-            {book.title}
+            {book.id === READER_DICTATION_BOOK_ID ? t("readerBook") : book.title}
            </Button>
           ))}
          </div>
         </div>
         {selectedBook && selectedBook.volumes.length > 1 ? (
-         <div className="flex flex-wrap gap-2" aria-label="Chọn tập nghe chép">
+         <div className="flex flex-wrap gap-2" aria-label={t("volumeAria")}>
           {selectedBook.volumes.map((volume) => (
            <Button
             key={volume.id}
@@ -501,10 +325,10 @@ export function StudioDictationWorkspace({
          <div className="grid gap-2">
           <div className="flex flex-wrap items-center justify-between gap-2">
            <Typography variant="caption" tone="muted" weight="black">
-            Chọn bài
+            {t("chooseLesson")}
            </Typography>
            <Typography variant="caption" tone="muted">
-            {initialReaderDocuments.length} bài
+            {t("lessons", { count: initialReaderDocuments.length })}
            </Typography>
           </div>
           <Select
@@ -517,14 +341,15 @@ export function StudioDictationWorkspace({
             resetPracticeFlow();
            }}
           >
-           <SelectTrigger aria-label="Chọn bài đọc giáo trình để luyện chép chính tả">
-            <SelectValue placeholder="Chọn bài" />
+           <SelectTrigger aria-label={t("readerLessonAria")}>
+            <SelectValue placeholder={t("chooseLesson")} />
            </SelectTrigger>
            <SelectContent>
             <SelectGroup>
              {initialReaderDocuments.map((document) => (
               <SelectItem key={document.id} value={document.id}>
-               Bài {document.reading_number ?? ""} · {document.title_zh} · {document.title_vi}
+               {t("lessonNumber", { number: document.reading_number ?? "" })} · {document.title_zh}{" "}
+               · {document.title_vi}
               </SelectItem>
              ))}
             </SelectGroup>
@@ -536,10 +361,10 @@ export function StudioDictationWorkspace({
          <div className="grid gap-2">
           <div className="flex flex-wrap items-center justify-between gap-2">
            <Typography variant="caption" tone="muted" weight="black">
-            Chọn bài
+            {t("chooseLesson")}
            </Typography>
            <Typography variant="caption" tone="muted">
-            {visibleLessons.length} bài
+            {t("lessons", { count: visibleLessons.length })}
            </Typography>
           </div>
           <Select
@@ -550,8 +375,8 @@ export function StudioDictationWorkspace({
             resetPracticeFlow();
            }}
           >
-           <SelectTrigger aria-label="Chọn bài luyện chép chính tả">
-            <SelectValue placeholder="Chọn bài" />
+           <SelectTrigger aria-label={t("lessonAria")}>
+            <SelectValue placeholder={t("chooseLesson")} />
            </SelectTrigger>
            <SelectContent>
             <SelectGroup>
@@ -570,26 +395,32 @@ export function StudioDictationWorkspace({
       {sourceType === "reader" ? (
        initialReaderResource === null ? (
         <Typography variant="bodySmall" tone="danger">
-         Không tìm thấy bài đọc trong thư viện hiện tại.
+         {t("missingReader")}
         </Typography>
        ) : (
         <Typography variant="bodySmall" tone="muted">
-         {initialReaderResource.document.title_zh} · {initialReaderResource.paragraphs.length} đoạn
+         {initialReaderResource.document.title_zh} ·{" "}
+         {t("paragraphs", { count: initialReaderResource.paragraphs.length })}
         </Typography>
        )
       ) : null}
       {sourceType === "library" ? (
        ttsLibraryQuery.isPending ? (
         <Typography variant="bodySmall" tone="muted">
-         Đang tải thư viện giọng đọc…
+         {t("libraryLoading")}
         </Typography>
        ) : ttsLibraryQuery.isError ? (
-        <Typography variant="bodySmall" tone="danger">
-         {ttsLibraryQuery.error.message}
-        </Typography>
+        <QueryErrorCard
+         title={t("loadError")}
+         description={t("loadErrorHelp")}
+         retryLabel={t("retry")}
+         onRetry={() => {
+          void ttsLibraryQuery.refetch();
+         }}
+        />
        ) : ttsLibraryQuery.data?.clips.length === 0 ? (
         <Typography variant="bodySmall" tone="muted">
-         Chưa có bản ghi giọng đọc. Hãy tạo bản ghi trước khi luyện.
+         {t("emptyLibrary")}
         </Typography>
        ) : (
         <Select
@@ -599,8 +430,8 @@ export function StudioDictationWorkspace({
           resetPracticeFlow();
          }}
         >
-         <SelectTrigger aria-label="Chọn bản ghi giọng đọc">
-          <SelectValue placeholder="Chọn bản ghi" />
+         <SelectTrigger aria-label={t("clipAria")}>
+          <SelectValue placeholder={t("chooseClip")} />
          </SelectTrigger>
          <SelectContent>
           <SelectGroup>
@@ -623,17 +454,17 @@ export function StudioDictationWorkspace({
         }}
         rows={5}
         lang="zh-CN"
-        placeholder="Dán nội dung tiếng Trung để luyện nghe chép…"
-        aria-label="Nội dung nghe chép tự dán"
+        placeholder={t("customPlaceholder")}
+        aria-label={t("customAria")}
        />
       ) : null}
       {sourceEntries.length > 0 && !modeConfirmed && !practiceStarted ? (
        <>
         <Typography variant="bodySmall" tone="muted">
-         Sau khi vào luyện, bạn mới chọn chế độ theo câu, theo đoạn hoặc toàn bài.
+         {t("nextStepHelp")}
         </Typography>
         <Button type="button" variant="default" onClick={() => setModeConfirmed(true)}>
-         Vào luyện nghe chép
+         {t("enterPractice")}
         </Button>
        </>
       ) : null}
@@ -644,25 +475,28 @@ export function StudioDictationWorkspace({
    {!isReaderCoursePack && bundleQuery.isPending ? (
     <Card variant="subtle" padding="lg">
      <Typography variant="bodySmall" tone="muted">
-      Đang tải bài nghe chép…
+      {t("lessonLoading")}
      </Typography>
     </Card>
    ) : null}
    {!isReaderCoursePack && bundleQuery.isError ? (
-    <Card variant="subtle" padding="lg">
-     <Typography variant="bodySmall" tone="danger">
-      {bundleQuery.error.message}
-     </Typography>
-    </Card>
+    <QueryErrorCard
+     title={t("loadError")}
+     description={t("loadErrorHelp")}
+     retryLabel={t("retry")}
+     onRetry={() => {
+      void bundleQuery.refetch();
+     }}
+    />
    ) : null}
    {sourceEntries.length > 0 && modeConfirmed && !practiceStarted ? (
     <Card variant="section" padding="md" className="grid gap-4">
      <div className="grid gap-1">
       <Typography as="h2" variant="sectionTitle" weight="black">
-       Chọn chế độ luyện
+       {t("chooseMode")}
       </Typography>
       <Typography variant="bodySmall" tone="muted">
-       Chọn cách chia đoạn nghe trước khi bắt đầu. Có thể đổi lại trong lúc luyện.
+       {t("modeHelp")}
       </Typography>
      </div>
      <div className="grid gap-2 sm:grid-cols-3">
@@ -676,10 +510,10 @@ export function StudioDictationWorkspace({
        onClick={() => setPlaybackMode("sentence")}
       >
        <Typography as="span" variant="bodySmall" weight="black" className="w-full text-left">
-        Theo câu
+        {t("sentenceMode")}
        </Typography>
        <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
-        Nghe và chấm từng câu; phù hợp để bắt âm và sửa lỗi chi tiết.
+        {t("sentenceHelp")}
        </Typography>
       </Button>
       <Button
@@ -692,10 +526,10 @@ export function StudioDictationWorkspace({
        onClick={() => setPlaybackMode("paragraph")}
       >
        <Typography as="span" variant="bodySmall" weight="black" className="w-full text-left">
-        Theo đoạn
+        {t("paragraphMode")}
        </Typography>
        <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
-        Nghe theo từng đoạn; luyện giữ mạch ý và cấu trúc dài hơn.
+        {t("paragraphHelp")}
        </Typography>
       </Button>
       <Button
@@ -708,35 +542,35 @@ export function StudioDictationWorkspace({
        onClick={() => setPlaybackMode("passage")}
       >
        <Typography as="span" variant="bodySmall" weight="black" className="w-full text-left">
-        Toàn bài
+        {t("passageMode")}
        </Typography>
        <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
-        Nghe và chép toàn bộ bài trong một lượt.
+        {t("passageHelp")}
        </Typography>
       </Button>
      </div>
      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3">
       <Typography variant="caption" tone="muted">
-       Đã chọn:{" "}
+       {t("selected")}{" "}
        {playbackMode === "sentence"
-        ? "Theo câu"
+        ? t("sentenceMode")
         : playbackMode === "paragraph"
-          ? "Theo đoạn"
-          : "Toàn bài"}{" "}
+          ? t("paragraphMode")
+          : t("passageMode")}{" "}
        ·{" "}
        {initialReaderResource?.document.title_zh ??
         selectedReaderResource?.document.title_zh ??
         selectedSection?.titleZh ??
         selectedClip?.title ??
-        "Nội dung tự chọn"}{" "}
-       · {sourceEntries.length} câu
+        t("customTitle")}{" "}
+       · {t("sentences", { count: sourceEntries.length })}
       </Typography>
       <div className="flex flex-wrap gap-2">
        <Button type="button" variant="outline" onClick={resetPracticeFlow}>
-        Đổi bài / nguồn
+        {t("changeSource")}
        </Button>
        <Button type="button" variant="default" onClick={() => setPracticeStarted(true)}>
-        Bắt đầu luyện
+        {t("start")}
        </Button>
       </div>
      </div>
@@ -747,35 +581,35 @@ export function StudioDictationWorkspace({
      <section className="flex flex-col gap-3 border-b border-border-default pb-3 sm:flex-row sm:items-center sm:justify-between">
       <div className="grid min-w-0 gap-1">
        <Typography variant="overline" tone="accent" weight="black">
-        Bước 3 · Luyện nghe chép
+        {t("stepPractice")}
        </Typography>
        <Typography as="h2" variant="sectionTitle" weight="black" clamp="one">
         {initialReaderResource?.document.title_zh ??
          selectedReaderResource?.document.title_zh ??
          selectedSection?.titleZh ??
          selectedClip?.title ??
-         "Nội dung tự chọn"}
+         t("customTitle")}
        </Typography>
        <Typography variant="bodySmall" tone="muted" clamp="one">
         {playbackMode === "sentence"
-         ? "Theo câu"
+         ? t("sentenceMode")
          : playbackMode === "paragraph"
-           ? "Theo đoạn"
-           : "Toàn bài"}{" "}
+           ? t("paragraphMode")
+           : t("passageMode")}{" "}
         ·{" "}
         {initialReaderResource?.document.title_vi ||
          selectedReaderResource?.document.title_vi ||
          selectedSection?.titleVi ||
          selectedClip?.title ||
-         "Nguồn tự chọn"}
+         t("sourceFallback")}
        </Typography>
       </div>
       <div className="flex shrink-0 flex-wrap gap-2">
        <Button type="button" variant="outline" onClick={() => setPracticeStarted(false)}>
-        Đổi chế độ
+        {t("changeMode")}
        </Button>
        <Button type="button" variant="outline" onClick={resetPracticeFlow}>
-        Đổi bài / nguồn
+        {t("changeSource")}
        </Button>
       </div>
      </section>
@@ -823,28 +657,31 @@ export function StudioDictationWorkspace({
         entries={sourceEntries}
         isPlaybackActive={tts.isLoading || tts.isPaused || tts.isSpeaking}
         sourceLabel={
-         selectedBook?.title || selectedSection?.titleVi || selectedClip?.title || "Bài đang học"
+         selectedBook?.title ||
+         selectedSection?.titleVi ||
+         selectedClip?.title ||
+         t("currentLesson")
         }
         titleVi={
          initialReaderResource?.document.title_vi ||
          selectedReaderResource?.document.title_vi ||
          selectedSection?.titleVi ||
          selectedClip?.title ||
-         "Nguồn tự chọn"
+         t("sourceFallback")
         }
         titleZh={
          initialReaderResource?.document.title_zh ??
          selectedReaderResource?.document.title_zh ??
          selectedSection?.titleZh ??
          selectedClip?.title ??
-         "Nội dung tự chọn"
+         t("customTitle")
         }
        />
       </aside>
      </div>
      {attemptSaveError ? (
       <Typography variant="caption" tone="danger">
-       {attemptSaveError}
+       {t("saveError")}
       </Typography>
      ) : null}
     </div>

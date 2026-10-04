@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { ChevronDown, Settings2 } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
@@ -47,34 +49,35 @@ export function StudioDictationSettingsMenu({
  onScriptModeChange: (next: StudioDictationScriptMode) => void;
  onVoiceChange: (next: string) => void;
 }) {
+ const t = useTranslations("Dictation");
  return (
   <DropdownMenu>
    <DropdownMenuTrigger asChild>
     <Button type="button" variant="outline" size="toolbar">
      <Settings2 data-icon="inline-start" />
-     Cài đặt
+     {t("settings")}
      <ChevronDown data-icon="inline-end" />
     </Button>
    </DropdownMenuTrigger>
    <DropdownMenuContent align="end" width="lg">
-    <DropdownMenuLabel>Nghe chép</DropdownMenuLabel>
+    <DropdownMenuLabel>{t("dictationLabel")}</DropdownMenuLabel>
     <DropdownMenuCheckboxItem
      checked={loopCurrent}
      onCheckedChange={(next) => onLoopCurrentChange(next === true)}
     >
-     Lặp phần hiện tại
+     {t("loopCurrent")}
     </DropdownMenuCheckboxItem>
     <DropdownMenuCheckboxItem
      checked={autoAdvance}
      onCheckedChange={(next) => onAutoAdvanceChange(next === true)}
     >
-     Tự chuyển khi phát xong
+     {t("autoAdvance")}
     </DropdownMenuCheckboxItem>
     <DropdownMenuSeparator />
     <DropdownMenuSub>
-     <DropdownMenuSubTrigger>Giọng đọc</DropdownMenuSubTrigger>
+     <DropdownMenuSubTrigger>{t("voice")}</DropdownMenuSubTrigger>
      <DropdownMenuSubContent width="lg">
-      <DropdownMenuLabel>Giọng đọc</DropdownMenuLabel>
+      <DropdownMenuLabel>{t("voice")}</DropdownMenuLabel>
       <DropdownMenuRadioGroup value={selectedVoiceName} onValueChange={onVoiceChange}>
        {voices.map((voice) => (
         <DropdownMenuRadioItem key={voice.shortName} value={voice.shortName}>
@@ -85,7 +88,7 @@ export function StudioDictationSettingsMenu({
      </DropdownMenuSubContent>
     </DropdownMenuSub>
     <DropdownMenuSub>
-     <DropdownMenuSubTrigger>Tốc độ · {rate.toFixed(2)}×</DropdownMenuSubTrigger>
+     <DropdownMenuSubTrigger>{t("rate", { rate: rate.toFixed(2) })}</DropdownMenuSubTrigger>
      <DropdownMenuSubContent width="sm">
       <DropdownMenuRadioGroup
        value={String(rate)}
@@ -103,7 +106,7 @@ export function StudioDictationSettingsMenu({
      </DropdownMenuSubContent>
     </DropdownMenuSub>
     <DropdownMenuSeparator />
-    <DropdownMenuLabel>Hỗ trợ khi nghe</DropdownMenuLabel>
+    <DropdownMenuLabel>{t("support")}</DropdownMenuLabel>
     <DropdownMenuRadioGroup
      value={scriptMode}
      onValueChange={(value) => {
@@ -112,9 +115,9 @@ export function StudioDictationSettingsMenu({
       }
      }}
     >
-     <DropdownMenuRadioItem value="hidden">Ẩn gợi ý</DropdownMenuRadioItem>
-     <DropdownMenuRadioItem value="pinyin">Hiện pinyin</DropdownMenuRadioItem>
-     <DropdownMenuRadioItem value="hanzi">Hiện chữ Hán</DropdownMenuRadioItem>
+     <DropdownMenuRadioItem value="hidden">{t("hideHints")}</DropdownMenuRadioItem>
+     <DropdownMenuRadioItem value="pinyin">{t("showPinyin")}</DropdownMenuRadioItem>
+     <DropdownMenuRadioItem value="hanzi">{t("showHanzi")}</DropdownMenuRadioItem>
     </DropdownMenuRadioGroup>
    </DropdownMenuContent>
   </DropdownMenu>

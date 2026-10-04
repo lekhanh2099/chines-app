@@ -1,12 +1,12 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { Label } from "@/components/ui/forms/label";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import type { ErrorInput } from "@/types/error";
-import { JsonValueSchema, type JsonObject } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import CodeMirror from "@uiw/react-codemirror";
 import { useMemo, useState } from "react";
-import { useQueryClient } from "@tanstack/react-query";
 import { FileJson, ListChecks, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { z, ZodError } from "zod";
@@ -24,16 +24,17 @@ import {
  DialogTitle,
 } from "@/components/ui/overlays/dialog";
 import { Tabs } from "@/components/ui/navigation/tabs";
+import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutation-error";
+import { useRadicalMutation } from "@/features/hanzihome/editing/useRadicalMutation";
 import {
- HanziHomeMutationError,
- isHanziHomeMutationConflict,
-} from "@/features/hanzihome/editing/mutation-error";
-
-const radicalMutationResponseSchema = z.object({
- error: z.string().optional(),
- details: JsonValueSchema.optional(),
-});
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+ radicalFormSchema,
+ radicalColumnValuesSchema,
+ valuesFromRadical,
+ columnValuesFromRadical,
+ columnValuesFromForm,
+ changedFields,
+ isValidRadicalStrokeText,
+} from "@/features/hanzihome/editing/radical-edit-utils";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 
 type RadicalEditDialogProps = {
@@ -42,211 +43,10 @@ type RadicalEditDialogProps = {
  onOpenChange: (open: boolean) => void;
 };
 
-type RadicalFormValues = {
- radical: string;
- nameVi: string;
- strokes: string;
- modernMeaning: string;
- historyMeaning: string;
- recognition: string;
- variantsText: string;
- relatedComponentsText: string;
- distinguishText: string;
- groupsText: string;
-};
-
 const EditModeSchema = z.enum(["fields", "json"]);
 type EditMode = z.infer<typeof EditModeSchema>;
 
 const formId = "hanzihome-radical-edit-form";
-
-const radicalComponentSchema = z.object({
- form: z.string().trim().min(1),
- note: z.string(),
-});
-
-const radicalGroupSchema = z.object({
- name: z.string().trim().min(1),
- chars: z.array(z.string().trim().min(1)),
-});
-
-const radicalColumnValuesSchema = z.strictObject({
- radical: z.string().trim().min(1, "Thiếu bộ thủ"),
- name_vi: z.string().nullable(),
- strokes: z.number().int().positive().nullable(),
- core_meaning: z.object({
-  modern: z.string(),
-  history: z.string(),
- }),
- recognition: z.string().nullable(),
- variants: z.array(radicalComponentSchema),
- related_components: z.array(radicalComponentSchema),
- distinguish: z.array(z.string()),
- groups: z.array(radicalGroupSchema),
-});
-
-const radicalFormSchema = z.object({
- radical: z.string().trim().min(1, "Thiếu bộ thủ"),
- nameVi: z.string(),
- strokes: z
-  .string()
-  .trim()
-  .refine((value) => value === "" || /^[1-9]\d*$/.test(value), "Số nét phải là số dương."),
- modernMeaning: z.string(),
- historyMeaning: z.string(),
- recognition: z.string(),
- variantsText: z.string(),
- relatedComponentsText: z.string(),
- distinguishText: z.string(),
- groupsText: z.string(),
-});
-
-function jsonErrorMessage(error: ErrorInput) {
- if (error instanceof SyntaxError) return "JSON chưa hợp lệ.";
- if (error instanceof ZodError) return error.issues[0]?.message ?? "JSON không đúng schema.";
- if (error instanceof Error) return error.message;
- return "Không thể đọc JSON.";
-}
-
-function renderComponentLines(components: StaticRadicalData["relatedComponents"]) {
- return (components ?? []).map((component) => `${component.form} | ${component.note}`).join("\n");
-}
-
-function parseComponentLines(value: string) {
- return value
-  .split("\n")
-  .map((line) => line.trim())
-  .filter(Boolean)
-  .map((line) => {
-   const [form = "", ...noteParts] = line.split("|");
-   return {
-    form: form.trim(),
-    note: noteParts.join("|").trim(),
-   };
-  })
-  .filter((component) => component.form);
-}
-
-function renderGroups(groups: StaticRadicalData["groups"]) {
- return (groups ?? []).map((group) => `${group.name}: ${group.chars.join(" ")}`).join("\n");
-}
-
-function parseGroups(value: string) {
- return value
-  .split("\n")
-  .map((line) => line.trim())
-  .filter(Boolean)
-  .map((line) => {
-   const [name = "", charsText = ""] = line.split(":");
-   return {
-    name: name.trim(),
-    chars: charsText
-     .split(/[\s,，]+/)
-     .map((char) => char.trim())
-     .filter(Boolean),
-   };
-  })
-  .filter((group) => group.name && group.chars.length > 0);
-}
-
-function renderStringList(values: StaticRadicalData["distinguish"]) {
- return (values ?? []).join("\n");
-}
-
-function parseStringList(value: string) {
- return value
-  .split("\n")
-  .map((line) => line.trim())
-  .filter(Boolean);
-}
-
-function valuesFromRadical(radical: StaticRadicalData): RadicalFormValues {
- return {
-  radical: radical.radical,
-  nameVi: radical.nameVi ?? "",
-  strokes: radical.strokes ? String(radical.strokes) : "",
-  modernMeaning: radical.coreMeaning.modern ?? "",
-  historyMeaning: radical.coreMeaning.history ?? "",
-  recognition: radical.recognition ?? "",
-  variantsText: renderComponentLines(radical.variants),
-  relatedComponentsText: renderComponentLines(radical.relatedComponents),
-  distinguishText: renderStringList(radical.distinguish),
-  groupsText: renderGroups(radical.groups),
- };
-}
-
-function columnValuesFromForm(values: RadicalFormValues) {
- return {
-  radical: values.radical.trim(),
-  name_vi: values.nameVi.trim() || null,
-  strokes: values.strokes.trim() ? Number(values.strokes.trim()) : null,
-  core_meaning: {
-   modern: values.modernMeaning.trim(),
-   history: values.historyMeaning.trim(),
-  },
-  recognition: values.recognition.trim() || null,
-  variants: parseComponentLines(values.variantsText),
-  related_components: parseComponentLines(values.relatedComponentsText),
-  distinguish: parseStringList(values.distinguishText),
-  groups: parseGroups(values.groupsText),
- };
-}
-
-function columnValuesFromRadical(radical: StaticRadicalData) {
- return {
-  radical: radical.radical,
-  name_vi: radical.nameVi ?? null,
-  strokes: radical.strokes ?? null,
-  core_meaning: {
-   modern: radical.coreMeaning.modern ?? "",
-   history: radical.coreMeaning.history ?? "",
-  },
-  recognition: radical.recognition ?? null,
-  variants: radical.variants,
-  related_components: radical.relatedComponents ?? [],
-  distinguish: radical.distinguish,
-  groups: radical.groups ?? [],
- };
-}
-
-function changedFields(before: JsonObject, after: JsonObject): JsonObject {
- return Object.fromEntries(
-  Object.entries(after).filter(
-   ([key, value]) => JSON.stringify(before[key]) !== JSON.stringify(value),
-  ),
- );
-}
-
-async function updateRadical({
- radical,
- changes,
-}: {
- radical: StaticRadicalData;
- changes: JsonObject;
-}) {
- const expectedUpdatedAt = radical.editMeta?.updatedAt;
- if (!expectedUpdatedAt) throw new Error("Bộ thủ này chưa có DB write target.");
-
- const response = await fetch(`/api/hanzihome/content/radicals/${encodeURIComponent(radical.id)}`, {
-  method: "PATCH",
-  headers: { Accept: "application/json", "Content-Type": "application/json" },
-  body: JSON.stringify({
-   reason: `Cập nhật bộ thủ ${radical.radical}`,
-   expectedUpdatedAt,
-   changes,
-  }),
- });
- const payload = radicalMutationResponseSchema.safeParse(await response.json().catch(() => null));
- if (!response.ok) {
-  const message =
-   payload.success && payload.data.error
-    ? payload.data.error
-    : `Không thể lưu bộ thủ (${response.status})`;
-  const details = payload.success ? payload.data.details : undefined;
-  throw new HanziHomeMutationError(message, response.status, details);
- }
- return payload.success ? payload.data : null;
-}
 
 function RadicalEditDialogContent({
  radical,
@@ -255,7 +55,16 @@ function RadicalEditDialogContent({
  radical: StaticRadicalData;
  onOpenChange: (open: boolean) => void;
 }) {
- const queryClient = useQueryClient();
+ const t = useTranslations("Radicals");
+ const formSchema = useMemo(
+  () =>
+   radicalFormSchema.extend({
+    radical: z.string().trim().min(1, t("required")),
+    strokes: z.string().trim().refine(isValidRadicalStrokeText, t("positiveStrokes")),
+   }),
+  [t],
+ );
+ const mutation = useRadicalMutation();
  const initialValues = useMemo(() => valuesFromRadical(radical), [radical]);
  const before = useMemo(() => columnValuesFromRadical(radical), [radical]);
  const [mode, setMode] = useState<EditMode>(EditModeSchema.enum.fields);
@@ -266,24 +75,21 @@ function RadicalEditDialogContent({
  const submitColumnValues = async (after: JsonObject) => {
   const changes = changedFields(before, after);
   if (Object.keys(changes).length === 0) {
-   toast.info("Không có thay đổi để lưu.");
+   toast.info(t("unchanged"));
    return;
   }
 
   try {
-   await updateRadical({ radical, changes });
-   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
-   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.searchIndexRoot });
-   toast.success("Đã lưu bộ thủ vào Supabase.");
+   await mutation.mutateAsync({ radical, changes });
+   toast.success(t("saved"));
    onOpenChange(false);
   } catch (error) {
    if (isHanziHomeMutationConflict(error)) {
-    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
-    toast.error("Bộ thủ đã thay đổi, đang tải lại.");
+    toast.error(t("conflict"));
     onOpenChange(false);
     return;
    }
-   toast.error(error instanceof Error ? error.message : "Không thể lưu bộ thủ.");
+   toast.error(t("saveError"));
   }
  };
 
@@ -294,7 +100,13 @@ function RadicalEditDialogContent({
    setIsJsonSubmitting(true);
    await submitColumnValues(parsed);
   } catch (error) {
-   setJsonError(jsonErrorMessage(error));
+   setJsonError(
+    error instanceof SyntaxError
+     ? t("invalidJson")
+     : error instanceof ZodError
+       ? t("schemaJson")
+       : t("readJson"),
+   );
   } finally {
    setIsJsonSubmitting(false);
   }
@@ -302,7 +114,7 @@ function RadicalEditDialogContent({
 
  const form = useAppForm({
   defaultValues: initialValues,
-  validators: { onSubmit: radicalFormSchema },
+  validators: { onSubmit: formSchema },
   onSubmit: async ({ value }) => {
    const after = columnValuesFromForm(value);
    await submitColumnValues(after);
@@ -312,8 +124,8 @@ function RadicalEditDialogContent({
  return (
   <DialogContent className="max-h-[90vh] max-w-3xl overflow-hidden">
    <DialogHeader>
-    <DialogTitle>Sửa bộ thủ {radical.radical}</DialogTitle>
-    <DialogDescription>Lưu từng field của một dòng bộ thủ trong Supabase.</DialogDescription>
+    <DialogTitle>{t("editTitle", { radical: radical.radical })}</DialogTitle>
+    <DialogDescription>{t("editHelp")}</DialogDescription>
    </DialogHeader>
    <DialogBody className="max-h-[calc(90vh-12rem)] overflow-y-auto pr-1">
     <div className="grid gap-4">
@@ -321,7 +133,7 @@ function RadicalEditDialogContent({
       value={mode}
       onValueChange={setMode}
       items={[
-       { key: "fields", label: "Field", icon: ListChecks },
+       { key: "fields", label: t("fields"), icon: ListChecks },
        { key: "json", label: "JSON", icon: FileJson },
       ]}
      />
@@ -337,50 +149,44 @@ function RadicalEditDialogContent({
       >
        <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_8rem]">
         <form.AppField name="radical">
-         {(field) => <field.TextField label="Bộ thủ" required />}
+         {(field) => <field.TextField label={t("radical")} required />}
         </form.AppField>
         <form.AppField name="strokes">
-         {(field) => <field.TextField label="Số nét" inputMode="numeric" />}
+         {(field) => <field.TextField label={t("strokeCount")} inputMode="numeric" />}
         </form.AppField>
        </div>
        <form.AppField name="nameVi">
-        {(field) => <field.TextField label="Tên tiếng Việt" />}
+        {(field) => <field.TextField label={t("nameVi")} />}
        </form.AppField>
        <form.AppField name="modernMeaning">
-        {(field) => <field.Textarea label="Ý nghĩa hiện đại" />}
+        {(field) => <field.Textarea label={t("modern")} />}
        </form.AppField>
        <form.AppField name="historyMeaning">
-        {(field) => <field.Textarea label="Nguồn gốc / lịch sử" />}
+        {(field) => <field.Textarea label={t("history")} />}
        </form.AppField>
        <form.AppField name="variantsText">
         {(field) => (
-         <field.Textarea label="Biến thể" description="Mỗi dòng: dạng | ghi chú" font="mono" />
+         <field.Textarea label={t("variants")} description={t("componentHelp")} font="mono" />
         )}
        </form.AppField>
        <form.AppField name="relatedComponentsText">
         {(field) => (
          <field.Textarea
-          label="Thành phần liên quan"
-          description="Mỗi dòng: dạng | ghi chú"
+          label={t("related")}
+          description={t("componentHelp")}
           density="comfortable"
           font="mono"
          />
         )}
        </form.AppField>
        <form.AppField name="recognition">
-        {(field) => <field.Textarea label="Nhận diện" />}
+        {(field) => <field.Textarea label={t("recognition")} />}
        </form.AppField>
        <form.AppField name="distinguishText">
-        {(field) => <field.Textarea label="Phân biệt" description="Mỗi dòng là một ghi chú." />}
+        {(field) => <field.Textarea label={t("distinguish")} description={t("distinguishHelp")} />}
        </form.AppField>
        <form.AppField name="groupsText">
-        {(field) => (
-         <field.Textarea
-          label="Nhóm chữ thường gặp"
-          description="Mỗi dòng: Tên nhóm: 字 字 字"
-          font="mono"
-         />
-        )}
+        {(field) => <field.Textarea label={t("groups")} description={t("groupHelp")} font="mono" />}
        </form.AppField>
       </form>
      ) : (
@@ -430,7 +236,7 @@ function RadicalEditDialogContent({
    </DialogBody>
    <DialogFooter>
     <Button type="button" variant="ghost" onClick={() => onOpenChange(false)}>
-     Hủy
+     {t("cancel")}
     </Button>
     <Button
      type="button"
@@ -442,12 +248,12 @@ function RadicalEditDialogContent({
      }}
     >
      <RotateCcw className="h-4 w-4" />
-     Reset
+     {t("reset")}
     </Button>
     <form.Subscribe selector={(state) => state.isSubmitting}>
      {(isSubmitting) => (
       <Button type="submit" form={formId} disabled={isSubmitting || isJsonSubmitting}>
-       {isSubmitting || isJsonSubmitting ? "Đang lưu..." : "Lưu"}
+       {isSubmitting || isJsonSubmitting ? t("saving") : t("save")}
       </Button>
      )}
     </form.Subscribe>

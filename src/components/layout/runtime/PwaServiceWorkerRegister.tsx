@@ -12,6 +12,23 @@ export function PwaServiceWorkerRegister() {
    return;
   }
 
+  if (process.env.NODE_ENV === "development") {
+   void navigator.serviceWorker
+    .getRegistrations()
+    .then((registrations) =>
+     Promise.all(
+      registrations
+       .filter((registration) => {
+        const worker = registration.active ?? registration.waiting ?? registration.installing;
+        return worker && new URL(worker.scriptURL).pathname === "/sw.js";
+       })
+       .map((registration) => registration.unregister()),
+     ),
+    )
+    .catch((error) => logger.error("[PWA] Development worker cleanup failed:", error));
+   return;
+  }
+
   // Only register on secure origin or localhost
   const isLocalhost =
    window.location.hostname === "localhost" ||
@@ -84,7 +101,12 @@ export function PwaServiceWorkerRegister() {
  }, []);
 
  useEffect(() => {
-  if (!isResolved || typeof window === "undefined" || !("serviceWorker" in navigator)) {
+  if (
+   process.env.NODE_ENV === "development" ||
+   !isResolved ||
+   typeof window === "undefined" ||
+   !("serviceWorker" in navigator)
+  ) {
    return;
   }
 

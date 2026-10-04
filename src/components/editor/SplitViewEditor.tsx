@@ -13,7 +13,7 @@ import { useCallback, useRef } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { Editor } from "./Editor";
 import { ResizableDivider } from "./ResizableDivider";
-import { splitViewStore } from "@/stores/notes/split-view-store";
+import { selectNoteDividerPosition, splitViewStore } from "@/stores/notes/split-view-store";
 import { z } from "zod";
 
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
@@ -47,8 +47,7 @@ export function SplitViewEditor({
  toolbarVisible = true,
 }: SplitViewEditorProps) {
  const containerRef = useRef<HTMLDivElement>(null);
- const dividerPositions = useSelector(splitViewStore, (state) => state.dividerPositions);
- const dividerPosition = dividerPositions[noteId] ?? 50;
+ const dividerPosition = useSelector(splitViewStore, selectNoteDividerPosition(noteId));
  const { setDividerPosition } = splitViewStore.actions;
  const splitStyle: SplitViewStyle = {
   "--split-pane-leading-size": `${dividerPosition}%`,
