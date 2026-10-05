@@ -397,8 +397,10 @@ describe("useTTS terminal lifecycle", () => {
     }),
   );
   const tts = controller();
-  const pending = tts.speakWithLifecycle("你好", { rate: 1 });
+  const onSettled = vi.fn();
+  const pending = tts.speakWithLifecycle("你好", { rate: 1, onSettled });
   tts.stop();
+  expect(onSettled).toHaveBeenCalledOnce();
   await expect(pending).resolves.toEqual({ completed: false, cancelled: true });
   response.resolve(
    Response.json([{ name: "Voice", shortName: "zh-CN-Voice", gender: "Female", locale: "zh-CN" }]),
@@ -406,20 +408,24 @@ describe("useTTS terminal lifecycle", () => {
   await Promise.resolve();
   await Promise.resolve();
   expect(audioInstances).toHaveLength(0);
+  expect(onSettled).toHaveBeenCalledOnce();
  });
 
  it("ignores old audio completion after replacement and settles each request once", async () => {
   const tts = controller();
-  const first = tts.speakWithLifecycle("一", { rate: 1 });
+  const onSettled = vi.fn();
+  const first = tts.speakWithLifecycle("一", { rate: 1, onSettled });
   const firstAudio = await activeAudio();
   const oldEnded = firstAudio.onended;
   const second = tts.speakWithLifecycle("二", { rate: 1 });
+  expect(onSettled).toHaveBeenCalledOnce();
   await expect(first).resolves.toEqual({ completed: false, cancelled: true });
   const secondAudio = await activeAudio(1);
   oldEnded();
   expect(secondAudio.pause).not.toHaveBeenCalled();
   secondAudio.onended();
   await expect(second).resolves.toEqual({ completed: true, cancelled: false });
+  expect(onSettled).toHaveBeenCalledOnce();
  });
 
  it("rejects media errors rather than completing", async () => {

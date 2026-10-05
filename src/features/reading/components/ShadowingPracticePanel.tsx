@@ -50,6 +50,7 @@ export function ShadowingPracticePanel({
  const [isShadowing, setIsShadowing] = useState(false);
  const [attempts, setAttempts] = useState<ShadowingAttempt[]>([]);
  const timerRef = useRef<number | null>(null);
+ const pendingTtsRef = useRef(false);
  const attemptUrlsRef = useRef<string[]>([]);
  const lastBlobRef = useRef<Blob | null>(null);
 
@@ -84,7 +85,8 @@ export function ShadowingPracticePanel({
  useEffect(
   () => () => {
    clearTimer();
-   stopTts();
+   // The shared lifecycle releases this flag before a Reader successor starts.
+   if (pendingTtsRef.current) stopTts();
    attemptUrlsRef.current.forEach((url) => URL.revokeObjectURL(url));
    attemptUrlsRef.current = [];
   },
@@ -106,10 +108,18 @@ export function ShadowingPracticePanel({
   setIsShadowing(true);
   timerRef.current = window.setTimeout(() => {
    timerRef.current = null;
-   tts.speakSequence([paragraph.zh], () => {
-    recorder.stop();
-    setIsShadowing(false);
-   });
+   stopTts();
+   pendingTtsRef.current = true;
+   void tts
+    .speakWithLifecycle(paragraph.zh, {
+     rate: tts.rate,
+     onSettled: () => {
+      pendingTtsRef.current = false;
+      recorder.stop();
+      setIsShadowing(false);
+     },
+    })
+    .catch(() => {});
   }, delayMs);
  };
 
@@ -265,7 +275,18 @@ export function ShadowingPracticePanel({
      type="button"
      variant="outline"
      disabled={isShadowing || tts.isLoading}
-     onClick={() => tts.speakSequence([paragraph.zh])}
+     onClick={() => {
+      stopTts();
+      pendingTtsRef.current = true;
+      void tts
+       .speakWithLifecycle(paragraph.zh, {
+        rate: tts.rate,
+        onSettled: () => {
+         pendingTtsRef.current = false;
+        },
+       })
+       .catch(() => {});
+     }}
     >
      <Volume2 data-icon="inline-start" />
      {t("listen")}

@@ -12,6 +12,7 @@ import {
  type LessonDisplayMode,
 } from "@/features/hanzihome/components/lesson-overview/types";
 import type { ReaderSpeechService } from "@/features/reader/runtime/reader-speech";
+import type { useTTS } from "@/hooks/useTTS";
 import { readerDocumentResponseSchema } from "../model/reading-document.schemas";
 import { ReaderDocumentStudy } from "./ReaderDocumentStudy";
 import { HskWorkspace } from "@/features/hsk/HskWorkspace";
@@ -27,14 +28,19 @@ const requests: Parameters<ReaderSpeechService["speak"]>[0][] = [];
 let resolveSpeech:
  | ((result: Awaited<ReturnType<ReaderSpeechService["speak"]>>) => void)
  | undefined;
+let settleSharedSpeech = () => {};
 const speech: ReaderSpeechService = {
  speak: (input) => {
+  settleSharedSpeech();
   requests.push(input);
   return new Promise((resolve) => {
    resolveSpeech = resolve;
   });
  },
- stop: () => resolveSpeech?.({ completed: false, cancelled: true }),
+ stop: () => {
+  settleSharedSpeech();
+  resolveSpeech?.({ completed: false, cancelled: true });
+ },
  pause: () => {},
  resume: () => {},
 };
@@ -66,7 +72,25 @@ export function useMandarinReaderSpeechService() {
  return speech;
 }
 export function useSharedMandarinTts() {
- return { stop: speech.stop, isLoading: false, speakSequence: () => speech.stop() };
+ return {
+  stop: speech.stop,
+  isLoading: false,
+  rate: 1,
+  speakSequence: () => speech.stop(),
+  speakWithLifecycle: (
+   _text: Parameters<ReturnType<typeof useTTS>["speakWithLifecycle"]>[0],
+   options: Parameters<ReturnType<typeof useTTS>["speakWithLifecycle"]>[1],
+  ): ReturnType<ReturnType<typeof useTTS>["speakWithLifecycle"]> => {
+   speech.stop();
+   return new Promise((resolve) => {
+    settleSharedSpeech = () => {
+     settleSharedSpeech = () => {};
+     options.onSettled?.();
+     resolve({ completed: false, cancelled: true });
+    };
+   });
+  },
+ };
 }
 export function useVocabInspector() {
  return { openInspector: () => {} };

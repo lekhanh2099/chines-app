@@ -208,6 +208,59 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
     await browserExpect(
      page.getByRole("button", { name: chrome.commands.stopReading, exact: true }),
     ).toHaveCount(0);
+    await page.getByRole("combobox", { name: chrome.commands.openOutline, exact: true }).click();
+    await page.getByRole("option").first().click();
+    const beforeContinuous = (await page.evaluate(() => window.readingHarness.snapshot())).requests
+     .length;
+    await page
+     .locator("[data-reader-toolbar]")
+     .getByRole("button", { name: chrome.commands.listen, exact: true })
+     .click();
+    await browserExpect
+     .poll(
+      async () => (await page.evaluate(() => window.readingHarness.snapshot())).requests.length,
+     )
+     .toBe(beforeContinuous + 1);
+    await page.evaluate(() => window.readingHarness.finish());
+    await browserExpect(page.locator(`[data-reader-segment="${second.id}"]`)).toHaveAttribute(
+     "data-active",
+     "true",
+    );
+    await browserExpect(
+     page.getByRole("button", { name: chrome.commands.stopReading, exact: true }),
+    ).toBeVisible();
+    expect((await page.evaluate(() => window.readingHarness.snapshot())).requests.at(-1)).toEqual({
+     segmentId: second.id,
+     startOffset: 0,
+    });
+    await page.getByRole("button", { name: chrome.commands.stopReading, exact: true }).click();
+    await browserExpect(
+     page.getByRole("button", { name: chrome.commands.stopReading, exact: true }),
+    ).toHaveCount(0);
+    await page.getByRole("combobox", { name: chrome.commands.openOutline, exact: true }).click();
+    await page.getByRole("option").last().click();
+    await page
+     .getByRole("button", { name: messages.Reader.study.shadowing.listen, exact: true })
+     .click();
+    const beforeTakeover = (await page.evaluate(() => window.readingHarness.snapshot())).requests
+     .length;
+    await page
+     .locator("[data-reader-toolbar]")
+     .getByRole("button", { name: chrome.commands.listen, exact: true })
+     .click();
+    await browserExpect
+     .poll(
+      async () => (await page.evaluate(() => window.readingHarness.snapshot())).requests.length,
+     )
+     .toBe(beforeTakeover + 1);
+    await page.getByRole("button", { name: chrome.tools.shadowing, exact: true }).click();
+    await browserExpect(
+     page.getByRole("button", { name: messages.Reader.study.shadowing.start, exact: true }),
+    ).toHaveCount(0);
+    await page.getByRole("button", { name: chrome.commands.stopReading, exact: true }).click();
+    await browserExpect(
+     page.getByRole("button", { name: chrome.commands.stopReading, exact: true }),
+    ).toHaveCount(0);
     await page.goto(
      url +
       "reading-test?source=reader-highlight&document=" +
