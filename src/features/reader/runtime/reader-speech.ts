@@ -35,6 +35,12 @@ export const readerSpeechServiceSchema = z.strictObject({
   output: z.promise(readerSpeechResultSchema),
  }),
  stop: z.function({ input: z.tuple([]), output: z.void() }),
+ prepare: z
+  .function({
+   input: z.tuple([readerSpeechInputSchema]),
+   output: z.promise(z.void()),
+  })
+  .optional(),
  pause: z.function({ input: z.tuple([]), output: z.void() }).optional(),
  resume: z.function({ input: z.tuple([]), output: z.void() }).optional(),
  setRate: z.function({ input: z.tuple([z.number().positive()]), output: z.void() }).optional(),

@@ -5,6 +5,16 @@ import { readerSpeechProgressSchema, readerSpeechServiceSchema } from "./reader-
 const input = { segmentId: "paragraph-1", text: "你好。", startOffset: 0, rate: 1 };
 
 describe("reader speech service contract", () => {
+ it("validates optional preparation independently without starting playback", async () => {
+  const prepare = vi.fn(async () => {});
+  const speak = vi.fn(async () => ({ completed: true, cancelled: false }));
+  const service = readerSpeechServiceSchema.parse({ prepare, speak, stop: vi.fn() });
+  await service.prepare?.(input);
+  expect(prepare).toHaveBeenCalledWith(input);
+  expect(speak).not.toHaveBeenCalled();
+  await expect(service.prepare?.({ ...input, rate: 0 })).rejects.toThrow();
+  expect(prepare).toHaveBeenCalledOnce();
+ });
  it.each([
   { completed: true, cancelled: false },
   { completed: false, cancelled: true },

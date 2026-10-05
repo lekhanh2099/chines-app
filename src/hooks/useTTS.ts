@@ -34,6 +34,11 @@ type TTSPlaybackLifecycle = TTSPlaybackOptions & {
  resolve: (result: z.output<typeof ttsPlaybackResultSchema>) => void;
  reject: (error: Error) => void;
 };
+type TTSPreparedAudio = {
+ key: string;
+ controller: AbortController;
+ promise: Promise<Blob>;
+};
 
 function splitSpeechSegments(segments: readonly string[]) {
  const normalizedText = segments
@@ -94,6 +99,14 @@ export function useTTS() {
  const settledCallbackRef = useRef<() => void>(null);
  const lifecycleRef = useRef<TTSPlaybackLifecycle>(null);
  const synthesisRateRef = useRef(DEFAULT_RATE);
+ const preparedAudioRef = useRef<TTSPreparedAudio>(null);
+ const preparationRunRef = useRef(0);
+
+ const cancelPreparation = useCallback(() => {
+  preparationRunRef.current += 1;
+  preparedAudioRef.current?.controller.abort();
+  preparedAudioRef.current = null;
+ }, []);
 
  const cleanupAudio = useCallback(() => {
   if (audioRef.current) {
@@ -134,6 +147,7 @@ export function useTTS() {
  );
 
  const stop = useCallback(() => {
+  cancelPreparation();
   playbackRunRef.current += 1;
   abortControllerRef.current?.abort();
   generationAbortControllerRef.current?.abort();
@@ -149,7 +163,7 @@ export function useTTS() {
   sequenceIndexRef.current = 0;
   setState({ isSpeaking: false, isPaused: false, isLoading: false, error: null });
   settlePlayback(false);
- }, [cleanupAudio, settlePlayback]);
+ }, [cancelPreparation, cleanupAudio, settlePlayback]);
 
  const pause = useCallback(() => {
   const audio = audioRef.current;
@@ -227,10 +241,11 @@ export function useTTS() {
    playbackRunRef.current += 1;
    abortControllerRef.current?.abort();
    generationAbortControllerRef.current?.abort();
+   cancelPreparation();
    cleanupAudio();
    settleLifecycle(false);
   };
- }, [cleanupAudio, settleLifecycle]);
+ }, [cancelPreparation, cleanupAudio, settleLifecycle]);
 
  const playBlob = useCallback(
   (blob: Blob, runId: number, text: string, onComplete?: () => void, synthesisRate = rate) => {
@@ -325,6 +340,60 @@ export function useTTS() {
   [cleanupAudio, rate, settlePlayback],
  );
 
+ const loadAudio = useCallback(
+  async (
+   text: string,
+   voiceName: string,
+   synthesisRate: number,
+   controller: AbortController,
+  ): Promise<Blob> => {
+   const cacheKey = buildCacheKey(text, voiceName, synthesisRate);
+   const cached = await getCachedAudio(cacheKey);
+   if (controller.signal.aborted) throw new Error("TTS preparation cancelled");
+   if (cached) return cached;
+   const response = await fetch("/api/tts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text, voice: voiceName, rate: synthesisRate }),
+    signal: controller.signal,
+   });
+   if (response.status === 401) throw new Error(TTS_AUTH_ERROR_MESSAGE);
+   if (!response.ok) throw new Error(`TTS API ${response.status}`);
+   const blob = await response.blob();
+   if (controller.signal.aborted) throw new Error("TTS preparation cancelled");
+   void setCachedAudio(cacheKey, blob);
+   return blob;
+  },
+  [],
+ );
+
+ const prepareAudio = useCallback(
+  async (text: string, synthesisRate: number): Promise<void> => {
+   const normalizedText = splitSpeechSegments([text])[0];
+   if (!normalizedText) return;
+   const runId = preparationRunRef.current;
+   const availableVoices = await loadVoices();
+   if (runId !== preparationRunRef.current) return;
+   const voiceName = selectedVoiceName || availableVoices[0]?.shortName;
+   if (!voiceName)
+    throw voiceLoadErrorRef.current ?? new Error("Không tải được giọng Mandarin zh-CN");
+   const key = buildCacheKey(normalizedText, voiceName, synthesisRate);
+   let preparation = preparedAudioRef.current;
+   if (preparation?.key !== key) {
+    preparation?.controller.abort();
+    const controller = new AbortController();
+    preparation = {
+     key,
+     controller,
+     promise: loadAudio(normalizedText, voiceName, synthesisRate, controller),
+    };
+    preparedAudioRef.current = preparation;
+   }
+   await preparation.promise;
+  },
+  [loadAudio, loadVoices, selectedVoiceName],
+ );
+
  const loadAndPlay = useCallback(
   async (
    text: string,
@@ -334,33 +403,22 @@ export function useTTS() {
    synthesisRate = rate,
   ) => {
    const cacheKey = buildCacheKey(text, voiceName, synthesisRate);
-   const cached = await getCachedAudio(cacheKey);
-   if (playbackRunRef.current !== runId) return;
-   if (cached) {
-    playBlob(cached, runId, text, onComplete, synthesisRate);
-    return;
-   }
-
-   const controller = new AbortController();
+   const preparation = preparedAudioRef.current;
+   preparedAudioRef.current = null;
+   const matches = preparation?.key === cacheKey;
+   if (!matches) preparation?.controller.abort();
+   const controller = matches && preparation ? preparation.controller : new AbortController();
    abortControllerRef.current = controller;
 
    try {
-    const response = await fetch("/api/tts", {
-     method: "POST",
-     headers: { "Content-Type": "application/json" },
-     body: JSON.stringify({
-      text,
-      voice: voiceName,
-      rate: synthesisRate,
-     }),
-     signal: controller.signal,
-    });
-    if (response.status === 401) throw new Error(TTS_AUTH_ERROR_MESSAGE);
-    if (!response.ok) throw new Error(`TTS API ${response.status}`);
-
-    const blob = await response.blob();
+    const blob =
+     matches && preparation
+      ? await preparation.promise.catch((error) => {
+         if (controller.signal.aborted) throw error;
+         return loadAudio(text, voiceName, synthesisRate, controller);
+        })
+      : await loadAudio(text, voiceName, synthesisRate, controller);
     if (playbackRunRef.current !== runId) return;
-    void setCachedAudio(cacheKey, blob);
     playBlob(blob, runId, text, onComplete, synthesisRate);
    } catch (error) {
     if (controller.signal.aborted || playbackRunRef.current !== runId) return;
@@ -420,7 +478,7 @@ export function useTTS() {
     if (abortControllerRef.current === controller) abortControllerRef.current = null;
    }
   },
-  [playBlob, rate, selectedVoiceName, settlePlayback],
+  [loadAudio, playBlob, rate, selectedVoiceName, settlePlayback],
  );
 
  const speak = useCallback(
@@ -435,6 +493,7 @@ export function useTTS() {
    }
 
    playbackRunRef.current += 1;
+   cancelPreparation();
    const runId = playbackRunRef.current;
    settleLifecycle(false);
    abortControllerRef.current?.abort();
@@ -466,15 +525,27 @@ export function useTTS() {
     voiceName,
    );
   },
-  [cleanupAudio, loadAndPlay, loadVoices, selectedVoiceName, settleLifecycle, settlePlayback],
+  [
+   cancelPreparation,
+   cleanupAudio,
+   loadAndPlay,
+   loadVoices,
+   selectedVoiceName,
+   settleLifecycle,
+   settlePlayback,
+  ],
  );
 
- const setPlaybackRate = useCallback((nextRate: number) => {
-  if (!Number.isFinite(nextRate) || nextRate <= 0) return;
-  setRate(nextRate);
-  if (lifecycleRef.current) lifecycleRef.current.rate = nextRate;
-  if (audioRef.current) audioRef.current.playbackRate = nextRate / synthesisRateRef.current;
- }, []);
+ const setPlaybackRate = useCallback(
+  (nextRate: number) => {
+   if (!Number.isFinite(nextRate) || nextRate <= 0) return;
+   if (lifecycleRef.current?.rate !== nextRate) cancelPreparation();
+   setRate(nextRate);
+   if (lifecycleRef.current) lifecycleRef.current.rate = nextRate;
+   if (audioRef.current) audioRef.current.playbackRate = nextRate / synthesisRateRef.current;
+  },
+  [cancelPreparation],
+ );
 
  const generateAudio = useCallback(
   async (text: string): Promise<Blob | null> => {
@@ -577,12 +648,21 @@ export function useTTS() {
    text: string,
    options: TTSPlaybackOptions,
   ): Promise<z.output<typeof ttsPlaybackResultSchema>> => {
+   // Keep the one prepared segment across the normal Reader handoff.
+   const preparation = preparedAudioRef.current;
+   preparedAudioRef.current = null;
    stop();
    const runId = playbackRunRef.current;
    const normalizedText = text.trim();
-   if (!normalizedText) return Promise.resolve({ completed: true, cancelled: false });
-   if (!Number.isFinite(options.rate) || options.rate <= 0)
+   if (!normalizedText) {
+    preparation?.controller.abort();
+    return Promise.resolve({ completed: true, cancelled: false });
+   }
+   if (!Number.isFinite(options.rate) || options.rate <= 0) {
+    preparation?.controller.abort();
     return Promise.reject(new Error("Invalid speech rate"));
+   }
+   preparedAudioRef.current = preparation;
    return new Promise((resolve, reject) => {
     sequenceSegmentsRef.current = splitSpeechSegments([normalizedText]);
     sequenceIndexRef.current = 0;
@@ -638,6 +718,7 @@ export function useTTS() {
    }
 
    playbackRunRef.current += 1;
+   cancelPreparation();
    const runId = playbackRunRef.current;
    settleLifecycle(false);
    abortControllerRef.current?.abort();
@@ -659,7 +740,15 @@ export function useTTS() {
     void playNextSequenceSegment(runId, voiceName);
    });
   },
-  [cleanupAudio, loadVoices, playNextSequenceSegment, selectedVoiceName, settleLifecycle, stop],
+  [
+   cancelPreparation,
+   cleanupAudio,
+   loadVoices,
+   playNextSequenceSegment,
+   selectedVoiceName,
+   settleLifecycle,
+   stop,
+  ],
  );
 
  const selectedVoice =
@@ -680,6 +769,8 @@ export function useTTS() {
   pause,
   resume,
   generateAudio,
+  prepareAudio,
+  cancelPreparation,
   stop,
   isSpeaking: state.isSpeaking,
   isPaused: state.isPaused,

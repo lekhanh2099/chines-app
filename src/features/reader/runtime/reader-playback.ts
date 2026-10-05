@@ -54,6 +54,28 @@ export function createReaderPlayback(store: ReaderStore, speech?: ReaderSpeechSe
       status: store.state.playback.status === "paused" ? "paused" : "playing",
       progress: snapshot.progress,
      });
+     if (
+      snapshot.progress >= 0.5 &&
+      speech.prepare &&
+      !characterStart &&
+      !store.state.playback.loopCurrent &&
+      (continuous || store.state.playback.autoAdvance)
+     ) {
+      const nextId = store.state.content.segmentIds[store.state.content.segmentIds.indexOf(id) + 1];
+      const nextSegment =
+       nextId === undefined ? undefined : store.state.content.segmentsById[nextId];
+      if (nextSegment) {
+       // Preparation failures must not interrupt the current audio. Playback retries normally.
+       void speech
+        .prepare({
+         segmentId: nextSegment.id,
+         text: nextSegment.speechText ?? nextSegment.zh,
+         startOffset: 0,
+         rate: store.state.playback.rate,
+        })
+        .catch(() => {});
+      }
+     }
     },
    });
    const result = readerSpeechResultSchema.parse(await speech.speak(input));
@@ -70,6 +92,7 @@ export function createReaderPlayback(store: ReaderStore, speech?: ReaderSpeechSe
    if (nextId && !characterStart && (continuous || store.state.playback.autoAdvance)) {
     await play(nextId, 0, token);
    } else {
+    speech.stop();
     owners.delete(speech);
     reset();
    }

@@ -8,6 +8,15 @@ Full gate sau Chrome/browser follow-through trước lượt tách tiếp **PASS
 
 Bảng baseline/findings phía dưới giữ nguyên reproduction ban đầu. Trạng thái hiện tại và proof ở các bảng cập nhật này; checkpoint, quyết định contract và rollback ở [execution ledger](/Users/hagenlee/Desktop/Person/chines-app/docs/refactors/feature-quality-audit-enhancement-2026-10-04.md#12-execution-ledger--04102026).
 
+### Reader TTS lookahead — cập nhật 05/10/2026
+
+- Trước: Reader chỉ synthesize đoạn tiếp theo sau khi audio hiện tại ended, tạo khoảng chờ khi chưa có cache. Regression actual Reader → Mandarin adapter → useTTS tái hiện FAIL ở mốc 50%: chưa có request cho đoạn kế tiếp.
+- Sau: runtime chuẩn bị đúng một đoạn kế tiếp từ progress 50% khi continuous/auto-advance, dùng canonical speechText. Existing useTTS giữ một preparation promise keyed text/voice/rate; handoff dùng lại Blob hoặc request pending, không synthesize trùng và không tạo Audio/object URL trước khi phát. Dùng cache IndexedDB hiện tại; không tạo full-document queue.
+- Stop/unmount/legacy replacement hủy preparation; rate/text mismatch không reuse audio cũ. Preparation failure không đổi trạng thái đoạn đang phát hoặc tự retry mỗi tick; handoff retry một lần bằng owning transport. Character playback, single-segment và loop không prepare đoạn không được phát.
+- Owner/precedent: reader-playback điều phối, optional ReaderSpeechService.prepare theo existing pause/resume/setRate, MandarinTtsProvider bridge, useTTS fetch/run fencing, buildCacheKey/getCachedAudio/setCachedAudio giữ cache contract. Bốn existing source files, ba existing test files; không thêm file/dependency/HTTP API/DB schema/persistence format. Internal service thêm optional prepare và hook thêm callbacks cho behavior được yêu cầu.
+- Verification: npm run check PASS exit 0, 275 files/1.454 tests; 6 files/7 opt-in SKIP đã chạy riêng và PASS 7/7. Audit 0, build 129 pages PASS. [Full gate](/tmp/chines-app-tts-lookahead-check.log), [browser suite](/tmp/chines-app-tts-lookahead-browser.log), [fail-before](/tmp/chines-app-tts-lookahead-before.log). Chrome authenticated 3001 Nhịp cầu Bài 1 tự advance tới đoạn 10, pause/resume/stop PASS, browser errors rỗng; GET/POST TTS 200 trong log dev. [Playback screenshot](/tmp/chines-app-tts-lookahead-3001.png).
+- Dimension: network scheduling/request reuse; không claim giảm React commits hoặc gapless playback. Với đoạn ngắn/provider chậm, preparation có thể chưa hoàn tất lúc ended; vẫn await cùng request. Browser smoke không đo transition gap. C06/C07 và 32-row program vẫn PARTIAL; matching remote CI là publish gate và được đối chiếu sau push.
+
 ### Release verification và TTS trên dev 3001
 
 Kiểm tra ngày 04/10/2026 với **Node 22.23.3 / npm 12.2.0**, đúng package-manager của CI. Clean `npm ci` trong checkout tạm dùng cùng package/lock: 829 packages, audit 0 vulnerabilities. Lần gọi đầu bằng `--prefix` lỗi EUSAGE; chạy lại đúng working directory thành công, không sửa lockfile hoặc dependency.

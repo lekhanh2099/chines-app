@@ -19,6 +19,7 @@ function setup() {
   pause: vi.fn(),
   resume: vi.fn(),
   setRate: vi.fn(),
+  prepare: vi.fn(async () => {}),
  };
  const content = cookReaderData([
   { id: "a", zh: "你好。", speechText: "您好。" },
@@ -36,6 +37,40 @@ async function settle() {
 }
 
 describe("Reader speech commands", () => {
+ it.each(["character", "single", "loop"])(
+  "does not prepare an unrelated segment in %s mode",
+  (mode) => {
+   const { commands, pending, store, speech } = setup();
+   if (mode === "character") commands.playFromCharacter("a", 1);
+   else {
+    if (mode === "single") store.actions.toggleAutoAdvance();
+    if (mode === "loop") store.actions.toggleLoop();
+    commands.playCurrent();
+   }
+   pending[0]?.input.onProgress?.({ progress: 0.9 });
+   expect(speech.prepare).not.toHaveBeenCalled();
+   commands.dispose();
+  },
+ );
+
+ it("prepares canonical next speech after 50% without moving the active segment", () => {
+  const { commands, pending, store, speech } = setup();
+  commands.playAll();
+  pending[0]?.input.onProgress?.({ progress: 0.49 });
+  expect(speech.prepare).not.toHaveBeenCalled();
+  pending[0]?.input.onProgress?.({ progress: 0.5 });
+  expect(speech.prepare).toHaveBeenCalledWith({
+   segmentId: "b",
+   text: "中国。",
+   startOffset: 0,
+   rate: 1,
+  });
+  expect(store.state.playback).toMatchObject({ segmentId: "a", status: "playing", progress: 0.5 });
+  commands.next();
+  pending[0]?.input.onProgress?.({ progress: 0.9 });
+  expect(speech.prepare).toHaveBeenCalledOnce();
+  commands.dispose();
+ });
  it("ignores invalid character targets and non-finite offsets without interrupting playback", () => {
   const { commands, pending, speech, store } = setup();
   commands.playCurrent();

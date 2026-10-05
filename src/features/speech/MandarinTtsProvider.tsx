@@ -16,6 +16,9 @@ export function createMandarinReaderSpeechService(initialController: MandarinTts
  let run = 0;
  let pending = false;
  const speech: ReaderSpeechService = {
+  prepare: async (input) => {
+   if (pending) await controller.prepareAudio(input.text.slice(input.startOffset), input.rate);
+  },
   speak: async (input) => {
    const token = ++run;
    pending = true;
@@ -35,6 +38,7 @@ export function createMandarinReaderSpeechService(initialController: MandarinTts
   },
   stop: () => {
    run += 1;
+   controller.cancelPreparation();
    if (!pending) return;
    pending = false;
    controller.stop();
