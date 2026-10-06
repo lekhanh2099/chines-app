@@ -161,7 +161,24 @@ function createHarness() {
         lookup: (selection) => lookups.push(selection.text),
         annotations: withAnnotations
          ? {
-            items: [{ id: "annotation", segmentId: "source", text: "你", start: 0, end: 1 }],
+            items: [
+             {
+              id: "annotation",
+              segmentId: "source",
+              text: "你",
+              noteText: "Ghi chú dòng 1\nGhi chú dòng 2",
+              start: 0,
+              end: 1,
+             },
+             {
+              id: "highlight",
+              segmentId: "source",
+              text: "。",
+              noteText: " ",
+              start: 2,
+              end: 3,
+             },
+            ],
             onOpen: (annotation) => annotationActions.push(annotation.id),
             onSelection: (selection) => annotationActions.push(selection.text),
            }

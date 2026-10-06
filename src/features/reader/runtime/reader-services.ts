@@ -13,6 +13,7 @@ export const readerAnnotationSchema = z.strictObject({
  id: z.string().min(1),
  segmentId: z.string().min(1),
  text: z.string().min(1),
+ noteText: z.string(),
  start: z.number().int().nonnegative(),
  end: z.number().int().positive(),
  color: z.enum(["yellow", "green", "blue", "pink"]).optional(),

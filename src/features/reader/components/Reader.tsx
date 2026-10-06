@@ -18,6 +18,7 @@ import {
  useReaderStore,
 } from "../runtime/reader-context";
 import { focusRingClassName } from "@/components/ui/focus-ring";
+import { TooltipProvider } from "@/components/ui/overlays/tooltip";
 
 export function Reader({
  data,
@@ -41,7 +42,9 @@ export function Reader({
    display={display?.value ?? localDisplay}
    onDisplayChange={display?.onChange ?? setLocalDisplay}
   >
-   <ReaderFrame className={className} />
+   <TooltipProvider>
+    <ReaderFrame className={className} />
+   </TooltipProvider>
   </ReaderProvider>
  );
 }

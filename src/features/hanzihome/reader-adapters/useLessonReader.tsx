@@ -139,6 +139,7 @@ export function useLessonReader({
          id: annotation.id,
          segmentId: annotation.nodeId,
          text: annotation.selectedText,
+         noteText: annotation.noteText,
          start: annotation.resolvedStartOffset,
          end: annotation.resolvedEndOffset,
         })),

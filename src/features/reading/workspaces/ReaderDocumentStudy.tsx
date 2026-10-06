@@ -368,6 +368,7 @@ function ReaderDocumentStudyContent({
          id: annotation.id,
          segmentId: annotation.paragraph_id,
          text: annotation.selected_text,
+         noteText: annotation.note_text,
          start: annotation.start_offset,
          end: annotation.end_offset,
          color: annotation.color,

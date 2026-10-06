@@ -117,7 +117,7 @@ describe("Business Chinese study policies", () => {
    start_offset: 0,
    end_offset: 2,
    selected_text: "你好",
-   note_text: "",
+   note_text: "Ghi chú dòng 1\nGhi chú dòng 2",
    color: "yellow",
    payload: {},
    revision: 0,
@@ -134,7 +134,15 @@ describe("Business Chinese study policies", () => {
     { ...annotation, selected_text: "" },
    ]),
   ).toEqual([
-   { id: annotation.id, segmentId: "paragraph", text: "你好", start: 0, end: 2, color: "yellow" },
+   {
+    id: annotation.id,
+    segmentId: "paragraph",
+    text: "你好",
+    noteText: "Ghi chú dòng 1\nGhi chú dòng 2",
+    start: 0,
+    end: 2,
+    color: "yellow",
+   },
   ]);
  });
  it("applies answer and meaning visibility independently without mutating source rows", () => {

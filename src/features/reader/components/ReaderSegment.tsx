@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { Typography } from "@/components/ui/display/typography";
 import { focusRingClassName } from "@/components/ui/focus-ring";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/overlays/tooltip";
 import { cn } from "@/lib/utils";
 import {
  formatContextualPinyinRange,
@@ -149,8 +150,20 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
     {grapheme.segment}
    </span>
   );
+  const annotatedHanzi = annotation?.noteText.trim() ? (
+   <Tooltip key={grapheme.index}>
+    <TooltipTrigger asChild>{hanzi}</TooltipTrigger>
+    <TooltipContent side="top">
+     <Typography as="span" variant="caption" tone="inherit" wrapping="preWrap">
+      {annotation.noteText}
+     </Typography>
+    </TooltipContent>
+   </Tooltip>
+  ) : (
+   hanzi
+  );
   if (!includePinyin || !inlinePinyin || !display.showPinyin || !glyph?.spokenPinyin || !analysis)
-   return hanzi;
+   return annotatedHanzi;
   const needsPronunciationReview =
    glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
   const inspect = (element: HTMLElement) =>
@@ -162,7 +175,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
    });
   return (
    <ruby key={grapheme.index}>
-    {hanzi}
+    {annotatedHanzi}
     <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
      <span
       role="button"

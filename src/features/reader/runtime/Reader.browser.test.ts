@@ -349,9 +349,31 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      ),
     );
     await browserExpect(page.locator("ruby")).toHaveCount(1);
-    await page.getByRole("button", { name: "Mở ghi chú cho 你", exact: true }).click();
+    const annotation = page.getByRole("button", { name: "Mở ghi chú cho 你", exact: true });
+    await annotation.hover();
+    await browserExpect(page.getByRole("tooltip")).toBeVisible();
+    await browserExpect(page.getByRole("tooltip")).toContainText("Ghi chú dòng 1");
+    await browserExpect(page.getByRole("tooltip")).toContainText("Ghi chú dòng 2");
+    expect((await page.evaluate(() => window.readerHarness.snapshot())).annotationActions).toEqual(
+     [],
+    );
+    await page.keyboard.press("Escape");
+    await browserExpect(page.getByRole("tooltip")).toHaveCount(0);
+    await annotation.focus();
+    await browserExpect(page.getByRole("tooltip")).toBeVisible();
+    await page.keyboard.press("Enter");
+    expect((await page.evaluate(() => window.readerHarness.snapshot())).annotationActions).toEqual([
+     "annotation",
+    ]);
+    await page.keyboard.press("Escape");
+    await browserExpect(page.getByRole("tooltip")).toHaveCount(0);
+    await page.getByRole("button", { name: "Mở ghi chú cho 。", exact: true }).hover();
+    await browserExpect(page.getByRole("tooltip")).toHaveCount(0);
+    await annotation.click();
+    await browserExpect(page.getByRole("tooltip")).toHaveCount(0);
     await page.getByRole("button", { name: "Pinyin chữ 好 cần kiểm tra", exact: true }).click();
     expect((await page.evaluate(() => window.readerHarness.snapshot())).annotationActions).toEqual([
+     "annotation",
      "annotation",
     ]);
     expect((await page.evaluate(() => window.readerHarness.snapshot())).reviews).toEqual(["好"]);
@@ -363,7 +385,7 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      source.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
     });
     const selectedRuby = await page.evaluate(() => window.readerHarness.snapshot());
-    expect(selectedRuby.annotationActions).toEqual(["annotation", "你好。"]);
+    expect(selectedRuby.annotationActions).toEqual(["annotation", "annotation", "你好。"]);
     expect(selectedRuby.lookups).toEqual([]);
     await page.reload();
     await page.waitForFunction(() => Boolean(window.readerHarness));
