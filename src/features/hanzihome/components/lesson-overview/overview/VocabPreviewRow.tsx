@@ -17,7 +17,7 @@ export function VocabPreviewRow({
   <div className="min-w-0 rounded-xl border border-border-default bg-bg-subtle p-3 grid gap-1">
    <div className="flex min-w-0 items-baseline gap-2">
     <StudyInstructionText
-     variant="sectionTitle"
+     variant="pageTitle"
      tone="default"
      weight="black"
      clamp="one"
@@ -25,12 +25,12 @@ export function VocabPreviewRow({
     >
      {hanzi}
     </StudyInstructionText>
-    <StudyInstructionText tone="primary" weight="bold" clamp="one">
+    <StudyInstructionText variant="body" tone="primary" weight="bold" clamp="one">
      {pinyin}
     </StudyInstructionText>
    </div>
    <StudyInstructionText
-    variant="overline"
+    variant="label"
     tone="muted"
     weight="bold"
     clamp="one"
@@ -39,7 +39,7 @@ export function VocabPreviewRow({
    >
     {hanviet || category}
    </StudyInstructionText>
-   <StudyInstructionText tone="secondary" weight="semibold" clamp="two">
+   <StudyInstructionText variant="body" tone="secondary" weight="semibold" clamp="two">
     {meaning}
    </StudyInstructionText>
   </div>

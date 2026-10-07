@@ -260,6 +260,42 @@ describe("BusinessChineseStudyWorkspace", () => {
   15_000,
  );
 
+ it.each([true, false])(
+  "preserves vocabulary expansion visibility with tap reveal enabled (%s)",
+  (showDetails) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "nhip-cau");
+   const lesson = getTextbookLesson("nhip-cau", 3);
+   const section = lesson?.sections.find((item) => item.title.includes("词语搭配与扩展"));
+   if (!book || !lesson || !section) throw new Error("Expected Nhịp cầu vocabulary expansion.");
+   mockParams = new URLSearchParams("lesson=3&tab=vocab");
+   mockSettings = {
+    bookDisplayModes: {
+     [`static:${book.id}`]: {
+      ...DEFAULT_LESSON_DISPLAY_MODE,
+      autoDetectPinyin: true,
+      showPinyin: showDetails,
+      showMeaning: showDetails,
+      revealMode: "tap",
+     },
+    },
+   };
+
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={books}
+     lesson={{ ...lesson, sections: [{ ...section, blocks: section.blocks.slice(0, 5) }] }}
+    />,
+   );
+
+   expect(markup.includes("<ruby")).toBe(showDetails);
+   expect(markup.includes("định nhét vào")).toBe(showDetails);
+   expect(markup).toContain('aria-label="Đọc tiếng Trung: 打算塞进去"');
+   expect(markup).not.toContain("Hiện pinyin");
+   expect(markup).not.toContain("Hiện nghĩa");
+  },
+ );
+
  it.each([
   { unit: 1, promptCells: 3 },
   { unit: 8, promptCells: 0 },

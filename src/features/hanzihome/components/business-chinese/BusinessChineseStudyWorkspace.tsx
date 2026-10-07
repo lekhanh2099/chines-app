@@ -811,7 +811,13 @@ function BusinessChineseTextBlock({
     />
    )}
    {!progressiveReveal && translationTurn.content && displayMode.showMeaning ? (
-    <TranslationText tone="muted" weight="medium" leading="relaxed" wrapping="preWrap">
+    <TranslationText
+     variant={variant === "body" ? "body" : "bodySmall"}
+     tone="muted"
+     weight="medium"
+     leading="relaxed"
+     wrapping="preWrap"
+    >
      {translationTurn.content}
     </TranslationText>
    ) : null}
@@ -833,6 +839,8 @@ function BusinessChineseSection({
  vocabularyPreview?: ReactNode;
 }) {
  const visibleBlocks = businessChineseVisibleBlocks(section, canonicalVocabularyTableIds);
+ const sectionDisplayMode: LessonDisplayMode =
+  section.category === "vocab" ? { ...displayMode, revealMode: "always" } : displayMode;
 
  return (
   <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4">
@@ -861,9 +869,9 @@ function BusinessChineseSection({
         pronunciationId={block.id}
         text={block.text}
         translation={block.translation ?? translations.get(block.id)}
-        displayMode={displayMode}
-        compactHanzi={section.category !== "text"}
-        variant="cardTitle"
+        displayMode={sectionDisplayMode}
+        compactHanzi={section.category !== "text" && section.category !== "vocab"}
+        variant={section.category === "vocab" ? "sectionTitle" : "cardTitle"}
         weight="black"
        />
       );
@@ -877,8 +885,9 @@ function BusinessChineseSection({
        pronunciationId={block.id}
        text={block.text}
        translation={block.translation ?? translations.get(block.id)}
-       displayMode={displayMode}
-       compactHanzi={section.category !== "text"}
+       displayMode={sectionDisplayMode}
+       compactHanzi={section.category !== "text" && section.category !== "vocab"}
+       variant={section.category === "vocab" ? "body" : "bodySmall"}
       />
      );
     })}
