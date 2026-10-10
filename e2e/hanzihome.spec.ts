@@ -52,7 +52,7 @@ function createAdminClient(): SupabaseClient<Database> {
 }
 
 async function login(page: Page, account: typeof accountA) {
- await page.goto("/vi/login");
+ if (page.url() !== new URL("/vi/login", baseURL).href) await page.goto("/vi/login");
  await page.getByLabel("Email").fill(account.email);
  await page.getByRole("textbox", { name: "Mật khẩu" }).fill(account.password);
  await page.getByRole("button", { name: "Đăng nhập", exact: true }).click();
@@ -413,6 +413,19 @@ test("keeps cached lessons after a storage read failure and reports an evicted v
      };
     }),
   );
+  await recovered.evaluate(async () => {
+   await navigator.serviceWorker.ready;
+  });
+  await expect
+   .poll(() => recovered.evaluate(() => navigator.serviceWorker.controller !== null))
+   .toBe(true);
+  await expect
+   .poll(() =>
+    recovered.evaluate(async () =>
+     Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
+    ),
+   )
+   .toBe(true);
   await context.setOffline(true);
   await recovered.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
   await expect(
@@ -425,7 +438,91 @@ test("keeps cached lessons after a storage read failure and reports an evicted v
  }
 });
 
-test("reopens static textbooks offline with local lesson, tab, resume and focus controls", async ({
+for (const book of [
+ { key: "tm3", path: "han-thuong-mai", first: "BÀI 1: 开户汇款", second: "BÀI 2: 按揭买房" },
+ {
+  key: "nhip-cau",
+  path: "nhip-cau-han-ngu",
+  first: 'BÀI 1: 我的"希望工程"',
+  second: "BÀI 2: 差不多先生传",
+ },
+ {
+  key: "doc-hieu",
+  path: "doc-hieu",
+  first: "UNIT 1 – TOÀN BỘ 5 BÀI",
+  second: "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
+ },
+]) {
+ test(`reopens static textbook ${book.key} offline with local lesson, tab and resume`, async ({
+  page,
+  context,
+ }) => {
+  test.setTimeout(60_000);
+  await login(page, accountA);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/vi/offline");
+  await expect(page.getByRole("list", { name: "Giáo trình có sẵn", exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(3);
+  await expect(page.getByText("Hán thương mại 2", { exact: true })).toHaveCount(0);
+  await page.evaluate(async () => {
+   await navigator.serviceWorker.ready;
+  });
+  await expect
+   .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
+   .toBe(true);
+  await expect
+   .poll(() =>
+    page.evaluate(async () => {
+     const cache = await caches.open("hanzihome-static-v13");
+     return (
+      await Promise.all(
+       ["/vi/offline", "/en/offline", "/zh-CN/offline"].map(async (path) =>
+        Boolean(await cache.match(path)),
+       ),
+      )
+     ).every(Boolean);
+    }),
+   )
+   .toBe(true);
+  const navigationRequests: string[] = [];
+  page.on("request", (request) => {
+   if (request.url().includes("_rsc=")) navigationRequests.push(request.url());
+  });
+  try {
+   await context.setOffline(true);
+   await page.goto(`/vi/hsk/${book.path}?lesson=1&tab=text`);
+   await expect(page).toHaveURL(new RegExp(`/vi/offline\\?.*book=${book.key}`));
+   const selector = page.getByRole("button", { name: "Chọn bài học", exact: true });
+   await expect(selector).toContainText(book.first);
+   await expect(page.locator("[data-reader-segment]").first()).toBeVisible();
+   await page.reload();
+   await expect(selector).toContainText(book.first);
+   await selector.click();
+   await page.getByRole("button", { name: book.second, exact: true }).click();
+   await expect(selector).toContainText(book.second);
+   await expect(page).toHaveURL(new RegExp(`book=${book.key}&lesson=2`));
+   await page.getByRole("tab", { name: "Từ vựng", exact: true }).click();
+   await expect(page).toHaveURL(/tab=vocab/);
+   await page.reload();
+   await expect(selector).toContainText(book.second);
+   await expect(page.getByRole("tab", { name: "Từ vựng", exact: true })).toHaveAttribute(
+    "aria-selected",
+    "true",
+   );
+   await page.goto(`/vi/offline?book=${book.key}`);
+   await expect(selector).toContainText(book.second);
+   await expect(page.getByRole("tab", { name: "Từ vựng", exact: true })).toHaveAttribute(
+    "aria-selected",
+    "true",
+   );
+   expect(navigationRequests).toEqual([]);
+  } finally {
+   await context.setOffline(false);
+  }
+ });
+}
+
+test("keeps offline textbook focus, locale, mobile and unavailable-book controls", async ({
  page,
  context,
 }) => {
@@ -462,48 +559,10 @@ test("reopens static textbooks offline with local lesson, tab, resume and focus 
  });
  try {
   await context.setOffline(true);
-  for (const book of [
-   { key: "tm3", path: "han-thuong-mai", first: "BÀI 1: 开户汇款", second: "BÀI 2: 按揭买房" },
-   {
-    key: "nhip-cau",
-    path: "nhip-cau-han-ngu",
-    first: 'BÀI 1: 我的"希望工程"',
-    second: "BÀI 2: 差不多先生传",
-   },
-   {
-    key: "doc-hieu",
-    path: "doc-hieu",
-    first: "UNIT 1 – TOÀN BỘ 5 BÀI",
-    second: "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
-   },
-  ]) {
-   await page.goto(`/vi/hsk/${book.path}?lesson=1&tab=text`);
-   await expect(page).toHaveURL(new RegExp(`/vi/offline\\?.*book=${book.key}`));
-   const selector = page.getByRole("button", { name: "Chọn bài học", exact: true });
-   await expect(selector).toContainText(book.first);
-   await expect(page.locator("[data-reader-segment]").first()).toBeVisible();
-   await page.reload();
-   await expect(selector).toContainText(book.first);
-   await selector.click();
-   await page.getByRole("button", { name: book.second, exact: true }).click();
-   await expect(selector).toContainText(book.second);
-   await expect(page).toHaveURL(new RegExp(`book=${book.key}&lesson=2`));
-   await page.getByRole("tab", { name: "Từ vựng", exact: true }).click();
-   await expect(page).toHaveURL(/tab=vocab/);
-   await page.reload();
-   await expect(selector).toContainText(book.second);
-   await expect(page.getByRole("tab", { name: "Từ vựng", exact: true })).toHaveAttribute(
-    "aria-selected",
-    "true",
-   );
-   await page.goto(`/vi/offline?book=${book.key}`);
-   await expect(selector).toContainText(book.second);
-   await expect(page.getByRole("tab", { name: "Từ vựng", exact: true })).toHaveAttribute(
-    "aria-selected",
-    "true",
-   );
-  }
-  expect(navigationRequests).toEqual([]);
+  await page.goto("/vi/offline?book=doc-hieu&lesson=2&tab=vocab");
+  await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toContainText(
+   "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
+  );
   const focus = page.getByRole("button", { name: "Chế độ tập trung", exact: true });
   await focus.click();
   await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toBeDisabled();
@@ -534,6 +593,7 @@ test("reopens static textbooks offline with local lesson, tab, resume and focus 
   await expect(
    page.getByRole("heading", { name: "Giáo trình không khả dụng", exact: true }),
   ).toBeVisible();
+  expect(navigationRequests).toEqual([]);
  } finally {
   await context.setOffline(false);
  }
