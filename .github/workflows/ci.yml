@@ -14,11 +14,161 @@ concurrency:
  cancel-in-progress: true
 
 jobs:
- verify:
+ changes:
   runs-on: ubuntu-latest
-  timeout-minutes: 20
+  timeout-minutes: 5
+  outputs:
+   unit_files: ${{ steps.scope.outputs.unit_files }}
+   code: ${{ steps.scope.outputs.code }}
+   unit_full: ${{ steps.scope.outputs.unit_full }}
+   browser_files: ${{ steps.scope.outputs.browser_files }}
+   e2e_grep: ${{ steps.scope.outputs.e2e_grep }}
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      fetch-depth: 2
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+   - name: Select checks from the tested Git diff
+     id: scope
+     env:
+      EVENT_NAME: ${{ github.event_name }}
+      PUSH_BASE: ${{ github.event.before }}
+      PR_BASE: ${{ github.event.pull_request.base.sha }}
+     run: |
+      node --input-type=module <<'JS'
+      import { execFileSync } from "node:child_process";
+      import { appendFileSync } from "node:fs";
+
+      const base = process.env.EVENT_NAME === "pull_request" ? process.env.PR_BASE : process.env.PUSH_BASE;
+      let full = process.env.EVENT_NAME === "workflow_dispatch" || !base || /^0+$/.test(base);
+      if (!full) {
+       try {
+        execFileSync("git", ["cat-file", "-e", base + "^{commit}"], { stdio: "ignore" });
+       } catch {
+        try {
+         execFileSync("git", ["fetch", "--no-tags", "--depth=1", "origin", base], { stdio: "inherit" });
+        } catch {
+         full = true;
+        }
+       }
+      }
+      const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, "HEAD"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
+      const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, "HEAD"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
+      const browserFiles = {
+       notes: ["src/features/notes/hooks/NoteEditor.browser.test.ts", "src/features/notes/hooks/NoteOwner.browser.test.ts"],
+       srs: ["src/features/dictionary/dictionary-srs-outbox.browser.test.ts", "src/features/dictionary/DictionarySrsPage.test.tsx"],
+       pdf: ["src/features/reading/pdf/PdfAnnotations.browser.test.ts"],
+       tts: ["src/features/hanzihome/tts/TtsAudioPreview.browser.test.ts"],
+       listening: ["src/features/hanzihome/listening/ListeningExercises.browser.test.ts"],
+       recorder: ["src/features/reading/hooks/ShadowingRecorder.browser.test.ts"],
+       reading: ["src/features/reading/workspaces/Reading.browser.test.ts"],
+       reader: ["src/features/reader/runtime/Reader.browser.test.ts"],
+       translation: ["src/features/translation/TranslationWorkspace.browser.test.ts"],
+       home: ["src/features/home/HomeDashboard.browser.test.ts"],
+       annotations: ["src/features/hanzihome/annotations/LessonAnnotations.browser.test.ts"],
+       conversation: ["src/features/hanzihome/ai-conversation/AiConversation.browser.test.ts"],
+      };
+      const productPatterns = {
+       search: "loads the authenticated Search index",
+       offline: "serves a public offline shell|reopens the downloaded Reader|restarts Chromium offline|keeps cached lessons|reopens static textbook|keeps offline textbook|ignores a late offline library read|preserves downloaded lessons|keeps private page responses",
+       learning: "schedules a review|surfaces a revision conflict",
+       reading: "keeps Reader completion explicit|keeps guest Daily Reading",
+       pdf: "retains failed PDF strokes|serializes two PDF first creators",
+       notes: "keeps two Notes drafts|fences linked Reader Notes",
+      };
+      // Browser fixtures load component modules through Vite URLs, so Git/Vitest's
+      // static import graph alone cannot select their affected consumers.
+      const scopes = [
+       { match: /^src[/](?:services[/]notes|stores[/]notes)[/]/, browser: ["notes", "home", "annotations", "reader"], product: ["notes"] },
+       { match: /^src[/]features[/](?:notes|notebook)[/]|^src[/]features[/]hanzihome[/]components[/]notes[/]|^src[/]app[/].*[/](?:notes|note|notebook)[/]/, browser: ["notes"], product: ["notes"] },
+       { match: /^src[/]features[/]home[/]|^src[/]app[/][^/]+[/][(]app[)][/]page[.]tsx$/, browser: ["home"], product: [] },
+       { match: /^src[/](?:features[/](?:dictionary|personal-learning)|stores[/]dictionary|services[/]vocab)[/]|^src[/]app[/].*[/](?:dictionary|vocab|personal-learning)[/]/, browser: ["srs", "reader", "translation"], product: ["learning"] },
+       { match: /^src[/]features[/]translation[/]|^src[/]app[/].*[/]translation[/]/, browser: ["translation"], product: [] },
+       { match: /^src[/]features[/]reading[/]pdf[/]|^src[/]app[/]api[/](?:reading[/]pdf[/]annotations|hanzihome[/]reader[/]pdf-annotations)[/]/, browser: ["pdf"], product: ["pdf"] },
+       { match: /^src[/]app[/]api[/]reading[/]annotations[/]/, browser: ["pdf", "reader", "reading"], product: ["pdf", "reading"] },
+       { match: /^src[/]features[/]reading[/]|^src[/]app[/][^/]+[/][(]app[)][/]reader[/]/, browser: ["reading", "recorder", "reader"], product: ["reading"] },
+       { match: /^src[/]features[/]reader[/]/, browser: ["reader", "annotations"], product: ["reading", "notes"] },
+       { match: /^src[/]features[/]hanzihome[/]tts[/]|^src[/]hooks[/]useTTS[.]|^src[/]app[/].*[/]tts[/]/, browser: ["tts", "listening", "reader", "reading"], product: [] },
+       { match: /^src[/]features[/](?:hanzihome[/]listening|dictation|speech)[/]/, browser: ["listening", "recorder"], product: [] },
+       { match: /^src[/]features[/]hanzihome[/]annotations[/]|^src[/]app[/]api[/]hanzihome[/](?:reader[/]annotations|lesson-annotations)[/]/, browser: ["annotations", "notes", "reader"], product: ["notes"] },
+       { match: /^src[/]features[/]hanzihome[/]ai-conversation[/]|^src[/]app[/]api[/]ai[/]conversation[/]/, browser: ["conversation"], product: [] },
+       { match: /^src[/]features[/]hanzihome[/]search[/]|^src[/]app[/]api[/]hanzihome[/]search-index[/]/, browser: ["home"], product: ["search"] },
+       { match: /^src[/]features[/]hanzihome[/]learning-loop[/]|^src[/]features[/]hanzihome[/]hooks[/]useHanziHomeLearningLoop[.]|^src[/]app[/].*[/]learning-loop[/]/, browser: ["srs"], product: ["learning"] },
+       { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, browser: ["reader"], product: ["offline"] },
+       { match: /^src[/]features[/]daily-reading[/]|^src[/]app[/]api[/]daily-reading[/]/, browser: ["reading", "recorder"], product: ["reading"] },
+       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "tts", "listening", "annotations", "home"], product: ["offline", "search"] },
+      ];
+      let code = full;
+      let unitFull = full || deleted.length > 0;
+      let allBrowser = full;
+      let allProduct = full;
+      const selectedBrowser = new Set();
+      const selectedProduct = new Set();
+      for (const file of paths) {
+       if (file.endsWith(".md") || file.startsWith("docs/") || file.startsWith(".agents/")) continue;
+       code = true;
+       if (/^([.]github[/]|[.]husky[/]|scripts[/]check-|[.]ox|[.]gitignore$)/.test(file)) {
+        unitFull = true;
+        continue;
+       }
+       if (/^(e2e[/]|scripts[/]e2e[/]|playwright[.]config[.])/.test(file)) {
+        allProduct = true;
+        unitFull = true;
+        continue;
+       }
+       if (/^src[/]components[/]ui[/]|^src[/]app[/].*[.](?:css|scss)$/.test(file)) {
+        allBrowser = true;
+        unitFull = true;
+        continue;
+       }
+       if (/[/](?:query-keys|types|index)[.][cm]?[jt]sx?$/.test(file)) {
+        unitFull = true;
+        allBrowser = true;
+        allProduct = true;
+        continue;
+       }
+       if (file.startsWith("src/app/") || file.endsWith(".json")) unitFull = true;
+       const scope = scopes.find((candidate) => candidate.match.test(file));
+       if (scope) {
+        for (const group of scope.browser) {
+         for (const fixture of browserFiles[group]) selectedBrowser.add(fixture);
+        }
+        // Component and test-only edits are covered by mounted/Node tests.
+        if (!/[/]components[/]|[.](?:test|spec)[.]|[.]browser[.]fixture[.]|[.](?:css|scss)$/.test(file) || file.endsWith("/PwaServiceWorkerRegister.tsx")) {
+         for (const group of scope.product) selectedProduct.add(productPatterns[group]);
+        }
+       } else {
+        // Shared/auth/schema/config/data and unmapped owners must not silently
+        // lose coverage. A manual dispatch also takes this full-suite path.
+        unitFull = true;
+        allBrowser = true;
+        allProduct = true;
+       }
+      }
+      const output = {
+       base: full ? "" : base,
+       code: String(code),
+       unit_full: String(unitFull),
+       unit_files: JSON.stringify(paths),
+       browser_files: (allBrowser ? Object.values(browserFiles).flat() : [...selectedBrowser]).join(" "),
+       e2e_grep: allProduct ? "." : [...selectedProduct].join("|"),
+      };
+      const newline = String.fromCharCode(10);
+      appendFileSync(process.env.GITHUB_OUTPUT, Object.entries(output).map(([key, value]) => key + "=" + value).join(newline) + newline);
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (full ? "full" : "affected"), "Diff base: " + (output.base || "full"), "Changed paths: " + paths.length, "Node tests: " + (unitFull ? "full" : "Vitest dependency graph"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
+      JS
+
+ verify:
+  needs: changes
+  runs-on: ubuntu-latest
+  timeout-minutes: 15
   env:
    HUSKY: 0
+   VITEST_MAX_WORKERS: 2
+   NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
   steps:
    - uses: actions/checkout@v5
 
@@ -29,14 +179,78 @@ jobs:
 
    - run: npm install --global npm@12.2.0
    - run: npm ci
-   - run: npm run check
+   - run: npm run format:check
+   - name: Static checks
+     if: needs.changes.outputs.code == 'true'
+     run: |
+      npm run lint
+      npm run source:check
+      npm run route:check
+      npm run ui:check
+      npm run api:check
+      npm run typecheck
+   - name: Node regression tests
+     if: needs.changes.outputs.code == 'true'
      env:
-      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
-      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+      UNIT_FULL: ${{ needs.changes.outputs.unit_full }}
+      UNIT_FILES: ${{ needs.changes.outputs.unit_files }}
+     run: |
+      if [ "$UNIT_FULL" = "true" ]; then
+       npm run test:run -- --maxWorkers=2
+      else
+       node --input-type=module <<'JS'
+      import { execFileSync } from "node:child_process";
+      const files = JSON.parse(process.env.UNIT_FILES);
+      execFileSync("npm", ["exec", "--", "vitest", "related", "--run", "--maxWorkers=2", ...files], { stdio: "inherit" });
+      JS
+      fi
+   - run: npm run audit:prod
+     if: needs.changes.outputs.code == 'true'
+   - name: Production build when E2E does not already build it
+     if: needs.changes.outputs.code == 'true' && needs.changes.outputs.e2e_grep == ''
+     run: npm run build
+
+ browser:
+  needs: changes
+  if: needs.changes.outputs.browser_files != ''
+  runs-on: ubuntu-latest
+  timeout-minutes: 15
+  env:
+   HUSKY: 0
+   NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+   NOTES_BROWSER_TEST: "1"
+   SRS_BROWSER_TEST: "1"
+   PDF_BROWSER_TEST: "1"
+   TTS_BROWSER_TEST: "1"
+   LISTENING_BROWSER_TEST: "1"
+   RECORDER_BROWSER_TEST: "1"
+   READER_BROWSER_TEST: "1"
+   TRANSLATION_BROWSER_TEST: "1"
+   HOME_BROWSER_TEST: "1"
+   LESSON_ANNOTATIONS_BROWSER_TEST: "1"
+   AI_CONVERSATION_BROWSER_TEST: "1"
+  steps:
+   - uses: actions/checkout@v5
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+   - run: npm install --global npm@12.2.0
+   - run: npm ci
+   - run: npx playwright install --with-deps chromium
+   - name: Affected mounted browser fixtures
+     env:
+      BROWSER_FILES: ${{ needs.changes.outputs.browser_files }}
+     run: |
+      read -r -a files <<< "$BROWSER_FILES"
+      npm run test:run -- --maxWorkers=2 "${files[@]}"
 
  e2e:
+  needs: changes
+  if: needs.changes.outputs.e2e_grep != ''
   runs-on: ubuntu-latest
-  timeout-minutes: 35
+  timeout-minutes: 20
   env:
    HUSKY: 0
    E2E_BASE_URL: http://127.0.0.1:3001
@@ -88,36 +302,10 @@ jobs:
      run: |
       npx supabase test db --local supabase/tests/hanzihome_full_crud_test.sql supabase/tests/user_ai_task_routing_rls.test.sql supabase/tests/notes_revision_cas.test.sql supabase/tests/linked_annotation_notes_cas.test.sql supabase/tests/notes_rollout_compatibility.test.sql supabase/tests/pdf_annotation_absence_cas.test.sql
       docker exec -i supabase_db_chines-app psql -U postgres -d postgres -v ON_ERROR_STOP=1 < supabase/tests/auth_session_limit.test.sql
-   - name: Verify mounted browser fixtures
-     run: >-
-      npm run test:run -- --maxWorkers=2
-      src/features/notes/hooks/NoteEditor.browser.test.ts
-      src/features/notes/hooks/NoteOwner.browser.test.ts
-      src/features/dictionary/dictionary-srs-outbox.browser.test.ts
-      src/features/dictionary/DictionarySrsPage.test.tsx
-      src/features/reading/pdf/PdfAnnotations.browser.test.ts
-      src/features/hanzihome/tts/TtsAudioPreview.browser.test.ts
-      src/features/hanzihome/listening/ListeningExercises.browser.test.ts
-      src/features/reading/hooks/ShadowingRecorder.browser.test.ts
-      src/features/reading/workspaces/Reading.browser.test.ts
-      src/features/reader/runtime/Reader.browser.test.ts
-      src/features/translation/TranslationWorkspace.browser.test.ts
-      src/features/home/HomeDashboard.browser.test.ts
-      src/features/hanzihome/annotations/LessonAnnotations.browser.test.ts
-      src/features/hanzihome/ai-conversation/AiConversation.browser.test.ts
-     env:
-      NOTES_BROWSER_TEST: "1"
-      SRS_BROWSER_TEST: "1"
-      PDF_BROWSER_TEST: "1"
-      TTS_BROWSER_TEST: "1"
-      LISTENING_BROWSER_TEST: "1"
-      RECORDER_BROWSER_TEST: "1"
-      READER_BROWSER_TEST: "1"
-      TRANSLATION_BROWSER_TEST: "1"
-      HOME_BROWSER_TEST: "1"
-      LESSON_ANNOTATIONS_BROWSER_TEST: "1"
-      AI_CONVERSATION_BROWSER_TEST: "1"
    - run: npm run e2e:seed
-   - run: npm run test:e2e
+   - name: Affected product E2E
+     env:
+      E2E_GREP: ${{ needs.changes.outputs.e2e_grep }}
+     run: npm run test:e2e -- --grep "$E2E_GREP"
    - if: always()
      run: npx supabase stop

@@ -53,6 +53,7 @@ function createAdminClient(): SupabaseClient<Database> {
 
 async function login(page: Page, account: typeof accountA) {
  if (page.url() !== new URL("/vi/login", baseURL).href) await page.goto("/vi/login");
+ await page.waitForLoadState("load");
  await page.getByLabel("Email").fill(account.email);
  await page.getByRole("textbox", { name: "Mật khẩu" }).fill(account.password);
  await page.getByRole("button", { name: "Đăng nhập", exact: true }).click();
@@ -613,6 +614,19 @@ test("ignores a late offline library read after another tab changes the account"
  await expect(
   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
  ).toBeVisible();
+ await page.evaluate(async () => {
+  await navigator.serviceWorker.ready;
+ });
+ await expect
+  .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
+  .toBe(true);
+ await expect
+  .poll(() =>
+   page.evaluate(async () =>
+    Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
+   ),
+  )
+  .toBe(true);
  await page.addInitScript(() => {
   const original = IDBObjectStore.prototype.getAll;
   let held = sessionStorage.getItem("e2e-offline-read-held") === "1";
@@ -706,9 +720,22 @@ test("preserves downloaded lessons when refreshing their cache exceeds storage q
    return original.apply(this, args);
   };
  });
+ const resources = Promise.all([
+  page.waitForResponse(
+   (response) =>
+    response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson") &&
+    response.status() === 200,
+  ),
+  page.waitForResponse(
+   (response) =>
+    response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson/vocabulary") &&
+    response.status() === 200,
+  ),
+ ]);
  await page.goto(
   "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
  );
+ expect((await resources).every((response) => response.ok())).toBe(true);
  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
  await expect(page.locator("html")).toHaveAttribute("data-cache-quota-failed", "true");
  try {
