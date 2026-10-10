@@ -106,7 +106,12 @@
  },
  "list": {
   "emptyTitle": "No matching notes",
-  "emptyDescription": "Change the filters, import a note file, or create a new note."
+  "emptyDescription": "Change the filters, import a note file, or create a new note.",
+  "pagination": "Notes pages",
+  "previous": "Previous",
+  "next": "Next",
+  "page": "Page {page} of {total}",
+  "range": "{start}–{end} of {total} notes"
  },
  "readingStatus": {
   "none": "Not applicable",

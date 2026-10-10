@@ -25,12 +25,22 @@ import {
  type WheelEvent,
 } from "react";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { Input } from "@/components/ui/forms/input";
 import { Typography } from "@/components/ui/display/typography";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogDescription,
+ DialogFooter,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import {
  BasePopover as Popover,
  BasePopoverPopup,
@@ -214,8 +224,19 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
  const activeStrokeRef = useRef("");
  const pinchDistanceRef = useRef<number | null>(null);
  const common = useTranslations("Common");
- const { strokes, replaceStrokes, retrySave, saveFailed, isSaving, loadFailed, retryLoad } =
-  usePdfAnnotations({ assetId: importedPdfAssetId(asset), pageNumber: asset.pdfPage });
+ const {
+  strokes,
+  replaceStrokes,
+  retrySave,
+  saveFailed,
+  isSaving,
+  isQueued,
+  canEdit,
+  loadFailed,
+  retryLoad,
+  conflict,
+  resolveConflict,
+ } = usePdfAnnotations({ assetId: importedPdfAssetId(asset), pageNumber: asset.pdfPage });
  const [zoom, setZoom] = useState(100);
  const [fitToContainer, setFitToContainer] = useState(true);
  const [isFullscreen, setIsFullscreen] = useState(false);
@@ -227,6 +248,24 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
  const [eraserSize, setEraserSize] = useState(24);
  const [past, setPast] = useState<PdfStroke[][]>([]);
  const [future, setFuture] = useState<PdfStroke[][]>([]);
+ const [conflictOpen, setConflictOpen] = useState(true);
+ const [resolvingConflict, setResolvingConflict] = useState(false);
+ const chooseConflict = async (useServer: boolean) => {
+  setResolvingConflict(true);
+  try {
+   await resolveConflict(useServer);
+   if (useServer) {
+    setPast([]);
+    setFuture([]);
+    activeStrokeRef.current = "";
+   }
+   setConflictOpen(true);
+  } catch {
+   toast.error(t("conflict.error"));
+  } finally {
+   setResolvingConflict(false);
+  }
+ };
  useEffect(() => {
   const syncFullscreen = () => setIsFullscreen(document.fullscreenElement === viewerRef.current);
   document.addEventListener("fullscreenchange", syncFullscreen);
@@ -275,7 +314,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
   setIsFullscreen((current) => !current);
  };
  const pointerCanInk = (event: PointerEvent<SVGSVGElement>) =>
-  drawingTool !== null && (event.pointerType !== "touch" || touchInk);
+  canEdit && drawingTool !== null && (event.pointerType !== "touch" || touchInk);
  const pointFromEvent = (event: PointerEvent<SVGSVGElement>) =>
   normalizedPdfPoint(event.clientX, event.clientY, event.currentTarget.getBoundingClientRect());
  const beginStroke = (event: PointerEvent<SVGSVGElement>) => {
@@ -421,7 +460,13 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
     </div>
    </header>
 
-   {loadFailed || saveFailed ? (
+   {isQueued && !saveFailed ? (
+    <Typography as="p" variant="caption" tone="muted" role="status" className="px-3 pt-2 sm:px-4">
+     {t("annotationQueued")}
+    </Typography>
+   ) : null}
+
+   {loadFailed || (saveFailed && !conflict.active) ? (
     <div role="alert" className="flex items-center gap-2 px-3 pt-2 sm:px-4">
      <Typography as="p" variant="caption" tone="danger">
       {t(loadFailed ? "annotationError" : "annotationSaveError")}
@@ -438,6 +483,85 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       {common("actions.retry")}
      </Button>
     </div>
+   ) : null}
+
+   {conflict.active ? (
+    <>
+     <div role="alert" className="flex flex-wrap items-center gap-2 px-3 pt-2 sm:px-4">
+      <Typography variant="caption" tone="danger">
+       {t("conflict.description")}
+      </Typography>
+      <Button variant="outline" size="sm" onClick={() => setConflictOpen(true)}>
+       {t("conflict.review")}
+      </Button>
+     </div>
+     <Dialog open={conflictOpen} onOpenChange={setConflictOpen}>
+      <DialogContent size="xl" closeLabel={common("actions.cancel")}>
+       <DialogHeader>
+        <DialogTitle>{t("conflict.title")}</DialogTitle>
+        <DialogDescription>{t("conflict.description")}</DialogDescription>
+       </DialogHeader>
+       <DialogBody className="grid gap-3 md:grid-cols-2">
+        {[
+         { label: t("conflict.local"), preview: strokes },
+         { label: t("conflict.server"), preview: conflict.annotation?.payload.strokes ?? [] },
+        ].map(({ label, preview }) => (
+         <Card key={label} padding="md" className="min-w-0">
+          <Typography as="h3" variant="sectionTitle">
+           {label}
+          </Typography>
+          <Typography variant="caption" tone="muted">
+           {t("conflict.strokeCount", { count: preview.length })}
+          </Typography>
+          <div className="relative">
+           {/* oxlint-disable-next-line next/no-img-element -- same local PDF page geometry as the annotation canvas */}
+           <img src={asset.imageSrc} alt="" className="block h-auto w-full" />
+           <svg
+            viewBox="0 0 1000 1000"
+            preserveAspectRatio="none"
+            role="img"
+            aria-label={label}
+            className="absolute inset-0 size-full"
+           >
+            {preview.map((stroke) => (
+             <path
+              key={stroke.id}
+              d={pdfStrokePath(stroke)}
+              fill="none"
+              stroke={stroke.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={stroke.width}
+              opacity={stroke.tool === "highlighter" ? 0.42 : 1}
+             />
+            ))}
+           </svg>
+          </div>
+         </Card>
+        ))}
+       </DialogBody>
+       <DialogFooter>
+        <Button
+         variant="outline"
+         disabled={resolvingConflict}
+         onClick={() => {
+          void chooseConflict(true);
+         }}
+        >
+         {t("conflict.useServer")}
+        </Button>
+        <Button
+         disabled={resolvingConflict}
+         onClick={() => {
+          void chooseConflict(false);
+         }}
+        >
+         {t("conflict.keepLocal")}
+        </Button>
+       </DialogFooter>
+      </DialogContent>
+     </Dialog>
+    </>
    ) : null}
 
    <div
@@ -470,6 +594,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        size="icon-toolbar"
        variant={drawingTool === "pen" ? "active" : "ghost"}
        aria-label={t("pen")}
+       disabled={!canEdit}
        onClick={() => setDrawingTool("pen")}
       >
        <Pen />
@@ -479,6 +604,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        size="icon-toolbar"
        variant={drawingTool === "highlighter" ? "active" : "ghost"}
        aria-label={t("highlighter")}
+       disabled={!canEdit}
        onClick={() => setDrawingTool("highlighter")}
       >
        <Highlighter />
@@ -488,6 +614,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        size="icon-toolbar"
        variant={drawingTool === "eraser" ? "active" : "ghost"}
        aria-label={t("eraser")}
+       disabled={!canEdit}
        onClick={() => setDrawingTool("eraser")}
       >
        <Eraser />
@@ -498,7 +625,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        size="icon-toolbar"
        variant="ghost"
        aria-label={t("undo")}
-       disabled={past.length === 0}
+       disabled={!canEdit || past.length === 0}
        onClick={undo}
       >
        <Undo2 />
@@ -508,7 +635,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        size="icon-toolbar"
        variant="ghost"
        aria-label={t("redo")}
-       disabled={future.length === 0}
+       disabled={!canEdit || future.length === 0}
        onClick={redo}
       >
        <Redo2 />
@@ -518,7 +645,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        size="icon-toolbar"
        variant="ghost"
        aria-label={t("clear")}
-       disabled={strokes.length === 0}
+       disabled={!canEdit || strokes.length === 0}
        onClick={clear}
       >
        <Trash2 />
@@ -528,6 +655,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        size="icon-toolbar"
        variant={touchInk ? "active" : "ghost"}
        aria-label={t("touch")}
+       disabled={!canEdit}
        aria-pressed={touchInk}
        onClick={() => setTouchInk((current) => !current)}
       >

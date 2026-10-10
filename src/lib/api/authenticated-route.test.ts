@@ -25,6 +25,7 @@ import {
  privateNoStoreJson,
  requireAuthenticatedRoute,
  requireSessionOrBearerAuthenticatedRoute,
+ verifyExpectedAuthenticatedOwner,
 } from "./authenticated-route";
 
 describe("authenticated route contract", () => {
@@ -58,6 +59,35 @@ describe("authenticated route contract", () => {
   expect(result.authenticated).toBe(true);
   if (!result.authenticated) throw new Error("Expected authenticated result");
   expect(result.context.user).toBe(user);
+ });
+
+ it("binds an expected owner to the verified cookie session, including after an account switch", async () => {
+  getUser.mockResolvedValue({ data: { user: { id: "new-owner" } }, error: null });
+  const auth = await requireAuthenticatedRoute();
+  if (!auth.authenticated) throw new Error("Expected authenticated result");
+  const url = "https://app.example/api/hanzihome/lesson-annotations";
+  expect(
+   verifyExpectedAuthenticatedOwner(
+    new Request(url, {
+     headers: { "X-HanziHome-Owner-Id": "new-owner" },
+    }),
+    auth.context,
+   ),
+  ).toBeNull();
+  for (const owner of ["old-owner", ""]) {
+   const failure = verifyExpectedAuthenticatedOwner(
+    new Request(url, {
+     headers: { "X-HanziHome-Owner-Id": owner },
+    }),
+    auth.context,
+   );
+   expect(failure?.status).toBe(412);
+   expect(failure?.headers.get("Cache-Control")).toBe("private, no-store");
+   expect(await failure?.json()).toEqual({
+    code: "AUTH_OWNER_MISMATCH",
+    error: "Request owner no longer matches the authenticated session",
+   });
+  }
  });
 
  it("keeps the cookie session path when no Bearer header is supplied", async () => {

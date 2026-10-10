@@ -1,3 +1,6 @@
+import { DictionarySrsQueuedError } from "@/types/error";
+import { saveDictionarySrs } from "@/features/dictionary/dictionary-srs-api";
+import { saveDictionarySrsDurably } from "@/features/dictionary/dictionary-srs-outbox";
 import { QueryClient, QueryClientProvider, onlineManager } from "@tanstack/react-query";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -10,6 +13,11 @@ import type { getVocabWithProgress } from "@/services/vocab/vocab.service";
 vi.mock("@/components/providers/QueryProvider", () => ({
  useClientSession: () => ({ supabase: {}, userId: "user-1", isResolved: true }),
 }));
+vi.mock(import("@/features/dictionary/dictionary-srs-outbox"), async (importOriginal) => ({
+ ...(await importOriginal()),
+ saveDictionarySrsDurably: vi.fn(),
+}));
+const durableSave = vi.mocked(saveDictionarySrsDurably);
 const fetchRequest = vi.fn<typeof fetch>();
 let client: QueryClient;
 const initial: Awaited<ReturnType<typeof getVocabWithProgress>> = {
@@ -37,6 +45,8 @@ beforeEach(() => {
   defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
  });
  client.setQueryData(key, initial);
+ durableSave.mockReset();
+ durableSave.mockImplementation(saveDictionarySrs);
  fetchRequest.mockReset();
  vi.stubGlobal("fetch", fetchRequest);
  onlineManager.setOnline(true);
@@ -48,25 +58,16 @@ afterEach(() => {
 });
 
 describe("dictionary SRS save lifecycle", () => {
- it("keeps an already-offline mutation paused and unsaved until a real response acknowledges it", async () => {
+ it("commits offline intent instead of pausing it in RAM, without a saved acknowledgement", async () => {
   onlineManager.setOnline(false);
-  fetchRequest.mockResolvedValue(
-   Response.json({
-    vocabId: "vocab-1",
-    dictionaryId: "dictionary-1",
-    contextSchemaAvailable: true,
-    noteSchemaAvailable: true,
-   }),
-  );
-  const pending = controller().saveMutation.mutateAsync({ vocabData: initial.vocab });
-  await vi.waitFor(() => expect(client.getMutationCache().getAll()[0]?.state.isPaused).toBe(true));
+  durableSave.mockRejectedValueOnce(new DictionarySrsQueuedError());
+  await expect(
+   controller().saveMutation.mutateAsync({ vocabData: initial.vocab }),
+  ).rejects.toBeInstanceOf(DictionarySrsQueuedError);
+  expect(durableSave).toHaveBeenCalledWith(expect.objectContaining({ hanzi: "你好" }), "user-1");
+  expect(client.getMutationCache().getAll()[0]?.state.isPaused).toBe(false);
   expect(fetchRequest).not.toHaveBeenCalled();
   expect(client.getQueryData<typeof initial>(key)?.isSaved).toBe(false);
-  onlineManager.setOnline(true);
-  await client.resumePausedMutations();
-  await pending;
-  expect(fetchRequest).toHaveBeenCalledOnce();
-  expect(client.getQueryData<typeof initial>(key)?.isSaved).toBe(true);
  });
  it("rejects online-start/offline-failure without marking the cache saved", async () => {
   let rejectRequest = (_error: Error) => {};

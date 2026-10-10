@@ -8,6 +8,8 @@ import {
 import { AnnotationAnchorSchema } from "@/features/hanzihome/annotations/types";
 import {
  apiError,
+ expectedAuthenticatedOwnerHeader,
+ verifyExpectedAuthenticatedOwner,
  privateNoStoreJson,
  requireAuthenticatedRoute,
 } from "@/lib/api/authenticated-route";
@@ -25,6 +27,10 @@ const createSchema = z.strictObject({
 export async function GET(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ if (request.headers.has(expectedAuthenticatedOwnerHeader)) {
+  const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+  if (ownerError) return ownerError;
+ }
  const parsed = querySchema.safeParse({
   lessonId: new URL(request.url).searchParams.get("lessonId"),
  });
@@ -46,6 +52,10 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ if (request.headers.has(expectedAuthenticatedOwnerHeader)) {
+  const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+  if (ownerError) return ownerError;
+ }
  const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = createSchema.safeParse(body);
  if (!parsed.success) return apiError("Invalid lesson annotation payload", 400, "INVALID_PAYLOAD");

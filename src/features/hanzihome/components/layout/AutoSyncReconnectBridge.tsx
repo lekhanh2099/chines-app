@@ -5,18 +5,23 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
+import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
+import { syncPendingDictionarySrs } from "@/features/dictionary/dictionary-srs-outbox";
 import { syncPendingReviewAttempts } from "@/features/hanzihome/local/review-attempt-outbox";
+import { syncPendingPdfAnnotations } from "@/features/reading/pdf/pdf-annotation-outbox";
 import { syncPendingReaderAnnotations } from "@/features/reading/services/reading-annotation-api";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
 
 export function AutoSyncReconnectBridge(): null {
  const queryClient = useQueryClient();
+ const { userId, isResolved } = useClientSession();
  const t = useTranslations("Common");
 
  useEffect(() => {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !isResolved || !userId) return;
+
+  let active = true;
 
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
@@ -27,13 +32,12 @@ export function AutoSyncReconnectBridge(): null {
 
    timeoutId = setTimeout(async () => {
     try {
-     const supabase = createClient();
-     const user = await getClientSessionUser(supabase);
-     if (user?.id) {
-      const result = await syncPendingReviewAttempts(user.id);
+     if (active && navigator.onLine) {
+      const result = await syncPendingReviewAttempts(userId);
+      if (!active) return;
       if (result.syncedCount > 0) {
        void queryClient.invalidateQueries({
-        queryKey: hanzihomeQueryKeys.learningState(user.id),
+        queryKey: hanzihomeQueryKeys.learningState(userId),
        });
        void queryClient.invalidateQueries({
         queryKey: hanzihomeQueryKeys.catalogRoot,
@@ -41,10 +45,27 @@ export function AutoSyncReconnectBridge(): null {
        toast.success(t("offlinePack.reconnectSyncSuccess", { count: result.syncedCount }));
       }
 
-      const annotationResult = await syncPendingReaderAnnotations(user.id);
+      const annotationResult = await syncPendingReaderAnnotations(userId);
+      if (!active) return;
       if (annotationResult.syncedCount > 0) {
        void queryClient.invalidateQueries({
-        queryKey: hanzihomeQueryKeys.readerAnnotations(user.id),
+        queryKey: hanzihomeQueryKeys.readerAnnotations(userId),
+       });
+      }
+
+      const savedWords = await syncPendingDictionarySrs(userId);
+      if (!active) return;
+      if (savedWords > 0) {
+       void queryClient.invalidateQueries({ queryKey: dictionaryQueryKeys.vocabListRoot(userId) });
+       void queryClient.invalidateQueries({ queryKey: ["vocab-detail", userId] });
+       void queryClient.invalidateQueries({ queryKey: ["editor-smart-selection", userId] });
+      }
+
+      const savedPdfPages = await syncPendingPdfAnnotations(userId);
+      if (!active) return;
+      if (savedPdfPages > 0) {
+       void queryClient.invalidateQueries({
+        queryKey: hanzihomeQueryKeys.readerPdfAnnotations(userId),
        });
       }
 
@@ -68,14 +89,16 @@ export function AutoSyncReconnectBridge(): null {
   };
 
   window.addEventListener("online", handleOnline);
+  handleOnline();
 
   return () => {
+   active = false;
    if (timeoutId) {
     clearTimeout(timeoutId);
    }
    window.removeEventListener("online", handleOnline);
   };
- }, [queryClient, t]);
+ }, [isResolved, queryClient, t, userId]);
 
  return null;
 }

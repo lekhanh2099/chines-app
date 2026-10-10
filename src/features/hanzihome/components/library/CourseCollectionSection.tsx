@@ -1,6 +1,7 @@
 "use client";
 
 import { BookCopy, BookOpenCheck, Headphones, LibraryBig, Shapes } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
 import { Badge } from "@/components/ui/display/badge";
@@ -10,9 +11,10 @@ import { Separator } from "@/components/ui/layout/separator";
 import { Typography } from "@/components/ui/display/typography";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
 import { CourseCrudActions } from "@/features/hanzihome/components/library/CourseCrudActions";
-import type {
- LibraryCourseGroup,
- LibraryCourseGroupKey,
+import {
+ getLibraryCourseEntries,
+ type LibraryCourseGroup,
+ type LibraryCourseGroupKey,
 } from "@/features/hanzihome/components/library/library-course-groups";
 import type { HanziHomeCourseBook, HanziHomeLesson } from "@/features/hanzihome/types";
 import { isPublishedStudioContentId } from "@/features/hanzihome/static-json/studio-published-content-id";
@@ -36,14 +38,9 @@ export function CourseCollectionSection({
  lessons: HanziHomeLesson[];
  editMode: boolean;
 }) {
+ const t = useTranslations("Common.library");
  const GroupIcon = groupIcons[group.key];
- const coursesWithBooks = group.courses.map((course) => ({
-  course,
-  books: books
-   .filter((book) => book.courseId === course.id)
-   .toSorted((left, right) => left.order - right.order),
-  lessons: lessons.filter((lesson) => lesson.courseId === course.id),
- }));
+ const coursesWithBooks = getLibraryCourseEntries(group, books, lessons);
  const hasBooks = coursesWithBooks.some((entry) => entry.books.length > 0);
 
  return (
@@ -55,7 +52,7 @@ export function CourseCollectionSection({
      </IconTile>
      <div className="grid min-w-0 gap-1">
       <Typography variant="overline" tone="accent" weight="black" tracking="wide">
-       Bộ giáo trình
+       {t("collection")}
       </Typography>
       <div className="flex flex-wrap items-center gap-2">
        <Typography
@@ -64,20 +61,24 @@ export function CourseCollectionSection({
         id={`${group.key}-collection-heading`}
         weight="black"
        >
-        {group.title}
+        {t(`groups.${group.key}.title`)}
        </Typography>
-       {group.isDraft ? <Badge variant="warning">Dữ liệu nháp</Badge> : null}
+       {group.isDraft ? <Badge variant="warning">{t("draft")}</Badge> : null}
        {group.key === "boyaSecondEdition" ? (
-        <Badge variant="warning">Thiếu Cao cấp III</Badge>
+        <Badge variant="warning">{t("missingAdvancedVolume")}</Badge>
        ) : null}
       </div>
       <Typography as="p" variant="bodySmall" tone="muted">
-       {group.description}
+       {t(`groups.${group.key}.description`)}
       </Typography>
      </div>
     </div>
     <Typography variant="caption" tone="muted" weight="bold" className="shrink-0 sm:pt-1">
-     {group.courses.length} cấp độ · {group.bookCount} quyển · {group.lessonCount} bài
+     {t("collectionCounts", {
+      levels: group.courses.length,
+      books: group.bookCount,
+      lessons: group.lessonCount,
+     })}
     </Typography>
    </header>
 
@@ -100,7 +101,7 @@ export function CourseCollectionSection({
            <div className="grid min-w-0 gap-0.5">
             <div className="flex flex-wrap items-center gap-2">
              <Typography variant="caption" tone="accent" weight="black">
-              Cấp {courseIndex + 1}/{group.courses.length}
+              {t("levelPosition", { current: courseIndex + 1, total: group.courses.length })}
              </Typography>
              <Typography as="h4" variant="cardTitle" id={`${course.id}-heading`} weight="black">
               {course.title}
@@ -115,7 +116,7 @@ export function CourseCollectionSection({
            </div>
           </div>
           <Typography variant="caption" tone="muted" weight="bold" className="pl-10 sm:pl-0">
-           {courseBooks.length} quyển · {course.stats.lessonCount} bài
+           {t("courseCounts", { books: courseBooks.length, lessons: course.stats.lessonCount })}
           </Typography>
          </header>
 
@@ -138,8 +139,8 @@ export function CourseCollectionSection({
            size="compact"
            surface="subtle"
            align="start"
-           title="Chưa có quyển học"
-           description="Cấp độ này chưa có quyển được thêm vào thư viện."
+           title={t("noBooksTitle")}
+           description={t("noBooksDescription")}
           />
          )}
         </section>
@@ -151,8 +152,8 @@ export function CourseCollectionSection({
     <EmptyState
      size="compact"
      surface="subtle"
-     title="Bộ giáo trình chưa có quyển học"
-     description="Thêm quyển để bắt đầu tổ chức bài học trong bộ này."
+     title={t("noCollectionBooksTitle")}
+     description={t("noCollectionBooksDescription")}
     />
    )}
   </Card>

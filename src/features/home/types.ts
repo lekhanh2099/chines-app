@@ -27,7 +27,12 @@ export type HomeLearningPulse = {
  learningLoopDueCount: number;
  readerCompletedCount: number;
  readerDocumentCount: number;
+ overviewAvailable: boolean;
+ overviewLoading: boolean;
  overviewUnavailable: boolean;
+ reviewedTodayAvailable: boolean;
+ reviewedTodayLoading: boolean;
+ reviewedTodayUnavailable: boolean;
 };
 
 export type HomeRecentActivityItem = {
@@ -43,6 +48,14 @@ export type HomeDashboardModel = {
  catalogUnavailable: boolean;
  learningPulse: HomeLearningPulse;
  recentActivity: HomeRecentActivityItem[];
+ recentActivityLoading: boolean;
+ recentActivityUnavailable: boolean;
+ retryRecentActivity: () => void;
+ retryLearningOverview: () => void;
+ retryReviewedToday: () => void;
  recentNotes: NoteListItem[];
+ recentNotesLoading: boolean;
+ recentNotesUnavailable: boolean;
+ retryRecentNotes: () => void;
  isLoading: boolean;
 };

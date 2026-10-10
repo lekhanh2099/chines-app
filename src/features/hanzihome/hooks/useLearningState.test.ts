@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { onlineManager, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -34,7 +34,13 @@ vi.mock("@/components/providers/QueryProvider", () => ({
  }),
 }));
 
-import { getLearningStateSyncState, useLearningState } from "./useLearningState";
+import {
+ getLearningStateSyncState,
+ useLearningSettings,
+ useLearningState,
+} from "./useLearningState";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+import type { UserLearningState } from "@/features/hanzihome/types";
 import {
  emptyLearningState,
  defaultLessonTextDisplaySettings,
@@ -96,6 +102,81 @@ describe("A2 — Learning/Review Durability and Retry Intent Recovery", () => {
 
  afterEach(() => {
   queryClient.clear();
+ });
+
+ it("executes the existing local-first read when the query starts offline", async () => {
+  function ReadState() {
+   useLearningState();
+   return null;
+  }
+  const wasOnline = onlineManager.isOnline();
+  onlineManager.setOnline(false);
+  try {
+   renderToStaticMarkup(
+    createElement(QueryClientProvider, { client: queryClient }, createElement(ReadState)),
+   );
+   const query = queryClient
+    .getQueryCache()
+    .find({ queryKey: hanzihomeQueryKeys.learningState("test-user-123") });
+   if (!query) throw new Error("Learning-state query was not registered");
+   await query.fetch();
+   expect(localFirst.load).toHaveBeenCalledWith("test-user-123");
+   expect(query.state.data).toEqual(normalizeLearningState(emptyLearningState));
+   expect(localFirst.sync).not.toHaveBeenCalled();
+  } finally {
+   onlineManager.setOnline(wasOnline);
+  }
+ });
+
+ it("reads settings from the current owner's whole-state query without rewriting progress", () => {
+  const ownerState: UserLearningState = {
+   ...emptyLearningState,
+   settings: {
+    lessonTextDisplayMode: { ...defaultLessonTextDisplaySettings, hanziFont: "songti" },
+   },
+   progress: {
+    vocab: { saved: { status: "known", level: 3, lastReviewedAt: "2026-10-08T00:00:00Z" } },
+    grammar: {},
+   },
+  };
+  queryClient.setQueryData(hanzihomeQueryKeys.learningState("test-user-123"), ownerState);
+  queryClient.setQueryData<UserLearningState>(hanzihomeQueryKeys.learningState("other-owner"), {
+   ...emptyLearningState,
+   settings: {
+    lessonTextDisplayMode: { ...defaultLessonTextDisplaySettings, hanziFont: "noto-sans" },
+   },
+  });
+  const captured: ReturnType<typeof useLearningSettings>[] = [];
+  function Settings() {
+   captured.push(useLearningSettings());
+   return null;
+  }
+  renderToStaticMarkup(
+   createElement(QueryClientProvider, { client: queryClient }, createElement(Settings)),
+  );
+  expect(captured).toEqual([ownerState.settings]);
+  expect(queryClient.getQueryData(hanzihomeQueryKeys.learningState("test-user-123"))).toEqual(
+   ownerState,
+  );
+ });
+
+ it("keeps default settings while this owner has no data, even when another owner's cache is warm", () => {
+  queryClient.setQueryData<UserLearningState>(hanzihomeQueryKeys.learningState("other-owner"), {
+   ...emptyLearningState,
+   settings: {
+    lessonTextDisplayMode: { ...defaultLessonTextDisplaySettings, hanziFont: "songti" },
+   },
+  });
+  const captured: ReturnType<typeof useLearningSettings>[] = [];
+  function Settings() {
+   captured.push(useLearningSettings());
+   return null;
+  }
+  renderToStaticMarkup(
+   createElement(QueryClientProvider, { client: queryClient }, createElement(Settings)),
+  );
+  expect(captured).toEqual([emptyLearningState.settings]);
+  expect(localFirst.save).not.toHaveBeenCalled();
  });
 
  it("Invariant: When local IndexedDB save fails, intent is preserved and retrySync recovers persistence", async () => {

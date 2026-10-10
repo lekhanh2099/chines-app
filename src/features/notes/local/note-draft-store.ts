@@ -1,5 +1,6 @@
 "use client";
 
+import type { DbNote } from "@/types/database";
 import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import { z } from "zod";
 import { logger } from "@/lib/logger";
@@ -7,11 +8,17 @@ import { logger } from "@/lib/logger";
 const DB_NAME = "notes-local-db";
 const DB_VERSION = 1;
 const DRAFTS_STORE = "note_drafts";
+const draftTabIdSchema = z.uuid();
 
 export const NoteDraftRecordSchema = z.object({
  key: z.string().min(1),
  userId: z.string().min(1),
  noteId: z.string().min(1),
+ tabId: draftTabIdSchema.optional(),
+ recoverySources: z
+  .array(z.object({ key: z.string().min(1), updatedAt: z.number().int().nonnegative() }))
+  .optional(),
+ baseRevision: z.number().int().nonnegative().optional(),
  content: JsonObjectSchema.nullable(),
  readingContent: JsonObjectSchema.nullable().optional(),
  contentUpdatedAt: z.number().int().nonnegative().optional(),
@@ -24,9 +31,45 @@ export type NoteDraftRecord = z.infer<typeof NoteDraftRecordSchema>;
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 let dbPromise: Nullable<Promise<IDBDatabase>> = null;
+let tabIdPromise: Nullable<Promise<string>> = null;
+// The document keeps its identity lease until it closes. A duplicated tab may
+// inherit sessionStorage, but cannot acquire the original document's lease.
+const tabLease = new Promise<void>(() => {});
 
-function createDraftKey(userId: string, noteId: string): string {
- return `${userId}:${noteId}`;
+function getDraftTabId(): Promise<string> {
+ if (tabIdPromise) return tabIdPromise;
+ tabIdPromise = new Promise((resolve, reject) => {
+  const stored = draftTabIdSchema.safeParse(sessionStorage.getItem("notes-draft-tab-id"));
+  const candidate = stored.success ? stored.data : crypto.randomUUID();
+  if (typeof navigator !== "undefined" && navigator.locks) {
+   void navigator.locks
+    .request(`notes-draft-tab:${candidate}`, { ifAvailable: true }, (lock) => {
+     if (lock) {
+      sessionStorage.setItem("notes-draft-tab-id", candidate);
+      resolve(candidate);
+      return tabLease;
+     }
+     const replacement = crypto.randomUUID();
+     return navigator.locks.request(`notes-draft-tab:${replacement}`, () => {
+      sessionStorage.setItem("notes-draft-tab-id", replacement);
+      resolve(replacement);
+      return tabLease;
+     });
+    })
+    .catch(reject);
+  } else {
+   // Without identity leases, use a fresh identity and offer prior drafts for
+   // explicit recovery rather than risking two documents sharing one key.
+   const fresh = crypto.randomUUID();
+   sessionStorage.setItem("notes-draft-tab-id", fresh);
+   resolve(fresh);
+  }
+ });
+ return tabIdPromise;
+}
+
+async function createDraftKey(userId: string, noteId: string): Promise<string> {
+ return `${userId}:${noteId}:${await getDraftTabId()}`;
 }
 
 export function closeNotesDraftDb(): void {
@@ -83,6 +126,7 @@ export async function saveNoteDraft(
  userId: string,
  noteId: string,
  draft: {
+  baseRevision: DbNote["revision"];
   content: JsonObject;
   readingContent?: Nullable<JsonObject>;
   contentUpdatedAt?: number;
@@ -91,9 +135,9 @@ export async function saveNoteDraft(
 ): Promise<boolean> {
  if (!userId || !noteId) return false;
 
- const key = createDraftKey(userId, noteId);
-
  try {
+  const key = await createDraftKey(userId, noteId);
+  const tabId = await getDraftTabId();
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
@@ -126,6 +170,9 @@ export async function saveNoteDraft(
      key,
      userId,
      noteId,
+     tabId,
+     recoverySources: current?.recoverySources,
+     baseRevision: current ? current.baseRevision : draft.baseRevision,
      content: updatesContent ? draft.content : (current?.content ?? null),
      readingContent: updatesReading ? draft.readingContent : current?.readingContent,
      contentUpdatedAt,
@@ -161,6 +208,47 @@ export async function saveNoteDraft(
  }
 }
 
+export async function advanceNoteDraftRevision(
+ userId: string,
+ noteId: string,
+ expectedRevision: NoteDraftRecord["baseRevision"],
+ acknowledgedRevision: DbNote["revision"],
+): Promise<boolean> {
+ const key = await createDraftKey(userId, noteId);
+ const db = await openNotesDraftDb();
+ return new Promise((resolve, reject) => {
+  const tx = db.transaction(DRAFTS_STORE, "readwrite");
+  const store = tx.objectStore(DRAFTS_STORE);
+  const request = store.get(key);
+  let advanced = false;
+  request.onsuccess = () => {
+   const parsed = NoteDraftRecordSchema.safeParse(request.result);
+   if (!parsed.success || parsed.data.baseRevision !== expectedRevision) return;
+   store.put({ ...parsed.data, baseRevision: acknowledgedRevision });
+   advanced = true;
+  };
+  tx.oncomplete = () => resolve(advanced);
+  tx.onerror = () => reject(tx.error);
+  tx.onabort = () => reject(tx.error);
+ });
+}
+
+function deleteAcknowledgedRecoverySources(store: IDBObjectStore, draft: NoteDraftRecord): void {
+ for (const source of draft.recoverySources ?? []) {
+  const request = store.get(source.key);
+  request.onsuccess = () => {
+   const parsed = NoteDraftRecordSchema.safeParse(request.result);
+   if (
+    parsed.success &&
+    parsed.data.userId === draft.userId &&
+    parsed.data.noteId === draft.noteId &&
+    parsed.data.updatedAt === source.updatedAt
+   )
+    store.delete(source.key);
+  };
+ }
+}
+
 export async function clearNoteContentDraft(
  userId: string,
  noteId: string,
@@ -169,8 +257,8 @@ export async function clearNoteContentDraft(
 ): Promise<boolean> {
  if (!userId || !noteId) return false;
 
- const key = createDraftKey(userId, noteId);
  try {
+  const key = await createDraftKey(userId, noteId);
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
@@ -198,6 +286,7 @@ export async function clearNoteContentDraft(
     }
 
     if (parsed.data.readingContent === undefined) {
+     deleteAcknowledgedRecoverySources(store, parsed.data);
      store.delete(key);
      return;
     }
@@ -231,8 +320,8 @@ export async function clearNoteReadingContentDraft(
 ): Promise<boolean> {
  if (!userId || !noteId) return false;
 
- const key = createDraftKey(userId, noteId);
  try {
+  const key = await createDraftKey(userId, noteId);
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
@@ -260,6 +349,7 @@ export async function clearNoteReadingContentDraft(
     }
 
     if (parsed.data.content === null) {
+     deleteAcknowledgedRecoverySources(store, parsed.data);
      store.delete(key);
      return;
     }
@@ -291,8 +381,8 @@ export async function getNoteDraft(
 ): Promise<Nullable<NoteDraftRecord>> {
  if (!userId || !noteId) return null;
 
- const key = createDraftKey(userId, noteId);
  try {
+  const key = await createDraftKey(userId, noteId);
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readonly");
@@ -326,6 +416,75 @@ export async function getNoteDraft(
  }
 }
 
+export async function getOtherNoteDrafts(
+ userId: string,
+ noteId: string,
+): Promise<NoteDraftRecord[]> {
+ const key = await createDraftKey(userId, noteId);
+ const db = await openNotesDraftDb();
+ return new Promise((resolve, reject) => {
+  const tx = db.transaction(DRAFTS_STORE, "readonly");
+  const request = tx.objectStore(DRAFTS_STORE).index("noteId").getAll(noteId);
+  request.onsuccess = () => {
+   const rows = z.array(NoteDraftRecordSchema).safeParse(request.result);
+   if (!rows.success) {
+    reject(rows.error);
+    return;
+   }
+   resolve(
+    rows.data
+     .filter((draft) => draft.userId === userId && draft.noteId === noteId && draft.key !== key)
+     .sort((a, b) => b.updatedAt - a.updatedAt),
+   );
+  };
+  request.onerror = () => reject(request.error);
+ });
+}
+
+export async function recoverNoteDraft(
+ userId: string,
+ noteId: string,
+ source: NoteDraftRecord,
+): Promise<boolean> {
+ if (source.userId !== userId || source.noteId !== noteId) return false;
+ const key = await createDraftKey(userId, noteId);
+ const tabId = await getDraftTabId();
+ const db = await openNotesDraftDb();
+ return new Promise((resolve, reject) => {
+  const tx = db.transaction(DRAFTS_STORE, "readwrite");
+  const store = tx.objectStore(DRAFTS_STORE);
+  let recovered = false;
+  const request = store.get(source.key);
+  request.onsuccess = () => {
+   const current = NoteDraftRecordSchema.safeParse(request.result);
+   if (
+    !current.success ||
+    current.data.userId !== userId ||
+    current.data.noteId !== noteId ||
+    current.data.updatedAt !== source.updatedAt
+   )
+    return;
+   const destination = store.get(key);
+   destination.onsuccess = () => {
+    if (destination.result) return;
+    store.put({
+     ...current.data,
+     key,
+     tabId,
+     recoverySources: [
+      ...(current.data.recoverySources ?? []),
+      { key: source.key, updatedAt: source.updatedAt },
+     ],
+    });
+    recovered = true;
+   };
+  };
+  tx.oncomplete = () => resolve(recovered);
+  tx.onerror = () => reject(tx.error);
+  tx.onabort = () => reject(tx.error);
+ });
+}
+
 export async function clearNoteDraft(
  userId: string,
  noteId: string,
@@ -333,8 +492,8 @@ export async function clearNoteDraft(
 ): Promise<boolean> {
  if (!userId || !noteId) return false;
 
- const key = createDraftKey(userId, noteId);
  try {
+  const key = await createDraftKey(userId, noteId);
   const db = await openNotesDraftDb();
   return new Promise((resolve) => {
    const tx = db.transaction(DRAFTS_STORE, "readwrite");
@@ -357,6 +516,7 @@ export async function clearNoteDraft(
      resolve(false);
      return;
     }
+    deleteAcknowledgedRecoverySources(store, parsed.data);
     store.delete(key);
    };
 

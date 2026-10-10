@@ -1,12 +1,14 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { FileText } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
+import { Button } from "@/components/ui/actions/button";
 import { Typography } from "@/components/ui/display/typography";
 import type { NoteFolder, NoteListItem } from "@/services/notes/notes.service";
+import { getNoteLibraryPage, groupNoteLibraryByMonth } from "@/features/notes/note-library-utils";
 
 import type { LessonLookup } from "./noteContext";
 import { NoteCreateDialog } from "./NoteCreateDialog";
@@ -17,27 +19,25 @@ export function NoteList({
  notes,
  folders,
  lessonLookup,
+ page,
+ onPageChange,
  groupByMonth = false,
 }: {
  notes: NoteListItem[];
  folders: NoteFolder[];
  lessonLookup: LessonLookup;
+ page: number;
+ onPageChange: (page: number) => void;
  groupByMonth?: boolean;
 }) {
  const t = useTranslations("Notes");
  const locale = useLocale();
- const groups = useMemo<[string, NoteListItem[]][]>(() => {
-  if (!groupByMonth) return [["", notes]];
-  const monthFormatter = new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" });
-  const byMonth = new Map<string, NoteListItem[]>();
-  for (const note of notes) {
-   const month = monthFormatter.format(new Date(note.updated_at));
-   const existing = byMonth.get(month) ?? [];
-   existing.push(note);
-   byMonth.set(month, existing);
-  }
-  return Array.from(byMonth.entries());
- }, [groupByMonth, locale, notes]);
+ const contentViewportRef = useRef<HTMLDivElement>(null);
+ const visiblePage = useMemo(() => getNoteLibraryPage(notes, page), [notes, page]);
+ const groups = useMemo(
+  () => groupNoteLibraryByMonth(visiblePage.notes, locale, groupByMonth),
+  [groupByMonth, locale, visiblePage.notes],
+ );
 
  if (notes.length === 0) {
   return (
@@ -60,7 +60,10 @@ export function NoteList({
  }
 
  return (
-  <div className="min-h-0 flex-1 overflow-y-auto bg-bg-primary px-3 py-3 scrollbar-soft sm:px-4 lg:px-6 lg:py-4 xl:px-8">
+  <div
+   ref={contentViewportRef}
+   className="min-h-0 flex-1 overflow-y-auto bg-bg-primary px-3 py-3 scrollbar-soft sm:px-4 lg:px-6 lg:py-4 xl:px-8"
+  >
    <div className="grid gap-4">
     {groups.map(([month, monthNotes]) => (
      <section key={month || "all"} className="grid gap-2">
@@ -83,6 +86,43 @@ export function NoteList({
       </div>
      </section>
     ))}
+    {visiblePage.totalPages > 1 ? (
+     <nav
+      aria-label={t("list.pagination")}
+      className="flex flex-wrap items-center justify-end gap-2"
+     >
+      <Typography variant="caption" tone="muted" className="mr-auto" aria-live="polite">
+       {t("list.range", { start: visiblePage.start, end: visiblePage.end, total: notes.length })}
+      </Typography>
+      <Button
+       type="button"
+       size="sm"
+       variant="outline"
+       disabled={visiblePage.page <= 1}
+       onClick={() => {
+        onPageChange(visiblePage.page - 1);
+        contentViewportRef.current?.scrollTo({ top: 0 });
+       }}
+      >
+       {t("list.previous")}
+      </Button>
+      <Typography as="span" variant="bodySmall" tone="muted">
+       {t("list.page", { page: visiblePage.page, total: visiblePage.totalPages })}
+      </Typography>
+      <Button
+       type="button"
+       size="sm"
+       variant="outline"
+       disabled={visiblePage.page >= visiblePage.totalPages}
+       onClick={() => {
+        onPageChange(visiblePage.page + 1);
+        contentViewportRef.current?.scrollTo({ top: 0 });
+       }}
+      >
+       {t("list.next")}
+      </Button>
+     </nav>
+    ) : null}
    </div>
   </div>
  );

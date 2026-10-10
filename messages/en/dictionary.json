@@ -8,6 +8,8 @@
   "searchAria": "Search saved vocabulary",
   "searchPlaceholder": "Search Hanzi, pinyin, Sino-Vietnamese, meaning...",
   "search": "Search",
+  "loadErrorTitle": "Could not load saved vocabulary",
+  "loadErrorDescription": "The data could not be loaded. Retry to load your saved words; your search term will be kept.",
   "missingSchema": "The current database does not contain the vocabulary SRS table. Apply the `user_vocab_progress` migration before this route can display data.",
   "emptySearchTitle": "No matching words",
   "emptySearchDescription": "Try another search term or clear the search field.",

@@ -4,6 +4,7 @@ import { useDeferredValue, useMemo, useState } from "react";
 import { Filter, Library } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { toast } from "sonner";
 
 import { WorkspaceCommandHeader } from "@/components/layout/workspace/workspace-command-header";
 import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
@@ -23,10 +24,14 @@ import { Typography } from "@/components/ui/display/typography";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
+import { useCreateQuickNote } from "@/features/notes/hooks/useCreateNote";
+import { formatQuickNoteDate } from "@/features/notes/note-editor-utils";
+import { useRouter } from "@/i18n/navigation";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import {
- matchesNoteFacets,
- matchesNoteLibraryView,
- type NoteLibraryView,
+ filterNoteLibrary,
+ getNoteLibrarySources,
+ getNoteLibraryNavigationAfterFolderDelete,
 } from "@/features/notes/note-library-utils";
 import type { NoteFolder, NoteListItem } from "@/services/notes/notes.service";
 import { NoteCategorySchema, type NoteCategory } from "@/types/database";
@@ -37,7 +42,7 @@ import { NoteImportButton } from "./NoteImportButton";
 import { NoteList } from "./NoteList";
 import { NotesLibraryNavigator } from "./NotesLibraryNavigator";
 import { NotesWorkspaceSkeleton } from "./NotesWorkspaceSkeleton";
-import { buildLessonLookup, getNoteContext } from "./noteContext";
+import { buildLessonLookup } from "./noteContext";
 import { useNoteContextLabels } from "./useNoteContextLabels";
 
 const emptyNotes: NoteListItem[] = [];
@@ -46,10 +51,31 @@ type NoteCategoryFilter = NoteCategory | "all";
 
 export function NotesWorkspace() {
  const t = useTranslations("Notes");
+ const common = useTranslations("Common");
  const locale = useLocale();
+ const router = useRouter();
+ const quickNote = useCreateQuickNote();
+ const createQuickNote = async () => {
+  if (quickNote.isPending) return;
+  if (focusModeStore.get().enabled) {
+   toast.warning(t("quick.focusBlocked"));
+   return;
+  }
+  try {
+   const note = await quickNote.mutateAsync(() =>
+    t("quick.defaultTitle", { date: formatQuickNoteDate(new Date(), locale) }),
+   );
+   router.push(note ? `/notes/${note.id}` : "/login");
+  } catch {
+   toast.error(t("quick.error"));
+  }
+ };
  const contextLabels = useNoteContextLabels();
  const [searchQuery, setSearchQuery] = useState("");
- const [activeView, setActiveView] = useState<NoteLibraryView>("recent");
+ const [navigation, setNavigation] = useState<
+  Parameters<typeof getNoteLibraryNavigationAfterFolderDelete>[0]
+ >({ activeView: "recent", page: 1 });
+ const { activeView, page } = navigation;
  const [category, setCategory] = useState<NoteCategoryFilter>("all");
  const [sourceHost, setSourceHost] = useState("all");
  const [navigatorOpen, setNavigatorOpen] = useState(false);
@@ -70,58 +96,30 @@ export function NotesWorkspace() {
   () => new Map(folders.map((folder) => [folder.id, folder.name])),
   [folders],
  );
- const sourceOptions = useMemo(
+ const sourceOptions = useMemo(() => getNoteLibrarySources(notes, locale), [locale, notes]);
+
+ const filteredNotes = useMemo(
   () =>
-   Array.from(
-    notes
-     .reduce((options, note) => {
-      if (!note.source_host) return options;
-      options.set(note.source_host, note.source_label || note.source_host);
-      return options;
-     }, new Map<string, string>())
-     .entries(),
-   ).sort((a, b) => String(a[1]).localeCompare(String(b[1]), locale)),
-  [locale, notes],
+   filterNoteLibrary(notes, {
+    view: activeView,
+    category,
+    sourceHost,
+    searchQuery: deferredSearchQuery,
+    lessonLookup,
+    contextLabels,
+    folderNames,
+   }),
+  [
+   activeView,
+   category,
+   contextLabels,
+   deferredSearchQuery,
+   folderNames,
+   lessonLookup,
+   notes,
+   sourceHost,
+  ],
  );
-
- const filteredNotes = useMemo(() => {
-  const normalizedSearch = deferredSearchQuery.trim().toLowerCase();
-
-  return notes.filter((note) => {
-   if (!matchesNoteLibraryView(note, activeView)) return false;
-   if (!matchesNoteFacets(note, { category, sourceHost })) return false;
-   if (!normalizedSearch) return true;
-
-   const context = getNoteContext(note, lessonLookup, contextLabels);
-   const searchableText = [
-    note.title,
-    note.category,
-    note.source_label,
-    note.source_host,
-    note.source_author,
-    note.folder_id ? folderNames.get(note.folder_id) : null,
-    context.displayTitle,
-    context.title,
-    context.subtitle,
-    context.relationLabel,
-    ...note.tags,
-   ]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
-
-   return searchableText.includes(normalizedSearch);
-  });
- }, [
-  activeView,
-  category,
-  contextLabels,
-  deferredSearchQuery,
-  folderNames,
-  lessonLookup,
-  notes,
-  sourceHost,
- ]);
 
  if (isNewAction) return <NewNoteStarter />;
 
@@ -129,32 +127,39 @@ export function NotesWorkspace() {
   return <NotesWorkspaceSkeleton />;
  }
 
- if (notesQuery.isError || foldersQuery.isError) {
-  return (
-   <div className="p-4 sm:p-6">
+ const libraryError =
+  notesQuery.isError || foldersQuery.isError ? (
+   <div className="shrink-0 p-4 sm:p-6">
     <QueryErrorCard
      title={t("loadError.title")}
      description={t("loadError.description")}
+     retryLabel={common("actions.retry")}
      onRetry={() => {
       void Promise.all([notesQuery.refetch(), foldersQuery.refetch()]);
      }}
     />
    </div>
-  );
- }
+  ) : null;
+ if (libraryError && (!notesQuery.data || !foldersQuery.data)) return libraryError;
 
  const navigator = (
   <NotesLibraryNavigator
    notes={notes}
    folders={folders}
    activeView={activeView}
-   onViewChange={setActiveView}
+   onViewChange={(view) => {
+    setNavigation({ activeView: view, page: 1 });
+   }}
+   onFolderDeleted={(folderId) => {
+    setNavigation((current) => getNoteLibraryNavigationAfterFolderDelete(current, folderId));
+   }}
    onNavigate={() => setNavigatorOpen(false)}
   />
  );
 
  return (
   <div className="flex h-full min-h-0 flex-col overflow-hidden bg-bg-primary">
+   {libraryError}
    <WorkspaceCommandHeader
     title={t("title")}
     badge={
@@ -177,13 +182,21 @@ export function NotesWorkspace() {
       <div className="min-w-0 flex-1 md:max-w-sm">
        <Input
         value={searchQuery}
-        onChange={(event) => setSearchQuery(event.target.value)}
+        onChange={(event) => {
+         setSearchQuery(event.target.value);
+         setNavigation((current) => ({ ...current, page: 1 }));
+        }}
         aria-label={t("searchLabel")}
         placeholder={t("searchPlaceholder")}
         density="compact"
        />
       </div>
-      <QuickNoteButton variant="outline" compactOnTablet />
+      <QuickNoteButton
+       variant="outline"
+       compactOnTablet
+       isCreating={quickNote.isPending}
+       onCreate={() => void createQuickNote()}
+      />
       <NoteImportButton compactOnTablet />
       <NoteCreateDialog compactOnTablet folders={folders} />
      </>
@@ -198,10 +211,14 @@ export function NotesWorkspace() {
       onValueChange={(value) => {
        if (value === "all") {
         setCategory("all");
+        setNavigation((current) => ({ ...current, page: 1 }));
         return;
        }
        const nextCategory = NoteCategorySchema.safeParse(value);
-       if (nextCategory.success) setCategory(nextCategory.data);
+       if (nextCategory.success) {
+        setCategory(nextCategory.data);
+        setNavigation((current) => ({ ...current, page: 1 }));
+       }
       }}
      >
       <SelectTrigger size="sm">
@@ -215,7 +232,13 @@ export function NotesWorkspace() {
        <SelectItem value="culture">{t("filters.categories.culture")}</SelectItem>
       </SelectContent>
      </Select>
-     <Select value={sourceHost} onValueChange={setSourceHost}>
+     <Select
+      value={sourceHost}
+      onValueChange={(value) => {
+       setSourceHost(value);
+       setNavigation((current) => ({ ...current, page: 1 }));
+      }}
+     >
       <SelectTrigger size="sm">
        <SelectValue />
       </SelectTrigger>
@@ -239,6 +262,8 @@ export function NotesWorkspace() {
      notes={filteredNotes}
      folders={folders}
      lessonLookup={lessonLookup}
+     page={page}
+     onPageChange={(nextPage) => setNavigation((current) => ({ ...current, page: nextPage }))}
      groupByMonth={activeView === "completed"}
     />
    </div>

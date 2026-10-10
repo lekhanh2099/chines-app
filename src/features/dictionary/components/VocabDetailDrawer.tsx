@@ -19,9 +19,9 @@ import {
  HanziText,
  PinyinText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { DictionarySrsQueuedError } from "@/types/error";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
-import { extractChinese } from "@/lib/text/chinese-utils";
 import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
 import {
  getNormalizedAntonyms,
@@ -31,33 +31,14 @@ import {
  getNormalizedSynonyms,
 } from "@/services/vocab/vocab.service";
 import { vocabDetailDrawerStore } from "@/stores/dictionary/vocab-detail-drawer-store";
-import type { SmartSelectionMode } from "@/types/database";
-
-const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
-
-function getDisplayMeaning(
- mode: SmartSelectionMode,
- data: ReturnType<typeof useSmartSelectionInsights>["data"],
-) {
- if (!data) return "";
- if (mode === "sentence") return data.translation || data.entry.meaning || "";
-
- return (
-  data.meaning_summary ||
-  data.definitions[0]?.meaning ||
-  data.definitions[0]?.text ||
-  data.entry.meaning ||
-  ""
- );
-}
-
-function getUniqueCharacters(text: string) {
- return Array.from(
-  new Set(Array.from(extractChinese(text)).filter((char) => HANZI_CHAR_REGEX.test(char))),
- );
-}
+import {
+ getDictionaryDisplayMeaning,
+ getUniqueChineseCharacters,
+ HANZI_CHAR_REGEX,
+} from "../utils";
 
 export function VocabDetailDrawer() {
+ const common = useTranslations("Common");
  const t = useTranslations("Dictionary.drawer");
  const isOpen = useSelector(vocabDetailDrawerStore, (state) => state.isOpen);
  const text = useSelector(vocabDetailDrawerStore, (state) => state.text);
@@ -69,7 +50,7 @@ export function VocabDetailDrawer() {
   mode,
  });
  const smartData = detailQuery.data;
- const displayMeaning = getDisplayMeaning(mode, smartData);
+ const displayMeaning = smartData ? getDictionaryDisplayMeaning(mode, smartData) : "";
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
 
  const handleSpeak = () => {
@@ -95,8 +76,10 @@ export function VocabDetailDrawer() {
      ? t("saveSentenceSuccess")
      : t("saveWordSuccess", { word: smartData.entry.hanzi }),
    );
-  } catch {
-   toast.error(t("saveError"));
+  } catch (error) {
+   if (error instanceof DictionarySrsQueuedError)
+    toast.warning(common("offlinePack.srsSaveQueued"));
+   else toast.error(t("saveError"));
   }
  };
 
@@ -268,7 +251,7 @@ function WordDetailPanel({
  const relatedCompounds = getNormalizedRelatedCompounds(ai);
  const synonyms = getNormalizedSynonyms(ai);
  const antonyms = getNormalizedAntonyms(ai);
- const characters = getUniqueCharacters(smartData.entry.hanzi);
+ const characters = getUniqueChineseCharacters(smartData.entry.hanzi);
  const [activeCharacter, setActiveCharacter] = useState(characters[0] || "");
  const visualCharacter =
   characters.includes(activeCharacter) && activeCharacter

@@ -106,7 +106,12 @@
  },
  "list": {
   "emptyTitle": "Chưa có ghi chú phù hợp",
-  "emptyDescription": "Thử đổi bộ lọc, import file note hoặc tạo ghi chú mới."
+  "emptyDescription": "Thử đổi bộ lọc, import file note hoặc tạo ghi chú mới.",
+  "pagination": "Phân trang ghi chú",
+  "previous": "Trang trước",
+  "next": "Trang sau",
+  "page": "Trang {page}/{total}",
+  "range": "{start}–{end} trên {total} ghi chú"
  },
  "readingStatus": {
   "none": "Không áp dụng",

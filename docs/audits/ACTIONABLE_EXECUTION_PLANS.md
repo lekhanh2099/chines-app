@@ -1,5 +1,7 @@
 # BẢN KẾ HOẠCH THỰC THI CHI TIẾT (ACTIONABLE EXECUTION ROADMAP)
 
+> Historical proposals — execution ownership 2026-10-08: Plans 1–5 đã được map vào [feature quality master plan](../refactors/feature-quality-audit-enhancement-2026-10-04.md#0-một-plan-thực-thi--reconciliation-08102026). Đây không là queue thực thi song song. Các đề xuất redesign, xóa compatibility API hoặc private HTML cache phía dưới không tự được duyệt; current-source evidence và repository contracts ở master plan quyết định scope.
+
 ## DỰ ÁN: CHINES-APP (HANZIHOME)
 
 > **Dành cho:** Tech Lead & Product Owner đánh giá, phản biện và ra quyết định phê duyệt.  

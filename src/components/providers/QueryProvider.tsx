@@ -7,6 +7,7 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState } from 
 import { transitionAuthenticatedQueryOwner } from "@/lib/query/auth-owner-transition";
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { noteTabsStore } from "@/stores/notes/note-tabs-store";
 
 type BrowserSupabaseClient = ReturnType<typeof createClient>;
 
@@ -47,6 +48,8 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
 
   const applyUser = (user: User | null) => {
    if (!active) return;
+
+   noteTabsStore.actions.setOwner(user?.id ?? null);
 
    const transition = transitionAuthenticatedQueryOwner({
     previousOwner: ownerRef.current,

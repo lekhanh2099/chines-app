@@ -2,6 +2,7 @@
 
 import { MoreHorizontal, Square } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { memo } from "react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/display/avatar";
 import { Button } from "@/components/ui/actions/button";
@@ -22,7 +23,7 @@ function getAvatarFallback(name: string) {
  return name.trim().slice(0, 1) || "AI";
 }
 
-export function AiConversationMessageBubble({
+export const AiConversationMessageBubble = memo(function AiConversationMessageBubble({
  message,
  assistantName,
 }: AiConversationMessageBubbleProps) {
@@ -63,7 +64,7 @@ export function AiConversationMessageBubble({
    </div>
   </div>
  );
-}
+});
 
 export function AiConversationTypingBubble({
  assistantName,

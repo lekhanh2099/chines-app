@@ -10,20 +10,13 @@ import { extractChinese, isChineseOnlyText } from "@/lib/text/chinese-utils";
 import { enqueueSelectionLookup } from "@/lib/api/selection-lookup-queue";
 import { JsonValueSchema } from "@/types/json";
 import {
- PersonalNoteModeSchema,
  SmartSelectionResultSchema,
  type PersonalNoteMode,
  type SmartSelectionMode,
  type SmartSelectionResult,
 } from "@/types/database";
 import { z } from "zod";
-
-const saveSrsResponseSchema = z.object({
- vocabId: z.string().min(1),
- dictionaryId: z.string().nullable(),
- contextSchemaAvailable: z.boolean(),
- noteSchemaAvailable: z.boolean(),
-});
+import { saveDictionarySrsDurably } from "@/features/dictionary/dictionary-srs-outbox";
 
 function resolveMode(selection: string): SmartSelectionMode {
  return selection.length <= 2 ? "word" : "sentence";
@@ -90,38 +83,22 @@ export function useSmartSelectionInsights(
  });
 
  const saveMutation = useMutation({
+  networkMode: "always",
   mutationFn: async (payload?: { personalNote?: string; personalNoteMode?: PersonalNoteMode }) => {
    if (!query.data) {
     throw new Error("Không có dữ liệu để lưu");
    }
    if (!userId) throw new Error("Not authenticated");
 
-   const personalNoteMode = payload?.personalNoteMode
-    ? PersonalNoteModeSchema.parse(payload.personalNoteMode)
-    : undefined;
-   const response = await fetch("/api/dictionary/srs", {
-    method: "POST",
-    headers: {
-     "Content-Type": "application/json",
-     "X-HanziHome-Owner-Id": userId,
-    },
-    body: JSON.stringify({
+   return saveDictionarySrsDurably(
+    {
      hanzi: query.data.entry.hanzi,
      contextSentence: query.data.context_sentence,
      personalNote: payload?.personalNote,
-     personalNoteMode,
-    }),
-   });
-
-   if (!response.ok) throw new Error("Không thể lưu selection vào kho ôn tập");
-   const result = saveSrsResponseSchema.parse(await response.json());
-   if (payload?.personalNote?.trim() && !result.noteSchemaAvailable) {
-    throw new Error(
-     "Database chưa có cột personal_note. Chạy migration user_vocab_progress trước.",
-    );
-   }
-
-   return result;
+     personalNoteMode: payload?.personalNoteMode,
+    },
+    userId,
+   );
   },
   onSuccess: (_result, payload) => {
    queryClient.setQueryData<typeof query.data>(queryKey, (old) =>

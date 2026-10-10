@@ -135,10 +135,15 @@ export async function replaceInStoreIf<T>(
   let replacement: T | null = null;
 
   request.onsuccess = () => {
-   const parsed = schema.safeParse(request.result);
-   if (!parsed.success || !matches(parsed.data)) return;
-   replacement = replace(parsed.data);
-   store.put(replacement);
+   try {
+    const parsed = schema.safeParse(request.result);
+    if (!parsed.success || !matches(parsed.data)) return;
+    replacement = replace(parsed.data);
+    store.put(replacement);
+   } catch (error) {
+    tx.abort();
+    reject(error);
+   }
   };
   request.onerror = () => reject(request.error);
   tx.oncomplete = () => resolve(replacement);

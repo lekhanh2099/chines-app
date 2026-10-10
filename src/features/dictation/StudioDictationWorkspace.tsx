@@ -169,7 +169,7 @@ export function StudioDictationWorkspace({
     ? []
     : [externalDictationEntry(`tts:${selectedClip.id}`, selectedClip.text, selectedClip.title)];
   }
-  return customDictationEntries(customText, t("pasted"));
+  return customDictationEntries(customText, t("pasted"), practiceStarted);
  }, [
   customText,
   initialReaderResource?.paragraphs,
@@ -178,6 +178,7 @@ export function StudioDictationWorkspace({
   selectedClip,
   sourceType,
   transcriptEntries,
+  practiceStarted,
   t,
  ]);
  const {
@@ -472,14 +473,20 @@ export function StudioDictationWorkspace({
     )}
    </Card>
 
-   {!isReaderCoursePack && bundleQuery.isPending ? (
+   {sourceType === "lesson" &&
+   !isReaderCoursePack &&
+   selectedLessonId.length > 0 &&
+   bundleQuery.isPending ? (
     <Card variant="subtle" padding="lg">
      <Typography variant="bodySmall" tone="muted">
       {t("lessonLoading")}
      </Typography>
     </Card>
    ) : null}
-   {!isReaderCoursePack && bundleQuery.isError ? (
+   {sourceType === "lesson" &&
+   !isReaderCoursePack &&
+   selectedLessonId.length > 0 &&
+   bundleQuery.isError ? (
     <QueryErrorCard
      title={t("loadError")}
      description={t("loadErrorHelp")}

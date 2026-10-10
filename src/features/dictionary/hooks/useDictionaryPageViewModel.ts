@@ -2,7 +2,9 @@
 
 import { useCallback, useState } from "react";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
+import { DictionarySrsQueuedError } from "@/types/error";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
@@ -26,6 +28,7 @@ import {
 } from "@/features/dictionary/utils";
 
 export function useDictionaryPageViewModel(): DictionaryPageViewModel {
+ const common = useTranslations("Common");
  const { speak } = useTTS();
  const params = useParams<{ hanzi: string }>();
  const rawText = decodeURIComponent(params.hanzi || "");
@@ -187,7 +190,11 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
    { vocabData },
    {
     onSuccess: () => toast.success(`Đã lưu \"${vocabData.hanzi}\" vào SRS!`),
-    onError: () => toast.error("Không thể lưu từ vựng"),
+    onError: (error) => {
+     if (error instanceof DictionarySrsQueuedError)
+      toast.warning(common("offlinePack.srsSaveQueued"));
+     else toast.error("Không thể lưu từ vựng");
+    },
    },
   );
  };
@@ -205,8 +212,11 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
    },
    {
     onSuccess: () => toast.success("Đã lưu ghi chú cá nhân"),
-    onError: (error) =>
-     toast.error(error instanceof Error ? error.message : "Không thể lưu ghi chú cá nhân"),
+    onError: (error) => {
+     if (error instanceof DictionarySrsQueuedError)
+      toast.warning(common("offlinePack.srsSaveQueued"));
+     else toast.error(error instanceof Error ? error.message : "Không thể lưu ghi chú cá nhân");
+    },
    },
   );
  };

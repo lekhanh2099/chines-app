@@ -1,4 +1,8 @@
 import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
+import {
+ buildDictationDiff,
+ summarizeDictationDiff,
+} from "@/features/hanzihome/practice/dictation-comparison";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import type { DictationAttempt } from "./dictation-session";
@@ -179,9 +183,18 @@ export function readerDictationEntries(
  );
 }
 
-export function customDictationEntries(text: string, title: string) {
+export function customDictationEntries(text: string, title: string, generatePinyin = true) {
  const trimmed = text.trim();
- return trimmed.length === 0 ? [] : [externalDictationEntry("custom:dictation", trimmed, title)];
+ return trimmed.length === 0
+  ? []
+  : [
+     externalDictationEntry(
+      "custom:dictation",
+      trimmed,
+      title,
+      generatePinyin ? generateSmartPinyin(trimmed).pinyin : "",
+     ),
+    ];
 }
 
 export function dictationActiveEntryIndex(
@@ -203,4 +216,67 @@ export function dictationPlaybackTexts(
   : activeEntry
     ? [dictationEntryText(activeEntry)].filter(Boolean)
     : [];
+}
+
+export function dictationCardModels(input: {
+ entries: readonly ListeningTranscriptEntry[];
+ activeEntryId?: ListeningTranscriptEntry["id"];
+ answers: Readonly<Partial<Record<ListeningTranscriptEntry["id"], string>>>;
+ attemptHistory: Readonly<Partial<Record<ListeningTranscriptEntry["id"], DictationAttempt[]>>>;
+ dirtyAnswers: Readonly<Partial<Record<ListeningTranscriptEntry["id"], boolean>>>;
+}) {
+ const visibleEntries =
+  input.activeEntryId === undefined
+   ? input.entries
+   : input.entries.filter((entry) => entry.id === input.activeEntryId);
+ return visibleEntries.map((entry) => {
+  const answer = input.answers[entry.id] ?? "";
+  const history = input.attemptHistory[entry.id] ?? [];
+  const attempt = history.at(-1);
+  const isChecked = attempt !== undefined && !input.dirtyAnswers[entry.id];
+  const expectedText = dictationEntryText(entry);
+  return {
+   entry,
+   index: input.entries.indexOf(entry),
+   answer,
+   history,
+   isChecked,
+   expectedText,
+   score: isChecked ? (attempt?.score ?? null) : null,
+   diff: isChecked ? buildDictationDiff(expectedText, answer) : [],
+  };
+ });
+}
+
+export function dictationResponseMs(
+ submittedAt: number,
+ startedAt?: number,
+): DictationAttempt["responseMs"] {
+ return startedAt === undefined ? null : Math.max(0, submittedAt - startedAt);
+}
+
+export function studioDictationEditorModel(input: {
+ entry: ListeningTranscriptEntry;
+ answer: string;
+ history: readonly DictationAttempt[];
+ isDirty: boolean;
+ index: number;
+ total: number;
+}) {
+ const attempt = input.history.at(-1);
+ const isChecked = attempt !== undefined && !input.isDirty;
+ const target = dictationEntryText(input.entry);
+ const diff = isChecked ? buildDictationDiff(target, input.answer) : [];
+ return {
+  answer: input.answer,
+  attempt,
+  isChecked,
+  target,
+  diff,
+  summary: isChecked ? summarizeDictationDiff(diff) : null,
+  characterCount: Array.from(target).length,
+  bestScore: Math.max(0, ...input.history.map((item) => item.score)),
+  canAdvance: isChecked && attempt.score === 100 && input.index < input.total - 1,
+  isCheckDisabled: !isChecked && !input.answer.trim(),
+ };
 }

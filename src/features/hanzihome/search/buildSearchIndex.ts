@@ -162,7 +162,7 @@ function buildTextItems(lesson: HanziHomeLesson) {
 
  sections.forEach((section) => {
   const sectionRecord = asRecord(section);
-  const sectionType = text(sectionRecord, "type");
+  const sectionType = section.type;
   if (sectionType !== "text" && sectionType !== "reading") return;
 
   const sectionTitle =
@@ -180,9 +180,8 @@ function buildTextItems(lesson: HanziHomeLesson) {
    }),
   );
 
-  const blocks = Array.isArray(sectionRecord.blocks) ? sectionRecord.blocks : [];
-  const items = Array.isArray(sectionRecord.items) ? sectionRecord.items : [];
-  [...blocks, ...items].forEach((value, index) => {
+  const contentNodes = section.type === "text" ? section.blocks : section.items;
+  contentNodes.forEach((value, index) => {
    const block = asRecord(value);
    const targetId = text(block, "id") || `${section.id}:${index}`;
    const title =

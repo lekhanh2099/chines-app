@@ -5,11 +5,12 @@ import {
  getPdfAnnotation,
  savePdfAnnotation,
 } from "@/features/reading/pdf/pdf-annotation-repository";
-import { pdfAnnotationPayloadSchema } from "@/features/reading/pdf/pdf-annotations";
+import { annotationPayloadSchema } from "@/features/reading/pdf/pdf-annotation-api";
 import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
+ verifyExpectedAuthenticatedOwner,
 } from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
@@ -23,16 +24,12 @@ const querySchema = z.strictObject({
  assetId: z.string().min(1),
  pageNumber: pageNumberQuerySchema,
 });
-const payloadSchema = z.strictObject({
- assetId: z.string().min(1),
- pageNumber: z.number().int().positive(),
- payload: pdfAnnotationPayloadSchema,
- expectedRevision: z.number().int().nonnegative(),
-});
 
 export async function GET(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
 
  const url = new URL(request.url);
  const parsed = querySchema.safeParse({
@@ -51,14 +48,20 @@ export async function GET(request: Request) {
 export async function PUT(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
 
  const body: JsonFieldValue = await request.json().catch(() => null);
- const parsed = payloadSchema.safeParse(body);
+ const parsed = annotationPayloadSchema.safeParse(body);
  if (!parsed.success) return apiError("Invalid PDF annotation payload", 400, "INVALID_PAYLOAD");
 
  try {
-  return privateNoStoreJson({ annotation: await savePdfAnnotation(parsed.data, auth.context) });
+  const result = await savePdfAnnotation(parsed.data, auth.context);
+  return privateNoStoreJson(
+   { annotation: result.annotation },
+   { status: result.saved ? 200 : 409 },
+  );
  } catch {
-  return apiError("Could not save PDF annotation", 409, "PDF_ANNOTATION_CONFLICT");
+  return apiError("Could not save PDF annotation", 503, "PDF_ANNOTATION_UNAVAILABLE");
  }
 }

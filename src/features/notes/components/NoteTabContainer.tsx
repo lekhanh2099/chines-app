@@ -27,7 +27,7 @@ import {
 import { Typography } from "@/components/ui/display/typography";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import type { NoteListItem } from "@/services/notes/notes.service";
+import { mergeSelectableNotes, type SelectableNote } from "@/features/notes/note-library-utils";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
 import { noteTabsStore } from "@/stores/notes/note-tabs-store";
@@ -48,6 +48,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  const tabs = useSelector(noteTabsStore, (state) => state.tabs);
  const activeNoteId = useSelector(noteTabsStore, (state) => state.activeNoteId);
  const hasHydrated = useSelector(noteTabsStore, (state) => state.hasHydrated);
+ const ownerId = useSelector(noteTabsStore, (state) => state.ownerId);
  const { hydrate: hydrateTabs, openTab } = noteTabsStore.actions;
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { setContent: setHeaderToolbar, clearContent: clearHeaderToolbar } =
@@ -63,14 +64,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  );
 
  const selectableNotes = useMemo(
-  () =>
-   focusModeEnabled
-    ? tabs.map((tab) => ({
-       id: tab.noteId,
-       title: tab.title || t("untitled"),
-       updated_at: "",
-      }))
-    : mergeSelectableNotes(notes ?? [], tabs, t("untitled")),
+  () => mergeSelectableNotes(focusModeEnabled ? [] : (notes ?? []), tabs, t("untitled")),
   [focusModeEnabled, notes, t, tabs],
  );
 
@@ -115,12 +109,12 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  }, [tabs.length]);
 
  useEffect(() => {
-  if (initialNoteId) {
+  if (initialNoteId && ownerId) {
    openTab(initialNoteId, initialTitle);
   }
-  // Only run on mount or when the noteId changes.
+  // Open the route after the authenticated tab owner resolves.
   // eslint-disable-next-line react-hooks/exhaustive-deps
- }, [initialNoteId]); // oxlint-disable-line react-hooks-eslint/exhaustive-deps
+ }, [initialNoteId, ownerId]); // oxlint-disable-line react-hooks-eslint/exhaustive-deps
 
  useEffect(() => {
   const handler = (event: Event) => {
@@ -192,40 +186,6 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
    </div>
   </div>
  );
-}
-
-type SelectableNote = {
- id: NoteListItem["id"];
- title: NoteListItem["title"];
- updated_at: NoteListItem["updated_at"];
-};
-
-function mergeSelectableNotes(
- notes: NoteListItem[],
- tabs: Array<{ noteId: string; title: string }>,
- untitled: string,
-) {
- const notesById = new Map<string, SelectableNote>();
-
- for (const note of notes) {
-  notesById.set(note.id, {
-   id: note.id,
-   title: note.title || untitled,
-   updated_at: note.updated_at,
-  });
- }
-
- for (const tab of tabs) {
-  if (!notesById.has(tab.noteId)) {
-   notesById.set(tab.noteId, {
-    id: tab.noteId,
-    title: tab.title || untitled,
-    updated_at: "",
-   });
-  }
- }
-
- return Array.from(notesById.values());
 }
 
 function NoteQuickSelect({

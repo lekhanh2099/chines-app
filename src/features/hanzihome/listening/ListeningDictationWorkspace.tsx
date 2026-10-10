@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { z } from "zod";
 import { Headphones, Keyboard, Play } from "lucide-react";
 
@@ -26,11 +26,7 @@ import {
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { lessonDisplaySettings } from "@/features/hanzihome/utils/learning-state";
-import { buildDictationDiff } from "../practice/dictation-comparison";
-import {
- createDictationAttempt,
- type DictationAttempt,
-} from "@/features/dictation/dictation-session";
+import type { DictationAttempt } from "@/features/dictation/dictation-session";
 import { useDictationAttempts } from "@/features/dictation/useDictationAttempts";
 import { dictationEntryText } from "@/features/dictation/dictation-workspace-utils";
 
@@ -44,6 +40,7 @@ import {
  type ListeningTranscriptEntry,
 } from "./listening.view-model";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
+import { useListeningDictationSession } from "./useListeningDictationSession";
 
 export function DictationCards({
  entries,
@@ -65,25 +62,22 @@ export function DictationCards({
  activeEntryId?: string;
 }) {
  const t = useTranslations("Listening");
- const [answers, setAnswers] = useState<Record<string, string>>({});
- const [attemptHistory, setAttemptHistory] = useState<Record<string, DictationAttempt[]>>({});
- const [dirtyAnswers, setDirtyAnswers] = useState<Record<string, boolean>>({});
  const [revealed, setRevealed] = useState<Record<string, boolean>>({});
- const startedAtRef = useRef<Record<string, number>>({});
- const visibleEntries =
-  activeEntryId === undefined ? entries : entries.filter((entry) => entry.id === activeEntryId);
+ const { cards, playEntry, updateAnswer, checkAnswer } = useListeningDictationSession({
+  entries,
+  activeEntryId,
+  playPassage: playbackMode === "passage",
+  playParagraph: playbackMode === "paragraph",
+  passageText,
+  onSpeak,
+  onSpeakSequence,
+  onChecked: (entryId) => setRevealed((current) => ({ ...current, [entryId]: true })),
+  onAttempt,
+ });
 
  return (
   <div className="grid gap-2.5">
-   {visibleEntries.map((entry) => {
-    const index = entries.indexOf(entry);
-    const answer = answers[entry.id] ?? "";
-    const history = attemptHistory[entry.id] ?? [];
-    const attempt = history.at(-1);
-    const isChecked = attempt !== undefined && !dirtyAnswers[entry.id];
-    const expectedText = dictationEntryText(entry);
-    const score = isChecked ? (attempt?.score ?? null) : null;
-    const diff = isChecked ? buildDictationDiff(expectedText, answer) : [];
+   {cards.map(({ entry, index, answer, history, isChecked, score, diff }) => {
     const showTranscript = revealed[entry.id] ?? isChecked;
 
     return (
@@ -102,32 +96,7 @@ export function DictationCards({
          {t("dictationSteps")}
         </StudyInstructionText>
        </div>
-       <Button
-        type="button"
-        variant="surface"
-        size="toolbar"
-        onClick={() =>
-         (() => {
-          const startedAt = Date.now();
-          if (playbackMode === "passage") {
-           visibleEntries.forEach((candidate) => {
-            startedAtRef.current[candidate.id] ??= startedAt;
-           });
-           onSpeakSequence([passageText]);
-           return;
-          }
-          if (playbackMode === "paragraph") {
-           visibleEntries.forEach((candidate) => {
-            startedAtRef.current[candidate.id] ??= startedAt;
-           });
-           onSpeakSequence(entries.map(dictationEntryText));
-           return;
-          }
-          startedAtRef.current[entry.id] ??= startedAt;
-          onSpeak(expectedText);
-         })()
-        }
-       >
+       <Button type="button" variant="surface" size="toolbar" onClick={() => playEntry(entry.id)}>
         <Play data-icon="inline-start" />
         {playbackMode === "sentence"
          ? t("listenSentence")
@@ -146,10 +115,7 @@ export function DictationCards({
        aria-label={t("dictationQuestion", { number: index + 1 })}
        placeholder={t("dictationPlaceholder")}
        onChange={(event) => {
-        const value = event.target.value;
-        startedAtRef.current[entry.id] ??= Date.now();
-        setAnswers((current) => ({ ...current, [entry.id]: value }));
-        setDirtyAnswers((current) => ({ ...current, [entry.id]: true }));
+        updateAnswer(entry.id, event.target.value);
        }}
       />
 
@@ -158,19 +124,7 @@ export function DictationCards({
         type="button"
         size="toolbar"
         disabled={!answer.trim()}
-        onClick={() => {
-         const startedAt = startedAtRef.current[entry.id];
-         const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);
-         const nextAttempt = createDictationAttempt(entry.id, expectedText, answer, responseMs);
-         delete startedAtRef.current[entry.id];
-         setAttemptHistory((current) => ({
-          ...current,
-          [entry.id]: [...(current[entry.id] ?? []), nextAttempt],
-         }));
-         setDirtyAnswers((current) => ({ ...current, [entry.id]: false }));
-         setRevealed((current) => ({ ...current, [entry.id]: true }));
-         onAttempt(nextAttempt);
-        }}
+        onClick={() => checkAnswer(entry.id)}
        >
         {t("check")}
        </Button>

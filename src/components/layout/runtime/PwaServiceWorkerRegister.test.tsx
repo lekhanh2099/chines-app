@@ -67,6 +67,9 @@ describe("PwaServiceWorkerRegister", () => {
    type: "WARMUP_OFFLINE_CACHE",
    routes: [
     "/vi/reader",
+    "/vi/offline",
+    "/en/offline",
+    "/zh-CN/offline",
     "/vi/hanzihome",
     "/vi/hsk/han-thuong-mai",
     "/vi/hsk/nhip-cau-han-ngu",

@@ -32,5 +32,18 @@
  "deleteTitle": "Xóa ghi chú?",
  "deleteDescription": "“{title}” sẽ bị xóa khỏi danh sách ghi chú của bạn.",
  "deleting": "Đang xóa...",
+ "conflict": {
+  "recoveryTitle": "Có bản nháp chưa lưu từ tab khác",
+  "recoveryDraft": "Bản nháp {number}",
+  "recover": "Khôi phục bản nháp này",
+  "title": "Ghi chú có bản mới trên thiết bị khác",
+  "description": "Bản chưa lưu trên thiết bị này vẫn được giữ. Chọn bản muốn dùng trước khi ghi tiếp.",
+  "review": "So sánh các bản",
+  "local": "Bản trên thiết bị này",
+  "serverTitle": "Bản server: {title} (revision {revision})",
+  "useServer": "Dùng bản server",
+  "keepLocal": "Giữ bản của tôi và lưu tiếp",
+  "error": "Chưa thể xử lý xung đột. Các bản vẫn được giữ."
+ },
  "save": { "saving": "Đang lưu...", "saved": "Đã lưu", "error": "Lỗi lưu" }
 }

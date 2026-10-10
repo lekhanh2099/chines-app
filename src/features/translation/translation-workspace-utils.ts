@@ -11,6 +11,77 @@ import { evaluateHumanitiesAnswer } from "@/features/humanities/humanities-evalu
 
 type Evaluation = HumanitiesDocumentResource["exerciseItems"][number]["payload"]["evaluation"];
 
+export const interpretingMarks: readonly ["kept", "partial", "missed", "unsure"] = [
+ "kept",
+ "partial",
+ "missed",
+ "unsure",
+];
+export type HumanitiesUnitMark = (typeof interpretingMarks)[number];
+
+export function createTranslationRecordingSubmission(
+ context: { contentId: TranslationSegment["id"]; direction: TranslationDirection },
+ answer: {
+  transcript: string;
+  notes: string;
+  unitMarks: Record<NonNullable<Evaluation>["informationUnits"][number]["id"], HumanitiesUnitMark>;
+  durationSeconds: number;
+ },
+): PracticeAttemptPayload {
+ return {
+  surface: "translation",
+  contentId: context.contentId,
+  direction: context.direction,
+  answer: { kind: "interpreting-recording", ...answer },
+  scorePercent: null,
+  responseMs: answer.durationSeconds * 1_000,
+ };
+}
+
+export function createTranslationRevisionSubmission(
+ context: Parameters<typeof createTranslationRecordingSubmission>[0],
+ answer: string,
+): PracticeAttemptPayload {
+ return {
+  surface: "translation",
+  contentId: context.contentId,
+  direction: context.direction,
+  answer: { answer, reference: null, missingUnitIds: [] },
+  scorePercent: null,
+  responseMs: null,
+ };
+}
+
+export function createTranslationSelfMarkSubmission(
+ context: Parameters<typeof createTranslationRecordingSubmission>[0],
+ unitMarks: Parameters<typeof createTranslationRecordingSubmission>[1]["unitMarks"],
+): PracticeAttemptPayload {
+ return {
+  surface: "translation",
+  contentId: context.contentId,
+  direction: context.direction,
+  answer: { kind: "interpreting-self-mark", unitMarks },
+  scorePercent: null,
+  responseMs: null,
+ };
+}
+
+export function translationPreparationRemaining(
+ state: { key: string; remaining: number },
+ key: string,
+ limit: number,
+): number {
+ return state.key === key ? state.remaining : limit;
+}
+
+export function advanceTranslationPreparation(
+ state: Parameters<typeof translationPreparationRemaining>[0],
+ key: string,
+ limit: number,
+) {
+ return { key, remaining: Math.max(0, translationPreparationRemaining(state, key, limit) - 1) };
+}
+
 export function translationSourceKind(resource: HumanitiesDocumentResource["document"]): string {
  const value = resource.source_metadata.source_kind;
  return typeof value === "string" ? value : "humanities";

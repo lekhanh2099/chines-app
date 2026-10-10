@@ -59,6 +59,8 @@ describe("Home messages", () => {
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
     <HomeLearningPulse
+     onRetryOverview={() => {}}
+     onRetryReviewedToday={() => {}}
      pulse={{
       trackedCount: 12,
       reviewCount: 3,
@@ -70,6 +72,11 @@ describe("Home messages", () => {
       readerCompletedCount: 2,
       readerDocumentCount: 6,
       overviewUnavailable: false,
+      overviewAvailable: true,
+      overviewLoading: false,
+      reviewedTodayAvailable: true,
+      reviewedTodayLoading: false,
+      reviewedTodayUnavailable: false,
      }}
     />
    </NextIntlClientProvider>,
@@ -92,6 +99,9 @@ describe("Home messages", () => {
      timeZone="Asia/Ho_Chi_Minh"
     >
      <RecentNotesPanel
+      loading={false}
+      unavailable={false}
+      onRetry={() => {}}
       notes={[
        {
         id: "00000000-0000-4000-8000-000000000001",
@@ -110,11 +120,15 @@ describe("Home messages", () => {
         source_author: null,
         source_published_at: null,
         source_captured_at: null,
+        revision: 0,
         links: [],
        },
       ]}
      />
      <RecentLearningActivityPanel
+      loading={false}
+      unavailable={false}
+      onRetry={() => {}}
       items={[
        {
         key: "00000000-0000-4000-8000-000000000002",
@@ -132,6 +146,46 @@ describe("Home messages", () => {
    expect(markup).toContain("坚持");
    expect(consoleError).not.toHaveBeenCalled();
    consoleError.mockRestore();
+  },
+ );
+
+ it.each([
+  {
+   locale: "vi",
+   error: "Không tải được ghi chú gần đây",
+   empty: "Chưa có ghi chú gần đây",
+   retry: "Thử lại",
+  },
+  { locale: "en", error: "Could not load recent notes", empty: "No recent notes", retry: "Retry" },
+  { locale: "zh-CN", error: "无法加载最近的笔记", empty: "没有最近笔记", retry: "重试" },
+ ] satisfies ReadonlyArray<{ locale: AppLocale; error: string; empty: string; retry: string }>)(
+  "keeps failed recent-notes reads separate from a valid empty list for $locale",
+  async (testCase) => {
+   const messages = await loadAppMessages(testCase.locale);
+   const render = (unavailable: boolean, loading = false) =>
+    renderToStaticMarkup(
+     <NextIntlClientProvider
+      locale={testCase.locale}
+      messages={messages}
+      timeZone="Asia/Ho_Chi_Minh"
+     >
+      <RecentNotesPanel notes={[]} loading={loading} unavailable={unavailable} onRetry={() => {}} />
+     </NextIntlClientProvider>,
+    );
+   const failed = render(true);
+   expect(failed).toContain('role="alert"');
+   expect(failed).toContain(testCase.error);
+   expect(failed).toContain(testCase.retry);
+   expect(failed).not.toContain(testCase.empty);
+   expect(failed).not.toContain("Home.");
+   const empty = render(false);
+   expect(empty).not.toContain('role="alert"');
+   expect(empty).toContain(testCase.empty);
+   const pending = render(false, true);
+   expect(pending).toContain('aria-busy="true"');
+   expect(pending).not.toContain(testCase.empty);
+   expect(pending).not.toContain('role="alert"');
+   expect(pending).not.toContain("Home.");
   },
  );
 });

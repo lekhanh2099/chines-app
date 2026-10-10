@@ -1,5 +1,7 @@
 # Pinyin theo đơn vị đọc — review và implementation checkpoints
 
+> Execution ownership — 2026-10-08: remaining corpus/segmenter/dictionary review dùng chung [feature quality master plan](feature-quality-audit-enhancement-2026-10-04.md#0-một-plan-thực-thi--reconciliation-08102026), C01/C08/C10/C13. File này giữ historical contract/proof; dependency research không tự cấp quyền cài package hoặc đổi pronunciation owner và không là queue implementation thứ hai.
+
 ## Trạng thái và phạm vi
 
 - Ngày review: 2026-09-14. Baseline local: `main`, HEAD `737cb13f310318d6f9466092d70a571c8f73bb65`; working tree sạch trước khi tạo tài liệu. Không fetch/xác nhận remote trong lượt review này.

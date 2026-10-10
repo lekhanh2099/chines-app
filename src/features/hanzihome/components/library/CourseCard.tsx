@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, BookMarked } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -16,13 +16,13 @@ import {
  SelectValue,
 } from "@/components/ui/forms/select";
 import { Typography } from "@/components/ui/display/typography";
-import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
+import { usePrefetchHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
+import { getLibraryBookStudy } from "./library-course-groups";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
  HanziHomeLesson,
 } from "@/features/hanzihome/types";
-import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import { Link, useRouter } from "@/i18n/navigation";
 
 import { BookCrudActions } from "./BookCrudActions";
@@ -44,43 +44,26 @@ export function CourseCard({
  canMoveBookUp?: boolean;
  canMoveBookDown?: boolean;
 }) {
+ const t = useTranslations("Common.library");
  const router = useRouter();
- const queryClient = useQueryClient();
- const bookLessons = useMemo(
-  () => lessons.filter((lesson) => lesson.bookId === book.id),
-  [book.id, lessons],
- );
+ const prefetchLesson = usePrefetchHanziHomeLesson(router.prefetch);
  const [selectedLessonId, setSelectedLessonId] = useState("");
-
- const effectiveLesson = useMemo(() => {
-  const selectedExists = bookLessons.some((lesson) => lesson.id === selectedLessonId);
-  const effectiveLessonId = (selectedExists ? selectedLessonId : null) || bookLessons[0]?.id || "";
-
-  return bookLessons.find((lesson) => lesson.id === effectiveLessonId) ?? null;
- }, [bookLessons, selectedLessonId]);
-
+ const {
+  bookLessons,
+  effectiveLesson,
+  href,
+  visibleLessonCount,
+  visibleVocabCount,
+  visibleGrammarCount,
+ } = useMemo(
+  () => getLibraryBookStudy(course, book, lessons, selectedLessonId),
+  [book, course, lessons, selectedLessonId],
+ );
  const effectiveLessonId = effectiveLesson?.id ?? "";
- const href = buildHanziHomeLessonHref({
-  courseId: course.id,
-  bookId: book.id,
-  lessonNumber: effectiveLesson?.lessonNumber,
- });
-
- const visibleLessonCount = bookLessons.length;
- const visibleVocabCount = bookLessons.reduce(
-  (sum, lesson) => sum + (lesson.vocabCount ?? lesson.vocabIds.length),
-  0,
- );
- const visibleGrammarCount = bookLessons.reduce(
-  (sum, lesson) => sum + (lesson.grammarCount ?? lesson.grammarPointIds.length),
-  0,
- );
-
  const prefetchSelectedLesson = (targetLessonId = effectiveLessonId) => {
   if (!targetLessonId) return;
-
-  router.prefetch(href);
-  prefetchHanziHomeLessonResources(queryClient, targetLessonId);
+  const target = getLibraryBookStudy(course, book, lessons, targetLessonId);
+  if (target.effectiveLesson) prefetchLesson(target.effectiveLesson.id, target.href);
  };
 
  const handleLessonSelectionChange = (newLessonId: string) => {
@@ -110,10 +93,10 @@ export function CourseCard({
 
     <div className="hidden shrink-0 items-center gap-1.5 sm:flex">
      <Badge variant="default" size="sm">
-      {visibleLessonCount} bài
+      {t("lessonCount", { count: visibleLessonCount })}
      </Badge>
      <Typography variant="caption" tone="muted" weight="bold">
-      {visibleVocabCount} từ · {visibleGrammarCount} ngữ pháp
+      {t("contentCounts", { vocab: visibleVocabCount, grammar: visibleGrammarCount })}
      </Typography>
     </div>
    </div>
@@ -125,14 +108,14 @@ export function CourseCard({
        <SelectTrigger
         size="sm"
         width="full"
-        aria-label={`Chọn bài trong ${book.shortTitle || book.title}`}
+        aria-label={t("selectLessonAria", { book: book.shortTitle || book.title })}
        >
-        <SelectValue placeholder="Chọn bài" />
+        <SelectValue placeholder={t("selectLesson")} />
        </SelectTrigger>
        <SelectContent align="start">
         {bookLessons.map((lesson) => (
          <SelectItem key={lesson.id} value={lesson.id}>
-          Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
+          {t("lessonLabel", { number: lesson.lessonNumber, title: lesson.titleZh || lesson.title })}
          </SelectItem>
         ))}
        </SelectContent>
@@ -141,21 +124,25 @@ export function CourseCard({
 
      {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
      <CourseOfflineDownloadButton courseId={course.id} lessonIds={bookLessons.map((l) => l.id)} />
-     <Button asChild size="toolbar" aria-label={`Mở ${effectiveLesson?.titleZh || "bài học"}`}>
+     <Button
+      asChild
+      size="toolbar"
+      aria-label={t("openLessonAria", { title: effectiveLesson?.titleZh || t("lesson") })}
+     >
       <Link
        href={href}
        onMouseEnter={() => prefetchSelectedLesson()}
        onFocus={() => prefetchSelectedLesson()}
        onTouchStart={() => prefetchSelectedLesson()}
       >
-       Mở
+       {t("open")}
        <ArrowRight data-icon="inline-end" />
       </Link>
      </Button>
     </div>
    ) : (
     <Typography as="p" variant="caption" tone="muted">
-     Quyển này chưa có bài học.
+     {t("noLessons")}
     </Typography>
    )}
   </Card>

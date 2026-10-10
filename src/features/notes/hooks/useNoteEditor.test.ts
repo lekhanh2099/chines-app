@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import type { DbNote } from "@/types/database";
 import { useNoteEditor } from "./useNoteEditor";
 import type {
  updateNoteContent,
@@ -22,20 +23,28 @@ const mocks = vi.hoisted(() => ({
 vi.mock("@/components/providers/QueryProvider", () => ({
  useClientSession: () => ({ supabase: {}, userId: "user-test-1", isResolved: true }),
 }));
-vi.mock("@/services/notes/notes.service", () => ({
+vi.mock(import("@/services/notes/notes.service"), async (importOriginal) => ({
+ ...(await importOriginal()),
  updateNoteContent: mocks.content,
  updateReadingContent: mocks.reading,
  updateNoteLibraryMetadata: mocks.metadata,
  getNoteById: async () => null,
  getNoteFolders: async () => [],
- updateNoteTitle: async () => true,
- updateNoteCategory: async () => true,
- updateSplitViewEnabled: async () => true,
+ updateNoteTitle: async (_client, _id, title, revision) =>
+  createFixtureNote({ title, revision: revision + 1 }),
+ updateNoteCategory: async (_client, _id, category, revision) =>
+  createFixtureNote({ category, revision: revision + 1 }),
+ updateSplitViewEnabled: async (_client, _id, split_view_enabled, revision) =>
+  createFixtureNote({ split_view_enabled, revision: revision + 1 }),
  deleteNote: async () => true,
 }));
 vi.mock("../local/note-draft-store", () => ({
  saveNoteDraft: mocks.draft,
  getNoteDraft: async () => null,
+ advanceNoteDraftRevision: async () => true,
+ getOtherNoteDrafts: async () => [],
+ recoverNoteDraft: async () => true,
+ clearNoteDraft: async () => true,
  clearNoteContentDraft: async () => true,
  clearNoteReadingContentDraft: async () => true,
 }));
@@ -62,6 +71,7 @@ function createFixtureNote(overrides?: Partial<NoteDetail>): NoteDetail {
   source_author: null,
   source_published_at: null,
   source_captured_at: null,
+  revision: 0,
   created_at: "2026-09-01T00:00:00.000Z",
   updated_at: "2026-09-01T10:00:00.000Z",
   links: [],
@@ -108,9 +118,15 @@ beforeEach(() => {
  });
  client.setQueryData(noteQueryKeys.detail("user-test-1", "note-1"), createFixtureNote());
  client.setQueryData(noteQueryKeys.folders("user-test-1"), []);
- mocks.content.mockResolvedValue(true);
- mocks.reading.mockResolvedValue(true);
- mocks.metadata.mockResolvedValue();
+ mocks.content.mockImplementation(async (_client, _id, content, revision) =>
+  createFixtureNote({ content, revision: revision + 1 }),
+ );
+ mocks.reading.mockImplementation(async (_client, _id, reading_content, revision) =>
+  createFixtureNote({ reading_content, revision: revision + 1 }),
+ );
+ mocks.metadata.mockImplementation(async (_client, _id, _input, revision) =>
+  createFixtureNote({ revision: revision + 1 }),
+ );
  mocks.draft.mockResolvedValue(true);
  vi.spyOn(URL, "createObjectURL").mockImplementation((blob) => {
   if (!(blob instanceof Blob)) throw new Error("Expected download Blob");
@@ -154,14 +170,14 @@ describe("Notes editor import/export flow", () => {
   hook.exportNote();
   expect((await exportedBody()).readingContent).toEqual({ text: "left pane" });
   await vi.advanceTimersByTimeAsync(1000);
-  expect(mocks.reading).toHaveBeenCalledWith({}, "note-1", { text: "left pane" });
+  expect(mocks.reading).toHaveBeenCalledWith({}, "note-1", { text: "left pane" }, 0, "user-test-1");
   expect(mocks.content).not.toHaveBeenCalled();
  });
  it("awaits the reading write before import resolves", async () => {
-  let resolveReading = (_saved: boolean) => {};
+  let resolveReading = (_saved: DbNote) => {};
   mocks.reading.mockImplementationOnce(
    () =>
-    new Promise<boolean>((resolve) => {
+    new Promise<DbNote>((resolve) => {
      resolveReading = resolve;
     }),
   );
@@ -170,12 +186,12 @@ describe("Notes editor import/export flow", () => {
   void pending.then(completed);
   await vi.waitFor(() => expect(mocks.reading).toHaveBeenCalledOnce());
   expect(completed).not.toHaveBeenCalled();
-  resolveReading(true);
+  resolveReading(createFixtureNote({ revision: 2 }));
   await pending;
   expect(completed).toHaveBeenCalledOnce();
  });
  it("rejects failed import writes and retains the body for retry/export", async () => {
-  mocks.content.mockResolvedValueOnce(false);
+  mocks.content.mockRejectedValueOnce(new Error("Failed to save content"));
   const hook = controller();
   await expect(hook.importNote(importFile("A"))).rejects.toThrow("Failed to save content");
   expect(mocks.reading).toHaveBeenCalledOnce();

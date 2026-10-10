@@ -9,11 +9,13 @@ import {
  useContext,
  useEffect,
  useMemo,
+ useRef,
  useState,
  type ReactNode,
 } from "react";
 import { Bookmark, Highlighter, Languages, StickyNote, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 import { z } from "zod";
 
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
@@ -34,6 +36,9 @@ import {
  DialogTitle,
 } from "@/components/ui/overlays/dialog";
 import { containsChinese } from "@/lib/text/chinese-utils";
+import { Editor } from "@/components/editor/Editor";
+import { Typography } from "@/components/ui/display/typography";
+import { LessonAnnotationConflictError } from "./lesson-annotation-api";
 
 import { createAnnotationAnchor, resolveAnnotationAnchor } from "./annotation-anchor";
 import {
@@ -138,10 +143,13 @@ export function LessonAnnotationProvider({
  children: ReactNode;
 }) {
  const annotationState = useLessonAnnotations(lessonId);
+ const disposedRef = useRef(false);
  const { openInspector } = useVocabInspector();
  const [selectionDraft, setSelectionDraft] = useState<Nullable<SelectionDraft>>(null);
  const [noteDialog, setNoteDialog] = useState<Nullable<z.infer<typeof NoteDialogSchema>>>(null);
  const [noteText, setNoteText] = useState("");
+ const [noteConflict, setNoteConflict] = useState<Nullable<LessonTextAnnotation>>(null);
+ const conflict = useTranslations("Notes.editor.conflict");
  const selectionAnchor = useCallback(
   () =>
    selectionDraft
@@ -153,6 +161,13 @@ export function LessonAnnotationProvider({
   [selectionDraft],
  );
  const closeSelectionMenu = useCallback(() => setSelectionDraft(null), []);
+
+ useEffect(() => {
+  disposedRef.current = false;
+  return () => {
+   disposedRef.current = true;
+  };
+ }, []);
 
  useEffect(() => {
   const selectionTimer = { current: 0 };
@@ -240,10 +255,12 @@ export function LessonAnnotationProvider({
 
   try {
    await annotationState.createAnnotation({ anchor: selectionDraft.anchor });
+   if (disposedRef.current) return;
    toast.success("Đã highlight đoạn đã chọn.");
    closeSelectionMenu();
    window.getSelection()?.removeAllRanges();
   } catch (error) {
+   if (disposedRef.current) return;
    toast.error(annotationErrorMessage(error, "Không thể lưu highlight"));
   }
  };
@@ -255,6 +272,7 @@ export function LessonAnnotationProvider({
    return;
   }
   setNoteText("");
+  setNoteConflict(null);
   setNoteDialog({
    kind: NoteDialogSchema.options[0].shape.kind.value,
    anchor: selectionDraft.anchor,
@@ -263,6 +281,7 @@ export function LessonAnnotationProvider({
  };
 
  const openAnnotation = useCallback((annotation: LessonTextAnnotation) => {
+  setNoteConflict(null);
   setNoteText(annotation.noteText);
   setNoteDialog({ kind: "annotation", annotation });
  }, []);
@@ -270,16 +289,20 @@ export function LessonAnnotationProvider({
   setSelectionDraft(null);
   setNoteDialog(null);
   setNoteText("");
+  setNoteConflict(null);
   window.getSelection()?.removeAllRanges();
  }, []);
 
- const saveNote = async () => {
+ const saveNote = async (resolveConflict = false) => {
   if (!noteDialog || !noteText.trim()) return;
+  if (resolveConflict && !noteConflict) return;
   try {
    if (noteDialog.kind === "annotation") {
+    const base = resolveConflict && noteConflict ? noteConflict : noteDialog.annotation;
     await annotationState.updateAnnotationNote({
      annotationId: noteDialog.annotation.id,
      noteText: noteText.trim(),
+     expectedRevision: base.note?.revision ?? null,
     });
    } else {
     await annotationState.createAnnotation({
@@ -287,10 +310,17 @@ export function LessonAnnotationProvider({
      noteText: noteText.trim(),
     });
    }
+   if (disposedRef.current) return;
    toast.success("Đã lưu ghi chú.");
    setNoteDialog(null);
+   setNoteConflict(null);
    window.getSelection()?.removeAllRanges();
   } catch (error) {
+   if (disposedRef.current) return;
+   if (error instanceof LessonAnnotationConflictError) {
+    setNoteConflict(error.annotation);
+    return;
+   }
    toast.error(annotationErrorMessage(error, "Không thể lưu ghi chú"));
   }
  };
@@ -299,9 +329,11 @@ export function LessonAnnotationProvider({
   if (noteDialog?.kind !== "annotation") return;
   try {
    await annotationState.deleteAnnotation(noteDialog.annotation.id);
+   if (disposedRef.current) return;
    toast.success("Đã xóa highlight.");
    setNoteDialog(null);
   } catch (error) {
+   if (disposedRef.current) return;
    toast.error(annotationErrorMessage(error, "Không thể xóa highlight"));
   }
  };
@@ -371,6 +403,39 @@ export function LessonAnnotationProvider({
       </DialogDescription>
      </DialogHeader>
      <DialogBody>
+      {noteConflict ? (
+       <div role="alert" className="grid gap-3">
+        <Typography tone="danger">{conflict("description")}</Typography>
+        <Typography as="h3" variant="sectionTitle">
+         {conflict("local")}
+        </Typography>
+        <Typography className="whitespace-pre-wrap">{noteText}</Typography>
+        {noteConflict.note ? (
+         <>
+          <Typography as="h3" variant="sectionTitle">
+           {conflict("serverTitle", {
+            title: noteConflict.note.title,
+            revision: noteConflict.note.revision,
+           })}
+          </Typography>
+          <Editor
+           key={`${noteConflict.note.id}:${noteConflict.note.revision}:content`}
+           initialContent={noteConflict.note.content}
+           readOnly
+           toolbarVisible={false}
+          />
+          {noteConflict.note.reading_content ? (
+           <Editor
+            key={`${noteConflict.note.id}:${noteConflict.note.revision}:reading`}
+            initialContent={noteConflict.note.reading_content}
+            readOnly
+            toolbarVisible={false}
+           />
+          ) : null}
+         </>
+        ) : null}
+       </div>
+      ) : null}
       <Label variant="label" tone="secondary" weight="bold" className="grid gap-2">
        Nội dung ghi chú
        <Textarea
@@ -389,7 +454,7 @@ export function LessonAnnotationProvider({
        <Button
         variant="destructive"
         onClick={deleteAnnotation}
-        disabled={annotationState.isMutating}
+        disabled={annotationState.isMutating || !!noteConflict}
        >
         <Trash2 />
         Xóa highlight
@@ -399,9 +464,38 @@ export function LessonAnnotationProvider({
       <DialogClose asChild>
        <Button variant="outline">Hủy</Button>
       </DialogClose>
-      <Button onClick={saveNote} disabled={!noteText.trim() || annotationState.isMutating}>
-       Lưu
-      </Button>
+      {noteConflict ? (
+       <>
+        <Button
+         variant="outline"
+         disabled={annotationState.isMutating}
+         onClick={() => {
+          setNoteDialog(null);
+          setNoteText("");
+          setNoteConflict(null);
+         }}
+        >
+         {conflict("useServer")}
+        </Button>
+        <Button
+         disabled={!noteText.trim() || annotationState.isMutating}
+         onClick={() => {
+          void saveNote(true);
+         }}
+        >
+         {conflict("keepLocal")}
+        </Button>
+       </>
+      ) : (
+       <Button
+        onClick={() => {
+         void saveNote();
+        }}
+        disabled={!noteText.trim() || annotationState.isMutating}
+       >
+        Lưu
+       </Button>
+      )}
      </DialogFooter>
     </DialogContent>
    </Dialog>

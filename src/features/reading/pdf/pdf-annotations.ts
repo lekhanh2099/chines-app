@@ -38,6 +38,30 @@ export const pdfAnnotationRowSchema = z.strictObject({
 export type PdfAnnotationPayload = z.output<typeof pdfAnnotationPayloadSchema>;
 export type PdfAnnotationRow = z.output<typeof pdfAnnotationRowSchema>;
 
+export function equalPdfAnnotationPayloads(
+ left: PdfAnnotationPayload,
+ right: PdfAnnotationPayload,
+): boolean {
+ return (
+  left.strokes.length === right.strokes.length &&
+  left.strokes.every((stroke, index) => {
+   const other = right.strokes[index];
+   return Boolean(
+    other &&
+    stroke.id === other.id &&
+    stroke.tool === other.tool &&
+    stroke.color === other.color &&
+    stroke.width === other.width &&
+    stroke.points.length === other.points.length &&
+    stroke.points.every((point, pointIndex) => {
+     const otherPoint = other.points[pointIndex];
+     return otherPoint && point.x === otherPoint.x && point.y === otherPoint.y;
+    }),
+   );
+  })
+ );
+}
+
 export function createPdfStroke(
  tool: PdfDrawingTool,
  color: string,

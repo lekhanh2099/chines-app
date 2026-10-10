@@ -4,6 +4,7 @@
  * Each tab = { noteId, title }. One tab is "active" at a time.
  * Persists open tabs to localStorage so they survive refresh.
  */
+import type { AuthenticatedOwner } from "@/lib/query/auth-owner-transition";
 import type { JsonFieldValue } from "@/types/json";
 import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
@@ -40,22 +41,34 @@ const storageConfig = {
 };
 
 type NoteTabsState = {
+ ownerId: AuthenticatedOwner;
  tabs: NoteTab[];
  activeNoteId: NoteTabsData["activeNoteId"];
  hasHydrated: boolean;
 };
 
-function loadState(): NoteTabsData {
- return readVersionedStorage(getBrowserStorage(), storageConfig);
+function loadState(ownerId: AuthenticatedOwner): NoteTabsData {
+ if (!ownerId) return fallbackState;
+ return readVersionedStorage(getBrowserStorage(), {
+  ...storageConfig,
+  key: `${STORAGE_KEY}:${ownerId}`,
+ });
 }
 
 function saveState(tabs: NoteTab[], activeNoteId: NoteTabsData["activeNoteId"]) {
- writeVersionedStorage(getBrowserStorage(), storageConfig, { tabs, activeNoteId });
+ const ownerId = noteTabsStore.get().ownerId;
+ if (!ownerId) return;
+ writeVersionedStorage(
+  getBrowserStorage(),
+  { ...storageConfig, key: `${STORAGE_KEY}:${ownerId}` },
+  { tabs, activeNoteId },
+ );
 }
 
 export const noteTabsStore = createStore<
  NoteTabsState,
  {
+  setOwner: (ownerId: AuthenticatedOwner) => void;
   hydrate: () => void;
   openTab: (noteId: string, title?: string) => void;
   closeTab: (noteId: string) => void;
@@ -67,22 +80,31 @@ export const noteTabsStore = createStore<
  }
 >(
  {
+  ownerId: null,
   tabs: [],
   activeNoteId: null,
   hasHydrated: false,
  },
  ({ setState, get }) => ({
+  setOwner: (ownerId) => {
+   if (get().ownerId === ownerId && get().hasHydrated) return;
+   const next = loadState(ownerId);
+   setState(() => ({ ...next, ownerId, hasHydrated: true }));
+  },
+
   hydrate: () => {
    if (get().hasHydrated || typeof window === "undefined") return;
-   const next = loadState();
-   setState(() => ({ ...next, hasHydrated: true }));
+   const next = loadState(get().ownerId);
+   setState((state) => ({ ...state, ...next, hasHydrated: true }));
   },
 
   openTab: (noteId, title) => {
-   const { tabs } = get();
+   if (!get().ownerId) return;
+   const { tabs, activeNoteId } = get();
    const existing = tabs.find((t) => t.noteId === noteId);
 
    if (existing) {
+    if (activeNoteId === noteId) return;
     setState((state) => ({ ...state, activeNoteId: noteId }));
     saveState(tabs, noteId);
     return;
@@ -122,7 +144,8 @@ export const noteTabsStore = createStore<
   },
 
   setActive: (noteId) => {
-   const { tabs } = get();
+   const { tabs, activeNoteId } = get();
+   if (activeNoteId === noteId) return;
    if (tabs.some((t) => t.noteId === noteId)) {
     setState((state) => ({ ...state, activeNoteId: noteId }));
     saveState(tabs, noteId);
@@ -131,6 +154,7 @@ export const noteTabsStore = createStore<
 
   updateTabTitle: (noteId, title) => {
    const { tabs, activeNoteId } = get();
+   if (!tabs.some((tab) => tab.noteId === noteId && tab.title !== title)) return;
    const newTabs = tabs.map((t) => (t.noteId === noteId ? { ...t, title } : t));
    setState((state) => ({ ...state, tabs: newTabs }));
    saveState(newTabs, activeNoteId);

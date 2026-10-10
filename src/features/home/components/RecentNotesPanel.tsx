@@ -6,14 +6,26 @@ import { EmptyState } from "@/components/patterns/empty-state";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { IconTile } from "@/components/ui/display/icon-tile";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import { HomeArrowIcon, HomeSectionHeader } from "@/features/home/components/HomePrimitives";
-import type { NoteListItem } from "@/services/notes/notes.service";
+import type { HomeDashboardModel } from "@/features/home/types";
 import { Link } from "@/i18n/navigation";
 
-export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
+export function RecentNotesPanel({
+ notes,
+ loading,
+ unavailable,
+ onRetry,
+}: {
+ notes: HomeDashboardModel["recentNotes"];
+ loading: HomeDashboardModel["recentNotesLoading"];
+ unavailable: HomeDashboardModel["recentNotesUnavailable"];
+ onRetry: HomeDashboardModel["retryRecentNotes"];
+}) {
  const format = useFormatter();
  const now = useNow({ updateInterval: 60_000 });
  const t = useTranslations("Home");
+ const common = useTranslations("Common");
 
  return (
   <section aria-labelledby="recent-notes-title">
@@ -29,6 +41,27 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
      }
     />
 
+    {loading ? (
+     <div aria-busy="true" aria-label={t("notes.loading")} className="grid animate-pulse gap-3">
+      {Array.from({ length: 3 }, (_, index) => (
+       <div key={index} className="flex items-center gap-3">
+        <div className="size-8 rounded-lg bg-bg-subtle" />
+        <div className="grid min-w-0 flex-1 gap-1">
+         <div className="h-4 w-48 max-w-full rounded-md bg-bg-subtle" />
+         <div className="h-3 w-28 rounded-full bg-bg-subtle" />
+        </div>
+       </div>
+      ))}
+     </div>
+    ) : null}
+    {unavailable ? (
+     <QueryErrorCard
+      title={t("notes.loadErrorTitle")}
+      description={t("notes.loadErrorDescription")}
+      retryLabel={common("actions.retry")}
+      onRetry={onRetry}
+     />
+    ) : null}
     {notes.length > 0 ? (
      <div className="divide-y divide-border-default/70">
       {notes.map((note) => (
@@ -66,7 +99,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
        </Link>
       ))}
      </div>
-    ) : (
+    ) : !unavailable && !loading ? (
      <EmptyState
       size="compact"
       title={t("notes.emptyTitle")}
@@ -77,7 +110,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
        </Button>
       }
      />
-    )}
+    ) : null}
    </Card>
   </section>
  );

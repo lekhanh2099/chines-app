@@ -460,7 +460,14 @@ describe("BusinessChineseStudyWorkspace", () => {
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
-  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+  const focusedLesson = {
+   ...lesson,
+   sections: lesson.sections.map((section) => ({ ...section, blocks: section.blocks.slice(0, 1) })),
+   vocab: lesson.vocab.slice(0, 1),
+  };
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace books={books} lesson={focusedLesson} />,
+  );
 
   expect(markup).toContain("Ghi chú");
   expect(markup).toContain("Luyện dịch");
@@ -473,11 +480,12 @@ describe("BusinessChineseStudyWorkspace", () => {
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
   vi.mocked(routerPushMock).mockClear();
-
-  // Test rendering with initial searchParams mock
+  mockParams = new URLSearchParams("lesson=1&tab=notes");
   const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
 
   expect(markup).toContain("Ghi chú");
+  expect(markup).toContain("Chưa có ghi chú riêng cho bài này.");
+  expect(markup).not.toContain("data-reader-segment=");
  });
 
  it("includes a Bookmark button on the lesson header and toolbar", () => {

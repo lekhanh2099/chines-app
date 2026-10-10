@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import type { NoteDetail } from "@/services/notes/notes.service";
+import type { NoteDetail, NoteFolder } from "@/services/notes/notes.service";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor/editor-document";
 import type { NoteDraftRecord } from "./local/note-draft-store";
 import { NoteExportPayloadSchema } from "./note-export.schema";
 import {
@@ -7,6 +8,11 @@ import {
  createNoteExportPayload,
  restoreNoteDraft,
  resolveNoteSaveStatus,
+ createNoteFormInput,
+ createNoteImportInput,
+ findNoteImportFolder,
+ formatQuickNoteDate,
+ createQuickNoteInput,
 } from "./note-editor-utils";
 
 function createFixtureNote(overrides?: Partial<NoteDetail>): NoteDetail {
@@ -31,6 +37,7 @@ function createFixtureNote(overrides?: Partial<NoteDetail>): NoteDetail {
   source_author: null,
   source_published_at: null,
   source_captured_at: null,
+  revision: 0,
   created_at: "2026-09-01T00:00:00.000Z",
   updated_at: "2026-09-01T10:00:00.000Z",
   links: [],
@@ -39,6 +46,119 @@ function createFixtureNote(overrides?: Partial<NoteDetail>): NoteDetail {
 }
 
 describe("note editor utilities", () => {
+ it.each([
+  ["vi", "03:04 02/01/2026"],
+  ["en", "01/02/2026, 03:04 AM"],
+  ["zh-CN", "2026/01/02 03:04"],
+ ])("formats the existing quick-note date fields in %s", (locale, formatted) => {
+  expect(formatQuickNoteDate(new Date(2026, 0, 2, 3, 4), locale)).toBe(formatted);
+ });
+ it("keeps quick note tags/content and leaves existing database defaults intact", () => {
+  expect(createQuickNoteInput("Quick title")).toEqual({
+   title: "Quick title",
+   tags: ["quick-note"],
+   content: EMPTY_LEXICAL_DOCUMENT,
+  });
+ });
+ it("creates plain and reading payloads without changing tag order or duplicates", () => {
+  const form: Parameters<typeof createNoteFormInput>[0] = {
+   title: "  中文 note  ",
+   tags: " grammar, ,中文, grammar, ",
+   category: "culture",
+   folderId: "unfiled",
+   readingStatus: "completed",
+  };
+  expect(createNoteFormInput(form, false)).toEqual({
+   title: "中文 note",
+   tags: ["grammar", "中文", "grammar"],
+   category: "culture",
+   content: EMPTY_LEXICAL_DOCUMENT,
+   readingContent: undefined,
+   splitViewEnabled: false,
+   folderId: null,
+   readingStatus: null,
+   source: null,
+  });
+  expect(createNoteFormInput({ ...form, folderId: "folder", tags: "" }, true)).toEqual({
+   title: "中文 note",
+   tags: [],
+   category: "culture",
+   content: EMPTY_LEXICAL_DOCUMENT,
+   readingContent: EMPTY_LEXICAL_DOCUMENT,
+   splitViewEnabled: true,
+   folderId: "folder",
+   readingStatus: "completed",
+   source: null,
+  });
+ });
+ it("matches import folders by exact name and parent without mutating their order", () => {
+  const parent: NoteFolder = {
+   id: "parent",
+   userId: "owner",
+   parentId: null,
+   name: "Folder",
+   color: "purple",
+   position: 0,
+   createdAt: "",
+   updatedAt: "",
+  };
+  const child: NoteFolder = { ...parent, id: "child", parentId: "parent" };
+  const folders = [child, parent];
+  expect(findNoteImportFolder(folders, null, "Folder")).toBe(parent);
+  expect(findNoteImportFolder(folders, "parent", "Folder")).toBe(child);
+  expect(findNoteImportFolder(folders, null, "folder")).toBeUndefined();
+  expect(findNoteImportFolder(folders, "different", "Folder")).toBeUndefined();
+  expect(folders).toEqual([child, parent]);
+ });
+ it("maps an imported v2 note to its exact create fields and preserves metadata", () => {
+  const source = {
+   url: "https://example.test/read",
+   host: "example.test",
+   label: "Source",
+   author: "Author",
+   publishedAt: null,
+   capturedAt: "2026-10-10T00:00:00Z",
+  };
+  const imported = NoteExportPayloadSchema.parse({
+   version: 2,
+   note: {
+    title: "Imported",
+    tags: ["中文"],
+    category: "grammar",
+    content: { text: "body" },
+    readingContent: { text: "reading" },
+    splitViewEnabled: true,
+    readingStatus: "inbox",
+    source,
+   },
+  }).note;
+  expect(createNoteImportInput(imported, "child")).toEqual({
+   title: "Imported",
+   tags: ["中文"],
+   category: "grammar",
+   content: { text: "body" },
+   readingContent: { text: "reading" },
+   splitViewEnabled: true,
+   readingStatus: "inbox",
+   folderId: "child",
+   source,
+  });
+  const minimal = NoteExportPayloadSchema.parse({
+   version: 2,
+   note: { title: "Minimal", content: {} },
+  }).note;
+  expect(createNoteImportInput(minimal, null)).toEqual({
+   title: "Minimal",
+   tags: [],
+   category: "general",
+   content: {},
+   readingContent: null,
+   splitViewEnabled: undefined,
+   readingStatus: null,
+   folderId: null,
+   source: null,
+  });
+ });
  it("restores both unacknowledged panes even after a newer metadata update", () => {
   const note = createFixtureNote({ updated_at: "2026-10-04T00:00:00Z" });
   const draft: NoteDraftRecord = {

@@ -1,6 +1,7 @@
 "use client";
 
 import { Pencil, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
@@ -20,6 +21,7 @@ export function HanziHomeLibraryCrudToolbar({
  editMode: boolean;
  onEditModeChange: (enabled: boolean) => void;
 }) {
+ const t = useTranslations("Common.library");
  return (
   <div className="flex flex-wrap items-center gap-2">
    <Button
@@ -29,7 +31,7 @@ export function HanziHomeLibraryCrudToolbar({
     onClick={() => onEditModeChange(!editMode)}
    >
     {editMode ? <X className="h-4 w-4" /> : <Pencil className="h-4 w-4" />}
-    {editMode ? "Tắt sửa" : "Sửa"}
+    {editMode ? t("exitEdit") : t("edit")}
    </Button>
    {editMode ? (
     <>

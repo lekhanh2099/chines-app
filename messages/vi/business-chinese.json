@@ -41,5 +41,16 @@
  "semesterBookmarksCount": "Bài học kỳ này ({count})",
  "bookmarkLesson": "Đánh dấu bài học kỳ này",
  "unbookmarkLesson": "Bỏ đánh dấu bài học",
- "bookmarked": "Đã đánh dấu"
+ "bookmarked": "Đã đánh dấu",
+ "utilities": "Tiện ích",
+ "practice": {
+  "translation": {
+   "description": "Luyện dịch hai chiều câu và đoạn văn của bài này.",
+   "open": "Mở Luyện dịch ({count} đoạn)"
+  },
+  "dictation": {
+   "description": "Luyện nghe chép chính tả từng câu ngắn trong bài.",
+   "open": "Mở Nghe chép ({count} câu)"
+  }
+ }
 }

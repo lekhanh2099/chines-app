@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { DbNoteSchema } from "@/types/database";
 
 export const AnnotationAnchorSchema = z.object({
  lessonId: z.string(),
@@ -19,12 +20,26 @@ export const LessonTextAnnotationSchema = AnnotationAnchorSchema.extend({
  id: z.string(),
  tone: z.literal("focus"),
  noteId: z.string().nullable(),
+ note: DbNoteSchema.nullable(),
  noteText: z.string(),
  createdAt: z.string(),
  updatedAt: z.string(),
 });
 
 export type LessonTextAnnotation = z.infer<typeof LessonTextAnnotationSchema>;
+
+export const LessonAnnotationNoteUpdateSchema = z.strictObject({
+ annotationId: z.uuid(),
+ noteText: z.string().trim().min(1),
+ expectedRevision: DbNoteSchema.shape.revision.nullable(),
+});
+export type LessonAnnotationNoteUpdate = z.infer<typeof LessonAnnotationNoteUpdateSchema>;
+
+export const LessonAnnotationNoteResultSchema = z.strictObject({
+ saved: z.boolean(),
+ annotation: LessonTextAnnotationSchema,
+});
+export type LessonAnnotationNoteResult = z.infer<typeof LessonAnnotationNoteResultSchema>;
 
 export const ResolvedLessonTextAnnotationSchema = LessonTextAnnotationSchema.extend({
  resolvedStartOffset: z.number(),

@@ -123,9 +123,10 @@ const NoteFolderRowSchema = z.object({
 type NoteFolderRow = z.infer<typeof NoteFolderRowSchema>;
 
 const noteListSelect =
- "id, title, tags, status, category, short_id, updated_at, linked_lesson_id, folder_id, reading_status, source_url, source_host, source_label, source_author, source_published_at, source_captured_at";
+ "id, revision, title, tags, status, category, short_id, updated_at, linked_lesson_id, folder_id, reading_status, source_url, source_host, source_label, source_author, source_published_at, source_captured_at";
 
 const NoteListRowSchema = DbNoteSchema.pick({
+ revision: true,
  id: true,
  title: true,
  tags: true,
@@ -371,64 +372,90 @@ export async function createNote(
  return DbNoteSchema.parse(data);
 }
 
+const NoteUpdateSchema = DbNoteSchema.pick({
+ content: true,
+ reading_content: true,
+ title: true,
+ category: true,
+ split_view_enabled: true,
+ folder_id: true,
+ reading_status: true,
+ source_url: true,
+ source_host: true,
+ source_label: true,
+ source_author: true,
+ source_published_at: true,
+ source_captured_at: true,
+}).partial();
+
+export class NoteConflictError extends Error {
+ constructor(readonly serverNote: NoteDetail) {
+  super("NOTE_REVISION_CONFLICT");
+ }
+}
+
+async function updateNoteWithRevision(
+ supabase: AppSupabaseClient,
+ noteId: string,
+ expectedRevision: DbNote["revision"],
+ ownerUserId: string,
+ changes: z.output<typeof NoteUpdateSchema>,
+): Promise<DbNote> {
+ const { data, error } = await supabase.rpc("update_note_with_revision", {
+  p_note_id: noteId,
+  p_expected_owner: ownerUserId,
+  p_expected_revision: expectedRevision,
+  p_changes: NoteUpdateSchema.parse(changes),
+ });
+ if (error) {
+  if (error.code === "40001") {
+   const serverNote = await getNoteById(supabase, noteId, ownerUserId);
+   if (serverNote) throw new NoteConflictError(serverNote);
+  }
+  throw new Error(error.message);
+ }
+ const saved = DbNoteSchema.parse(data);
+ if (
+  saved.id !== noteId ||
+  saved.user_id !== ownerUserId ||
+  saved.revision !== expectedRevision + 1
+ ) {
+  throw new Error("Server did not acknowledge the requested note revision");
+ }
+ return saved;
+}
+
 /** Update note content (used by auto-save) */
-export async function updateNoteContent(
+export function updateNoteContent(
  supabase: AppSupabaseClient,
  noteId: string,
  content: JsonObject,
-): Promise<boolean> {
- const { data, error } = await supabase
-  .from("notes")
-  .update({ content, updated_at: new Date().toISOString() })
-  .eq("id", noteId)
-  .select("id")
-  .maybeSingle();
-
- if (error) {
-  logger.error("[NotesService] update content error:", error);
-  return false;
- }
- return data !== null;
+ expectedRevision: DbNote["revision"],
+ ownerUserId: string,
+) {
+ return updateNoteWithRevision(supabase, noteId, expectedRevision, ownerUserId, { content });
 }
 
 /** Update note title */
-export async function updateNoteTitle(
+export function updateNoteTitle(
  supabase: AppSupabaseClient,
  noteId: string,
- title: string,
-): Promise<boolean> {
- const { data, error } = await supabase
-  .from("notes")
-  .update({ title, updated_at: new Date().toISOString() })
-  .eq("id", noteId)
-  .select("id")
-  .maybeSingle();
-
- if (error) {
-  logger.error("[NotesService] update title error:", error);
-  return false;
- }
- return data !== null;
+ title: DbNote["title"],
+ expectedRevision: DbNote["revision"],
+ ownerUserId: string,
+) {
+ return updateNoteWithRevision(supabase, noteId, expectedRevision, ownerUserId, { title });
 }
 
 /** Update note category */
-export async function updateNoteCategory(
+export function updateNoteCategory(
  supabase: AppSupabaseClient,
  noteId: string,
  category: NoteCategory,
-): Promise<boolean> {
- const { data, error } = await supabase
-  .from("notes")
-  .update({ category, updated_at: new Date().toISOString() })
-  .eq("id", noteId)
-  .select("id")
-  .maybeSingle();
-
- if (error) {
-  logger.error("[NotesService] update category error:", error);
-  return false;
- }
- return data !== null;
+ expectedRevision: DbNote["revision"],
+ ownerUserId: string,
+) {
+ return updateNoteWithRevision(supabase, noteId, expectedRevision, ownerUserId, { category });
 }
 
 /** Delete a note */
@@ -448,46 +475,29 @@ export async function deleteNote(supabase: AppSupabaseClient, noteId: string): P
 }
 
 /** Update reading content (split view left pane) */
-export async function updateReadingContent(
+export function updateReadingContent(
  supabase: AppSupabaseClient,
  noteId: string,
  readingContent: DbNote["reading_content"],
-): Promise<boolean> {
- const { data, error } = await supabase
-  .from("notes")
-  .update({
-   reading_content: readingContent,
-   updated_at: new Date().toISOString(),
-  })
-  .eq("id", noteId)
-  .select("id")
-  .maybeSingle();
-
- if (error) {
-  logger.error("[NotesService] update reading content error:", error);
-  return false;
- }
- return data !== null;
+ expectedRevision: DbNote["revision"],
+ ownerUserId: string,
+) {
+ return updateNoteWithRevision(supabase, noteId, expectedRevision, ownerUserId, {
+  reading_content: readingContent,
+ });
 }
 
 /** Update split view enabled state */
-export async function updateSplitViewEnabled(
+export function updateSplitViewEnabled(
  supabase: AppSupabaseClient,
  noteId: string,
- enabled: boolean,
-): Promise<boolean> {
- const { data, error } = await supabase
-  .from("notes")
-  .update({ split_view_enabled: enabled, updated_at: new Date().toISOString() })
-  .eq("id", noteId)
-  .select("id")
-  .maybeSingle();
-
- if (error) {
-  logger.error("[NotesService] update split view state error:", error);
-  return false;
- }
- return data !== null;
+ enabled: DbNote["split_view_enabled"],
+ expectedRevision: DbNote["revision"],
+ ownerUserId: string,
+) {
+ return updateNoteWithRevision(supabase, noteId, expectedRevision, ownerUserId, {
+  split_view_enabled: enabled,
+ });
 }
 
 /** Search notes by title (for link-to-note feature) */
@@ -590,8 +600,10 @@ export async function updateNoteLibraryMetadata(
  supabase: AppSupabaseClient,
  noteId: string,
  input: z.infer<typeof UpdateNoteLibraryMetadataInputSchema>,
-): Promise<void> {
- const changes: TablesUpdate<"notes"> = { updated_at: new Date().toISOString() };
+ expectedRevision: DbNote["revision"],
+ ownerUserId: string,
+): Promise<DbNote> {
+ const changes: z.output<typeof NoteUpdateSchema> = {};
  if (input.title !== undefined) changes.title = input.title;
  if (input.folderId !== undefined) changes.folder_id = input.folderId;
  if (input.readingStatus !== undefined) changes.reading_status = input.readingStatus;
@@ -604,14 +616,7 @@ export async function updateNoteLibraryMetadata(
   changes.source_captured_at = input.source?.capturedAt ?? null;
  }
 
- const { data, error } = await supabase
-  .from("notes")
-  .update(changes)
-  .eq("id", noteId)
-  .select("id")
-  .maybeSingle();
- if (error) throw error;
- if (!data) throw new Error("Note metadata was not saved");
+ return updateNoteWithRevision(supabase, noteId, expectedRevision, ownerUserId, changes);
 }
 
 /* ══════════════════════════════════════════

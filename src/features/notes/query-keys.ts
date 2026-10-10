@@ -7,6 +7,7 @@ export const noteQueryKeys = {
  listRoot: (userId: UserScope) => ["notes", userId, "list"],
  list: (userId: UserScope, category?: NoteCategory) => ["notes", userId, "list", category ?? "all"],
  detail: (userId: UserScope, noteId: string) => ["notes", userId, "detail", noteId],
+ recentRoot: (userId: UserScope) => ["notes", userId, "recent"],
  recent: (userId: UserScope, limit: number) => ["notes", userId, "recent", limit],
  folders: (userId: UserScope) => ["notes", userId, "folders"],
  lessonLinkedRoot: (userId: UserScope) => ["notes", userId, "lesson-linked"],

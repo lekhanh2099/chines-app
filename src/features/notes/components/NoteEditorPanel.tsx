@@ -44,6 +44,7 @@ import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import { Typography } from "@/components/ui/display/typography";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
+import { NoteConflictDialog } from "@/features/notes/components/NoteConflictDialog";
 import { useNoteEditor } from "@/features/notes/hooks/useNoteEditor";
 import { useRouter } from "@/i18n/navigation";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
@@ -89,6 +90,10 @@ export function NoteEditorPanel({
   importNote,
   exportNote,
   retrySave,
+  conflict,
+  resolveConflict,
+  recoverableDrafts,
+  recoverDraft,
   isImporting,
   importVersion,
   noteContent,
@@ -117,6 +122,7 @@ export function NoteEditorPanel({
  const isReadOnlyMode = readOnlyOverride ?? isMobileViewport;
  const [isToolbarVisible, setIsToolbarVisible] = useState(true);
  const importInputRef = useRef<HTMLInputElement>(null);
+ const mobileActionsTriggerRef = useRef<HTMLButtonElement>(null);
  const splitViewSynced = useRef(false);
 
  useEffect(() => {
@@ -226,6 +232,15 @@ export function NoteEditorPanel({
     </div>
    ) : (
     <>
+     {conflict ? (
+      <NoteConflictDialog
+       localNote={note}
+       serverNote={conflict}
+       onResolve={resolveConflict}
+       recoverableDrafts={recoverableDrafts}
+       onRecover={recoverDraft}
+      />
+     ) : null}
      <Input
       ref={importInputRef}
       type="file"
@@ -246,6 +261,7 @@ export function NoteEditorPanel({
            variant="ghost"
            size="icon"
            className="shrink-0 xl:hidden"
+           ref={mobileActionsTriggerRef}
            aria-label={t("options")}
            title={t("options")}
            aria-haspopup="dialog"
@@ -344,6 +360,10 @@ export function NoteEditorPanel({
       onOpenChange={setMobileActionsOpen}
       side="bottom"
       height="tall"
+      onCloseAutoFocus={(event) => {
+       event.preventDefault();
+       mobileActionsTriggerRef.current?.focus();
+      }}
      >
       <SheetHeader title={t("options")} onClose={() => setMobileActionsOpen(false)} />
       <SheetBody className="grid content-start gap-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">

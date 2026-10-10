@@ -53,6 +53,10 @@
   "requiredUnits": "本课有 {count} 个必须保留的信息单元",
   "referenceNotice": "参考答案只会在第一次作答后打开。只要完整保留意义、逻辑关系、术语和必要语气，其他表达方式也可以正确。",
   "history": "本段历史：{count} 次",
+  "historyLoading": "正在加载本段历史…",
+  "historyError": "无法加载本段历史",
+  "historyErrorHelp": "你仍然可以继续练习。请重试以查看历史记录。",
+  "historyRetry": "重试",
   "review": "复习"
  },
  "source": {

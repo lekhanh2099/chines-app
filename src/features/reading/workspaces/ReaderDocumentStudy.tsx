@@ -12,7 +12,7 @@ import {
  type LucideIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useMemo, useState, type ReactNode } from "react";
+import { memo, useMemo, useState, type ReactNode } from "react";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -82,7 +82,7 @@ function metadataString(resource: ReaderDocumentResource, key: string) {
  return typeof value === "string" ? value : null;
 }
 
-export function ReaderDocumentStudy({
+export const ReaderDocumentStudy = memo(function ReaderDocumentStudy({
  resource,
  stateOwner = "reader",
  backHref = "/reader",
@@ -147,7 +147,7 @@ export function ReaderDocumentStudy({
    }}
   />
  );
-}
+});
 
 function ReaderDocumentStudyContent({
  resource,

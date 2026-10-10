@@ -33,6 +33,7 @@
   "synced": "已同步"
  },
  "offlinePack": {
+  "srsSaveQueued": "操作已保存在此设备上。联网后将同步到 SRS；服务器尚未确认。",
   "downloadCourse": "下载离线课程",
   "downloading": "正在下载 ({percent}%)...",
   "downloadReady": "已离线就绪",
@@ -54,6 +55,68 @@
   "courseSeriesHeading": "教材系列",
   "courseSeriesDescription": "各系列按级别划分，分册为选课交互单元。",
   "noCoursesTitle": "暂无教材",
-  "noCoursesDescription": "汉字之家文库中暂无课程数据。"
+  "noCoursesDescription": "汉字之家文库中暂无课程数据。",
+  "collection": "教材系列",
+  "draft": "草稿数据",
+  "missingAdvancedVolume": "缺少高级 III",
+  "collectionCounts": "{levels} 个级别 · {books} 册 · {lessons} 课",
+  "levelPosition": "级别 {current}/{total}",
+  "courseCounts": "{books} 册 · {lessons} 课",
+  "noBooksTitle": "暂无分册",
+  "noBooksDescription": "此级别尚未在文库中添加分册。",
+  "noCollectionBooksTitle": "此教材系列暂无分册",
+  "noCollectionBooksDescription": "添加分册，开始整理此系列的课程。",
+  "lessonCount": "{count} 课",
+  "contentCounts": "{vocab} 个词汇 · {grammar} 个语法点",
+  "selectLessonAria": "在{book}中选择课程",
+  "selectLesson": "选择课程",
+  "lessonLabel": "第 {number} 课：{title}",
+  "lesson": "课程",
+  "openLessonAria": "打开{title}",
+  "open": "打开",
+  "noLessons": "此分册暂无课程。",
+  "recentTitle": "最近学习",
+  "resume": "继续学习",
+  "loadingRecent": "正在加载最近学习的课程",
+  "loading": "正在加载汉字之家文库",
+  "edit": "编辑",
+  "exitEdit": "退出编辑",
+  "groups": {
+   "hanyu": {
+    "title": "汉语教程",
+    "description": "按汉语教程系列从低到高逐册学习。"
+   },
+   "boya": {
+    "title": "博雅汉语",
+    "description": "博雅学习路径按级别和分册划分。"
+   },
+   "boyaSecondEdition": {
+    "title": "博雅九册 · 第二版",
+    "description": "第二版 · 中高级五册中已有四册，缺少高级 III。"
+   },
+   "listening": {
+    "title": "听力教材",
+    "description": "按分册练习听力、应答与听写。"
+   },
+   "other": {
+    "title": "其他教材",
+    "description": "补充教材与自建内容。"
+   }
+  }
+ },
+ "offlineStudy": {
+  "title": "离线学习",
+  "loading": "正在确认账户和本地数据。如果页面无法打开，请联网后重新加载。",
+  "description": "打开当前账户已下载的课程。AI、未下载的内容和在线语音需要网络连接。",
+  "library": "已下载课程",
+  "open": "打开已下载课程",
+  "textbooks": "可用教材",
+  "openTextbook": "打开教材",
+  "textbookUnavailable": "教材不可用",
+  "sessionUnavailable": "无法确认账户。请联网并重新登录，以打开该账户已下载的课程。",
+  "empty": "暂无可离线学习的课程",
+  "emptyDescription": "请在联网时下载教材，将完整课程和生词保存到此设备。",
+  "storageError": "无法读取离线存储",
+  "storageErrorDescription": "本地数据暂不可用。请重试；若仍失败，请联网后打开课程。"
  }
 }

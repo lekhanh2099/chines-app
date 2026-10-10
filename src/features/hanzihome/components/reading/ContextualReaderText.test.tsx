@@ -97,6 +97,7 @@ describe("ContextualReaderText", () => {
   suffixText: "。",
   tone: "focus",
   noteId: "saved-note-1",
+  note: null,
   noteText: "Nhạc cụ",
   createdAt: "2026-09-06T00:00:00.000Z",
   updatedAt: "2026-09-06T00:00:00.000Z",

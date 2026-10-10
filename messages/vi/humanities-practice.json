@@ -53,6 +53,10 @@
   "requiredUnits": "Bài này có {count} đơn vị ý cần giữ",
   "referenceNotice": "Bản tham khảo chỉ mở sau lần làm đầu. Một cách diễn đạt khác vẫn đúng khi giữ đủ nghĩa, quan hệ logic, thuật ngữ và sắc thái cần thiết.",
   "history": "Lịch sử đoạn này: {count} lần",
+  "historyLoading": "Đang tải lịch sử đoạn này…",
+  "historyError": "Không tải được lịch sử đoạn này",
+  "historyErrorHelp": "Bạn vẫn có thể luyện tập. Thử tải lại để xem lịch sử.",
+  "historyRetry": "Thử tải lại",
   "review": "review"
  },
  "source": {

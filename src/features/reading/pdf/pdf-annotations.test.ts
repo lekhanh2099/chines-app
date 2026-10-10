@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
  appendPdfStrokePoint,
+ equalPdfAnnotationPayloads,
  createPdfStroke,
  erasePdfStrokesAtPoint,
  pdfStrokePath,
@@ -10,6 +11,19 @@ import {
 
 describe("HanziHome PDF annotation geometry", () => {
  const point = { x: 0.2, y: 0.3 };
+
+ it("compares complete stroke content when reconciling a lost acknowledgement", () => {
+  const stroke = createPdfStroke("pen", "#ff0000", 4, point);
+  const payload = { strokes: [stroke] };
+  expect(
+   equalPdfAnnotationPayloads(payload, { strokes: [{ ...stroke, points: [{ ...point }] }] }),
+  ).toBe(true);
+  expect(equalPdfAnnotationPayloads(payload, { strokes: [{ ...stroke, width: 5 }] })).toBe(false);
+  expect(
+   equalPdfAnnotationPayloads(payload, { strokes: [{ ...stroke, points: [{ x: 0.3, y: 0.3 }] }] }),
+  ).toBe(false);
+  expect(equalPdfAnnotationPayloads(payload, { strokes: [] })).toBe(false);
+ });
 
  it("creates and appends normalized strokes deterministically", () => {
   const stroke = createPdfStroke("pen", "#ff0000", 4, point);

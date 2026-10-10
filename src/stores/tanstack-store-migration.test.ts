@@ -48,7 +48,13 @@ describe("TanStack Store migration", () => {
   }));
   dictionaryLookupStore.setState(() => ({ overrides: {}, hasHydrated: false }));
   focusModeStore.setState(() => ({ enabled: false, hasHydrated: false }));
-  noteTabsStore.setState(() => ({ tabs: [], activeNoteId: null, hasHydrated: false }));
+  noteTabsStore.setState(() => ({
+   ownerId: null,
+   tabs: [],
+   activeNoteId: null,
+   hasHydrated: false,
+  }));
+  noteTabsStore.actions.setOwner("owner-a");
   sidebarStore.setState(() => ({ isCollapsed: false }));
   splitViewStore.setState(() => ({ activeNotes: {}, dividerPositions: {} }));
   inspectorStore.setState(() => ({
@@ -113,6 +119,97 @@ describe("TanStack Store migration", () => {
 
   expect(dictionaryLookupStore.actions.isEnabled("/vi/notes/note-1")).toBe(true);
   expect(dictionaryLookupStore.actions.isEnabled("/zh-CN/notes/note-3")).toBe(true);
+ });
+
+ it("does not notify Notes subscribers for unchanged tab actions", () => {
+  noteTabsStore.actions.openTab("note-1", "Ghi chú");
+  const initial = noteTabsStore.get();
+  const notify = vi.fn();
+  const subscription = noteTabsStore.subscribe(notify);
+  try {
+   noteTabsStore.actions.setOwner("owner-a");
+   noteTabsStore.actions.openTab("note-1", "Ghi chú");
+   noteTabsStore.actions.setActive("note-1");
+   noteTabsStore.actions.updateTabTitle("note-1", "Ghi chú");
+   noteTabsStore.actions.updateTabTitle("missing", "Missing");
+   expect(noteTabsStore.get()).toBe(initial);
+   expect(notify).not.toHaveBeenCalled();
+   noteTabsStore.actions.updateTabTitle("note-1", "Đã đổi tên");
+   expect(notify).toHaveBeenCalledOnce();
+   expect(noteTabsStore.get().tabs).toEqual([{ noteId: "note-1", title: "Đã đổi tên" }]);
+   noteTabsStore.actions.openTab("note-2", "Hai");
+   noteTabsStore.actions.setActive("note-1");
+   expect(noteTabsStore.get().activeNoteId).toBe("note-1");
+  } finally {
+   subscription.unsubscribe();
+  }
+ });
+
+ it("isolates persisted note titles, preserves legacy bytes and restores each owner's tabs", () => {
+  const legacy = JSON.stringify({
+   version: 1,
+   data: {
+    tabs: [{ noteId: "legacy-note", title: "Legacy private" }],
+    activeNoteId: "legacy-note",
+   },
+  });
+  localStorage.setItem("note-tabs", legacy);
+  noteTabsStore.actions.openTab("note-a", "A private");
+  const savedA = localStorage.getItem("note-tabs:owner-a");
+  expect(savedA).toBe(
+   JSON.stringify({
+    version: 1,
+    data: {
+     tabs: [{ noteId: "note-a", title: "A private" }],
+     activeNoteId: "note-a",
+    },
+   }),
+  );
+  noteTabsStore.actions.setOwner(null);
+  noteTabsStore.actions.openTab("guest-note", "Must not persist");
+  noteTabsStore.actions.closeAll();
+  expect(noteTabsStore.get()).toEqual({
+   ownerId: null,
+   tabs: [],
+   activeNoteId: null,
+   hasHydrated: true,
+  });
+  expect(localStorage.getItem("note-tabs:owner-a")).toBe(savedA);
+  expect(localStorage.getItem("note-tabs:null")).toBeNull();
+  noteTabsStore.actions.setOwner("owner-b");
+  expect(noteTabsStore.get().tabs).toEqual([]);
+  noteTabsStore.actions.openTab("note-b", "B private");
+  const savedB = localStorage.getItem("note-tabs:owner-b");
+  noteTabsStore.actions.setOwner("owner-a");
+  expect(noteTabsStore.get().tabs).toEqual([{ noteId: "note-a", title: "A private" }]);
+  expect(noteTabsStore.get().activeNoteId).toBe("note-a");
+  noteTabsStore.actions.setOwner("owner-b");
+  expect(noteTabsStore.get().tabs).toEqual([{ noteId: "note-b", title: "B private" }]);
+  expect(localStorage.getItem("note-tabs:owner-a")).toBe(savedA);
+  expect(localStorage.getItem("note-tabs:owner-b")).toBe(savedB);
+  expect(localStorage.getItem("note-tabs")).toBe(legacy);
+ });
+
+ it("keeps the existing twenty-tab order and selection after owner restoration", () => {
+  for (let index = 1; index <= 21; index++) {
+   noteTabsStore.actions.openTab(`note-${index}`, `Title ${index}`);
+  }
+  expect(noteTabsStore.get().tabs).toHaveLength(20);
+  expect(noteTabsStore.get().tabs[0].noteId).toBe("note-2");
+  noteTabsStore.actions.reorderTabs(19, 0);
+  noteTabsStore.actions.setActive("note-10");
+  noteTabsStore.actions.updateTabTitle("note-10", "Updated title");
+  const state = noteTabsStore.get();
+  noteTabsStore.actions.setOwner(null);
+  noteTabsStore.actions.setOwner("owner-a");
+  expect(noteTabsStore.get()).toEqual(state);
+  noteTabsStore.actions.closeTab("note-10");
+  expect(noteTabsStore.get().activeNoteId).toBe("note-11");
+  noteTabsStore.actions.closeOthers("note-21");
+  noteTabsStore.actions.setOwner(null);
+  noteTabsStore.actions.setOwner("owner-a");
+  expect(noteTabsStore.get().tabs).toEqual([{ noteId: "note-21", title: "Title 21" }]);
+  expect(noteTabsStore.get().activeNoteId).toBe("note-21");
  });
 
  it("keeps focus mode navigation inside the current lesson or an open note", () => {

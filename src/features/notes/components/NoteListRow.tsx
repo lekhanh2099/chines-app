@@ -44,12 +44,9 @@ import { IconTile } from "@/components/ui/display/icon-tile";
 import { Typography } from "@/components/ui/display/typography";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
 import { useUpdateNoteLibraryMetadata } from "@/features/notes/hooks/useNoteLibrary";
-import { useDeleteNoteFromList } from "@/features/notes/hooks/useNotesList";
-import { useQueryClient } from "@tanstack/react-query";
-import { useClientSession } from "@/components/providers/QueryProvider";
-import { getNoteById } from "@/services/notes/notes.service";
-import { noteQueryKeys } from "@/features/notes/query-keys";
-import { getNoteDraft } from "@/features/notes/local/note-draft-store";
+import { useDeleteNoteFromList, usePrefetchNote } from "@/features/notes/hooks/useNotesList";
+import { NoteConflictError, type getNoteById } from "@/services/notes/notes.service";
+import { getNoteFolderBreadcrumb } from "@/features/notes/note-library-utils";
 import { Link } from "@/i18n/navigation";
 import type { NoteFolder, NoteListItem } from "@/services/notes/notes.service";
 import { noteTabsStore } from "@/stores/notes/note-tabs-store";
@@ -71,17 +68,6 @@ function getContextTone(kind: ReturnType<typeof getNoteContext>["kind"]) {
  return "neutral";
 }
 
-function getFolderBreadcrumb(
- folderId: NoteListItem["folder_id"],
- folders: NoteFolder[],
-): string | null {
- if (!folderId) return null;
- const folder = folders.find((item) => item.id === folderId);
- if (!folder) return null;
- const parent = folder.parentId ? folders.find((item) => item.id === folder.parentId) : null;
- return parent ? `${parent.name} / ${folder.name}` : folder.name;
-}
-
 export function NoteListRow({
  note,
  folders,
@@ -101,11 +87,18 @@ export function NoteListRow({
   month: "2-digit",
   year: "2-digit",
  }).format(new Date(note.updated_at));
- const folderBreadcrumb = getFolderBreadcrumb(note.folder_id, folders);
- const metadataMutation = useUpdateNoteLibraryMetadata();
+ const folderBreadcrumb = getNoteFolderBreadcrumb(note.folder_id, folders);
+ const metadataMutation = useUpdateNoteLibraryMetadata(note.id);
  const deleteMutation = useDeleteNoteFromList();
+ const prefetchNote = usePrefetchNote();
  const { closeTab } = noteTabsStore.actions;
  const [metadataOpen, setMetadataOpen] = useState(false);
+ const [metadataDraft, setMetadataDraft] = useState<{
+  folder_id?: NoteListItem["folder_id"];
+  reading_status?: NoteListItem["reading_status"];
+ }>({});
+ const [metadataConflict, setMetadataConflict] =
+  useState<Awaited<ReturnType<typeof getNoteById>>>(null);
  const [deleteOpen, setDeleteOpen] = useState(false);
  const sortedFolders = useMemo(
   () =>
@@ -120,9 +113,20 @@ export function NoteListRow({
   readingStatus?: NoteListItem["reading_status"];
  }) => {
   try {
-   await metadataMutation.mutateAsync({ noteId: note.id, ...input });
-  } catch {
-   toast.error(t("row.updatedError"));
+   await metadataMutation.mutateAsync({
+    noteId: note.id,
+    expectedRevision: note.revision,
+    ...input,
+   });
+  } catch (error) {
+   if (error instanceof NoteConflictError) {
+    const draft: typeof metadataDraft = {};
+    if (input.folderId !== undefined) draft.folder_id = input.folderId;
+    if (input.readingStatus !== undefined) draft.reading_status = input.readingStatus;
+    setMetadataDraft(draft);
+    setMetadataConflict(error.serverNote);
+    setMetadataOpen(true);
+   } else toast.error(t("row.updatedError"));
   }
  };
 
@@ -137,44 +141,13 @@ export function NoteListRow({
   }
  };
 
- const { supabase, userId } = useClientSession();
- const queryClient = useQueryClient();
-
- const handlePrefetch = () => {
-  if (!userId) return;
-  void queryClient.prefetchQuery({
-   queryKey: noteQueryKeys.detail(userId, note.id),
-   queryFn: async () => {
-    const serverNote = await getNoteById(supabase, note.id, userId);
-    if (!serverNote) return null;
-    try {
-     const localDraft = await getNoteDraft(userId, note.id);
-     if (localDraft) {
-      const serverTime = new Date(serverNote.updated_at).getTime();
-      if (localDraft.updatedAt > serverTime) {
-       return {
-        ...serverNote,
-        content: localDraft.content,
-        reading_content: localDraft.readingContent ?? serverNote.reading_content,
-       };
-      }
-     }
-    } catch {
-     // Fall back to server note
-    }
-    return serverNote;
-   },
-   staleTime: 60 * 1000,
-  });
- };
-
  return (
   <>
    <article className="group grid grid-cols-[minmax(0,1fr)_auto] border-b border-border-default transition-colors last:border-b-0 hover:bg-bg-subtle/70">
     <Link
      href={`/notes/${note.id}`}
-     onMouseEnter={handlePrefetch}
-     onPointerDown={handlePrefetch}
+     onMouseEnter={() => prefetchNote(note.id)}
+     onPointerDown={() => prefetchNote(note.id)}
      className="min-w-0 px-3 py-3 sm:px-4 lg:px-5 lg:py-4"
     >
      <div className="flex min-w-0 items-start gap-3">
@@ -301,7 +274,19 @@ export function NoteListRow({
       </DropdownMenuContent>
      </DropdownMenu>
      {metadataOpen ? (
-      <NoteLibraryMetadataDialog note={note} open onOpenChange={setMetadataOpen} hideTrigger />
+      <NoteLibraryMetadataDialog
+       note={{ ...note, ...metadataDraft }}
+       initialConflict={metadataConflict ?? undefined}
+       open
+       onOpenChange={(open) => {
+        setMetadataOpen(open);
+        if (!open) {
+         setMetadataDraft({});
+         setMetadataConflict(null);
+        }
+       }}
+       hideTrigger
+      />
      ) : null}
     </div>
    </article>

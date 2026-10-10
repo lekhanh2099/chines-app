@@ -41,5 +41,16 @@
  "semesterBookmarksCount": "本学期书签 ({count})",
  "bookmarkLesson": "标记为本学期课程",
  "unbookmarkLesson": "取消标记",
- "bookmarked": "已标记"
+ "bookmarked": "已标记",
+ "utilities": "工具",
+ "practice": {
+  "translation": {
+   "description": "练习本课句子和段落的双向翻译。",
+   "open": "打开翻译练习（{count} 段）"
+  },
+  "dictation": {
+   "description": "练习听写本课的短句。",
+   "open": "打开听写练习（{count} 句）"
+  }
+ }
 }

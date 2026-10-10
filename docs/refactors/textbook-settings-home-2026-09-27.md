@@ -1,5 +1,7 @@
 # Textbook settings, continuation and Home
 
+> Execution ownership — 2026-10-08: CP1 hydration chưa reproduced được theo dõi tại [feature quality master plan](feature-quality-audit-enhancement-2026-10-04.md#0-một-plan-thực-thi--reconciliation-08102026), C10-02/C12/C14. Giữ historical receipts bên dưới; không claim hydration đã fix hoặc tạo queue Home thứ hai.
+
 Approved scope: per-book display preferences; per-book lesson + tab continuation; Home grouped by series; tm2 stays hidden. Preserve existing Pinyin WIP. Do not persist reader segments.
 
 ## Checkpoints

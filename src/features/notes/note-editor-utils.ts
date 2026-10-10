@@ -2,13 +2,80 @@ import type { MutationStatus } from "@tanstack/react-query";
 
 import type { NoteDraftRecord } from "./local/note-draft-store";
 import type { NoteExportPayload } from "./note-export.schema";
-import type { NoteDetail, NoteFolder } from "@/services/notes/notes.service";
+import type { CreateNoteInput, NoteDetail, NoteFolder } from "@/services/notes/notes.service";
+import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor/editor-document";
+
+export function formatQuickNoteDate(date: Date, locale: string): string {
+ return new Intl.DateTimeFormat(locale, {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+ }).format(date);
+}
+
+export function createQuickNoteInput(title: CreateNoteInput["title"]): CreateNoteInput {
+ return { title, tags: ["quick-note"], content: EMPTY_LEXICAL_DOCUMENT };
+}
+
+export function createNoteFormInput(
+ input: {
+  title: CreateNoteInput["title"];
+  tags: string;
+  category: NoteDetail["category"];
+  folderId: string;
+  readingStatus: NonNullable<NoteDetail["reading_status"]>;
+ },
+ reading: boolean,
+): CreateNoteInput {
+ return {
+  title: input.title.trim(),
+  tags: input.tags
+   .split(",")
+   .map((tag) => tag.trim())
+   .filter(Boolean),
+  category: input.category,
+  content: EMPTY_LEXICAL_DOCUMENT,
+  readingContent: reading ? EMPTY_LEXICAL_DOCUMENT : undefined,
+  splitViewEnabled: reading,
+  folderId: input.folderId === "unfiled" ? null : input.folderId,
+  readingStatus: reading ? input.readingStatus : null,
+  source: null,
+ };
+}
+
+export function findNoteImportFolder(
+ folders: readonly NoteFolder[],
+ parentId: NoteFolder["parentId"],
+ name: NoteFolder["name"],
+) {
+ return folders.find((folder) => folder.parentId === parentId && folder.name === name);
+}
+
+export function createNoteImportInput(
+ note: NoteExportPayload["note"],
+ folderId: NoteFolder["parentId"],
+): CreateNoteInput {
+ return {
+  title: note.title,
+  tags: note.tags,
+  category: note.category,
+  content: note.content,
+  readingContent: note.readingContent ?? null,
+  splitViewEnabled: note.splitViewEnabled,
+  folderId,
+  readingStatus: note.readingStatus ?? null,
+  source: note.source ?? null,
+ };
+}
 
 export function restoreNoteDraft(note: NoteDetail, draft: NoteDraftRecord): NoteDetail {
  // A pane remains a local intent until its own successful write acknowledges it.
  // A title/category write also advances updated_at and cannot acknowledge a pane.
  return {
   ...note,
+  revision: draft.baseRevision ?? note.revision,
   content: draft.content ?? note.content,
   reading_content: draft.readingContent === undefined ? note.reading_content : draft.readingContent,
  };

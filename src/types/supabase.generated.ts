@@ -2365,6 +2365,7 @@ export type Database = {
           linked_lesson_id: string | null
           reading_content: Json | null
           reading_status: string | null
+          revision: number
           short_id: string | null
           source_author: string | null
           source_captured_at: string | null
@@ -2389,6 +2390,7 @@ export type Database = {
           linked_lesson_id?: string | null
           reading_content?: Json | null
           reading_status?: string | null
+          revision?: number
           short_id?: string | null
           source_author?: string | null
           source_captured_at?: string | null
@@ -2413,6 +2415,7 @@ export type Database = {
           linked_lesson_id?: string | null
           reading_content?: Json | null
           reading_status?: string | null
+          revision?: number
           short_id?: string | null
           source_author?: string | null
           source_captured_at?: string | null
@@ -3352,6 +3355,15 @@ export type Database = {
         }
         Returns: string
       }
+      hanzihome_update_lesson_text_annotation_note_cas_as_server: {
+        Args: {
+          p_annotation_id: string
+          p_expected_revision?: number
+          p_note_text: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       hanzihome_update_listening_item_as_user: {
         Args: {
           p_changes: Json
@@ -3518,6 +3530,16 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      hanzihome_upsert_pdf_annotation_cas: {
+        Args: {
+          p_asset_id: string
+          p_expected_absent: boolean
+          p_expected_revision: number
+          p_page_number: number
+          p_payload: Json
+        }
+        Returns: Json
+      }
       hanzihome_upsert_personal_learning_state: {
         Args: { p_expected_revision: number; p_node_id: string; p_state: Json }
         Returns: {
@@ -3683,6 +3705,15 @@ export type Database = {
       update_lesson_text_annotation_note: {
         Args: { p_annotation_id: string; p_note_text: string }
         Returns: string
+      }
+      update_note_with_revision: {
+        Args: {
+          p_changes: Json
+          p_expected_owner: string
+          p_expected_revision: number
+          p_note_id: string
+        }
+        Returns: Json
       }
       upsert_legacy_vocabulary_cache: {
         Args: {

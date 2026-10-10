@@ -183,6 +183,7 @@ export function LearningStateSyncAgent() {
  const query = useQuery({
   queryKey: hanzihomeQueryKeys.learningState(userId),
   enabled: isResolved,
+  networkMode: "always",
   queryFn: () =>
    userId
     ? loadLearningStateLocalFirst(userId)
@@ -211,6 +212,21 @@ export function LearningStateSyncAgent() {
  return null;
 }
 
+export function useLearningSettings(): UserLearningState["settings"] {
+ const { userId, isResolved } = useClientSession();
+ const query = useQuery({
+  queryKey: hanzihomeQueryKeys.learningState(userId),
+  enabled: isResolved,
+  networkMode: "always",
+  queryFn: () =>
+   userId
+    ? loadLearningStateLocalFirst(userId)
+    : Promise.resolve(normalizeLearningState(emptyLearningState)),
+  select: (state) => state.settings,
+ });
+ return query.data ?? emptyLearningState.settings;
+}
+
 export function useLearningState() {
  const { userId, isResolved } = useClientSession();
  const queryClient = useQueryClient();
@@ -222,6 +238,7 @@ export function useLearningState() {
  const query = useQuery({
   queryKey,
   enabled: isResolved,
+  networkMode: "always",
   queryFn: () =>
    userId
     ? loadLearningStateLocalFirst(userId)

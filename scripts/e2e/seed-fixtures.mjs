@@ -87,4 +87,83 @@ const loopItem = await admin.from("hanzihome_learning_loop_items").upsert(
 );
 if (loopItem.error) throw loopItem.error;
 
+// The real Search repository requires a non-empty seed radical catalog.
+const radicals = await admin
+ .from("hanzihome_radicals")
+ .select("id")
+ .eq("source", "seed")
+ .is("deleted_at", null)
+ .limit(1);
+if (radicals.error) throw radicals.error;
+if (radicals.data.length === 0) {
+ const radical = await admin.from("hanzihome_radicals").insert({
+  id: "e2e-search-radical",
+  source: "seed",
+  radical_index: 1,
+  radical: "一",
+  name_vi: "Nhất",
+  strokes: 1,
+  core_meaning: { modern: "một" },
+ });
+ if (radical.error) throw radical.error;
+}
+
+// A private normalized lesson exercises the real API/cache/Reader cold-boot path.
+const offlineCourse = await admin.from("hanzihome_courses").upsert({
+ id: "e2e-offline-course",
+ slug: "e2e-offline-course",
+ title: "Offline fixture course A",
+ source: "custom",
+ user_id: userA,
+});
+if (offlineCourse.error) throw offlineCourse.error;
+const offlineBook = await admin.from("hanzihome_course_books").upsert({
+ id: "e2e-offline-book",
+ course_id: "e2e-offline-course",
+ title: "Offline fixture book A",
+ source: "custom",
+ user_id: userA,
+});
+if (offlineBook.error) throw offlineBook.error;
+const offlineLesson = await admin.from("hanzihome_lessons").upsert({
+ id: "e2e-offline-lesson",
+ course_id: "e2e-offline-course",
+ book_id: "e2e-offline-book",
+ lesson_number: 1,
+ lesson_order: 1,
+ title_zh: "离线学习",
+ title_vi: "Offline fixture lesson A",
+ source: "custom",
+ owner_id: userA,
+});
+if (offlineLesson.error) throw offlineLesson.error;
+const offlineText = await admin.from("hanzihome_lesson_sections").upsert({
+ id: "00000000-0000-4000-8000-000000006051",
+ lesson_id: "e2e-offline-lesson",
+ source_section_id: "e2e-offline-section",
+ section_key: "text",
+ section_type: "text",
+ section_order: 1,
+ title: "课文",
+ title_vi: "Bài khóa",
+ payload: {
+  type: "text",
+  blocks: [
+   {
+    id: "e2e-offline-block",
+    type: "text_narrative",
+    order: 1,
+    title: "离线学习",
+    paragraphs: [
+     { id: "e2e-offline-paragraph-zh", order: 1, zh: "你好，离线学习。" },
+     { id: "e2e-offline-paragraph-a", order: 2, zh: "Offline fixture paragraph A." },
+    ],
+   },
+  ],
+ },
+ source: "custom",
+ owner_id: userA,
+});
+if (offlineText.error) throw offlineText.error;
+
 console.log(`Seeded HanziHome E2E fixtures: ${accounts.map(({ email }) => email).join(", ")}`);

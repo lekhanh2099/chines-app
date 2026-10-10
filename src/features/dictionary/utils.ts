@@ -1,11 +1,26 @@
 import { extractChinese } from "@/lib/text/chinese-utils";
 import type { ExampleItem } from "@/features/dictionary/types";
+import type { SmartSelectionMode, SmartSelectionResult } from "@/types/database";
 
 export const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
 
 export function getUniqueChineseCharacters(text: string): string[] {
  return Array.from(
   new Set(Array.from(extractChinese(text)).filter((character) => HANZI_CHAR_REGEX.test(character))),
+ );
+}
+
+export function getDictionaryDisplayMeaning(
+ mode: SmartSelectionMode,
+ data: SmartSelectionResult,
+): string {
+ if (mode === "sentence") return data.translation || data.entry.meaning || "";
+ return (
+  data.meaning_summary ||
+  data.definitions[0]?.meaning ||
+  data.definitions[0]?.text ||
+  data.entry.meaning ||
+  ""
  );
 }
 

@@ -32,5 +32,18 @@
  "deleteTitle": "删除笔记？",
  "deleteDescription": "“{title}”将从你的笔记库中删除。",
  "deleting": "删除中...",
+ "conflict": {
+  "recoveryTitle": "其他标签页有未保存的草稿",
+  "recoveryDraft": "草稿 {number}",
+  "recover": "恢复此草稿",
+  "title": "此笔记已在其他设备上更新",
+  "description": "此设备上的未保存草稿仍被保留。请先选择要使用的版本，再继续保存。",
+  "review": "比较版本",
+  "local": "此设备上的草稿",
+  "serverTitle": "服务器版本：{title}（版本 {revision}）",
+  "useServer": "使用服务器版本",
+  "keepLocal": "保留我的草稿并保存",
+  "error": "暂时无法解决冲突。两个版本均被保留。"
+ },
  "save": { "saving": "保存中...", "saved": "已保存", "error": "保存失败" }
 }

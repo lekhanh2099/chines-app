@@ -27,6 +27,7 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
  const catalog = catalogQuery.data;
  const learning = useLearningState();
  const recentNotes = useRecentNotes(3);
+ const refetchRecentNotes = recentNotes.refetch;
  const todayStart = startOfToday().toISOString();
  const learningOverviewQuery = useQuery({
   queryKey: hanzihomeQueryKeys.homeLearningOverview(userId),
@@ -54,6 +55,9 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
     : Promise.resolve(0),
   staleTime: 30_000,
  });
+ const refetchLearningOverview = learningOverviewQuery.refetch;
+ const refetchRecentActivity = reviewAttemptsQuery.refetch;
+ const refetchReviewedToday = reviewTodayCountQuery.refetch;
 
  return useMemo(() => {
   const progressItems = [
@@ -97,18 +101,38 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
     learningLoopDueCount: learningOverview?.learningLoopDueCount ?? 0,
     readerCompletedCount: learningOverview?.readerCompletedCount ?? 0,
     readerDocumentCount: learningOverview?.readerDocumentCount ?? 0,
+    overviewAvailable: learningOverview !== undefined,
+    overviewLoading: learningOverviewQuery.isFetching,
     overviewUnavailable: learningOverviewQuery.isError,
+    reviewedTodayAvailable: reviewTodayCountQuery.data !== undefined,
+    reviewedTodayLoading: reviewTodayCountQuery.isFetching,
+    reviewedTodayUnavailable: reviewTodayCountQuery.isError,
    },
    recentActivity,
+   recentActivityLoading: reviewAttemptsQuery.isFetching,
+   recentActivityUnavailable: reviewAttemptsQuery.isError,
+   retryRecentActivity: () => {
+    void refetchRecentActivity();
+   },
+   retryLearningOverview: () => {
+    void refetchLearningOverview();
+   },
+   retryReviewedToday: () => {
+    void refetchReviewedToday();
+   },
    recentNotes: recentNotes.data ?? [],
+   recentNotesLoading: recentNotes.isLoading,
+   recentNotesUnavailable: recentNotes.isError,
+   retryRecentNotes: () => {
+    void refetchRecentNotes();
+   },
    isLoading:
     catalogQuery.isPending ||
     learning.isLoading ||
-    recentNotes.isLoading ||
     (userId !== null &&
-     (reviewAttemptsQuery.isPending ||
-      reviewTodayCountQuery.isPending ||
-      learningOverviewQuery.isPending)),
+     ((reviewAttemptsQuery.isPending && !reviewAttemptsQuery.isFetched) ||
+      (reviewTodayCountQuery.isPending && !reviewTodayCountQuery.isFetched) ||
+      (learningOverviewQuery.isPending && !learningOverviewQuery.isFetched))),
   };
  }, [
   textbooks,
@@ -118,14 +142,27 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
   learning.isLoading,
   learning.state,
   recentNotes.data,
+  recentNotes.isError,
   recentNotes.isLoading,
+  refetchRecentNotes,
   learningOverviewQuery.data,
   learningOverviewQuery.isError,
+  learningOverviewQuery.isFetching,
+  learningOverviewQuery.isFetched,
   learningOverviewQuery.isPending,
   reviewAttemptsQuery.data,
+  reviewAttemptsQuery.isError,
+  reviewAttemptsQuery.isFetching,
+  reviewAttemptsQuery.isFetched,
   reviewAttemptsQuery.isPending,
   reviewTodayCountQuery.data,
+  reviewTodayCountQuery.isError,
+  reviewTodayCountQuery.isFetching,
+  reviewTodayCountQuery.isFetched,
   reviewTodayCountQuery.isPending,
+  refetchLearningOverview,
+  refetchRecentActivity,
+  refetchReviewedToday,
   userId,
   t,
  ]);

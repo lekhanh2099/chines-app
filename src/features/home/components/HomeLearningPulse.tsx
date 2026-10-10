@@ -6,15 +6,28 @@ import { Card } from "@/components/ui/layout/card";
 import { IconTile } from "@/components/ui/display/icon-tile";
 import { Separator } from "@/components/ui/layout/separator";
 import { Typography } from "@/components/ui/display/typography";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import type { HomeDashboardModel } from "@/features/home/types";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
-export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learningPulse"] }) {
+export function HomeLearningPulse({
+ pulse,
+ onRetryOverview,
+ onRetryReviewedToday,
+}: {
+ pulse: HomeDashboardModel["learningPulse"];
+ onRetryOverview: HomeDashboardModel["retryLearningOverview"];
+ onRetryReviewedToday: HomeDashboardModel["retryReviewedToday"];
+}) {
  const t = useTranslations("Home");
+ const common = useTranslations("Common");
 
  return (
-  <section aria-labelledby="home-learning-pulse-title">
+  <section
+   aria-labelledby="home-learning-pulse-title"
+   aria-busy={pulse.overviewLoading || pulse.reviewedTodayLoading}
+  >
    <Card variant="section" padding="lg" className="grid gap-5">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid min-w-0 gap-1">
@@ -48,13 +61,13 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
      />
      <PulseStat
       icon={<Repeat2 />}
-      value={pulse.srsDueCount}
+      value={pulse.overviewAvailable ? pulse.srsDueCount : "—"}
       label={t("pulse.srsDueCount")}
       tone="warning"
      />
      <PulseStat
       icon={<Workflow />}
-      value={pulse.learningLoopDueCount}
+      value={pulse.overviewAvailable ? pulse.learningLoopDueCount : "—"}
       label={t("pulse.learningLoopDueCount")}
       tone="accent"
      />
@@ -71,7 +84,7 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
      />
      <PulseStat
       icon={<History />}
-      value={pulse.reviewedTodayCount}
+      value={pulse.reviewedTodayAvailable ? pulse.reviewedTodayCount : "—"}
       label={t("pulse.reviewedTodayCount")}
       tone="accent"
      />
@@ -83,7 +96,9 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
      />
      <PulseStat
       icon={<FileText />}
-      value={`${pulse.readerCompletedCount}/${pulse.readerDocumentCount}`}
+      value={
+       pulse.overviewAvailable ? `${pulse.readerCompletedCount}/${pulse.readerDocumentCount}` : "—"
+      }
       label={t("pulse.readerCompletedCount")}
       tone="info"
      />
@@ -92,10 +107,31 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
     <Typography as="p" variant="caption" tone="muted">
      {pulse.trackedCount > 0 ? t("pulse.tracked", { count: pulse.trackedCount }) : t("pulse.empty")}
     </Typography>
-    {pulse.overviewUnavailable ? (
-     <Typography as="p" variant="caption" tone="danger">
-      {t("pulse.unavailable")}
+    {pulse.overviewLoading ? (
+     <Typography as="p" variant="caption" tone="muted">
+      {t("pulse.overviewLoading")}
      </Typography>
+    ) : null}
+    {pulse.overviewUnavailable ? (
+     <QueryErrorCard
+      title={t("pulse.overviewErrorTitle")}
+      description={t("pulse.unavailable")}
+      retryLabel={common("actions.retry")}
+      onRetry={onRetryOverview}
+     />
+    ) : null}
+    {pulse.reviewedTodayLoading ? (
+     <Typography as="p" variant="caption" tone="muted">
+      {t("pulse.reviewedTodayLoading")}
+     </Typography>
+    ) : null}
+    {pulse.reviewedTodayUnavailable ? (
+     <QueryErrorCard
+      title={t("pulse.reviewedTodayErrorTitle")}
+      description={t("pulse.reviewedTodayErrorDescription")}
+      retryLabel={common("actions.retry")}
+      onRetry={onRetryReviewedToday}
+     />
     ) : null}
    </Card>
   </section>

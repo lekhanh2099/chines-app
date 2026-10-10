@@ -3,7 +3,12 @@ import type { ReaderHumanitiesEvaluation } from "@/features/humanities/model/hum
 import type { TranslationSegment } from "@/features/hanzihome/practice/translation-practice";
 import {
  createTranslationSubmission,
+ createTranslationRecordingSubmission,
+ createTranslationRevisionSubmission,
+ createTranslationSelfMarkSubmission,
  translationCourseModuleOrder,
+ advanceTranslationPreparation,
+ translationPreparationRemaining,
 } from "./translation-workspace-utils";
 
 const segment: TranslationSegment = {
@@ -37,6 +42,97 @@ const evaluation: ReaderHumanitiesEvaluation = {
 };
 
 describe("translation workspace policies", () => {
+ it("preserves the learner revision and complete self-mark payload without changing the source", () => {
+  const context: Parameters<typeof createTranslationRevisionSubmission>[0] = {
+   contentId: "second",
+   direction: "vi-zh",
+  };
+  const marks: Parameters<typeof createTranslationSelfMarkSubmission>[1] = {
+   time: "kept",
+   place: "partial",
+  };
+  expect(createTranslationRevisionSubmission(context, "  星期四\n九点  ")).toEqual({
+   surface: "translation",
+   contentId: "second",
+   direction: "vi-zh",
+   answer: { answer: "  星期四\n九点  ", reference: null, missingUnitIds: [] },
+   scorePercent: null,
+   responseMs: null,
+  });
+  expect(createTranslationSelfMarkSubmission(context, marks)).toEqual({
+   surface: "translation",
+   contentId: "second",
+   direction: "vi-zh",
+   answer: { kind: "interpreting-self-mark", unitMarks: { time: "kept", place: "partial" } },
+   scorePercent: null,
+   responseMs: null,
+  });
+  expect(context).toEqual({ contentId: "second", direction: "vi-zh" });
+  expect(marks).toEqual({ time: "kept", place: "partial" });
+ });
+ it("builds the complete recording payload from the captured source and preserves learner fields", () => {
+  const context = { contentId: segment.id, direction: evaluation.direction };
+  const answer: Parameters<typeof createTranslationRecordingSubmission>[1] = {
+   transcript: "  Lời dịch của tôi  ",
+   notes: "9h — thứ Năm",
+   unitMarks: { time: "partial", place: "unsure" },
+   durationSeconds: 7,
+  };
+  expect(createTranslationRecordingSubmission(context, answer)).toEqual({
+   surface: "translation",
+   contentId: "segment-1",
+   direction: "zh-vi",
+   answer: {
+    kind: "interpreting-recording",
+    transcript: "  Lời dịch của tôi  ",
+    notes: "9h — thứ Năm",
+    unitMarks: { time: "partial", place: "unsure" },
+    durationSeconds: 7,
+   },
+   scorePercent: null,
+   responseMs: 7000,
+  });
+  expect(context).toEqual({ contentId: "segment-1", direction: "zh-vi" });
+  expect(answer.durationSeconds).toBe(7);
+  expect(answer.unitMarks).toEqual({ time: "partial", place: "unsure" });
+  expect(
+   createTranslationRecordingSubmission(
+    { contentId: "second", direction: "vi-zh" },
+    { transcript: "", notes: "", unitMarks: {}, durationSeconds: 0 },
+   ),
+  ).toEqual({
+   surface: "translation",
+   contentId: "second",
+   direction: "vi-zh",
+   answer: {
+    kind: "interpreting-recording",
+    transcript: "",
+    notes: "",
+    unitMarks: {},
+    durationSeconds: 0,
+   },
+   scorePercent: null,
+   responseMs: 0,
+  });
+ });
+ it("uses the current preparation key, decrements once, and stops at zero", () => {
+  const prior = { key: "first:zh-vi", remaining: 2 };
+  expect(translationPreparationRemaining(prior, "first:zh-vi", 3)).toBe(2);
+  expect(translationPreparationRemaining(prior, "second:zh-vi", 3)).toBe(3);
+  expect(translationPreparationRemaining(prior, "first:vi-zh", 0)).toBe(0);
+  expect(advanceTranslationPreparation(prior, "first:zh-vi", 3)).toEqual({
+   key: "first:zh-vi",
+   remaining: 1,
+  });
+  expect(advanceTranslationPreparation(prior, "second:zh-vi", 3)).toEqual({
+   key: "second:zh-vi",
+   remaining: 2,
+  });
+  expect(
+   advanceTranslationPreparation({ key: "first:zh-vi", remaining: 0 }, "first:zh-vi", 3),
+  ).toEqual({ key: "first:zh-vi", remaining: 0 });
+  expect(prior).toEqual({ key: "first:zh-vi", remaining: 2 });
+ });
  it("preserves both course module boundary mappings", () => {
   expect(
    [1, 2, 6, 7, 10, 11, 15, 16].map((index) => translationCourseModuleOrder("translation", index)),

@@ -41,5 +41,16 @@
  "semesterBookmarksCount": "Semester Bookmarks ({count})",
  "bookmarkLesson": "Bookmark for this semester",
  "unbookmarkLesson": "Remove bookmark",
- "bookmarked": "Bookmarked"
+ "bookmarked": "Bookmarked",
+ "utilities": "Tools",
+ "practice": {
+  "translation": {
+   "description": "Practice translating the sentences and paragraphs in this lesson in both directions.",
+   "open": "Open translation ({count} segments)"
+  },
+  "dictation": {
+   "description": "Practice listening and transcribing short sentences from this lesson.",
+   "open": "Open dictation ({count} sentences)"
+  }
+ }
 }

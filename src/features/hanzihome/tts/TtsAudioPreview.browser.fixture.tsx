@@ -20,6 +20,39 @@ import messages from "../../../../messages/vi/tts-studio.json";
 const created: string[] = [];
 const revoked: string[] = [];
 const waiting: ((blob: Blob) => void)[] = [];
+const controlledAudio: HTMLAudioElement[] = [];
+class ControlledAudio extends Audio {
+ private positionSeconds = 0;
+ private isPlaybackPaused = true;
+ constructor(..._args: ConstructorParameters<typeof Audio>) {
+  super();
+ }
+ get duration() {
+  return 100;
+ }
+ get currentTime() {
+  return this.positionSeconds;
+ }
+ set currentTime(seconds: number) {
+  this.positionSeconds = seconds;
+ }
+ get paused() {
+  return this.isPlaybackPaused;
+ }
+ play() {
+  controlledAudio.splice(0, controlledAudio.length, this);
+  this.isPlaybackPaused = false;
+  this.dispatchEvent(new Event("play"));
+  return Promise.resolve();
+ }
+ pause() {
+  if (this.isPlaybackPaused) return;
+  this.isPlaybackPaused = true;
+  this.dispatchEvent(new Event("pause"));
+ }
+ load() {}
+}
+window.Audio = ControlledAudio;
 const createUrl = URL.createObjectURL.bind(URL);
 const revokeUrl = URL.revokeObjectURL.bind(URL);
 const evidence = document.createElement("pre");
@@ -197,6 +230,8 @@ function FullSubscriber() {
    <Button onClick={() => tts.setRate(1.25)}>Set fixture rate 1.25</Button>
    <Button onClick={() => tts.setRate(1.5)}>Set fixture rate 1.5</Button>
    <Typography as="p">Fixture rate: {tts.rate}</Typography>
+   <Typography as="p">Fixture speaking: {String(tts.isSpeaking)}</Typography>
+   <Typography as="p">Fixture time: {tts.currentTimeSeconds}</Typography>
   </section>
  );
 }
@@ -257,6 +292,12 @@ button("Reset context commits", () => {
  contextCommits.reader = 0;
  contextCommits.button = 0;
  emitContext();
+});
+button("Tick controlled audio", () => {
+ const audio = controlledAudio.at(-1);
+ if (!audio) throw new Error("Controlled audio is not playing");
+ audio.currentTime += 1;
+ audio.dispatchEvent(new Event("timeupdate"));
 });
 button("Complete generation", () => {
  waiting.shift()?.(new Blob(["fixture audio"]));

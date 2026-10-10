@@ -25,11 +25,30 @@ describe("HanziHome contextual pronunciation", () => {
   ["优美的音乐让他听得入迷。", "de5"],
   ["而且吹得不比他们中的任何一位差。", "de5"],
   ["既然你的盾坚固得什么矛都刺不进去。", "de5"],
+  ["想得通", "de5"],
+  ["看得开", "de5"],
   ["他得到了奖品。", "de2"],
   ["我得去上课。", "dei3"],
  ])("resolves 得 in its phrase context: %s", (text, reading) => {
   const result = analyzeContextualPronunciation({ text });
   expect(result.glyphs.find((glyph) => glyph.text === "得")?.spokenReadingKey).toBe(reading);
+ });
+
+ it("reads potential complements in the actual 差不多先生 paragraph", () => {
+  const text =
+   "他死后，大家都称赞差不多先生样样事情看得开，想得通；大家都说他一生不肯认真，不肯算账，不肯计较，真是一位有德行的人。于是大家给他取了个死后的法号，叫他圆通大师。";
+  const result = analyzeContextualPronunciation({ text });
+  const complements = result.glyphs.filter((glyph) => glyph.text === "得");
+  expect(complements.map((glyph) => glyph.spokenReadingKey)).toEqual(["de5", "de5"]);
+  expect(complements.map((glyph) => glyph.evidence)).toEqual([
+   ["dictionary-exact"],
+   ["dictionary-exact"],
+  ]);
+  const phraseStart = text.indexOf("看得开");
+  expect(formatContextualPinyinRange(result, phraseStart, phraseStart + 3)).toBe("kàn de kāi");
+  const thinkStart = text.indexOf("想得通");
+  expect(formatContextualPinyinRange(result, thinkStart, thinkStart + 3)).toBe("xiǎng de tōng");
+  expect(result.glyphs.find((glyph) => glyph.text === "德")?.spokenReadingKey).toBe("de2");
  });
 
  it("keeps lexical and tone-sandhi readings aligned to Hanzi graphemes", () => {

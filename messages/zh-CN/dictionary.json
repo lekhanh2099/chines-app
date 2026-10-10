@@ -8,6 +8,8 @@
   "searchAria": "搜索词汇复习库",
   "searchPlaceholder": "搜索汉字、拼音、汉越音、释义...",
   "search": "搜索",
+  "loadErrorTitle": "无法加载词汇复习库",
+  "loadErrorDescription": "数据加载失败。请重试以加载已收藏的词语，搜索关键词会保留。",
   "missingSchema": "当前数据库尚未包含词汇 SRS 表。请先应用 `user_vocab_progress` migration，本页面才能显示数据。",
   "emptySearchTitle": "没有找到符合条件的词",
   "emptySearchDescription": "请尝试其他关键词或清空搜索内容。",

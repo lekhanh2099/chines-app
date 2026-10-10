@@ -43,7 +43,16 @@
   "readerCompletedCount": "Reader đã hoàn thành",
   "tracked": "{count} mục đã có trạng thái học. Nhóm đầu gồm các mục đang học hoặc đang đánh dấu khó; đây không phải lịch đến hạn SRS.",
   "empty": "Chưa có tiến độ để tổng hợp. Bắt đầu học hoặc đánh dấu trạng thái để dashboard tự cập nhật.",
-  "unavailable": "Không tải được phần tổng quan SRS, Learning Loop và Reader. Tiến độ học hiện tại vẫn hiển thị."
+  "unavailable": "Không tải được phần tổng quan SRS, Learning Loop và Reader. Tiến độ học hiện tại vẫn hiển thị.",
+  "overviewErrorTitle": "Không tải được tổng quan học tập",
+  "overviewLoading": "Đang tải tổng quan học tập",
+  "reviewedTodayLoading": "Đang tải số lượt ôn hôm nay",
+  "reviewedTodayErrorTitle": "Không tải được số lượt ôn hôm nay",
+  "reviewedTodayErrorDescription": "Vui lòng thử tải lại số lượt ôn. Các phần khác vẫn hiển thị."
+ },
+ "focus": {
+  "overviewUnknownTitle": "Tiếp tục học và ôn tập hôm nay",
+  "overviewUnknownDescription": "Chưa có số liệu đến hạn để xác nhận tiến độ hôm nay. Bạn vẫn có thể mở kho thẻ hoặc tiếp tục bài học."
  },
  "activity": {
   "title": "Hoạt động gần đây",
@@ -63,13 +72,19 @@
    "grammar": "Điểm ngữ pháp đã ôn",
    "radical": "Bộ thủ đã ôn"
   },
-  "empty": "Chưa có lượt ôn gần đây. Khi bạn đánh giá flashcard, hoạt động sẽ xuất hiện ở đây."
+  "empty": "Chưa có lượt ôn gần đây. Khi bạn đánh giá flashcard, hoạt động sẽ xuất hiện ở đây.",
+  "loading": "Đang tải hoạt động gần đây",
+  "loadErrorTitle": "Không tải được hoạt động gần đây",
+  "loadErrorDescription": "Vui lòng thử tải lại lịch sử ôn tập. Các phần khác vẫn hiển thị."
  },
  "notes": {
   "title": "Ghi chú mới cập nhật",
   "description": "Tiếp tục các note đang dùng gần đây.",
   "viewAll": "Xem tất cả",
   "untitled": "Ghi chú chưa đặt tên",
+  "loadErrorTitle": "Không tải được ghi chú gần đây",
+  "loading": "Đang tải ghi chú gần đây",
+  "loadErrorDescription": "Vui lòng thử tải lại danh sách ghi chú.",
   "emptyTitle": "Chưa có ghi chú gần đây",
   "emptyDescription": "Tạo một ghi chú khi cần giữ lại nội dung đang học.",
   "create": "Tạo ghi chú"

@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 export function HanziHomeLibrarySkeleton() {
+ const t = useTranslations("Common.library");
  return (
   <div
    className="flex w-full min-w-0 flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:py-5"
@@ -73,7 +76,7 @@ export function HanziHomeLibrarySkeleton() {
      </section>
     ))}
    </div>
-   <span className="sr-only">Đang tải thư viện HanziHome</span>
+   <span className="sr-only">{t("loading")}</span>
   </div>
  );
 }

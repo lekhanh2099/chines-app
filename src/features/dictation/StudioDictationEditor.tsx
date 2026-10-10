@@ -1,9 +1,9 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { dictationEntryText } from "./dictation-workspace-utils";
+import { useStudioDictationSession } from "./useStudioDictationSession";
 
-import { useEffect, useRef, useState, type KeyboardEventHandler } from "react";
+import { useEffect, useRef, type KeyboardEventHandler } from "react";
 import { Pause, Play, Repeat2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/display/badge";
@@ -20,14 +20,8 @@ import {
  useListeningHotkeys,
 } from "@/features/hanzihome/listening/useListeningHotkeys";
 
-import {
- buildDictationDiff,
- summarizeDictationDiff,
-} from "@/features/hanzihome/practice/dictation-comparison";
-import {
- createDictationAttempt,
- type DictationAttempt,
-} from "@/features/dictation/dictation-session";
+import type { buildDictationDiff } from "@/features/hanzihome/practice/dictation-comparison";
+import type { DictationAttempt } from "@/features/dictation/dictation-session";
 
 type DictationTokenTone = "success" | "warning" | "danger";
 
@@ -69,87 +63,28 @@ export function StudioDictationEditor({
  onToggleLoop?: () => void;
 }) {
  const t = useTranslations("Dictation");
- const [answers, setAnswers] = useState<Record<string, string>>({});
- const [attempts, setAttempts] = useState<Record<string, DictationAttempt[]>>({});
- const [checked, setChecked] = useState<Record<string, boolean>>({});
+ const {
+  answer,
+  attempt,
+  isChecked,
+  target,
+  diff,
+  summary,
+  characterCount,
+  bestScore,
+  canAdvance,
+  isCheckDisabled,
+  updateAnswer,
+  handlePrevious,
+  handleNext,
+  editAgain,
+  confirmOrEdit,
+ } = useStudioDictationSession({ entry, index, total, onAttempt, onNext, onPrevious });
  const textareaRef = useRef<HTMLTextAreaElement>(null);
- const autoNextTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
- const answer = answers[entry.id] ?? "";
- const history = attempts[entry.id] ?? [];
- const attempt = history.at(-1);
- const isChecked = checked[entry.id] === true && attempt !== undefined;
- const target = dictationEntryText(entry);
- const diff = isChecked ? buildDictationDiff(target, answer) : [];
- const summary = isChecked ? summarizeDictationDiff(diff) : null;
-
- useEffect(() => {
-  return () => {
-   if (autoNextTimerRef.current !== null) {
-    clearTimeout(autoNextTimerRef.current);
-    autoNextTimerRef.current = null;
-   }
-  };
- }, [entry.id]);
 
  useEffect(() => {
   if (!isChecked) textareaRef.current?.focus();
  }, [entry.id, isChecked]);
-
- const handlePrevious = () => {
-  if (autoNextTimerRef.current !== null) {
-   clearTimeout(autoNextTimerRef.current);
-   autoNextTimerRef.current = null;
-  }
-  onPrevious();
- };
-
- const handleNext = () => {
-  if (autoNextTimerRef.current !== null) {
-   clearTimeout(autoNextTimerRef.current);
-   autoNextTimerRef.current = null;
-  }
-  onNext();
- };
-
- const checkCurrent = () => {
-  if (!answer.trim()) return;
-  const nextAttempt = createDictationAttempt(entry.id, target, answer, null);
-  setAttempts((current) => ({
-   ...current,
-   [entry.id]: [...(current[entry.id] ?? []), nextAttempt],
-  }));
-  setChecked((current) => ({ ...current, [entry.id]: true }));
-  onAttempt(nextAttempt);
-
-  if (nextAttempt.score === 100 && index < total - 1) {
-   if (autoNextTimerRef.current !== null) {
-    clearTimeout(autoNextTimerRef.current);
-   }
-   autoNextTimerRef.current = setTimeout(() => {
-    onNext();
-   }, 900);
-  }
- };
-
- const editAgain = () => {
-  if (autoNextTimerRef.current !== null) {
-   clearTimeout(autoNextTimerRef.current);
-   autoNextTimerRef.current = null;
-  }
-  setChecked((current) => ({ ...current, [entry.id]: false }));
- };
-
- const confirmOrEdit = () => {
-  if (isChecked) {
-   if (attempt?.score === 100 && index < total - 1) {
-    handleNext();
-   } else {
-    editAgain();
-   }
-  } else {
-   checkCurrent();
-  }
- };
 
  const controlTapRef = useRef<{ downTime: number; comboUsed: boolean } | null>(null);
 
@@ -211,12 +146,12 @@ export function StudioDictationEditor({
      </Typography>
      <Typography variant="caption" tone="muted">
       {t("answerSummary", {
-       count: Array.from(target).length,
-       score: Math.max(0, ...history.map((item) => item.score)),
+       count: characterCount,
+       score: bestScore,
       })}
      </Typography>
     </div>
-    {isChecked ? (
+    {isChecked && attempt !== undefined ? (
      <div className="flex items-center gap-2">
       <Badge
        variant={attempt.score === 100 ? "success" : attempt.score >= 70 ? "warning" : "danger"}
@@ -313,10 +248,7 @@ export function StudioDictationEditor({
       placeholder={t("answerPlaceholder")}
       onKeyDown={onEditorKeyDown}
       onKeyUp={onEditorKeyUp}
-      onChange={(event) => {
-       setAnswers((current) => ({ ...current, [entry.id]: event.target.value }));
-       setChecked((current) => ({ ...current, [entry.id]: false }));
-      }}
+      onChange={(event) => updateAnswer(event.target.value)}
      />
     </div>
    )}
@@ -385,12 +317,8 @@ export function StudioDictationEditor({
        </Badge>
       </Button>
      ) : null}
-     <Button type="button" disabled={!isChecked && !answer.trim()} onClick={confirmOrEdit}>
-      {isChecked
-       ? attempt?.score === 100 && index < total - 1
-        ? t("nextPart")
-        : t("editAgain")
-       : t("check")}
+     <Button type="button" disabled={isCheckDisabled} onClick={confirmOrEdit}>
+      {isChecked ? (canAdvance ? t("nextPart") : t("editAgain")) : t("check")}
       <Badge size="sm" casing="natural">
        {isChecked ? "6 · Ctrl/⌘ ↵" : "Ctrl/⌘ ↵"}
       </Badge>

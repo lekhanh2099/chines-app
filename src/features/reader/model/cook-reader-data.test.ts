@@ -118,4 +118,54 @@ describe("Reader cooker", () => {
   expect(content.title?.pinyin).toBeTruthy();
   expect(content.capabilities).toContain("pinyin");
  });
+
+ it("preserves large section membership and source order", () => {
+  const document = {
+   id: "large",
+   language: "zh-CN",
+   source: { kind: "article" },
+   segments: Array.from({ length: 2_000 }, (_, index) => ({
+    id: `segment-${index}`,
+    sectionId: `section-${Math.floor(index / 100)}`,
+    kind: "paragraph",
+    zh: "中国。",
+    pinyin: "source",
+   })),
+   sections: Array.from({ length: 20 }, (_, sectionIndex) => ({
+    id: `section-${sectionIndex}`,
+    title: `Section ${sectionIndex}`,
+    segmentIds: Array.from({ length: 100 }, (_, index) => `segment-${sectionIndex * 100 + index}`),
+   })),
+   metadata: [],
+   capabilities: [],
+  };
+  const content = cookReaderData(document);
+  expect(content.segmentIds).toEqual(document.segments.map((segment) => segment.id));
+  expect(content.sectionIds).toEqual(document.sections.map((section) => section.id));
+  expect(content.sectionsById["section-19"].segmentIds).toEqual(document.sections[19].segmentIds);
+  expect(content.segmentsById["segment-1999"]).toEqual(document.segments[1999]);
+ });
+
+ it("rejects repeated assignment and section membership mismatches", () => {
+  const document = {
+   id: "document",
+   language: "zh-CN",
+   source: { kind: "article" },
+   segments: [{ id: "a", kind: "paragraph", zh: "你好" }],
+   sections: [
+    { id: "one", title: "One", segmentIds: ["a"] },
+    { id: "two", title: "Two", segmentIds: ["a"] },
+   ],
+   metadata: [],
+   capabilities: [],
+  };
+  expect(() => cookReaderData(document)).toThrow("Invalid Reader section reference");
+  expect(() =>
+   cookReaderData({
+    ...document,
+    segments: [{ id: "a", sectionId: "two", kind: "paragraph", zh: "你好" }],
+    sections: [{ id: "one", title: "One", segmentIds: ["a"] }],
+   }),
+  ).toThrow("Invalid Reader segment section");
+ });
 });

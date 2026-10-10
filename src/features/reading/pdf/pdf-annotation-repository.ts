@@ -4,9 +4,9 @@ import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 
 import {
  pdfAnnotationRowSchema,
- type PdfAnnotationPayload,
  type PdfAnnotationRow,
 } from "@/features/reading/pdf/pdf-annotations";
+import { annotationSaveResultSchema, type PdfAnnotationPayloadInput } from "./pdf-annotation-api";
 import {
  getReaderAsset,
  listReaderAssets,
@@ -52,22 +52,18 @@ export async function getPdfAnnotation(
 }
 
 export async function savePdfAnnotation(
- input: {
-  assetId: string;
-  pageNumber: number;
-  payload: PdfAnnotationPayload;
-  expectedRevision: number;
- },
+ input: PdfAnnotationPayloadInput,
  context: PdfAnnotationContext,
-): Promise<PdfAnnotationRow> {
+) {
  await validatePdfPage(input.assetId, input.pageNumber);
  const { client } = contextClient(context);
- const { data, error } = await client.rpc("hanzihome_upsert_pdf_annotation", {
+ const { data, error } = await client.rpc("hanzihome_upsert_pdf_annotation_cas", {
   p_asset_id: input.assetId,
   p_page_number: input.pageNumber,
   p_payload: input.payload,
   p_expected_revision: input.expectedRevision,
+  p_expected_absent: input.expectedAbsent,
  });
  if (error) throw new Error(error.message);
- return pdfAnnotationRowSchema.parse(data);
+ return annotationSaveResultSchema.parse(data);
 }

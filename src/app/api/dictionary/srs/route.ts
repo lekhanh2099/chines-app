@@ -1,5 +1,4 @@
 import type { JsonFieldValue } from "@/types/json";
-import { z } from "zod";
 
 import { saveCanonicalDictionaryEntryToSrsAsServer } from "@/features/dictionary/server/dictionary-persistence.server";
 import {
@@ -23,18 +22,10 @@ import {
  normalizeDictionaryHeadword,
  upsertDictionaryEntry,
 } from "@/services/vocab/vocab.service";
-import { PersonalNoteModeSchema } from "@/types/database";
+import { saveDictionarySrsSchema } from "@/features/dictionary/dictionary-srs-api";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-const saveDictionarySrsSchema = z.strictObject({
- hanzi: z.string().trim().min(1).max(32),
- contextSentence: z.string().max(10_000).optional(),
- contextTranslation: z.string().max(10_000).optional(),
- personalNote: z.string().max(10_000).optional(),
- personalNoteMode: PersonalNoteModeSchema.optional(),
-});
 
 function runtimeError(status: "missing-key" | "storage-unavailable" | "task-disabled") {
  if (status === "task-disabled") {

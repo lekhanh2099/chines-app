@@ -145,6 +145,7 @@
   "openOriginal": "Mở PDF gốc",
   "fullscreen": "Toàn màn hình",
   "annotationError": "Không tải được ghi chú PDF; nét mới sẽ được giữ trong phiên này.",
+  "annotationQueued": "Đã giữ nét vẽ trên thiết bị, đang chờ server xác nhận.",
   "annotationSaveError": "Chưa lưu được ghi chú PDF. Nét vẽ vẫn còn trong phiên này; hãy thử lưu lại.",
   "pan": "Di chuyển PDF",
   "pen": "Bút vẽ",
@@ -160,6 +161,17 @@
   "eraserSize": "Cỡ tẩy {size}",
   "annotationLayer": "Lớp ghi chú PDF",
   "previewError": "Không tải được trang preview",
-  "originalPdf": "Mở PDF gốc"
+  "originalPdf": "Mở PDF gốc",
+  "conflict": {
+   "title": "Ghi chú PDF đã thay đổi",
+   "description": "Trang này đã được lưu từ thiết bị khác. Các nét trên thiết bị này vẫn được giữ; hãy xem hai bản trước khi chọn.",
+   "review": "Xem hai bản",
+   "local": "Bản trên thiết bị này",
+   "server": "Bản đã lưu trên server",
+   "strokeCount": "{count} nét",
+   "useServer": "Dùng bản server",
+   "keepLocal": "Giữ nét của tôi và lưu tiếp",
+   "error": "Chưa giải quyết được xung đột. Các nét trên thiết bị này vẫn được giữ."
+  }
  }
 }

@@ -2,6 +2,7 @@
 
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import {
  ExternalLink,
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import {
  DropdownMenu,
  DropdownMenuCheckboxItem,
@@ -24,7 +26,8 @@ import {
  DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
-import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
+import { useNoteEditor } from "@/features/notes/hooks/useNoteEditor";
+import { NoteConflictDialog } from "@/features/notes/components/NoteConflictDialog";
 import type { JsonObject } from "@/types/json";
 
 import { LessonReadingPane } from "./LessonReadingPane";
@@ -55,18 +58,41 @@ export function LessonSplitNoteEditor({
  const [mobilePane, setMobilePane] = useState<MobileNotePane>("note");
  const [readOnly, setReadOnly] = useState(false);
  const [toolbarVisible, setToolbarVisible] = useState(true);
+ const saveLabels = useTranslations("Notes.editor.save");
+ const notesLabels = useTranslations("Notes");
+ const common = useTranslations("Common");
  const {
   note,
   isLoading,
-  saveContent,
-  saveReadingContent,
-  isSaving,
-  isReadingSaving,
+  handleChange: saveContent,
+  handleReadingChange: saveReadingContent,
+  displaySaveStatus,
+  retrySave,
+  error,
+  refetch,
   updateSplitView,
- } = useNoteDetail(noteId);
+  conflict,
+  resolveConflict,
+  recoverableDrafts,
+  recoverDraft,
+  importVersion,
+ } = useNoteEditor(noteId);
 
  if (isLoading) {
   return <LessonSplitNoteEditorSkeleton fillHeight={fillHeight} />;
+ }
+
+ if (error) {
+  return (
+   <QueryErrorCard
+    title={notesLabels("loadError.title")}
+    description={notesLabels("loadError.description")}
+    retryLabel={common("actions.retry")}
+    onRetry={() => {
+     void refetch();
+    }}
+   />
+  );
  }
 
  if (!note) {
@@ -82,17 +108,47 @@ export function LessonSplitNoteEditor({
  const splitEnabled = note.split_view_enabled ?? true;
 
  return (
-  <div className={fillHeight ? "flex h-full min-h-0 min-w-0 flex-col gap-3" : "grid min-w-0 gap-3"}>
+  <div
+   key={importVersion}
+   className={fillHeight ? "flex h-full min-h-0 min-w-0 flex-col gap-3" : "grid min-w-0 gap-3"}
+  >
+   {conflict ? (
+    <NoteConflictDialog
+     localNote={note}
+     serverNote={conflict}
+     onResolve={resolveConflict}
+     recoverableDrafts={recoverableDrafts}
+     onRecover={recoverDraft}
+    />
+   ) : null}
    <div className="flex min-w-0 items-center justify-between gap-2 sm:gap-3">
     <StudyInstructionText
      variant="caption"
-     tone="muted"
+     tone={displaySaveStatus === "error" ? "danger" : "muted"}
+     role={displaySaveStatus === "error" ? "alert" : "status"}
      weight="bold"
      className="inline-flex items-center gap-1.5"
     >
      <Save className="h-3.5 w-3.5" />
-     {isSaving || isReadingSaving ? "Đang lưu..." : "Autosave"}
+     {displaySaveStatus === "idle"
+      ? "Autosave"
+      : displaySaveStatus === "pending"
+        ? saveLabels("saving")
+        : displaySaveStatus === "success"
+          ? saveLabels("saved")
+          : saveLabels("error")}
     </StudyInstructionText>
+    {displaySaveStatus === "error" ? (
+     <Button
+      variant="ghost"
+      size="sm"
+      onClick={() => {
+       void retrySave().catch(() => {});
+      }}
+     >
+      {common("actions.retry")}
+     </Button>
+    ) : null}
     <div className="ml-auto flex min-w-0 items-center gap-2">
      <div className="hidden flex-wrap items-center justify-end gap-2 sm:flex sm:gap-3">
       <Button
@@ -122,7 +178,9 @@ export function LessonSplitNoteEditor({
        variant={splitEnabled ? "active" : "outline"}
        size="toolbar"
        aria-pressed={splitEnabled}
-       onClick={() => updateSplitView(!splitEnabled)}
+       onClick={() => {
+        void updateSplitView(!splitEnabled).catch(() => {});
+       }}
       >
        {splitEnabled ? "Đóng Split" : "Mở Split"}
       </Button>
@@ -172,7 +230,9 @@ export function LessonSplitNoteEditor({
         <DropdownMenuCheckboxItem
          checked={splitEnabled}
          onSelect={(event) => event.preventDefault()}
-         onCheckedChange={updateSplitView}
+         onCheckedChange={(enabled) => {
+          void updateSplitView(enabled).catch(() => {});
+         }}
         >
          <PanelLeft />
          {splitEnabled ? "Đóng Split" : "Mở Split"}

@@ -86,23 +86,37 @@ jobs:
       exit 1
    - name: Verify local database contracts
      run: |
-      npx supabase test db --local supabase/tests/hanzihome_full_crud_test.sql supabase/tests/user_ai_task_routing_rls.test.sql
+      npx supabase test db --local supabase/tests/hanzihome_full_crud_test.sql supabase/tests/user_ai_task_routing_rls.test.sql supabase/tests/notes_revision_cas.test.sql supabase/tests/linked_annotation_notes_cas.test.sql supabase/tests/notes_rollout_compatibility.test.sql supabase/tests/pdf_annotation_absence_cas.test.sql
       docker exec -i supabase_db_chines-app psql -U postgres -d postgres -v ON_ERROR_STOP=1 < supabase/tests/auth_session_limit.test.sql
    - name: Verify mounted browser fixtures
      run: >-
-      npm run test:run --
+      npm run test:run -- --maxWorkers=2
       src/features/notes/hooks/NoteEditor.browser.test.ts
+      src/features/notes/hooks/NoteOwner.browser.test.ts
+      src/features/dictionary/dictionary-srs-outbox.browser.test.ts
+      src/features/dictionary/DictionarySrsPage.test.tsx
+      src/features/reading/pdf/PdfAnnotations.browser.test.ts
       src/features/hanzihome/tts/TtsAudioPreview.browser.test.ts
       src/features/hanzihome/listening/ListeningExercises.browser.test.ts
       src/features/reading/hooks/ShadowingRecorder.browser.test.ts
       src/features/reading/workspaces/Reading.browser.test.ts
       src/features/reader/runtime/Reader.browser.test.ts
+      src/features/translation/TranslationWorkspace.browser.test.ts
+      src/features/home/HomeDashboard.browser.test.ts
+      src/features/hanzihome/annotations/LessonAnnotations.browser.test.ts
+      src/features/hanzihome/ai-conversation/AiConversation.browser.test.ts
      env:
       NOTES_BROWSER_TEST: "1"
+      SRS_BROWSER_TEST: "1"
+      PDF_BROWSER_TEST: "1"
       TTS_BROWSER_TEST: "1"
       LISTENING_BROWSER_TEST: "1"
       RECORDER_BROWSER_TEST: "1"
       READER_BROWSER_TEST: "1"
+      TRANSLATION_BROWSER_TEST: "1"
+      HOME_BROWSER_TEST: "1"
+      LESSON_ANNOTATIONS_BROWSER_TEST: "1"
+      AI_CONVERSATION_BROWSER_TEST: "1"
    - run: npm run e2e:seed
    - run: npm run test:e2e
    - if: always()

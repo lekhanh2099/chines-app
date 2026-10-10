@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useMemo, useRef, useState } from "react";
 import { Mic, Square } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/layout/card";
 import { SegmentedControl } from "@/components/ui/forms/segmented-control";
 import { Textarea } from "@/components/ui/forms/textarea";
 import { Typography } from "@/components/ui/display/typography";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import {
  ReaderHanziText,
  PinyinText,
@@ -24,10 +25,9 @@ import {
 } from "@/features/hanzihome/practice/translation-practice";
 import type { HumanitiesDocumentResource } from "@/features/humanities/model/humanities-resource.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
-import { useShadowingRecorder } from "@/features/reading/hooks/useShadowingRecorder";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
-import { type HumanitiesEvaluationResult } from "@/features/humanities/humanities-evaluator";
+import { evaluateHumanitiesAnswer } from "@/features/humanities/humanities-evaluator";
 import {
  humanitiesPracticeContent,
  type HumanitiesPracticeTrack,
@@ -35,20 +35,18 @@ import {
 
 import {
  createTranslationSubmission,
+ createTranslationRevisionSubmission,
+ createTranslationSelfMarkSubmission,
+ interpretingMarks,
  translationCourseModuleOrder,
  translationResourceSegments,
  translationSourceKind,
  translationTrackDocuments,
+ type HumanitiesUnitMark,
 } from "./translation-workspace-utils";
 import { useTranslationAttempts } from "./useTranslationAttempts";
-
-type HumanitiesUnitMark = "kept" | "partial" | "missed" | "unsure";
-const interpretingMarks = [
- "kept",
- "partial",
- "missed",
- "unsure",
-] satisfies readonly HumanitiesUnitMark[];
+import { useTranslationPreparation } from "./useTranslationPreparation";
+import { useTranslationRecording } from "./useTranslationRecording";
 
 export function TranslationWorkspace({
  initialDocuments,
@@ -70,15 +68,11 @@ export function TranslationWorkspace({
  const [drafts, setDrafts] = useState<Record<string, string>>({});
  const [backTranslations, setBackTranslations] = useState<Record<string, string>>({});
  const [checked, setChecked] = useState<Record<string, boolean>>({});
- const [humanitiesResult, setHumanitiesResult] = useState<HumanitiesEvaluationResult | null>(null);
  const [replayCount, setReplayCount] = useState(0);
- const [preparationState, setPreparationState] = useState({ key: "", remaining: 0 });
  const [interpretingNotes, setInterpretingNotes] = useState("");
  const [learnerTranscript, setLearnerTranscript] = useState("");
  const [unitMarks, setUnitMarks] = useState<Record<string, HumanitiesUnitMark>>({});
  const startedAtRef = useRef<Record<string, number>>({});
- const lastRecordingRef = useRef<Blob | null>(null);
- const recorder = useShadowingRecorder();
  const requestedDocumentId = searchParams.get("document") ?? "";
  const selectedIdValue = initialDocuments.some((document) => document.id === requestedDocumentId)
   ? requestedDocumentId
@@ -118,10 +112,7 @@ export function TranslationWorkspace({
  const humanitiesEvaluation =
   evaluation !== undefined && evaluation.direction === direction ? evaluation : undefined;
  const isInterpreting = humanitiesEvaluation?.mode === "interpreting";
- const preparationKey = `${segment?.id ?? ""}:${direction}`;
- const preparationLimit = isInterpreting ? (humanitiesEvaluation.preparationSeconds ?? 0) : 0;
- const preparationRemaining =
-  preparationState.key === preparationKey ? preparationState.remaining : preparationLimit;
+ const preparation = useTranslationPreparation(segment?.id ?? "", direction, humanitiesEvaluation);
  const key = segment ? `${segment.id}:${direction}` : "";
  const { historyQuery, submitAttempt, saveError, clearSaveError } = useTranslationAttempts(
   segment?.id ?? "",
@@ -129,56 +120,22 @@ export function TranslationWorkspace({
  const draft = key ? (drafts[key] ?? "") : "";
  const backTranslation = key ? (backTranslations[key] ?? "") : "";
  const isChecked = key ? checked[key] === true : false;
+ const humanitiesResult = useMemo(
+  () =>
+   isChecked && humanitiesEvaluation !== undefined
+    ? evaluateHumanitiesAnswer(draft, humanitiesEvaluation)
+    : null,
+  [isChecked, draft, humanitiesEvaluation],
+ );
  const score =
   segment && isChecked
    ? (humanitiesResult?.score ?? scoreTranslationAttempt(segment, direction, draft))
    : null;
-
- useEffect(() => {
-  if (!isInterpreting || preparationRemaining <= 0) return;
-  const timer = window.setTimeout(
-   () =>
-    setPreparationState((current) => ({
-     key: preparationKey,
-     remaining: Math.max(
-      0,
-      (current.key === preparationKey ? current.remaining : preparationLimit) - 1,
-     ),
-    })),
-   1_000,
-  );
-  return () => window.clearTimeout(timer);
- }, [isInterpreting, preparationKey, preparationLimit, preparationRemaining]);
-
- useEffect(() => {
-  if (!isInterpreting || segment === undefined || recorder.audioBlob === null) return;
-  if (lastRecordingRef.current === recorder.audioBlob) return;
-  lastRecordingRef.current = recorder.audioBlob;
-  submitAttempt({
-   surface: "translation",
-   contentId: segment.id,
-   direction,
-   answer: {
-    kind: "interpreting-recording",
-    transcript: learnerTranscript,
-    notes: interpretingNotes,
-    unitMarks,
-    durationSeconds: recorder.durationSeconds,
-   },
-   scorePercent: null,
-   responseMs: recorder.durationSeconds * 1_000,
-  });
- }, [
-  direction,
-  interpretingNotes,
-  isInterpreting,
-  learnerTranscript,
-  recorder.audioBlob,
-  recorder.durationSeconds,
-  segment,
-  unitMarks,
+ const { recorder, startRecording } = useTranslationRecording({
+  context: { contentId: segment?.id ?? "", direction },
+  answer: { transcript: learnerTranscript, notes: interpretingNotes, unitMarks },
   submitAttempt,
- ]);
+ });
 
  const updateDraft = (value: string) => {
   if (!key) return;
@@ -186,14 +143,13 @@ export function TranslationWorkspace({
    startedAtRef.current[key] = Date.now();
   setDrafts((current) => ({ ...current, [key]: value }));
   setChecked((current) => ({ ...current, [key]: false }));
-  setHumanitiesResult(null);
  };
 
  const checkAnswer = (submittedAt: number) => {
   if (!segment || !key || !draft.trim()) return;
   const startedAt = startedAtRef.current[key];
   const responseMs = startedAt === undefined ? null : Math.max(0, submittedAt - startedAt);
-  const { payload, evaluationResult } = createTranslationSubmission(
+  const { payload } = createTranslationSubmission(
    segment,
    direction,
    draft,
@@ -201,7 +157,6 @@ export function TranslationWorkspace({
    humanitiesEvaluation,
   );
   delete startedAtRef.current[key];
-  setHumanitiesResult(evaluationResult);
   setChecked((current) => ({ ...current, [key]: true }));
   clearSaveError();
   submitAttempt(payload);
@@ -408,9 +363,8 @@ export function TranslationWorkspace({
           selectDocument(document.id);
           setActiveIndex(0);
           setDirectionPreference(null);
-          setHumanitiesResult(null);
           setReplayCount(0);
-          setPreparationState({ key: "", remaining: 0 });
+          preparation.reset();
           setInterpretingNotes("");
           setLearnerTranscript("");
           setUnitMarks({});
@@ -470,7 +424,6 @@ export function TranslationWorkspace({
      onClick={() => {
       clearDocument();
       setActiveIndex(0);
-      setHumanitiesResult(null);
      }}
     >
      {t("detail.back", { track: trackTitle })}
@@ -604,6 +557,21 @@ export function TranslationWorkspace({
      </Typography>
     </Card>
    ) : null}
+   {historyQuery.isPending ? (
+    <Typography as="p" variant="caption" tone="muted" role="status">
+     {t("detail.historyLoading")}
+    </Typography>
+   ) : null}
+   {historyQuery.isError ? (
+    <QueryErrorCard
+     title={t("detail.historyError")}
+     description={t("detail.historyErrorHelp")}
+     retryLabel={t("detail.historyRetry")}
+     onRetry={() => {
+      void historyQuery.refetch();
+     }}
+    />
+   ) : null}
    {historyQuery.data && historyQuery.data.length > 0 ? (
     <Card variant="subtle" padding="sm" className="flex flex-wrap items-center gap-2">
      <Typography as="p" variant="caption" tone="muted" weight="black">
@@ -617,88 +585,15 @@ export function TranslationWorkspace({
     </Card>
    ) : null}
    <div className="grid min-w-0 gap-3 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
-    <Card variant="section" padding="md" className="grid min-w-0 content-start gap-3">
-     <div className="flex flex-wrap items-center justify-between gap-2">
-      <Typography as="h2" variant="cardTitle" weight="black">
-       {t("source.title")}
-      </Typography>
-      <Badge>{direction === "zh-vi" ? t("source.directionZhVi") : t("source.directionViZh")}</Badge>
-     </div>
-     <Typography as="p" variant="caption" tone="muted">
-      {t("source.segment", {
-       order: segment.order,
-       total: segments.length,
-       source: translationSourceKind(resource.document),
-      })}
-     </Typography>
-     {direction === "zh-vi" ? (
-      <ReaderHanziText
-       displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showPinyin: true, showMeaning: false }}
-       leading="learner"
-       wrapping="preWrap"
-      >
-       {segment.zh}
-      </ReaderHanziText>
-     ) : (
-      <Typography as="p" variant="body" wrapping="preWrap" leading="relaxed">
-       {segment.vi || resource.document.title_vi}
-      </Typography>
-     )}
-     {segment.pinyin ? (
-      <PinyinText variant="bodySmall" tone="accent" weight="semibold">
-       {segment.pinyin}
-      </PinyinText>
-     ) : null}
-     <div className="grid gap-2 border-t border-border-default pt-3">
-      <Typography as="span" variant="caption" tone="muted" weight="black">
-       {t("source.glossary")}
-      </Typography>
-      {selectedPayload?.glossary === undefined || selectedPayload.glossary.length === 0 ? (
-       <Typography as="p" variant="caption" tone="muted">
-        {t("source.noGlossary")}
-       </Typography>
-      ) : (
-       selectedPayload.glossary.map((entry) => (
-        <div
-         key={entry.id}
-         className="grid gap-1 border-b border-border-default pb-2 last:border-0"
-        >
-         <Typography as="strong" variant="bodySmall" weight="black">
-          {entry.headword} {entry.pinyin === null ? "" : entry.pinyin}
-         </Typography>
-         <Typography as="p" variant="caption" tone="muted">
-          {entry.meaningVi}
-         </Typography>
-         <Typography as="p" variant="caption" tone="muted">
-          {entry.noteVi}
-         </Typography>
-        </div>
-       ))
-      )}
-     </div>
-     <div className="grid grid-cols-2 gap-2">
-      <Button
-       type="button"
-       variant={direction === "zh-vi" ? "active" : "outline"}
-       onClick={() => {
-        setDirectionPreference("zh-vi");
-        setHumanitiesResult(null);
-       }}
-      >
-       {t("source.zhViButton")}
-      </Button>
-      <Button
-       type="button"
-       variant={direction === "vi-zh" ? "active" : "outline"}
-       onClick={() => {
-        setDirectionPreference("vi-zh");
-        setHumanitiesResult(null);
-       }}
-      >
-       {t("source.viZhButton")}
-      </Button>
-     </div>
-    </Card>
+    <TranslationSourcePanel
+     segment={segment}
+     direction={direction}
+     titleVi={resource.document.title_vi}
+     sourceKind={translationSourceKind(resource.document)}
+     totalSegments={segments.length}
+     glossary={selectedPayload?.glossary}
+     onDirectionChange={setDirectionPreference}
+    />
     <Card variant="subtle" padding="md" className="grid min-w-0 content-start gap-3">
      <div className="flex flex-wrap items-center justify-between gap-2">
       <div className="grid gap-0.5">
@@ -715,14 +610,9 @@ export function TranslationWorkspace({
        disabled={!draft.trim()}
        onClick={() => {
         if (!segment || !draft.trim()) return;
-        submitAttempt({
-         surface: "translation",
-         contentId: segment.id,
-         direction,
-         answer: { answer: draft, reference: null, missingUnitIds: [] },
-         scorePercent: null,
-         responseMs: null,
-        });
+        submitAttempt(
+         createTranslationRevisionSubmission({ contentId: segment.id, direction }, draft),
+        );
        }}
       >
        {t("answer.saveRevision")}
@@ -738,8 +628,8 @@ export function TranslationWorkspace({
          {t("answer.interpreting")}
         </Typography>
         <Badge>
-         {preparationRemaining > 0
-          ? t("answer.preparing", { seconds: preparationRemaining })
+         {preparation.remaining > 0
+          ? t("answer.preparing", { seconds: preparation.remaining })
           : t("answer.ready")}
         </Badge>
        </div>
@@ -762,10 +652,7 @@ export function TranslationWorkspace({
          <Button
           type="button"
           disabled={recorder.isRequesting || !recorder.isSupported}
-          onClick={() => {
-           recorder.clear();
-           void recorder.start();
-          }}
+          onClick={startRecording}
          >
           <Mic data-icon="inline-start" />
           {recorder.isRequesting ? t("answer.requestingPermission") : t("answer.startRecording")}
@@ -806,14 +693,9 @@ export function TranslationWorkspace({
              onClick={() => {
               const nextMarks = { ...unitMarks, [unit.id]: mark };
               setUnitMarks(nextMarks);
-              submitAttempt({
-               surface: "translation",
-               contentId: segment.id,
-               direction,
-               answer: { kind: "interpreting-self-mark", unitMarks: nextMarks },
-               scorePercent: null,
-               responseMs: null,
-              });
+              submitAttempt(
+               createTranslationSelfMarkSubmission({ contentId: segment.id, direction }, nextMarks),
+              );
              }}
             >
              {markLabel(mark)}
@@ -847,7 +729,6 @@ export function TranslationWorkspace({
        disabled={activeIndex === 0}
        onClick={() => {
         tts.stop();
-        setHumanitiesResult(null);
         setActiveIndex((index) => index - 1);
        }}
       >
@@ -859,7 +740,6 @@ export function TranslationWorkspace({
        disabled={activeIndex >= segments.length - 1}
        onClick={() => {
         tts.stop();
-        setHumanitiesResult(null);
         setActiveIndex((index) => index + 1);
        }}
       >
@@ -944,3 +824,102 @@ export function TranslationWorkspace({
   </div>
  );
 }
+
+const TranslationSourcePanel = memo(function TranslationSourcePanel({
+ segment,
+ direction,
+ titleVi,
+ sourceKind,
+ totalSegments,
+ glossary,
+ onDirectionChange,
+}: {
+ segment: ReturnType<typeof translationResourceSegments>[number];
+ direction: TranslationDirection;
+ titleVi: HumanitiesDocumentResource["document"]["title_vi"];
+ sourceKind: ReturnType<typeof translationSourceKind>;
+ totalSegments: number;
+ glossary: HumanitiesDocumentResource["exerciseItems"][number]["payload"]["glossary"];
+ onDirectionChange: (direction: TranslationDirection) => void;
+}) {
+ const t = useTranslations("HumanitiesPractice");
+ return (
+  <Card variant="section" padding="md" className="grid min-w-0 content-start gap-3">
+   <div className="flex flex-wrap items-center justify-between gap-2">
+    <Typography as="h2" variant="cardTitle" weight="black">
+     {t("source.title")}
+    </Typography>
+    <Badge>{direction === "zh-vi" ? t("source.directionZhVi") : t("source.directionViZh")}</Badge>
+   </div>
+   <Typography as="p" variant="caption" tone="muted">
+    {t("source.segment", {
+     order: segment.order,
+     total: totalSegments,
+     source: sourceKind,
+    })}
+   </Typography>
+   {direction === "zh-vi" ? (
+    <ReaderHanziText
+     displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showPinyin: true, showMeaning: false }}
+     leading="learner"
+     wrapping="preWrap"
+    >
+     {segment.zh}
+    </ReaderHanziText>
+   ) : (
+    <Typography as="p" variant="body" wrapping="preWrap" leading="relaxed">
+     {segment.vi || titleVi}
+    </Typography>
+   )}
+   {segment.pinyin ? (
+    <PinyinText variant="bodySmall" tone="accent" weight="semibold">
+     {segment.pinyin}
+    </PinyinText>
+   ) : null}
+   <div className="grid gap-2 border-t border-border-default pt-3">
+    <Typography as="span" variant="caption" tone="muted" weight="black">
+     {t("source.glossary")}
+    </Typography>
+    {glossary === undefined || glossary.length === 0 ? (
+     <Typography as="p" variant="caption" tone="muted">
+      {t("source.noGlossary")}
+     </Typography>
+    ) : (
+     glossary.map((entry) => (
+      <div key={entry.id} className="grid gap-1 border-b border-border-default pb-2 last:border-0">
+       <Typography as="strong" variant="bodySmall" weight="black">
+        {entry.headword} {entry.pinyin === null ? "" : entry.pinyin}
+       </Typography>
+       <Typography as="p" variant="caption" tone="muted">
+        {entry.meaningVi}
+       </Typography>
+       <Typography as="p" variant="caption" tone="muted">
+        {entry.noteVi}
+       </Typography>
+      </div>
+     ))
+    )}
+   </div>
+   <div className="grid grid-cols-2 gap-2">
+    <Button
+     type="button"
+     variant={direction === "zh-vi" ? "active" : "outline"}
+     onClick={() => {
+      onDirectionChange("zh-vi");
+     }}
+    >
+     {t("source.zhViButton")}
+    </Button>
+    <Button
+     type="button"
+     variant={direction === "vi-zh" ? "active" : "outline"}
+     onClick={() => {
+      onDirectionChange("vi-zh");
+     }}
+    >
+     {t("source.viZhButton")}
+    </Button>
+   </div>
+  </Card>
+ );
+});

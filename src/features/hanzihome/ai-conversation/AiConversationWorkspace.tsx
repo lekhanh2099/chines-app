@@ -417,11 +417,7 @@ export function AiConversationWorkspace() {
    : persistedMessages.length > 0
      ? persistedMessages.map((message) => ({
         key: message.id,
-        message: {
-         role: message.role,
-         content: message.content,
-         ...(message.runtimeReceipt ? { runtimeReceipt: message.runtimeReceipt } : {}),
-        },
+        message,
        }))
      : [{ key: "greeting", message: greeting }];
  const pendingMessage =

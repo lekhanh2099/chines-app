@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
 import { useTTS } from "@/hooks/useTTS";
 import type { ReaderSpeechService } from "@/features/reader/runtime/reader-speech";
@@ -9,6 +9,14 @@ type MandarinTtsContextValue = ReturnType<typeof useTTS>;
 
 type MandarinTtsContextState = { value?: MandarinTtsContextValue };
 const MandarinTtsContext = createContext<MandarinTtsContextState>({});
+type MandarinTtsControls = {
+ isSpeaking: MandarinTtsContextValue["isSpeaking"];
+ isLoading: MandarinTtsContextValue["isLoading"];
+ speakingRequestText: MandarinTtsContextValue["speakingRequestText"];
+ speakSequence: MandarinTtsContextValue["speakSequence"];
+ stop: MandarinTtsContextValue["stop"];
+};
+const MandarinTtsControlsContext = createContext<{ value?: MandarinTtsControls }>({});
 const MandarinReaderSpeechContext = createContext<ReaderSpeechService | null>(null);
 
 export function createMandarinReaderSpeechService(initialController: MandarinTtsContextValue) {
@@ -63,6 +71,18 @@ export function createMandarinReaderSpeechService(initialController: MandarinTts
 
 export function MandarinTtsProvider({ children }: { children: ReactNode }) {
  const tts = useTTS();
+ const controlsContext = useMemo(
+  () => ({
+   value: {
+    isSpeaking: tts.isSpeaking,
+    isLoading: tts.isLoading,
+    speakingRequestText: tts.speakingRequestText,
+    speakSequence: tts.speakSequence,
+    stop: tts.stop,
+   },
+  }),
+  [tts.isSpeaking, tts.isLoading, tts.speakingRequestText, tts.speakSequence, tts.stop],
+ );
  const [adapter] = useState(() => createMandarinReaderSpeechService(tts));
  useEffect(() => {
   adapter.updateController(tts);
@@ -70,9 +90,11 @@ export function MandarinTtsProvider({ children }: { children: ReactNode }) {
 
  return (
   <MandarinTtsContext.Provider value={{ value: tts }}>
-   <MandarinReaderSpeechContext.Provider value={adapter.speech}>
-    {children}
-   </MandarinReaderSpeechContext.Provider>
+   <MandarinTtsControlsContext.Provider value={controlsContext}>
+    <MandarinReaderSpeechContext.Provider value={adapter.speech}>
+     {children}
+    </MandarinReaderSpeechContext.Provider>
+   </MandarinTtsControlsContext.Provider>
   </MandarinTtsContext.Provider>
  );
 }
@@ -86,5 +108,11 @@ export function useMandarinReaderSpeechService(): ReaderSpeechService {
 export function useSharedMandarinTts(): MandarinTtsContextValue {
  const context = useContext(MandarinTtsContext);
  if (!context.value) throw new Error("useSharedMandarinTts requires MandarinTtsProvider");
+ return context.value;
+}
+
+export function useMandarinTtsControls(): MandarinTtsControls {
+ const context = useContext(MandarinTtsControlsContext);
+ if (!context.value) throw new Error("useMandarinTtsControls requires MandarinTtsProvider");
  return context.value;
 }

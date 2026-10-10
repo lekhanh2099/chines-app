@@ -12,6 +12,7 @@ function scopedResourceKey(root: readonly string[], ownerOrResource: UserScope, 
 export const hanzihomeQueryKeys = {
  root: ["hanzihome"],
  learningState: (userId: UserScope) => ["hanzihome", "learning-state", userId],
+ offlineLessons: (userId: UserScope) => ["hanzihome", "offline-lessons", userId],
  catalogRoot: ["hanzihome", "catalog"],
  catalog: (includeLessons: boolean, includeRadicals = false) => [
   "hanzihome",
@@ -59,6 +60,7 @@ export const hanzihomeQueryKeys = {
    ownerOrDocument,
    documentId,
   ),
+ readerPdfAnnotations: (userId: UserScope) => ["hanzihome", "reader", "pdf-annotation", userId],
  readerPdfAnnotation: (
   ownerOrAsset: UserScope,
   assetOrPage: string | number,

@@ -113,6 +113,13 @@ export function BusinessChineseLessonSelector({
  const handleSelectLesson = useCallback(
   (targetLesson: TextbookBookSummary["lessons"][number]) => {
    setOpen(false);
+   if (window.location.pathname.endsWith("/offline")) {
+    const params = new URLSearchParams();
+    params.set("book", targetLesson.bookKey);
+    params.set("lesson", String(targetLesson.number));
+    window.history.pushState(null, "", `?${params.toString()}`);
+    return;
+   }
    router.push(buildTextbookHref(targetLesson.bookKey, targetLesson.number), {
     scroll: false,
    });

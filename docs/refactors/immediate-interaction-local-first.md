@@ -1,5 +1,7 @@
 # FROZEN IMPLEMENTATION PLAN
 
+> Execution ownership — 2026-10-08: các acceptance còn mở được theo dõi duy nhất tại [feature quality master plan](feature-quality-audit-enhancement-2026-10-04.md#0-một-plan-thực-thi--reconciliation-08102026), C00/C02–C05/C11/C13/C14. File này giữ historical requirements/receipts; không là queue implementation thứ hai và checkbox cũ không chứng minh completion hiện tại.
+
 ## Immediate Interaction + Durable Local-first Learning + Offline Lesson Cache
 
 ### Repository baseline and authorization

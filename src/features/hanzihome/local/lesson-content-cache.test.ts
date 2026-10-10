@@ -3,8 +3,15 @@ import type { QueryClient } from "@tanstack/react-query";
 
 const storage = new Map<string, unknown>();
 const generations = new Map<string, number>();
+const records = vi.hoisted(() => ({ read: vi.fn() }));
 
-vi.mock("./content-cache-store", () => ({
+vi.mock("./hanzihome-local-db", () => ({
+ getAllFromStoreMatching: records.read,
+ HANZIHOME_LOCAL_STORES: { contentCache: "content_cache" },
+}));
+
+vi.mock("./content-cache-store", async (importOriginal) => ({
+ ...(await importOriginal<typeof import("./content-cache-store")>()),
  readContentCache: vi.fn(({ ownerId, resourceType, resourceId }) => {
   const key = `${ownerId}:${resourceType}:${resourceId}`;
   return Promise.resolve(storage.get(key) ?? null);
@@ -50,6 +57,7 @@ vi.mock("@/features/hanzihome/repositories/hanzihome-content-api-client", () => 
 }));
 
 import {
+ listCachedLessonSummaries,
  evictCachedLessonResources,
  getErrorHttpStatus,
  isTransientNetworkError,
@@ -62,12 +70,14 @@ import {
 } from "./lesson-content-cache";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import type { LessonVocabularyListResource } from "@/features/hanzihome/repositories/hanzihome-content-resources";
+import { ContentCacheRecordBaseSchema, writeContentCache } from "./content-cache-store";
 
 describe("lesson-content-cache", () => {
  beforeEach(() => {
   storage.clear();
   generations.clear();
   vi.clearAllMocks();
+  records.read.mockResolvedValue([]);
  });
 
  const mockLesson: HanziHomeLesson = {
@@ -86,6 +96,114 @@ describe("lesson-content-cache", () => {
   items: [],
   total: 0,
  };
+
+ it("lists only complete, valid, current-owner snapshots and returns summaries without bodies", async () => {
+  const metadata = { cachedAt: 1, lastAccessedAt: 1, byteSize: 1, accessCount: 1 };
+  records.read.mockResolvedValue([
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_detail:lesson-abc",
+    ownerId: "A",
+    resourceType: "lesson_detail",
+    resourceId: "lesson-abc",
+    metadata,
+    data: mockLesson,
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_vocab:lesson-abc",
+    ownerId: "A",
+    resourceType: "lesson_vocab",
+    resourceId: "lesson-abc",
+    metadata,
+    data: mockVocabList,
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "B:lesson_detail:lesson-abc",
+    ownerId: "B",
+    resourceType: "lesson_detail",
+    resourceId: "lesson-abc",
+    metadata,
+    data: { ...mockLesson, title: "Private B" },
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "B:lesson_vocab:lesson-abc",
+    ownerId: "B",
+    resourceType: "lesson_vocab",
+    resourceId: "lesson-abc",
+    metadata,
+    data: mockVocabList,
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_detail:missing-vocab",
+    ownerId: "A",
+    resourceType: "lesson_detail",
+    resourceId: "missing-vocab",
+    metadata,
+    data: { ...mockLesson, id: "missing-vocab" },
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_detail:deleted",
+    ownerId: "A",
+    resourceType: "lesson_detail",
+    resourceId: "deleted",
+    metadata: { ...metadata, deletedAt: 2 },
+    data: { ...mockLesson, id: "deleted" },
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_vocab:deleted",
+    ownerId: "A",
+    resourceType: "lesson_vocab",
+    resourceId: "deleted",
+    metadata,
+    data: { ...mockVocabList, lessonId: "deleted" },
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_detail:corrupt",
+    ownerId: "A",
+    resourceType: "lesson_detail",
+    resourceId: "corrupt",
+    metadata,
+    data: { wrong: true },
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_vocab:corrupt",
+    ownerId: "A",
+    resourceType: "lesson_vocab",
+    resourceId: "corrupt",
+    metadata,
+    data: { ...mockVocabList, lessonId: "corrupt" },
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_detail:mismatch",
+    ownerId: "A",
+    resourceType: "lesson_detail",
+    resourceId: "mismatch",
+    metadata,
+    data: mockLesson,
+   }),
+   ContentCacheRecordBaseSchema.parse({
+    key: "A:lesson_vocab:mismatch",
+    ownerId: "A",
+    resourceType: "lesson_vocab",
+    resourceId: "mismatch",
+    metadata,
+    data: { ...mockVocabList, lessonId: "mismatch" },
+   }),
+  ]);
+  expect(await listCachedLessonSummaries("A")).toEqual([
+   { id: "lesson-abc", lessonNumber: 1, title: "Bài 1", titleZh: "第一课" },
+  ]);
+  expect(await listCachedLessonSummaries("B")).toEqual([
+   { id: "lesson-abc", lessonNumber: 1, title: "Private B", titleZh: "第一课" },
+  ]);
+  expect(await listCachedLessonSummaries("C")).toEqual([]);
+ });
+
+ it("does not open storage without an owner and keeps read failures observable", async () => {
+  expect(await listCachedLessonSummaries("")).toEqual([]);
+  expect(records.read).not.toHaveBeenCalled();
+  records.read.mockRejectedValueOnce(new Error("IndexedDB unavailable"));
+  await expect(listCachedLessonSummaries("A")).rejects.toThrow("IndexedDB unavailable");
+ });
 
  it("classifies transient network errors and HTTP error statuses correctly", () => {
   expect(isTransientNetworkError(new TypeError("Failed to fetch"))).toBe(true);
@@ -264,6 +382,31 @@ describe("lesson-content-cache", () => {
   });
 
   expect(result).toEqual(mockVocabList);
+ });
+
+ it("keeps the previous lesson snapshot when a successful refresh cannot fit in storage", async () => {
+  await writeCachedLessonDetail("user-1", "lesson-abc", mockLesson);
+  const refreshed: HanziHomeLesson = { ...mockLesson, title: "Refreshed lesson" };
+  api.fetchLessonDetail.mockResolvedValueOnce(refreshed);
+  vi
+   .mocked(writeContentCache)
+   .mockRejectedValueOnce(new DOMException("Storage full", "QuotaExceededError"));
+  await expect(
+   loadLessonDetailWithCache({ ownerId: "user-1", lessonId: "lesson-abc" }),
+  ).resolves.toEqual(refreshed);
+  await expect(readCachedLessonDetail("user-1", "lesson-abc")).resolves.toEqual(mockLesson);
+ });
+
+ it("keeps the previous vocabulary snapshot when a successful refresh cannot fit in storage", async () => {
+  await writeCachedLessonVocabulary("user-1", "lesson-abc", mockVocabList);
+  api.fetchLessonVocabulary.mockResolvedValueOnce(mockVocabList);
+  vi
+   .mocked(writeContentCache)
+   .mockRejectedValueOnce(new DOMException("Storage full", "QuotaExceededError"));
+  await expect(
+   loadLessonVocabularyWithCache({ ownerId: "user-1", lessonId: "lesson-abc" }),
+  ).resolves.toEqual(mockVocabList);
+  await expect(readCachedLessonVocabulary("user-1", "lesson-abc")).resolves.toEqual(mockVocabList);
  });
 
  it("prevents stale in-flight GET from resurrecting overwritten lesson data", async () => {

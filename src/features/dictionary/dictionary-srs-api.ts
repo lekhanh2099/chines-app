@@ -1,5 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/supabase.generated";
+import { z } from "zod";
+import { PersonalNoteModeSchema } from "@/types/database";
 import { parseErrorLike, type ErrorInput } from "@/types/error";
 import {
  normalizeProgressRows,
@@ -11,6 +13,49 @@ import {
 
 const PAGE_SIZE = 1000;
 const RESOURCE_BATCH_SIZE = 200;
+
+export const saveDictionarySrsSchema = z.strictObject({
+ hanzi: z.string().trim().min(1).max(32),
+ contextSentence: z.string().max(10_000).optional(),
+ contextTranslation: z.string().max(10_000).optional(),
+ personalNote: z.string().max(10_000).optional(),
+ personalNoteMode: PersonalNoteModeSchema.optional(),
+});
+
+const saveSrsResponseSchema = z.object({
+ vocabId: z.string().min(1),
+ dictionaryId: z.string().nullable(),
+ contextSchemaAvailable: z.boolean(),
+ noteSchemaAvailable: z.boolean(),
+});
+
+export class DictionarySrsApiError extends Error {
+ constructor(
+  message: string,
+  readonly status: number,
+ ) {
+  super(message);
+ }
+}
+
+export async function saveDictionarySrs(
+ input: z.input<typeof saveDictionarySrsSchema>,
+ ownerUserId: string,
+) {
+ const payload = saveDictionarySrsSchema.parse(input);
+ const response = await fetch("/api/dictionary/srs", {
+  method: "POST",
+  headers: { "Content-Type": "application/json", "X-HanziHome-Owner-Id": ownerUserId },
+  body: JSON.stringify(payload),
+ });
+ if (!response.ok)
+  throw new DictionarySrsApiError("Không thể lưu từ vựng vào SRS.", response.status);
+ const result = saveSrsResponseSchema.parse(await response.json());
+ if (payload.personalNote?.trim() && !result.noteSchemaAvailable) {
+  throw new DictionarySrsApiError("Database chưa có cột personal_note.", 409);
+ }
+ return result;
+}
 
 function isMissingTableError(code: ReturnType<typeof getErrorCode>) {
  return code === "42P01" || code === "PGRST205";

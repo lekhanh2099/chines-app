@@ -33,6 +33,7 @@
   "synced": "Đã đồng bộ"
  },
  "offlinePack": {
+  "srsSaveQueued": "Đã lưu thao tác trên thiết bị. Sẽ đồng bộ SRS khi có mạng; server chưa xác nhận.",
   "downloadCourse": "Tải học offline",
   "downloading": "Đang tải ({percent}%)...",
   "downloadReady": "Đã sẵn sàng offline",
@@ -54,6 +55,68 @@
   "courseSeriesHeading": "Các bộ giáo trình",
   "courseSeriesDescription": "Mỗi bộ được chia theo cấp độ; quyển học là đơn vị tương tác cuối cùng để chọn bài.",
   "noCoursesTitle": "Chưa có giáo trình",
-  "noCoursesDescription": "Dữ liệu khóa học chưa khả dụng trong thư viện HanziHome."
+  "noCoursesDescription": "Dữ liệu khóa học chưa khả dụng trong thư viện HanziHome.",
+  "collection": "Bộ giáo trình",
+  "draft": "Dữ liệu nháp",
+  "missingAdvancedVolume": "Thiếu Cao cấp III",
+  "collectionCounts": "{levels} cấp độ · {books} quyển · {lessons} bài",
+  "levelPosition": "Cấp {current}/{total}",
+  "courseCounts": "{books} quyển · {lessons} bài",
+  "noBooksTitle": "Chưa có quyển học",
+  "noBooksDescription": "Cấp độ này chưa có quyển được thêm vào thư viện.",
+  "noCollectionBooksTitle": "Bộ giáo trình chưa có quyển học",
+  "noCollectionBooksDescription": "Thêm quyển để bắt đầu tổ chức bài học trong bộ này.",
+  "lessonCount": "{count} bài",
+  "contentCounts": "{vocab} từ · {grammar} ngữ pháp",
+  "selectLessonAria": "Chọn bài trong {book}",
+  "selectLesson": "Chọn bài",
+  "lessonLabel": "Bài {number}: {title}",
+  "lesson": "bài học",
+  "openLessonAria": "Mở {title}",
+  "open": "Mở",
+  "noLessons": "Quyển này chưa có bài học.",
+  "recentTitle": "Vừa học",
+  "resume": "Học tiếp",
+  "loadingRecent": "Đang tải bài vừa học",
+  "loading": "Đang tải thư viện HanziHome",
+  "edit": "Sửa",
+  "exitEdit": "Tắt sửa",
+  "groups": {
+   "hanyu": {
+    "title": "Giáo trình Hán ngữ",
+    "description": "Học theo bộ Hán ngữ, từ quyển thấp đến quyển cao."
+   },
+   "boya": {
+    "title": "Giáo trình Boya",
+    "description": "Lộ trình Boya được chia rõ theo từng cấp độ và tập."
+   },
+   "boyaSecondEdition": {
+    "title": "Boya 9 quyển · Bản 2",
+    "description": "第二版 · hiện có 4/5 quyển Trung–Cao cấp; chưa có Cao cấp III."
+   },
+   "listening": {
+    "title": "Giáo trình luyện nghe",
+    "description": "Bài nghe, luyện phản xạ và nghe chép theo từng quyển."
+   },
+   "other": {
+    "title": "Giáo trình khác",
+    "description": "Các giáo trình bổ sung và nội dung tự tạo."
+   }
+  }
+ },
+ "offlineStudy": {
+  "title": "Học ngoại tuyến",
+  "loading": "Đang xác định tài khoản và dữ liệu trên máy. Nếu trang không mở được, kết nối mạng rồi tải lại.",
+  "description": "Mở bài đã tải của tài khoản hiện tại. AI, nội dung chưa tải và âm thanh từ dịch vụ cần kết nối mạng.",
+  "library": "Bài trên máy",
+  "open": "Mở bài đã tải",
+  "textbooks": "Giáo trình có sẵn",
+  "openTextbook": "Mở giáo trình",
+  "textbookUnavailable": "Giáo trình không khả dụng",
+  "sessionUnavailable": "Chưa xác định được tài khoản. Kết nối mạng và đăng nhập lại để mở đúng bài đã tải.",
+  "empty": "Chưa có bài sẵn sàng offline",
+  "emptyDescription": "Khi có mạng, tải giáo trình để lưu đầy đủ bài học và từ vựng trên thiết bị này.",
+  "storageError": "Không đọc được bộ nhớ offline",
+  "storageErrorDescription": "Dữ liệu trên máy chưa khả dụng. Thử lại; nếu vẫn lỗi, kết nối mạng để mở bài."
  }
 }

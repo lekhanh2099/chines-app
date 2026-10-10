@@ -36,7 +36,31 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
   return null;
  }
 
- const collection = await getDictionarySrsCollection(supabase, user.id);
+ let collection: Awaited<ReturnType<typeof getDictionarySrsCollection>>;
+ try {
+  collection = await getDictionarySrsCollection(supabase, user.id);
+ } catch {
+  const common = await getTranslations("Common");
+  return (
+   <PageContainer>
+    <div className="grid gap-5">
+     <PageHeader title={t("title")} eyebrow={t("eyebrow")} description={t("description")} />
+     <Card role="alert" variant="subtle" padding="md" className="grid gap-3">
+      <Typography as="h2" variant="sectionTitle" weight="bold">
+       {t("loadErrorTitle")}
+      </Typography>
+      <Typography as="p" variant="bodySmall" tone="secondary">
+       {t("loadErrorDescription")}
+      </Typography>
+      <form method="get">
+       <Input type="hidden" name="q" value={resolvedSearchParams?.q ?? ""} />
+       <Button type="submit">{common("actions.retry")}</Button>
+      </form>
+     </Card>
+    </div>
+   </PageContainer>
+  );
+ }
  const missingSchema = collection.missingSchema;
  const savedItems = collection.savedItems.filter((item) => matchesQuery(item, query, locale));
 

@@ -2,7 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
-import { z } from "zod";
+import { saveDictionarySrsDurably } from "../dictionary-srs-outbox";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
 import { extractChinese } from "@/lib/text/chinese-utils";
@@ -18,12 +18,6 @@ import { GenerateVocabResponseSchema } from "@/types/database";
 import type { VocabData, AiAnalysis, PersonalNoteMode } from "@/types/database";
 
 const pendingAiGenerations = new Map<string, Promise<AiAnalysis>>();
-const saveSrsResponseSchema = z.object({
- vocabId: z.string().min(1),
- dictionaryId: z.string().nullable(),
- contextSchemaAvailable: z.boolean(),
- noteSchemaAvailable: z.boolean(),
-});
 
 /**
  * Hook: Fetch vocab detail + progress for the dictionary page.
@@ -117,6 +111,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
 
  // ── Mutation: save to SRS through the authenticated server boundary ──
  const saveMutation = useMutation({
+  networkMode: "always",
   mutationFn: async (payload: {
    vocabData: VocabData;
    options?: {
@@ -128,29 +123,16 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   }) => {
    if (!userId) throw new Error("Not authenticated");
 
-   const response = await fetch("/api/dictionary/srs", {
-    method: "POST",
-    headers: {
-     "Content-Type": "application/json",
-     "X-HanziHome-Owner-Id": userId,
-    },
-    body: JSON.stringify({
+   return saveDictionarySrsDurably(
+    {
      hanzi: payload.vocabData.hanzi,
      contextSentence: payload.options?.contextSentence,
      contextTranslation: payload.options?.contextTranslation,
      personalNote: payload.options?.personalNote,
      personalNoteMode: payload.options?.personalNoteMode,
-    }),
-   });
-
-   if (!response.ok) throw new Error("Save failed");
-   const result = saveSrsResponseSchema.parse(await response.json());
-
-   if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
-    throw new Error("Database chua co cot personal_note. Hay dong bo schema truoc.");
-   }
-
-   return result;
+    },
+    userId,
+   );
   },
   onSuccess: (_result, variables) => {
    const payload = variables;

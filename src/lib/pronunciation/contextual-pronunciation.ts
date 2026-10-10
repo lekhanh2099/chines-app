@@ -63,6 +63,8 @@ const contextualPhraseDictionary: PronunciationDictionaryEntry[] = [
  { id: "complement-listen", text: "听得入迷", pinyin: "tīng de rù mí", priority: 100 },
  { id: "complement-play", text: "吹得不比", pinyin: "chuī de bù bǐ", priority: 100 },
  { id: "complement-solid", text: "坚固得", pinyin: "jiān gù de", priority: 100 },
+ { id: "complement-think-through", text: "想得通", pinyin: "xiǎng de tōng", priority: 100 },
+ { id: "complement-take-lightly", text: "看得开", pinyin: "kàn de kāi", priority: 100 },
  { id: "modal-must-go", text: "我得去", pinyin: "wǒ děi qù", priority: 100 },
  ...engineEntries,
 ];

@@ -3,10 +3,16 @@ import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
 
-import { JsonValueSchema, type JsonFieldValue } from "@/types/json";
+import { DbNoteSchema } from "@/types/database";
 import type { Database } from "@/types/supabase.generated";
 
-import { type AnnotationAnchor, type LessonTextAnnotation } from "./types";
+import {
+ type AnnotationAnchor,
+ type LessonTextAnnotation,
+ type LessonAnnotationNoteUpdate,
+ type LessonAnnotationNoteResult,
+} from "./types";
+import { extractAnnotationNoteText } from "./annotation-note-utils";
 
 const annotationRowSchema = z.object({
  id: z.string(),
@@ -22,31 +28,21 @@ const annotationRowSchema = z.object({
  note_id: z.string().nullable(),
  created_at: z.string(),
  updated_at: z.string(),
- notes: z.object({ content: JsonValueSchema }).nullable(),
-});
-
-const lexicalNoteContentSchema = z.object({
- content: z
-  .array(
-   z.object({
-    content: z.array(z.object({ text: JsonValueSchema.optional() })).optional(),
-   }),
-  )
-  .optional(),
+ notes: DbNoteSchema.nullable(),
 });
 
 type Authority = SupabaseClient<Database>;
 
-function extractNoteText(content: JsonFieldValue): string {
- const parsed = lexicalNoteContentSchema.safeParse(content);
- if (!parsed.success) return "";
- const text = parsed.data.content?.[0]?.content?.find(
-  (item) => typeof item.text === "string",
- )?.text;
- return typeof text === "string" ? text : "";
-}
-
-function mapAnnotation(row: z.output<typeof annotationRowSchema>): LessonTextAnnotation {
+function mapAnnotation(
+ row: z.output<typeof annotationRowSchema>,
+ userId: string,
+): LessonTextAnnotation {
+ if (
+  row.note_id !== null &&
+  (!row.notes || row.notes.id !== row.note_id || row.notes.user_id !== userId)
+ ) {
+  throw new Error("Lesson annotation note owner mismatch");
+ }
  return {
   id: row.id,
   lessonId: row.lesson_id,
@@ -59,7 +55,8 @@ function mapAnnotation(row: z.output<typeof annotationRowSchema>): LessonTextAnn
   suffixText: row.suffix_text,
   tone: row.tone,
   noteId: row.note_id,
-  noteText: extractNoteText(row.notes?.content),
+  note: row.notes,
+  noteText: row.notes ? extractAnnotationNoteText(row.notes.content) : "",
   createdAt: row.created_at,
   updatedAt: row.updated_at,
  };
@@ -69,14 +66,14 @@ async function getOwnedAnnotation(authority: Authority, userId: string, annotati
  const { data, error } = await authority
   .from("lesson_text_annotations")
   .select(
-   "id, lesson_id, node_type, node_id, start_offset, end_offset, selected_text, prefix_text, suffix_text, tone, note_id, created_at, updated_at, notes(content)",
+   "id, lesson_id, node_type, node_id, start_offset, end_offset, selected_text, prefix_text, suffix_text, tone, note_id, created_at, updated_at, notes(*)",
   )
   .eq("user_id", userId)
   .eq("id", annotationId)
   .maybeSingle();
  if (error) throw new Error(error.message);
  if (data === null) throw new Error("Lesson annotation not found");
- return mapAnnotation(annotationRowSchema.parse(data));
+ return mapAnnotation(annotationRowSchema.parse(data), userId);
 }
 
 export async function listLessonAnnotations(
@@ -87,13 +84,16 @@ export async function listLessonAnnotations(
  const { data, error } = await authority
   .from("lesson_text_annotations")
   .select(
-   "id, lesson_id, node_type, node_id, start_offset, end_offset, selected_text, prefix_text, suffix_text, tone, note_id, created_at, updated_at, notes(content)",
+   "id, lesson_id, node_type, node_id, start_offset, end_offset, selected_text, prefix_text, suffix_text, tone, note_id, created_at, updated_at, notes(*)",
   )
   .eq("user_id", userId)
   .eq("lesson_id", lessonId)
   .order("start_offset", { ascending: true });
  if (error) throw new Error(error.message);
- return annotationRowSchema.array().parse(data).map(mapAnnotation);
+ return annotationRowSchema
+  .array()
+  .parse(data)
+  .map((row) => mapAnnotation(row, userId));
 }
 
 export async function createLessonAnnotation(
@@ -120,15 +120,20 @@ export async function createLessonAnnotation(
 export async function updateLessonAnnotationNote(
  authority: Authority,
  userId: string,
- input: { annotationId: string; noteText: string },
-): Promise<LessonTextAnnotation> {
- const { error } = await authority.rpc("hanzihome_update_lesson_text_annotation_note_as_server", {
-  p_user_id: userId,
-  p_annotation_id: input.annotationId,
-  p_note_text: input.noteText,
- });
+ input: LessonAnnotationNoteUpdate,
+): Promise<LessonAnnotationNoteResult> {
+ const { data, error } = await authority.rpc(
+  "hanzihome_update_lesson_text_annotation_note_cas_as_server",
+  {
+   p_user_id: userId,
+   p_annotation_id: input.annotationId,
+   p_note_text: input.noteText,
+   ...(input.expectedRevision === null ? {} : { p_expected_revision: input.expectedRevision }),
+  },
+ );
  if (error) throw new Error(error.message);
- return getOwnedAnnotation(authority, userId, input.annotationId);
+ const result = z.strictObject({ saved: z.boolean(), annotation: annotationRowSchema }).parse(data);
+ return { saved: result.saved, annotation: mapAnnotation(result.annotation, userId) };
 }
 
 export async function deleteLessonAnnotation(

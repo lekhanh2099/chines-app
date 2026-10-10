@@ -50,7 +50,9 @@ import { Typography } from "@/components/ui/display/typography";
 import { useNoteFolderMutations } from "@/features/notes/hooks/useNoteLibrary";
 import {
  buildNoteFolderTree,
- matchesNoteLibraryView,
+ countNoteLibraryView,
+ countNotesInFolder,
+ getNextNoteFolderPosition,
  type NoteFolderTreeNode,
  type NoteLibraryView,
 } from "@/features/notes/note-library-utils";
@@ -82,12 +84,14 @@ export function NotesLibraryNavigator({
  folders,
  activeView,
  onViewChange,
+ onFolderDeleted,
  onNavigate,
 }: {
  notes: NoteListItem[];
  folders: NoteFolder[];
  activeView: NoteLibraryView;
  onViewChange: (view: NoteLibraryView) => void;
+ onFolderDeleted: (folderId: NoteFolder["id"]) => void;
  onNavigate?: () => void;
 }) {
  const t = useTranslations("Notes");
@@ -96,7 +100,12 @@ export function NotesLibraryNavigator({
  const [folderName, setFolderName] = useState("");
  const [folderColor, setFolderColor] = useState<NoteFolderColor>("purple");
  const folderTree = useMemo(() => buildNoteFolderTree(folders), [folders]);
- const { createMutation, updateMutation, deleteMutation } = useNoteFolderMutations();
+ const {
+  createMutation,
+  updateMutation,
+  deleteMutation,
+  moveFolder: moveFolderMutation,
+ } = useNoteFolderMutations();
 
  const openDialog = (state: Exclude<FolderDialogState, null>) => {
   setFolderName(state.mode === "rename" ? state.folder.name : "");
@@ -118,7 +127,7 @@ export function NotesLibraryNavigator({
      name: folderName,
      color: folderColor,
      parentId: dialogState.parentId,
-     position: folders.filter((folder) => folder.parentId === dialogState.parentId).length,
+     position: getNextNoteFolderPosition(folders, dialogState.parentId),
     });
    } else {
     await updateMutation.mutateAsync({
@@ -126,7 +135,7 @@ export function NotesLibraryNavigator({
      changes: { name: folderName, color: folderColor },
     });
    }
-   setDialogState(null);
+   setDialogState((current) => (current === dialogState ? null : current));
   } catch {
    toast.error(t("folders.saveError"));
   }
@@ -136,26 +145,16 @@ export function NotesLibraryNavigator({
   if (dialogState?.mode !== "delete") return;
   try {
    await deleteMutation.mutateAsync(dialogState.folder.id);
-   if (activeView === `folder:${dialogState.folder.id}`) onViewChange("unfiled");
-   setDialogState(null);
+   onFolderDeleted(dialogState.folder.id);
+   setDialogState((current) => (current === dialogState ? null : current));
   } catch {
    toast.error(t("folders.deleteError"));
   }
  };
 
  const moveFolder = async (folder: NoteFolder, direction: FolderMoveDirection) => {
-  const siblings = folders
-   .filter((item) => item.parentId === folder.parentId)
-   .sort((a, b) => a.position - b.position);
-  const index = siblings.findIndex((item) => item.id === folder.id);
-  const swap = siblings[index + direction];
-  if (!swap) return;
-
   try {
-   await Promise.all([
-    updateMutation.mutateAsync({ folderId: folder.id, changes: { position: swap.position } }),
-    updateMutation.mutateAsync({ folderId: swap.id, changes: { position: folder.position } }),
-   ]);
+   await moveFolderMutation(folder, folders, direction === -1);
   } catch {
    toast.error(t("folders.sortError"));
   }
@@ -178,7 +177,7 @@ export function NotesLibraryNavigator({
      </Typography>
      {smartViewDefinitions.map((view) => {
       const Icon = view.icon;
-      const count = notes.filter((note) => matchesNoteLibraryView(note, view.value)).length;
+      const count = countNoteLibraryView(notes, view.value);
       return (
        <Button
         key={view.value}
@@ -335,7 +334,7 @@ function FolderNavigationRow({
 }) {
  const t = useTranslations("Notes.folders");
  const view: NoteLibraryView = `folder:${folder.id}`;
- const count = notes.filter((note) => note.folder_id === folder.id).length;
+ const count = countNotesInFolder(notes, folder.id);
 
  return (
   <div className="grid gap-1">

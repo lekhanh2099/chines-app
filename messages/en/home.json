@@ -43,7 +43,16 @@
   "readerCompletedCount": "Reader completed",
   "tracked": "{count} items have a learning status. The first group contains items being learned or marked difficult; it is not the SRS due schedule.",
   "empty": "There is no progress to summarize yet. Start learning or mark a status and the dashboard will update automatically.",
-  "unavailable": "The SRS, Learning Loop, and Reader overview could not be loaded. Current learning progress is still shown."
+  "unavailable": "The SRS, Learning Loop, and Reader overview could not be loaded. Current learning progress is still shown.",
+  "overviewErrorTitle": "Could not load learning overview",
+  "overviewLoading": "Loading learning overview",
+  "reviewedTodayLoading": "Loading today's review count",
+  "reviewedTodayErrorTitle": "Could not load today's review count",
+  "reviewedTodayErrorDescription": "Retry loading the review count. Other sections remain available."
+ },
+ "focus": {
+  "overviewUnknownTitle": "Continue learning and reviewing today",
+  "overviewUnknownDescription": "Due counts are not available to confirm today's progress yet. You can still open your cards or continue a lesson."
  },
  "activity": {
   "title": "Recent activity",
@@ -63,13 +72,19 @@
    "grammar": "Reviewed grammar point",
    "radical": "Reviewed radical"
   },
-  "empty": "No recent reviews yet. Activity will appear here after you grade a flashcard."
+  "empty": "No recent reviews yet. Activity will appear here after you grade a flashcard.",
+  "loading": "Loading recent activity",
+  "loadErrorTitle": "Could not load recent activity",
+  "loadErrorDescription": "Retry loading your review history. Other sections remain available."
  },
  "notes": {
   "title": "Recently updated notes",
   "description": "Continue the notes you used recently.",
   "viewAll": "View all",
   "untitled": "Untitled note",
+  "loadErrorTitle": "Could not load recent notes",
+  "loading": "Loading recent notes",
+  "loadErrorDescription": "Try loading the list again to view your saved notes.",
   "emptyTitle": "No recent notes",
   "emptyDescription": "Create a note when you want to keep something from your studies.",
   "create": "Create note"

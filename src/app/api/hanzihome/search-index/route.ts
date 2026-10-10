@@ -5,6 +5,7 @@ import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
+ type AuthenticatedRouteContext,
 } from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
@@ -12,7 +13,11 @@ export const revalidate = 0;
 
 // In-memory server cache with 5-minute TTL to accelerate repeated index fetches
 const SEARCH_INDEX_CACHE_TTL_MS = 5 * 60 * 1000;
-let cachedSearchIndex: { items: HanziHomeSearchIndexItem[]; expiresAt: number } | null = null;
+let cachedSearchIndex: {
+ ownerId: AuthenticatedRouteContext["user"]["id"];
+ items: HanziHomeSearchIndexItem[];
+ expiresAt: number;
+} | null = null;
 
 export async function GET() {
  const auth = await requireAuthenticatedRoute();
@@ -20,7 +25,12 @@ export async function GET() {
 
  try {
   const now = Date.now();
-  if (cachedSearchIndex && cachedSearchIndex.expiresAt > now) {
+  const ownerId = auth.context.user.id;
+  if (
+   cachedSearchIndex &&
+   cachedSearchIndex.ownerId === ownerId &&
+   cachedSearchIndex.expiresAt > now
+  ) {
    return privateNoStoreJson({ items: cachedSearchIndex.items });
   }
 
@@ -28,6 +38,7 @@ export async function GET() {
   const items = buildHanziHomeSearchIndex(data);
 
   cachedSearchIndex = {
+   ownerId,
    items,
    expiresAt: now + SEARCH_INDEX_CACHE_TTL_MS,
   };

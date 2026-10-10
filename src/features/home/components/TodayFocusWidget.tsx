@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, CheckCircle2, Flame, PlayCircle, Repeat2, Sparkles, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -41,9 +42,10 @@ function getActiveResumeLesson(courses: HomeDashboardModel["courses"]) {
 }
 
 export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
+ const t = useTranslations("Home");
  const activeResumeLesson = getActiveResumeLesson(courses);
 
- const hasDueCards = pulse.srsDueCount > 0;
+ const hasDueCards = pulse.overviewAvailable && pulse.srsDueCount > 0;
 
  return (
   <section aria-labelledby="today-focus-heading" className="grid w-full min-w-0 gap-4">
@@ -56,7 +58,11 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
     <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
      <div className="grid min-w-0 gap-2">
       <div className="flex items-center gap-2">
-       <Badge variant={hasDueCards ? "warning" : "success"} size="sm" casing="natural">
+       <Badge
+        variant={!pulse.overviewAvailable ? "default" : hasDueCards ? "warning" : "success"}
+        size="sm"
+        casing="natural"
+       >
         <Flame className="size-3.5 fill-current" />
         Hôm nay
        </Badge>
@@ -74,7 +80,9 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
        tone="default"
        weight="black"
       >
-       {hasDueCards ? (
+       {!pulse.overviewAvailable ? (
+        t("focus.overviewUnknownTitle")
+       ) : hasDueCards ? (
         <>
          Bạn có{" "}
          <span className="text-warning-text underline decoration-warning/50 underline-offset-4">
@@ -88,9 +96,11 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
       </Typography>
 
       <Typography as="p" variant="bodySmall" tone="muted" className="max-w-xl">
-       {hasDueCards
-        ? "Thuật toán lặp lại ngắt quãng (SRS) đã lên lịch những từ bạn sắp quên. Hãy hoàn thành phiên ôn để củng cố trí nhớ dài hạn."
-        : "Không còn thẻ nào đến hạn. Bạn có thể tiếp tục học bài mới hoặc đọc bài viết tiếng Trung để mở rộng vốn từ."}
+       {!pulse.overviewAvailable
+        ? t("focus.overviewUnknownDescription")
+        : hasDueCards
+          ? "Thuật toán lặp lại ngắt quãng (SRS) đã lên lịch những từ bạn sắp quên. Hãy hoàn thành phiên ôn để củng cố trí nhớ dài hạn."
+          : "Không còn thẻ nào đến hạn. Bạn có thể tiếp tục học bài mới hoặc đọc bài viết tiếng Trung để mở rộng vốn từ."}
       </Typography>
      </div>
 

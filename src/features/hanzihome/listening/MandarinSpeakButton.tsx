@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/actions/button";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { cn } from "@/lib/utils";
 
-import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
+import { useMandarinTtsControls } from "@/features/speech/MandarinTtsProvider";
 
 export function MandarinSpeakButton({
  text,
@@ -34,7 +34,7 @@ export function MandarinSpeakButton({
  onFinish?: () => void;
 }) {
  const t = useTranslations("TtsStudio");
- const tts = useSharedMandarinTts();
+ const tts = useMandarinTtsControls();
  const isCoarsePointer = useCoarsePointer();
  const normalizedText = text.trim();
  const normalizedSegments = (segments ?? [normalizedText])

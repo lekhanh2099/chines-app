@@ -5,6 +5,7 @@ import { Settings2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
+import { Typography } from "@/components/ui/display/typography";
 import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
@@ -29,12 +30,16 @@ import {
  useNoteFolders,
  useUpdateNoteLibraryMetadata,
 } from "@/features/notes/hooks/useNoteLibrary";
-import { normalizeReadingUrl } from "@/features/notes/note-library-utils";
-import type { NoteDetail } from "@/services/notes/notes.service";
-import { ReadingStatusSchema } from "@/types/database";
+import { createNoteLibraryMetadataInput } from "@/features/notes/note-library-utils";
+import {
+ NoteConflictError,
+ type getNoteById,
+ type NoteDetail,
+} from "@/services/notes/notes.service";
 
 type NoteLibraryMetadataTarget = {
  id: NoteDetail["id"];
+ revision: NoteDetail["revision"];
  title: NoteDetail["title"];
  folder_id: NoteDetail["folder_id"];
  reading_status: NoteDetail["reading_status"];
@@ -51,18 +56,24 @@ export function NoteLibraryMetadataDialog({
  open: controlledOpen,
  onOpenChange: controlledOnOpenChange,
  hideTrigger = false,
+ initialConflict,
 }: {
  note: NoteLibraryMetadataTarget;
  compact?: boolean;
  open?: boolean;
  onOpenChange?: (open: boolean) => void;
  hideTrigger?: boolean;
+ initialConflict?: NoteDetail;
 }) {
  const t = useTranslations("Notes");
  const common = useTranslations("Common");
  const [internalOpen, setInternalOpen] = useState(false);
  const open = controlledOpen ?? internalOpen;
  const setOpen = controlledOnOpenChange ?? setInternalOpen;
+ const [expectedRevision, setExpectedRevision] = useState(note.revision);
+ const [conflict, setConflict] = useState<Awaited<ReturnType<typeof getNoteById>>>(
+  initialConflict ?? null,
+ );
  const [title, setTitle] = useState(note.title);
  const [folderId, setFolderId] = useState(note.folder_id ?? "unfiled");
  const [readingStatus, setReadingStatus] = useState(note.reading_status ?? "none");
@@ -70,20 +81,24 @@ export function NoteLibraryMetadataDialog({
  const [sourceLabel, setSourceLabel] = useState(note.source_label ?? "");
  const [sourceAuthor, setSourceAuthor] = useState(note.source_author ?? "");
  const [publishedAt, setPublishedAt] = useState(note.source_published_at ?? "");
+ const [sourceCapturedAt, setSourceCapturedAt] = useState(note.source_captured_at);
  const foldersQuery = useNoteFolders();
- const mutation = useUpdateNoteLibraryMetadata();
+ const mutation = useUpdateNoteLibraryMetadata(note.id);
 
- const resetFields = () => {
-  setTitle(note.title);
-  setFolderId(note.folder_id ?? "unfiled");
-  setReadingStatus(note.reading_status ?? "none");
-  setSourceUrl(note.source_url ?? "");
-  setSourceLabel(note.source_label ?? "");
-  setSourceAuthor(note.source_author ?? "");
-  setPublishedAt(note.source_published_at ?? "");
+ const resetFields = (target: NoteLibraryMetadataTarget) => {
+  setExpectedRevision(target.revision);
+  setConflict(null);
+  setTitle(target.title);
+  setFolderId(target.folder_id ?? "unfiled");
+  setReadingStatus(target.reading_status ?? "none");
+  setSourceUrl(target.source_url ?? "");
+  setSourceLabel(target.source_label ?? "");
+  setSourceAuthor(target.source_author ?? "");
+  setPublishedAt(target.source_published_at ?? "");
+  setSourceCapturedAt(target.source_captured_at);
  };
 
- const save = async () => {
+ const save = async (revision = expectedRevision) => {
   const nextTitle = title.trim();
   if (!nextTitle) {
    toast.error(t("metadata.titleRequired"));
@@ -91,29 +106,29 @@ export function NoteLibraryMetadataDialog({
   }
 
   try {
-   const normalized = sourceUrl.trim() ? normalizeReadingUrl(sourceUrl) : null;
-   const parsedReadingStatus = ReadingStatusSchema.safeParse(readingStatus);
    await mutation.mutateAsync({
     noteId: note.id,
-    title: nextTitle,
-    folderId: folderId === "unfiled" ? null : folderId,
-    readingStatus: parsedReadingStatus.success ? parsedReadingStatus.data : null,
-    source:
-     normalized === null
-      ? null
-      : {
-         url: normalized.url,
-         host: normalized.host,
-         label: sourceLabel.trim() || normalized.host,
-         author: sourceAuthor.trim() || null,
-         publishedAt: publishedAt || null,
-         capturedAt: note.source_captured_at ?? new Date().toISOString(),
-        },
+    expectedRevision: revision,
+    ...createNoteLibraryMetadataInput(
+     {
+      title: nextTitle,
+      folderId,
+      readingStatus,
+      sourceUrl,
+      sourceLabel,
+      sourceAuthor,
+      publishedAt,
+      sourceCapturedAt,
+     },
+     new Date().toISOString(),
+    ),
    });
+   setConflict(null);
    setOpen(false);
    toast.success(t("metadata.success"));
-  } catch {
-   toast.error(t("metadata.error"));
+  } catch (error) {
+   if (error instanceof NoteConflictError) setConflict(error.serverNote);
+   else toast.error(t("metadata.error"));
   }
  };
 
@@ -126,7 +141,7 @@ export function NoteLibraryMetadataDialog({
       size={compact ? "menu" : "icon-sm"}
       aria-label={t("metadata.trigger")}
       title={t("metadata.trigger")}
-      onClick={resetFields}
+      onClick={() => resetFields(note)}
      >
       <Settings2 />
       {compact ? t("metadata.trigger") : null}
@@ -139,6 +154,31 @@ export function NoteLibraryMetadataDialog({
      <DialogDescription>{t("metadata.description")}</DialogDescription>
     </DialogHeader>
     <DialogBody>
+     {conflict ? (
+      <div role="alert" className="grid gap-2">
+       <Typography variant="bodySmall">{t("editor.conflict.description")}</Typography>
+       <Typography variant="bodySmall">
+        {t("editor.conflict.serverTitle", { title: conflict.title, revision: conflict.revision })}
+       </Typography>
+       <div className="flex flex-wrap gap-2">
+        <Button
+         variant="outline"
+         disabled={mutation.isPending}
+         onClick={() => resetFields(conflict)}
+        >
+         {t("editor.conflict.useServer")}
+        </Button>
+        <Button
+         disabled={mutation.isPending}
+         onClick={() => {
+          void save(conflict.revision);
+         }}
+        >
+         {t("editor.conflict.keepLocal")}
+        </Button>
+       </div>
+      </div>
+     ) : null}
      <FieldGroup>
       <Field>
        <FieldLabel htmlFor="note-title">{t("metadata.titleLabel")}</FieldLabel>
@@ -226,7 +266,10 @@ export function NoteLibraryMetadataDialog({
      <Button variant="outline" onClick={() => setOpen(false)}>
       {common("actions.cancel")}
      </Button>
-     <Button disabled={mutation.isPending || !title.trim()} onClick={() => void save()}>
+     <Button
+      disabled={mutation.isPending || Boolean(conflict) || !title.trim()}
+      onClick={() => void save()}
+     >
       {common("actions.save")}
      </Button>
     </DialogFooter>

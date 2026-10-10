@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/display/badge";
 import { Card } from "@/components/ui/layout/card";
 import { IconTile } from "@/components/ui/display/icon-tile";
 import { Typography } from "@/components/ui/display/typography";
+import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import { HomeSectionHeader } from "@/features/home/components/HomePrimitives";
 import type { HomeDashboardModel } from "@/features/home/types";
 
@@ -20,12 +21,19 @@ const resultVariants = {
 
 export function RecentLearningActivityPanel({
  items,
+ loading,
+ unavailable,
+ onRetry,
 }: {
  items: HomeDashboardModel["recentActivity"];
+ loading: HomeDashboardModel["recentActivityLoading"];
+ unavailable: HomeDashboardModel["recentActivityUnavailable"];
+ onRetry: HomeDashboardModel["retryRecentActivity"];
 }) {
  const format = useFormatter();
  const now = useNow({ updateInterval: 60_000 });
  const t = useTranslations("Home");
+ const common = useTranslations("Common");
  const resultLabels = {
   known: t("activity.results.known"),
   hard: t("activity.results.hard"),
@@ -33,7 +41,7 @@ export function RecentLearningActivityPanel({
  } satisfies Record<HomeDashboardModel["recentActivity"][number]["result"], string>;
 
  return (
-  <section aria-labelledby="recent-learning-activity-title">
+  <section aria-labelledby="recent-learning-activity-title" aria-busy={loading}>
    <Card variant="section" padding="lg" className="grid gap-4">
     <HomeSectionHeader
      id="recent-learning-activity-title"
@@ -41,6 +49,19 @@ export function RecentLearningActivityPanel({
      description={t("activity.description")}
     />
 
+    {loading ? (
+     <Typography as="p" variant="bodySmall" tone="muted">
+      {t("activity.loading")}
+     </Typography>
+    ) : null}
+    {unavailable ? (
+     <QueryErrorCard
+      title={t("activity.loadErrorTitle")}
+      description={t("activity.loadErrorDescription")}
+      retryLabel={common("actions.retry")}
+      onRetry={onRetry}
+     />
+    ) : null}
     {items.length > 0 ? (
      <div className="divide-y divide-border-default/70">
       {items.map((item) => (
@@ -71,11 +92,11 @@ export function RecentLearningActivityPanel({
        </div>
       ))}
      </div>
-    ) : (
+    ) : !unavailable && !loading ? (
      <Typography as="p" variant="bodySmall" tone="muted">
       {t("activity.empty")}
      </Typography>
-    )}
+    ) : null}
    </Card>
   </section>
  );

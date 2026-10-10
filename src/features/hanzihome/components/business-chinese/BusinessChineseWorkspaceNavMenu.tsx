@@ -1,6 +1,7 @@
 "use client";
 
 import { Bookmark, Check, CloudCheck, Menu } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/actions/button";
 import {
@@ -42,11 +43,13 @@ export function BusinessChineseWorkspaceNavMenu<T extends string = string>({
  bookmarkedLabel,
  offlineReadyLabel,
  offlineDescription,
- menuLabel = "Nội dung bài học",
+ menuLabel,
  className,
 }: BusinessChineseWorkspaceNavMenuProps<T>) {
+ const t = useTranslations("BusinessChinese");
+ const resolvedMenuLabel = menuLabel ?? t("tabsLabel");
  const activeTab = tabs.find((tab) => tab.key === activeView);
- const title = activeTab ? `${menuLabel}: ${activeTab.label}` : menuLabel;
+ const title = activeTab ? `${resolvedMenuLabel}: ${activeTab.label}` : resolvedMenuLabel;
 
  return (
   <DropdownMenu>
@@ -70,7 +73,7 @@ export function BusinessChineseWorkspaceNavMenu<T extends string = string>({
    </DropdownMenuTrigger>
    <DropdownMenuContent align="end" width="md">
     <DropdownMenuLabel className="flex items-center justify-between text-xs font-medium uppercase tracking-wider text-muted-foreground">
-     <span>{menuLabel}</span>
+     <span>{resolvedMenuLabel}</span>
      {activeTab ? (
       <span className="text-[0.7rem] font-semibold normal-case text-accent-text">
        {activeTab.label}
@@ -94,7 +97,7 @@ export function BusinessChineseWorkspaceNavMenu<T extends string = string>({
     </DropdownMenuGroup>
     <DropdownMenuSeparator />
     <DropdownMenuLabel className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-     Tiện ích
+     {t("utilities")}
     </DropdownMenuLabel>
     <DropdownMenuGroup>
      <DropdownMenuItem onClick={onToggleLessonBookmark} className="cursor-pointer gap-2">

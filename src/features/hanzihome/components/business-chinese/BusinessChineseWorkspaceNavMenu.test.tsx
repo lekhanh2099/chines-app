@@ -1,5 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
+import { NextIntlClientProvider } from "next-intl";
+import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
 import {
  BusinessChineseWorkspaceNavMenu,
  type BusinessChineseNavTab,
@@ -14,17 +16,19 @@ const mockTabs: ReadonlyArray<BusinessChineseNavTab<string>> = [
 describe("BusinessChineseWorkspaceNavMenu", () => {
  it("renders active tab label in title/aria-label and Menu icon button", () => {
   const markup = renderToStaticMarkup(
-   <BusinessChineseWorkspaceNavMenu
-    tabs={mockTabs}
-    activeView="text"
-    onActiveViewChange={vi.fn()}
-    isLessonBookmarked={false}
-    onToggleLessonBookmark={vi.fn()}
-    bookmarkLabel="Đánh dấu bài học"
-    bookmarkedLabel="Đã đánh dấu"
-    offlineReadyLabel="Đã sẵn sàng offline"
-    menuLabel="Nội dung bài học"
-   />,
+   <NextIntlClientProvider locale="vi" messages={{ BusinessChinese: businessChineseMessages }}>
+    <BusinessChineseWorkspaceNavMenu
+     tabs={mockTabs}
+     activeView="text"
+     onActiveViewChange={vi.fn()}
+     isLessonBookmarked={false}
+     onToggleLessonBookmark={vi.fn()}
+     bookmarkLabel="Đánh dấu bài học"
+     bookmarkedLabel="Đã đánh dấu"
+     offlineReadyLabel="Đã sẵn sàng offline"
+     menuLabel="Nội dung bài học"
+    />
+   </NextIntlClientProvider>,
   );
 
   expect(markup).toContain('aria-label="Nội dung bài học: Bài khóa"');
@@ -34,16 +38,18 @@ describe("BusinessChineseWorkspaceNavMenu", () => {
 
  it("renders bookmark dot indicator when lesson is bookmarked", () => {
   const markup = renderToStaticMarkup(
-   <BusinessChineseWorkspaceNavMenu
-    tabs={mockTabs}
-    activeView="text"
-    onActiveViewChange={vi.fn()}
-    isLessonBookmarked={true}
-    onToggleLessonBookmark={vi.fn()}
-    bookmarkLabel="Đánh dấu bài học"
-    bookmarkedLabel="Đã đánh dấu"
-    offlineReadyLabel="Đã sẵn sàng offline"
-   />,
+   <NextIntlClientProvider locale="vi" messages={{ BusinessChinese: businessChineseMessages }}>
+    <BusinessChineseWorkspaceNavMenu
+     tabs={mockTabs}
+     activeView="text"
+     onActiveViewChange={vi.fn()}
+     isLessonBookmarked={true}
+     onToggleLessonBookmark={vi.fn()}
+     bookmarkLabel="Đánh dấu bài học"
+     bookmarkedLabel="Đã đánh dấu"
+     offlineReadyLabel="Đã sẵn sàng offline"
+    />
+   </NextIntlClientProvider>,
   );
 
   expect(markup).toContain("bg-warning");
@@ -52,16 +58,18 @@ describe("BusinessChineseWorkspaceNavMenu", () => {
 
  it("renders different active tab label in title correctly", () => {
   const markup = renderToStaticMarkup(
-   <BusinessChineseWorkspaceNavMenu
-    tabs={mockTabs}
-    activeView="vocab"
-    onActiveViewChange={vi.fn()}
-    isLessonBookmarked={false}
-    onToggleLessonBookmark={vi.fn()}
-    bookmarkLabel="Đánh dấu bài học"
-    bookmarkedLabel="Đã đánh dấu"
-    offlineReadyLabel="Đã sẵn sàng offline"
-   />,
+   <NextIntlClientProvider locale="vi" messages={{ BusinessChinese: businessChineseMessages }}>
+    <BusinessChineseWorkspaceNavMenu
+     tabs={mockTabs}
+     activeView="vocab"
+     onActiveViewChange={vi.fn()}
+     isLessonBookmarked={false}
+     onToggleLessonBookmark={vi.fn()}
+     bookmarkLabel="Đánh dấu bài học"
+     bookmarkedLabel="Đã đánh dấu"
+     offlineReadyLabel="Đã sẵn sàng offline"
+    />
+   </NextIntlClientProvider>,
   );
 
   expect(markup).toContain('aria-label="Nội dung bài học: Từ vựng"');

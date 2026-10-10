@@ -7,9 +7,35 @@ import {
  deleteNote as deleteNoteRecord,
  getUserNotes,
  getNotesByCategory,
+ getNoteById,
 } from "@/services/notes/notes.service";
 import { noteQueryKeys } from "@/features/notes/query-keys";
 import type { NoteCategory } from "@/types/database";
+import { getNoteDraft } from "@/features/notes/local/note-draft-store";
+import { restoreNoteDraft } from "@/features/notes/note-editor-utils";
+
+export function usePrefetchNote() {
+ const { supabase, userId } = useClientSession();
+ const queryClient = useQueryClient();
+ return (noteId: Parameters<typeof getNoteById>[1]) => {
+  if (!userId) return;
+  void queryClient.prefetchQuery({
+   queryKey: noteQueryKeys.detail(userId, noteId),
+   queryFn: async () => {
+    const serverNote = await getNoteById(supabase, noteId, userId);
+    if (!serverNote) return null;
+    try {
+     const localDraft = await getNoteDraft(userId, noteId);
+     if (localDraft) return restoreNoteDraft(serverNote, localDraft);
+    } catch {
+     // Fall back to server note
+    }
+    return serverNote;
+   },
+   staleTime: 60 * 1000,
+  });
+ };
+}
 
 /**
  * Hook: Fetch user's notes list.

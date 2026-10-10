@@ -1,5 +1,7 @@
 # Reader / Reading ownership migration
 
+> Execution ownership — 2026-10-08: remaining checkpoint 12 được reconcile tại [feature quality master plan](feature-quality-audit-enhancement-2026-10-04.md#0-một-plan-thực-thi--reconciliation-08102026), C06/C14/C15. Blocker dependency audit tháng 9 phía dưới là historical; phải revalidate source/gate hiện tại, không migration engine hoặc chạy queue này lần hai.
+
 ## Đang ở đâu — cập nhật 2026-09-09
 
 - **Đã xong:** checkpoint 1–11 về migration và regression trong phạm vi từng checkpoint.

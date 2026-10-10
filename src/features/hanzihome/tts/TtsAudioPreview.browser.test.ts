@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 import { createServer } from "vite";
 import { it } from "vitest";
 import type {} from "./TtsAudioPreview.browser.fixture";
+import messages from "../../../../messages/vi/tts-studio.json";
 
 it.runIf(process.env.TTS_BROWSER_TEST === "1")(
  "isolates Reader speech, fences Studio playback and releases preview resources on unmount",
@@ -38,6 +39,15 @@ it.runIf(process.env.TTS_BROWSER_TEST === "1")(
    const browser = await chromium.launch({ headless: true });
    try {
     const page = await browser.newPage();
+    await page.route("**/api/tts", async (route) => {
+     if (route.request().method() === "GET") {
+      await route.fulfill({
+       json: [{ name: "Fixture voice", shortName: "fixture", gender: "Female", locale: "zh-CN" }],
+      });
+     } else {
+      await route.fulfill({ body: "controlled audio", contentType: "audio/wav" });
+     }
+    });
     await page.goto(url + "tts-audit");
     await page.getByRole("button", { name: "Set fixture rate 1.25", exact: true }).click();
     await page.evaluate(
@@ -52,6 +62,29 @@ it.runIf(process.env.TTS_BROWSER_TEST === "1")(
     await browserExpect(page.locator("#tts-context-evidence")).toHaveText(
      '{"full":2,"reader":0,"button":2}',
     );
+    for (let repetition = 0; repetition < 5; repetition += 1) {
+     await page.getByRole("button", { name: /测试/u }).click();
+     await browserExpect(page.getByText("Fixture speaking: true", { exact: true })).toBeVisible();
+     const stopReading = page.getByRole("button", { name: messages.stopReading, exact: true });
+     await browserExpect(stopReading).toHaveAttribute("aria-pressed", "true");
+     await browserExpect(page.getByText("Fixture time: 0", { exact: true })).toBeVisible();
+     await page.getByRole("button", { name: "Reset context commits", exact: true }).click();
+     for (let tick = 1; tick <= 30; tick += 1) {
+      await page
+       .getByRole("button", { name: "Tick controlled audio", exact: true })
+       .evaluate((control) => control.dispatchEvent(new MouseEvent("click", { bubbles: true })));
+      await browserExpect(page.getByText(`Fixture time: ${tick}`, { exact: true })).toBeVisible();
+     }
+     await browserExpect(page.locator("#tts-context-evidence")).toHaveText(
+      '{"full":30,"reader":0,"button":0}',
+     );
+     await stopReading.click();
+     await browserExpect(page.getByText("Fixture speaking: false", { exact: true })).toBeVisible();
+     await browserExpect(page.getByRole("button", { name: /测试/u })).toHaveAttribute(
+      "aria-pressed",
+      "false",
+     );
+    }
     const playback = page.getByRole("region", { name: "Playback lifecycle probe" });
     const playbackProof = page.locator("#tts-playback-evidence");
     await playback.getByRole("button", { name: "Enable advance", exact: true }).click();
@@ -116,13 +149,13 @@ it.runIf(process.env.TTS_BROWSER_TEST === "1")(
     await page.getByRole("button", { name: "Complete generation", exact: true }).click();
     await browserExpect(page.getByText("Preview available", { exact: true })).toBeVisible();
     await browserExpect(page.locator("#audio-evidence")).toHaveText(
-     '{"created":1,"revoked":0,"pending":0}',
+     '{"created":6,"revoked":5,"pending":0}',
     );
     await page.getByRole("button", { name: "Generate preview", exact: true }).click();
     await page.getByRole("button", { name: "Unmount preview", exact: true }).click();
     await page.getByRole("button", { name: "Complete generation", exact: true }).click();
     await browserExpect(page.locator("#audio-evidence")).toHaveText(
-     '{"created":1,"revoked":1,"pending":0}',
+     '{"created":6,"revoked":6,"pending":0}',
     );
    } finally {
     await browser.close();

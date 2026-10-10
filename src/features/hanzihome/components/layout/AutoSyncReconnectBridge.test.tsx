@@ -4,6 +4,10 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AutoSyncReconnectBridge } from "./AutoSyncReconnectBridge";
 
+vi.mock("@/components/providers/QueryProvider", () => ({
+ useClientSession: () => ({ userId: "user-123", isResolved: true }),
+}));
+
 vi.mock("@tanstack/react-query", () => ({
  useQueryClient: () => ({
   invalidateQueries: vi.fn(),

@@ -6,6 +6,7 @@ import {
  lessonVocabularyApiResponseSchema,
 } from "@/features/hanzihome/hanzihome-api.schemas";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import type { LessonRouteSummary } from "@/features/hanzihome/utils/lesson-route";
 import type { LessonVocabularyListResource } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import {
  fetchHanziHomeLessonDetail,
@@ -13,16 +14,64 @@ import {
 } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import {
+ buildContentCacheKey,
+ ContentCacheRecordBaseSchema,
  deleteContentCache,
  getContentCacheGeneration,
  readContentCache,
  writeContentCache,
 } from "./content-cache-store";
+import { getAllFromStoreMatching, HANZIHOME_LOCAL_STORES } from "./hanzihome-local-db";
 
 export const LESSON_DETAIL_RESOURCE_TYPE = "lesson_detail";
 export const LESSON_VOCAB_RESOURCE_TYPE = "lesson_vocab";
 
 const lessonVocabularyResourceSchema = lessonVocabularyApiResponseSchema.shape.resource;
+
+export async function listCachedLessonSummaries(ownerId: string) {
+ const summaries: Array<
+  LessonRouteSummary &
+   Pick<HanziHomeLesson, "title"> &
+   Pick<HanziHomeLesson, "titleZh"> &
+   Pick<HanziHomeLesson, "courseId">
+ > = [];
+ if (!ownerId) return summaries;
+ const records = await getAllFromStoreMatching(
+  HANZIHOME_LOCAL_STORES.contentCache,
+  ContentCacheRecordBaseSchema,
+ );
+ const owned = records.filter(
+  (record) =>
+   record.ownerId === ownerId &&
+   record.metadata.deletedAt === undefined &&
+   record.key === buildContentCacheKey(ownerId, record.resourceType, record.resourceId),
+ );
+ const vocabularyIds = new Set<string>();
+ for (const record of owned) {
+  if (record.resourceType !== LESSON_VOCAB_RESOURCE_TYPE) continue;
+  const resource = lessonVocabularyResourceSchema.safeParse(record.data);
+  if (resource.success && resource.data.lessonId === record.resourceId) {
+   vocabularyIds.add(record.resourceId);
+  }
+ }
+ for (const record of owned) {
+  if (record.resourceType !== LESSON_DETAIL_RESOURCE_TYPE || !vocabularyIds.has(record.resourceId))
+   continue;
+  const lesson = lessonSchema.safeParse(record.data);
+  if (!lesson.success || lesson.data.id !== record.resourceId) continue;
+  summaries.push({
+   id: lesson.data.id,
+   lessonNumber: lesson.data.lessonNumber,
+   bookId: lesson.data.bookId,
+   courseId: lesson.data.courseId,
+   title: lesson.data.title,
+   titleZh: lesson.data.titleZh,
+  });
+ }
+ return summaries.sort(
+  (left, right) => left.title.localeCompare(right.title) || left.id.localeCompare(right.id),
+ );
+}
 
 export async function readCachedLessonDetail(
  ownerId: string,
@@ -204,7 +253,7 @@ export async function loadLessonDetailWithCache(params: {
  try {
   const remote = await fetchHanziHomeLessonDetail(lessonId, { signal });
   if (remote) {
-   void writeCachedLessonDetail(ownerId, lessonId, remote, startGeneration);
+   void writeCachedLessonDetail(ownerId, lessonId, remote, startGeneration).catch(() => {});
   }
   return remote;
  } catch (error) {
@@ -275,7 +324,7 @@ export async function loadLessonVocabularyWithCache(params: {
  try {
   const remote = await fetchHanziHomeLessonVocabulary(lessonId, { signal });
   if (remote) {
-   void writeCachedLessonVocabulary(ownerId, lessonId, remote, startGeneration);
+   void writeCachedLessonVocabulary(ownerId, lessonId, remote, startGeneration).catch(() => {});
   }
   return remote;
  } catch (error) {

@@ -33,6 +33,7 @@
   "synced": "Synced"
  },
  "offlinePack": {
+  "srsSaveQueued": "Saved on this device. SRS will sync when connected; the server has not confirmed it yet.",
   "downloadCourse": "Download for offline",
   "downloading": "Downloading ({percent}%)...",
   "downloadReady": "Offline ready",
@@ -54,6 +55,68 @@
   "courseSeriesHeading": "Curriculum Series",
   "courseSeriesDescription": "Each series is divided by level; the volume is the final interaction unit for selecting lessons.",
   "noCoursesTitle": "No curriculum available",
-  "noCoursesDescription": "Course data is not yet available in the HanziHome library."
+  "noCoursesDescription": "Course data is not yet available in the HanziHome library.",
+  "collection": "Curriculum series",
+  "draft": "Draft data",
+  "missingAdvancedVolume": "Advanced III missing",
+  "collectionCounts": "{levels} levels · {books} volumes · {lessons} lessons",
+  "levelPosition": "Level {current}/{total}",
+  "courseCounts": "{books} volumes · {lessons} lessons",
+  "noBooksTitle": "No study volumes",
+  "noBooksDescription": "No volumes have been added to the library for this level.",
+  "noCollectionBooksTitle": "No volumes in this series",
+  "noCollectionBooksDescription": "Add a volume to start organizing lessons in this series.",
+  "lessonCount": "{count} lessons",
+  "contentCounts": "{vocab} words · {grammar} grammar points",
+  "selectLessonAria": "Select a lesson in {book}",
+  "selectLesson": "Select a lesson",
+  "lessonLabel": "Lesson {number}: {title}",
+  "lesson": "lesson",
+  "openLessonAria": "Open {title}",
+  "open": "Open",
+  "noLessons": "This volume has no lessons yet.",
+  "recentTitle": "Recently studied",
+  "resume": "Continue studying",
+  "loadingRecent": "Loading your recent lesson",
+  "loading": "Loading the HanziHome library",
+  "edit": "Edit",
+  "exitEdit": "Exit edit mode",
+  "groups": {
+   "hanyu": {
+    "title": "Hanyu curriculum",
+    "description": "Study the Hanyu series from lower to higher volumes."
+   },
+   "boya": {
+    "title": "Boya curriculum",
+    "description": "The Boya study path is organized by level and volume."
+   },
+   "boyaSecondEdition": {
+    "title": "Boya · 9 volumes · Second edition",
+    "description": "Second edition · 4 of 5 intermediate–advanced volumes available; Advanced III is missing."
+   },
+   "listening": {
+    "title": "Listening curriculum",
+    "description": "Listening lessons, response practice and dictation by volume."
+   },
+   "other": {
+    "title": "Other curricula",
+    "description": "Supplementary curricula and custom content."
+   }
+  }
+ },
+ "offlineStudy": {
+  "title": "Offline study",
+  "loading": "Resolving your account and local data. If this page cannot open, reconnect and reload.",
+  "description": "Open downloaded lessons for your current account. AI, content not downloaded and provider audio require a connection.",
+  "library": "Downloaded lessons",
+  "open": "Open downloaded lesson",
+  "textbooks": "Available textbooks",
+  "openTextbook": "Open textbook",
+  "textbookUnavailable": "Textbook unavailable",
+  "sessionUnavailable": "Your account could not be resolved. Reconnect and sign in again to open your downloaded lessons.",
+  "empty": "No lessons ready offline",
+  "emptyDescription": "While online, download a course to save complete lessons and vocabulary on this device.",
+  "storageError": "Offline storage could not be read",
+  "storageErrorDescription": "Local data is unavailable. Retry; if it still fails, reconnect to open the lesson."
  }
 }

@@ -4,30 +4,29 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { usePdfAnnotations } from "./usePdfAnnotations";
-import type { savePdfAnnotation, PdfAnnotationPayloadInput } from "./pdf-annotation-api";
+import type { enqueuePdfAnnotation, flushPendingPdfAnnotation } from "./pdf-annotation-outbox";
 import { createPdfStroke, type PdfAnnotationRow } from "./pdf-annotations";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
-const mocks = vi.hoisted(() => ({ save: vi.fn<typeof savePdfAnnotation>() }));
-vi.mock("./pdf-annotation-api", () => ({
+const ownerId = "22222222-2222-4222-8222-222222222222";
+const mocks = vi.hoisted(() => ({
+ enqueue: vi.fn<typeof enqueuePdfAnnotation>(),
+ flush: vi.fn<typeof flushPendingPdfAnnotation>(),
+}));
+vi.mock("@/components/providers/QueryProvider", () => ({
+ useClientSession: () => ({ userId: "22222222-2222-4222-8222-222222222222", isResolved: true }),
+}));
+vi.mock("./pdf-annotation-api", async (importOriginal) => ({
+ ...(await importOriginal<typeof import("./pdf-annotation-api")>()),
  fetchPdfAnnotation: async () => null,
- savePdfAnnotation: mocks.save,
+}));
+vi.mock("./pdf-annotation-outbox", () => ({
+ enqueuePdfAnnotation: mocks.enqueue,
+ flushPendingPdfAnnotation: mocks.flush,
+ getPendingPdfAnnotation: async () => null,
 }));
 let client: QueryClient;
-const key = hanzihomeQueryKeys.readerPdfAnnotation("asset-1", 1);
-function saved(input: PdfAnnotationPayloadInput): PdfAnnotationRow {
- return {
-  id: "11111111-1111-4111-8111-111111111111",
-  user_id: "22222222-2222-4222-8222-222222222222",
-  asset_id: input.assetId,
-  page_number: input.pageNumber,
-  payload: input.payload,
-  revision: input.expectedRevision + 1,
-  created_at: "2026-10-04T00:00:00Z",
-  updated_at: "2026-10-04T00:00:00Z",
- };
-}
-// Exercises actual callbacks and request coalescing, not mounted effects or UI.
+const key = hanzihomeQueryKeys.readerPdfAnnotation(ownerId, "asset-1", 1);
 function controller() {
  const captures: ReturnType<typeof usePdfAnnotations>[] = [];
  function Probe() {
@@ -42,58 +41,47 @@ function controller() {
 beforeEach(() => {
  client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
  client.setQueryData(key, null);
- mocks.save.mockReset();
- mocks.save.mockImplementation(async (input) => saved(input));
+ mocks.enqueue.mockReset();
+ mocks.enqueue.mockResolvedValue();
+ mocks.flush.mockReset();
+ mocks.flush.mockResolvedValue(null);
 });
 afterEach(() => client.clear());
 
-describe("PDF pending write lifecycle", () => {
- it("retains the latest intent after failure and retries it explicitly", async () => {
-  let rejectRequest = (_error: Error) => {};
-  mocks.save.mockImplementationOnce(
-   () =>
-    new Promise<PdfAnnotationRow>((_resolve, reject) => {
-     rejectRequest = reject;
-    }),
+describe("PDF durable write hook boundary", () => {
+ it("commits under the authenticated owner and does not manufacture an acknowledgement", async () => {
+  const stroke = createPdfStroke("pen", "#ff0000", 4, { x: 0.1, y: 0.1 });
+  controller().replaceStrokes([stroke]);
+  await vi.waitFor(() => expect(mocks.flush).toHaveBeenCalled());
+  expect(mocks.enqueue).toHaveBeenCalledWith(
+   {
+    assetId: "asset-1",
+    pageNumber: 1,
+    payload: { strokes: [stroke] },
+    expectedRevision: 0,
+    expectedAbsent: true,
+   },
+   ownerId,
   );
-  const hook = controller();
-  const first = createPdfStroke("pen", "#ff0000", 4, { x: 0.1, y: 0.1 });
-  const latest = createPdfStroke("pen", "#ff0000", 4, { x: 0.2, y: 0.2 });
-  hook.replaceStrokes([first]);
-  hook.replaceStrokes([first, latest]);
-  rejectRequest(new Error("Save failed"));
-  await hook.retrySave();
-  expect(mocks.save).toHaveBeenCalledTimes(2);
-  expect(mocks.save.mock.calls[1]?.[0]).toMatchObject({
-   payload: { strokes: [first, latest] },
-   expectedRevision: 0,
-  });
-  expect(client.getQueryData<PdfAnnotationRow>(key)?.payload.strokes).toEqual([first, latest]);
+  expect(client.getQueryData(key)).toBeNull();
  });
- it("coalesces intermediate edits and advances the acknowledged revision", async () => {
-  let resolveRequest = (_row: PdfAnnotationRow) => {};
-  mocks.save.mockImplementationOnce(
-   () =>
-    new Promise<PdfAnnotationRow>((resolve) => {
-     resolveRequest = resolve;
-    }),
-  );
+ it("publishes only the acknowledged row and retries a failed drain", async () => {
   const hook = controller();
-  const first = createPdfStroke("pen", "#ff0000", 4, { x: 0.1, y: 0.1 });
-  const last = createPdfStroke("pen", "#ff0000", 4, { x: 0.3, y: 0.3 });
-  hook.replaceStrokes([first]);
-  hook.replaceStrokes([]);
-  hook.replaceStrokes([last]);
-  resolveRequest(
-   saved({ assetId: "asset-1", pageNumber: 1, payload: { strokes: [first] }, expectedRevision: 0 }),
-  );
+  mocks.flush.mockRejectedValueOnce(new Error("Save failed"));
+  await expect(hook.retrySave()).rejects.toThrow("Save failed");
+  expect(client.getQueryData(key)).toBeNull();
+  const saved: PdfAnnotationRow = {
+   id: "11111111-1111-4111-8111-111111111111",
+   user_id: ownerId,
+   asset_id: "asset-1",
+   page_number: 1,
+   payload: { strokes: [] },
+   revision: 1,
+   created_at: "2026-10-08T00:00:00Z",
+   updated_at: "2026-10-08T00:00:00Z",
+  };
+  mocks.flush.mockResolvedValueOnce(saved);
   await hook.retrySave();
-  expect(mocks.save).toHaveBeenCalledTimes(2);
-  expect(mocks.save.mock.calls[1]?.[0]).toMatchObject({
-   payload: { strokes: [last] },
-   expectedRevision: 1,
-  });
-  await hook.retrySave();
-  expect(mocks.save).toHaveBeenCalledTimes(2);
+  expect(client.getQueryData(key)).toEqual(saved);
  });
 });

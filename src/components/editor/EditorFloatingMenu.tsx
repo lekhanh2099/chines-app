@@ -39,6 +39,7 @@ import {
  Volume2,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import {
@@ -53,6 +54,7 @@ import { Separator } from "@/components/ui/layout/separator";
 import { Textarea } from "@/components/ui/forms/textarea";
 import { Typography } from "@/components/ui/display/typography";
 import { useDebounce } from "@/hooks/useDebounce";
+import { DictionarySrsQueuedError } from "@/types/error";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
 import { containsChinese, extractChinese } from "@/lib/text/chinese-utils";
@@ -110,6 +112,7 @@ function FormatButton({
 }
 
 export default function EditorFloatingMenu() {
+ const common = useTranslations("Common");
  const [editor] = useLexicalComposerContext();
  const { speak } = useTTS();
  const [isViewportHidden, setIsViewportHidden] = useState(false);
@@ -403,7 +406,9 @@ export default function EditorFloatingMenu() {
      : `Đã lưu "${smartData?.entry.hanzi || detailTarget}" vào kho ôn tập`,
    );
   } catch (saveError) {
-   toast.error(saveError instanceof Error ? saveError.message : "Không thể lưu selection");
+   if (saveError instanceof DictionarySrsQueuedError)
+    toast.warning(common("offlinePack.srsSaveQueued"));
+   else toast.error(saveError instanceof Error ? saveError.message : "Không thể lưu selection");
   }
  };
 
@@ -442,7 +447,9 @@ export default function EditorFloatingMenu() {
    toast.success("Đã lưu ghi chú nhanh");
    setShowNote(false);
   } catch (saveError) {
-   toast.error(saveError instanceof Error ? saveError.message : "Không thể lưu ghi chú");
+   if (saveError instanceof DictionarySrsQueuedError)
+    toast.warning(common("offlinePack.srsSaveQueued"));
+   else toast.error(saveError instanceof Error ? saveError.message : "Không thể lưu ghi chú");
   }
  };
 

@@ -2,7 +2,9 @@ import { createClient } from "@supabase/supabase-js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { Database } from "@/types/supabase.generated";
+import type { DbNote } from "@/types/database";
 import {
+ NoteConflictError,
  getNoteById,
  updateNoteContent,
  updateReadingContent,
@@ -42,6 +44,7 @@ function listNote(index: number): Omit<NoteListItem, "links"> {
   source_author: null,
   source_published_at: null,
   source_captured_at: null,
+  revision: 0,
  };
 }
 describe("Notes complete collection reads", () => {
@@ -129,6 +132,21 @@ beforeEach(() => {
  fetchRequest.mockReset();
 });
 
+function savedNote(overrides?: Partial<DbNote>): DbNote {
+ return {
+  ...listNote(1),
+  id: "note-1",
+  user_id: "user-1",
+  revision: 1,
+  content: { text: "saved" },
+  reading_content: null,
+  split_view_enabled: false,
+  is_published: false,
+  created_at: "2026-10-08T00:00:00Z",
+  ...overrides,
+ };
+}
+
 describe("Notes service acknowledgements", () => {
  it("rejects a failed detail read instead of returning not-found", async () => {
   fetchRequest.mockResolvedValue(
@@ -142,21 +160,68 @@ describe("Notes service acknowledgements", () => {
  });
  it("does not acknowledge content, reading or title when no row was updated", async () => {
   fetchRequest.mockImplementation(async () => Response.json([]));
-  await expect(updateNoteContent(client, "note-1", { text: "unsaved" })).resolves.toBe(false);
-  await expect(updateReadingContent(client, "note-1", null)).resolves.toBe(false);
-  await expect(updateNoteTitle(client, "note-1", "New title")).resolves.toBe(false);
+  await expect(
+   updateNoteContent(client, "note-1", { text: "unsaved" }, 0, "user-1"),
+  ).rejects.toThrow();
+  await expect(updateReadingContent(client, "note-1", null, 0, "user-1")).rejects.toThrow();
+  await expect(updateNoteTitle(client, "note-1", "New title", 0, "user-1")).rejects.toThrow();
  });
  it("acknowledges an actual updated row", async () => {
-  fetchRequest.mockResolvedValue(Response.json([{ id: "note-1" }]));
-  await expect(updateNoteContent(client, "note-1", { text: "saved" })).resolves.toBe(true);
+  const row = savedNote();
+  fetchRequest.mockResolvedValue(Response.json(row));
+  await expect(
+   updateNoteContent(client, "note-1", { text: "saved" }, 0, "user-1"),
+  ).resolves.toEqual(row);
   const request = fetchRequest.mock.calls[0];
-  expect(request?.[1]?.method).toBe("PATCH");
-  expect(new Headers(request?.[1]?.headers).get("Prefer")).toBe("return=representation");
+  if (!request) throw new Error("Missing RPC request");
+  expect(requestUrl(request[0]).pathname).toBe("/rest/v1/rpc/update_note_with_revision");
+  expect(request[1]?.method).toBe("POST");
+  expect(request[1]?.body).toBe(
+   JSON.stringify({
+    p_note_id: "note-1",
+    p_expected_owner: "user-1",
+    p_expected_revision: 0,
+    p_changes: { content: { text: "saved" } },
+   }),
+  );
  });
  it("rejects a zero-row metadata import", async () => {
   fetchRequest.mockResolvedValue(Response.json([]));
   await expect(
-   updateNoteLibraryMetadata(client, "note-1", { readingStatus: "reading" }),
-  ).rejects.toThrow("not saved");
+   updateNoteLibraryMetadata(client, "note-1", { readingStatus: "reading" }, 0, "user-1"),
+  ).rejects.toThrow();
+ });
+ it.each([{ user_id: "other-user" }, { id: "other-note" }, { revision: 0 }])(
+  "rejects an acknowledgement for a different owner, note or revision: %j",
+  async (changes) => {
+   fetchRequest.mockResolvedValue(Response.json(savedNote(changes)));
+   await expect(
+    updateNoteContent(client, "note-1", { text: "saved" }, 0, "user-1"),
+   ).rejects.toThrow("did not acknowledge");
+  },
+ );
+ it("preserves the fresh server snapshot on a stale revision and does not retry a write", async () => {
+  const row = savedNote({ revision: 4, content: { text: "another device" } });
+  fetchRequest.mockImplementation(async (input) => {
+   const url = requestUrl(input);
+   if (url.pathname.endsWith("/update_note_with_revision"))
+    return Response.json(
+     { code: "40001", message: "NOTE_REVISION_CONFLICT", details: "", hint: "" },
+     { status: 409 },
+    );
+   if (url.pathname.endsWith("/notes")) {
+    expect(url.searchParams.get("user_id")).toBe("eq.user-1");
+    return Response.json(row);
+   }
+   return Response.json([]);
+  });
+  const failure = updateNoteTitle(client, "note-1", "local title", 0, "user-1");
+  await expect(failure).rejects.toBeInstanceOf(NoteConflictError);
+  await expect(failure).rejects.toMatchObject({ serverNote: { ...row, links: [] } });
+  expect(
+   fetchRequest.mock.calls.filter(([input]) =>
+    requestUrl(input).pathname.endsWith("/update_note_with_revision"),
+   ),
+  ).toHaveLength(1);
  });
 });

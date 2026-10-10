@@ -1016,6 +1016,10 @@ export function BusinessChineseStudyWorkspace({
   const params = new URLSearchParams(searchParams.toString());
   params.set("lesson", String(lesson.number));
   params.set("tab", value);
+  if (currentPath.endsWith("/offline")) {
+   window.history.pushState(null, "", `?${params.toString()}`);
+   return;
+  }
   router.push(`${buildTextbookHref(lesson.bookKey, lesson.number).split("?")[0]}?${params}`, {
    scroll: false,
   });
@@ -1023,6 +1027,13 @@ export function BusinessChineseStudyWorkspace({
  useEffect(() => {
   if (learning.isLoading) return;
   if (shouldRestoreLesson && resumeLesson) {
+   if (currentPath.endsWith("/offline")) {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("lesson", String(resumeLesson.number));
+    params.set("tab", searchParams.get("tab") ?? resume?.module ?? "all");
+    window.history.replaceState(null, "", `?${params.toString()}`);
+    return;
+   }
    router.replace(
     `${buildTextbookHref(lesson.bookKey, resumeLesson.number)}&tab=${encodeURIComponent(searchParams.get("tab") ?? resume?.module ?? "all")}`,
    );
@@ -1043,6 +1054,7 @@ export function BusinessChineseStudyWorkspace({
   activeView,
   bookKey,
   searchParams,
+  currentPath,
  ]);
 
  const navMenu = (
@@ -1460,10 +1472,10 @@ function BusinessChineseStudyWorkspaceContent({
                >
                 <div className="flex items-center gap-2">
                  <Badge variant="accent" size="sm" casing="natural">
-                  Luyện dịch
+                  {t("tabs.translation")}
                  </Badge>
                  <Typography variant="bodySmall" tone="secondary">
-                  Luyện dịch hai chiều câu và đoạn văn của bài này.
+                  {t("practice.translation.description")}
                  </Typography>
                 </div>
                 <Button
@@ -1472,7 +1484,7 @@ function BusinessChineseStudyWorkspaceContent({
                  variant="outline"
                  onClick={() => onActiveViewChange("translation")}
                 >
-                 Mở Luyện dịch ({translationSegments.length} đoạn)
+                 {t("practice.translation.open", { count: translationSegments.length })}
                 </Button>
                </Card>
               ) : null}
@@ -1484,10 +1496,10 @@ function BusinessChineseStudyWorkspaceContent({
                >
                 <div className="flex items-center gap-2">
                  <Badge variant="purple" size="sm" casing="natural">
-                  Nghe chép
+                  {t("tabs.dictation")}
                  </Badge>
                  <Typography variant="bodySmall" tone="secondary">
-                  Luyện nghe chép chính tả từng câu ngắn trong bài.
+                  {t("practice.dictation.description")}
                  </Typography>
                 </div>
                 <Button
@@ -1496,7 +1508,9 @@ function BusinessChineseStudyWorkspaceContent({
                  variant="outline"
                  onClick={() => onActiveViewChange("dictation")}
                 >
-                 Mở Nghe chép ({businessChineseDictationCount(dictationSources)} câu)
+                 {t("practice.dictation.open", {
+                  count: businessChineseDictationCount(dictationSources),
+                 })}
                 </Button>
                </Card>
               ) : null}

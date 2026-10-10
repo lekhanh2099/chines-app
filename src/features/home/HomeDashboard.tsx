@@ -33,15 +33,29 @@ export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] 
        courses={dashboard.courses}
        unavailable={dashboard.catalogUnavailable}
       />
-      <RecentNotesPanel notes={dashboard.recentNotes} />
-      <RecentLearningActivityPanel items={dashboard.recentActivity} />
+      <RecentNotesPanel
+       notes={dashboard.recentNotes}
+       loading={dashboard.recentNotesLoading}
+       unavailable={dashboard.recentNotesUnavailable}
+       onRetry={dashboard.retryRecentNotes}
+      />
+      <RecentLearningActivityPanel
+       items={dashboard.recentActivity}
+       loading={dashboard.recentActivityLoading}
+       unavailable={dashboard.recentActivityUnavailable}
+       onRetry={dashboard.retryRecentActivity}
+      />
      </div>
 
      <aside
       className="grid min-w-0 gap-4 sm:gap-5 xl:sticky xl:top-4"
       aria-label={t("page.overviewAria")}
      >
-      <HomeLearningPulse pulse={dashboard.learningPulse} />
+      <HomeLearningPulse
+       pulse={dashboard.learningPulse}
+       onRetryOverview={dashboard.retryLearningOverview}
+       onRetryReviewedToday={dashboard.retryReviewedToday}
+      />
       <GlobalMemoryTipCard contentOnly showEmptyState className="w-full" />
      </aside>
     </div>

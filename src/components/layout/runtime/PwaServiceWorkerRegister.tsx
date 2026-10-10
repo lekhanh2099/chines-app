@@ -47,6 +47,9 @@ export function PwaServiceWorkerRegister() {
     type: "WARMUP_OFFLINE_CACHE",
     routes: [
      window.location.pathname,
+     "/vi/offline",
+     "/en/offline",
+     "/zh-CN/offline",
      "/vi/hanzihome",
      "/vi/hsk/han-thuong-mai",
      "/vi/hsk/nhip-cau-han-ngu",

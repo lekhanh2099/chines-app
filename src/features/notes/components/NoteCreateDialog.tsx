@@ -37,7 +37,7 @@ import { Spinner } from "@/components/ui/feedback/spinner";
 import { Typography } from "@/components/ui/display/typography";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { useRouter } from "@/i18n/navigation";
-import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor/editor-document";
+import { createNoteFormInput } from "@/features/notes/note-editor-utils";
 import { cn } from "@/lib/utils";
 import type { NoteFolder } from "@/services/notes/notes.service";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
@@ -49,13 +49,6 @@ type CreateMode = "note" | "reading";
 const DEFAULT_NOTE_CATEGORY: NoteCategory = "general";
 const DEFAULT_READING_STATUS: ReadingStatus = "reading";
 const noteCategoryValues: NoteCategory[] = ["general", "grammar", "vocabulary", "culture"];
-
-function parseTags(value: string): string[] {
- return value
-  .split(",")
-  .map((tag) => tag.trim())
-  .filter(Boolean);
-}
 
 export function NoteCreateDialog({
  folders = [],
@@ -89,18 +82,9 @@ export function NoteCreateDialog({
    }
 
    try {
-    const emptyDocument = EMPTY_LEXICAL_DOCUMENT;
-    const note = await createNoteMutation.mutateAsync({
-     title: value.title.trim(),
-     tags: parseTags(value.tags),
-     category: value.category,
-     content: emptyDocument,
-     readingContent: mode === "reading" ? emptyDocument : undefined,
-     splitViewEnabled: mode === "reading",
-     folderId: value.folderId === "unfiled" ? null : value.folderId,
-     readingStatus: mode === "reading" ? value.readingStatus : null,
-     source: null,
-    });
+    const note = await createNoteMutation.mutateAsync(
+     createNoteFormInput(value, mode === "reading"),
+    );
 
     setMode(null);
     form.reset();

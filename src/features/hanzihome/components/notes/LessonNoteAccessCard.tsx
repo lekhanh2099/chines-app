@@ -51,6 +51,7 @@ export function LessonNoteAccessCard({ compact = false }: { compact?: boolean })
      <LinkedContentSkeleton label="Đang kiểm tra ghi chú của bài" />
     ) : note ? (
      <LessonSplitNoteEditor
+      key={note.id}
       noteId={note.id}
       fillHeight={compact}
       defaultReadingContent={defaultReadingContent}

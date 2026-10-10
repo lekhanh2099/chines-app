@@ -145,6 +145,7 @@
   "openOriginal": "打开原始 PDF",
   "fullscreen": "全屏",
   "annotationError": "无法加载 PDF 笔记；新的笔画会保留在本次学习中。",
+  "annotationQueued": "笔画已保存在此设备上，正在等待服务器确认。",
   "annotationSaveError": "PDF 笔记未保存。笔画仍保留在本次会话中，请重试保存。",
   "pan": "移动 PDF",
   "pen": "画笔",
@@ -160,6 +161,17 @@
   "eraserSize": "橡皮大小 {size}",
   "annotationLayer": "PDF 笔记图层",
   "previewError": "无法加载预览页面",
-  "originalPdf": "打开原始 PDF"
+  "originalPdf": "打开原始 PDF",
+  "conflict": {
+   "title": "PDF 批注已更改",
+   "description": "此页面已在其他设备上保存。本机笔迹仍会保留，请查看两个版本后再选择。",
+   "review": "查看两个版本",
+   "local": "本机版本",
+   "server": "服务器已保存版本",
+   "strokeCount": "{count} 笔",
+   "useServer": "使用服务器版本",
+   "keepLocal": "保留我的笔迹并保存",
+   "error": "暂时无法解决冲突。本机笔迹仍会保留。"
+  }
  }
 }

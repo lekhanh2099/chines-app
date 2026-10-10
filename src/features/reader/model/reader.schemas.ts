@@ -72,10 +72,20 @@ export const readerDocumentSchema = z
   ) {
    ctx.addIssue({ code: "custom", message: "Duplicate Reader IDs" });
   }
+  const segmentsById = new Map<string, (typeof document.segments)[number]>();
+  for (const segment of document.segments) {
+   if (!segmentsById.has(segment.id)) segmentsById.set(segment.id, segment);
+  }
+  const sectionMembersById = new Map<string, Set<string>>();
+  for (const section of document.sections) {
+   if (!sectionMembersById.has(section.id)) {
+    sectionMembersById.set(section.id, new Set(section.segmentIds));
+   }
+  }
   const assigned = new Set<string>();
   for (const section of document.sections) {
    for (const id of section.segmentIds) {
-    const segment = document.segments.find((item) => item.id === id);
+    const segment = segmentsById.get(id);
     if (
      !segment ||
      assigned.has(id) ||
@@ -90,9 +100,7 @@ export const readerDocumentSchema = z
    if (
     segment.sectionId !== undefined &&
     (!sectionIds.has(segment.sectionId) ||
-     !document.sections
-      .find((section) => section.id === segment.sectionId)
-      ?.segmentIds.includes(segment.id))
+     !sectionMembersById.get(segment.sectionId)?.has(segment.id))
    ) {
     ctx.addIssue({ code: "custom", message: "Invalid Reader segment section" });
    }

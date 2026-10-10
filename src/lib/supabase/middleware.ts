@@ -40,6 +40,7 @@ export async function updateSession(request: NextRequest, initialResponse?: Next
   logicalPathname.startsWith("/hsk/");
  const isPublicStaticLearningRoute =
   isPublicReaderRoute ||
+  logicalPathname === "/offline" ||
   logicalPathname === "/daily-reading" ||
   logicalPathname === "/dictation" ||
   logicalPathname === "/humanities" ||

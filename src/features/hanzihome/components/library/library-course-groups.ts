@@ -1,5 +1,10 @@
-import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
+import type {
+ HanziHomeCatalogCourse,
+ HanziHomeCourseBook,
+ HanziHomeLesson,
+} from "@/features/hanzihome/types";
 import { z } from "zod";
+import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 
 export const LibraryCourseGroupKeySchema = z.enum([
  "hanyu",
@@ -101,4 +106,57 @@ function resolveCourseGroupKey(course: HanziHomeCatalogCourse): LibraryCourseGro
  if (course.id.startsWith("boya-") || course.slug.startsWith("boya-")) return "boya";
  if (course.type === "hanyu") return "hanyu";
  return "other";
+}
+
+export function getLibraryStats(courses: HanziHomeCatalogCourse[], books: HanziHomeCourseBook[]) {
+ return {
+  courseCount: courses.length,
+  bookCount: books.length,
+  lessonCount: courses.reduce((sum, course) => sum + course.stats.lessonCount, 0),
+  grammarCount: courses.reduce((sum, course) => sum + course.stats.grammarCount, 0),
+ };
+}
+
+export function getLibraryCourseEntries(
+ group: LibraryCourseGroup,
+ books: HanziHomeCourseBook[],
+ lessons: HanziHomeLesson[],
+) {
+ return group.courses.map((course) => ({
+  course,
+  books: books
+   .filter((book) => book.courseId === course.id)
+   .toSorted((left, right) => left.order - right.order),
+  lessons: lessons.filter((lesson) => lesson.courseId === course.id),
+ }));
+}
+
+export function getLibraryBookStudy(
+ course: HanziHomeCatalogCourse,
+ book: HanziHomeCourseBook,
+ lessons: HanziHomeLesson[],
+ selectedLessonId: HanziHomeLesson["id"],
+) {
+ const bookLessons = lessons.filter((lesson) => lesson.bookId === book.id);
+ const selectedExists = bookLessons.some((lesson) => lesson.id === selectedLessonId);
+ const effectiveLessonId = (selectedExists ? selectedLessonId : null) || bookLessons[0]?.id || "";
+ const effectiveLesson = bookLessons.find((lesson) => lesson.id === effectiveLessonId) ?? null;
+ return {
+  bookLessons,
+  effectiveLesson,
+  href: buildHanziHomeLessonHref({
+   courseId: course.id,
+   bookId: book.id,
+   lessonNumber: effectiveLesson?.lessonNumber,
+  }),
+  visibleLessonCount: bookLessons.length,
+  visibleVocabCount: bookLessons.reduce(
+   (sum, lesson) => sum + (lesson.vocabCount ?? lesson.vocabIds.length),
+   0,
+  ),
+  visibleGrammarCount: bookLessons.reduce(
+   (sum, lesson) => sum + (lesson.grammarCount ?? lesson.grammarPointIds.length),
+   0,
+  ),
+ };
 }

@@ -2,6 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { useQueryClient } from "@tanstack/react-query";
+import { noteQueryKeys } from "../query-keys";
+import type { NoteDetail } from "@/services/notes/notes.service";
 import { useClientSession } from "@/components/providers/QueryProvider";
 import { useNoteDetail } from "./useNoteDetail";
 import {
@@ -9,7 +12,7 @@ import {
  useNoteFolders,
  useUpdateNoteLibraryMetadata,
 } from "./useNoteLibrary";
-import { getNoteDraft, saveNoteDraft } from "../local/note-draft-store";
+import { getNoteDraft, saveNoteDraft, type NoteDraftRecord } from "../local/note-draft-store";
 import { normalizeImportedNotePayload, type NoteExportPayload } from "../note-export.schema";
 import {
  createNoteDownloadFileName,
@@ -22,6 +25,7 @@ import { JsonValueSchema, type JsonObject } from "@/types/json";
 
 export function useNoteEditor(noteId: string) {
  const detail = useNoteDetail(noteId);
+ const queryClient = useQueryClient();
  const {
   note,
   saveContent,
@@ -35,7 +39,7 @@ export function useNoteEditor(noteId: string) {
  const { userId } = useClientSession();
  const foldersQuery = useNoteFolders();
  const { createMutation: createFolderMutation } = useNoteFolderMutations();
- const metadataMutation = useUpdateNoteLibraryMetadata();
+ const metadataMutation = useUpdateNoteLibraryMetadata(noteId);
  const [dirtyContent, setDirtyContent] = useState(false);
  const [dirtyReading, setDirtyReading] = useState(false);
  const [localDraftFailed, setLocalDraftFailed] = useState({ content: false, reading: false });
@@ -49,6 +53,7 @@ export function useNoteEditor(noteId: string) {
  const contentTimer = useRef<ReturnType<typeof setTimeout>>(null);
  const readingTimer = useRef<ReturnType<typeof setTimeout>>(null);
  const hasNote = note !== null;
+ const awaitingRecovery = detail.recoverableDrafts.length > 0;
 
  const flushContent = useCallback(async () => {
   if (contentTimer.current) clearTimeout(contentTimer.current);
@@ -84,13 +89,19 @@ export function useNoteEditor(noteId: string) {
 
  const handleChange = useCallback(
   (content: JsonObject) => {
-   if (importingRef.current) return;
+   if (importingRef.current || awaitingRecovery) return;
+   const currentNote = queryClient.getQueryData<NoteDetail>(noteQueryKeys.detail(userId, noteId));
+   if (!currentNote) return;
    latestContent.current = content;
    stageContent(content);
    pendingContent.current = content;
    setDirtyContent(true);
    if (userId) {
-    void saveNoteDraft(userId, noteId, { content, contentUpdatedAt: Date.now() }).then((saved) =>
+    void saveNoteDraft(userId, noteId, {
+     baseRevision: currentNote.revision,
+     content,
+     contentUpdatedAt: Date.now(),
+    }).then((saved) =>
      setLocalDraftFailed((current) =>
       current.content === !saved ? current : { ...current, content: !saved },
      ),
@@ -101,19 +112,22 @@ export function useNoteEditor(noteId: string) {
     void flushContent().catch(() => {});
    }, 1000);
   },
-  [flushContent, noteId, stageContent, userId],
+  [awaitingRecovery, flushContent, noteId, queryClient, stageContent, userId],
  );
 
  const handleReadingChange = useCallback(
   (readingContent: JsonObject) => {
-   if (importingRef.current) return;
+   if (importingRef.current || awaitingRecovery) return;
+   const currentNote = queryClient.getQueryData<NoteDetail>(noteQueryKeys.detail(userId, noteId));
+   if (!currentNote) return;
    latestReading.current = readingContent;
    stageReadingContent(readingContent);
    pendingReading.current = readingContent;
    setDirtyReading(true);
    if (userId) {
     void saveNoteDraft(userId, noteId, {
-     content: latestContent.current ?? note?.content ?? {},
+     baseRevision: currentNote.revision,
+     content: latestContent.current ?? currentNote.content,
      readingContent,
      readingContentUpdatedAt: Date.now(),
     }).then((saved) =>
@@ -127,14 +141,15 @@ export function useNoteEditor(noteId: string) {
     void flushReading().catch(() => {});
    }, 1000);
   },
-  [flushReading, note?.content, noteId, stageReadingContent, userId],
+  [awaitingRecovery, flushReading, noteId, queryClient, stageReadingContent, userId],
  );
 
  const retrySave = useCallback(async () => {
-  if ((localDraftFailed.content || localDraftFailed.reading) && userId) {
+  if ((localDraftFailed.content || localDraftFailed.reading) && userId && note) {
    const content = latestContent.current;
    const readingContent = latestReading.current;
    const saved = await saveNoteDraft(userId, noteId, {
+    baseRevision: note.revision,
     content: content ?? note?.content ?? {},
     readingContent,
     contentUpdatedAt: content === null ? undefined : Date.now(),
@@ -151,13 +166,13 @@ export function useNoteEditor(noteId: string) {
   flushReading,
   localDraftFailed.content,
   localDraftFailed.reading,
-  note?.content,
+  note,
   noteId,
   userId,
  ]);
 
  useEffect(() => {
-  if (!hasNote || !userId) return;
+  if (!hasNote || !userId || detail.isLoading) return;
   let disposed = false;
   void getNoteDraft(userId, noteId).then((draft) => {
    if (disposed || !draft) return;
@@ -179,7 +194,16 @@ export function useNoteEditor(noteId: string) {
   return () => {
    disposed = true;
   };
- }, [flushContent, flushReading, hasNote, noteId, stageContent, stageReadingContent, userId]);
+ }, [
+  detail.isLoading,
+  flushContent,
+  flushReading,
+  hasNote,
+  noteId,
+  stageContent,
+  stageReadingContent,
+  userId,
+ ]);
 
  useEffect(() => {
   const flush = () => {
@@ -222,6 +246,7 @@ export function useNoteEditor(noteId: string) {
  const importNote = useCallback(
   async (file: File) => {
    if (importingRef.current) return;
+   if (!note) throw new Error("Note is not loaded");
    const rawPayload = JsonValueSchema.parse(JSON.parse(await file.text()));
    const payload = normalizeImportedNotePayload(rawPayload);
    const hasLibraryMetadata =
@@ -245,7 +270,13 @@ export function useNoteEditor(noteId: string) {
     setDirtyReading(true);
     setImportVersion((version) => version + 1);
     if (userId) {
-     const saved = await saveNoteDraft(userId, noteId, { content, readingContent });
+     const current = queryClient.getQueryData<NoteDetail>(noteQueryKeys.detail(userId, noteId));
+     if (!current) throw new Error("Note is not loaded");
+     const saved = await saveNoteDraft(userId, noteId, {
+      baseRevision: current.revision,
+      content,
+      readingContent,
+     });
      setLocalDraftFailed({ content: !saved, reading: !saved });
      if (!saved) throw new Error("Local note draft was not saved");
     }
@@ -288,7 +319,10 @@ export function useNoteEditor(noteId: string) {
         })
        ).id;
      } else if (folderSpec === null) folderId = null;
+     const current = queryClient.getQueryData<NoteDetail>(noteQueryKeys.detail(userId, noteId));
+     if (!current) throw new Error("Note is not loaded");
      await metadataMutation.mutateAsync({
+      expectedRevision: current.revision,
       noteId,
       folderId,
       readingStatus: payload.note.readingStatus ?? null,
@@ -304,8 +338,8 @@ export function useNoteEditor(noteId: string) {
    createFolderMutation,
    foldersQuery.data,
    metadataMutation,
-   note?.category,
-   note?.title,
+   note,
+   queryClient,
    noteId,
    retrySave,
    stageContent,
@@ -317,10 +351,44 @@ export function useNoteEditor(noteId: string) {
   ],
  );
 
+ const resolveConflict = async (useServer: boolean) => {
+  if (contentTimer.current) clearTimeout(contentTimer.current);
+  if (readingTimer.current) clearTimeout(readingTimer.current);
+  await detail.resolveConflict(useServer);
+  if (useServer) {
+   pendingContent.current = null;
+   pendingReading.current = undefined;
+   latestContent.current = null;
+   latestReading.current = undefined;
+   setDirtyContent(false);
+   setDirtyReading(false);
+   setLocalDraftFailed({ content: false, reading: false });
+   setImportVersion((version) => version + 1);
+  } else {
+   await retrySave();
+   latestContent.current = null;
+   latestReading.current = undefined;
+   setImportVersion((version) => version + 1);
+  }
+ };
+
+ const recoverDraft = async (source: NoteDraftRecord) => {
+  const draft = await detail.recoverDraft(source);
+  latestContent.current = draft.content;
+  pendingContent.current = draft.content;
+  latestReading.current = draft.readingContent;
+  pendingReading.current = draft.readingContent;
+  setDirtyContent(draft.content !== null);
+  setDirtyReading(draft.readingContent !== undefined);
+  setImportVersion((version) => version + 1);
+ };
+
  return {
   ...detail,
   handleChange,
   handleReadingChange,
+  resolveConflict,
+  recoverDraft,
   retrySave,
   exportNote,
   importNote,

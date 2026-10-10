@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { type QueryClient, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
@@ -18,9 +18,29 @@ import {
  readCachedLessonDetail,
  readCachedLessonVocabulary,
 } from "@/features/hanzihome/local/lesson-content-cache";
-import { lessonResourceStaleTime } from "@/features/hanzihome/utils/lesson-prefetch";
+import type { useRouter } from "@/i18n/navigation";
+import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import {
+ lessonResourceStaleTime,
+ prefetchHanziHomeLessonResources,
+} from "@/features/hanzihome/utils/lesson-prefetch";
 
 export { lessonResourceStaleTime };
+
+export function usePrefetchHanziHomeLesson(
+ prefetchRoute: ReturnType<typeof useRouter>["prefetch"],
+) {
+ const queryClient = useQueryClient();
+ const { userId } = useClientSession();
+ return useCallback(
+  (lessonId: HanziHomeLesson["id"], href: string) => {
+   if (!lessonId) return;
+   prefetchRoute(href);
+   prefetchHanziHomeLessonResources(queryClient, lessonId, userId || "anonymous");
+  },
+  [prefetchRoute, queryClient, userId],
+ );
+}
 
 export async function hydrateCachedLessonDetail(
  queryClient: QueryClient,

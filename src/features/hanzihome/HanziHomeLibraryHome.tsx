@@ -16,14 +16,17 @@ import { Typography } from "@/components/ui/display/typography";
 import { CourseCollectionSection } from "@/features/hanzihome/components/library/CourseCollectionSection";
 import { HanziHomeLibrarySkeleton } from "@/features/hanzihome/components/library/HanziHomeLibrarySkeleton";
 import { HanziHomeLibraryCrudToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryCrudToolbar";
-import { groupLibraryCourses } from "@/features/hanzihome/components/library/library-course-groups";
+import {
+ getLibraryStats,
+ groupLibraryCourses,
+} from "@/features/hanzihome/components/library/library-course-groups";
 import { RecentLearningCard } from "@/features/hanzihome/components/library/RecentLearningCard";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
-import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
 
 export function HanziHomeLibraryHome() {
  const t = useTranslations("Common.library");
+ const common = useTranslations("Common");
  const [editMode, setEditMode] = useState(false);
  const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: true });
  const catalogData = catalogQuery.data;
@@ -36,21 +39,21 @@ export function HanziHomeLibraryHome() {
 
  if (catalogQuery.isPending) return <HanziHomeLibrarySkeleton />;
 
- if (catalogQuery.isError) {
-  return (
-   <PageContainer>
-    <QueryErrorCard
-     title={t("loadErrorTitle")}
-     description={t("loadErrorDescription")}
-     onRetry={() => void catalogQuery.refetch()}
-    />
-   </PageContainer>
-  );
- }
+ const libraryError = catalogQuery.isError ? (
+  <QueryErrorCard
+   title={t("loadErrorTitle")}
+   description={t("loadErrorDescription")}
+   retryLabel={common("actions.retry")}
+   onRetry={() => void catalogQuery.refetch()}
+  />
+ ) : null;
+ if (libraryError && !catalogQuery.isRefetchError)
+  return <PageContainer>{libraryError}</PageContainer>;
 
  return (
   <PageContainer>
    <div className="grid w-full min-w-0 gap-6">
+    {libraryError}
     <PageHeader
      title={t("title")}
      description={t("description")}
@@ -148,13 +151,4 @@ function LibraryStat({
    </div>
   </div>
  );
-}
-
-function getLibraryStats(courses: HanziHomeCatalogCourse[], books: HanziHomeCourseBook[]) {
- return {
-  courseCount: courses.length,
-  bookCount: books.length,
-  lessonCount: courses.reduce((sum, course) => sum + course.stats.lessonCount, 0),
-  grammarCount: courses.reduce((sum, course) => sum + course.stats.grammarCount, 0),
- };
 }

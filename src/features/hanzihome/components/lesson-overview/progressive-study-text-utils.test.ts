@@ -19,6 +19,7 @@ const annotation: ResolvedLessonTextAnnotation = {
  suffixText: "你",
  tone: "focus",
  noteId: null,
+ note: null,
  noteText: "",
  createdAt: "2026-10-04T00:00:00Z",
  updatedAt: "2026-10-04T00:00:00Z",

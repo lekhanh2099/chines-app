@@ -145,6 +145,7 @@
   "openOriginal": "Open original PDF",
   "fullscreen": "Fullscreen",
   "annotationError": "PDF notes could not be loaded; new strokes will stay in this session.",
+  "annotationQueued": "Strokes are stored on this device and awaiting server confirmation.",
   "annotationSaveError": "PDF notes were not saved. Strokes remain in this session; retry saving.",
   "pan": "Pan PDF",
   "pen": "Pen",
@@ -160,6 +161,17 @@
   "eraserSize": "Eraser size {size}",
   "annotationLayer": "PDF annotation layer",
   "previewError": "The preview page could not be loaded",
-  "originalPdf": "Open original PDF"
+  "originalPdf": "Open original PDF",
+  "conflict": {
+   "title": "PDF annotations have changed",
+   "description": "This page was saved from another device. Your local strokes are retained; review both versions before choosing.",
+   "review": "Review both versions",
+   "local": "Version on this device",
+   "server": "Saved server version",
+   "strokeCount": "{count} strokes",
+   "useServer": "Use server version",
+   "keepLocal": "Keep my strokes and save",
+   "error": "Could not resolve the conflict. Your local strokes are still retained."
+  }
  }
 }

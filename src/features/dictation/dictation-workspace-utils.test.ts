@@ -9,6 +9,9 @@ import {
  customDictationEntries,
  dictationActiveEntryIndex,
  dictationPlaybackTexts,
+ dictationCardModels,
+ dictationResponseMs,
+ studioDictationEditorModel,
  dictationEntryText,
  dictationEntryPinyin,
  dictationEntryMeaning,
@@ -39,6 +42,131 @@ function lesson(id: string, bookId: string, bookTitle: string): HanziHomeLesson 
  };
 }
 describe("dictation source and submission policies", () => {
+ it("keeps the latest Studio feedback separate from its best score and advance policy", () => {
+  const entry = externalDictationEntry("one", "你好。", "One", "nǐ hǎo");
+  const perfect: DictationAttempt = {
+   entryId: "one",
+   expectedText: "你好。",
+   answer: "你好。",
+   score: 100,
+   mistakeCount: 0,
+   responseMs: null,
+  };
+  const incomplete: DictationAttempt = {
+   ...perfect,
+   answer: "你。",
+   score: 50,
+   mistakeCount: 1,
+  };
+  const input: Parameters<typeof studioDictationEditorModel>[0] = {
+   entry,
+   answer: "你。",
+   history: [perfect, incomplete],
+   isDirty: false,
+   index: 0,
+   total: 2,
+  };
+  expect(studioDictationEditorModel(input)).toMatchObject({
+   attempt: incomplete,
+   isChecked: true,
+   target: "你好。",
+   characterCount: 3,
+   bestScore: 100,
+   summary: { correct: 1, missing: 1, replaced: 0, extra: 0, transposed: 0 },
+   canAdvance: false,
+   isCheckDisabled: false,
+  });
+  const correctInput = { ...input, answer: "你好。", history: [perfect] };
+  expect(studioDictationEditorModel(correctInput).canAdvance).toBe(true);
+  expect(studioDictationEditorModel({ ...correctInput, index: 1 }).canAdvance).toBe(false);
+  expect(studioDictationEditorModel({ ...correctInput, isDirty: true })).toMatchObject({
+   isChecked: false,
+   diff: [],
+   summary: null,
+   bestScore: 100,
+   canAdvance: false,
+  });
+ });
+
+ it("starts Studio unanswered without feedback and counts Unicode characters", () => {
+  const model = studioDictationEditorModel({
+   entry: externalDictationEntry("one", "𠀀你好。", "One", ""),
+   answer: " \n ",
+   history: [],
+   isDirty: false,
+   index: 0,
+   total: 1,
+  });
+  expect(model).toMatchObject({
+   attempt: undefined,
+   isChecked: false,
+   diff: [],
+   summary: null,
+   characterCount: 4,
+   bestScore: 0,
+   canAdvance: false,
+   isCheckDisabled: true,
+  });
+ });
+
+ it("keeps hidden-entry numbering and clears old feedback after an answer edit", () => {
+  const entries = [
+   externalDictationEntry("one", "你好", "One", "nǐ hǎo"),
+   externalDictationEntry("two", "谢谢", "Two", "xiè xie"),
+  ];
+  const attempt: DictationAttempt = {
+   entryId: "two",
+   expectedText: "谢谢",
+   answer: "谢谢",
+   score: 100,
+   mistakeCount: 0,
+   responseMs: 500,
+  };
+  const input: Parameters<typeof dictationCardModels>[0] = {
+   entries,
+   activeEntryId: "two",
+   answers: { two: "谢谢" },
+   attemptHistory: { two: [attempt] },
+   dirtyAnswers: {},
+  };
+  const cards = dictationCardModels(input);
+  expect(cards).toHaveLength(1);
+  expect(cards[0]).toMatchObject({
+   entry: { id: "two" },
+   index: 1,
+   score: 100,
+   isChecked: true,
+   history: [attempt],
+   diff: [
+    { kind: "match", value: "谢", expected: "谢", actual: "谢" },
+    { kind: "match", value: "谢", expected: "谢", actual: "谢" },
+   ],
+  });
+  expect(
+   dictationCardModels({ ...input, answers: { two: "谢" }, dirtyAnswers: { two: true } })[0],
+  ).toMatchObject({ answer: "谢", score: null, isChecked: false, diff: [], history: [attempt] });
+  expect(dictationCardModels({ ...input, activeEntryId: "removed" })).toEqual([]);
+ });
+
+ it("starts unanswered cards without feedback and clamps response time", () => {
+  const cards = dictationCardModels({
+   entries: [externalDictationEntry("one", "你好", "One", "nǐ hǎo")],
+   answers: {},
+   attemptHistory: {},
+   dirtyAnswers: {},
+  });
+  expect(cards[0]).toMatchObject({
+   answer: "",
+   history: [],
+   isChecked: false,
+   score: null,
+   diff: [],
+  });
+  expect(dictationResponseMs(2500, 1000)).toBe(1500);
+  expect(dictationResponseMs(500, 1000)).toBe(0);
+  expect(dictationResponseMs(2500)).toBeNull();
+ });
+
  it("selects lessons within the chosen volume and resets the Reader course volume", () => {
   const lessons = [
    lesson("one", "course:book:hsk3-volume-1", "HSK 3（上）"),
@@ -104,6 +232,29 @@ describe("dictation source and submission policies", () => {
    title: "Pasted",
    transcript: { full: { zh: "你好。" } },
   });
+ });
+ it("keeps custom source identity and text while deferring pinyin until practice", () => {
+  const pending = customDictationEntries(" 你好。 \n", "Pasted", false);
+  expect(pending).toEqual([
+   {
+    id: "custom:dictation",
+    title: "Pasted",
+    transcript: {
+     mode: "monologue",
+     speakers: [{ id: "learner-source", labelZh: "练习", labelVi: "Bài luyện", voice: "neutral" }],
+     lines: [{ order: 1, speakerId: "learner-source", zh: "你好。", pinyin: "" }],
+     full: { zh: "你好。", pinyin: "" },
+    },
+   },
+  ]);
+  expect(customDictationEntries(" 你好。 \n", "Pasted", true)[0]?.transcript.full).toEqual({
+   zh: "你好。",
+   pinyin: "nǐ hǎo 。",
+  });
+  expect(customDictationEntries(" 你好。 \n", "Pasted")).toEqual(
+   customDictationEntries(" 你好。 \n", "Pasted", true),
+  );
+  expect(customDictationEntries(" \n ", "Pasted", false)).toEqual([]);
  });
  it("groups volumes once, orders HSK levels, and preserves the Reader source", () => {
   const lessons = [

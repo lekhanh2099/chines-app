@@ -1,3 +1,6 @@
+import { DictionarySrsQueuedError } from "@/types/error";
+import { saveDictionarySrs } from "@/features/dictionary/dictionary-srs-api";
+import { saveDictionarySrsDurably } from "@/features/dictionary/dictionary-srs-outbox";
 import { QueryClient, QueryClientProvider, onlineManager } from "@tanstack/react-query";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -9,6 +12,11 @@ import { SmartSelectionResultSchema, type SmartSelectionResult } from "@/types/d
 vi.mock("@/components/providers/QueryProvider", () => ({
  useClientSession: () => ({ userId: "user-1", isResolved: true }),
 }));
+vi.mock(import("@/features/dictionary/dictionary-srs-outbox"), async (importOriginal) => ({
+ ...(await importOriginal()),
+ saveDictionarySrsDurably: vi.fn(),
+}));
+const durableSave = vi.mocked(saveDictionarySrsDurably);
 const fetchRequest = vi.fn<typeof fetch>();
 let client: QueryClient;
 const initial = SmartSelectionResultSchema.parse({
@@ -55,6 +63,8 @@ beforeEach(() => {
  });
  controller();
  client.setQueryData(selectionQuery().queryKey, initial);
+ durableSave.mockReset();
+ durableSave.mockImplementation(saveDictionarySrs);
  fetchRequest.mockReset();
  vi.stubGlobal("fetch", fetchRequest);
  onlineManager.setOnline(true);
@@ -66,6 +76,19 @@ afterEach(() => {
 });
 
 describe("smart selection SRS save", () => {
+ it("commits offline selection intent without marking the query saved", async () => {
+  onlineManager.setOnline(false);
+  durableSave.mockRejectedValueOnce(new DictionarySrsQueuedError());
+  await expect(controller().saveSelection({ personalNote: "Pending" })).rejects.toBeInstanceOf(
+   DictionarySrsQueuedError,
+  );
+  expect(durableSave).toHaveBeenCalledWith(
+   expect.objectContaining({ hanzi: "你好", personalNote: "Pending" }),
+   "user-1",
+  );
+  expect(client.getMutationCache().getAll()[0]?.state.isPaused).toBe(false);
+  expect(client.getQueryData<SmartSelectionResult>(selectionQuery().queryKey)?.isSaved).toBe(false);
+ });
  it("does not turn an offline failure into a queued success", async () => {
   let rejectRequest = (_error: Error) => {};
   fetchRequest.mockImplementation(

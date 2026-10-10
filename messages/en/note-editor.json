@@ -32,5 +32,18 @@
  "deleteTitle": "Delete note?",
  "deleteDescription": "“{title}” will be removed from your notes library.",
  "deleting": "Deleting...",
+ "conflict": {
+  "recoveryTitle": "Unsaved drafts from another tab",
+  "recoveryDraft": "Draft {number}",
+  "recover": "Recover this draft",
+  "title": "This note changed on another device",
+  "description": "Your unsaved draft is retained on this device. Choose a version before saving again.",
+  "review": "Compare versions",
+  "local": "Draft on this device",
+  "serverTitle": "Server version: {title} (revision {revision})",
+  "useServer": "Use server version",
+  "keepLocal": "Keep my draft and save",
+  "error": "Could not resolve the conflict. Both versions are retained."
+ },
  "save": { "saving": "Saving...", "saved": "Saved", "error": "Save failed" }
 }

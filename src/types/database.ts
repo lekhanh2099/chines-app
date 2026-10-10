@@ -35,6 +35,7 @@ export const ReadingStatusSchema = z.enum(["inbox", "reading", "completed"]);
 export const PersonalNoteModeSchema = z.enum(["normal", "important"]);
 
 export const DbNoteSchema = z.object({
+ revision: z.number().int().nonnegative(),
  id: z.string(),
  user_id: z.string(),
  title: z.string(),

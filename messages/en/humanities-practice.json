@@ -53,6 +53,10 @@
   "requiredUnits": "This lesson has {count, plural, one {# information unit to preserve} other {# information units to preserve}}",
   "referenceNotice": "The reference opens only after the first attempt. Different wording can still be correct when it preserves meaning, logical relations, terminology, and required nuance.",
   "history": "History for this segment: {count, plural, one {# attempt} other {# attempts}}",
+  "historyLoading": "Loading this segment's history…",
+  "historyError": "Could not load this segment's history",
+  "historyErrorHelp": "You can keep practicing. Retry to view your history.",
+  "historyRetry": "Retry",
   "review": "review"
  },
  "source": {

@@ -43,6 +43,25 @@ describe("i18n message contracts", () => {
   );
  });
 
+ it.each(appLocales)("%s preserves Library interpolation parameters", async (locale) => {
+  const messages = await loadAppMessages(locale);
+  const library = messages.Common.library;
+  expect(library.collectionCounts).toContain("{levels}");
+  expect(library.collectionCounts).toContain("{books}");
+  expect(library.collectionCounts).toContain("{lessons}");
+  expect(library.courseCounts).toContain("{books}");
+  expect(library.courseCounts).toContain("{lessons}");
+  expect(library.levelPosition).toContain("{current}");
+  expect(library.levelPosition).toContain("{total}");
+  expect(library.lessonCount).toContain("{count}");
+  expect(library.contentCounts).toContain("{vocab}");
+  expect(library.contentCounts).toContain("{grammar}");
+  expect(library.selectLessonAria).toContain("{book}");
+  expect(library.lessonLabel).toContain("{number}");
+  expect(library.lessonLabel).toContain("{title}");
+  expect(library.openLessonAria).toContain("{title}");
+ });
+
  it.each(appLocales)("%s names every AI task in the registry", async (locale) => {
   const messages = await loadAppMessages(locale);
   const tasks = messages.AiSettings.taskRouting.tasks;
