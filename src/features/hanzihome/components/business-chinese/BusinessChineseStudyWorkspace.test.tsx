@@ -251,13 +251,88 @@ describe("BusinessChineseStudyWorkspace", () => {
    expect(markup).toContain(`${lesson.vocab.length} từ chính`);
    expect(markup).toContain("Mở từ vựng");
    expect(markup).toContain(firstWord.hanzi);
-   expect(markup).toContain(firstWord.pinyin);
+   expect(markup).toContain("<ruby");
+   expect(markup).toContain(`aria-label="Đọc tiếng Trung: ${firstWord.hanzi}"`);
    expect(markup).toContain(firstWord.hanviet || firstWord.pos);
    expect(markup).toContain(firstWord.meaning);
    expect(markup).toContain("max-h-80");
    expect(markup).not.toContain(">STT<");
   },
   15_000,
+ );
+
+ it.each(getTextbookCatalog())(
+  "uses vocabulary cards for every vocabulary table in $label",
+  (book) => {
+   const lessonNumber =
+    book.key === "tm2" ? 6 : book.key === "tm3" ? 10 : book.key === "nhip-cau" ? 2 : 1;
+   const lesson = getTextbookLesson(book.key, lessonNumber);
+   if (!lesson) throw new Error(`Expected vocabulary lesson for ${book.key}.`);
+   mockParams = new URLSearchParams(`lesson=${lesson.number}&tab=vocab`);
+
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={getTextbookCatalog()}
+     lesson={{
+      ...lesson,
+      sections: lesson.sections.filter((section) => section.category === "vocab"),
+     }}
+    />,
+   );
+
+   expect(markup.includes("<table")).toBe(false);
+   expect(markup).toContain("Từ vựng bài này");
+   if (book.key === "nhip-cau") {
+    expect(markup).toContain('aria-label="Đọc tiếng Trung: 西安"');
+    expect(markup).toContain("(thành phố) Tây An");
+    expect(markup).toContain('aria-label="Đọc tiếng Trung: 娘家"');
+    expect(markup).toContain("nhà mẹ đẻ (của phụ nữ đã lấy chồng)");
+    expect(markup).toContain("nương gia");
+    expect(markup).toContain('id="nhip-cau-lesson-02-source-54"');
+    expect(markup).toContain('id="nhip-cau-lesson-02-source-506"');
+   }
+   if (book.key === "tm2") expect(markup).toContain("公務艙");
+   if (book.key === "tm3") expect(markup).toContain(">Bài<");
+  },
+  15_000,
+ );
+
+ it.each([true, false])(
+  "preserves vocabulary card display settings and audio (%s)",
+  (showDetails) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "nhip-cau");
+   const lesson = getTextbookLesson("nhip-cau", 2);
+   const section = lesson?.sections.find((item) => item.category === "vocab");
+   const firstWord = lesson?.vocab[0];
+   if (!book || !lesson || !section || !firstWord)
+    throw new Error("Expected Nhịp cầu vocabulary cards.");
+   mockParams = new URLSearchParams("lesson=2&tab=vocab");
+   mockSettings = {
+    bookDisplayModes: {
+     [`static:${book.id}`]: {
+      ...DEFAULT_LESSON_DISPLAY_MODE,
+      autoDetectPinyin: true,
+      showPinyin: showDetails,
+      showMeaning: showDetails,
+      revealMode: "tap",
+     },
+    },
+   };
+
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace books={books} lesson={{ ...lesson, sections: [section] }} />,
+   );
+
+   expect(markup.includes("<table")).toBe(false);
+   expect(markup.includes("<ruby")).toBe(showDetails);
+   expect(markup.includes("nương gia")).toBe(showDetails);
+   expect(markup.includes("nhà mẹ đẻ (của phụ nữ đã lấy chồng)")).toBe(showDetails);
+   expect(markup.includes(firstWord.meaning)).toBe(showDetails);
+   expect(markup).toContain('aria-label="Đọc tiếng Trung: 娘家"');
+   expect(markup).toContain('aria-label="Đọc tiếng Trung: 西安"');
+   expect(markup).toContain(`aria-label="Đọc tiếng Trung: ${firstWord.hanzi}"`);
+  },
  );
 
  it.each([true, false])(

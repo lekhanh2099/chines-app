@@ -57,6 +57,7 @@ import {
  HanziAwareText,
  PinyinText,
  ReaderHanziText,
+ StudyInstructionText,
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { LessonPreviewCard } from "@/features/hanzihome/components/lesson-overview/overview/LessonPreviewCard";
@@ -517,15 +518,31 @@ function SpeakableBusinessChineseText({
 function BusinessChineseTable({
  block,
  displayMode,
+ vocabularyCards = false,
 }: {
  block: TextbookLesson["sections"][number]["blocks"][number];
  displayMode: LessonDisplayMode;
+ vocabularyCards?: boolean;
 }) {
  const t = useTranslations("BusinessChinese");
  const [revealed, setRevealed] = useState(false);
  const answerVisible = displayMode.showAnswers || revealed;
  const { headers, pinyinColumnIndex, hanziColumnIndex, isVocabularyTable, visibleColumnIndexes } =
   businessChineseTableColumns(block, displayMode, answerVisible);
+ const hanvietColumnIndex = headers.findIndex((header) => /^hán việt$/iu.test(header));
+ const posColumnIndex = headers.findIndex((header) => /^từ loại$/iu.test(header));
+ const meaningColumnIndex = headers.findIndex((header) =>
+  /^(dịch )?nghĩa( tiếng việt)?$/iu.test(header),
+ );
+ const metadataColumnIndexes = visibleColumnIndexes.filter(
+  (index) =>
+   index !== hanziColumnIndex &&
+   index !== pinyinColumnIndex &&
+   index !== hanvietColumnIndex &&
+   index !== posColumnIndex &&
+   index !== meaningColumnIndex &&
+   headers[index] !== "STT",
+ );
 
  return (
   <div className="grid min-w-0 gap-2">
@@ -550,73 +567,123 @@ function BusinessChineseTable({
     </Button>
    ) : null}
    {visibleColumnIndexes.length > 0 ? (
-    <div className="max-w-full overflow-x-auto rounded-xl border border-border-default">
-     <table className="w-full min-w-2xl border-collapse text-left">
-      <thead className="bg-surface-muted">
-       <tr>
-        {visibleColumnIndexes.map((cellIndex) => (
-         <th
-          key={`${block.id}-header-${cellIndex}`}
-          scope="col"
-          className={cn(
-           "border-b border-border-default align-top",
-           isVocabularyTable ? "px-4 py-3" : "px-3 py-2",
-          )}
-         >
-          <BusinessChineseText
-           pronunciationId={`${block.id}:header:${cellIndex}`}
-           text={headers[cellIndex] ?? ""}
-           displayMode={displayMode}
-           variant={isVocabularyTable ? "body" : "label"}
-           weight={isVocabularyTable ? "black" : undefined}
-           compactHanzi
-          />
-         </th>
-        ))}
-       </tr>
-      </thead>
-      <tbody>
-       {block.rows.slice(1).map((row, rowIndex) => (
-        <tr
-         key={`${block.id}-row-${rowIndex}`}
-         className="border-b border-border-default last:border-b-0"
-        >
-         {visibleColumnIndexes.map((cellIndex) => (
-          <td
-           key={`${block.id}-row-${rowIndex}-cell-${cellIndex}`}
-           className={cn("align-top", isVocabularyTable ? "px-4 py-3" : "px-3 py-2")}
-          >
-           {cellIndex === pinyinColumnIndex ? (
-            <PinyinText
-             as="span"
-             variant={isVocabularyTable ? "body" : "bodySmall"}
-             tone="secondary"
-             weight="semibold"
-             wrapping="preWrap"
-            >
-             {row[cellIndex] ?? ""}
-            </PinyinText>
-           ) : (
+    vocabularyCards && isVocabularyTable ? (
+     <div className="grid min-w-0 gap-2 sm:grid-cols-2">
+      {block.rows.slice(1).map((row, rowIndex) => (
+       <VocabPreviewRow
+        key={`${block.id}-row-${rowIndex}`}
+        hanzi={row[hanziColumnIndex] ?? ""}
+        pinyin={row[pinyinColumnIndex] ?? ""}
+        hanviet={
+         visibleColumnIndexes.includes(hanvietColumnIndex) ? (row[hanvietColumnIndex] ?? "") : ""
+        }
+        category={visibleColumnIndexes.includes(posColumnIndex) ? (row[posColumnIndex] ?? "") : ""}
+        meaning={
+         visibleColumnIndexes.includes(meaningColumnIndex) ? (row[meaningColumnIndex] ?? "") : ""
+        }
+        header={
+         <SpeakableBusinessChineseText
+          pronunciationId={`${block.id}:row:${rowIndex}:cell:${hanziColumnIndex}`}
+          text={row[hanziColumnIndex] ?? ""}
+          sourcePinyin={row[pinyinColumnIndex]}
+          displayMode={displayMode}
+          variant="body"
+         />
+        }
+       >
+        {metadataColumnIndexes.length > 0 ? (
+         <div className="grid min-w-0 gap-1">
+          {metadataColumnIndexes.map((cellIndex) => (
+           <div
+            key={`${block.id}-row-${rowIndex}-cell-${cellIndex}`}
+            className="grid min-w-0 gap-1"
+           >
+            <StudyInstructionText variant="caption" tone="muted" weight="bold">
+             {headers[cellIndex]}
+            </StudyInstructionText>
             <SpeakableBusinessChineseText
              pronunciationId={`${block.id}:row:${rowIndex}:cell:${cellIndex}`}
              text={row[cellIndex] ?? ""}
              displayMode={displayMode}
-             sourcePinyin={
-              cellIndex === hanziColumnIndex && pinyinColumnIndex >= 0
-               ? row[pinyinColumnIndex]
-               : undefined
-             }
-             variant={isVocabularyTable ? "body" : "bodySmall"}
-             compactHanzi={!isVocabularyTable && headers.length !== 2}
+             variant="bodySmall"
+             compactHanzi
             />
+           </div>
+          ))}
+         </div>
+        ) : null}
+       </VocabPreviewRow>
+      ))}
+     </div>
+    ) : (
+     <div className="max-w-full overflow-x-auto rounded-xl border border-border-default">
+      <table className="w-full min-w-2xl border-collapse text-left">
+       <thead className="bg-surface-muted">
+        <tr>
+         {visibleColumnIndexes.map((cellIndex) => (
+          <th
+           key={`${block.id}-header-${cellIndex}`}
+           scope="col"
+           className={cn(
+            "border-b border-border-default align-top",
+            isVocabularyTable ? "px-4 py-3" : "px-3 py-2",
            )}
-          </td>
+          >
+           <BusinessChineseText
+            pronunciationId={`${block.id}:header:${cellIndex}`}
+            text={headers[cellIndex] ?? ""}
+            displayMode={displayMode}
+            variant={isVocabularyTable ? "body" : "label"}
+            weight={isVocabularyTable ? "black" : undefined}
+            compactHanzi
+           />
+          </th>
          ))}
         </tr>
-       ))}
-      </tbody>
-     </table>
-    </div>
+       </thead>
+       <tbody>
+        {block.rows.slice(1).map((row, rowIndex) => (
+         <tr
+          key={`${block.id}-row-${rowIndex}`}
+          className="border-b border-border-default last:border-b-0"
+         >
+          {visibleColumnIndexes.map((cellIndex) => (
+           <td
+            key={`${block.id}-row-${rowIndex}-cell-${cellIndex}`}
+            className={cn("align-top", isVocabularyTable ? "px-4 py-3" : "px-3 py-2")}
+           >
+            {cellIndex === pinyinColumnIndex ? (
+             <PinyinText
+              as="span"
+              variant={isVocabularyTable ? "body" : "bodySmall"}
+              tone="secondary"
+              weight="semibold"
+              wrapping="preWrap"
+             >
+              {row[cellIndex] ?? ""}
+             </PinyinText>
+            ) : (
+             <SpeakableBusinessChineseText
+              pronunciationId={`${block.id}:row:${rowIndex}:cell:${cellIndex}`}
+              text={row[cellIndex] ?? ""}
+              displayMode={displayMode}
+              sourcePinyin={
+               cellIndex === hanziColumnIndex && pinyinColumnIndex >= 0
+                ? row[pinyinColumnIndex]
+                : undefined
+              }
+              variant={isVocabularyTable ? "body" : "bodySmall"}
+              compactHanzi={!isVocabularyTable && headers.length !== 2}
+             />
+            )}
+           </td>
+          ))}
+         </tr>
+        ))}
+       </tbody>
+      </table>
+     </div>
+    )
    ) : null}
   </div>
  );
@@ -625,9 +692,11 @@ function BusinessChineseTable({
 function TextbookVocabularyPreview({
  vocabulary,
  onOpenVocabulary,
+ displayMode,
 }: {
  vocabulary: TextbookLesson["vocab"];
  onOpenVocabulary?: () => void;
+ displayMode: LessonDisplayMode;
 }) {
  const t = useTranslations("BusinessChinese");
 
@@ -650,9 +719,18 @@ function TextbookVocabularyPreview({
       key={word.id}
       hanzi={word.hanzi}
       pinyin={word.pinyin}
-      hanviet={word.hanviet}
+      hanviet={displayMode.showMeaning ? word.hanviet : ""}
       category={word.pos}
-      meaning={word.meaning}
+      meaning={displayMode.showMeaning ? word.meaning : ""}
+      header={
+       <SpeakableBusinessChineseText
+        pronunciationId={word.id}
+        text={word.hanzi}
+        sourcePinyin={word.pinyin}
+        displayMode={displayMode}
+        variant="body"
+       />
+      }
      />
     ))}
    </div>
@@ -860,7 +938,14 @@ function BusinessChineseSection({
     {vocabularyPreview}
     {visibleBlocks.map((block) => {
      if (block.type === "table") {
-      return <BusinessChineseTable key={block.id} block={block} displayMode={displayMode} />;
+      return (
+       <BusinessChineseTable
+        key={block.id}
+        block={block}
+        displayMode={displayMode}
+        vocabularyCards={section.category === "vocab"}
+       />
+      );
      }
      if (block.type === "subheading") {
       return (
@@ -1459,6 +1544,7 @@ function BusinessChineseStudyWorkspaceContent({
               (activeView === "all" || activeView === "vocab") ? (
                <TextbookVocabularyPreview
                 vocabulary={lesson.vocab}
+                displayMode={displayMode}
                 onOpenVocabulary={
                  activeView === "all" ? () => onActiveViewChange("vocab") : undefined
                 }
@@ -1533,6 +1619,7 @@ function BusinessChineseStudyWorkspaceContent({
                     section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
                      <TextbookVocabularyPreview
                       vocabulary={lesson.vocab}
+                      displayMode={displayMode}
                       onOpenVocabulary={
                        activeView === "all" ? () => onActiveViewChange("vocab") : undefined
                       }
