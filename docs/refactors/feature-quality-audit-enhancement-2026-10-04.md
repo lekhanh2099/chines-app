@@ -4,7 +4,7 @@ Lập ngày 04/10/2026; đối chiếu và dọn tài liệu ngày 11/10/2026.
 
 **CI và publication của các slice đã triển khai: COMPLETE. Audit toàn bộ feature: PARTIAL.** Không có item đang triển khai trong bản đối chiếu này. Dọn docs không phải bằng chứng hoàn thành feature.
 
-Đây là **queue duy nhất** của chương trình. [Report](../audits/FEATURE_CODE_QUALITY_REPORT_2026-10-04.md) ghi kết quả và giới hạn; [coverage](../testing/frontend-flow-coverage.md) ghi test owners và cách kiểm chứng. Không chạy lại một extraction hoặc migration chỉ vì checklist cũ còn mở.
+Đây là **queue duy nhất** của chương trình, giữ acceptance còn mở và các quyết định đã duyệt. [Coverage](../testing/frontend-flow-coverage.md) ghi test owners và cách kiểm chứng; [report lịch sử](https://github.com/lekhanh2099/chines-app/blob/ab61e2631a689019ab49318d103e4fb10037de74/docs/audits/FEATURE_CODE_QUALITY_REPORT_2026-10-04.md) giữ feature matrix và kết quả R01–R12. Không chạy lại một extraction hoặc migration chỉ vì checklist cũ còn mở.
 
 PDF được user tạm hoãn ngày 08/10/2026: row 13 **DEFERRED**, còn 31 nhóm active. Giữ source, tests, drafts và migration hiện hữu; không tiếp tục enhancement, focused audit hoặc production enforcement PDF. Full verification vẫn giữ regression tests hiện có. Migration enforce chung Notes/PDF chưa được phép apply.
 
@@ -20,11 +20,11 @@ PDF được user tạm hoãn ngày 08/10/2026: row 13 **DEFERRED**, còn 31 nh�
 | [ ]    | C03 | Notes ordering, CAS, per-tab drafts, metadata/folder/owner slices local pass; còn live rollout và đầy đủ durability/concurrency acceptance.                                                      |
 | [ ]    | C04 | Latest-snapshot export, import acknowledgement và pane status có proof; import nhiều writes chưa atomic, còn failure/partial states ngoài các fixture đã chạy.                                   |
 | [ ]    | C05 | Linked Reader Notes CAS/owner local pass; còn Reader reload/account/storage-failure matrix. PDF-specific acceptance deferred.                                                                    |
-| [ ]    | C06 | Đã tách các slice Translation/Dictation/Notes/Search theo owner hiện có; còn review wiring/responsibilities các surface chưa đủ proof trong report.                                              |
+| [ ]    | C06 | Đã tách các slice Translation/Dictation/Notes/Search theo owner hiện có; còn review wiring/responsibilities các surface chưa đủ proof trong coverage và feature matrix lịch sử.                  |
 | [ ]    | C07 | TTS/font/Reader/recorder/AI subscriber slices đã đo; còn shared shell, whole-workspace và physical-device proof. Không tính extraction là giảm rerender.                                         |
 | [ ]    | C08 | CPU/text/search có utility và volume proof; còn corpus/segmenter correctness, cold index và các hotspot chưa đo.                                                                                 |
 | [ ]    | C09 | Notes/SRS completeness, batching, Reader cache/owner và Search identity đã kiểm chứng; server cursor/snapshot, concurrent offsets, payload/capacity và historical Search 503 attribution còn mở. |
-| [ ]    | C10 | Hoàn tất required states của 31 active feature rows trong report; không thay feature acceptance bằng test count.                                                                                 |
+| [ ]    | C10 | Hoàn tất required states của 31 active feature rows trong feature matrix lịch sử; đối chiếu current source, không thay feature acceptance bằng test count.                                       |
 | [ ]    | C11 | Offline bootstrap/relaunch, owner isolation và Notes resource slices pass; còn cross-surface queue/retry-tail, cache generation/pinning/eviction và storage-failure/device proof.                |
 | [ ]    | C12 | Locale/responsive/focus slices pass; còn toàn bộ chrome, learner/source interactions, touch và thiết bị thật.                                                                                    |
 | [ ]    | C13 | Local SQL/RLS/auth/CAS compatibility pass; production enforcement/live providers và capacity proof chưa hoàn tất.                                                                                |
@@ -43,10 +43,10 @@ Các mục dưới đây là acceptance chưa đạt, không phải chỉ thị 
 | C10-02 / C12 / C14 | HYDRATION NOT REPRODUCED      | CP1 cũ cần cùng bundle, authenticated server HTML và first-client output; không thêm suppression hoặc gọi đã fix.                                                                                                                                             |
 | C01 / C08 / C10    | CORPUS PARTIAL                | Báo failed cases và tỷ lệ grouped/fallback/sai merge trên corpus thực; so existing Intl/pinyin-pro segmenter. Dataset/package research cần review coverage, load cost và pronunciation authority trước thay dependency.                                       |
 | C11                | DURABILITY PARTIAL            | Trace intent → durable commit → remote ack → conditional cleanup; kiểm chứng retry-tail/review identity, content-write sau eviction, pin retention khi ordinary cache write, owner/generation fences và unacknowledged panes. Không chạy lại fix đã có proof. |
-| C10–C14            | FEATURE STATES PARTIAL        | Dùng cột còn thiếu trong report: mỗi slice có loading/empty/error/retry/stale/permission/success và transitions thực sự tồn tại; live provider/DB/device proof tách riêng.                                                                                    |
+| C10–C14            | FEATURE STATES PARTIAL        | Đối chiếu feature matrix lịch sử với current source và coverage: mỗi slice có loading/empty/error/retry/stale/permission/success và transitions thực sự tồn tại; live provider/DB/device proof tách riêng.                                                    |
 | Row 13             | DEFERRED BY USER              | Giữ regression/data compatibility; không cộng completion và không dành thêm effort PDF.                                                                                                                                                                       |
 
-Default Studio inventory cần sibling `reading-course.json` hiện không có trong checkout. Lệnh đã chạy với explicit clean corpus root và 26 assets pass là proof khác; không ghi default invocation pass khi thiếu input.
+Tool packaging Studio và các test riêng đã retire theo yêu cầu dọn scripts ngày 11/10/2026. Giữ nguyên seed JSON/assets và regression tests của runtime; proof CLI lịch sử không phải một bước verification hiện hành.
 
 ## Các slice đã hoàn thành — không làm lại
 
@@ -97,45 +97,21 @@ Production schema snapshot **đã kiểm chứng ngày 10/10/2026**, không ph�
 
 ## Ownership và tests
 
-Reuse existing feature owners theo [frontend structure](../architecture/frontend-structure.md), không tạo layer chung vì logic xuất hiện hai lần.
-
-| Owner            | Trách nhiệm / test đúng nơi                                                                                                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| UI component     | Render semantic/locale/loading/error/disabled/focus/keyboard và callback; không fetch, score, domain grouping hoặc autosave pipeline. Test visible behavior và interaction.          |
-| Workspace        | Compose existing hooks/UI/route props; không giữ editable copy của Query/Form. Ít integration cases chứng minh event → owner → result.                                               |
-| Pure utils       | Input → output: grading/filter/order/segmentation/snapshot/export/timing policy; không React/fetch/storage/timer scheduling. Expected outputs độc lập với implementation.            |
-| Hook             | Query/Form subscriptions, lifecycle/debounce/flush/order/cleanup; gọi utils và I/O owners. Test actual callbacks với Query/timers/deferred requests, mounted effect/cleanup khi cần. |
-| API/service      | Endpoint/method/headers/payload và runtime response/error contract; không toast/navigation hoặc biến failure thành success. Test transport/auth/owner/cancel/malformed response.     |
-| Route/repository | Trusted identity/role/parent/revision, canonical DB/provider reads/writes. Local SQL/RLS proof riêng với controlled HTTP test.                                                       |
-| Local/runtime    | Durable commit/replay/locks/generation/store selectors/adapters. Test race/quota/restart/stale ack/resource disposal; không thêm competing owner.                                    |
-
-Giữ routes, formats, source IDs/offsets, learning semantics và authoritative generated/schema/domain types. Diff audit không để unused exports, debug/profiling code, speculative wrappers hoặc suppressions. Shared contracts/storage/schema/dependencies đổi ngoài approval hiện hữu cần dừng để review, không widen type để xanh.
+Contract lâu dài nằm tại [responsibility và test boundaries](../architecture/frontend-structure.md#8-responsibility-and-test-boundaries): UI, workspace, pure utils/model, hook, API/service, route/repository và local/runtime. Giữ existing owners và test đúng boundary tái hiện được lỗi. Scope/type/diff review theo `AGENTS.md`; master này chỉ giữ acceptance và approvals của chương trình.
 
 ## Performance: phân biệt dimension
 
-| Thay đổi                              | Kết luận được phép                                                                                                                          |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tách utils/hook/UI                    | Tăng testability/ownership; tự nó không giảm owner render hoặc tạo memo boundary.                                                           |
-| `memo` / narrow selector / skip no-op | Có thể giảm commit/subscriber work khi props/selected value thật sự ổn định; own state/context vẫn update. Cần actual trigger/commit proof. |
-| `useMemo` / `useCallback`             | Calculation/reference reuse; không ngăn owner render. Dependencies/callers phải đúng.                                                       |
-| Debounce / TTS prepare / batching     | Giảm request/write hoặc latency; không tự giảm input renders. Latest intent/cancellation/retry vẫn phải đúng.                               |
-| Pagination / bounded rendering        | Giảm DOM/mount work; không tự giảm owner triggers hoặc full-list network/memory. Giữ completeness/filter/selection.                         |
-| Stable key / resource cleanup         | Giữ identity, tránh remount hoặc release resources; không dùng key để che stale state, giữ intentional auth-owner retirement.               |
-| Deferred/transition/lazy load         | Scheduling hoặc initial load; không tự giảm total CPU/interaction commits. Đo đúng metric.                                                  |
+Contract và phương pháp đo nằm tại [performance evidence](../architecture/frontend-structure.md#9-performance-evidence). Phân biệt CPU, React commits, DOM, network/payload, DB và retained resources; extraction không tự giảm rerender.
 
-R01–R12 results và measured limits nằm trong report. Source guard `npm run check:hanzihome:perf` là **manual source check**, không phải benchmark, không nằm trong automatic CI hay `npm run check`.
-
-Mỗi comparison ghi source SHA/diff, toolchain, mode/device/viewport, real/synthetic fixture và cold/warm controls. Lặp tối thiểu 5 flow samples; pure utility timing dùng warm-up và đủ samples nếu báo percentile. Dev/mock Profiler không chứng minh production Web Vitals; production build thường không cung cấp React profiling callbacks. Đo CPU, React commits, DOM, HTTP/payload, DB và retained resources riêng. Chỉ giữ optimization có invariant và measured benefit; delta trong noise ghi no demonstrated improvement.
-
-Memory đo sau close/unmount và sau intentional cache expiry; warmed cache/hidden mounted tabs không tự là leak. Pending intents không được evict để đạt budget. Server/provider volume chỉ chạy isolated/local fixtures trong scope được duyệt; không load-test production hoặc suy ra N users từ mock timings.
+R01–R12 results và measured limits nằm trong report lịch sử đã link ở đầu tài liệu. Performance profiling chạy manual khi acceptance của slice yêu cầu, không nằm trong automatic CI hay `npm run check`.
 
 ## Verification policy hiện hành
 
 - Local commit: existing lint-staged Oxfmt/Oxlint trên staged files; không full-suite pre-commit.
 - Automatic CI: diff-based owner/consumer selection, static contracts/typecheck cho code, Vitest related hoặc full fallback; mounted fixtures tách job không Supabase; selected product E2E dùng isolated Supabase. Một production build; jobs có thể chạy song song.
-- Docs-only: format; không build/Node/mounted/E2E chỉ vì sửa `.md`.
+- Docs/skills-only: format và lightweight YAML/metadata/routing/reference check khi hướng dẫn đổi; không build/Node/mounted/E2E chỉ vì sửa docs hoặc `skills-lock.json`.
 - Shared/auth/schema/dependency/unmapped paths dùng conservative full proof; manual Run workflow chạy full Node + 14 mounted files + toàn bộ product/SQL. Skip phải ghi rõ; không đổi test để xanh.
-- `npm run check` giữ full local release gate. Coverage/Studio/corpus/integration/performance được chạy khi acceptance của slice yêu cầu, không benchmark mặc định mỗi push.
+- `npm run check` giữ full local release gate. Coverage/corpus/integration/performance được chạy khi acceptance của slice yêu cầu, không benchmark mặc định mỗi push.
 - External browser/fixture seeding/live paid provider/schema mutation phải giữ scope/target/authorization; mocks không thành live proof.
 
 ## Publication receipt — 10/10/2026
@@ -160,4 +136,12 @@ Các plan/PRD/receipts cũ đã bỏ khỏi docs hiện hành theo yêu cầu us
 
 Rollback từng app slice cùng caller/owner consumers; không delete drafts/pending intents hoặc sửa migration history. DB rollback phải review data impact riêng. Cleanup docs chỉ khôi phục các file Markdown từ Git nếu cần; không ảnh hưởng app, schema, storage hoặc user data.
 
-Cleanup verification ngày 11/10/2026: `npm run format:check` và `git diff --check` pass; local Markdown link targets và retired-path references đã kiểm tra. Chỉ sửa/xóa existing Markdown docs; không đổi app, `AGENTS.md`/`.agents`, dependencies, schema hoặc storage. User đã duyệt push cleanup; verification của lượt docs dùng format/diff/reference checks, không rerun app tests. Automatic CI khi publish dùng docs-only selection hiện hành.
+Lượt dọn tiếp ngày 11/10/2026 giữ năm core skills và docs phục vụ flow hiện hành. Report lịch sử, skill inventory/scorecard và vendor skill bundles được retire; skill-maintenance invariants chuyển về `AGENTS.md`, Memory Tips chuyển về current architecture. [Snapshot trước lượt này](https://github.com/lekhanh2099/chines-app/tree/ab61e2631a689019ab49318d103e4fb10037de74) giữ toàn bộ nội dung để khôi phục. Không thay app, dependencies, schema, storage hoặc acceptance/approval đang mở. Verification dùng format/diff/reference và routing review; không chạy lại app tests cho cleanup docs/skills.
+
+Receipt cleanup trước audit: `npm run format:check` và `git diff --check` pass; 37 Markdown files/99 local links không có target hỏng, cả 21 docs có trong index, năm core skills chưa đổi nội dung tại thời điểm đó. Next.js managed block, approval table và production snapshot giữ nguyên. Routing review gồm năm domain và các exclusions hiện hữu; đây không phải benchmark agent. Preview lúc đó cho thấy xóa `skills-lock.json` chọn full Node, 14 mounted files và full product E2E; lỗi phân loại metadata được sửa trong update bên dưới.
+
+Agent guidance update sau audit ngày 11/10: `AGENTS.md` thống nhất TypeScript với yêu cầu trực tiếp của user; responsibility/test/performance contract chuyển về frontend structure, skill architecture route thêm performance. CI dùng inline Node pattern hiện có và Prettier hiện có để kiểm tra YAML/metadata/routing/file references; docs/skills/`skills-lock.json` không kéo app tests, xóa app source và manual full vẫn giữ fallback. 25 selection cases và 13 contract cases (12 negative fixtures) pass trên final workflow; năm core skills pass Codex validator. Không thêm file/dependency hoặc thay app/schema/storage/acceptance.
+
+Hai global skills sửa riêng trên máy: HanziHome UI audit dùng current Card/Button/docs và scoped rollout; Impeccable resolve helper từ installed skill root, actual context command đọc được `PRODUCT.md`. Generic Codex validator từ chối field `version` của Impeccable; giữ field vì vendor context loader đang đọc trực tiếp, YAML/helper/reference proof đã pass riêng. Global changes không nằm trong checkout/CI. Diff của riêng instruction/tooling update lúc đó chọn static/full Node/build, không chọn mounted/product E2E; chưa commit/push hoặc chạy CI remote mới. App tests không rerun cho instruction/tooling update; đây không phải agent benchmark.
+
+Dọn scripts theo yêu cầu ngày 11/10/2026: bỏ bảy file tooling/test Studio và manual performance/session/font, cùng năm npm commands; còn 15 file phục vụ CI/E2E và Supabase types. Seed/types/fonts/lockfile giữ nguyên qua 20 SHA-256 checks; không đổi app source, API, schema, storage hoặc dependency. Full `npm run check` với test env placeholders và hai workers như CI pass: 279 files/1.584 tests, 53 skipped, audit 0 và build 132 pages; lần đầu tests fail do thiếu public Supabase env. Guidance check pass năm skills/37 Markdown files/105 local references. Browser/product E2E và CI remote chưa chạy mới; rollback khôi phục bảy file và năm commands cùng nhau từ Git, giữ runtime artifacts.

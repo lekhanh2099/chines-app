@@ -9,47 +9,37 @@ description: Design, review, apply, and verify HanziHome Supabase migrations saf
 
 Keep schema history reproducible and preserve the study/edit flow while database contracts evolve.
 
-## Preflight
+## Trace the migration
 
-1. Read root `AGENTS.md`, `supabase/AGENTS.md`, the affected HanziHome subtree
-   contract and relevant accepted ADRs.
-2. Inspect related migrations, live generated types, server repository queries, route authorization, and tests.
-3. State the exact local, branch, staging, or production target. Inspect
-   migration drift and define ownership (`seed`, `custom`, or `user_override`),
-   stable IDs, parent relationships, existing-row safety, read payload impact
-   and lock/rewrite risk.
-4. Choose and document either rollback or forward-fix for this migration; do
-   not claim both without an executable path.
-5. If seed-edit policy, exercise shape, required destructive child replacement,
-   target environment, or production authorization is unclear, stop and ask.
+Read [Supabase instructions](../../../supabase/AGENTS.md) for the approval,
+existing-row, security and verification contract. For HanziHome content changes,
+also read the affected subtree contract and accepted ownership ADRs.
+
+Inspect related migrations, generated types, repository queries, route
+authorization and tests. Trace ownership (`seed`, `custom`, or `user_override`),
+stable IDs, parent relationships and affected read/write payloads to the actual
+target. Use the owning contract's stop conditions when the write policy or
+exercise shape is unresolved.
 
 ## Migration workflow
 
-1. Create one timestamped migration under `supabase/migrations/`; never make dashboard-only schema edits.
-2. Make policy/grant/function changes explicit. Resolve identity server-side and verify parent-child membership from rows, not request claims.
-3. Prefer additive/backfill/enforce sequencing for populated tables. Use transactions where partial application would be unsafe.
-4. Keep normal edits row/node-level. Name bulk replacement separately and make it transactional.
-5. Apply first to the stated local, branch, or otherwise safe environment unless
+1. Prepare the timestamped SQL and review evidence required by the Supabase
+   contract before requesting approval.
+2. Apply first to the stated local, branch, or otherwise safe environment unless
    the user explicitly authorizes production.
-6. Refresh `src/types/supabase.generated.ts`, update Zod/API contracts, and run targeted tests plus required repository checks.
-7. Run Supabase security/performance advisors when live access is available and report unresolved findings.
-
-Read [references/migration-review.md](references/migration-review.md) before approval.
+3. Refresh generated types and affected Zod/API contracts, then run the relevant
+   database and repository checks.
+4. Run security/performance advisors when live access is available and report
+   unresolved findings.
 
 ## Verification
 
-Use root verification tiers. A read-only review reports the inspected migration,
-ownership and drift evidence without applying changes. Actual schema/RLS/RPC or
-generated-contract changes require the full repository gate plus the relevant
-database checks; static checks alone do not prove a live environment.
-
-Stop before database mutation when target, authorization, rollback/forward-fix
-or existing-row impact is unclear. Credentialed probes are explicit live
-operations, not generic CI prerequisites.
+Use [root verification tiers](../../../AGENTS.md#6-working-method) and the
+database proof requirements in
+[Supabase instructions](../../../supabase/AGENTS.md). Read-only review and
+credentialed live operations remain separate scopes.
 
 ## Output
 
-Report the precedent, invariant, migration path, drift state, existing-row and
-lock risk, chosen rollback or forward-fix, authorization/ownership behavior,
-affected read/write contracts, verification evidence, exact environment
-touched, selected tier, and residual deployment risk.
+Report the migration review evidence from the Supabase contract, actual checks
+and environment touched, and remaining deployment risk.

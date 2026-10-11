@@ -24,8 +24,8 @@ npm run dev
 The app runs at [http://localhost:3001](http://localhost:3001). `npm run dev`
 uses the Supabase project configured in `.env.local`, so localhost resolves the
 same authenticated user and live user-owned data as production. A localhost
-login is therefore a real session in that project and counts toward the same
-three-session limit. Keep Supabase secret/service-role keys server-only.
+login is therefore a real session in that project. The checked-in Auth hook
+caps concurrent sessions at five. Keep Supabase secret/service-role keys server-only.
 
 ## Verification
 
@@ -60,16 +60,12 @@ Manual Run workflow (`workflow_dispatch`) retains full Node, mounted and
 product/SQL verification. `npm run check` remains the full local merge/release
 gate; it is not the automatic affected-selection runner.
 
-Run HanziHome performance checks manually when the change needs them:
-
-```bash
-npm run check:hanzihome:perf
-```
-
-This command checks source boundaries; it does not measure runtime performance.
-Profiling/benchmarks stay on demand with their fixture, mode and result limits.
+Run performance profiling/benchmarks on demand with their fixture, mode and
+result limits, following [performance evidence](docs/architecture/frontend-structure.md#9-performance-evidence).
 
 Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit hook. The full `npm run check` gate remains the release-quality gate.
+
+See [script ownership](CONTRIBUTING.md#script-ownership) for current entrypoints, manual tools and their write targets.
 
 ## Supabase workflow
 
@@ -83,5 +79,6 @@ Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit 
 Start with [docs/README.md](docs/README.md), [current architecture](docs/architecture/current-system.md), and the repository [AGENTS.md](AGENTS.md). The Hanzi Studio contract lives in the current architecture, with static
 published content and Supabase-owned new user state. Quality work has one
 [master plan](docs/refactors/feature-quality-audit-enhancement-2026-10-04.md),
-with separate results and coverage documents; superseded plans/receipts are
+with [flow coverage](docs/testing/frontend-flow-coverage.md); historical reports,
+superseded plans and receipts are
 available through the Git history linked from the docs index.

@@ -34,25 +34,18 @@ payload. Inspect unsupported shapes before editing.
 
 For vocabulary, follow the canonical row and lesson resource/query cache from
 the subtree contract through mini-grid, workspace, review and editor consumers.
-For learning-state fields, inspect every existing owner before adding state,
-progress, mastery, review or settings. Persisted writes require an expected
-remote version and deterministic conflict-rebase proof. Trace the single
-app-level sync agent and consumer enqueue path when retry behavior changes.
+For learning-state fields, trace the persisted owner, sync agent and consumer
+enqueue path using the subtree learning-state contract, especially when retry
+behavior changes.
 HanziHome query keys belong in `src/features/hanzihome/query-keys.ts`.
 
 ## Editing and import
 
 Trace the validated node payload, ownership/parent checks, update and sibling
-isolation. If seed-edit policy or the write target is unclear, use the subtree
-stop conditions. Import/bulk edit requires complete validation, count/identity
-reconciliation and a preview/diff before persistence; preview is evidence,
-not write authorization.
-
-Exercise persistence needs a family-specific inventory before editing support:
-metadata, instruction, questions/items, choices, word bank, answer/key,
-acceptable answers, explanations, refs, dialogue, sample answers, cloze
-segments/answers and matching sides/matches. Do not generalize one exercise
-shape to all families.
+isolation. Apply the subtree
+[content/import policy](../../../src/features/hanzihome/AGENTS.md#1-product-and-content-truth)
+and [persistence inventory](../../../src/features/hanzihome/AGENTS.md#6-api-and-persistence)
+to the affected family before preparing a write.
 
 ## Context and verification
 
@@ -62,14 +55,11 @@ checks in [`ui-verification.md`](../../../docs/ui/ui-verification.md), and
 interface copy/navigation in [`i18n.md`](../../../docs/architecture/i18n.md).
 Load only the affected sections.
 
-Use root verification tiers and applicable existing data scripts. Verify the
-changed node against representative real lesson data, unchanged siblings,
-conflict handling, invalidation and intact Study Mode. For learning-state
-changes, prove unrelated remote changes survive conflict rebase and consumers
-do not install duplicate retry listeners. Report unsupported shapes and any
-unverified persistence boundary. Schema, persisted-format, authorization and
-multi-surface changes require the full gate; a local node fix uses targeted
-proof unless its affected contract is broader.
+Select the tier from [root verification](../../../AGENTS.md#6-working-method),
+node/query/renderer proof from
+[subtree verification](../../../src/features/hanzihome/AGENTS.md#10-verification),
+and relevant cases from
+[coverage requirements](../../../docs/testing/frontend-flow-coverage.md#required-proof-by-change-type).
 
 The handoff adds the entity/node, read/write owner, stable ID, sibling evidence
 and residual data risk to the root completion requirements.

@@ -1,6 +1,6 @@
 ---
 name: frontend-feature-workflow
-description: Resolve frontend state, query/cache ownership, feature boundaries and server/client architecture in chines-app. Use when investigating or changing these contracts. Do not use for styling, copy-only edits, isolated tests, or local fixes that preserve architecture.
+description: Resolve state/query/cache ownership, feature boundaries, server/client architecture and requested CPU/render/network/resource performance investigations in chines-app. Skip styling, copy-only edits, isolated tests and local fixes that preserve these contracts and make no performance claim.
 metadata:
   author: chines-app
   compatibility: chines-app; npm; Node.js 22+; Next.js App Router; React; TypeScript; TanStack Query/Form/Store
@@ -11,8 +11,9 @@ metadata:
 
 Use the affected sections of
 [`frontend-structure.md`](../../../docs/architecture/frontend-structure.md) for
-canonical boundaries and state ownership. Root and nearest `AGENTS.md` govern
-scope, types, risk and verification; this skill is not general app preflight.
+canonical boundaries, test ownership and performance evidence. Root and nearest
+`AGENTS.md` govern scope, types, risk and verification; this skill is not general
+app preflight.
 
 ## Trace the owner
 
@@ -38,6 +39,8 @@ categories and speculative shared abstractions outside the task.
 
 Read only when affected:
 
+- responsibility/test separation or performance claims: sections 8 and 9 of
+  [`frontend-structure.md`](../../../docs/architecture/frontend-structure.md);
 - navigation, locale or interface copy:
   [`i18n.md`](../../../docs/architecture/i18n.md);
 - user flow or shared UI semantics:
@@ -48,9 +51,8 @@ Read only when affected:
 
 ## Evidence
 
-Use root verification tiers. Reproduce regressions at the lowest boundary that
-still fails, then verify affected consumers. Shared migrations, breaking
-contracts and release work require the full gate; an application-file edit
-alone does not. UI/copy claims require the rendered evidence in their owning
-docs. Report the owner, protected invariant and remaining limits alongside the
-root handoff evidence.
+Select the tier from [root verification](../../../AGENTS.md#6-working-method)
+and the proof boundary from the linked concern owner. Report the traced owner,
+protected invariant and remaining limits. Performance investigations use
+[section 9](../../../docs/architecture/frontend-structure.md#9-performance-evidence)
+for measurement and claim limits.

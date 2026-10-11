@@ -345,3 +345,57 @@ Before moving a file or changing a shared API:
 6. Migrate by surface, not repository-wide replacement.
 7. Verify affected consumers/interactions using the tier defined in root
    `AGENTS.md`; shared migrations and breaking contracts require the full gate.
+
+## 8. Responsibility and test boundaries
+
+Use the existing owner and feature placement. Repeated logic alone does not
+authorize a shared layer, new hook or wider refactor.
+
+| Owner            | Responsibility and proof                                                                                                                                                                                                    |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| UI component     | Render semantic/locale/loading/error/disabled/focus/keyboard states and callbacks. Keep fetch, scoring, domain grouping and autosave pipelines with their existing owners. Test visible behavior and interaction.           |
+| Workspace        | Compose existing hooks, UI and route props without an editable copy of Query/Form state. Focused integration proves event → owner → result.                                                                                 |
+| Pure utils/model | Input → output rules for grading, filtering, ordering, segmentation, snapshots, export and timing policy. No React, fetch, storage or timer scheduling. Expected outputs are independent of the implementation.             |
+| Hook             | Query/Form subscriptions, lifecycle, debounce/flush, ordering and cleanup. Call pure rules and I/O owners; test actual callbacks with Query, timers and deferred requests, including mounted effects/cleanup when required. |
+| API/service      | Endpoint, method, headers, payload and runtime response/error contract. No toast/navigation or converting failure to success. Test transport, auth, owner, cancellation and malformed responses.                            |
+| Route/repository | Trusted identity, role, parent and revision checks; canonical database/provider reads and writes. Controlled HTTP and local SQL/RLS tests prove their respective boundaries.                                                |
+| Local/runtime    | Durable commit/replay, locks, generations, selectors and adapters. Test races, quota, restart, stale acknowledgements and resource disposal without a competing owner.                                                      |
+
+Preserve routes, formats, source IDs/offsets, learning semantics and authoritative
+generated/schema/domain types. A utility test is sufficient only when it can
+reproduce the failure; use hook, API, database or rendered integration proof for
+ordering, authorization, persistence and wiring. Do not mirror the algorithm in
+the test or infer correctness from test count.
+
+## 9. Performance evidence
+
+Identify the trigger, affected owner and measured dimension before optimizing.
+Measure CPU, React commits, DOM/mount work, HTTP/payload, database work and
+retained resources separately.
+
+| Change                              | Claim it can support                                                                                                                         |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Extract utils/hook/UI               | Better testability and ownership; extraction alone does not reduce owner renders or create a memo boundary.                                  |
+| `memo`, narrow selector, skip no-op | Less commit/subscriber work when props or selected values are stable. Own state/context still updates; prove the actual trigger and commits. |
+| `useMemo` / `useCallback`           | Calculation/reference reuse; neither prevents the owner from rendering. Verify dependencies and callers.                                     |
+| Debounce, TTS prepare, batching     | Fewer requests/writes or lower latency; input renders may remain. Preserve latest intent, cancellation and retry.                            |
+| Pagination / bounded rendering      | Less DOM/mount work; owner triggers, full-list network and memory may remain. Preserve completeness, filtering and selection.                |
+| Stable keys / cleanup               | Preserve identity, avoid remount or release resources. Do not hide stale state with a key; retain intentional auth-owner retirement.         |
+| Deferred/transition/lazy loading    | Change scheduling or initial load; total CPU/interaction commits may remain. Measure the claimed metric.                                     |
+
+Record source SHA/diff, toolchain, mode/device/viewport, real or synthetic fixture
+and cold/warm controls for comparisons. Use at least five flow samples; pure
+utility timing needs warm-up and enough samples for any reported percentile.
+Dev/mock Profiler evidence does not prove production Web Vitals, and an ordinary
+production build may not provide React profiling callbacks. Keep optimizations
+with a protected invariant and demonstrated benefit; report changes within
+noise as no demonstrated improvement.
+
+Measure memory after close/unmount and intentional cache expiry. A warmed cache
+or hidden mounted tab alone does not prove a leak. Never evict pending intents
+to meet a budget. Server/provider volume checks use authorized isolated/local
+fixtures; mock timings do not prove production user capacity or authorize a
+production load test.
+
+Profiling is manual when the task requires it; it is not part of automatic CI
+or `npm run check`.

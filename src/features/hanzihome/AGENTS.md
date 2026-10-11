@@ -71,6 +71,10 @@ NOT mirror either persisted owner. One app-level learning-state sync agent owns
 online/focus retry orchestration; consumer hooks only read state and enqueue
 mutations.
 
+Learning-state persisted writes require an expected remote version and
+deterministic conflict-rebase proof that unrelated remote changes survive.
+Consumer hooks MUST NOT install duplicate retry listeners.
+
 Import or bulk-edit work MUST validate the complete input, reconcile counts and
 stable identities, and produce a preview/diff before persistence. A mismatch
 MUST remain untouched and be reported; preview is not authorization to write.
@@ -183,6 +187,11 @@ Normal field/node edits SHOULD map to a single-row update whenever practical.
 
 Exercise and practice persistence is high risk. Before supporting a new exercise
 family, identify every rendered and persisted subpart.
+
+The family-specific inventory covers metadata, instruction, questions/items,
+choices, word bank, answer/key, acceptable answers, explanations, refs,
+dialogue, sample answers, cloze segments/answers and matching sides/matches.
+Do not generalize one exercise shape to all families.
 
 ## 7. Study renderer
 

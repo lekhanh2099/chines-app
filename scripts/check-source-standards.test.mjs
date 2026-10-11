@@ -127,7 +127,7 @@ describe("source architecture ownership guard", () => {
       source: "const lessonTextDisplayMode = true;",
      },
      {
-      file: "src/features/hanzihome/reader/reader-state.schemas.ts",
+      file: "src/features/reading/model/reading-progress.schemas.ts",
       source: "const schema = { showPinyin: true };",
      },
     ],

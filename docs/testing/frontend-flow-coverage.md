@@ -1,6 +1,6 @@
 # Frontend user-flow coverage
 
-Đối chiếu source và CI ngày 11/10/2026; receipts thực thi đến 10/10/2026. [Master plan](../refactors/feature-quality-audit-enhancement-2026-10-04.md) là queue duy nhất; [report](../audits/FEATURE_CODE_QUALITY_REPORT_2026-10-04.md) ghi đủ 32 rows, PDF deferred và 31 active rows. Coverage không phải một plan khác.
+Đối chiếu source và CI ngày 11/10/2026; receipts thực thi đến 10/10/2026. [Master plan](../refactors/feature-quality-audit-enhancement-2026-10-04.md) là queue duy nhất: PDF deferred, 31 nhóm còn active và whole-feature audit PARTIAL. Coverage ghi executable owners và proof boundaries, không tạo một plan khác.
 
 ## CI và local verification
 
@@ -9,16 +9,41 @@ Source of truth: [CI workflow](../../.github/workflows/ci.yml), [package scripts
 | Trigger / scope                              | Checks                                                                                                                                                    |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Commit                                       | Existing staged-only Oxfmt/Oxlint; không full test suite.                                                                                                 |
-| Docs-only push/PR                            | Install + format; không build/Node/browser/product E2E.                                                                                                   |
+| Docs/skills-only push/PR                     | Install + format và lightweight YAML/metadata/routing/file-reference check; `skills-lock.json` dùng cùng scope, không build/Node/browser/product E2E.     |
 | Code push/PR                                 | Full static contract/type checks; Vitest related graph hoặc full Node nếu broad/deleted paths; owner/consumer map chọn mounted fixtures và product cases. |
 | Runtime-loaded fixtures                      | Explicit map trong workflow, vì Vite URL imports không thuộc Vitest static graph. Mounted job riêng, không cần Supabase.                                  |
 | Shared/auth/schema/dependency/unmapped paths | Conservative full Node/browser/product path; không silently mất consumer coverage.                                                                        |
 | Manual Run workflow                          | Full Node, toàn bộ 14 mounted files và product/SQL suite.                                                                                                 |
-| Local merge/release                          | `npm run check`; required mounted/SQL/product/coverage/corpus proof theo contract của slice. Performance profiling/source guard chạy manual khi cần.      |
+| Local merge/release                          | `npm run check`; required mounted/SQL/product/coverage/corpus proof theo contract của slice. Performance profiling chạy manual khi cần.                   |
 
 Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify, mounted browser và product E2E chạy độc lập sau selection. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
 
-Không dùng duration hoặc loaded-file coverage thay feature acceptance. Source-only perf guard `npm run check:hanzihome:perf` không nằm trong CI/default full check và không đo HanziHome performance.
+Guidance check dùng Prettier hiện có để kiểm tra YAML, root routing, tên skill,
+npm commands và local Markdown file targets; không fetch links hoặc benchmark
+agent. Chạy khi docs/skills/metadata, workflow hoặc package scripts đổi, có file
+bị xóa, hoặc manual full run. Xóa riêng docs/skills không kéo full Node; xóa app
+source vẫn giữ conservative Node fallback. Global skills mức máy không nằm
+trong checkout/CI và cần kiểm chứng riêng khi cập nhật.
+
+Không dùng duration hoặc loaded-file coverage thay feature acceptance. Performance profiling chạy manual theo [performance evidence](../architecture/frontend-structure.md#9-performance-evidence).
+
+## Required proof by change type
+
+Đây là checklist canonical dùng cho test review và feature verification. Chọn các row bị ảnh hưởng; test placement và independent expected outputs theo [responsibility/test boundaries](../architecture/frontend-structure.md#8-responsibility-and-test-boundaries).
+
+| Surface / change   | Minimum proof                                                                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Catalog/library    | Pending, error + retry, true empty, summary-only payload.                                                                                   |
+| Lesson selection   | Selected ID in query key, one detail payload, missing lesson.                                                                               |
+| Query              | First pending render, error vs empty, retry, all cache-key variables, stale/refetch behavior.                                               |
+| Mapper/renderer    | Representative exact source shape, sparse fields, unmapped shape fallback, no hidden available data.                                        |
+| Form/dialog        | Adapter-derived initial values, validation, dirty/reset/cancel, submit disabled/pending/error.                                              |
+| Node mutation      | Owned fields accepted, parent/sibling fields rejected, only the selected field/node changes and siblings remain untouched.                  |
+| Route/RPC          | Invalid payload, no session, wrong owner/parent, valid owner/success, conflict/stale update.                                                |
+| Query invalidation | Smallest resource plus dependent lesson/catalog only.                                                                                       |
+| Import             | Count/identity reconciliation, duplicates, orphans, unmapped fields.                                                                        |
+| Migration          | Existing-row safety, nullability, RLS/policies/grants/RPC and generated-type drift under [Supabase instructions](../../supabase/AGENTS.md). |
+| Responsive overlay | Focus, keyboard, scroll lock, nested layer and overflow checks from [UI verification](../ui/ui-verification.md).                            |
 
 ## Mounted test owners
 
@@ -71,13 +96,13 @@ D05 offline proof dùng public offline entry, actual DB lesson/cache/Reader và 
 | Offline                         | Public shell/local DB/privacy/relaunch/account/quota/three textbooks.                                                                                                          | Queue/cache generation/pinning/retained capacity across surfaces, Safari/device.      |
 | PDF                             | Prior revision/outbox/SVG/DB proof retained.                                                                                                                                   | Deferred, không tiếp tục focused acceptance.                                          |
 
-Utils tests chứa independent expected domain outputs; API tests chứa transport/schema/auth/error; hook/runtime tests chứa ordering/lifecycle/selector/cleanup. Rendered integration chứng minh actual wiring, không tạo bản sao algorithm trong test. Test count không thay missing state/owner evidence.
+Chọn test đúng owner theo [responsibility/test boundaries](../architecture/frontend-structure.md#8-responsibility-and-test-boundaries); rendered integration chứng minh actual wiring. Test count không thay missing state/owner evidence.
 
 ## Viewports và measurement
 
 Rendered scenarios dùng desktop `1440×900`, tablet/touch `820×1180`, Android-width `412×915`; Reader fixtures còn có `390px`. Labels/locales `vi`, `en`, `zh-CN` và keyboard/focus/overflow được kiểm tra ở những surface có receipt. Không coi width emulation là thiết bị/microphone thật.
 
-Resource/CPU/commit measurements nằm trong report R01–R12. Notes có 45 isolated contexts (1k/10k/50k chars × 1/5/20 tabs), Search có 1k/10k/50k index fixtures; controlled heap/GC không thành production capacity. Historical hydration CP1 vẫn NOT REPRODUCED, cần server HTML/first-client cùng bundle. Next cancellation-path log attribution không giải thích historical Search cloud 503.
+Resource/CPU/commit measurements R01–R12 nằm trong [report lịch sử](https://github.com/lekhanh2099/chines-app/blob/ab61e2631a689019ab49318d103e4fb10037de74/docs/audits/FEATURE_CODE_QUALITY_REPORT_2026-10-04.md#r01r12-số-đo-đúng-dimension). Notes có 45 isolated contexts (1k/10k/50k chars × 1/5/20 tabs), Search có 1k/10k/50k index fixtures; controlled heap/GC không thành production capacity. Historical hydration CP1 vẫn NOT REPRODUCED, cần server HTML/first-client cùng bundle. Next cancellation-path log attribution không giải thích historical Search cloud 503.
 
 ## Latest verified receipt
 

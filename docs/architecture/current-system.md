@@ -51,6 +51,18 @@ validation.
 
 The browser client validates every response envelope before data reaches UI state. Loading, error, and empty are separate states; an API failure must not become an empty catalog.
 
+### Memory tips
+
+Memory tips are a separate resource, not catalog or lesson-detail content:
+`GET /api/hanzihome/memory-tips` → TanStack Query cache → `useRouteMemoryTip`
+→ `GlobalMemoryTipCard`. Route changes and manual “Đổi câu” select from the
+client cache without fetching lesson detail or refetching tips. Keep the
+filtered tips array memoized as in `GlobalMemoryTipCard`; an array created
+on every render changes the selection callback and can repeat its effect.
+System tips remain read-only; user CRUD resolves ownership server-side and
+uses Supabase RLS. The current GET returns the authenticated user's active,
+non-system tips.
+
 ## Write contracts
 
 Normal content writes use the smallest stable entity ID and the smallest owning node. Route handlers resolve the authenticated user, verify ownership/editability and parent-child relationships, then perform a row-level update or a purpose-built RPC. Normal edits do not delete and reinsert child arrays.

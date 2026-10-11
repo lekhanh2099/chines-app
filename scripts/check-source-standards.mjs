@@ -183,7 +183,7 @@ export function inspectArchitectureBoundaries({ sources }) {
   }
 
   if (
-   file === "src/features/hanzihome/reader/reader-state.schemas.ts" &&
+   file === "src/features/reading/model/reading-progress.schemas.ts" &&
    /\b(?:showPinyin|showMeaning|summaryText)\s*:/.test(source)
   ) {
    failures.push(`${file} persists display preferences in Reader progress`);

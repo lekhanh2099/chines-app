@@ -46,10 +46,7 @@ registry/upstream work; local component use does not require it.
 
 ## Verification
 
-Apply the root tier and the affected portions of `ui-verification.md`. A visual
-claim requires rendering at the affected state/viewport; broaden only when
-responsive behavior or shared consumers are affected. Use repository UI/source
-checks where applicable. Interface copy and theme work retain their dedicated
-rendered checks in the linked owners. Report actual routes/viewports/states and
-any unavailable authenticated rendering; a build or source inspection does not
-prove visual correctness.
+Select the tier from [root verification](../../../AGENTS.md#6-working-method)
+and the affected states, viewports and handoff evidence from
+[ui-verification.md](../../../docs/ui/ui-verification.md). Copy and theme tasks
+use the additional checks in their linked owners.

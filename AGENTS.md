@@ -31,7 +31,8 @@ architecture does not require a general workflow skill.
 
 Load a skill only for its matching task:
 
-- state/query/cache ownership, feature boundaries or server/client architecture:
+- state/query/cache ownership, feature boundaries, server/client architecture,
+  or requested CPU/render/network/resource performance investigation:
   `.agents/skills/frontend-feature-workflow/SKILL.md`;
 - UI design, implementation or interaction review:
   `.agents/skills/frontend-ui-system/SKILL.md`;
@@ -40,13 +41,7 @@ Load a skill only for its matching task:
 - requested HanziHome regression/coverage review:
   `.agents/skills/hanzihome-test-review/SKILL.md`;
 - Supabase migration, RLS, generated types or drift:
-  `.agents/skills/hanzihome-supabase-migration/SKILL.md`;
-- explicit `$shadcn` invocation for registry/upstream component work:
-  `.agents/skills/shadcn/SKILL.md`;
-- requested broad UX audit or UX research:
-  `.agents/skills/ui-ux-pro-max/SKILL.md`;
-- requested Radix-to-Base investigation or migration:
-  `.agents/skills/migrate-radix-to-base/SKILL.md`.
+  `.agents/skills/hanzihome-supabase-migration/SKILL.md`.
 
 Skills are not prerequisites for each other. When a task spans domains, select
 each relevant skill directly; do not load a general skill just because another
@@ -55,15 +50,32 @@ contract and source without a UI or general workflow skill.
 
 Canonical details are loaded by concern, using only the affected sections:
 
-- architecture/state: `docs/architecture/frontend-structure.md`;
+- architecture/state, responsibility/test boundaries and performance evidence:
+  `docs/architecture/frontend-structure.md`;
 - UI semantics/ownership: `docs/ui/component-contracts.md`;
 - component existence/status: `docs/ui/component-inventory.md`;
 - theme/palette: `docs/ui/theme-contract.md`;
 - rendered UI evidence: `docs/ui/ui-verification.md`;
 - navigation, locale or interface copy: `docs/architecture/i18n.md`;
-- high-risk work: `docs/agent/risk-confirmation.md`;
-- creating, editing or auditing skills/instructions only:
-  `docs/agent/skill-authoring.md`.
+- high-risk work: `docs/agent/risk-confirmation.md`.
+
+For skill maintenance, inspect root/nested routing, descriptions, invocation
+metadata and references. Keep `.agents/skills/<skill-name>/SKILL.md` names and
+paths unless every caller is migrated; optional UI metadata belongs in
+`agents/openai.yaml`, with `policy.allow_implicit_invocation: false` for
+explicit-only skills. Skills own triggers/exclusions and domain procedure;
+link to canonical policy instead of repeating it. Before retiring text, map
+each invariant to its owner and move unique knowledge there. Update routing
+and references together, then verify representative trigger and non-trigger
+tasks. Broken references, stale commands and local-contract conflicts block
+completion; manual routing reviews and byte counts are not model benchmarks.
+
+Vendor skills are references within the requested scope. Preserve existing
+TanStack Query/Form/Store owners, component/service terminology and local UI
+contracts; a vendor example does not authorize SWR adoption, a new cache,
+dependency, abstraction or wider refactor. Resolve vendor helper/reference paths
+from the installed `SKILL.md` directory and run helpers from the target project;
+do not copy a global skill into the repository to repair a relative path.
 
 Do not reread unchanged instructions already loaded in the task.
 
@@ -132,13 +144,21 @@ Use Zod for values that cross an actual runtime trust boundary, including:
 - environment/provider/file input;
 - database content when generated/static typing is insufficient at runtime.
 
-Do not create a Zod schema merely to avoid writing an ordinary internal TypeScript union, DOM type, callback type or component prop type.
+Do not create a Zod schema or internal parser to conceal a type mismatch or
+manufacture a DOM type, callback type or component prop contract.
 
 ### Unions and `unknown`
 
-Handwritten unions/discriminated unions are valid for internal compile-time modeling when the contract is local and no runtime parsing is required. Prefer reusing an owner type when one already exists.
+New or modified owned TypeScript must not introduce new union types or introduce
+or propagate `unknown`. Preserve authoritative existing contracts outside the
+requested change; do not expand them or create a compatibility union. Reuse
+the generated/schema/domain/library owner rather than inventing a new shape.
 
-`unknown` is valid at a genuine untrusted/library/error boundary because it forces narrowing. It must be narrowed before entering domain state or rendered props. Do not replace `unknown` with `any` or a cast merely to silence TypeScript.
+If an external/library boundary forces `unknown`, a new union, assertion,
+coercion, parser or public-contract change, stop before implementing a
+workaround. Explain the exact conflicting types, authoritative owner, cause
+and minimum correct contract change. Do not replace the conflict with `any`,
+a cast, a weakened type or changed compiler/validation settings.
 
 ### Hard prohibitions
 
@@ -146,16 +166,21 @@ Owned application source must not introduce:
 
 - explicit `any`;
 - `z.any()` or `z.unknown()` as an unconstrained escape hatch;
-- type assertions used to force an incompatible value through the compiler;
+- type assertions, including `as` and angle-bracket assertions;
 - chained/double assertions;
-- non-null assertions used as data repair;
+- non-null assertions;
 - TypeScript suppressions or TypeScript-related ESLint disables;
 - fake guards/normalizers/coercion added only to hide an internal mismatch;
 - fallback/optional fields invented only to silence TypeScript.
 
 When types conflict, fix the authoritative owner/query/schema/service/store/caller. Do not widen a correct shared contract to accommodate an incorrect consumer.
 
-`scripts/check-source-standards.mjs` intentionally checks only machine-detectable high-value rules: unsafe explicit `any`, unconstrained Zod escape hatches, assertions, non-null assertions, TypeScript suppressions, client/server import boundaries, deprecated Zod APIs, and unreachable owned modules. It does not ban normal TypeScript unions or properly narrowed `unknown`.
+`scripts/check-source-standards.mjs` checks machine-detectable rules including
+unsafe explicit `any`, unconstrained Zod escape hatches, assertions, non-null
+assertions, suppressions and client/server imports. It does not detect every
+new union or propagation of `unknown`; a passing guard does not replace the
+scope/type diff review above. Existing out-of-scope source is not authorization
+to introduce a prohibited construct.
 
 ## 6. Working method
 
