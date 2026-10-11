@@ -1,163 +1,59 @@
-# Daily Reading — implementation handoff
+# Daily Reading — source acquisition contract
 
-Status: source implementation complete; executable and viewport verification still required before release.
+Đối chiếu source ngày 11/10/2026. Đây là reference về source capture/browser article storage, không phải release checklist hoặc plan active. Durable enrichment jobs/runtime/stream/reuse/metrics nằm trong [operations guide](ai-runtime-daily-reading-operations.md); [BYOK contract](ai-runtime-byok.md) sở hữu credentials/task routing. Remaining verification thuộc master/coverage ở docs index.
 
-Shared AI credential/runtime authority: `docs/architecture/ai-runtime-byok.md`.
-
-## Product contract
-
-Daily Reading is a local-first article acquisition feature. Its critical path is:
+## Article-first flow
 
 ```text
-discover -> extract -> validate/rerank -> persist source article -> readable
+discover → extract → validate/rerank → persist source article → readable
+                                           → optional AI enrichment jobs
 ```
 
-AI enrichment is optional and starts only after the source article is durably stored.
+Article acquisition success khác AI enrichment success. Missing/disabled key, quota, invalid provider response hoặc failed module không được hide/invalidate article đã captured. Captured Chinese article immutable; AI enrichments không rewrite source text.
 
-The product must preserve this invariant:
+## Scheduler và settings
 
-```text
-article acquisition success != AI enrichment success
-```
+[Scheduler agent](../../src/features/daily-reading/runtime/DailyReadingSchedulerAgent.tsx) chạy theo authenticated visible browser session, không phải server cron. Default capture time 10:00 `Asia/Ho_Chi_Minh`, user settings có thể đổi; next visible session thực hiện catch-up khi policy cho phép. Persisted scheduled article là ngày capture thành công dù enrichment lỗi. Existing generation lock điều phối multiple tabs; không claim source acquisition chạy khi mọi app/browser session đã đóng.
 
-A missing API key, quota error, invalid AI response or failed grammar/question module must never hide or invalidate an already captured article.
+Settings gồm capture time, HSK level, freshness, topics/reviewed sources, preferred length, diversity/recent-article avoidance, no-match skip/bounded expansion và auto enrichment. Internal quality/bounds vẫn app-owned; settings không mở publisher allowlist hoặc bypass quality validation.
 
-## Release clock and scheduler
+Source test/capture không cần AI key; missing key chỉ chặn learning support và dùng existing Add API Key recovery. Reader dùng được khi enrichment idle/blocked/failed; ready learning modules hiển thị khi data sẵn sàng. Interface tách Source article và AI learning support; source criteria dùng existing progressive disclosure.
 
-The scheduler remains browser-session-owned rather than server cron.
+## Discovery/extraction
 
-- Default capture time is 10:00 in `Asia/Ho_Chi_Minh`; Daily Reading settings can change the local capture time.
-- When an authenticated visible app session reaches/passes the configured time, the scheduler may capture the day's source.
-- If the app was closed, the next visible session performs catch-up.
-- A persisted scheduled article counts as that day's success even when later enrichment fails.
-- Multiple tabs coordinate through the existing Daily Reading lock to avoid duplicate capture.
+[Source server](../../src/features/daily-reading/source/daily-reading-source.server.ts) dùng reviewed RSS/listing sources và bounded GDELT discovery. Metadata ranking không phải final selection authority: extract nhiều candidates rồi rerank validated body.
 
-The application must not claim that Daily Reading runs while every browser/app session is closed.
-
-## Collection settings and policy
-
-User settings may influence:
-
-- capture time;
-- target HSK level;
-- source freshness window;
-- topics;
-- reviewed sources;
-- preferred article length;
-- topic diversity and recent-article avoidance;
-- no-match behavior (`skip-day` vs bounded freshness expansion);
-- whether AI learning support starts automatically after capture.
-
-Internal safety/quality bounds remain application-owned. User settings never expand the reviewed publisher allowlist or bypass content-quality checks.
-
-## Source acquisition
-
-`src/features/daily-reading/source/daily-reading-source.server.ts` owns discovery orchestration.
-
-Discovery uses reviewed official RSS/listing sources plus bounded GDELT discovery. Metadata ranking is not the final selection authority. The collector extracts multiple candidates and reranks the validated content.
-
-Extraction priority is:
+Extraction priority giữ source-specific precedence:
 
 ```text
 JSON-LD articleBody
--> itemprop=articleBody
--> semantic <article>
--> reviewed/known content containers
--> <main>
--> generic paragraph fallback
+→ itemprop=articleBody
+→ semantic article
+→ reviewed content containers
+→ main
+→ generic paragraph fallback
 ```
 
-The parser preserves cleaned paragraph boundaries. Quality validation evaluates extraction confidence, Chinese density, paragraph coherence, title/body consistency, freshness, preferred length, truncation and date evidence.
+Parser giữ cleaned paragraph boundaries. Validation xét extraction confidence, Chinese density, paragraph coherence, title/body consistency, freshness/preferred length, truncation/date evidence. Early candidate batch fail thì thử bounded later batches; không coi first eight failures là không có bài.
 
-If an early candidate batch fails quality checks, collection continues through bounded later batches rather than treating the first eight failures as proof that no article exists.
+## Persistence và legacy compatibility
 
-## Article-first persistence
+[Client capture](../../src/features/daily-reading/services/daily-reading.client.ts) nhận validated result, [lưu article](../../src/features/daily-reading/local/daily-reading-storage.client.ts) và chỉ sau đó record capture success/telemetry, optionally enqueue enrichment. Telemetry failure không roll article back. Storage read/write failure phải giữ actual failure, không báo capture success từ RAM.
 
-New captures use the current ledger and `source-captured` provenance.
+Current captures có `source-captured` provenance. Dedup dùng article ID, canonical source URL/content fingerprint. Legacy migration additive khi current storage absent; giữ legacy storage cho recovery và label `legacy-adapted`, không giả source-captured. Không remove V1 read/migration support khi chưa có recovery proof.
 
-The browser:
+Article/settings/capture ledger vẫn browser-local; enrichment jobs, runtime metadata và validated results có server persistence qua [job service](../../src/features/daily-reading/enrichment/daily-reading-enrichment-jobs.server.ts) và existing migrations. Do đó không mô tả toàn feature là “không có Supabase schema”. Server jobs tiếp tục sau page leave; source capture scheduler vẫn browser-owned. Article text không trở thành hosted article library chỉ vì job metadata được lưu server.
 
-1. receives a validated source-capture response;
-2. writes the immutable Chinese article to Daily Reading storage;
-3. verifies the stored value;
-4. only then records capture success/run telemetry;
-5. optionally starts AI enrichment.
+## Pinyin và enrichment evidence
 
-Telemetry failure after article persistence cannot roll the article back.
+Current article contract không persist Pinyin. Title/paragraph/vocabulary display derive từ contextual-pronunciation và Reader settings, không dùng auto-generated pronunciation như source of truth. Legacy Pinyin/review fields không copy vào current article contract.
 
-Deduplication uses article ID, canonical source URL and content fingerprint.
+Independent translation/vocabulary/grammar/questions modules giữ ready siblings khi một module fail. Shared personal BYOK runtime resolve task/key/model; assigned tasks không fallback sang app-wide provider key. Translation giữ source paragraph IDs/order; vocabulary phải có trong source; grammar evidence match sentence; question evidence trỏ valid source paragraph/phrase và required question coverage.
 
-Legacy local data is migrated additively when current storage is absent. Legacy storage remains untouched for rollback/recovery during the migration period, and migrated content is labeled `legacy-adapted` rather than `source-captured`.
+Progressive translation, terminal reconciliation, request signatures/reuse và live operations procedure có một owner ở operations guide; không duplicate implementation/release queue ở đây.
 
-## Pinyin contract
+## Verification boundary
 
-Daily Reading persists no pinyin fields.
+Existing schema/migration/settings/policy/source/capture/storage/scheduler/enrichment và route/i18n tests là owner proof. Browser acceptance cần capture không key, catch-up/multi-tab, partial enrichment/retry, Add-Key, Pinyin/reload/offline interruption và responsive/focus states theo current coverage. Local controlled pass không chứng minh live publishers/providers/physical devices.
 
-Title/paragraph/vocabulary pinyin is derived at render time through the existing contextual-pronunciation engine and current reader display settings. This avoids treating automatically generated readings as pronunciation source of truth.
-
-Legacy data may still contain historical pinyin and `pinyinReviewStatus`; migration intentionally does not copy those fields into the current article contract.
-
-## AI enrichment
-
-Enrichment modules are independent:
-
-```text
-translation
-vocabulary
-grammar
-questions
-```
-
-Each module owns its own `idle | running | ready | failed | blocked` state and can be retried independently. A later failure must not reset already-ready sibling modules.
-
-All Daily Reading enrichment uses the shared personal-BYOK runtime described in `docs/architecture/ai-runtime-byok.md`. There is no application-wide Gemini/DeepSeek provider-key fallback.
-
-Translation preserves source paragraph IDs/order. Vocabulary must occur in source text. Grammar evidence must match source sentences. Question evidence must point to valid paragraph IDs/source phrases and satisfy the required question-type coverage.
-
-The captured Chinese article is immutable; enrichment must not rewrite it.
-
-## Reader and settings UX
-
-The primary UI separates two concepts:
-
-```text
-Bài nguồn / Source article
-AI hỗ trợ học / AI learning support
-```
-
-Source test and article capture do not require an AI key. A missing key only blocks enrichment and presents the reusable Add API Key recovery interaction.
-
-The reader remains usable when every enrichment module is idle/blocked/failed. Ready enrichment tabs appear as their data becomes available.
-
-Advanced source criteria use progressive disclosure so capture time/target level/source status remain the primary settings.
-
-## Legacy compatibility
-
-The unused legacy `/api/hanzihome/reader/daily-reading/generate` AI route has been removed. Legacy generated-reading schemas remain read-only inputs for browser-local migration so existing saved articles remain recoverable.
-
-Do not remove V1 read/migration support until release verification proves existing browser data remains recoverable.
-
-## Database boundary
-
-Daily Reading adds no Supabase schema/RLS migration and no hosted Daily Reading article persistence. Article/settings/run state remains browser-local by design.
-
-## Focused verification
-
-Run the feature tests and repository gates in an executable checkout. At minimum include the Daily Reading schema/migration/settings/policy/source/capture/storage/scheduler/enrichment tests plus route tests for source capture/enrichment and i18n.
-
-Then run:
-
-```bash
-npm run source:check
-npm run route:check
-npm run ui:check
-npm run api:check
-npm run typecheck
-npm run test:run
-npm run format:check
-npm run check
-```
-
-Manual browser acceptance must cover mobile ~390×844, iPad portrait ~820×1180 and desktop 1440×900 in light/dark; source test/capture without a key; auto capture/catch-up; multi-tab single flight; pinyin toggle; partial enrichment/retry; missing-key/Add-Key; reload persistence; offline/interruption and no overflow/focus regressions.
-
-No executable or viewport gate is considered passed until it is actually run in a dependency/browser environment.
+[Master](../refactors/feature-quality-audit-enhancement-2026-10-04.md) và [coverage](../testing/frontend-flow-coverage.md) giữ remaining acceptance/actual commands. Production migration/deploy vẫn theo risk confirmation, không tự chạy từ runbook.

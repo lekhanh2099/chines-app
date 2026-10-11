@@ -37,7 +37,6 @@ npm run source:check
 npm run route:check
 npm run ui:check
 npm run api:check
-npm run check:hanzihome:perf
 npm run typecheck
 npm run test:run
 ```
@@ -48,9 +47,27 @@ Use the full repository gate before merge/release work:
 npm run check
 ```
 
-`npm run check` runs lint, source/route/UI/API contract checks, the HanziHome performance-boundary guard, type generation and type checking, deterministic tests, formatting verification, the production dependency audit, and a production build.
+`npm run check` runs lint, source/route/UI/API contract checks, type generation and type checking, deterministic tests, formatting verification, the production dependency audit, and a production build.
 
-The GitHub Actions CI workflow runs automatically for pushes to `main` and pull requests; it also remains available through manual `workflow_dispatch`. Run `npm run check` before merge/release work when local feedback is needed.
+The [GitHub Actions workflow](.github/workflows/ci.yml) selects checks from the
+changed owners and affected consumers on push/PR. Code changes run static checks,
+related Node tests (or conservative full fallback), and the relevant mounted
+browser/product E2E cases. Mounted fixtures run in a separate job without
+Supabase; product E2E uses isolated local Supabase. The production app builds once.
+Docs-only changes run formatting without application tests/build.
+
+Manual Run workflow (`workflow_dispatch`) retains full Node, mounted and
+product/SQL verification. `npm run check` remains the full local merge/release
+gate; it is not the automatic affected-selection runner.
+
+Run HanziHome performance checks manually when the change needs them:
+
+```bash
+npm run check:hanzihome:perf
+```
+
+This command checks source boundaries; it does not measure runtime performance.
+Profiling/benchmarks stay on demand with their fixture, mode and result limits.
 
 Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit hook. The full `npm run check` gate remains the release-quality gate.
 
@@ -63,4 +80,8 @@ Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit 
 
 ## Documentation
 
-Start with [docs/README.md](docs/README.md), [current architecture](docs/architecture/current-system.md), and the repository [AGENTS.md](AGENTS.md). Historical local-JSON PRDs are retained for product context; the Hanzi Studio migration contract is documented in the current architecture, with static published content and Supabase-owned new user state.
+Start with [docs/README.md](docs/README.md), [current architecture](docs/architecture/current-system.md), and the repository [AGENTS.md](AGENTS.md). The Hanzi Studio contract lives in the current architecture, with static
+published content and Supabase-owned new user state. Quality work has one
+[master plan](docs/refactors/feature-quality-audit-enhancement-2026-10-04.md),
+with separate results and coverage documents; superseded plans/receipts are
+available through the Git history linked from the docs index.
