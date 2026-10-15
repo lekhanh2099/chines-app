@@ -1,26 +1,24 @@
-import type { Voice } from "edge-tts-ts";
+import type { EdgeTTS, Voice } from "@andresaya/edge-tts";
 import { NextRequest } from "next/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { JsonFieldValue } from "@/types/json";
 
-const { communicate, createClient, getUser, listVoices, stream } = vi.hoisted(() => ({
- communicate: vi.fn(),
+const { createClient, generate, getUser, getVoices } = vi.hoisted(() => ({
  createClient: vi.fn(),
+ generate: vi.fn<EdgeTTS["generate"]>(),
  getUser: vi.fn(),
- listVoices: vi.fn(),
- stream: vi.fn(),
+ getVoices: vi.fn<EdgeTTS["getVoices"]>(),
 }));
 
-vi.mock("edge-tts-ts", () => ({
- listVoices,
- Communicate: class {
-  constructor(text: string, options?: { voice?: string; rate?: string }) {
-   communicate(text, options);
+vi.mock("@andresaya/edge-tts", () => ({
+ EdgeTTS: class {
+  getVoices() {
+   return getVoices();
   }
 
-  stream() {
-   return stream();
+  generate(...args: Parameters<EdgeTTS["generate"]>) {
+   return generate(...args);
   }
  },
 }));
@@ -34,11 +32,10 @@ const xiaoxiaoVoice: Voice = {
  ShortName: "zh-CN-XiaoxiaoNeural",
  Gender: "Female",
  Locale: "zh-CN",
- SuggestedCodec: "audio-24khz-48kbitrate-mono-mp3",
  FriendlyName: "Microsoft Xiaoxiao Online (Natural) - Chinese (Mainland)",
- Status: "GA",
+ LocalName: "Xiaoxiao",
  VoiceTag: {
-  ContentCategories: ["General"],
+  TailoredScenarios: ["General"],
   VoicePersonalities: ["Warm"],
  },
 };
@@ -50,11 +47,6 @@ const taiwanVoice: Voice = {
  FriendlyName: "Microsoft HsiaoChen Online (Natural) - Chinese (Taiwan)",
 };
 
-async function* audioChunks() {
- yield { type: "audio", data: new Uint8Array([1, 2]) };
- yield { type: "audio", data: new Uint8Array([3]) };
-}
-
 function postRequest(body: JsonFieldValue) {
  return new NextRequest("https://app.example/api/tts", {
   method: "POST",
@@ -65,15 +57,21 @@ function postRequest(body: JsonFieldValue) {
 
 describe("/api/tts", () => {
  beforeEach(() => {
-  communicate.mockReset();
   createClient.mockReset();
+  generate.mockReset();
   getUser.mockReset();
-  listVoices.mockReset();
-  stream.mockReset();
+  getVoices.mockReset();
   createClient.mockResolvedValue({ auth: { getUser } });
   getUser.mockResolvedValue({ data: { user: { id: "user-1" } } });
-  listVoices.mockResolvedValue([xiaoxiaoVoice, taiwanVoice]);
-  stream.mockImplementation(audioChunks);
+  getVoices.mockResolvedValue([xiaoxiaoVoice, taiwanVoice]);
+  generate.mockResolvedValue({
+   audio: Buffer.from([1, 2, 3]),
+   format: "mp3",
+   outputFormat: "audio-24khz-48kbitrate-mono-mp3",
+   wordBoundaries: [],
+   sentenceBoundaries: [],
+   duration: 1,
+  });
  });
 
  it("rejects requests without an authenticated user", async () => {
@@ -86,7 +84,8 @@ describe("/api/tts", () => {
 
   expect(getResponse.status).toBe(401);
   expect(postResponse.status).toBe(401);
-  expect(listVoices).not.toHaveBeenCalled();
+  expect(getVoices).not.toHaveBeenCalled();
+  expect(generate).not.toHaveBeenCalled();
  });
 
  it("returns only Mainland Mandarin voices", async () => {
@@ -119,33 +118,100 @@ describe("/api/tts", () => {
   expect(longText.status).toBe(400);
   expect(invalidRate.status).toBe(400);
   expect(invalidVoice.status).toBe(400);
-  expect(communicate).not.toHaveBeenCalled();
+  expect(generate).not.toHaveBeenCalled();
  });
 
- it("streams Edge audio as one private MPEG response", async () => {
+ it("returns Edge audio as one private MPEG response", async () => {
   const response = await POST(
    postRequest({ text: "你好", voice: xiaoxiaoVoice.ShortName, rate: 0.9 }),
   );
 
   expect(response.status).toBe(200);
   expect(response.headers.get("Content-Type")).toBe("audio/mpeg");
+  expect(response.headers.get("Content-Length")).toBe("3");
   expect(response.headers.get("Cache-Control")).toBe("private, no-store");
   expect(new Uint8Array(await response.arrayBuffer())).toEqual(new Uint8Array([1, 2, 3]));
-  expect(communicate).toHaveBeenCalledWith("你好", {
-   voice: xiaoxiaoVoice.ShortName,
+  expect(generate).toHaveBeenCalledWith("你好", xiaoxiaoVoice.ShortName, {
    rate: "-10%",
   });
  });
 
  it("returns 502 when Edge synthesis fails", async () => {
-  stream.mockImplementation(async function* failingStream() {
-   throw new Error("WebSocket unavailable");
+  generate.mockRejectedValue(new Error("WebSocket unavailable"));
+
+  const response = await POST(
+   postRequest({ text: "你好", voice: xiaoxiaoVoice.ShortName, rate: 1 }),
+  );
+
+  expect(response.status).toBe(502);
+  await expect(response.json()).resolves.toEqual({ error: "Không thể tạo audio" });
+ });
+
+ it.each([
+  { rate: 0.75, percentage: "-25%" },
+  { rate: 0.9, percentage: "-10%" },
+  { rate: 1, percentage: "+0%" },
+  { rate: 1.1, percentage: "+10%" },
+  { rate: 1.25, percentage: "+25%" },
+ ])("preserves synthesis rate $rate", async ({ rate, percentage }) => {
+  const response = await POST(postRequest({ text: "你好", voice: xiaoxiaoVoice.ShortName, rate }));
+
+  expect(response.status).toBe(200);
+  expect(generate).toHaveBeenCalledWith("你好", xiaoxiaoVoice.ShortName, { rate: percentage });
+ });
+
+ it("preserves every character and joins audio across UTF-8 synthesis chunks", async () => {
+  const text = "你".repeat(1_365) + "😀<&>尾".repeat(600);
+  const response = await POST(postRequest({ text, voice: xiaoxiaoVoice.ShortName, rate: 0.9 }));
+  const synthesisTexts = generate.mock.calls.map(([synthesisText]) => synthesisText);
+
+  expect(response.status).toBe(200);
+  expect(synthesisTexts.length).toBeGreaterThan(1);
+  expect(synthesisTexts.join("")).toBe(text);
+  for (const synthesisText of synthesisTexts) {
+   expect(Buffer.byteLength(synthesisText)).toBeLessThanOrEqual(4_096);
+   expect(synthesisText.isWellFormed()).toBe(true);
+   expect(generate).toHaveBeenCalledWith(synthesisText, xiaoxiaoVoice.ShortName, { rate: "-10%" });
+  }
+  expect(new Uint8Array(await response.arrayBuffer())).toEqual(
+   new Uint8Array(synthesisTexts.flatMap(() => [1, 2, 3])),
+  );
+ });
+
+ it("rejects empty audio from the client", async () => {
+  generate.mockResolvedValue({
+   audio: Buffer.alloc(0),
+   format: "mp3",
+   outputFormat: "audio-24khz-48kbitrate-mono-mp3",
+   wordBoundaries: [],
+   sentenceBoundaries: [],
+   duration: 0,
   });
 
   const response = await POST(
    postRequest({ text: "你好", voice: xiaoxiaoVoice.ShortName, rate: 1 }),
   );
 
+  expect(response.status).toBe(502);
+  await expect(response.json()).resolves.toEqual({ error: "Không thể tạo audio" });
+ });
+
+ it("does not return partial audio when a later synthesis chunk fails", async () => {
+  generate.mockImplementationOnce(async () => ({
+   audio: Buffer.from([1, 2, 3]),
+   format: "mp3",
+   outputFormat: "audio-24khz-48kbitrate-mono-mp3",
+   wordBoundaries: [],
+   sentenceBoundaries: [],
+   duration: 1,
+  }));
+  generate.mockRejectedValue(new Error("WebSocket unavailable"));
+
+  const response = await POST(
+   postRequest({ text: "你".repeat(2_000), voice: xiaoxiaoVoice.ShortName, rate: 1 }),
+  );
+
+  expect(generate).toHaveBeenCalledTimes(2);
   expect(response.status).toBe(502);
   await expect(response.json()).resolves.toEqual({ error: "Không thể tạo audio" });
  });

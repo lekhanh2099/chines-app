@@ -17,7 +17,7 @@ const legacyHanziHomeRedirects = [
 const nextConfig: NextConfig = {
  devIndicators: false,
  allowedDevOrigins: ["127.0.0.1"],
- serverExternalPackages: ["edge-tts-ts"],
+ serverExternalPackages: ["@andresaya/edge-tts"],
  turbopack: {
   root: process.cwd(),
  },

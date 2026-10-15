@@ -50,6 +50,7 @@
   "prepare": "husky"
  },
  "dependencies": {
+  "@andresaya/edge-tts": "^1.9.1",
   "@base-ui/react": "^1.8.0",
   "@codemirror/lang-html": "^6.4.12",
   "@lexical/code": "^0.52.0",
@@ -71,7 +72,6 @@
   "class-variance-authority": "^0.7.1",
   "clsx": "^2.1.1",
   "date-fns": "^4.4.0",
-  "edge-tts-ts": "^1.0.0",
   "hanzi-writer": "^3.7.3",
   "lexical": "^0.52.0",
   "lucide-react": "^1.50.0",

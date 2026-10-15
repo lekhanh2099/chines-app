@@ -1,13 +1,14 @@
 import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { Communicate, listVoices } from "edge-tts-ts";
+import { EdgeTTS } from "@andresaya/edge-tts";
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
 
 export const runtime = "nodejs";
 
 const MAX_TEXT_LENGTH = 10_000;
+const MAX_SYNTHESIS_TEXT_BYTES = 4_096;
 const VOICE_LIST_TTL_MS = 5 * 60 * 1_000;
 const supportedRates = [0.75, 0.9, 1, 1.1, 1.25];
 const ttsSchema = z.object({
@@ -28,7 +29,7 @@ async function getAuthenticatedUser() {
  return user;
 }
 
-type EdgeVoiceList = Awaited<ReturnType<typeof listVoices>>;
+type EdgeVoiceList = Awaited<ReturnType<EdgeTTS["getVoices"]>>;
 
 let voiceListCache: { expiresAt: number; voices: EdgeVoiceList } | null = null;
 let voiceListInFlight: Promise<EdgeVoiceList> | null = null;
@@ -42,7 +43,7 @@ async function getMandarinVoices() {
   const voices = await voiceListInFlight;
   return voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
  }
- voiceListInFlight = listVoices();
+ voiceListInFlight = new EdgeTTS({ voicesCacheTtl: 0 }).getVoices();
  let voices: EdgeVoiceList;
  try {
   voices = await voiceListInFlight;
@@ -105,15 +106,30 @@ export async function POST(request: NextRequest) {
    return NextResponse.json({ error: "Giọng Mandarin không hợp lệ" }, { status: 400 });
   }
 
-  const communication = new Communicate(text, {
-   voice,
-   rate: formatRate(rate),
-  });
-  const chunks: Uint8Array[] = [];
-  for await (const chunk of communication.stream()) {
-   if (chunk.type === "audio") chunks.push(chunk.data);
+  const synthesisTexts: string[] = [];
+  let synthesisText = "";
+  let synthesisTextBytes = 0;
+  for (const character of text) {
+   const characterBytes = Buffer.byteLength(character);
+   if (synthesisTextBytes + characterBytes > MAX_SYNTHESIS_TEXT_BYTES) {
+    synthesisTexts.push(synthesisText);
+    synthesisText = "";
+    synthesisTextBytes = 0;
+   }
+   synthesisText += character;
+   synthesisTextBytes += characterBytes;
   }
-  if (chunks.length === 0) throw new Error("Edge TTS returned no audio");
+  if (synthesisText) synthesisTexts.push(synthesisText);
+
+  const communication = new EdgeTTS();
+  const chunks: Uint8Array[] = [];
+  for (const synthesisText of synthesisTexts) {
+   const { audio } = await communication.generate(synthesisText, voice, {
+    rate: formatRate(rate),
+   });
+   if (audio.length === 0) throw new Error("Edge TTS returned no audio");
+   chunks.push(audio);
+  }
   const buffer = Buffer.concat(chunks);
 
   return new NextResponse(buffer, {
