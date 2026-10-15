@@ -1,14 +1,16 @@
 import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { EdgeTTS } from "@andresaya/edge-tts";
+import { EdgeTTSError, type EdgeTTS } from "@andresaya/edge-tts";
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
+import { EdgeTTSV2 } from "./edge-tts.server";
 
 export const runtime = "nodejs";
 
 const MAX_TEXT_LENGTH = 10_000;
 const MAX_SYNTHESIS_TEXT_BYTES = 4_096;
+const MAX_SYNTHESIS_RETRIES = 2;
 const VOICE_LIST_TTL_MS = 5 * 60 * 1_000;
 const supportedRates = [0.75, 0.9, 1, 1.1, 1.25];
 const ttsSchema = z.object({
@@ -43,7 +45,7 @@ async function getMandarinVoices() {
   const voices = await voiceListInFlight;
   return voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
  }
- voiceListInFlight = new EdgeTTS({ voicesCacheTtl: 0 }).getVoices();
+ voiceListInFlight = new EdgeTTSV2({ voicesCacheTtl: 0 }).getVoices();
  let voices: EdgeVoiceList;
  try {
   voices = await voiceListInFlight;
@@ -121,14 +123,27 @@ export async function POST(request: NextRequest) {
   }
   if (synthesisText) synthesisTexts.push(synthesisText);
 
-  const communication = new EdgeTTS();
+  const communication = new EdgeTTSV2();
   const chunks: Uint8Array[] = [];
   for (const synthesisText of synthesisTexts) {
-   const { audio } = await communication.generate(synthesisText, voice, {
-    rate: formatRate(rate),
-   });
-   if (audio.length === 0) throw new Error("Edge TTS returned no audio");
-   chunks.push(audio);
+   for (let attempt = 0; attempt <= MAX_SYNTHESIS_RETRIES; attempt += 1) {
+    try {
+     const { audio } = await communication.generate(synthesisText, voice, {
+      rate: formatRate(rate),
+     });
+     if (audio.length === 0) throw new Error("Edge TTS returned no audio");
+     chunks.push(audio);
+     break;
+    } catch (error) {
+     if (
+      !(error instanceof EdgeTTSError && error.status === 429) ||
+      attempt === MAX_SYNTHESIS_RETRIES
+     ) {
+      throw error;
+     }
+     await new Promise<void>((resolve) => setTimeout(resolve, 1_000 * 2 ** attempt));
+    }
+   }
   }
   const buffer = Buffer.concat(chunks);
 

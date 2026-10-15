@@ -1,8 +1,11 @@
 import type { EdgeTTS, Voice } from "@andresaya/edge-tts";
+import { EdgeTTSError } from "@andresaya/edge-tts";
 import { NextRequest } from "next/server";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { JsonFieldValue } from "@/types/json";
+
+vi.mock("server-only", () => ({}));
 
 const { createClient, generate, getUser, getVoices } = vi.hoisted(() => ({
  createClient: vi.fn(),
@@ -11,7 +14,8 @@ const { createClient, generate, getUser, getVoices } = vi.hoisted(() => ({
  getVoices: vi.fn<EdgeTTS["getVoices"]>(),
 }));
 
-vi.mock("@andresaya/edge-tts", () => ({
+vi.mock("@andresaya/edge-tts", async (importOriginal) => ({
+ ...(await importOriginal<typeof import("@andresaya/edge-tts")>()),
  EdgeTTS: class {
   getVoices() {
    return getVoices();
@@ -56,6 +60,10 @@ function postRequest(body: JsonFieldValue) {
 }
 
 describe("/api/tts", () => {
+ afterEach(() => {
+  vi.useRealTimers();
+ });
+
  beforeEach(() => {
   createClient.mockReset();
   generate.mockReset();
@@ -143,6 +151,39 @@ describe("/api/tts", () => {
    postRequest({ text: "你好", voice: xiaoxiaoVoice.ShortName, rate: 1 }),
   );
 
+  expect(response.status).toBe(502);
+  await expect(response.json()).resolves.toEqual({ error: "Không thể tạo audio" });
+  expect(generate).toHaveBeenCalledTimes(1);
+ });
+
+ it("waits before retrying a temporary upstream 429", async () => {
+  vi.useFakeTimers();
+  generate.mockRejectedValueOnce(
+   new EdgeTTSError("Too many requests", "HANDSHAKE", { status: 429 }),
+  );
+
+  const pending = POST(postRequest({ text: "你好", voice: xiaoxiaoVoice.ShortName, rate: 1 }));
+  await vi.advanceTimersByTimeAsync(999);
+  expect(generate).toHaveBeenCalledTimes(1);
+  await vi.advanceTimersByTimeAsync(1);
+  const response = await pending;
+
+  expect(response.status).toBe(200);
+  expect(generate).toHaveBeenCalledTimes(2);
+  expect(new Uint8Array(await response.arrayBuffer())).toEqual(new Uint8Array([1, 2, 3]));
+ });
+
+ it("stops after two retries when upstream 429 persists", async () => {
+  vi.useFakeTimers();
+  generate.mockRejectedValue(new EdgeTTSError("Too many requests", "HANDSHAKE", { status: 429 }));
+
+  const pending = POST(postRequest({ text: "你好", voice: xiaoxiaoVoice.ShortName, rate: 1 }));
+  await vi.advanceTimersByTimeAsync(1_000);
+  expect(generate).toHaveBeenCalledTimes(2);
+  await vi.advanceTimersByTimeAsync(2_000);
+  const response = await pending;
+
+  expect(generate).toHaveBeenCalledTimes(3);
   expect(response.status).toBe(502);
   await expect(response.json()).resolves.toEqual({ error: "Không thể tạo audio" });
  });
