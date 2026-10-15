@@ -56,12 +56,12 @@ describe("navigation configuration", () => {
   expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
  });
 
- it("groups the three textbook curricula beside HSK inside the learning journey", () => {
+ it("groups the textbook curricula beside HSK inside the learning journey", () => {
   expect(navigationGroups[0]?.sections[2]).toMatchObject({
    id: "textbooks",
    messageKey: "navigation.sections.textbooks",
    collapsible: true,
-   itemIds: ["businessChinese", "chineseBridge", "readingComprehension"],
+   itemIds: ["businessChinese", "chineseBridge", "readingComprehension", "spokenChinese"],
   });
  });
 
@@ -94,6 +94,7 @@ describe("navigation configuration", () => {
   expect(navigationItems.businessChinese.href).toBe("/hsk/han-thuong-mai");
   expect(navigationItems.chineseBridge.href).toBe("/hsk/nhip-cau-han-ngu");
   expect(navigationItems.readingComprehension.href).toBe("/hsk/doc-hieu");
+  expect(navigationItems.spokenChinese.href).toBe("/hsk/khau-ngu-tc1");
  });
 
  it("hides engineering destinations without the HanziHome content capability", () => {

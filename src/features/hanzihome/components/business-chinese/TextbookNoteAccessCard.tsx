@@ -35,7 +35,9 @@ export function TextbookNoteAccessCard({
    {
     lessonId: lesson.id,
     relationType: "main",
-    title: `${lesson.bookLabel} · Bài ${lesson.number} · ${lesson.title}`,
+    title: lesson.rawTitle.startsWith("复习")
+     ? `${lesson.bookLabel} · ${lesson.title}`
+     : `${lesson.bookLabel} · Bài ${lesson.number} · ${lesson.title}`,
     category: "general",
     tags: ["textbook", lesson.bookKey, lesson.id, "lesson-note"],
     content: createTextbookPersonalNoteContent(lesson),

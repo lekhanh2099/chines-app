@@ -74,6 +74,7 @@ describe("PwaServiceWorkerRegister", () => {
     "/vi/hsk/han-thuong-mai",
     "/vi/hsk/nhip-cau-han-ngu",
     "/vi/hsk/doc-hieu",
+    "/vi/hsk/khau-ngu-tc1",
    ],
   });
  });

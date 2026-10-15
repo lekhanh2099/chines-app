@@ -11,6 +11,7 @@ const chineseSpeechSegmentPattern =
 export function buildTextbookHref(book: TextbookLesson["bookKey"], lessonNumber: number) {
  if (book === "nhip-cau") return `/hsk/nhip-cau-han-ngu?lesson=${lessonNumber}`;
  if (book === "doc-hieu") return `/hsk/doc-hieu?lesson=${lessonNumber}`;
+ if (book === "khau-ngu") return `/hsk/khau-ngu-tc1?lesson=${lessonNumber}`;
  return `/hsk/han-thuong-mai?book=${book}&lesson=${lessonNumber}`;
 }
 

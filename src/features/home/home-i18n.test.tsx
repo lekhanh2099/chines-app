@@ -7,6 +7,7 @@ import { ContinueLearningPanel } from "@/features/home/components/ContinueLearni
 import { HomeLearningPulse } from "@/features/home/components/HomeLearningPulse";
 import { RecentLearningActivityPanel } from "@/features/home/components/RecentLearningActivityPanel";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
+import { TodayFocusWidget } from "@/features/home/components/TodayFocusWidget";
 import type { HomeLessonTarget } from "@/features/home/types";
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
@@ -37,6 +38,54 @@ const localeCases = [
 }>;
 
 describe("Home messages", () => {
+ it("keeps a resumed Khẩu ngữ review title in both continuation surfaces", async () => {
+  const messages = await loadAppMessages("vi");
+  const review = {
+   ...lesson,
+   href: "/hsk/khau-ngu-tc1?lesson=24&tab=practice",
+   title: "ÔN TẬP 4: 国际婚姻",
+   titleZh: "",
+   courseTitle: "Khẩu ngữ Trung cấp 1",
+   lessonNumber: 24,
+   module: "practice",
+  } satisfies HomeLessonTarget;
+  const courses = [
+   {
+    id: "static:khau-ngu",
+    title: review.courseTitle,
+    books: [{ id: "static:khau-ngu", title: review.courseTitle, lesson: review }],
+   },
+  ];
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <ContinueLearningPanel courses={courses} unavailable={false} />
+    <TodayFocusWidget
+     courses={courses}
+     pulse={{
+      trackedCount: 0,
+      reviewCount: 0,
+      knownCount: 0,
+      reviewedTodayCount: 0,
+      bookmarkedCount: 0,
+      srsDueCount: 0,
+      learningLoopDueCount: 0,
+      readerCompletedCount: 0,
+      readerDocumentCount: 0,
+      overviewAvailable: true,
+      overviewLoading: false,
+      overviewUnavailable: false,
+      reviewedTodayAvailable: true,
+      reviewedTodayLoading: false,
+      reviewedTodayUnavailable: false,
+     }}
+    />
+   </NextIntlClientProvider>,
+  );
+  expect(markup.match(/ÔN TẬP 4: 国际婚姻/gu)).toHaveLength(3);
+  expect(markup).not.toContain("Bài 24");
+  expect(markup).toContain(review.href.replaceAll("&", "&amp;"));
+ });
+
  it.each(localeCases)("renders the learning continuation chrome for $locale", async (testCase) => {
   const messages = await loadAppMessages(testCase.locale);
   const markup = renderToStaticMarkup(

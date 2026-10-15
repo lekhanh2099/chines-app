@@ -79,10 +79,12 @@ export function ContinueLearningPanel({
              {book.title}
             </Typography>
             <Typography as="span" variant="bodySmall" wrapping="breakWords">
-             {t("continueLearning.lesson", {
-              number: lesson.lessonNumber,
-              title: lesson.titleZh || lesson.title,
-             })}
+             {lesson.title.startsWith("ÔN TẬP ")
+              ? lesson.title
+              : t("continueLearning.lesson", {
+                 number: lesson.lessonNumber,
+                 title: lesson.titleZh || lesson.title,
+                })}
             </Typography>
             <Typography as="span" variant="caption" tone="muted">
              {lesson.isRecent ? t("continueLearning.resume") : t("continueLearning.start")} ·{" "}
@@ -117,10 +119,12 @@ export function ContinueLearningPanel({
              {book.title} · {moduleLabel ?? t("modules.overview")}
             </Typography>
             <Typography as="span" variant="bodySmall" weight="bold" wrapping="breakWords">
-             {t("continueLearning.lesson", {
-              number: lesson.lessonNumber,
-              title: lesson.titleZh || lesson.title,
-             })}
+             {lesson.title.startsWith("ÔN TẬP ")
+              ? lesson.title
+              : t("continueLearning.lesson", {
+                 number: lesson.lessonNumber,
+                 title: lesson.titleZh || lesson.title,
+                })}
             </Typography>
             <Typography as="span" variant="caption" tone="muted">
              {t("continueLearning.resume")}

@@ -41,6 +41,7 @@ const localeCases = [
   textbooks: "Giáo trình",
   chineseBridge: "Nhịp cầu Hán ngữ",
   readingComprehension: "Đọc hiểu",
+  spokenChinese: "Khẩu ngữ Trung cấp 1",
   dataQuality: "Chất lượng dữ liệu",
   apiDocs: "API & tích hợp",
   tts: "Giọng đọc",
@@ -53,6 +54,7 @@ const localeCases = [
   textbooks: "Textbooks",
   chineseBridge: "Chinese Bridge",
   readingComprehension: "Reading comprehension",
+  spokenChinese: "Intermediate Spoken Chinese 1",
   dataQuality: "Data quality",
   apiDocs: "API & integrations",
   tts: "Text to speech",
@@ -65,6 +67,7 @@ const localeCases = [
   textbooks: "教材",
   chineseBridge: "桥梁",
   readingComprehension: "阅读理解",
+  spokenChinese: "中级汉语口语 1",
   dataQuality: "数据质量",
   apiDocs: "API 与集成",
   tts: "语音",
@@ -77,6 +80,7 @@ const localeCases = [
  textbooks: string;
  chineseBridge: string;
  readingComprehension: string;
+ spokenChinese: string;
  dataQuality: string;
  apiDocs: string;
  tts: string;
@@ -93,6 +97,7 @@ describe("Sidebar translations", () => {
    textbooks,
    chineseBridge,
    readingComprehension,
+   spokenChinese,
    dataQuality,
    apiDocs,
    tts,
@@ -110,6 +115,7 @@ describe("Sidebar translations", () => {
    expect(markup).toContain(textbooks);
    expect(markup).toContain(chineseBridge);
    expect(markup).toContain(readingComprehension);
+   expect(markup).toContain(spokenChinese);
    expect(markup).not.toContain(dataQuality);
    expect(markup).not.toContain(apiDocs);
    expect(markup).not.toContain(tts);
@@ -144,7 +150,7 @@ describe("Sidebar translations", () => {
   }
  });
 
- it.each(["/hsk/han-thuong-mai", "/hsk/nhip-cau-han-ngu", "/hsk/doc-hieu"])(
+ it.each(["/hsk/han-thuong-mai", "/hsk/nhip-cau-han-ngu", "/hsk/doc-hieu", "/hsk/khau-ngu-tc1"])(
   "activates only the selected textbook destination on %s",
   async (pathname) => {
    currentPathname = pathname;

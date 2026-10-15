@@ -165,7 +165,7 @@ function OfflineLessonLibrary({ ownerId }: { ownerId: string }) {
      className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"
      aria-label={t("offlineStudy.textbooks")}
     >
-     {getTextbookCatalogForBookKeys(["tm3", "nhip-cau", "doc-hieu"]).map((book) => (
+     {getTextbookCatalogForBookKeys(["tm3", "nhip-cau", "doc-hieu", "khau-ngu"]).map((book) => (
       <li key={book.id}>
        <Card padding="md" className="grid h-full gap-3">
         <Typography as="h2" variant="sectionTitle">
@@ -205,7 +205,7 @@ export function OfflineStudyWorkspace() {
    </Card>
   );
  }
- const books = getTextbookCatalogForBookKeys(["tm3", "nhip-cau", "doc-hieu"]);
+ const books = getTextbookCatalogForBookKeys(["tm3", "nhip-cau", "doc-hieu", "khau-ngu"]);
  const book = books.find((item) => item.key === searchParams.get("book"));
  const summary =
   book?.lessons.find((item) => item.number === Number(searchParams.get("lesson"))) ??

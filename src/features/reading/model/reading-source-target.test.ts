@@ -10,6 +10,7 @@ describe("reader source targets", () => {
   "/hsk/han-thuong-mai?book=tm2&lesson=1",
   "/hsk/nhip-cau-han-ngu?lesson=2",
   "/hsk/doc-hieu?lesson=3",
+  "/hsk/khau-ngu-tc1?lesson=9",
  ])("preserves the textbook route and lesson for %s", (baseHref) => {
   const target = {
    source: "reader-highlight",

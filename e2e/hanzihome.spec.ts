@@ -453,6 +453,12 @@ for (const book of [
   first: "UNIT 1 – TOÀN BỘ 5 BÀI",
   second: "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
  },
+ {
+  key: "khau-ngu",
+  path: "khau-ngu-tc1",
+  first: "BÀI 1: 让我们认识一下，好吗？",
+  second: "BÀI 2: 健康第一",
+ },
 ]) {
  test(`reopens static textbook ${book.key} offline with local lesson, tab and resume`, async ({
   page,
@@ -463,7 +469,7 @@ for (const book of [
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/vi/offline");
   await expect(page.getByRole("list", { name: "Giáo trình có sẵn", exact: true })).toBeVisible();
-  await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(3);
+  await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(4);
   await expect(page.getByText("Hán thương mại 2", { exact: true })).toHaveCount(0);
   await page.evaluate(async () => {
    await navigator.serviceWorker.ready;
@@ -516,6 +522,15 @@ for (const book of [
     "aria-selected",
     "true",
    );
+   if (book.key === "khau-ngu") {
+    await page.goto("/vi/offline?book=khau-ngu&lesson=5&tab=practice");
+    const advertisement = page.locator(
+     'img[src="/textbooks/khau-ngu/lesson-05-advertisements.png"]',
+    );
+    await advertisement.scrollIntoViewIfNeeded();
+    await expect(advertisement).toBeVisible();
+    await expect(advertisement).toHaveJSProperty("naturalWidth", 1190);
+   }
    expect(navigationRequests).toEqual([]);
   } finally {
    await context.setOffline(false);
@@ -532,7 +547,7 @@ test("keeps offline textbook focus, locale, mobile and unavailable-book controls
  await page.setViewportSize({ width: 1440, height: 900 });
  await page.goto("/vi/offline");
  await expect(page.getByRole("list", { name: "Giáo trình có sẵn", exact: true })).toBeVisible();
- await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(3);
+ await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(4);
  await expect(page.getByText("Hán thương mại 2", { exact: true })).toHaveCount(0);
  await page.evaluate(async () => {
   await navigator.serviceWorker.ready;
@@ -573,14 +588,14 @@ test("keeps offline textbook focus, locale, mobile and unavailable-book controls
   await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toBeDisabled();
   await focus.click();
   await page.getByRole("button", { name: "Bài trên máy", exact: true }).click();
-  await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(3);
+  await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(4);
   for (const localized of [
    { locale: "en", title: "Offline study", label: "Open textbook" },
    { locale: "zh-CN", title: "离线学习", label: "打开教材" },
   ]) {
    await page.goto(`/${localized.locale}/offline`);
    await expect(page.getByRole("heading", { name: localized.title, exact: true })).toBeVisible();
-   await expect(page.getByRole("button", { name: localized.label, exact: true })).toHaveCount(3);
+   await expect(page.getByRole("button", { name: localized.label, exact: true })).toHaveCount(4);
   }
   await page.setViewportSize({ width: 412, height: 915 });
   await page.goto("/vi/offline?book=nhip-cau&lesson=1&tab=text");

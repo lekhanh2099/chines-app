@@ -483,7 +483,10 @@ export function dictationSourcesFromTextbook(
     }
    }
 
-   const zhTurn = splitDialogueTurn(rawZh);
+   const zhTurn =
+    block.translation !== undefined
+     ? { speaker: block.speaker ?? "", content: rawZh }
+     : splitDialogueTurn(rawZh);
    const cleanZh = (zhTurn.content || rawZh).trim();
    if (!cleanZh || !containsHanziText(cleanZh)) continue;
 

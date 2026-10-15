@@ -4,7 +4,17 @@ const STATIC_CACHE = `hanzihome-static-${CACHE_VERSION}`;
 const OFFLINE_OWNER_CACHE = "hanzihome-offline-owner";
 const OFFLINE_OWNER_CACHE_PATH = "/__hanzihome-offline-owner";
 
-const PRECACHE_ASSETS = ["/favicon.svg"];
+const PRECACHE_ASSETS = [
+ "/favicon.svg",
+ "/textbooks/khau-ngu/lesson-05-advertisements.png",
+ "/textbooks/khau-ngu/lesson-06-lamp-cartoon.png",
+ "/textbooks/khau-ngu/lesson-07-advertisement.png",
+ "/textbooks/khau-ngu/lesson-09-advertisements.png",
+ "/textbooks/khau-ngu/lesson-15-concert-posters.png",
+ "/textbooks/khau-ngu/lesson-15-exhibition-posters.png",
+ "/textbooks/khau-ngu/lesson-15-furniture-poster.png",
+ "/textbooks/khau-ngu/lesson-17-relationship-vocabulary.png",
+];
 const OFFLINE_ROUTES = ["/vi/offline", "/en/offline", "/zh-CN/offline"];
 const PRECACHE_ROUTES = [
  ...OFFLINE_ROUTES,
@@ -12,6 +22,7 @@ const PRECACHE_ROUTES = [
  "/vi/hsk/han-thuong-mai",
  "/vi/hsk/nhip-cau-han-ngu",
  "/vi/hsk/doc-hieu",
+ "/vi/hsk/khau-ngu-tc1",
 ];
 
 /**
@@ -226,7 +237,9 @@ self.addEventListener("fetch", (event) => {
           ? "nhip-cau"
           : textbookPath === "/hsk/doc-hieu"
             ? "doc-hieu"
-            : null;
+            : textbookPath === "/hsk/khau-ngu-tc1"
+              ? "khau-ngu"
+              : null;
       if (book) target.searchParams.set("book", book);
       for (const key of ["courseId", "bookId", "lesson", "lessonId", "module", "tab"]) {
        const value = url.searchParams.get(key);

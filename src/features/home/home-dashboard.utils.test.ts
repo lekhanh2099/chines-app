@@ -187,7 +187,7 @@ describe("Home textbook continuation", () => {
   expect(groups[0]?.books[1]?.lesson?.href).toBe(
    "/hanzihome?courseId=hanyu-q3&bookId=b&lesson=1&module=vocab",
   );
-  expect(groups).toHaveLength(4);
+  expect(groups).toHaveLength(5);
   expect(
    groups.flatMap((group) => group.books).some((book) => book.lesson?.href.includes("book=tm2")),
   ).toBe(false);
@@ -215,7 +215,21 @@ describe("Home textbook continuation", () => {
    getTextbookCatalog(),
    {},
   );
-  expect(groups).toHaveLength(3);
+  expect(groups).toHaveLength(4);
   expect(groups.every((group) => group.books[0]?.lesson?.isRecent === false)).toBe(true);
+  expect(groups.find((group) => group.id === "static:khau-ngu")?.books[0]?.lesson).toMatchObject({
+   href: "/hsk/khau-ngu-tc1?lesson=1&tab=all",
+   lessonNumber: 1,
+  });
+ });
+ it("resumes the original Khẩu ngữ lesson number and its saved module", () => {
+  const groups = buildHomeCourseGroups(catalog, getTextbookCatalog(), {
+   bookResume: { "static:khau-ngu": { lessonId: "khau-ngu-lesson-09", module: "practice" } },
+  });
+  expect(groups.find((group) => group.id === "static:khau-ngu")?.books[0]?.lesson).toMatchObject({
+   href: "/hsk/khau-ngu-tc1?lesson=9&tab=practice",
+   lessonNumber: 9,
+   isRecent: true,
+  });
  });
 });

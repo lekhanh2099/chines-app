@@ -3,6 +3,7 @@ import { z } from "zod";
 import businessChineseSeed from "./business-chinese.json";
 import chineseBridgeSeed from "./nhip-cau.json";
 import readingComprehensionSeed from "./doc-hieu.json";
+import spokenChineseSeed from "./khau-ngu.json";
 
 const businessChineseBlockSchema = z.object({
  id: z.string().min(1),
@@ -12,6 +13,14 @@ const businessChineseBlockSchema = z.object({
  translation: z.string().optional(),
  speaker: z.string().optional(),
  answerColumnIndexes: z.array(z.number().int().nonnegative()).optional(),
+ image: z
+  .object({
+   src: z.string().min(1),
+   alt: z.string().min(1),
+   width: z.number().int().positive(),
+   height: z.number().int().positive(),
+  })
+  .optional(),
 });
 
 const businessChineseSectionSchema = z.object({
@@ -64,7 +73,7 @@ const businessChineseCorpusSchema = z.object({
 const businessChineseCorpus = businessChineseCorpusSchema.parse(businessChineseSeed);
 
 const textbookLessonSchema = businessChineseLessonSchema.extend({
- bookKey: z.enum(["tm2", "tm3", "nhip-cau", "doc-hieu"]),
+ bookKey: z.enum(["tm2", "tm3", "nhip-cau", "doc-hieu", "khau-ngu"]),
  number: z.number().int().positive(),
 });
 
@@ -85,7 +94,18 @@ const readingComprehensionBook = textbookBookSchema
   lessons: z.array(textbookLessonSchema.extend({ bookKey: z.literal("doc-hieu") })).length(18),
  })
  .parse(readingComprehensionSeed);
-const textbookBooks = [...businessChineseCorpus.books, chineseBridgeBook, readingComprehensionBook];
+const spokenChineseBook = textbookBookSchema
+ .extend({
+  key: z.literal("khau-ngu"),
+  lessons: z.array(textbookLessonSchema.extend({ bookKey: z.literal("khau-ngu") })).length(24),
+ })
+ .parse(spokenChineseSeed);
+const textbookBooks = [
+ ...businessChineseCorpus.books,
+ chineseBridgeBook,
+ readingComprehensionBook,
+ spokenChineseBook,
+];
 
 export type TextbookLesson = z.infer<typeof textbookLessonSchema>;
 

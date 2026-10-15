@@ -107,6 +107,47 @@ function renderWorkspace(element: ReactNode) {
 }
 
 describe("BusinessChineseStudyWorkspace", () => {
+ it("renders the fourth review with hidden source answers and no invented Bài 24 heading", () => {
+  const lesson = getTextbookLesson("khau-ngu", 24);
+  if (!lesson) throw new Error("Expected fourth Khẩu ngữ review.");
+  mockParams = new URLSearchParams("lesson=24&tab=practice");
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
+  );
+  expect(markup).toContain(lesson.title);
+  expect(markup).not.toContain("Bài 24");
+  expect(markup).toContain("Hiện đáp án");
+  expect(markup).not.toContain("正确答案：");
+  expect(markup).toContain("城市交通");
+  expect(markup).toContain("环保知识");
+ });
+
+ it.each([5, 7, 9])(
+  "keeps the school source exercise image and original lesson number for Khẩu ngữ %i",
+  (number) => {
+   const lesson = getTextbookLesson("khau-ngu", number);
+   if (!lesson) throw new Error(`Expected Khẩu ngữ lesson ${number}.`);
+   mockParams = new URLSearchParams(`lesson=${number}&tab=practice`);
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
+   );
+   const images = lesson.sections
+    .flatMap((section) => section.blocks)
+    .flatMap((block) => (block.image ? [block.image] : []));
+   expect(images).toHaveLength(1);
+   for (const image of images) {
+    expect(markup).toContain(`src="${image.src}"`);
+    expect(markup).toContain(`alt="${image.alt}"`);
+    expect(markup).toContain(`width="${image.width}"`);
+    expect(markup).toContain(`height="${image.height}"`);
+   }
+   expect(markup).not.toContain("/_next/image");
+   expect(markup).toContain(lesson.title);
+   expect(markup).not.toContain(`Bài ${number}/5`);
+   expect(markup).not.toContain("Hiện đáp án");
+  },
+ );
+
  it.each(getTextbookCatalog())(
   "omits the duplicate book sidebar for $label",
   (book) => {
@@ -128,7 +169,7 @@ describe("BusinessChineseStudyWorkspace", () => {
   15_000,
  );
 
- it.each(["nhip-cau", "doc-hieu"])(
+ it.each(["nhip-cau", "doc-hieu", "khau-ngu"])(
   "keeps real %s source sections in order with one All-view reader per source text section",
   (bookKey) => {
    const book = getTextbookCatalog().find((item) => item.key === bookKey);

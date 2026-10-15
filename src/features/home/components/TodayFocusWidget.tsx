@@ -144,7 +144,9 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
         </Badge>
        </div>
        <Typography as="h3" variant="body" weight="black" clamp="one">
-        Bài {activeResumeLesson.lessonNumber}: {activeResumeLesson.title}
+        {activeResumeLesson.title.startsWith("ÔN TẬP ")
+         ? activeResumeLesson.title
+         : `Bài ${activeResumeLesson.lessonNumber}: ${activeResumeLesson.title}`}
        </Typography>
       </div>
 

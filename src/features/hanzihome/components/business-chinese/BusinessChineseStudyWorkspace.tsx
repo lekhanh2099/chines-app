@@ -15,6 +15,7 @@ import {
 } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
 
@@ -937,6 +938,25 @@ function BusinessChineseSection({
    <div className="grid min-w-0 gap-4">
     {vocabularyPreview}
     {visibleBlocks.map((block) => {
+     if (block.image) {
+      return (
+       <figure key={block.id} id={block.id} className="grid min-w-0 gap-2">
+        <Image
+         src={block.image.src}
+         alt={block.image.alt}
+         width={block.image.width}
+         height={block.image.height}
+         unoptimized
+         className="h-auto max-w-full"
+        />
+        {block.text ? (
+         <Typography as="figcaption" variant="bodySmall" tone="muted">
+          {block.text}
+         </Typography>
+        ) : null}
+       </figure>
+      );
+     }
      if (block.type === "table") {
       return (
        <BusinessChineseTable
@@ -996,13 +1016,15 @@ export function BusinessChineseStudyWorkspace({
  const { toggleBookmark } = learning;
 
  const currentPath = typeof window !== "undefined" ? window.location.pathname : "";
- const detectedBookKey: TextbookLesson["bookKey"] = currentPath.includes("/doc-hieu")
-  ? "doc-hieu"
-  : currentPath.includes("/han-thuong-mai")
-    ? "tm3"
-    : currentPath.includes("/nhip-cau")
-      ? "nhip-cau"
-      : initialLesson.bookKey;
+ const detectedBookKey: TextbookLesson["bookKey"] = currentPath.includes("/khau-ngu-tc1")
+  ? "khau-ngu"
+  : currentPath.includes("/doc-hieu")
+    ? "doc-hieu"
+    : currentPath.includes("/han-thuong-mai")
+      ? "tm3"
+      : currentPath.includes("/nhip-cau")
+        ? "nhip-cau"
+        : initialLesson.bookKey;
 
  const requestedLessonNumber =
   typeof searchParams.get("lesson") === "string" ? Number(searchParams.get("lesson")) : null;
@@ -1373,6 +1395,8 @@ function BusinessChineseStudyWorkspaceContent({
  const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
  const intro = lesson.intro.join(" ");
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
+ const book = books.find((item) => item.key === lesson.bookKey);
+ const sequentialLessons = book?.lessons.every((item, index) => item.number === index + 1);
  const selectSection = (sectionId: string) => {
   scrollAppContentToElement(document.getElementById(sectionId), {
    behavior: "smooth",
@@ -1423,11 +1447,12 @@ function BusinessChineseStudyWorkspaceContent({
      <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
       <Typography as="h1" variant="pageTitle" className="sr-only">
        {lesson.bookLabel} ·{" "}
-       {t("lessonPosition", {
-        lesson: lesson.number,
-        count: books.find((book) => book.key === lesson.bookKey)?.lessons.length ?? 0,
-       })}
-       {" · "}
+       {sequentialLessons ? (
+        <>
+         {t("lessonPosition", { lesson: lesson.number, count: book?.lessons.length ?? 0 })}
+         {" · "}
+        </>
+       ) : null}
        {lesson.title}
       </Typography>
       {activeView !== "text" && activeView !== "all" ? (

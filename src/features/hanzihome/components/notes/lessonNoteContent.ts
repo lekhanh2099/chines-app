@@ -109,7 +109,12 @@ export function createTextbookReadingContent(lesson: TextbookLesson): JsonObject
  return {
   root: {
    children: [
-    heading(`${lesson.bookLabel} · Bài ${lesson.number}: ${lesson.title}`, "h1"),
+    heading(
+     lesson.rawTitle.startsWith("复习")
+      ? `${lesson.bookLabel} · ${lesson.title}`
+      : `${lesson.bookLabel} · Bài ${lesson.number}: ${lesson.title}`,
+     "h1",
+    ),
     paragraph(""),
     heading("Từ vựng trọng tâm"),
     ...(vocabLines.length > 0
@@ -129,7 +134,11 @@ export function createTextbookPersonalNoteContent(lesson: TextbookLesson): JsonO
  return {
   root: {
    children: [
-    heading(`Ghi chú: ${lesson.bookLabel} · Bài ${lesson.number} · ${lesson.title}`),
+    heading(
+     lesson.rawTitle.startsWith("复习")
+      ? `Ghi chú: ${lesson.bookLabel} · ${lesson.title}`
+      : `Ghi chú: ${lesson.bookLabel} · Bài ${lesson.number} · ${lesson.title}`,
+    ),
     paragraph(""),
     paragraph("Những điểm dễ quên: "),
     paragraph(""),

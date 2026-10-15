@@ -66,7 +66,8 @@ function matchesHref(
     pathname !== "/hsk/grammar" &&
     pathname !== "/hsk/han-thuong-mai" &&
     pathname !== "/hsk/nhip-cau-han-ngu" &&
-    pathname !== "/hsk/doc-hieu")
+    pathname !== "/hsk/doc-hieu" &&
+    pathname !== "/hsk/khau-ngu-tc1")
   );
  }
 

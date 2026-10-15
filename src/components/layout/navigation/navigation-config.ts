@@ -90,6 +90,11 @@ export const navigationItems = {
   icon: BookOpenText,
   href: "/hsk/doc-hieu",
  },
+ spokenChinese: {
+  messageKey: "navigation.items.spokenChinese",
+  icon: BookOpenText,
+  href: "/hsk/khau-ngu-tc1",
+ },
  grammar: { messageKey: "navigation.items.grammar", icon: ListTree, href: "/grammar" },
  humanities: {
   messageKey: "navigation.items.humanities",
@@ -167,6 +172,7 @@ export const navigationItems = {
  businessChinese: NavigationItemConfig;
  chineseBridge: NavigationItemConfig;
  readingComprehension: NavigationItemConfig;
+ spokenChinese: NavigationItemConfig;
  grammar: NavigationItemConfig;
  humanities: NavigationItemConfig;
  personalLearning: NavigationItemConfig;
@@ -232,7 +238,7 @@ export const navigationGroups = [
     id: "textbooks",
     messageKey: "navigation.sections.textbooks",
     collapsible: true,
-    itemIds: ["businessChinese", "chineseBridge", "readingComprehension"],
+    itemIds: ["businessChinese", "chineseBridge", "readingComprehension", "spokenChinese"],
    },
    {
     id: "learning-more",
