@@ -451,6 +451,66 @@ describe("useTTS terminal lifecycle", () => {
   await expect(tts.speakWithLifecycle("你好", { rate: 1 })).rejects.toThrow("TTS API 503");
  });
 
+ it.each([
+  { onLine: true, status: 400, message: "TTS API 400" },
+  { onLine: true, status: 502, message: "TTS API 502" },
+  { onLine: true, status: 503, message: "TTS API 503" },
+  { onLine: false, status: 0, message: "Failed to fetch" },
+ ])(
+  "reports Edge failure without native speech or advancing Reader (online=$onLine, status=$status)",
+  async ({ onLine, status, message }) => {
+   const nativeSpeak = vi.fn<SpeechSynthesis["speak"]>(() => {
+    throw new Error("Native speech must not start");
+   });
+   const nativeCancel = vi.fn<SpeechSynthesis["cancel"]>();
+   const navigator = { onLine };
+   vi.stubGlobal("navigator", navigator);
+   vi.stubGlobal("window", {
+    navigator,
+    speechSynthesis: { speak: nativeSpeak, cancel: nativeCancel, getVoices: () => [] },
+    SpeechSynthesisUtterance: class {},
+   });
+   let failing = true;
+   fetchAudio.mockImplementation(async (_url, init) => {
+    if (init?.method !== "POST")
+     return Response.json([
+      { name: "Voice", shortName: "zh-CN-Voice", gender: "Female", locale: "zh-CN" },
+     ]);
+    if (!failing) return new Response(new Blob(["audio"]));
+    if (status === 0) throw new TypeError(message);
+    return new Response(null, { status });
+   });
+   const tts = controller();
+   const adapter = createMandarinReaderSpeechService(tts);
+   const store = createReaderStore(
+    cookReaderData([
+     { id: "a", zh: "一" },
+     { id: "b", zh: "二" },
+    ]),
+   );
+   const commands = createReaderPlayback(store, adapter.speech);
+   commands.playAll();
+   await vi.waitFor(() =>
+    expect(store.state.playback).toMatchObject({ status: "idle", error: message }),
+   );
+   expect(audioInstances).toHaveLength(0);
+   expect(nativeSpeak).not.toHaveBeenCalled();
+   expect(nativeCancel).not.toHaveBeenCalled();
+   expect(fetchAudio.mock.calls.filter(([, init]) => init?.method === "POST")).toHaveLength(1);
+
+   failing = false;
+   commands.playAll();
+   const first = await activeAudio();
+   expect(store.state.playback).toMatchObject({ segmentId: "a", status: "playing", error: null });
+   first.onended();
+   const second = await activeAudio(1);
+   expect(store.state.playback.segmentId).toBe("b");
+   second.onended();
+   await vi.waitFor(() => expect(store.state.playback.status).toBe("idle"));
+   expect(nativeSpeak).not.toHaveBeenCalled();
+  },
+ );
+
  it("preserves the login-required error when voice discovery returns 401 and allows retry", async () => {
   const tts = controller();
   fetchAudio.mockResolvedValueOnce(new Response(null, { status: 401 }));
