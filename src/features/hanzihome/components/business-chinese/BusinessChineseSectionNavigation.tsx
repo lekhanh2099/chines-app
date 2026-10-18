@@ -26,9 +26,9 @@ export function MobileSectionNavigation({
  const t = useTranslations("BusinessChinese");
 
  return (
-  <div className="2xl:hidden">
+  <div className="min-w-0 2xl:hidden">
    <Select onValueChange={onSelect}>
-    <SelectTrigger aria-label={t("tocLabel")} width="full">
+    <SelectTrigger aria-label={t("tocLabel")} width="full" className="min-w-0 max-w-none">
      <SelectValue placeholder={t("tocLabel")} />
     </SelectTrigger>
     <SelectContent>
@@ -70,11 +70,12 @@ export function DesktopSectionNavigation({
        variant="navigation"
        size="menu"
        align="start"
+       wrap={section.category === "grammar" ? "normal" : "nowrap"}
        className="min-w-0 w-full"
        title={stripLeadingEmoji(section.title)}
        onClick={() => onSelect(section.id)}
       >
-       <span className="min-w-0 truncate">
+       <span className={section.category === "grammar" ? "min-w-0" : "min-w-0 truncate"}>
         <HanziInlineText text={stripLeadingEmoji(section.title)} />
        </span>
       </Button>

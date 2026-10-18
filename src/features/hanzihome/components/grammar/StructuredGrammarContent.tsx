@@ -6,11 +6,14 @@ import {
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/display/typography";
+import { focusRingClassName } from "@/components/ui/focus-ring";
+import { Card } from "@/components/ui/layout/card";
 import { Lightbulb, Sigma } from "lucide-react";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
 import { CreateNormalizedChildDialog } from "@/features/hanzihome/editing/components/CreateNormalizedChildDialog";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
+import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import { GrammarDetailSectionCard } from "./GrammarDetailSectionCard";
 import { cleanGrammarDisplayLine, isDuplicateCoreSection } from "./grammar-display";
 
@@ -119,37 +122,6 @@ export function StructuredGrammarContent({
     </section>
    )}
 
-   {detailSections.length > 0 && (
-    <section className="grid gap-2">
-     <Typography as="h3" variant="cardTitle" tone="default" weight="black">
-      Chi tiết
-     </Typography>
-     {detailSections.map((section, index) => {
-      const content = <GrammarDetailSectionCard section={section} />;
-
-      if (!lessonId || !pointPath || !section.id) {
-       return <div key={section.id || section.key}>{content}</div>;
-      }
-
-      return (
-       <EditableNodeWrapper
-        key={section.id}
-        lessonId={lessonId}
-        entityType="grammar_detail_section"
-        entityId={section.id}
-        parentEntityType="grammar_point"
-        parentEntityId={point.id}
-        path={[...pointPath, "detailSections", index]}
-        value={section}
-        label={section.title}
-       >
-        {content}
-       </EditableNodeWrapper>
-      );
-     })}
-    </section>
-   )}
-
    {!hasExampleDetailSection && examples.length > 0 && (
     <section className="grid gap-2">
      <Typography as="h3" variant="cardTitle" tone="default" weight="black">
@@ -221,6 +193,56 @@ export function StructuredGrammarContent({
        leading="relaxed"
       />
      ))}
+    </section>
+   )}
+
+   {detailSections.length > 0 && (
+    <section className="grid gap-2">
+     <Typography as="h3" variant="cardTitle" tone="default" weight="black">
+      Chi tiết
+     </Typography>
+     {detailSections.map((section, index) => {
+      const isReferenceSection =
+       section.key === "source" || section.key === "verification" || section.key === "categories";
+      const content = isReferenceSection ? (
+       <Card asChild variant="subtle" padding="sm">
+        <details open={editMode || undefined} className="grid gap-2">
+         <summary className={`min-h-11 cursor-pointer rounded-lg py-3 ${focusRingClassName}`}>
+          <HanziAwareText
+           as="span"
+           text={cleanGrammarDisplayLine(section.title)}
+           variant="cardTitle"
+           tone="default"
+           weight="black"
+          />
+         </summary>
+         <MarkdownContent content={section.lines.map(cleanGrammarDisplayLine).join("\n")} />
+        </details>
+       </Card>
+      ) : (
+       <GrammarDetailSectionCard section={section} />
+      );
+
+      if (!lessonId || !pointPath || !section.id) {
+       return <div key={section.id || section.key}>{content}</div>;
+      }
+
+      return (
+       <EditableNodeWrapper
+        key={section.id}
+        lessonId={lessonId}
+        entityType="grammar_detail_section"
+        entityId={section.id}
+        parentEntityType="grammar_point"
+        parentEntityId={point.id}
+        path={[...pointPath, "detailSections", index]}
+        value={section}
+        label={section.title}
+       >
+        {content}
+       </EditableNodeWrapper>
+      );
+     })}
     </section>
    )}
   </div>

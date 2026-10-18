@@ -123,7 +123,7 @@ import {
  dictationSourcesFromTextbook,
  translationSegmentsFromTextbook,
 } from "@/features/hanzihome/practice/translation-practice";
-import { useRouter as useLocalizedRouter } from "@/i18n/navigation";
+import { usePathname, useRouter as useLocalizedRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
@@ -144,6 +144,7 @@ import {
  isChineseOnlyText,
  pairedTextbookTranslations,
  splitBusinessChineseExercise,
+ splitBusinessChineseGrammarExample,
 } from "./business-chinese-study-utils";
 
 import { useBusinessChineseReaderAnnotations } from "./useBusinessChineseReaderAnnotations";
@@ -220,6 +221,7 @@ function BusinessChineseText({
  variant = "bodySmall",
  weight,
  compactHanzi = false,
+ learnerContent = false,
 }: {
  pronunciationId: string;
  text: string;
@@ -228,6 +230,7 @@ function BusinessChineseText({
  variant?: TypographyProps<"div">["variant"];
  weight?: TypographyProps<"div">["weight"];
  compactHanzi?: boolean;
+ learnerContent?: boolean;
 }) {
  const displayMode = useMemo(
   () => ({
@@ -240,8 +243,10 @@ function BusinessChineseText({
  const pronunciationSessionActions = useReaderPronunciationSessionActions();
  const pronunciationOverrides = useReaderPronunciationSessionOverrides(pronunciationId);
  const readerCommands = useReaderCommands();
- const readerSegmentIndex = useReaderSelector((state) =>
-  state.content.segmentIds.indexOf(pronunciationId),
+ const canPlayFromCharacter = useReaderSelector(
+  (state) =>
+   state.content.segmentIds.includes(pronunciationId) &&
+   (!learnerContent || state.content.segmentsById[pronunciationId]?.zh === text),
  );
  const playbackProgress = useReaderSelector((state) =>
   state.playback.segmentId === pronunciationId && state.playback.status !== "idle"
@@ -276,8 +281,8 @@ function BusinessChineseText({
   [pronunciationOverrides, sourcePinyin, text],
  );
  const contextualDisplayMode: LessonDisplayMode = useMemo(
-  () => (compactHanzi ? { ...displayMode, hanziSize: "md" } : displayMode),
-  [compactHanzi, displayMode],
+  () => (compactHanzi && !learnerContent ? { ...displayMode, hanziSize: "md" } : displayMode),
+  [compactHanzi, displayMode, learnerContent],
  );
  const canShowPinyin =
   Boolean(displayMode?.showPinyin) &&
@@ -332,13 +337,19 @@ function BusinessChineseText({
 
  if (analysis === null) {
   return (
-   <Typography as="div" variant={variant} weight={weight} wrapping="preWrap">
+   <Typography
+    as={learnerContent ? undefined : "div"}
+    variant={variant}
+    weight={weight}
+    wrapping="preWrap"
+   >
     {text}
    </Typography>
   );
  }
 
- const content = isChineseOnlyText(text) ? (
+ const chineseOnly = isChineseOnlyText(text);
+ const content = chineseOnly ? (
   <ContextualReaderText
    analysis={analysis}
    displayMode={contextualDisplayMode}
@@ -350,7 +361,7 @@ function BusinessChineseText({
    readerAnnotations={annotationsContext?.readerAnnotations}
    onOpenReaderAnnotation={annotationsContext?.onOpenReaderAnnotation}
    onGlyphClick={
-    readerSegmentIndex >= 0
+    canPlayFromCharacter
      ? (start) => readerCommands.playFromCharacter(pronunciationId, start)
      : undefined
    }
@@ -363,13 +374,20 @@ function BusinessChineseText({
    showPinyin={canShowPinyin}
    variant={variant}
    weight={weight}
+   learnerContent={learnerContent}
    onGlyphInspect={inspectPronunciation}
   />
  );
 
  return (
   <>
-   {content}
+   {learnerContent && chineseOnly && (variant === "sectionTitle" || variant === "cardTitle") ? (
+    <div role="heading" aria-level={variant === "cardTitle" ? 3 : 2} aria-label={text}>
+     {content}
+    </div>
+   ) : (
+    content
+   )}
    {pronunciationPreview ? (
     <ReaderPronunciationReviewPopover
      target={pronunciationPreview}
@@ -391,6 +409,7 @@ function BusinessChineseMixedText({
  variant,
  weight,
  onGlyphInspect,
+ learnerContent,
 }: {
  analysis: ContextualPronunciationAnalysis;
  displayMode: LessonDisplayMode;
@@ -398,6 +417,7 @@ function BusinessChineseMixedText({
  variant: TypographyProps<"div">["variant"];
  weight?: TypographyProps<"div">["weight"];
  onGlyphInspect: (glyph: ContextualPronunciationGlyph, rect: DOMRect) => void;
+ learnerContent: boolean;
 }) {
  const t = useTranslations("Reader.document.text");
  const glyphByStart = useMemo(
@@ -410,7 +430,17 @@ function BusinessChineseMixedText({
  );
 
  return (
-  <Typography as="div" variant={variant} weight={weight} wrapping="preWrap">
+  <Typography
+   as={learnerContent ? undefined : "div"}
+   variant={variant}
+   weight={weight}
+   wrapping="preWrap"
+   aria-label={
+    learnerContent && (variant === "sectionTitle" || variant === "cardTitle")
+     ? analysis.normalizedText
+     : undefined
+   }
+  >
    {graphemes.map((grapheme) => {
     const glyph = glyphByStart.get(grapheme.index);
     if (glyph === undefined) {
@@ -424,7 +454,7 @@ function BusinessChineseMixedText({
       <ReaderHanziText
        key={`${grapheme.index}:${grapheme.segment}`}
        displayMode={displayMode}
-       size="inherit"
+       size={learnerContent ? undefined : "inherit"}
       >
        {grapheme.segment}
       </ReaderHanziText>
@@ -433,7 +463,7 @@ function BusinessChineseMixedText({
 
     return (
      <ruby key={`${grapheme.index}:${grapheme.segment}`}>
-      <ReaderHanziText displayMode={displayMode} size="inherit">
+      <ReaderHanziText displayMode={displayMode} size={learnerContent ? undefined : "inherit"}>
        {grapheme.segment}
       </ReaderHanziText>
       <rt className="select-none">
@@ -441,7 +471,7 @@ function BusinessChineseMixedText({
         as="span"
         tone="accent"
         weight="semibold"
-        scale="cloze"
+        scale={learnerContent ? "inherit" : "cloze"}
         className={cn(
          "cursor-pointer rounded-sm",
          focusRingClassName,
@@ -485,6 +515,7 @@ function SpeakableBusinessChineseText({
  variant,
  weight,
  compactHanzi,
+ learnerContent,
 }: {
  pronunciationId: string;
  text: string;
@@ -493,6 +524,7 @@ function SpeakableBusinessChineseText({
  variant?: TypographyProps<"div">["variant"];
  weight?: TypographyProps<"div">["weight"];
  compactHanzi?: boolean;
+ learnerContent?: boolean;
 }) {
  const speechSegments = getChineseSpeechSegments(text);
 
@@ -507,6 +539,7 @@ function SpeakableBusinessChineseText({
      variant={variant}
      weight={weight}
      compactHanzi={compactHanzi}
+     learnerContent={learnerContent}
     />
    </div>
    {speechSegments.length > 0 ? (
@@ -520,10 +553,12 @@ function BusinessChineseTable({
  block,
  displayMode,
  vocabularyCards = false,
+ learnerContent = false,
 }: {
  block: TextbookLesson["sections"][number]["blocks"][number];
  displayMode: LessonDisplayMode;
  vocabularyCards?: boolean;
+ learnerContent?: boolean;
 }) {
  const t = useTranslations("BusinessChinese");
  const [revealed, setRevealed] = useState(false);
@@ -553,6 +588,8 @@ function BusinessChineseTable({
      text={block.text}
      displayMode={displayMode}
      compactHanzi
+     learnerContent={learnerContent}
+     variant={learnerContent ? "body" : undefined}
     />
    ) : null}
    {block.answerColumnIndexes?.length && !displayMode.showAnswers ? (
@@ -634,9 +671,10 @@ function BusinessChineseTable({
             pronunciationId={`${block.id}:header:${cellIndex}`}
             text={headers[cellIndex] ?? ""}
             displayMode={displayMode}
-            variant={isVocabularyTable ? "body" : "label"}
+            variant={isVocabularyTable || learnerContent ? "body" : "label"}
             weight={isVocabularyTable ? "black" : undefined}
             compactHanzi
+            learnerContent={learnerContent}
            />
           </th>
          ))}
@@ -656,7 +694,7 @@ function BusinessChineseTable({
             {cellIndex === pinyinColumnIndex ? (
              <PinyinText
               as="span"
-              variant={isVocabularyTable ? "body" : "bodySmall"}
+              variant={isVocabularyTable || learnerContent ? "body" : "bodySmall"}
               tone="secondary"
               weight="semibold"
               wrapping="preWrap"
@@ -673,8 +711,9 @@ function BusinessChineseTable({
                 ? row[pinyinColumnIndex]
                 : undefined
               }
-              variant={isVocabularyTable ? "body" : "bodySmall"}
+              variant={isVocabularyTable || learnerContent ? "body" : "bodySmall"}
               compactHanzi={!isVocabularyTable && headers.length !== 2}
+              learnerContent={learnerContent}
              />
             )}
            </td>
@@ -752,13 +791,15 @@ function BusinessChineseExercise({
  const answerVisible = displayMode.showAnswers || revealed;
 
  return (
-  <Card variant="subtle" padding="sm">
-   <div className="grid min-w-0 gap-2">
+  <Card variant="default" padding="md" className="h-full">
+   <div className="grid min-w-0 gap-4">
     <SpeakableBusinessChineseText
      pronunciationId={`${block.id}:prompt`}
      text={prompt}
      displayMode={displayMode}
      compactHanzi
+     learnerContent
+     variant="body"
     />
     {!displayMode.showAnswers ? (
      <Button
@@ -779,6 +820,8 @@ function BusinessChineseExercise({
        text={answer}
        displayMode={displayMode}
        compactHanzi
+       learnerContent
+       variant="body"
       />
      </div>
     ) : null}
@@ -795,6 +838,8 @@ function BusinessChineseTextBlock({
  compactHanzi = false,
  variant,
  weight,
+ grammar = false,
+ practice = false,
 }: {
  pronunciationId: string;
  text: string;
@@ -803,6 +848,8 @@ function BusinessChineseTextBlock({
  compactHanzi?: boolean;
  variant?: TypographyProps<"div">["variant"];
  weight?: TypographyProps<"div">["weight"];
+ grammar?: boolean;
+ practice?: boolean;
 }) {
  const displayMode = useMemo(
   () => ({
@@ -814,9 +861,19 @@ function BusinessChineseTextBlock({
  const t = useTranslations("BusinessChinese");
  const [revealStage, setRevealStage] = useState(0);
  const inlineText = splitTrailingTranslation(text);
- const sourceTurn = splitDialogueTurn(inlineText.source);
- const resolvedTranslation = translation?.trim() || inlineText.translation;
- const translationTurn = splitDialogueTurn(resolvedTranslation);
+ const grammarExample = grammar
+  ? splitBusinessChineseGrammarExample(inlineText.source)
+  : inlineText;
+ const sourceTurn =
+  grammar && grammarExample.translation
+   ? { speaker: "", content: grammarExample.source }
+   : splitDialogueTurn(grammarExample.source);
+ const resolvedTranslation =
+  translation?.trim() || grammarExample.translation || inlineText.translation;
+ const grammarNote = grammar && grammarExample.translation ? inlineText.translation : "";
+ const translationTurn = grammar
+  ? { speaker: "", content: resolvedTranslation }
+  : splitDialogueTurn(resolvedTranslation);
  const progressiveReveal =
   !compactHanzi && displayMode.revealMode === "tap" && containsHanziText(sourceTurn.content);
  const speechSegments = getChineseSpeechSegments(sourceTurn.content);
@@ -887,17 +944,23 @@ function BusinessChineseTextBlock({
      compactHanzi={compactHanzi}
      variant={variant}
      weight={weight}
+     learnerContent={grammar || practice}
     />
    )}
    {!progressiveReveal && translationTurn.content && displayMode.showMeaning ? (
     <TranslationText
      variant={variant === "body" ? "body" : "bodySmall"}
-     tone="muted"
+     tone={grammar ? "secondary" : "muted"}
      weight="medium"
      leading="relaxed"
      wrapping="preWrap"
     >
      {translationTurn.content}
+    </TranslationText>
+   ) : null}
+   {grammarNote && displayMode.showMeaning ? (
+    <TranslationText tone="muted" leading="relaxed" wrapping="preWrap">
+     {grammarNote}
     </TranslationText>
    ) : null}
   </div>
@@ -920,10 +983,33 @@ function BusinessChineseSection({
  const visibleBlocks = businessChineseVisibleBlocks(section, canonicalVocabularyTableIds);
  const sectionDisplayMode: LessonDisplayMode =
   section.category === "vocab" ? { ...displayMode, revealMode: "always" } : displayMode;
+ const learnerContent = section.category === "grammar" || section.category === "practice";
+ const numberedPracticeItem = /^(?:[（(]\d+[）)]|[①-⑳]|\d+[.．、])/u;
+ const blockGroups: TextbookLesson["sections"][number]["blocks"][] = [];
+ for (const block of visibleBlocks) {
+  const current = blockGroups.at(-1);
+  const first = current?.[0];
+  if (
+   section.category === "practice" &&
+   current &&
+   first?.type === "paragraph" &&
+   numberedPracticeItem.test(first.text.trim()) &&
+   !first.text.includes("→") &&
+   block.type === "paragraph" &&
+   !block.image &&
+   !block.text.includes("→") &&
+   !numberedPracticeItem.test(block.text.trim())
+  ) {
+   current.push(block);
+  } else {
+   blockGroups.push([block]);
+  }
+ }
 
  return (
   <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4">
-   {visibleBlocks.length > 0 ? (
+   {visibleBlocks.length > 0 &&
+   !(section.category === "grammar" && visibleBlocks[0]?.type === "subheading") ? (
     <header>
      <SpeakableBusinessChineseText
       pronunciationId={`${section.id}:title`}
@@ -932,42 +1018,80 @@ function BusinessChineseSection({
       variant="sectionTitle"
       weight="black"
       compactHanzi
+      learnerContent={learnerContent}
      />
     </header>
    ) : null}
-   <div className="grid min-w-0 gap-4">
+   <div className={cn("grid min-w-0 gap-4", learnerContent && "2xl:grid-cols-2")}>
     {vocabularyPreview}
-    {visibleBlocks.map((block) => {
-     if (block.image) {
-      return (
-       <figure key={block.id} id={block.id} className="grid min-w-0 gap-2">
-        <Image
-         src={block.image.src}
-         alt={block.image.alt}
-         width={block.image.width}
-         height={block.image.height}
-         unoptimized
-         className="h-auto max-w-full"
+    {blockGroups.map((blocks) => {
+     const first = blocks[0];
+     if (!first) return null;
+     const grammarExample =
+      section.category === "grammar" &&
+      first.type === "paragraph" &&
+      Boolean(
+       splitBusinessChineseGrammarExample(splitTrailingTranslation(first.text).source).translation,
+      );
+     const practiceQuestion =
+      section.category === "practice" &&
+      first.type === "paragraph" &&
+      !first.image &&
+      (first.text.includes("→") || numberedPracticeItem.test(first.text.trim()));
+     const content = blocks.map((block) => {
+      if (block.image) {
+       return (
+        <figure key={block.id} id={block.id} className="grid min-w-0 gap-2">
+         <Image
+          src={block.image.src}
+          alt={block.image.alt}
+          width={block.image.width}
+          height={block.image.height}
+          unoptimized
+          className="h-auto max-w-full"
+         />
+         {block.text ? (
+          <Typography as="figcaption" variant="bodySmall" tone="muted">
+           {block.text}
+          </Typography>
+         ) : null}
+        </figure>
+       );
+      }
+      if (block.type === "table") {
+       return (
+        <BusinessChineseTable
+         key={block.id}
+         block={block}
+         displayMode={displayMode}
+         vocabularyCards={section.category === "vocab"}
+         learnerContent={learnerContent}
         />
-        {block.text ? (
-         <Typography as="figcaption" variant="bodySmall" tone="muted">
-          {block.text}
-         </Typography>
-        ) : null}
-       </figure>
-      );
-     }
-     if (block.type === "table") {
-      return (
-       <BusinessChineseTable
-        key={block.id}
-        block={block}
-        displayMode={displayMode}
-        vocabularyCards={section.category === "vocab"}
-       />
-      );
-     }
-     if (block.type === "subheading") {
+       );
+      }
+      if (block.type === "subheading") {
+       return (
+        <BusinessChineseTextBlock
+         key={block.id}
+         pronunciationId={block.id}
+         text={block.text}
+         translation={block.translation ?? translations.get(block.id)}
+         displayMode={sectionDisplayMode}
+         compactHanzi={section.category !== "text" && section.category !== "vocab"}
+         variant={
+          section.category === "vocab" || section.category === "grammar"
+           ? "sectionTitle"
+           : "cardTitle"
+         }
+         weight="black"
+         grammar={section.category === "grammar"}
+         practice={section.category === "practice"}
+        />
+       );
+      }
+      if (section.category === "practice" && block.text.includes("→")) {
+       return <BusinessChineseExercise key={block.id} block={block} displayMode={displayMode} />;
+      }
       return (
        <BusinessChineseTextBlock
         key={block.id}
@@ -976,24 +1100,32 @@ function BusinessChineseSection({
         translation={block.translation ?? translations.get(block.id)}
         displayMode={sectionDisplayMode}
         compactHanzi={section.category !== "text" && section.category !== "vocab"}
-        variant={section.category === "vocab" ? "sectionTitle" : "cardTitle"}
-        weight="black"
+        variant={section.category === "vocab" || learnerContent ? "body" : "bodySmall"}
+        grammar={section.category === "grammar"}
+        practice={section.category === "practice"}
        />
       );
-     }
-     if (section.category === "practice" && block.text.includes("→")) {
-      return <BusinessChineseExercise key={block.id} block={block} displayMode={displayMode} />;
-     }
+     });
      return (
-      <BusinessChineseTextBlock
-       key={block.id}
-       pronunciationId={block.id}
-       text={block.text}
-       translation={block.translation ?? translations.get(block.id)}
-       displayMode={sectionDisplayMode}
-       compactHanzi={section.category !== "text" && section.category !== "vocab"}
-       variant={section.category === "vocab" ? "body" : "bodySmall"}
-      />
+      <div
+       key={first.id}
+       className={cn(
+        "min-w-0",
+        learnerContent && !grammarExample && !practiceQuestion && "2xl:col-span-2",
+       )}
+      >
+       {grammarExample || (practiceQuestion && !first.text.includes("→")) ? (
+        <Card
+         variant={grammarExample ? "subtle" : "default"}
+         padding="md"
+         className="grid h-full min-w-0 content-start gap-3"
+        >
+         {content}
+        </Card>
+       ) : (
+        <div className="grid min-w-0 gap-3">{content}</div>
+       )}
+      </div>
      );
     })}
    </div>
@@ -1015,7 +1147,7 @@ export function BusinessChineseStudyWorkspace({
  const learningState = learning.state;
  const { toggleBookmark } = learning;
 
- const currentPath = typeof window !== "undefined" ? window.location.pathname : "";
+ const currentPath = usePathname();
  const detectedBookKey: TextbookLesson["bookKey"] = currentPath.includes("/khau-ngu-tc1")
   ? "khau-ngu"
   : currentPath.includes("/doc-hieu")

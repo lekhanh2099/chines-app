@@ -79,6 +79,27 @@ export function splitBusinessChineseExercise(text: string) {
  };
 }
 
+export function splitBusinessChineseGrammarExample(text: string) {
+ const source = text.trim();
+ if (source.includes("→")) {
+  const example = splitBusinessChineseExercise(source);
+  if (isChineseOnlyText(example.prompt) && /^"?[A-Za-zÀ-ỹ]/u.test(example.answer)) {
+   return { source: example.prompt, translation: example.answer };
+  }
+ }
+ if (!/^\(\d+\)\s*"?\p{Script=Han}/u.test(source)) {
+  return { source, translation: "" };
+ }
+
+ const separatorIndex = source.search(/[。！？.!?…]"?\s+"?[A-Za-zÀ-ỹ]/u);
+ if (separatorIndex < 0) return { source, translation: "" };
+ const sourceEnd = separatorIndex + (source.charAt(separatorIndex + 1) === '"' ? 2 : 1);
+ return {
+  source: source.slice(0, sourceEnd).trim(),
+  translation: source.slice(sourceEnd).trim(),
+ };
+}
+
 export function businessChineseSourceSections(sections: TextbookLesson["sections"]) {
  return sections.filter((section) => !section.title.includes("DỊCH BÀI KHÓA"));
 }
@@ -125,7 +146,27 @@ export function businessChineseVisibleSections(
  sections: TextbookLesson["sections"],
  activeView: string,
 ) {
- return sections.filter((section) => activeView === "all" || section.category === activeView);
+ return sections
+  .filter((section) => activeView === "all" || section.category === activeView)
+  .flatMap((section) => {
+   if (section.category !== "grammar") return [section];
+
+   const groups: TextbookLesson["sections"] = [];
+   for (const block of section.blocks) {
+    const current = groups.at(-1);
+    if (block.type === "subheading" || !current) {
+     groups.push({
+      ...section,
+      id: groups.length === 0 ? section.id : `${section.id}:${block.id}`,
+      title: block.type === "subheading" ? block.text : section.title,
+      blocks: [block],
+     });
+    } else {
+     current.blocks.push(block);
+    }
+   }
+   return groups.length > 0 ? groups : [section];
+  });
 }
 
 export function businessChineseReaderVocabulary(vocabulary: TextbookLesson["vocab"]) {

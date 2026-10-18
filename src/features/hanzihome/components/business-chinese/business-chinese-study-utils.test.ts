@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { getTextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import {
  businessChineseTableColumns,
@@ -7,6 +8,7 @@ import {
  isChineseOnlyText,
  pairedTextbookTranslations,
  splitBusinessChineseExercise,
+ splitBusinessChineseGrammarExample,
  businessChineseContentSections,
  businessChineseSourceSections,
  businessChineseTabAvailable,
@@ -31,6 +33,75 @@ const block: TextbookLesson["sections"][number]["blocks"][number] = {
  answerColumnIndexes: [3],
 };
 describe("Business Chinese study policies", () => {
+ it.each([
+  {
+   input: "(1) 他从来不浪费粮食. Anh ấy chưa bao giờ lãng phí lương thực.",
+   source: "(1) 他从来不浪费粮食.",
+   translation: "Anh ấy chưa bao giờ lãng phí lương thực.",
+  },
+  {
+   input:
+    '(4) "我给你叫去。"小护士说着就冲北房喊叫. "Tôi đi gọi cho anh." Nữ y tá nhỏ nói rồi hướng về phía nhà Bắc gọi to.',
+   source: '(4) "我给你叫去。"小护士说着就冲北房喊叫.',
+   translation: '"Tôi đi gọi cho anh." Nữ y tá nhỏ nói rồi hướng về phía nhà Bắc gọi to.',
+  },
+  {
+   input:
+    "(7) 儿子吵着闹着一定要买那件T恤衫. Con trai làm ầm ĩ mãi nhất định phải mua cái áo thun đó.",
+   source: "(7) 儿子吵着闹着一定要买那件T恤衫.",
+   translation: "Con trai làm ầm ĩ mãi nhất định phải mua cái áo thun đó.",
+  },
+  {
+   input: "(4) 文章的大致内容是…… Nội dung đại khái của bài viết là...",
+   source: "(4) 文章的大致内容是……",
+   translation: "Nội dung đại khái của bài viết là...",
+  },
+  {
+   input: "我回去试试。 → Tôi về thử xem.",
+   source: "我回去试试。",
+   translation: "Tôi về thử xem.",
+  },
+  {
+   input: '1. Thường dùng trong câu phủ định với "没(有)".',
+   source: '1. Thường dùng trong câu phủ định với "没(有)".',
+   translation: "",
+  },
+  {
+   input: 'S + 没(有) → Không dùng "不有".',
+   source: 'S + 没(有) → Không dùng "不有".',
+   translation: "",
+  },
+ ])(
+  "separates bilingual examples while preserving Chinese text: $source",
+  ({ input, source, translation }) => {
+   expect(splitBusinessChineseGrammarExample(input)).toEqual({ source, translation });
+  },
+ );
+
+ it("exposes all eight grammar points without losing source blocks or their identities", () => {
+  const lesson = getTextbookLesson("nhip-cau", 3);
+  const section = lesson?.sections.find((item) => item.category === "grammar");
+  if (!lesson || !section) throw new Error("Expected Nhịp cầu lesson 3 grammar.");
+
+  const groups = businessChineseVisibleSections(lesson.sections, "grammar");
+  expect(groups).toHaveLength(8);
+  expect(groups[0]?.id).toBe(section.id);
+  expect(new Set(groups.map((group) => group.id)).size).toBe(8);
+  expect(groups.every((group) => group.blocks[0]?.type === "subheading")).toBe(true);
+  expect(groups.map((group) => group.title)).toEqual(
+   section.blocks.filter((item) => item.type === "subheading").map((item) => item.text),
+  );
+  const blocks = groups.flatMap((group) => group.blocks);
+  expect(blocks).toHaveLength(75);
+  blocks.forEach((item, index) => expect(item).toBe(section.blocks[index]));
+  expect(section.blocks).toHaveLength(75);
+
+  const textSections = lesson.sections.filter((item) => item.category === "text");
+  businessChineseVisibleSections(lesson.sections, "text").forEach((item, index) =>
+   expect(item).toBe(textSections[index]),
+  );
+ });
+
  it("preserves source sections, empty navigation rules and canonical vocabulary visibility", () => {
   const sections: TextbookLesson["sections"] = [
    { id: "source", title: "BÀI KHÓA", category: "text", blocks: [block] },
