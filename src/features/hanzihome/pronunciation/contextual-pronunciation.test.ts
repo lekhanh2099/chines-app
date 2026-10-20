@@ -65,6 +65,24 @@ describe("HanziHome contextual pronunciation", () => {
   );
  });
 
+ it("reads 地 as a neutral particle in the actual 含笑地看着你 paragraph", () => {
+  const text =
+   "后来，我虽然也接触过一些女孩，但始终没有一个合我心意的。工作三年后，我考上了研究生。就在上研究生的第二年，我遇到了一个化学系的女孩儿。这一次我的感情彻底失去了控制。那是个苏州女孩，有着一双明亮的大眼睛，一口白白的牙齿；她的衣服虽不算是时髦，可总是很得体。和你讲话时，她总是含笑地看着你，显得很美。";
+  const result = analyzeContextualPronunciation({ text });
+  const particle = result.glyphs.find((glyph) => glyph.text === "地");
+  expect(particle?.start).toBe(text.indexOf("地"));
+  expect(particle?.lexicalReadingKey).toBe("de5");
+  expect(particle?.spokenReadingKey).toBe("de5");
+  expect(particle?.evidence).toEqual(["dictionary-exact"]);
+  const phrase = "含笑地看着你";
+  const phraseStart = text.indexOf(phrase);
+  expect(formatContextualPinyinRange(result, phraseStart, phraseStart + phrase.length)).toBe(
+   "hán xiào de kàn zhe nǐ",
+  );
+  const noun = analyzeContextualPronunciation({ text: "含笑的地方" });
+  expect(noun.glyphs.find((glyph) => glyph.text === "地")?.spokenReadingKey).toBe("di4");
+ });
+
  it.each([
   "静静地走过",
   "怯怯地问",

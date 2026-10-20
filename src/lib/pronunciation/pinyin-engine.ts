@@ -86,6 +86,7 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  快快地: "kuài kuài de",
  高兴地: "gāo xìng de",
  认真地: "rèn zhēn de",
+ 含笑地: "hán xiào de",
  偷偷地: "tōu tōu de",
  大声地: "dà shēng de",
  悄悄地: "qiāo qiāo de",

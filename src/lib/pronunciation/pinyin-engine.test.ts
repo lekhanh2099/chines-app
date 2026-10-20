@@ -26,6 +26,8 @@ describe("pinyin-engine", () => {
    expect(generateSmartPinyin("慢慢地走").pinyin).toBe("màn màn de zǒu");
    expect(generateSmartPinyin("高兴地唱").pinyin).toBe("gāo xìng de chàng");
    expect(generateSmartPinyin("认真地学").pinyin).toBe("rèn zhēn de xué");
+   expect(generateSmartPinyin("含笑地看着你").pinyin).toBe("hán xiào de kàn zhe nǐ");
+   expect(generateSmartPinyin("含笑的地方").pinyin).toBe("hán xiào de dì fang");
    expect(generateSmartPinyin("目的地").pinyin).toBe("mù dì dì");
    expect(generateSmartPinyin("地方").pinyin).toBe("dì fang");
   });
