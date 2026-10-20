@@ -30,6 +30,38 @@ describe("pinyin-engine", () => {
    expect(generateSmartPinyin("地方").pinyin).toBe("dì fang");
   });
 
+  it.each([
+   "静静地走过",
+   "怯怯地问",
+   "工工整整地写",
+   "蹦蹦跳跳地走",
+   "一笔一笔地算",
+   "缓缓地下去",
+   "高高兴兴地上台",
+   "好好地工作",
+   "一步一步地上台",
+  ])("infers adverbial 地 without an exact phrase entry: %s", (text) => {
+   const result = generateSmartPinyin(text);
+   expect(result.syllables[Array.from(text).indexOf("地")]).toBe("de");
+  });
+
+  it.each([
+   "地",
+   "天地",
+   "大地",
+   "我的地很大",
+   "一块块地用了",
+   "看看地上",
+   "瞧瞧地下室",
+   "挖挖地看看",
+   "打扫打扫地下室",
+   "收拾收拾地下室",
+   "整理整理地上的灰",
+  ])("does not force an unrecognized noun 地 to de: %s", (text) => {
+   const result = generateSmartPinyin(text);
+   expect(result.syllables[Array.from(text).indexOf("地")]).toBe("dì");
+  });
+
   it("resolves 着 (zhe vs zháo vs zhuó)", () => {
    expect(generateSmartPinyin("睡不着").pinyin).toBe("shuì bu zháo");
    expect(generateSmartPinyin("睡着了").pinyin).toBe("shuì zháo le");

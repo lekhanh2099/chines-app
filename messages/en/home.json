@@ -7,7 +7,7 @@
  },
  "continueLearning": {
   "title": "Continue learning",
-  "description": "Choose a textbook series and resume each book where you left off.",
+  "description": "Return to the lessons you have started.",
   "recentLesson": "Recently studied",
   "startHanziHome": "Start HanziHome",
   "lesson": "Lesson {number}: {title}",
@@ -15,7 +15,9 @@
   "resume": "Continue",
   "start": "Start",
   "books": "{count} books",
-  "catalogUnavailable": "The lesson catalog could not be loaded. Other textbooks are still available."
+  "catalogUnavailable": "The lesson catalog could not be loaded. Other textbooks are still available.",
+  "browseLibrary": "Browse all textbooks",
+  "empty": "You haven’t started a lesson yet. Choose a textbook to begin."
  },
  "modules": {
   "overview": "Overview",

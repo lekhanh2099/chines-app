@@ -41,7 +41,12 @@ export type NavigationItemConfig = {
 
 export const navigationItems = {
  home: { messageKey: "navigation.items.home", icon: Home, href: "/" },
- lessons: { messageKey: "navigation.items.lessons", icon: BookOpenCheck, href: "/hanzihome" },
+ lessons: {
+  messageKey: "navigation.items.lessons",
+  icon: BookOpenCheck,
+  href: "/hanzihome",
+  aliases: ["/hsk/han-thuong-mai", "/hsk/nhip-cau-han-ngu", "/hsk/doc-hieu", "/hsk/khau-ngu-tc1"],
+ },
  reader: { messageKey: "navigation.items.reader", icon: BookOpenText, href: "/reader" },
  readerCourse: {
   messageKey: "navigation.items.readerCourse",
@@ -201,6 +206,10 @@ export const compatibilityNavigationItemIds: readonly NavigationItemId[] = [
  "readerCourse",
  "readerPractice",
  "readerMock",
+ "businessChinese",
+ "chineseBridge",
+ "readingComprehension",
+ "spokenChinese",
 ] satisfies readonly NavigationItemId[];
 
 type NavigationSectionConfig = {
@@ -233,12 +242,6 @@ export const navigationGroups = [
     messageKey: "navigation.sections.hskReading",
     collapsible: true,
     itemIds: ["hskReading", "hskGrammar"],
-   },
-   {
-    id: "textbooks",
-    messageKey: "navigation.sections.textbooks",
-    collapsible: true,
-    itemIds: ["businessChinese", "chineseBridge", "readingComprehension", "spokenChinese"],
    },
    {
     id: "learning-more",

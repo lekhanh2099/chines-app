@@ -1155,6 +1155,61 @@ const ADVERB_AFTER_HAI = new Set([
  "爱",
 ]);
 
+// Adjectival morphemes support the productive AA modifier pattern; verb
+// reduplication such as 挖挖 must not turn its following land object into a particle.
+const ADVERBIAL_REDUPLICATION_BASES = new Set([
+ ...DEGREE_OR_ADJ_AFTER_DE,
+ "静",
+ "怯",
+ "缓",
+ "轻",
+ "悄",
+ "默",
+ "匆",
+ "微",
+ "急",
+ "忙",
+ "整",
+ "细",
+ "稳",
+ "紧",
+]);
+
+/** Recognize reduplicated modifiers followed by an action, without a phrase entry. */
+export function isAdverbialDe(chineseChars: readonly string[], index: number): boolean {
+ if (chineseChars[index] !== "地") return false;
+ const prev = chineseChars[index - 1];
+ const prevPrev = chineseChars[index - 2];
+ const prev3 = chineseChars[index - 3];
+ const prev4 = chineseChars[index - 4];
+ const next = chineseChars[index + 1];
+ if (
+  !prev ||
+  !prevPrev ||
+  !next ||
+  !CHINESE_CHAR_REGEX.test(prev) ||
+  !CHINESE_CHAR_REGEX.test(prevPrev)
+ )
+  return false;
+
+ const repeatedAdjective = prev === prevPrev && ADVERBIAL_REDUPLICATION_BASES.has(prev);
+ const repeatedPair = prev === prev3 && prevPrev === prev4 && CHINESE_CHAR_REGEX.test(prev3 ?? "");
+ const doubledPair = prev === prevPrev && prev3 === prev4 && CHINESE_CHAR_REGEX.test(prev3 ?? "");
+ if (!repeatedAdjective && !repeatedPair && !doubledPair) return false;
+ // A quantified noun (一块块地) does not establish an adverbial boundary.
+ if (prev === prevPrev && /^[一二三四五六七八九十百千万两几每这那]$/u.test(prev3 ?? ""))
+  return false;
+ // ABAB verbs can take a place noun (打扫打扫地下室); 一步一步 is a modifier.
+ if (repeatedPair && prevPrev !== "一" && NOUN_SUFFIXES_AFTER_DI.has(next)) return false;
+
+ return (
+  VERBS_BEFORE_DE.has(next) ||
+  VERBS_AFTER_DEI.has(next) ||
+  (next === "工" && chineseChars[index + 2] === "作") ||
+  ((next === "上" || next === "下") && CHINESE_CHAR_REGEX.test(chineseChars[index + 2] ?? ""))
+ );
+}
+
 /**
  * Apply grammatical contextual rules across syllables in single-pass O(N).
  * Handles structural particle "得" (de vs děi), "地" (de vs dì), "倒" (dào vs dǎo),
@@ -1187,6 +1242,11 @@ export function applyGrammarHeuristics(
    const prevPrev = chineseChars[i - 2];
    const next = chineseChars[i + 1];
 
+   if (isAdverbialDe(chineseChars, i)) {
+    syllables[i] = "de";
+    continue;
+   }
+
    // 目的地 -> mù dì dì
    if (prevPrev === "目" && prev === "的") {
     syllables[i] = "dì";
@@ -1201,8 +1261,7 @@ export function applyGrammarHeuristics(
     continue;
    }
 
-   // Structural adverbial particle "de" (e.g., 慢慢地走, 高兴地唱)
-   syllables[i] = "de";
+   // Without positive grammatical evidence, keep the library/dictionary reading.
   } else if (char === "倒") {
    const next = chineseChars[i + 1];
    const nextNext = chineseChars[i + 2];

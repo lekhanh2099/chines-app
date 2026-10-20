@@ -62,6 +62,8 @@ export const userLearningStateSchema = z.object({
    lastModule: moduleSchema.optional(),
    density: z.enum(["comfortable", "compact", "focus"]).optional(),
    vocabDetailTab: z.string().optional(),
+   libraryCollectionOrder: z.array(z.string().min(1)).optional(),
+   libraryResumeOrder: z.array(z.string().min(1)).optional(),
    lessonTextDisplayMode: lessonTextDisplayModeSchema.optional(),
    bookDisplayModes: z.record(z.string(), lessonTextDisplayModeSchema).optional(),
    bookResume: z

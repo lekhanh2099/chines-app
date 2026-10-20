@@ -130,6 +130,8 @@ function NavRow({
 }) {
  const t = useTranslations("Shell");
  const item = navigationItems[itemId];
+ const pathname = usePathname();
+ const searchParams = useSearchParams();
  const Icon = item.icon;
  const label = t(item.messageKey);
  const pendingHref = useSelector(navigationPendingStore, (state) => state.pendingHref);
@@ -153,7 +155,10 @@ function NavRow({
    <Link
     href={item.href}
     onClick={(event) => {
-     if (active || isPendingThisItem) {
+     if (
+      (active && (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
+      isPendingThisItem
+     ) {
       event.preventDefault();
       return;
      }
@@ -221,7 +226,11 @@ function CollapsedGroupMenu({
           aria-busy={isPendingThisItem ? "true" : undefined}
           className={cn(isPendingThisItem && "pointer-events-none opacity-80")}
           onClick={(event) => {
-           if (itemActive || isPendingThisItem) {
+           if (
+            (itemActive &&
+             (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
+            isPendingThisItem
+           ) {
             event.preventDefault();
             return;
            }
@@ -502,7 +511,11 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
         <Link
          href={item.href}
          onClick={(event) => {
-          if (active || isPendingThisItem) {
+          if (
+           (active &&
+            (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
+           isPendingThisItem
+          ) {
            event.preventDefault();
            return;
           }

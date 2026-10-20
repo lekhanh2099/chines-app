@@ -1,7 +1,11 @@
 import { convert, pinyin, polyphonic } from "pinyin-pro";
 import { z } from "zod";
 
-import { POLYPHONIC_DICTIONARY, ensurePinyinEngineInitialized } from "./pinyin-engine.ts";
+import {
+ POLYPHONIC_DICTIONARY,
+ ensurePinyinEngineInitialized,
+ isAdverbialDe,
+} from "./pinyin-engine.ts";
 
 ensurePinyinEngineInitialized();
 
@@ -628,6 +632,7 @@ export function analyzeContextualPronunciation(
  const graphemes = [
   ...new Intl.Segmenter("zh-CN", { granularity: "grapheme" }).segment(normalizedText),
  ];
+ const chineseChars = graphemes.map((item) => item.segment);
  const hanziCount = graphemes.filter((item) => classify(item.segment) === "hanzi").length;
  let lexicalValues: string[] = [];
  let spokenValues: string[] = [];
@@ -688,9 +693,20 @@ export function analyzeContextualPronunciation(
      pronunciationDictionary,
     )
   : new Map<number, string>();
+ const providedDictionaryReadings =
+  readingsAligned && dictionary.length > 0
+   ? dictionaryReadingsByGlyphStart(
+      normalizedText,
+      graphemes,
+      lexicalValues,
+      spokenValues,
+      alternatives,
+      dictionary,
+     )
+   : new Map<number, string>();
  const glyphs: ContextualPronunciationGlyph[] = [];
  let hanziIndex = 0;
- for (const item of graphemes) {
+ for (const [graphemeIndex, item] of graphemes.entries()) {
   const type = classify(item.segment);
   if (type !== "hanzi") continue;
   const lexicalKey = readingsAligned ? (lexicalValues[hanziIndex] ?? null) : null;
@@ -700,13 +716,23 @@ export function analyzeContextualPronunciation(
   const overrideKey = overrideMatch?.key ?? null;
   const sourceKey =
    sourceAligned && sourceAlignment !== null ? (sourceAlignment[hanziIndex] ?? null) : null;
-  const dictionaryKey = dictionaryReadings.get(item.index) ?? null;
+  const adverbialDe =
+   readingsAligned &&
+   !providedDictionaryReadings.has(item.index) &&
+   isAdverbialDe(chineseChars, graphemeIndex);
+  const dictionaryKey =
+   adverbialDe && dictionaryReadings.get(item.index) !== "de5"
+    ? null
+    : (dictionaryReadings.get(item.index) ?? null);
+  const contextualLexicalKey = adverbialDe ? "de5" : lexicalKey;
+  const contextualSpokenKey = adverbialDe ? "de5" : spokenKey;
   const sourceLexicalKey = sourceKey;
-  const selectedLexicalKey = overrideKey ?? sourceLexicalKey ?? dictionaryKey ?? lexicalKey;
+  const selectedLexicalKey =
+   overrideKey ?? sourceLexicalKey ?? dictionaryKey ?? contextualLexicalKey;
   const selectedSpokenKey =
    overrideKey ??
    sourceLexicalKey ??
-   (selectedLexicalKey === lexicalKey ? spokenKey : selectedLexicalKey);
+   (selectedLexicalKey === contextualLexicalKey ? contextualSpokenKey : selectedLexicalKey);
   const selectedAlternatives = [
    ...new Set([selectedLexicalKey, ...keys].filter((key): key is string => key !== null)),
   ];

@@ -7,13 +7,14 @@ import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 
 import { filterNavigationGroupsForContentCapability, navigationItems } from "./navigation-config";
-import { Sidebar } from "./Sidebar";
+import { MobileBottomNavigation, Sidebar } from "./Sidebar";
 
 vi.mock("next/navigation", () => ({
- useSearchParams: () => new URLSearchParams(),
+ useSearchParams: () => currentSearchParams,
 }));
 
 let currentPathname = "/reader";
+let currentSearchParams = new URLSearchParams();
 
 vi.mock("@/i18n/navigation", () => ({
  Link: ({
@@ -38,7 +39,6 @@ const localeCases = [
   personalGroup: "Cá nhân",
   knowledgeGroup: "Năng lực",
   moreCluster: "Thêm",
-  textbooks: "Giáo trình",
   chineseBridge: "Nhịp cầu Hán ngữ",
   readingComprehension: "Đọc hiểu",
   spokenChinese: "Khẩu ngữ Trung cấp 1",
@@ -51,7 +51,6 @@ const localeCases = [
   personalGroup: "Personal",
   knowledgeGroup: "Capabilities",
   moreCluster: "More",
-  textbooks: "Textbooks",
   chineseBridge: "Chinese Bridge",
   readingComprehension: "Reading comprehension",
   spokenChinese: "Intermediate Spoken Chinese 1",
@@ -64,7 +63,6 @@ const localeCases = [
   personalGroup: "个人",
   knowledgeGroup: "能力",
   moreCluster: "更多",
-  textbooks: "教材",
   chineseBridge: "桥梁",
   readingComprehension: "阅读理解",
   spokenChinese: "中级汉语口语 1",
@@ -77,7 +75,6 @@ const localeCases = [
  personalGroup: string;
  knowledgeGroup: string;
  moreCluster: string;
- textbooks: string;
  chineseBridge: string;
  readingComprehension: string;
  spokenChinese: string;
@@ -94,7 +91,6 @@ describe("Sidebar translations", () => {
    personalGroup,
    knowledgeGroup,
    moreCluster,
-   textbooks,
    chineseBridge,
    readingComprehension,
    spokenChinese,
@@ -112,10 +108,10 @@ describe("Sidebar translations", () => {
    expect(markup).toContain(personalGroup);
    expect(markup).toContain(knowledgeGroup);
    expect(markup).toContain(moreCluster);
-   expect(markup).toContain(textbooks);
-   expect(markup).toContain(chineseBridge);
-   expect(markup).toContain(readingComprehension);
-   expect(markup).toContain(spokenChinese);
+   expect(markup).not.toContain('id="sidebar-section-textbooks"');
+   expect(markup).not.toContain(chineseBridge);
+   expect(markup).not.toContain(readingComprehension);
+   expect(markup).not.toContain(spokenChinese);
    expect(markup).not.toContain(dataQuality);
    expect(markup).not.toContain(apiDocs);
    expect(markup).not.toContain(tts);
@@ -151,7 +147,7 @@ describe("Sidebar translations", () => {
  });
 
  it.each(["/hsk/han-thuong-mai", "/hsk/nhip-cau-han-ngu", "/hsk/doc-hieu", "/hsk/khau-ngu-tc1"])(
-  "activates only the selected textbook destination on %s",
+  "activates only the lesson library for a textbook study route on %s",
   async (pathname) => {
    currentPathname = pathname;
    const messages = await loadAppMessages("vi");
@@ -163,13 +159,60 @@ describe("Sidebar translations", () => {
    const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
 
    expect(activeLinks).toHaveLength(1);
-   expect(activeLinks[0]).toContain(`href="${pathname}"`);
+   expect(activeLinks[0]).toContain('href="/hanzihome"');
    expect(activeLinks[0]).not.toContain('href="/hsk"');
-   const textbooksTrigger = markup.match(
-    /<button[^>]*aria-controls="sidebar-section-textbooks"[^>]*>/u,
-   )?.[0];
-   expect(textbooksTrigger).toContain('aria-expanded="true"');
+   expect(markup).not.toContain('aria-controls="sidebar-section-textbooks"');
    currentPathname = "/reader";
   },
  );
+
+ it.each(["/hsk/han-thuong-mai", "/hsk/nhip-cau-han-ngu", "/hsk/doc-hieu", "/hsk/khau-ngu-tc1"])(
+  "keeps the mobile lesson entry active for %s",
+  async (pathname) => {
+   currentPathname = pathname;
+   const messages = await loadAppMessages("vi");
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <MobileBottomNavigation canManageContent={false} />
+    </NextIntlClientProvider>,
+   );
+   const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
+
+   expect(activeLinks).toHaveLength(1);
+   expect(activeLinks[0]).toContain('href="/hanzihome"');
+   currentPathname = "/reader";
+  },
+ );
+
+ it("keeps the lesson library active inside a catalog lesson workspace", async () => {
+  currentPathname = "/hanzihome";
+  currentSearchParams = new URLSearchParams("courseId=hanyu&bookId=book-1&lesson=2&module=grammar");
+  const messages = await loadAppMessages("vi");
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <Sidebar canManageContent={false} />
+   </NextIntlClientProvider>,
+  );
+  const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
+
+  expect(activeLinks).toHaveLength(1);
+  expect(activeLinks[0]).toContain('href="/hanzihome"');
+  currentPathname = "/reader";
+  currentSearchParams = new URLSearchParams();
+ });
+
+ it.each(["/hsk", "/hsk/grammar"])("preserves the HSK selection on %s", async (pathname) => {
+  currentPathname = pathname;
+  const messages = await loadAppMessages("vi");
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <Sidebar canManageContent={false} />
+   </NextIntlClientProvider>,
+  );
+  const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
+
+  expect(activeLinks).toHaveLength(1);
+  expect(activeLinks[0]).toContain(`href="${pathname}"`);
+  currentPathname = "/reader";
+ });
 });

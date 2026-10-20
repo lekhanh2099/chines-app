@@ -5,6 +5,7 @@ import type {
 } from "@/features/hanzihome/types";
 import { z } from "zod";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
 export const LibraryCourseGroupKeySchema = z.enum([
  "hanyu",
@@ -14,6 +15,22 @@ export const LibraryCourseGroupKeySchema = z.enum([
  "other",
 ]);
 export type LibraryCourseGroupKey = z.infer<typeof LibraryCourseGroupKeySchema>;
+
+export const libraryCourseGroupCharacters: Record<LibraryCourseGroupKey, string> = {
+ hanyu: "汉",
+ boya: "博",
+ boyaSecondEdition: "雅",
+ listening: "听",
+ other: "学",
+};
+
+export const libraryTextbookCharacters: Record<TextbookBookSummary["key"], string> = {
+ tm2: "商",
+ tm3: "商",
+ "nhip-cau": "桥",
+ "doc-hieu": "读",
+ "khau-ngu": "说",
+};
 
 export type LibraryCourseGroup = {
  key: LibraryCourseGroupKey;

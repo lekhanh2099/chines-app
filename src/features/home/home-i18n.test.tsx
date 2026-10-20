@@ -8,7 +8,7 @@ import { HomeLearningPulse } from "@/features/home/components/HomeLearningPulse"
 import { RecentLearningActivityPanel } from "@/features/home/components/RecentLearningActivityPanel";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
 import { TodayFocusWidget } from "@/features/home/components/TodayFocusWidget";
-import type { HomeLessonTarget } from "@/features/home/types";
+import type { HomeDashboardModel, HomeLessonTarget } from "@/features/home/types";
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 
@@ -81,7 +81,7 @@ describe("Home messages", () => {
     />
    </NextIntlClientProvider>,
   );
-  expect(markup.match(/ÔN TẬP 4: 国际婚姻/gu)).toHaveLength(3);
+  expect(markup.match(/ÔN TẬP 4: 国际婚姻/gu)).toHaveLength(2);
   expect(markup).not.toContain("Bài 24");
   expect(markup).toContain(review.href.replaceAll("&", "&amp;"));
  });
@@ -102,6 +102,79 @@ describe("Home messages", () => {
   expect(markup).toContain(testCase.lesson);
   expect(markup).not.toContain("Home.");
  });
+
+ it.each(localeCases)(
+  "shows only resumed books once and links to the library for $locale",
+  async (testCase) => {
+   const messages = await loadAppMessages(testCase.locale);
+   const courses: HomeDashboardModel["courses"] = [
+    {
+     id: "course",
+     title: "Course",
+     books: [
+      { id: "continued", title: "Continued volume", lesson },
+      {
+       id: "unstarted",
+       title: "Unstarted volume",
+       lesson: { ...lesson, href: "/hanzihome?lesson=2", isRecent: false },
+      },
+      { id: "empty", title: "Empty volume", lesson: null },
+     ],
+    },
+   ];
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider
+     locale={testCase.locale}
+     messages={messages}
+     timeZone="Asia/Ho_Chi_Minh"
+    >
+     <ContinueLearningPanel courses={courses} unavailable={false} />
+    </NextIntlClientProvider>,
+   );
+
+   expect(markup.split(`href="${lesson.href}"`)).toHaveLength(2);
+   expect(markup).toContain("Continued volume");
+   expect(markup).not.toContain("Unstarted volume");
+   expect(markup).not.toContain("Empty volume");
+   expect(markup).not.toContain("<details");
+   expect(markup).toContain('href="/hanzihome"');
+   expect(markup).toContain(messages.Home.continueLearning.browseLibrary);
+   expect(markup).not.toContain("Home.");
+  },
+ );
+
+ it.each(
+  localeCases.flatMap(({ locale }) =>
+   [true, false].map((unavailable) => ({ locale, unavailable })),
+  ),
+ )(
+  "keeps the resume empty state distinct from an unavailable catalog for $locale ($unavailable)",
+  async ({ locale, unavailable }) => {
+   const messages = await loadAppMessages(locale);
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <ContinueLearningPanel
+      courses={[
+       {
+        id: "course",
+        title: "Course",
+        books: [
+         { id: "unstarted", title: "Unstarted volume", lesson: { ...lesson, isRecent: false } },
+        ],
+       },
+      ]}
+      unavailable={unavailable}
+     />
+    </NextIntlClientProvider>,
+   );
+
+   expect(markup.includes(messages.Home.continueLearning.empty)).toBe(!unavailable);
+   expect(markup.includes(messages.Home.continueLearning.catalogUnavailable)).toBe(unavailable);
+   expect(markup).not.toContain("Unstarted volume");
+   expect(markup).toContain('href="/hanzihome"');
+   expect(markup).not.toContain("Home.");
+  },
+ );
 
  it("keeps learning pulse values subordinate to the section heading", async () => {
   const messages = await loadAppMessages("vi");

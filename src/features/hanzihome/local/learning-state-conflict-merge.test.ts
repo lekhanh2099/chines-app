@@ -21,6 +21,178 @@ function stateWith(patch: Partial<UserLearningState>): UserLearningState {
 }
 
 describe("mergeLearningStateAfterConflict", () => {
+ it("leaves library orders absent when no generation has a saved preference", () => {
+  const merged = mergeLearningStateAfterConflict({
+   base: emptyLearningState,
+   local: emptyLearningState,
+   remote: emptyLearningState,
+  });
+
+  expect(merged.settings).not.toHaveProperty("libraryCollectionOrder");
+  expect(merged.settings).not.toHaveProperty("libraryResumeOrder");
+ });
+
+ it("keeps remote library reorders when the cloned local sequences are unchanged", () => {
+  const base = stateWith({
+   settings: {
+    libraryCollectionOrder: ["group:hanyu", "static:khau-ngu"],
+    libraryResumeOrder: ["catalog:book-a", "static:khau-ngu"],
+   },
+  });
+  const local = stateWith({
+   settings: {
+    libraryCollectionOrder: ["group:hanyu", "static:khau-ngu"],
+    libraryResumeOrder: ["catalog:book-a", "static:khau-ngu"],
+    density: "compact",
+   },
+  });
+  const remote = stateWith({
+   settings: {
+    libraryCollectionOrder: ["static:khau-ngu", "group:hanyu", "static:nhip-cau"],
+    libraryResumeOrder: ["static:khau-ngu", "catalog:book-a"],
+   },
+  });
+
+  const merged = mergeLearningStateAfterConflict({ base, local, remote });
+
+  expect(merged.settings.libraryCollectionOrder).toEqual(remote.settings.libraryCollectionOrder);
+  expect(merged.settings.libraryResumeOrder).toEqual(remote.settings.libraryResumeOrder);
+  expect(merged.settings.density).toBe("compact");
+ });
+
+ it("keeps complete local library reorders during concurrent reorders without losing unrelated remote state", () => {
+  const base = stateWith({
+   settings: {
+    libraryCollectionOrder: ["group:hanyu", "static:khau-ngu", "static:nhip-cau"],
+    libraryResumeOrder: ["catalog:book-a", "static:khau-ngu", "static:nhip-cau"],
+   },
+  });
+  const local = stateWith({
+   settings: {
+    libraryCollectionOrder: ["static:khau-ngu", "group:hanyu", "static:nhip-cau"],
+    libraryResumeOrder: ["static:khau-ngu", "catalog:book-a", "static:nhip-cau"],
+   },
+  });
+  const remote = stateWith({
+   settings: {
+    libraryCollectionOrder: ["static:nhip-cau", "static:khau-ngu", "group:hanyu"],
+    libraryResumeOrder: ["static:nhip-cau", "static:khau-ngu", "catalog:book-a"],
+    density: "compact",
+    bookResume: { "static:khau-ngu": { lessonId: "khau-ngu-review-04", module: "practice" } },
+    lessonTextDisplayMode: { ...defaultLessonTextDisplaySettings, hanziSize: "lg" },
+   },
+   progress: { vocab: { saved: { status: "known", level: 3 } } },
+  });
+
+  const merged = mergeLearningStateAfterConflict({ base, local, remote });
+
+  expect(merged.settings.libraryCollectionOrder).toEqual(local.settings.libraryCollectionOrder);
+  expect(merged.settings.libraryResumeOrder).toEqual(local.settings.libraryResumeOrder);
+  expect(merged.settings.density).toBe("compact");
+  expect(merged.settings.bookResume).toEqual(remote.settings.bookResume);
+  expect(merged.settings.lessonTextDisplayMode).toEqual(remote.settings.lessonTextDisplayMode);
+  expect(merged.progress).toEqual(remote.progress);
+ });
+
+ it("keeps explicit local empty resets over saved remote library orders", () => {
+  const base = stateWith({
+   settings: {
+    libraryCollectionOrder: ["group:hanyu", "static:khau-ngu"],
+    libraryResumeOrder: ["catalog:book-a", "static:khau-ngu"],
+   },
+  });
+  const local = stateWith({ settings: { libraryCollectionOrder: [], libraryResumeOrder: [] } });
+  const remote = stateWith({
+   settings: {
+    libraryCollectionOrder: ["static:khau-ngu", "group:hanyu"],
+    libraryResumeOrder: ["static:khau-ngu", "catalog:book-a"],
+   },
+  });
+
+  const merged = mergeLearningStateAfterConflict({ base, local, remote });
+
+  expect(merged.settings.libraryCollectionOrder).toEqual([]);
+  expect(merged.settings.libraryResumeOrder).toEqual([]);
+ });
+
+ it("distinguishes explicit empty local resets from absent legacy preferences", () => {
+  const local = stateWith({ settings: { libraryCollectionOrder: [], libraryResumeOrder: [] } });
+  const remote = stateWith({
+   settings: {
+    libraryCollectionOrder: ["static:khau-ngu", "group:hanyu"],
+    libraryResumeOrder: ["static:khau-ngu", "catalog:book-a"],
+   },
+  });
+
+  const merged = mergeLearningStateAfterConflict({ base: emptyLearningState, local, remote });
+
+  expect(merged.settings.libraryCollectionOrder).toEqual([]);
+  expect(merged.settings.libraryResumeOrder).toEqual([]);
+ });
+
+ it("preserves intentional local removals of saved library orders", () => {
+  const base = stateWith({
+   settings: {
+    libraryCollectionOrder: ["group:hanyu", "static:khau-ngu"],
+    libraryResumeOrder: ["catalog:book-a", "static:khau-ngu"],
+   },
+  });
+  const remote = stateWith({
+   settings: {
+    libraryCollectionOrder: ["static:khau-ngu", "group:hanyu"],
+    libraryResumeOrder: ["static:khau-ngu", "catalog:book-a"],
+   },
+  });
+
+  const merged = mergeLearningStateAfterConflict({ base, local: emptyLearningState, remote });
+
+  expect(merged.settings).not.toHaveProperty("libraryCollectionOrder");
+  expect(merged.settings).not.toHaveProperty("libraryResumeOrder");
+ });
+
+ it("merges collection and resume reorders independently", () => {
+  const base = stateWith({
+   settings: {
+    libraryCollectionOrder: ["group:hanyu", "static:khau-ngu"],
+    libraryResumeOrder: ["catalog:book-a", "static:khau-ngu"],
+   },
+  });
+  const collectionChange = stateWith({
+   settings: {
+    libraryCollectionOrder: ["static:khau-ngu", "group:hanyu"],
+    libraryResumeOrder: ["catalog:book-a", "static:khau-ngu"],
+   },
+  });
+  const resumeChange = stateWith({
+   settings: {
+    libraryCollectionOrder: ["group:hanyu", "static:khau-ngu"],
+    libraryResumeOrder: ["static:khau-ngu", "catalog:book-a"],
+   },
+  });
+
+  const localCollection = mergeLearningStateAfterConflict({
+   base,
+   local: collectionChange,
+   remote: resumeChange,
+  });
+  const localResume = mergeLearningStateAfterConflict({
+   base,
+   local: resumeChange,
+   remote: collectionChange,
+  });
+
+  expect(localCollection.settings.libraryCollectionOrder).toEqual(
+   collectionChange.settings.libraryCollectionOrder,
+  );
+  expect(localCollection.settings.libraryResumeOrder).toEqual(
+   resumeChange.settings.libraryResumeOrder,
+  );
+  expect(localResume.settings.libraryCollectionOrder).toEqual(
+   collectionChange.settings.libraryCollectionOrder,
+  );
+  expect(localResume.settings.libraryResumeOrder).toEqual(resumeChange.settings.libraryResumeOrder);
+ });
+
  it("merges lesson display preferences per nested field", () => {
   const base = stateWith({
    settings: { lessonTextDisplayMode: defaultLessonTextDisplaySettings },

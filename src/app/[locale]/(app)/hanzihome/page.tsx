@@ -1,6 +1,7 @@
 import { notFound, permanentRedirect } from "next/navigation";
 
 import { HanziHomePage as HanziHomeFeaturePage } from "@/features/hanzihome/HanziHomePage";
+import { getTextbookCatalog } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { isAppLocale, localizePathname } from "@/i18n/config";
 
 export default async function HanziHomePage({
@@ -24,5 +25,7 @@ export default async function HanziHomePage({
   permanentRedirect(localizePathname(target, locale));
  }
 
- return <HanziHomeFeaturePage />;
+ return (
+  <HanziHomeFeaturePage textbooks={getTextbookCatalog().filter((book) => book.key !== "tm2")} />
+ );
 }

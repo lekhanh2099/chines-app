@@ -321,8 +321,10 @@ describe("learning-state-local-store atomic operations", () => {
  });
 });
 
-it("round-trips book settings and resume through durable storage without crossing owners", async () => {
+it("round-trips book preferences and personal library orders through durable storage without crossing owners", async () => {
  const settings: UserLearningState["settings"] = {
+  libraryCollectionOrder: ["static:khau-ngu", "group:hanyu", "static:nhip-cau"],
+  libraryResumeOrder: ["catalog:book-a", "static:khau-ngu"],
   bookDisplayModes: {
    "static:bridge": { ...defaultTextbookDisplaySettings, hanziSize: "lg" },
   },

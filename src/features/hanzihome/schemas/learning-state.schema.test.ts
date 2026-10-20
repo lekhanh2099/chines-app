@@ -2,6 +2,63 @@ import { describe, expect, it } from "vitest";
 
 import { userLearningStateSchema } from "./learning-state.schema";
 
+describe("learning-state library order preferences", () => {
+ it("keeps legacy state valid without adding saved library orders", () => {
+  const parsed = userLearningStateSchema.parse({});
+
+  expect(parsed.settings).toEqual({});
+  expect(parsed.settings.libraryCollectionOrder).toBeUndefined();
+  expect(parsed.settings.libraryResumeOrder).toBeUndefined();
+ });
+
+ it("preserves independent collection and resume sequences through parsing and serialization", () => {
+  const parsed = userLearningStateSchema.parse({
+   settings: {
+    libraryCollectionOrder: ["static:khau-ngu", "group:hanyu", "static:nhip-cau"],
+    libraryResumeOrder: ["catalog:book-a", "static:khau-ngu"],
+   },
+  });
+
+  expect(parsed.settings.libraryCollectionOrder).toEqual([
+   "static:khau-ngu",
+   "group:hanyu",
+   "static:nhip-cau",
+  ]);
+  expect(parsed.settings.libraryResumeOrder).toEqual(["catalog:book-a", "static:khau-ngu"]);
+  expect(JSON.stringify(parsed.settings)).toBe(
+   '{"libraryCollectionOrder":["static:khau-ngu","group:hanyu","static:nhip-cau"],"libraryResumeOrder":["catalog:book-a","static:khau-ngu"]}',
+  );
+ });
+
+ it("preserves an explicit empty order while rejecting invalid collection identifiers", () => {
+  expect(
+   userLearningStateSchema.parse({ settings: { libraryCollectionOrder: [] } }).settings
+    .libraryCollectionOrder,
+  ).toEqual([]);
+  expect(
+   userLearningStateSchema.safeParse({ settings: { libraryCollectionOrder: [""] } }).success,
+  ).toBe(false);
+  expect(
+   userLearningStateSchema.safeParse({ settings: { libraryCollectionOrder: "group:hanyu" } })
+    .success,
+  ).toBe(false);
+ });
+
+ it("preserves an empty resume order while rejecting invalid resume identifiers", () => {
+  expect(
+   userLearningStateSchema.parse({ settings: { libraryResumeOrder: [] } }).settings
+    .libraryResumeOrder,
+  ).toEqual([]);
+  expect(
+   userLearningStateSchema.safeParse({ settings: { libraryResumeOrder: [""] } }).success,
+  ).toBe(false);
+  expect(
+   userLearningStateSchema.safeParse({ settings: { libraryResumeOrder: "catalog:book-a" } })
+    .success,
+  ).toBe(false);
+ });
+});
+
 function learningStateWithFont(hanziFont: string) {
  return {
   settings: {

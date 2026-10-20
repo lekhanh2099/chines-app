@@ -122,6 +122,7 @@ function reviewKey(item: UserLearningState["reviewHistory"][number]) {
  *
  * Conflict policy:
  * - scalar settings merge per field; a same-field conflict keeps the pending local intent;
+ * - collection and resume orders compare IDs by position; changed local sequences win as a whole;
  * - lesson display settings merge per nested field against the product defaults when absent;
  * - bookmark arrays are membership sets: local add/remove deltas apply to the latest remote set;
  * - progress items are atomic review snapshots. If both sides changed the same item, the later
@@ -165,6 +166,24 @@ export function mergeLearningStateAfterConflict({
   local.settings.vocabDetailTab,
   remote.settings.vocabDetailTab,
  );
+ const baseCollectionOrder = base.settings.libraryCollectionOrder;
+ const localCollectionOrder = local.settings.libraryCollectionOrder;
+ if (
+  localCollectionOrder?.length !== baseCollectionOrder?.length ||
+  localCollectionOrder?.some((id, index) => id !== baseCollectionOrder?.[index])
+ ) {
+  if (localCollectionOrder === undefined) delete settings.libraryCollectionOrder;
+  else settings.libraryCollectionOrder = localCollectionOrder;
+ }
+ const baseResumeOrder = base.settings.libraryResumeOrder;
+ const localResumeOrder = local.settings.libraryResumeOrder;
+ if (
+  localResumeOrder?.length !== baseResumeOrder?.length ||
+  localResumeOrder?.some((id, index) => id !== baseResumeOrder?.[index])
+ ) {
+  if (localResumeOrder === undefined) delete settings.libraryResumeOrder;
+  else settings.libraryResumeOrder = localResumeOrder;
+ }
  settings.lessonTextDisplayMode = mergeLessonTextDisplayMode(
   base.settings.lessonTextDisplayMode,
   local.settings.lessonTextDisplayMode,

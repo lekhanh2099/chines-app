@@ -1690,6 +1690,25 @@ export const currentApiInventory = [
   internalReason: null,
  }),
  inventoryEntry({
+  currentPath: "/api/hanzihome/library-covers",
+  methods: ["GET"],
+  source: "route",
+  group: "HanziHome content",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason: "Shared library cover metadata is read by authenticated HanziHome learners.",
+ }),
+ inventoryEntry({
+  currentPath: "/api/hanzihome/library-covers/[collectionId]",
+  methods: ["PUT", "DELETE"],
+  source: "route",
+  group: "HanziHome content",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "Shared library cover mutations require the signed-in editor capability and audited compare-and-swap RPC.",
+ }),
+ inventoryEntry({
   currentPath: "/api/hanzihome/html-artifacts/[artifactId]",
   methods: ["GET", "PATCH", "DELETE"],
   source: "route",

@@ -7,7 +7,7 @@
  },
  "continueLearning": {
   "title": "Học tiếp",
-  "description": "Chọn bộ giáo trình, mở từng quyển và tiếp tục đúng bài đang học.",
+  "description": "Quay lại những bài bạn đang học.",
   "recentLesson": "Bài vừa học",
   "startHanziHome": "Bắt đầu HanziHome",
   "lesson": "Bài {number}: {title}",
@@ -15,7 +15,9 @@
   "resume": "Tiếp tục",
   "start": "Bắt đầu",
   "books": "{count} quyển",
-  "catalogUnavailable": "Chưa tải được danh sách Bài học. Các giáo trình khác vẫn khả dụng."
+  "catalogUnavailable": "Chưa tải được danh sách Bài học. Các giáo trình khác vẫn khả dụng.",
+  "browseLibrary": "Xem tất cả giáo trình",
+  "empty": "Bạn chưa bắt đầu bài học nào. Chọn một giáo trình để bắt đầu."
  },
  "modules": {
   "overview": "Tổng quan",

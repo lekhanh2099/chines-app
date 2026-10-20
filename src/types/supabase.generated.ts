@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.5"
+    PostgrestVersion: "14.4"
   }
   public: {
     Tables: {
@@ -1322,6 +1322,27 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      hanzihome_library_covers: {
+        Row: {
+          collection_id: string
+          cover_url: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          collection_id: string
+          cover_url: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          collection_id?: string
+          cover_url?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       hanzihome_listening_audio: {
         Row: {
@@ -3231,6 +3252,16 @@ export type Database = {
           p_expected_updated_at?: string
           p_operation: string
           p_reason?: string
+        }
+        Returns: Json
+      }
+      hanzihome_mutate_library_cover_as_user: {
+        Args: {
+          p_collection_id: string
+          p_cover_url?: string
+          p_expected_updated_at?: string
+          p_reason?: string
+          p_reset?: boolean
         }
         Returns: Json
       }

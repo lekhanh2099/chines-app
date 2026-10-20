@@ -51,6 +51,113 @@ describe("HanziHome contextual pronunciation", () => {
   expect(result.glyphs.find((glyph) => glyph.text === "德")?.spokenReadingKey).toBe("de2");
  });
 
+ it("reads 地 as a neutral particle in the actual 静静地走过 paragraph", () => {
+  const text =
+   "第二天课间，我把那封信还给了她。直到下课，她也没有抬起头。从此，每当见到我，她总是低着头，静静地走过。";
+  const result = analyzeContextualPronunciation({ text });
+  const particle = result.glyphs.find((glyph) => glyph.text === "地");
+  expect(particle?.lexicalReadingKey).toBe("de5");
+  expect(particle?.spokenReadingKey).toBe("de5");
+  expect(particle?.evidence).toEqual(["context-library"]);
+  const phraseStart = text.indexOf("静静地走过");
+  expect(formatContextualPinyinRange(result, phraseStart, phraseStart + 5)).toBe(
+   "jìng jìng de zǒu guò",
+  );
+ });
+
+ it.each([
+  "静静地走过",
+  "怯怯地问",
+  "工工整整地写",
+  "急急忙忙地跑去",
+  "蹦蹦跳跳地走",
+  "一笔一笔地算",
+  "缓缓地下去",
+  "高高兴兴地上台",
+  "好好地工作",
+  "一步一步地上台",
+ ])("infers adverbial 地 in unlisted reduplicated modifiers: %s", (text) => {
+  const result = analyzeContextualPronunciation({ text });
+  expect(result.glyphs.find((glyph) => glyph.text === "地")?.spokenReadingKey).toBe("de5");
+ });
+
+ it.each([
+  "地",
+  "天地",
+  "大地",
+  "当地",
+  "地方",
+  "土地",
+  "目的地",
+  "地球",
+  "地址",
+  "我的地很大",
+  "一块块地用了",
+  "看看地图",
+  "看看地上",
+  "看看地下室",
+  "听听地道",
+  "瞧瞧地下室",
+  "摸摸地上",
+  "擦擦地上",
+  "挖挖地看看",
+  "锄锄地看看",
+  "打扫打扫地下室",
+  "收拾收拾地下室",
+  "整理整理地上的灰",
+ ])("keeps the noun reading of 地 in %s", (text) => {
+  const result = analyzeContextualPronunciation({ text });
+  expect(result.glyphs.find((glyph) => glyph.text === "地")?.spokenReadingKey).toBe("di4");
+ });
+
+ it("keeps exact dictionary evidence when the adverbial reading already agrees", () => {
+  const result = analyzeContextualPronunciation({ text: "慢慢地走" });
+  const particle = result.glyphs.find((glyph) => glyph.text === "地");
+  expect(particle?.evidence).toEqual(["dictionary-exact"]);
+  expect(particle?.confidence).toBe(0.95);
+ });
+
+ it("preserves explicit readings ahead of the adverbial 地 rule", () => {
+  const text = "静静地走";
+  const source = analyzeContextualPronunciation({ text, sourcePinyin: "jìng jìng dì zǒu" });
+  const manual = analyzeContextualPronunciation({
+   text,
+   overrides: [
+    {
+     id: "particle-override",
+     text: "地",
+     readings: ["di4"],
+     scope: "sentence-instance",
+     sentenceText: text,
+     start: 2,
+     end: 3,
+     updatedAt: "2026-10-20T00:00:00.000Z",
+    },
+   ],
+  });
+  const dictionary = analyzeContextualPronunciation({ text }, [
+   { id: "explicit-phrase", text: "静静地", pinyin: "jìng jìng dì", priority: 100 },
+  ]);
+  expect(
+   [source, manual, dictionary].map(
+    (result) => result.glyphs.find((glyph) => glyph.text === "地")?.spokenReadingKey,
+   ),
+  ).toEqual(["di4", "di4", "di4"]);
+ });
+
+ it("keeps grammar context within the original grapheme boundaries", () => {
+  const result = analyzeContextualPronunciation({ text: "🙂他静静地走过" });
+  const particle = result.glyphs.find((glyph) => glyph.text === "地");
+  expect(particle?.start).toBe(5);
+  expect(particle?.end).toBe(6);
+  expect(particle?.spokenReadingKey).toBe("de5");
+
+  for (const text of ["静静，地上全是雪", "静静 地上全是雪"]) {
+   const separated = analyzeContextualPronunciation({ text });
+   expect(separated.glyphs.find((glyph) => glyph.text === "地")?.spokenReadingKey).toBe("di4");
+  }
+ });
+
  it("keeps lexical and tone-sandhi readings aligned to Hanzi graphemes", () => {
   const result = analyzeContextualPronunciation({ text: "一不" });
   expect(result.glyphs).toHaveLength(2);
