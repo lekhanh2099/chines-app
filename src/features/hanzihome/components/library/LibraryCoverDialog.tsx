@@ -134,6 +134,7 @@ export function LibraryCoverDialog({
       className="flex min-h-0 flex-col"
       onSubmit={(event) => {
        event.preventDefault();
+       if (isPending || form.state.isSubmitting) return;
        void form.handleSubmit();
       }}
      >

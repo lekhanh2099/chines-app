@@ -842,7 +842,7 @@ it
        await browserExpect(covers).toHaveCount(defaultOrder.length);
        expect(
         await covers.evaluateAll((images) => images.map((image) => image.getAttribute("src"))),
-       ).toEqual(defaultOrder.map(() => "/textbooks/common-cover.svg"));
+       ).toEqual(defaultOrder.map(() => new URL("textbooks/common-cover.svg", url).href));
        await browserExpect
         .poll(() =>
          covers.evaluateAll((images) =>
