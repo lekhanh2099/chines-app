@@ -127,14 +127,15 @@
    "description": "Pinyin là đề xuất theo ngữ cảnh, không được mặc định xem là đúng. Với chữ đa âm, hãy xác nhận cách đọc phù hợp câu này.",
    "sessionDescription": "Thay đổi ở nguồn này chỉ áp dụng trong phiên đọc hiện tại và không được ghi là dữ liệu đã xác nhận lâu dài.",
    "meaning": "Nghĩa trong ngữ cảnh",
-   "choose": "Chọn âm cho từng chữ",
+   "choose": "Cách đọc",
    "noReading": "Chưa có cách đọc khả dụng.",
    "openInspector": "Mở phân tích đầy đủ",
    "resetSession": "Bỏ áp dụng",
    "resetPersistent": "Bỏ xác nhận",
    "close": "Đóng",
-   "applySession": "Áp dụng trong phiên",
-   "confirm": "Xác nhận cách đọc"
+   "applySession": "Áp dụng",
+   "sessionOnly": "Chỉ trong phiên này",
+   "confirm": "Xác nhận"
   },
   "selection": {
    "missingPinyin": "Chưa xác định pinyin",
@@ -147,7 +148,7 @@
    "notePlaceholder": "Ghi chú cho đoạn chọn…",
    "noteAria": "Ghi chú cho đoạn chọn",
    "cancel": "Huỷ",
-   "saveNote": "Lưu ghi chú",
+   "saveNote": "Lưu",
    "listen": "Nghe",
    "playFromHere": "Đọc tiếp",
    "review": "Ôn lại",

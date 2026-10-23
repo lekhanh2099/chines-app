@@ -1722,17 +1722,35 @@ it
      "data-active",
      "true",
     );
-    await page.locator('[aria-label^="Kiểm tra pinyin chữ"]').first().click();
+    const sessionPinyin = page
+     .locator('[data-reader-segment="source-p1"]')
+     .getByRole("button", { name: /pinyin chữ 化/iu });
+    const pronunciationChoices = page.getByRole("radiogroup", { name: "化", exact: true });
+    await sessionPinyin.click();
+    await pronunciationChoices.getByRole("radio", { name: "huà", exact: true }).focus();
+    await page.keyboard.press("ArrowRight");
+    await browserExpect(
+     pronunciationChoices.getByRole("radio", { name: "huā", exact: true }),
+    ).toBeChecked();
     await page
      .getByRole("button", { name: chrome.pronunciation.applySession, exact: true })
      .click();
-    await page.locator('[aria-label^="Kiểm tra pinyin chữ"]').first().click();
+    await sessionPinyin.click();
+    await browserExpect(
+     pronunciationChoices.getByRole("radio", { name: "huā", exact: true }),
+    ).toBeChecked();
     await browserExpect(
      page.getByRole("button", { name: chrome.pronunciation.resetSession, exact: true }),
     ).toBeVisible();
     await page
      .getByRole("button", { name: chrome.pronunciation.resetSession, exact: true })
      .click();
+    await sessionPinyin.click();
+    await browserExpect(
+     pronunciationChoices.getByRole("radio", { name: "huà", exact: true }),
+    ).toBeChecked();
+    await page.getByRole("button", { name: chrome.pronunciation.close, exact: true }).click();
+    await browserExpect(pronunciationChoices).toHaveCount(0);
     for (const viewport of [
      { width: 390, height: 844 },
      { width: 820, height: 1180 },

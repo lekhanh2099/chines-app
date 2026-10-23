@@ -133,14 +133,15 @@
    "description": "Pinyin is a contextual suggestion and must not be assumed correct. For polyphonic characters, confirm the reading that fits this sentence.",
    "sessionDescription": "This change applies only to the current reading session and is not stored as a long-term confirmed value.",
    "meaning": "Meaning in context",
-   "choose": "Choose a reading for each character",
+   "choose": "Reading",
    "noReading": "No reading is available.",
    "openInspector": "Open full analysis",
    "resetSession": "Remove session change",
    "resetPersistent": "Remove confirmation",
    "close": "Close",
-   "applySession": "Apply in this session",
-   "confirm": "Confirm reading"
+   "applySession": "Apply",
+   "sessionOnly": "This session only",
+   "confirm": "Confirm"
   },
   "selection": {
    "missingPinyin": "Pinyin is not available",
@@ -153,7 +154,7 @@
    "notePlaceholder": "Add a note for the selected segment…",
    "noteAria": "Note for selected segment",
    "cancel": "Cancel",
-   "saveNote": "Save note",
+   "saveNote": "Save",
    "listen": "Listen",
    "playFromHere": "Play from here",
    "review": "Review",

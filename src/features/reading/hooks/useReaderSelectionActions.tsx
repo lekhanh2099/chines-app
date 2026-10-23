@@ -3,6 +3,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import {
  BookmarkPlus,
+ Check,
  ChevronLeft,
  Info,
  Languages,
@@ -572,8 +573,8 @@ export function useReaderSelectionActions({
         </div>
        ) : (
         <div className="grid gap-2.5 p-3 w-72">
-         <div className="flex items-center justify-between gap-1 pb-1">
-          <div className="flex items-center gap-1.5" role="group" aria-label="Màu ghi chú">
+         <div className="flex items-center justify-between gap-1">
+          <div className="flex items-center" role="group" aria-label="Màu ghi chú">
            {HIGHLIGHT_COLORS.map(({ color, label, swatchStyle }) => {
             const isCurrent = openedAnnotation
              ? openedAnnotation.color === color
@@ -582,9 +583,9 @@ export function useReaderSelectionActions({
              <Button
               key={color}
               type="button"
-              variant="swatch"
-              size="icon-xs"
-              style={swatchStyle}
+              variant="ghost"
+              size="compact"
+              className="w-8"
               aria-pressed={isCurrent}
               aria-label={`Màu ${label}`}
               title={`Màu ${label}`}
@@ -596,15 +597,27 @@ export function useReaderSelectionActions({
                }
               }}
              >
-              <span className="sr-only">{label}</span>
+              <span
+               className="relative grid size-4 shrink-0 place-items-center rounded-full"
+               style={swatchStyle}
+               aria-hidden="true"
+              >
+               {isCurrent ? (
+                <>
+                 <span className="absolute -inset-0.5 rounded-full border border-primary" />
+                 <Check className="size-3 text-primary-foreground" />
+                </>
+               ) : null}
+              </span>
              </Button>
             );
            })}
           </div>
           <Button
            type="button"
-           size="icon-xs"
+           size="compact"
            variant="ghost"
+           className="w-8"
            aria-label={t("closeAria")}
            onClick={() => (openedAnnotation ? clear() : setMode("quick"))}
           >
@@ -612,6 +625,7 @@ export function useReaderSelectionActions({
           </Button>
          </div>
          <Textarea
+          density="compact"
           value={noteDraft}
           onChange={(event) => setNoteDraft(event.target.value)}
           placeholder={t("notePlaceholder")}
@@ -619,36 +633,42 @@ export function useReaderSelectionActions({
           rows={2}
           autoFocus
          />
-         <div className="flex justify-end gap-1.5 pt-1">
+         <div className="flex flex-wrap items-center justify-between gap-1.5 pt-1">
           {openedAnnotation ? (
            <Button
             type="button"
-            size="sm"
-            variant="destructive"
+            size="compact"
+            variant="menuDestructive"
+            className="w-auto"
             disabled={saving}
             onClick={() => removeAnnotation(openedAnnotation.id, openedAnnotation.revision)}
            >
+            <Trash2 className="size-3.5" />
             {notesT("delete")}
            </Button>
           ) : null}
-          <Button
-           type="button"
-           size="sm"
-           variant="ghost"
-           onClick={() => (openedAnnotation ? clear() : setMode("quick"))}
-          >
-           {t("cancel")}
-          </Button>
-          <Button
-           type="button"
-           size="sm"
-           disabled={
-            saving || !noteDraft.trim() || selection.start === null || selection.end === null
-           }
-           onClick={() => saveAnnotation("note", selectedColor)}
-          >
-           {t("saveNote")}
-          </Button>
+          <div className="ml-auto flex gap-1.5">
+           <Button
+            type="button"
+            size="compact"
+            variant="ghost"
+            onClick={() => (openedAnnotation ? clear() : setMode("quick"))}
+           >
+            {t("cancel")}
+           </Button>
+           <Button
+            type="button"
+            size="compact"
+            variant="avatar"
+            disabled={
+             saving || !noteDraft.trim() || selection.start === null || selection.end === null
+            }
+            onClick={() => saveAnnotation("note", selectedColor)}
+           >
+            <Check className="size-3.5" />
+            {t("saveNote")}
+           </Button>
+          </div>
          </div>
         </div>
        )}

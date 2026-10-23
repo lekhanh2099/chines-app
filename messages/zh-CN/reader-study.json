@@ -127,14 +127,15 @@
    "description": "拼音是基于语境的建议，不能默认正确。对于多音字，请确认适合当前句子的读音。",
    "sessionDescription": "此更改仅应用于当前阅读会话，不会保存为长期确认的数据。",
    "meaning": "语境中的含义",
-   "choose": "为每个字选择读音",
+   "choose": "读音",
    "noReading": "没有可用读音。",
    "openInspector": "打开完整分析",
    "resetSession": "取消本次应用",
    "resetPersistent": "取消确认",
    "close": "关闭",
-   "applySession": "应用于本次学习",
-   "confirm": "确认读音"
+   "applySession": "应用",
+   "sessionOnly": "仅本次学习",
+   "confirm": "确认"
   },
   "selection": {
    "missingPinyin": "暂无拼音",
@@ -147,7 +148,7 @@
    "notePlaceholder": "为所选段落添加笔记…",
    "noteAria": "所选段落的笔记",
    "cancel": "取消",
-   "saveNote": "保存笔记",
+   "saveNote": "保存",
    "listen": "听",
    "playFromHere": "从这里朗读",
    "review": "复习",
