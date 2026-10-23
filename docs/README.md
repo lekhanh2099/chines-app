@@ -14,6 +14,7 @@
 
 - [Frontend structure/state ownership](architecture/frontend-structure.md), [Supabase runtime source](adr/0001-supabase-runtime-source.md).
 - [Contribution/commands](../CONTRIBUTING.md), [risk/confirmation](agent/risk-confirmation.md).
+- [Solo AI engineering workflow v1](agent/solo-ai-engineering-workflow.md) adapts the research blueprint to HanziHome, preserves existing ownership and remains unvalidated by a pilot; it grants no authority to install tools, publish or deploy.
 - [AGENTS.md](../AGENTS.md) là owner routing của năm core skills: architecture/state, UI, content editing, test review và Supabase. Hướng dẫn bảo trì skills cũng nằm tại đó; không giữ inventory/scorecard riêng.
 - [Frontend flow coverage](testing/frontend-flow-coverage.md) giữ checklist test canonical, test owners, affected CI selection và proof boundaries. Skill Test Review dẫn tới đây, không giữ matrix riêng.
 - `.agents/skills` giữ trigger và quy trình truy vết cho agent; docs và nearest `AGENTS.md` giữ contracts/checklists. Migration review dùng [Supabase instructions](../supabase/AGENTS.md), content editing dùng [HanziHome contract](../src/features/hanzihome/AGENTS.md).

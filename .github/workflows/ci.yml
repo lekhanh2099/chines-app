@@ -57,7 +57,7 @@ jobs:
       }
       const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, "HEAD"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
       const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, "HEAD"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
-      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|skills-lock[.]json$)/;
+      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|skills-lock[.]json$)/;
       const guidance = full || deleted.length > 0 || paths.some((file) => guidancePath.test(file) || file === ".github/workflows/ci.yml" || file === "package.json");
       const browserFiles = {
        notes: ["src/features/notes/hooks/NoteEditor.browser.test.ts", "src/features/notes/hooks/NoteOwner.browser.test.ts"],
@@ -193,6 +193,10 @@ jobs:
       import { format } from "prettier";
 
       const failures = [];
+      const issueTemplates = readdirSync(".github/ISSUE_TEMPLATE").filter((file) => /[.]ya?ml$/.test(file));
+      for (const file of issueTemplates) {
+       await format(readFileSync(`.github/ISSUE_TEMPLATE/${file}`, "utf8"), { parser: "yaml" });
+      }
       const rootContract = readFileSync("AGENTS.md", "utf8");
       const scripts = JSON.parse(readFileSync("package.json", "utf8")).scripts;
       for (const match of rootContract.matchAll(/`((?:docs[/]|[.]agents[/]skills[/])[a-zA-Z0-9/_.-]+[.]md)`/g)) {
@@ -385,3 +389,34 @@ jobs:
      run: npm run test:e2e -- --grep "$E2E_GREP"
    - if: always()
      run: npx supabase stop
+
+ gate:
+  name: CI gate
+  needs: [changes, verify, browser, e2e]
+  if: always()
+  runs-on: ubuntu-latest
+  timeout-minutes: 2
+  steps:
+   - name: Require every selected check to pass
+     env:
+      CHECK_RESULTS: ${{ toJSON(needs) }}
+     run: |
+      node --input-type=module <<'JS'
+      const checks = JSON.parse(process.env.CHECK_RESULTS);
+      const failures = [];
+      for (const job of ["changes", "verify"]) {
+       if (checks[job].result !== "success") failures.push(`${job}: ${checks[job].result}`);
+      }
+      for (const [job, output] of [["browser", "browser_files"], ["e2e", "e2e_grep"]]) {
+       const selected = Boolean(checks.changes.outputs[output]);
+       const result = checks[job].result;
+       if (selected ? result !== "success" : result !== "success" && result !== "skipped") {
+        failures.push(`${job}: ${result} (selected: ${selected})`);
+       }
+      }
+      if (failures.length) {
+       console.error(failures.join("\n"));
+       process.exit(1);
+      }
+      console.log("All selected CI checks passed; unselected suites may be skipped.");
+      JS

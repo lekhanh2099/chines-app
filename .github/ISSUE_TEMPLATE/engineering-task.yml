@@ -1,0 +1,73 @@
+name: Engineering task
+description: Define scope, acceptance and evidence for a HanziHome change.
+body:
+ - type: markdown
+   attributes:
+    value: |
+     The agent may draft this task from your request. Do not include secrets or user data.
+     Do not duplicate the audit queue: keep tasks owned by the master plan there until ownership is explicitly transferred.
+     New issues start in BACKLOG. Move to READY after scope, acceptance and required approvals are clear. Checkboxes do not grant approval.
+ - type: textarea
+   id: goal
+   attributes:
+    label: Goal / current reproduction
+    description: Describe current behavior, reproduction steps for a bug and the expected outcome.
+   validations:
+    required: true
+ - type: textarea
+   id: scope
+   attributes:
+    label: Scope / non-goals / preserved behavior
+    description: State the allowed scope, exclusions and behavior that must remain unchanged.
+   validations:
+    required: true
+ - type: textarea
+   id: acceptance
+   attributes:
+    label: Acceptance criteria
+    description: List observable or testable criteria. Keep the task open while required acceptance is unmet.
+    placeholder: |
+     - [ ] Expected behavior and regression to protect.
+   validations:
+    required: true
+ - type: dropdown
+   id: risk
+   attributes:
+    label: Risk
+    description: Follow docs/agent/risk-confirmation.md. This selection does not replace human approval.
+    options:
+     - Low
+     - Medium
+     - High
+   validations:
+    required: true
+ - type: dropdown
+   id: verification-tier
+   attributes:
+    label: Verification tier
+    description: Follow AGENTS.md. Verification tier is independent of risk.
+    options:
+     - Fast
+     - Subsystem
+     - Full
+   validations:
+    required: true
+ - type: textarea
+   id: boundaries
+   attributes:
+    label: Owners / precedent / types / dependencies
+    description: Identify expected files, existing implementation/type owners, auth/data/API/cache/persistence/cost impacts and dependencies. The agent verifies these before coding.
+   validations:
+    required: true
+ - type: textarea
+   id: verification
+   attributes:
+    label: Verification plan / approvals / rollback
+    description: Map acceptance to checks, record granted/pending approvals and rollback when applicable. External browser use and production access require authorization.
+   validations:
+    required: true
+ - type: textarea
+   id: evidence
+   attributes:
+    label: Progress / evidence / handoff
+    description: Update this issue with separate local/CI/accepted/merged/deployed/observed states, commands/results, source SHA or diff, review findings and open acceptance.
