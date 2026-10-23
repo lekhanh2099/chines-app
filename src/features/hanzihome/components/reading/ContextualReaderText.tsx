@@ -240,10 +240,7 @@ export function ContextualReaderText({
     <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
      {pinyinInteractive ? (
       <span
-       className={cn(
-        pinyinClassName,
-        needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
-       )}
+       className={cn(pinyinClassName, needsPronunciationReview && "text-warning")}
        onClick={(event) => {
         event.stopPropagation();
         activatePinyin(event.currentTarget);
@@ -304,7 +301,7 @@ export function ContextualReaderText({
         className={cn(
          "cursor-pointer rounded-sm",
          focusRingClassName,
-         needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
+         needsPronunciationReview && "text-warning",
         )}
         onClick={(event) => {
          event.stopPropagation();

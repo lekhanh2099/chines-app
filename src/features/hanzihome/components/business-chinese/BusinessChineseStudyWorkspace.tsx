@@ -475,7 +475,7 @@ function BusinessChineseMixedText({
         className={cn(
          "cursor-pointer rounded-sm",
          focusRingClassName,
-         needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
+         needsPronunciationReview && "text-warning",
         )}
         role="button"
         tabIndex={0}

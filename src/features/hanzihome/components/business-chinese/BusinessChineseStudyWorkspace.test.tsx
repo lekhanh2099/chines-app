@@ -445,7 +445,8 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("Bài 1/18");
   expect(markup).toContain("Nghe bài");
   expect(markup).toContain("Công cụ học");
-  expect(markup).toContain("text-warning underline decoration-dotted underline-offset-2");
+  expect(markup).toContain("text-warning");
+  expect(markup).not.toContain("decoration-dotted");
   expect(markup).not.toContain(">Ngữ pháp<");
   for (const section of textSections) expect(markup).toContain(`id="${section.id}"`);
  });
@@ -748,7 +749,8 @@ describe("BusinessChineseStudyWorkspace", () => {
    }),
   );
   expect(markup).toContain('aria-label="Pinyin chữ 行 cần kiểm tra"');
-  expect(markup).toContain("text-warning underline decoration-dotted underline-offset-2");
+  expect(markup).toContain("text-warning");
+  expect(markup).not.toContain("decoration-dotted");
   expect(markup).toContain("Công cụ học");
  });
 

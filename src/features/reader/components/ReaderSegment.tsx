@@ -183,7 +183,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
       className={cn(
        "cursor-pointer rounded-sm",
        focusRingClassName,
-       needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
+       needsPronunciationReview && "text-warning",
       )}
       aria-label={textLabels(
        needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",
@@ -246,7 +246,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
         className={cn(
          "cursor-pointer rounded-sm",
          focusRingClassName,
-         needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
+         needsPronunciationReview && "text-warning",
         )}
         aria-label={textLabels(
          needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",

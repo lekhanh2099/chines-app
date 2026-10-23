@@ -33,6 +33,12 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  舍得: "shě de",
  免得: "miǎn de",
  省得: "shěng de",
+ 不由得: "bù yóu de",
+ 舍不得: "shě bu de",
+ 怪不得: "guài bu de",
+ 不见得: "bù jiàn de",
+ 恨不得: "hèn bu de",
+ 懒得: "lǎn de",
  来得及: "lái de jí",
  来不及: "lái bu jí",
  跑得快: "pǎo de kuài",
@@ -123,6 +129,9 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  着凉: "zháo liáng",
  着迷: "zháo mí",
  着慌: "zháo huāng",
+ 不着边际: "bù zhuó biān jì",
+ 不着痕迹: "bù zhuó hén jì",
+ 不着调: "bù zháo diào",
  看着: "kàn zhe",
  听着: "tīng zhe",
  说着: "shuō zhe",
@@ -197,6 +206,7 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  倒酒: "dào jiǔ",
  倒垃圾: "dào lā jī",
  倒流: "dào liú",
+ 倒映: "dào yìng",
  倒退: "dào tuì",
  倒立: "dào lì",
  倒数: "dào shǔ",
@@ -375,6 +385,7 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  民乐: "mín yuè",
  器乐: "qì yuè",
  声乐: "shēng yuè",
+ 古乐: "gǔ yuè",
  快乐: "kuài lè",
  乐观: "lè guān",
  乐趣: "lè qù",
@@ -446,6 +457,7 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  自传: "zì zhuàn",
  传记: "zhuàn jì",
  外传: "wài zhuàn",
+ 差不多先生传: "chà bu duō xiān sheng zhuàn",
  传说: "chuán shuō",
  传统: "chuán tǒng",
  传播: "chuán bō",
@@ -518,6 +530,77 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  盛情: "shèng qíng",
  盛饭: "chéng fàn",
  盛汤: "chéng tāng",
+ 盛入: "chéng rù",
+
+ // ── Reviewed lexical readings from the learner corpus ──
+ 钻空子: "zuān kòng zi",
+ 挨训: "ái xùn",
+ 炸酱: "zhá jiàng",
+ 切成: "qiē chéng",
+ 心脏: "xīn zàng",
+ 藏蓝: "zàng lán",
+ 咧开: "liě kāi",
+ 东钻西窜: "dōng zuān xī cuàn",
+ 走调: "zǒu diào",
+ 遛鸟: "liù niǎo",
+ 含含糊糊: "hán hán hú hú",
+ 重重地: "zhòng zhòng de",
+ 撒上: "sǎ shàng",
+ 卷走: "juǎn zǒu",
+ 夹在: "jiā zài",
+ 东栅: "dōng zhà",
+ 西栅: "xī zhà",
+ 各奔东西: "gè bèn dōng xī",
+ 学生会: "xué shēng huì",
+ 地方戏: "dì fāng xì",
+ 大城市: "dà chéng shì",
+ 记性: "jì xing",
+ 打扮: "dǎ ban",
+ 主意: "zhǔ yi",
+ 笑话: "xiào hua",
+ 张罗: "zhāng luo",
+ 打交道: "dǎ jiāo dao",
+ 耽误: "dān wu",
+ 高粱: "gāo liang",
+ 养活: "yǎng huo",
+ 胭脂: "yān zhi",
+ 外甥: "wài sheng",
+ 帐篷: "zhàng peng",
+ 苗条: "miáo tiao",
+ 收拾: "shōu shi",
+ 欺负: "qī fu",
+ 打发: "dǎ fa",
+ 在乎: "zài hu",
+ 功夫: "gōng fu",
+ 白净: "bái jing",
+ 本事: "běn shi",
+ 财主: "cái zhu",
+ 打算: "dǎ suan",
+ 工夫: "gōng fu",
+ 故事: "gù shi",
+ 伙计: "huǒ ji",
+ 口袋: "kǒu dai",
+ 快活: "kuài huo",
+ 厉害: "lì hai",
+ 粮食: "liáng shi",
+ 两口子: "liǎng kǒu zi",
+ 料子: "liào zi",
+ 念叨: "niàn dao",
+ 婆家: "pó jia",
+ 首饰: "shǒu shi",
+ 太太: "tài tai",
+ 晚上: "wǎn shang",
+ 委屈: "wěi qu",
+ 位置: "wèi zhi",
+ 行李: "xíng li",
+ 学问: "xué wen",
+ 月亮: "yuè liang",
+ 马虎: "mǎ hu",
+ 裁缝: "cái feng",
+ 丈夫: "zhàng fu",
+ 大丈夫: "dà zhàng fū",
+ 明明白白: "míng míng bái bái",
+ 马马虎虎: "mǎ mǎ hū hū",
 
  // ── 落 (luò / là) ──
  落下: "luò xià",
@@ -776,6 +859,14 @@ export const POLYPHONIC_DICTIONARY: Readonly<Record<string, string>> = {
  梨子: "lí zi",
  橘子: "jú zi",
  柚子: "yòu zi",
+ 链子: "liàn zi",
+ 胆子: "dǎn zi",
+ 轮子: "lún zi",
+ 稿子: "gǎo zi",
+ 左撇子: "zuǒ piě zi",
+ 毯子: "tǎn zi",
+ 法子: "fǎ zi",
+ 例子: "lì zi",
 
  // ── Suffix -头 (-tou khinh thanh) ──
  骨头: "gǔ tou",
@@ -833,10 +924,73 @@ ensurePinyinEngineInitialized();
 
 /* ── Grammatical Context Sets for O(1) Fast Lookups ── */
 
+export const ERHUA_WORDS: readonly string[] = [
+ "哪儿",
+ "那儿",
+ "这儿",
+ "花儿",
+ "玩儿",
+ "小孩儿",
+ "男孩儿",
+ "女孩儿",
+ "会儿",
+ "点儿",
+ "一下儿",
+ "一块儿",
+ "个儿",
+ "串儿",
+ "事儿",
+ "人缘儿",
+ "份儿",
+ "伴儿",
+ "冰棍儿",
+ "准儿",
+ "劲儿",
+ "味儿",
+ "哥儿",
+ "声儿",
+ "大伙儿",
+ "好好儿",
+ "宝贝儿",
+ "小肚儿",
+ "心眼儿",
+ "摊儿",
+ "数数儿",
+ "明儿",
+ "样儿",
+ "根儿",
+ "歌儿",
+ "活儿",
+ "海边儿",
+ "牌儿",
+ "玩意儿",
+ "画儿",
+ "盒儿",
+ "码儿",
+ "空儿",
+ "纳闷儿",
+ "老头儿",
+ "聊天儿",
+ "脑儿",
+ "脸蛋儿",
+ "腿儿",
+ "菜馆儿",
+ "跟儿",
+ "路边儿",
+ "错儿",
+ "鹿尾儿",
+ "气儿",
+ "头儿",
+ "走调儿",
+];
+
 const VERBS_BEFORE_DE = new Set([
  "跑",
+ "去",
+ "回",
  "走",
  "吃",
+ "喝",
  "做",
  "学",
  "写",
@@ -862,6 +1016,169 @@ const VERBS_BEFORE_DE = new Set([
  "笑",
  "哭",
  "生",
+ "拿",
+ "办",
+ "放",
+ "扫",
+ "洗",
+ "塞",
+ "亮",
+ "困",
+ "饿",
+ "忙",
+ "兴",
+ "憋",
+ "系",
+ "坐",
+ "站",
+ "答",
+ "窜",
+ "买",
+ "停",
+ "排",
+ "来",
+ "受",
+ "发展",
+ "高兴",
+ "卖",
+ "开",
+ "考",
+ "打扮",
+ "画",
+ "策划",
+ "吵",
+ "激动",
+ "生活",
+ "收拾",
+ "睡",
+ "紧张",
+ "闷",
+ "相处",
+ "销售",
+ "布置",
+ "穿",
+ "搭配",
+ "逗",
+ "感动",
+ "气",
+ "疼",
+ "委屈",
+ "想",
+ "知道",
+ "称赞",
+ "承认",
+ "吃惊",
+ "愁",
+ "搭",
+ "等",
+ "干涉",
+ "工作",
+ "沟通",
+ "害",
+ "好",
+ "花",
+ "急",
+ "渴",
+ "累",
+ "抹",
+ "配合",
+ "热",
+ "设计",
+ "实现",
+ "谈",
+ "体会",
+ "选择",
+ "压",
+ "保管",
+ "保护",
+ "保证",
+ "避",
+ "便宜",
+ "辩论",
+ "表演",
+ "病",
+ "藏",
+ "宠",
+ "出发",
+ "吹",
+ "从容",
+ "弹",
+ "倒霉",
+ "颠",
+ "调",
+ "对",
+ "多",
+ "罚",
+ "分布",
+ "丰富",
+ "服",
+ "付",
+ "付出",
+ "改编",
+ "高大",
+ "观察",
+ "管",
+ "规定",
+ "恢复",
+ "挤",
+ "检查",
+ "讲解",
+ "讲究",
+ "接触",
+ "拒绝",
+ "控制",
+ "困难",
+ "了解",
+ "离",
+ "聊",
+ "流",
+ "漏",
+ "闹",
+ "拍摄",
+ "赔偿",
+ "佩服",
+ "捧",
+ "抢",
+ "轻松",
+ "伸",
+ "适应",
+ "收集",
+ "瘦",
+ "树立",
+ "掏",
+ "淘汰",
+ "讨论",
+ "提",
+ "贴",
+ "统计",
+ "推荐",
+ "玩儿",
+ "文明",
+ "问",
+ "下",
+ "吓",
+ "闲",
+ "心疼",
+ "信",
+ "行",
+ "宣布",
+ "要",
+ "遗憾",
+ "印",
+ "用",
+ "扎",
+ "张",
+ "涨",
+ "招呼",
+ "照顾",
+ "震",
+ "睁",
+ "支付",
+ "治疗",
+ "装饰",
+ "装修",
+ "钻",
+ "钻研",
 ]);
 
 const DEGREE_OR_ADJ_AFTER_DE = new Set([
@@ -906,10 +1223,13 @@ const PRONOUNS_BEFORE_DEI = new Set([
  "就",
  "还",
  "可",
+ "都",
+ "也",
 ]);
 
 const VERBS_AFTER_DEI = new Set([
  "去",
+ "来",
  "走",
  "做",
  "买",
@@ -934,6 +1254,37 @@ const VERBS_AFTER_DEI = new Set([
  "还",
  "想",
  "问",
+ "要",
+ "挨",
+ "躲",
+ "注",
+ "承",
+ "把",
+ "被",
+ "让",
+ "先",
+ "再",
+ "改",
+ "给",
+ "马上",
+ "稍稍",
+ "多长时间",
+ "收拾",
+ "付出",
+ "有",
+ "在",
+ "早点儿",
+ "切",
+ "倒",
+ "帮",
+ "赔",
+ "负起",
+ "迟到",
+ "戴",
+ "多练习",
+ "好听",
+ "选",
+ "提前",
 ]);
 
 const NOUN_SUFFIXES_AFTER_DI = new Set([
@@ -959,6 +1310,14 @@ const NOUN_SUFFIXES_AFTER_DI = new Set([
  "盘",
  "点",
  "段",
+ "板",
+ "名",
+ "雷",
+ "步",
+ "基",
+ "质",
+ "租",
+ "心",
 ]);
 
 const NOUN_PREFIXES_BEFORE_DI = new Set([
@@ -1174,9 +1533,388 @@ const ADVERBIAL_REDUPLICATION_BASES = new Set([
  "细",
  "稳",
  "紧",
+ "兴",
+ "平",
+ "懒",
+ "洋",
+ "勃",
+ "彬",
+ "忧",
+ "满",
+ "牢",
 ]);
 
-/** Recognize reduplicated modifiers followed by an action, without a phrase entry. */
+// Modifier vocabulary is independent of the following predicate; grammatical
+// templates below cover productive reduplication, negation and comparison.
+const ADVERBIAL_MODIFIERS = new Set([
+ ...Object.entries(POLYPHONIC_DICTIONARY)
+  .filter(([phrase, reading]) => phrase.endsWith("地") && reading.endsWith(" de"))
+  .map(([phrase]) => phrase.slice(0, -1)),
+ "开心",
+ "兴奋",
+ "从容",
+ "沉着",
+ "不停",
+ "踌躇",
+ "格外",
+ "调皮",
+ "感激",
+ "怀疑",
+ "满怀希望",
+ "着急",
+ "温柔",
+ "冷静",
+ "勇敢",
+ "愉快",
+ "突然",
+ "迅速",
+ "坚定",
+ "随便",
+ "顺利",
+ "善意",
+ "绝望",
+ "自觉",
+ "下意识",
+ "心平气和",
+ "聚精会神",
+ "实事求是",
+ "理所当然",
+ "不由自主",
+ "不知所措",
+ "有条不紊",
+ "专心致志",
+ "津津有味",
+ "火冒三丈",
+ "小心",
+ "赶快",
+ "幸福",
+ "庄严",
+ "强烈",
+ "轻易",
+ "奇怪",
+ "严格",
+ "亲切",
+ "感谢",
+ "更好",
+ "不断",
+ "不好意思",
+ "很快",
+ "冒昧",
+ "用力",
+ "有效",
+ "放心",
+ "客观",
+ "客气",
+ "手忙脚乱",
+ "友好",
+ "安全",
+ "白白",
+ "成功",
+ "吃惊",
+ "干脆",
+ "更多",
+ "很好",
+ "换着花样",
+ "坚决",
+ "厉害",
+ "连呼带叫",
+ "勉强",
+ "面带微笑",
+ "拼命",
+ "全身心",
+ "生气",
+ "失望",
+ "手舞足蹈",
+ "微笑",
+ "隐隐",
+ "用心",
+ "标准",
+ "不安",
+ "不服气",
+ "不明白",
+ "诚恳",
+ "诚实",
+ "吃力",
+ "崇拜",
+ "大批量",
+ "得体",
+ "得意",
+ "分期分批",
+ "感慨",
+ "高效",
+ "更快",
+ "关心",
+ "害怕",
+ "汗流满面",
+ "狠狠",
+ "欢天喜地",
+ "挥汗如雨",
+ "极大",
+ "急切",
+ "肩并肩",
+ "艰难",
+ "接二连三",
+ "尽可能",
+ "尽情",
+ "紧张不安",
+ "惊喜",
+ "精心",
+ "久久",
+ "开诚布公",
+ "牢固",
+ "连蹦带跳",
+ "连滚带爬",
+ "连声",
+ "气喘吁吁",
+ "气呼呼",
+ "恰当",
+ "千恩万谢",
+ "轻快",
+ "轻声",
+ "热心",
+ "深情",
+ "深入",
+ "神秘",
+ "适当",
+ "舒服",
+ "随时随地",
+ "听话",
+ "系统",
+ "详细",
+ "响亮",
+ "小声",
+ "辛苦",
+ "一个劲儿",
+ "一根不少",
+ "一溜烟",
+ "意外",
+ "悠闲",
+ "有根据",
+ "有计划",
+ "圆满",
+ "再三",
+ "真实",
+ "逐步",
+ "专心",
+ "准确",
+ "自我安慰",
+ "自由",
+ "最大化",
+ "尊敬",
+ "郑重",
+ "激烈",
+]);
+
+const PREDICATES_AFTER_DE = new Set([
+ ...VERBS_BEFORE_DE,
+ ...VERBS_AFTER_DEI,
+ ...DEGREE_OR_ADJ_AFTER_DE,
+ "站",
+ "坐",
+ "躺",
+ "叹",
+ "燃",
+ "感",
+ "脱",
+ "掏",
+ "赔",
+ "宣",
+ "点",
+ "瞪",
+ "望",
+ "摇",
+ "叙",
+ "退",
+ "答",
+ "眨",
+ "冲",
+ "逃",
+ "把",
+ "被",
+ "再",
+ "面对",
+]);
+
+const REDUPLICATED_VERBS = new Set([
+ "看",
+ "走",
+ "想",
+ "试",
+ "听",
+ "学",
+ "问",
+ "玩",
+ "尝",
+ "读",
+ "坐",
+ "笑",
+ "说",
+ "写",
+ "找",
+ "洗",
+ "逛",
+ "聊",
+ "练",
+ "摸",
+ "拍",
+ "敲",
+ "拿",
+ "喝",
+ "吃",
+]);
+
+const DURATIVE_VERBS_BEFORE_ZHE = new Set([
+ "看",
+ "听",
+ "说",
+ "走",
+ "坐",
+ "站",
+ "躺",
+ "穿",
+ "戴",
+ "拿",
+ "带",
+ "跟",
+ "开",
+ "关",
+ "等",
+ "望",
+ "瞪",
+ "闭",
+ "想",
+ "推",
+ "冲",
+ "引",
+ "叫",
+ "吹",
+]);
+
+const RESULT_VERBS_BEFORE_ZHAO = new Set([
+ "睡",
+ "找",
+ "寻",
+ "够",
+ "逮",
+ "捉",
+ "点",
+ "烧",
+ "冻",
+ "饿",
+ "撞",
+ "碰",
+ "遇",
+ "猜",
+ "见",
+ "摸",
+ "犯",
+ "掏",
+]);
+
+const COMPLEMENTS_AFTER_DE = new Set([
+ ...DEGREE_OR_ADJ_AFTER_DE,
+ "耀",
+ "满",
+ "干",
+ "整",
+ "这",
+ "那",
+ "了",
+ "动",
+ "慌",
+ "要",
+ "怎",
+ "我",
+ "你",
+ "他",
+ "她",
+ "乱",
+ "像",
+ "稳",
+ "笔",
+ "合",
+ "死",
+ "飞",
+ "秀",
+ "肚",
+ "浑",
+ "脚",
+ "汗",
+ "惊",
+ "发",
+ "比",
+ "直",
+ "入",
+ "老",
+ "可",
+ "上",
+ "下",
+ "及时",
+ "起",
+ "过",
+ "通",
+ "惯",
+ "广泛",
+ "讲究",
+ "过分",
+ "又",
+ "正",
+ "眼睛",
+ "拍着",
+ "得意",
+ "算是",
+ "跟",
+ "十全十美",
+ "便宜",
+ "越",
+ "倒",
+ "有理",
+ "有道理",
+ "有价值",
+ "最",
+ "超过",
+ "几乎",
+ "如此",
+ "没有",
+ "饱饱",
+ "一清二楚",
+ "半夜",
+ "实在",
+ "声音",
+ "数不清",
+ "让人",
+ "都",
+ "流下",
+ "人",
+ "明白",
+ "既",
+ "简直",
+ "确实",
+ "也",
+ "还",
+ "更",
+ "轻松",
+ "舒服",
+ "手舞足蹈",
+ "对",
+ "成",
+ "出来",
+ "出奇",
+ "控制不住",
+ "睡不着",
+ "挺",
+ "极",
+ "一夜",
+ "复杂",
+ "说不出",
+ "说话",
+ "走不动",
+ "一点",
+]);
+
+const LAND_VERBS_BEFORE_DI = new Set(["挖", "锄", "耕", "种", "租", "买", "卖", "占", "征", "犁"]);
+
+/** Recognize a modifier plus predicate without enumerating whole pinyin phrases. */
 export function isAdverbialDe(chineseChars: readonly string[], index: number): boolean {
  if (chineseChars[index] !== "地") return false;
  const prev = chineseChars[index - 1];
@@ -1184,6 +1922,13 @@ export function isAdverbialDe(chineseChars: readonly string[], index: number): b
  const prev3 = chineseChars[index - 3];
  const prev4 = chineseChars[index - 4];
  const next = chineseChars[index + 1];
+ if (
+  prev === "腾" &&
+  (next === "就"
+   ? /^[坐站跳冲]$/u.test(chineseChars[index + 2] ?? "")
+   : /^[坐站跳冲]$/u.test(next ?? ""))
+ )
+  return true;
  if (
   !prev ||
   !prevPrev ||
@@ -1196,25 +1941,628 @@ export function isAdverbialDe(chineseChars: readonly string[], index: number): b
  const repeatedAdjective = prev === prevPrev && ADVERBIAL_REDUPLICATION_BASES.has(prev);
  const repeatedPair = prev === prev3 && prevPrev === prev4 && CHINESE_CHAR_REGEX.test(prev3 ?? "");
  const doubledPair = prev === prevPrev && prev3 === prev4 && CHINESE_CHAR_REGEX.test(prev3 ?? "");
- if (!repeatedAdjective && !repeatedPair && !doubledPair) return false;
+ const trailingPair =
+  prev === prevPrev &&
+  prev3 !== prev &&
+  (ADVERBIAL_REDUPLICATION_BASES.has(prev4 ?? "") ||
+   ADVERBIAL_REDUPLICATION_BASES.has(prev3 ?? "") ||
+   ADVERBIAL_REDUPLICATION_BASES.has(prev) ||
+   prev3 === "笑");
+ const leadingPair = prev3 === prev4 && ADVERBIAL_REDUPLICATION_BASES.has(prev3 ?? "");
+ const alternatingModifier =
+  (prev4 === prevPrev && /^[无不自半]$/u.test(prev4 ?? "")) ||
+  (prev4 === "一" && prev3 === prev && prevPrev === "不");
+ const modifierText = chineseChars.slice(Math.max(0, index - 6), index).join("");
+ const knownModifier = [...ADVERBIAL_MODIFIERS].some((word) => modifierText.endsWith(word));
+ const recurringModifier =
+  /(?:一([\p{Script=Han}])(?:又|接)一\1|东([\p{Script=Han}])[串走跑奔]西\2|一([寸天步])\3)$/u.test(
+   modifierText,
+  );
+ const comparison =
+  (prev === "样" && /^[一这那同]$/u.test(prevPrev)) || prev === "似" || prev === "般";
+ const negatedModifier =
+  (prev4 === "无" && prev3 === "可") ||
+  (prev4 === "毫" && prev3 === "不") ||
+  (prev4 === "似" && prevPrev === "非");
+ if (
+  !repeatedAdjective &&
+  !repeatedPair &&
+  !doubledPair &&
+  !trailingPair &&
+  !leadingPair &&
+  !alternatingModifier &&
+  !knownModifier &&
+  !recurringModifier &&
+  !comparison &&
+  !negatedModifier
+ )
+  return false;
  // A quantified noun (一块块地) does not establish an adverbial boundary.
- if (prev === prevPrev && /^[一二三四五六七八九十百千万两几每这那]$/u.test(prev3 ?? ""))
+ if (
+  prev === prevPrev &&
+  !recurringModifier &&
+  /^[一二三四五六七八九十百千万两几每这那]$/u.test(prev3 ?? "")
+ )
+  return false;
+ if (LAND_VERBS_BEFORE_DI.has(prev)) return false;
+ if (
+  (next === "上" || next === "下") &&
+  !/^[台车班学楼床山岸场网前去来门任课街升沉降水了]$/u.test(chineseChars[index + 2] ?? "")
+ )
+  return false;
+ if (
+  (next === "上" || next === "下") &&
+  chineseChars[index + 2] === "了" &&
+  !/^[一二三四五六七八九十两几0-9]*(?:辆|层|个|节|堂)?[台车班学楼床山岸场网课]/u.test(
+   chineseChars.slice(index + 3, index + 9).join(""),
+  )
+ )
+  return false;
+ if (
+  prevPrev === "小" &&
+  prev === "心" &&
+  next === "滑" &&
+  !CHINESE_CHAR_REGEX.test(chineseChars[index + 2] ?? "")
+ )
+  return false;
+ if (
+  NOUN_SUFFIXES_AFTER_DI.has(next) &&
+  !ADVERBIAL_REDUPLICATION_BASES.has(prev) &&
+  (VERBS_BEFORE_DE.has(prev) || VERBS_AFTER_DEI.has(prev))
+ )
   return false;
  // ABAB verbs can take a place noun (打扫打扫地下室); 一步一步 is a modifier.
  if (repeatedPair && prevPrev !== "一" && NOUN_SUFFIXES_AFTER_DI.has(next)) return false;
 
+ // A recognized modifier establishes the boundary independently of which
+ // predicate follows it. Keep place-noun suffixes guarded (怀疑地图/整理地下室).
  return (
-  VERBS_BEFORE_DE.has(next) ||
-  VERBS_AFTER_DEI.has(next) ||
+  [...PREDICATES_AFTER_DE].some((word) =>
+   chineseChars
+    .slice(index + 1)
+    .join("")
+    .startsWith(word),
+  ) ||
   (next === "工" && chineseChars[index + 2] === "作") ||
-  ((next === "上" || next === "下") && CHINESE_CHAR_REGEX.test(chineseChars[index + 2] ?? ""))
+  ((next === "上" || next === "下") && CHINESE_CHAR_REGEX.test(chineseChars[index + 2] ?? "")) ||
+  (CHINESE_CHAR_REGEX.test(next) && !NOUN_SUFFIXES_AFTER_DI.has(next))
  );
 }
 
+/** Return a positively identified grammatical reading, or leave inference to the library. */
+export function getGrammarPinyin(chineseChars: readonly string[], index: number): string {
+ const char = chineseChars[index];
+ const prev = chineseChars[index - 1];
+ const prevPrev = chineseChars[index - 2];
+ const next = chineseChars[index + 1];
+
+ if (
+  /^[地得着冲不]$/u.test(char ?? "") &&
+  chineseChars.slice(Math.max(0, index - 4), index + 4).some((value) => /^\s+$/u.test(value))
+ ) {
+  const grammarChars = chineseChars.filter((value) => !/^\s+$/u.test(value));
+  const grammarIndex = chineseChars.slice(0, index).filter((value) => !/^\s+$/u.test(value)).length;
+  return getGrammarPinyin(grammarChars, grammarIndex);
+ }
+
+ if (char === "地") return isAdverbialDe(chineseChars, index) ? "de" : "";
+
+ if (
+  char &&
+  prev === char &&
+  REDUPLICATED_VERBS.has(char) &&
+  prevPrev !== char &&
+  next !== char &&
+  !/^(?:走廊|读物|问题|看法|想法|想象|听力|说明|说法|玩具|学问|笑话)/u.test(
+   chineseChars.slice(index, index + 2).join(""),
+  ) &&
+  !(next && next === chineseChars[index + 2]) &&
+  !(prevPrev && prevPrev === chineseChars[index - 3])
+ )
+  return pinyin(char, { toneType: "none" });
+
+ if (
+  char === "不" &&
+  prev &&
+  (REDUPLICATED_VERBS.has(prev) ||
+   /^[去回买卖做办放拿过带搬借忘记认帮拆等付飞塞掏闲停生受花避干离关忙]$/u.test(prev) ||
+   /^(?:联系不[上到]|进行不(?:下去|了(?!解))|(?:克服|改变|举行|应对)不了(?!解)|高兴不起来)/u.test(
+    chineseChars.slice(Math.max(0, index - 2), index + 4).join(""),
+   ) ||
+   (prev === "来" && next === "及")) &&
+  !/^懂装懂/u.test(chineseChars.slice(index + 1).join("")) &&
+  !(
+   prev === "说" &&
+   (next === "懂" || /^来[^，。！？；,.!?;]{0,5}的人/u.test(chineseChars.slice(index + 1).join("")))
+  ) &&
+  /^[懂动见着了完清住起出进下上开到来过惯及]$/u.test(next ?? "")
+ )
+  return "bu";
+
+ if (
+  char === "过" &&
+  /^[看听吃读用学见问做说买]$/u.test(prev ?? "") &&
+  !/^[来去头分度火量半]$/u.test(next ?? "")
+ )
+  return "guo";
+
+ if (
+  char === "西" &&
+  prev === "东" &&
+  /^(?:南北|方|两[岸国端])/u.test(chineseChars.slice(index + 1).join(""))
+ )
+  return "xī";
+ if (char === "缝" && prev === "裁" && /^[衣裤裙布]$/u.test(next ?? "")) return "féng";
+ if (
+  char === "方" &&
+  prev === "地" &&
+  /^(?:政府|官|经济|税|病|志|性)/u.test(chineseChars.slice(index + 1).join(""))
+ )
+  return "fāng";
+ if (
+  char === "分" &&
+  prev === "部" &&
+  (!prevPrev || !CHINESE_CHAR_REGEX.test(prevPrev) || /^[大一这那某少]$/u.test(prevPrev))
+ )
+  return "fèn";
+
+ if (char === "得" && next) {
+  const followingText = chineseChars.slice(index + 1, index + 9).join("");
+  const precedingText = chineseChars.slice(Math.max(0, index - 6), index).join("");
+  if (next === "来" && /(?:靠自己|辛苦|劳动)$/u.test(precedingText)) return "dé";
+  if (next === "来" && prev === "合") return "de";
+  if (/(?:不由|舍不|怪不|不见|恨不|懒)$/u.test(precedingText)) return "de";
+  if (
+   /^了[“"'「‘]*(?:第?[一二三四五六七八九十0-9]+等?奖|[\p{Script=Han}]{0,3}[病炎癌]|奖|冠军)/u.test(
+    followingText,
+   )
+  )
+   return "dé";
+  if (prev === "还" && next === "了") {
+   const before = chineseChars.slice(0, index - 1).join("");
+   if (/(?:不但|不仅|不光|不只)/u.test(before)) return "dé";
+   if (
+    /[借欠]|图书馆/u.test(before) &&
+    /^了[书钱债款](?:[吗吧呢了\p{Punctuation}]|$)/u.test(followingText)
+   )
+    return "de";
+  }
+  if (next === "到") {
+   const destination = chineseChars.slice(index + 2, index + 18).join("");
+   if (
+    /^(?:专门的)?(?:洗衣店|学校|医院|机场|车站|北京|超市)(?:去|来|干洗|办理|买)/u.test(destination)
+   )
+    return "děi";
+   if (/^[听看走]$/u.test(prev ?? "")) return "de";
+   if (POLYPHONIC_DICTIONARY[`${prev ?? ""}得到`]?.endsWith(" de dào")) return "de";
+   return "dé";
+  }
+  const bodyPartComplement = /^(?:(?:手|脚|头|肚子)(?:都|也|发|酸|疼|痛)|手舞足蹈)/u.test(
+   followingText,
+  );
+  if (PRONOUNS_BEFORE_DEI.has(prev ?? "") && /^(?:分清|体会|知道|救[这那一])/u.test(followingText))
+   return "děi";
+  // Acquire/resultative lexical words retain their dictionary reading.
+  if (
+   /^[获取赢博值心只求争夺谋]$/u.test(prev ?? "") ||
+   (prev === "难" && prevPrev !== "困") ||
+   /^[到奖病分失利体法罪救逞偿知道意胜势]$/u.test(next)
+  )
+   return "";
+  if (next === "手" && !bodyPartComplement) return "";
+  if (
+   /^(?:高分|大奖|好处|大病|重病|冠军|名次|票|了(?:胃癌|肝炎|感冒|大奖|冠军))/u.test(followingText)
+  )
+   return "";
+  if (prev === "不" && (next === "不" || next === "了")) return "";
+  if (/^[记觉懂舍免省显]$/u.test(prev ?? "")) return "de";
+  if (next === "了" && /^[奖病]$/u.test(chineseChars[index + 2] ?? "")) return "";
+  const verbalComplement =
+   [...VERBS_BEFORE_DE].some((word) => precedingText.endsWith(word)) &&
+   !(prev === "生" && prevPrev === "学");
+  const adjectivalComplement =
+   prev !== undefined &&
+   !/^[很非真太不]$/u.test(prev) &&
+   (ADVERBIAL_REDUPLICATION_BASES.has(prev) || /^[气胖咸]$/u.test(prev));
+  const modifierComplement = [...ADVERBIAL_MODIFIERS].some((word) =>
+   followingText.startsWith(word),
+  );
+  const degreeComplement = /^(?:十分|特别|相当|极其|格外|更加|越来越)/u.test(followingText);
+  const causativeComplement =
+   /^[\p{Script=Han}]{1,4}(?:很|怪|直|都|浑身|哈哈|忍不住|不知|不好意思|难为情|开心|高兴|难受|喜欢)/u.test(
+    followingText,
+   );
+  const potentialResultClause = /^[\p{Script=Han}]{1,4}不[了成动住起出到]/u.test(followingText);
+  const modalPredicate = [...VERBS_AFTER_DEI].some((word) => followingText.startsWith(word));
+  if (modalPredicate && /(?:早晚|迟早|首先|最后|最终|以后|将来)$/u.test(precedingText))
+   return "děi";
+  if (/^[一二三四五六七八九十两几0-9]+个?人(?:分担|合作|来|一起)/u.test(followingText))
+   return "děi";
+  if (
+   followingText.startsWith("多少钱") &&
+   /[这那一两三四五六七八九十几](?:盆|幅|本|支|辆|件|张|双|些)[\p{Script=Han}]{1,4}$/u.test(
+    precedingText,
+   )
+  )
+   return "děi";
+  if (
+   (verbalComplement || (adjectivalComplement && next !== "了")) &&
+   ([...COMPLEMENTS_AFTER_DE].some((word) => followingText.startsWith(word)) ||
+    modifierComplement ||
+    degreeComplement ||
+    bodyPartComplement ||
+    causativeComplement ||
+    potentialResultClause ||
+    followingText.startsWith("不能") ||
+    (next === "一" && chineseChars[index + 2] === "般"))
+  )
+   return "de";
+  if ((prev === "想" || prev === "怕") && /^(?:很|入神|发抖|浑身|合不拢)/u.test(followingText))
+   return "de";
+  if ((!prev || !CHINESE_CHAR_REGEX.test(prev) || PRONOUNS_BEFORE_DEI.has(prev)) && modalPredicate)
+   return "děi";
+  if (prev === "过" && prevPrev === "不" && modalPredicate) return "děi";
+  if (next === "要" && prev !== "不") return "děi";
+  // A subject followed by necessity can precede an adverbial phrase, not only
+  // a bare verb (我们得认真考虑). A preceding predicate still introduces de.
+  if (
+   !verbalComplement &&
+   !adjectivalComplement &&
+   (modifierComplement ||
+    modalPredicate ||
+    /^(?:好好|安排)/u.test(followingText) ||
+    /^[\p{Script=Han}]+才行/u.test(chineseChars.slice(index + 1, index + 22).join("")))
+  )
+   return "děi";
+ }
+
+ if (char === "了") {
+  const previousChars = chineseChars.slice(0, index).filter((value) => !/^\s+$/u.test(value));
+  const followingChars = chineseChars.slice(index + 1).filter((value) => !/^\s+$/u.test(value));
+  const previous = previousChars.at(-1);
+  const previous2 = previousChars.at(-2);
+  const following = followingChars[0];
+  if (/^无(?:新意|生趣|兴趣|痕迹|睡意|遗憾|牵挂|希望)/u.test(followingChars.join("")))
+   return "liǎo";
+  if (previous === "了" && previous2 === "不" && following === "之") return "liǎo";
+  if (
+   previous === "明" &&
+   (!previous2 ||
+    !CHINESE_CHAR_REGEX.test(previous2) ||
+    /(?:[我你他她它您咱](?:们)?|已经|早已|十分|完全|彻底|很)$/u.test(
+     previousChars.slice(0, -1).join(""),
+    ))
+  )
+   return "liǎo";
+  if (previous === "为" && !/^[因认以成作行]$/u.test(previous2 ?? "")) return "le";
+  if (
+   previous === "得" &&
+   /^[“"'「‘]*(?:第?[一二三四五六七八九十0-9]+等?奖|[\p{Script=Han}]{0,3}[病炎癌]|奖|冠军)/u.test(
+    followingChars.slice(0, 8).join(""),
+   )
+  )
+   return "le";
+  if (
+   previous === "不" &&
+   previous2 &&
+   CHINESE_CHAR_REGEX.test(previous2) &&
+   !/^[我你他她它咱您谁的都也就还又再可并真那这能敢愿不只]$/u.test(previous2)
+  )
+   return "liǎo";
+  if (
+   previous === "得" &&
+   previous2 === "还" &&
+   /(?:不但|不仅|不光|不只)/u.test(previousChars.join(""))
+  )
+   return "le";
+  if (
+   previous === "得" &&
+   previous2 === "不" &&
+   (VERBS_BEFORE_DE.has(previousChars.at(-3) ?? "") ||
+    VERBS_AFTER_DEI.has(previousChars.at(-3) ?? ""))
+  )
+   return "le";
+  if (previous === "得" && previous2 === "不") return "liǎo";
+  if (
+   previous === "了" &&
+   (previous2 === "不" || previous2 === "得") &&
+   (VERBS_BEFORE_DE.has(previousChars.at(-3) ?? "") ||
+    VERBS_AFTER_DEI.has(previousChars.at(-3) ?? ""))
+  )
+   return "le";
+  if (
+   (previous === "得" || previous === "不") &&
+   previous2 &&
+   !(previous === "得" && following && /^[奖病]$/u.test(following)) &&
+   (VERBS_BEFORE_DE.has(previous2) || VERBS_AFTER_DEI.has(previous2))
+  )
+   return "liǎo";
+  if (
+   (following === "结" && followingChars[1] === "果" && previous === "布") ||
+   (following === "事" && previous === "错") ||
+   (following === "却" && followingChars[1] === "又" && previous === "去" && previous2 === "失")
+  )
+   return "le";
+  const before = previousChars.slice(-6).join("");
+  const verbalAspect =
+   ([...VERBS_BEFORE_DE].some((word) => before.endsWith(word)) ||
+    /(?:发现|删除|发送|否认)$/u.test(before) ||
+    previous === "到") &&
+   !/^(?:想|要)$/u.test(previous ?? "") &&
+   !/(?:打算|希望|准备|需要|愿意|决定)$/u.test(before);
+  if (
+   verbalAspect &&
+   ((following === "结" && followingChars[1] === "案") ||
+    (following === "断" && followingChars[1] === "裂") ||
+    following === "却")
+  )
+   return "le";
+  if (following === "解") {
+   if (
+    (/^[药毒热剖脱说放题暑释压约]$/u.test(followingChars[1] ?? "") && verbalAspect) ||
+    (followingChars[1] === "决" && /^[说提]$/u.test(previous ?? ""))
+   )
+    return "le";
+   return "liǎo";
+  }
+  if (following && /^[解结然却无事断不]$/u.test(following)) return "";
+  // Whitespace in completed exercises does not change a particle's role.
+  // Keep lexical endings and potential complements above ahead of this rule.
+  if (prev !== previous || next !== following) {
+   const lexicalEnding = previousChars.slice(-3).join("");
+   if (
+    previous &&
+    CHINESE_CHAR_REGEX.test(previous) &&
+    !/^(?:知|未|终|了|不|得)$/u.test(previous) &&
+    !/(?:没完没|一了百|一了千)$/u.test(lexicalEnding) &&
+    !(previous === "一" && following === "百")
+   )
+    return "le";
+  }
+  // Quoted speech/predicates and age numerals still take the aspect/change particle.
+  const closingQuote =
+   prev !== undefined &&
+   (/^[”’」』》）)\]】]$/u.test(prev) ||
+    (/^["']$/u.test(prev) &&
+     chineseChars.slice(0, index).filter((value) => value === prev).length % 2 === 0));
+  if (
+   closingQuote &&
+   (!next ||
+    /^[吧吗呢啊\r\n\p{Punctuation}\p{Symbol}]$/u.test(next) ||
+    /^(?:(?:[0-9一二三四五六七八九十百两几]+|好几)[声句下遍次]|很久|以后)/u.test(
+     chineseChars.slice(index + 1, index + 8).join(""),
+    ))
+  )
+   return "le";
+  if (prev && /^[0-9]$/u.test(prev) && (!next || /^[吧吗呢啊\p{Punctuation}]$/u.test(next)))
+   return "le";
+  if (
+   /(?:周末|月底|年底|岁|时候|时间|日子|月份|星期[一二三四五六天日])$/u.test(
+    chineseChars.slice(Math.max(0, index - 4), index).join(""),
+   ) &&
+   (!next || /^[吧吗呢啊\p{Punctuation}]$/u.test(next))
+  )
+   return "le";
+  if (prev && VERBS_BEFORE_DE.has(prev) && next && /^[一二三四五六七八九十两几]$/u.test(next))
+   return "le";
+ }
+
+ if (char === "着") {
+  if (
+   next === "手" &&
+   prev === "想" &&
+   /^(?:解决|处理|开展|准备|进行|研究|修复|实施)/u.test(chineseChars.slice(index + 2).join(""))
+  )
+   return "zhuó";
+  if (
+   (next === "棋" &&
+    !VERBS_BEFORE_DE.has(prev ?? "") &&
+    !DURATIVE_VERBS_BEFORE_ZHE.has(prev ?? "")) ||
+   (/^[一两三这那]$/u.test(prev ?? "") && /^[妙险]$/u.test(next ?? "")) ||
+   (prev === "一" && prevPrev === "高") ||
+   (prev === "没" && next === "了")
+  )
+   return "zhāo";
+  const followingClause =
+   chineseChars
+    .slice(index + 1)
+    .join("")
+    .split(/[，。！？；,.!?;\n]/u)[0] ?? "";
+  // A following relative 的 keeps 穿着 verbal: 我的穿着很好看的衣服的朋友.
+  const nounPredicate =
+   followingClause.startsWith("是") ||
+   (!followingClause.includes("的") &&
+    /^(?:很|十分|非常|比较|有些|都|虽然|让|风格|品味|和|与)/u.test(followingClause));
+  if (
+   prev === "穿" &&
+   ((next === "打" && chineseChars[index + 2] === "扮") ||
+    (prevPrev === "的" && (!next || /^\p{Punctuation}$/u.test(next) || nounPredicate)))
+  )
+   return "zhuó";
+  const lexicalEnding = chineseChars.slice(index + 1, index + 3).join("");
+  if (prev === "不" && (lexicalEnding === "边际" || lexicalEnding === "痕迹")) return "";
+  if (
+   (prev === "得" || prev === "不") &&
+   prevPrev &&
+   (VERBS_BEFORE_DE.has(prevPrev) ||
+    VERBS_AFTER_DEI.has(prevPrev) ||
+    RESULT_VERBS_BEFORE_ZHAO.has(prevPrev))
+  )
+   return "zháo";
+  const repeatedVerb =
+   (next === prev && chineseChars[index + 2] === "着") ||
+   (prevPrev === "着" && chineseChars[index - 3] === prev);
+  if (repeatedVerb) return "zhe";
+  if (
+   (prev === "找" || prev === "猜") &&
+   (/(?:正(?!好)|一边)[^，。！？；,.!?;]{0,6}$/u.test(
+    chineseChars.slice(Math.max(0, index - 9), index - 1).join(""),
+   ) ||
+    (prev === "猜" && followingClause.startsWith("谜语")))
+  )
+   return "zhe";
+  if (prev === "正" && next === "走") return "zhe";
+  if (
+   prev === "摸" &&
+   /没等[^，。！？；,.!?;]{0,4}摸$/u.test(
+    chineseChars.slice(Math.max(0, index - 8), index).join(""),
+   )
+  )
+   return "zháo";
+  if (
+   prev &&
+   RESULT_VERBS_BEFORE_ZHAO.has(prev) &&
+   !(prev === "找" && prevPrev === "寻") &&
+   !(prev === "烧" && prevPrev === "燃") &&
+   (next === "了" || /^[找猜够逮捉见]$/u.test(prev))
+  )
+   return "zháo";
+  if (prev && DURATIVE_VERBS_BEFORE_ZHE.has(prev)) return "zhe";
+ }
+
+ if (char === "的") {
+  const boundary = !next || /^\p{Punctuation}$/u.test(next);
+  const beforeWord = chineseChars.slice(0, index - 1).join("");
+  const taxiContext =
+   (!beforeWord ||
+    /[“‘「『"'，、,：:]$/u.test(beforeWord) ||
+    /(?:经常|常常|总是|准备|选择|需要|愿意|喜欢|宁可|可以|决定|想|要|得)$/u.test(beforeWord)) &&
+   !/是[^，。！？；,.!?;]{0,10}$/u.test(beforeWord);
+  if (prev === "打" && ((boundary && taxiContext) || /^[去来回到]$/u.test(next ?? ""))) return "dī";
+  if (prev === "面" && boundary && (!prevPrev || /^[“‘「『"'坐乘]$/u.test(prevPrev))) return "dī";
+ }
+
+ if (char === "卡" && next === "在") {
+  const before = chineseChars
+   .slice(Math.max(0, index - 8), index)
+   .join("")
+   .replace(/(?:牢牢|紧紧)$/u, "");
+  const jammed =
+   !prev ||
+   /^[被却又就正仍还]$/u.test(prev) ||
+   /(?:链子|链条|皮带|机器|钥匙|门栓|鱼刺|纸张|齿轮|零件|卡片|车轮)$/u.test(before);
+  if (jammed) return "qiǎ";
+ }
+
+ if (char === "行" && prev === "同" && next !== "业") {
+  const before = chineseChars.slice(Math.max(0, index - 16), index - 1).join("");
+  if (
+   /(?:辆车(?:仍然|依然|一直|一起|也|还|正|都|在)*|结伴|一路|并肩|相约|(?:与|跟|和|陪)[我你他她您](?:们)?|带着(?:[小白黑黄花]?[狗猫]|孩子|家人|朋友))$/u.test(
+    before,
+   )
+  )
+   return "xíng";
+ }
+
+ if (char === "冲" && !/^[锋动突击洗刷浪破垮毁撞进出到向上下走跑]$/u.test(next ?? "")) {
+  const followingClause =
+   chineseChars
+    .slice(index + (next === "着" ? 2 : 1))
+    .join("")
+    .split(/[，。！？；,.!?;\n]/u)[0] ?? "";
+  // Directed speech/gesture differs from a durative verb (冲着咖啡/冲着凉水澡).
+  if (/^(?:[一二三两0-9]+杯)?(?:咖啡(?![师机])|奶粉|[冷凉热]水澡)/u.test(followingClause))
+   return "chōng";
+  if (
+   next === "着" &&
+   /^(?:[我你他她您咱](?:们)?|妈妈|爸爸|[\p{Script=Han}]{0,7}父母)/u.test(followingClause)
+  )
+   return "chòng";
+  if (
+   /^[\p{Script=Han}]{1,8}(?:喊|叫|说|笑|问|盯|瞪|发脾气|招手|点头|挥手)/u.test(
+    followingClause.split(/一边|一面|同时|并且|然后/u)[0] ?? "",
+   )
+  )
+   return "chòng";
+ }
+
+ if (
+  char === "钻" &&
+  !/(?:电|风|金刚|手摇|冲击)$/u.test(chineseChars.slice(Math.max(0, index - 3), index).join("")) &&
+  (/^[研进出入过]/u.test(chineseChars.slice(index + 1).join("")) ||
+   /^[^，。！？；,.!?;]{0,8}空子/u.test(chineseChars.slice(index + 1).join("")))
+ )
+  return "zuān";
+
+ if (
+  char === "还" &&
+  /^(?:[我你他她]的[书钱]|[我你他她]一个公道)/u.test(chineseChars.slice(index + 1).join(""))
+ )
+  return "huán";
+ if (
+  char === "长" &&
+  (/^[我你他她][一二三四五六七八九十0-9]+岁/u.test(chineseChars.slice(index + 1).join("")) ||
+   (next === "长" && chineseChars[index + 2] === "了"))
+ )
+  return "zhǎng";
+ if (char === "只" && prev && NUMBERS_BEFORE_ZHI.has(prev)) return "zhī";
+ if (char === "倒" && /^[摔吹撞推打跌绊]$/u.test(prev ?? "")) return "dǎo";
+ if (
+  char === "倒" &&
+  /^了[一两三四五六七八九十0-9]*[杯碗瓶壶盆][水茶酒奶汤]/u.test(
+   chineseChars.slice(index + 1).join(""),
+  )
+ )
+  return "dào";
+ if (
+  char === "教" &&
+  /(?:业主|主任)$/u.test(chineseChars.slice(Math.max(0, index - 2), index).join("")) &&
+  /^[我你他她孩]$/u.test(next ?? "")
+ )
+  return "jiāo";
+
+ if (
+  char === "斗" &&
+  next === "酒" &&
+  (chineseChars[index + 2] === "诗" ||
+   (/^[一二三四五六七八九十两半几]$/u.test(prev ?? "") && chineseChars[index + 2] !== "就"))
+ )
+  return "dǒu";
+
+ if (
+  char === "还" &&
+  /^(?:完|不了|得了)[钱书债款]/u.test(chineseChars.slice(index + 1, index + 5).join(""))
+ ) {
+  const before = chineseChars.slice(0, index).join("");
+  if (
+   !/^(?:得了)/u.test(chineseChars.slice(index + 1, index + 3).join("")) ||
+   (!/(?:不但|不仅|不光|不只)/u.test(before) && /[借欠]|图书馆/u.test(before))
+  )
+   return "huán";
+ }
+
+ if (
+  char === "教" &&
+  !/(?:[宗佛道儒家说主邪回新旧礼国异文社胎政助祆明名景信入请讨求管调传指赐任]|基督|伊斯兰|印度|东正|白莲|摩门|天理)$/u.test(
+   chineseChars.slice(Math.max(0, index - 3), index).join(""),
+  ) &&
+  /^[我你他她孩]$/u.test(next ?? "")
+ )
+  return "jiāo";
+
+ return "";
+}
+
+/** Classifier recurrence does not take the neutral 一 of verb reduplication. */
+export function getToneSandhiPinyin(chineseChars: readonly string[], index: number): string {
+ if (
+  chineseChars[index] !== "一" ||
+  chineseChars[index - 2] !== "一" ||
+  chineseChars[index - 1] !== chineseChars[index + 1] ||
+  !/^[个件本年月天次遍回步样行条张支]$/u.test(chineseChars[index + 1] ?? "")
+ )
+  return "";
+ const following = pinyin(chineseChars.slice(index + 1, index + 3).join(""), {
+  type: "array",
+  toneType: "num",
+  toneSandhi: false,
+ });
+ return following[0]?.endsWith("4") ? "yí" : "yì";
+}
+
 /**
- * Apply grammatical contextual rules across syllables in single-pass O(N).
- * Handles structural particle "得" (de vs děi), "地" (de vs dì), "倒" (dào vs dǎo),
- * and dynamic polyphones "只", "为", "长", "还".
+ * Apply grammatical contextual rules across syllables, including particles
+ * 得, 地, 了, 着 and the existing 倒, 只, 为, 长, 还 heuristics.
  */
 export function applyGrammarHeuristics(
  chineseChars: readonly string[],
@@ -1226,27 +2574,18 @@ export function applyGrammarHeuristics(
   const char = chineseChars[i];
   if (!char) continue;
 
-  if (char === "得") {
-   const prev = chineseChars[i - 1];
-   const next = chineseChars[i + 1];
+  const grammarPinyin = getGrammarPinyin(chineseChars, i);
+  if (grammarPinyin) {
+   syllables[i] = grammarPinyin;
+   continue;
+  }
+  const toneSandhiPinyin = getToneSandhiPinyin(chineseChars, i);
+  if (toneSandhiPinyin) syllables[i] = toneSandhiPinyin;
 
-   // Modal verb "děi" (have to / must): 我得去, 总得走, 谁得负责
-   if ((!prev || PRONOUNS_BEFORE_DEI.has(prev)) && next && VERBS_AFTER_DEI.has(next)) {
-    syllables[i] = "děi";
-   }
-   // Complement particle "de" (degree / capability): 跑得很快, 做得很好
-   else if (prev && VERBS_BEFORE_DE.has(prev) && next && DEGREE_OR_ADJ_AFTER_DE.has(next)) {
-    syllables[i] = "de";
-   }
-  } else if (char === "地") {
+  if (char === "地") {
    const prev = chineseChars[i - 1];
    const prevPrev = chineseChars[i - 2];
    const next = chineseChars[i + 1];
-
-   if (isAdverbialDe(chineseChars, i)) {
-    syllables[i] = "de";
-    continue;
-   }
 
    // 目的地 -> mù dì dì
    if (prevPrev === "目" && prev === "的") {
@@ -1388,7 +2727,7 @@ export function generateSmartPinyin(chinese: string): SmartPinyinResult {
  const rawPinyin = pinyin(chinese, {
   type: "array",
   toneType: "symbol",
-  v: true,
+  v: false,
  });
 
  const syllables: string[] = Array.isArray(rawPinyin) ? [...rawPinyin] : [];
@@ -1407,6 +2746,38 @@ export function generateSmartPinyin(chinese: string): SmartPinyinResult {
 
  // Apply contextual grammar heuristics
  applyGrammarHeuristics(chars, syllables);
+ const wordSegments = [...new Intl.Segmenter("zh-CN", { granularity: "word" }).segment(chinese)];
+ const lexicalErStarts = new Set(
+  wordSegments.flatMap((item) =>
+   /^儿[子女童歌科戏媳孙郎化音时]/u.test(item.segment) ? [item.index] : [],
+  ),
+ );
+ for (const [index, char] of chars.entries()) {
+  if (
+   char === "儿" &&
+   !lexicalErStarts.has(chars.slice(0, index).join("").length) &&
+   ERHUA_WORDS.some((word) =>
+    chars
+     .slice(Math.max(0, index - 3), index + 1)
+     .join("")
+     .endsWith(word),
+   )
+  ) {
+   syllables[index] = "r";
+   // 儿子 must not consume the 子 of a following word (这儿 + 子弹).
+   const followingWord = wordSegments.find(
+    (item) => item.index === chars.slice(0, index + 1).join("").length,
+   );
+   if (followingWord !== undefined && /^[子女童歌科戏媳孙郎化音时]/u.test(followingWord.segment)) {
+    const followingPinyin = POLYPHONIC_DICTIONARY[followingWord.segment];
+    if (followingPinyin !== undefined) {
+     for (const [offset, syllable] of followingPinyin.split(" ").entries()) {
+      syllables[index + 1 + offset] = syllable;
+     }
+    }
+   }
+  }
+ }
 
  // Detect polyphonic characters for warning flags
  const polyphonicIndices: number[] = [];
@@ -1418,7 +2789,11 @@ export function generateSmartPinyin(chinese: string): SmartPinyinResult {
  }
 
  return {
-  pinyin: syllables.join(" "),
+  pinyin: syllables
+   .map((syllable, index) =>
+    index > 0 && !(chars[index] === "儿" && syllable === "r") ? ` ${syllable}` : syllable,
+   )
+   .join(""),
   syllables,
   polyphonicIndices,
  };

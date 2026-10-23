@@ -166,6 +166,89 @@ describe("standalone Reader facade", () => {
   expect(html).toContain('aria-label="Kiểm tra pinyin chữ 心"');
  });
 
+ it.each([
+  {
+   id: "nhip-cau-lesson-04-source-9",
+   text: '身后传来一串自行车铃声，陈静"哎"了一声，骑车的小伙子已经一掠而过。',
+   sourcePinyin: "",
+   readings: [
+    { character: "了", pinyin: "le" },
+    { character: "掠", pinyin: "lüè" },
+   ],
+  },
+  {
+   id: "nhip-cau-lesson-04-source-5",
+   text:
+    '"再遇到人，一定开口。"陈静想着，抬眼望了望胡同里昏黄的路灯。夜深了，到处是一片片黑黝黝的怪影。"唉！这倒霉的自行车！"她推着车子，无可奈何地说。',
+   sourcePinyin: "",
+   readings: [{ character: "地", pinyin: "de" }],
+  },
+  {
+   id: "unsupported-hanzi",
+   text: "你𰻞好",
+   sourcePinyin: "",
+   readings: [
+    { character: "你", pinyin: "nǐ" },
+    { character: "好", pinyin: "hǎo" },
+   ],
+  },
+  {
+   id: "syllabic-nasal-source",
+   text: "嗯呣",
+   sourcePinyin: "ńg m̀",
+   readings: [
+    { character: "嗯", pinyin: "ńg" },
+    { character: "呣", pinyin: "m̀" },
+   ],
+  },
+ ])(
+  "renders corrected contextual pinyin in the reviewed passage $id",
+  async ({ id, text, sourcePinyin, readings }) => {
+   const messages = await loadAppMessages("vi");
+   const analysis = analyzeContextualPronunciation({ text, sourcePinyin: sourcePinyin || null });
+   const html = renderToStaticMarkup(
+    <NextIntlClientProvider locale="vi" messages={messages}>
+     <Reader
+      data={[{ id, zh: text, pinyin: sourcePinyin }]}
+      services={{
+       pronunciationReview: {
+        analyses: new Map([[id, analysis]]),
+        readingUnitsBySegmentId: new Map([[id, getContextualReadingUnits(analysis)]]),
+        onInspect: () => undefined,
+       },
+      }}
+     />
+    </NextIntlClientProvider>,
+   );
+
+   expect(html).toContain(`<article data-reader-segment="${id}"`);
+   expect(html).toContain("<ruby");
+   expect(html).not.toContain("lvè");
+   for (const { character, pinyin } of readings) {
+    const glyph = analysis.glyphs.find((item) => item.text === character);
+    if (glyph === undefined) throw new Error(`Expected a pronunciation glyph for ${character}.`);
+    const label = (
+     glyph.isPolyphonic
+      ? messages.Reader.document.text.inspectUnconfirmedPinyin
+      : messages.Reader.document.text.inspectPinyin
+    ).replace("{character}", character);
+    expect(html).toContain(`aria-label="${label}">${pinyin}</span>`);
+   }
+   for (const glyph of analysis.unresolved) {
+    expect(html).toContain(`>${glyph.text}</span>`);
+    expect(html).not.toContain(
+     `aria-label="${messages.Reader.document.text.inspectPinyin.replace("{character}", glyph.text)}"`,
+    );
+   }
+   for (const punctuation of ['"', "，", "。", "！"]) {
+    const escapedPunctuation = punctuation === '"' ? "&quot;" : punctuation;
+    expect(html.match(new RegExp(`>${escapedPunctuation}</span>`, "gu")) ?? []).toHaveLength(
+     text.split(punctuation).length - 1,
+    );
+   }
+  },
+ );
+
  it("keeps every grouped ruby unit intact when a long passage wraps", async () => {
   const messages = await loadAppMessages("vi");
   const analysis = analyzeContextualPronunciation({

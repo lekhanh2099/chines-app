@@ -3,8 +3,10 @@ import { z } from "zod";
 
 import {
  POLYPHONIC_DICTIONARY,
+ ERHUA_WORDS,
  ensurePinyinEngineInitialized,
- isAdverbialDe,
+ getGrammarPinyin,
+ getToneSandhiPinyin,
 } from "./pinyin-engine.ts";
 
 ensurePinyinEngineInitialized();
@@ -131,6 +133,7 @@ const wordSegmenter = new Intl.Segmenter("zh-CN", { granularity: "word" });
 // constrained to the reviewed learner corpus; the contextual engine remains
 // the authority for every glyph's reading.
 const orthographicWords = [
+ ...ERHUA_WORDS,
  "自行车",
  "冰激凌",
  "不太",
@@ -152,6 +155,8 @@ const orthographicWordCandidates = [...new Set(orthographicWords)].sort(
 );
 
 const orthographicCandidateSplits = new Map<string, readonly string[]>([
+ ["一会儿", ["一", "会儿"]],
+ ["一点儿", ["一", "点儿"]],
  ["一个", ["一", "个"]],
  ["一双", ["一", "双"]],
  ["一句", ["一", "句"]],
@@ -192,7 +197,14 @@ function orthographicUnitTexts(value: string): string[] {
  let index = 0;
 
  while (index < value.length) {
-  const knownWord = orthographicWordCandidates.find((word) => value.startsWith(word, index));
+  const knownWord = orthographicWordCandidates.find(
+   (word) =>
+    value.startsWith(word, index) &&
+    !(
+     word.endsWith("儿") &&
+     /^儿[子女童歌科戏媳孙郎化音时]/u.test(candidateByStart.get(index + word.length - 1) ?? "")
+    ),
+  );
   if (knownWord !== undefined) {
    const split = orthographicCandidateSplits.get(knownWord);
    units.push(...(split ?? [knownWord]));
@@ -313,7 +325,7 @@ export function formatContextualSpokenPinyin(analysis: ContextualPronunciationAn
   if (glyph !== undefined) {
    const reading = preferredDisplayedPinyin(glyph);
    if (reading !== null) {
-    if (previousWasHanzi) output += " ";
+    if (previousWasHanzi && reading !== "r") output += " ";
     output += reading;
     previousWasHanzi = true;
     continue;
@@ -336,7 +348,7 @@ export function formatContextualReadingPinyin(analysis: ContextualPronunciationA
   if (unit.type === "hanzi") {
    const reading = formatContextualReadingUnitPinyin(analysis, unit);
    if (reading !== null) {
-    if (previousWasHanzi) output += " ";
+    if (previousWasHanzi && reading !== "r") output += " ";
     output += reading;
     previousWasHanzi = true;
     continue;
@@ -347,7 +359,7 @@ export function formatContextualReadingPinyin(analysis: ContextualPronunciationA
     if (glyph !== undefined) {
      const fallbackReading = preferredDisplayedPinyin(glyph);
      if (fallbackReading !== null) {
-      if (previousWasHanzi) output += " ";
+      if (previousWasHanzi && fallbackReading !== "r") output += " ";
       output += fallbackReading;
       previousWasHanzi = true;
       continue;
@@ -375,7 +387,8 @@ export function formatContextualPinyinRange(
   .filter((glyph) => glyph.start >= start && glyph.end <= end)
   .map(preferredDisplayedPinyin)
   .filter((reading): reading is string => reading !== null)
-  .join(" ");
+  .join(" ")
+  .replace(/ r(?= |$)/gu, "r");
 }
 
 const hanziPattern = /\p{Script=Han}/u;
@@ -410,7 +423,9 @@ function normalizeReading(value: string): string | null {
 
 function displayPinyin(key: string | null): string | null {
  if (key === null) return null;
- return convert(key, { format: "numToSymbol" }).replace(/([a-zv]+)5$/u, "$1");
+ return convert(key, { format: "numToSymbol" })
+  .replace(/([a-zv]+)5$/u, "$1")
+  .replaceAll("v", "ü");
 }
 
 export function formatContextualReading(readingKey: string): string {
@@ -452,15 +467,15 @@ function normalizeSourcePinyin(value: string): string {
   "ǚ",
   "ǜ",
   "ü",
+  "ń",
+  "ň",
+  "ǹ",
+  "ḿ",
+  "\u0300",
+  "\u0304",
+  "\u030c",
  ]);
- const normalized = value
-  .normalize("NFC")
-  .toLocaleLowerCase()
-  .replaceAll("u:", "v")
-  .replace(
-   /([a-zvāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü]{2,}[0-5]?)r(?=$|[\s\p{Punctuation}\p{Symbol}])/gu,
-   "$1er",
-  );
+ const normalized = value.normalize("NFC").toLocaleLowerCase().replaceAll("u:", "v");
  let compact = "";
  for (const character of normalized) {
   if (toneMarks.has(character) || /[a-zv0-5]/u.test(character)) compact += character;
@@ -473,6 +488,7 @@ function sourcePinyinForms(key: string): string[] {
  const forms = [key, display === null ? null : normalizeSourcePinyin(display)];
  if (key.endsWith("5")) forms.push(key.slice(0, -1));
  if (key === "er2") forms.push("er");
+ if (key === "er2" || key === "er5") forms.push("r");
  return [...new Set(forms)].filter((value): value is string => value !== null);
 }
 
@@ -535,8 +551,15 @@ function alignSourceKeys(
  lexicalReadings: string[],
  spokenReadings: string[],
  alternatives: string[][],
+ erhuaIndices: ReadonlySet<number>,
+ spellings: Map<number, string>,
 ): string[] | null {
- if (lexicalReadings.length !== spokenReadings.length) return null;
+ if (
+  lexicalReadings.length !== spokenReadings.length ||
+  lexicalReadings.some((reading) => reading === "") ||
+  spokenReadings.some((reading) => reading === "")
+ )
+  return null;
  const compactSource = normalizeSourcePinyin(sourcePinyin);
  const candidates = lexicalReadings.map((lexical, index) =>
   [
@@ -562,9 +585,11 @@ function alignSourceKeys(
 
   for (const candidate of candidates[index] ?? []) {
    for (const form of sourcePinyinForms(candidate)) {
+    if (form === "r" && !erhuaIndices.has(index)) continue;
     if (!compactSource.startsWith(form, offset)) continue;
     const rest = solve(index + 1, offset + form.length);
     if (rest !== null) {
+     if (form === "r") spellings.set(index, "r");
      const result = [candidate, ...rest];
      memo.set(memoKey, result);
      return result;
@@ -586,6 +611,9 @@ function dictionaryReadingsByGlyphStart(
  spokenValues: string[],
  alternatives: string[][],
  dictionary: PronunciationDictionaryEntry[],
+ spellingsByStart: Map<number, string>,
+ lexicalErStarts: ReadonlySet<number>,
+ providedDictionary: PronunciationDictionaryEntry[],
 ): ReadonlyMap<number, string> {
  const hanziIndexByStart = new Map<number, number>();
  let hanziIndex = 0;
@@ -599,22 +627,35 @@ function dictionaryReadingsByGlyphStart(
  for (const grapheme of graphemes) {
   const entry = dictionaryToken(text, grapheme.index, dictionary);
   if (entry === null) continue;
+  if (
+   /^儿[子女童歌科戏媳孙郎化音时]/u.test(entry.text) &&
+   !lexicalErStarts.has(grapheme.index) &&
+   !providedDictionary.includes(entry)
+  )
+   continue;
   const phraseGraphemes = [
    ...new Intl.Segmenter("zh-CN", { granularity: "grapheme" }).segment(entry.text),
   ].filter((item) => classify(item.segment) === "hanzi");
   const firstHanziIndex = hanziIndexByStart.get(grapheme.index);
   if (firstHanziIndex === undefined || phraseGraphemes.length === 0) continue;
+  const spellings = new Map<number, string>();
   const matchedReadings = alignSourceKeys(
    entry.pinyin,
    lexicalValues.slice(firstHanziIndex, firstHanziIndex + phraseGraphemes.length),
    spokenValues.slice(firstHanziIndex, firstHanziIndex + phraseGraphemes.length),
    alternatives.slice(firstHanziIndex, firstHanziIndex + phraseGraphemes.length),
+   new Set(phraseGraphemes.flatMap((item, index) => (item.segment === "儿" ? [index] : []))),
+   spellings,
   );
   if (matchedReadings === null || matchedReadings.length !== phraseGraphemes.length) continue;
 
   for (const [index, phraseGrapheme] of phraseGraphemes.entries()) {
    const start = grapheme.index + phraseGrapheme.index;
-   if (!readingsByStart.has(start)) readingsByStart.set(start, matchedReadings[index]);
+   if (!readingsByStart.has(start)) {
+    readingsByStart.set(start, matchedReadings[index]);
+    const spelling = spellings.get(index);
+    if (spelling !== undefined) spellingsByStart.set(start, spelling);
+   }
   }
  }
 
@@ -633,7 +674,13 @@ export function analyzeContextualPronunciation(
   ...new Intl.Segmenter("zh-CN", { granularity: "grapheme" }).segment(normalizedText),
  ];
  const chineseChars = graphemes.map((item) => item.segment);
- const hanziCount = graphemes.filter((item) => classify(item.segment) === "hanzi").length;
+ const lexicalErStarts = new Set(
+  [...wordSegmenter.segment(normalizedText)].flatMap((item) =>
+   /^儿[子女童歌科戏媳孙郎化音时]/u.test(item.segment) ? [item.index] : [],
+  ),
+ );
+ const hanziGraphemes = graphemes.filter((item) => classify(item.segment) === "hanzi");
+ const hanziCount = hanziGraphemes.length;
  let lexicalValues: string[] = [];
  let spokenValues: string[] = [];
  let alternatives: string[][] = [];
@@ -643,6 +690,7 @@ export function analyzeContextualPronunciation(
    toneType: "num",
    toneSandhi: false,
    nonZh: "removed",
+   nonZhScope: /\P{Script=Han}/u,
    v: true,
   });
   const spoken = pinyin(normalizedText, {
@@ -650,23 +698,22 @@ export function analyzeContextualPronunciation(
    toneType: "num",
    toneSandhi: true,
    nonZh: "removed",
+   nonZhScope: /\P{Script=Han}/u,
    v: true,
   });
   const polyphonicValues = polyphonic(normalizedText, {
    type: "array",
    toneType: "num",
    nonZh: "removed",
+   nonZhScope: /\P{Script=Han}/u,
    v: true,
   });
   if (!Array.isArray(lexical) || !Array.isArray(spoken) || !Array.isArray(polyphonicValues)) {
    throw new Error("pinyin-pro returned a non-array result");
   }
-  lexicalValues = lexical.flatMap((item) =>
-   normalizeReading(item) === null ? [] : [normalizeReading(item) ?? ""],
-  );
-  spokenValues = spoken.flatMap((item) =>
-   normalizeReading(item) === null ? [] : [normalizeReading(item) ?? ""],
-  );
+  // Unsupported Han must keep its position without inventing a reading.
+  lexicalValues = lexical.map((item) => normalizeReading(item) ?? "");
+  spokenValues = spoken.map((item) => normalizeReading(item) ?? "");
   alternatives = polyphonicValues.map((item) => readingKeys(item));
  } catch {
   lexicalValues = [];
@@ -678,10 +725,20 @@ export function analyzeContextualPronunciation(
   lexicalValues.length === hanziCount &&
   spokenValues.length === hanziCount &&
   alternatives.length === hanziCount;
+ const sourceSpellings = new Map<number, string>();
+ const dictionarySpellings = new Map<number, string>();
+ const providedDictionarySpellings = new Map<number, string>();
  const sourceAlignment =
   request.sourcePinyin === null
    ? null
-   : alignSourceKeys(request.sourcePinyin, lexicalValues, spokenValues, alternatives);
+   : alignSourceKeys(
+      request.sourcePinyin,
+      lexicalValues,
+      spokenValues,
+      alternatives,
+      new Set(hanziGraphemes.flatMap((item, index) => (item.segment === "儿" ? [index] : []))),
+      sourceSpellings,
+     );
  const sourceAligned = request.sourcePinyin === null || sourceAlignment !== null;
  const dictionaryReadings = readingsAligned
   ? dictionaryReadingsByGlyphStart(
@@ -691,6 +748,9 @@ export function analyzeContextualPronunciation(
      spokenValues,
      alternatives,
      pronunciationDictionary,
+     dictionarySpellings,
+     lexicalErStarts,
+     dictionary,
     )
   : new Map<number, string>();
  const providedDictionaryReadings =
@@ -702,6 +762,9 @@ export function analyzeContextualPronunciation(
       spokenValues,
       alternatives,
       dictionary,
+      providedDictionarySpellings,
+      lexicalErStarts,
+      dictionary,
      )
    : new Map<number, string>();
  const glyphs: ContextualPronunciationGlyph[] = [];
@@ -709,30 +772,52 @@ export function analyzeContextualPronunciation(
  for (const [graphemeIndex, item] of graphemes.entries()) {
   const type = classify(item.segment);
   if (type !== "hanzi") continue;
-  const lexicalKey = readingsAligned ? (lexicalValues[hanziIndex] ?? null) : null;
-  const spokenKey = readingsAligned ? (spokenValues[hanziIndex] ?? null) : null;
+  const lexicalKey = readingsAligned ? lexicalValues[hanziIndex] || null : null;
+  const spokenKey = readingsAligned ? spokenValues[hanziIndex] || null : null;
+  const readingAvailable = lexicalKey !== null && spokenKey !== null;
   const keys = readingsAligned ? (alternatives[hanziIndex] ?? []) : [];
   const overrideMatch = overrideReadingForGlyph(request.overrides, item, originalText);
   const overrideKey = overrideMatch?.key ?? null;
   const sourceKey =
    sourceAligned && sourceAlignment !== null ? (sourceAlignment[hanziIndex] ?? null) : null;
-  const adverbialDe =
-   readingsAligned &&
-   !providedDictionaryReadings.has(item.index) &&
-   isAdverbialDe(chineseChars, graphemeIndex);
+  const grammarKey =
+   readingAvailable && !providedDictionaryReadings.has(item.index)
+    ? normalizeReading(getGrammarPinyin(chineseChars, graphemeIndex))
+    : null;
   const dictionaryKey =
-   adverbialDe && dictionaryReadings.get(item.index) !== "de5"
+   providedDictionaryReadings.get(item.index) ??
+   (grammarKey !== null && dictionaryReadings.get(item.index) !== grammarKey
     ? null
-    : (dictionaryReadings.get(item.index) ?? null);
-  const contextualLexicalKey = adverbialDe ? "de5" : lexicalKey;
-  const contextualSpokenKey = adverbialDe ? "de5" : spokenKey;
+    : (dictionaryReadings.get(item.index) ?? null));
+  const contextualLexicalKey = grammarKey ?? lexicalKey;
+  const contextualSpokenKey =
+   grammarKey ?? normalizeReading(getToneSandhiPinyin(chineseChars, graphemeIndex)) ?? spokenKey;
   const sourceLexicalKey = sourceKey;
   const selectedLexicalKey =
    overrideKey ?? sourceLexicalKey ?? dictionaryKey ?? contextualLexicalKey;
   const selectedSpokenKey =
    overrideKey ??
    sourceLexicalKey ??
+   providedDictionaryReadings.get(item.index) ??
    (selectedLexicalKey === contextualLexicalKey ? contextualSpokenKey : selectedLexicalKey);
+  // 儿 keeps its citation key and character offset; rhotic spelling is only r.
+  // Explicit source/dictionary spelling and manual readings remain authoritative.
+  const spokenSpelling =
+   overrideKey !== null
+    ? null
+    : sourceKey !== null
+      ? sourceSpellings.get(hanziIndex)
+      : providedDictionaryReadings.has(item.index)
+        ? providedDictionarySpellings.get(item.index)
+        : dictionaryKey !== null
+          ? dictionarySpellings.get(item.index)
+          : item.segment === "儿" &&
+              !lexicalErStarts.has(item.index) &&
+              ERHUA_WORDS.some((word) =>
+               normalizedText.endsWith(word, item.index + item.segment.length),
+              )
+            ? "r"
+            : null;
   const selectedAlternatives = [
    ...new Set([selectedLexicalKey, ...keys].filter((key): key is string => key !== null)),
   ];
@@ -744,7 +829,7 @@ export function analyzeContextualPronunciation(
       ? 0.95
       : isPolyphonic
         ? 0.55
-        : readingsAligned
+        : readingAvailable
           ? 0.8
           : 0;
   glyphs.push({
@@ -752,7 +837,7 @@ export function analyzeContextualPronunciation(
    start: item.index,
    end: item.index + item.segment.length,
    lexicalPinyin: displayPinyin(selectedLexicalKey),
-   spokenPinyin: displayPinyin(selectedSpokenKey),
+   spokenPinyin: spokenSpelling ?? displayPinyin(selectedSpokenKey),
    lexicalReadingKey: selectedLexicalKey,
    spokenReadingKey: selectedSpokenKey,
    isPolyphonic,
@@ -764,7 +849,7 @@ export function analyzeContextualPronunciation(
       ? ["source-pinyin"]
       : dictionaryKey !== null
         ? ["dictionary-exact"]
-        : readingsAligned
+        : readingAvailable
           ? ["context-library"]
           : ["fallback"]
      : ["manual-override"],
