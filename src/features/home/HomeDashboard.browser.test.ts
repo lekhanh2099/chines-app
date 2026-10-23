@@ -18,6 +18,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
   const fixture = fileURLToPath(new URL("./HomeDashboard.browser.fixture.tsx", import.meta.url));
   const server = await createServer({
    configFile: false,
+   define: { "process.env.__NEXT_IMAGE_OPTS": "undefined" },
    cacheDir: "node_modules/.vite/home-browser",
    optimizeDeps: { entries: [fixture] },
    resolve: {
@@ -314,6 +315,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(sourceCases)(
   const fixture = fileURLToPath(new URL("./HomeDashboard.browser.fixture.tsx", import.meta.url));
   const server = await createServer({
    configFile: false,
+   define: { "process.env.__NEXT_IMAGE_OPTS": "undefined" },
    cacheDir: "node_modules/.vite/home-full-browser",
    optimizeDeps: { entries: [fixture] },
    resolve: {
