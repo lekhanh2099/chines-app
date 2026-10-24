@@ -121,7 +121,7 @@ jobs:
        { match: /^src[/]features[/]hanzihome[/]learning-loop[/]|^src[/]features[/]hanzihome[/]hooks[/]useHanziHomeLearningLoop[.]|^src[/]app[/].*[/]learning-loop[/]/, browser: ["srs"], product: ["learning"] },
        { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, browser: ["reader"], product: ["offline"] },
        { match: /^src[/]features[/]daily-reading[/]|^src[/]app[/]api[/]daily-reading[/]/, browser: ["reading", "recorder"], product: ["reading"] },
-       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "tts", "listening", "annotations", "home"], product: ["offline", "search"] },
+       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "reading", "tts", "listening", "annotations", "home"], product: ["offline", "search"] },
       ];
       let code = full;
       let unitFull = full || deleted.some((file) => !guidancePath.test(file));
@@ -356,6 +356,8 @@ jobs:
   timeout-minutes: 20
   env:
    HUSKY: 0
+   # Use the CLI's original pinned images; the ECR mirror repeatedly rate-limits CI pulls.
+   SUPABASE_INTERNAL_IMAGE_REGISTRY: docker.io
    E2E_BASE_URL: http://127.0.0.1:3001
    E2E_USER_A_EMAIL: hanzihome-e2e-a@example.test
    E2E_USER_B_EMAIL: hanzihome-e2e-b@example.test

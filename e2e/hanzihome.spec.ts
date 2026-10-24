@@ -1014,7 +1014,15 @@ test("surfaces a revision conflict when remote state changes", async ({ page }) 
  });
  if (rateError) throw rateError;
 
+ const conflictingReview = page.waitForResponse(
+  (response) =>
+   response.url().endsWith("/api/hanzihome/learning-loop") &&
+   response.request().method() === "POST",
+ );
  await rateButton.click();
+ const conflict = await conflictingReview;
+ expect(conflict.status()).toBe(409);
+ await expect(conflict.json()).resolves.toMatchObject({ code: "LEARNING_LOOP_CONFLICT" });
  await expect(page.getByText("Không cập nhật được Learning Loop.", { exact: true })).toBeVisible();
 });
 
@@ -1288,16 +1296,35 @@ test("serializes two PDF first creators and keeps revision-zero updates distinct
 });
 
 test("keeps guest Daily Reading local and rejects browser dictionary writes", async ({ page }) => {
- const unauthorizedDailyRequests: string[] = [];
- page.on("response", (response) => {
-  if (response.status() === 401 && response.url().includes("/api/hanzihome/reader/daily-reading")) {
-   unauthorizedDailyRequests.push(response.url());
+ const dailyStateRequests: string[] = [];
+ page.on("request", (request) => {
+  if (new URL(request.url()).pathname === "/api/daily-reading/state") {
+   dailyStateRequests.push(`${request.method()} ${request.url()}`);
   }
  });
- await page.goto("/vi/daily-reading");
- await expect(page).toHaveURL(/\/vi\/daily-reading/);
- await page.waitForTimeout(500);
- expect(unauthorizedDailyRequests).toEqual([]);
+ await page.goto(
+  "/vi/daily-reading?document=hanzihome-studio-daily-reading:daily-seed-museum-summer-2026&tab=questions",
+ );
+ await expect(
+  page
+   .getByRole("heading", {
+    name: "在博物馆里过暑假：为什么越来越多年轻人愿意慢慢看历史？",
+    exact: true,
+   })
+   .first(),
+ ).toBeVisible();
+ await expect(
+  page.getByText(
+   "Bạn chưa đăng nhập. Đáp án trong phiên này vẫn dùng được để luyện tập nhưng lịch sử làm bài sẽ không được lưu lên tài khoản.",
+   { exact: true },
+  ),
+ ).toBeVisible();
+ await page.getByRole("tab", { name: "Đọc bài", exact: true }).click();
+ await expect(page.getByText("Chưa hoàn thành", { exact: true })).toBeVisible();
+ await page.getByRole("button", { name: "Đánh dấu đã học xong" }).click();
+ await expect(page.getByText("Đã hoàn thành", { exact: true })).toBeVisible();
+ await page.goto("/vi/login");
+ expect(dailyStateRequests).toEqual([]);
 
  await login(page, accountA);
  const userClient = createClient<Database>(supabaseUrl, publishableKey);
@@ -1317,20 +1344,30 @@ test("keeps guest Daily Reading local and rejects browser dictionary writes", as
   },
  );
  expect(readable.ok()).toBe(true);
+ const dictionaryEntry: Database["public"]["Tables"]["dictionary_core"]["Insert"] = {
+  headword: "__hanzihome_e2e__",
+  lookup_key: "__hanzihome_e2e__",
+  data: {},
+ };
  const write = await page.request.post(`${supabaseUrl}/rest/v1/dictionary_core`, {
   headers,
-  data: {
-   headword: "__hanzihome_e2e__",
-   lookup_key: "__hanzihome_e2e__",
-   data: {},
-  },
+  data: dictionaryEntry,
  });
- expect(write.ok()).toBe(false);
+ expect(write.status()).toBe(403);
+ await expect(write.json()).resolves.toMatchObject({ code: "42501" });
+ const cacheEntry: Database["public"]["Functions"]["upsert_legacy_vocabulary_cache"]["Args"] = {
+  p_hanzi: "__hanzihome_e2e__",
+  p_pinyin: "",
+  p_sino_vietnamese: "",
+  p_meaning: "",
+  p_analysis: {},
+ };
  const rpc = await page.request.post(`${supabaseUrl}/rest/v1/rpc/upsert_legacy_vocabulary_cache`, {
   headers,
-  data: { p_hanzi: "__hanzihome_e2e__", p_pinyin: "", p_meaning: "", p_type: "", p_data: {} },
+  data: cacheEntry,
  });
- expect(rpc.ok()).toBe(false);
+ expect(rpc.status()).toBe(403);
+ await expect(rpc.json()).resolves.toMatchObject({ code: "42501" });
 });
 
 test("keeps two Notes drafts separate and requires a choice before overwriting a newer server version", async ({

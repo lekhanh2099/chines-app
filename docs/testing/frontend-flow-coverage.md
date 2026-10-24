@@ -38,16 +38,36 @@ tooling regression checks, without application static checks, dependency audit,
 build or browser/database setup. Readiness and manual full validation still run
 the complete application gate.
 
+`scripts/check-ci-workflow.test.mjs` executes the workflow's inline selector and
+aggregate gate. Real temporary Git histories cover incremental draft updates,
+integration-base changes and rewritten history; regression cases also protect
+mounted consumer selection, metadata isolation and selected-suite failures.
+These run with the existing tooling tests, without browsers or a database.
+
 Retry-recovered product tests fail CI via `failOnFlakyTests`; retained traces
 remain available for diagnosis. The list reporter records each case's duration,
 and web-server output exposes the production build. Fresh hosted runners apply
 the canonical migrations and seed during Supabase startup, without a second
 reset. CI excludes unused Studio, image proxy, analytics, pooler, metadata and
 Edge Runtime services; database, Auth, REST, Storage and Realtime remain active.
+The E2E job uses the CLI's supported `SUPABASE_INTERNAL_IMAGE_REGISTRY=docker.io`
+override for both startup and SQL tests, preserving the original image names and
+versions. This avoids the ECR mirror's observed rate-limit backoffs. The explicit
+override uses one registry instead of the CLI's default fallback chain; a pull
+failure must remain visible. See the [version-matched CLI resolver](https://github.com/supabase/cli/blob/v2.119.0/apps/cli/src/command-internal/docker-registry.ts).
 The eleven service-worker cases opt into a real worker; other cases block worker
 installation and precaching. All cases keep isolated contexts and the single
 authenticated fixture lane. The explicit persistent Chromium restart keeps its
 real-worker behavior.
+
+Product assertions exercise the actual owner: the guest Daily Reading case
+opens the published static document, waits for resolved guest UI and marks it
+complete locally without any `/api/daily-reading/state` request. The Learning
+Loop conflict case requires HTTP 409 and `LEARNING_LOOP_CONFLICT`, in addition to
+the visible error, so unrelated network or authorization failures cannot pass it.
+Dictionary write checks send generated-contract-valid table/RPC payloads and
+require HTTP 403 / PostgreSQL `42501`; an invalid RPC signature cannot masquerade
+as a permission-denial pass.
 
 Guidance check dùng Prettier hiện có để kiểm tra YAML, root routing, tên skill,
 npm commands và local Markdown file targets; không fetch links hoặc benchmark
