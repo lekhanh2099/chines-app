@@ -30,9 +30,10 @@ describe("PwaServiceWorkerRegister", () => {
   expect(html).toBe("");
  });
 
- it("registers the production worker and warms the current route", async () => {
+ it("refreshes public shells on reload and warms study routes only when the controller changes", async () => {
   vi.stubEnv("NODE_ENV", "production");
   const postMessage = vi.fn();
+  const controllerEvents = new EventTarget();
   const mockRegister = vi.fn().mockResolvedValue({
    addEventListener: vi.fn(),
   });
@@ -55,15 +56,22 @@ describe("PwaServiceWorkerRegister", () => {
    serviceWorker: {
     register: mockRegister,
     controller: { postMessage },
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
+    addEventListener: controllerEvents.addEventListener.bind(controllerEvents),
+    removeEventListener: controllerEvents.removeEventListener.bind(controllerEvents),
    },
   });
 
   renderToStaticMarkup(createElement(PwaServiceWorkerRegister));
   for (const effect of harness.effects) effect();
   await vi.waitFor(() => expect(mockRegister).toHaveBeenCalledWith("/sw.js", { scope: "/" }));
-  expect(postMessage).toHaveBeenCalledWith({
+  expect(postMessage).toHaveBeenCalledOnce();
+  expect(postMessage).toHaveBeenNthCalledWith(1, {
+   type: "WARMUP_OFFLINE_CACHE",
+   routes: ["/vi/offline", "/en/offline", "/zh-CN/offline"],
+  });
+  controllerEvents.dispatchEvent(new Event("controllerchange"));
+  expect(postMessage).toHaveBeenCalledTimes(2);
+  expect(postMessage).toHaveBeenNthCalledWith(2, {
    type: "WARMUP_OFFLINE_CACHE",
    routes: [
     "/vi/reader",
