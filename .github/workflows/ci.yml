@@ -387,6 +387,13 @@ jobs:
      env:
       E2E_GREP: ${{ needs.changes.outputs.e2e_grep }}
      run: npm run test:e2e -- --grep "$E2E_GREP"
+   - name: Preserve failed local-fixture E2E evidence
+     if: failure()
+     uses: actions/upload-artifact@v4
+     with:
+      name: product-e2e-failures
+      path: test-results/
+      retention-days: 1
    - if: always()
      run: npx supabase stop
 

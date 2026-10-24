@@ -253,7 +253,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
     await searchDialog.getByRole("button", { name: "Thử lại", exact: true }).click();
     await browserExpect(searchDialog.getByRole("option")).toHaveCount(2);
     await browserExpect(searchDialog.getByRole("alert")).toHaveCount(0);
-    await searchInput.focus();
+    await searchInput.click();
     await searchInput.press("ArrowDown");
     await browserExpect(searchDialog.getByRole("option").nth(1)).toHaveAttribute(
      "aria-selected",

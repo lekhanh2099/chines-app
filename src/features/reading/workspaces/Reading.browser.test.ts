@@ -1728,10 +1728,12 @@ it
     const pronunciationChoices = page.getByRole("radiogroup", { name: "化", exact: true });
     await sessionPinyin.click();
     await pronunciationChoices.getByRole("radio", { name: "huà", exact: true }).focus();
-    await page.keyboard.press("ArrowRight");
+    // Radix moves focus asynchronously and selects while the arrow key is held.
+    await page.keyboard.down("ArrowRight");
     await browserExpect(
      pronunciationChoices.getByRole("radio", { name: "huā", exact: true }),
     ).toBeChecked();
+    await page.keyboard.up("ArrowRight");
     await page
      .getByRole("button", { name: chrome.pronunciation.applySession, exact: true })
      .click();
