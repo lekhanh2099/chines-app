@@ -69,6 +69,18 @@ Dictionary write checks send generated-contract-valid table/RPC payloads and
 require HTTP 403 / PostgreSQL `42501`; an invalid RPC signature cannot masquerade
 as a permission-denial pass.
 
+The strengthened RPC check exposed inherited direct `anon`/`authenticated`
+EXECUTE grants in a fresh CI database. The [targeted ACL migration](../../supabase/migrations/20261024124241_restrict_legacy_vocabulary_cache_execution.sql)
+revokes only this writer from browser roles and keeps `service_role`; it changes
+no function signature, generated data contract or existing row. The [transactional SQL regression](../../supabase/tests/dictionary_write_permissions.test.sql)
+checks effective grants, a valid denied browser call and successful trusted
+legacy/canonical cache writes, then rolls back its fixtures. CI applies the
+migration only to its isolated local stack. Production ACLs and migration drift
+remain unverified; production application requires separate authorization.
+Discarding the CI stack rolls back the isolated run. Trusted access can be
+forward-fixed by restoring the exact `service_role` EXECUTE grant; browser
+EXECUTE must not be regranted to make a failing test pass.
+
 Guidance check dùng Prettier hiện có để kiểm tra YAML, root routing, tên skill,
 npm commands và local Markdown file targets; không fetch links hoặc benchmark
 agent. Chạy khi docs/skills/metadata, workflow hoặc package scripts đổi, có file

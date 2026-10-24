@@ -405,7 +405,7 @@ jobs:
       exit 1
    - name: Verify local database contracts
      run: |
-      npx supabase test db --local supabase/tests/hanzihome_full_crud_test.sql supabase/tests/user_ai_task_routing_rls.test.sql supabase/tests/notes_revision_cas.test.sql supabase/tests/linked_annotation_notes_cas.test.sql supabase/tests/notes_rollout_compatibility.test.sql supabase/tests/pdf_annotation_absence_cas.test.sql
+      npx supabase test db --local supabase/tests/hanzihome_full_crud_test.sql supabase/tests/user_ai_task_routing_rls.test.sql supabase/tests/notes_revision_cas.test.sql supabase/tests/linked_annotation_notes_cas.test.sql supabase/tests/notes_rollout_compatibility.test.sql supabase/tests/pdf_annotation_absence_cas.test.sql supabase/tests/dictionary_write_permissions.test.sql
       docker exec -i supabase_db_chines-app psql -U postgres -d postgres -v ON_ERROR_STOP=1 < supabase/tests/auth_session_limit.test.sql
    - run: npm run e2e:seed
    - name: Affected product E2E
