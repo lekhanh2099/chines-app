@@ -253,7 +253,17 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
     await searchDialog.getByRole("button", { name: "Thử lại", exact: true }).click();
     await browserExpect(searchDialog.getByRole("option")).toHaveCount(2);
     await browserExpect(searchDialog.getByRole("alert")).toHaveCount(0);
-    await searchInput.click();
+    await searchDialog.getByRole("option").nth(1).hover();
+    await browserExpect(searchDialog.getByRole("option").nth(1)).toHaveAttribute(
+     "aria-selected",
+     "true",
+    );
+    await searchInput.fill("");
+    await searchInput.fill("希望");
+    await browserExpect(searchDialog.getByRole("option").first()).toHaveAttribute(
+     "aria-selected",
+     "true",
+    );
     await searchInput.press("ArrowDown");
     await browserExpect(searchDialog.getByRole("option").nth(1)).toHaveAttribute(
      "aria-selected",
