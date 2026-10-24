@@ -9,11 +9,11 @@ Source of truth: [CI workflow](../../.github/workflows/ci.yml), [package scripts
 | Trigger / scope                              | Checks                                                                                                                                                    |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Commit                                       | Existing staged-only Oxfmt/Oxlint; không full test suite.                                                                                                 |
-| Docs/skills-only push/PR                     | Install + format và lightweight YAML/metadata/routing/file-reference check; `skills-lock.json` dùng cùng scope, không build/Node/browser/product E2E.     |
-| Code push/PR                                 | Full static contract/type checks; Vitest related graph hoặc full Node nếu broad/deleted paths; owner/consumer map chọn mounted fixtures và product cases. |
+| Guidance/workflow-only draft update          | Install, format, guidance contracts và tooling regression tests; không application build/browser/product E2E.                                             |
+| Affected code push/draft update              | Full static contract/type checks; Vitest related graph hoặc full Node nếu broad/deleted paths; owner/consumer map chọn mounted fixtures và product cases. |
 | Runtime-loaded fixtures                      | Explicit map trong workflow, vì Vite URL imports không thuộc Vitest static graph. Mounted job riêng, không cần Supabase.                                  |
 | Shared/auth/schema/dependency/unmapped paths | Conservative full Node/browser/product path; không silently mất consumer coverage.                                                                        |
-| Manual Run workflow                          | Full Node, toàn bộ 14 mounted files và product/SQL suite.                                                                                                 |
+| Ready/non-draft/base change/manual           | Full Node, toàn bộ 14 mounted files và product/SQL suite.                                                                                                 |
 | Local merge/release                          | `npm run check`; required mounted/SQL/product/coverage/corpus proof theo contract của slice. Performance profiling chạy manual khi cần.                   |
 
 Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify, mounted browser và product E2E chạy độc lập sau selection. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
@@ -32,6 +32,11 @@ development feedback and does not clear earlier failed or cancelled coverage;
 the full readiness gate must pass before merge. Title/body edits skip app checks
 under a separate metadata concurrency group and check name, preserving the real
 required `CI gate` and any running code validation.
+
+Workflow/guidance-only draft updates run the existing guidance, formatting and
+tooling regression checks, without application static checks, dependency audit,
+build or browser/database setup. Readiness and manual full validation still run
+the complete application gate.
 
 Retry-recovered product tests fail CI via `failOnFlakyTests`; retained traces
 remain available for diagnosis. The list reporter records each case's duration,

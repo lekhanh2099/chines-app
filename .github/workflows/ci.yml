@@ -77,7 +77,7 @@ jobs:
       }
       const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
       const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
-      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|skills-lock[.]json$)/;
+      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|[.]github[/]workflows[/]ci[.]yml$|skills-lock[.]json$)/;
       const guidance = full || deleted.length > 0 || paths.some((file) => guidancePath.test(file) || file === ".github/workflows/ci.yml" || file === "package.json");
       const browserFiles = {
        notes: ["src/features/notes/hooks/NoteEditor.browser.test.ts", "src/features/notes/hooks/NoteOwner.browser.test.ts"],
@@ -280,6 +280,9 @@ jobs:
       console.log(`Agent guidance contracts passed: ${folders.length} skills, ${files.length} Markdown files, ${references} local file references. Behavioral routing and model benchmarks are separate proof.`);
       JS
    - run: npm run format:check
+   - name: Tooling regression tests
+     if: needs.changes.outputs.guidance == 'true' && needs.changes.outputs.code != 'true'
+     run: npm run test:run -- scripts --maxWorkers=2
    - name: Static checks
      if: needs.changes.outputs.code == 'true'
      run: |
@@ -420,11 +423,12 @@ jobs:
  gate:
   name: ${{ github.event.action == 'edited' && !github.event.changes.base && 'CI metadata' || 'CI gate' }}
   needs: [changes, verify, browser, e2e]
-  if: always() && (github.event.action != 'edited' || github.event.changes.base != null)
+  if: always()
   runs-on: ubuntu-latest
   timeout-minutes: 2
   steps:
    - name: Require every selected check to pass
+     if: github.event.action != 'edited' || github.event.changes.base != null
      env:
       CHECK_RESULTS: ${{ toJSON(needs) }}
      run: |
