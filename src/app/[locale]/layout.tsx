@@ -33,9 +33,9 @@ export const metadata: Metadata = {
  description: "A focused workspace for learning Chinese with HanziHome.",
  manifest: "/manifest.webmanifest",
  icons: {
-  icon: "/favicon.svg",
-  shortcut: "/favicon.svg",
-  apple: "/favicon.svg",
+  icon: "/favicon.svg?v=f09443a0",
+  shortcut: "/favicon.svg?v=f09443a0",
+  apple: "/favicon.svg?v=f09443a0",
  },
 };
 

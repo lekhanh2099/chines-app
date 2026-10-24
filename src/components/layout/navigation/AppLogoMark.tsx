@@ -1,17 +1,17 @@
-import { Languages } from "lucide-react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
 export function AppLogoMark({ className }: { className?: string }) {
  return (
-  <span
+  <Image
+   src="/favicon.svg?v=f09443a0"
+   alt=""
+   width={40}
+   height={40}
+   unoptimized
    aria-hidden="true"
-   className={cn(
-    "app-brand-gradient relative flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/25 text-primary-foreground",
-    className,
-   )}
-  >
-   <Languages className="size-5.5" strokeWidth={2.4} />
-  </span>
+   className={cn("size-10 shrink-0", className)}
+  />
  );
 }

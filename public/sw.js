@@ -283,6 +283,31 @@ self.addEventListener("fetch", (event) => {
   return;
  }
 
+ // The brand icon can change at the same URL; retained static caches must not shadow it.
+ if (url.origin === self.location.origin && url.pathname === "/favicon.svg") {
+  event.respondWith(
+   fetch(request, { cache: "no-cache" }).then(
+    async (networkResponse) => {
+     if (networkResponse.status === 200) {
+      try {
+       const cache = await caches.open(STATIC_CACHE);
+       await cache.put("/favicon.svg", networkResponse.clone());
+      } catch {
+       // A cache write failure must not discard the current network icon.
+      }
+     }
+     return networkResponse;
+    },
+    async () => {
+     const cache = await caches.open(STATIC_CACHE);
+     const current = await cache.match("/favicon.svg");
+     return current ?? (await caches.match(request, { ignoreSearch: true })) ?? Response.error();
+    },
+   ),
+  );
+  return;
+ }
+
  // 3. Static assets: Cache-first, falling back to network
  const isStaticAsset =
   url.pathname.startsWith("/_next/static/") ||
