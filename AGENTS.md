@@ -184,8 +184,10 @@ to introduce a prohibited construct.
 
 ## 6. Working method
 
-Use `CONTRIBUTING.md` for task readiness, acceptance-to-evidence mapping and
-completion. For chat/session handoff, lifecycle, tool adoption or a workflow
+Use `CONTRIBUTING.md` for request intake, evolving requirements, task readiness,
+acceptance-to-evidence mapping and completion. Derive and maintain the current
+brief from the conversation and repository evidence; the user need not supply
+a formal prompt. For chat/session handoff, lifecycle, tool adoption or a workflow
 pilot, read `docs/agent/solo-ai-engineering-workflow.md`. Its tool and pilot
 proposals do not authorize installation, publication or production actions.
 

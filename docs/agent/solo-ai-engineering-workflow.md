@@ -127,7 +127,25 @@ Evidence required:
 Rollback when applicable:
 ```
 
-The agent may derive the brief from the user's Vietnamese request and repository evidence. Do not ask again about routine choices or existing approvals. If new scope is discovered, state its impact and options and obtain a decision before proceeding beyond scope; continue independent authorized work where possible.
+Follow [request intake and updates](../../CONTRIBUTING.md#request-intake-and-updates)
+for short Vietnamese requests, follow-up corrections and clarification decisions.
+The template above is one current brief for significant work, not a document the
+user must fill in or a second task owner. Retain material updates with the
+existing owner; do not append contradictory versions as simultaneous acceptance.
+
+Examples of applying the procedure; these do not authorize application changes:
+
+| Conversation                                             | Expected agent behavior                                                                                                                  |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| “Fix pinyin chỗ này” with an identifiable screenshot     | Inspect the exact phrase and render path, establish the expected reading and preserve unrelated pronunciation behavior.                  |
+| “Đổi cái này” without an identifiable target             | Inspect available context, then ask for the missing target before dependent edits; continue work that does not depend on it.             |
+| “Chỉ mobile, giữ desktop”; later “desktop cũng đổi luôn” | Replace the conflicting desktop constraint and retain the remaining requirements and scope limits.                                       |
+| “Bỏ popup, đổi sang inline” after popup checks passed    | Update acceptance, review existing changes and reopen affected checks; the popup result does not prove the inline interaction.           |
+| “Ủa E2E là gì?” during implementation                    | Explain briefly and continue the active task unless the user changes or cancels it.                                                      |
+| A new session continues an existing task                 | Read its current brief, decisions, approvals, open acceptance and source-linked evidence, then compare the current diff before resuming. |
+
+These examples support instruction review. They do not prove model compliance,
+successful cross-session recovery or completion of the pilot in section 9.
 
 Independent review reads the requirements, diff, relevant contracts and actual test/CI evidence. Each finding needs severity, file:line, a failure scenario, evidence and an in-scope remedy. Distinguish blockers from suggestions; do not demand stylistic preferences or broader architecture changes. Reviewers cannot claim tests passed without evidence or grant approval on the human's behalf.
 
