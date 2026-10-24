@@ -24,6 +24,10 @@ and web-server output exposes the production build. Fresh hosted runners apply
 the canonical migrations and seed during Supabase startup, without a second
 reset. CI excludes unused Studio, image proxy, analytics, pooler, metadata and
 Edge Runtime services; database, Auth, REST, Storage and Realtime remain active.
+The eleven service-worker cases opt into a real worker; other cases block worker
+installation and precaching. All cases keep isolated contexts and the single
+authenticated fixture lane. The explicit persistent Chromium restart keeps its
+real-worker behavior.
 
 Guidance check dùng Prettier hiện có để kiểm tra YAML, root routing, tên skill,
 npm commands và local Markdown file targets; không fetch links hoặc benchmark

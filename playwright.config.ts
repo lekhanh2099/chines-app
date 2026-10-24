@@ -14,6 +14,7 @@ export default defineConfig({
  reporter: process.env.CI ? [["list"], ["github"]] : "list",
  use: {
   baseURL,
+  serviceWorkers: "block",
   trace: "retain-on-failure",
   screenshot: "only-on-failure",
   video: "retain-on-failure",

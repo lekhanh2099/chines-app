@@ -231,123 +231,20 @@ test("serves a public offline shell without server account or lesson content", a
  }
 });
 
-test("reopens the downloaded Reader offline and isolates its lessons after account change and logout", async ({
- page,
- context,
-}) => {
- test.setTimeout(60_000);
- await login(page, accountA);
- await page.goto(
-  "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
- );
- await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
- await waitForDownloadedLesson(page);
- await page.evaluate(async () => {
-  await navigator.serviceWorker.ready;
- });
- await expect
-  .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
-  .toBe(true);
- await expect
-  .poll(() =>
-   page.evaluate(async () => {
-    const cache = await caches.open("hanzihome-static-v13");
-    return Boolean(await cache.match("/vi/offline"));
-   }),
-  )
-  .toBe(true);
- await page.goto("/vi/offline");
- await expect(
-  page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
- ).toBeVisible();
- await page.getByRole("button", { name: "Mở bài đã tải", exact: true }).click();
- await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
- let reopened = page;
- try {
-  await context.setOffline(true);
-  await page.reload();
-  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
-  await page.close();
-  reopened = await context.newPage();
-  await reopened.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
-  await expect(reopened.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
-  for (const viewport of [
-   { width: 820, height: 1180 },
-   { width: 412, height: 915 },
-  ]) {
-   await reopened.setViewportSize(viewport);
-   await expect(reopened.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
-   expect(
-    await reopened.evaluate(
-     () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
-    ),
-   ).toBe(true);
-  }
-  await reopened.getByRole("button", { name: "Bài trên máy", exact: true }).click();
-  await expect(
-   reopened.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
-  ).toBeVisible();
-  await reopened.goto("/vi/offline?lessonId=missing-lesson");
-  await expect(
-   reopened.getByRole("heading", { name: "Chưa có sẵn offline", exact: true }),
-  ).toBeVisible();
- } finally {
-  await context.setOffline(false);
- }
- await reopened.goto("/vi");
- await openProfile(reopened, accountA.email);
- await logout(reopened);
- await login(reopened, accountB);
- await reopened.goto("/vi/offline");
- await expect(
-  reopened.getByRole("heading", { name: "Chưa có bài sẵn sàng offline", exact: true }),
- ).toBeVisible();
- await expect(reopened.getByText("Offline fixture lesson A", { exact: true })).toHaveCount(0);
- try {
-  await context.setOffline(true);
-  await reopened.goto("/vi/offline?lessonId=e2e-offline-lesson");
-  await expect(
-   reopened.getByRole("heading", { name: "Chưa có sẵn offline", exact: true }),
-  ).toBeVisible();
-  await expect(reopened.getByText("Offline fixture paragraph A.", { exact: true })).toHaveCount(0);
- } finally {
-  await context.setOffline(false);
- }
- await reopened.goto("/vi");
- await openProfile(reopened, accountB.email);
- await logout(reopened);
- try {
-  await context.setOffline(true);
-  await reopened.goto("/vi/offline?lessonId=e2e-offline-lesson");
-  await expect(
-   reopened.getByText(
-    "Chưa xác định được tài khoản. Kết nối mạng và đăng nhập lại để mở đúng bài đã tải.",
-    { exact: true },
-   ),
-  ).toBeVisible();
-  await expect(reopened.getByText("Offline fixture paragraph A.", { exact: true })).toHaveCount(0);
- } finally {
-  await context.setOffline(false);
-  await reopened.close();
- }
-});
+test.describe(() => {
+ test.use({ serviceWorkers: "allow" });
 
-test("restarts Chromium offline with the committed lesson and session in an isolated profile", async () => {
- test.setTimeout(60_000);
- const profile = await mkdtemp(join(tmpdir(), "hanzihome-e2e-offline-"));
- let browserContext = await chromium.launchPersistentContext(profile, { baseURL, headless: true });
- try {
-  const page = browserContext.pages()[0] ?? (await browserContext.newPage());
+ test("reopens the downloaded Reader offline and isolates its lessons after account change and logout", async ({
+  page,
+  context,
+ }) => {
+  test.setTimeout(60_000);
   await login(page, accountA);
   await page.goto(
    "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
   );
   await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
   await waitForDownloadedLesson(page);
-  await page.goto("/vi/offline");
-  await expect(
-   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
-  ).toBeVisible();
   await page.evaluate(async () => {
    await navigator.serviceWorker.ready;
   });
@@ -356,160 +253,346 @@ test("restarts Chromium offline with the committed lesson and session in an isol
    .toBe(true);
   await expect
    .poll(() =>
-    page.evaluate(async () =>
-     Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
-    ),
+    page.evaluate(async () => {
+     const cache = await caches.open("hanzihome-static-v13");
+     return Boolean(await cache.match("/vi/offline"));
+    }),
    )
    .toBe(true);
-  await browserContext.close();
-  browserContext = await chromium.launchPersistentContext(profile, {
-   baseURL,
-   headless: true,
-   offline: true,
-  });
-  const restarted = browserContext.pages()[0] ?? (await browserContext.newPage());
-  await restarted.goto(
+  await page.goto("/vi/offline");
+  await expect(
+   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Mở bài đã tải", exact: true }).click();
+  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+  let reopened = page;
+  try {
+   await context.setOffline(true);
+   await page.reload();
+   await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+   await page.close();
+   reopened = await context.newPage();
+   await reopened.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
+   await expect(reopened.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+   for (const viewport of [
+    { width: 820, height: 1180 },
+    { width: 412, height: 915 },
+   ]) {
+    await reopened.setViewportSize(viewport);
+    await expect(reopened.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+    expect(
+     await reopened.evaluate(
+      () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+     ),
+    ).toBe(true);
+   }
+   await reopened.getByRole("button", { name: "Bài trên máy", exact: true }).click();
+   await expect(
+    reopened.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
+   ).toBeVisible();
+   await reopened.goto("/vi/offline?lessonId=missing-lesson");
+   await expect(
+    reopened.getByRole("heading", { name: "Chưa có sẵn offline", exact: true }),
+   ).toBeVisible();
+  } finally {
+   await context.setOffline(false);
+  }
+  await reopened.goto("/vi");
+  await openProfile(reopened, accountA.email);
+  await logout(reopened);
+  await login(reopened, accountB);
+  await reopened.goto("/vi/offline");
+  await expect(
+   reopened.getByRole("heading", { name: "Chưa có bài sẵn sàng offline", exact: true }),
+  ).toBeVisible();
+  await expect(reopened.getByText("Offline fixture lesson A", { exact: true })).toHaveCount(0);
+  try {
+   await context.setOffline(true);
+   await reopened.goto("/vi/offline?lessonId=e2e-offline-lesson");
+   await expect(
+    reopened.getByRole("heading", { name: "Chưa có sẵn offline", exact: true }),
+   ).toBeVisible();
+   await expect(reopened.getByText("Offline fixture paragraph A.", { exact: true })).toHaveCount(0);
+  } finally {
+   await context.setOffline(false);
+  }
+  await reopened.goto("/vi");
+  await openProfile(reopened, accountB.email);
+  await logout(reopened);
+  try {
+   await context.setOffline(true);
+   await reopened.goto("/vi/offline?lessonId=e2e-offline-lesson");
+   await expect(
+    reopened.getByText(
+     "Chưa xác định được tài khoản. Kết nối mạng và đăng nhập lại để mở đúng bài đã tải.",
+     { exact: true },
+    ),
+   ).toBeVisible();
+   await expect(reopened.getByText("Offline fixture paragraph A.", { exact: true })).toHaveCount(0);
+  } finally {
+   await context.setOffline(false);
+   await reopened.close();
+  }
+ });
+
+ test("restarts Chromium offline with the committed lesson and session in an isolated profile", async () => {
+  test.setTimeout(60_000);
+  const profile = await mkdtemp(join(tmpdir(), "hanzihome-e2e-offline-"));
+  let browserContext = await chromium.launchPersistentContext(profile, { baseURL, headless: true });
+  try {
+   const page = browserContext.pages()[0] ?? (await browserContext.newPage());
+   await login(page, accountA);
+   await page.goto(
+    "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
+   );
+   await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+   await waitForDownloadedLesson(page);
+   await page.goto("/vi/offline");
+   await expect(
+    page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
+   ).toBeVisible();
+   await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+   });
+   await expect
+    .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
+    .toBe(true);
+   await expect
+    .poll(() =>
+     page.evaluate(async () =>
+      Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
+     ),
+    )
+    .toBe(true);
+   await browserContext.close();
+   browserContext = await chromium.launchPersistentContext(profile, {
+    baseURL,
+    headless: true,
+    offline: true,
+   });
+   const restarted = browserContext.pages()[0] ?? (await browserContext.newPage());
+   await restarted.goto(
+    "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
+   );
+   await expect(restarted).toHaveURL(/\/vi\/offline\?/);
+   await expect(
+    restarted.getByRole("heading", { name: "Học ngoại tuyến", exact: true }),
+   ).toBeVisible();
+   await expect(restarted.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+   expect(await restarted.evaluate(() => navigator.onLine)).toBe(false);
+  } finally {
+   try {
+    await browserContext.close();
+   } finally {
+    await rm(profile, { recursive: true, force: true });
+   }
+  }
+ });
+
+ test("keeps cached lessons after a storage read failure and reports an evicted vocabulary resource", async ({
+  page,
+  context,
+ }) => {
+  await login(page, accountA);
+  const resources = Promise.all([
+   page.waitForResponse(
+    (response) =>
+     response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson") &&
+     response.status() === 200,
+   ),
+   page.waitForResponse(
+    (response) =>
+     response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson/vocabulary") &&
+     response.status() === 200,
+   ),
+  ]);
+  await page.goto(
    "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
   );
-  await expect(restarted).toHaveURL(/\/vi\/offline\?/);
+  expect((await resources).every((response) => response.ok())).toBe(true);
+  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+  await waitForDownloadedLesson(page);
+  await page.goto("/vi/offline");
   await expect(
-   restarted.getByRole("heading", { name: "Học ngoại tuyến", exact: true }),
+   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
   ).toBeVisible();
-  await expect(restarted.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
-  expect(await restarted.evaluate(() => navigator.onLine)).toBe(false);
- } finally {
-  try {
-   await browserContext.close();
-  } finally {
-   await rm(profile, { recursive: true, force: true });
-  }
- }
-});
-
-test("keeps cached lessons after a storage read failure and reports an evicted vocabulary resource", async ({
- page,
- context,
-}) => {
- await login(page, accountA);
- const resources = Promise.all([
-  page.waitForResponse(
-   (response) =>
-    response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson") &&
-    response.status() === 200,
-  ),
-  page.waitForResponse(
-   (response) =>
-    response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson/vocabulary") &&
-    response.status() === 200,
-  ),
- ]);
- await page.goto(
-  "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
- );
- expect((await resources).every((response) => response.ok())).toBe(true);
- await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
- await waitForDownloadedLesson(page);
- await page.goto("/vi/offline");
- await expect(
-  page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
- ).toBeVisible();
- await page.addInitScript(() => {
-  IDBFactory.prototype.open = () => {
-   throw new DOMException("Controlled storage read failure", "InvalidStateError");
-  };
- });
- await page.reload();
- await expect(
-  page.getByRole("heading", { name: "Không đọc được bộ nhớ offline", exact: true }),
- ).toBeVisible();
- await page.getByRole("button", { name: "Thử lại", exact: true }).click();
- await expect(
-  page.getByRole("heading", { name: "Không đọc được bộ nhớ offline", exact: true }),
- ).toBeVisible();
- const recovered = await context.newPage();
- try {
-  await recovered.goto("/vi/offline");
-  await expect(
-   recovered.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
-  ).toBeVisible();
-  await recovered.evaluate(
-   () =>
-    new Promise<void>((resolve, reject) => {
-     const request = indexedDB.open("hanzihome-local-db");
-     request.onerror = () => reject(request.error);
-     request.onsuccess = () => {
-      const db = request.result;
-      const tx = db.transaction("content_cache", "readwrite");
-      const store = tx.objectStore("content_cache");
-      const keys = store.getAllKeys();
-      keys.onsuccess = () => {
-       for (const key of keys.result) {
-        if (typeof key === "string" && key.endsWith(":lesson_vocab:e2e-offline-lesson"))
-         store.delete(key);
-       }
-      };
-      tx.oncomplete = () => {
-       db.close();
-       resolve();
-      };
-      tx.onerror = () => {
-       db.close();
-       reject(tx.error);
-      };
-      tx.onabort = () => {
-       db.close();
-       reject(tx.error);
-      };
-     };
-    }),
-  );
-  await recovered.evaluate(async () => {
-   await navigator.serviceWorker.ready;
+  await page.addInitScript(() => {
+   IDBFactory.prototype.open = () => {
+    throw new DOMException("Controlled storage read failure", "InvalidStateError");
+   };
   });
-  await expect
-   .poll(() => recovered.evaluate(() => navigator.serviceWorker.controller !== null))
-   .toBe(true);
-  await expect
-   .poll(() =>
-    recovered.evaluate(async () =>
-     Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
-    ),
-   )
-   .toBe(true);
-  await context.setOffline(true);
-  await recovered.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
+  await page.reload();
   await expect(
-   recovered.getByRole("heading", { name: "Chưa có sẵn offline", exact: true }),
+   page.getByRole("heading", { name: "Không đọc được bộ nhớ offline", exact: true }),
   ).toBeVisible();
-  await expect(recovered.getByText("Offline fixture paragraph A.", { exact: true })).toHaveCount(0);
- } finally {
-  await context.setOffline(false);
-  await recovered.close();
- }
-});
+  await page.getByRole("button", { name: "Thử lại", exact: true }).click();
+  await expect(
+   page.getByRole("heading", { name: "Không đọc được bộ nhớ offline", exact: true }),
+  ).toBeVisible();
+  const recovered = await context.newPage();
+  try {
+   await recovered.goto("/vi/offline");
+   await expect(
+    recovered.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
+   ).toBeVisible();
+   await recovered.evaluate(
+    () =>
+     new Promise<void>((resolve, reject) => {
+      const request = indexedDB.open("hanzihome-local-db");
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => {
+       const db = request.result;
+       const tx = db.transaction("content_cache", "readwrite");
+       const store = tx.objectStore("content_cache");
+       const keys = store.getAllKeys();
+       keys.onsuccess = () => {
+        for (const key of keys.result) {
+         if (typeof key === "string" && key.endsWith(":lesson_vocab:e2e-offline-lesson"))
+          store.delete(key);
+        }
+       };
+       tx.oncomplete = () => {
+        db.close();
+        resolve();
+       };
+       tx.onerror = () => {
+        db.close();
+        reject(tx.error);
+       };
+       tx.onabort = () => {
+        db.close();
+        reject(tx.error);
+       };
+      };
+     }),
+   );
+   await recovered.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+   });
+   await expect
+    .poll(() => recovered.evaluate(() => navigator.serviceWorker.controller !== null))
+    .toBe(true);
+   await expect
+    .poll(() =>
+     recovered.evaluate(async () =>
+      Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
+     ),
+    )
+    .toBe(true);
+   await context.setOffline(true);
+   await recovered.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
+   await expect(
+    recovered.getByRole("heading", { name: "Chưa có sẵn offline", exact: true }),
+   ).toBeVisible();
+   await expect(recovered.getByText("Offline fixture paragraph A.", { exact: true })).toHaveCount(
+    0,
+   );
+  } finally {
+   await context.setOffline(false);
+   await recovered.close();
+  }
+ });
 
-for (const book of [
- { key: "tm3", path: "han-thuong-mai", first: "BÀI 1: 开户汇款", second: "BÀI 2: 按揭买房" },
- {
-  key: "nhip-cau",
-  path: "nhip-cau-han-ngu",
-  first: 'BÀI 1: 我的"希望工程"',
-  second: "BÀI 2: 差不多先生传",
- },
- {
-  key: "doc-hieu",
-  path: "doc-hieu",
-  first: "UNIT 1 – TOÀN BỘ 5 BÀI",
-  second: "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
- },
- {
-  key: "khau-ngu",
-  path: "khau-ngu-tc1",
-  first: "BÀI 1: 让我们认识一下，好吗？",
-  second: "BÀI 2: 健康第一",
- },
-]) {
- test(`reopens static textbook ${book.key} offline with local lesson, tab and resume`, async ({
+ for (const book of [
+  { key: "tm3", path: "han-thuong-mai", first: "BÀI 1: 开户汇款", second: "BÀI 2: 按揭买房" },
+  {
+   key: "nhip-cau",
+   path: "nhip-cau-han-ngu",
+   first: 'BÀI 1: 我的"希望工程"',
+   second: "BÀI 2: 差不多先生传",
+  },
+  {
+   key: "doc-hieu",
+   path: "doc-hieu",
+   first: "UNIT 1 – TOÀN BỘ 5 BÀI",
+   second: "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
+  },
+  {
+   key: "khau-ngu",
+   path: "khau-ngu-tc1",
+   first: "BÀI 1: 让我们认识一下，好吗？",
+   second: "BÀI 2: 健康第一",
+  },
+ ]) {
+  test(`reopens static textbook ${book.key} offline with local lesson, tab and resume`, async ({
+   page,
+   context,
+  }) => {
+   test.setTimeout(60_000);
+   await login(page, accountA);
+   await page.setViewportSize({ width: 1440, height: 900 });
+   await page.goto("/vi/offline");
+   await expect(page.getByRole("list", { name: "Giáo trình có sẵn", exact: true })).toBeVisible();
+   await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(4);
+   await expect(page.getByText("Hán thương mại 2", { exact: true })).toHaveCount(0);
+   await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+   });
+   await expect
+    .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
+    .toBe(true);
+   await expect
+    .poll(() =>
+     page.evaluate(async () => {
+      const cache = await caches.open("hanzihome-static-v13");
+      return (
+       await Promise.all(
+        ["/vi/offline", "/en/offline", "/zh-CN/offline"].map(async (path) =>
+         Boolean(await cache.match(path)),
+        ),
+       )
+      ).every(Boolean);
+     }),
+    )
+    .toBe(true);
+   const navigationRequests: string[] = [];
+   page.on("request", (request) => {
+    if (request.url().includes("_rsc=")) navigationRequests.push(request.url());
+   });
+   try {
+    await context.setOffline(true);
+    await page.goto(`/vi/hsk/${book.path}?lesson=1&tab=text`);
+    await expect(page).toHaveURL(new RegExp(`/vi/offline\\?.*book=${book.key}`));
+    const selector = page.getByRole("button", { name: "Chọn bài học", exact: true });
+    await expect(selector).toContainText(book.first);
+    await expect(page.locator("[data-reader-segment]").first()).toBeVisible();
+    await page.reload();
+    await expect(selector).toContainText(book.first);
+    await selector.click();
+    await page.getByRole("button", { name: book.second, exact: true }).click();
+    await expect(selector).toContainText(book.second);
+    await expect(page).toHaveURL(new RegExp(`book=${book.key}&lesson=2`));
+    await page.getByRole("tab", { name: "Từ vựng", exact: true }).click();
+    await expect(page).toHaveURL(/tab=vocab/);
+    await page.reload();
+    await expect(selector).toContainText(book.second);
+    await expect(page.getByRole("tab", { name: "Từ vựng", exact: true })).toHaveAttribute(
+     "aria-selected",
+     "true",
+    );
+    await page.goto(`/vi/offline?book=${book.key}`);
+    await expect(selector).toContainText(book.second);
+    await expect(page.getByRole("tab", { name: "Từ vựng", exact: true })).toHaveAttribute(
+     "aria-selected",
+     "true",
+    );
+    if (book.key === "khau-ngu") {
+     await page.goto("/vi/offline?book=khau-ngu&lesson=5&tab=practice");
+     const advertisement = page.locator(
+      'img[src="/textbooks/khau-ngu/lesson-05-advertisements.png"]',
+     );
+     await advertisement.scrollIntoViewIfNeeded();
+     await expect(advertisement).toBeVisible();
+     await expect(advertisement).toHaveJSProperty("naturalWidth", 1190);
+    }
+    expect(navigationRequests).toEqual([]);
+   } finally {
+    await context.setOffline(false);
+   }
+  });
+ }
+
+ test("keeps offline textbook focus, locale, mobile and unavailable-book controls", async ({
   page,
   context,
  }) => {
@@ -546,382 +629,305 @@ for (const book of [
   });
   try {
    await context.setOffline(true);
-   await page.goto(`/vi/hsk/${book.path}?lesson=1&tab=text`);
-   await expect(page).toHaveURL(new RegExp(`/vi/offline\\?.*book=${book.key}`));
-   const selector = page.getByRole("button", { name: "Chọn bài học", exact: true });
-   await expect(selector).toContainText(book.first);
-   await expect(page.locator("[data-reader-segment]").first()).toBeVisible();
-   await page.reload();
-   await expect(selector).toContainText(book.first);
-   await selector.click();
-   await page.getByRole("button", { name: book.second, exact: true }).click();
-   await expect(selector).toContainText(book.second);
-   await expect(page).toHaveURL(new RegExp(`book=${book.key}&lesson=2`));
-   await page.getByRole("tab", { name: "Từ vựng", exact: true }).click();
-   await expect(page).toHaveURL(/tab=vocab/);
-   await page.reload();
-   await expect(selector).toContainText(book.second);
-   await expect(page.getByRole("tab", { name: "Từ vựng", exact: true })).toHaveAttribute(
-    "aria-selected",
-    "true",
+   await page.goto("/vi/offline?book=doc-hieu&lesson=2&tab=vocab");
+   await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toContainText(
+    "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
    );
-   await page.goto(`/vi/offline?book=${book.key}`);
-   await expect(selector).toContainText(book.second);
-   await expect(page.getByRole("tab", { name: "Từ vựng", exact: true })).toHaveAttribute(
-    "aria-selected",
-    "true",
-   );
-   if (book.key === "khau-ngu") {
-    await page.goto("/vi/offline?book=khau-ngu&lesson=5&tab=practice");
-    const advertisement = page.locator(
-     'img[src="/textbooks/khau-ngu/lesson-05-advertisements.png"]',
-    );
-    await advertisement.scrollIntoViewIfNeeded();
-    await expect(advertisement).toBeVisible();
-    await expect(advertisement).toHaveJSProperty("naturalWidth", 1190);
+   const focus = page.getByRole("button", { name: "Chế độ tập trung", exact: true });
+   await focus.click();
+   await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toBeDisabled();
+   await expect(page.getByRole("button", { name: "Bài trên máy", exact: true })).toBeDisabled();
+   await page.reload();
+   await expect(focus).toHaveAttribute("aria-pressed", "true");
+   await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toBeDisabled();
+   await focus.click();
+   await page.getByRole("button", { name: "Bài trên máy", exact: true }).click();
+   await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(4);
+   for (const localized of [
+    { locale: "en", title: "Offline study", label: "Open textbook" },
+    { locale: "zh-CN", title: "离线学习", label: "打开教材" },
+   ]) {
+    await page.goto(`/${localized.locale}/offline`);
+    await expect(page.getByRole("heading", { name: localized.title, exact: true })).toBeVisible();
+    await expect(page.getByRole("button", { name: localized.label, exact: true })).toHaveCount(4);
    }
+   await page.setViewportSize({ width: 412, height: 915 });
+   await page.goto("/vi/offline?book=nhip-cau&lesson=1&tab=text");
+   await expect(page.locator("[data-reader-segment]").first()).toBeVisible();
+   expect(
+    await page.evaluate(
+     () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+    ),
+   ).toBe(true);
+   await page.goto("/vi/offline?book=tm2");
+   await expect(
+    page.getByRole("heading", { name: "Giáo trình không khả dụng", exact: true }),
+   ).toBeVisible();
    expect(navigationRequests).toEqual([]);
   } finally {
    await context.setOffline(false);
   }
  });
-}
 
-test("keeps offline textbook focus, locale, mobile and unavailable-book controls", async ({
- page,
- context,
-}) => {
- test.setTimeout(60_000);
- await login(page, accountA);
- await page.setViewportSize({ width: 1440, height: 900 });
- await page.goto("/vi/offline");
- await expect(page.getByRole("list", { name: "Giáo trình có sẵn", exact: true })).toBeVisible();
- await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(4);
- await expect(page.getByText("Hán thương mại 2", { exact: true })).toHaveCount(0);
- await page.evaluate(async () => {
-  await navigator.serviceWorker.ready;
- });
- await expect
-  .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
-  .toBe(true);
- await expect
-  .poll(() =>
-   page.evaluate(async () => {
-    const cache = await caches.open("hanzihome-static-v13");
-    return (
-     await Promise.all(
-      ["/vi/offline", "/en/offline", "/zh-CN/offline"].map(async (path) =>
-       Boolean(await cache.match(path)),
-      ),
-     )
-    ).every(Boolean);
-   }),
-  )
-  .toBe(true);
- const navigationRequests: string[] = [];
- page.on("request", (request) => {
-  if (request.url().includes("_rsc=")) navigationRequests.push(request.url());
- });
- try {
-  await context.setOffline(true);
-  await page.goto("/vi/offline?book=doc-hieu&lesson=2&tab=vocab");
-  await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toContainText(
-   "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
+ test("ignores a late offline library read after another tab changes the account", async ({
+  page,
+  context,
+ }) => {
+  test.setTimeout(60_000);
+  await login(page, accountA);
+  await page.goto(
+   "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
   );
-  const focus = page.getByRole("button", { name: "Chế độ tập trung", exact: true });
-  await focus.click();
-  await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toBeDisabled();
-  await expect(page.getByRole("button", { name: "Bài trên máy", exact: true })).toBeDisabled();
-  await page.reload();
-  await expect(focus).toHaveAttribute("aria-pressed", "true");
-  await expect(page.getByRole("button", { name: "Chọn bài học", exact: true })).toBeDisabled();
-  await focus.click();
-  await page.getByRole("button", { name: "Bài trên máy", exact: true }).click();
-  await expect(page.getByRole("button", { name: "Mở giáo trình", exact: true })).toHaveCount(4);
-  for (const localized of [
-   { locale: "en", title: "Offline study", label: "Open textbook" },
-   { locale: "zh-CN", title: "离线学习", label: "打开教材" },
-  ]) {
-   await page.goto(`/${localized.locale}/offline`);
-   await expect(page.getByRole("heading", { name: localized.title, exact: true })).toBeVisible();
-   await expect(page.getByRole("button", { name: localized.label, exact: true })).toHaveCount(4);
-  }
-  await page.setViewportSize({ width: 412, height: 915 });
-  await page.goto("/vi/offline?book=nhip-cau&lesson=1&tab=text");
-  await expect(page.locator("[data-reader-segment]").first()).toBeVisible();
-  expect(
-   await page.evaluate(
-    () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
-   ),
-  ).toBe(true);
-  await page.goto("/vi/offline?book=tm2");
-  await expect(
-   page.getByRole("heading", { name: "Giáo trình không khả dụng", exact: true }),
-  ).toBeVisible();
-  expect(navigationRequests).toEqual([]);
- } finally {
-  await context.setOffline(false);
- }
-});
-
-test("ignores a late offline library read after another tab changes the account", async ({
- page,
- context,
-}) => {
- test.setTimeout(60_000);
- await login(page, accountA);
- await page.goto(
-  "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
- );
- await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
- await waitForDownloadedLesson(page);
- await page.goto("/vi/offline");
- await expect(
-  page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
- ).toBeVisible();
- await page.evaluate(async () => {
-  await navigator.serviceWorker.ready;
- });
- await expect
-  .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
-  .toBe(true);
- await expect
-  .poll(() =>
-   page.evaluate(async () =>
-    Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
-   ),
-  )
-  .toBe(true);
- await page.addInitScript(() => {
-  const original = IDBObjectStore.prototype.getAll;
-  let held = sessionStorage.getItem("e2e-offline-read-held") === "1";
-  IDBObjectStore.prototype.getAll = function (...args: Parameters<IDBObjectStore["getAll"]>) {
-   const request = original.apply(this, args);
-   if (this.name === "content_cache" && !held) {
-    held = true;
-    sessionStorage.setItem("e2e-offline-read-held", "1");
-    request.addEventListener(
-     "success",
-     (event) => {
-      event.stopImmediatePropagation();
-      document.documentElement.setAttribute("data-offline-read-pending", "true");
-      document.addEventListener(
-       "release-offline-read",
-       () => {
-        request.dispatchEvent(new Event("success"));
-       },
-       { once: true },
-      );
-     },
-     { once: true },
-    );
-   }
-   return request;
-  };
- });
- await page.reload();
- await expect(page.locator("html")).toHaveAttribute("data-offline-read-pending", "true");
- const accountTab = await context.newPage();
- try {
-  await accountTab.goto("/vi");
-  await openProfile(accountTab, accountA.email);
-  await logout(accountTab);
-  await login(accountTab, accountB);
-  await expect(
-   page.getByRole("heading", { name: "Chưa có bài sẵn sàng offline", exact: true }),
-  ).toBeVisible();
-  await page.evaluate(() => document.dispatchEvent(new Event("release-offline-read")));
-  await expect(
-   page.getByRole("heading", { name: "Chưa có bài sẵn sàng offline", exact: true }),
-  ).toBeVisible();
-  await expect(page.getByText("Offline fixture lesson A", { exact: true })).toHaveCount(0);
-  await context.setOffline(true);
-  await page.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
-  await expect(
-   page.getByRole("heading", { name: "Chưa có sẵn offline", exact: true }),
-  ).toBeVisible();
-  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toHaveCount(0);
- } finally {
-  await context.setOffline(false);
-  await accountTab.close();
- }
-});
-
-test("preserves downloaded lessons when refreshing their cache exceeds storage quota", async ({
- page,
- context,
-}) => {
- await login(page, accountA);
- await page.goto(
-  "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
- );
- await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
- await waitForDownloadedLesson(page);
- await page.goto("/vi/offline");
- await expect(
-  page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
- ).toBeVisible();
- await page.evaluate(async () => {
-  await navigator.serviceWorker.ready;
- });
- await expect
-  .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
-  .toBe(true);
- await expect
-  .poll(() =>
-   page.evaluate(async () =>
-    Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
-   ),
-  )
-  .toBe(true);
- const errors: string[] = [];
- page.on("pageerror", (error) => errors.push(error.message));
- await page.addInitScript(() => {
-  const original = IDBObjectStore.prototype.put;
-  IDBObjectStore.prototype.put = function (...args: Parameters<IDBObjectStore["put"]>) {
-   if (this.name === "content_cache") {
-    document.documentElement.setAttribute("data-cache-quota-failed", "true");
-    throw new DOMException("Controlled cache quota failure", "QuotaExceededError");
-   }
-   return original.apply(this, args);
-  };
- });
- const resources = Promise.all([
-  page.waitForResponse(
-   (response) =>
-    response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson") &&
-    response.status() === 200,
-  ),
-  page.waitForResponse(
-   (response) =>
-    response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson/vocabulary") &&
-    response.status() === 200,
-  ),
- ]);
- await page.goto(
-  "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
- );
- expect((await resources).every((response) => response.ok())).toBe(true);
- await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
- await expect(page.locator("html")).toHaveAttribute("data-cache-quota-failed", "true");
- try {
-  await context.setOffline(true);
-  await page.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
   await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
-  expect(errors).toEqual([]);
- } finally {
-  await context.setOffline(false);
- }
-});
-
-test("keeps private page responses out of shared offline caches and preserves public assets", async ({
- page,
-}) => {
- await page.goto("/favicon.svg");
- await page.evaluate(async () => {
-  const legacy = await caches.open("hanzihome-static-audit-legacy");
-  await legacy.put(
-   "/vi/notes",
-   new Response("private-fixture-A", { headers: { "Content-Type": "text/html" } }),
-  );
-  await legacy.put(
-   new Request("/vi/notes?_rsc=legacy", { headers: { RSC: "1" } }),
-   new Response("private-rsc-A", { headers: { "Content-Type": "text/x-component" } }),
-  );
-  await legacy.put(
-   "/__cache-fixture.css",
-   new Response(".fixture { color: red; }", { headers: { "Content-Type": "text/css" } }),
-  );
- });
- await login(page, accountA);
- await page.evaluate(async () => {
-  await navigator.serviceWorker.ready;
- });
- await expect
-  .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
-  .toBe(true);
- await expect
-  .poll(() =>
-   page.evaluate(async () => {
-    const cache = await caches.open("hanzihome-static-v13");
-    return (
-     await Promise.all(
-      ["/vi/offline", "/en/offline", "/zh-CN/offline"].map(async (path) =>
-       Boolean(await cache.match(path)),
-      ),
-     )
-    ).every(Boolean);
-   }),
-  )
-  .toBe(true);
- await page.goto("/vi/notes");
- const rscStatus = await page.evaluate(async () => {
-  const response = await fetch("/vi/notes?_rsc=audit", { headers: { RSC: "1" } });
-  await response.arrayBuffer();
-  return response.status;
- });
- expect(rscStatus).toBe(200);
- const privateCopies = await page.evaluate(async () => {
-  const copies: string[] = [];
-  for (const key of await caches.keys()) {
-   if (!key.startsWith("hanzihome-static-")) continue;
-   const cache = await caches.open(key);
-   for (const request of await cache.keys()) {
-    const response = await cache.match(request);
-    const contentType = response?.headers.get("content-type") ?? "";
-    if (
-     (contentType.includes("text/html") &&
-      !["/vi/offline", "/en/offline", "/zh-CN/offline"].includes(new URL(request.url).pathname)) ||
-     contentType.includes("text/x-component")
-    )
-     copies.push(new URL(request.url).pathname);
-   }
-  }
-  return copies;
- });
- expect(privateCopies).toEqual([]);
- await expect(
-  page.evaluate(async () => {
-   const legacy = await caches.open("hanzihome-static-audit-legacy");
-   const asset = await legacy.match("/__cache-fixture.css");
-   return asset?.text();
-  }),
- ).resolves.toBe(".fixture { color: red; }");
- try {
-  await page.context().setOffline(true);
+  await waitForDownloadedLesson(page);
+  await page.goto("/vi/offline");
+  await expect(
+   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
+  ).toBeVisible();
+  await page.evaluate(async () => {
+   await navigator.serviceWorker.ready;
+  });
+  await expect
+   .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
+   .toBe(true);
+  await expect
+   .poll(() =>
+    page.evaluate(async () =>
+     Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
+    ),
+   )
+   .toBe(true);
+  await page.addInitScript(() => {
+   const original = IDBObjectStore.prototype.getAll;
+   let held = sessionStorage.getItem("e2e-offline-read-held") === "1";
+   IDBObjectStore.prototype.getAll = function (...args: Parameters<IDBObjectStore["getAll"]>) {
+    const request = original.apply(this, args);
+    if (this.name === "content_cache" && !held) {
+     held = true;
+     sessionStorage.setItem("e2e-offline-read-held", "1");
+     request.addEventListener(
+      "success",
+      (event) => {
+       event.stopImmediatePropagation();
+       document.documentElement.setAttribute("data-offline-read-pending", "true");
+       document.addEventListener(
+        "release-offline-read",
+        () => {
+         request.dispatchEvent(new Event("success"));
+        },
+        { once: true },
+       );
+      },
+      { once: true },
+     );
+    }
+    return request;
+   };
+  });
   await page.reload();
-  await expect(page.getByRole("heading", { name: "Học ngoại tuyến", exact: true })).toBeVisible();
-  await expect(page.getByText(accountA.email, { exact: true })).toHaveCount(0);
-  const offlineRscStatus = await page.evaluate(async () => {
-   const response = await fetch("/vi/notes?_rsc=offline", { headers: { RSC: "1" } });
+  await expect(page.locator("html")).toHaveAttribute("data-offline-read-pending", "true");
+  const accountTab = await context.newPage();
+  try {
+   await accountTab.goto("/vi");
+   await openProfile(accountTab, accountA.email);
+   await logout(accountTab);
+   await login(accountTab, accountB);
+   await expect(
+    page.getByRole("heading", { name: "Chưa có bài sẵn sàng offline", exact: true }),
+   ).toBeVisible();
+   await page.evaluate(() => document.dispatchEvent(new Event("release-offline-read")));
+   await expect(
+    page.getByRole("heading", { name: "Chưa có bài sẵn sàng offline", exact: true }),
+   ).toBeVisible();
+   await expect(page.getByText("Offline fixture lesson A", { exact: true })).toHaveCount(0);
+   await context.setOffline(true);
+   await page.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
+   await expect(
+    page.getByRole("heading", { name: "Chưa có sẵn offline", exact: true }),
+   ).toBeVisible();
+   await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toHaveCount(0);
+  } finally {
+   await context.setOffline(false);
+   await accountTab.close();
+  }
+ });
+
+ test("preserves downloaded lessons when refreshing their cache exceeds storage quota", async ({
+  page,
+  context,
+ }) => {
+  await login(page, accountA);
+  await page.goto(
+   "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
+  );
+  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+  await waitForDownloadedLesson(page);
+  await page.goto("/vi/offline");
+  await expect(
+   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
+  ).toBeVisible();
+  await page.evaluate(async () => {
+   await navigator.serviceWorker.ready;
+  });
+  await expect
+   .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
+   .toBe(true);
+  await expect
+   .poll(() =>
+    page.evaluate(async () =>
+     Boolean(await (await caches.open("hanzihome-static-v13")).match("/vi/offline")),
+    ),
+   )
+   .toBe(true);
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.addInitScript(() => {
+   const original = IDBObjectStore.prototype.put;
+   IDBObjectStore.prototype.put = function (...args: Parameters<IDBObjectStore["put"]>) {
+    if (this.name === "content_cache") {
+     document.documentElement.setAttribute("data-cache-quota-failed", "true");
+     throw new DOMException("Controlled cache quota failure", "QuotaExceededError");
+    }
+    return original.apply(this, args);
+   };
+  });
+  const resources = Promise.all([
+   page.waitForResponse(
+    (response) =>
+     response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson") &&
+     response.status() === 200,
+   ),
+   page.waitForResponse(
+    (response) =>
+     response.url().endsWith("/api/hanzihome/lessons/e2e-offline-lesson/vocabulary") &&
+     response.status() === 200,
+   ),
+  ]);
+  await page.goto(
+   "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
+  );
+  expect((await resources).every((response) => response.ok())).toBe(true);
+  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("data-cache-quota-failed", "true");
+  try {
+   await context.setOffline(true);
+   await page.goto("/vi/offline?lessonId=e2e-offline-lesson&module=lessonText");
+   await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+   expect(errors).toEqual([]);
+  } finally {
+   await context.setOffline(false);
+  }
+ });
+
+ test("keeps private page responses out of shared offline caches and preserves public assets", async ({
+  page,
+ }) => {
+  await page.goto("/favicon.svg");
+  await page.evaluate(async () => {
+   const legacy = await caches.open("hanzihome-static-audit-legacy");
+   await legacy.put(
+    "/vi/notes",
+    new Response("private-fixture-A", { headers: { "Content-Type": "text/html" } }),
+   );
+   await legacy.put(
+    new Request("/vi/notes?_rsc=legacy", { headers: { RSC: "1" } }),
+    new Response("private-rsc-A", { headers: { "Content-Type": "text/x-component" } }),
+   );
+   await legacy.put(
+    "/__cache-fixture.css",
+    new Response(".fixture { color: red; }", { headers: { "Content-Type": "text/css" } }),
+   );
+  });
+  await login(page, accountA);
+  await page.evaluate(async () => {
+   await navigator.serviceWorker.ready;
+  });
+  await expect
+   .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
+   .toBe(true);
+  await expect
+   .poll(() =>
+    page.evaluate(async () => {
+     const cache = await caches.open("hanzihome-static-v13");
+     return (
+      await Promise.all(
+       ["/vi/offline", "/en/offline", "/zh-CN/offline"].map(async (path) =>
+        Boolean(await cache.match(path)),
+       ),
+      )
+     ).every(Boolean);
+    }),
+   )
+   .toBe(true);
+  await page.goto("/vi/notes");
+  const rscStatus = await page.evaluate(async () => {
+   const response = await fetch("/vi/notes?_rsc=audit", { headers: { RSC: "1" } });
+   await response.arrayBuffer();
    return response.status;
   });
-  expect(offlineRscStatus).toBe(503);
-  await page.evaluate(async () => {
-   const cache = await caches.open("hanzihome-static-v13");
-   const shell = await cache.match("/vi/offline");
-   if (!shell) throw new Error("Public offline shell is missing");
-   const asset = Array.from(
-    (await shell.text()).matchAll(/src="(\/_next\/static\/[^"]+\.js)"/gu),
-    (match) => match[1],
-   ).at(0);
-   if (!asset) throw new Error("Public offline script is missing");
+  expect(rscStatus).toBe(200);
+  const privateCopies = await page.evaluate(async () => {
+   const copies: string[] = [];
    for (const key of await caches.keys()) {
-    if (key.startsWith("hanzihome-static-")) await (await caches.open(key)).delete(asset);
+    if (!key.startsWith("hanzihome-static-")) continue;
+    const cache = await caches.open(key);
+    for (const request of await cache.keys()) {
+     const response = await cache.match(request);
+     const contentType = response?.headers.get("content-type") ?? "";
+     if (
+      (contentType.includes("text/html") &&
+       !["/vi/offline", "/en/offline", "/zh-CN/offline"].includes(new URL(request.url).pathname)) ||
+      contentType.includes("text/x-component")
+     )
+      copies.push(new URL(request.url).pathname);
+    }
    }
+   return copies;
   });
-  await page.reload();
-  await expect(page.locator("#offlineTitle")).toBeVisible();
-  await page.evaluate(async () => {
-   const cache = await caches.open("hanzihome-static-v13");
-   for (const path of ["/vi/offline", "/en/offline", "/zh-CN/offline"]) await cache.delete(path);
-  });
-  await page.reload();
-  await expect(page.locator("#offlineTitle")).toBeVisible();
-  await expect(page.locator("#offlineLessonList")).toHaveCount(0);
- } finally {
-  await page.context().setOffline(false);
- }
+  expect(privateCopies).toEqual([]);
+  await expect(
+   page.evaluate(async () => {
+    const legacy = await caches.open("hanzihome-static-audit-legacy");
+    const asset = await legacy.match("/__cache-fixture.css");
+    return asset?.text();
+   }),
+  ).resolves.toBe(".fixture { color: red; }");
+  try {
+   await page.context().setOffline(true);
+   await page.reload();
+   await expect(page.getByRole("heading", { name: "Học ngoại tuyến", exact: true })).toBeVisible();
+   await expect(page.getByText(accountA.email, { exact: true })).toHaveCount(0);
+   const offlineRscStatus = await page.evaluate(async () => {
+    const response = await fetch("/vi/notes?_rsc=offline", { headers: { RSC: "1" } });
+    return response.status;
+   });
+   expect(offlineRscStatus).toBe(503);
+   await page.evaluate(async () => {
+    const cache = await caches.open("hanzihome-static-v13");
+    const shell = await cache.match("/vi/offline");
+    if (!shell) throw new Error("Public offline shell is missing");
+    const asset = Array.from(
+     (await shell.text()).matchAll(/src="(\/_next\/static\/[^"]+\.js)"/gu),
+     (match) => match[1],
+    ).at(0);
+    if (!asset) throw new Error("Public offline script is missing");
+    for (const key of await caches.keys()) {
+     if (key.startsWith("hanzihome-static-")) await (await caches.open(key)).delete(asset);
+    }
+   });
+   await page.reload();
+   await expect(page.locator("#offlineTitle")).toBeVisible();
+   await page.evaluate(async () => {
+    const cache = await caches.open("hanzihome-static-v13");
+    for (const path of ["/vi/offline", "/en/offline", "/zh-CN/offline"]) await cache.delete(path);
+   });
+   await page.reload();
+   await expect(page.locator("#offlineTitle")).toBeVisible();
+   await expect(page.locator("#offlineLessonList")).toHaveCount(0);
+  } finally {
+   await page.context().setOffline(false);
+  }
+ });
 });
 
 test("schedules a review and preserves an offline retry", async ({ page }) => {
