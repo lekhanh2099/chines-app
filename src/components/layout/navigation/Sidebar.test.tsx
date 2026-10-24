@@ -108,6 +108,7 @@ describe("Sidebar translations", () => {
    expect(markup).toContain(personalGroup);
    expect(markup).toContain(knowledgeGroup);
    expect(markup).toContain(moreCluster);
+   expect(markup).toContain('src="/favicon.svg?v=f09443a0"');
    expect(markup).not.toContain('id="sidebar-section-textbooks"');
    expect(markup).not.toContain(chineseBridge);
    expect(markup).not.toContain(readingComprehension);
