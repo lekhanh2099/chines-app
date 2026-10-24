@@ -253,11 +253,8 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
     await searchDialog.getByRole("button", { name: "Thử lại", exact: true }).click();
     await browserExpect(searchDialog.getByRole("option")).toHaveCount(2);
     await browserExpect(searchDialog.getByRole("alert")).toHaveCount(0);
-    await searchDialog.getByRole("option").nth(1).hover();
-    await browserExpect(searchDialog.getByRole("option").nth(1)).toHaveAttribute(
-     "aria-selected",
-     "true",
-    );
+    // Keep pointer selection separate from the query-reset and keyboard assertions.
+    await page.mouse.move(0, 0);
     await searchInput.fill("");
     await searchInput.fill("希望");
     await browserExpect(searchDialog.getByRole("option").first()).toHaveAttribute(
