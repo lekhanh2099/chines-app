@@ -76,6 +76,9 @@ See [script ownership](CONTRIBUTING.md#script-ownership) for current entrypoints
 
 ## Documentation
 
+For supported security updates and private vulnerability reporting, see the
+[security policy](SECURITY.md).
+
 Start with [docs/README.md](docs/README.md), [current architecture](docs/architecture/current-system.md), and the repository [AGENTS.md](AGENTS.md). The Hanzi Studio contract lives in the current architecture, with static
 published content and Supabase-owned new user state. Quality work has one
 [master plan](docs/refactors/feature-quality-audit-enhancement-2026-10-04.md),
