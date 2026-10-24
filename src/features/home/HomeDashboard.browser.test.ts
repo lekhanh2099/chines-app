@@ -18,6 +18,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
   const fixture = fileURLToPath(new URL("./HomeDashboard.browser.fixture.tsx", import.meta.url));
   const server = await createServer({
    configFile: false,
+   define: { "process.env.__NEXT_IMAGE_OPTS": "undefined" },
    cacheDir: "node_modules/.vite/home-browser",
    optimizeDeps: { entries: [fixture] },
    resolve: {
@@ -252,7 +253,14 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
     await searchDialog.getByRole("button", { name: "Thử lại", exact: true }).click();
     await browserExpect(searchDialog.getByRole("option")).toHaveCount(2);
     await browserExpect(searchDialog.getByRole("alert")).toHaveCount(0);
-    await searchInput.focus();
+    // Keep pointer selection separate from the query-reset and keyboard assertions.
+    await page.mouse.move(0, 0);
+    await searchInput.fill("");
+    await searchInput.fill("希望");
+    await browserExpect(searchDialog.getByRole("option").first()).toHaveAttribute(
+     "aria-selected",
+     "true",
+    );
     await searchInput.press("ArrowDown");
     await browserExpect(searchDialog.getByRole("option").nth(1)).toHaveAttribute(
      "aria-selected",
@@ -314,6 +322,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(sourceCases)(
   const fixture = fileURLToPath(new URL("./HomeDashboard.browser.fixture.tsx", import.meta.url));
   const server = await createServer({
    configFile: false,
+   define: { "process.env.__NEXT_IMAGE_OPTS": "undefined" },
    cacheDir: "node_modules/.vite/home-full-browser",
    optimizeDeps: { entries: [fixture] },
    resolve: {

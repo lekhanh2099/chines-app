@@ -63,8 +63,12 @@ export function PwaServiceWorkerRegister() {
    navigator.serviceWorker
     .register("/sw.js", { scope: "/" })
     .then((registration) => {
+     // Existing controllers cache loaded assets; refresh only public shells on reload.
      if (navigator.serviceWorker.controller) {
-      sendWarmup(navigator.serviceWorker.controller);
+      navigator.serviceWorker.controller.postMessage({
+       type: "WARMUP_OFFLINE_CACHE",
+       routes: ["/vi/offline", "/en/offline", "/zh-CN/offline"],
+      });
      }
 
      registration.addEventListener("updatefound", () => {
