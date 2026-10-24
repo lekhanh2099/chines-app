@@ -162,7 +162,6 @@ describe("CI affected selection with actual Git history", () => {
   { EVENT_ACTION: "reopened" },
   { EVENT_ACTION: "ready_for_review", PR_DRAFT: "false" },
   { PR_DRAFT: "false" },
-  { EVENT_ACTION: "edited" },
   { EVENT_NAME: "workflow_dispatch" },
   { PUSH_BASE: "" },
   { PUSH_BASE: "0000000000000000000000000000000000000000" },
@@ -190,41 +189,55 @@ describe("CI aggregation and metadata isolation", () => {
    always: () => true,
   });
 
- it("subscribes to readiness and base changes as well as code updates", () => {
+ it("subscribes to code and readiness events without replacing checks on metadata edits", () => {
   const types = workflow.match(/^ pull_request:\n  types: \[([^\]]+)\]/m)?.[1];
   if (!types) throw new Error("Missing CI pull-request events");
-  expect(types.split(",").map((value) => value.trim())).toEqual(
-   expect.arrayContaining(["opened", "reopened", "synchronize", "ready_for_review", "edited"]),
-  );
+  expect(types.split(",").map((value) => value.trim())).toEqual([
+   "opened",
+   "reopened",
+   "synchronize",
+   "ready_for_review",
+  ]);
  });
 
- it("does not replace or cancel code validation for title/body edits", () => {
-  const group = workflow.match(/^ group: ci-\$\{\{ github.ref \}\}(.+)$/m)?.[1];
-  if (!group) throw new Error("Missing CI metadata concurrency suffix");
-  const gateStep = jobSource("gate").match(/^     if: (.+)$/m)?.[1];
-  if (!gateStep) throw new Error("Missing CI gate step condition");
-  for (const action of ["opened", "synchronize", "ready_for_review", "edited"]) {
-   for (const baseChanged of [false, true]) {
-    for (const draft of [false, true, undefined]) {
-     const github = {
-      event_name: "pull_request",
-      event: { action, changes: baseChanged ? { base: {} } : {}, pull_request: { draft } },
-     };
-     const metadata = action === "edited" && !baseChanged;
-     expect(Boolean(evaluate(field("changes", "if"), github))).toBe(!metadata);
-     expect(Boolean(evaluate(field("gate", "if"), github))).toBe(true);
-     expect(Boolean(evaluate(gateStep, github))).toBe(!metadata);
-     expect(evaluate(field("gate", "name"), github)).toBe(
-      metadata ? "CI metadata" : draft ? "CI draft" : "CI gate",
-     );
-     expect(evaluate(group, github)).toBe(metadata ? "-metadata" : "");
-    }
+ it("aggregates every triggered validation without a metadata success path", () => {
+  expect(workflow).toContain("group: ci-${{ github.ref }}\n");
+  expect(jobSource("changes")).not.toMatch(/^  if:/m);
+  expect(jobSource("gate")).not.toMatch(/^     if:/m);
+  for (const action of ["opened", "reopened", "synchronize", "ready_for_review"]) {
+   for (const draft of [false, true, undefined]) {
+    const github = {
+     event_name: "pull_request",
+     event: { action, pull_request: { draft } },
+    };
+    expect(Boolean(evaluate(field("gate", "if"), github))).toBe(true);
+    expect(evaluate(field("gate", "name"), github)).toBe(draft ? "CI draft" : "CI gate");
    }
   }
   for (const eventName of ["push", "workflow_dispatch"]) {
    expect(evaluate(field("gate", "name"), { event_name: eventName, event: {} })).toBe("CI gate");
   }
  });
+
+ it.each(["changes", "verify", "browser", "e2e"])(
+  "tests the exact head in %s so unchanged-source readiness is independent of retargeting",
+  (job) => {
+   const checkout = jobSource(job).match(/uses: actions\/checkout@v5\n     with:\n      ref: (.+)/);
+   if (!checkout) throw new Error(`Missing exact-source checkout for ${job}`);
+   expect(
+    evaluate(checkout[1], {
+     event_name: "pull_request",
+     event: { pull_request: { head: { sha: "pr-head" } } },
+     sha: "merge",
+    }),
+   ).toBe("pr-head");
+   for (const eventName of ["push", "workflow_dispatch"]) {
+    expect(evaluate(checkout[1], { event_name: eventName, event: {}, sha: "event-head" })).toBe(
+     "event-head",
+    );
+   }
+  },
+ );
 
  it("keeps cancelled draft validation separate from the required gate on the same commit", () => {
   const names = [];

@@ -4,19 +4,18 @@ on:
  push:
   branches: [main, refactor/hanzihome-integrity-remediation]
  pull_request:
-  types: [opened, reopened, synchronize, ready_for_review, edited]
+  types: [opened, reopened, synchronize, ready_for_review]
  workflow_dispatch:
 
 permissions:
  contents: read
 
 concurrency:
- group: ci-${{ github.ref }}${{ github.event.action == 'edited' && !github.event.changes.base && '-metadata' || '' }}
+ group: ci-${{ github.ref }}
  cancel-in-progress: true
 
 jobs:
  changes:
-  if: github.event.action != 'edited' || github.event.changes.base != null
   runs-on: ubuntu-latest
   timeout-minutes: 5
   outputs:
@@ -29,6 +28,7 @@ jobs:
   steps:
    - uses: actions/checkout@v5
      with:
+      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
       fetch-depth: 0
    - uses: actions/setup-node@v5
      with:
@@ -51,7 +51,7 @@ jobs:
       const incremental = pullRequest && process.env.PR_DRAFT === "true" && process.env.EVENT_ACTION === "synchronize";
       const base = pullRequest && !incremental ? process.env.PR_BASE : process.env.PUSH_BASE;
       const head = incremental ? process.env.PR_HEAD : "HEAD";
-      let full = process.env.EVENT_NAME === "workflow_dispatch" || (pullRequest && (process.env.PR_DRAFT !== "true" || process.env.EVENT_ACTION === "edited")) || !base || /^0+$/.test(base) || !head || (incremental && !process.env.PR_BASE);
+      let full = process.env.EVENT_NAME === "workflow_dispatch" || (pullRequest && process.env.PR_DRAFT !== "true") || !base || /^0+$/.test(base) || !head || (incremental && !process.env.PR_BASE);
       if (!full) {
        for (const commit of incremental ? [base, head, process.env.PR_BASE] : [base]) {
         try {
@@ -195,6 +195,8 @@ jobs:
    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
   steps:
    - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
 
    - uses: actions/setup-node@v5
      with:
@@ -335,6 +337,8 @@ jobs:
    AI_CONVERSATION_BROWSER_TEST: "1"
   steps:
    - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
    - uses: actions/setup-node@v5
      with:
       node-version: 22
@@ -364,6 +368,8 @@ jobs:
    E2E_FIXTURE_PASSWORD: HanziHome-E2E!2026
   steps:
    - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
 
    - uses: actions/setup-node@v5
      with:
@@ -423,14 +429,13 @@ jobs:
      run: npx supabase stop
 
  gate:
-  name: ${{ github.event.action == 'edited' && !github.event.changes.base && 'CI metadata' || github.event_name == 'pull_request' && github.event.pull_request.draft && 'CI draft' || 'CI gate' }}
+  name: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft && 'CI draft' || 'CI gate' }}
   needs: [changes, verify, browser, e2e]
   if: always()
   runs-on: ubuntu-latest
   timeout-minutes: 2
   steps:
    - name: Require every selected check to pass
-     if: github.event.action != 'edited' || github.event.changes.base != null
      env:
       CHECK_RESULTS: ${{ toJSON(needs) }}
      run: |

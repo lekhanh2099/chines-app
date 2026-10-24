@@ -79,10 +79,11 @@ PREVIEW VALIDATED → RELEASE APPROVED → DEPLOYED → OBSERVED
 An authorized draft PR may open early, and CI may run during rework. Documentation/audit tasks can finish without deployment. A task requiring release closes only after its release acceptance passes; local-only tasks must state that they remain unpublished. Agent completion, green CI, acceptance, merge and deployment are distinct states.
 
 Iterative draft validation reports `CI draft`; the full PR readiness run reports
-the required `CI gate`. Metadata edits report `CI metadata`. Keep those contexts
-separate so a cancelled draft cannot leave a failed required check beside a
-successful readiness check on the same commit. Both validation aggregates remain
-strict; draft feedback and manual diagnostics do not replace PR readiness proof.
+the required `CI gate`. Keep those contexts separate so a cancelled draft cannot
+leave a failed required check beside a successful readiness check on the same
+commit. PR metadata edits do not start CI; a newer empty workflow suite must not
+displace readiness evidence. Both validation aggregates remain strict; draft
+feedback and manual diagnostics do not replace PR readiness proof.
 
 If `main` automatically deploys to production, merging is a release action. Verify the actual configuration before treating merge and release as independent approval gates.
 
@@ -141,9 +142,11 @@ and affected consumers, with conservative fallback for shared/dependency changes
 or uncertain history. A green draft run is partial feedback. Mark the PR ready
 for review when the implementation is ready to close; readiness and subsequent
 non-draft updates run the full suites before the required merge gate can pass.
-Title/body edits do not rerun app checks or replace the real gate result. Exact
-selection, base-change handling and proof limits belong to the test coverage
-document linked above.
+Title/body edits do not start a workflow run or replace the real gate result.
+Tests check out the exact PR head; protected `main` requires that head to be up
+to date before merge. Base retargeting alone does not rerun CI; an integration
+update commit triggers full non-draft validation. Exact selection and proof
+limits belong to the test coverage document linked above.
 
 Before pilot publication, inspect actual GitHub rulesets/protection, required checks, bypass permissions and repository plan. A solo contributor must not depend on approving their own PR to satisfy another reviewer's approval requirement; use human diff acceptance and required CI compatible with actual permissions. Mark uninspected settings as not verified.
 
