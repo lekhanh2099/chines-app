@@ -78,6 +78,12 @@ PREVIEW VALIDATED → RELEASE APPROVED → DEPLOYED → OBSERVED
 
 An authorized draft PR may open early, and CI may run during rework. Documentation/audit tasks can finish without deployment. A task requiring release closes only after its release acceptance passes; local-only tasks must state that they remain unpublished. Agent completion, green CI, acceptance, merge and deployment are distinct states.
 
+Iterative draft validation reports `CI draft`; the full PR readiness run reports
+the required `CI gate`. Metadata edits report `CI metadata`. Keep those contexts
+separate so a cancelled draft cannot leave a failed required check beside a
+successful readiness check on the same commit. Both validation aggregates remain
+strict; draft feedback and manual diagnostics do not replace PR readiness proof.
+
 If `main` automatically deploys to production, merging is a release action. Verify the actual configuration before treating merge and release as independent approval gates.
 
 **Risk** follows low/medium/high and the confirmation requirements in the [risk policy](risk-confirmation.md); do not add R0–R3 alongside the existing system. **Verification tier** follows Fast/Subsystem/Full in `AGENTS.md`. These dimensions are independent: approval does not replace tests, and passing tests does not authorize deployment.

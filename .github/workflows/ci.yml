@@ -423,7 +423,7 @@ jobs:
      run: npx supabase stop
 
  gate:
-  name: ${{ github.event.action == 'edited' && !github.event.changes.base && 'CI metadata' || 'CI gate' }}
+  name: ${{ github.event.action == 'edited' && !github.event.changes.base && 'CI metadata' || github.event_name == 'pull_request' && github.event.pull_request.draft && 'CI draft' || 'CI gate' }}
   needs: [changes, verify, browser, e2e]
   if: always()
   runs-on: ubuntu-latest

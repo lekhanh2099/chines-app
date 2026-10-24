@@ -184,6 +184,12 @@ describe("CI affected selection with actual Git history", () => {
 });
 
 describe("CI aggregation and metadata isolation", () => {
+ const evaluate = (expression, github) =>
+  vm.runInNewContext(expression.replace(/^\$\{\{\s*|\s*\}\}$/g, ""), {
+   github,
+   always: () => true,
+  });
+
  it("subscribes to readiness and base changes as well as code updates", () => {
   const types = workflow.match(/^ pull_request:\n  types: \[([^\]]+)\]/m)?.[1];
   if (!types) throw new Error("Missing CI pull-request events");
@@ -193,26 +199,65 @@ describe("CI aggregation and metadata isolation", () => {
  });
 
  it("does not replace or cancel code validation for title/body edits", () => {
-  const evaluate = (expression, github) =>
-   vm.runInNewContext(expression.replace(/^\$\{\{\s*|\s*\}\}$/g, ""), {
-    github,
-    always: () => true,
-   });
   const group = workflow.match(/^ group: ci-\$\{\{ github.ref \}\}(.+)$/m)?.[1];
   if (!group) throw new Error("Missing CI metadata concurrency suffix");
   const gateStep = jobSource("gate").match(/^     if: (.+)$/m)?.[1];
   if (!gateStep) throw new Error("Missing CI gate step condition");
   for (const action of ["opened", "synchronize", "ready_for_review", "edited"]) {
    for (const baseChanged of [false, true]) {
-    const github = { event: { action, changes: baseChanged ? { base: {} } : {} } };
-    const metadata = action === "edited" && !baseChanged;
-    expect(Boolean(evaluate(field("changes", "if"), github))).toBe(!metadata);
-    expect(Boolean(evaluate(field("gate", "if"), github))).toBe(true);
-    expect(Boolean(evaluate(gateStep, github))).toBe(!metadata);
-    expect(evaluate(field("gate", "name"), github)).toBe(metadata ? "CI metadata" : "CI gate");
-    expect(evaluate(group, github)).toBe(metadata ? "-metadata" : "");
+    for (const draft of [false, true, undefined]) {
+     const github = {
+      event_name: "pull_request",
+      event: { action, changes: baseChanged ? { base: {} } : {}, pull_request: { draft } },
+     };
+     const metadata = action === "edited" && !baseChanged;
+     expect(Boolean(evaluate(field("changes", "if"), github))).toBe(!metadata);
+     expect(Boolean(evaluate(field("gate", "if"), github))).toBe(true);
+     expect(Boolean(evaluate(gateStep, github))).toBe(!metadata);
+     expect(evaluate(field("gate", "name"), github)).toBe(
+      metadata ? "CI metadata" : draft ? "CI draft" : "CI gate",
+     );
+     expect(evaluate(group, github)).toBe(metadata ? "-metadata" : "");
+    }
    }
   }
+  for (const eventName of ["push", "workflow_dispatch"]) {
+   expect(evaluate(field("gate", "name"), { event_name: eventName, event: {} })).toBe("CI gate");
+  }
+ });
+
+ it("keeps cancelled draft validation separate from the required gate on the same commit", () => {
+  const names = [];
+  for (const draft of [true, false]) {
+   const github = {
+    sha: "same-commit",
+    event_name: "pull_request",
+    event: {
+     action: draft ? "synchronize" : "ready_for_review",
+     changes: {},
+     pull_request: { draft },
+    },
+   };
+   names.push(evaluate(field("gate", "name"), github));
+   const checks = {
+    changes: { result: "success", outputs: { browser_files: "", e2e_grep: "" } },
+    verify: { result: "cancelled" },
+    browser: { result: "skipped" },
+    e2e: { result: "skipped" },
+   };
+   let passed = true;
+   vm.runInNewContext(inlineSource("gate"), {
+    process: {
+     env: { CHECK_RESULTS: JSON.stringify(checks) },
+     exit: () => {
+      passed = false;
+     },
+    },
+    console: { error: () => {}, log: () => {} },
+   });
+   expect(passed).toBe(false);
+  }
+  expect(names).toEqual(["CI draft", "CI gate"]);
  });
 
  it("rejects failed or cancelled checks across all 1,024 selection/result combinations", () => {

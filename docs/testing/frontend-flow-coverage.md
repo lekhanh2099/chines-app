@@ -33,6 +33,13 @@ the full readiness gate must pass before merge. Title/body edits skip app checks
 under a separate metadata concurrency group and check name, preserving the real
 required `CI gate` and any running code validation.
 
+Draft validation reports `CI draft`; readiness, non-draft code, main pushes and
+manual full runs report `CI gate`. Both retain strict aggregation. A cancelled
+draft must not publish a failed required context on the same SHA as its later
+successful readiness run: GitHub can otherwise keep the PR blocked by both
+checks. Only the PR-triggered full readiness gate establishes merge eligibility;
+draft and metadata checks are separate feedback.
+
 Workflow/guidance-only draft updates run the existing guidance, formatting and
 tooling regression checks, without application static checks, dependency audit,
 build or browser/database setup. Readiness and manual full validation still run
