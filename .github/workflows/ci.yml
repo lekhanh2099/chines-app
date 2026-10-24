@@ -351,8 +351,8 @@ jobs:
    - name: Apply canonical local schema baseline
      shell: bash
      run: |
-      npx supabase start
-      npx supabase db reset
+      # A fresh hosted runner applies migrations and seed during start, without a second reset.
+      npx supabase start --exclude studio,imgproxy,logflare,vector,supavisor,postgres-meta,edge-runtime
    - name: Export local Supabase environment
      shell: bash
      run: |

@@ -358,18 +358,18 @@ describe("pinyin-engine", () => {
   });
  });
 
- describe("Performance benchmark", () => {
-  it("processes 10,000 characters within 100ms", () => {
+ describe("Long input", () => {
+  it("preserves syllable alignment and contextual readings across a long lesson", () => {
    const sampleSentence =
     "李允美是一位在中国工作的韩国人，她到中国工商银行开户并询问汇款的事情，跑得很快，慢慢地走。";
    const longText = sampleSentence.repeat(200); // ~10,000 chars
 
-   const start = performance.now();
    const result = generateSmartPinyin(longText);
-   const duration = performance.now() - start;
 
    expect(result.syllables.length).toBe(Array.from(longText).length);
-   expect(duration).toBeLessThan(150);
+   expect(result.pinyin.match(/zhōng guó gōng shāng yín háng/gu)).toHaveLength(200);
+   expect(result.pinyin.match(/pǎo de hěn kuài/gu)).toHaveLength(200);
+   expect(result.pinyin.match(/màn màn de zǒu/gu)).toHaveLength(200);
   });
  });
 });

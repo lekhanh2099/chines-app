@@ -18,6 +18,13 @@ Source of truth: [CI workflow](../../.github/workflows/ci.yml), [package scripts
 
 Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify, mounted browser và product E2E chạy độc lập sau selection. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
 
+Retry-recovered product tests fail CI via `failOnFlakyTests`; retained traces
+remain available for diagnosis. The list reporter records each case's duration,
+and web-server output exposes the production build. Fresh hosted runners apply
+the canonical migrations and seed during Supabase startup, without a second
+reset. CI excludes unused Studio, image proxy, analytics, pooler, metadata and
+Edge Runtime services; database, Auth, REST, Storage and Realtime remain active.
+
 Guidance check dùng Prettier hiện có để kiểm tra YAML, root routing, tên skill,
 npm commands và local Markdown file targets; không fetch links hoặc benchmark
 agent. Chạy khi docs/skills/metadata, workflow hoặc package scripts đổi, có file

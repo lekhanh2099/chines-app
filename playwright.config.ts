@@ -7,10 +7,11 @@ export default defineConfig({
  testDir: "./e2e",
  fullyParallel: false,
  forbidOnly: Boolean(process.env.CI),
+ failOnFlakyTests: Boolean(process.env.CI),
  retries: process.env.CI ? 1 : 0,
  globalTimeout: process.env.CI ? 720_000 : 0,
  workers: 1,
- reporter: process.env.CI ? "github" : "list",
+ reporter: process.env.CI ? [["list"], ["github"]] : "list",
  use: {
   baseURL,
   trace: "retain-on-failure",
@@ -27,7 +28,7 @@ export default defineConfig({
   url: baseURL,
   reuseExistingServer: !process.env.CI && !process.env.E2E_BASE_URL,
   timeout: 300_000,
-  stdout: "ignore",
+  stdout: "pipe",
   stderr: "pipe",
  },
 });

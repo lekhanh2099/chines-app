@@ -78,6 +78,52 @@ async function openFirstCoreReading(page: Page) {
  await expect(page.getByRole("button", { name: "Đánh dấu đã học xong" })).toBeVisible();
 }
 
+async function waitForDownloadedLesson(page: Page) {
+ const { data, error } = await createAdminClient().auth.admin.listUsers({
+  page: 1,
+  perPage: 1_000,
+ });
+ if (error) throw error;
+ const user = data.users.find((candidate) => candidate.email === accountA.email);
+ if (!user) throw new Error(`Fixture user ${accountA.email} is missing`);
+ // Rendering the API response precedes the background IndexedDB commit.
+ await expect
+  .poll(() =>
+   page.evaluate(
+    (ownerId) =>
+     new Promise<boolean>((resolve, reject) => {
+      const request = indexedDB.open("hanzihome-local-db");
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => {
+       const db = request.result;
+       const tx = db.transaction("content_cache", "readonly");
+       const keys = tx.objectStore("content_cache").getAllKeys();
+       let ready = false;
+       keys.onsuccess = () => {
+        ready =
+         keys.result.includes(`${ownerId}:lesson_detail:e2e-offline-lesson`) &&
+         keys.result.includes(`${ownerId}:lesson_vocab:e2e-offline-lesson`);
+       };
+       tx.oncomplete = () => {
+        db.close();
+        resolve(ready);
+       };
+       tx.onerror = () => {
+        db.close();
+        reject(tx.error);
+       };
+       tx.onabort = () => {
+        db.close();
+        reject(tx.error);
+       };
+      };
+     }),
+    user.id,
+   ),
+  )
+  .toBe(true);
+}
+
 async function resetLearningLoopItem() {
  const admin = createAdminClient();
  const { data, error } = await admin.auth.admin.listUsers({ page: 1, perPage: 1_000 });
@@ -195,6 +241,7 @@ test("reopens the downloaded Reader offline and isolates its lessons after accou
   "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
  );
  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+ await waitForDownloadedLesson(page);
  await page.evaluate(async () => {
   await navigator.serviceWorker.ready;
  });
@@ -296,6 +343,7 @@ test("restarts Chromium offline with the committed lesson and session in an isol
    "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
   );
   await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+  await waitForDownloadedLesson(page);
   await page.goto("/vi/offline");
   await expect(
    page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
@@ -360,6 +408,7 @@ test("keeps cached lessons after a storage read failure and reports an evicted v
  );
  expect((await resources).every((response) => response.ok())).toBe(true);
  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+ await waitForDownloadedLesson(page);
  await page.goto("/vi/offline");
  await expect(
   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
@@ -625,6 +674,7 @@ test("ignores a late offline library read after another tab changes the account"
   "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
  );
  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+ await waitForDownloadedLesson(page);
  await page.goto("/vi/offline");
  await expect(
   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
@@ -706,6 +756,7 @@ test("preserves downloaded lessons when refreshing their cache exceeds storage q
   "/vi/hanzihome?courseId=e2e-offline-course&lessonId=e2e-offline-lesson&module=lessonText",
  );
  await expect(page.getByText("Offline fixture paragraph A.", { exact: true })).toBeVisible();
+ await waitForDownloadedLesson(page);
  await page.goto("/vi/offline");
  await expect(
   page.getByRole("heading", { name: "Offline fixture lesson A", exact: true }),
@@ -788,6 +839,20 @@ test("keeps private page responses out of shared offline caches and preserves pu
  });
  await expect
   .poll(() => page.evaluate(() => navigator.serviceWorker.controller !== null))
+  .toBe(true);
+ await expect
+  .poll(() =>
+   page.evaluate(async () => {
+    const cache = await caches.open("hanzihome-static-v13");
+    return (
+     await Promise.all(
+      ["/vi/offline", "/en/offline", "/zh-CN/offline"].map(async (path) =>
+       Boolean(await cache.match(path)),
+      ),
+     )
+    ).every(Boolean);
+   }),
+  )
   .toBe(true);
  await page.goto("/vi/notes");
  const rscStatus = await page.evaluate(async () => {
