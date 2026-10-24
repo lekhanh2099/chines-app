@@ -18,6 +18,21 @@ Source of truth: [CI workflow](../../.github/workflows/ci.yml), [package scripts
 
 Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify, mounted browser và product E2E chạy độc lập sau selection. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
 
+During draft PR development, each synchronized push selects tests from the
+previous head to the new head. Initial/reopened drafts use the whole PR scope.
+Dependency/shared-owner fallback applies to that selected diff, so an earlier
+dependency patch does not keep forcing full E2E for unrelated draft updates.
+Missing history, rewritten history or an integration base newer than the
+previous head falls back to full validation. The selector fetches full commit
+history to prove ancestry; test jobs retain their merge checkout.
+
+Marking a PR ready for review, updating a non-draft PR, changing its base or
+running the workflow manually selects the full suites. Draft green is partial
+development feedback and does not clear earlier failed or cancelled coverage;
+the full readiness gate must pass before merge. Title/body edits skip app checks
+under a separate metadata concurrency group and check name, preserving the real
+required `CI gate` and any running code validation.
+
 Retry-recovered product tests fail CI via `failOnFlakyTests`; retained traces
 remain available for diagnosis. The list reporter records each case's duration,
 and web-server output exposes the production build. Fresh hosted runners apply

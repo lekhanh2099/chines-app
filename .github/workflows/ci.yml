@@ -4,17 +4,19 @@ on:
  push:
   branches: [main, refactor/hanzihome-integrity-remediation]
  pull_request:
+  types: [opened, reopened, synchronize, ready_for_review, edited]
  workflow_dispatch:
 
 permissions:
  contents: read
 
 concurrency:
- group: ci-${{ github.ref }}
+ group: ci-${{ github.ref }}${{ github.event.action == 'edited' && !github.event.changes.base && '-metadata' || '' }}
  cancel-in-progress: true
 
 jobs:
  changes:
+  if: github.event.action != 'edited' || github.event.changes.base != null
   runs-on: ubuntu-latest
   timeout-minutes: 5
   outputs:
@@ -27,7 +29,7 @@ jobs:
   steps:
    - uses: actions/checkout@v5
      with:
-      fetch-depth: 2
+      fetch-depth: 0
    - uses: actions/setup-node@v5
      with:
       node-version: 22
@@ -35,28 +37,46 @@ jobs:
      id: scope
      env:
       EVENT_NAME: ${{ github.event_name }}
+      EVENT_ACTION: ${{ github.event.action }}
       PUSH_BASE: ${{ github.event.before }}
       PR_BASE: ${{ github.event.pull_request.base.sha }}
+      PR_HEAD: ${{ github.event.pull_request.head.sha }}
+      PR_DRAFT: ${{ github.event.pull_request.draft }}
      run: |
       node --input-type=module <<'JS'
       import { execFileSync } from "node:child_process";
       import { appendFileSync } from "node:fs";
 
-      const base = process.env.EVENT_NAME === "pull_request" ? process.env.PR_BASE : process.env.PUSH_BASE;
-      let full = process.env.EVENT_NAME === "workflow_dispatch" || !base || /^0+$/.test(base);
+      const pullRequest = process.env.EVENT_NAME === "pull_request";
+      const incremental = pullRequest && process.env.PR_DRAFT === "true" && process.env.EVENT_ACTION === "synchronize";
+      const base = pullRequest && !incremental ? process.env.PR_BASE : process.env.PUSH_BASE;
+      const head = incremental ? process.env.PR_HEAD : "HEAD";
+      let full = process.env.EVENT_NAME === "workflow_dispatch" || (pullRequest && (process.env.PR_DRAFT !== "true" || process.env.EVENT_ACTION === "edited")) || !base || /^0+$/.test(base) || !head || (incremental && !process.env.PR_BASE);
       if (!full) {
-       try {
-        execFileSync("git", ["cat-file", "-e", base + "^{commit}"], { stdio: "ignore" });
-       } catch {
+       for (const commit of incremental ? [base, head, process.env.PR_BASE] : [base]) {
         try {
-         execFileSync("git", ["fetch", "--no-tags", "--depth=1", "origin", base], { stdio: "inherit" });
+         execFileSync("git", ["cat-file", "-e", commit + "^{commit}"], { stdio: "ignore" });
         } catch {
-         full = true;
+         try {
+          execFileSync("git", ["fetch", "--no-tags", "--depth=1", "origin", commit], { stdio: "inherit" });
+         } catch {
+          full = true;
+          break;
+         }
         }
        }
       }
-      const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, "HEAD"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
-      const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, "HEAD"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
+      if (incremental && !full) {
+       try {
+        // A changed integration base or rewritten history cannot use a draft delta.
+        execFileSync("git", ["merge-base", "--is-ancestor", process.env.PR_BASE, base], { stdio: "ignore" });
+        execFileSync("git", ["merge-base", "--is-ancestor", base, head], { stdio: "ignore" });
+       } catch {
+        full = true;
+       }
+      }
+      const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
+      const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
       const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|skills-lock[.]json$)/;
       const guidance = full || deleted.length > 0 || paths.some((file) => guidancePath.test(file) || file === ".github/workflows/ci.yml" || file === "package.json");
       const browserFiles = {
@@ -161,7 +181,7 @@ jobs:
       };
       const newline = String.fromCharCode(10);
       appendFileSync(process.env.GITHUB_OUTPUT, Object.entries(output).map(([key, value]) => key + "=" + value).join(newline) + newline);
-      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (full ? "full" : "affected"), "Diff base: " + (output.base || "full"), "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (full ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Diff head: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
       JS
 
  verify:
@@ -398,9 +418,9 @@ jobs:
      run: npx supabase stop
 
  gate:
-  name: CI gate
+  name: ${{ github.event.action == 'edited' && !github.event.changes.base && 'CI metadata' || 'CI gate' }}
   needs: [changes, verify, browser, e2e]
-  if: always()
+  if: always() && (github.event.action != 'edited' || github.event.changes.base != null)
   runs-on: ubuntu-latest
   timeout-minutes: 2
   steps:

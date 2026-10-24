@@ -130,6 +130,15 @@ Example HanziHome pilot: a Pinyin bug with a current reproduction, verified expe
 
 Retain [affected CI selection](../../.github/workflows/ci.yml), configured npm commands and [test proof boundaries](../testing/frontend-flow-coverage.md). Before adding a dependency checker, SAST tool or orchestrator, identify a concrete gap in existing guards.
 
+Use a draft PR during implementation: synchronized pushes verify the new change
+and affected consumers, with conservative fallback for shared/dependency changes
+or uncertain history. A green draft run is partial feedback. Mark the PR ready
+for review when the implementation is ready to close; readiness and subsequent
+non-draft updates run the full suites before the required merge gate can pass.
+Title/body edits do not rerun app checks or replace the real gate result. Exact
+selection, base-change handling and proof limits belong to the test coverage
+document linked above.
+
 Before pilot publication, inspect actual GitHub rulesets/protection, required checks, bypass permissions and repository plan. A solo contributor must not depend on approving their own PR to satisfy another reviewer's approval requirement; use human diff acceptance and required CI compatible with actual permissions. Mark uninspected settings as not verified.
 
 Authority remains governed by `AGENTS.md` and the risk policy: dependency addition/removal/major upgrades, schema/RLS/auth/production-data changes, breaking public contracts, commits, pushes, PRs, merges and deployments require the corresponding authorization. This blueprint grants no additional authority. Sandbox, credentials and service permissions enforce boundaries; prompts do not replace them.
