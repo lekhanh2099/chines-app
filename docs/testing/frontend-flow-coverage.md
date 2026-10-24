@@ -9,14 +9,94 @@ Source of truth: [CI workflow](../../.github/workflows/ci.yml), [package scripts
 | Trigger / scope                              | Checks                                                                                                                                                    |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Commit                                       | Existing staged-only Oxfmt/Oxlint; không full test suite.                                                                                                 |
-| Docs/skills-only push/PR                     | Install + format và lightweight YAML/metadata/routing/file-reference check; `skills-lock.json` dùng cùng scope, không build/Node/browser/product E2E.     |
-| Code push/PR                                 | Full static contract/type checks; Vitest related graph hoặc full Node nếu broad/deleted paths; owner/consumer map chọn mounted fixtures và product cases. |
+| Guidance/workflow-only draft update          | Install, format, guidance contracts và tooling regression tests; không application build/browser/product E2E.                                             |
+| Affected code push/draft update              | Full static contract/type checks; Vitest related graph hoặc full Node nếu broad/deleted paths; owner/consumer map chọn mounted fixtures và product cases. |
 | Runtime-loaded fixtures                      | Explicit map trong workflow, vì Vite URL imports không thuộc Vitest static graph. Mounted job riêng, không cần Supabase.                                  |
 | Shared/auth/schema/dependency/unmapped paths | Conservative full Node/browser/product path; không silently mất consumer coverage.                                                                        |
-| Manual Run workflow                          | Full Node, toàn bộ 14 mounted files và product/SQL suite.                                                                                                 |
+| Ready/non-draft code update/manual           | Full Node, toàn bộ 14 mounted files và product/SQL suite.                                                                                                 |
 | Local merge/release                          | `npm run check`; required mounted/SQL/product/coverage/corpus proof theo contract của slice. Performance profiling chạy manual khi cần.                   |
 
 Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify, mounted browser và product E2E chạy độc lập sau selection. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
+
+During draft PR development, each synchronized push selects tests from the
+previous head to the new head. Initial/reopened drafts use the whole PR scope.
+Dependency/shared-owner fallback applies to that selected diff, so an earlier
+dependency patch does not keep forcing full E2E for unrelated draft updates.
+Missing history, rewritten history or an integration base newer than the
+previous head falls back to full validation. The selector fetches full commit
+history to prove ancestry. Selection and all test jobs check out the exact PR
+head SHA; push/manual runs check out their event SHA.
+
+Marking a PR ready for review, updating a non-draft PR's code or running the
+workflow manually selects the full suites. Draft green is partial development
+feedback and does not clear earlier failed or cancelled coverage; the full
+readiness gate must pass before merge. PR `edited` events are not subscribed:
+title/body edits cannot create a newer empty CI suite or cancel code validation.
+
+Base retargeting alone also does not rerun CI. This relies on `main` protection
+requiring an up-to-date branch and a successful PR-triggered `CI gate`, including
+admins. When `main` is an ancestor of the tested head, their merge tree is the
+same source tree already tested. If it is not, strict protection blocks merge
+until the head is updated; that commit triggers full non-draft verification.
+This policy does not establish safe integration for loosely protected branches.
+
+Draft validation reports `CI draft`; readiness, non-draft code, main pushes and
+manual full runs report `CI gate`. Both retain strict aggregation. A cancelled
+draft must not publish a failed required context on the same SHA as its later
+successful readiness run: GitHub can otherwise keep the PR blocked by both
+checks. Only the PR-triggered full readiness gate establishes merge eligibility;
+draft checks are separate feedback. The final aggregate always evaluates its
+selected jobs; there is no metadata-only success path.
+
+Workflow/guidance-only draft updates run the existing guidance, formatting and
+tooling regression checks, without application static checks, dependency audit,
+build or browser/database setup. Readiness and manual full validation still run
+the complete application gate.
+
+`scripts/check-ci-workflow.test.mjs` executes the workflow's inline selector and
+aggregate gate. Real temporary Git histories cover incremental draft updates,
+integration-base changes and rewritten history; regression cases also protect
+mounted consumer selection, metadata event exclusion, exact-source checkouts and
+selected-suite failures. The local harness does not prove GitHub merge eligibility;
+remote acceptance must check the PR merge state after a title/body edit.
+These run with the existing tooling tests, without browsers or a database.
+
+Retry-recovered product tests fail CI via `failOnFlakyTests`; retained traces
+remain available for diagnosis. The list reporter records each case's duration,
+and web-server output exposes the production build. Fresh hosted runners apply
+the canonical migrations and seed during Supabase startup, without a second
+reset. CI excludes unused Studio, image proxy, analytics, pooler, metadata and
+Edge Runtime services; database, Auth, REST, Storage and Realtime remain active.
+The E2E job uses the CLI's supported `SUPABASE_INTERNAL_IMAGE_REGISTRY=docker.io`
+override for both startup and SQL tests, preserving the original image names and
+versions. This avoids the ECR mirror's observed rate-limit backoffs. The explicit
+override uses one registry instead of the CLI's default fallback chain; a pull
+failure must remain visible. See the [version-matched CLI resolver](https://github.com/supabase/cli/blob/v2.119.0/apps/cli/src/command-internal/docker-registry.ts).
+The eleven service-worker cases opt into a real worker; other cases block worker
+installation and precaching. All cases keep isolated contexts and the single
+authenticated fixture lane. The explicit persistent Chromium restart keeps its
+real-worker behavior.
+
+Product assertions exercise the actual owner: the guest Daily Reading case
+opens the published static document, waits for resolved guest UI and marks it
+complete locally without any `/api/daily-reading/state` request. The Learning
+Loop conflict case requires HTTP 409 and `LEARNING_LOOP_CONFLICT`, in addition to
+the visible error, so unrelated network or authorization failures cannot pass it.
+Dictionary write checks send generated-contract-valid table/RPC payloads and
+require HTTP 403 / PostgreSQL `42501`; an invalid RPC signature cannot masquerade
+as a permission-denial pass.
+
+The strengthened RPC check exposed inherited direct `anon`/`authenticated`
+EXECUTE grants in a fresh CI database. The [targeted ACL migration](../../supabase/migrations/20261024124241_restrict_legacy_vocabulary_cache_execution.sql)
+revokes only this writer from browser roles and keeps `service_role`; it changes
+no function signature, generated data contract or existing row. The [transactional SQL regression](../../supabase/tests/dictionary_write_permissions.test.sql)
+checks effective grants, a valid denied browser call and successful trusted
+legacy/canonical cache writes, then rolls back its fixtures. CI applies the
+migration only to its isolated local stack. Production ACLs and migration drift
+remain unverified; production application requires separate authorization.
+Discarding the CI stack rolls back the isolated run. Trusted access can be
+forward-fixed by restoring the exact `service_role` EXECUTE grant; browser
+EXECUTE must not be regranted to make a failing test pass.
 
 Guidance check dùng Prettier hiện có để kiểm tra YAML, root routing, tên skill,
 npm commands và local Markdown file targets; không fetch links hoặc benchmark

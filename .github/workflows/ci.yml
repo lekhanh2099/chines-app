@@ -4,6 +4,7 @@ on:
  push:
   branches: [main, refactor/hanzihome-integrity-remediation]
  pull_request:
+  types: [opened, reopened, synchronize, ready_for_review]
  workflow_dispatch:
 
 permissions:
@@ -27,7 +28,8 @@ jobs:
   steps:
    - uses: actions/checkout@v5
      with:
-      fetch-depth: 2
+      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+      fetch-depth: 0
    - uses: actions/setup-node@v5
      with:
       node-version: 22
@@ -35,29 +37,47 @@ jobs:
      id: scope
      env:
       EVENT_NAME: ${{ github.event_name }}
+      EVENT_ACTION: ${{ github.event.action }}
       PUSH_BASE: ${{ github.event.before }}
       PR_BASE: ${{ github.event.pull_request.base.sha }}
+      PR_HEAD: ${{ github.event.pull_request.head.sha }}
+      PR_DRAFT: ${{ github.event.pull_request.draft }}
      run: |
       node --input-type=module <<'JS'
       import { execFileSync } from "node:child_process";
       import { appendFileSync } from "node:fs";
 
-      const base = process.env.EVENT_NAME === "pull_request" ? process.env.PR_BASE : process.env.PUSH_BASE;
-      let full = process.env.EVENT_NAME === "workflow_dispatch" || !base || /^0+$/.test(base);
+      const pullRequest = process.env.EVENT_NAME === "pull_request";
+      const incremental = pullRequest && process.env.PR_DRAFT === "true" && process.env.EVENT_ACTION === "synchronize";
+      const base = pullRequest && !incremental ? process.env.PR_BASE : process.env.PUSH_BASE;
+      const head = incremental ? process.env.PR_HEAD : "HEAD";
+      let full = process.env.EVENT_NAME === "workflow_dispatch" || (pullRequest && process.env.PR_DRAFT !== "true") || !base || /^0+$/.test(base) || !head || (incremental && !process.env.PR_BASE);
       if (!full) {
-       try {
-        execFileSync("git", ["cat-file", "-e", base + "^{commit}"], { stdio: "ignore" });
-       } catch {
+       for (const commit of incremental ? [base, head, process.env.PR_BASE] : [base]) {
         try {
-         execFileSync("git", ["fetch", "--no-tags", "--depth=1", "origin", base], { stdio: "inherit" });
+         execFileSync("git", ["cat-file", "-e", commit + "^{commit}"], { stdio: "ignore" });
         } catch {
-         full = true;
+         try {
+          execFileSync("git", ["fetch", "--no-tags", "--depth=1", "origin", commit], { stdio: "inherit" });
+         } catch {
+          full = true;
+          break;
+         }
         }
        }
       }
-      const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, "HEAD"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
-      const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, "HEAD"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
-      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|skills-lock[.]json$)/;
+      if (incremental && !full) {
+       try {
+        // A changed integration base or rewritten history cannot use a draft delta.
+        execFileSync("git", ["merge-base", "--is-ancestor", process.env.PR_BASE, base], { stdio: "ignore" });
+        execFileSync("git", ["merge-base", "--is-ancestor", base, head], { stdio: "ignore" });
+       } catch {
+        full = true;
+       }
+      }
+      const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
+      const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
+      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|[.]github[/]workflows[/]ci[.]yml$|skills-lock[.]json$)/;
       const guidance = full || deleted.length > 0 || paths.some((file) => guidancePath.test(file) || file === ".github/workflows/ci.yml" || file === "package.json");
       const browserFiles = {
        notes: ["src/features/notes/hooks/NoteEditor.browser.test.ts", "src/features/notes/hooks/NoteOwner.browser.test.ts"],
@@ -101,7 +121,7 @@ jobs:
        { match: /^src[/]features[/]hanzihome[/]learning-loop[/]|^src[/]features[/]hanzihome[/]hooks[/]useHanziHomeLearningLoop[.]|^src[/]app[/].*[/]learning-loop[/]/, browser: ["srs"], product: ["learning"] },
        { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, browser: ["reader"], product: ["offline"] },
        { match: /^src[/]features[/]daily-reading[/]|^src[/]app[/]api[/]daily-reading[/]/, browser: ["reading", "recorder"], product: ["reading"] },
-       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "tts", "listening", "annotations", "home"], product: ["offline", "search"] },
+       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "reading", "tts", "listening", "annotations", "home"], product: ["offline", "search"] },
       ];
       let code = full;
       let unitFull = full || deleted.some((file) => !guidancePath.test(file));
@@ -161,7 +181,7 @@ jobs:
       };
       const newline = String.fromCharCode(10);
       appendFileSync(process.env.GITHUB_OUTPUT, Object.entries(output).map(([key, value]) => key + "=" + value).join(newline) + newline);
-      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (full ? "full" : "affected"), "Diff base: " + (output.base || "full"), "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (full ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Diff head: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
       JS
 
  verify:
@@ -175,6 +195,8 @@ jobs:
    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
   steps:
    - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
 
    - uses: actions/setup-node@v5
      with:
@@ -193,6 +215,10 @@ jobs:
       import { format } from "prettier";
 
       const failures = [];
+      const issueTemplates = readdirSync(".github/ISSUE_TEMPLATE").filter((file) => /[.]ya?ml$/.test(file));
+      for (const file of issueTemplates) {
+       await format(readFileSync(`.github/ISSUE_TEMPLATE/${file}`, "utf8"), { parser: "yaml" });
+      }
       const rootContract = readFileSync("AGENTS.md", "utf8");
       const scripts = JSON.parse(readFileSync("package.json", "utf8")).scripts;
       for (const match of rootContract.matchAll(/`((?:docs[/]|[.]agents[/]skills[/])[a-zA-Z0-9/_.-]+[.]md)`/g)) {
@@ -256,6 +282,9 @@ jobs:
       console.log(`Agent guidance contracts passed: ${folders.length} skills, ${files.length} Markdown files, ${references} local file references. Behavioral routing and model benchmarks are separate proof.`);
       JS
    - run: npm run format:check
+   - name: Tooling regression tests
+     if: needs.changes.outputs.guidance == 'true' && needs.changes.outputs.code != 'true'
+     run: npm run test:run -- scripts --maxWorkers=2
    - name: Static checks
      if: needs.changes.outputs.code == 'true'
      run: |
@@ -308,6 +337,8 @@ jobs:
    AI_CONVERSATION_BROWSER_TEST: "1"
   steps:
    - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
    - uses: actions/setup-node@v5
      with:
       node-version: 22
@@ -329,12 +360,16 @@ jobs:
   timeout-minutes: 20
   env:
    HUSKY: 0
+   # Use the CLI's original pinned images; the ECR mirror repeatedly rate-limits CI pulls.
+   SUPABASE_INTERNAL_IMAGE_REGISTRY: docker.io
    E2E_BASE_URL: http://127.0.0.1:3001
    E2E_USER_A_EMAIL: hanzihome-e2e-a@example.test
    E2E_USER_B_EMAIL: hanzihome-e2e-b@example.test
    E2E_FIXTURE_PASSWORD: HanziHome-E2E!2026
   steps:
    - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
 
    - uses: actions/setup-node@v5
      with:
@@ -347,8 +382,8 @@ jobs:
    - name: Apply canonical local schema baseline
      shell: bash
      run: |
-      npx supabase start
-      npx supabase db reset
+      # A fresh hosted runner applies migrations and seed during start, without a second reset.
+      npx supabase start --exclude studio,imgproxy,logflare,vector,supavisor,postgres-meta,edge-runtime
    - name: Export local Supabase environment
      shell: bash
      run: |
@@ -376,12 +411,50 @@ jobs:
       exit 1
    - name: Verify local database contracts
      run: |
-      npx supabase test db --local supabase/tests/hanzihome_full_crud_test.sql supabase/tests/user_ai_task_routing_rls.test.sql supabase/tests/notes_revision_cas.test.sql supabase/tests/linked_annotation_notes_cas.test.sql supabase/tests/notes_rollout_compatibility.test.sql supabase/tests/pdf_annotation_absence_cas.test.sql
+      npx supabase test db --local supabase/tests/hanzihome_full_crud_test.sql supabase/tests/user_ai_task_routing_rls.test.sql supabase/tests/notes_revision_cas.test.sql supabase/tests/linked_annotation_notes_cas.test.sql supabase/tests/notes_rollout_compatibility.test.sql supabase/tests/pdf_annotation_absence_cas.test.sql supabase/tests/dictionary_write_permissions.test.sql
       docker exec -i supabase_db_chines-app psql -U postgres -d postgres -v ON_ERROR_STOP=1 < supabase/tests/auth_session_limit.test.sql
    - run: npm run e2e:seed
    - name: Affected product E2E
      env:
       E2E_GREP: ${{ needs.changes.outputs.e2e_grep }}
      run: npm run test:e2e -- --grep "$E2E_GREP"
+   - name: Preserve failed local-fixture E2E evidence
+     if: failure()
+     uses: actions/upload-artifact@v4
+     with:
+      name: product-e2e-failures
+      path: test-results/
+      retention-days: 1
    - if: always()
      run: npx supabase stop
+
+ gate:
+  name: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft && 'CI draft' || 'CI gate' }}
+  needs: [changes, verify, browser, e2e]
+  if: always()
+  runs-on: ubuntu-latest
+  timeout-minutes: 2
+  steps:
+   - name: Require every selected check to pass
+     env:
+      CHECK_RESULTS: ${{ toJSON(needs) }}
+     run: |
+      node --input-type=module <<'JS'
+      const checks = JSON.parse(process.env.CHECK_RESULTS);
+      const failures = [];
+      for (const job of ["changes", "verify"]) {
+       if (checks[job].result !== "success") failures.push(`${job}: ${checks[job].result}`);
+      }
+      for (const [job, output] of [["browser", "browser_files"], ["e2e", "e2e_grep"]]) {
+       const selected = Boolean(checks.changes.outputs[output]);
+       const result = checks[job].result;
+       if (selected ? result !== "success" : result !== "success" && result !== "skipped") {
+        failures.push(`${job}: ${result} (selected: ${selected})`);
+       }
+      }
+      if (failures.length) {
+       console.error(failures.join("\n"));
+       process.exit(1);
+      }
+      console.log("All selected CI checks passed; unselected suites may be skipped.");
+      JS

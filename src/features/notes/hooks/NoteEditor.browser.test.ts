@@ -26,6 +26,7 @@ it
   const fixture = fileURLToPath(new URL("./NoteEditor.browser.fixture.tsx", import.meta.url));
   const server = await createServer({
    configFile: false,
+   define: { "process.env.__NEXT_IMAGE_OPTS": "undefined" },
    cacheDir: "node_modules/.vite/notes-browser",
    optimizeDeps: { entries: [fixture] },
    resolve: {
