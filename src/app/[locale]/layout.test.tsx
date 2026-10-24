@@ -1,7 +1,9 @@
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { appLocales } from "@/i18n/config";
-import { generateStaticParams } from "./layout";
+import { generateStaticParams, metadata } from "./layout";
 
 vi.mock("@/components/layout/runtime/AppToaster", () => ({ AppToaster: vi.fn() }));
 vi.mock("@/components/layout/runtime/PwaServiceWorkerRegister", () => ({
@@ -33,5 +35,17 @@ describe("LocaleLayout static params", () => {
   vi.stubEnv("NODE_ENV", "production");
 
   expect(generateStaticParams()).toEqual(appLocales.map((locale) => ({ locale })));
+ });
+
+ it("refreshes browser icon URLs when the brand asset changes", () => {
+  const favicon = readFileSync(new URL("../../../public/favicon.svg", import.meta.url));
+  const revision = createHash("sha256").update(favicon).digest("hex").slice(0, 8);
+  const iconUrl = `/favicon.svg?v=${revision}`;
+
+  expect(metadata.icons).toEqual({
+   icon: iconUrl,
+   shortcut: iconUrl,
+   apple: iconUrl,
+  });
  });
 });
