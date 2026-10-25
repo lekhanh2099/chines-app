@@ -2,6 +2,50 @@
 
 Read `AGENTS.md` before changing HanziHome code. Inspect the current data and render path first, then choose the smallest safe slice.
 
+## Request intake and updates
+
+Short, colloquial Vietnamese and follow-up corrections are valid requirements.
+The agent owns turning them into the proportional brief below; the user does not
+have to complete a form or provide implementation details before work can begin.
+Conversational phrasing does not weaken “chỉ”, “không/đừng” or “giữ nguyên”
+constraints.
+
+1. Inspect the supplied request, attachments, available conversation and relevant
+   implementation, consumers and local precedent before asking for information.
+   Separate explicit requirements, observed behavior and assumptions. Resolve
+   references such as “chỗ này” from actual evidence; never invent an unseen
+   screen, selected element or reproduction. If a bug cannot be reproduced, state
+   that limit and identify the evidence still needed.
+2. Briefly state the intended change, behavior to preserve and observable result
+   that counts as done. Use the normal progress update for a simple fix; do not
+   repeat the full brief on every turn. This read-back accompanies authorized
+   work and is not an extra approval gate for routine reversible choices.
+3. Ask only when missing information leaves materially different outcomes after
+   inspection, or an action needs approval under the existing risk policy. Reuse
+   approvals already granted for that action and scope. Ask for the specific
+   missing decision; continue independent authorized work while waiting. Keep
+   dependent edits pending when an answer is required. Silence,
+   elapsed time and the agent's own read-back do not establish user approval.
+4. Treat follow-ups as updates to the active task unless the user clearly cancels
+   it or changes the objective. The latest explicit correction replaces only
+   conflicting requirements; retain all other constraints, preserved behavior
+   and approvals within their original scope. A question or status request does
+   not cancel implementation. New scope does not inherit unrelated approvals.
+   If investigation discovers work beyond the request, state its impact and
+   options and obtain a scope decision before expanding the work.
+5. When scope or acceptance changes, update the same current brief and summarize
+   the changed interpretation before dependent edits. Check work already done
+   against it, reopen affected completed acceptance/checkpoints and reverify the
+   changed behavior. Keep evidence tied to its source and criterion; a previous
+   green check does not prove revised acceptance. Preserve unrelated user work.
+6. Retain the current goal, constraints, decisions, granted/pending approvals,
+   open questions, acceptance, evidence and next action at the existing task
+   owner before handoff. Update an existing persisted brief only within granted
+   write authority; do not create a new file, issue or backlog for every chat.
+   If no persisted owner is available or authorized, provide a concise chat
+   handoff and state that cross-session recovery is not yet established. A new
+   session reads the available task owner and current diff before resuming.
+
 ## Change workflow
 
 Before implementation, state the goal, non-goals, observable acceptance criteria,
