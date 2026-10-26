@@ -18,6 +18,10 @@ import {
  businessChineseSectionDocuments,
  businessChineseReaderAnnotations,
  businessChineseReaderVocabulary,
+ splitPipePhraseDrill,
+ pairPracticeBlankAnswers,
+ parsePracticeExerciseItem,
+ evaluatePracticeAnswer,
 } from "./business-chinese-study-utils";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
@@ -33,6 +37,217 @@ const block: TextbookLesson["sections"][number]["blocks"][number] = {
  answerColumnIndexes: [3],
 };
 describe("Business Chinese study policies", () => {
+ it("extracts all sixteen original phrase-drill items, including wrapped rows", () => {
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  const drill = lesson?.sections
+   .flatMap((section) => section.blocks)
+   .find((item) => item.id === "nhip-cau-lesson-01-source-623");
+  if (!drill) throw new Error("Expected the original phrase drill.");
+  expect(splitPipePhraseDrill(drill.text)).toEqual([
+   "重新认识",
+   "反复考虑",
+   "遥远的地方",
+   "坚持下去",
+   "重新决定",
+   "反复修改",
+   "地方很遥远",
+   "继续下去",
+   "相同的命运",
+   "颤抖的双手",
+   "对得起他",
+   "控制不住",
+   "命运的安排",
+   "颤抖起来",
+   "他对得起",
+   "控制起来",
+  ]);
+  expect(splitPipePhraseDrill("你好 | 谢谢")).toEqual([]);
+  expect(splitPipePhraseDrill("你好 | 谢谢 | 再见 → 答案")).toEqual([]);
+  expect(splitPipePhraseDrill("你好 | | ")).toEqual([]);
+ });
+
+ it("pairs the eight source blanks without mutating or consuming unrelated blocks", () => {
+  const section = getTextbookLesson("nhip-cau", 1)?.sections.find(
+   (item) => item.category === "practice",
+  );
+  if (!section) throw new Error("Expected the original practice section.");
+  const originalBlocks = section.blocks.map((item) => ({ id: item.id, text: item.text }));
+  const { pairedAnswers, consumedAnswerBlockIds } = pairPracticeBlankAnswers(section.blocks);
+  expect([...pairedAnswers]).toEqual([
+   ["nhip-cau-lesson-01-source-627", "扭来扭去 / 扭一下"],
+   ["nhip-cau-lesson-01-source-628", "摸一下 / 摸透了"],
+   ["nhip-cau-lesson-01-source-629", "负担不起 / 负担很重"],
+   ["nhip-cau-lesson-01-source-630", "拆下来 / 拆不开"],
+   ["nhip-cau-lesson-01-source-631", "洒了一地 / 洒完"],
+   ["nhip-cau-lesson-01-source-632", "富裕起来"],
+   ["nhip-cau-lesson-01-source-633", "轻松一下 / 轻松得多"],
+   ["nhip-cau-lesson-01-source-634", "拒绝了 / 拒绝不了"],
+  ]);
+  expect([...consumedAnswerBlockIds]).toEqual(["nhip-cau-lesson-01-source-636"]);
+  expect(section.blocks.map((item) => ({ id: item.id, text: item.text }))).toEqual(originalBlocks);
+  expect(section.blocks.find((item) => item.id.endsWith("source-627"))?.text).toBe(
+   "扭 ___________",
+  );
+ });
+
+ it.each(["subheading", "table", "arrow", "mismatched answers"])(
+  "does not pair blanks across %s",
+  (boundary) => {
+   const prompt: TextbookLesson["sections"][number]["blocks"][number] = {
+    id: "blank",
+    type: "paragraph",
+    text: "扭 ___",
+    rows: [],
+   };
+   const answer: TextbookLesson["sections"][number]["blocks"][number] = {
+    id: "answer",
+    type: "paragraph",
+    text: "Gợi ý đáp án: → 扭一下",
+    rows: [],
+   };
+   const blocks: TextbookLesson["sections"][number]["blocks"] =
+    boundary === "mismatched answers"
+     ? [prompt, { ...answer, text: "参考答案：→ 扭一下\n摸一下" }]
+     : [
+        prompt,
+        {
+         id: "boundary",
+         type:
+          boundary === "table" ? "table" : boundary === "subheading" ? "subheading" : "paragraph",
+         text: boundary === "arrow" ? "题目 → 答案" : "下一题",
+         rows: [],
+        },
+        answer,
+       ];
+   expect(pairPracticeBlankAnswers(blocks).pairedAnswers.size).toBe(0);
+   expect(pairPracticeBlankAnswers(blocks).consumedAnswerBlockIds.size).toBe(0);
+  },
+ );
+
+ it.each([
+  {
+   prompt: "扭 ___________",
+   answer: "扭来扭去 / 扭一下",
+   hint: "",
+   baseWord: "扭",
+   hasBlank: true,
+   exact: "一下",
+   alternative: "扭来扭去",
+  },
+  {
+   prompt: "_______________。 (富裕)",
+   answer: "现在渐渐富裕起来了。",
+   hint: "富裕",
+   baseWord: "",
+   hasBlank: true,
+   exact: "现在渐渐富裕起来了！",
+   alternative: "现在渐渐富裕起来了。",
+  },
+  {
+   prompt: "你觉得这篇课文难吗？ (算)",
+   answer: "这篇课文对我来说算难的。",
+   hint: "算",
+   baseWord: "",
+   hasBlank: false,
+   exact: "这篇课文对我来说算难的",
+   alternative: "这篇课文对我来说算难的。",
+  },
+  {
+   prompt: "任何被救助的孩子都很感激他们的救助人。",
+   answer: "(凡……没有不……的) Đáp án: 凡是被救助的孩子，没有不感激他们的救助人的。",
+   hint: "凡……没有不……的",
+   baseWord: "",
+   hasBlank: false,
+   exact: "凡是被救助的孩子没有不感激他们的救助人的",
+   alternative: "凡是被救助的孩子，没有不感激他们的救助人的。",
+  },
+ ])(
+  "parses and evaluates the $hint exercise without changing its source prompt",
+  ({ prompt, answer, hint, baseWord, hasBlank, exact, alternative }) => {
+   const item = parsePracticeExerciseItem(prompt, answer);
+   expect(item).toMatchObject({
+    prompt,
+    keywordHint: hint,
+    baseWord,
+    hasBlank,
+    choices: [],
+    correctChoice: "",
+   });
+   if (hint) expect(item.displayPrompt).not.toContain(`(${hint})`);
+   expect(evaluatePracticeAnswer(exact, item).isExactMatch).toBe(true);
+   expect(evaluatePracticeAnswer(alternative, item).isExactMatch).toBe(true);
+   expect(evaluatePracticeAnswer("… ___", item)).toEqual({
+    isAnswered: false,
+    isExactMatch: false,
+    isKeywordMatch: false,
+   });
+   expect(evaluatePracticeAnswer("错误的回答", item)).toEqual({
+    isAnswered: true,
+    isExactMatch: false,
+    isKeywordMatch: false,
+   });
+  },
+ );
+
+ it("reports keyword use separately from an exact model-answer match", () => {
+  const item = parsePracticeExerciseItem("用指定词语完成句子 (富裕)", "现在渐渐富裕起来了。");
+  expect(evaluatePracticeAnswer("村民的生活越来越富裕。", item)).toEqual({
+   isAnswered: true,
+   isExactMatch: false,
+   isKeywordMatch: true,
+  });
+  expect(evaluatePracticeAnswer("富裕", item).isKeywordMatch).toBe(false);
+  const rewrite = parsePracticeExerciseItem(
+   "改写句子",
+   "(凡……没有不……的) Đáp án: 凡是被救助的孩子，没有不感激他们的救助人的。",
+  );
+  expect(evaluatePracticeAnswer("凡是努力学习的孩子，没有不进步的。", rewrite).isKeywordMatch).toBe(
+   true,
+  );
+  expect(evaluatePracticeAnswer("凡是努力学习的孩子都会进步。", rewrite).isKeywordMatch).toBe(
+   false,
+  );
+ });
+
+ it.each([1, 2])(
+  "parses source multiple-choice questions in lesson %i with three or four options",
+  (number) => {
+   const block = getTextbookLesson("nhip-cau", number)
+    ?.sections.flatMap((section) => section.blocks)
+    .find((item) => item.text.includes("A.") && item.text.includes("→ Đáp án:"));
+   if (!block) throw new Error("Expected the original multiple-choice question.");
+   const exercise = splitBusinessChineseExercise(block.text);
+   const item = parsePracticeExerciseItem(exercise.prompt, exercise.answer);
+   expect(item.choices.map((choice) => choice.key)).toEqual(
+    number === 1 ? ["A", "B", "C", "D"] : ["A", "B", "C"],
+   );
+   expect(item.correctChoice).toBe(number === 1 ? "D" : "C");
+   expect(item.displayPrompt).not.toContain("A.");
+   expect(item.choices.every((choice) => choice.text.length > 0)).toBe(true);
+   const multiline = parsePracticeExerciseItem(
+    "问题 A. 第一行\n第二行 B. 二 C. 三 D. 四",
+    "Đáp án: d",
+   );
+   expect(multiline.choices[0]?.text).toBe("第一行\n第二行");
+   expect(multiline.correctChoice).toBe("D");
+  },
+ );
+
+ it("evaluates the source reorder model and labelled alternative answers", () => {
+  const prompt = "在 / 故意 / 他 / 借口 / 是 / 分明 / 找";
+  const item = parsePracticeExerciseItem(prompt, "他分明是在故意找借口。");
+  expect(item.reorderTokens).toEqual(["在", "故意", "他", "借口", "是", "分明", "找"]);
+  expect(evaluatePracticeAnswer("他分明是在故意找借口", item).isExactMatch).toBe(true);
+  expect(evaluatePracticeAnswer("在故意他借口是分明找", item).isExactMatch).toBe(false);
+  expect(
+   evaluatePracticeAnswer(
+    "你好",
+    parsePracticeExerciseItem("___", "参考答案：(1) 你好！\n(2) 您好。"),
+   ).isExactMatch,
+  ).toBe(true);
+  expect(parsePracticeExerciseItem("一 / 二 / 三", "一二三").reorderTokens).toEqual([]);
+ });
+
  it.each([
   {
    input: "(1) 他从来不浪费粮食. Anh ấy chưa bao giờ lãng phí lương thực.",

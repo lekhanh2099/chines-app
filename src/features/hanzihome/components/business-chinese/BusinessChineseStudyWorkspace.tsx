@@ -12,6 +12,8 @@ import {
  type KeyboardEvent,
  type MouseEvent,
  type ReactNode,
+ type ComponentProps,
+ type SyntheticEvent,
 } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useSearchParams } from "next/navigation";
@@ -37,6 +39,7 @@ import {
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
+import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
@@ -149,6 +152,11 @@ import {
  pairedTextbookTranslations,
  splitBusinessChineseExercise,
  splitBusinessChineseGrammarExample,
+ splitPipePhraseDrill,
+ pairPracticeBlankAnswers,
+ parsePracticeExerciseItem,
+ evaluatePracticeAnswer,
+ type PracticeAnswerEvaluation,
 } from "./business-chinese-study-utils";
 
 import { useBusinessChineseReaderAnnotations } from "./useBusinessChineseReaderAnnotations";
@@ -352,41 +360,62 @@ function BusinessChineseText({
     weight={weight}
     wrapping="preWrap"
    >
-    {text}
+    {learnerContent
+     ? text.split(/([_＿]{3,})/u).map((part, index) =>
+        /[_＿]{3,}/u.test(part) ? (
+         <span
+          key={`${index}:blank`}
+          data-practice-blank="true"
+          className="inline-block min-w-14 rounded-md border border-dashed border-border-default bg-surface-muted px-2 py-0.5 text-center text-text-muted align-baseline"
+         >
+          ___
+         </span>
+        ) : (
+         part
+        ),
+       )
+     : text}
    </Typography>
   );
  }
 
  const chineseOnly = isChineseOnlyText(text);
- const content = chineseOnly ? (
-  <ContextualReaderText
-   analysis={analysis}
-   displayMode={contextualDisplayMode}
-   showPinyin={canShowPinyin}
-   pinyinPresentation="ruby"
-   sourcePinyin={sourcePinyin}
-   activeCharacterIndex={activeCharacterIndex}
-   paragraphId={pronunciationId}
-   readerAnnotations={annotationsContext?.readerAnnotations}
-   onOpenReaderAnnotation={annotationsContext?.onOpenReaderAnnotation}
-   onGlyphClick={
-    canPlayFromCharacter
-     ? (start) => readerCommands.playFromCharacter(pronunciationId, start)
-     : undefined
-   }
-   onGlyphInspect={inspectPronunciation}
-  />
- ) : (
-  <BusinessChineseMixedText
-   analysis={analysis}
-   displayMode={contextualDisplayMode}
-   showPinyin={canShowPinyin}
-   variant={variant}
-   weight={weight}
-   learnerContent={learnerContent}
-   onGlyphInspect={inspectPronunciation}
-  />
- );
+ const content =
+  chineseOnly && !(learnerContent && /[_＿]{3,}/u.test(text)) ? (
+   <ContextualReaderText
+    analysis={analysis}
+    displayMode={contextualDisplayMode}
+    showPinyin={canShowPinyin}
+    pinyinPresentation="ruby"
+    sourcePinyin={sourcePinyin}
+    activeCharacterIndex={activeCharacterIndex}
+    paragraphId={pronunciationId}
+    readerAnnotations={annotationsContext?.readerAnnotations}
+    onOpenReaderAnnotation={annotationsContext?.onOpenReaderAnnotation}
+    onGlyphClick={
+     canPlayFromCharacter
+      ? (start) => readerCommands.playFromCharacter(pronunciationId, start)
+      : undefined
+    }
+    onGlyphInspect={inspectPronunciation}
+   />
+  ) : (
+   <BusinessChineseMixedText
+    analysis={analysis}
+    displayMode={contextualDisplayMode}
+    showPinyin={canShowPinyin}
+    variant={variant}
+    weight={weight}
+    learnerContent={learnerContent}
+    onGlyphInspect={inspectPronunciation}
+    activeCharacterIndex={chineseOnly ? activeCharacterIndex : -1}
+    onGlyphClick={
+     chineseOnly && canPlayFromCharacter
+      ? (start) => readerCommands.playFromCharacter(pronunciationId, start)
+      : undefined
+    }
+   />
+  );
 
  return (
   <>
@@ -419,6 +448,8 @@ function BusinessChineseMixedText({
  weight,
  onGlyphInspect,
  learnerContent,
+ activeCharacterIndex = -1,
+ onGlyphClick,
 }: {
  analysis: ContextualPronunciationAnalysis;
  displayMode: LessonDisplayMode;
@@ -427,6 +458,8 @@ function BusinessChineseMixedText({
  weight?: TypographyProps<"div">["weight"];
  onGlyphInspect: (glyph: ContextualPronunciationGlyph, rect: DOMRect) => void;
  learnerContent: boolean;
+ activeCharacterIndex?: number;
+ onGlyphClick?: ComponentProps<typeof ContextualReaderText>["onGlyphClick"];
 }) {
  const t = useTranslations("Reader.document.text");
  const glyphByStart = useMemo(
@@ -436,6 +469,10 @@ function BusinessChineseMixedText({
  const graphemes = useMemo(
   () => [...chineseGraphemeSegmenter.segment(analysis.normalizedText)],
   [analysis.normalizedText],
+ );
+ const blanks = useMemo(
+  () => (learnerContent ? [...analysis.normalizedText.matchAll(/[_＿]{3,}/gu)] : []),
+  [analysis.normalizedText, learnerContent],
  );
 
  return (
@@ -450,31 +487,80 @@ function BusinessChineseMixedText({
      : undefined
    }
   >
-   {graphemes.map((grapheme) => {
+   {graphemes.map((grapheme, index) => {
+    // Keep original offsets so pinyin after a collapsed blank still belongs to its glyph.
+    const blank = blanks.find(
+     (match) => grapheme.index >= match.index && grapheme.index < match.index + match[0].length,
+    );
+    if (blank) {
+     return grapheme.index === blank.index ? (
+      <span
+       key={`${grapheme.index}:blank`}
+       data-practice-blank="true"
+       className="inline-block min-w-14 rounded-md border border-dashed border-border-default bg-surface-muted px-2 py-0.5 text-center text-text-muted align-baseline"
+      >
+       ___
+      </span>
+     ) : null;
+    }
     const glyph = glyphByStart.get(grapheme.index);
     if (glyph === undefined) {
-     return <span key={`${grapheme.index}:${grapheme.segment}`}>{grapheme.segment}</span>;
+     return (
+      <span
+       key={`${grapheme.index}:${grapheme.segment}`}
+       className={cn(index === activeCharacterIndex && "reading-progress-highlight")}
+       aria-current={index === activeCharacterIndex ? "true" : undefined}
+      >
+       {grapheme.segment}
+      </span>
+     );
     }
     const needsPronunciationReview =
      glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
+    const active = index === activeCharacterIndex;
+    const activateHanzi = (event: SyntheticEvent<HTMLElement>) => {
+     event.stopPropagation();
+     if (window.getSelection()?.isCollapsed === false) return;
+     onGlyphClick?.(glyph.start, glyph.end);
+    };
+    const hanzi = (
+     <ReaderHanziText
+      key={`${grapheme.index}:${grapheme.segment}`}
+      displayMode={displayMode}
+      size={learnerContent ? undefined : "inherit"}
+      className={cn(
+       onGlyphClick && "cursor-pointer rounded-sm select-text",
+       onGlyphClick && focusRingClassName,
+       active && "reading-progress-highlight",
+      )}
+      onClick={onGlyphClick ? activateHanzi : undefined}
+      onKeyDown={
+       onGlyphClick
+        ? (event: KeyboardEvent<HTMLElement>) => {
+           if (event.key !== "Enter" && event.key !== " ") return;
+           event.preventDefault();
+           activateHanzi(event);
+          }
+        : undefined
+      }
+      role={onGlyphClick ? "button" : undefined}
+      tabIndex={onGlyphClick ? 0 : undefined}
+      aria-label={
+       onGlyphClick ? t("playFromCharacter", { character: grapheme.segment }) : undefined
+      }
+      aria-current={active ? "true" : undefined}
+     >
+      {grapheme.segment}
+     </ReaderHanziText>
+    );
 
     if (!showPinyin || glyph.spokenPinyin === null) {
-     return (
-      <ReaderHanziText
-       key={`${grapheme.index}:${grapheme.segment}`}
-       displayMode={displayMode}
-       size={learnerContent ? undefined : "inherit"}
-      >
-       {grapheme.segment}
-      </ReaderHanziText>
-     );
+     return hanzi;
     }
 
     return (
      <ruby key={`${grapheme.index}:${grapheme.segment}`}>
-      <ReaderHanziText displayMode={displayMode} size={learnerContent ? undefined : "inherit"}>
-       {grapheme.segment}
-      </ReaderHanziText>
+      {hanzi}
       <rt className="select-none">
        <PinyinText
         as="span"
@@ -525,6 +611,7 @@ function SpeakableBusinessChineseText({
  weight,
  compactHanzi,
  learnerContent,
+ speakable = true,
 }: {
  pronunciationId: string;
  text: string;
@@ -534,8 +621,9 @@ function SpeakableBusinessChineseText({
  weight?: TypographyProps<"div">["weight"];
  compactHanzi?: boolean;
  learnerContent?: boolean;
+ speakable?: boolean;
 }) {
- const speechSegments = getChineseSpeechSegments(text);
+ const speechSegments = speakable ? getChineseSpeechSegments(text) : [];
 
  return (
   <div id={pronunciationId} className="flex min-w-0 scroll-mt-24 items-start gap-2">
@@ -571,9 +659,13 @@ function BusinessChineseTable({
 }) {
  const t = useTranslations("BusinessChinese");
  const [revealed, setRevealed] = useState(false);
+ const [rowChoices, setRowChoices] = useState<Map<number, string>>(() => new Map());
  const answerVisible = displayMode.showAnswers || revealed;
  const { headers, pinyinColumnIndex, hanziColumnIndex, isVocabularyTable, visibleColumnIndexes } =
   businessChineseTableColumns(block, displayMode, answerVisible);
+ const trueFalseColumnIndex = headers.findIndex(
+  (header, index) => /^đ\/s$/iu.test(header.trim()) && block.answerColumnIndexes?.includes(index),
+ );
  const hanvietColumnIndex = headers.findIndex((header) => /^hán việt$/iu.test(header));
  const posColumnIndex = headers.findIndex((header) => /^từ loại$/iu.test(header));
  const meaningColumnIndex = headers.findIndex((header) =>
@@ -725,6 +817,33 @@ function BusinessChineseTable({
               learnerContent={learnerContent}
              />
             )}
+            {trueFalseColumnIndex >= 0 && cellIndex === 1 ? (
+             <div className="flex flex-wrap gap-2">
+              {[
+               { value: "Đ", label: t("practice.trueChoice") },
+               { value: "S", label: t("practice.falseChoice") },
+              ].map((choice) => (
+               <Button
+                key={choice.value}
+                type="button"
+                size="compact"
+                variant={
+                 rowChoices.get(rowIndex) === choice.value
+                  ? choice.value === row[trueFalseColumnIndex].match(/^[ĐS](?=\s|$)/u)?.[0]
+                   ? "success"
+                   : "warning"
+                  : "outline"
+                }
+                aria-pressed={rowChoices.get(rowIndex) === choice.value}
+                onClick={() =>
+                 setRowChoices((current) => new Map(current).set(rowIndex, choice.value))
+                }
+               >
+                {choice.label}
+               </Button>
+              ))}
+             </div>
+            ) : null}
            </td>
           ))}
          </tr>
@@ -790,26 +909,181 @@ function TextbookVocabularyPreview({
 function BusinessChineseExercise({
  block,
  displayMode,
+ pairedAnswer = "",
 }: {
  block: TextbookLesson["sections"][number]["blocks"][number];
  displayMode: LessonDisplayMode;
+ pairedAnswer?: string;
 }) {
  const t = useTranslations("BusinessChinese");
  const [revealed, setRevealed] = useState(false);
- const { prompt, answer } = splitBusinessChineseExercise(block.text);
+ const { prompt, answer } = pairedAnswer
+  ? { prompt: block.text, answer: pairedAnswer }
+  : splitBusinessChineseExercise(block.text);
+ const parsed = parsePracticeExerciseItem(prompt, answer);
+ const [draft, setDraft] = useState("");
+ const [selectedTokenIndexes, setSelectedTokenIndexes] = useState<readonly number[]>([]);
+ const [selectedChoice, setSelectedChoice] = useState("");
+ const [evaluation, setEvaluation] = useState<PracticeAnswerEvaluation>(() =>
+  evaluatePracticeAnswer("", parsed),
+ );
  const answerVisible = displayMode.showAnswers || revealed;
+ const handleCheck = () => setEvaluation(evaluatePracticeAnswer(draft, parsed));
+ const handleReset = () => {
+  setDraft("");
+  setSelectedTokenIndexes([]);
+  setEvaluation(evaluatePracticeAnswer("", parsed));
+ };
+ const toggleToken = (index: number) => {
+  const nextTokenIndexes = selectedTokenIndexes.includes(index)
+   ? selectedTokenIndexes.filter((selectedIndex) => selectedIndex !== index)
+   : [...selectedTokenIndexes, index];
+  setSelectedTokenIndexes(nextTokenIndexes);
+  setDraft(nextTokenIndexes.map((selectedIndex) => parsed.reorderTokens[selectedIndex]).join(""));
+  setEvaluation(evaluatePracticeAnswer("", parsed));
+ };
 
  return (
-  <Card variant="default" padding="md" className="h-full">
+  <Card
+   id={block.id}
+   data-textbook-block={block.id}
+   variant="default"
+   padding="md"
+   className="h-full scroll-mt-24"
+  >
    <div className="grid min-w-0 gap-4">
     <SpeakableBusinessChineseText
      pronunciationId={`${block.id}:prompt`}
-     text={prompt}
+     text={parsed.displayPrompt}
      displayMode={displayMode}
      compactHanzi
      learnerContent
      variant="body"
     />
+    {parsed.keywordHint ? (
+     <Badge variant="accent" size="md" casing="natural">
+      {t("practice.keywordHint", { keyword: parsed.keywordHint })}
+     </Badge>
+    ) : null}
+    {parsed.choices.length > 0 ? (
+     <div className="grid min-w-0 gap-2">
+      {parsed.choices.map((choice) => (
+       <div
+        key={choice.key}
+        className="flex min-w-0 items-start gap-2 rounded-lg border border-border-default bg-surface-muted/40 p-2"
+       >
+        <Button
+         type="button"
+         size="compact"
+         variant={
+          selectedChoice === choice.key
+           ? choice.key === parsed.correctChoice
+            ? "success"
+            : "destructive"
+           : "outline"
+         }
+         aria-pressed={selectedChoice === choice.key}
+         onClick={() => setSelectedChoice(choice.key)}
+        >{`${choice.key}.`}</Button>
+        <div className="min-w-0 flex-1">
+         <BusinessChineseText
+          pronunciationId={`${block.id}:choice:${choice.key}`}
+          text={choice.text}
+          displayMode={displayMode}
+          learnerContent
+          variant="body"
+         />
+        </div>
+       </div>
+      ))}
+      {selectedChoice ? (
+       <Badge
+        variant={selectedChoice === parsed.correctChoice ? "success" : "warning"}
+        size="md"
+        casing="natural"
+        role="status"
+       >
+        {t(
+         selectedChoice === parsed.correctChoice
+          ? "practice.feedback.correct"
+          : "practice.feedback.incorrect",
+        )}
+       </Badge>
+      ) : null}
+     </div>
+    ) : parsed.hasBlank || parsed.reorderTokens.length > 0 || Boolean(parsed.keywordHint) ? (
+     <div className="grid min-w-0 gap-2">
+      {parsed.reorderTokens.length > 0 ? (
+       <div className="flex flex-wrap gap-2">
+        {parsed.reorderTokens.map((token, index) => (
+         <Button
+          key={`${index}:${token}`}
+          type="button"
+          size="compact"
+          variant={selectedTokenIndexes.includes(index) ? "secondary" : "outline"}
+          aria-pressed={selectedTokenIndexes.includes(index)}
+          onClick={() => toggleToken(index)}
+         >
+          {token}
+         </Button>
+        ))}
+       </div>
+      ) : null}
+      <div className="flex min-w-0 flex-wrap items-center gap-2">
+       <Input
+        density="compact"
+        surface="card"
+        className="min-w-0 flex-1"
+        value={draft}
+        onChange={(event) => {
+         setDraft(event.target.value);
+         if (!event.target.value) setSelectedTokenIndexes([]);
+         setEvaluation(evaluatePracticeAnswer("", parsed));
+        }}
+        onKeyDown={(event) => {
+         if (event.key === "Enter" && !event.nativeEvent.isComposing && draft.trim()) {
+          event.preventDefault();
+          handleCheck();
+         }
+        }}
+        placeholder={t("practice.inputPlaceholder")}
+        aria-label={t("practice.inputPlaceholder")}
+       />
+       <Button
+        type="button"
+        size="compact"
+        variant="secondary"
+        disabled={!draft.trim()}
+        onClick={handleCheck}
+       >
+        {t("practice.checkAnswer")}
+       </Button>
+       {draft || evaluation.isAnswered ? (
+        <Button type="button" size="compact" variant="ghost" onClick={handleReset}>
+         {t("practice.resetAnswer")}
+        </Button>
+       ) : null}
+      </div>
+      {evaluation.isAnswered ? (
+       <Badge
+        variant={
+         evaluation.isExactMatch ? "success" : evaluation.isKeywordMatch ? "info" : "warning"
+        }
+        size="md"
+        casing="natural"
+        role="status"
+       >
+        {t(
+         evaluation.isExactMatch
+          ? "practice.feedback.correct"
+          : evaluation.isKeywordMatch
+            ? "practice.feedback.keywordMatch"
+            : "practice.feedback.incorrect",
+        )}
+       </Badge>
+      ) : null}
+     </div>
+    ) : null}
     {!displayMode.showAnswers ? (
      <Button
       type="button"
@@ -849,6 +1123,7 @@ function BusinessChineseTextBlock({
  weight,
  grammar = false,
  practice = false,
+ speakable = true,
 }: {
  pronunciationId: string;
  text: string;
@@ -859,6 +1134,7 @@ function BusinessChineseTextBlock({
  weight?: TypographyProps<"div">["weight"];
  grammar?: boolean;
  practice?: boolean;
+ speakable?: boolean;
 }) {
  const displayMode = useMemo(
   () => ({
@@ -892,7 +1168,7 @@ function BusinessChineseTextBlock({
   containsHanziText(sourceTurn.content) &&
   (!compactHanzi ||
    ((grammar || practice) && variant === "body" && isChineseOnlyText(sourceTurn.content)));
- const speechSegments = getChineseSpeechSegments(sourceTurn.content);
+ const speechSegments = speakable ? getChineseSpeechSegments(sourceTurn.content) : [];
  const hasRevealPinyin = displayMode.autoDetectPinyin;
  const hasRevealMeaning = Boolean(translationTurn.content);
  const visibleRevealStage =
@@ -1001,6 +1277,7 @@ function BusinessChineseTextBlock({
       variant={variant}
       weight={weight}
       learnerContent={grammar || practice}
+      speakable={speakable}
      />
     )}
    </div>
@@ -1049,9 +1326,17 @@ function BusinessChineseSection({
  const sectionDisplayMode: LessonDisplayMode =
   section.category === "vocab" ? { ...displayMode, revealMode: "always" } : displayMode;
  const learnerContent = section.category === "grammar" || section.category === "practice";
+ const practiceSubheadings =
+  section.category === "practice"
+   ? visibleBlocks.filter((block) => block.type === "subheading")
+   : [];
+ const { pairedAnswers, consumedAnswerBlockIds } = pairPracticeBlankAnswers(
+  section.category === "practice" ? visibleBlocks : [],
+ );
  const numberedPracticeItem = /^(?:[（(]\d+[）)]|[①-⑳]|\d+[.．、])/u;
  const blockGroups: TextbookLesson["sections"][number]["blocks"][] = [];
  for (const block of visibleBlocks) {
+  if (consumedAnswerBlockIds.has(block.id)) continue;
   const current = blockGroups.at(-1);
   const first = current?.[0];
   if (
@@ -1084,8 +1369,30 @@ function BusinessChineseSection({
       weight="black"
       compactHanzi
       learnerContent={learnerContent}
+      speakable={section.category !== "practice"}
      />
     </header>
+   ) : null}
+   {practiceSubheadings.length > 1 ? (
+    <div className="flex min-w-0 flex-wrap gap-2">
+     {practiceSubheadings.map((sub) => (
+      <Button
+       key={sub.id}
+       type="button"
+       size="compact"
+       variant="outline"
+       wrap="normal"
+       onClick={() =>
+        scrollAppContentToElement(document.getElementById(sub.id), {
+         behavior: "smooth",
+         block: "start",
+        })
+       }
+      >
+       {sub.text}
+      </Button>
+     ))}
+    </div>
    ) : null}
    <div className="grid min-w-0 gap-4">
     {vocabularyPreview}
@@ -1153,11 +1460,49 @@ function BusinessChineseSection({
          weight="black"
          grammar={section.category === "grammar"}
          practice={section.category === "practice"}
+         speakable={section.category !== "practice"}
         />
        );
       }
-      if (section.category === "practice" && block.text.includes("→")) {
-       return <BusinessChineseExercise key={block.id} block={block} displayMode={displayMode} />;
+      if (
+       section.category === "practice" &&
+       (block.text.includes("→") || pairedAnswers.has(block.id))
+      ) {
+       return (
+        <BusinessChineseExercise
+         key={block.id}
+         block={block}
+         displayMode={displayMode}
+         pairedAnswer={pairedAnswers.get(block.id)}
+        />
+       );
+      }
+      const phrases = section.category === "practice" ? splitPipePhraseDrill(block.text) : [];
+      if (phrases.length > 0) {
+       return (
+        <div
+         key={block.id}
+         id={block.id}
+         data-textbook-block={block.id}
+         className="grid min-w-0 scroll-mt-24 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
+         {phrases.map((phrase, index) => (
+          <div
+           key={`${index}:${phrase}`}
+           className="flex min-w-0 items-center justify-between gap-2 rounded-lg border border-border-default bg-surface-muted/40 px-3 py-2"
+          >
+           <BusinessChineseText
+            pronunciationId={`${block.id}:phrase:${index}`}
+            text={phrase}
+            displayMode={displayMode}
+            learnerContent
+            variant="body"
+           />
+           <MandarinSpeakButton text={phrase} segments={[phrase]} touchTarget />
+          </div>
+         ))}
+        </div>
+       );
       }
       return (
        <BusinessChineseTextBlock
@@ -1781,12 +2126,16 @@ function BusinessChineseStudyWorkspaceContent({
               ) : null}
               {activeView === "practice" &&
               (translationSegments.length > 0 || dictationSources.length > 0) ? (
-               <div className="flex min-w-0 flex-wrap items-center gap-2">
+               <Card
+                variant="subtle"
+                padding="sm"
+                className="flex min-w-0 flex-wrap items-center gap-2"
+               >
                 {translationSegments.length > 0 ? (
                  <Button
                   type="button"
                   size="compact"
-                  variant="ghost"
+                  variant="outline"
                   title={t("practice.translation.description")}
                   onClick={() => onActiveViewChange("translation")}
                  >
@@ -1797,7 +2146,7 @@ function BusinessChineseStudyWorkspaceContent({
                  <Button
                   type="button"
                   size="compact"
-                  variant="ghost"
+                  variant="outline"
                   title={t("practice.dictation.description")}
                   onClick={() => onActiveViewChange("dictation")}
                  >
@@ -1806,7 +2155,7 @@ function BusinessChineseStudyWorkspaceContent({
                   })}
                  </Button>
                 ) : null}
-               </div>
+               </Card>
               ) : null}
               {visibleSections.map((section, index) => {
                const content = (

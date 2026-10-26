@@ -79,6 +79,156 @@ export function splitBusinessChineseExercise(text: string) {
  };
 }
 
+export function splitPipePhraseDrill(text: string): string[] {
+ if (text.includes("→") || (text.match(/\|/g) ?? []).length < 2) return [];
+ const phrases = text
+  .split("|")
+  .map((part) => part.trim())
+  .filter(Boolean)
+  .flatMap((part) =>
+   /^[\p{Script=Han}]{2,}(?:\s+[\p{Script=Han}]{2,})+$/u.test(part) ? part.split(/\s+/u) : [part],
+  );
+ return phrases.length >= 3 ? phrases : [];
+}
+
+export function pairPracticeBlankAnswers(
+ blocks: readonly TextbookLesson["sections"][number]["blocks"][number][],
+): { pairedAnswers: ReadonlyMap<string, string>; consumedAnswerBlockIds: ReadonlySet<string> } {
+ const pairedAnswers = new Map<string, string>();
+ const consumedAnswerBlockIds = new Set<string>();
+ blocks.forEach((block, index) => {
+  if (block.type !== "paragraph") return;
+  const match = block.text.match(/^(?:Gợi ý đáp án|Đáp án|参考答案)\s*[:：]?\s*→\s*([\s\S]+)$/iu);
+  if (!match) return;
+  const lines = match[1]
+   .split(/\n/u)
+   .map((line) => line.trim())
+   .filter(Boolean);
+  const precedingBlankBlocks: TextbookLesson["sections"][number]["blocks"] = [];
+  for (let previousIndex = index - 1; previousIndex >= 0; previousIndex -= 1) {
+   const previous = blocks[previousIndex];
+   if (previous.type !== "paragraph" || previous.text.includes("→")) break;
+   if (/[_＿]{3,}/u.test(previous.text)) precedingBlankBlocks.unshift(previous);
+  }
+  if (precedingBlankBlocks.length === 0 || precedingBlankBlocks.length !== lines.length) return;
+  precedingBlankBlocks.forEach((prompt, lineIndex) =>
+   pairedAnswers.set(prompt.id, lines[lineIndex]),
+  );
+  consumedAnswerBlockIds.add(block.id);
+ });
+ return { pairedAnswers, consumedAnswerBlockIds };
+}
+
+export type ParsedPracticeChoice = {
+ key: string;
+ text: string;
+};
+
+export type ParsedPracticeExerciseItem = {
+ prompt: string;
+ displayPrompt: string;
+ answer: string;
+ keywordHint: string;
+ baseWord: string;
+ hasBlank: boolean;
+ reorderTokens: readonly string[];
+ choices: readonly ParsedPracticeChoice[];
+ correctChoice: string;
+};
+
+export function parsePracticeExerciseItem(
+ promptText: string,
+ answerText: string,
+): ParsedPracticeExerciseItem {
+ let cleanAnswer = answerText;
+ let displayPrompt = promptText;
+ let keywordHint = "";
+ const answerHint = answerText.match(
+  /^[(（]([^()（）]+)[)）]\s*(?:Đáp án|Gợi ý đáp án)\s*[:：]\s*([\s\S]+)$/iu,
+ );
+ if (answerHint) {
+  keywordHint = answerHint[1].trim();
+  cleanAnswer = answerHint[2].trim();
+ }
+ const promptHint = promptText.match(/\s+[(（]([\p{Script=Han}….\s、/]+)[)）]$/u);
+ if (promptHint) {
+  if (!keywordHint) keywordHint = promptHint[1].trim();
+  displayPrompt = promptText.slice(0, promptHint.index).trim();
+ }
+ const baseWord = displayPrompt.match(/^([\p{Script=Han}]{1,4})\s*[_＿]{3,}$/u)?.[1] ?? "";
+ const choices: ParsedPracticeChoice[] = [];
+ let correctChoice = "";
+ const choiceMatch = displayPrompt.match(
+  /^([\s\S]*?)\s+A[.．、]\s*([\s\S]+?)\s+B[.．、]\s*([\s\S]+?)\s+C[.．、]\s*([\s\S]+?)(?:\s+D[.．、]\s*([\s\S]+?))?$/u,
+ );
+ const choiceAnswer = cleanAnswer.match(/^(?:Đáp án|正确答案)\s*[:：]?\s*([A-D])\b/iu);
+ if (choiceMatch && choiceAnswer) {
+  displayPrompt = choiceMatch[1].trim();
+  ["A", "B", "C", "D"].forEach((key, index) => {
+   const text = choiceMatch[index + 2]?.trim();
+   if (text) choices.push({ key, text });
+  });
+  correctChoice = choiceAnswer[1].toUpperCase();
+ }
+ const reorderTokens =
+  (displayPrompt.match(/\//gu) ?? []).length >= 3
+   ? displayPrompt
+      .split("/")
+      .map((token) => token.trim())
+      .filter(Boolean)
+   : [];
+ return {
+  prompt: promptText,
+  displayPrompt,
+  answer: cleanAnswer,
+  keywordHint,
+  baseWord,
+  hasBlank: /[_＿]{3,}/u.test(displayPrompt),
+  reorderTokens,
+  choices,
+  correctChoice,
+ };
+}
+
+export type PracticeAnswerEvaluation = {
+ isAnswered: boolean;
+ isExactMatch: boolean;
+ isKeywordMatch: boolean;
+};
+
+export function evaluatePracticeAnswer(
+ userAnswer: string,
+ item: ParsedPracticeExerciseItem,
+): PracticeAnswerEvaluation {
+ const punctuation = /[，。！？；：、“”‘’（）().,!?;:'"\s…—_＿-]/gu;
+ const normalizedAnswer = userAnswer.replace(punctuation, "");
+ if (!normalizedAnswer) return { isAnswered: false, isExactMatch: false, isKeywordMatch: false };
+ const candidates = item.answer.split(/[\/\n]+/u).map((answer) =>
+  answer
+   .trim()
+   .replace(/^(?:Đáp án|Gợi ý đáp án|参考答案)\s*[:：]?\s*/iu, "")
+   .replace(/^\(\d+\)\s*/u, "")
+   .replace(punctuation, ""),
+ );
+ const withBaseWord = `${item.baseWord}${userAnswer}`.replace(punctuation, "");
+ if (
+  candidates.some(
+   (answer) => answer === normalizedAnswer || (item.baseWord && answer === withBaseWord),
+  )
+ ) {
+  return { isAnswered: true, isExactMatch: true, isKeywordMatch: false };
+ }
+ const keywords = item.keywordHint.match(/[\p{Script=Han}]+/gu) ?? [];
+ return {
+  isAnswered: true,
+  isExactMatch: false,
+  isKeywordMatch:
+   keywords.length > 0 &&
+   keywords.every((keyword) => userAnswer.includes(keyword)) &&
+   userAnswer.trim().length > item.keywordHint.length,
+ };
+}
+
 export function splitBusinessChineseGrammarExample(text: string) {
  const source = text.trim();
  if (source.includes("→")) {

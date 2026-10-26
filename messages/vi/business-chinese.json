@@ -48,6 +48,17 @@
  "bookmarked": "Đã đánh dấu",
  "utilities": "Tiện ích",
  "practice": {
+  "inputPlaceholder": "Nhập câu trả lời tiếng Trung...",
+  "checkAnswer": "Kiểm tra",
+  "resetAnswer": "Làm lại",
+  "keywordHint": "Từ gợi ý: {keyword}",
+  "trueChoice": "Đúng (Đ)",
+  "falseChoice": "Sai (S)",
+  "feedback": {
+   "correct": "Chính xác! Khớp với đáp án mẫu.",
+   "keywordMatch": "Hợp lệ! Đã dùng đúng từ gợi ý — hãy đối chiếu đáp án mẫu.",
+   "incorrect": "Chưa khớp đáp án mẫu. Hãy thử lại hoặc mở đáp án."
+  },
   "translation": {
    "description": "Luyện dịch hai chiều câu và đoạn văn của bài này.",
    "open": "Mở Luyện dịch ({count} đoạn)"
