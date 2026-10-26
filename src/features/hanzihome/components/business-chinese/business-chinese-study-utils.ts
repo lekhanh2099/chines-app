@@ -5,6 +5,7 @@ import type { ReaderAnnotation } from "@/features/reader/runtime/reader-services
 import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
 import { analyzeContextualPronunciation } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import type { DictationSource } from "@/features/hanzihome/practice/translation-practice";
+import { splitTrailingTranslation } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
 
 const nonChineseTextPattern = /[^\p{Script=Han}\p{Number}\p{Punctuation}\p{Separator}\p{Symbol}]/gu;
 
@@ -203,17 +204,30 @@ export function evaluatePracticeAnswer(
  const punctuation = /[，。！？；：、“”‘’（）().,!?;:'"\s…—_＿-]/gu;
  const normalizedAnswer = userAnswer.replace(punctuation, "");
  if (!normalizedAnswer) return { isAnswered: false, isExactMatch: false, isKeywordMatch: false };
- const candidates = item.answer.split(/[\/\n]+/u).map((answer) =>
-  answer
-   .trim()
-   .replace(/^(?:Đáp án|Gợi ý đáp án|参考答案)\s*[:：]?\s*/iu, "")
-   .replace(/^\(\d+\)\s*/u, "")
-   .replace(punctuation, ""),
- );
+ const candidates = item.answer
+  .split(/\n+/u)
+  .flatMap((answer) => splitTrailingTranslation(answer).source.split(/\/+/u))
+  .map((answer) =>
+   answer
+    .trim()
+    .replace(/^(?:Đáp án|Gợi ý đáp án|参考答案)\s*[:：]?\s*/iu, "")
+    .replace(/^\(\d+\)\s*/u, "")
+    .replace(punctuation, ""),
+  );
  const withBaseWord = `${item.baseWord}${userAnswer}`.replace(punctuation, "");
+ const completedPrompt =
+  (item.displayPrompt.match(/[_＿]{3,}/gu) ?? []).length === 1
+   ? item.displayPrompt
+      .replace(/[_＿]{3,}/u, () => userAnswer)
+      .replace(/^\(\d+\)\s*/u, "")
+      .replace(punctuation, "")
+   : "";
  if (
   candidates.some(
-   (answer) => answer === normalizedAnswer || (item.baseWord && answer === withBaseWord),
+   (answer) =>
+    answer === normalizedAnswer ||
+    (item.baseWord && answer === withBaseWord) ||
+    (completedPrompt.length > 0 && answer === completedPrompt),
   )
  ) {
   return { isAnswered: true, isExactMatch: true, isKeywordMatch: false };

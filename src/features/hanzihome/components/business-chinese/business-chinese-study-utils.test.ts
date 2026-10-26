@@ -209,6 +209,76 @@ describe("Business Chinese study policies", () => {
   );
  });
 
+ it.each([
+  {
+   lesson: getTextbookLesson("tm3", 10),
+   id: "business-chinese-tm3-lesson-10-section-12-block-026",
+   sentence: "下班时间刚到，他就收拾东西走了。",
+   completion: "就收拾东西走了",
+  },
+  {
+   lesson: getTextbookLesson("tm3", 1),
+   id: "business-chinese-tm3-lesson-01-section-13-block-021",
+   sentence: "只要办了银行卡，就可以不用到银行排队存取款了。",
+   completion: "只要办了银行卡",
+  },
+  {
+   lesson: getTextbookLesson("tm3", 2),
+   id: "business-chinese-tm3-lesson-02-section-08-block-006",
+   sentence: "今年房价非常高，一些地段的房价高达每平方米3万元。",
+   completion: "高达每平方米3万元",
+  },
+ ])(
+  "accepts Chinese answers without the source translation for $id",
+  ({ lesson, id, sentence, completion }) => {
+   const block = lesson?.sections
+    .flatMap((section) => section.blocks)
+    .find((item) => item.id === id);
+   if (!block) throw new Error("Expected the source bilingual completion exercise.");
+   const sourceText = block.text;
+   const exercise = splitBusinessChineseExercise(block.text);
+   const item = parsePracticeExerciseItem(exercise.prompt, exercise.answer);
+   expect(evaluatePracticeAnswer(sentence, item).isExactMatch).toBe(true);
+   expect(evaluatePracticeAnswer(completion, item).isExactMatch).toBe(true);
+   expect(evaluatePracticeAnswer("错误的回答", item).isExactMatch).toBe(false);
+   expect(evaluatePracticeAnswer("Vừa đến giờ tan làm", item).isExactMatch).toBe(false);
+   expect(item.answer).toBe(exercise.answer);
+   expect(block.text).toBe(sourceText);
+  },
+ );
+
+ it("preserves Chinese parenthetical content and bilingual newline alternatives", () => {
+  const item = parsePracticeExerciseItem("___", "你好。 (Xin/chào.)\n再见。 (Tạm biệt.)");
+  expect(evaluatePracticeAnswer("你好", item).isExactMatch).toBe(true);
+  expect(evaluatePracticeAnswer("再见", item).isExactMatch).toBe(true);
+  expect(evaluatePracticeAnswer("Xin/chào", item).isExactMatch).toBe(false);
+  const chineseParenthetical = parsePracticeExerciseItem("___", "我们去 (明天)");
+  expect(evaluatePracticeAnswer("我们去", chineseParenthetical).isExactMatch).toBe(false);
+  expect(evaluatePracticeAnswer("我们去（明天）", chineseParenthetical).isExactMatch).toBe(true);
+ });
+
+ it("accepts the source reading gap or completed sentence without filling multiple gaps alike", () => {
+  const blocks = getTextbookLesson("doc-hieu", 2)?.sections.flatMap((section) => section.blocks);
+  const singleBlank = blocks?.find(
+   (item) => item.id === "doc-hieu-unit-02-article-01-practice-block-193",
+  );
+  const multipleBlanks = blocks?.find(
+   (item) => item.id === "doc-hieu-unit-02-article-01-practice-block-194",
+  );
+  if (!singleBlank || !multipleBlanks)
+   throw new Error("Expected the source reading blank exercises.");
+  const singleExercise = splitBusinessChineseExercise(singleBlank.text);
+  const singleItem = parsePracticeExerciseItem(singleExercise.prompt, singleExercise.answer);
+  expect(evaluatePracticeAnswer("超市", singleItem).isExactMatch).toBe(true);
+  expect(evaluatePracticeAnswer("她去超市给公婆买礼物。", singleItem).isExactMatch).toBe(true);
+  expect(evaluatePracticeAnswer("商店", singleItem).isExactMatch).toBe(false);
+  expect(evaluatePracticeAnswer("", singleItem).isAnswered).toBe(false);
+  const multipleExercise = splitBusinessChineseExercise(multipleBlanks.text);
+  const multipleItem = parsePracticeExerciseItem(multipleExercise.prompt, multipleExercise.answer);
+  expect(evaluatePracticeAnswer(multipleExercise.answer, multipleItem).isExactMatch).toBe(true);
+  expect(evaluatePracticeAnswer("一身", multipleItem).isExactMatch).toBe(false);
+ });
+
  it.each([1, 2])(
   "parses source multiple-choice questions in lesson %i with three or four options",
   (number) => {
