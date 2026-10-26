@@ -115,7 +115,8 @@ describe("standalone Reader facade", () => {
   expect(firstArticle.slice(0, firstArticle.indexOf(">"))).toContain("bg-surface-muted");
   expect(firstArticle).toContain("Xin chào.");
   expect(firstArticle).not.toContain("Tạm biệt.");
-  expect(firstArticle.replace(/<[^>]*>/g, "")).toContain("你好。");
+  const firstText = Array.from(firstArticle.matchAll(/>([^<>]*)</g), (match) => match[1]).join("");
+  expect(firstText).toContain("你好。");
   expect(secondArticle).toContain('data-reader-segment="second"');
   expect(secondArticle).toContain('data-active="false"');
   expect(secondArticle).not.toContain('aria-current="true"');
@@ -123,7 +124,10 @@ describe("standalone Reader facade", () => {
   expect(secondArticle.slice(0, secondArticle.indexOf(">"))).not.toContain("bg-surface-muted");
   expect(secondArticle).toContain("Tạm biệt.");
   expect(secondArticle).not.toContain("Xin chào.");
-  expect(secondArticle.replace(/<[^>]*>/g, "")).toContain("再见。");
+  const secondText = Array.from(secondArticle.matchAll(/>([^<>]*)</g), (match) => match[1]).join(
+   "",
+  );
+  expect(secondText).toContain("再见。");
   for (const article of articles) {
    expect(article.match(/data-slot="card"/g)).toHaveLength(1);
    expect(

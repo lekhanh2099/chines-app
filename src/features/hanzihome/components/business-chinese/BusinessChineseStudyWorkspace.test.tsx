@@ -275,9 +275,8 @@ describe("BusinessChineseStudyWorkspace", () => {
    );
 
    expect(markup.includes('data-textbook-formula="true"')).toBe(true);
-   expect(markup.replace(/<[^>]*>/g, "").includes("Chủ ngữ + 轻易 + Động từ + (Tân ngữ)")).toBe(
-    true,
-   );
+   const textContent = Array.from(markup.matchAll(/>([^<>]*)</g), (match) => match[1]).join("");
+   expect(textContent).toContain("Chủ ngữ + 轻易 + Động từ + (Tân ngữ)");
    expect(markup.includes('lang="vi">Tân ngữ</p>')).toBe(false);
    expect(markup).toContain(`id="${formula.id}"`);
    expect(markup).toContain('aria-label="Đọc tiếng Trung: 轻易"');
@@ -342,9 +341,8 @@ describe("BusinessChineseStudyWorkspace", () => {
   const positions = blocks.map((block) => markup.indexOf(`data-textbook-block="${block.id}"`));
 
   expect(markup.includes("Lưu ý:")).toBe(true);
-  expect(
-   markup.replace(/<[^>]*>/g, "").includes("là cấu trúc cố định, biểu thị sự chất vấn."),
-  ).toBe(true);
+  const textContent = Array.from(markup.matchAll(/>([^<>]*)</g), (match) => match[1]).join("");
+  expect(textContent).toContain("là cấu trúc cố định, biểu thị sự chất vấn.");
   expect(positions.every((position) => position >= 0)).toBe(true);
   expect(positions).toEqual([...positions].sort((left, right) => left - right));
  });
