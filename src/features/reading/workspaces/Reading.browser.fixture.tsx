@@ -19,7 +19,11 @@ import {
  getTextbookLesson,
  type TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
-import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
+import {
+ defaultTextbookDisplaySettings,
+ emptyLearningState,
+} from "@/features/hanzihome/utils/learning-state";
+import type { LessonTextDisplaySettings } from "@/features/hanzihome/types";
 import { buildTextbookHref } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
 import type { useLearningState as actualUseLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
@@ -34,7 +38,7 @@ import {
 import { createRoot } from "react-dom/client";
 import { NextIntlClientProvider } from "next-intl";
 import { loadAppMessages } from "@/i18n/messages";
-import type { AppLocale } from "@/i18n/config";
+import { appLocales, defaultAppLocale, type AppLocale } from "@/i18n/config";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { HanziTypographyPreferenceBridge } from "@/features/hanzihome/typography/HanziTypographyPreferenceBridge";
 import type { ReaderSpeechService } from "@/features/reader/runtime/reader-speech";
@@ -318,20 +322,61 @@ const harness = {
   bookKey: TextbookLesson["bookKey"] = "doc-hieu",
   locale: AppLocale = "vi",
   view = "practice",
+  displaySettings: Partial<LessonTextDisplaySettings> = {},
+  preview = false,
+  lessonNumber = 1,
  ) {
-  const lesson = getTextbookLesson(bookKey, 1);
+  const lesson = getTextbookLesson(bookKey, lessonNumber);
   if (!lesson) throw new Error("Missing textbook lesson");
+  if (preview) {
+   const book = getTextbookCatalog().find((item) => item.key === bookKey);
+   if (!book) throw new Error("Missing textbook book");
+   container.removeAttribute("data-app-scroll-viewport");
+   container.className = "h-screen overflow-hidden";
+   learningLoading = false;
+   learningError = false;
+   learningState = {
+    ...emptyLearningState,
+    settings: {
+     bookDisplayModes: {
+      [`static:${book.id}`]: { ...defaultTextbookDisplaySettings, ...displaySettings },
+     },
+    },
+   };
+   listeners.forEach((listener) => listener());
+  }
   const messages = await loadAppMessages(locale);
-  window.history.replaceState(null, "", `${buildTextbookHref(bookKey, 1)}&tab=${view}`);
+  window.history.replaceState(null, "", `${buildTextbookHref(bookKey, lesson.number)}&tab=${view}`);
+  const workspace = (
+   <BusinessChineseStudyWorkspace
+    key={`${lesson.id}:${locale}:${view}`}
+    books={getTextbookCatalog()}
+    lesson={lesson}
+   />
+  );
   root.render(
    <StrictMode>
     <QueryClientProvider client={queryClient}>
      <NextIntlClientProvider locale={locale} messages={messages}>
-      <BusinessChineseStudyWorkspace
-       key={`${bookKey}:${locale}:${view}`}
-       books={getTextbookCatalog()}
-       lesson={lesson}
-      />
+      {preview ? (
+       <ThemeProvider>
+        <TooltipProvider>
+         <div className="app-shell flex h-dvh w-full min-w-0 items-stretch overflow-hidden bg-background text-foreground">
+          <HanziTypographyPreferenceBridge />
+          <Sidebar canManageContent={false} />
+          <div className="flex h-dvh min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+           <Header />
+           <AppScrollViewport className="page-shell nova-page scrollbar-soft">
+            {workspace}
+           </AppScrollViewport>
+           <MobileBottomNavigation canManageContent={false} />
+          </div>
+         </div>
+        </TooltipProvider>
+       </ThemeProvider>
+      ) : (
+       workspace
+      )}
      </NextIntlClientProvider>
     </QueryClientProvider>
    </StrictMode>,
@@ -465,3 +510,32 @@ declare global {
  }
 }
 window.readingHarness = harness;
+
+const previewParams = new URLSearchParams(window.location.search);
+const previewView = previewParams.get("preview");
+if (previewView === "grammar" || previewView === "practice" || previewView === "text") {
+ const previewBook = getTextbookCatalog().find(
+  (book) => book.key === (previewParams.get("book") ?? "nhip-cau"),
+ );
+ const previewLesson = previewBook?.lessons.find(
+  (lesson) => String(lesson.number) === previewParams.get("lesson"),
+ );
+ const previewLocale =
+  appLocales.find((locale) => locale === previewParams.get("locale")) ?? defaultAppLocale;
+ const displaySettings: Partial<LessonTextDisplaySettings> = {};
+ if (previewParams.get("reveal") === "tap") displaySettings.revealMode = "tap";
+ if (previewParams.has("showPinyin")) {
+  displaySettings.showPinyin = previewParams.get("showPinyin") !== "false";
+ }
+ if (previewParams.has("showMeaning")) {
+  displaySettings.showMeaning = previewParams.get("showMeaning") !== "false";
+ }
+ void harness.mountBusiness(
+  previewBook?.key ?? "nhip-cau",
+  previewLocale,
+  previewView,
+  displaySettings,
+  true,
+  previewLesson?.number ?? 1,
+ );
+}

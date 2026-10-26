@@ -237,7 +237,7 @@ export function ContextualReaderText({
     >
      {grapheme.segment}
     </span>
-    <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
+    <rt className="select-none font-pinyin text-[0.45em] font-medium text-text-secondary">
      {pinyinInteractive ? (
       <span
        className={cn(pinyinClassName, needsPronunciationReview && "text-warning")}
@@ -276,7 +276,7 @@ export function ContextualReaderText({
   return (
    <ruby key={unit.id} className="whitespace-nowrap">
     {unitGraphemes.map((grapheme) => renderGrapheme(grapheme, graphemes.indexOf(grapheme), false))}
-    <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
+    <rt className="select-none font-pinyin text-[0.45em] font-medium text-text-secondary">
      {unitGraphemes.map((grapheme) => {
       const glyph = glyphByStart.get(grapheme.index);
       if (glyph === undefined) return null;

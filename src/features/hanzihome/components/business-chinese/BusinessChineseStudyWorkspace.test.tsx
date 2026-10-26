@@ -19,6 +19,8 @@ import {
  getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { appLocales } from "@/i18n/config";
+import { loadAppMessages } from "@/i18n/messages";
 
 const routerPushMock = vi.hoisted(() => vi.fn());
 const readerDocumentMock = vi.hoisted(() => vi.fn<(document: ReaderDocumentModel) => void>());
@@ -150,8 +152,9 @@ describe("BusinessChineseStudyWorkspace", () => {
   }
   expect(markup).toContain('aria-label="Đọc tiếng Trung: 他从来不浪费粮食"');
   expect(markup.replace(/<[^>]*>/g, "")).toContain("Anh ấy chưa bao giờ lãng phí lương thực.");
-  expect(markup).toContain("2xl:grid-cols-2");
+  expect(markup).not.toContain("2xl:grid-cols-2");
   expect(markup).not.toContain("max-w-4xl");
+  expect(markup).not.toContain("max-w-5xl");
  });
 
  it.each([true, false])("applies grammar reader size and pinyin visibility (%s)", (showPinyin) => {
@@ -216,6 +219,311 @@ describe("BusinessChineseStudyWorkspace", () => {
   },
  );
 
+ it.each(getTextbookCatalog())(
+  "renders $label source content in one full-width vertical document",
+  (book) => {
+   const lesson = getTextbookLesson(book.key, 1);
+   const section =
+    lesson?.sections.find((item) => item.category === "grammar") ??
+    lesson?.sections.find((item) => item.category === "practice");
+   if (!lesson || !section) throw new Error(`Expected source content for ${book.key}.`);
+   const blocks = section.blocks.slice(0, 5);
+   mockParams = new URLSearchParams(`lesson=1&tab=${section.category}`);
+
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={getTextbookCatalog()}
+     lesson={{ ...lesson, sections: [{ ...section, blocks }] }}
+    />,
+   );
+   const textBlocks = blocks.filter(
+    (block) => block.type !== "table" && !block.image && !block.text.includes("→"),
+   );
+   const positions = textBlocks.map((block) => markup.indexOf(`data-textbook-block="${block.id}"`));
+
+   expect(markup.match(/data-textbook-document/g)).toHaveLength(1);
+   expect(positions.every((position) => position >= 0)).toBe(true);
+   expect(positions).toEqual([...positions].sort((left, right) => left - right));
+   expect(markup.includes("2xl:grid-cols-2")).toBe(false);
+   expect(markup.includes("max-w-4xl")).toBe(false);
+   expect(markup.includes("max-w-5xl")).toBe(false);
+  },
+ );
+
+ it.each([true, false])(
+  "keeps the optional grammar object inline in the formula with meanings %s",
+  (showMeaning) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "nhip-cau");
+   const lesson = getTextbookLesson("nhip-cau", 1);
+   const section = lesson?.sections.find((item) => item.category === "grammar");
+   const formula = section?.blocks.find((block) => block.id === "nhip-cau-lesson-01-source-395");
+   if (!book || !lesson || !section || !formula)
+    throw new Error("Expected the original 轻易 formula with its optional object.");
+   mockParams = new URLSearchParams("lesson=1&tab=grammar");
+   mockSettings = {
+    bookDisplayModes: {
+     [`static:${book.id}`]: { ...DEFAULT_LESSON_DISPLAY_MODE, showPinyin: false, showMeaning },
+    },
+   };
+
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={books}
+     lesson={{ ...lesson, sections: [{ ...section, blocks: [formula] }] }}
+    />,
+   );
+
+   expect(markup.includes('data-textbook-formula="true"')).toBe(true);
+   const textContent = Array.from(markup.matchAll(/>([^<>]*)</g), (match) => match[1]).join("");
+   expect(textContent).toContain("Chủ ngữ + 轻易 + Động từ + (Tân ngữ)");
+   expect(markup.includes('lang="vi">Tân ngữ</p>')).toBe(false);
+   expect(markup).toContain(`id="${formula.id}"`);
+   expect(markup).toContain('aria-label="Đọc tiếng Trung: 轻易"');
+  },
+ );
+
+ it("keeps later grammar meanings after their original examples in a frameless document flow", () => {
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  const section = lesson?.sections.find((item) => item.category === "grammar");
+  if (!lesson || !section) throw new Error("Expected the original 轻易 grammar point.");
+  const blocks = section.blocks.slice(0, 12);
+  mockParams = new URLSearchParams("lesson=1&tab=grammar");
+
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{ ...lesson, sections: [{ ...section, blocks }] }}
+   />,
+  );
+  const documentMarkup = markup.slice(markup.indexOf("data-textbook-document"));
+  const positions = blocks.map((block) => markup.indexOf(`data-textbook-block="${block.id}"`));
+
+  expect(markup.includes("data-textbook-document")).toBe(true);
+  expect(documentMarkup.includes('data-slot="card"')).toBe(false);
+  for (const block of blocks) {
+   expect(markup.split(`data-textbook-block="${block.id}"`)).toHaveLength(2);
+   expect(markup).toContain(`id="${block.id}"`);
+  }
+  expect(positions.every((position) => position >= 0)).toBe(true);
+  expect(positions).toEqual([...positions].sort((left, right) => left - right));
+  expect(markup.includes("Ý nghĩa 2:")).toBe(true);
+ });
+
+ it("preserves the source grammar note after its examples when translations are hidden", () => {
+  const books = getTextbookCatalog();
+  const book = books.find((item) => item.key === "nhip-cau");
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  const section = lesson?.sections.find((item) => item.category === "grammar");
+  if (!book || !lesson || !section) throw new Error("Expected Nhịp cầu grammar source.");
+  const noteIndex = section.blocks.findIndex(
+   (block) => block.id === "nhip-cau-lesson-01-source-463",
+  );
+  if (noteIndex < 2) throw new Error("Expected the original 凭 note and its preceding examples.");
+  const blocks = section.blocks.slice(noteIndex - 2, noteIndex + 1);
+  mockParams = new URLSearchParams("lesson=1&tab=grammar");
+  mockSettings = {
+   bookDisplayModes: {
+    [`static:${book.id}`]: {
+     ...DEFAULT_LESSON_DISPLAY_MODE,
+     showPinyin: false,
+     showMeaning: false,
+    },
+   },
+  };
+
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={books}
+    lesson={{ ...lesson, sections: [{ ...section, blocks }] }}
+   />,
+  );
+  const positions = blocks.map((block) => markup.indexOf(`data-textbook-block="${block.id}"`));
+
+  expect(markup.includes("Lưu ý:")).toBe(true);
+  const textContent = Array.from(markup.matchAll(/>([^<>]*)</g), (match) => match[1]).join("");
+  expect(textContent).toContain("là cấu trúc cố định, biểu thị sự chất vấn.");
+  expect(positions.every((position) => position >= 0)).toBe(true);
+  expect(positions).toEqual([...positions].sort((left, right) => left - right));
+ });
+
+ it("keeps grammar headings compact while preserving the chosen learner font and example size", () => {
+  const books = getTextbookCatalog();
+  const book = books.find((item) => item.key === "nhip-cau");
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  const section = lesson?.sections.find((item) => item.category === "grammar");
+  const heading = section?.blocks[0];
+  const example = section?.blocks.find((block) => block.id === "nhip-cau-lesson-01-source-397");
+  if (!book || !lesson || !section || !heading || !example)
+   throw new Error("Expected the original grammar heading and example.");
+  mockParams = new URLSearchParams("lesson=1&tab=grammar");
+  mockSettings = {
+   bookDisplayModes: {
+    [`static:${book.id}`]: {
+     ...DEFAULT_LESSON_DISPLAY_MODE,
+     showPinyin: false,
+     hanziFont: "songti",
+     hanziSize: "3xl",
+    },
+   },
+  };
+
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={books}
+    lesson={{ ...lesson, sections: [{ ...section, blocks: [heading, example] }] }}
+   />,
+  );
+  const headingMarkup = markup
+   .split('data-textbook-block="')
+   .find((block) => block.startsWith(`${heading.id}"`));
+  const exampleMarkup = markup
+   .split('data-textbook-block="')
+   .find((block) => block.startsWith(`${example.id}"`));
+  if (!headingMarkup || !exampleMarkup) throw new Error("Expected both source blocks.");
+
+  expect(headingMarkup).toMatch(/<h2\b|role="heading" aria-level="2"/);
+  expect(headingMarkup).toContain("font-family:var(--font-reading-noto-serif)");
+  expect(headingMarkup).toContain("font-size:clamp(1.25rem, 3.5vw, 1.375rem)");
+  expect(headingMarkup.includes("font-size:clamp(1.75rem, 5vw, 2.625rem)")).toBe(false);
+  expect(exampleMarkup).toContain("font-family:var(--font-reading-noto-serif)");
+  expect(exampleMarkup).toContain("font-size:clamp(1.75rem, 5vw, 2.625rem)");
+ });
+
+ it.each(appLocales)("%s renders document guidance from its real locale bundle", async (locale) => {
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  const section = lesson?.sections.find((item) => item.category === "grammar");
+  const usage = section?.blocks.find((block) => block.id === "nhip-cau-lesson-01-source-391");
+  const example = section?.blocks.find((block) => block.id === "nhip-cau-lesson-01-source-397");
+  if (!lesson || !section || !usage || !example)
+   throw new Error("Expected the original explanation and example.");
+  mockParams = new URLSearchParams("lesson=1&tab=grammar");
+  const messages = await loadAppMessages(locale);
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <QueryClientProvider client={new QueryClient()}>
+     <BusinessChineseStudyWorkspace
+      books={getTextbookCatalog()}
+      lesson={{ ...lesson, sections: [{ ...section, blocks: [usage, example] }] }}
+     />
+    </QueryClientProvider>
+   </NextIntlClientProvider>,
+  );
+
+  expect(markup.includes(messages.BusinessChinese.content.explanation)).toBe(true);
+  expect(markup.includes(messages.BusinessChinese.content.examples)).toBe(true);
+  expect(markup.includes("Cách dùng:")).toBe(true);
+  expect(markup.includes("Lưu ý")).toBe(false);
+  expect(markup.includes("BusinessChinese.content.")).toBe(false);
+ });
+
+ it.each([
+  { showPinyin: true, showMeaning: true, autoDetectPinyin: true },
+  { showPinyin: false, showMeaning: true, autoDetectPinyin: true },
+  { showPinyin: true, showMeaning: false, autoDetectPinyin: true },
+  { showPinyin: false, showMeaning: false, autoDetectPinyin: true },
+  { showPinyin: false, showMeaning: false, autoDetectPinyin: false },
+ ])(
+  "starts grammar tap reveal in Hanzi with saved visibility $showPinyin/$showMeaning and automatic pinyin $autoDetectPinyin",
+  ({ showPinyin, showMeaning, autoDetectPinyin }) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "nhip-cau");
+   const lesson = getTextbookLesson("nhip-cau", 1);
+   const section = lesson?.sections.find((item) => item.category === "grammar");
+   const example = section?.blocks.find((block) => block.id === "nhip-cau-lesson-01-source-397");
+   if (!book || !lesson || !section || !example)
+    throw new Error("Expected the original 轻易 grammar example.");
+   mockParams = new URLSearchParams("lesson=1&tab=grammar");
+   mockSettings = {
+    bookDisplayModes: {
+     [`static:${book.id}`]: {
+      ...DEFAULT_LESSON_DISPLAY_MODE,
+      autoDetectPinyin,
+      showPinyin,
+      showMeaning,
+      hanziFont: "songti",
+      hanziSize: "lg",
+      revealMode: "tap",
+     },
+    },
+   };
+
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={books}
+     lesson={{ ...lesson, sections: [{ ...section, blocks: [example] }] }}
+    />,
+   );
+   const exampleMarkup = markup
+    .split('data-textbook-block="')
+    .find((block) => block.startsWith(`${example.id}"`));
+   if (!exampleMarkup) throw new Error("Expected the original grammar example block.");
+
+   expect(exampleMarkup.includes("<ruby")).toBe(false);
+   expect(exampleMarkup.includes("Bạn chưa hiểu rõ tình hình")).toBe(false);
+   expect(
+    exampleMarkup.includes('aria-label="Đọc tiếng Trung: 你不了解情况，不要轻易发表意见。"'),
+   ).toBe(true);
+   expect(exampleMarkup).toContain("font-family:var(--font-reading-noto-serif)");
+   expect(exampleMarkup).toContain("font-size:clamp(1.25rem, 3.5vw, 1.375rem)");
+   expect(exampleMarkup.includes(businessChineseMessages.actions.revealPinyin)).toBe(
+    autoDetectPinyin,
+   );
+   expect(exampleMarkup.includes(businessChineseMessages.actions.revealMeaning)).toBe(
+    !autoDetectPinyin,
+   );
+   expect(exampleMarkup).not.toContain(businessChineseMessages.actions.revealHanzi);
+  },
+ );
+
+ it.each([true, false])(
+  "starts numbered practice prompts in Hanzi and skips unavailable data with automatic pinyin %s",
+  (autoDetectPinyin) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "khau-ngu");
+   const lesson = getTextbookLesson("khau-ngu", 1);
+   const section = lesson?.sections.find((item) => item.category === "practice");
+   const prompt = section?.blocks.find((block) => block.id === "khau-ngu-lesson-01-en-p15-b03");
+   if (!book || !lesson || !section || !prompt)
+    throw new Error("Expected the original numbered practice prompt.");
+   mockParams = new URLSearchParams("lesson=1&tab=practice");
+   mockSettings = {
+    bookDisplayModes: {
+     [`static:${book.id}`]: {
+      ...DEFAULT_LESSON_DISPLAY_MODE,
+      autoDetectPinyin,
+      showPinyin: false,
+      showMeaning: false,
+      hanziFont: "songti",
+      hanziSize: "lg",
+      revealMode: "tap",
+     },
+    },
+   };
+
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={books}
+     lesson={{ ...lesson, sections: [{ ...section, blocks: [prompt] }] }}
+    />,
+   );
+   const promptMarkup = markup
+    .split('data-textbook-block="')
+    .find((block) => block.startsWith(`${prompt.id}"`));
+   if (!promptMarkup) throw new Error("Expected the numbered practice question block.");
+
+   expect(promptMarkup.includes("<ruby")).toBe(false);
+   expect(promptMarkup).toContain("font-family:var(--font-reading-noto-serif)");
+   expect(promptMarkup).toContain("font-size:clamp(1.25rem, 3.5vw, 1.375rem)");
+   expect(promptMarkup.includes(`aria-label="Đọc tiếng Trung: ${prompt.text}"`)).toBe(true);
+   expect(promptMarkup.includes(businessChineseMessages.actions.revealPinyin)).toBe(
+    autoDetectPinyin,
+   );
+   expect(promptMarkup).not.toContain(businessChineseMessages.actions.revealMeaning);
+   expect(promptMarkup).not.toContain(businessChineseMessages.actions.revealHanzi);
+  },
+ );
+
  it("preserves the complete narration in both lines of a quoted grammar example", () => {
   const lesson = getTextbookLesson("nhip-cau", 8);
   const section = lesson?.sections.find((item) => item.category === "grammar");
@@ -237,7 +545,7 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("Mọi người đều đang làm việc, làm sao tôi có thể nghỉ?");
  });
 
- it("keeps split source dialogue turns in the same practice question card and source order", () => {
+ it("keeps split source dialogue turns adjacent and ordered in the practice document", () => {
   const lesson = getTextbookLesson("khau-ngu", 1);
   const section = lesson?.sections.find((item) => item.category === "practice");
   if (!lesson || !section) throw new Error("Expected Khẩu ngữ lesson 1 practice.");
@@ -256,16 +564,10 @@ describe("BusinessChineseStudyWorkspace", () => {
     lesson={{ ...lesson, sections: [{ ...section, blocks: turns }] }}
    />,
   );
-  const cards = markup.split('data-slot="card"');
-  const firstQuestion = cards.find((card) => card.includes(`id="${firstA.id}"`));
-  const nextQuestion = cards.find((card) => card.includes(`id="${nextA.id}"`));
-  if (!firstQuestion || !nextQuestion) throw new Error("Expected both practice question cards.");
-
-  expect(firstQuestion).toContain(`id="${firstB.id}"`);
-  expect(firstQuestion).not.toContain(`id="${nextA.id}"`);
-  expect(firstQuestion).not.toContain(`id="${nextB.id}"`);
-  expect(nextQuestion).toContain(`id="${nextB.id}"`);
-  expect(nextQuestion).not.toContain(`id="${firstB.id}"`);
+  expect(markup.includes("data-textbook-document")).toBe(true);
+  for (const turn of turns) {
+   expect(markup.split(`data-textbook-block="${turn.id}"`)).toHaveLength(2);
+  }
   const positions = turns.map((block) => markup.indexOf(`id="${block.id}"`));
   expect(positions.every((position) => position >= 0)).toBe(true);
   expect(positions).toEqual([...positions].sort((left, right) => left - right));
@@ -309,9 +611,9 @@ describe("BusinessChineseStudyWorkspace", () => {
     markup.indexOf(`id="${firstA.id}"`),
    );
    const question = markup
-    .split('data-slot="card"')
-    .find((card) => card.includes(`id="${firstA.id}"`));
-   if (!question) throw new Error("Expected the practice question card.");
+    .split('data-textbook-block="')
+    .find((block) => block.startsWith(`${firstA.id}"`));
+   if (!question) throw new Error("Expected the practice question block.");
 
    expect(instructionMarkup).toMatch(/<h3\b|role="heading" aria-level="3"/);
    expect(instructionMarkup).not.toMatch(/<h2\b|role="heading" aria-level="2"/);
@@ -673,6 +975,9 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("Nghe bài");
   expect(markup).toContain("Công cụ học");
   expect(markup.includes(`aria-label="${businessChineseMessages.tabsLabel}"`)).toBe(true);
+  expect(markup).toContain(`role="tablist" aria-label="${businessChineseMessages.tabsLabel}"`);
+  expect(markup).toContain('role="tab" aria-selected="true"');
+  expect(markup).toContain('role="tabpanel"');
   expect(markup).not.toContain("lucide-panel-left-open");
   expect(markup).toContain("<ruby");
   expect(markup).toContain('lang="zh-CN"');
