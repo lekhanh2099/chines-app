@@ -26,6 +26,10 @@
   "grammar": "Ngữ pháp",
   "practice": "Bài tập"
  },
+ "content": {
+  "explanation": "Giải thích",
+  "examples": "Ví dụ"
+ },
  "actions": {
   "showPinyin": "Hiện pinyin",
   "hidePinyin": "Ẩn pinyin",

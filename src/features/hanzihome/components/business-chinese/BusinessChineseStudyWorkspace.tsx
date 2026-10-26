@@ -87,6 +87,10 @@ import { useReaderSelectionActions } from "@/features/reading/hooks/useReaderSel
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { useIsLessonCached } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 import { Reader } from "@/features/reader/components/Reader";
+import {
+ nextAvailableRevealStage,
+ type RevealStage,
+} from "@/features/reader/model/progressive-reveal";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
 import type { ReaderSurfacePronunciationTarget } from "@/features/reading/model/reading-interactions";
@@ -281,8 +285,13 @@ function BusinessChineseText({
   [pronunciationOverrides, sourcePinyin, text],
  );
  const contextualDisplayMode: LessonDisplayMode = useMemo(
-  () => (compactHanzi && !learnerContent ? { ...displayMode, hanziSize: "md" } : displayMode),
-  [compactHanzi, displayMode, learnerContent],
+  () =>
+   variant === "pageTitle" || variant === "sectionTitle" || variant === "cardTitle"
+    ? { ...displayMode, hanziSize: "lg" }
+    : compactHanzi && !learnerContent
+      ? { ...displayMode, hanziSize: "md" }
+      : displayMode,
+  [compactHanzi, displayMode, learnerContent, variant],
  );
  const canShowPinyin =
   Boolean(displayMode?.showPinyin) &&
@@ -370,7 +379,7 @@ function BusinessChineseText({
  ) : (
   <BusinessChineseMixedText
    analysis={analysis}
-   displayMode={displayMode}
+   displayMode={contextualDisplayMode}
    showPinyin={canShowPinyin}
    variant={variant}
    weight={weight}
@@ -469,8 +478,8 @@ function BusinessChineseMixedText({
       <rt className="select-none">
        <PinyinText
         as="span"
-        tone="accent"
-        weight="semibold"
+        tone="secondary"
+        weight="medium"
         scale={learnerContent ? "inherit" : "cloze"}
         className={cn(
          "cursor-pointer rounded-sm",
@@ -859,8 +868,12 @@ function BusinessChineseTextBlock({
   [propDisplayMode],
  );
  const t = useTranslations("BusinessChinese");
- const [revealStage, setRevealStage] = useState(0);
- const inlineText = splitTrailingTranslation(text);
+ const [revealStage, setRevealStage] = useState<RevealStage>(0);
+ const grammarFormula = grammar && /^(?:\d+[.．]\s*)?(?:Cấu trúc|Công thức):/u.test(text.trim());
+ // Optional formula operands are source text, not parenthesized translations.
+ const inlineText = grammarFormula
+  ? { source: text.trim(), translation: "" }
+  : splitTrailingTranslation(text);
  const grammarExample = grammar
   ? splitBusinessChineseGrammarExample(inlineText.source)
   : inlineText;
@@ -875,91 +888,142 @@ function BusinessChineseTextBlock({
   ? { speaker: "", content: resolvedTranslation }
   : splitDialogueTurn(resolvedTranslation);
  const progressiveReveal =
-  !compactHanzi && displayMode.revealMode === "tap" && containsHanziText(sourceTurn.content);
+  displayMode.revealMode === "tap" &&
+  containsHanziText(sourceTurn.content) &&
+  (!compactHanzi ||
+   ((grammar || practice) && variant === "body" && isChineseOnlyText(sourceTurn.content)));
  const speechSegments = getChineseSpeechSegments(sourceTurn.content);
+ const hasRevealPinyin = displayMode.autoDetectPinyin;
+ const hasRevealMeaning = Boolean(translationTurn.content);
+ const visibleRevealStage =
+  (revealStage === 1 && !hasRevealPinyin) || (revealStage === 2 && !hasRevealMeaning)
+   ? 0
+   : revealStage;
  const revealDisplayMode: LessonDisplayMode = useMemo(
-  () => ({ ...displayMode, showPinyin: revealStage >= 1 }),
-  [displayMode, revealStage],
+  () => ({ ...displayMode, showPinyin: hasRevealPinyin && visibleRevealStage === 1 }),
+  [displayMode, hasRevealPinyin, visibleRevealStage],
  );
- const nextRevealStage = revealStage >= (translationTurn.content ? 2 : 1) ? 0 : revealStage + 1;
+ const nextRevealStage = nextAvailableRevealStage(visibleRevealStage, {
+  hasPinyin: hasRevealPinyin,
+  hasMeaning: hasRevealMeaning,
+ });
  const revealLabel =
   nextRevealStage === 0
    ? t("actions.revealHanzi")
    : nextRevealStage === 1
      ? t("actions.revealPinyin")
      : t("actions.revealMeaning");
+ const inlineGrammarLabel =
+  grammar &&
+  !grammarFormula &&
+  /^(?:Cách dùng|Ý nghĩa(?: \d+)?|Lưu ý(?: khác| về vị trí)?|Các cụm(?: từ)? thường gặp)$/u.test(
+   sourceTurn.speaker,
+  );
 
  return (
   <div
    id={progressiveReveal ? pronunciationId : undefined}
-   className="grid min-w-0 scroll-mt-24 gap-1.5"
+   data-textbook-block={pronunciationId}
+   className={cn(
+    "grid min-w-0 scroll-mt-24 gap-1.5",
+    inlineGrammarLabel && "sm:grid-cols-[auto_minmax(0,1fr)] sm:items-baseline sm:gap-x-3",
+   )}
   >
    {sourceTurn.speaker ? (
     <HanziAwareText
      as="span"
-     text={sourceTurn.speaker}
-     variant="overline"
-     tone="muted"
-     weight="black"
-     tracking="wide"
-     transform="uppercase"
+     text={grammar ? `${sourceTurn.speaker}:` : sourceTurn.speaker}
+     variant={grammar ? "body" : "overline"}
+     tone={grammar ? "default" : "muted"}
+     weight={grammar ? "semibold" : "black"}
+     tracking={grammar ? "normal" : "wide"}
+     transform={grammar ? "none" : "uppercase"}
     />
    ) : null}
-   {progressiveReveal ? (
-    <div className="grid min-w-0 gap-1.5">
-     <div className="flex min-w-0 items-start gap-2">
-      <div className="min-w-0 flex-1">
-       {revealStage === 2 && translationTurn.content ? (
-        <TranslationText weight="medium" leading="relaxed" wrapping="preWrap">
-         {translationTurn.content}
-        </TranslationText>
-       ) : (
-        <BusinessChineseText
-         pronunciationId={pronunciationId}
-         text={sourceTurn.content}
-         displayMode={revealDisplayMode}
+   <div
+    data-textbook-formula={grammarFormula && variant === "body" ? "true" : undefined}
+    className={cn(
+     "min-w-0",
+     grammarFormula && variant === "body" && "rounded-lg bg-surface-muted/50 px-3 py-2",
+    )}
+   >
+    {progressiveReveal ? (
+     <div className="grid min-w-0 gap-1.5">
+      <div className="flex min-w-0 items-start gap-2">
+       <div className="min-w-0 flex-1">
+        {visibleRevealStage === 2 && hasRevealMeaning ? (
+         <TranslationText
+          weight={grammar ? "normal" : "medium"}
+          leading="relaxed"
+          wrapping="preWrap"
+         >
+          {translationTurn.content}
+         </TranslationText>
+        ) : (
+         <BusinessChineseText
+          pronunciationId={pronunciationId}
+          text={sourceTurn.content}
+          displayMode={revealDisplayMode}
+          compactHanzi={compactHanzi}
+          learnerContent={grammar || practice}
+          variant={variant}
+          weight={weight}
+         />
+        )}
+       </div>
+       {speechSegments.length > 0 ? (
+        <MandarinSpeakButton
+         text={speechSegments.join(" ")}
+         segments={speechSegments}
+         touchTarget
         />
-       )}
+       ) : null}
       </div>
-      {speechSegments.length > 0 ? (
-       <MandarinSpeakButton text={speechSegments.join(" ")} segments={speechSegments} touchTarget />
+      {nextRevealStage !== visibleRevealStage ? (
+       <Button
+        type="button"
+        variant="ghost"
+        size="compact"
+        align="start"
+        className="justify-self-start"
+        onClick={() => setRevealStage(nextRevealStage)}
+       >
+        {revealLabel}
+       </Button>
       ) : null}
      </div>
-     <Button
-      type="button"
-      variant="ghost"
-      size="compact"
-      align="start"
-      className="justify-self-start"
-      onClick={() => setRevealStage(nextRevealStage)}
-     >
-      {revealLabel}
-     </Button>
-    </div>
-   ) : (
-    <SpeakableBusinessChineseText
-     pronunciationId={pronunciationId}
-     text={sourceTurn.content}
-     displayMode={displayMode}
-     compactHanzi={compactHanzi}
-     variant={variant}
-     weight={weight}
-     learnerContent={grammar || practice}
-    />
-   )}
+    ) : (
+     <SpeakableBusinessChineseText
+      pronunciationId={pronunciationId}
+      text={sourceTurn.content}
+      displayMode={displayMode}
+      compactHanzi={compactHanzi}
+      variant={variant}
+      weight={weight}
+      learnerContent={grammar || practice}
+     />
+    )}
+   </div>
    {!progressiveReveal && translationTurn.content && displayMode.showMeaning ? (
     <TranslationText
      variant={variant === "body" ? "body" : "bodySmall"}
      tone={grammar ? "secondary" : "muted"}
-     weight="medium"
+     weight={grammar ? "normal" : "medium"}
      leading="relaxed"
      wrapping="preWrap"
+     className={inlineGrammarLabel ? "sm:col-span-2" : undefined}
     >
      {translationTurn.content}
     </TranslationText>
    ) : null}
-   {grammarNote && displayMode.showMeaning ? (
-    <TranslationText tone="muted" leading="relaxed" wrapping="preWrap">
+   {grammarNote && (progressiveReveal ? visibleRevealStage === 2 : displayMode.showMeaning) ? (
+    <TranslationText
+     tone="muted"
+     weight="normal"
+     leading="relaxed"
+     wrapping="preWrap"
+     className={inlineGrammarLabel ? "sm:col-span-2" : undefined}
+    >
      {grammarNote}
     </TranslationText>
    ) : null}
@@ -980,6 +1044,7 @@ function BusinessChineseSection({
  canonicalVocabularyTableIds: readonly string[];
  vocabularyPreview?: ReactNode;
 }) {
+ const t = useTranslations("BusinessChinese");
  const visibleBlocks = businessChineseVisibleBlocks(section, canonicalVocabularyTableIds);
  const sectionDisplayMode: LessonDisplayMode =
   section.category === "vocab" ? { ...displayMode, revealMode: "always" } : displayMode;
@@ -1022,22 +1087,24 @@ function BusinessChineseSection({
      />
     </header>
    ) : null}
-   <div className={cn("grid min-w-0 gap-4", learnerContent && "2xl:grid-cols-2")}>
+   <div className="grid min-w-0 gap-4">
     {vocabularyPreview}
-    {blockGroups.map((blocks) => {
+    {blockGroups.map((blocks, groupIndex) => {
      const first = blocks[0];
      if (!first) return null;
+     const previous = blockGroups[groupIndex - 1]?.[0];
      const grammarExample =
       section.category === "grammar" &&
       first.type === "paragraph" &&
       Boolean(
        splitBusinessChineseGrammarExample(splitTrailingTranslation(first.text).source).translation,
       );
-     const practiceQuestion =
-      section.category === "practice" &&
-      first.type === "paragraph" &&
-      !first.image &&
-      (first.text.includes("→") || numberedPracticeItem.test(first.text.trim()));
+     const previousGrammarExample =
+      previous?.type === "paragraph" &&
+      Boolean(
+       splitBusinessChineseGrammarExample(splitTrailingTranslation(previous.text).source)
+        .translation,
+      );
      const content = blocks.map((block) => {
       if (block.image) {
        return (
@@ -1094,37 +1161,33 @@ function BusinessChineseSection({
       }
       return (
        <BusinessChineseTextBlock
-        key={block.id}
+        key={learnerContent ? `${block.id}:${sectionDisplayMode.revealMode}` : block.id}
         pronunciationId={block.id}
         text={block.text}
         translation={block.translation ?? translations.get(block.id)}
         displayMode={sectionDisplayMode}
         compactHanzi={section.category !== "text" && section.category !== "vocab"}
         variant={section.category === "vocab" || learnerContent ? "body" : "bodySmall"}
+        weight={section.category === "grammar" ? "normal" : undefined}
         grammar={section.category === "grammar"}
         practice={section.category === "practice"}
        />
       );
      });
      return (
-      <div
-       key={first.id}
-       className={cn(
-        "min-w-0",
-        learnerContent && !grammarExample && !practiceQuestion && "2xl:col-span-2",
-       )}
-      >
-       {grammarExample || (practiceQuestion && !first.text.includes("→")) ? (
-        <Card
-         variant={grammarExample ? "subtle" : "default"}
-         padding="md"
-         className="grid h-full min-w-0 content-start gap-3"
-        >
-         {content}
-        </Card>
-       ) : (
-        <div className="grid min-w-0 gap-3">{content}</div>
-       )}
+      <div key={first.id} className="grid min-w-0 gap-3">
+       {section.category === "grammar" && first.text.trim().startsWith("Cách dùng:") ? (
+        <Typography as="h3" variant="cardTitle" weight="semibold">
+         {t("content.explanation")}
+        </Typography>
+       ) : null}
+       {grammarExample && !previousGrammarExample && !previous?.text.trim().startsWith("Ví dụ") ? (
+        <Typography as="h3" variant="cardTitle" weight="semibold">
+         {t("content.examples")}
+        </Typography>
+       ) : null}
+       {content}
+       {grammarExample && groupIndex < blockGroups.length - 1 ? <Separator /> : null}
       </div>
      );
     })}
@@ -1662,7 +1725,11 @@ function BusinessChineseStudyWorkspaceContent({
            </Card>
           ) : null}
 
-          {activeView === "text" ? readerContent : null}
+          {activeView === "text" ? (
+           <Card variant="section" padding="lg" data-textbook-document className="min-w-0">
+            {readerContent}
+           </Card>
+          ) : null}
 
           {activeView === "notes" ? <TextbookNoteAccessCard lesson={lesson} /> : null}
 
@@ -1695,7 +1762,12 @@ function BusinessChineseStudyWorkspaceContent({
              {!focusMode ? (
               <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
              ) : null}
-             <div className="grid min-w-0 gap-6">
+             <Card
+              variant="section"
+              padding="lg"
+              data-textbook-document
+              className="grid min-w-0 gap-6"
+             >
               {lesson.vocab.length > 0 &&
               canonicalVocabularyTableIds.length === 0 &&
               (activeView === "all" || activeView === "vocab") ? (
@@ -1707,89 +1779,71 @@ function BusinessChineseStudyWorkspaceContent({
                 }
                />
               ) : null}
-              {activeView === "practice" && translationSegments.length > 0 ? (
-               <Card
-                variant="subtle"
-                padding="sm"
-                className="flex flex-wrap items-center justify-between gap-3"
-               >
-                <div className="flex items-center gap-2">
-                 <Badge variant="accent" size="sm" casing="natural">
-                  {t("tabs.translation")}
-                 </Badge>
-                 <Typography variant="bodySmall" tone="secondary">
-                  {t("practice.translation.description")}
-                 </Typography>
-                </div>
-                <Button
-                 type="button"
-                 size="sm"
-                 variant="outline"
-                 onClick={() => onActiveViewChange("translation")}
-                >
-                 {t("practice.translation.open", { count: translationSegments.length })}
-                </Button>
-               </Card>
+              {activeView === "practice" &&
+              (translationSegments.length > 0 || dictationSources.length > 0) ? (
+               <div className="flex min-w-0 flex-wrap items-center gap-2">
+                {translationSegments.length > 0 ? (
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant="ghost"
+                  title={t("practice.translation.description")}
+                  onClick={() => onActiveViewChange("translation")}
+                 >
+                  {t("practice.translation.open", { count: translationSegments.length })}
+                 </Button>
+                ) : null}
+                {dictationSources.length > 0 ? (
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant="ghost"
+                  title={t("practice.dictation.description")}
+                  onClick={() => onActiveViewChange("dictation")}
+                 >
+                  {t("practice.dictation.open", {
+                   count: businessChineseDictationCount(dictationSources),
+                  })}
+                 </Button>
+                ) : null}
+               </div>
               ) : null}
-              {activeView === "practice" && dictationSources.length > 0 ? (
-               <Card
-                variant="subtle"
-                padding="sm"
-                className="flex flex-wrap items-center justify-between gap-3"
-               >
-                <div className="flex items-center gap-2">
-                 <Badge variant="purple" size="sm" casing="natural">
-                  {t("tabs.dictation")}
-                 </Badge>
-                 <Typography variant="bodySmall" tone="secondary">
-                  {t("practice.dictation.description")}
-                 </Typography>
-                </div>
-                <Button
-                 type="button"
-                 size="sm"
-                 variant="outline"
-                 onClick={() => onActiveViewChange("dictation")}
-                >
-                 {t("practice.dictation.open", {
-                  count: businessChineseDictationCount(dictationSources),
-                 })}
-                </Button>
-               </Card>
-              ) : null}
-              {visibleSections.map((section, index) => (
-               <Fragment key={section.id}>
-                {section.category === "text" ? (
-                 <BusinessChineseReader
-                  bookKey={bookKey}
-                  document={sectionDocuments.get(section.id) ?? textReaderDocument}
-                  services={index === 0 ? firstSectionServices : otherSectionServices}
-                 />
-                ) : (
-                 <Card variant="section" padding="md">
-                  <BusinessChineseSection
-                   section={section}
-                   displayMode={displayMode}
-                   translations={pairedTranslations}
-                   canonicalVocabularyTableIds={canonicalVocabularyTableIds}
-                   vocabularyPreview={
-                    section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
-                     <TextbookVocabularyPreview
-                      vocabulary={lesson.vocab}
-                      displayMode={displayMode}
-                      onOpenVocabulary={
-                       activeView === "all" ? () => onActiveViewChange("vocab") : undefined
-                      }
-                     />
-                    ) : undefined
-                   }
+              {visibleSections.map((section, index) => {
+               const content = (
+                <BusinessChineseSection
+                 section={section}
+                 displayMode={displayMode}
+                 translations={pairedTranslations}
+                 canonicalVocabularyTableIds={canonicalVocabularyTableIds}
+                 vocabularyPreview={
+                  section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
+                   <TextbookVocabularyPreview
+                    vocabulary={lesson.vocab}
+                    displayMode={displayMode}
+                    onOpenVocabulary={
+                     activeView === "all" ? () => onActiveViewChange("vocab") : undefined
+                    }
+                   />
+                  ) : undefined
+                 }
+                />
+               );
+               return (
+                <Fragment key={section.id}>
+                 {section.category === "text" ? (
+                  <BusinessChineseReader
+                   bookKey={bookKey}
+                   document={sectionDocuments.get(section.id) ?? textReaderDocument}
+                   services={index === 0 ? firstSectionServices : otherSectionServices}
                   />
-                 </Card>
-                )}
-                {index < visibleSections.length - 1 ? <Separator /> : null}
-               </Fragment>
-              ))}
-             </div>
+                 ) : (
+                  content
+                 )}
+                 {index < visibleSections.length - 1 ? <Separator /> : null}
+                </Fragment>
+               );
+              })}
+             </Card>
             </div>
            </div>
           ) : null}

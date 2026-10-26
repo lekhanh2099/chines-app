@@ -26,6 +26,10 @@
   "grammar": "语法",
   "practice": "练习"
  },
+ "content": {
+  "explanation": "用法说明",
+  "examples": "例句"
+ },
  "actions": {
   "showPinyin": "显示拼音",
   "hidePinyin": "隐藏拼音",

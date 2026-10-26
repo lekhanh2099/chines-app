@@ -176,7 +176,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   return (
    <ruby key={grapheme.index}>
     {annotatedHanzi}
-    <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
+    <rt className="select-none font-pinyin text-[0.45em] font-medium text-text-secondary">
      <span
       role="button"
       tabIndex={0}
@@ -222,7 +222,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   return (
    <ruby key={unit.id} className="whitespace-nowrap">
     {unitGraphemes.map((grapheme) => renderGrapheme(grapheme, graphemes.indexOf(grapheme), false))}
-    <rt className="select-none font-pinyin text-[0.45em] font-semibold text-accent-text">
+    <rt className="select-none font-pinyin text-[0.45em] font-medium text-text-secondary">
      {unitGraphemes.map((grapheme) => {
       const glyph = glyphs.get(grapheme.index);
       if (glyph === undefined) return null;
@@ -296,6 +296,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
     ref={register}
     data-reader-segment={segmentId}
     data-active={active}
+    aria-current={active ? "true" : undefined}
     data-no-inspector="true"
     className="grid min-w-0 gap-2"
     onMouseUp={(event) => captureSelection(event.currentTarget)}
@@ -345,7 +346,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
      {services.speech ? (
       <Button
        type="button"
-       variant="ghost"
+       variant={active ? "active" : "ghost"}
        size="icon"
        className="shrink-0 self-end"
        aria-label={commandLabels("listen")}

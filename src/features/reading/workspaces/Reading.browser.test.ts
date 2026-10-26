@@ -1821,8 +1821,11 @@ it
       }),
      ).toBeVisible();
      await browserExpect(
-      page.getByText(labels.practice.translation.description, { exact: true }),
-     ).toBeVisible();
+      page.getByRole("button", {
+       name: labels.practice.translation.open.replace("{count}", String(translationCount)),
+       exact: true,
+      }),
+     ).toHaveAttribute("title", labels.practice.translation.description);
      await browserExpect(
       page.getByRole("button", {
        name: labels.practice.dictation.open.replace("{count}", String(dictationCount)),
@@ -1880,6 +1883,9 @@ it
       await browserExpect(nav).toBeFocused();
      }
      await page.setViewportSize({ width: 1440, height: 900 });
+     await browserExpect(
+      page.getByRole("tablist", { name: labels.tabsLabel, exact: true }),
+     ).toBeVisible();
      await page.getByRole("tab", { name: labels.tabs.text, exact: true }).click();
      await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(
       textbookSegments.length,

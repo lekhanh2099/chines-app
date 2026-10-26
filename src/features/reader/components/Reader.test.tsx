@@ -85,6 +85,52 @@ describe("standalone Reader facade", () => {
   expect(html).toContain('data-reader-segment="speaker-turn"');
   expect(html).toContain('data-reader-segment="quote"');
  });
+ it("keeps each source paragraph in its own card and marks only the current segment", async () => {
+  const messages = await loadAppMessages("vi");
+  const html = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages}>
+    <Reader
+     data={[
+      { id: "first", zh: "你好。", vi: "Xin chào." },
+      { id: "second", zh: "再见。", vi: "Tạm biệt." },
+     ]}
+     services={{
+      speech: {
+       speak: async () => ({ completed: true, cancelled: false }),
+       stop: () => {},
+      },
+     }}
+    />
+   </NextIntlClientProvider>,
+  );
+  const articles = html.match(/<article\b[\s\S]*?<\/article>/g) ?? [];
+  const firstArticle = articles[0];
+  const secondArticle = articles[1];
+  if (!firstArticle || !secondArticle) throw new Error("Expected both source paragraph cards.");
+
+  expect(articles).toHaveLength(2);
+  expect(firstArticle).toContain('data-reader-segment="first"');
+  expect(firstArticle).toContain('data-active="true"');
+  expect(firstArticle).toContain('aria-current="true"');
+  expect(firstArticle.slice(0, firstArticle.indexOf(">"))).toContain("bg-surface-muted");
+  expect(firstArticle).toContain("Xin chào.");
+  expect(firstArticle).not.toContain("Tạm biệt.");
+  expect(firstArticle.replace(/<[^>]*>/g, "")).toContain("你好。");
+  expect(secondArticle).toContain('data-reader-segment="second"');
+  expect(secondArticle).toContain('data-active="false"');
+  expect(secondArticle).not.toContain('aria-current="true"');
+  expect(secondArticle.slice(0, secondArticle.indexOf(">"))).toContain("bg-surface");
+  expect(secondArticle.slice(0, secondArticle.indexOf(">"))).not.toContain("bg-surface-muted");
+  expect(secondArticle).toContain("Tạm biệt.");
+  expect(secondArticle).not.toContain("Xin chào.");
+  expect(secondArticle.replace(/<[^>]*>/g, "")).toContain("再见。");
+  for (const article of articles) {
+   expect(article.match(/data-slot="card"/g)).toHaveLength(1);
+   expect(
+    article.split(`aria-label="${messages.Reader.study.chrome.commands.listen}"`),
+   ).toHaveLength(2);
+  }
+ });
  it.each(locales)(
   "renders source content and translated controls in %s without product providers",
   async (locale) => {

@@ -26,6 +26,10 @@
   "grammar": "Grammar",
   "practice": "Exercises"
  },
+ "content": {
+  "explanation": "Explanation",
+  "examples": "Examples"
+ },
  "actions": {
   "showPinyin": "Show pinyin",
   "hidePinyin": "Hide pinyin",
