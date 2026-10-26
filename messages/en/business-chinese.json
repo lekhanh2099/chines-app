@@ -48,6 +48,17 @@
  "bookmarked": "Bookmarked",
  "utilities": "Tools",
  "practice": {
+  "inputPlaceholder": "Type your Chinese answer...",
+  "checkAnswer": "Check",
+  "resetAnswer": "Reset",
+  "keywordHint": "Target word: {keyword}",
+  "trueChoice": "True (Đ)",
+  "falseChoice": "False (S)",
+  "feedback": {
+   "correct": "Correct! Matches the model answer.",
+   "keywordMatch": "Valid! Uses the target word — compare with the model answer.",
+   "incorrect": "Does not match the model answer yet. Try again or show the answer."
+  },
   "translation": {
    "description": "Practice translating the sentences and paragraphs in this lesson in both directions.",
    "open": "Open translation ({count} segments)"

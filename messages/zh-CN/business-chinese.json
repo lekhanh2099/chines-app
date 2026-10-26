@@ -48,6 +48,17 @@
  "bookmarked": "已标记",
  "utilities": "工具",
  "practice": {
+  "inputPlaceholder": "输入中文答案...",
+  "checkAnswer": "检查",
+  "resetAnswer": "重置",
+  "keywordHint": "指定词语：{keyword}",
+  "trueChoice": "对 (Đ)",
+  "falseChoice": "错 (S)",
+  "feedback": {
+   "correct": "回答正确！与参考答案一致。",
+   "keywordMatch": "已使用指定词语，请对照参考答案。",
+   "incorrect": "与参考答案不符，请重试或查看答案。"
+  },
   "translation": {
    "description": "练习本课句子和段落的双向翻译。",
    "open": "打开翻译练习（{count} 段）"

@@ -112,6 +112,279 @@ function renderWorkspace(element: ReactNode) {
 }
 
 describe("BusinessChineseStudyWorkspace", () => {
+ it("renders all source phrases with individual audio and silent semantic practice headings", () => {
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  const section = lesson?.sections.find((item) => item.category === "practice");
+  if (!lesson || !section) throw new Error("Expected the original practice section.");
+  mockParams = new URLSearchParams("lesson=1&tab=practice");
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{ ...lesson, sections: [{ ...section, blocks: section.blocks.slice(0, 3) }] }}
+   />,
+  );
+  const grid = markup.slice(
+   markup.indexOf('id="nhip-cau-lesson-01-source-623"'),
+   markup.indexOf('data-textbook-block="nhip-cau-lesson-01-source-626"'),
+  );
+  expect(grid.match(/aria-label="Đọc tiếng Trung:/gu)).toHaveLength(16);
+  expect(grid).toContain('aria-label="Đọc tiếng Trung: 重新认识"');
+  expect(grid).toContain('aria-label="Đọc tiếng Trung: 命运的安排"');
+  expect(grid).toContain("<ruby");
+  expect(grid).not.toContain("|");
+  expect(grid).toContain('data-textbook-block="nhip-cau-lesson-01-source-623"');
+  expect(markup).toContain(`id="${section.id}:title"`);
+  expect(markup).toMatch(/<h2\b|role="heading" aria-level="2"/u);
+  expect(markup).toMatch(/<h3\b|role="heading" aria-level="3"/u);
+  expect(markup).not.toContain('aria-label="Đọc tiếng Trung: 熟读下列词组"');
+  expect(markup).not.toContain('aria-label="Đọc tiếng Trung: 六、练习"');
+  expect(markup).toContain('data-size="compact"');
+  expect(markup).toContain(">(一) 熟读下列词组</button>");
+  expect(markup).toContain(">(二) 给下列词语填上补语</button>");
+ });
+
+ it.each([false, true])(
+  "pairs all eight blank cards and reveals only their own model answers (%s)",
+  (showAnswers) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "nhip-cau");
+   const lesson = getTextbookLesson("nhip-cau", 1);
+   const section = lesson?.sections.find((item) => item.category === "practice");
+   if (!book || !lesson || !section) throw new Error("Expected the original blank exercise.");
+   mockParams = new URLSearchParams("lesson=1&tab=practice");
+   mockSettings = {
+    bookDisplayModes: { [`static:${book.id}`]: { ...DEFAULT_LESSON_DISPLAY_MODE, showAnswers } },
+   };
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={books}
+     lesson={{ ...lesson, sections: [{ ...section, blocks: section.blocks.slice(2, 12) }] }}
+    />,
+   );
+   expect(markup.match(/data-practice-blank="true"/gu)).toHaveLength(8);
+   expect(markup.match(/<input\b/gu)).toHaveLength(8);
+   expect(markup).not.toContain('data-textbook-block="nhip-cau-lesson-01-source-636"');
+   expect(markup).not.toContain("Gợi ý đáp án: →");
+   expect(markup.includes('id="nhip-cau-lesson-01-source-627:answer"')).toBe(showAnswers);
+   const firstCard = markup
+    .split('data-textbook-block="')
+    .find((part) => part.startsWith('nhip-cau-lesson-01-source-627"'));
+   if (!firstCard) throw new Error("Expected the first paired blank card.");
+   expect(firstCard).toContain('aria-label="Đọc tiếng Trung: 扭"');
+   expect(firstCard.includes('aria-expanded="false"')).toBe(!showAnswers);
+   expect(firstCard.includes('aria-label="Đọc tiếng Trung: 扭来扭去 扭一下"')).toBe(showAnswers);
+   expect(firstCard).not.toContain('id="nhip-cau-lesson-01-source-628:answer"');
+   expect(firstCard).not.toContain('aria-label="Đọc tiếng Trung: 摸一下 摸透了"');
+  },
+ );
+
+ it("keeps original glyph offsets and ruby after a collapsed learner blank", () => {
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  const section = lesson?.sections.find((item) => item.category === "practice");
+  if (!lesson || !section) throw new Error("Expected the practice renderer.");
+  mockParams = new URLSearchParams("lesson=1&tab=practice");
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{
+     ...lesson,
+     sections: [
+      {
+       ...section,
+       blocks: [{ id: "offset-blank", type: "paragraph", text: "我 ＿＿＿＿＿＿ 重新", rows: [] }],
+      },
+     ],
+    }}
+   />,
+  );
+  const promptMarkup = markup.slice(markup.indexOf('id="offset-blank"'));
+  const rubyText = Array.from(promptMarkup.matchAll(/<ruby\b[^>]*>[\s\S]*?<\/ruby>/gu), ([ruby]) =>
+   Array.from(ruby.matchAll(/>([^<>]*)</g), (match) => match[1]).join(""),
+  );
+  expect(promptMarkup.match(/data-practice-blank="true"/gu)).toHaveLength(1);
+  expect(rubyText).toContain("重chóng");
+  expect(rubyText).toContain("新xīn");
+  expect(promptMarkup).not.toContain("＿＿＿＿＿＿");
+ });
+
+ it("formats a real dialogue blank even when the learner prompt contains no Hanzi", () => {
+  const lesson = getTextbookLesson("khau-ngu", 2);
+  const section = lesson?.sections.find((item) =>
+   item.blocks.some((block) => block.id === "khau-ngu-lesson-02-en-p22-b03"),
+  );
+  const prompt = section?.blocks.find((block) => block.id === "khau-ngu-lesson-02-en-p22-b03");
+  if (!lesson || !section || !prompt)
+   throw new Error("Expected the source no-Hanzi dialogue blank.");
+  mockParams = new URLSearchParams("lesson=2&tab=practice");
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{ ...lesson, sections: [{ ...section, blocks: [prompt] }] }}
+   />,
+  );
+  expect(markup).toContain(`data-textbook-block="${prompt.id}"`);
+  expect(markup.match(/data-practice-blank="true"/gu)).toHaveLength(1);
+  expect(markup).not.toContain("________________");
+  expect(prompt.text).toBe("B：________________。");
+ });
+
+ it.each([false, true])(
+  "preserves glyph playback controls around a real Chinese-only blank with pinyin %s",
+  (showPinyin) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "khau-ngu");
+   const lesson = getTextbookLesson("khau-ngu", 2);
+   const section = lesson?.sections.find((item) =>
+    item.blocks.some((block) => block.id === "khau-ngu-lesson-02-en-p21-b21"),
+   );
+   const prompt = section?.blocks.find((block) => block.id === "khau-ngu-lesson-02-en-p21-b21");
+   if (!book || !lesson || !section || !prompt)
+    throw new Error("Expected the original playable completion prompt.");
+   mockParams = new URLSearchParams("lesson=2&tab=practice");
+   mockSettings = {
+    bookDisplayModes: {
+     [`static:${book.id}`]: { ...DEFAULT_LESSON_DISPLAY_MODE, showPinyin, autoDetectPinyin: true },
+    },
+   };
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={books}
+     lesson={{ ...lesson, sections: [{ ...section, blocks: [prompt] }] }}
+    />,
+   );
+   const promptMarkup = markup.slice(markup.indexOf(`data-textbook-block="${prompt.id}"`));
+   expect(promptMarkup).toContain('data-practice-blank="true"');
+   expect(promptMarkup).toContain('role="button" tabindex="0" aria-label="Đọc từ chữ 上"');
+   expect(promptMarkup).toContain('role="button" tabindex="0" aria-label="Đọc từ chữ 持"');
+   expect(promptMarkup.includes("<ruby")).toBe(showPinyin);
+  },
+ );
+
+ it("renders source multiple-choice selectors beside learner text with hidden model answers", () => {
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  const section = lesson?.sections.find((item) => item.category === "practice");
+  const question = section?.blocks.find((item) => item.id === "nhip-cau-lesson-01-source-717");
+  if (!lesson || !section || !question) throw new Error("Expected the original reading question.");
+  mockParams = new URLSearchParams("lesson=1&tab=practice");
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{ ...lesson, sections: [{ ...section, blocks: [question] }] }}
+   />,
+  );
+  for (const key of ["A", "B", "C", "D"]) {
+   expect(markup).toContain(`aria-pressed="false">${key}.</button><div`);
+  }
+  expect(markup).not.toContain("Đáp án: D");
+  expect(markup).toContain('aria-label="Đọc tiếng Trung: 三个大学生看完信以后笑了。是因为："');
+  expect(markup).toContain("<ruby");
+  expect(markup).not.toMatch(/<button\b[^>]*>(?:(?!<\/button>)[\s\S])*<ruby/u);
+  expect(markup).toContain(`id="${question.id}" data-textbook-block="${question.id}"`);
+ });
+
+ it("renders plain reorder chips and a keyword hint for the source rewrite exercise", () => {
+  const lesson = getTextbookLesson("nhip-cau", 2);
+  const section = lesson?.sections.find((item) => item.category === "practice");
+  const blocks = section?.blocks.filter((item) =>
+   ["nhip-cau-lesson-02-source-562", "nhip-cau-lesson-02-source-584"].includes(item.id),
+  );
+  if (!lesson || !section || !blocks || blocks.length !== 2)
+   throw new Error("Expected the source rewrite and reorder exercises.");
+  mockParams = new URLSearchParams("lesson=2&tab=practice");
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{ ...lesson, sections: [{ ...section, blocks }] }}
+   />,
+  );
+  expect(markup).toContain("Từ gợi ý: 凡……没有不……的");
+  expect(markup.match(/<input\b/gu)).toHaveLength(2);
+  for (const token of ["在", "故意", "他", "借口", "是", "分明", "找"])
+   expect(markup).toContain(`aria-pressed="false">${token}</button>`);
+  expect(markup).not.toContain("他分明是在故意找借口。");
+ });
+
+ it.each([false, true])(
+  "renders judgment choices within statement cells and preserves hidden answer columns (%s)",
+  (showAnswers) => {
+   const books = getTextbookCatalog();
+   const book = books.find((item) => item.key === "nhip-cau");
+   const lesson = getTextbookLesson("nhip-cau", 1);
+   const section = lesson?.sections.find((item) => item.category === "practice");
+   const table = section?.blocks.find((item) => item.id === "nhip-cau-lesson-01-source-697");
+   if (!book || !lesson || !section || !table)
+    throw new Error("Expected the original judgment table.");
+   mockParams = new URLSearchParams("lesson=1&tab=practice");
+   mockSettings = {
+    bookDisplayModes: { [`static:${book.id}`]: { ...DEFAULT_LESSON_DISPLAY_MODE, showAnswers } },
+   };
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace
+     books={books}
+     lesson={{ ...lesson, sections: [{ ...section, blocks: [table] }] }}
+    />,
+   );
+   expect(markup.match(/<td\b/gu)).toHaveLength(showAnswers ? 32 : 16);
+   expect(markup.match(/aria-pressed="false">Đúng \(Đ\)<\/button>/gu)).toHaveLength(8);
+   expect(markup.match(/aria-pressed="false">Sai \(S\)<\/button>/gu)).toHaveLength(8);
+   expect(markup.includes("是因为激动，用力过猛才洒了葵花子。")).toBe(showAnswers);
+  },
+ );
+
+ it.each([false, true])("preserves annotated judgment answers for reveal (%s)", (showAnswers) => {
+  const books = getTextbookCatalog();
+  const book = books.find((item) => item.key === "nhip-cau");
+  const lesson = getTextbookLesson("nhip-cau", 6);
+  const section = lesson?.sections.find((item) => item.category === "practice");
+  const table = section?.blocks.find((item) => item.id === "nhip-cau-lesson-06-source-865");
+  if (!book || !lesson || !section || !table)
+   throw new Error("Expected the source annotated judgments.");
+  mockParams = new URLSearchParams("lesson=6&tab=practice");
+  mockSettings = {
+   bookDisplayModes: { [`static:${book.id}`]: { ...DEFAULT_LESSON_DISPLAY_MODE, showAnswers } },
+  };
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={books}
+    lesson={{ ...lesson, sections: [{ ...section, blocks: [table] }] }}
+   />,
+  );
+  expect(markup.match(/<td\b/gu)).toHaveLength(showAnswers ? 30 : 20);
+  expect(markup.match(/aria-pressed="false">Sai \(S\)<\/button>/gu)).toHaveLength(10);
+  expect(markup.includes("S (6 tuổi)")).toBe(showAnswers);
+  expect(markup.includes("S (quốc tế)")).toBe(showAnswers);
+  expect(table.rows[1]?.[2]).toBe("S (6 tuổi)");
+ });
+
+ it.each(appLocales)(
+  "%s renders practice controls through the real locale bundle",
+  async (locale) => {
+   const lesson = getTextbookLesson("nhip-cau", 1);
+   const section = lesson?.sections.find((item) => item.category === "practice");
+   const item = section?.blocks.find((block) => block.id === "nhip-cau-lesson-01-source-649");
+   if (!lesson || !section || !item) throw new Error("Expected the source keyword completion.");
+   mockParams = new URLSearchParams("lesson=1&tab=practice");
+   const messages = await loadAppMessages(locale);
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <QueryClientProvider client={new QueryClient()}>
+      <BusinessChineseStudyWorkspace
+       books={getTextbookCatalog()}
+       lesson={{ ...lesson, sections: [{ ...section, blocks: [item] }] }}
+      />
+     </QueryClientProvider>
+    </NextIntlClientProvider>,
+   );
+   expect(markup).toContain(`placeholder="${messages.BusinessChinese.practice.inputPlaceholder}"`);
+   expect(markup).toContain(messages.BusinessChinese.practice.checkAnswer);
+   expect(markup).toContain(
+    messages.BusinessChinese.practice.keywordHint.replace("{keyword}", "富裕"),
+   );
+   expect(markup).not.toContain("(富裕)");
+   expect(markup).not.toContain("BusinessChinese.practice.");
+  },
+ );
+
  it("resolves the routed book when a mounted textbook workspace receives a new pathname", () => {
   const previousLesson = getTextbookLesson("khau-ngu", 3);
   const currentLesson = getTextbookLesson("doc-hieu", 1);
