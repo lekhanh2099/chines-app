@@ -199,7 +199,7 @@ describe("BusinessChineseStudyWorkspace", () => {
   );
   const promptMarkup = markup.slice(markup.indexOf('id="offset-blank"'));
   const rubyText = Array.from(promptMarkup.matchAll(/<ruby\b[^>]*>[\s\S]*?<\/ruby>/gu), ([ruby]) =>
-   ruby.replace(/<[^>]*>/gu, ""),
+   Array.from(ruby.matchAll(/>([^<>]*)</g), (match) => match[1]).join(""),
   );
   expect(promptMarkup.match(/data-practice-blank="true"/gu)).toHaveLength(1);
   expect(rubyText).toContain("重chóng");
