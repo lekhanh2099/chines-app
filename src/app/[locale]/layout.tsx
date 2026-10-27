@@ -33,9 +33,14 @@ export const metadata: Metadata = {
  description: "A focused workspace for learning Chinese with HanziHome.",
  manifest: "/manifest.webmanifest",
  icons: {
-  icon: "/favicon.svg?v=f09443a0",
-  shortcut: "/favicon.svg?v=f09443a0",
-  apple: "/favicon.svg?v=f09443a0",
+  icon: [
+   { url: "/favicon.svg?v=fda899ef", type: "image/svg+xml", sizes: "any" },
+   { url: "/icon/32.png", type: "image/png", sizes: "32x32" },
+   { url: "/icon/192.png", type: "image/png", sizes: "192x192" },
+   { url: "/icon/512.png", type: "image/png", sizes: "512x512" },
+  ],
+  shortcut: "/favicon.svg?v=fda899ef",
+  apple: { url: "/apple-icon/180.png", type: "image/png", sizes: "180x180" },
  },
 };
 

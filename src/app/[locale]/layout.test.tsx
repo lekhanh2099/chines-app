@@ -43,9 +43,14 @@ describe("LocaleLayout static params", () => {
   const iconUrl = `/favicon.svg?v=${revision}`;
 
   expect(metadata.icons).toEqual({
-   icon: iconUrl,
+   icon: [
+    { url: iconUrl, type: "image/svg+xml", sizes: "any" },
+    { url: "/icon/32.png", type: "image/png", sizes: "32x32" },
+    { url: "/icon/192.png", type: "image/png", sizes: "192x192" },
+    { url: "/icon/512.png", type: "image/png", sizes: "512x512" },
+   ],
    shortcut: iconUrl,
-   apple: iconUrl,
+   apple: { url: "/apple-icon/180.png", type: "image/png", sizes: "180x180" },
   });
  });
 });

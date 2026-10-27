@@ -7,6 +7,7 @@ import { useSelector } from "@tanstack/react-store";
 import { ChevronRight, Menu } from "lucide-react";
 
 import { AppLogoMark } from "@/components/layout/navigation/AppLogoMark";
+import { BrandWordmark } from "@/components/layout/navigation/BrandWordmark";
 import {
  filterNavigationGroupsForContentCapability,
  mobileNavigationItemIds,
@@ -28,6 +29,7 @@ import {
 } from "@/components/ui/overlays/dropdown-menu";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import { Typography } from "@/components/ui/display/typography";
+import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { appShellStore } from "@/stores/shell/app-shell-store";
@@ -89,6 +91,16 @@ function matchesHref(
 }
 
 function isActive(pathname: string, searchParams: URLSearchParams, itemId: NavigationItemId) {
+ if (
+  itemId === "lessons" &&
+  [
+   navigationItems.businessChinese.href,
+   navigationItems.chineseBridge.href,
+   navigationItems.spokenChinese.href,
+  ].includes(pathname)
+ ) {
+  return false;
+ }
  const item: NavigationItemConfig = navigationItems[itemId];
  return [item.href, ...(item.aliases ?? [])].some((href) =>
   matchesHref(pathname, searchParams, href, item.match ?? "exact"),
@@ -121,11 +133,13 @@ function NavRow({
  itemId,
  active,
  collapsed,
+ nested = false,
  onNavigate,
 }: {
  itemId: NavigationItemId;
  active: boolean;
  collapsed: boolean;
+ nested?: boolean;
  onNavigate?: () => void;
 }) {
  const t = useTranslations("Shell");
@@ -139,16 +153,16 @@ function NavRow({
 
  return (
   <Button
-   variant={active ? "active" : "navigation"}
-   size="menu"
-   align={collapsed ? "center" : "start"}
+   variant={active ? "navigationActive" : "navigation"}
+   size={collapsed ? "icon-sm" : onNavigate ? "menu" : nested && !active ? "compact" : "toolbar"}
+   align={collapsed ? "center" : "between"}
    asChild
    aria-current={active ? "page" : undefined}
    aria-busy={isPendingThisItem ? "true" : undefined}
    aria-label={collapsed ? label : undefined}
    title={collapsed ? label : undefined}
    className={cn(
-    collapsed ? "w-10" : "w-full min-w-0 overflow-hidden",
+    collapsed ? "w-10" : "w-full min-w-0",
     isPendingThisItem && "pointer-events-none opacity-80",
    )}
   >
@@ -166,11 +180,12 @@ function NavRow({
      onNavigate?.();
     }}
    >
-    <Icon data-icon="inline-start" />
-    {!collapsed ? (
-     <Typography as="span" clamp="one" className="min-w-0 flex-1">
-      {label}
-     </Typography>
+    <div className="flex items-center gap-2.5 min-w-0">
+     <Icon className={cn("size-4 shrink-0", active ? "text-primary" : "text-foreground-muted")} />
+     {!collapsed ? <span className="truncate">{label}</span> : null}
+    </div>
+    {active && !collapsed ? (
+     <span aria-hidden="true" className="size-1.5 rounded-full bg-primary shrink-0" />
     ) : null}
    </Link>
   </Button>
@@ -197,14 +212,14 @@ function CollapsedGroupMenu({
    <DropdownMenuTrigger asChild>
     <Button
      type="button"
-     variant={active ? "active" : "navigation"}
+     variant="navigation"
      size="menu"
      align="center"
      className="w-10"
      aria-label={groupLabel}
      title={groupLabel}
     >
-     <GroupIcon data-icon="inline-start" />
+     <GroupIcon data-icon="inline-start" className={active ? "text-primary" : undefined} />
     </Button>
    </DropdownMenuTrigger>
    <DropdownMenuContent side="right" align="start" width="md">
@@ -296,15 +311,17 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
   >
    <div
     className={cn(
-     "flex h-14 items-center border-b border-border-default",
-     isCollapsed ? "justify-center px-3" : "justify-between gap-2 px-4",
+     "flex items-center border-b border-border-default shrink-0",
+     isCollapsed ? "flex-col gap-2 px-2 py-2" : "h-14 justify-between gap-2 px-4",
     )}
    >
-    {!isCollapsed ? (
+    {isCollapsed ? (
      <Link
       href="/"
+      aria-label="HanziHome"
       className={cn(
-       "flex min-w-0 items-center gap-3",
+       "group/brand flex size-11 min-h-11 shrink-0 items-center justify-center rounded-lg text-text-primary",
+       focusRingClassName,
        pendingHref === "/" && "pointer-events-none opacity-80",
       )}
       onClick={(event) => {
@@ -316,11 +333,19 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
       }}
      >
       <AppLogoMark />
-      <Typography tone="default" weight="black" clamp="one">
-       HanziHome
-      </Typography>
      </Link>
-    ) : null}
+    ) : (
+     <BrandWordmark
+      className={cn("min-h-11 min-w-0", pendingHref === "/" && "pointer-events-none opacity-80")}
+      onClick={(event) => {
+       if (pathname === "/" || pendingHref === "/") {
+        event.preventDefault();
+        return;
+       }
+       navigationPendingStore.actions.startNavigation("/");
+      }}
+     />
+    )}
     <PanelToggleButton
      open={!isCollapsed}
      onOpenChange={toggleSidebar}
@@ -333,11 +358,11 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
     aria-label={t("navigation.aria.main")}
     className={cn(
      "min-h-0 flex-1 overflow-y-auto py-3 scrollbar-soft",
-     isCollapsed ? "grid content-start gap-2 px-3" : "px-3",
+     isCollapsed ? "grid content-start gap-2 px-1" : "px-3",
     )}
    >
     {isCollapsed ? (
-     <div className="grid content-start gap-1.5">
+     <div className="grid content-start justify-items-center gap-1.5">
       {visibleNavigationGroups.map((group) => (
        <CollapsedGroupMenu
         key={group.id}
@@ -348,114 +373,156 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
       ))}
      </div>
     ) : (
-     <div className="grid content-start gap-1.5">
+     <div className="grid content-start gap-2">
       {visibleNavigationGroups.map((group) => {
        const groupOpen = group.id === currentNavigationState.expandedGroupId;
        const GroupIcon = group.icon;
        const groupLabel = t(group.messageKey);
 
        return (
-        <section key={group.id} className="grid gap-1" aria-label={groupLabel}>
-         <Button
-          type="button"
-          variant={group.id === activeGroupId ? "active" : "navigation"}
-          size="menu"
-          align="between"
-          className="w-full min-w-0"
-          aria-expanded={groupOpen}
-          aria-controls={`sidebar-group-${group.id}`}
-          onClick={() => {
-           if (group.id === activeGroupId) {
+        <section key={group.id} aria-label={groupLabel}>
+         <div
+          className={
+           groupOpen
+            ? "grid gap-1 rounded-xl border border-border-default/70 bg-surface-subtle/40 p-2"
+            : undefined
+          }
+         >
+          <Button
+           type="button"
+           variant="navigation"
+           size={groupOpen ? "compact" : "toolbar"}
+           align="between"
+           className={cn("w-full min-w-0", groupOpen && "h-8")}
+           aria-expanded={groupOpen}
+           aria-controls={groupOpen ? `sidebar-group-${group.id}` : undefined}
+           onClick={() => {
             setNavigationState({
              ...currentNavigationState,
              routeKey,
-             expandedGroupId: group.id,
+             expandedGroupId: groupOpen ? "" : group.id,
             });
-            return;
-           }
-           setNavigationState({
-            ...currentNavigationState,
-            routeKey,
-            expandedGroupId: currentNavigationState.expandedGroupId === group.id ? "" : group.id,
-           });
-          }}
-         >
-          <span className="flex min-w-0 flex-1 items-center gap-3">
-           <GroupIcon data-icon="inline-start" />
-           <Typography as="span" clamp="one" className="min-w-0 flex-1 text-start">
-            {groupLabel}
-           </Typography>
-          </span>
-          <ChevronRight
-           data-icon="inline-end"
-           className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")}
-          />
-         </Button>
+           }}
+          >
+           <span
+            className={cn(
+             "flex min-w-0 flex-1 items-center gap-2.5",
+             groupOpen && "text-foreground",
+            )}
+           >
+            <GroupIcon className={cn("size-4 shrink-0", groupOpen && "text-primary")} />
+            <Typography
+             as="span"
+             variant={groupOpen ? "caption" : "bodySmall"}
+             tone={groupOpen ? "default" : "inherit"}
+             weight={groupOpen ? "bold" : "medium"}
+             clamp="one"
+             className="min-w-0 flex-1 text-start"
+            >
+             {groupLabel}
+            </Typography>
+           </span>
+           <ChevronRight
+            data-icon="inline-end"
+            className={cn("size-3.5 shrink-0 transition-transform", groupOpen && "rotate-90")}
+           />
+          </Button>
 
-         <div
-          id={`sidebar-group-${group.id}`}
-          hidden={!groupOpen}
-          className="grid gap-1 border-l border-border-default pb-1 pl-2"
-         >
-          {group.sections.map((section) => {
-           const sectionActive = section.itemIds.some((itemId) =>
-            isActive(pathname, searchParams, itemId),
-           );
-           const sectionOpen = section.id === currentNavigationState.expandedSectionId;
-           if (!section.collapsible) {
-            return section.itemIds.map((itemId) => (
-             <NavRow
-              key={itemId}
-              itemId={itemId}
-              active={isActive(pathname, searchParams, itemId)}
-              collapsed={false}
-             />
-            ));
-           }
-           return (
-            <div key={section.id} className="grid gap-1">
-             <Button
-              type="button"
-              variant={sectionActive ? "active" : "navigation"}
-              size="menu"
-              align="between"
-              className="w-full min-w-0"
-              aria-expanded={sectionOpen}
-              aria-controls={`sidebar-section-${section.id}`}
-              onClick={() =>
-               setNavigationState({
-                ...currentNavigationState,
-                routeKey,
-                expandedSectionId:
-                 currentNavigationState.expandedSectionId === section.id ? "" : section.id,
-               })
-              }
-             >
-              <Typography as="span" clamp="one" className="min-w-0 flex-1 text-start">
-               {t(section.messageKey)}
-              </Typography>
-              <ChevronRight
-               data-icon="inline-end"
-               className={cn("shrink-0 transition-transform", sectionOpen && "rotate-90")}
-              />
-             </Button>
-             <div
-              id={`sidebar-section-${section.id}`}
-              hidden={!sectionOpen}
-              className="grid gap-1 border-l border-border-default pl-2"
-             >
-              {section.itemIds.map((itemId) => (
+          {groupOpen ? (
+           <div id={`sidebar-group-${group.id}`} className="grid gap-0.5 pt-0.5">
+            {group.sections.map((section) => {
+             const sectionActive = section.itemIds.some((itemId) =>
+              isActive(pathname, searchParams, itemId),
+             );
+             const sectionOpen = section.id === currentNavigationState.expandedSectionId;
+             const SectionIcon =
+              section.id === "textbooks" ? navigationItems.lessons.icon : GroupIcon;
+
+             if (!section.collapsible) {
+              return section.itemIds.map((itemId) => (
                <NavRow
                 key={itemId}
                 itemId={itemId}
                 active={isActive(pathname, searchParams, itemId)}
                 collapsed={false}
                />
-              ))}
-             </div>
-            </div>
-           );
-          })}
+              ));
+             }
+
+             return (
+              <div key={section.id} className="grid gap-0.5">
+               <Button
+                type="button"
+                variant="navigation"
+                size="compact"
+                align="between"
+                className="w-full min-w-0 h-8"
+                aria-expanded={sectionOpen}
+                aria-controls={`sidebar-section-${section.id}`}
+                onClick={() =>
+                 setNavigationState({
+                  ...currentNavigationState,
+                  routeKey,
+                  expandedSectionId:
+                   currentNavigationState.expandedSectionId === section.id ? "" : section.id,
+                 })
+                }
+               >
+                <span className="flex min-w-0 flex-1 items-center gap-2">
+                 {section.id === "hsk-reading" ? (
+                  <span
+                   aria-hidden="true"
+                   className="grid size-4 shrink-0 place-items-center rounded-sm border border-current text-primary text-[0.625rem] font-bold"
+                  >
+                   H
+                  </span>
+                 ) : (
+                  <SectionIcon
+                   data-icon="inline-start"
+                   className={sectionActive ? "text-primary" : undefined}
+                  />
+                 )}
+                 <Typography
+                  as="span"
+                  variant="bodySmall"
+                  tone="inherit"
+                  weight="medium"
+                  clamp="one"
+                  className="min-w-0 flex-1 text-start"
+                 >
+                  {t(section.messageKey)}
+                 </Typography>
+                </span>
+                <ChevronRight
+                 data-icon="inline-end"
+                 className={cn(
+                  "size-3.5 shrink-0 transition-transform",
+                  sectionOpen && "rotate-90",
+                 )}
+                />
+               </Button>
+               <div
+                id={`sidebar-section-${section.id}`}
+                hidden={!sectionOpen}
+                className="pt-0.5 pl-5"
+               >
+                <div className="grid gap-0.5 border-l border-border-default/80 pl-2.5">
+                 {section.itemIds.map((itemId) => (
+                  <NavRow
+                   key={itemId}
+                   itemId={itemId}
+                   active={isActive(pathname, searchParams, itemId)}
+                   collapsed={false}
+                   nested
+                  />
+                 ))}
+                </div>
+               </div>
+              </div>
+             );
+            })}
+           </div>
+          ) : null}
          </div>
         </section>
        );
@@ -475,8 +542,10 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const [moreOpen, setMoreOpen] = useState(false);
+ const lessonsActive =
+  isActive(pathname, searchParams, "lessons") || navigationItems.lessons.aliases.includes(pathname);
  const primaryRouteActive = mobileNavigationItemIds.some((itemId) =>
-  isActive(pathname, searchParams, itemId),
+  itemId === "lessons" ? lessonsActive : isActive(pathname, searchParams, itemId),
  );
  const moreActive = !primaryRouteActive;
 
@@ -492,7 +561,8 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
      {mobileNavigationItemIds.map((itemId) => {
       const item = navigationItems[itemId];
       const Icon = item.icon;
-      const active = isActive(pathname, searchParams, itemId);
+      const active =
+       itemId === "lessons" ? lessonsActive : isActive(pathname, searchParams, itemId);
       const label = t(item.messageKey);
       const isPendingThisItem = pendingHref === item.href;
 
