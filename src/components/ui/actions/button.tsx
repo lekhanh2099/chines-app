@@ -24,6 +24,7 @@ const buttonVariants = cva(
      "hover:bg-surface-muted hover:text-foreground aria-expanded:bg-surface-muted aria-expanded:text-foreground",
     navigation:
      "border-transparent text-foreground-muted hover:bg-surface-muted hover:text-foreground",
+    navigationActive: "border-border-default/80 bg-surface text-primary font-semibold shadow-xs",
     active: "app-active-item [&_[data-slot=typography]]:text-inherit",
     surface:
      "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated hover:text-text-primary",
