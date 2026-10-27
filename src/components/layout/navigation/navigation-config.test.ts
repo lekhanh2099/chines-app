@@ -34,7 +34,9 @@ describe("navigation configuration", () => {
  });
 
  it("places HTML files with the primary learning destinations", () => {
-  expect(navigationGroups[0]?.sections[2]?.itemIds).toEqual(["humanities", "htmlArtifacts"]);
+  expect(
+   navigationGroups[0]?.sections.find((section) => section.id === "learning-more")?.itemIds,
+  ).toEqual(["humanities", "htmlArtifacts"]);
   expect(navigationGroups[3]?.sections.flatMap((section) => section.itemIds)).not.toContain(
    "htmlArtifacts",
   );
@@ -56,10 +58,10 @@ describe("navigation configuration", () => {
   expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
  });
 
- it("uses the lesson library as the single textbook entry while retaining study routes", () => {
-  for (const group of navigationGroups) {
-   expect(group.sections.map((section) => section.id)).not.toContain("textbooks");
-  }
+ it("exposes the three extended textbooks while retaining the lesson library aliases", () => {
+  expect(
+   navigationGroups[0]?.sections.find((section) => section.id === "textbooks")?.itemIds,
+  ).toEqual(["businessChinese", "chineseBridge", "spokenChinese"]);
   expect(navigationItems.lessons.href).toBe("/hanzihome");
   expect(navigationItems.lessons.aliases).toEqual([
    navigationItems.businessChinese.href,
