@@ -1,11 +1,12 @@
 "use client";
 
-import { memo, useMemo, useRef, useState } from "react";
+import { memo, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Mic, Square } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
 import { Badge } from "@/components/ui/display/badge";
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { SegmentedControl } from "@/components/ui/forms/segmented-control";
@@ -71,12 +72,15 @@ export function TranslationWorkspace({
  const [replayCount, setReplayCount] = useState(0);
  const [interpretingNotes, setInterpretingNotes] = useState("");
  const [learnerTranscript, setLearnerTranscript] = useState("");
+ const [submittedRecording, setSubmittedRecording] = useState({ notes: "", transcript: "" });
  const [unitMarks, setUnitMarks] = useState<Record<string, HumanitiesUnitMark>>({});
  const startedAtRef = useRef<Record<string, number>>({});
+ const navigationRevisionRef = useRef(0);
  const requestedDocumentId = searchParams.get("document") ?? "";
  const selectedIdValue = initialDocuments.some((document) => document.id === requestedDocumentId)
   ? requestedDocumentId
   : "";
+ const displayedDocumentIdRef = useRef(selectedIdValue);
  const resource = selectedIdValue.length > 0 ? initialResource : null;
  const content = humanitiesPracticeContent[activeTrack];
  const trackTitle =
@@ -94,11 +98,33 @@ export function TranslationWorkspace({
  const selectDocument = (documentId: string) => {
   const next = new URLSearchParams(searchParams.toString());
   next.set("document", documentId);
+  displayedDocumentIdRef.current = documentId;
+  navigationRevisionRef.current += 1;
+  setDrafts((current) =>
+   Object.fromEntries(Object.entries(current).filter(([draftKey]) => checked[draftKey])),
+  );
+  setBackTranslations({});
+  startedAtRef.current = {};
+  setInterpretingNotes("");
+  setLearnerTranscript("");
+  setSubmittedRecording({ notes: "", transcript: "" });
+  clearSaveError();
   router.push(`${pathname}?${next.toString()}`, { scroll: false });
  };
  const clearDocument = () => {
   const next = new URLSearchParams(searchParams.toString());
   next.delete("document");
+  displayedDocumentIdRef.current = "";
+  navigationRevisionRef.current += 1;
+  setDrafts((current) =>
+   Object.fromEntries(Object.entries(current).filter(([draftKey]) => checked[draftKey])),
+  );
+  setBackTranslations({});
+  startedAtRef.current = {};
+  setInterpretingNotes("");
+  setLearnerTranscript("");
+  setSubmittedRecording({ notes: "", transcript: "" });
+  clearSaveError();
   router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
  };
  const segments = useMemo(
@@ -117,6 +143,14 @@ export function TranslationWorkspace({
  const { historyQuery, submitAttempt, saveError, clearSaveError } = useTranslationAttempts(
   segment?.id ?? "",
  );
+ const requestNavigation = useUnsavedDraftGuard(
+  Object.entries(drafts).some(
+   ([draftKey, value]) => value.trim().length > 0 && (!checked[draftKey] || Boolean(saveError)),
+  ) ||
+   Object.values(backTranslations).some((value) => value.trim().length > 0) ||
+   (interpretingNotes.trim().length > 0 && interpretingNotes !== submittedRecording.notes) ||
+   (learnerTranscript.trim().length > 0 && learnerTranscript !== submittedRecording.transcript),
+ );
  const draft = key ? (drafts[key] ?? "") : "";
  const backTranslation = key ? (backTranslations[key] ?? "") : "";
  const isChecked = key ? checked[key] === true : false;
@@ -131,11 +165,31 @@ export function TranslationWorkspace({
   segment && isChecked
    ? (humanitiesResult?.score ?? scoreTranslationAttempt(segment, direction, draft))
    : null;
+ const recordingRevision = navigationRevisionRef.current;
  const { recorder, startRecording } = useTranslationRecording({
   context: { contentId: segment?.id ?? "", direction },
   answer: { transcript: learnerTranscript, notes: interpretingNotes, unitMarks },
   submitAttempt,
+  onSaved: (answer) => {
+   if (navigationRevisionRef.current !== recordingRevision) return;
+   setSubmittedRecording({ notes: answer.notes, transcript: answer.transcript });
+  },
  });
+
+ useLayoutEffect(() => {
+  if (displayedDocumentIdRef.current === selectedIdValue) return;
+  displayedDocumentIdRef.current = selectedIdValue;
+  navigationRevisionRef.current += 1;
+  setDrafts((current) =>
+   Object.fromEntries(Object.entries(current).filter(([draftKey]) => checked[draftKey])),
+  );
+  setBackTranslations({});
+  startedAtRef.current = {};
+  setInterpretingNotes("");
+  setLearnerTranscript("");
+  setSubmittedRecording({ notes: "", transcript: "" });
+  clearSaveError();
+ }, [checked, clearSaveError, selectedIdValue]);
 
  const updateDraft = (value: string) => {
   if (!key) return;
@@ -360,15 +414,15 @@ export function TranslationWorkspace({
          layout="grid"
          variant="surfaceCard"
          onClick={() => {
-          selectDocument(document.id);
-          setActiveIndex(0);
-          setDirectionPreference(null);
-          setReplayCount(0);
-          preparation.reset();
-          setInterpretingNotes("");
-          setLearnerTranscript("");
-          setUnitMarks({});
-          recorder.clear();
+          requestNavigation(() => {
+           selectDocument(document.id);
+           setActiveIndex(0);
+           setDirectionPreference(null);
+           setReplayCount(0);
+           preparation.reset();
+           setUnitMarks({});
+           recorder.clear();
+          });
          }}
         >
          <Typography
@@ -422,8 +476,10 @@ export function TranslationWorkspace({
      align="start"
      className="justify-self-start"
      onClick={() => {
-      clearDocument();
-      setActiveIndex(0);
+      requestNavigation(() => {
+       clearDocument();
+       setActiveIndex(0);
+      });
      }}
     >
      {t("detail.back", { track: trackTitle })}
@@ -445,7 +501,7 @@ export function TranslationWorkspace({
     </div>
    </Card>
    <nav className="grid grid-cols-2 gap-2 sm:grid-cols-5" aria-label={t("nav.aria")}>
-    <Button type="button" variant="outline" onClick={clearDocument}>
+    <Button type="button" variant="outline" onClick={() => requestNavigation(clearDocument)}>
      {t("nav.lessonList")}
     </Button>
     <Button
@@ -454,7 +510,7 @@ export function TranslationWorkspace({
      disabled={selectedLessonIndex <= 1}
      onClick={() => {
       const previous = trackDocuments[selectedLessonIndex - 2];
-      if (previous !== undefined) selectDocument(previous.id);
+      if (previous !== undefined) requestNavigation(() => selectDocument(previous.id));
      }}
     >
      {t("nav.previous")}
@@ -465,7 +521,7 @@ export function TranslationWorkspace({
      disabled={selectedLessonIndex >= trackDocuments.length}
      onClick={() => {
       const next = trackDocuments[selectedLessonIndex];
-      if (next !== undefined) selectDocument(next.id);
+      if (next !== undefined) requestNavigation(() => selectDocument(next.id));
      }}
     >
      {t("nav.next")}
@@ -474,8 +530,10 @@ export function TranslationWorkspace({
      type="button"
      variant={activeTrack === "translation" ? "active" : "outline"}
      onClick={() => {
-      setActiveTrack("translation");
-      clearDocument();
+      requestNavigation(() => {
+       setActiveTrack("translation");
+       clearDocument();
+      });
      }}
     >
      {t("tracks.translation.title")}
@@ -484,8 +542,10 @@ export function TranslationWorkspace({
      type="button"
      variant={activeTrack === "interpreting" ? "active" : "outline"}
      onClick={() => {
-      setActiveTrack("interpreting");
-      clearDocument();
+      requestNavigation(() => {
+       setActiveTrack("interpreting");
+       clearDocument();
+      });
      }}
     >
      {t("tracks.interpreting.title")}

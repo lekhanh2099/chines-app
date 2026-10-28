@@ -65,6 +65,12 @@
    "apiDocs": "API 与集成",
    "settings": "设置"
   },
+  "mobileItems": {
+   "home": "首页",
+   "lessons": "教材",
+   "dictation": "听写",
+   "notes": "笔记"
+  },
   "sidebarLabel": "导航侧栏",
   "more": "更多",
   "openAll": "打开全部导航",
@@ -80,6 +86,10 @@
   "focusModeShort": "专注",
   "focusModeActive": "专注模式已开启",
   "focusModeWarning": "专注模式已开启。你将留在当前课程中，只能切换当前栏目或已打开的笔记标签。",
+  "focusModeLessonBlocked": "专注模式已开启，无法切换到其他课时。",
+  "lessonNavigationAria": "快速切换 HanziHome 课时",
+  "chooseLessonAria": "选择 HanziHome 课时",
+  "lessonOption": "第 {number} 课：{title}",
   "openAllSettings": "打开全部设置"
  },
  "breadcrumbs": {
@@ -153,5 +163,56 @@
    "note": "笔记",
    "navigation": "导航"
   }
+ },
+ "workspace": {
+  "loadErrorTitle": "无法加载课程",
+  "loadErrorDescription": "课程数据暂时不可用。请重新加载页面或返回资料库。",
+  "emptyCourseTitle": "这门课程还没有课文",
+  "emptyCourseDescription": "返回学习资料库选择其他课程。",
+  "radicalsTitle": "HanziHome 部首",
+  "lessonTitle": "课程 {title}",
+  "studyTitle": "HanziHome 学习区",
+  "retry": "重试加载",
+  "backToLibrary": "返回学习资料库",
+  "loading": "正在加载课程"
+ },
+ "studyModules": {
+  "overview": "概览",
+  "lessonText": "课文",
+  "practice": "练习",
+  "listening": "听力练习",
+  "dictation": "听写",
+  "script": "原文",
+  "notes": "笔记",
+  "vocab": "词汇",
+  "grammar": "语法",
+  "review": "复习",
+  "paneLabel": "窗格 {number} · {module}",
+  "reorder": "调整{module}模块顺序",
+  "moveLeft": "向左移动",
+  "moveRight": "向右移动",
+  "moveOtherPane": "移至另一个窗格",
+  "openTools": "打开课时工具",
+  "lessonTools": "课时工具",
+  "tools": "工具",
+  "workspace": "学习空间",
+  "readOnlyContent": "只读内容",
+  "splitScreen": "分屏",
+  "closeSplitScreen": "关闭分屏",
+  "viewMode": "查看模式",
+  "studyMode": "学习",
+  "dataAudit": "数据检查",
+  "editContent": "编辑内容",
+  "rawLessonJson": "原始课时 JSON",
+  "selectAria": "选择学习内容",
+  "activePaneAria": "当前显示的窗格",
+  "selectPaneAria": "选择此窗格的学习内容",
+  "aria": "学习内容"
+ },
+ "unsavedDraft": {
+  "title": "练习尚未提交",
+  "description": "你有尚未提交的练习。确定要离开吗？",
+  "stay": "留下",
+  "leave": "离开"
  }
 }

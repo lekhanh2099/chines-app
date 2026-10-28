@@ -6,6 +6,7 @@ import { BookOpen } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { z } from "zod";
 
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import {
  AppHeaderBreadcrumb,
  AppHeaderBreadcrumbItem,
@@ -59,6 +60,7 @@ export function ReaderHeaderContextBridge({
 }) {
  const t = useTranslations("Reader.document.header");
  const router = useRouter();
+ const requestNavigation = useUnsavedDraftGuard(false);
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const selectedIndex = navigationDocuments.findIndex(
   (document) => document.id === selectedDocument.id,
@@ -118,7 +120,9 @@ export function ReaderHeaderContextBridge({
         onValueChange={(documentId) => {
          const nextDocument = navigationDocuments.find((document) => document.id === documentId);
          if (nextDocument === undefined) return;
-         router.push(readerRouteHref(backHref, nextDocument), { scroll: false });
+         requestNavigation(() =>
+          router.push(readerRouteHref(backHref, nextDocument), { scroll: false }),
+         );
         }}
        >
         <SelectTrigger
@@ -157,6 +161,7 @@ export function ReaderHeaderContextBridge({
   focusModeEnabled,
   navigationDocuments,
   progressLabel,
+  requestNavigation,
   router,
   sectionLabel,
   selectedDocument,

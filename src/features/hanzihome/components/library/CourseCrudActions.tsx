@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -34,6 +35,7 @@ const formSchema = z.object({
 });
 
 export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }) {
+ const tDeleteItem = useTranslations("Common.softDelete.itemTypes");
  const [open, setOpen] = useState(false);
  const queryClient = useQueryClient();
  const form = useAppForm({
@@ -112,7 +114,7 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
   <>
    <LibraryCrudActionsMenu
     ariaLabel={`Tác vụ cho ${course.title}`}
-    itemType="khóa học"
+    itemType={tDeleteItem("course")}
     itemLabel={course.title}
     disabled={!course.updatedAt}
     canMoveUp={course.order !== 1}

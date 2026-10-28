@@ -54,7 +54,22 @@
  },
  "focus": {
   "overviewUnknownTitle": "Continue learning and reviewing today",
-  "overviewUnknownDescription": "Due counts are not available to confirm today's progress yet. You can still open your cards or continue a lesson."
+  "overviewUnknownDescription": "Due counts are not available to confirm today's progress yet. You can still open your cards or continue a lesson.",
+  "today": "Today",
+  "reviewedToday": "Reviewed {count} times",
+  "dueTitle": "You have <highlight>{count} items in your review queue</highlight> due today",
+  "noDueTitle": "Nothing is due in your review queue today",
+  "dueDescription": "Your due items are ready. Complete a review session to reinforce what you have learned.",
+  "noDueDescription": "You can continue a lesson or read Chinese to expand your vocabulary.",
+  "reviewNow": "Review now ({count})",
+  "viewCards": "View saved cards",
+  "resumeLesson": "Continue your most recent lesson",
+  "resumeHint": "Open the lesson workspace directly",
+  "resumeNow": "Continue learning",
+  "vocabProgress": "Your vocabulary progress",
+  "knownWords": "words learned",
+  "learning": "Learning:",
+  "total": "Total:"
  },
  "activity": {
   "title": "Recent activity",

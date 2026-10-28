@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import { createDictationAttempt, type DictationAttempt } from "./dictation-session";
 import { dictationCardModels, studioDictationEditorModel } from "./dictation-workspace-utils";
@@ -27,6 +28,14 @@ export function useStudioDictationSession({
  const [dirtyAnswers, setDirtyAnswers] = useState<
   Parameters<typeof dictationCardModels>[0]["dirtyAnswers"]
  >({});
+ const hasUnsavedAnswer = Object.entries(answers).some(
+  ([entryId, answer]) =>
+   dirtyAnswers[entryId] === true &&
+   answer !== undefined &&
+   answer.trim().length > 0 &&
+   answer !== attemptHistory[entryId]?.at(-1)?.answer,
+ );
+ useUnsavedDraftGuard(hasUnsavedAnswer);
  const autoNextTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
  const model = studioDictationEditorModel({
   entry,

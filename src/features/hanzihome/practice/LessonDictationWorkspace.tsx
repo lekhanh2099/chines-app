@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Badge } from "@/components/ui/display/badge";
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { Card } from "@/components/ui/layout/card";
 import {
  Select,
@@ -38,6 +39,7 @@ export function LessonDictationWorkspace({
  titleZh,
 }: LessonDictationWorkspaceProps) {
  const tts = useSharedMandarinTts();
+ const requestNavigation = useUnsavedDraftGuard(false);
  const { stop } = tts;
  const sources = useMemo(
   () => explicitSources ?? dictationSourcesFromLesson(sourceLesson),
@@ -87,15 +89,17 @@ export function LessonDictationWorkspace({
  useEffect(() => () => stop(), [stop]);
 
  const selectSource = (sourceId: string) => {
-  tts.stop();
-  loopCurrentRef.current = false;
-  autoAdvanceRef.current = false;
-  setSelectedSourceId(sourceId);
-  setActiveIndex(0);
-  setCheckedEntryIds(new Set());
-  setLoopCurrent(false);
-  setAutoAdvance(false);
-  setScriptMode("hidden");
+  requestNavigation(() => {
+   tts.stop();
+   loopCurrentRef.current = false;
+   autoAdvanceRef.current = false;
+   setSelectedSourceId(sourceId);
+   setActiveIndex(0);
+   setCheckedEntryIds(new Set());
+   setLoopCurrent(false);
+   setAutoAdvance(false);
+   setScriptMode("hidden");
+  });
  };
 
  const selectEntry = (index: number) => {
@@ -216,6 +220,7 @@ export function LessonDictationWorkspace({
 
    <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_22rem]">
     <StudioDictationPracticePanel
+     key={selectedSource.id}
      activeIndex={effectiveActiveIndex}
      autoAdvance={autoAdvance}
      checkedCount={checkedEntryIds.size}

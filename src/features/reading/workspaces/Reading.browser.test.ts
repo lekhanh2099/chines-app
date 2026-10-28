@@ -329,7 +329,7 @@ it
       currentCovers = [originalCover];
       await page.evaluate(() => window.readingHarness.mountLibrary());
       const card = page.locator('article[data-library-collection="group:hanyu"]');
-      const coverButton = card.getByRole("button", {
+      const coverLink = card.getByRole("link", {
        name: `${copy.viewLessons}: ${copy.groups.hanyu.title}`,
        exact: true,
       });
@@ -337,11 +337,8 @@ it
        name: copy.reorderCollection.replace("{title}", copy.groups.hanyu.title),
        exact: true,
       });
-      await browserExpect(coverButton.locator("img")).toHaveAttribute(
-       "src",
-       originalCover.coverUrl,
-      );
-      await browserExpect(coverButton.locator('span[aria-hidden="true"]')).toHaveCount(0);
+      await browserExpect(coverLink.locator("img")).toHaveAttribute("src", originalCover.coverUrl);
+      await browserExpect(coverLink.locator('span[aria-hidden="true"]')).toHaveCount(0);
       await browserExpect(
        page.getByRole("banner").getByRole("button", { name: copy.edit, exact: true }),
       ).toHaveCount(0);
@@ -386,19 +383,19 @@ it
       holdCoverSave = false;
       releaseCoverSave();
       await browserExpect(dialog).toHaveCount(0);
-      await browserExpect(coverButton.locator("img")).toHaveAttribute("src", draftUrl);
-      await browserExpect(coverButton.locator('span[aria-hidden="true"]')).toHaveCount(0);
+      await browserExpect(coverLink.locator("img")).toHaveAttribute("src", draftUrl);
+      await browserExpect(coverLink.locator('span[aria-hidden="true"]')).toHaveCount(0);
       expect(coverSaves[0]?.input.expectedUpdatedAt).toBe(originalCover.updatedAt);
 
       await menuButton.click();
       await page.getByRole("menuitem", { name: copy.cover.edit, exact: true }).click();
       await dialog.getByRole("button", { name: copy.cover.useCommon, exact: true }).click();
       await browserExpect(dialog).toHaveCount(0);
-      await browserExpect(coverButton.locator("img")).toHaveAttribute(
+      await browserExpect(coverLink.locator("img")).toHaveAttribute(
        "src",
        "/textbooks/common-cover.svg",
       );
-      await browserExpect(coverButton.locator('span[aria-hidden="true"]')).toHaveCount(1);
+      await browserExpect(coverLink.locator('span[aria-hidden="true"]')).toHaveCount(1);
       expect(coverResets).toHaveLength(1);
       expect(coverResets[0]?.input.expectedUpdatedAt).toBe("2026-10-20T09:00:01.000Z");
 
@@ -562,23 +559,24 @@ it
          exact: true,
         });
         const card = page.locator(`article[data-library-collection="group:${group.key}"]`);
-        const trigger = card.getByRole("button", {
+        const trigger = card.getByRole("link", {
          name: `${copy.viewLessons}: ${copy.groups[group.key].title}`,
          exact: true,
         });
         await browserExpect(heading).toHaveCount(1);
         await trigger.focus();
         await page.keyboard.press("Enter");
-        const dialog = page.getByRole("dialog", {
-         name: copy.groups[group.key].title,
-         exact: true,
-        });
-        await browserExpect(dialog).toBeVisible();
+        const detail = page.getByRole("main");
+        await browserExpect(page).toHaveURL(`${url}hanzihome?collection=${group.key}`);
         await browserExpect(
-         dialog.getByText(copy.groups[group.key].description, { exact: true }),
+         detail.getByRole("heading", { name: copy.groups[group.key].title, exact: true }),
+        ).toBeVisible();
+        await browserExpect(card).toBeHidden();
+        await browserExpect(
+         detail.getByText(copy.groups[group.key].description, { exact: true }),
         ).toHaveCount(1);
         await browserExpect(
-         dialog.getByText(
+         detail.getByText(
           copy.collectionCounts
            .replace("{levels}", String(group.courses.length))
            .replace("{books}", String(group.bookCount))
@@ -588,28 +586,28 @@ it
         ).toHaveCount(1);
         if (group.key === "hanyu") {
          await browserExpect(
-          dialog.getByRole("heading", { name: "课程甲", exact: true }),
+          detail.getByRole("heading", { name: "课程甲", exact: true }),
          ).toBeVisible();
-         await browserExpect(dialog.getByText(copy.noLessons, { exact: true })).toBeVisible();
-         await browserExpect(dialog.getByText(copy.noBooksTitle, { exact: true })).toHaveCount(1);
+         await browserExpect(detail.getByText(copy.noLessons, { exact: true })).toBeVisible();
+         await browserExpect(detail.getByText(copy.noBooksTitle, { exact: true })).toHaveCount(1);
          await browserExpect(
-          dialog.getByText(copy.noBooksDescription, { exact: true }),
+          detail.getByText(copy.noBooksDescription, { exact: true }),
          ).toHaveCount(1);
          await browserExpect(
-          dialog.getByText(copy.contentCounts.replace("{vocab}", "9").replace("{grammar}", "5"), {
+          detail.getByText(copy.contentCounts.replace("{vocab}", "9").replace("{grammar}", "5"), {
            exact: true,
           }),
          ).toHaveCount(1);
          await browserExpect(
-          dialog.getByText(copy.contentCounts.replace("{vocab}", "0").replace("{grammar}", "0"), {
+          detail.getByText(copy.contentCounts.replace("{vocab}", "0").replace("{grammar}", "0"), {
            exact: true,
           }),
          ).toHaveCount(1);
-         await browserExpect(dialog.getByRole("combobox")).toHaveAccessibleName(
+         await browserExpect(detail.getByRole("combobox")).toHaveAccessibleName(
           copy.selectLessonAria.replace("{book}", "第一册"),
          );
          await browserExpect(
-          dialog.getByRole("link", {
+          detail.getByRole("link", {
            name: copy.openLessonAria.replace("{title}", "第一课"),
            exact: true,
           }),
@@ -623,7 +621,7 @@ it
           await browserExpect
            .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
            .toBe(true);
-          const select = dialog.getByRole("combobox");
+          const select = detail.getByRole("combobox");
           await select.focus();
           await page.keyboard.press("Enter");
           await browserExpect(page.getByRole("option")).toHaveCount(2);
@@ -638,20 +636,20 @@ it
          }
         } else {
          await browserExpect(
-          dialog.getByText(copy.noCollectionBooksTitle, { exact: true }),
+          detail.getByText(copy.noCollectionBooksTitle, { exact: true }),
          ).toHaveCount(1);
          await browserExpect(
-          dialog.getByText(copy.noCollectionBooksDescription, { exact: true }),
+          detail.getByText(copy.noCollectionBooksDescription, { exact: true }),
          ).toHaveCount(1);
         }
         if (group.key === "boyaSecondEdition") {
          await browserExpect(
-          dialog.getByText(copy.missingAdvancedVolume, { exact: true }),
+          detail.getByText(copy.missingAdvancedVolume, { exact: true }),
          ).toHaveCount(1);
         }
-        await page.keyboard.press("Escape");
-        await browserExpect(dialog).toHaveCount(0);
-        await browserExpect(trigger).toBeFocused();
+        await page.goBack();
+        await browserExpect(page).toHaveURL(`${url}hanzihome`);
+        await browserExpect(trigger).toBeVisible();
        }
        for (const filter of [
         { label: copy.filters.hanyu, count: 1 },
@@ -668,28 +666,32 @@ it
        }
        for (const book of textbooks) {
         const card = page.locator(`article[data-library-collection="static:${book.id}"]`);
-        const trigger = card.getByRole("button", {
+        const trigger = card.getByRole("link", {
          name: `${copy.viewLessons}: ${book.label}`,
          exact: true,
         });
         await trigger.click();
-        const dialog = page.getByRole("dialog", { name: book.label, exact: true });
-        await browserExpect(dialog).toBeVisible();
-        await browserExpect(dialog.getByRole("link")).toHaveCount(book.lessons.length);
+        const detail = page.getByRole("main");
+        await browserExpect(page).toHaveURL(`${url}hanzihome?collection=${book.id}`);
+        await browserExpect(
+         detail.getByRole("heading", { name: book.label, exact: true }),
+        ).toBeVisible();
+        await browserExpect(card).toBeHidden();
+        await browserExpect(detail.locator('a[href^="/hsk/"]')).toHaveCount(book.lessons.length);
         expect(
-         await dialog
-          .getByRole("link")
+         await detail
+          .locator('a[href^="/hsk/"]')
           .evaluateAll((links) => links.map((link) => link.getAttribute("href"))),
         ).toEqual(book.lessons.map((lesson) => buildTextbookHref(book.key, lesson.number)));
         const review = book.lessons.find((lesson) => lesson.title.startsWith("ÔN TẬP "));
         if (review) {
          await browserExpect(
-          dialog.getByRole("link", { name: review.title, exact: true }),
+          detail.getByRole("link", { name: review.title, exact: true }),
          ).toHaveAttribute("href", buildTextbookHref(book.key, review.number));
         }
-        await page.keyboard.press("Escape");
-        await browserExpect(dialog).toHaveCount(0);
-        await browserExpect(trigger).toBeFocused();
+        await page.goBack();
+        await browserExpect(page).toHaveURL(`${url}hanzihome`);
+        await browserExpect(trigger).toBeVisible();
        }
        await browserExpect(page.getByRole("button", { name: copy.edit, exact: true })).toHaveCount(
         0,
@@ -706,7 +708,9 @@ it
        await page.evaluate((value) => window.readingHarness.mountLibrary(value, true), locale);
        await browserExpect(page.locator("[data-library-resume]")).toHaveCount(0);
        await browserExpect(
-        page.locator('article[data-library-collection="group:hanyu"]').getByRole("link"),
+        page.locator(
+         'article[data-library-collection="group:hanyu"] a[href^="/hanzihome?courseId="]',
+        ),
        ).toHaveAttribute(
         "href",
         "/hanzihome?courseId=course-a&bookId=book-a&lesson=1&module=grammar",
@@ -901,7 +905,7 @@ it
          cards.map((card) => card.getAttribute("data-library-collection")),
         ),
        ).toEqual(defaultOrder);
-       await browserExpect(collections.getByRole("link")).toHaveCount(0);
+       await browserExpect(collections.getByRole("link")).toHaveCount(defaultOrder.length);
        expect((await page.evaluate(() => window.readingHarness.snapshot())).settingsWrites).toEqual(
         [],
        );
@@ -1062,10 +1066,11 @@ it
       await page.evaluate(() => window.readingHarness.mountLibrary());
       await page
        .locator('article[data-library-collection="group:hanyu"]')
-       .getByRole("button", { name: "Xem bài học: Giáo trình Hán ngữ", exact: true })
+       .getByRole("link", { name: "Xem bài học: Giáo trình Hán ngữ", exact: true })
        .click();
+      await browserExpect(page).toHaveURL(`${url}hanzihome?collection=hanyu`);
       await browserExpect(
-       page.getByRole("dialog", { name: "Giáo trình Hán ngữ", exact: true }),
+       page.getByRole("main").getByRole("heading", { name: "Giáo trình Hán ngữ", exact: true }),
       ).toBeVisible();
       const select = page.getByRole("combobox");
       await browserExpect(select).toBeVisible();
@@ -1120,7 +1125,9 @@ it
       await page.evaluate(() => window.readingHarness.mountLibrary("vi", true));
       const copy = (await loadAppMessages("vi")).Common.library;
       await browserExpect(
-       page.locator('article[data-library-collection="group:hanyu"]').getByRole("link"),
+       page.locator(
+        'article[data-library-collection="group:hanyu"] a[href^="/hanzihome?courseId="]',
+       ),
       ).toHaveAttribute(
        "href",
        "/hanzihome?courseId=course-a&bookId=book-a&lesson=1&module=grammar",
@@ -1156,13 +1163,17 @@ it
        },
       );
       const gallery = page.getByRole("group", { name: copy.collectionsLabel, exact: true });
-      await browserExpect(gallery.getByRole("link")).toHaveCount(2);
+      await browserExpect(gallery.getByRole("link")).toHaveCount(
+       groups.length + textbooks.length + 2,
+      );
       await browserExpect(
-       gallery.locator('article[data-library-collection="group:hanyu"]').getByRole("link"),
+       gallery.locator(
+        'article[data-library-collection="group:hanyu"] a[href^="/hanzihome?courseId="]',
+       ),
       ).toHaveAttribute("href", "/hanzihome?courseId=course-a&bookId=book-a&lesson=2&module=vocab");
       const compactReview = gallery
        .locator(`article[data-library-collection="static:${spoken.id}"]`)
-       .getByRole("link");
+       .locator('a[href^="/hsk/"]');
       await browserExpect(compactReview).toHaveAttribute(
        "href",
        `${buildTextbookHref(spoken.key, review.number)}&tab=practice`,
@@ -1276,7 +1287,9 @@ it
        advancedSettings,
       );
       await browserExpect(
-       gallery.locator('article[data-library-collection="group:hanyu"]').getByRole("link"),
+       gallery.locator(
+        'article[data-library-collection="group:hanyu"] a[href^="/hanzihome?courseId="]',
+       ),
       ).toHaveAttribute(
        "href",
        "/hanzihome?courseId=course-a&bookId=book-a&lesson=1&module=grammar",
@@ -1448,13 +1461,17 @@ it
      "data-active",
      "true",
     );
-    await page.getByRole("tab", { name: chrome.tabs.translation, exact: true }).click();
+    await browserExpect(
+     page.getByRole("tablist", { name: chrome.tabsAria, exact: true }).getByRole("tab"),
+    ).toHaveCount(3);
+    await page.getByRole("tab", { name: chrome.groups.practice, exact: true }).click();
+    await page.getByRole("button", { name: chrome.tabs.translation, exact: true }).click();
     await browserExpect(page.getByRole("button", { name: "2", exact: true })).toHaveAttribute(
      "aria-current",
      "step",
     );
     await page.getByRole("button", { name: "1", exact: true }).click();
-    await page.getByRole("tab", { name: chrome.tabs.reader, exact: true }).click();
+    await page.getByRole("tab", { name: chrome.groups.reading, exact: true }).click();
     await browserExpect(page.locator(`[data-reader-segment="${paragraph.id}"]`)).toHaveAttribute(
      "data-active",
      "true",

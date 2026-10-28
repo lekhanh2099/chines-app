@@ -2,6 +2,7 @@
 
 import type { DragEvent, ReactNode } from "react";
 import { Ellipsis } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import {
@@ -61,6 +62,7 @@ export function ModulePane({
   targetIndex: number,
  ) => void;
 }) {
+ const tModules = useTranslations("Shell.studyModules");
  const isCoarsePointer = useCoarsePointer();
  const activeIndex = items.indexOf(activeModule);
  const targetPane: PaneId = paneId === "left" ? "right" : "left";
@@ -83,8 +85,8 @@ export function ModulePane({
      type="button"
      variant="ghost"
      size={isCoarsePointer ? "icon" : "icon-toolbar"}
-     aria-label={`Sắp xếp mô-đun ${moduleMeta[activeModule].label}`}
-     title={`Sắp xếp mô-đun ${moduleMeta[activeModule].label}`}
+     aria-label={tModules("reorder", { module: tModules(moduleMeta[activeModule].key) })}
+     title={tModules("reorder", { module: tModules(moduleMeta[activeModule].key) })}
     >
      <Ellipsis />
     </Button>
@@ -94,17 +96,17 @@ export function ModulePane({
      disabled={activeIndex <= 0}
      onSelect={() => onMoveModule(activeModule, paneId, paneId, activeIndex - 1)}
     >
-     Di chuyển sang trái
+     {tModules("moveLeft")}
     </DropdownMenuItem>
     <DropdownMenuItem
      disabled={activeIndex < 0 || activeIndex >= items.length - 1}
      onSelect={() => onMoveModule(activeModule, paneId, paneId, activeIndex + 1)}
     >
-     Di chuyển sang phải
+     {tModules("moveRight")}
     </DropdownMenuItem>
     <DropdownMenuSeparator />
     <DropdownMenuItem onSelect={() => onMoveModule(activeModule, paneId, targetPane, 0)}>
-     Chuyển sang khung còn lại
+     {tModules("moveOtherPane")}
     </DropdownMenuItem>
    </DropdownMenuContent>
   </DropdownMenu>
@@ -127,7 +129,7 @@ export function ModulePane({
         if (selectedModule) onSelectModule(selectedModule);
        }}
       >
-       <SelectTrigger size="sm" width="full" aria-label="Chọn nội dung cho khung học">
+       <SelectTrigger size="sm" width="full" aria-label={tModules("selectPaneAria")}>
         <SelectValue />
        </SelectTrigger>
        <SelectContent align="end">
@@ -138,7 +140,7 @@ export function ModulePane({
           return (
            <SelectItem key={item} value={item}>
             <Icon />
-            {meta.label}
+            {tModules(meta.key)}
            </SelectItem>
           );
          })}

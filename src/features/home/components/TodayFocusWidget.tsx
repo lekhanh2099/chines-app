@@ -45,13 +45,13 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
  const t = useTranslations("Home");
  const activeResumeLesson = getActiveResumeLesson(courses);
 
- const hasDueCards = pulse.overviewAvailable && pulse.srsDueCount > 0;
+ const hasDueReviewItems = pulse.overviewAvailable && pulse.learningLoopDueCount > 0;
 
  return (
   <section aria-labelledby="today-focus-heading" className="grid w-full min-w-0 gap-4">
    {/* Hero Daily Habit Banner */}
    <Card
-    variant={hasDueCards ? "elevated" : "subtle"}
+    variant={hasDueReviewItems ? "elevated" : "subtle"}
     padding="lg"
     className="relative overflow-hidden"
    >
@@ -59,16 +59,16 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
      <div className="grid min-w-0 gap-2">
       <div className="flex items-center gap-2">
        <Badge
-        variant={!pulse.overviewAvailable ? "default" : hasDueCards ? "warning" : "success"}
+        variant={!pulse.overviewAvailable ? "default" : hasDueReviewItems ? "warning" : "success"}
         size="sm"
         casing="natural"
        >
         <Flame className="size-3.5 fill-current" />
-        Hôm nay
+        {t("focus.today")}
        </Badge>
        {pulse.reviewedTodayCount > 0 ? (
         <Badge variant="default" size="sm" casing="natural">
-         Đã ôn {pulse.reviewedTodayCount} lượt
+         {t("focus.reviewedToday", { count: pulse.reviewedTodayCount })}
         </Badge>
        ) : null}
       </div>
@@ -80,43 +80,42 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
        tone="default"
        weight="black"
       >
-       {!pulse.overviewAvailable ? (
-        t("focus.overviewUnknownTitle")
-       ) : hasDueCards ? (
-        <>
-         Bạn có{" "}
-         <span className="text-warning-text underline decoration-warning/50 underline-offset-4">
-          {pulse.srsDueCount} thẻ từ vựng
-         </span>{" "}
-         cần ôn tập hôm nay
-        </>
-       ) : (
-        "Tuyệt vời! Bạn đã hoàn thành toàn bộ thẻ ôn tập của hôm nay"
-       )}
+       {!pulse.overviewAvailable
+        ? t("focus.overviewUnknownTitle")
+        : hasDueReviewItems
+          ? t.rich("focus.dueTitle", {
+             count: pulse.learningLoopDueCount,
+             highlight: (chunks) => (
+              <span className="text-warning-text underline decoration-warning/50 underline-offset-4">
+               {chunks}
+              </span>
+             ),
+            })
+          : t("focus.noDueTitle")}
       </Typography>
 
       <Typography as="p" variant="bodySmall" tone="muted" className="max-w-xl">
        {!pulse.overviewAvailable
         ? t("focus.overviewUnknownDescription")
-        : hasDueCards
-          ? "Thuật toán lặp lại ngắt quãng (SRS) đã lên lịch những từ bạn sắp quên. Hãy hoàn thành phiên ôn để củng cố trí nhớ dài hạn."
-          : "Không còn thẻ nào đến hạn. Bạn có thể tiếp tục học bài mới hoặc đọc bài viết tiếng Trung để mở rộng vốn từ."}
+        : hasDueReviewItems
+          ? t("focus.dueDescription")
+          : t("focus.noDueDescription")}
       </Typography>
      </div>
 
      <div className="flex shrink-0 items-center gap-3">
-      {hasDueCards ? (
+      {hasDueReviewItems ? (
        <Button size="lg" className="gap-2" asChild>
-        <Link href="/dictionary">
+        <Link href="/learning-loop">
          <Zap className="size-4 fill-current" />
-         Ôn tập ngay ({pulse.srsDueCount})
+         {t("focus.reviewNow", { count: pulse.learningLoopDueCount })}
         </Link>
        </Button>
       ) : (
        <Button variant="outline" size="lg" className="gap-2" asChild>
         <Link href="/dictionary">
          <Repeat2 className="size-4" />
-         Xem kho thẻ từ
+         {t("focus.viewCards")}
         </Link>
        </Button>
       )}
@@ -137,7 +136,7 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
        <div className="flex items-center justify-between gap-2">
         <span className="flex items-center gap-1.5 text-xs font-bold text-text-muted">
          <Sparkles className="size-3.5 text-primary" />
-         Học tiếp bài học gần nhất
+         {t("focus.resumeLesson")}
         </span>
         <Badge size="sm" variant="default" casing="natural">
          {activeResumeLesson.bookTitle}
@@ -146,18 +145,21 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
        <Typography as="h3" variant="body" weight="black" clamp="one">
         {activeResumeLesson.title.startsWith("ÔN TẬP ")
          ? activeResumeLesson.title
-         : `Bài ${activeResumeLesson.lessonNumber}: ${activeResumeLesson.title}`}
+         : t("continueLearning.lesson", {
+            number: activeResumeLesson.lessonNumber,
+            title: activeResumeLesson.title,
+           })}
        </Typography>
       </div>
 
       <div className="flex items-center justify-between gap-2 pt-2 border-t border-border-default/60">
        <Typography as="span" variant="caption" tone="muted">
-        Bấm để vào thẳng workspace bài học
+        {t("focus.resumeHint")}
        </Typography>
        <Button size="toolbar" className="gap-1.5" asChild>
         <Link href={activeResumeLesson.href}>
          <PlayCircle className="size-4" />
-         Vào học ngay
+         {t("focus.resumeNow")}
          <ArrowRight className="size-3.5" />
         </Link>
        </Button>
@@ -169,14 +171,14 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
     <Card variant="section" padding="md" className="flex flex-col justify-between gap-2">
      <div className="grid gap-1">
       <Typography as="span" variant="caption" tone="muted" weight="bold">
-       Tiến độ từ vựng cá nhân
+       {t("focus.vocabProgress")}
       </Typography>
       <div className="flex items-baseline gap-2">
        <span className="text-2xl font-black tracking-tight text-text-primary">
         {pulse.knownCount}
        </span>
        <Typography as="span" variant="caption" tone="muted">
-        từ đã thuộc
+        {t("focus.knownWords")}
        </Typography>
       </div>
      </div>
@@ -184,11 +186,11 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
      <div className="flex items-center justify-between text-xs text-text-muted pt-2 border-t border-border-default/60">
       <span className="flex items-center gap-1">
        <Repeat2 className="size-3.5 text-warning" />
-       Đang học: <strong className="text-text-primary">{pulse.reviewCount}</strong>
+       {t("focus.learning")} <strong className="text-text-primary">{pulse.reviewCount}</strong>
       </span>
       <span className="flex items-center gap-1">
        <CheckCircle2 className="size-3.5 text-success" />
-       Tổng: <strong className="text-text-primary">{pulse.trackedCount}</strong>
+       {t("focus.total")} <strong className="text-text-primary">{pulse.trackedCount}</strong>
       </span>
      </div>
     </Card>

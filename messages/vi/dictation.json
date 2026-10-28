@@ -1,6 +1,12 @@
 {
  "heading": "Phòng chép chính tả",
  "description": "Chọn bài HSK 3–6 theo giáo trình, tập và bài; hoặc dùng bản giọng đọc đã lưu hay nội dung tự dán để luyện nghe chép chính tả.",
+ "recentSource": "Bài chép chính tả gần nhất",
+ "resumeRecent": "Tiếp tục bài gần nhất",
+ "chooseDifferentSource": "Chọn bài khác",
+ "hideSourcePicker": "Ẩn phần chọn bài",
+ "resumingRecent": "Đang mở lại bài chép chính tả gần nhất…",
+ "resumeUnavailable": "Bài gần nhất không còn mở được. Hãy chọn lại nội dung để luyện.",
  "lessonSource": "Bài học / bài đọc HSK",
  "librarySource": "Từ thư viện giọng đọc",
  "customSource": "Dán nội dung",

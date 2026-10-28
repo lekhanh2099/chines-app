@@ -1,6 +1,7 @@
 "use client";
 
 import type { DragEvent } from "react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import type {
@@ -40,6 +41,7 @@ export function ModuleTabButton({
   targetIndex: number,
  ) => void;
 }) {
+ const tModules = useTranslations("Shell.studyModules");
  const meta = moduleMeta[item];
  const isCoarsePointer = useCoarsePointer();
  const Icon = meta.icon;
@@ -86,7 +88,7 @@ export function ModuleTabButton({
    className={cn("shrink-0 cursor-grab active:cursor-grabbing", isDragging && "opacity-40")}
   >
    <Icon data-icon="inline-start" />
-   {meta.label}
+   {tModules(meta.key)}
   </Button>
  );
 }

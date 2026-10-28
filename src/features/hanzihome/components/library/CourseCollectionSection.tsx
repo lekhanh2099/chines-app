@@ -56,8 +56,8 @@ export function CourseCollectionSection({
       </Typography>
       <div className="flex flex-wrap items-center gap-2">
        <Typography
-        as="h3"
-        variant="cardTitle"
+        as="h1"
+        variant="pageTitle"
         id={`${group.key}-collection-heading`}
         weight="black"
        >
@@ -103,7 +103,7 @@ export function CourseCollectionSection({
              <Typography variant="caption" tone="accent" weight="black">
               {t("levelPosition", { current: courseIndex + 1, total: group.courses.length })}
              </Typography>
-             <Typography as="h4" variant="cardTitle" id={`${course.id}-heading`} weight="black">
+             <Typography as="h2" variant="cardTitle" id={`${course.id}-heading`} weight="black">
               {course.title}
              </Typography>
              {canEditCourse ? <CourseCrudActions course={course} /> : null}

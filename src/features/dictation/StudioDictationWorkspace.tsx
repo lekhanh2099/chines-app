@@ -2,10 +2,13 @@
 
 import { useTranslations } from "next-intl";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { z } from "zod";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -50,8 +53,43 @@ import { useDictationPlayback } from "./useDictationPlayback";
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import { decodeJson, encodeJson } from "@/lib/schema/storage";
 
 type DictationSource = "lesson" | "library" | "custom" | "reader";
+
+const recentSourceStoragePrefix = "chines-app:dictation:recent-source:v1";
+const recentSourceSchema = z
+ .object({
+  title: z.string().min(1).max(200),
+  bookId: z.string().max(100),
+  volumeId: z.string().max(100),
+  lessonId: z.string().max(100),
+  sectionId: z.string().max(100),
+  readerDocumentId: z.string().max(100),
+  documentId: z.string().max(100),
+  clipId: z.string().max(100),
+ })
+ .refine((source) => {
+  if (
+   [source.lessonId, source.readerDocumentId, source.documentId, source.clipId].filter(Boolean)
+    .length !== 1
+  )
+   return false;
+  if (source.lessonId) return Boolean(source.bookId && source.volumeId && source.sectionId);
+  if (source.readerDocumentId)
+   return source.bookId === READER_DICTATION_BOOK_ID && !source.volumeId && !source.sectionId;
+  return !source.bookId && !source.volumeId && !source.sectionId;
+ });
+const emptyRecentSource = {
+ title: "",
+ bookId: "",
+ volumeId: "",
+ lessonId: "",
+ sectionId: "",
+ readerDocumentId: "",
+ documentId: "",
+ clipId: "",
+};
 
 export function StudioDictationWorkspace({
  initialReaderDocuments,
@@ -65,6 +103,9 @@ export function StudioDictationWorkspace({
  initialDictationLessons: ReadonlyArray<HanziHomeLesson>;
 }) {
  const t = useTranslations("Dictation");
+ const requestNavigation = useUnsavedDraftGuard(false);
+ const { userId, isResolved } = useClientSession();
+ const recentSourceStorageKey = `${recentSourceStoragePrefix}:${userId ?? "guest"}`;
  const tts = useSharedMandarinTts();
  const router = useRouter();
  const pathname = usePathname();
@@ -72,6 +113,15 @@ export function StudioDictationWorkspace({
  const requestedDocumentId = searchParams.get("documentId") ?? "";
  const requestedReaderDocumentId = searchParams.get("readerDocumentId") ?? "";
  const requestedClipId = searchParams.get("clipId") ?? "";
+ const resumeRequested = searchParams.get("resume") === "1";
+ const [recentSource, setRecentSource] = useState(emptyRecentSource);
+ const [hasRecentSource, setHasRecentSource] = useState(false);
+ const [recentSourceOwner, setRecentSourceOwner] = useState("");
+ const ownerReady = isResolved && recentSourceOwner === recentSourceStorageKey;
+ const [resumePending, setResumePending] = useState(false);
+ const [resumeUnavailable, setResumeUnavailable] = useState(false);
+ const [manualSelectionOpen, setManualSelectionOpen] = useState(false);
+ const loadedRecentSourceOwner = useRef("");
  const [selectedLessonIdState, setSelectedLessonId] = useState("");
  const [selectedBookIdState, setSelectedBookId] = useState("");
  const [selectedVolumeIdState, setSelectedVolumeId] = useState("");
@@ -123,10 +173,14 @@ export function StudioDictationWorkspace({
   requestedReaderDocumentId,
  );
  const selectedReaderResource =
-  isReaderCoursePack && selectedReaderDocumentId === requestedReaderDocumentId
+  isReaderCoursePack && initialReaderCourseResource?.document.id === selectedReaderDocumentId
    ? initialReaderCourseResource
-   : isReaderCoursePack && selectedReaderDocumentId === initialReaderDocuments[0]?.id
-     ? initialReaderCourseResource
+   : null;
+ const currentReaderResource =
+  sourceType === "reader" && initialReaderResource?.document.id === requestedDocumentId
+   ? initialReaderResource
+   : sourceType === "lesson" && isReaderCoursePack
+     ? selectedReaderResource
      : null;
  const bundleQuery = useHanziHomeListeningLesson(
   sourceType === "lesson" && !isReaderCoursePack ? selectedLessonId : "",
@@ -154,7 +208,7 @@ export function StudioDictationWorkspace({
  );
  const sourceEntries = useMemo(() => {
   if (sourceType === "reader") {
-   return readerDictationEntries(initialReaderResource?.paragraphs ?? [], (number) =>
+   return readerDictationEntries(currentReaderResource?.paragraphs ?? [], (number) =>
     t("paragraph", { number }),
    );
   }
@@ -172,7 +226,7 @@ export function StudioDictationWorkspace({
   return customDictationEntries(customText, t("pasted"), practiceStarted);
  }, [
   customText,
-  initialReaderResource?.paragraphs,
+  currentReaderResource?.paragraphs,
   selectedReaderResource?.paragraphs,
   isReaderCoursePack,
   selectedClip,
@@ -193,7 +247,7 @@ export function StudioDictationWorkspace({
   changeTransportAutoAdvance,
  } = useDictationPlayback({
   entries: sourceEntries,
-  enabled: practiceStarted,
+  enabled: practiceStarted && ownerReady,
   playWholePassage: playbackMode === "passage",
   loadVoices: tts.loadVoices,
   stop: tts.stop,
@@ -210,7 +264,164 @@ export function StudioDictationWorkspace({
   setModeConfirmed(false);
   setPracticeStarted(false);
   setCheckedEntryIds(new Set());
+  setResumePending(false);
+  setResumeUnavailable(false);
  };
+
+ useEffect(() => {
+  if (!isResolved || loadedRecentSourceOwner.current === recentSourceStorageKey) return;
+  if (loadedRecentSourceOwner.current) tts.stop();
+  const frame = window.requestAnimationFrame(() => {
+   const previousOwner = loadedRecentSourceOwner.current;
+   loadedRecentSourceOwner.current = recentSourceStorageKey;
+   setRecentSourceOwner(recentSourceStorageKey);
+   setRecentSource(emptyRecentSource);
+   setHasRecentSource(false);
+   setResumePending(false);
+   setResumeUnavailable(false);
+   if (previousOwner && previousOwner !== recentSourceStorageKey) {
+    resetPlayback();
+    setScriptMode("hidden");
+    setModeConfirmed(false);
+    setPracticeStarted(false);
+    setCheckedEntryIds(new Set());
+    setSelectedBookId("");
+    setSelectedVolumeId("");
+    setSelectedLessonId("");
+    setSelectedSectionId("");
+    setSelectedReaderDocumentId("");
+    setSelectedClipId(requestedClipId);
+    setSourceType(requestedDocumentId ? "reader" : requestedClipId ? "library" : "lesson");
+    setCustomText("");
+    setManualSelectionOpen(false);
+   }
+   try {
+    const raw = window.localStorage.getItem(recentSourceStorageKey);
+    const saved = raw === null ? null : decodeJson(raw, recentSourceSchema);
+    if (saved === null) return;
+    if (saved.lessonId) {
+     const lesson = initialDictationLessons.find((item) => item.id === saved.lessonId);
+     const book = bookOptions.find((item) => item.id === saved.bookId);
+     if (
+      !lesson ||
+      lesson.bookId !== saved.volumeId ||
+      !book?.volumes.some((volume) => volume.id === saved.volumeId)
+     )
+      return;
+    }
+    if (
+     saved.readerDocumentId &&
+     !initialReaderDocuments.some((document) => document.id === saved.readerDocumentId)
+    )
+     return;
+    setRecentSource(saved);
+    setHasRecentSource(true);
+    if (!resumeRequested) return;
+    if (
+     requestedDocumentId !== saved.documentId ||
+     requestedReaderDocumentId !== saved.readerDocumentId ||
+     requestedClipId !== saved.clipId
+    ) {
+     setManualSelectionOpen(true);
+     return;
+    }
+    setSelectedBookId(saved.bookId);
+    setSelectedVolumeId(saved.volumeId);
+    setSelectedLessonId(saved.lessonId);
+    setSelectedSectionId(saved.sectionId);
+    setSelectedReaderDocumentId(saved.readerDocumentId);
+    setSelectedClipId(saved.clipId);
+    setSourceType(saved.documentId ? "reader" : saved.clipId ? "library" : "lesson");
+    setModeConfirmed(true);
+    setResumePending(true);
+   } catch {
+    // Browser storage can be unavailable; manual source selection still works.
+   }
+  });
+  return () => window.cancelAnimationFrame(frame);
+ }, [
+  bookOptions,
+  initialDictationLessons,
+  initialReaderDocuments,
+  isResolved,
+  recentSourceStorageKey,
+  requestedClipId,
+  requestedDocumentId,
+  requestedReaderDocumentId,
+  resetPlayback,
+  resumeRequested,
+  tts,
+ ]);
+
+ const hasCurrentRecentSource = hasRecentSource && recentSourceOwner === recentSourceStorageKey;
+ const resumeUrlMatchesRecent =
+  requestedDocumentId === recentSource.documentId &&
+  requestedReaderDocumentId === recentSource.readerDocumentId &&
+  requestedClipId === recentSource.clipId;
+ useEffect(() => {
+  if (!resumePending || !hasCurrentRecentSource || !resumeRequested || !resumeUrlMatchesRecent)
+   return;
+  if (sourceType === "library" && ttsLibraryQuery.isPending) return;
+  if (sourceType === "lesson" && !isReaderCoursePack && bundleQuery.isPending) return;
+
+  const hasExactSource =
+   sourceType === "reader"
+    ? currentReaderResource?.document.id === recentSource.documentId
+    : sourceType === "library"
+      ? selectedClip?.id === recentSource.clipId
+      : isReaderCoursePack
+        ? selectedReaderResource?.document.id === recentSource.readerDocumentId
+        : selectedLessonId === recentSource.lessonId &&
+          selectedSection?.id === recentSource.sectionId;
+  const readFailed =
+   (sourceType === "library" && ttsLibraryQuery.isError) ||
+   (sourceType === "lesson" && !isReaderCoursePack && bundleQuery.isError);
+  const frame = window.requestAnimationFrame(() => {
+   setResumePending(false);
+   if (hasExactSource && sourceEntries.length > 0) {
+    setPracticeStarted(true);
+    return;
+   }
+   setModeConfirmed(false);
+   setManualSelectionOpen(true);
+   setResumeUnavailable(!readFailed);
+   if (!readFailed) {
+    setHasRecentSource(false);
+    try {
+     window.localStorage.removeItem(recentSourceStorageKey);
+    } catch {
+     // The invalid recent source stays hidden for this visit.
+    }
+   }
+  });
+  return () => window.cancelAnimationFrame(frame);
+ }, [
+  bundleQuery.isError,
+  bundleQuery.isPending,
+  currentReaderResource,
+  hasCurrentRecentSource,
+  isReaderCoursePack,
+  recentSource.clipId,
+  recentSource.documentId,
+  recentSource.lessonId,
+  recentSource.readerDocumentId,
+  recentSource.sectionId,
+  recentSourceStorageKey,
+  requestedClipId,
+  requestedDocumentId,
+  requestedReaderDocumentId,
+  resumePending,
+  resumeRequested,
+  resumeUrlMatchesRecent,
+  selectedClip,
+  selectedLessonId,
+  selectedReaderResource,
+  selectedSection,
+  sourceEntries.length,
+  sourceType,
+  ttsLibraryQuery.isError,
+  ttsLibraryQuery.isPending,
+ ]);
 
  const persistAttempt = (attempt: DictationAttempt) => {
   setCheckedEntryIds((current) => new Set(current).add(attempt.entryId));
@@ -225,9 +436,19 @@ export function StudioDictationWorkspace({
  if (requestedDocumentId.length > 0) {
   sourceOptions.unshift({ key: "reader", label: t("readerSource") });
  }
+ const sourcePickerVisible =
+  !resumePending &&
+  (!practiceStarted || sourceEntries.length === 0) &&
+  (!hasCurrentRecentSource ||
+   manualSelectionOpen ||
+   (practiceStarted && sourceEntries.length === 0) ||
+   (!resumeRequested &&
+    (requestedDocumentId.length > 0 ||
+     requestedReaderDocumentId.length > 0 ||
+     requestedClipId.length > 0)));
 
  return (
-  <div className="grid min-w-0 gap-4">
+  <div className="grid min-w-0 gap-4" style={{ display: ownerReady ? undefined : "none" }}>
    <div className="grid gap-1">
     <Typography as="h1" variant="pageTitle" weight="black">
      {t("heading")}
@@ -237,7 +458,88 @@ export function StudioDictationWorkspace({
     </Typography>
    </div>
 
-   <Card variant="section" padding="md" className="grid gap-3">
+   {hasCurrentRecentSource && !practiceStarted && !resumePending ? (
+    <Card variant="elevated" padding="md" className="grid gap-3">
+     <div className="grid gap-1">
+      <Typography variant="overline" tone="accent" weight="black">
+       {t("recentSource")}
+      </Typography>
+      <Typography as="h2" variant="cardTitle" weight="black">
+       {recentSource.title}
+      </Typography>
+     </div>
+     <div className="flex flex-wrap gap-2">
+      <Button
+       type="button"
+       onClick={() => {
+        setSelectedBookId(recentSource.bookId);
+        setSelectedVolumeId(recentSource.volumeId);
+        setSelectedLessonId(recentSource.lessonId);
+        setSelectedSectionId(recentSource.sectionId);
+        setSelectedReaderDocumentId(recentSource.readerDocumentId);
+        setSelectedClipId(recentSource.clipId);
+        setSourceType(
+         recentSource.documentId ? "reader" : recentSource.clipId ? "library" : "lesson",
+        );
+        resetPracticeFlow();
+        setManualSelectionOpen(false);
+        setModeConfirmed(true);
+        setResumePending(true);
+        const next = new URLSearchParams();
+        next.set("resume", "1");
+        if (recentSource.documentId) next.set("documentId", recentSource.documentId);
+        if (recentSource.readerDocumentId)
+         next.set("readerDocumentId", recentSource.readerDocumentId);
+        if (recentSource.clipId) next.set("clipId", recentSource.clipId);
+        router.push(`${pathname}?${next.toString()}`, { scroll: false });
+       }}
+      >
+       {t("resumeRecent")}
+      </Button>
+      <Button
+       type="button"
+       variant="outline"
+       onClick={() => setManualSelectionOpen((current) => !current)}
+      >
+       {manualSelectionOpen ? t("hideSourcePicker") : t("chooseDifferentSource")}
+      </Button>
+     </div>
+    </Card>
+   ) : null}
+
+   {resumePending ? (
+    <Card variant="subtle" padding="md" className="flex flex-wrap items-center gap-3">
+     <Typography as="p" variant="bodySmall" tone="muted" role="status">
+      {t("resumingRecent")}
+     </Typography>
+     <Button
+      type="button"
+      variant="outline"
+      onClick={() => {
+       setManualSelectionOpen(true);
+       resetPracticeFlow();
+       router.replace(pathname, { scroll: false });
+      }}
+     >
+      {t("chooseDifferentSource")}
+     </Button>
+    </Card>
+   ) : null}
+
+   {resumeUnavailable ? (
+    <Card variant="subtle" padding="md" role="alert">
+     <Typography as="p" variant="bodySmall" tone="warning">
+      {t("resumeUnavailable")}
+     </Typography>
+    </Card>
+   ) : null}
+
+   <Card
+    variant="section"
+    padding="md"
+    className="grid gap-3"
+    style={{ display: sourcePickerVisible ? undefined : "none" }}
+   >
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div className="grid gap-1">
       <Typography as="span" variant="caption" tone="muted" className="block">
@@ -394,14 +696,14 @@ export function StudioDictationWorkspace({
        </>
       ) : null}
       {sourceType === "reader" ? (
-       initialReaderResource === null ? (
+       currentReaderResource === null ? (
         <Typography variant="bodySmall" tone="danger">
          {t("missingReader")}
         </Typography>
        ) : (
         <Typography variant="bodySmall" tone="muted">
-         {initialReaderResource.document.title_zh} ·{" "}
-         {t("paragraphs", { count: initialReaderResource.paragraphs.length })}
+         {currentReaderResource.document.title_zh} ·{" "}
+         {t("paragraphs", { count: currentReaderResource.paragraphs.length })}
         </Typography>
        )
       ) : null}
@@ -496,7 +798,7 @@ export function StudioDictationWorkspace({
      }}
     />
    ) : null}
-   {sourceEntries.length > 0 && modeConfirmed && !practiceStarted ? (
+   {sourceEntries.length > 0 && modeConfirmed && !practiceStarted && !resumePending ? (
     <Card variant="section" padding="md" className="grid gap-4">
      <div className="grid gap-1">
       <Typography as="h2" variant="sectionTitle" weight="black">
@@ -565,18 +867,62 @@ export function StudioDictationWorkspace({
           ? t("paragraphMode")
           : t("passageMode")}{" "}
        ·{" "}
-       {initialReaderResource?.document.title_zh ??
-        selectedReaderResource?.document.title_zh ??
+       {currentReaderResource?.document.title_zh ??
         selectedSection?.titleZh ??
         selectedClip?.title ??
         t("customTitle")}{" "}
        · {t("sentences", { count: sourceEntries.length })}
       </Typography>
       <div className="flex flex-wrap gap-2">
-       <Button type="button" variant="outline" onClick={resetPracticeFlow}>
+       <Button
+        type="button"
+        variant="outline"
+        onClick={() => {
+         setManualSelectionOpen(true);
+         resetPracticeFlow();
+        }}
+       >
         {t("changeSource")}
        </Button>
-       <Button type="button" variant="default" onClick={() => setPracticeStarted(true)}>
+       <Button
+        type="button"
+        variant="default"
+        onClick={() => {
+         if (isResolved && sourceType !== "custom") {
+          const source = {
+           title:
+            sourceType === "reader"
+             ? (currentReaderResource?.document.title_zh ?? "")
+             : sourceType === "library"
+               ? selectedClip?.title || selectedClip?.text.slice(0, 36) || ""
+               : isReaderCoursePack
+                 ? (selectedReaderResource?.document.title_zh ?? "")
+                 : (selectedSection?.titleZh ?? ""),
+           bookId: sourceType === "lesson" ? selectedBookId : "",
+           volumeId: sourceType === "lesson" ? selectedVolumeId : "",
+           lessonId: sourceType === "lesson" && !isReaderCoursePack ? selectedLessonId : "",
+           sectionId:
+            sourceType === "lesson" && !isReaderCoursePack ? (selectedSection?.id ?? "") : "",
+           readerDocumentId:
+            sourceType === "lesson" && isReaderCoursePack ? selectedReaderDocumentId : "",
+           documentId: sourceType === "reader" ? requestedDocumentId : "",
+           clipId: sourceType === "library" ? effectiveSelectedClipId : "",
+          };
+          const encoded = encodeJson(source, recentSourceSchema);
+          if (encoded !== null) {
+           try {
+            window.localStorage.setItem(recentSourceStorageKey, encoded);
+            setRecentSource(source);
+            setHasRecentSource(true);
+           } catch {
+            // Practice is still available when browser storage is unavailable.
+           }
+          }
+         }
+         setResumeUnavailable(false);
+         setPracticeStarted(true);
+        }}
+       >
         {t("start")}
        </Button>
       </div>
@@ -591,8 +937,7 @@ export function StudioDictationWorkspace({
         {t("stepPractice")}
        </Typography>
        <Typography as="h2" variant="sectionTitle" weight="black" clamp="one">
-        {initialReaderResource?.document.title_zh ??
-         selectedReaderResource?.document.title_zh ??
+        {currentReaderResource?.document.title_zh ??
          selectedSection?.titleZh ??
          selectedClip?.title ??
          t("customTitle")}
@@ -604,18 +949,30 @@ export function StudioDictationWorkspace({
            ? t("paragraphMode")
            : t("passageMode")}{" "}
         ·{" "}
-        {initialReaderResource?.document.title_vi ||
-         selectedReaderResource?.document.title_vi ||
+        {currentReaderResource?.document.title_vi ||
          selectedSection?.titleVi ||
          selectedClip?.title ||
          t("sourceFallback")}
        </Typography>
       </div>
       <div className="flex shrink-0 flex-wrap gap-2">
-       <Button type="button" variant="outline" onClick={() => setPracticeStarted(false)}>
+       <Button
+        type="button"
+        variant="outline"
+        onClick={() => requestNavigation(() => setPracticeStarted(false))}
+       >
         {t("changeMode")}
        </Button>
-       <Button type="button" variant="outline" onClick={resetPracticeFlow}>
+       <Button
+        type="button"
+        variant="outline"
+        onClick={() =>
+         requestNavigation(() => {
+          setManualSelectionOpen(true);
+          resetPracticeFlow();
+         })
+        }
+       >
         {t("changeSource")}
        </Button>
       </div>
@@ -670,15 +1027,13 @@ export function StudioDictationWorkspace({
          t("currentLesson")
         }
         titleVi={
-         initialReaderResource?.document.title_vi ||
-         selectedReaderResource?.document.title_vi ||
+         currentReaderResource?.document.title_vi ||
          selectedSection?.titleVi ||
          selectedClip?.title ||
          t("sourceFallback")
         }
         titleZh={
-         initialReaderResource?.document.title_zh ??
-         selectedReaderResource?.document.title_zh ??
+         currentReaderResource?.document.title_zh ??
          selectedSection?.titleZh ??
          selectedClip?.title ??
          t("customTitle")

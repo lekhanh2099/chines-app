@@ -6,6 +6,7 @@ import type { JsonFieldValue } from "@/types/json";
 import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import Link from "next/link";
 import { Layers3 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
@@ -39,46 +40,12 @@ export const DEFAULT_SELECTED_CONTENT_MODULES: LessonContentModule[] = ["lessonT
 
 const LESSON_CONTENT_MODULES: Array<{
  value: LessonContentModule;
- label: string;
- description: string;
 }> = [
- {
-  value: "lessonText",
-  label: "Bài khóa",
-  description: "Hội thoại, đoạn văn và nội dung chính của bài.",
- },
- {
-  value: "vocab",
-  label: "Từ vựng",
-  description: "Từ vựng chính và tên riêng nếu bài có.",
- },
- {
-  value: "grammar",
-  label: "Ngữ pháp",
-  description: "Điểm ngữ pháp và ví dụ theo bài.",
- },
- {
-  value: "exercises",
-  label: "Bài tập",
-  description: "Các nhóm luyện tập, sửa câu, điền từ, hội thoại.",
- },
- {
-  value: "reading",
-  label: "Đọc hiểu",
-  description: "Bài đọc, câu hỏi đọc hiểu và điền khuyết.",
- },
-];
-
-const LESSON_CONTENT_PRESETS: Array<{
- label: string;
- modules: LessonContentModule[];
-}> = [
- { label: "Chỉ bài khóa", modules: ["lessonText"] },
- { label: "Chỉ ngữ pháp", modules: ["grammar"] },
- { label: "Chỉ từ vựng", modules: ["vocab"] },
- { label: "Bài khóa + Từ vựng", modules: ["lessonText", "vocab"] },
- { label: "Từ vựng + Bài tập", modules: ["vocab", "exercises"] },
- { label: "Tất cả", modules: ["lessonText", "vocab", "grammar", "exercises", "reading"] },
+ { value: "lessonText" },
+ { value: "vocab" },
+ { value: "grammar" },
+ { value: "exercises" },
+ { value: "reading" },
 ];
 
 function getSectionContentModule(
@@ -203,10 +170,22 @@ function LessonContentModuleSelector({
  onToggleModule: (module: LessonContentModule) => void;
  onApplyPreset: (modules: LessonContentModule[]) => void;
 }) {
+ const t = useTranslations("Vocab");
  const selectedModuleLabels = LESSON_CONTENT_MODULES.filter((module) =>
   selectedModules.includes(module.value),
- ).map((module) => module.label);
+ ).map((module) => t(`preview.modules.${module.value}.label`));
  const hasSelection = selectedModules.length > 0;
+ const presets: Array<{ label: string; modules: LessonContentModule[] }> = [
+  { label: t("preview.presets.lessonTextOnly"), modules: ["lessonText"] },
+  { label: t("preview.presets.grammarOnly"), modules: ["grammar"] },
+  { label: t("preview.presets.vocabOnly"), modules: ["vocab"] },
+  { label: t("preview.presets.lessonTextVocab"), modules: ["lessonText", "vocab"] },
+  { label: t("preview.presets.vocabExercises"), modules: ["vocab", "exercises"] },
+  {
+   label: t("preview.presets.all"),
+   modules: ["lessonText", "vocab", "grammar", "exercises", "reading"],
+  },
+ ];
 
  return (
   <section className="grid gap-3">
@@ -219,13 +198,13 @@ function LessonContentModuleSelector({
       tracking="wide"
       transform="uppercase"
      >
-      Bước 2 · Nội dung hiển thị
+      {t("preview.step")}
      </StudyInstructionText>
      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-      Chọn phần muốn xem trong bài
+      {t("preview.title")}
      </Typography>
      <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold">
-      Bật/tắt từng phần hoặc dùng preset nhanh. Phần preview bên dưới sẽ đổi theo bài đã chọn.
+      {t("preview.description")}
      </StudyInstructionText>
     </div>
 
@@ -236,7 +215,7 @@ function LessonContentModuleSelector({
       weight="black"
       className="rounded-full bg-bg-subtle px-3 py-1"
      >
-      {selectedModules.length} phần
+      {t("preview.selectedCount", { count: selectedModules.length })}
      </StudyInstructionText>
      <Button
       type="button"
@@ -244,7 +223,7 @@ function LessonContentModuleSelector({
       onClick={() => onApplyPreset([])}
       disabled={!hasSelection}
      >
-      Bỏ chọn
+      {t("preview.clear")}
      </Button>
     </div>
    </div>
@@ -260,9 +239,9 @@ function LessonContentModuleSelector({
        variant={isSelected ? "active" : "surface"}
        onClick={() => onToggleModule(module.value)}
        aria-pressed={isSelected}
-       title={module.description}
+       title={t(`preview.modules.${module.value}.description`)}
       >
-       {module.label}
+       {t(`preview.modules.${module.value}.label`)}
       </Button>
      );
     })}
@@ -276,9 +255,9 @@ function LessonContentModuleSelector({
      tracking="wide"
      transform="uppercase"
     >
-     Preset
+     {t("preview.presetLabel")}
     </StudyInstructionText>
-    {LESSON_CONTENT_PRESETS.map((preset) => (
+    {presets.map((preset) => (
      <Button
       key={preset.label}
       type="button"
@@ -296,9 +275,9 @@ function LessonContentModuleSelector({
     weight="black"
     className="grid gap-1 rounded-xl bg-bg-subtle px-3 py-2"
    >
-    Đang xem:{" "}
+    {t("preview.viewing")}{" "}
     <StudyInstructionText as="span" tone="primary">
-     {selectedModuleLabels.length > 0 ? selectedModuleLabels.join(" + ") : "Chưa chọn nội dung"}
+     {selectedModuleLabels.length > 0 ? selectedModuleLabels.join(" + ") : t("preview.noModules")}
     </StudyInstructionText>
    </StudyInstructionText>
   </section>
@@ -314,6 +293,7 @@ function SelectedLessonContentPreview({
  selectedModules: LessonContentModule[];
  selectedLessonCount: number;
 }) {
+ const t = useTranslations("Vocab");
  if (selectedLessonCount === 0) {
   return (
    <StudyInstructionText
@@ -322,7 +302,7 @@ function SelectedLessonContentPreview({
     weight="bold"
     className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4"
    >
-    Chọn một hoặc nhiều bài ở trên để xem nội dung theo phần.
+    {t("preview.selectLessons")}
    </StudyInstructionText>
   );
  }
@@ -335,7 +315,7 @@ function SelectedLessonContentPreview({
     weight="bold"
     className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4"
    >
-    Chọn ít nhất một phần nội dung để hiển thị.
+    {t("preview.selectModule")}
    </StudyInstructionText>
   );
  }
@@ -354,7 +334,7 @@ function SelectedLessonContentPreview({
       <div className="h-20 rounded-lg bg-bg-card" />
      </div>
     ))}
-    <span className="sr-only">Đang tải nội dung bài đã chọn</span>
+    <span className="sr-only">{t("preview.loading")}</span>
    </div>
   );
  }
@@ -363,7 +343,7 @@ function SelectedLessonContentPreview({
   <section className="grid gap-3">
    <div className="flex items-center gap-2 text-sm font-black text-text-primary">
     <Layers3 className="h-4 w-4 text-primary" />
-    <span>Xem nhanh nội dung bài đã chọn</span>
+    <span>{t("preview.quickView")}</span>
    </div>
 
    <div className="grid gap-3">
@@ -375,7 +355,7 @@ function SelectedLessonContentPreview({
       <div className="flex flex-wrap items-center justify-between gap-2">
        <div>
         <Typography as="h3" variant="cardTitle" tone="default" weight="black">
-         Bài {lesson.lessonNumber}: {lesson.titleZh}
+         {t("filters.lessonOption", { number: lesson.lessonNumber, title: lesson.titleZh })}
         </Typography>
         <StudyInstructionText variant="label" tone="muted" weight="bold">
          {lesson.title}
@@ -392,7 +372,7 @@ function SelectedLessonContentPreview({
            module: "overview",
           })}
          >
-          Mở bài
+          {t("list.openLesson")}
          </Link>
         </Button>
        )}
@@ -417,14 +397,14 @@ function LessonModulePreview({
  lesson: HanziHomeLesson;
  module: LessonContentModule;
 }) {
- const moduleMeta = LESSON_CONTENT_MODULES.find((option) => option.value === module);
+ const t = useTranslations("Vocab");
  const sections = getLessonSectionsForModule(lesson, module);
  const itemCount = getModuleItemCount(lesson, module, sections);
 
  return (
   <section className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3">
    <div className="flex items-center justify-between gap-3">
-    <span>{moduleMeta?.label ?? module}</span>
+    <span>{t(`preview.modules.${module}.label`)}</span>
     <StudyInstructionText
      variant="caption"
      tone="muted"
@@ -432,7 +412,7 @@ function LessonModulePreview({
      scale="micro"
      className="rounded-full bg-bg-subtle px-2 py-1"
     >
-     {itemCount} mục
+     {t("list.count", { count: itemCount })}
     </StudyInstructionText>
    </div>
 
@@ -481,15 +461,16 @@ function CompactModuleContent({
  module: LessonContentModule;
  sections: LessonSectionMatch[];
 }) {
+ const t = useTranslations("Vocab");
  if (module === "lessonText") return <CompactLessonText sections={sections} />;
  if (module === "vocab") return <CompactVocabulary lesson={lesson} sections={sections} />;
  if (module === "grammar") return <CompactGrammar lesson={lesson} sections={sections} />;
  if (module === "exercises")
-  return <CompactGenericItems sections={sections} emptyLabel="Chưa có bài tập." />;
+  return <CompactGenericItems sections={sections} emptyLabel={t("preview.empty.exercises")} />;
  if (module === "reading")
-  return <CompactGenericItems sections={sections} emptyLabel="Chưa có bài đọc." />;
+  return <CompactGenericItems sections={sections} emptyLabel={t("preview.empty.reading")} />;
 
- return <CompactEmpty label="Phần này chưa có dữ liệu render được cho bài đã chọn." />;
+ return <CompactEmpty label={t("preview.empty.unavailable")} />;
 }
 
 function getLessonTextLines(sections: LessonSectionMatch[]) {
@@ -517,9 +498,10 @@ function getLessonTextLines(sections: LessonSectionMatch[]) {
 }
 
 function CompactLessonText({ sections }: { sections: LessonSectionMatch[] }) {
+ const t = useTranslations("Vocab");
  const lines = getLessonTextLines(sections).filter((line) => line.zh || line.vi);
 
- if (lines.length === 0) return <CompactEmpty label="Chưa có bài khóa." />;
+ if (lines.length === 0) return <CompactEmpty label={t("preview.empty.lessonText")} />;
 
  return (
   <div className="grid gap-2">
@@ -556,7 +538,7 @@ function CompactLessonText({ sections }: { sections: LessonSectionMatch[] }) {
    ))}
    {lines.length > 2 && (
     <StudyInstructionText variant="caption" tone="muted" weight="black">
-     +{lines.length - 2} dòng nữa trong bài.
+     {t("preview.moreLines", { count: lines.length - 2 })}
     </StudyInstructionText>
    )}
   </div>
@@ -570,6 +552,7 @@ function CompactVocabulary({
  lesson: HanziHomeLesson;
  sections: LessonSectionMatch[];
 }) {
+ const t = useTranslations("Vocab");
  const sourceItems = sections.flatMap(({ section }) =>
   arrayValue(asRecord(section), "items").map(asRecord),
  );
@@ -608,14 +591,14 @@ function CompactVocabulary({
     })}
     {sourceItems.length > 12 && (
      <StudyInstructionText variant="caption" tone="muted" weight="black" className="col-span-full">
-      +{sourceItems.length - 12} từ nữa.
+      {t("preview.moreWords", { count: sourceItems.length - 12 })}
      </StudyInstructionText>
     )}
    </div>
   );
  }
 
- if (lesson.vocab.length === 0) return <CompactEmpty label="Chưa có từ vựng." />;
+ if (lesson.vocab.length === 0) return <CompactEmpty label={t("preview.empty.vocab")} />;
 
  return (
   <div className="grid gap-1.5 sm:grid-cols-2 xl:grid-cols-3">
@@ -639,7 +622,7 @@ function CompactVocabulary({
    ))}
    {lesson.vocab.length > 12 && (
     <StudyInstructionText variant="caption" tone="muted" weight="black" className="col-span-full">
-     +{lesson.vocab.length - 12} từ nữa.
+     {t("preview.moreWords", { count: lesson.vocab.length - 12 })}
     </StudyInstructionText>
    )}
   </div>
@@ -653,6 +636,7 @@ function CompactGrammar({
  lesson: HanziHomeLesson;
  sections: LessonSectionMatch[];
 }) {
+ const t = useTranslations("Vocab");
  const sourceItems = sections.flatMap(({ section }) =>
   arrayValue(asRecord(section), "items").map(asRecord),
  );
@@ -666,7 +650,7 @@ function CompactGrammar({
       className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2"
      >
       <Typography as="h4" variant="cardTitle" tone="default" weight="black">
-       {itemTitle(item) || "Điểm ngữ pháp"}
+       {itemTitle(item) || t("preview.grammarPoint")}
       </Typography>
       {instructionText(item.core) && (
        <StudyInstructionText variant="label" tone="muted" weight="bold" clamp="two">
@@ -677,14 +661,14 @@ function CompactGrammar({
     ))}
     {sourceItems.length > 8 && (
      <StudyInstructionText variant="caption" tone="muted" weight="black">
-      +{sourceItems.length - 8} mục nữa.
+      {t("preview.moreItems", { count: sourceItems.length - 8 })}
      </StudyInstructionText>
     )}
    </div>
   );
  }
 
- if (lesson.grammar.length === 0) return <CompactEmpty label="Chưa có ngữ pháp." />;
+ if (lesson.grammar.length === 0) return <CompactEmpty label={t("preview.empty.grammar")} />;
 
  return (
   <div className="grid gap-1.5">
@@ -702,7 +686,7 @@ function CompactGrammar({
    ))}
    {lesson.grammar.length > 8 && (
     <StudyInstructionText variant="caption" tone="muted" weight="black">
-     +{lesson.grammar.length - 8} mục nữa.
+     {t("preview.moreItems", { count: lesson.grammar.length - 8 })}
     </StudyInstructionText>
    )}
   </div>
@@ -716,6 +700,7 @@ function CompactGenericItems({
  sections: LessonSectionMatch[];
  emptyLabel: string;
 }) {
+ const t = useTranslations("Vocab");
  const items = sections.flatMap(({ section }) => {
   const record = asRecord(section);
   return [...arrayValue(record, "items"), ...arrayValue(record, "blocks")].map(asRecord);
@@ -731,7 +716,7 @@ function CompactGenericItems({
      className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2 grid gap-1"
     >
      <Typography as="h4" variant="cardTitle" tone="default" weight="black">
-      {itemTitle(item) || `Mục ${index + 1}`}
+      {itemTitle(item) || t("preview.itemNumber", { number: index + 1 })}
      </Typography>
      {instructionText(item.instruction) && (
       <StudyInstructionText variant="label" tone="muted" weight="bold">

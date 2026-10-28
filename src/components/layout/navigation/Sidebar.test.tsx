@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
+import { ThemeProvider } from "@/components/layout/theme/ThemeProvider";
 import { sidebarStore } from "@/stores/shell/sidebar-store";
 
 import { AppLogoMark } from "./AppLogoMark";
@@ -233,7 +234,9 @@ describe("Sidebar translations", () => {
    const messages = await loadAppMessages("vi");
    const markup = renderToStaticMarkup(
     <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
-     <MobileBottomNavigation canManageContent={false} />
+     <ThemeProvider>
+      <MobileBottomNavigation canManageContent={false} />
+     </ThemeProvider>
     </NextIntlClientProvider>,
    );
    const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
@@ -243,6 +246,26 @@ describe("Sidebar translations", () => {
    currentPathname = "/reader";
   },
  );
+
+ it.each(localeCases)("shows five labeled mobile destinations for $locale", async ({ locale }) => {
+  currentPathname = "/";
+  const messages = await loadAppMessages(locale);
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <ThemeProvider>
+     <MobileBottomNavigation canManageContent={false} />
+    </ThemeProvider>
+   </NextIntlClientProvider>,
+  );
+
+  for (const label of Object.values(messages.Shell.navigation.mobileItems)) {
+   expect(markup).toContain(`>${label}</span>`);
+  }
+  expect(markup).toContain(`>${messages.Shell.navigation.more}</span>`);
+  expect(markup).toContain("h-[calc(var(--bottom-nav-height)+env(safe-area-inset-bottom))]");
+  expect(markup.match(/data-size="icon"/g)).toHaveLength(5);
+  expect(markup.match(/aria-current="page"/g)).toHaveLength(1);
+ });
 
  it("keeps the lesson library active inside a catalog lesson workspace", async () => {
   currentPathname = "/hanzihome";

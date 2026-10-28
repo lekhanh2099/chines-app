@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/display/badge";
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { Button } from "@/components/ui/actions/button";
 import { DropdownMenuItem } from "@/components/ui/overlays/dropdown-menu";
 import {
@@ -55,7 +56,9 @@ import { HanziHomeEditingDialogShell } from "@/features/hanzihome/editing";
 import { type LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
+import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import {
+ useHanziHomeEditMode,
  useHanziHomeFeatureSelector,
  useHanziHomeWorkspaceLayout,
 } from "@/features/hanzihome/context/selectors";
@@ -159,10 +162,14 @@ export function LearningSyncStatus() {
 }
 
 export function ModuleSplitWorkspaceContent() {
+ const tModules = useTranslations("Shell.studyModules");
  const runtime = useHanziHomeRuntime();
+ const canEdit = useHanziHomeCanEdit();
+ const editMode = useHanziHomeEditMode();
  const { splitEnabled, paneLayout, activePane, viewMode, splitPaneSize } =
   useHanziHomeWorkspaceLayout();
  const actions = useHanziHomeFeatureActions();
+ const requestNavigation = useUnsavedDraftGuard(false);
  const lessonTextSelectedSectionId = useHanziHomeFeatureSelector(
   (state) => state.lessonTextSelectedSectionId,
  );
@@ -170,7 +177,7 @@ export function ModuleSplitWorkspaceContent() {
  const [isHorizontalSplit, setIsHorizontalSplit] = useState(false);
  const isListeningLesson = runtime.lesson.tags?.includes("listening") ?? false;
  const effectiveSplitEnabled = splitEnabled && !isListeningLesson && !runtime.readOnly;
- const lessonTabs = tabsForLesson(runtime.lesson);
+ const lessonTabs = tabsForLesson(runtime.lesson, tModules);
 
  useEffect(() => {
   const mobileQuery = window.matchMedia("(max-width: 39.999rem)");
@@ -214,7 +221,7 @@ export function ModuleSplitWorkspaceContent() {
  }, [actions, activePane, effectiveSplitEnabled, paneLayout, runtime.activeModule]);
 
  const selectModule = (module: StudyModule) => {
-  runtime.selectModule(module);
+  if (module !== runtime.activeModule) requestNavigation(() => runtime.selectModule(module));
  };
 
  const selectActivePane = (paneId: PaneId) => {
@@ -223,29 +230,31 @@ export function ModuleSplitWorkspaceContent() {
  };
 
  const enableSplit = () => {
-  if (paneLayout.left.includes(runtime.activeModule)) {
-   actions.setActivePane("left");
-   actions.setPaneLayout(setPaneActive(paneLayout, "left", runtime.activeModule));
-  } else if (paneLayout.right.includes(runtime.activeModule)) {
-   actions.setActivePane("right");
-   actions.setPaneLayout(setPaneActive(paneLayout, "right", runtime.activeModule));
-  }
-  actions.setSplitEnabled(true);
+  requestNavigation(() => {
+   if (paneLayout.left.includes(runtime.activeModule)) {
+    actions.setActivePane("left");
+    actions.setPaneLayout(setPaneActive(paneLayout, "left", runtime.activeModule));
+   } else if (paneLayout.right.includes(runtime.activeModule)) {
+    actions.setActivePane("right");
+    actions.setPaneLayout(setPaneActive(paneLayout, "right", runtime.activeModule));
+   }
+   actions.setSplitEnabled(true);
+  });
  };
 
  const workspaceTools = runtime.readOnly ? (
   <DropdownMenu>
    <DropdownMenuTrigger asChild>
-    <Button type="button" variant="outline" size="toolbar" aria-label="Mở công cụ bài học">
+    <Button type="button" variant="outline" size="toolbar" aria-label={tModules("openTools")}>
      <SlidersHorizontal />
-     <span className="hidden sm:inline">Công cụ</span>
+     <span className="hidden sm:inline">{tModules("tools")}</span>
     </Button>
    </DropdownMenuTrigger>
    <DropdownMenuContent align="end" width="md">
-    <DropdownMenuLabel>Không gian học</DropdownMenuLabel>
+    <DropdownMenuLabel>{tModules("workspace")}</DropdownMenuLabel>
     <DropdownMenuItem disabled>
      <Lock />
-     Nội dung chỉ đọc
+     {tModules("readOnlyContent")}
     </DropdownMenuItem>
    </DropdownMenuContent>
   </DropdownMenu>
@@ -253,7 +262,7 @@ export function ModuleSplitWorkspaceContent() {
   <HanziHomeDeveloperTools inline>
    <DropdownMenuItem onSelect={enableSplit}>
     <Columns2 />
-    Chia đôi màn hình
+    {tModules("splitScreen")}
    </DropdownMenuItem>
   </HanziHomeDeveloperTools>
  );
@@ -273,26 +282,34 @@ export function ModuleSplitWorkspaceContent() {
  const readerToolsMenuContent = runtime.readOnly ? (
   <>
    <DropdownMenuSeparator />
-   <DropdownMenuLabel>Không gian học</DropdownMenuLabel>
+   <DropdownMenuLabel>{tModules("workspace")}</DropdownMenuLabel>
    <DropdownMenuItem disabled>
     <Lock />
-    Nội dung chỉ đọc
+    {tModules("readOnlyContent")}
    </DropdownMenuItem>
   </>
  ) : (
   <HanziHomeDeveloperToolsMenuContent leadingSeparator>
    <DropdownMenuItem
-    onSelect={effectiveSplitEnabled ? () => actions.setSplitEnabled(false) : enableSplit}
+    onSelect={
+     effectiveSplitEnabled
+      ? () => requestNavigation(() => actions.setSplitEnabled(false))
+      : enableSplit
+    }
    >
     <Columns2 />
-    {effectiveSplitEnabled ? "Đóng chia đôi màn hình" : "Chia đôi màn hình"}
+    {effectiveSplitEnabled ? tModules("closeSplitScreen") : tModules("splitScreen")}
    </DropdownMenuItem>
   </HanziHomeDeveloperToolsMenuContent>
  );
  const readerToolsSheetContent = runtime.readOnly ? undefined : (
   <HanziHomeDeveloperToolsSheetContent
    splitEnabled={effectiveSplitEnabled}
-   onToggleSplit={effectiveSplitEnabled ? () => actions.setSplitEnabled(false) : enableSplit}
+   onToggleSplit={
+    effectiveSplitEnabled
+     ? () => requestNavigation(() => actions.setSplitEnabled(false))
+     : enableSplit
+   }
   />
  );
 
@@ -310,9 +327,9 @@ export function ModuleSplitWorkspaceContent() {
       workspaceTools
      ) : (
       <HanziHomeDeveloperTools inline>
-       <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
+       <DropdownMenuItem onSelect={() => requestNavigation(() => actions.setSplitEnabled(false))}>
         <Columns2 />
-        Đóng chia đôi màn hình
+        {tModules("closeSplitScreen")}
        </DropdownMenuItem>
       </HanziHomeDeveloperTools>
      )}
@@ -330,8 +347,8 @@ export function ModuleSplitWorkspaceContent() {
        if (selectedModule) selectModule(selectedModule);
       }}
      >
-      <SelectTrigger aria-label="Chọn nội dung học" size="sm" width="full">
-       <SelectValue>{moduleMeta[runtime.activeModule].label}</SelectValue>
+      <SelectTrigger aria-label={tModules("selectAria")} size="sm" width="full">
+       <SelectValue>{tModules(moduleMeta[runtime.activeModule].key)}</SelectValue>
       </SelectTrigger>
       <SelectContent
        side="bottom"
@@ -374,11 +391,13 @@ export function ModuleSplitWorkspaceContent() {
  const debugPanel =
   !runtime.readOnly &&
   developerToolsEnabled &&
+  canEdit &&
+  editMode &&
   viewMode === "debug" &&
   runtime.activeModule !== "overview" ? (
    <div className="hidden xl:block">
     <DebugRawDataPanel
-     title="Raw lesson JSON"
+     title={tModules("rawLessonJson")}
      value={runtime.lesson.sourceLesson ?? runtime.lesson}
     />
    </div>
@@ -425,12 +444,24 @@ export function ModuleSplitWorkspaceContent() {
       <SegmentedControl<PaneId>
        value={activePane}
        items={[
-        { key: "left", label: `Khung 1 · ${moduleMeta[paneLayout.activeLeft].label}` },
-        { key: "right", label: `Khung 2 · ${moduleMeta[paneLayout.activeRight].label}` },
+        {
+         key: "left",
+         label: tModules("paneLabel", {
+          number: 1,
+          module: tModules(moduleMeta[paneLayout.activeLeft].key),
+         }),
+        },
+        {
+         key: "right",
+         label: tModules("paneLabel", {
+          number: 2,
+          module: tModules(moduleMeta[paneLayout.activeRight].key),
+         }),
+        },
        ]}
        onChange={selectActivePane}
        density="touch"
-       aria-label="Khung đang hiển thị"
+       aria-label={tModules("activePaneAria")}
       />
       <div className="grid min-h-0 min-w-0 overflow-hidden">
        <div className={activePane === "left" ? "min-h-0 min-w-0 overflow-hidden" : "hidden"}>

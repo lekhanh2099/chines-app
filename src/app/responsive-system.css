@@ -16,10 +16,6 @@
 }
 
 @media (max-width: 47.999rem) {
- :root {
-  --bottom-nav-height: 3.25rem;
- }
-
  /* Phone notes are a reading surface first: use the available width instead of
     nesting the document in a desktop-style card with another inset frame. */
  .note-editor-scroll,

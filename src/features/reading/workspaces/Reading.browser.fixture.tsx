@@ -213,7 +213,14 @@ export function useVocabInspector() {
  return { openInspector: () => {} };
 }
 export function useSearchParams() {
- return new URLSearchParams(window.location.search);
+ const search = useSyncExternalStore(
+  (listener) => {
+   window.addEventListener("popstate", listener);
+   return () => window.removeEventListener("popstate", listener);
+  },
+  () => window.location.search,
+ );
+ return new URLSearchParams(search);
 }
 export function usePathname() {
  return window.location.pathname.startsWith("/hsk") || window.location.pathname === "/hanzihome"
@@ -227,8 +234,31 @@ export function useRouter() {
   replace: (href: string) => navigationRequests.push(href),
  };
 }
-export function Link(props: ComponentProps<"a">) {
- return <a {...props} />;
+export function Link({ replace, onClick, ...props }: ComponentProps<"a"> & { replace?: boolean }) {
+ return (
+  <a
+   {...props}
+   onClick={(event) => {
+    onClick?.(event);
+    if (
+     event.defaultPrevented ||
+     event.button !== 0 ||
+     event.metaKey ||
+     event.ctrlKey ||
+     event.shiftKey ||
+     event.altKey ||
+     props.target ||
+     props.download ||
+     (props.href !== "/hanzihome" && !props.href?.startsWith("/hanzihome?collection="))
+    )
+     return;
+    event.preventDefault();
+    if (replace) window.history.replaceState(null, "", props.href);
+    else window.history.pushState(null, "", props.href);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+   }}
+  />
+ );
 }
 export default Link;
 

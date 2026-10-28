@@ -1,6 +1,7 @@
 "use client";
 
 import { Lightbulb } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/actions/button";
@@ -21,6 +22,7 @@ export function SaveMemoryTipButton({
  payload,
  variant = SaveMemoryTipButtonVariantSchema.enum.outline,
 }: SaveMemoryTipButtonProps) {
+ const t = useTranslations("MemoryTips");
  const createMutation = useCreateMemoryTipMutation();
 
  return (
@@ -31,14 +33,14 @@ export function SaveMemoryTipButton({
    onClick={async () => {
     try {
      await createMutation.mutateAsync(payload);
-     toast.success("Đã lưu nhắc nhanh");
+     toast.success(t("saveButton.saved"));
     } catch (error) {
      if (isDuplicateMemoryTipError(error)) {
-      toast.info("Tip này đã được lưu rồi.");
+      toast.info(t("dialog.duplicate"));
       return;
      }
 
-     toast.error(error instanceof MemoryTipsApiError ? error.message : "Không thể lưu nhắc nhanh");
+     toast.error(error instanceof MemoryTipsApiError ? error.message : t("saveButton.saveError"));
     }
    }}
   >
@@ -47,7 +49,7 @@ export function SaveMemoryTipButton({
    ) : (
     <Lightbulb data-icon="inline-start" />
    )}
-   Lưu nhắc nhanh
+   {t("saveButton.label")}
   </Button>
  );
 }

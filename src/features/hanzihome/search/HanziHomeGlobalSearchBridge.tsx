@@ -2,8 +2,10 @@
 
 import { useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { useSelector } from "@tanstack/react-store";
 import { useQueryClient } from "@tanstack/react-query";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
@@ -23,8 +25,10 @@ import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { globalSearchStore } from "@/stores/search/global-search-store";
 
 export function HanziHomeGlobalSearchBridge() {
+ const tHeader = useTranslations("Shell.header");
  const pathname = usePathname();
  const router = useRouter();
+ const requestNavigation = useUnsavedDraftGuard(false);
  const searchParams = useSearchParams();
  const queryClient = useQueryClient();
  const open = useSelector(globalSearchStore, (state) => state.open);
@@ -93,23 +97,25 @@ export function HanziHomeGlobalSearchBridge() {
 
  const handleOpenSearchResult = (item: HanziHomeSearchIndexItem) => {
   if (focusModeEnabled && item.lessonId && item.lessonId !== selectedLesson?.id) {
-   toast.warning("Focus mode đang bật. Không thể chuyển sang bài khác.");
+   toast.warning(tHeader("focusModeLessonBlocked"));
    return;
   }
 
-  clearHanziHomeSearchNavigationIntent();
-  if (item.module || item.targetId) {
-   setHanziHomeSearchNavigationIntent({
-    courseId: item.courseId,
-    lessonId: item.lessonId,
-    lessonNumber: item.lessonNumber,
-    module: item.module,
-    targetId: item.targetId,
-   });
-  }
+  requestNavigation(() => {
+   clearHanziHomeSearchNavigationIntent();
+   if (item.module || item.targetId) {
+    setHanziHomeSearchNavigationIntent({
+     courseId: item.courseId,
+     lessonId: item.lessonId,
+     lessonNumber: item.lessonNumber,
+     module: item.module,
+     targetId: item.targetId,
+    });
+   }
 
-  if (item.href) router.push(item.href);
-  closeAndClear();
+   if (item.href) router.push(item.href);
+   closeAndClear();
+  });
  };
 
  return (

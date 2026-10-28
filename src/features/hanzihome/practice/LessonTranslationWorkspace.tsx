@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Check, Copy } from "lucide-react";
 
 import { Badge } from "@/components/ui/display/badge";
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { SegmentedControl } from "@/components/ui/forms/segmented-control";
@@ -324,6 +325,12 @@ export function LessonTranslationWorkspace({
  );
  const [showPinyin, setShowPinyin] = useState(displayMode.showPinyin);
  const [attemptSaveError, setAttemptSaveError] = useState("");
+ useUnsavedDraftGuard(
+  Object.entries(state.drafts).some(
+   ([key, value]) =>
+    value.trim().length > 0 && (!state.checked[key] || attemptSaveError.length > 0),
+  ),
+ );
  const startedAtRef = useRef<Record<string, number>>({});
  const textareaRef = useRef<HTMLTextAreaElement>(null);
  const segment = segments[activeIndex];

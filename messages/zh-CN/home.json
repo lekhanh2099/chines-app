@@ -54,7 +54,22 @@
  },
  "focus": {
   "overviewUnknownTitle": "继续今天的学习与复习",
-  "overviewUnknownDescription": "暂时没有到期数据，无法确认今日进度。你仍可打开闪卡或继续学习课程。"
+  "overviewUnknownDescription": "暂时没有到期数据，无法确认今日进度。你仍可打开闪卡或继续学习课程。",
+  "today": "今天",
+  "reviewedToday": "今日已复习 {count} 次",
+  "dueTitle": "今天复习队列中有 <highlight>{count} 项内容</highlight> 到期",
+  "noDueTitle": "今天复习队列中没有到期项目",
+  "dueDescription": "到期的复习内容已准备好。完成本次复习，巩固已学知识。",
+  "noDueDescription": "你可以继续学习新课，或阅读中文文章拓展词汇量。",
+  "reviewNow": "立即复习（{count}）",
+  "viewCards": "查看已保存的词卡",
+  "resumeLesson": "继续最近的课程",
+  "resumeHint": "直接进入课程学习区",
+  "resumeNow": "立即学习",
+  "vocabProgress": "个人词汇进度",
+  "knownWords": "个词已掌握",
+  "learning": "学习中：",
+  "total": "总计："
  },
  "activity": {
   "title": "最近活动",

@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { RotateCcw, Volume2 } from "lucide-react";
+import { CheckCircle2, RotateCcw, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
@@ -12,6 +12,7 @@ import { Card } from "@/components/ui/layout/card";
 import { Typography } from "@/components/ui/display/typography";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+import { Link } from "@/i18n/navigation";
 
 import {
  fetchLearningLoopItems,
@@ -25,6 +26,8 @@ export function LearningLoopWorkspace() {
  const { userId, isResolved } = useClientSession();
  const queryClient = useQueryClient();
  const [error, setError] = useState<string | null>(null);
+ const [reviewProgress, setReviewProgress] = useState({ userId, count: 0 });
+ const reviewedInSession = reviewProgress.userId === userId ? reviewProgress.count : 0;
  const learningLoopKey = hanzihomeQueryKeys.learningLoopForUser(userId);
  const query = useQuery({
   queryKey: learningLoopKey,
@@ -52,9 +55,13 @@ export function LearningLoopWorkspace() {
    );
    return { targetItem, targetIndex };
   },
-  onSuccess: () => {
+  onSuccess: async () => {
    setError(null);
-   void queryClient.invalidateQueries({ queryKey: learningLoopKey });
+   await queryClient.invalidateQueries({ queryKey: learningLoopKey });
+   setReviewProgress((current) => ({
+    userId,
+    count: current.userId === userId ? current.count + 1 : 1,
+   }));
   },
   onError: (caught: Error, _variables, context) => {
    setError(caught.message);
@@ -76,6 +83,60 @@ export function LearningLoopWorkspace() {
   },
  });
  const item = useMemo(() => query.data?.[0] ?? null, [query.data]);
+ const rateItem = rateMutation.mutate;
+ const speakSequence = tts.speakSequence;
+ const isTtsLoading = tts.isLoading;
+
+ useEffect(() => {
+  if (item === null || !isResolved || !userId || query.isError || rateMutation.isPending) return;
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+   if (
+    event.defaultPrevented ||
+    event.repeat ||
+    event.isComposing ||
+    event.altKey ||
+    event.ctrlKey ||
+    event.metaKey ||
+    event.shiftKey ||
+    (event.target instanceof HTMLElement &&
+     event.target.closest(
+      "a, button, input, textarea, select, [contenteditable='true'], [role='button'], [role='combobox'], [role='menuitem'], [role='option'], [role='tab']",
+     ))
+   )
+    return;
+
+   if (event.code === "Space" || event.key === " ") {
+    if (isTtsLoading) return;
+    event.preventDefault();
+    speakSequence([item.prompt_zh]);
+    return;
+   }
+
+   if (event.key === "1") {
+    event.preventDefault();
+    rateItem({ itemId: item.id, rating: "again", expectedRevision: item.revision });
+   } else if (event.key === "2") {
+    event.preventDefault();
+    rateItem({ itemId: item.id, rating: "hard", expectedRevision: item.revision });
+   } else if (event.key === "3") {
+    event.preventDefault();
+    rateItem({ itemId: item.id, rating: "good", expectedRevision: item.revision });
+   }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+  return () => window.removeEventListener("keydown", handleKeyDown);
+ }, [
+  isResolved,
+  isTtsLoading,
+  item,
+  query.isError,
+  rateItem,
+  rateMutation.isPending,
+  speakSequence,
+  userId,
+ ]);
 
  if (!isResolved || query.isPending) {
   return (
@@ -114,6 +175,40 @@ export function LearningLoopWorkspace() {
   );
  }
  if (item === null) {
+  if (rateMutation.isPending) {
+   return (
+    <Card variant="subtle" padding="lg">
+     <Typography variant="bodySmall" tone="muted">
+      {t("finishing")}
+     </Typography>
+    </Card>
+   );
+  }
+
+  if (reviewedInSession > 0) {
+   return (
+    <Card variant="section" padding="lg" className="grid justify-items-center gap-4 text-center">
+     <div className="flex size-16 items-center justify-center rounded-full bg-success-subtle text-success-text">
+      <CheckCircle2 className="size-9 motion-safe:animate-pulse" />
+     </div>
+     <Typography as="h1" variant="pageTitle" weight="black">
+      {t("completionTitle")}
+     </Typography>
+     <Typography as="p" variant="body" tone="muted">
+      {t("completionDescription", { count: reviewedInSession })}
+     </Typography>
+     <div className="flex flex-wrap justify-center gap-2">
+      <Button asChild>
+       <Link href="/">{t("completionHome")}</Link>
+      </Button>
+      <Button asChild variant="outline">
+       <Link href="/dictionary">{t("completionDictionary")}</Link>
+      </Button>
+     </div>
+    </Card>
+   );
+  }
+
   return (
    <Card variant="section" padding="lg" className="grid gap-2">
     <Typography as="h1" variant="pageTitle" weight="black">
@@ -214,6 +309,7 @@ export function LearningLoopWorkspace() {
        })
       }
      >
+      <kbd className="rounded-md border border-current/20 px-1.5 py-0.5 font-mono text-xs">[1]</kbd>
       {t("ratings.again")}
      </Button>
      <Button
@@ -228,6 +324,7 @@ export function LearningLoopWorkspace() {
        })
       }
      >
+      <kbd className="rounded-md border border-current/20 px-1.5 py-0.5 font-mono text-xs">[2]</kbd>
       {t("ratings.hard")}
      </Button>
      <Button
@@ -241,6 +338,7 @@ export function LearningLoopWorkspace() {
        })
       }
      >
+      <kbd className="rounded-md border border-current/20 px-1.5 py-0.5 font-mono text-xs">[3]</kbd>
       {t("ratings.good")}
      </Button>
     </div>

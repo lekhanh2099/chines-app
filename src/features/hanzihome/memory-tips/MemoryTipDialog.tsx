@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -32,8 +33,8 @@ import { useCreateMemoryTipMutation, useUpdateMemoryTipMutation } from "./useMem
 
 const memoryTipFormSchema = z.object({
  tipType: memoryTipTypeSchema,
- title: z.string().trim().min(1, "Vui lòng nhập tiêu đề"),
- body: z.string().trim().min(1, "Vui lòng nhập nội dung"),
+ title: z.string().trim().min(1),
+ body: z.string().trim().min(1),
  formula: z.string().trim(),
  exampleZh: z.string().trim(),
  examplePinyin: z.string().trim(),
@@ -119,6 +120,16 @@ export function MemoryTipDialog({
  onCreated,
  onSaved,
 }: MemoryTipDialogProps) {
+ const t = useTranslations("MemoryTips");
+ const common = useTranslations("Common.actions");
+ const formSchema = useMemo(
+  () =>
+   memoryTipFormSchema.extend({
+    title: z.string().trim().min(1, t("dialog.titleRequired")),
+    body: z.string().trim().min(1, t("dialog.bodyRequired")),
+   }),
+  [t],
+ );
  const [internalOpen, setInternalOpen] = useState(false);
  const createMutation = useCreateMemoryTipMutation();
  const updateMutation = useUpdateMemoryTipMutation();
@@ -132,7 +143,7 @@ export function MemoryTipDialog({
  const form = useAppForm({
   defaultValues: initialValues,
   validators: {
-   onSubmit: memoryTipFormSchema,
+   onSubmit: formSchema,
   },
   onSubmit: async ({ value }) => {
    try {
@@ -141,11 +152,11 @@ export function MemoryTipDialog({
       tipId: tip.id,
       input: toUpdatePayload(value),
      });
-     toast.success("Đã cập nhật nhắc nhanh");
+     toast.success(t("dialog.updated"));
      onSaved?.();
     } else {
      await createMutation.mutateAsync(toPayload(value));
-     toast.success("Đã thêm nhắc nhanh");
+     toast.success(t("dialog.created"));
      onCreated?.();
     }
 
@@ -153,7 +164,7 @@ export function MemoryTipDialog({
     updateOpen(false);
    } catch (error) {
     if (isDuplicateMemoryTipError(error)) {
-     toast.info("Tip này đã được lưu rồi.");
+     toast.info(t("dialog.duplicate"));
      return;
     }
 
@@ -161,8 +172,8 @@ export function MemoryTipDialog({
      error instanceof MemoryTipsApiError
       ? error.message
       : isEditMode
-        ? "Không thể cập nhật nhắc nhanh"
-        : "Không thể thêm nhắc nhanh",
+        ? t("toast.updateError")
+        : t("dialog.createError"),
     );
    }
   },
@@ -176,18 +187,16 @@ export function MemoryTipDialog({
    {!trigger && open === undefined ? (
     <DialogTrigger asChild>
      <Button type="button" variant="outline" size="toolbar">
-      + Thêm
+      {t("dialog.addShort")}
      </Button>
     </DialogTrigger>
    ) : null}
 
-   <DialogContent>
+   <DialogContent closeLabel={common("close")}>
     <DialogHeader>
-     <DialogTitle>{isEditMode ? "Sửa nhắc nhanh" : "Thêm nhắc nhanh"}</DialogTitle>
+     <DialogTitle>{isEditMode ? t("dialog.editTitle") : t("dialog.createTitle")}</DialogTitle>
      <DialogDescription>
-      {isEditMode
-       ? "Cập nhật công thức, mẹo phân biệt hoặc ví dụ dễ quên."
-       : "Lưu công thức, mẹo phân biệt hoặc ví dụ dễ quên để nhắc lại nhanh."}
+      {isEditMode ? t("dialog.editDescription") : t("dialog.createDescription")}
      </DialogDescription>
     </DialogHeader>
 
@@ -204,12 +213,12 @@ export function MemoryTipDialog({
        <form.AppField name="tipType">
         {(field) => (
          <field.Select
-          label="Loại"
+          label={t("dialog.type")}
           options={[
-           { value: "grammar", label: "Ngữ pháp" },
-           { value: "vocab", label: "Từ vựng" },
-           { value: "formula", label: "Công thức" },
-           { value: "custom", label: "Tự thêm" },
+           { value: "grammar", label: t("types.grammar") },
+           { value: "vocab", label: t("types.vocab") },
+           { value: "formula", label: t("types.formula") },
+           { value: "custom", label: t("types.custom") },
           ]}
           disabled={isSubmitting}
          />
@@ -219,12 +228,12 @@ export function MemoryTipDialog({
        <form.AppField name="sourceType">
         {(field) => (
          <field.Select
-          label="Nguồn"
+          label={t("dialog.source")}
           options={[
-           { value: "custom", label: "Tự thêm" },
-           { value: "grammar", label: "Ngữ pháp" },
-           { value: "vocab", label: "Từ vựng" },
-           { value: "lesson", label: "Bài học" },
+           { value: "custom", label: t("types.custom") },
+           { value: "grammar", label: t("types.grammar") },
+           { value: "vocab", label: t("types.vocab") },
+           { value: "lesson", label: t("dialog.lesson") },
           ]}
           disabled={isSubmitting}
          />
@@ -235,8 +244,8 @@ export function MemoryTipDialog({
       <form.AppField name="title">
        {(field) => (
         <field.TextField
-         label="Tiêu đề"
-         placeholder="Ví dụ: 又 và 再 không giống nhau"
+         label={t("dialog.titleLabel")}
+         placeholder={t("dialog.titlePlaceholder")}
          required
          disabled={isSubmitting}
         />
@@ -246,8 +255,8 @@ export function MemoryTipDialog({
       <form.AppField name="body">
        {(field) => (
         <field.Textarea
-         label="Nội dung chính"
-         placeholder="Nhắc ngắn gọn điểm dễ quên."
+         label={t("dialog.bodyLabel")}
+         placeholder={t("dialog.bodyPlaceholder")}
          required
          disabled={isSubmitting}
         />
@@ -257,7 +266,7 @@ export function MemoryTipDialog({
       <form.AppField name="formula">
        {(field) => (
         <field.TextField
-         label="Công thức"
+         label={t("types.formula")}
          placeholder="S + 把 + O + V + 结果"
          disabled={isSubmitting}
         />
@@ -268,7 +277,7 @@ export function MemoryTipDialog({
        <form.AppField name="exampleZh">
         {(field) => (
          <field.TextField
-          label="Ví dụ tiếng Trung"
+          label={t("dialog.exampleZh")}
           placeholder="我把作业写完了。"
           disabled={isSubmitting}
          />
@@ -284,8 +293,8 @@ export function MemoryTipDialog({
        <form.AppField name="exampleVi">
         {(field) => (
          <field.TextField
-          label="Nghĩa tiếng Việt"
-          placeholder="Tôi làm xong bài tập rồi."
+          label={t("dialog.exampleVi")}
+          placeholder={t("dialog.exampleViPlaceholder")}
           disabled={isSubmitting}
          />
         )}
@@ -295,16 +304,16 @@ export function MemoryTipDialog({
       <form.AppField name="tagsText">
        {(field) => (
         <field.TextField
-         label="Tags"
+         label={t("dialog.tags")}
          placeholder="grammar, 把字句"
-         description="Ngăn cách nhiều tag bằng dấu phẩy."
+         description={t("dialog.tagsDescription")}
          disabled={isSubmitting}
         />
        )}
       </form.AppField>
 
       <form.AppField name="isPinned">
-       {(field) => <field.Checkbox label="Ghim tip này" disabled={isSubmitting} />}
+       {(field) => <field.Checkbox label={t("dialog.pinTip")} disabled={isSubmitting} />}
       </form.AppField>
      </DialogBody>
 
@@ -315,11 +324,11 @@ export function MemoryTipDialog({
        disabled={isSubmitting}
        onClick={() => updateOpen(false)}
       >
-       Hủy
+       {common("cancel")}
       </Button>
       <Button type="submit" disabled={isSubmitting}>
        {isSubmitting ? <Spinner data-icon="inline-start" /> : null}
-       {isEditMode ? "Cập nhật" : "Lưu nhắc nhanh"}
+       {isEditMode ? t("dialog.update") : t("dialog.save")}
       </Button>
      </DialogFooter>
     </form>

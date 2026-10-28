@@ -3,7 +3,15 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Archive, History, MessageSquarePlus, MoreHorizontal, Send, Settings2 } from "lucide-react";
+import {
+ Archive,
+ History,
+ MessageSquarePlus,
+ Mic,
+ MoreHorizontal,
+ Send,
+ Settings2,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { z } from "zod";
 
@@ -77,6 +85,26 @@ const SESSION_QUERY_ROOT = ["hanzihome", "ai-conversation", "session"];
 const HISTORY_QUERY_KEY = ["hanzihome", "ai-conversation", "history"];
 const SESSION_STALE_TIME_MS = 30_000;
 
+interface BrowserSpeechRecognition {
+ lang: string;
+ continuous: boolean;
+ interimResults: boolean;
+ onstart: () => void;
+ onresult: (event: SpeechRecognitionEvent) => void;
+ onerror: (event: SpeechRecognitionErrorEvent) => void;
+ onend: () => void;
+ start(): void;
+ stop(): void;
+ abort(): void;
+}
+
+declare global {
+ interface Window {
+  SpeechRecognition?: new () => BrowserSpeechRecognition;
+  webkitSpeechRecognition?: new () => BrowserSpeechRecognition;
+ }
+}
+
 type RetryTurn = { clientMessageId: string; content: string };
 type ArchiveTarget = { id: string; title: string };
 type RuntimeSelection = {
@@ -118,6 +146,10 @@ export function AiConversationWorkspace() {
  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
  const [archiveTarget, setArchiveTarget] = useState<ArchiveTarget | null>(null);
  const [draft, setDraft] = useState("");
+ const [isSpeechSupported, setIsSpeechSupported] = useState(false);
+ const [isListening, setIsListening] = useState(false);
+ const [isSpeechPending, setIsSpeechPending] = useState(false);
+ const [speechError, setSpeechError] = useState("");
  const [runtimeSelection, setRuntimeSelection] = useState<RuntimeSelection>({
   conversationId: null,
   keyId: AUTO_RUNTIME_KEY_ID,
@@ -128,6 +160,17 @@ export function AiConversationWorkspace() {
  const requestRef = useRef<AbortController | null>(null);
  const retryTurnRef = useRef<RetryTurn | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
+ const speechRecognitionRef = useRef<BrowserSpeechRecognition | null>(null);
+
+ const abortSpeech = useCallback(() => {
+  setSpeechError("");
+  const recognition = speechRecognitionRef.current;
+  if (!recognition) return;
+  speechRecognitionRef.current = null;
+  recognition.abort();
+  setIsListening(false);
+  setIsSpeechPending(false);
+ }, [setSpeechError, setIsListening, setIsSpeechPending]);
 
  const navigateToConversation = useCallback(
   (conversationId: string) => {
@@ -314,6 +357,7 @@ export function AiConversationWorkspace() {
   onSuccess: (session) => {
    const conversation = session.conversation;
    if (!conversation) return;
+   abortSpeech();
    queryClient.setQueryData(conversationSessionQueryKey(conversation.id), session);
    retryTurnRef.current = null;
    setDraft("");
@@ -363,6 +407,7 @@ export function AiConversationWorkspace() {
   onSuccess: ({ archivedId, nextSession }) => {
    queryClient.removeQueries({ queryKey: conversationSessionQueryKey(archivedId), exact: true });
    if (nextSession?.conversation) {
+    abortSpeech();
     queryClient.setQueryData(conversationSessionQueryKey(nextSession.conversation.id), nextSession);
     retryTurnRef.current = null;
     setDraft("");
@@ -460,7 +505,17 @@ export function AiConversationWorkspace() {
   archiveConversationMutation.isPending ||
   sessionQuery.isFetching;
 
- useEffect(() => () => requestRef.current?.abort(), []);
+ useEffect(() => {
+  const frame = window.requestAnimationFrame(() => {
+   setIsSpeechSupported(Boolean(window.SpeechRecognition || window.webkitSpeechRecognition));
+  });
+  return () => {
+   window.cancelAnimationFrame(frame);
+   requestRef.current?.abort();
+  };
+ }, []);
+
+ useEffect(() => () => abortSpeech(), [abortSpeech, conversationIdFromUrl]);
 
  useEffect(() => {
   const resolvedConversationId = sessionQuery.data?.conversation?.id;
@@ -511,6 +566,7 @@ export function AiConversationWorkspace() {
  };
 
  const updateDraft = (value: string) => {
+  abortSpeech();
   setDraft(value);
   const retryTurn = retryTurnRef.current;
   if (retryTurn && value.normalize("NFC").trim() !== retryTurn.content) {
@@ -523,6 +579,7 @@ export function AiConversationWorkspace() {
    setIsHistoryOpen(false);
    return;
   }
+  abortSpeech();
   retryTurnRef.current = null;
   setDraft("");
   sendMutation.reset();
@@ -532,7 +589,14 @@ export function AiConversationWorkspace() {
 
  const send = () => {
   const content = draft.normalize("NFC").trim();
-  if (!content || isSending || !runtimeHealth?.ready || sessionQuery.isFetching) return;
+  if (
+   !content ||
+   isSending ||
+   speechRecognitionRef.current ||
+   !runtimeHealth?.ready ||
+   sessionQuery.isFetching
+  )
+   return;
 
   requestRef.current?.abort();
   const controller = new AbortController();
@@ -551,8 +615,77 @@ export function AiConversationWorkspace() {
   Boolean(runtimeHealth?.ready) &&
   !isHealthChecking &&
   !isSending &&
+  !isListening &&
+  !isSpeechPending &&
   !sessionQuery.isFetching &&
   !sessionQuery.isError;
+
+ const toggleSpeech = () => {
+  const activeRecognition = speechRecognitionRef.current;
+  if (activeRecognition) {
+   setIsSpeechPending(true);
+   activeRecognition.stop();
+   return;
+  }
+
+  const SpeechRecognition = window.SpeechRecognition ?? window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+   setSpeechError(t("message.speechUnsupported"));
+   return;
+  }
+
+  try {
+   const recognition = new SpeechRecognition();
+   const baseDraft = draft;
+   recognition.lang = "zh-CN";
+   recognition.continuous = false;
+   recognition.interimResults = true;
+   recognition.onstart = () => {
+    if (speechRecognitionRef.current !== recognition) return;
+    setIsSpeechPending(false);
+    setIsListening(true);
+   };
+   recognition.onresult = (event) => {
+    if (speechRecognitionRef.current !== recognition) return;
+    let transcript = "";
+    for (let index = 0; index < event.results.length; index += 1) {
+     transcript += event.results[index][0]?.transcript ?? "";
+    }
+    setDraft(`${baseDraft}${baseDraft && transcript ? " " : ""}${transcript}`.slice(0, 6000));
+    retryTurnRef.current = null;
+   };
+   recognition.onerror = (event) => {
+    if (speechRecognitionRef.current !== recognition || event.error === "aborted") return;
+    speechRecognitionRef.current = null;
+    setIsListening(false);
+    setIsSpeechPending(false);
+    const errorKey =
+     event.error === "not-allowed" || event.error === "service-not-allowed"
+      ? "message.speechPermissionError"
+      : event.error === "no-speech"
+        ? "message.speechNoSpeech"
+        : event.error === "audio-capture"
+          ? "message.speechMicrophoneError"
+          : "message.speechStartError";
+    setSpeechError(t(errorKey));
+   };
+   recognition.onend = () => {
+    if (speechRecognitionRef.current !== recognition) return;
+    speechRecognitionRef.current = null;
+    setIsListening(false);
+    setIsSpeechPending(false);
+   };
+   speechRecognitionRef.current = recognition;
+   setSpeechError("");
+   setIsSpeechPending(true);
+   recognition.start();
+  } catch {
+   speechRecognitionRef.current = null;
+   setIsListening(false);
+   setIsSpeechPending(false);
+   setSpeechError(t("message.speechStartError"));
+  }
+ };
 
  return (
   <Card
@@ -735,6 +868,20 @@ export function AiConversationWorkspace() {
       placeholder={t("message.placeholder")}
       className="min-h-11 max-h-40 flex-1"
      />
+     {isSpeechSupported ? (
+      <Button
+       type="button"
+       variant="outline"
+       size="icon"
+       onClick={toggleSpeech}
+       disabled={isSpeechPending || isSending || sessionQuery.isError}
+       aria-label={isListening ? t("actions.stopVoice") : t("actions.startVoice")}
+       aria-pressed={isListening}
+       title={isListening ? t("actions.stopVoice") : t("actions.startVoice")}
+      >
+       <Mic className={isListening ? "motion-safe:animate-pulse text-danger" : undefined} />
+      </Button>
+     ) : null}
      <Button
       type="submit"
       size="icon"
@@ -747,6 +894,22 @@ export function AiConversationWorkspace() {
     <Typography variant="caption" tone="muted">
      {t("message.hint")}
     </Typography>
+    {isSpeechSupported ? (
+     <Typography
+      variant="caption"
+      tone={speechError ? "danger" : "muted"}
+      role={speechError ? "alert" : "status"}
+     >
+      {speechError ||
+       (isSpeechPending && isListening
+        ? t("message.speechStopping")
+        : isSpeechPending
+          ? t("message.speechPending")
+          : isListening
+            ? t("message.speechListening")
+            : t("message.speechHint"))}
+     </Typography>
+    ) : null}
    </form>
 
    <AiConversationHistorySheet

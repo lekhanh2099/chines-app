@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQueries, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Search } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { PageContainer } from "@/components/layout/workspace/page-container";
 import { EmptyState } from "@/components/patterns/empty-state";
@@ -76,6 +77,7 @@ function useReviewLessons(lessonIds: string[]) {
 }
 
 export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
+ const t = useTranslations("Vocab");
  const router = useRouter();
  const queryClient = useQueryClient();
  const searchParams = useSearchParams();
@@ -108,11 +110,8 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   [aggregateCourseIds, catalog.lessons],
  );
 
- const title = kind === "vocab" ? "Tổng hợp từ vựng" : "Tổng hợp ngữ pháp";
- const description =
-  kind === "vocab"
-   ? "Tra toàn bộ từ vựng theo giáo trình, quyển, bài học, pinyin và nghĩa."
-   : "Tra toàn bộ điểm ngữ pháp theo giáo trình, quyển, bài học và nội dung cốt lõi.";
+ const title = kind === "vocab" ? t("title.vocab") : t("title.grammar");
+ const description = kind === "vocab" ? t("description.vocab") : t("description.grammar");
 
  const filteredBooks = useMemo(
   () =>
@@ -176,7 +175,11 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   return byId;
  }, [reviewLessons]);
  const isReviewActive = kind !== "vocab" && activeReviewLessonIds.length > 0;
- const activeReviewTitle = formatSelectedLessonsLabel(activeReviewLessonSummaries);
+ const activeReviewTitle = formatSelectedLessonsLabel(
+  activeReviewLessonSummaries,
+  (number, title) => t("filters.lessonOption", { number, title }),
+  (count) => t("reviewPicker.activeCount", { count }),
+ );
  const shouldShowAggregateList = !isReviewActive;
  const hasActiveFilters = Boolean(
   filters.courseId || filters.bookId || filters.lessonId || filters.q.trim(),
@@ -284,12 +287,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   <PageContainer>
    <div className="grid w-full min-w-0 gap-5">
     <PageHeader
-     eyebrow="HanziHome Library"
+     eyebrow={t("eyebrow")}
      title={title}
      description={description}
      meta={
       <Typography variant="caption" tone="muted" weight="bold">
-       {items.length} mục đang hiển thị
+       {t("showing", { count: items.length })}
       </Typography>
      }
     />
@@ -319,22 +322,24 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
      <div className="grid gap-3 xl:grid-cols-[minmax(16rem,1.2fr)_repeat(3,minmax(9rem,0.8fr))_auto] xl:items-end">
       <Label variant="label" className="grid gap-1.5">
        <Typography variant="overline" tone="muted" weight="black">
-        Từ khóa
+        {t("search.label")}
        </Typography>
        <div className="relative min-w-0">
         <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
         <Input
          value={filters.q}
          onChange={(event) => updateFilter("q", event.target.value)}
-         aria-label={kind === "vocab" ? "Tìm từ vựng" : "Tìm ngữ pháp"}
-         placeholder={kind === "vocab" ? "Hán tự, pinyin, nghĩa..." : "Tiêu đề, cấu trúc..."}
+         aria-label={kind === "vocab" ? t("search.vocabAria") : t("search.grammarAria")}
+         placeholder={
+          kind === "vocab" ? t("search.vocabPlaceholder") : t("search.grammarPlaceholder")
+         }
          adornment="start"
         />
        </div>
       </Label>
 
       <FilterSelect
-       label="Giáo trình"
+       label={t("filters.course")}
        value={filters.courseId}
        onChange={(value) => updateFilter("courseId", value)}
        options={aggregateCourses.map((course) => ({
@@ -344,7 +349,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       />
 
       <FilterSelect
-       label="Quyển"
+       label={t("filters.book")}
        value={filters.bookId}
        onChange={(value) => updateFilter("bookId", value)}
        options={filteredBooks.map((book) => ({
@@ -354,12 +359,15 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       />
 
       <FilterSelect
-       label="Bài"
+       label={t("filters.lesson")}
        value={filters.lessonId}
        onChange={(value) => updateFilter("lessonId", value)}
        options={filteredLessons.map((lesson) => ({
         value: lesson.id,
-        label: `Bài ${lesson.lessonNumber}: ${lesson.titleZh}`,
+        label: t("filters.lessonOption", {
+         number: lesson.lessonNumber,
+         title: lesson.titleZh,
+        }),
        }))}
       />
 
@@ -370,7 +378,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
        variant="outline"
        size="toolbar"
       >
-       Xóa lọc
+       {t("filters.reset")}
       </Button>
      </div>
     </Card>
@@ -383,8 +391,8 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
         learningState={learning.state}
         initialMode={kind}
         availableModes={[kind]}
-        title="Ôn flashcard ngữ pháp"
-        description={activeReviewTitle || "Bài đang chọn"}
+        title={t("review.grammarTitle")}
+        description={activeReviewTitle || t("review.selectedLesson")}
         onAnswer={answerReview}
         onToggleBookmark={(scope, id) => learning.toggleBookmark(scope, id)}
         getItemLesson={(item) => lessonByReviewItemId.get(`${item.type}:${item.id}`) ?? null}
@@ -399,8 +407,8 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
 
     {shouldShowAggregateList && query.isError ? (
      <QueryErrorCard
-      title={`Không tải được ${kind === "vocab" ? "từ vựng" : "ngữ pháp"}`}
-      description={query.error?.message ?? "Dữ liệu tổng hợp hiện không khả dụng."}
+      title={kind === "vocab" ? t("loadError.vocabTitle") : t("loadError.grammarTitle")}
+      description={query.error?.message ?? t("loadError.description")}
       onRetry={() => void query.refetch()}
      />
     ) : null}
@@ -408,12 +416,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
     {shouldShowAggregateList && !query.isLoading && !query.isError && groupedItems.length === 0 ? (
      <EmptyState
       surface="subtle"
-      title="Không tìm thấy mục phù hợp"
-      description="Thử thay đổi từ khóa hoặc bộ lọc đang chọn."
+      title={t("empty.title")}
+      description={t("empty.description")}
       actions={
        hasActiveFilters ? (
         <Button type="button" variant="outline" size="toolbar" onClick={resetFilters}>
-         Xóa bộ lọc
+         {t("filters.clear")}
         </Button>
        ) : undefined
       }
@@ -428,10 +436,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
         <div className="flex flex-wrap items-center justify-between gap-2">
          <div>
           <Typography as="h2" variant="sectionTitle" weight="black">
-           {formatLessonHeading(group.lessonNumber, group.lessonTitle)}
+           {formatLessonHeading(group.lessonNumber, group.lessonTitle, (number, title) =>
+            t("filters.lessonOption", { number, title }),
+           )}
           </Typography>
           <Typography variant="caption" tone="muted" weight="bold">
-           {group.items.length} mục
+           {t("list.count", { count: group.items.length })}
           </Typography>
          </div>
 
@@ -448,7 +458,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
             onFocus={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
             onTouchStart={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
            >
-            Mở bài
+            {t("list.openLesson")}
            </Link>
           </Button>
           {kind === "vocab" ? (
@@ -467,7 +477,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
              onFocus={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
              onTouchStart={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
             >
-             Ôn bài
+             {t("list.reviewLesson")}
             </Link>
            </Button>
           ) : (
@@ -477,7 +487,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
             size="toolbar"
             onClick={() => startReview([group.lessonId])}
            >
-            Ôn bài
+            {t("list.reviewLesson")}
            </Button>
           )}
          </div>

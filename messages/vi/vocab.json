@@ -1,0 +1,112 @@
+{
+ "eyebrow": "Thư viện HanziHome",
+ "title": {
+  "vocab": "Tổng hợp từ vựng",
+  "grammar": "Tổng hợp ngữ pháp"
+ },
+ "description": {
+  "vocab": "Tra toàn bộ từ vựng theo giáo trình, quyển, bài học, pinyin và nghĩa.",
+  "grammar": "Tra toàn bộ điểm ngữ pháp theo giáo trình, quyển, bài học và nội dung cốt lõi."
+ },
+ "showing": "{count} mục đang hiển thị",
+ "search": {
+  "label": "Từ khóa",
+  "vocabAria": "Tìm từ vựng",
+  "grammarAria": "Tìm ngữ pháp",
+  "vocabPlaceholder": "Hán tự, pinyin, nghĩa...",
+  "grammarPlaceholder": "Tiêu đề, cấu trúc..."
+ },
+ "filters": {
+  "course": "Giáo trình",
+  "book": "Quyển",
+  "lesson": "Bài",
+  "lessonOption": "Bài {number}: {title}",
+  "all": "Tất cả",
+  "reset": "Xóa lọc",
+  "clear": "Xóa bộ lọc"
+ },
+ "review": {
+  "grammarTitle": "Ôn flashcard ngữ pháp",
+  "selectedLesson": "Bài đang chọn"
+ },
+ "reviewPicker": {
+  "eyebrow": "Chọn bài để ôn",
+  "vocabTitle": "Ôn từ vựng theo bài",
+  "grammarTitle": "Ôn ngữ pháp theo bài",
+  "selectedCount": "{count} bài",
+  "activeCount": "{count} bài đang ôn",
+  "close": "Đóng ôn",
+  "choose": "Chọn bài",
+  "start": "Bắt đầu ôn",
+  "selected": "Đã chọn",
+  "remove": "Bỏ {title}",
+  "more": "+{count} bài nữa",
+  "clear": "Xóa hết",
+  "noSelection": "Chưa chọn bài. Bấm “Chọn bài” để tìm nhanh theo số bài hoặc tên bài.",
+  "searchAria": "Tìm bài để ôn",
+  "searchPlaceholder": "Tìm bài, ví dụ: Bài 10...",
+  "noMatches": "Không tìm thấy bài phù hợp."
+ },
+ "preview": {
+  "step": "Bước 2 · Nội dung hiển thị",
+  "title": "Chọn phần muốn xem trong bài",
+  "description": "Bật/tắt từng phần hoặc dùng preset nhanh. Phần xem trước bên dưới sẽ đổi theo bài đã chọn.",
+  "selectedCount": "{count} phần",
+  "clear": "Bỏ chọn",
+  "presetLabel": "Preset",
+  "viewing": "Đang xem:",
+  "noModules": "Chưa chọn nội dung",
+  "selectLessons": "Chọn một hoặc nhiều bài ở trên để xem nội dung theo phần.",
+  "selectModule": "Chọn ít nhất một phần nội dung để hiển thị.",
+  "loading": "Đang tải nội dung bài đã chọn",
+  "quickView": "Xem nhanh nội dung bài đã chọn",
+  "moreLines": "+{count} dòng nữa trong bài.",
+  "moreWords": "+{count} từ nữa.",
+  "moreItems": "+{count} mục nữa.",
+  "grammarPoint": "Điểm ngữ pháp",
+  "itemNumber": "Mục {number}",
+  "modules": {
+   "lessonText": {
+    "label": "Bài khóa",
+    "description": "Hội thoại, đoạn văn và nội dung chính của bài."
+   },
+   "vocab": { "label": "Từ vựng", "description": "Từ vựng chính và tên riêng nếu bài có." },
+   "grammar": { "label": "Ngữ pháp", "description": "Điểm ngữ pháp và ví dụ theo bài." },
+   "exercises": {
+    "label": "Bài tập",
+    "description": "Các nhóm luyện tập, sửa câu, điền từ, hội thoại."
+   },
+   "reading": { "label": "Đọc hiểu", "description": "Bài đọc, câu hỏi đọc hiểu và điền khuyết." }
+  },
+  "presets": {
+   "lessonTextOnly": "Chỉ bài khóa",
+   "grammarOnly": "Chỉ ngữ pháp",
+   "vocabOnly": "Chỉ từ vựng",
+   "lessonTextVocab": "Bài khóa + Từ vựng",
+   "vocabExercises": "Từ vựng + Bài tập",
+   "all": "Tất cả"
+  },
+  "empty": {
+   "lessonText": "Chưa có bài khóa.",
+   "vocab": "Chưa có từ vựng.",
+   "grammar": "Chưa có ngữ pháp.",
+   "exercises": "Chưa có bài tập.",
+   "reading": "Chưa có bài đọc.",
+   "unavailable": "Phần này chưa có dữ liệu hiển thị cho bài đã chọn."
+  }
+ },
+ "loadError": {
+  "vocabTitle": "Không tải được từ vựng",
+  "grammarTitle": "Không tải được ngữ pháp",
+  "description": "Dữ liệu tổng hợp hiện không khả dụng."
+ },
+ "empty": {
+  "title": "Không tìm thấy mục phù hợp",
+  "description": "Thử thay đổi từ khóa hoặc bộ lọc đang chọn."
+ },
+ "list": {
+  "count": "{count} mục",
+  "openLesson": "Mở bài",
+  "reviewLesson": "Ôn bài"
+ }
+}

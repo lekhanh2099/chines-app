@@ -2,6 +2,7 @@
 
 import { type ReactElement, useState } from "react";
 import { Trash2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import {
@@ -34,6 +35,8 @@ export function SoftDeleteConfirmDialog({
  onOpenChange,
  onConfirm,
 }: SoftDeleteConfirmDialogProps) {
+ const t = useTranslations("Common.softDelete");
+ const common = useTranslations("Common.actions");
  const [internalOpen, setInternalOpen] = useState(false);
  const [isDeleting, setIsDeleting] = useState(false);
  const resolvedOpen = open ?? internalOpen;
@@ -60,22 +63,20 @@ export function SoftDeleteConfirmDialog({
  return (
   <Dialog open={resolvedOpen} onOpenChange={updateOpen}>
    {trigger ? <DialogTrigger asChild>{trigger}</DialogTrigger> : null}
-   <DialogContent size="sm" showCloseButton={!isDeleting}>
+   <DialogContent size="sm" showCloseButton={!isDeleting} closeLabel={common("close")}>
     <DialogHeader>
-     <DialogTitle>Xóa {itemType}?</DialogTitle>
-     <DialogDescription>
-      “{itemLabel}” sẽ được chuyển vào mục đã xóa và có thể khôi phục sau.
-     </DialogDescription>
+     <DialogTitle>{t("title", { type: itemType })}</DialogTitle>
+     <DialogDescription>{t("description", { label: itemLabel })}</DialogDescription>
     </DialogHeader>
     <DialogBody>
      <Typography as="p" variant="bodySmall" tone="secondary" leading="standard">
-      Nội dung này sẽ không còn xuất hiện trong chế độ học cho đến khi được khôi phục.
+      {t("note")}
      </Typography>
     </DialogBody>
     <DialogFooter>
      <DialogClose asChild>
       <Button type="button" variant="outline" disabled={isDeleting}>
-       Hủy
+       {common("cancel")}
       </Button>
      </DialogClose>
      <Button
@@ -85,7 +86,7 @@ export function SoftDeleteConfirmDialog({
       onClick={() => void handleConfirm()}
      >
       <Trash2 data-icon="inline-start" />
-      {isDeleting ? "Đang xóa..." : "Xóa"}
+      {isDeleting ? t("deleting") : t("delete")}
      </Button>
     </DialogFooter>
    </DialogContent>

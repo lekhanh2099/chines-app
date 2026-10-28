@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
+import { createTranslator } from "next-intl";
 
 import { AI_TASK_REGISTRY } from "@/lib/ai/ai-task-contract";
+import {
+ formatLessonHeading,
+ formatSelectedLessonsLabel,
+} from "@/features/hanzihome/components/aggregate-library/aggregate-utils";
 
 import type { AppLocale } from "./config";
 import { loadAppMessages } from "./messages";
@@ -19,6 +24,54 @@ const translatedLocales = ["en", "zh-CN"] satisfies readonly AppLocale[];
 const appLocales = ["vi", ...translatedLocales] satisfies readonly AppLocale[];
 
 describe("i18n message contracts", () => {
+ it.each(appLocales)("%s composes the soft-delete item title", async (locale) => {
+  const messages = await loadAppMessages(locale);
+  const t = createTranslator({ locale, messages, namespace: "Common.softDelete" });
+
+  expect(t("title", { type: t("itemTypes.memoryTip") })).toBe(
+   { vi: "Xóa nhắc nhanh?", en: "Delete quick tip?", "zh-CN": "删除速记提示？" }[locale],
+  );
+ });
+
+ it.each(appLocales)(
+  "%s formats aggregate review headings in the selected locale",
+  async (locale) => {
+   const messages = await loadAppMessages(locale);
+   const t = createTranslator({ locale, messages, namespace: "Vocab" });
+   const formatLabel = (number: number, title: string) =>
+    t("filters.lessonOption", { number, title });
+   const expectedHeading = {
+    vi: "Bài 10: 成语故事",
+    en: "Lesson 10: 成语故事",
+    "zh-CN": "第 10 课：成语故事",
+   }[locale];
+   const expectedCount = {
+    vi: "2 bài đang ôn",
+    en: "Reviewing 2 lessons",
+    "zh-CN": "正在复习 2 课",
+   }[locale];
+
+   expect(formatLessonHeading(10, "Bài 10: 成语故事", formatLabel)).toBe(expectedHeading);
+   expect(
+    formatSelectedLessonsLabel(
+     [{ lessonNumber: 10, title: "成语故事", titleZh: "成语故事" }],
+     formatLabel,
+     (count) => t("reviewPicker.activeCount", { count }),
+    ),
+   ).toBe(expectedHeading);
+   expect(
+    formatSelectedLessonsLabel(
+     [
+      { lessonNumber: 10, title: "成语故事", titleZh: "成语故事" },
+      { lessonNumber: 11, title: "中国文化", titleZh: "中国文化" },
+     ],
+     formatLabel,
+     (count) => t("reviewPicker.activeCount", { count }),
+    ),
+   ).toBe(expectedCount);
+  },
+ );
+
  it.each(translatedLocales)("%s exposes the same semantic keys as Vietnamese", async (locale) => {
   const [baseMessages, translatedMessages] = await Promise.all([
    loadAppMessages("vi"),

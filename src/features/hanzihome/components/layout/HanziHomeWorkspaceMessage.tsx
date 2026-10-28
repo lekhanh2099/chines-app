@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
@@ -17,6 +18,7 @@ export function HanziHomeWorkspaceMessage({
  showLibraryLink?: boolean;
  onRetry?: () => void;
 }) {
+ const t = useTranslations("Shell.workspace");
  return (
   <div className="hanzihome-static-page">
    <div className="flex w-full max-w-full flex-col gap-2.5">
@@ -30,13 +32,13 @@ export function HanziHomeWorkspaceMessage({
         <>
          {onRetry ? (
           <Button type="button" variant="outline" onClick={onRetry}>
-           Thử tải lại
+           {t("retry")}
           </Button>
          ) : null}
          {showLibraryLink ? (
           <Button asChild>
            <Link href="/" prefetch={false}>
-            Về thư viện học liệu
+            {t("backToLibrary")}
            </Link>
           </Button>
          ) : null}

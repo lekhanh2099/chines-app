@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/forms/input";
 import { Typography } from "@/components/ui/display/typography";
 import { useMemo, useState } from "react";
 import { Check, ChevronDown, RotateCcw, Search, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import type { AggregateKind } from "./aggregate-utils";
@@ -34,6 +35,7 @@ export function ReviewLessonMultiSelect({
  onStartReview: () => void;
  onCloseReview: () => void;
 }) {
+ const t = useTranslations("Vocab");
  const [query, setQuery] = useState("");
  const [isPickerOpen, setIsPickerOpen] = useState(false);
  const normalizedQuery = query.trim().toLowerCase();
@@ -44,7 +46,11 @@ export function ReviewLessonMultiSelect({
   if (!normalizedQuery) return lessons;
 
   return lessons.filter((lesson) => {
-   const heading = formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title);
+   const heading = formatLessonHeading(
+    lesson.lessonNumber,
+    lesson.titleZh || lesson.title,
+    (number, title) => t("filters.lessonOption", { number, title }),
+   );
    const searchableText = [
     heading,
     lesson.title,
@@ -57,7 +63,7 @@ export function ReviewLessonMultiSelect({
 
    return searchableText.includes(normalizedQuery);
   });
- }, [lessons, normalizedQuery]);
+ }, [lessons, normalizedQuery, t]);
 
  const selectedLessons = lessons.filter((lesson) => selectedLessonIdSet.has(lesson.id));
  const selectedCount = selectedLessons.length;
@@ -85,10 +91,10 @@ export function ReviewLessonMultiSelect({
       tracking="wide"
       transform="uppercase"
      >
-      Chọn bài để ôn
+      {t("reviewPicker.eyebrow")}
      </StudyInstructionText>
      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-      {kind === "vocab" ? "Ôn từ vựng theo bài" : "Ôn ngữ pháp theo bài"}
+      {kind === "vocab" ? t("reviewPicker.vocabTitle") : t("reviewPicker.grammarTitle")}
      </Typography>
     </div>
 
@@ -99,12 +105,12 @@ export function ReviewLessonMultiSelect({
       weight="black"
       className="rounded-full bg-bg-subtle px-3 py-1"
      >
-      {selectedCount} bài
+      {t("reviewPicker.selectedCount", { count: selectedCount })}
      </StudyInstructionText>
 
      {activeLessonTitle && (
       <Button type="button" size="sm" variant="outline" onClick={onCloseReview}>
-       Đóng ôn
+       {t("reviewPicker.close")}
       </Button>
      )}
 
@@ -115,7 +121,7 @@ export function ReviewLessonMultiSelect({
       onClick={() => setIsPickerOpen((current) => !current)}
       aria-expanded={isPickerOpen}
      >
-      Chọn bài
+      {t("reviewPicker.choose")}
       <ChevronDown
        className={["h-4 w-4 transition-transform", isPickerOpen ? "rotate-180" : ""].join(" ")}
       />
@@ -123,7 +129,7 @@ export function ReviewLessonMultiSelect({
 
      <Button type="button" size="sm" disabled={!canStartReview} onClick={onStartReview}>
       <RotateCcw className="h-4 w-4" />
-      {kind === "vocab" ? "Bắt đầu ôn" : "Bắt đầu ôn"}
+      {t("reviewPicker.start")}
      </Button>
     </div>
    </div>
@@ -137,22 +143,28 @@ export function ReviewLessonMultiSelect({
       tracking="wide"
       transform="uppercase"
      >
-      Đã chọn
+      {t("reviewPicker.selected")}
      </StudyInstructionText>
 
-     {selectedLessons.slice(0, 6).map((lesson) => (
-      <Button
-       key={lesson.id}
-       type="button"
-       variant="surfaceCard"
-       onClick={() => onToggleLesson(lesson.id)}
-
-       title={`Bỏ ${formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}`}
-      >
-       <span>{formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}</span>
-       <X data-icon="inline-end" />
-      </Button>
-     ))}
+     {selectedLessons.slice(0, 6).map((lesson) => {
+      const title = formatLessonHeading(
+       lesson.lessonNumber,
+       lesson.titleZh || lesson.title,
+       (number, lessonTitle) => t("filters.lessonOption", { number, title: lessonTitle }),
+      );
+      return (
+       <Button
+        key={lesson.id}
+        type="button"
+        variant="surfaceCard"
+        onClick={() => onToggleLesson(lesson.id)}
+        title={t("reviewPicker.remove", { title })}
+       >
+        <span>{title}</span>
+        <X data-icon="inline-end" />
+       </Button>
+      );
+     })}
 
      {selectedLessons.length > 6 && (
       <StudyInstructionText
@@ -161,12 +173,12 @@ export function ReviewLessonMultiSelect({
        weight="black"
        className="rounded-full bg-bg-subtle px-3 py-1.5"
       >
-       +{selectedLessons.length - 6} bài nữa
+       {t("reviewPicker.more", { count: selectedLessons.length - 6 })}
       </StudyInstructionText>
      )}
 
      <Button type="button" variant="ghost" onClick={clearSelectedLessons}>
-      Xóa hết
+      {t("reviewPicker.clear")}
      </Button>
     </div>
    )}
@@ -178,7 +190,7 @@ export function ReviewLessonMultiSelect({
      weight="bold"
      className="rounded-xl border border-dashed border-border-default bg-bg-subtle px-3 py-2"
     >
-     Chưa chọn bài. Bấm “Chọn bài” để tìm nhanh theo số bài hoặc tên bài.
+     {t("reviewPicker.noSelection")}
     </StudyInstructionText>
    )}
 
@@ -189,8 +201,8 @@ export function ReviewLessonMultiSelect({
       <Input
        value={query}
        onChange={(event) => setQuery(event.target.value)}
-       aria-label="Tìm bài để ôn"
-       placeholder="Tìm bài, ví dụ: Bài 10..."
+       aria-label={t("reviewPicker.searchAria")}
+       placeholder={t("reviewPicker.searchPlaceholder")}
        surface="field"
        adornment="start"
        className="w-full"
@@ -201,7 +213,11 @@ export function ReviewLessonMultiSelect({
       {filteredLessons.length > 0 ? (
        filteredLessons.map((lesson) => {
         const selected = selectedLessonIdSet.has(lesson.id);
-        const title = formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title);
+        const title = formatLessonHeading(
+         lesson.lessonNumber,
+         lesson.titleZh || lesson.title,
+         (number, lessonTitle) => t("filters.lessonOption", { number, title: lessonTitle }),
+        );
 
         return (
          <Button
@@ -234,7 +250,7 @@ export function ReviewLessonMultiSelect({
         weight="bold"
         className="col-span-full px-2 py-4"
        >
-        Không tìm thấy bài phù hợp.
+        {t("reviewPicker.noMatches")}
        </StudyInstructionText>
       )}
      </div>

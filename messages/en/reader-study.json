@@ -11,12 +11,18 @@
    "summary": "Summary",
    "notes": "Notes"
   },
+  "groups": {
+   "reading": "Reading",
+   "practice": "Practice",
+   "resources": "Resources"
+  },
   "backToReader": "Reader library",
   "defaultReading": "Reading",
   "unit": "Unit {unit}",
   "progressLoading": "Loading Reader progress; the static content is still ready to read.",
   "progressUnavailable": "Reader progress could not be loaded. You can still read; new changes will be saved when the connection is restored.",
   "tabsAria": "Reader sections",
+  "subtabsAria": "Reader subsection",
   "commands": {
    "segment": "Segment {current} / {total}",
    "lesson": "Lesson {current} / {total}",

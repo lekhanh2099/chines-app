@@ -11,12 +11,18 @@
    "summary": "总结",
    "notes": "笔记"
   },
+  "groups": {
+   "reading": "阅读",
+   "practice": "练习",
+   "resources": "资料"
+  },
   "backToReader": "Reader 目录",
   "defaultReading": "阅读",
   "unit": "单元 {unit}",
   "progressLoading": "正在加载 Reader 进度；静态内容仍可阅读。",
   "progressUnavailable": "无法加载 Reader 进度。你仍可阅读；连接恢复后会保存新的更改。",
   "tabsAria": "Reader 分区",
+  "subtabsAria": "Reader 分区内容",
   "commands": {
    "segment": "第 {current} / {total} 段",
    "lesson": "第 {current} / {total} 课",

@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/layout/card";
+import { useTranslations } from "next-intl";
 
 export function HanziHomeWorkspaceLoading() {
+ const t = useTranslations("Shell.workspace");
  return (
   <div className="hanzihome-static-page" aria-busy="true" aria-live="polite">
    <div className="grid w-full min-w-0 max-w-full animate-pulse gap-2.5">
@@ -26,7 +28,7 @@ export function HanziHomeWorkspaceLoading() {
       </div>
      </div>
     </Card>
-    <span className="sr-only">Đang tải bài học</span>
+    <span className="sr-only">{t("loading")}</span>
    </div>
   </div>
  );

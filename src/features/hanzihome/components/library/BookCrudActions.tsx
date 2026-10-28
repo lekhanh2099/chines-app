@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -40,6 +41,7 @@ export function BookCrudActions({
  canMoveUp?: boolean;
  canMoveDown?: boolean;
 }) {
+ const tDeleteItem = useTranslations("Common.softDelete.itemTypes");
  const [open, setOpen] = useState(false);
  const queryClient = useQueryClient();
  const form = useAppForm({
@@ -116,7 +118,7 @@ export function BookCrudActions({
   <>
    <LibraryCrudActionsMenu
     ariaLabel={`Tác vụ cho ${book.title}`}
-    itemType="quyển"
+    itemType={tDeleteItem("book")}
     itemLabel={book.title}
     disabled={!book.updatedAt}
     canMoveUp={canMoveUp}

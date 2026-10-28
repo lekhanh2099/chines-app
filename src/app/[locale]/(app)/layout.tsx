@@ -1,6 +1,7 @@
 import { AppScrollViewport } from "@/components/layout/scroll/AppScrollViewport";
 import { Header } from "@/components/layout/header/Header";
 import { MobileBottomNavigation, Sidebar } from "@/components/layout/navigation/Sidebar";
+import { UnsavedDraftNavigationGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { DailyReadingSchedulerAgent } from "@/features/daily-reading/runtime/DailyReadingSchedulerAgent";
 import { HanziHomeGlobalSearchBridge } from "@/features/hanzihome/search/HanziHomeGlobalSearchBridge";
 import { HanziTypographyPreferenceBridge } from "@/features/hanzihome/typography/HanziTypographyPreferenceBridge";
@@ -21,19 +22,21 @@ export default async function AppLayout({
   (await hasHanziHomeContentCapability(auth.context.supabase, auth.context.user.id));
 
  return (
-  <div className="app-shell flex h-dvh w-full min-w-0 items-stretch overflow-hidden bg-background text-foreground">
-   <LearningStateSyncAgent />
-   <HanziTypographyPreferenceBridge />
-   <DailyReadingSchedulerAgent />
-   <Sidebar canManageContent={canManageContent} />
-   <div className="flex h-dvh min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
-    <Header />
-    <HanziHomeGlobalSearchBridge />
-    <AppScrollViewport className="page-shell nova-page scrollbar-soft">
-     {children}
-    </AppScrollViewport>
-    <MobileBottomNavigation canManageContent={canManageContent} />
+  <UnsavedDraftNavigationGuard>
+   <div className="app-shell flex h-dvh w-full min-w-0 items-stretch overflow-hidden bg-background text-foreground">
+    <LearningStateSyncAgent />
+    <HanziTypographyPreferenceBridge />
+    <DailyReadingSchedulerAgent />
+    <Sidebar canManageContent={canManageContent} />
+    <div className="flex h-dvh min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+     <Header />
+     <HanziHomeGlobalSearchBridge />
+     <AppScrollViewport className="page-shell nova-page scrollbar-soft">
+      {children}
+     </AppScrollViewport>
+     <MobileBottomNavigation canManageContent={canManageContent} />
+    </div>
    </div>
-  </div>
+  </UnsavedDraftNavigationGuard>
  );
 }

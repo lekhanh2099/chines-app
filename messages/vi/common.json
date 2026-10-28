@@ -10,6 +10,20 @@
   "stop": "Dừng",
   "close": "Đóng"
  },
+ "softDelete": {
+  "title": "Xóa {type}?",
+  "description": "“{label}” sẽ được chuyển vào mục đã xóa và có thể khôi phục sau.",
+  "note": "Nội dung này sẽ không còn xuất hiện trong chế độ học cho đến khi được khôi phục.",
+  "delete": "Xóa",
+  "deleting": "Đang xóa...",
+  "itemTypes": {
+   "memoryTip": "nhắc nhanh",
+   "course": "khóa học",
+   "book": "quyển",
+   "lesson": "bài học",
+   "content": "nội dung"
+  }
+ },
  "language": "Ngôn ngữ",
  "passwordVisibility": {
   "show": "Hiện mật khẩu",
