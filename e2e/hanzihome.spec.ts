@@ -931,12 +931,15 @@ test.describe(() => {
 });
 
 test("schedules a review and preserves an offline retry", async ({ page }) => {
+ const completionTitle = "Hoàn thành phiên ôn!";
+ const completionDescription = "Bạn đã hoàn thành 1 lượt ôn trong phiên này.";
  await resetLearningLoopItem();
  await login(page, accountA);
  await page.goto("/vi/learning-loop");
  await expect(page.getByRole("heading", { name: "学习" })).toBeVisible();
  await page.getByRole("button", { name: /Đã nhớ/ }).click();
- await expect(page.getByText("Hôm nay chưa có mục đến hạn", { exact: true })).toBeVisible();
+ await expect(page.getByRole("heading", { name: completionTitle, exact: true })).toBeVisible();
+ await expect(page.getByText(completionDescription, { exact: true })).toBeVisible();
 
  const admin = createAdminClient();
  await expect
@@ -975,7 +978,8 @@ test("schedules a review and preserves an offline retry", async ({ page }) => {
    response.request().method() === "POST",
  );
  await page.getByRole("button", { name: /Đã nhớ/ }).click();
- await expect(page.getByText("Hôm nay chưa có mục đến hạn", { exact: true })).toBeVisible();
+ await expect(page.getByRole("heading", { name: completionTitle, exact: true })).toBeVisible();
+ await expect(page.getByText(completionDescription, { exact: true })).toBeVisible();
  expect((await retriedReview).ok()).toBe(true);
  await expect
   .poll(async () => {
