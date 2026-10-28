@@ -127,9 +127,19 @@ describe("CI affected selection with actual Git history", () => {
 
  it("uses all mounted consumers for global CSS without a database run", () => {
   const result = select({ latest: ["src/app/globals.css"] });
-  expect(result.browser_files.split(" ")).toHaveLength(14);
+  expect(result.browser_files.split(" ")).toHaveLength(15);
   expect(result.e2e_grep).toBe("");
   expect(result.unit_full).toBe("true");
+ });
+
+ it("selects the unsaved-draft navigation browser regression", () => {
+  const result = select({
+   latest: ["src/components/layout/navigation/UnsavedDraftNavigationGuard.tsx"],
+  });
+  expect(result.browser_files).toContain(
+   "src/components/layout/navigation/UnsavedDraftNavigationGuard.browser.test.ts",
+  );
+  expect(result.e2e_grep).toBe("");
  });
 
  it.each(["e2e/hanzihome.spec.ts", "scripts/e2e/seed-fixtures.mjs", "playwright.config.ts"])(
