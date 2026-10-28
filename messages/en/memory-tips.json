@@ -1,0 +1,80 @@
+{
+ "title": "Quick tips",
+ "description": "Keep formulas, distinctions, and easy-to-forget examples close at hand while studying.",
+ "count": "{count} active items",
+ "add": "Add a quick tip",
+ "listAria": "Quick tips list",
+ "types": {
+  "grammar": "Grammar",
+  "vocab": "Vocabulary",
+  "formula": "Formula",
+  "custom": "Custom"
+ },
+ "toast": {
+  "unpinned": "Unpinned",
+  "pinned": "Pinned",
+  "updateError": "Could not update the quick tip",
+  "archived": "Moved the quick tip to deleted items",
+  "archiveError": "Could not delete the quick tip"
+ },
+ "loadError": {
+  "title": "Could not load quick tips",
+  "description": "Quick tip data is currently unavailable."
+ },
+ "empty": {
+  "title": "No quick tips yet",
+  "description": "Add a tip here or save one from vocabulary or grammar to review later.",
+  "addFirst": "Add your first tip"
+ },
+ "card": {
+  "pinned": "Pinned",
+  "actionsAria": "Actions for {title}",
+  "actions": "Actions",
+  "edit": "Edit",
+  "unpin": "Unpin",
+  "pin": "Pin",
+  "delete": "Delete"
+ },
+ "global": {
+  "loading": "Loading quick tips",
+  "emptyTitle": "No tips yet",
+  "emptyDescription": "Add a short tip to see a reminder when you return to the study page.",
+  "addShort": "Add",
+  "manage": "Manage",
+  "pinnedAria": "Pinned tip",
+  "nextTip": "Another tip"
+ },
+ "saveButton": {
+  "label": "Save quick tip",
+  "saved": "Quick tip saved",
+  "saveError": "Could not save the quick tip"
+ },
+ "dialog": {
+  "updated": "Quick tip updated",
+  "created": "Quick tip added",
+  "duplicate": "This tip has already been saved.",
+  "createError": "Could not add the quick tip",
+  "addShort": "+ Add",
+  "editTitle": "Edit quick tip",
+  "createTitle": "Add quick tip",
+  "editDescription": "Update a formula, distinction, or example you want to remember.",
+  "createDescription": "Save a formula, distinction, or example for quick review.",
+  "type": "Type",
+  "source": "Source",
+  "lesson": "Lesson",
+  "titleLabel": "Title",
+  "titleRequired": "Enter a title",
+  "titlePlaceholder": "For example: 又 and 再 are different",
+  "bodyLabel": "Main content",
+  "bodyRequired": "Enter the main content",
+  "bodyPlaceholder": "Write a short reminder about the point you might forget.",
+  "exampleZh": "Chinese example",
+  "exampleVi": "Vietnamese meaning",
+  "exampleViPlaceholder": "E.g. Tôi làm xong bài tập rồi.",
+  "tags": "Tags",
+  "tagsDescription": "Separate multiple tags with commas.",
+  "pinTip": "Pin this tip",
+  "update": "Update",
+  "save": "Save quick tip"
+ }
+}

@@ -1,7 +1,11 @@
 import type { ComponentProps, ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import { NextIntlClientProvider } from "next-intl";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import shellVi from "../../../../../messages/vi/shell.json";
+import type { AppLocale } from "@/i18n/config";
+import { loadAppMessages } from "@/i18n/messages";
 import { HanziHomeFeatureProvider } from "@/features/hanzihome/context/HanziHomeFeatureProvider";
 import type { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import type { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
@@ -194,34 +198,58 @@ const lesson: HanziHomeLesson = {
  sourceLesson,
 };
 
-function renderWorkspace(element: ReactNode) {
+function renderWorkspace(element: ReactNode, shellMessages = shellVi, locale: AppLocale = "vi") {
  return renderToStaticMarkup(
-  <HanziHomeFeatureProvider
-   readOnly={false}
-   lesson={lesson}
-   learningState={{
-    settings: {},
-    progress: { vocab: {}, grammar: {} },
-    bookmarks: { lessons: [], vocab: [], grammar: [], radicals: [] },
-    reviewHistory: [],
-   }}
-   activeModule="lessonText"
-   onSelectModule={vi.fn()}
-   onUpdateLearningSettings={vi.fn()}
-   onBookmarkVocab={vi.fn()}
-   onMarkVocab={vi.fn()}
-   onBookmarkGrammar={vi.fn()}
-   onMarkGrammar={vi.fn()}
-   onAnswerReview={vi.fn()}
+  <NextIntlClientProvider
+   locale={locale}
+   messages={{ Shell: shellMessages }}
+   timeZone="Asia/Ho_Chi_Minh"
   >
-   {element}
-  </HanziHomeFeatureProvider>,
+   <HanziHomeFeatureProvider
+    readOnly={false}
+    lesson={lesson}
+    learningState={{
+     settings: {},
+     progress: { vocab: {}, grammar: {} },
+     bookmarks: { lessons: [], vocab: [], grammar: [], radicals: [] },
+     reviewHistory: [],
+    }}
+    activeModule="lessonText"
+    onSelectModule={vi.fn()}
+    onUpdateLearningSettings={vi.fn()}
+    onBookmarkVocab={vi.fn()}
+    onMarkVocab={vi.fn()}
+    onBookmarkGrammar={vi.fn()}
+    onMarkGrammar={vi.fn()}
+    onAnswerReview={vi.fn()}
+   >
+    {element}
+   </HanziHomeFeatureProvider>
+  </NextIntlClientProvider>,
  );
 }
 
 beforeEach(() => vi.clearAllMocks());
 
 describe("LessonTextInlineEditor module filtering", () => {
+ it.each(["vi", "en", "zh-CN"] satisfies AppLocale[])(
+  "renders the localized module title in %s",
+  async (locale) => {
+   const messages = await loadAppMessages(locale);
+   renderWorkspace(
+    <LessonTextInlineEditor
+     selectedSectionId="__all_lesson_sections__"
+     onSelectSection={vi.fn()}
+    />,
+    messages.Shell,
+    locale,
+   );
+   expect(frameMock.mock.calls[0]?.[0].title).toBe(
+    { vi: "Bài khóa", en: "Lesson text", "zh-CN": "课文" }[locale],
+   );
+  },
+ );
+
  it("binds facade callbacks to the original source paths despite display sorting", () => {
   renderWorkspace(
    <LessonTextInlineEditor selectedSectionId="__all_lesson_sections__" onSelectSection={vi.fn()} />,

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/display/badge";
 import {
@@ -35,6 +36,7 @@ export function HanziHomeStudyTabs<T extends string>({
  surface = "subtle",
  className,
 }: HanziHomeStudyTabsProps<T>) {
+ const tModules = useTranslations("Shell.studyModules");
  return (
   <SegmentedControl
    value={value}
@@ -49,7 +51,7 @@ export function HanziHomeStudyTabs<T extends string>({
    onChange={onChange}
    density={compact ? "toolbar" : "touch"}
    surface={surface}
-   aria-label="Nội dung học"
+   aria-label={tModules("aria")}
    className={className}
   />
  );

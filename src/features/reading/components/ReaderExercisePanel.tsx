@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
@@ -40,6 +41,11 @@ export function ReaderExercisePanel({
 }) {
  const t = useTranslations("Reader.study.exercise");
  const [drafts, setDrafts] = useState<Record<string, string>>({});
+ useUnsavedDraftGuard(
+  Object.entries(drafts).some(
+   ([itemId, value]) => value.trim().length > 0 && value !== answers[itemId]?.answer,
+  ),
+ );
  const exerciseGroupLabel: Record<ReaderExerciseGroupType, string> = {
   notes: t("groupLabels.notes"),
   vocabulary_review: t("groupLabels.vocabulary_review"),

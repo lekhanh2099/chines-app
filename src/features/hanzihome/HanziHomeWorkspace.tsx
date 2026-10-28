@@ -32,6 +32,7 @@ import { useRouter } from "@/i18n/navigation";
 
 export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeModule }) {
  const tSync = useTranslations("Common.syncStatus");
+ const tWorkspace = useTranslations("Shell.workspace");
  const router = useRouter();
  const searchParams = useSearchParams();
  const learning = useLearningState();
@@ -239,11 +240,9 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   return (
    <HanziHomeWorkspaceMessage
     eyebrow={selectedCourse?.title || "HanziHome"}
-    title={isOffline ? tSync("offlineUnavailableTitle") : "Không tải được bài học"}
+    title={isOffline ? tSync("offlineUnavailableTitle") : tWorkspace("loadErrorTitle")}
     description={
-     isOffline
-      ? tSync("offlineUnavailableDescription")
-      : "Dữ liệu bài học hiện không khả dụng. Thử tải lại trang hoặc quay về thư viện."
+     isOffline ? tSync("offlineUnavailableDescription") : tWorkspace("loadErrorDescription")
     }
     showLibraryLink
     onRetry={() => {
@@ -264,8 +263,8 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   return (
    <HanziHomeWorkspaceMessage
     eyebrow={selectedCourse?.title || "HanziHome"}
-    title="Course này chưa có bài học"
-    description="Quay về thư viện học liệu để chọn course khác."
+    title={tWorkspace("emptyCourseTitle")}
+    description={tWorkspace("emptyCourseDescription")}
     showLibraryLink
    />
   );
@@ -284,10 +283,10 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
    <div className="hanzihome-static-page hanzihome-workspace-page">
     <Typography as="h1" variant="pageTitle" className="sr-only">
      {resolvedActiveModule === "radicals"
-      ? "Bộ thủ HanziHome"
+      ? tWorkspace("radicalsTitle")
       : lesson
-        ? `Bài học ${lesson.title}`
-        : "Không gian học HanziHome"}
+        ? tWorkspace("lessonTitle", { title: lesson.title })
+        : tWorkspace("studyTitle")}
     </Typography>
     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
      {resolvedActiveModule === "radicals" ? (

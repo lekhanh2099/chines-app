@@ -1,6 +1,12 @@
 {
  "heading": "听写工作室",
  "description": "按教材、册和课选择 HSK 3–6 内容，或使用已保存音频与粘贴文本练习听写。",
+ "recentSource": "最近的听写内容",
+ "resumeRecent": "继续上次练习",
+ "chooseDifferentSource": "选择其他内容",
+ "hideSourcePicker": "收起内容选择",
+ "resumingRecent": "正在打开上次的听写内容…",
+ "resumeUnavailable": "上次的内容已无法打开，请重新选择练习内容。",
  "lessonSource": "HSK 课程／阅读",
  "librarySource": "来自语音库",
  "customSource": "粘贴内容",

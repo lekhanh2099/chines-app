@@ -4,7 +4,8 @@ import { Fragment, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useSelector } from "@tanstack/react-store";
-import { ChevronRight, Menu } from "lucide-react";
+import { ChevronRight, LockKeyhole, Menu, Moon, Sun } from "lucide-react";
+import { toast } from "sonner";
 
 import { AppLogoMark } from "@/components/layout/navigation/AppLogoMark";
 import { BrandWordmark } from "@/components/layout/navigation/BrandWordmark";
@@ -30,9 +31,11 @@ import {
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import { Typography } from "@/components/ui/display/typography";
 import { focusRingClassName } from "@/components/ui/focus-ring";
+import { useTheme } from "@/components/layout/theme/ThemeProvider";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { appShellStore } from "@/stores/shell/app-shell-store";
+import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { navigationPendingStore } from "@/stores/shell/navigation-pending-store";
 import { sidebarStore } from "@/stores/shell/sidebar-store";
 
@@ -536,9 +539,11 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
 
 export function MobileBottomNavigation({ canManageContent }: { canManageContent: boolean }) {
  const t = useTranslations("Shell");
+ const { theme, toggleTheme } = useTheme();
  const pendingHref = useSelector(navigationPendingStore, (state) => state.pendingHref);
  const visibleNavigationGroups = filterNavigationGroupsForContentCapability(canManageContent);
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const [moreOpen, setMoreOpen] = useState(false);
@@ -555,15 +560,15 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
   <>
    <nav
     aria-label={t("navigation.aria.quick")}
-    className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.25rem+env(safe-area-inset-bottom))] pt-1 lg:hidden"
+    className="nova-shell-header z-40 h-[calc(var(--bottom-nav-height)+env(safe-area-inset-bottom))] shrink-0 border-t border-border-default px-2 pb-[env(safe-area-inset-bottom)] lg:hidden"
    >
-    <div className="mx-auto grid w-full max-w-md grid-cols-5 gap-0.5">
+    <div className="mx-auto grid h-full w-full max-w-md grid-cols-5 items-center gap-0.5">
      {mobileNavigationItemIds.map((itemId) => {
       const item = navigationItems[itemId];
       const Icon = item.icon;
       const active =
        itemId === "lessons" ? lessonsActive : isActive(pathname, searchParams, itemId);
-      const label = t(item.messageKey);
+      const label = t(`navigation.mobileItems.${itemId}`);
       const isPendingThisItem = pendingHref === item.href;
 
       return (
@@ -576,7 +581,7 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
         aria-busy={isPendingThisItem ? "true" : undefined}
         aria-label={label}
         title={label}
-        className={cn("justify-self-center", isPendingThisItem && "pointer-events-none opacity-80")}
+        className={cn("w-full min-w-0", isPendingThisItem && "pointer-events-none opacity-80")}
        >
         <Link
          href={item.href}
@@ -592,7 +597,12 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
           navigationPendingStore.actions.startNavigation(item.href);
          }}
         >
-         <Icon />
+         <span className="flex min-w-0 flex-col items-center gap-0.5">
+          <Icon />
+          <Typography as="span" variant="caption" tone="inherit" scale="micro" clamp="one">
+           {label}
+          </Typography>
+         </span>
         </Link>
        </Button>
       );
@@ -606,10 +616,15 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
       aria-haspopup="dialog"
       aria-label={t("navigation.openAll")}
       title={t("navigation.more")}
-      className="justify-self-center"
+      className="w-full min-w-0"
       onClick={() => setMoreOpen(true)}
      >
-      <Menu />
+      <span className="flex min-w-0 flex-col items-center gap-0.5">
+       <Menu />
+       <Typography as="span" variant="caption" tone="inherit" scale="micro" clamp="one">
+        {t("navigation.more")}
+       </Typography>
+      </span>
      </Button>
     </div>
    </nav>
@@ -617,7 +632,41 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
    <Sheet open={moreOpen} onOpenChange={setMoreOpen} side="bottom">
     <SheetHeader title={t("navigation.sheetTitle")} onClose={() => setMoreOpen(false)} />
     <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
-     <nav aria-label={t("navigation.aria.all")}>
+     <div className="grid gap-2 border-b border-border-default pb-4 sm:grid-cols-2">
+      <Typography as="h2" variant="overline" tone="muted" className="sm:col-span-2">
+       {t("header.quickSettings")}
+      </Typography>
+      <Button
+       type="button"
+       variant={theme === "dark" ? "active" : "outline"}
+       size="touch"
+       align="start"
+       aria-pressed={theme === "dark"}
+       onClick={toggleTheme}
+       className="w-full"
+      >
+       {theme === "dark" ? <Sun data-icon="inline-start" /> : <Moon data-icon="inline-start" />}
+       {t("header.darkTheme")}
+      </Button>
+      <Button
+       type="button"
+       variant={focusModeEnabled ? "active" : "outline"}
+       size="touch"
+       align="start"
+       aria-pressed={focusModeEnabled}
+       onClick={() => {
+        if (!focusModeEnabled) {
+         toast.warning(t("header.focusModeWarning"), { duration: 5200 });
+        }
+        focusModeStore.actions.setEnabled(!focusModeEnabled);
+       }}
+       className="w-full"
+      >
+       <LockKeyhole data-icon="inline-start" />
+       {t("header.focusMode")}
+      </Button>
+     </div>
+     <nav aria-label={t("navigation.aria.all")} className="pt-4">
       <div className="grid gap-5 sm:grid-cols-2">
        {visibleNavigationGroups.map((group) => (
         <section

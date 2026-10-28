@@ -1,6 +1,12 @@
 {
  "heading": "Dictation studio",
  "description": "Choose HSK 3–6 lessons by textbook, volume, and lesson, or practice with saved audio or pasted text.",
+ "recentSource": "Most recent dictation",
+ "resumeRecent": "Continue this lesson",
+ "chooseDifferentSource": "Choose another source",
+ "hideSourcePicker": "Hide source picker",
+ "resumingRecent": "Opening your most recent dictation…",
+ "resumeUnavailable": "The recent source is no longer available. Choose content to practice.",
  "lessonSource": "HSK lesson / reading",
  "librarySource": "From speech library",
  "customSource": "Paste text",

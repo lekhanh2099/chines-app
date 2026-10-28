@@ -9,10 +9,12 @@ export function useTranslationRecording({
  context,
  answer,
  submitAttempt,
+ onSaved,
 }: {
  context: Parameters<typeof createTranslationRecordingSubmission>[0];
  answer: Omit<Parameters<typeof createTranslationRecordingSubmission>[1], "durationSeconds">;
  submitAttempt: ReturnType<typeof useTranslationAttempts>["submitAttempt"];
+ onSaved: (answer: Parameters<typeof createTranslationRecordingSubmission>[1]) => void;
 }) {
  const recorder = useShadowingRecorder();
  const recordingContextRef = useRef(context);
@@ -23,14 +25,15 @@ export function useTranslationRecording({
   if (!captured.contentId || recorder.audioBlob === null) return;
   if (lastRecordingRef.current === recorder.audioBlob) return;
   lastRecordingRef.current = recorder.audioBlob;
-  submitAttempt(
-   createTranslationRecordingSubmission(captured, {
-    transcript: answer.transcript,
-    notes: answer.notes,
-    unitMarks: answer.unitMarks,
-    durationSeconds: recorder.durationSeconds,
-   }),
-  );
+  const submittedAnswer = {
+   transcript: answer.transcript,
+   notes: answer.notes,
+   unitMarks: answer.unitMarks,
+   durationSeconds: recorder.durationSeconds,
+  };
+  submitAttempt(createTranslationRecordingSubmission(captured, submittedAnswer), {
+   onSuccess: () => onSaved(submittedAnswer),
+  });
  }, [
   answer.notes,
   answer.transcript,
@@ -38,6 +41,7 @@ export function useTranslationRecording({
   recorder.audioBlob,
   recorder.durationSeconds,
   submitAttempt,
+  onSaved,
  ]);
 
  const startRecording = () => {

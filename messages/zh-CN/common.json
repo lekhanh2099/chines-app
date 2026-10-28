@@ -10,6 +10,20 @@
   "stop": "停止",
   "close": "关闭"
  },
+ "softDelete": {
+  "title": "删除{type}？",
+  "description": "“{label}”将移至已删除项目，之后可以恢复。",
+  "note": "恢复之前，此内容不会出现在学习模式中。",
+  "delete": "删除",
+  "deleting": "正在删除...",
+  "itemTypes": {
+   "memoryTip": "速记提示",
+   "course": "课程",
+   "book": "分册",
+   "lesson": "课文",
+   "content": "内容"
+  }
+ },
  "language": "语言",
  "passwordVisibility": {
   "show": "显示密码",

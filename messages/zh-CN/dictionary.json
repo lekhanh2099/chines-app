@@ -5,6 +5,7 @@
   "description": "查找从词典或 Inspector 收藏的词语，并直接进入需要复习的条目。",
   "showing": "当前显示 {count} 个词",
   "allVocab": "全部词汇",
+  "reviewQueue": "打开复习队列（{count}）",
   "searchAria": "搜索词汇复习库",
   "searchPlaceholder": "搜索汉字、拼音、汉越音、释义...",
   "search": "搜索",
@@ -188,6 +189,7 @@
   "selectLessonsAction": "选择课程",
   "flashcardTitle": "词汇抽认卡复习",
   "selectedLesson": "当前选择课程",
+  "reviewingCount": "正在复习 {count} 课",
   "lessonFallback": "课文"
  }
 }

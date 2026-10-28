@@ -31,6 +31,9 @@ const user: User = {
 };
 
 vi.mock("@/lib/supabase/server", () => ({ createClient: () => client }));
+vi.mock("@/lib/supabase/service-role.server", () => ({
+ createServiceRoleSupabaseClient: () => client,
+}));
 vi.mock("next-intl/server", () => ({
  getLocale: async () => locale,
  getTranslations: async (namespace: string) => {
@@ -91,17 +94,72 @@ describe("saved dictionary server-page read states", () => {
 
  it("keeps real empty and missing-schema results distinct", async () => {
   const messages = await loadAppMessages(locale);
-  fetchRequest.mockResolvedValueOnce(Response.json([]));
-  const empty = renderToStaticMarkup(await DictionarySrsPage({}));
+  fetchRequest
+   .mockResolvedValueOnce(Response.json([]))
+   .mockResolvedValueOnce(new Response(null, { headers: { "content-range": "*/0" } }));
+  const empty = renderToStaticMarkup(
+   <NextIntlClientProvider locale={locale} messages={messages}>
+    {await DictionarySrsPage({})}
+   </NextIntlClientProvider>,
+  );
   expect(empty).toContain(messages.Dictionary.srs.emptyTitle);
   expect(empty).not.toContain('role="alert"');
-  fetchRequest.mockResolvedValueOnce(
-   Response.json({ code: "42P01", message: "Missing table" }, { status: 404 }),
+  expect(empty).not.toContain('href="/learning-loop"');
+  fetchRequest
+   .mockResolvedValueOnce(
+    Response.json({ code: "42P01", message: "Missing table" }, { status: 404 }),
+   )
+   .mockResolvedValueOnce(new Response(null, { headers: { "content-range": "*/0" } }));
+  const missing = renderToStaticMarkup(
+   <NextIntlClientProvider locale={locale} messages={messages}>
+    {await DictionarySrsPage({})}
+   </NextIntlClientProvider>,
   );
-  const missing = renderToStaticMarkup(await DictionarySrsPage({}));
   expect(missing).toContain(messages.Dictionary.srs.missingSchema);
   expect(missing).not.toContain(messages.Dictionary.srs.emptyTitle);
+  expect(missing).not.toContain('href="/learning-loop"');
+  expect(fetchRequest).toHaveBeenCalledTimes(4);
+ });
+
+ it("links to the actual due Learning Loop queue for the authenticated user", async () => {
+  const messages = await loadAppMessages(locale);
+  fetchRequest
+   .mockResolvedValueOnce(Response.json([]))
+   .mockResolvedValueOnce(new Response(null, { headers: { "content-range": "*/2" } }));
+
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale={locale} messages={messages}>
+    {await DictionarySrsPage({})}
+   </NextIntlClientProvider>,
+  );
+
+  expect(markup).toContain('href="/learning-loop"');
+  expect(markup).toContain(messages.Dictionary.srs.reviewQueue.replace("{count}", "2"));
   expect(fetchRequest).toHaveBeenCalledTimes(2);
+  const dueRequest = fetchRequest.mock.calls[1][0];
+  const dueUrl = new URL(dueRequest instanceof Request ? dueRequest.url : String(dueRequest));
+  expect(dueUrl.pathname).toMatch(/\/hanzihome_learning_loop_items$/);
+  expect(dueUrl.searchParams.get("user_id")).toBe(`eq.${user.id}`);
+  expect(dueUrl.searchParams.get("due_at")).toMatch(/^lte\./);
+ });
+
+ it("keeps the review CTA hidden when its due-count read fails", async () => {
+  const messages = await loadAppMessages(locale);
+  fetchRequest
+   .mockResolvedValueOnce(Response.json([]))
+   .mockResolvedValueOnce(
+    Response.json({ code: "XX000", message: "unavailable" }, { status: 503 }),
+   );
+
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale={locale} messages={messages}>
+    {await DictionarySrsPage({})}
+   </NextIntlClientProvider>,
+  );
+
+  expect(markup).toContain(messages.Dictionary.srs.emptyTitle);
+  expect(markup).not.toContain('href="/learning-loop"');
+  expect(markup).not.toContain("unavailable");
  });
 
  it("redirects a guest before reading personal progress", async () => {
@@ -131,7 +189,7 @@ describe("saved dictionary server-page read states", () => {
 });
 
 it.runIf(process.env.SRS_BROWSER_TEST === "1")(
- "retries the actual server-page read with its search term through a native GET form",
+ "retries the server-page read and renders the initial filter and due review action",
  async () => {
   let readStatus = 503;
   const reads: URL[] = [];
@@ -145,6 +203,9 @@ it.runIf(process.env.SRS_BROWSER_TEST === "1")(
         { vocab_id: "v-2", is_favorited: true },
        ])
      : Response.json({ code: "XX000", message: "private database detail" }, { status: 503 });
+   }
+   if (url.pathname.endsWith("/hanzihome_learning_loop_items")) {
+    return new Response(null, { headers: { "content-range": "*/2" } });
    }
    return Response.json([
     { id: "v-1", hanzi: "学习", pinyin: "xuéxí", meaning: "HỌC TẬP" },
@@ -226,13 +287,19 @@ it.runIf(process.env.SRS_BROWSER_TEST === "1")(
         page.getByRole("textbox", { name: messages.Dictionary.srs.searchAria }),
        ).toHaveValue(term);
        expect(new URL(page.url()).searchParams.get("q")).toBe(term);
-       // The query still includes '&', so this acknowledgement is a true empty
-       // search result. Submitting a simpler term then resolves the saved word.
+       // This fixture renders static HTML, so it checks the initial filter only.
        await browserExpect(page.getByText(messages.Dictionary.srs.emptySearchTitle)).toBeVisible();
-       expect(reads).toHaveLength(before + 3);
-       const search = page.getByRole("textbox", { name: messages.Dictionary.srs.searchAria });
-       await search.fill("học");
-       await search.press("Enter");
+       await browserExpect(
+        page.getByRole("link", {
+         name: messages.Dictionary.srs.reviewQueue.replace("{count}", "2"),
+        }),
+       ).toHaveAttribute("href", "/learning-loop");
+       expect(reads).toHaveLength(before + 4);
+
+       await page.goto(`${origin}${locale}/dictionary?q=${encodeURIComponent("học")}`);
+       await browserExpect(
+        page.getByRole("textbox", { name: messages.Dictionary.srs.searchAria }),
+       ).toHaveValue("học");
        const words = page.getByRole("region", { name: messages.Dictionary.srs.savedWordsAria });
        await browserExpect(words.getByRole("heading", { name: "学习", exact: true })).toBeVisible();
        await browserExpect(words.getByRole("heading", { name: "再见", exact: true })).toHaveCount(
@@ -242,15 +309,19 @@ it.runIf(process.env.SRS_BROWSER_TEST === "1")(
         "href",
         "/dictionary/%E5%AD%A6%E4%B9%A0",
        );
-       expect(reads).toHaveLength(before + 5);
+       expect(reads).toHaveLength(before + 7);
        expect(
         reads
          .slice(before)
          .every(
           (read) =>
-           !read.pathname.endsWith("/user_vocab_progress") ||
-           (read.searchParams.get("user_id") === `eq.${user.id}` &&
-            read.searchParams.get("is_favorited") === "eq.true"),
+           (read.pathname.endsWith("/user_vocab_progress") &&
+            read.searchParams.get("user_id") === `eq.${user.id}` &&
+            read.searchParams.get("is_favorited") === "eq.true") ||
+           (read.pathname.endsWith("/hanzihome_learning_loop_items") &&
+            read.searchParams.get("user_id") === `eq.${user.id}` &&
+            read.searchParams.get("due_at")?.startsWith("lte.")) ||
+           read.pathname.endsWith("/vocabularies"),
          ),
        ).toBe(true);
        expect(

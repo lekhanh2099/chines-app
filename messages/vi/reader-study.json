@@ -11,12 +11,18 @@
    "summary": "Tóm tắt",
    "notes": "Ghi chú"
   },
+  "groups": {
+   "reading": "Bài đọc",
+   "practice": "Luyện tập",
+   "resources": "Tài liệu"
+  },
   "backToReader": "Danh sách Reader",
   "defaultReading": "Bài đọc",
   "unit": "Đơn nguyên {unit}",
   "progressLoading": "Đang tải tiến độ Reader; nội dung tĩnh vẫn sẵn sàng để đọc.",
   "progressUnavailable": "Không tải được tiến độ Reader. Bạn vẫn có thể đọc; thay đổi mới sẽ được lưu khi kết nối được khôi phục.",
   "tabsAria": "Các phần của bài Reader",
+  "subtabsAria": "Nội dung trong phần Reader",
   "commands": {
    "segment": "Đoạn {current} / {total}",
    "lesson": "Bài {current} / {total}",

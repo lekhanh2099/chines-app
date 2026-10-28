@@ -134,10 +134,10 @@ Verify:
 - Sidebar shows Học, Luyện, Năng lực and Cá nhân on desktop;
 - navigating to a route in another group exposes the active route without closing unrelated user-opened groups;
 - collapsed rail preserves direct route access and accessible names;
-- phone quick navigation is icon-only, each destination keeps an accessible name and the active destination keeps `aria-current`;
-- phone quick-navigation targets remain 44px even though labels are visually hidden;
+- phone quick navigation shows icon and short label, each destination keeps an accessible name and the active destination keeps `aria-current`;
+- phone quick-navigation targets remain at least 44px with visible labels;
 - `Thêm` exposes every non-primary route plus the Settings destination so hiding the phone Header gear never makes Settings unreachable;
-- bottom navigation clears device safe-area without reserving obsolete label height;
+- bottom navigation includes device safe-area within its compact labeled bar;
 - Home contains continuation/recent-work content and does not duplicate the global sitemap as large navigation cards;
 - Home loading skeleton matches current hierarchy.
 

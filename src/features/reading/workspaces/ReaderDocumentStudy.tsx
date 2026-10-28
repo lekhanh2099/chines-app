@@ -15,8 +15,10 @@ import { useTranslations } from "next-intl";
 import { memo, useMemo, useState, type ReactNode } from "react";
 
 import { Badge } from "@/components/ui/display/badge";
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
 import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
 import { Typography } from "@/components/ui/display/typography";
 import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
@@ -251,6 +253,11 @@ function ReaderDocumentStudyContent({
   translationSegment && translationIsChecked
    ? scoreTranslationAttempt(translationSegment, translationDirection, translationDraft)
    : null;
+ const requestNavigation = useUnsavedDraftGuard(
+  Object.entries(translationDrafts).some(
+   ([key, value]) => value.trim().length > 0 && translationChecked[key] !== true,
+  ),
+ );
  const workspaceTabsEnabled = stateOwner !== "daily";
  const availableTabs = useMemo(
   () =>
@@ -276,6 +283,26 @@ function ReaderDocumentStudyContent({
  const activeWorkspaceTab = availableTabs.some((tab) => tab.id === workspaceTab)
   ? workspaceTab
   : "reader";
+ const readingTabs = availableTabs.filter(
+  (tab) => tab.id === "reader" || tab.id === "analysis" || tab.id === "summary",
+ );
+ const practiceTabs = availableTabs.filter(
+  (tab) => tab.id === "exercises" || tab.id === "translation" || tab.id === "dictation",
+ );
+ const resourceTabs = availableTabs.filter(
+  (tab) => tab.id === "vocabulary" || tab.id === "notes" || tab.id === "overview",
+ );
+ const activeGroup: ReaderWorkspaceTab = readingTabs.some((tab) => tab.id === activeWorkspaceTab)
+  ? "reader"
+  : practiceTabs.some((tab) => tab.id === activeWorkspaceTab)
+    ? "exercises"
+    : "vocabulary";
+ const activeGroupTabs =
+  activeGroup === "reader"
+   ? readingTabs
+   : activeGroup === "exercises"
+     ? practiceTabs
+     : resourceTabs;
  const readerUnitNumber = resource.document.unit_id?.replace(/^U/u, "") ?? "";
  const readerLessonLabel =
   metadataString(resource, "reading_label_vi") ??
@@ -494,17 +521,36 @@ function ReaderDocumentStudyContent({
 
    {workspaceTabsEnabled ? (
     <Tabs
-     value={activeWorkspaceTab}
-     items={availableTabs.map((tab) => ({
-      key: tab.id,
-      label: tab.label,
-      icon: tab.icon,
-     }))}
-     onValueChange={setWorkspaceTab}
+     value={activeGroup}
+     items={[
+      { key: "reader", label: t("chrome.groups.reading"), icon: BookOpenText },
+      { key: "exercises", label: t("chrome.groups.practice"), icon: Check },
+      { key: "vocabulary", label: t("chrome.groups.resources"), icon: NotebookPen },
+     ]}
+     onValueChange={(group) => {
+      const nextTab =
+       group === "reader"
+        ? readingTabs[0]
+        : group === "exercises"
+          ? practiceTabs[0]
+          : resourceTabs[0];
+      if (nextTab) {
+       requestNavigation(() => setWorkspaceTab(nextTab.id));
+      }
+     }}
      listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
      aria-label={t("chrome.tabsAria")}
     >
-     <TabsContent value={activeWorkspaceTab} className="pt-4 sm:pt-5">
+     <TabsContent value={activeGroup} className="grid gap-4 pt-4 sm:pt-5">
+      <SegmentedControl<ReaderWorkspaceTab>
+       value={activeWorkspaceTab}
+       items={activeGroupTabs.map((tab) => ({ key: tab.id, label: tab.label, icon: tab.icon }))}
+       onChange={(nextTab) => {
+        requestNavigation(() => setWorkspaceTab(nextTab));
+       }}
+       layout="wrap"
+       aria-label={t("chrome.subtabsAria")}
+      />
       {activeWorkspaceTab === "reader" ? readerSurface : null}
       {activeWorkspaceTab === "overview" ? <ReaderOverview resource={resource} /> : null}
       {activeWorkspaceTab === "exercises" ? (

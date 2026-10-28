@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { Lightbulb, Pencil, Pin, PinOff, Plus, RefreshCw, Settings } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/display/badge";
@@ -33,6 +34,7 @@ export function GlobalMemoryTipCard({
  contentOnly = false,
  className,
 }: GlobalMemoryTipCardProps) {
+ const t = useTranslations("MemoryTips");
  const tipsQuery = useMemoryTipsQuery();
  const tips = useMemo(() => getUserVisibleMemoryTips(tipsQuery.data ?? []), [tipsQuery.data]);
  const { selectedTip, pickNextTip } = useRouteMemoryTip(tips);
@@ -48,11 +50,9 @@ export function GlobalMemoryTipCard({
     tipId: selectedTip.id,
     input: { isPinned: !selectedTip.isPinned },
    });
-   toast.success(selectedTip.isPinned ? "Đã bỏ ghim" : "Đã ghim");
+   toast.success(selectedTip.isPinned ? t("toast.unpinned") : t("toast.pinned"));
   } catch (error) {
-   toast.error(
-    error instanceof MemoryTipsApiError ? error.message : "Không thể cập nhật nhắc nhanh",
-   );
+   toast.error(error instanceof MemoryTipsApiError ? error.message : t("toast.updateError"));
   }
  };
 
@@ -76,7 +76,7 @@ export function GlobalMemoryTipCard({
       <div className="h-4 w-48 max-w-full rounded-md bg-bg-subtle" />
       <div className="h-3 w-3/4 rounded-full bg-bg-subtle" />
      </div>
-     <span className="sr-only">Đang tải mẹo nhớ</span>
+     <span className="sr-only">{t("global.loading")}</span>
     </div>
    </Card>
   );
@@ -106,10 +106,10 @@ export function GlobalMemoryTipCard({
         tracking="wide"
         transform="uppercase"
        >
-        Nhắc nhanh
+        {t("title")}
        </StudyInstructionText>
        <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-        Chưa có mẹo nhớ
+        {t("global.emptyTitle")}
        </Typography>
        <StudyInstructionText
         variant="bodySmall"
@@ -118,7 +118,7 @@ export function GlobalMemoryTipCard({
         clamp="two"
         leading="relaxed"
        >
-        Thêm tip ngắn để app nhắc lại khi bạn quay về trang học.
+        {t("global.emptyDescription")}
        </StudyInstructionText>
       </div>
      </div>
@@ -129,14 +129,14 @@ export function GlobalMemoryTipCard({
         trigger={
          <Button type="button" variant="outline" size="toolbar">
           <Plus />
-          Thêm
+          {t("global.addShort")}
          </Button>
         }
        />
        <Button type="button" variant="ghost" size="toolbar" asChild>
         <Link href="/memory-tips" prefetch={false}>
          <Settings />
-         Quản lý
+         {t("global.manage")}
         </Link>
        </Button>
       </div>
@@ -154,7 +154,12 @@ export function GlobalMemoryTipCard({
   >
    <div className="relative grid w-full gap-3">
     {contentOnly && selectedTip.isPinned ? (
-     <Badge variant="accent" size="sm" className="absolute right-0 top-0" aria-label="Tip đã ghim">
+     <Badge
+      variant="accent"
+      size="sm"
+      className="absolute right-0 top-0"
+      aria-label={t("global.pinnedAria")}
+     >
       <Pin />
      </Badge>
     ) : null}
@@ -173,7 +178,7 @@ export function GlobalMemoryTipCard({
         tracking="wide"
         transform="uppercase"
        >
-        Nhắc nhanh
+        {t("title")}
        </StudyInstructionText>
        <Typography as="h2" variant="sectionTitle" tone="default" weight="black" clamp="one">
         {selectedTip.title}
@@ -194,7 +199,7 @@ export function GlobalMemoryTipCard({
       <div className="flex shrink-0 flex-wrap gap-2">
        <Button type="button" variant="ghost" size="toolbar" onClick={pickNextTip}>
         <RefreshCw />
-        Đổi câu
+        {t("global.nextTip")}
        </Button>
 
        {canEditSelectedTip ? (
@@ -204,7 +209,7 @@ export function GlobalMemoryTipCard({
          trigger={
           <Button type="button" variant="outline" size="toolbar">
            <Pencil />
-           Sửa
+           {t("card.edit")}
           </Button>
          }
         />
@@ -214,7 +219,7 @@ export function GlobalMemoryTipCard({
         trigger={
          <Button type="button" variant="outline" size="toolbar">
           <Plus />
-          Thêm
+          {t("global.addShort")}
          </Button>
         }
        />
@@ -222,7 +227,7 @@ export function GlobalMemoryTipCard({
        <Button type="button" variant="ghost" size="toolbar" asChild>
         <Link href="/memory-tips" prefetch={false}>
          <Settings />
-         Quản lý
+         {t("global.manage")}
         </Link>
        </Button>
 
@@ -240,7 +245,7 @@ export function GlobalMemoryTipCard({
          ) : (
           <Pin data-icon="inline-start" />
          )}
-         {selectedTip.isPinned ? "Bỏ ghim" : "Ghim"}
+         {selectedTip.isPinned ? t("card.unpin") : t("card.pin")}
         </Button>
        ) : null}
       </div>

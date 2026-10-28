@@ -10,6 +10,20 @@
   "stop": "Stop",
   "close": "Close"
  },
+ "softDelete": {
+  "title": "Delete {type}?",
+  "description": "“{label}” will be moved to deleted items and can be restored later.",
+  "note": "This content will not appear in study mode until it is restored.",
+  "delete": "Delete",
+  "deleting": "Deleting...",
+  "itemTypes": {
+   "memoryTip": "quick tip",
+   "course": "course",
+   "book": "book",
+   "lesson": "lesson",
+   "content": "content"
+  }
+ },
  "language": "Language",
  "passwordVisibility": {
   "show": "Show password",

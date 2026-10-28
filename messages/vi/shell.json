@@ -65,6 +65,12 @@
    "apiDocs": "API & tích hợp",
    "settings": "Cài đặt"
   },
+  "mobileItems": {
+   "home": "Trang chủ",
+   "lessons": "Giáo trình",
+   "dictation": "Chính tả",
+   "notes": "Ghi chú"
+  },
   "sidebarLabel": "thanh điều hướng",
   "more": "Thêm",
   "openAll": "Mở toàn bộ điều hướng",
@@ -80,6 +86,10 @@
   "focusModeShort": "Tập trung",
   "focusModeActive": "Chế độ tập trung đang bật",
   "focusModeWarning": "Chế độ tập trung đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
+  "focusModeLessonBlocked": "Chế độ tập trung đang bật. Không thể chuyển sang bài khác.",
+  "lessonNavigationAria": "Chuyển nhanh bài HanziHome",
+  "chooseLessonAria": "Chọn bài học HanziHome",
+  "lessonOption": "Bài {number}: {title}",
   "openAllSettings": "Mở tất cả cài đặt"
  },
  "breadcrumbs": {
@@ -153,5 +163,56 @@
    "note": "Ghi chú",
    "navigation": "Điều hướng"
   }
+ },
+ "workspace": {
+  "loadErrorTitle": "Không tải được bài học",
+  "loadErrorDescription": "Dữ liệu bài học hiện không khả dụng. Thử tải lại trang hoặc quay về thư viện.",
+  "emptyCourseTitle": "Giáo trình này chưa có bài học",
+  "emptyCourseDescription": "Quay về thư viện học liệu để chọn giáo trình khác.",
+  "radicalsTitle": "Bộ thủ HanziHome",
+  "lessonTitle": "Bài học {title}",
+  "studyTitle": "Không gian học HanziHome",
+  "retry": "Thử tải lại",
+  "backToLibrary": "Về thư viện học liệu",
+  "loading": "Đang tải bài học"
+ },
+ "studyModules": {
+  "overview": "Tổng quan",
+  "lessonText": "Bài khóa",
+  "practice": "Bài tập",
+  "listening": "Luyện nghe",
+  "dictation": "Nghe chép",
+  "script": "Script",
+  "notes": "Ghi chú",
+  "vocab": "Từ vựng",
+  "grammar": "Ngữ pháp",
+  "review": "Ôn tập",
+  "paneLabel": "Khung {number} · {module}",
+  "reorder": "Sắp xếp mô-đun {module}",
+  "moveLeft": "Di chuyển sang trái",
+  "moveRight": "Di chuyển sang phải",
+  "moveOtherPane": "Chuyển sang khung còn lại",
+  "openTools": "Mở công cụ bài học",
+  "lessonTools": "Công cụ bài học",
+  "tools": "Công cụ",
+  "workspace": "Không gian học",
+  "readOnlyContent": "Nội dung chỉ đọc",
+  "splitScreen": "Chia đôi màn hình",
+  "closeSplitScreen": "Đóng chia đôi màn hình",
+  "viewMode": "Chế độ xem",
+  "studyMode": "Học tập",
+  "dataAudit": "Kiểm tra dữ liệu",
+  "editContent": "Chỉnh sửa nội dung",
+  "rawLessonJson": "JSON bài học gốc",
+  "selectAria": "Chọn nội dung học",
+  "activePaneAria": "Khung đang hiển thị",
+  "selectPaneAria": "Chọn nội dung cho khung học",
+  "aria": "Nội dung học"
+ },
+ "unsavedDraft": {
+  "title": "Bài tập chưa nộp",
+  "description": "Bạn có bài tập chưa nộp. Bạn có chắc chắn muốn rời đi?",
+  "stay": "Ở lại",
+  "leave": "Rời đi"
  }
 }

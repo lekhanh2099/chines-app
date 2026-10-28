@@ -3,7 +3,9 @@
 import { useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
+import { useTranslations } from "next-intl";
 
+import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import {
  AppHeaderBreadcrumb,
  AppHeaderBreadcrumbItem,
@@ -41,6 +43,8 @@ export function HanziHomeHeaderContextBridge({
  lessons: HanziHomeLesson[];
 }) {
  const router = useRouter();
+ const tHeader = useTranslations("Shell.header");
+ const requestNavigation = useUnsavedDraftGuard(false);
  const queryClient = useQueryClient();
  const searchParams = useSearchParams();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
@@ -49,7 +53,7 @@ export function HanziHomeHeaderContextBridge({
  const content = useMemo(
   () => (
    <AppHeaderBreadcrumb
-    aria-label="Chuyển nhanh bài HanziHome"
+    aria-label={tHeader("lessonNavigationAria")}
     className="min-w-0 max-w-[min(12rem,48vw)] justify-self-start md:max-w-[min(42rem,70vw)]"
    >
     <AppHeaderBreadcrumbItem className="hidden md:flex">
@@ -79,22 +83,24 @@ export function HanziHomeHeaderContextBridge({
        const lesson = lessons.find((item) => item.id === lessonId);
        if (!lesson) return;
 
-       prefetchHanziHomeLessonResources(queryClient, lesson.id);
+       requestNavigation(() => {
+        prefetchHanziHomeLessonResources(queryClient, lesson.id);
 
-       const nextParams = new URLSearchParams(searchParamsString);
-       const currentModule = nextParams.get("module");
-       nextParams.set("courseId", selectedCourseId);
-       nextParams.set("lesson", getLessonRouteValue(lesson.lessonNumber));
-       if (lesson.bookId) nextParams.set("bookId", lesson.bookId);
-       else nextParams.delete("bookId");
-       nextParams.delete("lessonId");
-       if (currentModule) nextParams.set("module", currentModule);
+        const nextParams = new URLSearchParams(searchParamsString);
+        const currentModule = nextParams.get("module");
+        nextParams.set("courseId", selectedCourseId);
+        nextParams.set("lesson", getLessonRouteValue(lesson.lessonNumber));
+        if (lesson.bookId) nextParams.set("bookId", lesson.bookId);
+        else nextParams.delete("bookId");
+        nextParams.delete("lessonId");
+        if (currentModule) nextParams.set("module", currentModule);
 
-       router.push(`/hanzihome?${nextParams.toString()}`);
+        router.push(`/hanzihome?${nextParams.toString()}`);
+       });
       }}
      >
       <SelectTrigger
-       aria-label="Chọn bài học HanziHome"
+       aria-label={tHeader("chooseLessonAria")}
        variant="breadcrumb"
        className="w-[min(11rem,44vw)] md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72"
       >
@@ -104,7 +110,10 @@ export function HanziHomeHeaderContextBridge({
        <SelectGroup>
         {lessons.map((lesson) => (
          <SelectItem key={lesson.id} value={lesson.id}>
-          {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
+          {tHeader("lessonOption", {
+           number: lesson.lessonNumber,
+           title: lesson.titleZh || lesson.title,
+          })}
          </SelectItem>
         ))}
        </SelectGroup>
@@ -117,11 +126,13 @@ export function HanziHomeHeaderContextBridge({
    focusModeEnabled,
    lessons,
    queryClient,
+   requestNavigation,
    router,
    searchParamsString,
    selectedCourseId,
    selectedCourseTitle,
    selectedLesson.id,
+   tHeader,
   ],
  );
 

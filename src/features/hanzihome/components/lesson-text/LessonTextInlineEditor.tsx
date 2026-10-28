@@ -2,6 +2,7 @@
 
 import { FileText, Layers } from "lucide-react";
 import { useCallback, useMemo, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
 
 import { Card } from "@/components/ui/layout/card";
 import { Typography } from "@/components/ui/display/typography";
@@ -153,6 +154,7 @@ function LessonTextWorkspace({
  sourceSections: readonly Section[];
  editable: boolean;
 }) {
+ const tModules = useTranslations("Shell.studyModules");
  const runtime = useHanziHomeRuntime();
  const { lesson } = runtime;
  const actions = useHanziHomeFeatureActions();
@@ -299,7 +301,7 @@ function LessonTextWorkspace({
 
  return (
   <LessonModuleFrame
-   title={moduleMeta[module].label}
+   title={tModules(moduleMeta[module].key)}
    subtitle={
     showAllSections
      ? practiceOnly

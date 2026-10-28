@@ -35,6 +35,7 @@ export function HanziHomeVocabReviewPage({
  reviewLessonsParam: string | null;
 }) {
  const t = useTranslations("Dictionary.vocabReview");
+ const tLibrary = useTranslations("Common.library");
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const lessonTokens = useMemo(
   () => parseReviewLessonTokensParam(reviewLessonsParam),
@@ -71,6 +72,8 @@ export function HanziHomeVocabReviewPage({
    titleZh: lesson.titleZh,
    lessonNumber: lesson.lessonNumber,
   })),
+  (number, title) => tLibrary("lessonLabel", { number, title }),
+  (count) => t("reviewingCount", { count }),
  );
 
  const lessonByReviewItemId = useMemo(() => {

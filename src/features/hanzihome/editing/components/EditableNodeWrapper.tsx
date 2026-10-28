@@ -12,6 +12,7 @@ import {
 import { ArrowDown, ArrowUp, Trash2 } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import { cn } from "@/lib/utils";
@@ -83,6 +84,7 @@ export function EditableNodeWrapper({
  editOnly = false,
  children,
 }: EditableNodeWrapperProps) {
+ const tDeleteItem = useTranslations("Common.softDelete.itemTypes");
  const editMode = useHanziHomeEditMode();
  const queryClient = useQueryClient();
  const { services } = useHanziHomeFeatureContext();
@@ -209,7 +211,7 @@ export function EditableNodeWrapper({
    ) : null}
    {canDelete ? (
     <SoftDeleteConfirmDialog
-     itemType="nội dung"
+     itemType={tDeleteItem("content")}
      itemLabel={label || entityId}
      onConfirm={deleteNode}
      trigger={

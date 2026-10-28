@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Lightbulb, MoreHorizontal, Pencil, Pin, PinOff, Plus, Trash2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { PageContainer } from "@/components/layout/workspace/page-container";
@@ -31,14 +32,8 @@ import {
  useUpdateMemoryTipMutation,
 } from "./useMemoryTips";
 
-const tipTypeLabels: Record<MemoryTip["tipType"], string> = {
- grammar: "Ngữ pháp",
- vocab: "Từ vựng",
- formula: "Công thức",
- custom: "Tự thêm",
-};
-
 export function HanziHomeMemoryTipsPage() {
+ const t = useTranslations("MemoryTips");
  const tipsQuery = useMemoryTipsQuery();
  const updateMutation = useUpdateMemoryTipMutation();
  const archiveMutation = useArchiveMemoryTipMutation();
@@ -51,20 +46,18 @@ export function HanziHomeMemoryTipsPage() {
     tipId: tip.id,
     input: { isPinned: !tip.isPinned },
    });
-   toast.success(tip.isPinned ? "Đã bỏ ghim" : "Đã ghim");
+   toast.success(tip.isPinned ? t("toast.unpinned") : t("toast.pinned"));
   } catch (error) {
-   toast.error(
-    error instanceof MemoryTipsApiError ? error.message : "Không thể cập nhật nhắc nhanh",
-   );
+   toast.error(error instanceof MemoryTipsApiError ? error.message : t("toast.updateError"));
   }
  };
 
  const archiveTip = async (tip: MemoryTip) => {
   try {
    await archiveMutation.mutateAsync(tip.id);
-   toast.success("Đã chuyển nhắc nhanh vào mục đã xóa");
+   toast.success(t("toast.archived"));
   } catch (error) {
-   toast.error(error instanceof MemoryTipsApiError ? error.message : "Không thể xóa nhắc nhanh");
+   toast.error(error instanceof MemoryTipsApiError ? error.message : t("toast.archiveError"));
    throw error;
   }
  };
@@ -82,11 +75,11 @@ export function HanziHomeMemoryTipsPage() {
    <div className="grid w-full min-w-0 gap-5">
     <PageHeader
      eyebrow="HanziHome"
-     title="Nhắc nhanh"
-     description="Giữ lại công thức, mẹo phân biệt và ví dụ dễ quên để xem lại trong lúc học."
+     title={t("title")}
+     description={t("description")}
      meta={
       <Typography variant="caption" tone="muted" weight="bold">
-       {tips.length} mục đang dùng
+       {t("count", { count: tips.length })}
       </Typography>
      }
      actions={
@@ -94,7 +87,7 @@ export function HanziHomeMemoryTipsPage() {
        trigger={
         <Button type="button" size="toolbar">
          <Plus data-icon="inline-start" />
-         Thêm nhắc nhanh
+         {t("add")}
         </Button>
        }
       />
@@ -103,8 +96,8 @@ export function HanziHomeMemoryTipsPage() {
 
     {tipsQuery.error ? (
      <QueryErrorCard
-      title="Không tải được nhắc nhanh"
-      description="Dữ liệu nhắc nhanh hiện không khả dụng."
+      title={t("loadError.title")}
+      description={t("loadError.description")}
       onRetry={() => void tipsQuery.refetch()}
      />
     ) : null}
@@ -114,14 +107,14 @@ export function HanziHomeMemoryTipsPage() {
       surface="subtle"
       size="spacious"
       icon={<Lightbulb />}
-      title="Chưa có nhắc nhanh nào"
-      description="Thêm một tip ở đây hoặc lưu từ phần từ vựng/ngữ pháp để app có nội dung nhắc lại."
+      title={t("empty.title")}
+      description={t("empty.description")}
       actions={
        <MemoryTipDialog
         trigger={
          <Button type="button" size="toolbar">
           <Plus data-icon="inline-start" />
-          Thêm tip đầu tiên
+          {t("empty.addFirst")}
          </Button>
         }
        />
@@ -130,7 +123,7 @@ export function HanziHomeMemoryTipsPage() {
     ) : null}
 
     {!tipsQuery.error && tips.length > 0 ? (
-     <section className="grid gap-3" aria-label="Danh sách nhắc nhanh">
+     <section className="grid gap-3" aria-label={t("listAria")}>
       {tips.map((tip) => (
        <MemoryTipCard
         key={tip.id}
@@ -158,6 +151,8 @@ function MemoryTipCard({
  onTogglePin: (tip: MemoryTip) => Promise<void>;
  onArchive: (tip: MemoryTip) => Promise<void>;
 }) {
+ const t = useTranslations("MemoryTips");
+ const tDeleteItem = useTranslations("Common.softDelete.itemTypes");
  const [editOpen, setEditOpen] = useState(false);
  const [deleteOpen, setDeleteOpen] = useState(false);
 
@@ -166,8 +161,8 @@ function MemoryTipCard({
    <div className="flex items-start justify-between gap-3">
     <div className="grid min-w-0 flex-1 gap-1">
      <div className="flex flex-wrap items-center gap-2">
-      <Badge variant="default">{tipTypeLabels[tip.tipType]}</Badge>
-      {tip.isPinned ? <Badge variant="info">Đang ghim</Badge> : null}
+      <Badge variant="default">{t(`types.${tip.tipType}`)}</Badge>
+      {tip.isPinned ? <Badge variant="info">{t("card.pinned")}</Badge> : null}
      </div>
      <Typography as="h2" variant="sectionTitle" weight="black">
       {tip.title}
@@ -183,8 +178,8 @@ function MemoryTipCard({
        type="button"
        variant="ghost"
        size="icon-toolbar"
-       aria-label={`Tác vụ cho ${tip.title}`}
-       title="Tác vụ"
+       aria-label={t("card.actionsAria", { title: tip.title })}
+       title={t("card.actions")}
        disabled={isMutating}
       >
        <MoreHorizontal />
@@ -193,16 +188,16 @@ function MemoryTipCard({
      <DropdownMenuContent align="end" width="md">
       <DropdownMenuItem onSelect={() => setEditOpen(true)}>
        <Pencil />
-       Sửa
+       {t("card.edit")}
       </DropdownMenuItem>
       <DropdownMenuItem onSelect={() => void onTogglePin(tip)}>
        {tip.isPinned ? <PinOff /> : <Pin />}
-       {tip.isPinned ? "Bỏ ghim" : "Ghim"}
+       {tip.isPinned ? t("card.unpin") : t("card.pin")}
       </DropdownMenuItem>
       <DropdownMenuSeparator />
       <DropdownMenuItem tone="destructive" onSelect={() => setDeleteOpen(true)}>
        <Trash2 />
-       Xóa
+       {t("card.delete")}
       </DropdownMenuItem>
      </DropdownMenuContent>
     </DropdownMenu>
@@ -247,7 +242,7 @@ function MemoryTipCard({
 
    <MemoryTipDialog tip={tip} open={editOpen} onOpenChange={setEditOpen} />
    <SoftDeleteConfirmDialog
-    itemType="nhắc nhanh"
+    itemType={tDeleteItem("memoryTip")}
     itemLabel={tip.title}
     open={deleteOpen}
     onOpenChange={setDeleteOpen}

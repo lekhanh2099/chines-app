@@ -365,6 +365,7 @@ it.runIf(process.env.LISTENING_BROWSER_TEST === "1")(
      ),
     ).toEqual([3]);
     await page.evaluate(() => window.listeningHarness.resetPinyinSamples());
+    await page.getByRole("button", { name: "Đổi bài / nguồn", exact: true }).click();
     await input.fill("谢谢。");
     await browserExpect(page.getByText("Luyện nghe chép", { exact: true })).toHaveCount(0);
     expect(await page.evaluate(() => window.listeningHarness.pinyinSamples())).toEqual([]);

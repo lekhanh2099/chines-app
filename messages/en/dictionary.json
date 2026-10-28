@@ -5,6 +5,7 @@
   "description": "Find words saved from the dictionary or Inspector and jump directly to the item you want to review.",
   "showing": "{count, plural, one {# word shown} other {# words shown}}",
   "allVocab": "All vocabulary",
+  "reviewQueue": "Open review queue ({count})",
   "searchAria": "Search saved vocabulary",
   "searchPlaceholder": "Search Hanzi, pinyin, Sino-Vietnamese, meaning...",
   "search": "Search",
@@ -188,6 +189,7 @@
   "selectLessonsAction": "Select lessons",
   "flashcardTitle": "Vocabulary Flashcard Review",
   "selectedLesson": "Selected lesson",
+  "reviewingCount": "Reviewing {count} lessons",
   "lessonFallback": "Lesson"
  }
 }

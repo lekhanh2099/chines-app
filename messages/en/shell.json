@@ -65,6 +65,12 @@
    "apiDocs": "API & integrations",
    "settings": "Settings"
   },
+  "mobileItems": {
+   "home": "Home",
+   "lessons": "Lessons",
+   "dictation": "Dictation",
+   "notes": "Notes"
+  },
   "sidebarLabel": "navigation sidebar",
   "more": "More",
   "openAll": "Open all navigation",
@@ -80,6 +86,10 @@
   "focusModeShort": "Focus",
   "focusModeActive": "Focus mode is on",
   "focusModeWarning": "Focus mode is on. You will stay in the current lesson and can only switch the open section or notes tab.",
+  "focusModeLessonBlocked": "Focus mode is on. You cannot switch to another lesson.",
+  "lessonNavigationAria": "Quickly switch HanziHome lessons",
+  "chooseLessonAria": "Choose a HanziHome lesson",
+  "lessonOption": "Lesson {number}: {title}",
   "openAllSettings": "Open all settings"
  },
  "breadcrumbs": {
@@ -153,5 +163,56 @@
    "note": "Note",
    "navigation": "Navigation"
   }
+ },
+ "workspace": {
+  "loadErrorTitle": "Could not load the lesson",
+  "loadErrorDescription": "Lesson data is currently unavailable. Try reloading the page or return to the library.",
+  "emptyCourseTitle": "This course has no lessons yet",
+  "emptyCourseDescription": "Return to the learning library to choose another course.",
+  "radicalsTitle": "HanziHome radicals",
+  "lessonTitle": "Lesson {title}",
+  "studyTitle": "HanziHome study workspace",
+  "retry": "Try again",
+  "backToLibrary": "Back to the learning library",
+  "loading": "Loading lesson"
+ },
+ "studyModules": {
+  "overview": "Overview",
+  "lessonText": "Lesson text",
+  "practice": "Practice",
+  "listening": "Listening",
+  "dictation": "Dictation",
+  "script": "Script",
+  "notes": "Notes",
+  "vocab": "Vocabulary",
+  "grammar": "Grammar",
+  "review": "Review",
+  "paneLabel": "Pane {number} · {module}",
+  "reorder": "Reorder {module} module",
+  "moveLeft": "Move left",
+  "moveRight": "Move right",
+  "moveOtherPane": "Move to the other pane",
+  "openTools": "Open lesson tools",
+  "lessonTools": "Lesson tools",
+  "tools": "Tools",
+  "workspace": "Study workspace",
+  "readOnlyContent": "Read-only content",
+  "splitScreen": "Split screen",
+  "closeSplitScreen": "Close split screen",
+  "viewMode": "View mode",
+  "studyMode": "Study",
+  "dataAudit": "Data audit",
+  "editContent": "Edit content",
+  "rawLessonJson": "Raw lesson JSON",
+  "selectAria": "Select study content",
+  "activePaneAria": "Visible pane",
+  "selectPaneAria": "Select study content for this pane",
+  "aria": "Study content"
+ },
+ "unsavedDraft": {
+  "title": "Unsubmitted practice",
+  "description": "You have an unsubmitted answer. Are you sure you want to leave?",
+  "stay": "Stay",
+  "leave": "Leave"
  }
 }

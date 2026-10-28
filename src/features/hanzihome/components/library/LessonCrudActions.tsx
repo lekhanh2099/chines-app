@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -35,6 +36,7 @@ const formSchema = z.object({
 });
 
 export function LessonCrudActions({ lesson }: { lesson: HanziHomeLesson }) {
+ const tDeleteItem = useTranslations("Common.softDelete.itemTypes");
  const [open, setOpen] = useState(false);
  const queryClient = useQueryClient();
  const updatedAt = lesson.editMeta?.updatedAt;
@@ -126,7 +128,7 @@ export function LessonCrudActions({ lesson }: { lesson: HanziHomeLesson }) {
   <>
    <LibraryCrudActionsMenu
     ariaLabel={`Tác vụ cho ${lesson.titleZh}`}
-    itemType="bài học"
+    itemType={tDeleteItem("lesson")}
     itemLabel={lesson.titleZh}
     disabled={!updatedAt}
     canMoveUp={Boolean(order && order !== 1)}

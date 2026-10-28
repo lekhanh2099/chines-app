@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NextIntlClientProvider } from "next-intl";
+import type { ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -21,6 +22,10 @@ vi.mock("@/features/speech/MandarinTtsProvider", () => ({
   speakSequence: vi.fn(),
   stop: vi.fn(),
  }),
+}));
+
+vi.mock("@/i18n/navigation", () => ({
+ Link: ({ children, href }: { children: ReactNode; href: string }) => <a href={href}>{children}</a>,
 }));
 
 vi.mock("./learning-loop-api", async (importOriginal) => {

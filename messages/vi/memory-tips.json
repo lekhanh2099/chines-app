@@ -1,0 +1,80 @@
+{
+ "title": "Nhắc nhanh",
+ "description": "Giữ lại công thức, mẹo phân biệt và ví dụ dễ quên để xem lại trong lúc học.",
+ "count": "{count} mục đang dùng",
+ "add": "Thêm nhắc nhanh",
+ "listAria": "Danh sách nhắc nhanh",
+ "types": {
+  "grammar": "Ngữ pháp",
+  "vocab": "Từ vựng",
+  "formula": "Công thức",
+  "custom": "Tự thêm"
+ },
+ "toast": {
+  "unpinned": "Đã bỏ ghim",
+  "pinned": "Đã ghim",
+  "updateError": "Không thể cập nhật nhắc nhanh",
+  "archived": "Đã chuyển nhắc nhanh vào mục đã xóa",
+  "archiveError": "Không thể xóa nhắc nhanh"
+ },
+ "loadError": {
+  "title": "Không tải được nhắc nhanh",
+  "description": "Dữ liệu nhắc nhanh hiện không khả dụng."
+ },
+ "empty": {
+  "title": "Chưa có nhắc nhanh nào",
+  "description": "Thêm một tip ở đây hoặc lưu từ phần từ vựng/ngữ pháp để app có nội dung nhắc lại.",
+  "addFirst": "Thêm tip đầu tiên"
+ },
+ "card": {
+  "pinned": "Đang ghim",
+  "actionsAria": "Tác vụ cho {title}",
+  "actions": "Tác vụ",
+  "edit": "Sửa",
+  "unpin": "Bỏ ghim",
+  "pin": "Ghim",
+  "delete": "Xóa"
+ },
+ "global": {
+  "loading": "Đang tải mẹo nhớ",
+  "emptyTitle": "Chưa có mẹo nhớ",
+  "emptyDescription": "Thêm tip ngắn để app nhắc lại khi bạn quay về trang học.",
+  "addShort": "Thêm",
+  "manage": "Quản lý",
+  "pinnedAria": "Tip đã ghim",
+  "nextTip": "Đổi câu"
+ },
+ "saveButton": {
+  "label": "Lưu nhắc nhanh",
+  "saved": "Đã lưu nhắc nhanh",
+  "saveError": "Không thể lưu nhắc nhanh"
+ },
+ "dialog": {
+  "updated": "Đã cập nhật nhắc nhanh",
+  "created": "Đã thêm nhắc nhanh",
+  "duplicate": "Tip này đã được lưu rồi.",
+  "createError": "Không thể thêm nhắc nhanh",
+  "addShort": "+ Thêm",
+  "editTitle": "Sửa nhắc nhanh",
+  "createTitle": "Thêm nhắc nhanh",
+  "editDescription": "Cập nhật công thức, mẹo phân biệt hoặc ví dụ dễ quên.",
+  "createDescription": "Lưu công thức, mẹo phân biệt hoặc ví dụ dễ quên để nhắc lại nhanh.",
+  "type": "Loại",
+  "source": "Nguồn",
+  "lesson": "Bài học",
+  "titleLabel": "Tiêu đề",
+  "titleRequired": "Vui lòng nhập tiêu đề",
+  "titlePlaceholder": "Ví dụ: 又 và 再 không giống nhau",
+  "bodyLabel": "Nội dung chính",
+  "bodyRequired": "Vui lòng nhập nội dung",
+  "bodyPlaceholder": "Nhắc ngắn gọn điểm dễ quên.",
+  "exampleZh": "Ví dụ tiếng Trung",
+  "exampleVi": "Nghĩa tiếng Việt",
+  "exampleViPlaceholder": "Tôi làm xong bài tập rồi.",
+  "tags": "Tags",
+  "tagsDescription": "Ngăn cách nhiều tag bằng dấu phẩy.",
+  "pinTip": "Ghim tip này",
+  "update": "Cập nhật",
+  "save": "Lưu nhắc nhanh"
+ }
+}

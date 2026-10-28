@@ -2,6 +2,7 @@
 
 import { type ReactNode } from "react";
 import { Bug, Columns2, GraduationCap, SlidersHorizontal } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import {
  DropdownMenu,
@@ -43,7 +44,7 @@ export function HanziHomeDeveloperTools({
  const editMode = useHanziHomeEditMode();
  const showEditingTools = contentEditingEnabled && canEdit;
 
- if (!developerToolsEnabled && !showEditingTools && !children) return null;
+ if (!showEditingTools && !children) return null;
 
  if (compact) {
   return (
@@ -86,6 +87,7 @@ function HanziHomeCompactDeveloperTools({
  includeDialogShell?: boolean;
  children?: ReactNode;
 }) {
+ const tModules = useTranslations("Shell.studyModules");
  return (
   <>
    {showEditingTools && includeDialogShell ? <HanziHomeEditingDialogShell /> : null}
@@ -95,11 +97,11 @@ function HanziHomeCompactDeveloperTools({
       type="button"
       variant={editMode ? "active" : "outline"}
       size="toolbar"
-      aria-label="Mở công cụ bài học"
-      title="Công cụ bài học"
+      aria-label={tModules("openTools")}
+      title={tModules("lessonTools")}
      >
       <SlidersHorizontal />
-      <span className="hidden sm:inline">Công cụ</span>
+      <span className="hidden sm:inline">{tModules("tools")}</span>
      </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" width="md">
@@ -117,17 +119,20 @@ export function HanziHomeDeveloperToolsMenuContent({
  children?: ReactNode;
  leadingSeparator?: boolean;
 }) {
+ const tModules = useTranslations("Shell.studyModules");
  const canEdit = useHanziHomeCanEdit();
  const showEditingTools = contentEditingEnabled && canEdit;
+ const editMode = useHanziHomeEditMode();
+ const showDeveloperTools = developerToolsEnabled && showEditingTools && editMode;
  const viewMode = useHanziHomeFeatureSelector((state) => state.viewMode);
  const { setViewMode } = useHanziHomeFeatureActions();
 
  return (
   <>
    {leadingSeparator ? <DropdownMenuSeparator /> : null}
-   {developerToolsEnabled ? (
+   {showDeveloperTools ? (
     <>
-     <DropdownMenuLabel>Chế độ xem</DropdownMenuLabel>
+     <DropdownMenuLabel>{tModules("viewMode")}</DropdownMenuLabel>
      <DropdownMenuRadioGroup
       value={viewMode}
       onValueChange={(value) => {
@@ -136,11 +141,11 @@ export function HanziHomeDeveloperToolsMenuContent({
      >
       <DropdownMenuRadioItem value="study">
        <GraduationCap />
-       Học tập
+       {tModules("studyMode")}
       </DropdownMenuRadioItem>
       <DropdownMenuRadioItem value="debug">
        <Bug />
-       Kiểm tra dữ liệu
+       {tModules("dataAudit")}
       </DropdownMenuRadioItem>
      </DropdownMenuRadioGroup>
     </>
@@ -148,16 +153,16 @@ export function HanziHomeDeveloperToolsMenuContent({
 
    {children ? (
     <>
-     {developerToolsEnabled ? <DropdownMenuSeparator /> : null}
-     <DropdownMenuLabel>Không gian học</DropdownMenuLabel>
+     {showDeveloperTools ? <DropdownMenuSeparator /> : null}
+     <DropdownMenuLabel>{tModules("workspace")}</DropdownMenuLabel>
      {children}
     </>
    ) : null}
 
    {showEditingTools ? (
     <>
-     {developerToolsEnabled || children ? <DropdownMenuSeparator /> : null}
-     <DropdownMenuLabel>Chỉnh sửa nội dung</DropdownMenuLabel>
+     {showDeveloperTools || children ? <DropdownMenuSeparator /> : null}
+     <DropdownMenuLabel>{tModules("editContent")}</DropdownMenuLabel>
      <HanziHomeEditingTools includeDialogShell={false} presentation="menu" />
     </>
    ) : null}
@@ -172,8 +177,11 @@ export function HanziHomeDeveloperToolsSheetContent({
  splitEnabled: boolean;
  onToggleSplit: () => void;
 }) {
+ const tModules = useTranslations("Shell.studyModules");
  const canEdit = useHanziHomeCanEdit();
  const showEditingTools = contentEditingEnabled && canEdit;
+ const editMode = useHanziHomeEditMode();
+ const showDeveloperTools = developerToolsEnabled && showEditingTools && editMode;
  const viewMode = useHanziHomeFeatureSelector((state) => state.viewMode);
  const { setViewMode } = useHanziHomeFeatureActions();
 
@@ -181,18 +189,18 @@ export function HanziHomeDeveloperToolsSheetContent({
   <div className="grid gap-5">
    <section className="grid gap-3">
     <Typography as="h3" variant="cardTitle" tone="muted" weight="black" transform="uppercase">
-     Không gian học
+     {tModules("workspace")}
     </Typography>
     <Button type="button" variant="surfaceCard" size="touch" onClick={onToggleSplit}>
      <Columns2 data-icon="inline-start" />
-     {splitEnabled ? "Đóng chia đôi màn hình" : "Chia đôi màn hình"}
+     {splitEnabled ? tModules("closeSplitScreen") : tModules("splitScreen")}
     </Button>
    </section>
 
-   {developerToolsEnabled ? (
+   {showDeveloperTools ? (
     <section className="grid gap-3">
      <Typography as="h3" variant="cardTitle" tone="muted" weight="black" transform="uppercase">
-      Chế độ xem
+      {tModules("viewMode")}
      </Typography>
      <div className="grid grid-cols-2 gap-2">
       <Button
@@ -203,7 +211,7 @@ export function HanziHomeDeveloperToolsSheetContent({
        onClick={() => setViewMode("study")}
       >
        <GraduationCap data-icon="inline-start" />
-       Học tập
+       {tModules("studyMode")}
       </Button>
       <Button
        type="button"
@@ -213,7 +221,7 @@ export function HanziHomeDeveloperToolsSheetContent({
        onClick={() => setViewMode("debug")}
       >
        <Bug data-icon="inline-start" />
-       Kiểm tra dữ liệu
+       {tModules("dataAudit")}
       </Button>
      </div>
     </section>
@@ -222,7 +230,7 @@ export function HanziHomeDeveloperToolsSheetContent({
    {showEditingTools ? (
     <section className="grid gap-3">
      <Typography as="h3" variant="cardTitle" tone="muted" weight="black" transform="uppercase">
-      Chỉnh sửa nội dung
+      {tModules("editContent")}
      </Typography>
      <div className="flex flex-wrap gap-2">
       <HanziHomeEditingTools includeDialogShell={false} />

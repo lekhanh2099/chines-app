@@ -79,11 +79,14 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
  }, [hydrateLookupSettings]);
 
  useEffect(() => {
-  const handleMouseUp = (event: MouseEvent) => {
+  const selectionTimer = { current: 0 };
+  const captureSelection = (delay: number, event: Event) => {
    if (!lookupEnabled) return;
-   if (event.target instanceof Element && event.target.closest("[data-no-inspector]")) return;
+   const target = event.target;
+   if (target instanceof Element && target.closest("[data-no-inspector]")) return;
 
-   window.setTimeout(() => {
+   window.clearTimeout(selectionTimer.current);
+   selectionTimer.current = window.setTimeout(() => {
     const selection = window.getSelection();
     if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
      return;
@@ -102,11 +105,22 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
     if (rect.width === 0 && rect.height === 0) return;
 
     openInspector(text, { anchorRect: rect });
-   }, 10);
+   }, delay);
   };
 
+  const handleMouseUp = (event: MouseEvent) => captureSelection(10, event);
+  const handleSelectionChange = (event: Event) => captureSelection(150, event);
+  const handleTouchEnd = (event: TouchEvent) => captureSelection(150, event);
+
   document.addEventListener("mouseup", handleMouseUp);
-  return () => document.removeEventListener("mouseup", handleMouseUp);
+  document.addEventListener("selectionchange", handleSelectionChange);
+  document.addEventListener("touchend", handleTouchEnd);
+  return () => {
+   window.clearTimeout(selectionTimer.current);
+   document.removeEventListener("mouseup", handleMouseUp);
+   document.removeEventListener("selectionchange", handleSelectionChange);
+   document.removeEventListener("touchend", handleTouchEnd);
+  };
  }, [openInspector, lookupEnabled, overrides]);
 
  return (

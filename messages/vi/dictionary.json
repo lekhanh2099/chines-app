@@ -5,6 +5,7 @@
   "description": "Tìm lại những từ đã lưu từ từ điển hoặc inspector và mở thẳng vào mục cần ôn.",
   "showing": "{count} từ đang hiển thị",
   "allVocab": "Tổng hợp từ",
+  "reviewQueue": "Mở hàng ôn tập ({count})",
   "searchAria": "Tìm trong kho ôn tập từ vựng",
   "searchPlaceholder": "Tìm Hán tự, pinyin, Hán Việt, nghĩa...",
   "search": "Tìm",
@@ -188,6 +189,7 @@
   "selectLessonsAction": "Chọn bài ôn",
   "flashcardTitle": "Ôn flashcard từ vựng",
   "selectedLesson": "Bài đang chọn",
+  "reviewingCount": "{count} bài đang ôn",
   "lessonFallback": "Bài học"
  }
 }

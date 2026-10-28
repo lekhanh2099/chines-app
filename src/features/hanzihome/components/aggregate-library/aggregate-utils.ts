@@ -6,14 +6,13 @@ import type {
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
-export function formatLessonHeading(lessonNumber: number, lessonTitle: string) {
- const trimmedTitle = lessonTitle.trim();
-
- if (/^Bài\s+\d+[:：]/i.test(trimmedTitle)) {
-  return trimmedTitle;
- }
-
- return `Bài ${lessonNumber}: ${trimmedTitle}`;
+export function formatLessonHeading(
+ lessonNumber: number,
+ lessonTitle: string,
+ formatLabel: (number: number, title: string) => string,
+) {
+ const trimmedTitle = lessonTitle.trim().replace(/^Bài\s+\d+[:：]\s*/i, "");
+ return formatLabel(lessonNumber, trimmedTitle);
 }
 
 export function formatSelectedLessonsLabel(
@@ -22,13 +21,19 @@ export function formatSelectedLessonsLabel(
   title: string;
   titleZh: string;
  }>,
+ formatLabel: (number: number, title: string) => string,
+ formatCount: (count: number) => string,
 ) {
  if (lessons.length === 0) return "";
  if (lessons.length === 1) {
-  return formatLessonHeading(lessons[0].lessonNumber, lessons[0].titleZh || lessons[0].title);
+  return formatLessonHeading(
+   lessons[0].lessonNumber,
+   lessons[0].titleZh || lessons[0].title,
+   formatLabel,
+  );
  }
 
- return `${lessons.length} bài đang ôn`;
+ return formatCount(lessons.length);
 }
 
 export function combineReviewLessons(

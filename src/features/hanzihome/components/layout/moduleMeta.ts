@@ -18,21 +18,20 @@ import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 export type ModuleMeta = {
  key: StudyModule;
- label: string;
  icon: LucideIcon;
 };
 
 export const moduleMeta = {
- overview: { key: "overview", label: "Tổng quan", icon: Home },
- lessonText: { key: "lessonText", label: "Bài khóa", icon: FileText },
- practice: { key: "practice", label: "Bài tập", icon: ListChecks },
- listening: { key: "listening", label: "Luyện nghe", icon: Headphones },
- dictation: { key: "dictation", label: "Nghe chép", icon: Keyboard },
- script: { key: "script", label: "Script", icon: ScrollText },
- notes: { key: "notes", label: "Ghi chú", icon: NotebookPen },
- vocab: { key: "vocab", label: "Từ vựng", icon: BookOpen },
- grammar: { key: "grammar", label: "Ngữ pháp", icon: GraduationCap },
- review: { key: "review", label: "Ôn tập", icon: RotateCcw },
+ overview: { key: "overview", icon: Home },
+ lessonText: { key: "lessonText", icon: FileText },
+ practice: { key: "practice", icon: ListChecks },
+ listening: { key: "listening", icon: Headphones },
+ dictation: { key: "dictation", icon: Keyboard },
+ script: { key: "script", icon: ScrollText },
+ notes: { key: "notes", icon: NotebookPen },
+ vocab: { key: "vocab", icon: BookOpen },
+ grammar: { key: "grammar", icon: GraduationCap },
+ review: { key: "review", icon: RotateCcw },
 } satisfies Record<StudyModule, ModuleMeta>;
 
 const standardModuleKeys = [
@@ -47,7 +46,13 @@ const standardModuleKeys = [
 
 const listeningModuleKeys = ["listening", "dictation"] satisfies readonly StudyModule[];
 
-export function tabsForLesson(lesson: HanziHomeLesson) {
+export function tabsForLesson(
+ lesson: HanziHomeLesson,
+ labelForModule: (key: StudyModule) => string,
+) {
  const keys = lesson.tags?.includes("listening") ? listeningModuleKeys : standardModuleKeys;
- return keys.map((key) => moduleMeta[key]) satisfies HanziHomeStudyTab<StudyModule>[];
+ return keys.map((key) => ({
+  ...moduleMeta[key],
+  label: labelForModule(key),
+ })) satisfies HanziHomeStudyTab<StudyModule>[];
 }

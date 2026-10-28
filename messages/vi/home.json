@@ -54,7 +54,22 @@
  },
  "focus": {
   "overviewUnknownTitle": "Tiếp tục học và ôn tập hôm nay",
-  "overviewUnknownDescription": "Chưa có số liệu đến hạn để xác nhận tiến độ hôm nay. Bạn vẫn có thể mở kho thẻ hoặc tiếp tục bài học."
+  "overviewUnknownDescription": "Chưa có số liệu đến hạn để xác nhận tiến độ hôm nay. Bạn vẫn có thể mở kho thẻ hoặc tiếp tục bài học.",
+  "today": "Hôm nay",
+  "reviewedToday": "Đã ôn {count} lượt",
+  "dueTitle": "Bạn có <highlight>{count} mục trong hàng ôn tập</highlight> đến hạn hôm nay",
+  "noDueTitle": "Hôm nay hàng ôn tập chưa có mục đến hạn",
+  "dueDescription": "Những mục đến hạn đã sẵn sàng. Hãy hoàn thành phiên ôn để củng cố kiến thức.",
+  "noDueDescription": "Bạn có thể tiếp tục học bài mới hoặc đọc bài viết tiếng Trung để mở rộng vốn từ.",
+  "reviewNow": "Ôn tập ngay ({count})",
+  "viewCards": "Xem kho thẻ từ",
+  "resumeLesson": "Học tiếp bài học gần nhất",
+  "resumeHint": "Bấm để vào thẳng không gian bài học",
+  "resumeNow": "Vào học ngay",
+  "vocabProgress": "Tiến độ từ vựng cá nhân",
+  "knownWords": "từ đã thuộc",
+  "learning": "Đang học:",
+  "total": "Tổng:"
  },
  "activity": {
   "title": "Hoạt động gần đây",

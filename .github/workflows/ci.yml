@@ -92,6 +92,7 @@ jobs:
        home: ["src/features/home/HomeDashboard.browser.test.ts"],
        annotations: ["src/features/hanzihome/annotations/LessonAnnotations.browser.test.ts"],
        conversation: ["src/features/hanzihome/ai-conversation/AiConversation.browser.test.ts"],
+       navigation: ["src/components/layout/navigation/UnsavedDraftNavigationGuard.browser.test.ts"],
       };
       const productPatterns = {
        search: "loads the authenticated Search index",
@@ -117,6 +118,7 @@ jobs:
        { match: /^src[/]features[/](?:hanzihome[/]listening|dictation|speech)[/]/, browser: ["listening", "recorder"], product: [] },
        { match: /^src[/]features[/]hanzihome[/]annotations[/]|^src[/]app[/]api[/]hanzihome[/](?:reader[/]annotations|lesson-annotations)[/]/, browser: ["annotations", "notes", "reader"], product: ["notes"] },
        { match: /^src[/]features[/]hanzihome[/]ai-conversation[/]|^src[/]app[/]api[/]ai[/]conversation[/]/, browser: ["conversation"], product: [] },
+       { match: /^src[/]components[/]layout[/]navigation[/]UnsavedDraftNavigationGuard[.]/, browser: ["navigation"], product: [] },
        { match: /^src[/]features[/]hanzihome[/]search[/]|^src[/]app[/]api[/]hanzihome[/]search-index[/]/, browser: ["home"], product: ["search"] },
        { match: /^src[/]features[/]hanzihome[/]learning-loop[/]|^src[/]features[/]hanzihome[/]hooks[/]useHanziHomeLearningLoop[.]|^src[/]app[/].*[/]learning-loop[/]/, browser: ["srs"], product: ["learning"] },
        { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, browser: ["reader"], product: ["offline"] },
@@ -335,6 +337,7 @@ jobs:
    HOME_BROWSER_TEST: "1"
    LESSON_ANNOTATIONS_BROWSER_TEST: "1"
    AI_CONVERSATION_BROWSER_TEST: "1"
+   NAVIGATION_BROWSER_TEST: "1"
   steps:
    - uses: actions/checkout@v5
      with:

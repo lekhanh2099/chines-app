@@ -1,6 +1,7 @@
 import { Label } from "@/components/ui/forms/label";
 import { OptionSelect } from "@/components/ui/forms/option-select";
 import { Typography } from "@/components/ui/display/typography";
+import { useTranslations } from "next-intl";
 
 const allFilterOptionValue = "__all__";
 
@@ -15,6 +16,7 @@ export function FilterSelect({
  options: Array<{ value: string; label: string }>;
  onChange: (value: string) => void;
 }) {
+ const t = useTranslations("Vocab");
  return (
   <Label variant="label" className="grid gap-1.5">
    <Typography as="span" variant="overline" tone="muted">
@@ -23,7 +25,7 @@ export function FilterSelect({
    <OptionSelect
     ariaLabel={label}
     value={value === "" ? allFilterOptionValue : value}
-    options={[{ value: allFilterOptionValue, label: "Tất cả" }, ...options]}
+    options={[{ value: allFilterOptionValue, label: t("filters.all") }, ...options]}
     onValueChange={(nextValue) => onChange(nextValue === allFilterOptionValue ? "" : nextValue)}
    />
   </Label>
