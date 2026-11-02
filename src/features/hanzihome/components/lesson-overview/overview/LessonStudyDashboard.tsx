@@ -1,4 +1,8 @@
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziText,
+ PinyinText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/display/typography";
 import { GraduationCap, Headphones, Tags } from "lucide-react";
 
@@ -24,7 +28,7 @@ function getLessonHeading(lesson: HanziHomeLesson) {
  const metadata = asRecord(parsedLesson.metadata);
 
  return {
-  zhTitle: stringValue(title, "zh") || lesson.title,
+  zhTitle: stringValue(title, "zh") || lesson.titleZh || lesson.title,
   pinyinTitle: stringValue(title, "pinyin"),
   volume:
    stringValue(metadata, "volume_vi") ||
@@ -45,10 +49,10 @@ export function LessonStudyDashboard({
 }) {
  const heading = getLessonHeading(lesson);
  const header = (
-  <Card padding="lg" className="grid content-start">
+  <Card variant="section" padding="lg" className="grid content-start gap-4">
    <div className="flex flex-wrap items-start justify-between gap-3">
-    <div className="min-w-0">
-     <StudyInstructionText
+    <div className="grid min-w-0 gap-1">
+     <Typography
       variant="overline"
       tone="primary"
       weight="black"
@@ -56,26 +60,36 @@ export function LessonStudyDashboard({
       transform="uppercase"
      >
       Bài học
-     </StudyInstructionText>
-     <Typography as="h2" variant="sectionTitle" tone="default" weight="black" leading="tight">
-      {heading.zhTitle}
      </Typography>
-     <StudyInstructionText tone="muted" weight="bold">
+     <HanziText as="h2" size="hero" tone="default" leading="tight">
+      {heading.zhTitle}
+     </HanziText>
+     {heading.pinyinTitle && (
+      <PinyinText as="p" variant="sectionTitle" tone="accent" weight="bold">
+       {heading.pinyinTitle}
+      </PinyinText>
+     )}
+     <Typography variant="caption" tone="muted" weight="bold">
       {heading.volume}
-      {heading.pinyinTitle && ` · ${heading.pinyinTitle}`}
-     </StudyInstructionText>
+     </Typography>
     </div>
-    <div className="flex flex-wrap gap-2">
-     {lesson.tags?.includes("listening") ? (
-      <Button type="button" size="toolbar" onClick={() => onOpenModule("listening")}>
-       <Headphones data-icon="inline-start" />
-       Mở luyện nghe
-      </Button>
-     ) : null}
-     <OverviewStatPill label={`${lesson.vocab.length} từ`} />
-     <OverviewStatPill label={`${lesson.grammar.length} ngữ pháp`} />
-     <OverviewStatPill label={`${sections.length} phần`} />
-    </div>
+    {lesson.tags?.includes("listening") ? (
+     <Button type="button" size="toolbar" onClick={() => onOpenModule("listening")}>
+      <Headphones data-icon="inline-start" />
+      Mở luyện nghe
+     </Button>
+    ) : null}
+   </div>
+   <div className="flex flex-wrap items-center gap-1.5">
+    <OverviewStatPill label={`${lesson.vocab.length} từ vựng`} />
+    <Typography as="span" variant="caption" tone="muted">
+     ·
+    </Typography>
+    <OverviewStatPill label={`${lesson.grammar.length} điểm ngữ pháp`} />
+    <Typography as="span" variant="caption" tone="muted">
+     ·
+    </Typography>
+    <OverviewStatPill label={`${sections.length} phần học`} />
    </div>
   </Card>
  );

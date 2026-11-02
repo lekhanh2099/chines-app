@@ -1,7 +1,12 @@
 import type { ReactNode } from "react";
 
 import { Badge } from "@/components/ui/display/badge";
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Card } from "@/components/ui/layout/card";
+import {
+ HanziText,
+ PinyinText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 
 export function VocabPreviewRow({
  hanzi,
@@ -21,21 +26,15 @@ export function VocabPreviewRow({
  children?: ReactNode;
 }) {
  return (
-  <div className="min-w-0 rounded-xl border border-border-default bg-bg-subtle p-3 grid gap-1">
+  <Card variant="subtle" padding="md" className="grid min-w-0 content-start gap-1.5">
    {header ?? (
     <div className="flex min-w-0 items-baseline gap-2">
-     <StudyInstructionText
-      variant="pageTitle"
-      tone="default"
-      weight="black"
-      clamp="one"
-      lang="zh-CN"
-     >
+     <HanziText as="span" size="card" leading="none" clamp="one">
       {hanzi}
-     </StudyInstructionText>
-     <StudyInstructionText variant="body" tone="primary" weight="bold" clamp="one">
+     </HanziText>
+     <PinyinText as="span" tone="accent" weight="bold" clamp="one">
       {pinyin}
-     </StudyInstructionText>
+     </PinyinText>
     </div>
    )}
    <div className="flex min-w-0 flex-wrap items-center gap-2">
@@ -58,11 +57,11 @@ export function VocabPreviewRow({
     )}
    </div>
    {meaning && (
-    <StudyInstructionText variant="body" tone="secondary" weight="semibold" wrapping="preWrap">
+    <StudyInstructionText variant="bodySmall" tone="secondary" weight="semibold" wrapping="preWrap">
      {meaning}
     </StudyInstructionText>
    )}
    {children}
-  </div>
+  </Card>
  );
 }

@@ -123,6 +123,8 @@ export function VocabDetailDrawer() {
       <PinyinText as="p" tone="accent" weight="semibold">
        {smartData.entry.pinyin}
       </PinyinText>
+     ) : detailQuery.isLoading && mode === "word" ? (
+      <div aria-hidden="true" className="h-6 w-28 animate-pulse rounded-md bg-bg-subtle" />
      ) : null}
      {smartData?.runtimeReceipt ? (
       <div className="flex flex-wrap gap-1.5">
@@ -142,14 +144,35 @@ export function VocabDetailDrawer() {
 
    <SheetBody>
     {detailQuery.isLoading ? (
-     <Card
-      variant="subtle"
-      padding="lg"
-      className="flex min-h-40 items-center justify-center gap-2"
-     >
-      <Loader2 className="animate-spin" />
-      <Typography tone="muted">{t("loading")}</Typography>
-     </Card>
+     <div className="grid animate-pulse gap-4" aria-busy="true" aria-live="polite">
+      <Card variant="section" padding="md" className="grid gap-3">
+       <div className="h-4 w-24 rounded-md bg-bg-subtle" />
+       <div className="h-5 w-full max-w-80 rounded-md bg-bg-subtle" />
+      </Card>
+      {mode === "word" ? (
+       <Card variant="section" padding="md" className="grid gap-3">
+        <div className="h-4 w-24 rounded-md bg-bg-subtle" />
+        <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
+         <Card
+          variant="section"
+          padding="md"
+          className="flex w-full min-w-0 flex-col items-center gap-3"
+         >
+          <div className="aspect-square w-full max-w-40 rounded-xl bg-bg-subtle" />
+          <div className="flex flex-wrap items-center justify-center gap-2">
+           <div className="h-11 w-20 rounded-lg bg-bg-subtle" />
+           <div className="h-11 w-20 rounded-lg bg-bg-subtle" />
+          </div>
+         </Card>
+         <div className="grid content-start gap-2">
+          <div className="h-4 w-20 rounded-md bg-bg-subtle" />
+          <div className="h-4 w-full max-w-48 rounded-md bg-bg-subtle" />
+         </div>
+        </div>
+       </Card>
+      ) : null}
+      <span className="sr-only">{t("loading")}</span>
+     </div>
     ) : detailQuery.isError ? (
      <Card variant="subtle" padding="md" role="alert">
       <Typography as="p" variant="bodySmall" tone="danger" weight="semibold">

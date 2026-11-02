@@ -2,6 +2,7 @@
 
 import { Label } from "@/components/ui/forms/label";
 import { Typography } from "@/components/ui/display/typography";
+import { EmptyState } from "@/components/patterns/empty-state";
 import { useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
 import {
  Bookmark,
@@ -145,9 +146,9 @@ export function VocabList({
       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
        Từ vựng bài này
       </Typography>
-      <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+      <Typography variant="caption" tone="muted">
        {words.length} từ phù hợp · Tab để chuyển nhanh
-      </StudyInstructionText>
+      </Typography>
      </div>
 
      <div className="flex flex-wrap items-center gap-1.5">
@@ -195,20 +196,18 @@ export function VocabList({
       />
      </Label>
 
-     <StudyInstructionText
-      variant="bodySmall"
+     <Typography
+      variant="caption"
       tone="muted"
       leading="relaxed"
       className="hidden items-center lg:flex"
      >
       Chọn một từ để xem nghĩa, ví dụ và cách dùng. Shift+Tab quay lại từ trước.
-     </StudyInstructionText>
+     </Typography>
     </div>
 
     {words.length === 0 ? (
-     <StudyInstructionText tone="muted" weight="semibold">
-      Không có từ phù hợp bộ lọc.
-     </StudyInstructionText>
+     <EmptyState surface="subtle" title="Không có từ phù hợp bộ lọc" />
     ) : isWordPickerOpen ? (
      <div className="grid gap-1">
       <div
