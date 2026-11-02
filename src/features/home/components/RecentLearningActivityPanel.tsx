@@ -65,7 +65,10 @@ export function RecentLearningActivityPanel({
     {items.length > 0 ? (
      <div className="divide-y divide-border-default/70">
       {items.map((item) => (
-       <div key={item.key} className="flex min-w-0 items-start gap-3 py-3 first:pt-0 last:pb-0">
+       <div
+        key={item.key}
+        className="flex min-h-11 min-w-0 items-start gap-3 py-3 first:pt-0 last:pb-0"
+       >
         <IconTile size="sm" tone="neutral">
          <History />
         </IconTile>

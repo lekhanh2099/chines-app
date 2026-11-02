@@ -2,11 +2,12 @@ import {
  HanziAwareText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Card } from "@/components/ui/layout/card";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
 
 export function GrammarPreviewRow({ point, index }: { point: GrammarViewModel; index: number }) {
  return (
-  <div className="min-w-0 rounded-xl border border-border-default bg-bg-subtle p-3 grid gap-1">
+  <Card variant="subtle" padding="md" className="grid min-w-0 gap-1.5">
    <StudyInstructionText
     variant="overline"
     tone="muted"
@@ -31,14 +32,8 @@ export function GrammarPreviewRow({ point, index }: { point: GrammarViewModel; i
     clamp="two"
    />
    {point.structuresView[0] && (
-    <HanziAwareText
-     text={point.structuresView[0]}
-     tone="info"
-     weight="black"
-     clamp="one"
-     className="rounded-lg border border-info/25 bg-info-subtle px-2 py-1"
-    />
+    <HanziAwareText text={point.structuresView[0]} tone="info" weight="black" clamp="one" />
    )}
-  </div>
+  </Card>
  );
 }

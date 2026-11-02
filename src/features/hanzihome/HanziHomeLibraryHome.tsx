@@ -323,7 +323,7 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
              </Typography>
              <Button
               variant="ghost"
-              size="icon"
+              size={isCoarsePointer ? "icon" : "icon-toolbar"}
               aria-label={`${t("moveEarlier")}: ${title}`}
               disabled={!canReorder || index === 0}
               onClick={() => {
@@ -335,7 +335,7 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
              </Button>
              <Button
               variant="ghost"
-              size="icon"
+              size={isCoarsePointer ? "icon" : "icon-toolbar"}
               aria-label={`${t("moveLater")}: ${title}`}
               disabled={!canReorder || index === visibleCollectionIds.length - 1}
               onClick={() => {

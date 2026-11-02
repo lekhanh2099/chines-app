@@ -68,7 +68,7 @@ export function RecentNotesPanel({
        <Link
         key={note.id}
         href={`/notes/${note.id}`}
-        className="group flex items-center gap-3 py-3 first:pt-0 last:pb-0"
+        className="group flex min-h-11 items-center gap-3 py-3 first:pt-0 last:pb-0"
        >
         <IconTile size="sm" tone="neutral">
          <FileText />
