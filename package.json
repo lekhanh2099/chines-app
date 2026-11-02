@@ -22,6 +22,12 @@
   "@workflow/world-vercel": {
    "undici": "7.30.1"
   },
+  "workflow": {
+   "minimatch": "11.0.4"
+  },
+  "@vercel/queue": {
+   "minimatch": "11.0.4"
+  },
   "next": {
    "postcss": "8.5.28"
   }
