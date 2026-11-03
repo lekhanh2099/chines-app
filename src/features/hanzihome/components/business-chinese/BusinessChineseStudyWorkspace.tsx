@@ -2296,13 +2296,13 @@ function BusinessChineseStudyWorkspaceContent({
                  <Button
                   type="button"
                   size="compact"
-                  variant={isInteractivePracticeOpen ? "default" : "outline"}
+                  variant={isInteractivePracticeOpen ? "outline" : "default"}
                   onClick={() => setIsInteractivePracticeOpen((prev) => !prev)}
                  >
                   <Sparkles className="size-3.5" />
                   <span>
                    {isInteractivePracticeOpen
-                    ? "Đóng luyện tập từng câu"
+                    ? "Đóng chế độ từng câu"
                     : `Luyện tập từng câu (${universalTextbookPracticeItems.length} câu)`}
                   </span>
                  </Button>

@@ -5,7 +5,11 @@ import {
  evaluateUniversalAnswer,
 } from "./universal-exercise-adapter";
 import type { ContextualVocabDrillItem } from "@/features/hanzihome/components/business-chinese/business-chinese-study-utils";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import {
+ type TextbookLesson,
+ getBusinessChineseLesson,
+ getTextbookLesson,
+} from "@/features/hanzihome/static-json/business-chinese-static-content";
 
 describe("universal-exercise-adapter", () => {
  it("adapts contextual vocab drills into cloze universal items", () => {
@@ -107,15 +111,63 @@ describe("universal-exercise-adapter", () => {
 
   it("evaluates choice answer case-insensitively", () => {
    const items = adaptTextbookPracticeToUniversal([
-    { id: "p1", type: "paragraph", text: "Câu hỏi A. 1 B. 2", rows: [] },
-    { id: "a1", type: "paragraph", text: "Đáp án: → A", rows: [] },
+    {
+     id: "p1",
+     type: "paragraph",
+     text: "1. Câu hỏi trắc nghiệm\nA. Lựa chọn 1\nB. Lựa chọn 2 → A",
+     rows: [],
+    },
    ]);
    const item = items[0];
+   expect(item).toBeDefined();
    if (item) {
+    expect(item.interaction.type).toBe("choice");
     expect(evaluateUniversalAnswer(item, "A")).toBe(true);
     expect(evaluateUniversalAnswer(item, "a")).toBe(true);
     expect(evaluateUniversalAnswer(item, "B")).toBe(false);
    }
+  });
+
+  it("extracts practice items from real textbook lessons", () => {
+   const tm3 = getBusinessChineseLesson("tm3", 1);
+   const tm3Blocks: TextbookLesson["sections"][number]["blocks"][number][] = [];
+   if (tm3) {
+    tm3.sections.forEach((s) => {
+     if (s.category === "practice") tm3Blocks.push(...s.blocks);
+    });
+   }
+   const tm3Items = adaptTextbookPracticeToUniversal(tm3Blocks);
+   expect(tm3Items.length).toBeGreaterThan(50);
+
+   const nc = getTextbookLesson("nhip-cau", 1);
+   const ncBlocks: TextbookLesson["sections"][number]["blocks"][number][] = [];
+   if (nc) {
+    nc.sections.forEach((s) => {
+     if (s.category === "practice") ncBlocks.push(...s.blocks);
+    });
+   }
+   const ncItems = adaptTextbookPracticeToUniversal(ncBlocks);
+   expect(ncItems.length).toBeGreaterThan(50);
+
+   const dh = getTextbookLesson("doc-hieu", 1);
+   const dhBlocks: TextbookLesson["sections"][number]["blocks"][number][] = [];
+   if (dh) {
+    dh.sections.forEach((s) => {
+     if (s.category === "practice") dhBlocks.push(...s.blocks);
+    });
+   }
+   const dhItems = adaptTextbookPracticeToUniversal(dhBlocks);
+   expect(dhItems.length).toBeGreaterThan(50);
+
+   const kn = getTextbookLesson("khau-ngu", 1);
+   const knBlocks: TextbookLesson["sections"][number]["blocks"][number][] = [];
+   if (kn) {
+    kn.sections.forEach((s) => {
+     if (s.category === "practice") knBlocks.push(...s.blocks);
+    });
+   }
+   const knItems = adaptTextbookPracticeToUniversal(knBlocks);
+   expect(knItems.length).toBeGreaterThan(20);
   });
  });
 });

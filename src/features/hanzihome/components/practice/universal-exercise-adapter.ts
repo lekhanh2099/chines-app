@@ -39,46 +39,102 @@ export function adaptVocabDrillsToUniversal(
 export function adaptTextbookPracticeToUniversal(
  blocks: readonly TextbookLesson["sections"][number]["blocks"][number][],
 ): UniversalExerciseItem[] {
- const { pairedAnswers } = pairPracticeBlankAnswers(blocks);
+ const { pairedAnswers, consumedAnswerBlockIds } = pairPracticeBlankAnswers(blocks);
  const items: UniversalExerciseItem[] = [];
+ let currentSubheading = "";
 
  blocks.forEach((block) => {
+  if (block.type === "subheading") {
+   currentSubheading = block.text.trim();
+   return;
+  }
   if (block.type !== "paragraph") return;
-  const answer = pairedAnswers.get(block.id);
-  if (!answer) return;
+  if (consumedAnswerBlockIds.has(block.id)) return;
 
-  const parsed = parsePracticeExerciseItem(block.text, answer);
+  const rawText = block.text.trim();
+  if (!rawText) return;
 
-  // Check choices from parsed or directly from block.text
-  const choiceMatch = block.text.match(
-   /^([\s\S]*?)\s+A[.．、]\s*([\s\S]+?)\s+B[.．、]\s*([\s\S]+?)\s+C[.．、]\s*([\s\S]+?)(?:\s+D[.．、]\s*([\s\S]+?))?$/u,
+  let promptText = "";
+  let answerText = "";
+  let promptTranslation: string | undefined;
+
+  // Case A: Block has arrow "prompt → answer"
+  const arrowMatch = rawText.match(/^([\s\S]+?)\s*→\s*([\s\S]+)$/u);
+  if (arrowMatch) {
+   promptText = arrowMatch[1]?.trim() ?? "";
+   answerText = arrowMatch[2]?.trim() ?? "";
+  } else if (pairedAnswers.has(block.id)) {
+   // Case B: Block paired with answer from answers block below
+   promptText = rawText;
+   answerText = pairedAnswers.get(block.id) ?? "";
+  } else {
+   // Case C: Question without arrow or separate block (e.g. conversational/substitution/numbered drill)
+   const isExerciseItem =
+    /^[(（]?\d+[\.、)）]/u.test(rawText) ||
+    /^[①②③④⑤⑥⑦⑧⑨⑩]/u.test(rawText) ||
+    /[_＿]{3,}/u.test(rawText) ||
+    /[?？]/u.test(rawText);
+
+   if (!isExerciseItem) return;
+   promptText = rawText;
+   answerText = "";
+  }
+
+  // Skip answer-only blocks
+  if (/^(?:Đáp án|👉\s*Đáp án|正确答案|参考答案)\s*[:：]?\s*$/iu.test(promptText)) {
+   return;
+  }
+
+  // Extract trailing Vietnamese translation in parentheses if present
+  const translationMatch = answerText.match(/\(([^()]+)\)$/u);
+  if (translationMatch) {
+   promptTranslation = translationMatch[1]?.trim();
+   answerText = answerText.slice(0, translationMatch.index).trim();
+  }
+
+  // Parse prompt and clean answer
+  const parsed = parsePracticeExerciseItem(promptText, answerText);
+
+  // Check choices from parsed or directly from promptText
+  const choiceMatch = promptText.match(
+   /^([\s\S]*?)(?:\s*\n+\s*|\s+)(A)[.．、\s]\s*([\s\S]+?)(?:\s*\n+\s*|\s+)(B)[.．、\s]\s*([\s\S]+?)(?:(?:\s*\n+\s*|\s+)(C)[.．、\s]\s*([\s\S]+?))?(?:(?:\s*\n+\s*|\s+)(D)[.．、\s]\s*([\s\S]+?))?$/u,
   );
-  const directChoiceMatch = answer.match(/^(?:(?:Đáp án|正确答案)\s*[:：]?\s*)?([A-D])\b/iu);
+  const directChoiceMatch = answerText.match(
+   /(?:👉\s*Đáp án\s*[:：]?\s*|Đáp án\s*[:：]?\s*|^)([A-D])\b/iu,
+  );
 
   if ((parsed.choices.length > 0 && parsed.correctChoice) || (choiceMatch && directChoiceMatch)) {
+   const optA = choiceMatch ? (choiceMatch[3]?.trim() ?? "") : "";
+   const optB = choiceMatch ? (choiceMatch[5]?.trim() ?? "") : "";
+   const optC = choiceMatch ? choiceMatch[7]?.trim() : undefined;
+   const optD = choiceMatch ? choiceMatch[9]?.trim() : undefined;
+
    const options =
     parsed.choices.length > 0
      ? parsed.choices.map((c) => ({ key: c.key, label: c.text }))
-     : ["A", "B", "C", "D"].flatMap((key, index) => {
-        const text = choiceMatch ? choiceMatch[index + 2]?.trim() : undefined;
-        return text ? [{ key, label: text }] : [];
-       });
+     : [
+        { key: "A", label: optA },
+        { key: "B", label: optB },
+        ...(optC ? [{ key: "C", label: optC }] : []),
+        ...(optD ? [{ key: "D", label: optD }] : []),
+       ];
 
    const correctKey =
     parsed.correctChoice ||
     (directChoiceMatch ? (directChoiceMatch[1]?.toUpperCase() ?? "A") : "A");
 
-   const promptText = choiceMatch
+   const finalPrompt = choiceMatch
     ? (choiceMatch[1]?.trim() ?? parsed.displayPrompt)
     : parsed.displayPrompt;
 
    items.push({
     id: block.id,
     category: "practice_choice",
-    title: parsed.keywordHint || "Chọn đáp án đúng",
-    prompt: promptText,
+    title: currentSubheading || parsed.keywordHint || "Chọn đáp án đúng",
+    prompt: finalPrompt,
+    promptTranslation,
     hint: parsed.keywordHint || undefined,
-    audioText: promptText,
+    audioText: finalPrompt,
     interaction: {
      type: "choice",
      options,
@@ -88,23 +144,28 @@ export function adaptTextbookPracticeToUniversal(
    return;
   }
 
+  // Reorder interaction
   if (parsed.reorderTokens.length > 0) {
    items.push({
     id: block.id,
     category: "practice_reorder",
-    title: "Sắp xếp câu",
+    title: currentSubheading || "Sắp xếp câu",
     prompt: parsed.displayPrompt,
-    audioText: parsed.answer,
+    promptTranslation,
+    audioText: parsed.answer || parsed.displayPrompt,
     interaction: {
      type: "reorder",
      tokens: [...parsed.reorderTokens],
-     correctOrder: parsed.answer.split(/\s+/u).filter(Boolean),
+     correctOrder: parsed.answer
+      ? parsed.answer.split(/\s+/u).filter(Boolean)
+      : [...parsed.reorderTokens],
     },
    });
    return;
   }
 
-  if (parsed.hasBlank) {
+  // Cloze interaction
+  if (parsed.hasBlank || /[_＿]{3,}/u.test(parsed.displayPrompt)) {
    const blankMatch = parsed.displayPrompt.match(
     /^([\s\S]*?)(?:[_＿]{3,}|…{2,}|\.\.\.+)([\s\S]*)$/u,
    );
@@ -114,13 +175,14 @@ export function adaptTextbookPracticeToUniversal(
    items.push({
     id: block.id,
     category: "practice_cloze",
-    title: parsed.keywordHint || "Điền từ vào chỗ trống",
+    title: currentSubheading || parsed.keywordHint || "Điền từ vào chỗ trống",
     prompt: parsed.displayPrompt,
+    promptTranslation,
     hint: parsed.keywordHint || undefined,
-    audioText: parsed.answer,
+    audioText: parsed.answer || parsed.displayPrompt,
     interaction: {
      type: "cloze",
-     expectedAnswer: parsed.answer,
+     expectedAnswer: parsed.answer || "",
      placeholder: "Nhập từ phù hợp",
      preText,
      postText,
@@ -129,11 +191,13 @@ export function adaptTextbookPracticeToUniversal(
    return;
   }
 
+  // Open interaction (short answer, oral drill, translation)
   items.push({
    id: block.id,
    category: "practice_open",
-   title: "Câu hỏi luyện tập",
+   title: currentSubheading || "Câu hỏi luyện tập",
    prompt: parsed.displayPrompt,
+   promptTranslation,
    audioText: parsed.displayPrompt,
    interaction: {
     type: "open",
@@ -172,7 +236,13 @@ const INTERACTION_EVALUATORS: {
  cloze: (interaction, answer) => {
   const cleanInput = answer.trim().replace(PUNCTUATION_CLEANUP, "");
   const cleanTarget = interaction.expectedAnswer.trim().replace(PUNCTUATION_CLEANUP, "");
-  return cleanInput.length > 0 && cleanInput === cleanTarget;
+  if (cleanInput.length > 0 && cleanInput === cleanTarget) return true;
+  // If target contains multiple candidates (e.g. answer / alternative)
+  const candidates = interaction.expectedAnswer
+   .split(/[/、\n]/u)
+   .map((c) => c.trim().replace(PUNCTUATION_CLEANUP, ""))
+   .filter(Boolean);
+  return candidates.includes(cleanInput);
  },
  choice: (interaction, answer) => {
   return answer.trim().toUpperCase() === interaction.correctKey.trim().toUpperCase();
