@@ -9,7 +9,23 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
 
-export function GrammarReviewFront({ item }: { item: Extract<ReviewItem, { type: "grammar" }> }) {
+export function GrammarReviewFront({
+ item,
+ revealed = false,
+}: {
+ item: Extract<ReviewItem, { type: "grammar" }>;
+ revealed?: boolean;
+}) {
+ if (revealed) {
+  return (
+   <div className="grid gap-2 text-center">
+    <HanziText as="h3" size="large" tone="default" weight="black" tracking="tight">
+     {item.prompt}
+    </HanziText>
+   </div>
+  );
+ }
+
  return (
   <div className="grid gap-4 text-left">
    <IconTile size="lg" tone="info" className="mx-auto">

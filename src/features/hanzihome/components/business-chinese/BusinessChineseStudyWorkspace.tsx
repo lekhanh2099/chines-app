@@ -2142,17 +2142,7 @@ function BusinessChineseStudyWorkspaceContent({
 
           {activeView === "review" ? (
            <div data-textbook-document className="mx-auto grid w-full max-w-4xl min-w-0 gap-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border-default/60 pb-3">
-             <div className="grid min-w-0 gap-0.5">
-              <Typography variant="sectionTitle" weight="bold">
-               {t("vocabReview.title", { count: lesson.vocab.length })}
-              </Typography>
-              <Typography variant="bodySmall" tone="secondary">
-               {reviewMode === "flashcard"
-                ? t("vocabReview.eyebrow")
-                : t("vocabReview.clozeDescription")}
-              </Typography>
-             </div>
+            <div className="flex flex-wrap items-center justify-end gap-3 pb-1">
              <SegmentedControl
               value={reviewMode}
               items={reviewModeItems}
@@ -2166,6 +2156,8 @@ function BusinessChineseStudyWorkspaceContent({
               learningState={safeLearningState}
               onAnswer={onRecordReview}
               onToggleBookmark={onToggleBookmark}
+              title={t("vocabReview.title", { count: lesson.vocab.length })}
+              description={t("vocabReview.eyebrow")}
               availableModes={["all", "hard"]}
               initialMode="all"
              />

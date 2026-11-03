@@ -47,7 +47,8 @@ export function StudyReviewBack({
 
     <VocabWritingCue
      word={item.source}
-     size={180}
+     size={140}
+     compact
      autoPlay
      selectedIndex={selectedWritingIndex}
      onSelectedIndexChange={onSelectedWritingIndexChange}
