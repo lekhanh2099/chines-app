@@ -2173,6 +2173,12 @@ function BusinessChineseStudyWorkspaceContent({
           {activeView === "review" ? (
            <div data-textbook-document className="mx-auto grid w-full max-w-4xl min-w-0 gap-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-1">
+             <SegmentedControl
+              value={reviewMode}
+              items={reviewModeItems}
+              onChange={setReviewMode}
+              className="w-auto"
+             />
              <Button
               type="button"
               variant={isPipOpen || isInAppFloatingOpen ? "active" : "outline"}
@@ -2187,11 +2193,6 @@ function BusinessChineseStudyWorkspaceContent({
                 : t("vocabReview.pipButton")}
               </span>
              </Button>
-             <SegmentedControl
-              value={reviewMode}
-              items={reviewModeItems}
-              onChange={setReviewMode}
-             />
             </div>
 
             {reviewMode === "flashcard" ? (
