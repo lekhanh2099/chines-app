@@ -1,10 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import {
- SegmentedControl,
- type SegmentedControlItem,
-} from "@/components/ui/forms/segmented-control";
+import { NativeSelect } from "@/components/ui/forms/native-select";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import type { PipGrammarPoint } from "./pip-grammar-adapter";
 import type { UniversalExerciseItem } from "@/features/hanzihome/components/practice/universal-exercise.types";
@@ -70,24 +67,26 @@ export function UniversalAmbientPip({
   return availableModes[0]?.mode ?? "vocab";
  }, [availableModes, initialMode, userSelectedMode]);
 
- const modeItems = useMemo<SegmentedControlItem<UniversalPipMode>[]>(
-  () =>
-   availableModes.map(({ mode, label, count }) => ({
-    key: mode,
-    label: `${label} (${count})`,
-   })),
-  [availableModes],
- );
-
  const modeSwitcher =
   availableModes.length > 1 ? (
-   <SegmentedControl
+   <NativeSelect
+    aria-label="Chọn phần học"
     value={activeMode}
-    items={modeItems}
-    onChange={setUserSelectedMode}
-    density="toolbar"
-    surface="subtle"
-   />
+    onChange={(e) => {
+     const val = e.target.value;
+     if (val === "vocab" || val === "grammar" || val === "practice") {
+      setUserSelectedMode(val);
+     }
+    }}
+    density="compact"
+    className="max-w-[125px] font-semibold"
+   >
+    {availableModes.map(({ mode, label, count }) => (
+     <option key={mode} value={mode}>
+      {`${label} (${count})`}
+     </option>
+    ))}
+   </NativeSelect>
   ) : null;
 
  if (activeMode === "grammar" && grammarItems.length > 0) {

@@ -143,8 +143,8 @@ export function AmbientPipGrammarCard({
    {/* Top Bar */}
    <div className="border-b border-border-default/40 bg-surface-muted/30 px-3 py-1.5">
     <div className="flex items-center justify-between gap-2">
-     <div className="flex min-w-0 items-center gap-1.5">
-      <Badge variant="accent" size="sm" casing="natural">
+     <div className="flex min-w-0 flex-1 items-center gap-1.5 overflow-hidden">
+      <Badge variant="accent" size="sm" casing="natural" className="shrink-0">
        {`${currentIndex + 1}/${totalCount}`}
       </Badge>
       <StudyInstructionText tone="secondary" weight="bold" clamp="one">
@@ -152,7 +152,7 @@ export function AmbientPipGrammarCard({
       </StudyInstructionText>
      </div>
 
-     <div className="flex items-center gap-0.5">
+     <div className="flex shrink-0 items-center gap-1">
       {extraHeaderActions}
 
       <Button
