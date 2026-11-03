@@ -43,7 +43,7 @@ import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
-import { Bookmark, CloudCheck, PictureInPicture2, Tags } from "lucide-react";
+import { Bookmark, CloudCheck, PictureInPicture2, Sparkles, Tags } from "lucide-react";
 import { createPortal } from "react-dom";
 import { AmbientPipFlashcard } from "@/features/hanzihome/components/review/AmbientPipFlashcard";
 import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
@@ -55,6 +55,8 @@ import {
 import { Typography, type TypographyProps } from "@/components/ui/display/typography";
 import { VocabReviewPanel } from "@/features/hanzihome/components/review/VocabReviewPanel";
 import { BusinessChineseContextualDrills } from "./BusinessChineseContextualDrills";
+import { UniversalExerciseRunner } from "@/features/hanzihome/components/practice/UniversalExerciseRunner";
+import { adaptTextbookPracticeToUniversal } from "@/features/hanzihome/components/practice/universal-exercise-adapter";
 import type {
  ReviewAnswerHandler,
  ReviewBookmarkHandler,
@@ -1860,6 +1862,7 @@ function BusinessChineseStudyWorkspaceContent({
   closePip,
  } = useDocumentPip();
  const [isInAppFloatingOpen, setIsInAppFloatingOpen] = useState(false);
+ const [isInteractivePracticeOpen, setIsInteractivePracticeOpen] = useState(false);
 
  const handleTogglePip = useCallback(async () => {
   if (isPipOpen) {
@@ -2014,6 +2017,13 @@ function BusinessChineseStudyWorkspaceContent({
  const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
  const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
  const intro = lesson.intro.join(" ");
+ const universalTextbookPracticeItems = useMemo(() => {
+  const blocks: TextbookLesson["sections"][number]["blocks"][number][] = [];
+  lesson.sections.forEach((sec) => {
+   if (sec.category === "practice") blocks.push(...sec.blocks);
+  });
+  return adaptTextbookPracticeToUniversal(blocks);
+ }, [lesson.sections]);
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
  const book = books.find((item) => item.key === lesson.bookKey);
  const sequentialLessons = book?.lessons.every((item, index) => item.number === index + 1);
@@ -2274,12 +2284,29 @@ function BusinessChineseStudyWorkspaceContent({
                />
               ) : null}
               {activeView === "practice" &&
-              (translationSegments.length > 0 || dictationSources.length > 0) ? (
+              (translationSegments.length > 0 ||
+               dictationSources.length > 0 ||
+               universalTextbookPracticeItems.length > 0) ? (
                <Card
                 variant="subtle"
                 padding="sm"
                 className="flex min-w-0 flex-wrap items-center gap-2"
                >
+                {universalTextbookPracticeItems.length > 0 ? (
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant={isInteractivePracticeOpen ? "default" : "outline"}
+                  onClick={() => setIsInteractivePracticeOpen((prev) => !prev)}
+                 >
+                  <Sparkles className="size-3.5" />
+                  <span>
+                   {isInteractivePracticeOpen
+                    ? "Đóng luyện tập từng câu"
+                    : `Luyện tập từng câu (${universalTextbookPracticeItems.length} câu)`}
+                  </span>
+                 </Button>
+                ) : null}
                 {translationSegments.length > 0 ? (
                  <Button
                   type="button"
@@ -2305,6 +2332,15 @@ function BusinessChineseStudyWorkspaceContent({
                  </Button>
                 ) : null}
                </Card>
+              ) : null}
+              {activeView === "practice" &&
+              isInteractivePracticeOpen &&
+              universalTextbookPracticeItems.length > 0 ? (
+               <UniversalExerciseRunner
+                items={universalTextbookPracticeItems}
+                title={`Luyện tập bài học: ${lesson.title}`}
+                onClose={() => setIsInteractivePracticeOpen(false)}
+               />
               ) : null}
               {visibleSections.map((section, index) => {
                const content = (
