@@ -1378,7 +1378,7 @@ function BusinessChineseSection({
  }
 
  return (
-  <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4">
+  <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4 content-auto">
    {visibleBlocks.length > 0 &&
    !(section.category === "grammar" && visibleBlocks[0]?.type === "subheading") ? (
     <header>
@@ -2467,11 +2467,13 @@ function BusinessChineseStudyWorkspaceContent({
                return (
                 <Fragment key={section.id}>
                  {section.category === "text" ? (
-                  <BusinessChineseReader
-                   bookKey={bookKey}
-                   document={sectionDocuments.get(section.id) ?? textReaderDocument}
-                   services={index === 0 ? firstSectionServices : otherSectionServices}
-                  />
+                  <div className="content-auto">
+                   <BusinessChineseReader
+                    bookKey={bookKey}
+                    document={sectionDocuments.get(section.id) ?? textReaderDocument}
+                    services={index === 0 ? firstSectionServices : otherSectionServices}
+                   />
+                  </div>
                  ) : (
                   content
                  )}

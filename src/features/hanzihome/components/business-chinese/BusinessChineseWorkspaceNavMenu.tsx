@@ -55,7 +55,7 @@ export const BusinessChineseWorkspaceNavMenu = memo(function BusinessChineseWork
  const title = activeTab ? `${resolvedMenuLabel}: ${activeTab.label}` : resolvedMenuLabel;
 
  return (
-  <DropdownMenu>
+  <DropdownMenu modal={false}>
    <DropdownMenuTrigger asChild>
     <Button
      type="button"
