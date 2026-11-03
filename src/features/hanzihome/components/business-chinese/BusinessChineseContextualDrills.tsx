@@ -106,7 +106,7 @@ export function BusinessChineseContextualDrills({
          />
         </div>
 
-        <div className="grid min-w-0 gap-1">
+        <div className="grid min-w-0 gap-1.5 rounded-xl border border-border-default/50 bg-surface-muted/30 p-3.5">
          <Typography variant="body" weight="semibold">
           {drill.displayPrompt}
          </Typography>
