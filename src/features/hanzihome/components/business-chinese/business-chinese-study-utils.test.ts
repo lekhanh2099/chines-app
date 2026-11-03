@@ -22,6 +22,9 @@ import {
  pairPracticeBlankAnswers,
  parsePracticeExerciseItem,
  evaluatePracticeAnswer,
+ textbookLessonToReviewLesson,
+ generateContextualVocabDrills,
+ evaluateContextualVocabDrill,
 } from "./business-chinese-study-utils";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
@@ -565,5 +568,34 @@ describe("Business Chinese study policies", () => {
    prompt: "请翻译",
    answer: "Xin chào → ví dụ",
   });
+ });
+ it("supports active review tab when lesson has vocabulary", () => {
+  expect(businessChineseTabAvailable("review", [], 0, 10)).toBe(true);
+  expect(businessChineseTabAvailable("review", [], 0, 0)).toBe(false);
+ });
+ it("adapts textbook lesson to valid review lesson with contextual examples", () => {
+  const lesson = getTextbookLesson("tm3", 1);
+  expect(lesson).toBeDefined();
+  if (!lesson) return;
+  const reviewLesson = textbookLessonToReviewLesson(lesson);
+  expect(reviewLesson.id).toBe(lesson.id);
+  expect(reviewLesson.vocab.length).toBe(lesson.vocab.length);
+  expect(reviewLesson.vocabIds).toHaveLength(lesson.vocab.length);
+  const firstWord = reviewLesson.vocab[0];
+  expect(firstWord.runtimeId).toBe(lesson.vocab[0].id);
+  expect(firstWord.hanzi).toBe(lesson.vocab[0].hanzi);
+  expect(firstWord.meaning.meaning_vi).toBe(lesson.vocab[0].meaning);
+ });
+ it("generates contextual vocabulary drills and evaluates user answer", () => {
+  const lesson = getTextbookLesson("tm3", 1);
+  expect(lesson).toBeDefined();
+  if (!lesson) return;
+  const drills = generateContextualVocabDrills(lesson);
+  expect(drills.length).toBeGreaterThan(0);
+  const drill = drills[0];
+  expect(drill.displayPrompt).toContain("______");
+  expect(evaluateContextualVocabDrill(drill.targetWord, drill.targetWord)).toBe(true);
+  expect(evaluateContextualVocabDrill(`  ${drill.targetWord}  `, drill.targetWord)).toBe(true);
+  expect(evaluateContextualVocabDrill("sai_roi", drill.targetWord)).toBe(false);
  });
 });

@@ -6,6 +6,12 @@ import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annot
 import { analyzeContextualPronunciation } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import type { DictationSource } from "@/features/hanzihome/practice/translation-practice";
 import { splitTrailingTranslation } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
+import type { HanziHomeLesson, HanziHomeVocabItem } from "@/features/hanzihome/types";
+import {
+ DeepVocabularyItemSchema,
+ PartOfSpeechSchema,
+ VocabularyExampleSchema,
+} from "@/features/hanzihome/schemas/vocab.schema";
 
 const nonChineseTextPattern = /[^\p{Script=Han}\p{Number}\p{Punctuation}\p{Separator}\p{Symbol}]/gu;
 
@@ -284,6 +290,7 @@ export function businessChineseTabAvailable(
   key === "translation" ||
   (key === "dictation" && dictationCount > 0) ||
   (key === "vocab" && vocabularyCount > 0) ||
+  (key === "review" && vocabularyCount > 0) ||
   sections.some((section) => section.category === key)
  );
 }
@@ -392,4 +399,162 @@ export function businessChineseReaderAnnotations(
 
 export function businessChineseDictationCount(sources: readonly DictationSource[]) {
  return sources.reduce((count, source) => count + source.entries.length, 0);
+}
+
+function normalizeTextbookPos(pos: string) {
+ const normalized = pos.trim().toLowerCase().replaceAll(" ", "_");
+ const parsed = PartOfSpeechSchema.safeParse(normalized);
+ return parsed.success ? parsed.data : "unknown";
+}
+
+export function textbookLessonToReviewLesson(lesson: TextbookLesson): HanziHomeLesson {
+ const textSections = lesson.sections.filter((s) => s.category === "text");
+ const textSentences = textSections.flatMap((s) =>
+  s.blocks.filter((b) => b.type === "paragraph" && b.text.trim().length > 0),
+ );
+
+ const vocab: HanziHomeVocabItem[] = lesson.vocab.map((item, index) => {
+  const matchedSentences = textSentences.filter((s) => s.text.includes(item.hanzi));
+  const examples = matchedSentences.slice(0, 2).map((sentence, exampleIndex) =>
+   VocabularyExampleSchema.parse({
+    id: `${item.id}:ex:${exampleIndex + 1}`,
+    order: exampleIndex + 1,
+    zh: sentence.text,
+    pinyin: "",
+    vi: sentence.translation ?? "",
+    analysis_vi: "",
+    highlight: [item.hanzi],
+    grammar_refs: [],
+    vocab_refs: [item.id],
+    source_ref: lesson.title,
+    level: "basic",
+    audio_key: "",
+    notes: [],
+    check_needed: false,
+   }),
+  );
+
+  const parsedBase = DeepVocabularyItemSchema.parse({
+   id: item.id,
+   order: index + 1,
+   hanzi: item.hanzi,
+   pinyin: item.pinyin,
+   pos: {
+    raw_vi: item.pos,
+    raw_cn: "",
+    normalized: normalizeTextbookPos(item.pos),
+    notes: [],
+   },
+   level_tag: "unknown",
+   tags: [lesson.bookKey],
+   meaning: {
+    hanviet: item.hanviet,
+    meaning_vi: item.meaning,
+    meaning_en: "",
+    natural_translations_vi: [item.meaning],
+    short_definition_vi: item.meaning,
+    textbook_focus_vi: "",
+    register_vi: "",
+    usage_domain_vi: "",
+    notes: [],
+   },
+   word_formation: {
+    characters: [],
+    word_logic_vi: "",
+    memory_tip_vi: "",
+    warning_vi: "",
+    notes: [],
+    check_needed: false,
+   },
+   comparison: {
+    near_synonyms: [],
+    antonyms: [],
+    contrast_pairs: [],
+    usage_rules: [],
+    notes: [],
+   },
+   collocations: [],
+   examples,
+   audio_key: "",
+   raw_markdown: "",
+   notes: [],
+   check_needed: false,
+  });
+
+  return {
+   ...parsedBase,
+   examples,
+   runtimeId: item.id,
+   lessonId: lesson.id,
+   category: item.pos || "vocab",
+   tone: "",
+   detailSections: [],
+  };
+ });
+
+ return {
+  id: lesson.id,
+  lessonNumber: lesson.number,
+  titleZh: lesson.rawTitle || lesson.title,
+  title: lesson.title,
+  vocabIds: lesson.vocab.map((v) => v.id),
+  grammarPointIds: [],
+  vocab,
+  grammar: [],
+ };
+}
+
+export type ContextualVocabDrillItem = {
+ id: string;
+ sentenceId: string;
+ targetWord: string;
+ targetPinyin: string;
+ targetMeaning: string;
+ targetHanviet: string;
+ fullSentence: string;
+ sentenceTranslation: string;
+ displayPrompt: string;
+};
+
+export function generateContextualVocabDrills(
+ lesson: TextbookLesson,
+): readonly ContextualVocabDrillItem[] {
+ const textSections = lesson.sections.filter((s) => s.category === "text");
+ const paragraphs = textSections.flatMap((s) =>
+  s.blocks.filter((b) => b.type === "paragraph" && b.text.trim().length > 0),
+ );
+
+ const drills: ContextualVocabDrillItem[] = [];
+ const usedWords = new Set<string>();
+
+ for (const paragraph of paragraphs) {
+  for (const word of lesson.vocab) {
+   if (usedWords.has(word.hanzi)) continue;
+   if (paragraph.text.includes(word.hanzi)) {
+    usedWords.add(word.hanzi);
+    const displayPrompt = paragraph.text.replace(word.hanzi, "______");
+    drills.push({
+     id: `${lesson.id}:drill:${word.id}`,
+     sentenceId: paragraph.id,
+     targetWord: word.hanzi,
+     targetPinyin: word.pinyin,
+     targetMeaning: word.meaning,
+     targetHanviet: word.hanviet,
+     fullSentence: paragraph.text,
+     sentenceTranslation: paragraph.translation ?? "",
+     displayPrompt,
+    });
+    break;
+   }
+  }
+  if (drills.length >= 12) break;
+ }
+
+ return drills;
+}
+
+export function evaluateContextualVocabDrill(input: string, targetWord: string): boolean {
+ const cleanInput = input.trim().replace(/\s+/gu, "");
+ const cleanTarget = targetWord.trim().replace(/\s+/gu, "");
+ return cleanInput.length > 0 && cleanInput === cleanTarget;
 }

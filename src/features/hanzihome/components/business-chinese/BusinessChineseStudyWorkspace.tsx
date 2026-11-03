@@ -45,8 +45,18 @@ import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
 import { Bookmark, CloudCheck, Tags } from "lucide-react";
 import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
-import type { SegmentedControlItem } from "@/components/ui/forms/segmented-control";
+import {
+ SegmentedControl,
+ type SegmentedControlItem,
+} from "@/components/ui/forms/segmented-control";
 import { Typography, type TypographyProps } from "@/components/ui/display/typography";
+import { VocabReviewPanel } from "@/features/hanzihome/components/review/VocabReviewPanel";
+import { BusinessChineseContextualDrills } from "./BusinessChineseContextualDrills";
+import type {
+ ReviewAnswerHandler,
+ ReviewBookmarkHandler,
+} from "@/features/hanzihome/components/review/types";
+import type { UserLearningState } from "@/features/hanzihome/types";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
@@ -156,6 +166,8 @@ import {
  pairPracticeBlankAnswers,
  parsePracticeExerciseItem,
  evaluatePracticeAnswer,
+ textbookLessonToReviewLesson,
+ generateContextualVocabDrills,
  type PracticeAnswerEvaluation,
 } from "./business-chinese-study-utils";
 
@@ -1631,6 +1643,7 @@ export function BusinessChineseStudyWorkspace({
     { key: "translation", label: t("tabs.translation") },
     { key: "dictation", label: t("tabs.dictation") },
     { key: "vocab", label: t("tabs.vocab") },
+    { key: "review", label: t("tabs.review") },
     { key: "grammar", label: t("tabs.grammar") },
     { key: "practice", label: t("tabs.practice") },
    ].filter((tab) =>
@@ -1745,6 +1758,9 @@ export function BusinessChineseStudyWorkspace({
         readerContent={content}
         bookKey={bookKey}
         displayMode={displayMode}
+        learningState={learningState}
+        onRecordReview={learning.recordReview}
+        onToggleBookmark={toggleBookmark}
        />
       ),
      }}
@@ -1803,6 +1819,9 @@ function BusinessChineseStudyWorkspaceContent({
  readerContent,
  bookKey,
  displayMode,
+ learningState,
+ onRecordReview,
+ onToggleBookmark,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
@@ -1815,8 +1834,39 @@ function BusinessChineseStudyWorkspaceContent({
  readerContent: ReactNode;
  bookKey: string;
  displayMode: LessonDisplayMode;
+ learningState: UserLearningState;
+ onRecordReview: ReviewAnswerHandler;
+ onToggleBookmark: ReviewBookmarkHandler;
 }) {
  const t = useTranslations("BusinessChinese");
+ const reviewLesson = useMemo(() => textbookLessonToReviewLesson(lesson), [lesson]);
+ const contextualDrills = useMemo(() => generateContextualVocabDrills(lesson), [lesson]);
+ const [reviewMode, setReviewMode] = useState<"flashcard" | "drills">("flashcard");
+ const reviewModeItems = useMemo<SegmentedControlItem<"flashcard" | "drills">[]>(
+  () => [
+   { key: "flashcard", label: t("vocabReview.modeFlashcard") },
+   { key: "drills", label: t("vocabReview.modeDrills") },
+  ],
+  [t],
+ );
+ const safeLearningState = useMemo<UserLearningState>(
+  () => ({
+   ...learningState,
+   progress: {
+    vocab: {},
+    grammar: {},
+    ...(learningState?.progress ?? {}),
+   },
+   bookmarks: {
+    lessons: [],
+    vocab: [],
+    grammar: [],
+    radicals: [],
+    ...(learningState?.bookmarks ?? {}),
+   },
+  }),
+  [learningState],
+ );
  const isLessonOfflineReady = useIsLessonCached(lesson.id);
  const textReaderDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, "text"),
@@ -2090,10 +2140,51 @@ function BusinessChineseStudyWorkspaceContent({
            />
           ) : null}
 
+          {activeView === "review" ? (
+           <Card
+            variant="section"
+            padding="lg"
+            data-textbook-document
+            className="grid min-w-0 gap-4"
+           >
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border-default pb-3">
+             <div className="grid min-w-0 gap-0.5">
+              <Typography variant="sectionTitle" weight="bold">
+               {t("vocabReview.title", { count: lesson.vocab.length })}
+              </Typography>
+              <Typography variant="bodySmall" tone="secondary">
+               {reviewMode === "flashcard"
+                ? t("vocabReview.eyebrow")
+                : t("vocabReview.clozeDescription")}
+              </Typography>
+             </div>
+             <SegmentedControl
+              value={reviewMode}
+              items={reviewModeItems}
+              onChange={setReviewMode}
+             />
+            </div>
+
+            {reviewMode === "flashcard" ? (
+             <VocabReviewPanel
+              lesson={reviewLesson}
+              learningState={safeLearningState}
+              onAnswer={onRecordReview}
+              onToggleBookmark={onToggleBookmark}
+              availableModes={["all", "vocab", "hard"]}
+              initialMode="vocab"
+             />
+            ) : (
+             <BusinessChineseContextualDrills drills={contextualDrills} />
+            )}
+           </Card>
+          ) : null}
+
           {activeView !== "text" &&
           activeView !== "notes" &&
           activeView !== "translation" &&
-          activeView !== "dictation" ? (
+          activeView !== "dictation" &&
+          activeView !== "review" ? (
            <div
             className={cn(
              "grid min-w-0 gap-3",
@@ -2113,6 +2204,32 @@ function BusinessChineseStudyWorkspaceContent({
               data-textbook-document
               className="grid min-w-0 gap-6"
              >
+              {lesson.vocab.length > 0 && activeView === "vocab" ? (
+               <Card
+                variant="subtle"
+                padding="md"
+                className="flex min-w-0 flex-wrap items-center justify-between gap-3"
+               >
+                <div className="grid min-w-0 gap-1">
+                 <Typography variant="body" weight="semibold">
+                  {t("vocabReview.title", { count: lesson.vocab.length })}
+                 </Typography>
+                 <Typography variant="bodySmall" tone="secondary">
+                  {t("vocabReview.clozeDescription")}
+                 </Typography>
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant="default"
+                  onClick={() => onActiveViewChange("review")}
+                 >
+                  {t("vocabReview.startReview")}
+                 </Button>
+                </div>
+               </Card>
+              ) : null}
               {lesson.vocab.length > 0 &&
               canonicalVocabularyTableIds.length === 0 &&
               (activeView === "all" || activeView === "vocab") ? (

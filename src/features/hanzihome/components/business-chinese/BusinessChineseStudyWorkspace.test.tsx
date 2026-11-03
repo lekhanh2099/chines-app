@@ -72,8 +72,10 @@ vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
   state: {
    settings: { lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE, ...mockSettings },
    bookmarks: { lessons: mockBookmarkedLessonIds },
+   progress: { vocab: {}, grammar: {} },
   },
   toggleBookmark: toggleBookmarkMock,
+  recordReview: vi.fn(),
  }),
 }));
 
@@ -1407,6 +1409,42 @@ describe("BusinessChineseStudyWorkspace", () => {
   const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
 
   expect(markup).toContain("Đánh dấu bài học kỳ này");
+ });
+
+ it("includes Ôn tập in the workspace tabs when lesson has vocabulary", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+
+  expect(markup).toContain("Ôn tập");
+ });
+
+ it("renders the review tab workspace when tab=review is active", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  vi.mocked(routerPushMock).mockClear();
+  mockParams = new URLSearchParams("lesson=1&tab=review");
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+
+  expect(markup).toContain("Ôn tập chủ động");
+  expect(markup).toContain("Thẻ Flashcard");
+  expect(markup).toContain("Ứng dụng ngữ cảnh");
+ });
+
+ it("renders the vocab review CTA card when tab=vocab is active", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  vi.mocked(routerPushMock).mockClear();
+  mockParams = new URLSearchParams("lesson=1&tab=vocab");
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+
+  expect(markup).toContain("Ôn tập Flashcard");
  });
 
  it("indicates when the current lesson is bookmarked", () => {
