@@ -167,8 +167,7 @@ export function AmbientPipFlashcard({
        variant="ghost"
        size="toolbar"
        onClick={handleToggleAutoSpeak}
-       title={isAutoSpeak ? "Tắt tự động đọc từ" : "Bật tự động đọc từ"}
-       aria-label={isAutoSpeak ? "Tắt tự động đọc" : "Bật tự động đọc"}
+       aria-label={isAutoSpeak ? "Tắt tự động đọc từ" : "Bật tự động đọc từ"}
       >
        {isAutoSpeak ? (
         <Volume2 className="size-3.5 text-primary" />
@@ -182,8 +181,7 @@ export function AmbientPipFlashcard({
        variant="ghost"
        size="toolbar"
        onClick={handleToggleAuto}
-       title={isAutoPlay ? "Tạm dừng lướt tự động" : "Tiếp tục lướt tự động"}
-       aria-label={isAutoPlay ? "Tạm dừng" : "Tiếp tục"}
+       aria-label={isAutoPlay ? "Tạm dừng lướt tự động" : "Tiếp tục lướt tự động"}
       >
        {isAutoPlay ? <Pause className="size-3.5" /> : <Play className="size-3.5" />}
       </Button>
@@ -194,8 +192,7 @@ export function AmbientPipFlashcard({
         variant="ghost"
         size="toolbar"
         onClick={onClose}
-        title="Đóng cửa sổ nổi"
-        aria-label="Đóng"
+        aria-label="Đóng cửa sổ nổi"
        >
         <X className="size-3.5" />
        </Button>
@@ -241,7 +238,6 @@ export function AmbientPipFlashcard({
            e.stopPropagation();
            speak(currentItem.hanzi, { rate: 1.15 });
           }}
-          title="Phát âm nhanh (1.15x)"
           aria-label={`Phát âm ${currentItem.hanzi}`}
          >
           <Volume2 className="size-3.5" />
@@ -307,7 +303,6 @@ export function AmbientPipFlashcard({
       variant="ghost"
       size="compact"
       onClick={handlePrev}
-      title="Từ trước đó"
       aria-label="Từ trước đó"
      >
       <ChevronLeft className="size-3.5" />
@@ -319,7 +314,6 @@ export function AmbientPipFlashcard({
       variant="outline"
       size="compact"
       onClick={handleToggleFlip}
-      title="Lật thẻ"
       aria-label="Lật thẻ"
      >
       <RotateCw className="size-3" />
@@ -331,7 +325,6 @@ export function AmbientPipFlashcard({
       variant="ghost"
       size="compact"
       onClick={handleNext}
-      title="Từ tiếp theo"
       aria-label="Từ tiếp theo"
      >
       <span className="hidden sm:inline">Tiếp</span>
@@ -348,7 +341,6 @@ export function AmbientPipFlashcard({
       variant="ghost"
       size="compact"
       onClick={handleCycleInterval}
-      title="Nhấp để đổi chu kỳ tự đổi từ"
       aria-label={`Chu kỳ đổi từ: ${intervalSeconds} giây`}
      >
       {`${intervalSeconds}s`}
