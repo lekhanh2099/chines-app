@@ -45,7 +45,11 @@ import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
 import { Bookmark, CloudCheck, PictureInPicture2, Sparkles, Tags } from "lucide-react";
 import { createPortal } from "react-dom";
-import { AmbientPipFlashcard } from "@/features/hanzihome/components/review/AmbientPipFlashcard";
+import {
+ UniversalAmbientPip,
+ type UniversalPipMode,
+} from "@/features/hanzihome/components/review/UniversalAmbientPip";
+import { adaptTextbookGrammarToPip } from "@/features/hanzihome/components/review/pip-grammar-adapter";
 import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
 import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
 import {
@@ -1862,26 +1866,35 @@ function BusinessChineseStudyWorkspaceContent({
   closePip,
  } = useDocumentPip();
  const [isInAppFloatingOpen, setIsInAppFloatingOpen] = useState(false);
+ const [pipMode, setPipMode] = useState<UniversalPipMode>("vocab");
  const [isInteractivePracticeOpen, setIsInteractivePracticeOpen] = useState(false);
 
- const handleTogglePip = useCallback(async () => {
-  if (isPipOpen) {
-   closePip();
-   return;
-  }
-  if (isInAppFloatingOpen) {
-   setIsInAppFloatingOpen(false);
-   return;
-  }
-  if (isPipSupported) {
-   const win = await openPip({ width: 390, height: 300 });
-   if (!win) {
+ const handleTogglePip = useCallback(
+  async (targetMode: UniversalPipMode = "vocab") => {
+   setPipMode(targetMode);
+   if (isPipOpen) {
+    if (pipMode === targetMode) {
+     closePip();
+    }
+    return;
+   }
+   if (isInAppFloatingOpen) {
+    if (pipMode === targetMode) {
+     setIsInAppFloatingOpen(false);
+    }
+    return;
+   }
+   if (isPipSupported) {
+    const win = await openPip({ width: 440, height: 380 });
+    if (!win) {
+     setIsInAppFloatingOpen(true);
+    }
+   } else {
     setIsInAppFloatingOpen(true);
    }
-  } else {
-   setIsInAppFloatingOpen(true);
-  }
- }, [closePip, isInAppFloatingOpen, isPipOpen, isPipSupported, openPip]);
+  },
+  [closePip, isInAppFloatingOpen, isPipOpen, isPipSupported, openPip, pipMode],
+ );
  const safeLearningState = useMemo<UserLearningState>(
   () => ({
    ...learningState,
@@ -2024,6 +2037,10 @@ function BusinessChineseStudyWorkspaceContent({
   });
   return adaptTextbookPracticeToUniversal(blocks);
  }, [lesson.sections]);
+ const textbookGrammarPoints = useMemo(
+  () => adaptTextbookGrammarToPip(lesson.sections),
+  [lesson.sections],
+ );
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
  const book = books.find((item) => item.key === lesson.bookKey);
  const sequentialLessons = book?.lessons.every((item, index) => item.number === index + 1);
@@ -2193,7 +2210,7 @@ function BusinessChineseStudyWorkspaceContent({
               type="button"
               variant={isPipOpen || isInAppFloatingOpen ? "active" : "outline"}
               size="compact"
-              onClick={handleTogglePip}
+              onClick={() => handleTogglePip("vocab")}
               title={t("vocabReview.pipTooltip")}
              >
               <PictureInPicture2 className="size-3.5" />
@@ -2269,6 +2286,18 @@ function BusinessChineseStudyWorkspaceContent({
                  >
                   {t("vocabReview.startReview")}
                  </Button>
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant={
+                   (isPipOpen || isInAppFloatingOpen) && pipMode === "vocab" ? "active" : "outline"
+                  }
+                  onClick={() => handleTogglePip("vocab")}
+                  title={t("vocabReview.pipTooltip")}
+                 >
+                  <PictureInPicture2 className="size-3.5" />
+                  <span>{t("vocabReview.pipButton")}</span>
+                 </Button>
                 </div>
                </Card>
               ) : null}
@@ -2307,6 +2336,26 @@ function BusinessChineseStudyWorkspaceContent({
                   </span>
                  </Button>
                 ) : null}
+                {universalTextbookPracticeItems.length > 0 ? (
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant={
+                   (isPipOpen || isInAppFloatingOpen) && pipMode === "practice"
+                    ? "active"
+                    : "outline"
+                  }
+                  onClick={() => handleTogglePip("practice")}
+                  title="Mở cửa sổ nổi PiP để luyện tập bài tập"
+                 >
+                  <PictureInPicture2 className="size-3.5" />
+                  <span>
+                   {(isPipOpen || isInAppFloatingOpen) && pipMode === "practice"
+                    ? "Đang mở PiP"
+                    : "Cửa sổ nổi (PiP)"}
+                  </span>
+                 </Button>
+                ) : null}
                 {translationSegments.length > 0 ? (
                  <Button
                   type="button"
@@ -2341,6 +2390,34 @@ function BusinessChineseStudyWorkspaceContent({
                 title={`Luyện tập bài học: ${lesson.title}`}
                 onClose={() => setIsInteractivePracticeOpen(false)}
                />
+              ) : null}
+              {activeView === "grammar" && textbookGrammarPoints.length > 0 ? (
+               <div className="flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl border border-border-default/60 bg-surface-muted/30 p-2">
+                <div className="flex items-center gap-2">
+                 <Badge variant="default" size="sm">
+                  {`${textbookGrammarPoints.length} điểm ngữ pháp`}
+                 </Badge>
+                 <Typography variant="bodySmall" tone="secondary">
+                  Cấu trúc ngữ pháp và câu ví dụ kèm phiên âm
+                 </Typography>
+                </div>
+                <Button
+                 type="button"
+                 size="compact"
+                 variant={
+                  (isPipOpen || isInAppFloatingOpen) && pipMode === "grammar" ? "active" : "outline"
+                 }
+                 onClick={() => handleTogglePip("grammar")}
+                 title="Mở cửa sổ nổi PiP để ôn tập ngữ pháp"
+                >
+                 <PictureInPicture2 className="size-3.5" />
+                 <span>
+                  {(isPipOpen || isInAppFloatingOpen) && pipMode === "grammar"
+                   ? "Đang mở PiP"
+                   : "Cửa sổ nổi (PiP)"}
+                 </span>
+                </Button>
+               </div>
               ) : null}
               {visibleSections.map((section, index) => {
                const content = (
@@ -2388,18 +2465,24 @@ function BusinessChineseStudyWorkspaceContent({
       {selectionPopover}
       {isPipOpen && pipWindow
        ? createPortal(
-          <AmbientPipFlashcard
-           items={reviewLesson.vocab}
+          <UniversalAmbientPip
+           initialMode={pipMode}
            lessonTitle={lesson.title}
+           vocabItems={reviewLesson.vocab}
+           grammarItems={textbookGrammarPoints}
+           practiceItems={universalTextbookPracticeItems}
            onClose={closePip}
           />,
           pipWindow.document.body,
          )
        : null}
       {isInAppFloatingOpen ? (
-       <AmbientPipFlashcard
-        items={reviewLesson.vocab}
+       <UniversalAmbientPip
+        initialMode={pipMode}
         lessonTitle={lesson.title}
+        vocabItems={reviewLesson.vocab}
+        grammarItems={textbookGrammarPoints}
+        practiceItems={universalTextbookPracticeItems}
         onClose={() => setIsInAppFloatingOpen(false)}
         isFloatingInApp
        />

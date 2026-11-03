@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import {
  Play,
  Pause,
@@ -31,6 +31,7 @@ export type AmbientPipFlashcardProps = {
  readonly lessonTitle?: string;
  readonly onClose?: () => void;
  readonly isFloatingInApp?: boolean;
+ readonly extraHeaderActions?: ReactNode;
 };
 
 const INTERVAL_OPTIONS: readonly number[] = [10, 15, 30, 60];
@@ -61,6 +62,7 @@ export function AmbientPipFlashcard({
  lessonTitle = "Ôn tập nhận diện",
  onClose,
  isFloatingInApp = false,
+ extraHeaderActions,
 }: AmbientPipFlashcardProps) {
  const [currentIndex, setCurrentIndex] = useState(0);
  const [isFlipped, setIsFlipped] = useState(false);
@@ -176,6 +178,8 @@ export function AmbientPipFlashcard({
      </div>
 
      <div className="flex items-center gap-0.5">
+      {extraHeaderActions}
+
       <Button
        type="button"
        variant="ghost"
