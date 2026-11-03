@@ -1,7 +1,16 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Play, Pause, ChevronLeft, ChevronRight, X, RotateCw } from "lucide-react";
+import {
+ Play,
+ Pause,
+ ChevronLeft,
+ ChevronRight,
+ X,
+ RotateCw,
+ Volume2,
+ VolumeX,
+} from "lucide-react";
 import { ActionCard } from "@/components/ui/actions/action-card";
 import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
@@ -10,7 +19,7 @@ import {
  HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
+import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
@@ -53,8 +62,11 @@ export function AmbientPipFlashcard({
  const [currentIndex, setCurrentIndex] = useState(0);
  const [isFlipped, setIsFlipped] = useState(false);
  const [isAutoPlay, setIsAutoPlay] = useState(true);
+ const [isAutoSpeak, setIsAutoSpeak] = useState(true);
  const [intervalSeconds, setIntervalSeconds] = useState<number>(15);
  const [remainingSeconds, setRemainingSeconds] = useState<number>(15);
+
+ const { speak, stop } = useFastMandarinSpeech();
 
  const totalCount = items.length;
  const currentItem = items[currentIndex] ?? items[0];
@@ -79,6 +91,10 @@ export function AmbientPipFlashcard({
 
  const handleToggleAuto = useCallback(() => {
   setIsAutoPlay((prev) => !prev);
+ }, []);
+
+ const handleToggleAutoSpeak = useCallback(() => {
+  setIsAutoSpeak((prev) => !prev);
  }, []);
 
  const handleCycleInterval = useCallback(() => {
@@ -112,6 +128,18 @@ export function AmbientPipFlashcard({
   return () => clearInterval(timer);
  }, [handleNext, intervalSeconds, isAutoPlay, isFlipped, totalCount]);
 
+ useEffect(() => {
+  if (isAutoSpeak && currentItem?.hanzi) {
+   speak(currentItem.hanzi, { rate: 1.15 });
+  }
+ }, [currentIndex, currentItem?.hanzi, isAutoSpeak, speak]);
+
+ useEffect(() => {
+  return () => {
+   stop();
+  };
+ }, [stop]);
+
  if (!currentItem) {
   return null;
  }
@@ -134,6 +162,21 @@ export function AmbientPipFlashcard({
      </div>
 
      <div className="flex items-center gap-0.5">
+      <Button
+       type="button"
+       variant="ghost"
+       size="toolbar"
+       onClick={handleToggleAutoSpeak}
+       title={isAutoSpeak ? "Tắt tự động đọc từ" : "Bật tự động đọc từ"}
+       aria-label={isAutoSpeak ? "Tắt tự động đọc" : "Bật tự động đọc"}
+      >
+       {isAutoSpeak ? (
+        <Volume2 className="size-3.5 text-primary" />
+       ) : (
+        <VolumeX className="size-3.5" />
+       )}
+      </Button>
+
       <Button
        type="button"
        variant="ghost"
@@ -190,7 +233,19 @@ export function AmbientPipFlashcard({
          {currentItem.hanzi}
         </HanziText>
         <div className="pointer-events-auto">
-         <MandarinSpeakButton text={currentItem.hanzi} touchTarget />
+         <Button
+          type="button"
+          variant="ghost"
+          size="icon-xs"
+          onClick={(e) => {
+           e.stopPropagation();
+           speak(currentItem.hanzi, { rate: 1.15 });
+          }}
+          title="Phát âm nhanh (1.15x)"
+          aria-label={`Phát âm ${currentItem.hanzi}`}
+         >
+          <Volume2 className="size-3.5" />
+         </Button>
         </div>
        </div>
 

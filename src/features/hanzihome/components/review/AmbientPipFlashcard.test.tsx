@@ -5,10 +5,14 @@ import { AmbientPipFlashcard } from "./AmbientPipFlashcard";
 import { textbookLessonToReviewLesson } from "@/features/hanzihome/components/business-chinese/business-chinese-study-utils";
 import { getTextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
-vi.mock("@/features/hanzihome/listening/MandarinSpeakButton", () => ({
- MandarinSpeakButton: ({ text }: { text: string }) => (
-  <button type="button" aria-label={`Phát âm ${text}`} />
- ),
+vi.mock("@/features/speech/MandarinTtsProvider", () => ({
+ useMandarinTtsControls: () => ({
+  isSpeaking: false,
+  isLoading: false,
+  speakingRequestText: null,
+  speakSequence: vi.fn(),
+  stop: vi.fn(),
+ }),
 }));
 
 describe("AmbientPipFlashcard", () => {
