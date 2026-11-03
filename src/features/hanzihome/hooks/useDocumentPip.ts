@@ -38,6 +38,28 @@ export function syncDocumentStylesToPipWindow(targetDoc: Document): void {
    targetDoc.documentElement.dataset[key] = value;
   }
  }
+ if (document.body.className) {
+  targetDoc.body.className = document.body.className;
+ }
+
+ const resetStyle = targetDoc.createElement("style");
+ resetStyle.id = "pip-reset-styles";
+ resetStyle.textContent = `
+  html, body {
+   margin: 0 !important;
+   padding: 0 !important;
+   width: 100vw !important;
+   height: 100vh !important;
+   overflow: hidden !important;
+   box-sizing: border-box !important;
+   background: var(--bg-primary, var(--surface-canvas, #ffffff)) !important;
+   -webkit-font-smoothing: antialiased;
+  }
+  * {
+   box-sizing: border-box !important;
+  }
+ `;
+ targetDoc.head.appendChild(resetStyle);
 }
 
 export type UseDocumentPipReturn = {
@@ -76,8 +98,8 @@ export function useDocumentPip(): UseDocumentPipReturn {
 
    try {
     const win = await window.documentPictureInPicture.requestWindow({
-     width: options?.width ?? 380,
-     height: options?.height ?? 260,
+     width: options?.width ?? 390,
+     height: options?.height ?? 300,
      disallowReturnToOpener: false,
     });
 

@@ -23,6 +23,27 @@ export type AmbientPipFlashcardProps = {
 
 const INTERVAL_OPTIONS: readonly number[] = [10, 15, 30, 60];
 
+function renderHighlightedZh(text: string, targetHanzi: string) {
+ if (!targetHanzi || !text.includes(targetHanzi)) {
+  return text;
+ }
+ const parts = text.split(targetHanzi);
+ return (
+  <>
+   {parts.map((part, index) => (
+    <span key={index}>
+     {part}
+     {index < parts.length - 1 ? (
+      <StudyInstructionText as="span" tone="accent" weight="black">
+       {targetHanzi}
+      </StudyInstructionText>
+     ) : null}
+    </span>
+   ))}
+  </>
+ );
+}
+
 export function AmbientPipFlashcard({
  items,
  lessonTitle = "Ôn tập nhận diện",
@@ -98,19 +119,10 @@ export function AmbientPipFlashcard({
  const example = currentItem.examples[0];
  const progressPercent = Math.max(0, Math.min(100, (remainingSeconds / intervalSeconds) * 100));
 
- return (
-  <Card
-   variant="elevated"
-   padding="none"
-   className={[
-    "flex flex-col justify-between overflow-hidden select-none",
-    isFloatingInApp
-     ? "fixed bottom-5 right-5 z-50 w-92 max-w-[calc(100vw-2.5rem)]"
-     : "h-full w-full min-h-[220px]",
-   ].join(" ")}
-  >
+ const content = (
+  <>
    {/* Window Title & Progress Bar */}
-   <div className="border-b border-border-default/40 bg-surface-muted/30 px-3.5 py-2">
+   <div className="border-b border-border-default/40 bg-surface-muted/30 px-3 py-1.5">
     <div className="flex items-center justify-between gap-2">
      <div className="flex min-w-0 items-center gap-1.5">
       <Badge variant="accent" size="sm" casing="natural">
@@ -121,7 +133,7 @@ export function AmbientPipFlashcard({
       </StudyInstructionText>
      </div>
 
-     <div className="flex items-center gap-1">
+     <div className="flex items-center gap-0.5">
       <Button
        type="button"
        variant="ghost"
@@ -150,17 +162,18 @@ export function AmbientPipFlashcard({
    </div>
 
    {/* Timer progress bar */}
-   {isAutoPlay ? (
-    <div className="h-0.5 w-full overflow-hidden bg-border-default/30" aria-hidden="true">
-     <div
-      className="h-full bg-primary transition-all duration-1000 ease-linear"
-      style={{ inlineSize: `${progressPercent}%` }}
-     />
-    </div>
-   ) : null}
+   <div className="h-0.5 w-full overflow-hidden bg-border-default/30" aria-hidden="true">
+    <div
+     className="h-full bg-primary transition-all duration-1000 ease-linear"
+     style={{
+      inlineSize: `${progressPercent}%`,
+      opacity: isAutoPlay ? 1 : 0.4,
+     }}
+    />
+   </div>
 
    {/* Card Interactive Surface */}
-   <div className="relative flex flex-1 flex-col justify-center px-4 py-3 text-center">
+   <div className="relative flex flex-1 flex-col justify-center px-4 py-2 text-center">
     <ActionCard
      padding="none"
      onClick={handleToggleFlip}
@@ -183,14 +196,14 @@ export function AmbientPipFlashcard({
 
        {example ? (
         <div className="mx-auto max-w-xs rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
-         <HanziText as="p" size="inherit" weight="bold" leading="relaxed">
-          {example.zh}
+         <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
+          {renderHighlightedZh(example.zh, currentItem.hanzi)}
          </HanziText>
         </div>
        ) : null}
 
-       <StudyInstructionText variant="overline" tone="muted">
-        Nhấn để xem phiên âm và nghĩa
+       <StudyInstructionText variant="caption" tone="muted">
+        Nhấn để xem phiên âm & nghĩa
        </StudyInstructionText>
       </div>
      ) : (
@@ -211,9 +224,9 @@ export function AmbientPipFlashcard({
        </StudyInstructionText>
 
        {example ? (
-        <div className="mx-auto max-w-xs grid gap-1 rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
-         <HanziText as="p" size="inherit" weight="bold" leading="relaxed">
-          {example.zh}
+        <div className="mx-auto grid max-w-xs gap-1 rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
+         <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
+          {renderHighlightedZh(example.zh, currentItem.hanzi)}
          </HanziText>
          {example.vi ? (
           <StudyInstructionText tone="secondary" variant="caption">
@@ -223,7 +236,7 @@ export function AmbientPipFlashcard({
         </div>
        ) : null}
 
-       <StudyInstructionText variant="overline" tone="muted">
+       <StudyInstructionText variant="caption" tone="muted">
         Nhấn để quay lại mặt chữ Hán
        </StudyInstructionText>
       </div>
@@ -272,8 +285,8 @@ export function AmbientPipFlashcard({
     </div>
 
     <div className="flex items-center gap-1">
-     <StudyInstructionText variant="overline" tone="muted">
-      Chu kỳ
+     <StudyInstructionText variant="caption" tone="muted">
+      Chu kỳ:
      </StudyInstructionText>
      <Button
       type="button"
@@ -287,6 +300,24 @@ export function AmbientPipFlashcard({
      </Button>
     </div>
    </div>
-  </Card>
+  </>
+ );
+
+ if (isFloatingInApp) {
+  return (
+   <Card
+    variant="elevated"
+    padding="none"
+    className="fixed bottom-5 right-5 z-50 flex h-72 w-92 max-w-[calc(100vw-2.5rem)] flex-col justify-between overflow-hidden select-none"
+   >
+    {content}
+   </Card>
+  );
+ }
+
+ return (
+  <div className="flex h-screen w-screen flex-col justify-between overflow-hidden select-none bg-surface">
+   {content}
+  </div>
  );
 }

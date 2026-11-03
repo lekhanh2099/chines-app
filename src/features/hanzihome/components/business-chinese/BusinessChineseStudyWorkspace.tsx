@@ -1871,7 +1871,7 @@ function BusinessChineseStudyWorkspaceContent({
    return;
   }
   if (isPipSupported) {
-   const win = await openPip({ width: 380, height: 240 });
+   const win = await openPip({ width: 390, height: 300 });
    if (!win) {
     setIsInAppFloatingOpen(true);
    }
