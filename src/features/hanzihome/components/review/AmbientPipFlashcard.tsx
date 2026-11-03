@@ -19,7 +19,10 @@ import {
  HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
+import {
+ prefetchMandarinAudio,
+ useFastMandarinSpeech,
+} from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
@@ -130,9 +133,20 @@ export function AmbientPipFlashcard({
 
  useEffect(() => {
   if (isAutoSpeak && currentItem?.hanzi) {
-   speak(currentItem.hanzi, { rate: 1.15 });
+   const exampleZh = currentItem.examples[0]?.zh;
+   const segments = exampleZh ? [currentItem.hanzi, exampleZh] : [currentItem.hanzi];
+   speak(segments);
   }
- }, [currentIndex, currentItem?.hanzi, isAutoSpeak, speak]);
+ }, [currentIndex, currentItem, isAutoSpeak, speak]);
+
+ // Proactive background prefetch for next card's audio
+ useEffect(() => {
+  if (totalCount === 0) return;
+  const nextItem = items[(currentIndex + 1) % totalCount];
+  if (nextItem) {
+   prefetchMandarinAudio([nextItem.hanzi, nextItem.examples[0]?.zh]);
+  }
+ }, [currentIndex, items, totalCount]);
 
  useEffect(() => {
   return () => {
@@ -246,10 +260,26 @@ export function AmbientPipFlashcard({
        </div>
 
        {example ? (
-        <div className="mx-auto max-w-xs rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
-         <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
-          {renderHighlightedZh(example.zh, currentItem.hanzi)}
-         </HanziText>
+        <div className="mx-auto flex max-w-xs items-start gap-1.5 rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
+         <div className="flex-1">
+          <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
+           {renderHighlightedZh(example.zh, currentItem.hanzi)}
+          </HanziText>
+         </div>
+         <div className="pointer-events-auto shrink-0">
+          <Button
+           type="button"
+           variant="ghost"
+           size="icon-xs"
+           onClick={(e) => {
+            e.stopPropagation();
+            speak(example.zh);
+           }}
+           aria-label="Phát âm câu ví dụ"
+          >
+           <Volume2 className="size-3 text-muted-foreground hover:text-primary" />
+          </Button>
+         </div>
         </div>
        ) : null}
 
@@ -275,15 +305,31 @@ export function AmbientPipFlashcard({
        </StudyInstructionText>
 
        {example ? (
-        <div className="mx-auto grid max-w-xs gap-1 rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
-         <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
-          {renderHighlightedZh(example.zh, currentItem.hanzi)}
-         </HanziText>
-         {example.vi ? (
-          <StudyInstructionText tone="secondary" variant="caption">
-           {example.vi}
-          </StudyInstructionText>
-         ) : null}
+        <div className="mx-auto flex max-w-xs items-start gap-1.5 rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
+         <div className="grid flex-1 gap-1">
+          <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
+           {renderHighlightedZh(example.zh, currentItem.hanzi)}
+          </HanziText>
+          {example.vi ? (
+           <StudyInstructionText tone="secondary" variant="caption">
+            {example.vi}
+           </StudyInstructionText>
+          ) : null}
+         </div>
+         <div className="pointer-events-auto shrink-0">
+          <Button
+           type="button"
+           variant="ghost"
+           size="icon-xs"
+           onClick={(e) => {
+            e.stopPropagation();
+            speak(example.zh);
+           }}
+           aria-label="Phát âm câu ví dụ"
+          >
+           <Volume2 className="size-3 text-muted-foreground hover:text-primary" />
+          </Button>
+         </div>
         </div>
        ) : null}
 

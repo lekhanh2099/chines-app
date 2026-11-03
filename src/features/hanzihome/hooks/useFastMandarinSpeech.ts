@@ -1,9 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
+import { DEFAULT_MANDARIN_VOICE } from "@/hooks/useTTS";
+import { buildCacheKey, getCachedAudio, setCachedAudio } from "@/lib/audio/tts-cache";
 
 export type FastSpeechOptions = {
  rate?: number;
+ voice?: string;
  onFinish?: () => void;
 };
 
@@ -137,22 +140,120 @@ export function selectBestMandarinVoice(
  return bestVoice;
 }
 
+export async function fetchMandarinAudioBlob(
+ text: string,
+ voice = DEFAULT_MANDARIN_VOICE,
+ rate = 1.1,
+ abortSignal?: AbortSignal,
+): Promise<Blob | null> {
+ const trimmed = text.trim();
+ if (!trimmed) return null;
+
+ const cacheKey = buildCacheKey(trimmed, voice, rate);
+ const cached = await getCachedAudio(cacheKey);
+ if (cached) {
+  return cached;
+ }
+
+ if (typeof fetch === "undefined") {
+  return null;
+ }
+
+ try {
+  const response = await fetch("/api/tts", {
+   method: "POST",
+   headers: { "Content-Type": "application/json" },
+   body: JSON.stringify({ text: trimmed, voice, rate }),
+   signal: abortSignal,
+  });
+
+  if (!response.ok) {
+   return null;
+  }
+
+  const blob = await response.blob();
+  void setCachedAudio(cacheKey, blob);
+  return blob;
+ } catch {
+  return null;
+ }
+}
+
+export function prefetchMandarinAudio(
+ texts: readonly (string | undefined | null)[],
+ voice = DEFAULT_MANDARIN_VOICE,
+ rate = 1.1,
+): void {
+ if (typeof window === "undefined") return;
+
+ for (const text of texts) {
+  if (!text) continue;
+  const trimmed = text.trim();
+  if (!trimmed) continue;
+  const cacheKey = buildCacheKey(trimmed, voice, rate);
+  void getCachedAudio(cacheKey).then((cached) => {
+   if (cached) return;
+   void fetch("/api/tts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: trimmed, voice, rate }),
+   })
+    .then((res) => {
+     if (res.ok) {
+      void res.blob().then((blob) => setCachedAudio(cacheKey, blob));
+     }
+    })
+    .catch(() => {
+     // Ignore prefetch error
+    });
+  });
+ }
+}
+
 export function useFastMandarinSpeech() {
  const isSpeakingRef = useRef(false);
- const activeUtteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+ const currentAudioRef = useRef<HTMLAudioElement | null>(null);
+ const currentObjectUrlRef = useRef<string | null>(null);
+ const abortControllerRef = useRef<AbortController | null>(null);
+ const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+ const runIdRef = useRef(0);
  const cachedVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
 
- const stop = useCallback(() => {
+ const cleanupAudio = useCallback(() => {
+  if (timeoutRef.current !== null) {
+   clearTimeout(timeoutRef.current);
+   timeoutRef.current = null;
+  }
+  if (abortControllerRef.current !== null) {
+   abortControllerRef.current.abort();
+   abortControllerRef.current = null;
+  }
+  if (currentAudioRef.current !== null) {
+   const audio = currentAudioRef.current;
+   audio.onended = null;
+   audio.onerror = null;
+   audio.pause();
+   audio.removeAttribute("src");
+   currentAudioRef.current = null;
+  }
+  if (currentObjectUrlRef.current !== null) {
+   URL.revokeObjectURL(currentObjectUrlRef.current);
+   currentObjectUrlRef.current = null;
+  }
   if (typeof window !== "undefined" && "speechSynthesis" in window) {
    try {
     window.speechSynthesis.cancel();
    } catch {
-    // Ignore error when cancelling speech
+    // Ignore cancel error
    }
   }
   isSpeakingRef.current = false;
-  activeUtteranceRef.current = null;
  }, []);
+
+ const stop = useCallback(() => {
+  runIdRef.current += 1;
+  cleanupAudio();
+ }, [cleanupAudio]);
 
  const updateCachedVoice = useCallback(() => {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {
@@ -166,63 +267,125 @@ export function useFastMandarinSpeech() {
   }
  }, []);
 
- const speak = useCallback((text: string, options?: FastSpeechOptions) => {
-  const trimmed = text.trim();
-  if (!trimmed) return;
+ const speak = useCallback(
+  (input: string | readonly string[], options?: FastSpeechOptions) => {
+   const segments = (Array.isArray(input) ? input : [input]).map((s) => s.trim()).filter(Boolean);
 
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-   return;
-  }
+   if (segments.length === 0) return;
 
-  try {
-   const synth = window.speechSynthesis;
-   // Cancel any previous speech immediately
-   synth.cancel();
+   stop();
+   const runId = runIdRef.current;
+   isSpeakingRef.current = true;
 
-   const rate = options?.rate ?? 1.15;
-   const utterance = new SpeechSynthesisUtterance(trimmed);
+   const voice = options?.voice ?? DEFAULT_MANDARIN_VOICE;
+   const rate = options?.rate ?? 1.1;
 
-   let voiceToUse = cachedVoiceRef.current;
-   if (!voiceToUse) {
-    const currentVoices = synth.getVoices();
-    voiceToUse = selectBestMandarinVoice(currentVoices);
-    cachedVoiceRef.current = voiceToUse;
-   }
-
-   if (voiceToUse) {
-    utterance.voice = voiceToUse;
-    utterance.lang = voiceToUse.lang;
-   } else {
-    utterance.lang = "zh-CN";
-   }
-
-   utterance.rate = rate;
-
-   utterance.onstart = () => {
-    isSpeakingRef.current = true;
-   };
-
-   utterance.onend = () => {
-    isSpeakingRef.current = false;
-    activeUtteranceRef.current = null;
-    options?.onFinish?.();
-   };
-
-   utterance.onerror = (event) => {
-    isSpeakingRef.current = false;
-    activeUtteranceRef.current = null;
-    // Ignore normal cancellation or interruption events
-    if (event.error === "canceled" || event.error === "interrupted") {
+   const playNative = (text: string, onEnd: () => void) => {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+     onEnd();
      return;
+    }
+    try {
+     const synth = window.speechSynthesis;
+     synth.cancel();
+     const utterance = new SpeechSynthesisUtterance(text);
+     let nativeVoice = cachedVoiceRef.current;
+     if (!nativeVoice) {
+      nativeVoice = selectBestMandarinVoice(synth.getVoices());
+      cachedVoiceRef.current = nativeVoice;
+     }
+     if (nativeVoice) {
+      utterance.voice = nativeVoice;
+      utterance.lang = nativeVoice.lang;
+     } else {
+      utterance.lang = "zh-CN";
+     }
+     utterance.rate = rate;
+     utterance.onend = () => onEnd();
+     utterance.onerror = (e) => {
+      if (e.error === "canceled" || e.error === "interrupted") return;
+      onEnd();
+     };
+     synth.speak(utterance);
+    } catch {
+     onEnd();
     }
    };
 
-   activeUtteranceRef.current = utterance;
-   synth.speak(utterance);
-  } catch {
-   // Graceful silent fallback without affecting external providers
-  }
- }, []);
+   const playSegment = (index: number) => {
+    if (runId !== runIdRef.current) return;
+    if (index >= segments.length) {
+     isSpeakingRef.current = false;
+     options?.onFinish?.();
+     return;
+    }
+
+    const currentText = segments[index];
+    if (!currentText) {
+     playSegment(index + 1);
+     return;
+    }
+
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
+    void fetchMandarinAudioBlob(currentText, voice, rate, controller.signal)
+     .then((blob) => {
+      if (runId !== runIdRef.current) return;
+      if (blob && typeof Audio !== "undefined") {
+       const url = URL.createObjectURL(blob);
+       currentObjectUrlRef.current = url;
+       const audio = new Audio(url);
+       currentAudioRef.current = audio;
+
+       const proceedNext = () => {
+        if (runId !== runIdRef.current) return;
+        if (currentObjectUrlRef.current) {
+         URL.revokeObjectURL(currentObjectUrlRef.current);
+         currentObjectUrlRef.current = null;
+        }
+        currentAudioRef.current = null;
+
+        if (index + 1 < segments.length) {
+         timeoutRef.current = setTimeout(() => {
+          playSegment(index + 1);
+         }, 350);
+        } else {
+         playSegment(index + 1);
+        }
+       };
+
+       audio.onended = proceedNext;
+       audio.onerror = () => {
+        playNative(currentText, proceedNext);
+       };
+
+       audio.play().catch(() => {
+        playNative(currentText, proceedNext);
+       });
+      } else {
+       playNative(currentText, () => {
+        if (runId !== runIdRef.current) return;
+        if (index + 1 < segments.length) {
+         timeoutRef.current = setTimeout(() => {
+          playSegment(index + 1);
+         }, 350);
+        } else {
+         playSegment(index + 1);
+        }
+       });
+      }
+     })
+     .catch(() => {
+      if (runId !== runIdRef.current) return;
+      playNative(currentText, () => playSegment(index + 1));
+     });
+   };
+
+   playSegment(0);
+  },
+  [stop],
+ );
 
  useEffect(() => {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {

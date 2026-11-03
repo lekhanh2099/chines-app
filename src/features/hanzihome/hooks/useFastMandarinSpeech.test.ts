@@ -2,6 +2,8 @@ import { describe, expect, it, vi } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import {
+ fetchMandarinAudioBlob,
+ prefetchMandarinAudio,
  scoreMandarinVoice,
  selectBestMandarinVoice,
  useFastMandarinSpeech,
@@ -91,6 +93,17 @@ describe("selectBestMandarinVoice", () => {
  });
 });
 
+describe("fetchMandarinAudioBlob and prefetch", () => {
+ it("handles empty string gracefully", async () => {
+  const result = await fetchMandarinAudioBlob("   ");
+  expect(result).toBeNull();
+ });
+
+ it("prefetches multiple texts without throwing", () => {
+  expect(() => prefetchMandarinAudio(["面的", "自行车"])).not.toThrow();
+ });
+});
+
 describe("useFastMandarinSpeech", () => {
  it("handles SSR / Node environment safely without throwing", () => {
   const hookRef: { current: ReturnType<typeof useFastMandarinSpeech> | null } = { current: null };
@@ -105,11 +118,12 @@ describe("useFastMandarinSpeech", () => {
   expect(hookRef.current).not.toBeNull();
   if (hookRef.current) {
    expect(() => hookRef.current?.speak("你好")).not.toThrow();
+   expect(() => hookRef.current?.speak(["你好", "世界"])).not.toThrow();
    expect(() => hookRef.current?.stop()).not.toThrow();
   }
  });
 
- it("calls native speechSynthesis with selected Mandarin voice", () => {
+ it("calls native speechSynthesis when audio fetch falls back", async () => {
   const captured: { voice: SpeechSynthesisVoice | null } = { voice: null };
 
   const mockSpeak = vi.fn((utterance: SpeechSynthesisUtterance) => {
@@ -150,15 +164,17 @@ describe("useFastMandarinSpeech", () => {
   renderToStaticMarkup(createElement(TestConsumer));
 
   if (hookRef.current) {
-   hookRef.current.speak("自行车");
+   hookRef.current.speak(["自行车", "面的"]);
    expect(mockCancel).toHaveBeenCalled();
-   expect(mockSpeak).toHaveBeenCalled();
 
-   // Verify the utterance passed to synth.speak had Tingting assigned, NOT Eddy
+   // Allow microtasks for async fallback to execute
+   await new Promise((resolve) => setTimeout(resolve, 50));
+
+   expect(mockSpeak).toHaveBeenCalled();
    expect(captured.voice?.name).toBe("Tingting");
 
    hookRef.current.stop();
-   expect(mockCancel).toHaveBeenCalledTimes(2);
+   expect(mockCancel.mock.calls.length).toBeGreaterThanOrEqual(2);
   }
 
   vi.unstubAllGlobals();
