@@ -85,6 +85,9 @@
   "feedback": {
    "correct": "正确！你已掌握该词的语境用法。",
    "incorrect": "未填对。参考答案：{answer}"
-  }
+  },
+  "pipButton": "画中画浮窗",
+  "pipTooltip": "在桌面开启画中画浮窗，工作时沉浸式认读生词",
+  "pipActive": "浮窗已开启"
  }
 }

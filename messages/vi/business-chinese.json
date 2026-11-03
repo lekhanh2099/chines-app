@@ -85,6 +85,9 @@
   "feedback": {
    "correct": "Chính xác! Bạn đã nhớ từ này trong ngữ cảnh.",
    "incorrect": "Chưa chính xác. Đáp án gợi ý: {answer}"
-  }
+  },
+  "pipButton": "Cửa sổ nổi (PiP)",
+  "pipTooltip": "Mở thẻ trôi nổi trên desktop để nhận diện từ vựng khi làm việc",
+  "pipActive": "Đang mở cửa sổ nổi"
  }
 }

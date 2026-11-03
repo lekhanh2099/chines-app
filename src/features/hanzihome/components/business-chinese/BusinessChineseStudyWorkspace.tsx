@@ -43,7 +43,10 @@ import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
-import { Bookmark, CloudCheck, Tags } from "lucide-react";
+import { Bookmark, CloudCheck, PictureInPicture2, Tags } from "lucide-react";
+import { createPortal } from "react-dom";
+import { AmbientPipFlashcard } from "@/features/hanzihome/components/review/AmbientPipFlashcard";
+import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
 import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
 import {
  SegmentedControl,
@@ -1849,6 +1852,33 @@ function BusinessChineseStudyWorkspaceContent({
   ],
   [t],
  );
+ const {
+  isSupported: isPipSupported,
+  isOpen: isPipOpen,
+  pipWindow,
+  openPip,
+  closePip,
+ } = useDocumentPip();
+ const [isInAppFloatingOpen, setIsInAppFloatingOpen] = useState(false);
+
+ const handleTogglePip = useCallback(async () => {
+  if (isPipOpen) {
+   closePip();
+   return;
+  }
+  if (isInAppFloatingOpen) {
+   setIsInAppFloatingOpen(false);
+   return;
+  }
+  if (isPipSupported) {
+   const win = await openPip({ width: 380, height: 240 });
+   if (!win) {
+    setIsInAppFloatingOpen(true);
+   }
+  } else {
+   setIsInAppFloatingOpen(true);
+  }
+ }, [closePip, isInAppFloatingOpen, isPipOpen, isPipSupported, openPip]);
  const safeLearningState = useMemo<UserLearningState>(
   () => ({
    ...learningState,
@@ -2142,7 +2172,21 @@ function BusinessChineseStudyWorkspaceContent({
 
           {activeView === "review" ? (
            <div data-textbook-document className="mx-auto grid w-full max-w-4xl min-w-0 gap-4">
-            <div className="flex flex-wrap items-center justify-end gap-3 pb-1">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-1">
+             <Button
+              type="button"
+              variant={isPipOpen || isInAppFloatingOpen ? "active" : "outline"}
+              size="compact"
+              onClick={handleTogglePip}
+              title={t("vocabReview.pipTooltip")}
+             >
+              <PictureInPicture2 className="size-3.5" />
+              <span>
+               {isPipOpen || isInAppFloatingOpen
+                ? t("vocabReview.pipActive")
+                : t("vocabReview.pipButton")}
+              </span>
+             </Button>
              <SegmentedControl
               value={reviewMode}
               items={reviewModeItems}
@@ -2305,6 +2349,24 @@ function BusinessChineseStudyWorkspaceContent({
        </TabsContent>
       </Tabs>
       {selectionPopover}
+      {isPipOpen && pipWindow
+       ? createPortal(
+          <AmbientPipFlashcard
+           items={reviewLesson.vocab}
+           lessonTitle={lesson.title}
+           onClose={closePip}
+          />,
+          pipWindow.document.body,
+         )
+       : null}
+      {isInAppFloatingOpen ? (
+       <AmbientPipFlashcard
+        items={reviewLesson.vocab}
+        lessonTitle={lesson.title}
+        onClose={() => setIsInAppFloatingOpen(false)}
+        isFloatingInApp
+       />
+      ) : null}
      </div>
     </div>
    </ReaderServicesContext.Provider>
