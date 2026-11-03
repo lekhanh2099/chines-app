@@ -1680,19 +1680,22 @@ export function BusinessChineseStudyWorkspace({
   () => buildBusinessChineseReaderDocument(lesson, activeView),
   [activeView, lesson],
  );
- const setActiveView = (value: string) => {
-  setOptimisticTab(value);
-  const params = new URLSearchParams(searchParams.toString());
-  params.set("lesson", String(lesson.number));
-  params.set("tab", value);
-  if (currentPath.endsWith("/offline")) {
-   window.history.pushState(null, "", `?${params.toString()}`);
-   return;
-  }
-  router.push(`${buildTextbookHref(lesson.bookKey, lesson.number).split("?")[0]}?${params}`, {
-   scroll: false,
-  });
- };
+ const setActiveView = useCallback(
+  (value: string) => {
+   setOptimisticTab(value);
+   const params = new URLSearchParams(searchParams.toString());
+   params.set("lesson", String(lesson.number));
+   params.set("tab", value);
+   if (currentPath.endsWith("/offline")) {
+    window.history.pushState(null, "", `?${params.toString()}`);
+    return;
+   }
+   router.push(`${buildTextbookHref(lesson.bookKey, lesson.number).split("?")[0]}?${params}`, {
+    scroll: false,
+   });
+  },
+  [currentPath, lesson.bookKey, lesson.number, router, searchParams],
+ );
  useEffect(() => {
   if (learning.isLoading) return;
   if (shouldRestoreLesson && resumeLesson) {
@@ -1726,19 +1729,63 @@ export function BusinessChineseStudyWorkspace({
   currentPath,
  ]);
 
- const navMenu = (
-  <BusinessChineseWorkspaceNavMenu
-   tabs={tabs}
-   activeView={activeView}
-   onActiveViewChange={setActiveView}
-   isLessonBookmarked={isLessonBookmarked}
-   onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
-   bookmarkLabel={t("bookmarkLesson")}
-   bookmarkedLabel={t("bookmarked")}
-   offlineReadyLabel={t("offlineReady")}
-   offlineDescription={t("offlineDescription")}
-   menuLabel={t("tabsLabel")}
-  />
+ const navMenu = useMemo(
+  () => (
+   <BusinessChineseWorkspaceNavMenu
+    tabs={tabs}
+    activeView={activeView}
+    onActiveViewChange={setActiveView}
+    isLessonBookmarked={isLessonBookmarked}
+    onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
+    bookmarkLabel={t("bookmarkLesson")}
+    bookmarkedLabel={t("bookmarked")}
+    offlineReadyLabel={t("offlineReady")}
+    offlineDescription={t("offlineDescription")}
+    menuLabel={t("tabsLabel")}
+   />
+  ),
+  [tabs, activeView, setActiveView, isLessonBookmarked, handleToggleCurrentLessonBookmark, t],
+ );
+
+ const workspaceReaderServices = useMemo<ReaderServices>(
+  () => ({
+   toolbar: {
+    actions: navMenu,
+   },
+   renderReader: ({ content }) => (
+    <BusinessChineseStudyWorkspaceContent
+     books={books}
+     lesson={lesson}
+     activeView={activeView}
+     onActiveViewChange={setActiveView}
+     tabs={tabs}
+     isLessonBookmarked={isLessonBookmarked}
+     onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
+     navMenu={navMenu}
+     readerContent={content}
+     bookKey={bookKey}
+     displayMode={displayMode}
+     learningState={learningState}
+     onRecordReview={learning.recordReview}
+     onToggleBookmark={toggleBookmark}
+    />
+   ),
+  }),
+  [
+   navMenu,
+   books,
+   lesson,
+   activeView,
+   setActiveView,
+   tabs,
+   isLessonBookmarked,
+   handleToggleCurrentLessonBookmark,
+   bookKey,
+   displayMode,
+   learningState,
+   learning.recordReview,
+   toggleBookmark,
+  ],
  );
 
  if (shouldRestoreLesson) return <HanziHomeWorkspaceLoading />;
@@ -1750,29 +1797,7 @@ export function BusinessChineseStudyWorkspace({
      key={readerDocument.id}
      document={readerDocument}
      bookKey={bookKey}
-     services={{
-      toolbar: {
-       actions: navMenu,
-      },
-      renderReader: ({ content }) => (
-       <BusinessChineseStudyWorkspaceContent
-        books={books}
-        lesson={lesson}
-        activeView={activeView}
-        onActiveViewChange={setActiveView}
-        tabs={tabs}
-        isLessonBookmarked={isLessonBookmarked}
-        onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
-        navMenu={navMenu}
-        readerContent={content}
-        bookKey={bookKey}
-        displayMode={displayMode}
-        learningState={learningState}
-        onRecordReview={learning.recordReview}
-        onToggleBookmark={toggleBookmark}
-       />
-      ),
-     }}
+     services={workspaceReaderServices}
     />
    </ReaderPronunciationSessionProvider>
   </MandarinTtsProvider>
@@ -1793,27 +1818,27 @@ function BusinessChineseReader({
   displayMode: defaultTextbookDisplaySettings,
   bookKey,
  });
- return (
-  <Reader
-   data={integration.data}
-   display={integration.display}
-   services={{
-    ...integration.services,
-    ...services,
-    toolbar: {
-     stickyOffset: "page",
-     ...integration.services.toolbar,
-     ...services?.toolbar,
-    },
-    renderReader: ({ content }) => {
-     const workspace = services?.renderReader ? services.renderReader({ content }) : content;
-     return integration.services.renderReader
-      ? integration.services.renderReader({ content: workspace })
-      : workspace;
-    },
-   }}
-  />
+
+ const mergedServices = useMemo<ReaderServices>(
+  () => ({
+   ...integration.services,
+   ...services,
+   toolbar: {
+    stickyOffset: "page",
+    ...integration.services.toolbar,
+    ...services?.toolbar,
+   },
+   renderReader: ({ content }) => {
+    const workspace = services?.renderReader ? services.renderReader({ content }) : content;
+    return integration.services.renderReader
+     ? integration.services.renderReader({ content: workspace })
+     : workspace;
+   },
+  }),
+  [integration.services, services],
  );
+
+ return <Reader data={integration.data} display={integration.display} services={mergedServices} />;
 }
 
 function BusinessChineseStudyWorkspaceContent({

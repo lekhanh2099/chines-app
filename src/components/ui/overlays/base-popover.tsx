@@ -89,7 +89,12 @@ function BasePopoverPopup({
  variant = BasePopoverVariantSchema.enum.default,
  ...props
 }: BasePopoverPopupProps) {
- return <Popover.Popup className={popupVariants[variant]} {...props} />;
+ return (
+  <Popover.Popup
+   className={cn(popupVariants[variant], "transform-gpu will-change-[transform,opacity]")}
+   {...props}
+  />
+ );
 }
 
 export {

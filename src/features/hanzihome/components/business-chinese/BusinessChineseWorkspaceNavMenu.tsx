@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { Bookmark, Check, CloudCheck, Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
@@ -33,7 +34,9 @@ export type BusinessChineseWorkspaceNavMenuProps<T extends string = string> = {
  className?: string;
 };
 
-export function BusinessChineseWorkspaceNavMenu<T extends string = string>({
+export const BusinessChineseWorkspaceNavMenu = memo(function BusinessChineseWorkspaceNavMenu<
+ T extends string = string,
+>({
  tabs,
  activeView,
  onActiveViewChange,
@@ -121,4 +124,4 @@ export function BusinessChineseWorkspaceNavMenu<T extends string = string>({
    </DropdownMenuContent>
   </DropdownMenu>
  );
-}
+});
