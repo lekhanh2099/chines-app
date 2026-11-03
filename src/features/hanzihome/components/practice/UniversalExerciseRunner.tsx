@@ -128,10 +128,10 @@ export function UniversalExerciseRunner({
   setIsCompleted(false);
  }, [stopSpeech]);
 
- // Keyboard shortcuts (Enter to check or next)
+ // Keyboard shortcuts (Enter to check/next, Left/Right arrows)
  useEffect(() => {
   const handleKeyDown = (e: KeyboardEvent) => {
-   // Skip if inside an open textarea
+   // Skip if inside an open textarea without modifier
    if (e.target instanceof HTMLTextAreaElement && !e.ctrlKey && !e.metaKey) {
     return;
    }
@@ -145,12 +145,34 @@ export function UniversalExerciseRunner({
     } else {
      handleNext();
     }
+    return;
+   }
+
+   // Arrow keys navigation when not actively typing in an input
+   if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+    return;
+   }
+
+   if (e.key === "ArrowLeft" && currentIndex > 0) {
+    e.preventDefault();
+    handlePrev();
+   } else if (e.key === "ArrowRight" && currentIndex + 1 < totalCount) {
+    e.preventDefault();
+    handleNext();
    }
   };
 
   window.addEventListener("keydown", handleKeyDown);
   return () => window.removeEventListener("keydown", handleKeyDown);
- }, [currentAnswer, handleCheckCurrent, handleNext, isCurrentSubmitted]);
+ }, [
+  currentAnswer,
+  currentIndex,
+  handleCheckCurrent,
+  handleNext,
+  handlePrev,
+  isCurrentSubmitted,
+  totalCount,
+ ]);
 
  if (totalCount === 0) {
   return (

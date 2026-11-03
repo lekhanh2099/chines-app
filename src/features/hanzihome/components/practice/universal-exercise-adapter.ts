@@ -225,19 +225,25 @@ export function adaptAllLessonExercises(lesson: TextbookLesson): UniversalExerci
  return [...universalVocabItems, ...universalTextbookItems];
 }
 
-type InteractionEvaluator<T extends UniversalInteraction["type"]> = (
- interaction: Extract<UniversalInteraction, { type: T }>,
- answer: string,
-) => boolean;
+type EvaluatorStrategy = (interaction: UniversalInteraction, answer: string) => boolean;
 
-const INTERACTION_EVALUATORS: {
- readonly [K in UniversalInteraction["type"]]: InteractionEvaluator<K>;
-} = {
+const EVALUATOR_REGISTRY: Record<UniversalInteraction["type"], EvaluatorStrategy> = {
  cloze: (interaction, answer) => {
+  if (interaction.type !== "cloze") return false;
   const cleanInput = answer.trim().replace(PUNCTUATION_CLEANUP, "");
   const cleanTarget = interaction.expectedAnswer.trim().replace(PUNCTUATION_CLEANUP, "");
+  if (!cleanTarget) return cleanInput.length > 0;
   if (cleanInput.length > 0 && cleanInput === cleanTarget) return true;
-  // If target contains multiple candidates (e.g. answer / alternative)
+
+  // Check reconstructed sentence if preText/postText are present
+  const reconstructed =
+   `${interaction.preText ?? ""}${cleanInput}${interaction.postText ?? ""}`.replace(
+    PUNCTUATION_CLEANUP,
+    "",
+   );
+  if (reconstructed === cleanTarget) return true;
+
+  // Check split candidates (e.g. answer alternatives)
   const candidates = interaction.expectedAnswer
    .split(/[/、\n]/u)
    .map((c) => c.trim().replace(PUNCTUATION_CLEANUP, ""))
@@ -245,9 +251,11 @@ const INTERACTION_EVALUATORS: {
   return candidates.includes(cleanInput);
  },
  choice: (interaction, answer) => {
+  if (interaction.type !== "choice") return false;
   return answer.trim().toUpperCase() === interaction.correctKey.trim().toUpperCase();
  },
  reorder: (interaction, answer) => {
+  if (interaction.type !== "reorder") return false;
   const cleanInput = answer.trim().replace(PUNCTUATION_CLEANUP, "");
   const cleanTarget = interaction.correctOrder.join("").trim().replace(PUNCTUATION_CLEANUP, "");
   return cleanInput.length > 0 && cleanInput === cleanTarget;
@@ -258,18 +266,6 @@ const INTERACTION_EVALUATORS: {
 };
 
 export function evaluateUniversalAnswer(item: UniversalExerciseItem, userAnswer: string): boolean {
- const type = item.interaction.type;
- if (type === "cloze") {
-  return INTERACTION_EVALUATORS.cloze(item.interaction, userAnswer);
- }
- if (type === "choice") {
-  return INTERACTION_EVALUATORS.choice(item.interaction, userAnswer);
- }
- if (type === "reorder") {
-  return INTERACTION_EVALUATORS.reorder(item.interaction, userAnswer);
- }
- if (type === "open") {
-  return INTERACTION_EVALUATORS.open(item.interaction, userAnswer);
- }
- return false;
+ const evaluate = EVALUATOR_REGISTRY[item.interaction.type];
+ return evaluate(item.interaction, userAnswer);
 }
