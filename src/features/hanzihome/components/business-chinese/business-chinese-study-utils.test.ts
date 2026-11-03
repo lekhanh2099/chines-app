@@ -585,6 +585,19 @@ describe("Business Chinese study policies", () => {
   expect(firstWord.runtimeId).toBe(lesson.vocab[0].id);
   expect(firstWord.hanzi).toBe(lesson.vocab[0].hanzi);
   expect(firstWord.meaning.meaning_vi).toBe(lesson.vocab[0].meaning);
+
+  const nhipCauLesson = getTextbookLesson("nhip-cau", 5);
+  expect(nhipCauLesson).toBeDefined();
+  if (!nhipCauLesson) return;
+  const nhipCauReview = textbookLessonToReviewLesson(nhipCauLesson);
+  const miandi = nhipCauReview.vocab.find((item) => item.hanzi === "面的");
+  expect(miandi).toBeDefined();
+  if (!miandi) return;
+  expect(miandi.examples.length).toBeGreaterThan(0);
+  const example = miandi.examples[0];
+  expect(example.zh).toContain("面的");
+  expect(example.zh.length).toBeLessThanOrEqual(65);
+  expect(example.vi).toBeTruthy();
  });
  it("generates contextual vocabulary drills and evaluates user answer", () => {
   const lesson = getTextbookLesson("tm3", 1);
@@ -597,5 +610,13 @@ describe("Business Chinese study policies", () => {
   expect(evaluateContextualVocabDrill(drill.targetWord, drill.targetWord)).toBe(true);
   expect(evaluateContextualVocabDrill(`  ${drill.targetWord}  `, drill.targetWord)).toBe(true);
   expect(evaluateContextualVocabDrill("sai_roi", drill.targetWord)).toBe(false);
+
+  const nhipCauLesson = getTextbookLesson("nhip-cau", 5);
+  expect(nhipCauLesson).toBeDefined();
+  if (!nhipCauLesson) return;
+  const nhipCauDrills = generateContextualVocabDrills(nhipCauLesson);
+  expect(nhipCauDrills.length).toBeGreaterThan(0);
+  const drillWithTranslation = nhipCauDrills.find((d) => d.sentenceTranslation.length > 0);
+  expect(drillWithTranslation).toBeDefined();
  });
 });
