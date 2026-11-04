@@ -363,6 +363,14 @@ describe("HanziHome translation practice", () => {
   expect(tm2Sources[0]?.entries[0]?.zh).toBe("订购真丝面料");
   expect(tm2Sources[0]?.entries[0]?.pinyin).toBe("dìnggòu zhēn sī miàn liào");
 
+  const vocabSource = nhipCauSources.find((s) => s.id === "vocab");
+  expect(vocabSource).toBeDefined();
+  if (!nhipCauLesson) throw new Error("nhipCauLesson missing");
+  expect(vocabSource?.entries.length).toBe(nhipCauLesson.vocab.length);
+  expect(vocabSource?.entries[0]?.zh).toBe(nhipCauLesson.vocab[0]?.hanzi);
+  expect(vocabSource?.entries[0]?.pinyin).toBe(nhipCauLesson.vocab[0]?.pinyin);
+  expect(vocabSource?.entries[0]?.vi).toBe(nhipCauLesson.vocab[0]?.meaning);
+
   expect(dictationSourcesFromTextbook(undefined)).toEqual([]);
  });
 });

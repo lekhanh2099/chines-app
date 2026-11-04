@@ -27,6 +27,7 @@ export function StudioDictationReferencePanel({
  entries,
  isPlaybackActive,
  sourceLabel,
+ textTabLabel,
  titleVi,
  titleZh,
 }: {
@@ -34,6 +35,7 @@ export function StudioDictationReferencePanel({
  entries: ListeningTranscriptEntry[];
  isPlaybackActive: boolean;
  sourceLabel: string;
+ textTabLabel?: string;
  titleVi: string;
  titleZh: string;
 }) {
@@ -68,7 +70,7 @@ export function StudioDictationReferencePanel({
    <SegmentedControl<DictationReferenceMode>
     value={visibleMode}
     items={[
-     { key: "hanzi", label: t("textTab") },
+     { key: "hanzi", label: textTabLabel ?? t("textTab") },
      { key: "pinyin", label: t("pinyinTab") },
      { key: "meaning", label: t("meaning") },
     ]}

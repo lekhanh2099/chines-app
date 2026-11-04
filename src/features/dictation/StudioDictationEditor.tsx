@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { formatDictationSpeed } from "./dictation-workspace-utils";
 import { useStudioDictationSession } from "./useStudioDictationSession";
 
 import { useEffect, useRef, type KeyboardEventHandler } from "react";
@@ -152,13 +153,25 @@ export function StudioDictationEditor({
      </Typography>
     </div>
     {isChecked && attempt !== undefined ? (
-     <div className="flex items-center gap-2">
+     <div className="flex flex-wrap items-center gap-2">
       <Badge
        variant={attempt.score === 100 ? "success" : attempt.score >= 70 ? "warning" : "danger"}
        casing="natural"
       >
        {attempt.score}%
       </Badge>
+      {(() => {
+       const speed = formatDictationSpeed(attempt.responseMs, characterCount);
+       if (!speed) return null;
+       return (
+        <Badge casing="natural">
+         <span aria-hidden="true">⚡</span>
+         <span>{speed.durationSeconds}s</span>
+         <span>·</span>
+         <span>{speed.cpm} CPM</span>
+        </Badge>
+       );
+      })()}
       <Button type="button" size="sm" variant="ghost" onClick={editAgain}>
        {t("editAgain")}
       </Button>

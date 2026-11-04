@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/display/badge";
 import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
@@ -14,6 +15,7 @@ import {
  SelectValue,
 } from "@/components/ui/forms/select";
 import { Typography } from "@/components/ui/display/typography";
+import { prefetchMandarinAudio } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
@@ -38,6 +40,7 @@ export function LessonDictationWorkspace({
  titleVi,
  titleZh,
 }: LessonDictationWorkspaceProps) {
+ const t = useTranslations("Dictation");
  const tts = useSharedMandarinTts();
  const requestNavigation = useUnsavedDraftGuard(false);
  const { stop } = tts;
@@ -85,6 +88,14 @@ export function LessonDictationWorkspace({
   [selectedSource],
  );
  const effectiveActiveIndex = Math.min(Math.max(0, activeIndex), Math.max(0, entries.length - 1));
+
+ useEffect(() => {
+  if (entries.length === 0) return;
+  const upcomingTexts = entries
+   .slice(effectiveActiveIndex, effectiveActiveIndex + 4)
+   .map((entry) => entry.transcript.full.zh);
+  prefetchMandarinAudio(upcomingTexts, tts.selectedVoiceName || undefined, tts.rate);
+ }, [effectiveActiveIndex, entries, tts.selectedVoiceName, tts.rate]);
 
  useEffect(() => () => stop(), [stop]);
 
@@ -197,10 +208,14 @@ export function LessonDictationWorkspace({
        {selectedSource.label}
       </Typography>
       <Typography variant="bodySmall" tone="muted">
-       Chọn phần cần luyện, rồi nghe và chép lại từng câu.
+       {selectedSource.id === "vocab"
+        ? "Nghe và gõ lại từng từ vựng, rèn luyện phản xạ và trí nhớ chữ Hán."
+        : "Chọn phần cần luyện, rồi nghe và chép lại từng câu."}
       </Typography>
      </div>
-     <Badge casing="natural">{entries.length} phần</Badge>
+     <Badge casing="natural">
+      {selectedSource.id === "vocab" ? `${entries.length} từ` : `${entries.length} phần`}
+     </Badge>
     </div>
     <Select value={selectedSource.id} onValueChange={selectSource}>
      <SelectTrigger width="full" aria-label="Chọn nội dung luyện nghe chép">
@@ -253,6 +268,7 @@ export function LessonDictationWorkspace({
       entries={entries}
       isPlaybackActive={tts.isLoading || tts.isPaused || tts.isSpeaking}
       sourceLabel={selectedSource.label}
+      textTabLabel={selectedSource.id === "vocab" ? t("vocabTab") : undefined}
       titleVi={titleVi || sourceLesson?.lesson.title.vi || selectedSource.label}
       titleZh={titleZh || sourceLesson?.lesson.title.zh || selectedSource.label}
      />
