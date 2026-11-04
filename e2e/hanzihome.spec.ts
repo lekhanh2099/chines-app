@@ -931,12 +931,15 @@ test.describe(() => {
 });
 
 test("schedules a review and preserves an offline retry", async ({ page }) => {
+ const completionTitle = "Hoàn thành phiên ôn!";
+ const completionDescription = "Bạn đã hoàn thành 1 lượt ôn trong phiên này.";
  await resetLearningLoopItem();
  await login(page, accountA);
  await page.goto("/vi/learning-loop");
  await expect(page.getByRole("heading", { name: "学习" })).toBeVisible();
- await page.getByRole("button", { name: "Đã nhớ", exact: true }).click();
- await expect(page.getByText("Hôm nay chưa có mục đến hạn", { exact: true })).toBeVisible();
+ await page.getByRole("button", { name: /Đã nhớ/ }).click();
+ await expect(page.getByRole("heading", { name: completionTitle, exact: true })).toBeVisible();
+ await expect(page.getByText(completionDescription, { exact: true })).toBeVisible();
 
  const admin = createAdminClient();
  await expect
@@ -962,10 +965,10 @@ test("schedules a review and preserves an offline retry", async ({ page }) => {
 
  await resetLearningLoopItem();
  await page.goto("/vi/learning-loop");
- await expect(page.getByRole("button", { name: "Đã nhớ", exact: true })).toBeVisible();
+ await expect(page.getByRole("button", { name: /Đã nhớ/ })).toBeVisible();
  await page.context().setOffline(true);
  await expect.poll(() => page.evaluate(() => navigator.onLine)).toBe(false);
- await page.getByRole("button", { name: "Đã nhớ", exact: true }).click();
+ await page.getByRole("button", { name: /Đã nhớ/ }).click();
  await expect(page.getByText("Không cập nhật được Learning Loop.", { exact: true })).toBeVisible();
  await page.context().setOffline(false);
  await page.reload();
@@ -974,8 +977,9 @@ test("schedules a review and preserves an offline retry", async ({ page }) => {
    response.url().endsWith("/api/hanzihome/learning-loop") &&
    response.request().method() === "POST",
  );
- await page.getByRole("button", { name: "Đã nhớ", exact: true }).click();
- await expect(page.getByText("Hôm nay chưa có mục đến hạn", { exact: true })).toBeVisible();
+ await page.getByRole("button", { name: /Đã nhớ/ }).click();
+ await expect(page.getByRole("heading", { name: completionTitle, exact: true })).toBeVisible();
+ await expect(page.getByText(completionDescription, { exact: true })).toBeVisible();
  expect((await retriedReview).ok()).toBe(true);
  await expect
   .poll(async () => {
@@ -998,7 +1002,7 @@ test("surfaces a revision conflict when remote state changes", async ({ page }) 
  await resetLearningLoopItem();
  await login(page, accountA);
  await page.goto("/vi/learning-loop");
- const rateButton = page.getByRole("button", { name: "Đã nhớ", exact: true });
+ const rateButton = page.getByRole("button", { name: /Đã nhớ/ });
  await expect(rateButton).toBeVisible();
 
  const admin = createAdminClient();

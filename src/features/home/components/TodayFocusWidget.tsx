@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, CheckCircle2, Flame, PlayCircle, Repeat2, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Flame, Repeat2, Sparkles, Zap } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/display/badge";
@@ -127,43 +127,47 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
    <div className="grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {/* Jump Back In Card */}
     {activeResumeLesson ? (
-     <Card
-      variant="interactive"
-      padding="md"
-      className="sm:col-span-2 lg:col-span-2 flex flex-col justify-between gap-3"
-     >
-      <div className="grid min-w-0 gap-1.5">
-       <div className="flex items-center justify-between gap-2">
-        <span className="flex items-center gap-1.5 text-xs font-bold text-text-muted">
-         <Sparkles className="size-3.5 text-primary" />
-         {t("focus.resumeLesson")}
-        </span>
-        <Badge size="sm" variant="default" casing="natural">
-         {activeResumeLesson.bookTitle}
-        </Badge>
+     <Card variant="interactive" padding="md" asChild>
+      <Link
+       href={activeResumeLesson.href}
+       className="group flex flex-col justify-between gap-3 sm:col-span-2 lg:col-span-2"
+      >
+       <div className="grid min-w-0 gap-1.5">
+        <div className="flex items-center justify-between gap-2">
+         <span className="flex items-center gap-1.5 text-xs font-bold text-text-muted">
+          <Sparkles className="size-3.5 text-primary" />
+          {t("focus.resumeLesson")}
+         </span>
+         <Badge size="sm" variant="default" casing="natural">
+          {activeResumeLesson.bookTitle}
+         </Badge>
+        </div>
+        <Typography as="h3" variant="body" weight="black" clamp="one">
+         {activeResumeLesson.title.startsWith("ÔN TẬP ")
+          ? activeResumeLesson.title
+          : t("continueLearning.lesson", {
+             number: activeResumeLesson.lessonNumber,
+             title: activeResumeLesson.title,
+            })}
+        </Typography>
        </div>
-       <Typography as="h3" variant="body" weight="black" clamp="one">
-        {activeResumeLesson.title.startsWith("ÔN TẬP ")
-         ? activeResumeLesson.title
-         : t("continueLearning.lesson", {
-            number: activeResumeLesson.lessonNumber,
-            title: activeResumeLesson.title,
-           })}
-       </Typography>
-      </div>
 
-      <div className="flex items-center justify-between gap-2 pt-2 border-t border-border-default/60">
-       <Typography as="span" variant="caption" tone="muted">
-        {t("focus.resumeHint")}
-       </Typography>
-       <Button size="toolbar" className="gap-1.5" asChild>
-        <Link href={activeResumeLesson.href}>
-         <PlayCircle className="size-4" />
+       <div className="flex items-center justify-between gap-2 pt-2 border-t border-border-default/60">
+        <Typography as="span" variant="caption" tone="muted">
+         {t("focus.resumeHint")}
+        </Typography>
+        <Typography
+         as="span"
+         variant="caption"
+         tone="primary"
+         weight="bold"
+         className="flex items-center gap-1.5"
+        >
          {t("focus.resumeNow")}
          <ArrowRight className="size-3.5" />
-        </Link>
-       </Button>
-      </div>
+        </Typography>
+       </div>
+      </Link>
      </Card>
     ) : null}
 
@@ -174,9 +178,9 @@ export function TodayFocusWidget({ courses, pulse }: TodayFocusWidgetProps) {
        {t("focus.vocabProgress")}
       </Typography>
       <div className="flex items-baseline gap-2">
-       <span className="text-2xl font-black tracking-tight text-text-primary">
+       <Typography as="span" variant="pageTitle" weight="black" tracking="tight">
         {pulse.knownCount}
-       </span>
+       </Typography>
        <Typography as="span" variant="caption" tone="muted">
         {t("focus.knownWords")}
        </Typography>

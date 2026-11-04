@@ -319,6 +319,10 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(sourceCases)(
  "keeps failed $source source for $locale at $viewportName distinct from valid zero/empty and retries only that source",
  async ({ locale, viewport, source }) => {
   const messages = await loadAppMessages(locale);
+  const dueTitle = messages.Home.focus.dueTitle
+   .replace("<highlight>", "")
+   .replace("</highlight>", "")
+   .replace("{count}", "2");
   const fixture = fileURLToPath(new URL("./HomeDashboard.browser.fixture.tsx", import.meta.url));
   const server = await createServer({
    configFile: false,
@@ -508,7 +512,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(sourceCases)(
      await browserExpect(page.locator("#today-focus-heading")).toHaveText(
       messages.Home.focus.overviewUnknownTitle,
      );
-    else await browserExpect(page.locator("#today-focus-heading")).toContainText("3 thẻ từ vựng");
+    else await browserExpect(page.locator("#today-focus-heading")).toHaveText(dueTitle);
     const independentRequests = requests.filter((item) => item !== source);
     status = 200;
     hold = true;
@@ -565,7 +569,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(sourceCases)(
     await browserExpect(loopValue).toHaveText("2");
     await browserExpect(readerValue).toHaveText("1/4");
     await browserExpect(activity.getByText("学习", { exact: true })).toBeVisible();
-    await browserExpect(page.locator("#today-focus-heading")).toContainText("3 thẻ từ vựng");
+    await browserExpect(page.locator("#today-focus-heading")).toHaveText(dueTitle);
     expect(requests.filter((item) => item === source)).toHaveLength(5);
     expect(requests.filter((item) => item !== source)).toEqual(independentRequests);
     const failedQueries = await page.evaluate(() =>
@@ -593,8 +597,8 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(sourceCases)(
     if (source === "overview") {
      await browserExpect(loopValue).toHaveText("0");
      await browserExpect(readerValue).toHaveText("0/0");
-     await browserExpect(page.locator("#today-focus-heading")).toContainText(
-      "hoàn thành toàn bộ thẻ",
+     await browserExpect(page.locator("#today-focus-heading")).toHaveText(
+      messages.Home.focus.noDueTitle,
      );
     }
     if (source === "activity") {

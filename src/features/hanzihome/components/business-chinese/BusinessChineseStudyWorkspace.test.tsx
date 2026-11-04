@@ -114,6 +114,34 @@ function renderWorkspace(element: ReactNode) {
 }
 
 describe("BusinessChineseStudyWorkspace", () => {
+ it.each(["vocab", "practice"])("shows the saved Pinyin control in the %s tab", (tab) => {
+  const books = getTextbookCatalog();
+  const book = books.find((item) => item.key === "khau-ngu");
+  const lesson = getTextbookLesson("khau-ngu", 1);
+  const section = lesson?.sections.find((item) => item.category === tab);
+  if (!book || !lesson || !section) throw new Error(`Expected Khẩu ngữ ${tab} content.`);
+  mockParams = new URLSearchParams(`lesson=1&tab=${tab}`);
+  for (const showPinyin of [false, true]) {
+   mockSettings = {
+    bookDisplayModes: {
+     [`static:${book.id}`]: {
+      ...DEFAULT_LESSON_DISPLAY_MODE,
+      autoDetectPinyin: true,
+      showPinyin,
+     },
+    },
+   };
+
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace books={books} lesson={{ ...lesson, sections: [section] }} />,
+   );
+   const pinyinControl = markup.match(/<button[^>]*aria-label="Hiện pinyin"[^>]*>/u)?.[0];
+
+   expect(pinyinControl).toContain(`aria-pressed="${showPinyin}"`);
+   expect(markup.match(/aria-label="Hiện pinyin"/gu)).toHaveLength(1);
+  }
+ });
+
  it("renders all source phrases with individual audio and silent semantic practice headings", () => {
   const lesson = getTextbookLesson("nhip-cau", 1);
   const section = lesson?.sections.find((item) => item.category === "practice");
@@ -1199,8 +1227,9 @@ describe("BusinessChineseStudyWorkspace", () => {
    expect(markup.includes("<ruby")).toBe(showDetails);
    expect(markup.includes("định nhét vào")).toBe(showDetails);
    expect(markup).toContain('aria-label="Đọc tiếng Trung: 打算塞进去"');
-   expect(markup).not.toContain("Hiện pinyin");
-   expect(markup).not.toContain("Hiện nghĩa");
+   const sectionMarkup = markup.slice(markup.indexOf(`id="${section.id}"`));
+   expect(sectionMarkup).not.toContain("Hiện pinyin");
+   expect(sectionMarkup).not.toContain("Hiện nghĩa");
   },
  );
 

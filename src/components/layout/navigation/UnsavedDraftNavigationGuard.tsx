@@ -62,6 +62,11 @@ export function UnsavedDraftNavigationGuard({ children }: { children: ReactNode 
  const pendingNavigation = useRef<() => void>(() => {});
  const pendingBack = useRef(false);
  const guardedHref = useRef("");
+ const guardedHistoryEntry = useRef(false);
+ const restoringBackEntry = useRef(false);
+ const restoringCleanEntry = useRef(false);
+ const removingHistoryEntry = useRef(false);
+ const continueNavigationAfterRemoval = useRef(false);
  const bypassClick = useRef(false);
  const bypassPopState = useRef(false);
  const bypassPopStateTimer = useRef(0);
@@ -89,13 +94,21 @@ export function UnsavedDraftNavigationGuard({ children }: { children: ReactNode 
 
  useEffect(() => {
   if (dirtyCount === 0 || focusModeEnabled) {
-   guardedHref.current = "";
+   if (
+    guardedHistoryEntry.current &&
+    !removingHistoryEntry.current &&
+    guardedHref.current === window.location.href
+   ) {
+    removingHistoryEntry.current = true;
+    window.history.back();
+   }
    return;
   }
   const href = window.location.href;
   if (guardedHref.current === href) return;
   guardedHref.current = href;
   window.history.pushState(window.history.state, "", href);
+  guardedHistoryEntry.current = true;
  }, [dirtyCount, focusModeEnabled, pathname, searchParamsString]);
 
  useLayoutEffect(() => {
@@ -151,27 +164,69 @@ export function UnsavedDraftNavigationGuard({ children }: { children: ReactNode 
    setOpen(true);
   };
 
-  const handlePopState = () => {
+  const handlePopState = (event: PopStateEvent) => {
+   if (restoringBackEntry.current) {
+    restoringBackEntry.current = false;
+    event.stopImmediatePropagation();
+    setOpen(true);
+    return;
+   }
+   if (restoringCleanEntry.current) {
+    restoringCleanEntry.current = false;
+    guardedHistoryEntry.current = true;
+    event.stopImmediatePropagation();
+    return;
+   }
+   if (removingHistoryEntry.current) {
+    removingHistoryEntry.current = false;
+    event.stopImmediatePropagation();
+    if (continueNavigationAfterRemoval.current) {
+     continueNavigationAfterRemoval.current = false;
+     guardedHistoryEntry.current = false;
+     guardedHref.current = "";
+     const navigate = pendingNavigation.current;
+     pendingNavigation.current = () => {};
+     allowUnload.current = true;
+     navigate();
+     return;
+    }
+    if (
+     dirtyOwners.current.size > 0 &&
+     !focusModeStore.get().enabled &&
+     guardedHref.current === window.location.href
+    ) {
+     restoringCleanEntry.current = true;
+     window.history.forward();
+     return;
+    }
+    guardedHistoryEntry.current = false;
+    guardedHref.current = "";
+    return;
+   }
    if (bypassPopState.current) {
     bypassPopState.current = false;
     window.clearTimeout(bypassPopStateTimer.current);
     bypassPopStateTimer.current = 0;
     allowUnload.current = false;
+    guardedHistoryEntry.current = false;
+    guardedHref.current = "";
     return;
    }
    if (dirtyOwners.current.size === 0 || focusModeStore.get().enabled) return;
+   event.stopImmediatePropagation();
    pendingBack.current = true;
    pendingNavigation.current = () => {
     bypassPopState.current = true;
     allowUnload.current = true;
-    window.history.back();
+    window.history.go(-2);
     window.clearTimeout(bypassPopStateTimer.current);
     bypassPopStateTimer.current = window.setTimeout(() => {
      bypassPopState.current = false;
      allowUnload.current = false;
     }, 500);
    };
-   setOpen(true);
+   restoringBackEntry.current = true;
+   window.history.forward();
   };
 
   const handleBeforeUnload = (event: BeforeUnloadEvent) => {
@@ -181,11 +236,11 @@ export function UnsavedDraftNavigationGuard({ children }: { children: ReactNode 
   };
 
   document.addEventListener("click", handleClick, true);
-  window.addEventListener("popstate", handlePopState);
+  window.addEventListener("popstate", handlePopState, true);
   window.addEventListener("beforeunload", handleBeforeUnload);
   return () => {
    document.removeEventListener("click", handleClick, true);
-   window.removeEventListener("popstate", handlePopState);
+   window.removeEventListener("popstate", handlePopState, true);
    window.removeEventListener("beforeunload", handleBeforeUnload);
    window.clearTimeout(bypassPopStateTimer.current);
   };
@@ -194,23 +249,25 @@ export function UnsavedDraftNavigationGuard({ children }: { children: ReactNode 
  const keepDraft = () => {
   setOpen(false);
   pendingNavigation.current = () => {};
-  if (pendingBack.current) {
-   pendingBack.current = false;
-   bypassPopState.current = true;
-   window.history.forward();
-   window.clearTimeout(bypassPopStateTimer.current);
-   bypassPopStateTimer.current = window.setTimeout(() => {
-    bypassPopState.current = false;
-    allowUnload.current = false;
-   }, 500);
-  }
+  pendingBack.current = false;
  };
 
  const leave = () => {
   setOpen(false);
+  const wasBack = pendingBack.current;
   pendingBack.current = false;
   const navigate = pendingNavigation.current;
   pendingNavigation.current = () => {};
+  if (wasBack) {
+   navigate();
+   return;
+  }
+  if (guardedHistoryEntry.current && guardedHref.current === window.location.href) {
+   continueNavigationAfterRemoval.current = true;
+   removingHistoryEntry.current = true;
+   window.history.back();
+   return;
+  }
   navigate();
  };
 

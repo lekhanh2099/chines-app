@@ -41,21 +41,24 @@ export function VocabDetailHeader({
       </HanziText>
       <MandarinSpeakButton text={word.hanzi} />
      </div>
-     <PinyinText
-      as="p"
-      variant={compact ? "sectionTitle" : "pageTitle"}
-      tone="accent"
-      weight="black"
-     >
+     <PinyinText as="p" variant="sectionTitle" tone="accent" weight="black">
       {word.pinyin}
       {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
      </PinyinText>
     </div>
 
     <div className="flex flex-wrap items-center gap-2">
-     {word.pos.raw_vi && <Badge variant="info">{word.pos.raw_vi}</Badge>}
+     {word.pos.raw_vi && (
+      <Badge variant="default" size="sm" casing="natural">
+       {word.pos.raw_vi}
+      </Badge>
+     )}
 
-     {word.level_tag !== "unknown" && <Badge variant="danger">{word.level_tag}</Badge>}
+     {word.level_tag !== "unknown" && (
+      <Badge variant="default" size="sm" casing="natural">
+       {word.level_tag}
+      </Badge>
+     )}
      <Button
       variant={bookmarked ? "default" : "outline"}
       size="toolbar"

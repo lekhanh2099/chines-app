@@ -43,7 +43,7 @@ import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
-import { Bookmark, CloudCheck, PictureInPicture2, Sparkles, Tags } from "lucide-react";
+import { Bookmark, CloudCheck, Languages, PictureInPicture2, Sparkles, Tags } from "lucide-react";
 import { createPortal } from "react-dom";
 import {
  UniversalAmbientPip,
@@ -133,6 +133,7 @@ import {
  ReaderServicesContext,
  useReaderServices,
  useReaderCommands,
+ useReaderDisplay,
  useReaderStore,
  useReaderSelector,
 } from "@/features/reader/runtime/reader-context";
@@ -1938,6 +1939,7 @@ function BusinessChineseStudyWorkspaceContent({
   }),
   [learningState],
  );
+ const toolsLabels = useTranslations("Reader.study.chrome.tools");
  const isLessonOfflineReady = useIsLessonCached(lesson.id);
  const textReaderDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, "text"),
@@ -1954,6 +1956,7 @@ function BusinessChineseStudyWorkspaceContent({
   [textReaderDocument],
  );
  const readerCommands = useReaderCommands();
+ const { value: readerDisplay, onChange: onReaderDisplayChange } = useReaderDisplay();
  const { actions: readerActions } = useReaderStore();
  const parentServices = useReaderServices();
  const {
@@ -2288,6 +2291,27 @@ function BusinessChineseStudyWorkspaceContent({
               data-textbook-document
               className="grid min-w-0 gap-6"
              >
+              {(activeView === "vocab" || activeView === "practice") && onReaderDisplayChange ? (
+               <div className="flex min-w-0 justify-end" data-reader-group="display">
+                <Button
+                 type="button"
+                 variant={readerDisplay.showPinyin ? "active" : "outline"}
+                 size="toolbar"
+                 aria-label={toolsLabels("showPinyin")}
+                 aria-pressed={readerDisplay.showPinyin}
+                 disabled={activeView === "practice" && readerDisplay.revealMode === "tap"}
+                 onClick={() =>
+                  onReaderDisplayChange({
+                   ...readerDisplay,
+                   showPinyin: !readerDisplay.showPinyin,
+                  })
+                 }
+                >
+                 <Languages data-icon="inline-start" />
+                 <span>{toolsLabels("pinyin")}</span>
+                </Button>
+               </div>
+              ) : null}
               {lesson.vocab.length > 0 && activeView === "vocab" ? (
                <Card
                 variant="subtle"
