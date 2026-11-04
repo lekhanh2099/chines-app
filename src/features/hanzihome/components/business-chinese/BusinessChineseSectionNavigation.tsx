@@ -87,6 +87,8 @@ export function DesktopSectionNavigation({
 }) {
  const t = useTranslations("BusinessChinese");
 
+ if (sections.length <= 1) return null;
+
  return (
   <Card
    variant="section"

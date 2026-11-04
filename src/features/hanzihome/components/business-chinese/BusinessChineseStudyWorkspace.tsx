@@ -1748,10 +1748,29 @@ export function BusinessChineseStudyWorkspace({
   [tabs, activeView, setActiveView, isLessonBookmarked, handleToggleCurrentLessonBookmark, t],
  );
 
+ const toolbarNavMenu = useMemo(
+  () => (
+   <BusinessChineseWorkspaceNavMenu
+    tabs={tabs}
+    activeView={activeView}
+    onActiveViewChange={setActiveView}
+    isLessonBookmarked={isLessonBookmarked}
+    onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
+    bookmarkLabel={t("bookmarkLesson")}
+    bookmarkedLabel={t("bookmarked")}
+    offlineReadyLabel={t("offlineReady")}
+    offlineDescription={t("offlineDescription")}
+    menuLabel={t("tabsLabel")}
+    className="xl:hidden"
+   />
+  ),
+  [tabs, activeView, setActiveView, isLessonBookmarked, handleToggleCurrentLessonBookmark, t],
+ );
+
  const workspaceReaderServices = useMemo<ReaderServices>(
   () => ({
    toolbar: {
-    actions: navMenu,
+    actions: toolbarNavMenu,
    },
    renderReader: ({ content }) => (
     <BusinessChineseStudyWorkspaceContent
@@ -1773,6 +1792,7 @@ export function BusinessChineseStudyWorkspace({
    ),
   }),
   [
+   toolbarNavMenu,
    navMenu,
    books,
    lesson,
@@ -2064,6 +2084,25 @@ function BusinessChineseStudyWorkspaceContent({
   });
  }, []);
 
+ const toolbarNavMenu = useMemo(
+  () => (
+   <BusinessChineseWorkspaceNavMenu
+    tabs={tabs}
+    activeView={activeView}
+    onActiveViewChange={onActiveViewChange}
+    isLessonBookmarked={isLessonBookmarked}
+    onToggleLessonBookmark={onToggleLessonBookmark}
+    bookmarkLabel={t("bookmarkLesson")}
+    bookmarkedLabel={t("bookmarked")}
+    offlineReadyLabel={t("offlineReady")}
+    offlineDescription={t("offlineDescription")}
+    menuLabel={t("tabsLabel")}
+    className={!focusMode ? "xl:hidden" : undefined}
+   />
+  ),
+  [tabs, activeView, onActiveViewChange, isLessonBookmarked, onToggleLessonBookmark, t, focusMode],
+ );
+
  const firstSectionServices = useMemo<ReaderServices>(
   () => ({
    ...annotationServices,
@@ -2076,11 +2115,18 @@ function BusinessChineseStudyWorkspaceContent({
        className={!focusMode ? "2xl:hidden" : undefined}
       />
      ) : undefined,
-    actions: navMenu,
+    actions: toolbarNavMenu,
    },
    renderSection: renderReaderSection,
   }),
-  [annotationServices, visibleSections, selectSection, focusMode, navMenu, renderReaderSection],
+  [
+   annotationServices,
+   visibleSections,
+   selectSection,
+   focusMode,
+   toolbarNavMenu,
+   renderReaderSection,
+  ],
  );
 
  const otherSectionServices = useMemo<ReaderServices>(
@@ -2287,10 +2333,10 @@ function BusinessChineseStudyWorkspaceContent({
            <div
             className={cn(
              "grid min-w-0 gap-3",
-             !focusMode && "2xl:grid-cols-[15rem_minmax(0,1fr)]",
+             !focusMode && visibleSections.length > 1 && "2xl:grid-cols-[15rem_minmax(0,1fr)]",
             )}
            >
-            {!focusMode ? (
+            {!focusMode && visibleSections.length > 1 ? (
              <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
             ) : null}
             <div className="grid min-w-0 gap-3">
