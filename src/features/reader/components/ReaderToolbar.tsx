@@ -83,53 +83,16 @@ export function ReaderToolbar() {
     className="flex min-w-0 items-center gap-1.5 overflow-x-auto scrollbar-none"
     data-reader-toolbar
    >
-    {/* Nhóm 1: Điều hướng đoạn */}
-    <div
-     className="flex shrink-0 items-center gap-1"
-     data-reader-group="navigation"
-     aria-label={t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
-    >
-     <Typography
-      variant="caption"
-      weight="medium"
-      tone="muted"
-      className="hidden md:inline whitespace-nowrap px-1 select-none"
-     >
-      {t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
-     </Typography>
-     <Button
-      variant="ghost"
-      size="icon-toolbar"
-      aria-label={t("previous")}
-      disabled={index === 0 || segmentCount === 0}
-      onClick={commands.previous}
-     >
-      <ChevronLeft />
-     </Button>
-     <Button
-      variant="ghost"
-      size="icon-toolbar"
-      aria-label={t("restart")}
-      disabled={segmentCount === 0 || !speech}
-      onClick={commands.restartCurrent}
-     >
-      <RotateCcw />
-     </Button>
-     <Button
-      variant="ghost"
-      size="icon-toolbar"
-      aria-label={t("next")}
-      disabled={segmentCount === 0 || index >= segmentCount - 1}
-      onClick={commands.next}
-     >
-      <ChevronRight />
-     </Button>
-     <ReaderOutline />
-    </div>
+    {/* Nhóm 0: Điều hướng đầu toolbar (ví dụ: mục lục phần học) */}
+    {toolbar?.leadingActions ? (
+     <div className="flex shrink-0 items-center gap-1" data-reader-group="leading">
+      {toolbar.leadingActions}
+     </div>
+    ) : null}
 
-    {/* Nhóm 2: Phát âm thanh */}
-    {speech ? (
-     <div className="flex shrink-0 items-center gap-1" data-reader-group="playback">
+    {/* Nhóm 1: Phát âm thanh và điều hướng câu */}
+    <div className="flex shrink-0 items-center gap-1" data-reader-group="playback">
+     {speech ? (
       <Button
        size="toolbar"
        className="w-9 justify-center sm:w-auto"
@@ -144,18 +107,60 @@ export function ReaderToolbar() {
        <PlaybackIcon data-icon="inline-start" />
        <span className="hidden sm:inline">{label}</span>
       </Button>
-      {status !== "idle" ? (
-       <Button
-        variant="ghost"
-        size="icon-toolbar"
-        aria-label={t("stopReading")}
-        onClick={commands.stop}
-       >
-        <Square className="size-3.5 fill-current" />
-       </Button>
-      ) : null}
+     ) : null}
+     {speech && status !== "idle" ? (
+      <Button
+       variant="ghost"
+       size="icon-toolbar"
+       aria-label={t("stopReading")}
+       onClick={commands.stop}
+      >
+       <Square className="size-3.5 fill-current" />
+      </Button>
+     ) : null}
+     <Button
+      variant="ghost"
+      size="icon-toolbar"
+      aria-label={t("previous")}
+      disabled={index === 0 || segmentCount === 0}
+      onClick={commands.previous}
+     >
+      <ChevronLeft />
+     </Button>
+     <Typography
+      variant="caption"
+      weight="medium"
+      tone="muted"
+      className="hidden md:inline whitespace-nowrap px-1 select-none"
+      aria-label={t("segment", {
+       current: segmentCount === 0 ? 0 : index + 1,
+       total: segmentCount,
+      })}
+     >
+      {t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
+     </Typography>
+     <Button
+      variant="ghost"
+      size="icon-toolbar"
+      aria-label={t("next")}
+      disabled={segmentCount === 0 || index >= segmentCount - 1}
+      onClick={commands.next}
+     >
+      <ChevronRight />
+     </Button>
+     <Button
+      variant="ghost"
+      size="icon-toolbar"
+      aria-label={t("restart")}
+      disabled={segmentCount === 0 || !speech}
+      onClick={commands.restartCurrent}
+     >
+      <RotateCcw />
+     </Button>
+     {!toolbar?.leadingActions ? <ReaderOutline /> : null}
+     {speech ? (
       <div className="hidden md:flex items-center">
-       <DropdownMenu>
+       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
          <Button
           variant="outline"
@@ -182,8 +187,8 @@ export function ReaderToolbar() {
         </DropdownMenuContent>
        </DropdownMenu>
       </div>
-     </div>
-    ) : null}
+     ) : null}
+    </div>
 
     {/* Nhóm 3: Quick Toggles (Pinyin, Bản dịch) - Hiển thị trực tiếp từ màn hình md trở lên */}
     {showContentDisplay ? (
