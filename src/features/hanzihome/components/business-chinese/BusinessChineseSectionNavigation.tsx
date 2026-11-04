@@ -1,46 +1,81 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { BookOpen, ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/forms/select";
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuGroup,
+ DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuTrigger,
+} from "@/components/ui/overlays/dropdown-menu";
 import { Typography } from "@/components/ui/display/typography";
 import { HanziInlineText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { stripLeadingEmoji } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { cn } from "@/lib/utils";
+
+export function CompactSectionNavigation({
+ sections,
+ onSelect,
+ className,
+}: {
+ readonly sections: TextbookLesson["sections"];
+ readonly onSelect: (sectionId: string) => void;
+ readonly className?: string;
+}) {
+ const t = useTranslations("BusinessChinese");
+
+ if (sections.length <= 1) return null;
+
+ return (
+  <DropdownMenu modal={false}>
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     variant="outline"
+     size="toolbar"
+     className={cn("gap-1.5 shrink-0", className)}
+     aria-label={t("tocLabel")}
+     title={t("tocLabel")}
+    >
+     <BookOpen className="size-3.5 text-accent-text shrink-0" />
+     <span className="truncate max-w-[7rem] sm:max-w-[10rem]">{t("tocLabel")}</span>
+     <ChevronDown className="size-3 text-muted-foreground shrink-0" />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="start" width="md">
+    <DropdownMenuLabel>{t("tocLabel")}</DropdownMenuLabel>
+    <DropdownMenuGroup>
+     {sections.map((section) => (
+      <DropdownMenuItem
+       key={section.id}
+       onClick={() => onSelect(section.id)}
+       className="cursor-pointer"
+      >
+       <HanziInlineText text={stripLeadingEmoji(section.title)} />
+      </DropdownMenuItem>
+     ))}
+    </DropdownMenuGroup>
+   </DropdownMenuContent>
+  </DropdownMenu>
+ );
+}
 
 export function MobileSectionNavigation({
  sections,
  onSelect,
+ className,
 }: {
- sections: TextbookLesson["sections"];
- onSelect: (sectionId: string) => void;
+ readonly sections: TextbookLesson["sections"];
+ readonly onSelect: (sectionId: string) => void;
+ readonly className?: string;
 }) {
- const t = useTranslations("BusinessChinese");
-
- return (
-  <div className="min-w-0 2xl:hidden">
-   <Select onValueChange={onSelect}>
-    <SelectTrigger aria-label={t("tocLabel")} width="full" className="min-w-0 max-w-none">
-     <SelectValue placeholder={t("tocLabel")} />
-    </SelectTrigger>
-    <SelectContent>
-     {sections.map((section) => (
-      <SelectItem key={section.id} value={section.id}>
-       {stripLeadingEmoji(section.title)}
-      </SelectItem>
-     ))}
-    </SelectContent>
-   </Select>
-  </div>
- );
+ return <CompactSectionNavigation sections={sections} onSelect={onSelect} className={className} />;
 }
 
 export function DesktopSectionNavigation({

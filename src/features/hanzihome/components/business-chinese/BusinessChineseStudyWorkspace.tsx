@@ -73,7 +73,7 @@ import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMe
 import { BusinessChineseLessonSelector } from "./BusinessChineseLessonSelector";
 import {
  DesktopSectionNavigation,
- MobileSectionNavigation,
+ CompactSectionNavigation,
 } from "./BusinessChineseSectionNavigation";
 import {
  containsHanziText,
@@ -2007,22 +2007,6 @@ function BusinessChineseStudyWorkspaceContent({
   [annotationsQuery.data, handleOpenAnnotation, handleSelection, textReaderDocument],
  );
 
- const firstSectionServices = useMemo<ReaderServices>(
-  () => ({
-   ...annotationServices,
-   toolbar: { actions: navMenu },
-   renderSection: renderReaderSection,
-  }),
-  [annotationServices, navMenu, renderReaderSection],
- );
-
- const otherSectionServices = useMemo<ReaderServices>(
-  () => ({
-   ...annotationServices,
-   renderSection: renderReaderSection,
-  }),
-  [annotationServices, renderReaderSection],
- );
  const annotationsContextValue = useMemo<BusinessChineseAnnotationsContextValue>(
   () => ({
    readerAnnotations: annotationsQuery.data ?? [],
@@ -2072,12 +2056,40 @@ function BusinessChineseStudyWorkspaceContent({
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
  const book = books.find((item) => item.key === lesson.bookKey);
  const sequentialLessons = book?.lessons.every((item, index) => item.number === index + 1);
- const selectSection = (sectionId: string) => {
+ const selectSection = useCallback((sectionId: string) => {
   scrollAppContentToElement(document.getElementById(sectionId), {
    behavior: "smooth",
    block: "start",
+   allowViewport: true,
   });
- };
+ }, []);
+
+ const firstSectionServices = useMemo<ReaderServices>(
+  () => ({
+   ...annotationServices,
+   toolbar: {
+    leadingActions:
+     visibleSections.length > 1 ? (
+      <CompactSectionNavigation
+       sections={visibleSections}
+       onSelect={selectSection}
+       className={!focusMode ? "2xl:hidden" : undefined}
+      />
+     ) : undefined,
+    actions: navMenu,
+   },
+   renderSection: renderReaderSection,
+  }),
+  [annotationServices, visibleSections, selectSection, focusMode, navMenu, renderReaderSection],
+ );
+
+ const otherSectionServices = useMemo<ReaderServices>(
+  () => ({
+   ...annotationServices,
+   renderSection: renderReaderSection,
+  }),
+  [annotationServices, renderReaderSection],
+ );
 
  const desktopTabActions = (
   <>
@@ -2282,9 +2294,6 @@ function BusinessChineseStudyWorkspaceContent({
              <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
             ) : null}
             <div className="grid min-w-0 gap-3">
-             {!focusMode ? (
-              <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
-             ) : null}
              <Card
               variant="section"
               padding="lg"
