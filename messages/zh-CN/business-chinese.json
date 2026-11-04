@@ -23,6 +23,7 @@
   "translation": "翻译练习",
   "dictation": "听写练习",
   "vocab": "词汇",
+  "review": "复习",
   "grammar": "语法",
   "practice": "练习"
  },
@@ -67,5 +68,26 @@
    "description": "练习听写本课的短句。",
    "open": "打开听写练习（{count} 句）"
   }
+ },
+ "vocabReview": {
+  "eyebrow": "本课词汇复习",
+  "title": "主动复习（{count} 个词）",
+  "startReview": "抽认卡复习",
+  "startDrills": "应用巩固练习",
+  "modeFlashcard": "抽认卡",
+  "modeDrills": "语境练习",
+  "clozeTitle": "课文语境填空",
+  "clozeDescription": "根据课文语境填入恰当的生词：",
+  "keywordHint": "提示词：{pinyin} · {meaning}",
+  "inputPlaceholder": "输入中文生词...",
+  "checkAnswer": "检查",
+  "resetAnswer": "重置",
+  "feedback": {
+   "correct": "正确！你已掌握该词的语境用法。",
+   "incorrect": "未填对。参考答案：{answer}"
+  },
+  "pipButton": "画中画浮窗",
+  "pipTooltip": "在桌面开启画中画浮窗，工作时沉浸式认读生词",
+  "pipActive": "浮窗已开启"
  }
 }

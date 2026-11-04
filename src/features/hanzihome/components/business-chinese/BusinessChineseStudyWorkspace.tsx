@@ -43,10 +43,29 @@ import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
-import { Bookmark, CloudCheck, Languages, Tags } from "lucide-react";
+import { Bookmark, CloudCheck, Languages, PictureInPicture2, Sparkles, Tags } from "lucide-react";
+import { createPortal } from "react-dom";
+import {
+ UniversalAmbientPip,
+ type UniversalPipMode,
+} from "@/features/hanzihome/components/review/UniversalAmbientPip";
+import { adaptTextbookGrammarToPip } from "@/features/hanzihome/components/review/pip-grammar-adapter";
+import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
 import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
-import type { SegmentedControlItem } from "@/components/ui/forms/segmented-control";
+import {
+ SegmentedControl,
+ type SegmentedControlItem,
+} from "@/components/ui/forms/segmented-control";
 import { Typography, type TypographyProps } from "@/components/ui/display/typography";
+import { VocabReviewPanel } from "@/features/hanzihome/components/review/VocabReviewPanel";
+import { BusinessChineseContextualDrills } from "./BusinessChineseContextualDrills";
+import { UniversalExerciseRunner } from "@/features/hanzihome/components/practice/UniversalExerciseRunner";
+import { adaptTextbookPracticeToUniversal } from "@/features/hanzihome/components/practice/universal-exercise-adapter";
+import type {
+ ReviewAnswerHandler,
+ ReviewBookmarkHandler,
+} from "@/features/hanzihome/components/review/types";
+import type { UserLearningState } from "@/features/hanzihome/types";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
@@ -157,6 +176,8 @@ import {
  pairPracticeBlankAnswers,
  parsePracticeExerciseItem,
  evaluatePracticeAnswer,
+ textbookLessonToReviewLesson,
+ generateContextualVocabDrills,
  type PracticeAnswerEvaluation,
 } from "./business-chinese-study-utils";
 
@@ -1358,7 +1379,7 @@ function BusinessChineseSection({
  }
 
  return (
-  <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4">
+  <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4 content-auto">
    {visibleBlocks.length > 0 &&
    !(section.category === "grammar" && visibleBlocks[0]?.type === "subheading") ? (
     <header>
@@ -1632,6 +1653,7 @@ export function BusinessChineseStudyWorkspace({
     { key: "translation", label: t("tabs.translation") },
     { key: "dictation", label: t("tabs.dictation") },
     { key: "vocab", label: t("tabs.vocab") },
+    { key: "review", label: t("tabs.review") },
     { key: "grammar", label: t("tabs.grammar") },
     { key: "practice", label: t("tabs.practice") },
    ].filter((tab) =>
@@ -1659,19 +1681,22 @@ export function BusinessChineseStudyWorkspace({
   () => buildBusinessChineseReaderDocument(lesson, activeView),
   [activeView, lesson],
  );
- const setActiveView = (value: string) => {
-  setOptimisticTab(value);
-  const params = new URLSearchParams(searchParams.toString());
-  params.set("lesson", String(lesson.number));
-  params.set("tab", value);
-  if (currentPath.endsWith("/offline")) {
-   window.history.pushState(null, "", `?${params.toString()}`);
-   return;
-  }
-  router.push(`${buildTextbookHref(lesson.bookKey, lesson.number).split("?")[0]}?${params}`, {
-   scroll: false,
-  });
- };
+ const setActiveView = useCallback(
+  (value: string) => {
+   setOptimisticTab(value);
+   const params = new URLSearchParams(searchParams.toString());
+   params.set("lesson", String(lesson.number));
+   params.set("tab", value);
+   if (currentPath.endsWith("/offline")) {
+    window.history.pushState(null, "", `?${params.toString()}`);
+    return;
+   }
+   router.push(`${buildTextbookHref(lesson.bookKey, lesson.number).split("?")[0]}?${params}`, {
+    scroll: false,
+   });
+  },
+  [currentPath, lesson.bookKey, lesson.number, router, searchParams],
+ );
  useEffect(() => {
   if (learning.isLoading) return;
   if (shouldRestoreLesson && resumeLesson) {
@@ -1705,19 +1730,63 @@ export function BusinessChineseStudyWorkspace({
   currentPath,
  ]);
 
- const navMenu = (
-  <BusinessChineseWorkspaceNavMenu
-   tabs={tabs}
-   activeView={activeView}
-   onActiveViewChange={setActiveView}
-   isLessonBookmarked={isLessonBookmarked}
-   onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
-   bookmarkLabel={t("bookmarkLesson")}
-   bookmarkedLabel={t("bookmarked")}
-   offlineReadyLabel={t("offlineReady")}
-   offlineDescription={t("offlineDescription")}
-   menuLabel={t("tabsLabel")}
-  />
+ const navMenu = useMemo(
+  () => (
+   <BusinessChineseWorkspaceNavMenu
+    tabs={tabs}
+    activeView={activeView}
+    onActiveViewChange={setActiveView}
+    isLessonBookmarked={isLessonBookmarked}
+    onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
+    bookmarkLabel={t("bookmarkLesson")}
+    bookmarkedLabel={t("bookmarked")}
+    offlineReadyLabel={t("offlineReady")}
+    offlineDescription={t("offlineDescription")}
+    menuLabel={t("tabsLabel")}
+   />
+  ),
+  [tabs, activeView, setActiveView, isLessonBookmarked, handleToggleCurrentLessonBookmark, t],
+ );
+
+ const workspaceReaderServices = useMemo<ReaderServices>(
+  () => ({
+   toolbar: {
+    actions: navMenu,
+   },
+   renderReader: ({ content }) => (
+    <BusinessChineseStudyWorkspaceContent
+     books={books}
+     lesson={lesson}
+     activeView={activeView}
+     onActiveViewChange={setActiveView}
+     tabs={tabs}
+     isLessonBookmarked={isLessonBookmarked}
+     onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
+     navMenu={navMenu}
+     readerContent={content}
+     bookKey={bookKey}
+     displayMode={displayMode}
+     learningState={learningState}
+     onRecordReview={learning.recordReview}
+     onToggleBookmark={toggleBookmark}
+    />
+   ),
+  }),
+  [
+   navMenu,
+   books,
+   lesson,
+   activeView,
+   setActiveView,
+   tabs,
+   isLessonBookmarked,
+   handleToggleCurrentLessonBookmark,
+   bookKey,
+   displayMode,
+   learningState,
+   learning.recordReview,
+   toggleBookmark,
+  ],
  );
 
  if (shouldRestoreLesson) return <HanziHomeWorkspaceLoading />;
@@ -1729,26 +1798,7 @@ export function BusinessChineseStudyWorkspace({
      key={readerDocument.id}
      document={readerDocument}
      bookKey={bookKey}
-     services={{
-      toolbar: {
-       actions: navMenu,
-      },
-      renderReader: ({ content }) => (
-       <BusinessChineseStudyWorkspaceContent
-        books={books}
-        lesson={lesson}
-        activeView={activeView}
-        onActiveViewChange={setActiveView}
-        tabs={tabs}
-        isLessonBookmarked={isLessonBookmarked}
-        onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
-        navMenu={navMenu}
-        readerContent={content}
-        bookKey={bookKey}
-        displayMode={displayMode}
-       />
-      ),
-     }}
+     services={workspaceReaderServices}
     />
    </ReaderPronunciationSessionProvider>
   </MandarinTtsProvider>
@@ -1769,27 +1819,27 @@ function BusinessChineseReader({
   displayMode: defaultTextbookDisplaySettings,
   bookKey,
  });
- return (
-  <Reader
-   data={integration.data}
-   display={integration.display}
-   services={{
-    ...integration.services,
-    ...services,
-    toolbar: {
-     stickyOffset: "page",
-     ...integration.services.toolbar,
-     ...services?.toolbar,
-    },
-    renderReader: ({ content }) => {
-     const workspace = services?.renderReader ? services.renderReader({ content }) : content;
-     return integration.services.renderReader
-      ? integration.services.renderReader({ content: workspace })
-      : workspace;
-    },
-   }}
-  />
+
+ const mergedServices = useMemo<ReaderServices>(
+  () => ({
+   ...integration.services,
+   ...services,
+   toolbar: {
+    stickyOffset: "page",
+    ...integration.services.toolbar,
+    ...services?.toolbar,
+   },
+   renderReader: ({ content }) => {
+    const workspace = services?.renderReader ? services.renderReader({ content }) : content;
+    return integration.services.renderReader
+     ? integration.services.renderReader({ content: workspace })
+     : workspace;
+   },
+  }),
+  [integration.services, services],
  );
+
+ return <Reader data={integration.data} display={integration.display} services={mergedServices} />;
 }
 
 function BusinessChineseStudyWorkspaceContent({
@@ -1804,6 +1854,9 @@ function BusinessChineseStudyWorkspaceContent({
  readerContent,
  bookKey,
  displayMode,
+ learningState,
+ onRecordReview,
+ onToggleBookmark,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
@@ -1816,8 +1869,76 @@ function BusinessChineseStudyWorkspaceContent({
  readerContent: ReactNode;
  bookKey: string;
  displayMode: LessonDisplayMode;
+ learningState: UserLearningState;
+ onRecordReview: ReviewAnswerHandler;
+ onToggleBookmark: ReviewBookmarkHandler;
 }) {
  const t = useTranslations("BusinessChinese");
+ const reviewLesson = useMemo(() => textbookLessonToReviewLesson(lesson), [lesson]);
+ const contextualDrills = useMemo(() => generateContextualVocabDrills(lesson), [lesson]);
+ const [reviewMode, setReviewMode] = useState<"flashcard" | "drills">("flashcard");
+ const reviewModeItems = useMemo<SegmentedControlItem<"flashcard" | "drills">[]>(
+  () => [
+   { key: "flashcard", label: t("vocabReview.modeFlashcard") },
+   { key: "drills", label: t("vocabReview.modeDrills") },
+  ],
+  [t],
+ );
+ const {
+  isSupported: isPipSupported,
+  isOpen: isPipOpen,
+  pipWindow,
+  openPip,
+  closePip,
+ } = useDocumentPip();
+ const [isInAppFloatingOpen, setIsInAppFloatingOpen] = useState(false);
+ const [pipMode, setPipMode] = useState<UniversalPipMode>("vocab");
+ const [isInteractivePracticeOpen, setIsInteractivePracticeOpen] = useState(false);
+
+ const handleTogglePip = useCallback(
+  async (targetMode: UniversalPipMode = "vocab") => {
+   setPipMode(targetMode);
+   if (isPipOpen) {
+    if (pipMode === targetMode) {
+     closePip();
+    }
+    return;
+   }
+   if (isInAppFloatingOpen) {
+    if (pipMode === targetMode) {
+     setIsInAppFloatingOpen(false);
+    }
+    return;
+   }
+   if (isPipSupported) {
+    const win = await openPip({ width: 440, height: 380 });
+    if (!win) {
+     setIsInAppFloatingOpen(true);
+    }
+   } else {
+    setIsInAppFloatingOpen(true);
+   }
+  },
+  [closePip, isInAppFloatingOpen, isPipOpen, isPipSupported, openPip, pipMode],
+ );
+ const safeLearningState = useMemo<UserLearningState>(
+  () => ({
+   ...learningState,
+   progress: {
+    vocab: {},
+    grammar: {},
+    ...(learningState?.progress ?? {}),
+   },
+   bookmarks: {
+    lessons: [],
+    vocab: [],
+    grammar: [],
+    radicals: [],
+    ...(learningState?.bookmarks ?? {}),
+   },
+  }),
+  [learningState],
+ );
  const toolsLabels = useTranslations("Reader.study.chrome.tools");
  const isLessonOfflineReady = useIsLessonCached(lesson.id);
  const textReaderDocument = useMemo(
@@ -1937,6 +2058,17 @@ function BusinessChineseStudyWorkspaceContent({
  const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
  const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
  const intro = lesson.intro.join(" ");
+ const universalTextbookPracticeItems = useMemo(() => {
+  const blocks: TextbookLesson["sections"][number]["blocks"][number][] = [];
+  lesson.sections.forEach((sec) => {
+   if (sec.category === "practice") blocks.push(...sec.blocks);
+  });
+  return adaptTextbookPracticeToUniversal(blocks);
+ }, [lesson.sections]);
+ const textbookGrammarPoints = useMemo(
+  () => adaptTextbookGrammarToPip(lesson.sections),
+  [lesson.sections],
+ );
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
  const book = books.find((item) => item.key === lesson.bookKey);
  const sequentialLessons = book?.lessons.every((item, index) => item.number === index + 1);
@@ -2093,10 +2225,53 @@ function BusinessChineseStudyWorkspaceContent({
            />
           ) : null}
 
+          {activeView === "review" ? (
+           <div data-textbook-document className="mx-auto grid w-full max-w-4xl min-w-0 gap-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-1">
+             <SegmentedControl
+              value={reviewMode}
+              items={reviewModeItems}
+              onChange={setReviewMode}
+              className="w-auto"
+             />
+             <Button
+              type="button"
+              variant={isPipOpen || isInAppFloatingOpen ? "active" : "outline"}
+              size="compact"
+              onClick={() => handleTogglePip("vocab")}
+              title={t("vocabReview.pipTooltip")}
+             >
+              <PictureInPicture2 className="size-3.5" />
+              <span>
+               {isPipOpen || isInAppFloatingOpen
+                ? t("vocabReview.pipActive")
+                : t("vocabReview.pipButton")}
+              </span>
+             </Button>
+            </div>
+
+            {reviewMode === "flashcard" ? (
+             <VocabReviewPanel
+              lesson={reviewLesson}
+              learningState={safeLearningState}
+              onAnswer={onRecordReview}
+              onToggleBookmark={onToggleBookmark}
+              title={t("vocabReview.title", { count: lesson.vocab.length })}
+              description={t("vocabReview.eyebrow")}
+              availableModes={["all", "hard"]}
+              initialMode="all"
+             />
+            ) : (
+             <BusinessChineseContextualDrills drills={contextualDrills} />
+            )}
+           </div>
+          ) : null}
+
           {activeView !== "text" &&
           activeView !== "notes" &&
           activeView !== "translation" &&
-          activeView !== "dictation" ? (
+          activeView !== "dictation" &&
+          activeView !== "review" ? (
            <div
             className={cn(
              "grid min-w-0 gap-3",
@@ -2137,6 +2312,44 @@ function BusinessChineseStudyWorkspaceContent({
                 </Button>
                </div>
               ) : null}
+              {lesson.vocab.length > 0 && activeView === "vocab" ? (
+               <Card
+                variant="subtle"
+                padding="md"
+                className="flex min-w-0 flex-wrap items-center justify-between gap-3"
+               >
+                <div className="grid min-w-0 gap-1">
+                 <Typography variant="body" weight="semibold">
+                  {t("vocabReview.title", { count: lesson.vocab.length })}
+                 </Typography>
+                 <Typography variant="bodySmall" tone="secondary">
+                  {t("vocabReview.clozeDescription")}
+                 </Typography>
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant="default"
+                  onClick={() => onActiveViewChange("review")}
+                 >
+                  {t("vocabReview.startReview")}
+                 </Button>
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant={
+                   (isPipOpen || isInAppFloatingOpen) && pipMode === "vocab" ? "active" : "outline"
+                  }
+                  onClick={() => handleTogglePip("vocab")}
+                  title={t("vocabReview.pipTooltip")}
+                 >
+                  <PictureInPicture2 className="size-3.5" />
+                  <span>{t("vocabReview.pipButton")}</span>
+                 </Button>
+                </div>
+               </Card>
+              ) : null}
               {lesson.vocab.length > 0 &&
               canonicalVocabularyTableIds.length === 0 &&
               (activeView === "all" || activeView === "vocab") ? (
@@ -2149,12 +2362,49 @@ function BusinessChineseStudyWorkspaceContent({
                />
               ) : null}
               {activeView === "practice" &&
-              (translationSegments.length > 0 || dictationSources.length > 0) ? (
+              (translationSegments.length > 0 ||
+               dictationSources.length > 0 ||
+               universalTextbookPracticeItems.length > 0) ? (
                <Card
                 variant="subtle"
                 padding="sm"
                 className="flex min-w-0 flex-wrap items-center gap-2"
                >
+                {universalTextbookPracticeItems.length > 0 ? (
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant={isInteractivePracticeOpen ? "outline" : "default"}
+                  onClick={() => setIsInteractivePracticeOpen((prev) => !prev)}
+                 >
+                  <Sparkles className="size-3.5" />
+                  <span>
+                   {isInteractivePracticeOpen
+                    ? "Đóng chế độ từng câu"
+                    : `Luyện tập từng câu (${universalTextbookPracticeItems.length} câu)`}
+                  </span>
+                 </Button>
+                ) : null}
+                {universalTextbookPracticeItems.length > 0 ? (
+                 <Button
+                  type="button"
+                  size="compact"
+                  variant={
+                   (isPipOpen || isInAppFloatingOpen) && pipMode === "practice"
+                    ? "active"
+                    : "outline"
+                  }
+                  onClick={() => handleTogglePip("practice")}
+                  title="Mở cửa sổ nổi PiP để luyện tập bài tập"
+                 >
+                  <PictureInPicture2 className="size-3.5" />
+                  <span>
+                   {(isPipOpen || isInAppFloatingOpen) && pipMode === "practice"
+                    ? "Đang mở PiP"
+                    : "Cửa sổ nổi (PiP)"}
+                  </span>
+                 </Button>
+                ) : null}
                 {translationSegments.length > 0 ? (
                  <Button
                   type="button"
@@ -2181,6 +2431,43 @@ function BusinessChineseStudyWorkspaceContent({
                 ) : null}
                </Card>
               ) : null}
+              {activeView === "practice" &&
+              isInteractivePracticeOpen &&
+              universalTextbookPracticeItems.length > 0 ? (
+               <UniversalExerciseRunner
+                items={universalTextbookPracticeItems}
+                title={`Luyện tập bài học: ${lesson.title}`}
+                onClose={() => setIsInteractivePracticeOpen(false)}
+               />
+              ) : null}
+              {activeView === "grammar" && textbookGrammarPoints.length > 0 ? (
+               <div className="flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl border border-border-default/60 bg-surface-muted/30 p-2">
+                <div className="flex items-center gap-2">
+                 <Badge variant="default" size="sm">
+                  {`${textbookGrammarPoints.length} điểm ngữ pháp`}
+                 </Badge>
+                 <Typography variant="bodySmall" tone="secondary">
+                  Cấu trúc ngữ pháp và câu ví dụ kèm phiên âm
+                 </Typography>
+                </div>
+                <Button
+                 type="button"
+                 size="compact"
+                 variant={
+                  (isPipOpen || isInAppFloatingOpen) && pipMode === "grammar" ? "active" : "outline"
+                 }
+                 onClick={() => handleTogglePip("grammar")}
+                 title="Mở cửa sổ nổi PiP để ôn tập ngữ pháp"
+                >
+                 <PictureInPicture2 className="size-3.5" />
+                 <span>
+                  {(isPipOpen || isInAppFloatingOpen) && pipMode === "grammar"
+                   ? "Đang mở PiP"
+                   : "Cửa sổ nổi (PiP)"}
+                 </span>
+                </Button>
+               </div>
+              ) : null}
               {visibleSections.map((section, index) => {
                const content = (
                 <BusinessChineseSection
@@ -2204,11 +2491,13 @@ function BusinessChineseStudyWorkspaceContent({
                return (
                 <Fragment key={section.id}>
                  {section.category === "text" ? (
-                  <BusinessChineseReader
-                   bookKey={bookKey}
-                   document={sectionDocuments.get(section.id) ?? textReaderDocument}
-                   services={index === 0 ? firstSectionServices : otherSectionServices}
-                  />
+                  <div className="content-auto">
+                   <BusinessChineseReader
+                    bookKey={bookKey}
+                    document={sectionDocuments.get(section.id) ?? textReaderDocument}
+                    services={index === 0 ? firstSectionServices : otherSectionServices}
+                   />
+                  </div>
                  ) : (
                   content
                  )}
@@ -2225,6 +2514,30 @@ function BusinessChineseStudyWorkspaceContent({
        </TabsContent>
       </Tabs>
       {selectionPopover}
+      {isPipOpen && pipWindow
+       ? createPortal(
+          <UniversalAmbientPip
+           initialMode={pipMode}
+           lessonTitle={lesson.title}
+           vocabItems={reviewLesson.vocab}
+           grammarItems={textbookGrammarPoints}
+           practiceItems={universalTextbookPracticeItems}
+           onClose={closePip}
+          />,
+          pipWindow.document.body,
+         )
+       : null}
+      {isInAppFloatingOpen ? (
+       <UniversalAmbientPip
+        initialMode={pipMode}
+        lessonTitle={lesson.title}
+        vocabItems={reviewLesson.vocab}
+        grammarItems={textbookGrammarPoints}
+        practiceItems={universalTextbookPracticeItems}
+        onClose={() => setIsInAppFloatingOpen(false)}
+        isFloatingInApp
+       />
+      ) : null}
      </div>
     </div>
    </ReaderServicesContext.Provider>

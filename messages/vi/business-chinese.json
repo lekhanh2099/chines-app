@@ -23,6 +23,7 @@
   "translation": "Luyện dịch",
   "dictation": "Nghe chép",
   "vocab": "Từ vựng",
+  "review": "Ôn tập",
   "grammar": "Ngữ pháp",
   "practice": "Bài tập"
  },
@@ -67,5 +68,26 @@
    "description": "Luyện nghe chép chính tả từng câu ngắn trong bài.",
    "open": "Mở Nghe chép ({count} câu)"
   }
+ },
+ "vocabReview": {
+  "eyebrow": "Ôn tập từ vựng",
+  "title": "Ôn tập chủ động ({count} từ)",
+  "startReview": "Ôn tập Flashcard",
+  "startDrills": "Luyện nhớ ứng dụng",
+  "modeFlashcard": "Thẻ Flashcard",
+  "modeDrills": "Ứng dụng ngữ cảnh",
+  "clozeTitle": "Điền từ theo ngữ cảnh bài học",
+  "clozeDescription": "Vận dụng từ vựng mới để điền vào câu bài khóa phù hợp:",
+  "keywordHint": "Từ gợi ý: {pinyin} · {meaning}",
+  "inputPlaceholder": "Nhập từ tiếng Trung...",
+  "checkAnswer": "Kiểm tra",
+  "resetAnswer": "Làm lại",
+  "feedback": {
+   "correct": "Chính xác! Bạn đã nhớ từ này trong ngữ cảnh.",
+   "incorrect": "Chưa chính xác. Đáp án gợi ý: {answer}"
+  },
+  "pipButton": "Cửa sổ nổi (PiP)",
+  "pipTooltip": "Mở thẻ trôi nổi trên desktop để nhận diện từ vựng khi làm việc",
+  "pipActive": "Đang mở cửa sổ nổi"
  }
 }

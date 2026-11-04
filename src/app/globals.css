@@ -50,6 +50,11 @@
  }
 }
 
+@utility content-auto {
+ content-visibility: auto;
+ contain-intrinsic-size: auto 500px;
+}
+
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 

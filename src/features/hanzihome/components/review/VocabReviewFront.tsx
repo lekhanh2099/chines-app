@@ -13,11 +13,24 @@ import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpea
 export function VocabReviewFront({
  item,
  speakButtonClassName,
+ revealed = false,
 }: {
  item: Extract<ReviewItem, { type: "vocab" }>;
  speakButtonClassName?: string;
+ revealed?: boolean;
 }) {
  const example = item.source.examples.find((entry) => entry.zh)?.zh;
+
+ if (revealed) {
+  return (
+   <div className="flex items-center justify-center gap-2">
+    <HanziText as="h3" size="large" weight="black" tracking="normal">
+     {item.prompt}
+    </HanziText>
+    <MandarinSpeakButton text={item.prompt} className={speakButtonClassName} />
+   </div>
+  );
+ }
 
  return (
   <div className="grid gap-3">

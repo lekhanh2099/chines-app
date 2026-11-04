@@ -31,17 +31,18 @@ export function StudyReviewCard({
 }: StudyReviewCardProps) {
  const isGrammar = item.type === "grammar";
  const front = isGrammar ? (
-  <GrammarReviewFront item={item} />
+  <GrammarReviewFront item={item} revealed={revealed} />
  ) : (
   <VocabReviewFront
    item={item}
+   revealed={revealed}
    speakButtonClassName={revealed ? undefined : "pointer-events-auto"}
   />
  );
 
  if (!revealed) {
   return (
-   <div className="relative grid min-h-80 w-full touch-pan-y select-none place-items-center text-center">
+   <div className="relative grid min-h-[420px] w-full touch-pan-y select-none place-items-center text-center transition-all duration-200 ease-out sm:min-h-[450px]">
     <ActionCard
      padding="md"
      onClick={onReveal}
@@ -66,7 +67,7 @@ export function StudyReviewCard({
   <Card
    variant="section"
    padding="md"
-   className="grid min-h-80 w-full touch-pan-y select-none place-items-center text-center"
+   className="grid min-h-[420px] w-full touch-pan-y select-none place-items-center text-center transition-all duration-200 ease-out sm:min-h-[450px]"
    onTouchStart={touchHandlers.onTouchStart}
    onTouchEnd={touchHandlers.onTouchEnd}
   >
