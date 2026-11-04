@@ -17,7 +17,8 @@ export type PipGrammarPoint = {
 const NUMBERED_HEADING_REGEX =
  /^(\([一二三四五六七八九十]+\)|\[\d+\]|\d+\.\s*(?:Cấu trúc|Ngữ pháp|[“"「『]))/u;
 const NUMBERED_EXAMPLE_REGEX = /^(\([0-9]+\)|[①②③④⑤⑥⑦⑧⑨⑩]|\d+\.)\s*/u;
-const ZH_VI_SPLIT_REGEX = /^([\u4e00-\u9fa5\s\d\p{P}A-Za-z]+?[!?.。！？])\s+([A-ZÀ-Ỹa-zà-ỹ].+)$/u;
+const ZH_VI_SPLIT_REGEX =
+ /^([\p{Script=Han}\p{Script=Latin}\s\d\p{P}]+?[!?.。！？])\s+([\p{Script=Latin}].+)$/u;
 
 function parseMarkdownTableExamples(rawText: string): readonly PipGrammarExample[] {
  const parts = rawText

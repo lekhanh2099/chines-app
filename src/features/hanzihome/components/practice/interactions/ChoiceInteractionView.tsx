@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
@@ -19,12 +19,18 @@ export function ChoiceInteractionView({
   [item.interaction],
  );
  const correctKey = interaction?.correctKey ?? "";
+ const rootRef = useRef<HTMLDivElement>(null);
 
  useEffect(() => {
   if (isSubmitted || options.length === 0) return;
+  const targetWindow = rootRef.current?.ownerDocument.defaultView;
+  if (!targetWindow) return;
 
   const handleKeyDown = (e: KeyboardEvent) => {
-   if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+   if (
+    e.target instanceof targetWindow.HTMLInputElement ||
+    e.target instanceof targetWindow.HTMLTextAreaElement
+   ) {
     return;
    }
 
@@ -48,8 +54,8 @@ export function ChoiceInteractionView({
    }
   };
 
-  window.addEventListener("keydown", handleKeyDown);
-  return () => window.removeEventListener("keydown", handleKeyDown);
+  targetWindow.addEventListener("keydown", handleKeyDown);
+  return () => targetWindow.removeEventListener("keydown", handleKeyDown);
  }, [isSubmitted, onChange, options]);
 
  if (!interaction) {
@@ -57,7 +63,7 @@ export function ChoiceInteractionView({
  }
 
  return (
-  <div className="grid gap-3">
+  <div ref={rootRef} className="grid gap-3">
    <div className="grid gap-2 sm:grid-cols-2">
     {options.map((option, index) => {
      const isSelected = value === option.key;

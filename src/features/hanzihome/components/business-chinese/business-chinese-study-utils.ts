@@ -157,7 +157,7 @@ export function parsePracticeExerciseItem(
   keywordHint = answerHint[1].trim();
   cleanAnswer = answerHint[2].trim();
  }
- const promptHint = promptText.match(/\s+[(（]([\p{Script=Han}….\s、/]+)[)）]$/u);
+ const promptHint = promptText.match(/\s+[(（]([\p{Script=Han}….\s、/]+|hoàn thành câu)[)）]$/iu);
  if (promptHint) {
   if (!keywordHint) keywordHint = promptHint[1].trim();
   displayPrompt = promptText.slice(0, promptHint.index).trim();

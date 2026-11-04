@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
 import { RotateCcw } from "lucide-react";
@@ -9,6 +8,7 @@ import type { InteractionComponentProps } from "../universal-exercise.types";
 
 export function ReorderInteractionView({
  item,
+ value,
  isSubmitted,
  isCorrect,
  onChange,
@@ -17,26 +17,29 @@ export function ReorderInteractionView({
  const tokens = interaction?.tokens ?? [];
  const correctOrder = interaction?.correctOrder ?? [];
 
- // Reset selected indices when item.id changes without useEffect
- const [prevItemId, setPrevItemId] = useState(item.id);
- const [selectedIndices, setSelectedIndices] = useState<readonly number[]>([]);
-
- if (item.id !== prevItemId) {
-  setPrevItemId(item.id);
-  setSelectedIndices([]);
- }
+ const selectedIndices: number[] = [];
+ const usedIndices = new Set<number>();
+ value
+  .split(/\s+/u)
+  .filter(Boolean)
+  .forEach((selectedToken) => {
+   const tokenIndex = tokens.findIndex(
+    (token, index) => token === selectedToken && !usedIndices.has(index),
+   );
+   if (tokenIndex < 0) return;
+   usedIndices.add(tokenIndex);
+   selectedIndices.push(tokenIndex);
+  });
 
  const handleToggleToken = (index: number) => {
   if (isSubmitted) return;
 
   if (selectedIndices.includes(index)) {
    const next = selectedIndices.filter((i) => i !== index);
-   setSelectedIndices(next);
    const serialized = next.map((i) => tokens[i] ?? "").join(" ");
    onChange(serialized);
   } else {
    const next = [...selectedIndices, index];
-   setSelectedIndices(next);
    const serialized = next.map((i) => tokens[i] ?? "").join(" ");
    onChange(serialized);
   }
@@ -44,7 +47,6 @@ export function ReorderInteractionView({
 
  const handleReset = () => {
   if (isSubmitted) return;
-  setSelectedIndices([]);
   onChange("");
  };
 

@@ -31,11 +31,43 @@ describe("universal-exercise-adapter", () => {
   expect(items).toHaveLength(1);
   const item = items[0];
   expect(item?.category).toBe("vocab_cloze");
-  expect(item?.title).toBe("面的");
+  expect(item?.title).toBe("Điền từ vào chỗ trống");
   expect(item?.interaction.type).toBe("cloze");
   if (item && item.interaction.type === "cloze") {
    expect(item.interaction.expectedAnswer).toBe("面的");
+   expect(item.interaction.placeholder).toBe("Nhập từ phù hợp");
    expect(item.interaction.preText).toContain("自行车谁也怕");
+  }
+ });
+
+ it("does not auto-grade a blank prompt without an answer key", () => {
+  const items = adaptTextbookPracticeToUniversal([
+   {
+    id: "missing-answer",
+    type: "paragraph",
+    text: "李强是大华贸易公司的 ______ 联络员。",
+    rows: [],
+   },
+  ]);
+
+  expect(items).toEqual([]);
+ });
+
+ it("removes an instructional suffix before building a cloze sentence", () => {
+  const items = adaptTextbookPracticeToUniversal([
+   {
+    id: "instruction-suffix",
+    type: "paragraph",
+    text: "经理，明天的会议 ______ (hoàn thành câu) → 经理，明天的会议是否照常进行？",
+    rows: [],
+   },
+  ]);
+
+  const item = items[0];
+  expect(item?.interaction.type).toBe("cloze");
+  if (item && item.interaction.type === "cloze") {
+   expect(item.interaction.postText).not.toContain("hoàn thành câu");
+   expect(evaluateUniversalAnswer(item, "是否照常进行")).toBe(true);
   }
  });
 

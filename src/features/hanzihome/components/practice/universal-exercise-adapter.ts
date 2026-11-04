@@ -20,7 +20,7 @@ export function adaptVocabDrillsToUniversal(
   return {
    id: drill.id,
    category: "vocab_cloze",
-   title: drill.targetWord,
+   title: "Điền từ vào chỗ trống",
    prompt: drill.displayPrompt,
    promptTranslation: drill.sentenceTranslation,
    hint: `${drill.targetPinyin} · ${drill.targetMeaning}`,
@@ -28,7 +28,7 @@ export function adaptVocabDrillsToUniversal(
    interaction: {
     type: "cloze",
     expectedAnswer: drill.targetWord,
-    placeholder: `Điền "${drill.targetWord}"`,
+    placeholder: "Nhập từ phù hợp",
     preText,
     postText,
    },
@@ -166,6 +166,11 @@ export function adaptTextbookPracticeToUniversal(
 
   // Cloze interaction
   if (parsed.hasBlank || /[_＿]{3,}/u.test(parsed.displayPrompt)) {
+   // A blank without a source answer cannot be auto-graded safely. It remains
+   // available in the source practice renderer, but is excluded from this
+   // universal auto-graded runner until an answer key exists.
+   if (!parsed.answer.trim()) return;
+
    const blankMatch = parsed.displayPrompt.match(
     /^([\s\S]*?)(?:[_＿]{3,}|…{2,}|\.\.\.+)([\s\S]*)$/u,
    );
@@ -232,7 +237,7 @@ const EVALUATOR_REGISTRY: Record<UniversalInteraction["type"], EvaluatorStrategy
   if (interaction.type !== "cloze") return false;
   const cleanInput = answer.trim().replace(PUNCTUATION_CLEANUP, "");
   const cleanTarget = interaction.expectedAnswer.trim().replace(PUNCTUATION_CLEANUP, "");
-  if (!cleanTarget) return cleanInput.length > 0;
+  if (!cleanTarget) return false;
   if (cleanInput.length > 0 && cleanInput === cleanTarget) return true;
 
   // Check reconstructed sentence if preText/postText are present

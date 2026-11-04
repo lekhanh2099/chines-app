@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import {
  CheckCircle2,
  ChevronLeft,
@@ -64,6 +64,7 @@ export function AmbientPipExerciseRunner({
  const [answers, setAnswers] = useState<ReadonlyMap<string, string>>(new Map());
  const [evaluations, setEvaluations] = useState<ReadonlyMap<string, boolean>>(new Map());
  const [isCompleted, setIsCompleted] = useState(false);
+ const rootRef = useRef<HTMLDivElement>(null);
 
  if (rawItems !== prevRawItems) {
   setPrevRawItems(rawItems);
@@ -154,8 +155,14 @@ export function AmbientPipExerciseRunner({
 
  // Keyboard navigation: Enter to submit or next, Left/Right for prev/next
  useEffect(() => {
+  const targetWindow = rootRef.current?.ownerDocument.defaultView;
+  if (!targetWindow) return;
+
   const handleKeyDown = (e: KeyboardEvent) => {
-   if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+   if (
+    e.target instanceof targetWindow.HTMLInputElement ||
+    e.target instanceof targetWindow.HTMLTextAreaElement
+   ) {
     if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
      e.preventDefault();
      if (!isCurrentSubmitted) {
@@ -183,8 +190,8 @@ export function AmbientPipExerciseRunner({
    }
   };
 
-  window.addEventListener("keydown", handleKeyDown);
-  return () => window.removeEventListener("keydown", handleKeyDown);
+  targetWindow.addEventListener("keydown", handleKeyDown);
+  return () => targetWindow.removeEventListener("keydown", handleKeyDown);
  }, [handleCheckCurrent, handleNext, handlePrev, isCurrentSubmitted]);
 
  useEffect(() => {
@@ -418,6 +425,7 @@ export function AmbientPipExerciseRunner({
  if (isFloatingInApp) {
   return (
    <Card
+    ref={rootRef}
     variant="elevated"
     padding="none"
     className="fixed bottom-5 right-5 z-50 flex h-84 w-96 max-w-[calc(100vw-2.5rem)] flex-col justify-between overflow-hidden select-none"
@@ -428,7 +436,10 @@ export function AmbientPipExerciseRunner({
  }
 
  return (
-  <div className="flex h-screen w-screen flex-col justify-between overflow-hidden select-none bg-surface">
+  <div
+   ref={rootRef}
+   className="flex h-screen w-screen flex-col justify-between overflow-hidden select-none bg-surface"
+  >
    {content}
   </div>
  );
