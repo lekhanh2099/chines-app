@@ -99,7 +99,7 @@ describe("ReaderTools", () => {
    </NextIntlClientProvider>,
   );
   expect(markup.indexOf("data-reader-toolbar")).toBeLessThan(markup.indexOf("data-reader-content"));
-  expect(markup).toContain('data-reader-group="navigation"');
+  expect(markup).not.toContain('data-reader-group="navigation"');
   expect(markup).toContain('data-reader-group="playback"');
   expect(markup).toContain('data-reader-group="tools"');
   expect(markup).not.toContain('data-reader-group="display"');

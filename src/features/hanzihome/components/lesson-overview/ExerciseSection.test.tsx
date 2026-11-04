@@ -492,7 +492,7 @@ describe("ReadingCard", () => {
   expect(html).toContain("Đoạn 1 / 3");
   expect(html).toContain("Nghe bài");
   expect(html).toContain("Công cụ học");
-  expect(html).toContain('data-reader-group="navigation"');
+  expect(html).not.toContain('data-reader-group="navigation"');
   expect(html).toContain('data-reader-group="playback"');
   expect(html).toContain('data-reader-group="tools"');
   expect(html).toContain('data-reader-group="display"');
