@@ -2277,6 +2277,7 @@ function BusinessChineseStudyWorkspaceContent({
 
           {activeView === "dictation" ? (
            <LessonDictationWorkspace
+            lesson={lesson}
             sources={dictationSources}
             titleVi={lesson.title}
             titleZh={lesson.bookLabel}
