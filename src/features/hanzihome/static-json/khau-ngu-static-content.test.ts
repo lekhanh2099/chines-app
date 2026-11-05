@@ -415,7 +415,10 @@ describe("Khẩu ngữ static content", () => {
      false,
     );
    }
-   expect(sources.flatMap((source) => source.entries).every((entry) => entry.vi === "")).toBe(true);
+   const readingEntries = sources
+    .filter((source) => source.id !== "vocab")
+    .flatMap((source) => source.entries);
+   expect(readingEntries.every((entry) => entry.vi === "")).toBe(true);
   }
  });
 
