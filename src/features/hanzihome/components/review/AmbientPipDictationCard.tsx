@@ -35,6 +35,7 @@ import {
  dictationResponseMs,
  formatDictationSpeed,
 } from "@/features/dictation/dictation-workspace-utils";
+import type { DictationAttempt } from "@/features/dictation/dictation-session";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import { cn } from "@/lib/utils";
@@ -47,9 +48,7 @@ export type AmbientPipDictationCardProps = {
  readonly extraHeaderActions?: ReactNode;
 };
 
-type AttemptResult = {
- score: number;
- responseMs: number | null;
+type AttemptResult = Pick<DictationAttempt, "score" | "responseMs"> & {
  diff: DictationDiffToken[];
 };
 
@@ -84,6 +83,7 @@ export function AmbientPipDictationCard({
  const startTimeRef = useRef<number | null>(null);
  const autoNextTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  const inputRef = useRef<HTMLInputElement>(null);
+ const rootRef = useRef<HTMLDivElement>(null);
 
  const { speak, stop } = useFastMandarinSpeech();
 
@@ -212,6 +212,7 @@ export function AmbientPipDictationCard({
    return indices;
   });
   setCurrentIndex(0);
+  setSessionAttempts(new Map());
   setAnswer("");
   setIsChecked(false);
   setAttempt(null);
@@ -246,9 +247,10 @@ export function AmbientPipDictationCard({
 
   let totalCpm = 0;
   let cpmCount = 0;
-  for (const att of attemptsArray) {
+  for (const [index, att] of sessionAttempts.entries()) {
    if (att.responseMs && att.responseMs > 0) {
-    const chars = 2;
+    const chars = activeItems[index]?.hanzi.length ?? 0;
+    if (chars === 0) continue;
     const cpm = Math.round((chars / (att.responseMs / 1000)) * 60);
     totalCpm += cpm;
     cpmCount++;
@@ -302,6 +304,7 @@ export function AmbientPipDictationCard({
  }, [cancelAutoNext]);
 
  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  if (event.nativeEvent.isComposing) return;
   if (event.key === "Enter") {
    event.preventDefault();
    if (isChecked) {
@@ -321,6 +324,60 @@ export function AmbientPipDictationCard({
    playCurrentAudio();
   }
  };
+
+ useEffect(() => {
+  const targetWindow = rootRef.current?.ownerDocument.defaultView;
+  if (!targetWindow) return;
+
+  const handleWindowKeyDown = (event: KeyboardEvent) => {
+   if (event.isComposing || isCompleted) return;
+
+   const root = rootRef.current;
+   if (
+    root &&
+    event.target instanceof targetWindow.Node &&
+    event.target !== root.ownerDocument.body &&
+    !root.contains(event.target)
+   ) {
+    return;
+   }
+
+   if (
+    event.target instanceof targetWindow.HTMLInputElement ||
+    event.target instanceof targetWindow.HTMLTextAreaElement ||
+    event.target instanceof targetWindow.HTMLButtonElement ||
+    event.target instanceof targetWindow.HTMLSelectElement ||
+    event.target instanceof targetWindow.HTMLAnchorElement ||
+    (event.target instanceof targetWindow.HTMLElement && event.target.isContentEditable)
+   ) {
+    return;
+   }
+
+   if (event.key === "Enter") {
+    event.preventDefault();
+    if (isChecked) {
+     handleNext();
+    } else {
+     handleCheck();
+    }
+    return;
+   }
+
+   if (event.key === "Escape" && isChecked) {
+    event.preventDefault();
+    handleEditAgain();
+    return;
+   }
+
+   if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "r") {
+    event.preventDefault();
+    playCurrentAudio();
+   }
+  };
+
+  targetWindow.addEventListener("keydown", handleWindowKeyDown);
+  return () => targetWindow.removeEventListener("keydown", handleWindowKeyDown);
+ }, [handleCheck, handleEditAgain, handleNext, isChecked, isCompleted, playCurrentAudio]);
 
  // Focus input when card changes or when editing again
  useEffect(() => {
@@ -483,13 +540,7 @@ export function AmbientPipDictationCard({
      <div className="grid gap-2.5">
       {/* Audio Play Trigger & Hint Area */}
       <div className="flex items-center justify-between gap-2">
-       <Button
-        type="button"
-        variant="outline"
-        size="compact"
-        onClick={playCurrentAudio}
-        aria-label={`Nghe lại ${currentItem.hanzi}`}
-       >
+       <Button type="button" variant="outline" size="compact" onClick={playCurrentAudio}>
         <Volume2 className="size-3.5" />
         <span>Nghe lại (Ctrl+R)</span>
        </Button>
@@ -681,13 +732,18 @@ export function AmbientPipDictationCard({
     padding="none"
     className="fixed bottom-5 right-5 z-50 flex h-72 w-92 max-w-[calc(100vw-2.5rem)] flex-col justify-between overflow-hidden select-none"
    >
-    {content}
+    <div ref={rootRef} className="contents">
+     {content}
+    </div>
    </Card>
   );
  }
 
  return (
-  <div className="flex h-screen w-screen flex-col justify-between overflow-hidden select-none bg-surface">
+  <div
+   ref={rootRef}
+   className="flex h-screen w-screen flex-col justify-between overflow-hidden select-none bg-surface"
+  >
    {content}
   </div>
  );

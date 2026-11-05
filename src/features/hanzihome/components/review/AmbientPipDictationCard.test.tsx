@@ -32,6 +32,7 @@ describe("AmbientPipDictationCard", () => {
   expect(html).toContain(`1/${reviewLesson.vocab.length}`);
   expect(html).toContain("Gõ chữ Hán rồi bấm Enter...");
   expect(html).toContain("Nghe lại (Ctrl+R)");
+  expect(html).not.toContain('aria-label="Nghe lại');
   expect(html).toContain("Kiểm tra (↵)");
  });
 
