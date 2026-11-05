@@ -38,7 +38,6 @@ import {
 } from "@/components/layout/header/app-header-breadcrumb";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { Badge } from "@/components/ui/display/badge";
-import { IconTile } from "@/components/ui/display/icon-tile";
 import { Button } from "@/components/ui/actions/button";
 import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
@@ -50,6 +49,7 @@ import {
  CloudCheck,
  Languages,
  PictureInPicture2,
+ Search,
  Sparkles,
  Tags,
 } from "lucide-react";
@@ -77,7 +77,6 @@ import type {
 import type { UserLearningState } from "@/features/hanzihome/types";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
-import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import { BusinessChineseLessonSelector } from "./BusinessChineseLessonSelector";
 import {
@@ -1945,6 +1944,18 @@ function BusinessChineseStudyWorkspaceContent({
  const [isInAppFloatingOpen, setIsInAppFloatingOpen] = useState(false);
  const [pipMode, setPipMode] = useState<UniversalPipMode>("vocab");
  const [isInteractivePracticeOpen, setIsInteractivePracticeOpen] = useState(false);
+ const [vocabSearchQuery, setVocabSearchQuery] = useState("");
+ const filteredVocab = useMemo(() => {
+  if (!vocabSearchQuery.trim()) return lesson.vocab;
+  const q = vocabSearchQuery.trim().toLowerCase();
+  return lesson.vocab.filter(
+   (w) =>
+    w.hanzi.toLowerCase().includes(q) ||
+    w.pinyin.toLowerCase().includes(q) ||
+    w.meaning.toLowerCase().includes(q) ||
+    w.hanviet.toLowerCase().includes(q),
+  );
+ }, [lesson.vocab, vocabSearchQuery]);
 
  const handleTogglePip = useCallback(
   async (targetMode: UniversalPipMode = "vocab") => {
@@ -2176,8 +2187,8 @@ function BusinessChineseStudyWorkspaceContent({
   [annotationServices, renderReaderSection],
  );
 
- const desktopTabActions = (
-  <>
+ const tabActions = (
+  <div className="flex shrink-0 items-center gap-1.5">
    <OfflineAudioSettingsDialog lesson={lesson} />
    <Button
     variant="ghost"
@@ -2193,7 +2204,9 @@ function BusinessChineseStudyWorkspaceContent({
       isLessonBookmarked ? "fill-warning text-warning" : "text-muted-foreground",
      )}
     />
-    <span className={cn(isLessonBookmarked && "font-semibold text-warning-text")}>
+    <span
+     className={cn("hidden sm:inline", isLessonBookmarked && "font-semibold text-warning-text")}
+    >
      {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
     </span>
    </Button>
@@ -2202,14 +2215,15 @@ function BusinessChineseStudyWorkspaceContent({
      variant="success"
      size="sm"
      casing="natural"
-     className="cursor-default gap-1 shrink-0"
+     className="cursor-default gap-1 shrink-0 hidden md:inline-flex"
      title={t("offlineDescription")}
     >
      <CloudCheck data-icon="inline-start" />
      <span>{t("offlineReady")}</span>
     </Badge>
    ) : null}
-  </>
+   {navMenu}
+  </div>
  );
 
  return (
@@ -2228,42 +2242,14 @@ function BusinessChineseStudyWorkspaceContent({
        ) : null}
        {lesson.title}
       </Typography>
-      {activeView !== "text" && activeView !== "all" ? (
-       <div className="shrink-0 xl:hidden">
-        <WorkspaceToolbar>
-         <div className="flex min-w-0 flex-1 items-center gap-2">
-          <Typography variant="bodySmall" weight="bold" clamp="one">
-           {tabs.find((tab) => tab.key === activeView)?.label ?? t("tabsLabel")}
-          </Typography>
-         </div>
-         <div className="flex shrink-0 items-center gap-1.5">
-          <Button
-           variant={isLessonBookmarked ? "warning" : "ghost"}
-           size="icon-toolbar"
-           onClick={onToggleLessonBookmark}
-           title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-           aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-          >
-           <Bookmark
-            className={cn(
-             "size-4",
-             isLessonBookmarked ? "fill-current text-warning" : "text-muted-foreground",
-            )}
-           />
-          </Button>
-          {navMenu}
-         </div>
-        </WorkspaceToolbar>
-       </div>
-      ) : null}
       <Tabs
        value={activeView}
        items={tabs}
        onValueChange={onActiveViewChange}
-       actions={desktopTabActions}
+       actions={tabActions}
        aria-label={t("tabsLabel")}
-       className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden xl:grid-rows-[auto_minmax(0,1fr)]"
-       listClassName="hanzihome-liquid-toolbar hidden xl:flex"
+       className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
+       listClassName="hanzihome-liquid-toolbar flex"
       >
        <TabsContent value={activeView} className="min-h-0 overflow-hidden">
         <div className="relative h-full min-h-0 min-w-0 overflow-y-auto overflow-x-hidden pr-1 scrollbar-soft">
@@ -2369,42 +2355,46 @@ function BusinessChineseStudyWorkspaceContent({
           ) : null}
 
           {activeView === "vocab" ? (
-           <div data-textbook-document className="grid min-w-0 gap-4">
+           <div data-textbook-document className="grid min-w-0 gap-3">
             {lesson.vocab.length > 0 ? (
              <Card
               variant="subtle"
-              padding="md"
-              className="flex min-w-0 flex-wrap items-center justify-between gap-3"
+              padding="sm"
+              className="flex min-w-0 flex-wrap items-center justify-between gap-2"
              >
-              <div className="flex min-w-0 items-center gap-3">
-               <IconTile>
-                <Tags />
-               </IconTile>
-               <div className="grid min-w-0 gap-0.5">
-                <Typography
-                 variant="overline"
-                 tone="muted"
-                 weight="black"
-                 tracking="wide"
-                 transform="uppercase"
-                >
-                 {t("vocabularyPreview.eyebrow")}
-                </Typography>
-                <div className="flex items-center gap-2">
-                 <Typography variant="body" weight="semibold">
-                  Từ vựng cốt lõi
-                 </Typography>
-                 <Badge variant="default" casing="natural">
-                  {lesson.vocab.length} từ
-                 </Badge>
-                </div>
-                <Typography variant="caption" tone="secondary">
-                 Tra cứu phát âm, âm Hán Việt, giải nghĩa và luyện phản xạ ghi nhớ.
-                </Typography>
+              <div className="flex min-w-0 items-center gap-2">
+               <Typography
+                variant="caption"
+                tone="muted"
+                weight="bold"
+                tracking="wide"
+                transform="uppercase"
+                className="hidden sm:inline"
+               >
+                {t("vocabularyPreview.eyebrow")}
+               </Typography>
+               <Badge variant="default" casing="natural">
+                {lesson.vocab.length} từ
+               </Badge>
+               <div className="relative min-w-[140px] sm:min-w-[180px]">
+                <Input
+                 type="search"
+                 density="compact"
+                 adornment="start"
+                 value={vocabSearchQuery}
+                 onChange={(e) => setVocabSearchQuery(e.target.value)}
+                 placeholder="Tìm từ vựng..."
+                />
+                <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                </div>
+               {vocabSearchQuery ? (
+                <Typography variant="caption" tone="secondary">
+                 ({filteredVocab.length} kết quả)
+                </Typography>
+               ) : null}
               </div>
 
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-wrap items-center gap-1.5">
                {onReaderDisplayChange ? (
                 <>
                  <Button
@@ -2465,9 +2455,17 @@ function BusinessChineseStudyWorkspaceContent({
              </Card>
             ) : null}
 
-            {lesson.vocab.length > 0 && canonicalVocabularyTableIds.length === 0 ? (
+            {filteredVocab.length === 0 && vocabSearchQuery ? (
+             <Card variant="subtle" padding="lg" className="text-center">
+              <Typography variant="bodySmall" tone="muted">
+               Không tìm thấy từ vựng nào khớp với &ldquo;{vocabSearchQuery}&rdquo;
+              </Typography>
+             </Card>
+            ) : null}
+
+            {filteredVocab.length > 0 && canonicalVocabularyTableIds.length === 0 ? (
              <div className="grid gap-2 sm:grid-cols-2">
-              {lesson.vocab.map((word) => (
+              {filteredVocab.map((word) => (
                <VocabPreviewRow
                 key={word.id}
                 hanzi={word.hanzi}
@@ -2499,7 +2497,7 @@ function BusinessChineseStudyWorkspaceContent({
               vocabularyPreview={
                section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
                 <TextbookVocabularyPreview
-                 vocabulary={lesson.vocab}
+                 vocabulary={filteredVocab}
                  displayMode={effectiveDisplayMode}
                 />
                ) : undefined
