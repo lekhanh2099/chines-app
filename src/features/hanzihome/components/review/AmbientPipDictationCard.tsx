@@ -129,7 +129,7 @@ export function AmbientPipDictationCard({
 
   if (score === 100 && totalCount > 1) {
    cancelAutoNext();
-   autoNextTimerRef.current = setTimeout(handleNext, 900);
+   autoNextTimerRef.current = setTimeout(handleNext, 1500);
   }
  }, [answer, cancelAutoNext, currentItem, handleNext, totalCount]);
 
@@ -298,23 +298,29 @@ export function AmbientPipDictationCard({
 
      {/* Checked Result Diff & Speed */}
      {isChecked && attempt !== null ? (
-      <div className="grid gap-2 rounded-xl border border-border-default/60 bg-bg-subtle p-2.5 text-center">
-       {/* Hanzi Diff Tokens */}
-       <div className="flex flex-wrap items-center justify-center gap-1">
-        {attempt.diff.map((token, idx) => (
-         <span
-          key={`${idx}-${token.kind}-${token.value}`}
-          className={cn(
-           "text-base font-bold",
-           token.kind === "match" && "text-success-text",
-           token.kind === "missing" && "line-through opacity-75 text-warning-text",
-           (token.kind === "extra" || token.kind === "replace" || token.kind === "transpose") &&
-            "text-danger-text",
-          )}
-         >
-          {token.kind === "missing" ? `(${token.expected})` : token.value}
-         </span>
-        ))}
+      <div className="grid gap-2 rounded-xl border border-border-default/60 bg-bg-subtle p-3 text-center">
+       {/* Large Hero Hanzi for recognition / visual imprint */}
+       <div className="flex flex-wrap items-center justify-center gap-1.5 py-1">
+        {attempt.score === 100 ? (
+         <HanziText as="h2" size="review" weight="black" tone="success" leading="none">
+          {currentItem.hanzi}
+         </HanziText>
+        ) : (
+         attempt.diff.map((token, idx) => (
+          <span
+           key={`${idx}-${token.kind}-${token.value}`}
+           className={cn(
+            "font-hanzi text-3xl font-black",
+            token.kind === "match" && "text-success-text",
+            token.kind === "missing" && "line-through opacity-75 text-warning-text",
+            (token.kind === "extra" || token.kind === "replace" || token.kind === "transpose") &&
+             "text-danger-text",
+           )}
+          >
+           {token.kind === "missing" ? `(${token.expected})` : token.value}
+          </span>
+         ))
+        )}
        </div>
 
        {/* Score and Speed Badges */}
@@ -337,9 +343,11 @@ export function AmbientPipDictationCard({
 
        {/* Correct Pinyin & Meaning */}
        <div className="flex flex-wrap items-center justify-center gap-1.5 text-xs">
-        <HanziText as="span" size="inherit" weight="black" tone="accent">
-         {currentItem.hanzi}
-        </HanziText>
+        {attempt.score < 100 ? (
+         <HanziText as="span" size="large" weight="black" tone="accent">
+          {currentItem.hanzi}
+         </HanziText>
+        ) : null}
         <StudyInstructionText tone="accent" weight="bold">
          {currentItem.pinyin}
         </StudyInstructionText>
