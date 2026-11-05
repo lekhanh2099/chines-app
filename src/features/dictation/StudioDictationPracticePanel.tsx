@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { dictationEntryText } from "./dictation-workspace-utils";
 
@@ -7,9 +8,11 @@ import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { Typography } from "@/components/ui/display/typography";
+import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { ListeningShortcutLegend } from "@/features/hanzihome/listening/ListeningShortcutLegend";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import type { TTSVoice } from "@/hooks/useTTS";
+import { cn } from "@/lib/utils";
 
 import type { DictationAttempt } from "@/features/dictation/dictation-session";
 import { StudioDictationEditor } from "@/features/dictation/StudioDictationEditor";
@@ -22,6 +25,7 @@ export function StudioDictationPracticePanel({
  activeIndex,
  autoAdvance,
  checkedCount,
+ checkedEntryIds,
  entries,
  isLoading,
  isPaused,
@@ -48,6 +52,7 @@ export function StudioDictationPracticePanel({
  activeIndex: number;
  autoAdvance: boolean;
  checkedCount: number;
+ checkedEntryIds?: ReadonlySet<string>;
  entries: ListeningTranscriptEntry[];
  isLoading: boolean;
  isPaused: boolean;
@@ -72,7 +77,13 @@ export function StudioDictationPracticePanel({
  onVoiceChange: (next: string) => void;
 }) {
  const t = useTranslations("Dictation");
+ const activeButtonRef = useRef<HTMLButtonElement>(null);
  const entry = entries[activeIndex];
+
+ useEffect(() => {
+  scrollAppContentToElement(activeButtonRef.current, { block: "nearest" });
+ }, [activeIndex]);
+
  if (!entry) return null;
  const text = dictationEntryText(entry);
 
@@ -112,22 +123,32 @@ export function StudioDictationPracticePanel({
 
    {entries.length > 1 ? (
     <div
-     className="grid grid-cols-5 items-start gap-2 sm:grid-cols-8 md:grid-cols-10"
+     className={cn(
+      "grid grid-cols-5 items-start gap-1.5 sm:grid-cols-8 md:grid-cols-10",
+      entries.length > 15 &&
+       "max-h-28 overflow-y-auto rounded-xl border border-border-default/50 bg-bg-subtle/30 p-2 scrollbar-thin",
+     )}
      aria-label={t("segmentAria")}
     >
-     {entries.map((candidate, index) => (
-      <Button
-       key={candidate.id}
-       type="button"
-       size="sm"
-       variant={index === activeIndex ? "active" : "outline"}
-       aria-current={index === activeIndex ? "step" : undefined}
-       title={candidate.title}
-       onClick={() => onSelect(index)}
-      >
-       {index + 1}
-      </Button>
-     ))}
+     {entries.map((candidate, index) => {
+      const isEntryActive = index === activeIndex;
+      const isEntryDone = checkedEntryIds?.has(candidate.id);
+
+      return (
+       <Button
+        key={candidate.id}
+        ref={isEntryActive ? activeButtonRef : undefined}
+        type="button"
+        size="compact"
+        variant={isEntryActive ? "active" : isEntryDone ? "success" : "outline"}
+        aria-current={isEntryActive ? "step" : undefined}
+        title={candidate.title}
+        onClick={() => onSelect(index)}
+       >
+        <span>{index + 1}</span>
+       </Button>
+      );
+     })}
     </div>
    ) : null}
 

@@ -1,12 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
  ChevronLeft,
  ChevronRight,
  Eye,
  EyeOff,
  RotateCcw,
+ Shuffle,
+ Trophy,
  Volume2,
  VolumeX,
  X,
@@ -14,6 +16,7 @@ import {
 import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
 import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
 import { Input } from "@/components/ui/forms/input";
 import {
  HanziText,
@@ -50,6 +53,13 @@ type AttemptResult = {
  diff: DictationDiffToken[];
 };
 
+type SummaryStats = {
+ accuracy: number;
+ avgCpm: number;
+ perfectCount: number;
+ mistakes: HanziHomeVocabItem[];
+};
+
 export function AmbientPipDictationCard({
  items,
  lessonTitle = "Nghe chép từ vựng",
@@ -57,10 +67,17 @@ export function AmbientPipDictationCard({
  isFloatingInApp = false,
  extraHeaderActions,
 }: AmbientPipDictationCardProps) {
+ const [mistakesItems, setMistakesItems] = useState<readonly HanziHomeVocabItem[] | null>(null);
+ const [shuffledIndices, setShuffledIndices] = useState<readonly number[] | null>(null);
+ const [speechRate, setSpeechRate] = useState<number>(1.0);
  const [currentIndex, setCurrentIndex] = useState(0);
  const [answer, setAnswer] = useState("");
  const [isChecked, setIsChecked] = useState(false);
  const [attempt, setAttempt] = useState<AttemptResult | null>(null);
+ const [sessionAttempts, setSessionAttempts] = useState<Map<number, AttemptResult>>(
+  () => new Map(),
+ );
+ const [isCompleted, setIsCompleted] = useState(false);
  const [isAutoSpeak, setIsAutoSpeak] = useState(true);
  const [showHint, setShowHint] = useState(false);
 
@@ -70,8 +87,19 @@ export function AmbientPipDictationCard({
 
  const { speak, stop } = useFastMandarinSpeech();
 
- const totalCount = items.length;
- const currentItem = items[currentIndex] ?? items[0];
+ const isRetryingMistakes = mistakesItems !== null;
+ const baseItems = mistakesItems ?? items;
+ const isShuffled = shuffledIndices !== null;
+
+ const activeItems = useMemo<readonly HanziHomeVocabItem[]>(() => {
+  if (shuffledIndices && shuffledIndices.length === baseItems.length) {
+   return shuffledIndices.map((idx) => baseItems[idx] ?? baseItems[0]);
+  }
+  return baseItems;
+ }, [baseItems, shuffledIndices]);
+
+ const totalCount = activeItems.length;
+ const currentItem = activeItems[currentIndex] ?? activeItems[0];
 
  const cancelAutoNext = useCallback(() => {
   if (autoNextTimerRef.current !== null) {
@@ -82,30 +110,43 @@ export function AmbientPipDictationCard({
 
  const playCurrentAudio = useCallback(() => {
   if (!currentItem?.hanzi) return;
-  speak(currentItem.hanzi, { rate: 1.0 });
- }, [currentItem, speak]);
+  speak(currentItem.hanzi, { rate: speechRate });
+ }, [currentItem, speak, speechRate]);
 
  const handleNext = useCallback(() => {
   if (totalCount === 0) return;
   cancelAutoNext();
-  setCurrentIndex((prev) => (prev + 1) % totalCount);
+
+  if (currentIndex >= totalCount - 1) {
+   setIsCompleted(true);
+   return;
+  }
+
+  setCurrentIndex((prev) => prev + 1);
   setAnswer("");
   setIsChecked(false);
   setAttempt(null);
   setShowHint(false);
   startTimeRef.current = null;
- }, [cancelAutoNext, totalCount]);
+ }, [cancelAutoNext, currentIndex, totalCount]);
 
  const handlePrev = useCallback(() => {
   if (totalCount === 0) return;
   cancelAutoNext();
-  setCurrentIndex((prev) => (prev - 1 + totalCount) % totalCount);
+
+  if (isCompleted) {
+   setIsCompleted(false);
+   setCurrentIndex(totalCount - 1);
+   return;
+  }
+
+  setCurrentIndex((prev) => Math.max(0, prev - 1));
   setAnswer("");
   setIsChecked(false);
   setAttempt(null);
   setShowHint(false);
   startTimeRef.current = null;
- }, [cancelAutoNext, totalCount]);
+ }, [cancelAutoNext, isCompleted, totalCount]);
 
  const handleAnswerChange = (value: string) => {
   if (!isChecked && startTimeRef.current === null && value.trim().length > 0) {
@@ -127,11 +168,17 @@ export function AmbientPipDictationCard({
   setAttempt(result);
   setIsChecked(true);
 
+  setSessionAttempts((prev) => {
+   const next = new Map(prev);
+   next.set(currentIndex, result);
+   return next;
+  });
+
   if (score === 100 && totalCount > 1) {
    cancelAutoNext();
    autoNextTimerRef.current = setTimeout(handleNext, 1500);
   }
- }, [answer, cancelAutoNext, currentItem, handleNext, totalCount]);
+ }, [answer, cancelAutoNext, currentItem, currentIndex, handleNext, totalCount]);
 
  const handleEditAgain = useCallback(() => {
   cancelAutoNext();
@@ -141,6 +188,37 @@ export function AmbientPipDictationCard({
   setTimeout(() => inputRef.current?.focus(), 50);
  }, [cancelAutoNext]);
 
+ const handleCycleRate = useCallback(() => {
+  setSpeechRate((prev) => {
+   if (prev === 1.0) return 1.2;
+   if (prev === 1.2) return 0.8;
+   return 1.0;
+  });
+ }, []);
+
+ const handleToggleShuffle = useCallback(() => {
+  cancelAutoNext();
+  setShuffledIndices((prev) => {
+   if (prev !== null) {
+    return null;
+   }
+   const indices = Array.from({ length: baseItems.length }, (_, i) => i);
+   for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = indices[i];
+    indices[i] = indices[j] ?? j;
+    indices[j] = temp ?? i;
+   }
+   return indices;
+  });
+  setCurrentIndex(0);
+  setAnswer("");
+  setIsChecked(false);
+  setAttempt(null);
+  setShowHint(false);
+  startTimeRef.current = null;
+ }, [baseItems.length, cancelAutoNext]);
+
  const handleToggleAutoSpeak = useCallback(() => {
   setIsAutoSpeak((prev) => !prev);
  }, []);
@@ -148,6 +226,80 @@ export function AmbientPipDictationCard({
  const handleToggleHint = useCallback(() => {
   setShowHint((prev) => !prev);
  }, []);
+
+ // Summary stats calculation
+ const summaryStats = useMemo<SummaryStats>(() => {
+  const attemptsArray = Array.from(sessionAttempts.values());
+  const attemptedCount = attemptsArray.length;
+  if (attemptedCount === 0) {
+   const emptyMistakes: HanziHomeVocabItem[] = [];
+   return {
+    accuracy: 100,
+    avgCpm: 0,
+    perfectCount: 0,
+    mistakes: emptyMistakes,
+   };
+  }
+
+  const totalScore = attemptsArray.reduce((acc, curr) => acc + curr.score, 0);
+  const accuracy = Math.round(totalScore / attemptedCount);
+
+  let totalCpm = 0;
+  let cpmCount = 0;
+  for (const att of attemptsArray) {
+   if (att.responseMs && att.responseMs > 0) {
+    const chars = 2;
+    const cpm = Math.round((chars / (att.responseMs / 1000)) * 60);
+    totalCpm += cpm;
+    cpmCount++;
+   }
+  }
+  const avgCpm = cpmCount > 0 ? Math.round(totalCpm / cpmCount) : 0;
+
+  const mistakes: HanziHomeVocabItem[] = [];
+  activeItems.forEach((item, idx) => {
+   const res = sessionAttempts.get(idx);
+   if (!res || res.score < 100) {
+    mistakes.push(item);
+   }
+  });
+
+  return {
+   accuracy,
+   avgCpm,
+   perfectCount: attemptedCount - mistakes.length,
+   mistakes,
+  };
+ }, [activeItems, sessionAttempts]);
+
+ const handleRetryMistakes = useCallback(() => {
+  if (summaryStats.mistakes.length === 0) return;
+  cancelAutoNext();
+  setMistakesItems(summaryStats.mistakes);
+  setShuffledIndices(null);
+  setSessionAttempts(new Map());
+  setIsCompleted(false);
+  setCurrentIndex(0);
+  setAnswer("");
+  setIsChecked(false);
+  setAttempt(null);
+  setShowHint(false);
+  startTimeRef.current = null;
+ }, [cancelAutoNext, summaryStats.mistakes]);
+
+ const handleRestartAll = useCallback(() => {
+  cancelAutoNext();
+  setMistakesItems(null);
+  setShuffledIndices(null);
+  setSessionAttempts(new Map());
+  setIsCompleted(false);
+  setCurrentIndex(0);
+  setAnswer("");
+  setIsChecked(false);
+  setAttempt(null);
+  setShowHint(false);
+  startTimeRef.current = null;
+ }, [cancelAutoNext]);
 
  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
   if (event.key === "Enter") {
@@ -172,27 +324,27 @@ export function AmbientPipDictationCard({
 
  // Focus input when card changes or when editing again
  useEffect(() => {
-  if (!isChecked) {
+  if (!isChecked && !isCompleted) {
    inputRef.current?.focus();
   }
- }, [currentIndex, isChecked]);
+ }, [currentIndex, isChecked, isCompleted]);
 
  // Speak audio on word load
  useEffect(() => {
-  if (isAutoSpeak && currentItem?.hanzi) {
-   speak(currentItem.hanzi, { rate: 1.0 });
+  if (isAutoSpeak && currentItem?.hanzi && !isCompleted) {
+   speak(currentItem.hanzi, { rate: speechRate });
   }
- }, [currentIndex, currentItem, isAutoSpeak, speak]);
+ }, [currentIndex, currentItem, isAutoSpeak, isCompleted, speak, speechRate]);
 
  // Background prefetch upcoming audio
  useEffect(() => {
-  if (totalCount === 0) return;
-  const upcoming = items
+  if (totalCount === 0 || isCompleted) return;
+  const upcoming = activeItems
    .slice(currentIndex, currentIndex + 4)
    .map((it) => it?.hanzi)
    .filter(Boolean);
-  prefetchMandarinAudio(upcoming);
- }, [currentIndex, items, totalCount]);
+  prefetchMandarinAudio(upcoming, undefined, speechRate);
+ }, [currentIndex, activeItems, totalCount, isCompleted, speechRate]);
 
  useEffect(() => {
   return () => {
@@ -201,7 +353,7 @@ export function AmbientPipDictationCard({
   };
  }, [cancelAutoNext, stop]);
 
- if (!currentItem) {
+ if (!currentItem && !isCompleted) {
   return null;
  }
 
@@ -214,15 +366,37 @@ export function AmbientPipDictationCard({
     <div className="flex items-center justify-between gap-2">
      <div className="flex min-w-0 flex-1 items-center gap-1.5 overflow-hidden">
       <Badge variant="accent" size="sm" casing="natural" className="shrink-0">
-       {`${currentIndex + 1}/${totalCount}`}
+       {isCompleted ? "Xong" : `${currentIndex + 1}/${totalCount}`}
       </Badge>
       <StudyInstructionText tone="secondary" weight="bold" clamp="one">
-       {lessonTitle}
+       {isRetryingMistakes ? `${lessonTitle} (Luyện từ sai)` : lessonTitle}
       </StudyInstructionText>
      </div>
 
      <div className="flex shrink-0 items-center gap-1">
       {extraHeaderActions}
+
+      <Button
+       type="button"
+       variant="ghost"
+       size="compact"
+       onClick={handleCycleRate}
+       title={`Tốc độ đọc: ${speechRate}x (Bấm để đổi 0.8x / 1.0x / 1.2x)`}
+       aria-label={`Tốc độ đọc ${speechRate}x`}
+      >
+       <span>{`${speechRate}x`}</span>
+      </Button>
+
+      <Button
+       type="button"
+       variant={isShuffled ? "active" : "ghost"}
+       size="toolbar"
+       onClick={handleToggleShuffle}
+       title={isShuffled ? "Đang xáo trộn (Bấm để theo thứ tự sách)" : "Xáo trộn từ vựng (Shuffle)"}
+       aria-label={isShuffled ? "Tắt xáo trộn từ" : "Bật xáo trộn từ"}
+      >
+       <Shuffle className="size-3.5" />
+      </Button>
 
       <Button
        type="button"
@@ -255,131 +429,183 @@ export function AmbientPipDictationCard({
 
    {/* Main Interactive Practice Surface */}
    <div className="relative flex flex-1 flex-col justify-center px-4 py-2">
-    <div className="grid gap-2.5">
-     {/* Audio Play Trigger & Hint Area */}
-     <div className="flex items-center justify-between gap-2">
-      <Button
-       type="button"
-       variant="outline"
-       size="compact"
-       onClick={playCurrentAudio}
-       aria-label={`Nghe lại ${currentItem.hanzi}`}
-      >
-       <Volume2 className="size-3.5" />
-       <span>Nghe lại (Ctrl+R)</span>
-      </Button>
-
-      <Button
-       type="button"
-       variant="ghost"
-       size="compact"
-       onClick={handleToggleHint}
-       aria-label={showHint ? "Ẩn gợi ý nghĩa" : "Hiện gợi ý nghĩa"}
-      >
-       {showHint ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
-       <span>{showHint ? "Ẩn gợi ý" : "Gợi ý"}</span>
-      </Button>
-     </div>
-
-     {/* Hint Display (if toggled or if checked) */}
-     {showHint && !isChecked ? (
-      <div className="rounded-lg border border-border-default/50 bg-bg-subtle p-2 text-center">
-       <div className="flex items-center justify-center gap-2">
-        <StudyInstructionText tone="accent" weight="bold">
-         {currentItem.pinyin}
-        </StudyInstructionText>
-        <StudyInstructionText tone="muted">·</StudyInstructionText>
-        <StudyInstructionText tone="secondary" weight="semibold">
-         {getVocabDisplayMeaning(currentItem)}
-        </StudyInstructionText>
+    {isCompleted ? (
+     <div className="grid gap-3 rounded-xl border border-border-default/60 bg-bg-subtle p-3.5 text-center">
+      <div className="flex flex-col items-center justify-center gap-1">
+       <div className="flex size-9 items-center justify-center rounded-full bg-success-subtle text-success-text">
+        <Trophy className="size-5" />
        </div>
-      </div>
-     ) : null}
-
-     {/* Checked Result Diff & Speed */}
-     {isChecked && attempt !== null ? (
-      <div className="grid gap-2 rounded-xl border border-border-default/60 bg-bg-subtle p-3 text-center">
-       {/* Large Hero Hanzi for recognition / visual imprint */}
-       <div className="flex flex-wrap items-center justify-center gap-1.5 py-1">
-        {attempt.score === 100 ? (
-         <HanziText as="h2" size="review" weight="black" tone="success" leading="none">
-          {currentItem.hanzi}
-         </HanziText>
-        ) : (
-         attempt.diff.map((token, idx) => (
-          <span
-           key={`${idx}-${token.kind}-${token.value}`}
-           className={cn(
-            "font-hanzi text-3xl font-black",
-            token.kind === "match" && "text-success-text",
-            token.kind === "missing" && "line-through opacity-75 text-warning-text",
-            (token.kind === "extra" || token.kind === "replace" || token.kind === "transpose") &&
-             "text-danger-text",
-           )}
-          >
-           {token.kind === "missing" ? `(${token.expected})` : token.value}
-          </span>
-         ))
-        )}
-       </div>
-
-       {/* Score and Speed Badges */}
-       <div className="flex items-center justify-center gap-2">
-        <Badge
-         variant={attempt.score === 100 ? "success" : attempt.score >= 70 ? "warning" : "danger"}
-         casing="natural"
-        >
-         {attempt.score}%
-        </Badge>
-        {speed ? (
-         <Badge casing="natural">
-          <span aria-hidden="true">⚡</span>
-          <span>{speed.durationSeconds}s</span>
-          <span>·</span>
-          <span>{speed.cpm} CPM</span>
-         </Badge>
-        ) : null}
-       </div>
-
-       {/* Correct Pinyin & Meaning */}
-       <div className="flex flex-wrap items-center justify-center gap-1.5 text-xs">
-        {attempt.score < 100 ? (
-         <HanziText as="span" size="large" weight="black" tone="accent">
-          {currentItem.hanzi}
-         </HanziText>
-        ) : null}
-        <StudyInstructionText tone="accent" weight="bold">
-         {currentItem.pinyin}
-        </StudyInstructionText>
-        <StudyInstructionText tone="muted">·</StudyInstructionText>
-        <StudyInstructionText tone="secondary" weight="semibold">
-         {getVocabDisplayMeaning(currentItem)}
-        </StudyInstructionText>
-       </div>
-      </div>
-     ) : (
-      /* Input Field */
-      <div className="grid gap-1.5">
-       <Input
-        ref={inputRef}
-        type="text"
-        value={answer}
-        density="compact"
-        surface="field"
-        autoCapitalize="off"
-        autoCorrect="off"
-        spellCheck={false}
-        placeholder="Gõ chữ Hán rồi bấm Enter..."
-        aria-label={`Gõ chữ Hán cho từ số ${currentIndex + 1}`}
-        onChange={(e) => handleAnswerChange(e.target.value)}
-        onKeyDown={handleKeyDown}
-       />
-       <StudyInstructionText variant="caption" tone="muted" className="text-center">
-        Bấm Enter để kiểm tra · Ctrl+R để nghe lại
+       <Typography as="h3" variant="cardTitle" weight="black">
+        {isRetryingMistakes ? "Hoàn thành phần luyện lại!" : "Hoàn thành bài luyện!"}
+       </Typography>
+       <StudyInstructionText variant="caption" tone="muted">
+        {`Đã hoàn thành ${activeItems.length} từ vựng`}
        </StudyInstructionText>
       </div>
-     )}
-    </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-1.5">
+       <Badge variant={summaryStats.accuracy >= 90 ? "success" : "warning"} casing="natural">
+        {`Chính xác: ${summaryStats.accuracy}%`}
+       </Badge>
+       {summaryStats.avgCpm > 0 ? (
+        <Badge casing="natural">
+         <span aria-hidden="true">⚡</span>
+         <span>{`${summaryStats.avgCpm} CPM`}</span>
+        </Badge>
+       ) : null}
+       <Badge variant={summaryStats.mistakes.length === 0 ? "success" : "default"} casing="natural">
+        {summaryStats.mistakes.length === 0
+         ? "Đúng 100% tất cả"
+         : `${summaryStats.mistakes.length} từ cần ôn`}
+       </Badge>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
+       {summaryStats.mistakes.length > 0 ? (
+        <Button type="button" variant="default" size="compact" onClick={handleRetryMistakes}>
+         <RotateCcw className="size-3.5" />
+         <span>{`Luyện lại ${summaryStats.mistakes.length} từ sai`}</span>
+        </Button>
+       ) : null}
+
+       <Button
+        type="button"
+        variant={summaryStats.mistakes.length > 0 ? "outline" : "default"}
+        size="compact"
+        onClick={handleRestartAll}
+       >
+        <RotateCcw className="size-3.5" />
+        <span>Luyện lại tất cả</span>
+       </Button>
+      </div>
+     </div>
+    ) : (
+     <div className="grid gap-2.5">
+      {/* Audio Play Trigger & Hint Area */}
+      <div className="flex items-center justify-between gap-2">
+       <Button
+        type="button"
+        variant="outline"
+        size="compact"
+        onClick={playCurrentAudio}
+        aria-label={`Nghe lại ${currentItem.hanzi}`}
+       >
+        <Volume2 className="size-3.5" />
+        <span>Nghe lại (Ctrl+R)</span>
+       </Button>
+
+       <Button
+        type="button"
+        variant="ghost"
+        size="compact"
+        onClick={handleToggleHint}
+        aria-label={showHint ? "Ẩn gợi ý nghĩa" : "Hiện gợi ý nghĩa"}
+       >
+        {showHint ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
+        <span>{showHint ? "Ẩn gợi ý" : "Gợi ý"}</span>
+       </Button>
+      </div>
+
+      {/* Hint Display (if toggled or if checked) */}
+      {showHint && !isChecked ? (
+       <div className="rounded-lg border border-border-default/50 bg-bg-subtle p-2 text-center">
+        <div className="flex items-center justify-center gap-2">
+         <StudyInstructionText tone="accent" weight="bold">
+          {currentItem.pinyin}
+         </StudyInstructionText>
+         <StudyInstructionText tone="muted">·</StudyInstructionText>
+         <StudyInstructionText tone="secondary" weight="semibold">
+          {getVocabDisplayMeaning(currentItem)}
+         </StudyInstructionText>
+        </div>
+       </div>
+      ) : null}
+
+      {/* Checked Result Diff & Speed */}
+      {isChecked && attempt !== null ? (
+       <div className="grid gap-2 rounded-xl border border-border-default/60 bg-bg-subtle p-3 text-center">
+        {/* Large Hero Hanzi for recognition / visual imprint */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 py-1">
+         {attempt.score === 100 ? (
+          <HanziText as="h2" size="review" weight="black" tone="success" leading="none">
+           {currentItem.hanzi}
+          </HanziText>
+         ) : (
+          attempt.diff.map((token, idx) => (
+           <span
+            key={`${idx}-${token.kind}-${token.value}`}
+            className={cn(
+             "font-hanzi text-3xl font-black",
+             token.kind === "match" && "text-success-text",
+             token.kind === "missing" && "line-through opacity-75 text-warning-text",
+             (token.kind === "extra" || token.kind === "replace" || token.kind === "transpose") &&
+              "text-danger-text",
+            )}
+           >
+            {token.kind === "missing" ? `(${token.expected})` : token.value}
+           </span>
+          ))
+         )}
+        </div>
+
+        {/* Score and Speed Badges */}
+        <div className="flex items-center justify-center gap-2">
+         <Badge
+          variant={attempt.score === 100 ? "success" : attempt.score >= 70 ? "warning" : "danger"}
+          casing="natural"
+         >
+          {attempt.score}%
+         </Badge>
+         {speed ? (
+          <Badge casing="natural">
+           <span aria-hidden="true">⚡</span>
+           <span>{speed.durationSeconds}s</span>
+           <span>·</span>
+           <span>{speed.cpm} CPM</span>
+          </Badge>
+         ) : null}
+        </div>
+
+        {/* Correct Pinyin & Meaning */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 text-xs">
+         {attempt.score < 100 ? (
+          <HanziText as="span" size="large" weight="black" tone="accent">
+           {currentItem.hanzi}
+          </HanziText>
+         ) : null}
+         <StudyInstructionText tone="accent" weight="bold">
+          {currentItem.pinyin}
+         </StudyInstructionText>
+         <StudyInstructionText tone="muted">·</StudyInstructionText>
+         <StudyInstructionText tone="secondary" weight="semibold">
+          {getVocabDisplayMeaning(currentItem)}
+         </StudyInstructionText>
+        </div>
+       </div>
+      ) : (
+       /* Input Field */
+       <div className="grid gap-1.5">
+        <Input
+         ref={inputRef}
+         type="text"
+         value={answer}
+         density="compact"
+         surface="field"
+         autoCapitalize="off"
+         autoCorrect="off"
+         spellCheck={false}
+         placeholder="Gõ chữ Hán rồi bấm Enter..."
+         aria-label={`Gõ chữ Hán cho từ số ${currentIndex + 1}`}
+         onChange={(e) => handleAnswerChange(e.target.value)}
+         onKeyDown={handleKeyDown}
+        />
+        <StudyInstructionText variant="caption" tone="muted" className="text-center">
+         Bấm Enter để kiểm tra · Ctrl+R để nghe lại
+        </StudyInstructionText>
+       </div>
+      )}
+     </div>
+    )}
    </div>
 
    {/* Bottom Navigation Toolbar */}
@@ -389,6 +615,7 @@ export function AmbientPipDictationCard({
       type="button"
       variant="ghost"
       size="compact"
+      disabled={currentIndex === 0 && !isCompleted}
       onClick={handlePrev}
       aria-label="Từ trước đó"
      >
@@ -396,34 +623,37 @@ export function AmbientPipDictationCard({
       <span className="hidden sm:inline">Trước</span>
      </Button>
 
-     {isChecked ? (
-      <Button
-       type="button"
-       variant="outline"
-       size="compact"
-       onClick={handleEditAgain}
-       aria-label="Sửa lại từ này"
-      >
-       <RotateCcw className="size-3" />
-       <span>Sửa lại (Esc)</span>
-      </Button>
-     ) : (
-      <Button
-       type="button"
-       variant="default"
-       size="compact"
-       disabled={!answer.trim()}
-       onClick={handleCheck}
-       aria-label="Kiểm tra kết quả"
-      >
-       <span>Kiểm tra (↵)</span>
-      </Button>
-     )}
+     {!isCompleted ? (
+      isChecked ? (
+       <Button
+        type="button"
+        variant="outline"
+        size="compact"
+        onClick={handleEditAgain}
+        aria-label="Sửa lại từ này"
+       >
+        <RotateCcw className="size-3" />
+        <span>Sửa lại (Esc)</span>
+       </Button>
+      ) : (
+       <Button
+        type="button"
+        variant="default"
+        size="compact"
+        disabled={!answer.trim()}
+        onClick={handleCheck}
+        aria-label="Kiểm tra kết quả"
+       >
+        <span>Kiểm tra (↵)</span>
+       </Button>
+      )
+     ) : null}
 
      <Button
       type="button"
       variant="ghost"
       size="compact"
+      disabled={isCompleted}
       onClick={handleNext}
       aria-label="Từ tiếp theo"
      >
@@ -434,10 +664,10 @@ export function AmbientPipDictationCard({
 
     <div className="flex items-center gap-1">
      <StudyInstructionText variant="caption" tone="muted">
-      Phần:
+      {isCompleted ? "Đã xong:" : "Phần:"}
      </StudyInstructionText>
      <StudyInstructionText variant="caption" tone="secondary" weight="bold">
-      {`${currentIndex + 1}/${totalCount}`}
+      {isCompleted ? `${totalCount}/${totalCount}` : `${currentIndex + 1}/${totalCount}`}
      </StudyInstructionText>
     </div>
    </div>

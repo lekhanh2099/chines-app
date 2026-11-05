@@ -35,6 +35,19 @@ describe("AmbientPipDictationCard", () => {
   expect(html).toContain("Kiểm tra (↵)");
  });
 
+ it("renders rate cycle and shuffle toolbar actions", () => {
+  const html = renderToStaticMarkup(
+   createElement(AmbientPipDictationCard, {
+    items: reviewLesson.vocab,
+    lessonTitle: "Nhịp cầu Bài 5",
+   }),
+  );
+
+  expect(html).toContain("1x");
+  expect(html).toContain("Tốc độ đọc");
+  expect(html).toContain("Xáo trộn từ vựng (Shuffle)");
+ });
+
  it("renders in-app floating mode with close button", () => {
   const onClose = vi.fn();
   const html = renderToStaticMarkup(

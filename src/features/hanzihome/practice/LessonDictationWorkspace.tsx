@@ -259,6 +259,7 @@ export function LessonDictationWorkspace({
      activeIndex={effectiveActiveIndex}
      autoAdvance={autoAdvance}
      checkedCount={checkedEntryIds.size}
+     checkedEntryIds={checkedEntryIds}
      entries={entries}
      isLoading={tts.isLoading}
      isPaused={tts.isPaused}
