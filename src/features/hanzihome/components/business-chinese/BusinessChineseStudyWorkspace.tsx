@@ -1760,24 +1760,6 @@ export function BusinessChineseStudyWorkspace({
   currentPath,
  ]);
 
- const navMenu = useMemo(
-  () => (
-   <BusinessChineseWorkspaceNavMenu
-    tabs={tabs}
-    activeView={activeView}
-    onActiveViewChange={setActiveView}
-    isLessonBookmarked={isLessonBookmarked}
-    onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
-    bookmarkLabel={t("bookmarkLesson")}
-    bookmarkedLabel={t("bookmarked")}
-    offlineReadyLabel={t("offlineReady")}
-    offlineDescription={t("offlineDescription")}
-    menuLabel={t("tabsLabel")}
-   />
-  ),
-  [tabs, activeView, setActiveView, isLessonBookmarked, handleToggleCurrentLessonBookmark, t],
- );
-
  const toolbarNavMenu = useMemo(
   () => (
    <BusinessChineseWorkspaceNavMenu
@@ -1811,7 +1793,6 @@ export function BusinessChineseStudyWorkspace({
      tabs={tabs}
      isLessonBookmarked={isLessonBookmarked}
      onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
-     navMenu={navMenu}
      readerContent={content}
      bookKey={bookKey}
      displayMode={displayMode}
@@ -1823,7 +1804,6 @@ export function BusinessChineseStudyWorkspace({
   }),
   [
    toolbarNavMenu,
-   navMenu,
    books,
    lesson,
    activeView,
@@ -1900,7 +1880,6 @@ function BusinessChineseStudyWorkspaceContent({
  tabs,
  isLessonBookmarked,
  onToggleLessonBookmark,
- navMenu,
  readerContent,
  bookKey,
  displayMode,
@@ -1915,7 +1894,6 @@ function BusinessChineseStudyWorkspaceContent({
  tabs: SegmentedControlItem<string>[];
  isLessonBookmarked: boolean;
  onToggleLessonBookmark: () => void;
- navMenu: ReactNode;
  readerContent: ReactNode;
  bookKey: string;
  displayMode: LessonDisplayMode;
@@ -2222,7 +2200,6 @@ function BusinessChineseStudyWorkspaceContent({
      <span>{t("offlineReady")}</span>
     </Badge>
    ) : null}
-   {navMenu}
   </div>
  );
 
