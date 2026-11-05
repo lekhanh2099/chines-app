@@ -38,6 +38,7 @@ import {
 } from "@/components/layout/header/app-header-breadcrumb";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { Badge } from "@/components/ui/display/badge";
+import { IconTile } from "@/components/ui/display/icon-tile";
 import { Button } from "@/components/ui/actions/button";
 import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
@@ -891,20 +892,41 @@ function TextbookVocabularyPreview({
 }) {
  const t = useTranslations("BusinessChinese");
 
+ if (!onOpenVocabulary) {
+  return (
+   <div className="grid gap-2 sm:grid-cols-2">
+    {vocabulary.map((word) => (
+     <VocabPreviewRow
+      key={word.id}
+      hanzi={word.hanzi}
+      pinyin={word.pinyin}
+      hanviet={displayMode.showMeaning ? word.hanviet : ""}
+      category={word.pos}
+      meaning={displayMode.showMeaning ? word.meaning : ""}
+      header={
+       <SpeakableBusinessChineseText
+        pronunciationId={word.id}
+        text={word.hanzi}
+        sourcePinyin={word.pinyin}
+        displayMode={displayMode}
+        variant="body"
+       />
+      }
+     />
+    ))}
+   </div>
+  );
+ }
+
  return (
   <LessonPreviewCard
    icon={Tags}
    eyebrow={t("vocabularyPreview.eyebrow")}
    title={t("vocabularyPreview.title", { count: vocabulary.length })}
-   actionLabel={onOpenVocabulary ? t("vocabularyPreview.open") : undefined}
+   actionLabel={t("vocabularyPreview.open")}
    onAction={onOpenVocabulary}
   >
-   <div
-    className={cn(
-     "grid gap-2 sm:grid-cols-2",
-     onOpenVocabulary && "max-h-80 overflow-y-auto pr-1 scrollbar-soft",
-    )}
-   >
+   <div className="grid max-h-80 gap-2 overflow-y-auto pr-1 scrollbar-soft sm:grid-cols-2">
     {vocabulary.map((word) => (
      <VocabPreviewRow
       key={word.id}
@@ -2266,9 +2288,9 @@ function BusinessChineseStudyWorkspaceContent({
           ) : null}
 
           {activeView === "text" ? (
-           <Card variant="section" padding="lg" data-textbook-document className="min-w-0">
+           <div data-textbook-document className="min-w-0">
             {readerContent}
-           </Card>
+           </div>
           ) : null}
 
           {activeView === "notes" ? <TextbookNoteAccessCard lesson={lesson} /> : null}
@@ -2330,11 +2352,132 @@ function BusinessChineseStudyWorkspaceContent({
            </div>
           ) : null}
 
+          {activeView === "vocab" ? (
+           <div data-textbook-document className="grid min-w-0 gap-4">
+            {lesson.vocab.length > 0 ? (
+             <Card
+              variant="subtle"
+              padding="md"
+              className="flex min-w-0 flex-wrap items-center justify-between gap-3"
+             >
+              <div className="flex min-w-0 items-center gap-3">
+               <IconTile>
+                <Tags />
+               </IconTile>
+               <div className="grid min-w-0 gap-0.5">
+                <div className="flex items-center gap-2">
+                 <Typography
+                  variant="overline"
+                  tone="muted"
+                  weight="black"
+                  tracking="wide"
+                  transform="uppercase"
+                 >
+                  {t("vocabularyPreview.eyebrow")}
+                 </Typography>
+                 <Badge variant="default" casing="natural">
+                  {lesson.vocab.length} từ
+                 </Badge>
+                </div>
+                <Typography variant="body" weight="semibold">
+                 {t("vocabReview.title", { count: lesson.vocab.length })}
+                </Typography>
+                <Typography variant="caption" tone="secondary">
+                 {t("vocabReview.clozeDescription")}
+                </Typography>
+               </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2">
+               {onReaderDisplayChange ? (
+                <Button
+                 type="button"
+                 variant={readerDisplay.showPinyin ? "active" : "outline"}
+                 size="compact"
+                 aria-label={toolsLabels("showPinyin")}
+                 aria-pressed={readerDisplay.showPinyin}
+                 onClick={() =>
+                  onReaderDisplayChange({
+                   ...readerDisplay,
+                   showPinyin: !readerDisplay.showPinyin,
+                  })
+                 }
+                >
+                 <Languages data-icon="inline-start" />
+                 <span>{toolsLabels("pinyin")}</span>
+                </Button>
+               ) : null}
+               <Button
+                type="button"
+                size="compact"
+                variant="default"
+                onClick={() => onActiveViewChange("review")}
+               >
+                {t("vocabReview.startReview")}
+               </Button>
+               <Button
+                type="button"
+                size="compact"
+                variant={
+                 (isPipOpen || isInAppFloatingOpen) && pipMode === "vocab" ? "active" : "outline"
+                }
+                onClick={() => handleTogglePip("vocab")}
+                title={t("vocabReview.pipTooltip")}
+               >
+                <PictureInPicture2 className="size-3.5" />
+                <span>{t("vocabReview.pipButton")}</span>
+               </Button>
+              </div>
+             </Card>
+            ) : null}
+
+            {lesson.vocab.length > 0 && canonicalVocabularyTableIds.length === 0 ? (
+             <div className="grid gap-2 sm:grid-cols-2">
+              {lesson.vocab.map((word) => (
+               <VocabPreviewRow
+                key={word.id}
+                hanzi={word.hanzi}
+                pinyin={word.pinyin}
+                hanviet={displayMode.showMeaning ? word.hanviet : ""}
+                category={word.pos}
+                meaning={displayMode.showMeaning ? word.meaning : ""}
+                header={
+                 <SpeakableBusinessChineseText
+                  pronunciationId={word.id}
+                  text={word.hanzi}
+                  sourcePinyin={word.pinyin}
+                  displayMode={displayMode}
+                  variant="body"
+                 />
+                }
+               />
+              ))}
+             </div>
+            ) : null}
+
+            {visibleSections.map((section) => (
+             <BusinessChineseSection
+              key={section.id}
+              section={section}
+              displayMode={displayMode}
+              translations={pairedTranslations}
+              canonicalVocabularyTableIds={canonicalVocabularyTableIds}
+              vocabularyPreview={
+               section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
+                <TextbookVocabularyPreview vocabulary={lesson.vocab} displayMode={displayMode} />
+               ) : undefined
+              }
+             />
+            ))}
+           </div>
+          ) : null}
+
           {activeView !== "text" &&
           activeView !== "notes" &&
           activeView !== "translation" &&
           activeView !== "dictation" &&
-          activeView !== "review" ? (
+          activeView !== "review" &&
+          activeView !== "vocab" ? (
            <div
             className={cn(
              "grid min-w-0 gap-3",
@@ -2351,7 +2494,7 @@ function BusinessChineseStudyWorkspaceContent({
               data-textbook-document
               className="grid min-w-0 gap-6"
              >
-              {(activeView === "vocab" || activeView === "practice") && onReaderDisplayChange ? (
+              {activeView === "practice" && onReaderDisplayChange ? (
                <div className="flex min-w-0 justify-end" data-reader-group="display">
                 <Button
                  type="button"
@@ -2359,7 +2502,7 @@ function BusinessChineseStudyWorkspaceContent({
                  size="toolbar"
                  aria-label={toolsLabels("showPinyin")}
                  aria-pressed={readerDisplay.showPinyin}
-                 disabled={activeView === "practice" && readerDisplay.revealMode === "tap"}
+                 disabled={readerDisplay.revealMode === "tap"}
                  onClick={() =>
                   onReaderDisplayChange({
                    ...readerDisplay,
@@ -2372,53 +2515,13 @@ function BusinessChineseStudyWorkspaceContent({
                 </Button>
                </div>
               ) : null}
-              {lesson.vocab.length > 0 && activeView === "vocab" ? (
-               <Card
-                variant="subtle"
-                padding="md"
-                className="flex min-w-0 flex-wrap items-center justify-between gap-3"
-               >
-                <div className="grid min-w-0 gap-1">
-                 <Typography variant="body" weight="semibold">
-                  {t("vocabReview.title", { count: lesson.vocab.length })}
-                 </Typography>
-                 <Typography variant="bodySmall" tone="secondary">
-                  {t("vocabReview.clozeDescription")}
-                 </Typography>
-                </div>
-                <div className="flex flex-wrap items-center gap-2">
-                 <Button
-                  type="button"
-                  size="compact"
-                  variant="default"
-                  onClick={() => onActiveViewChange("review")}
-                 >
-                  {t("vocabReview.startReview")}
-                 </Button>
-                 <Button
-                  type="button"
-                  size="compact"
-                  variant={
-                   (isPipOpen || isInAppFloatingOpen) && pipMode === "vocab" ? "active" : "outline"
-                  }
-                  onClick={() => handleTogglePip("vocab")}
-                  title={t("vocabReview.pipTooltip")}
-                 >
-                  <PictureInPicture2 className="size-3.5" />
-                  <span>{t("vocabReview.pipButton")}</span>
-                 </Button>
-                </div>
-               </Card>
-              ) : null}
               {lesson.vocab.length > 0 &&
               canonicalVocabularyTableIds.length === 0 &&
-              (activeView === "all" || activeView === "vocab") ? (
+              activeView === "all" ? (
                <TextbookVocabularyPreview
                 vocabulary={lesson.vocab}
                 displayMode={displayMode}
-                onOpenVocabulary={
-                 activeView === "all" ? () => onActiveViewChange("vocab") : undefined
-                }
+                onOpenVocabulary={() => onActiveViewChange("vocab")}
                />
               ) : null}
               {activeView === "practice" &&
