@@ -39,8 +39,25 @@ describe("UniversalAmbientPip", () => {
   );
 
   expect(html).toContain(`Từ vựng (${reviewLesson.vocab.length})`);
+  expect(html).toContain(`Chép từ (${reviewLesson.vocab.length})`);
   expect(html).toContain(`Ngữ pháp (${grammarPoints.length})`);
   expect(html).toContain(`Bài tập (${practiceItems.length})`);
+ });
+
+ it("renders dictation mode directly when requested as initialMode", () => {
+  const html = renderToStaticMarkup(
+   createElement(UniversalAmbientPip, {
+    initialMode: "dictation",
+    vocabItems: reviewLesson.vocab,
+    grammarItems: grammarPoints,
+    practiceItems: practiceItems,
+    lessonTitle: "BÀI 5: 话说'面的'",
+   }),
+  );
+
+  expect(html).toContain(`1/${reviewLesson.vocab.length}`);
+  expect(html).toContain("Gõ chữ Hán rồi bấm Enter...");
+  expect(html).toContain("Nghe lại");
  });
 
  it("renders grammar mode directly when requested as initialMode", () => {

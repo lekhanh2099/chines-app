@@ -2280,6 +2280,8 @@ function BusinessChineseStudyWorkspaceContent({
             sources={dictationSources}
             titleVi={lesson.title}
             titleZh={lesson.bookLabel}
+            onOpenPip={() => handleTogglePip("dictation")}
+            isPipActive={(isPipOpen || isInAppFloatingOpen) && pipMode === "dictation"}
            />
           ) : null}
 

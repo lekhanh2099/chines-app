@@ -6,10 +6,11 @@ import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import type { PipGrammarPoint } from "./pip-grammar-adapter";
 import type { UniversalExerciseItem } from "@/features/hanzihome/components/practice/universal-exercise.types";
 import { AmbientPipFlashcard } from "./AmbientPipFlashcard";
+import { AmbientPipDictationCard } from "./AmbientPipDictationCard";
 import { AmbientPipGrammarCard } from "./AmbientPipGrammarCard";
 import { AmbientPipExerciseRunner } from "./AmbientPipExerciseRunner";
 
-export type UniversalPipMode = "vocab" | "grammar" | "practice";
+export type UniversalPipMode = "vocab" | "dictation" | "grammar" | "practice";
 
 export type UniversalAmbientPipProps = {
  readonly initialMode?: UniversalPipMode;
@@ -36,6 +37,11 @@ export function UniversalAmbientPip({
    modes.push({
     mode: "vocab",
     label: "Từ vựng",
+    count: vocabItems.length,
+   });
+   modes.push({
+    mode: "dictation",
+    label: "Chép từ",
     count: vocabItems.length,
    });
   }
@@ -74,7 +80,7 @@ export function UniversalAmbientPip({
     value={activeMode}
     onChange={(e) => {
      const val = e.target.value;
-     if (val === "vocab" || val === "grammar" || val === "practice") {
+     if (val === "vocab" || val === "dictation" || val === "grammar" || val === "practice") {
       setUserSelectedMode(val);
      }
     }}
@@ -88,6 +94,18 @@ export function UniversalAmbientPip({
     ))}
    </NativeSelect>
   ) : null;
+
+ if (activeMode === "dictation" && vocabItems.length > 0) {
+  return (
+   <AmbientPipDictationCard
+    items={vocabItems}
+    lessonTitle={lessonTitle}
+    onClose={onClose}
+    isFloatingInApp={isFloatingInApp}
+    extraHeaderActions={modeSwitcher}
+   />
+  );
+ }
 
  if (activeMode === "grammar" && grammarItems.length > 0) {
   return (

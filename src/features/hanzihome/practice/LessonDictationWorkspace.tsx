@@ -2,8 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { PictureInPicture2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/display/badge";
+import { Button } from "@/components/ui/actions/button";
 import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { Card } from "@/components/ui/layout/card";
 import {
@@ -32,6 +34,8 @@ export type LessonDictationWorkspaceProps = {
  sources?: DictationSource[];
  titleVi?: string;
  titleZh?: string;
+ onOpenPip?: () => void;
+ isPipActive?: boolean;
 };
 
 export function LessonDictationWorkspace({
@@ -39,6 +43,8 @@ export function LessonDictationWorkspace({
  sources: explicitSources,
  titleVi,
  titleZh,
+ onOpenPip,
+ isPipActive = false,
 }: LessonDictationWorkspaceProps) {
  const t = useTranslations("Dictation");
  const tts = useSharedMandarinTts();
@@ -213,9 +219,23 @@ export function LessonDictationWorkspace({
         : "Chọn phần cần luyện, rồi nghe và chép lại từng câu."}
       </Typography>
      </div>
-     <Badge casing="natural">
-      {selectedSource.id === "vocab" ? `${entries.length} từ` : `${entries.length} phần`}
-     </Badge>
+     <div className="flex flex-wrap items-center gap-2">
+      <Badge casing="natural">
+       {selectedSource.id === "vocab" ? `${entries.length} từ` : `${entries.length} phần`}
+      </Badge>
+      {onOpenPip ? (
+       <Button
+        type="button"
+        variant={isPipActive ? "active" : "outline"}
+        size="compact"
+        onClick={onOpenPip}
+        title="Mở cửa sổ nổi PiP để nghe chép từ vựng"
+       >
+        <PictureInPicture2 className="size-3.5" />
+        <span>{isPipActive ? "Đang mở PiP" : "Cửa sổ nổi (PiP)"}</span>
+       </Button>
+      ) : null}
+     </div>
     </div>
     <Select value={selectedSource.id} onValueChange={selectSource}>
      <SelectTrigger width="full" aria-label="Chọn nội dung luyện nghe chép">
