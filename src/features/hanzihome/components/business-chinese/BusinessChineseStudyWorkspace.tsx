@@ -44,7 +44,15 @@ import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
-import { Bookmark, CloudCheck, Languages, PictureInPicture2, Sparkles, Tags } from "lucide-react";
+import {
+ Bookmark,
+ BookOpen,
+ CloudCheck,
+ Languages,
+ PictureInPicture2,
+ Sparkles,
+ Tags,
+} from "lucide-react";
 import { createPortal } from "react-dom";
 import {
  UniversalAmbientPip,
@@ -2082,6 +2090,14 @@ function BusinessChineseStudyWorkspaceContent({
   () => businessChineseVisibleSections(contentSections, activeView),
   [activeView, contentSections],
  );
+ const effectiveDisplayMode: LessonDisplayMode = useMemo(
+  () => ({
+   ...displayMode,
+   showPinyin: readerDisplay?.showPinyin ?? displayMode.showPinyin,
+   showMeaning: readerDisplay?.showMeaning ?? displayMode.showMeaning,
+  }),
+  [displayMode, readerDisplay?.showMeaning, readerDisplay?.showPinyin],
+ );
  const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
  const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
  const intro = lesson.intro.join(" ");
@@ -2365,47 +2381,65 @@ function BusinessChineseStudyWorkspaceContent({
                 <Tags />
                </IconTile>
                <div className="grid min-w-0 gap-0.5">
+                <Typography
+                 variant="overline"
+                 tone="muted"
+                 weight="black"
+                 tracking="wide"
+                 transform="uppercase"
+                >
+                 {t("vocabularyPreview.eyebrow")}
+                </Typography>
                 <div className="flex items-center gap-2">
-                 <Typography
-                  variant="overline"
-                  tone="muted"
-                  weight="black"
-                  tracking="wide"
-                  transform="uppercase"
-                 >
-                  {t("vocabularyPreview.eyebrow")}
+                 <Typography variant="body" weight="semibold">
+                  Từ vựng cốt lõi
                  </Typography>
                  <Badge variant="default" casing="natural">
                   {lesson.vocab.length} từ
                  </Badge>
                 </div>
-                <Typography variant="body" weight="semibold">
-                 {t("vocabReview.title", { count: lesson.vocab.length })}
-                </Typography>
                 <Typography variant="caption" tone="secondary">
-                 {t("vocabReview.clozeDescription")}
+                 Tra cứu phát âm, âm Hán Việt, giải nghĩa và luyện phản xạ ghi nhớ.
                 </Typography>
                </div>
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
                {onReaderDisplayChange ? (
-                <Button
-                 type="button"
-                 variant={readerDisplay.showPinyin ? "active" : "outline"}
-                 size="compact"
-                 aria-label={toolsLabels("showPinyin")}
-                 aria-pressed={readerDisplay.showPinyin}
-                 onClick={() =>
-                  onReaderDisplayChange({
-                   ...readerDisplay,
-                   showPinyin: !readerDisplay.showPinyin,
-                  })
-                 }
-                >
-                 <Languages data-icon="inline-start" />
-                 <span>{toolsLabels("pinyin")}</span>
-                </Button>
+                <>
+                 <Button
+                  type="button"
+                  variant={readerDisplay.showPinyin ? "active" : "outline"}
+                  size="compact"
+                  aria-label={toolsLabels("showPinyin")}
+                  aria-pressed={readerDisplay.showPinyin}
+                  onClick={() =>
+                   onReaderDisplayChange({
+                    ...readerDisplay,
+                    showPinyin: !readerDisplay.showPinyin,
+                   })
+                  }
+                 >
+                  <Languages data-icon="inline-start" />
+                  <span>{toolsLabels("pinyin")}</span>
+                 </Button>
+                 <Button
+                  type="button"
+                  variant={readerDisplay.showMeaning ? "active" : "outline"}
+                  size="compact"
+                  aria-label={toolsLabels("showTranslation")}
+                  aria-pressed={readerDisplay.showMeaning}
+                  onClick={() =>
+                   onReaderDisplayChange({
+                    ...readerDisplay,
+                    showMeaning: !readerDisplay.showMeaning,
+                   })
+                  }
+                 >
+                  <BookOpen data-icon="inline-start" />
+                  <span>{toolsLabels("translation")}</span>
+                 </Button>
+                </>
                ) : null}
                <Button
                 type="button"
@@ -2438,15 +2472,15 @@ function BusinessChineseStudyWorkspaceContent({
                 key={word.id}
                 hanzi={word.hanzi}
                 pinyin={word.pinyin}
-                hanviet={displayMode.showMeaning ? word.hanviet : ""}
+                hanviet={effectiveDisplayMode.showMeaning ? word.hanviet : ""}
                 category={word.pos}
-                meaning={displayMode.showMeaning ? word.meaning : ""}
+                meaning={effectiveDisplayMode.showMeaning ? word.meaning : ""}
                 header={
                  <SpeakableBusinessChineseText
                   pronunciationId={word.id}
                   text={word.hanzi}
                   sourcePinyin={word.pinyin}
-                  displayMode={displayMode}
+                  displayMode={effectiveDisplayMode}
                   variant="body"
                  />
                 }
@@ -2459,12 +2493,15 @@ function BusinessChineseStudyWorkspaceContent({
              <BusinessChineseSection
               key={section.id}
               section={section}
-              displayMode={displayMode}
+              displayMode={effectiveDisplayMode}
               translations={pairedTranslations}
               canonicalVocabularyTableIds={canonicalVocabularyTableIds}
               vocabularyPreview={
                section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
-                <TextbookVocabularyPreview vocabulary={lesson.vocab} displayMode={displayMode} />
+                <TextbookVocabularyPreview
+                 vocabulary={lesson.vocab}
+                 displayMode={effectiveDisplayMode}
+                />
                ) : undefined
               }
              />
