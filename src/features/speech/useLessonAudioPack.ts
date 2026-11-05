@@ -36,7 +36,10 @@ export function extractLessonMandarinTexts(
  return Array.from(textSet);
 }
 
-export function useLessonAudioPack(lesson: TextbookLesson | null | undefined) {
+export function useLessonAudioPack(
+ lesson: TextbookLesson | null | undefined,
+ voiceName: string = DEFAULT_MANDARIN_VOICE,
+) {
  const [status, setStatus] = useState<LessonAudioPackStatus>("checking");
  const [cachedCount, setCachedCount] = useState(0);
  const [totalCount, setTotalCount] = useState(0);
@@ -44,6 +47,7 @@ export function useLessonAudioPack(lesson: TextbookLesson | null | undefined) {
 
  const abortControllerRef = useRef<AbortController | null>(null);
  const texts = useMemo(() => extractLessonMandarinTexts(lesson), [lesson]);
+ const targetVoice = voiceName || DEFAULT_MANDARIN_VOICE;
 
  const checkCacheStatus = useCallback(async () => {
   if (texts.length === 0) {
@@ -54,12 +58,12 @@ export function useLessonAudioPack(lesson: TextbookLesson | null | undefined) {
   }
 
   setTotalCount(texts.length);
-  const keys = texts.map((t) => buildCacheKey(t, DEFAULT_MANDARIN_VOICE, 1.0));
+  const keys = texts.map((t) => buildCacheKey(t, targetVoice, 1.0));
   const cachedKeys = await checkAudioKeysCached(keys);
 
   setCachedCount(cachedKeys.size);
   setStatus(cachedKeys.size >= texts.length ? "ready" : "idle");
- }, [texts]);
+ }, [targetVoice, texts]);
 
  useEffect(() => {
   let isMounted = true;
@@ -67,7 +71,7 @@ export function useLessonAudioPack(lesson: TextbookLesson | null | undefined) {
    return;
   }
 
-  const keys = texts.map((t) => buildCacheKey(t, DEFAULT_MANDARIN_VOICE, 1.0));
+  const keys = texts.map((t) => buildCacheKey(t, targetVoice, 1.0));
   void (async () => {
    const cachedKeys = await checkAudioKeysCached(keys);
    if (!isMounted) return;
@@ -79,7 +83,7 @@ export function useLessonAudioPack(lesson: TextbookLesson | null | undefined) {
   return () => {
    isMounted = false;
   };
- }, [texts]);
+ }, [targetVoice, texts]);
 
  const downloadLessonAudio = useCallback(async () => {
   if (texts.length === 0) return;
@@ -93,14 +97,12 @@ export function useLessonAudioPack(lesson: TextbookLesson | null | undefined) {
   setStatus("downloading");
   setErrorMessage(null);
 
-  const keys = texts.map((t) => buildCacheKey(t, DEFAULT_MANDARIN_VOICE, 1.0));
+  const keys = texts.map((t) => buildCacheKey(t, targetVoice, 1.0));
   const cachedKeys = await checkAudioKeysCached(keys);
   let currentCached = cachedKeys.size;
   setCachedCount(currentCached);
 
-  const missingTexts = texts.filter(
-   (t) => !cachedKeys.has(buildCacheKey(t, DEFAULT_MANDARIN_VOICE, 1.0)),
-  );
+  const missingTexts = texts.filter((t) => !cachedKeys.has(buildCacheKey(t, targetVoice, 1.0)));
 
   // Concurrency pool of 3 to avoid overwhelming server while maintaining high speed
   const concurrency = 3;
@@ -115,12 +117,7 @@ export function useLessonAudioPack(lesson: TextbookLesson | null | undefined) {
     if (!text) continue;
 
     try {
-     const blob = await fetchMandarinAudioBlob(
-      text,
-      DEFAULT_MANDARIN_VOICE,
-      1.0,
-      controller.signal,
-     );
+     const blob = await fetchMandarinAudioBlob(text, targetVoice, 1.0, controller.signal);
      if (blob) {
       currentCached += 1;
       setCachedCount(currentCached);
@@ -143,7 +140,7 @@ export function useLessonAudioPack(lesson: TextbookLesson | null | undefined) {
   }
 
   void checkCacheStatus();
- }, [checkCacheStatus, texts]);
+ }, [checkCacheStatus, targetVoice, texts]);
 
  const cancelDownload = useCallback(() => {
   if (abortControllerRef.current !== null) {

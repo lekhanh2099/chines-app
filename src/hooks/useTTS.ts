@@ -19,6 +19,7 @@ const DEFAULT_RATE = 1;
 const MAX_TTS_TEXT_LENGTH = 10_000;
 const TTS_AUTH_ERROR_MESSAGE = "Phiên đăng nhập không hợp lệ. Hãy đăng nhập lại để dùng giọng đọc.";
 export const DEFAULT_MANDARIN_VOICE = "zh-CN-XiaoxiaoNeural";
+export const MANDARIN_VOICE_STORAGE_KEY = "mandarin_voice_pref";
 
 const ttsPlaybackResultSchema = z.strictObject({ completed: z.boolean(), cancelled: z.boolean() });
 type TTSPlaybackOptions = {
@@ -78,6 +79,18 @@ export function useTTS() {
  const [durationSeconds, setDurationSeconds] = useState(0);
  const [voices, setVoices] = useState<TTSVoice[]>([]);
  const [selectedVoiceName, setSelectedVoiceName] = useState("");
+
+ useEffect(() => {
+  if (typeof window === "undefined") return;
+  try {
+   const saved = window.localStorage.getItem(MANDARIN_VOICE_STORAGE_KEY);
+   if (saved && typeof saved === "string" && saved.startsWith("zh-CN-")) {
+    setSelectedVoiceName((current) => current || saved);
+   }
+  } catch {
+   // Ignore storage errors in restricted contexts
+  }
+ }, []);
  const [rate, setRate] = useState(DEFAULT_RATE);
  const [speakingText, setSpeakingText] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [speakingRequestText, setSpeakingRequestText] =
@@ -200,11 +213,20 @@ export function useTTS() {
     const voicePayload: JsonFieldValue = await response.json();
     const nextVoices = TTSVoiceListSchema.parse(voicePayload);
     setVoices(nextVoices);
-    setSelectedVoiceName((current) =>
-     nextVoices.some((voice) => voice.shortName === current)
-      ? current
-      : (nextVoices[0]?.shortName ?? ""),
-    );
+    setSelectedVoiceName((current) => {
+     let preferred = current;
+     if (!preferred && typeof window !== "undefined") {
+      try {
+       const saved = window.localStorage.getItem(MANDARIN_VOICE_STORAGE_KEY);
+       if (saved && typeof saved === "string") preferred = saved;
+      } catch {
+       // Ignore storage error
+      }
+     }
+     return nextVoices.some((voice) => voice.shortName === preferred)
+      ? preferred
+      : (nextVoices[0]?.shortName ?? DEFAULT_MANDARIN_VOICE);
+    });
     setState((current) => ({ ...current, error: null }));
     return nextVoices;
    } catch (error) {
@@ -713,6 +735,23 @@ export function useTTS() {
   ],
  );
 
+ const handleSetSelectedVoiceName = useCallback(
+  (nextVoice: string | ((current: string) => string)) => {
+   setSelectedVoiceName((current) => {
+    const resolved = typeof nextVoice === "function" ? nextVoice(current) : nextVoice;
+    if (typeof window !== "undefined" && resolved) {
+     try {
+      window.localStorage.setItem(MANDARIN_VOICE_STORAGE_KEY, resolved);
+     } catch {
+      // Ignore storage errors
+     }
+    }
+    return resolved;
+   });
+  },
+  [],
+ );
+
  const selectedVoice =
   voices.find((voice) => voice.shortName === selectedVoiceName) ?? voices[0] ?? null;
 
@@ -721,7 +760,7 @@ export function useTTS() {
   loadVoices,
   selectedVoice,
   selectedVoiceName,
-  setSelectedVoiceName,
+  setSelectedVoiceName: handleSetSelectedVoiceName,
   rate,
   setRate,
   speak,
