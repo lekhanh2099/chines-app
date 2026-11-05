@@ -206,6 +206,9 @@ export function useSharedMandarinTts() {
   },
  };
 }
+export function useOptionalSharedMandarinTts() {
+ return null;
+}
 export function useMandarinTtsControls() {
  return { ...useSharedMandarinTts(), isSpeaking: false, speakingRequestText: null };
 }

@@ -149,7 +149,7 @@ it.runIf(process.env.LISTENING_BROWSER_TEST === "1")(
       answer: "你。",
       score: 50,
       mistakeCount: 1,
-      responseMs: null,
+      responseMs: 0,
      },
     ]);
     await page.clock.runFor(1000);

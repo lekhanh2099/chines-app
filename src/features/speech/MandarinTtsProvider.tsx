@@ -111,6 +111,11 @@ export function useSharedMandarinTts(): MandarinTtsContextValue {
  return context.value;
 }
 
+export function useOptionalSharedMandarinTts(): MandarinTtsContextValue | null {
+ const context = useContext(MandarinTtsContext);
+ return context.value ?? null;
+}
+
 export function useMandarinTtsControls(): MandarinTtsControls {
  const context = useContext(MandarinTtsControlsContext);
  if (!context.value) throw new Error("useMandarinTtsControls requires MandarinTtsProvider");

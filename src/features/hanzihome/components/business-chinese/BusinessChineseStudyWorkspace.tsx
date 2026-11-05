@@ -146,6 +146,7 @@ import {
 import { TextbookNoteAccessCard } from "./TextbookNoteAccessCard";
 import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
 import { LessonDictationWorkspace } from "@/features/hanzihome/practice/LessonDictationWorkspace";
+import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettingsDialog";
 import {
  dictationSourcesFromTextbook,
  translationSegmentsFromTextbook,
@@ -2139,6 +2140,7 @@ function BusinessChineseStudyWorkspaceContent({
 
  const desktopTabActions = (
   <>
+   <OfflineAudioSettingsDialog lesson={lesson} />
    <Button
     variant="ghost"
     size="sm"
@@ -2277,9 +2279,12 @@ function BusinessChineseStudyWorkspaceContent({
 
           {activeView === "dictation" ? (
            <LessonDictationWorkspace
+            lesson={lesson}
             sources={dictationSources}
             titleVi={lesson.title}
             titleZh={lesson.bookLabel}
+            onOpenPip={() => handleTogglePip("dictation")}
+            isPipActive={(isPipOpen || isInAppFloatingOpen) && pipMode === "dictation"}
            />
           ) : null}
 

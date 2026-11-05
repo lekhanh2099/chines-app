@@ -11,6 +11,7 @@ import {
  dictationPlaybackTexts,
  dictationCardModels,
  dictationResponseMs,
+ formatDictationSpeed,
  studioDictationEditorModel,
  dictationEntryText,
  dictationEntryPinyin,
@@ -323,6 +324,20 @@ describe("dictation source and submission policies", () => {
    error_key: "mistakes:1",
    due_at: "2026-10-04T00:00:00Z",
    revision: 0,
+  });
+ });
+
+ it("formats dictation speed in seconds and CPM", () => {
+  expect(formatDictationSpeed(null, 10)).toBeNull();
+  expect(formatDictationSpeed(0, 10)).toBeNull();
+  expect(formatDictationSpeed(1500, 0)).toBeNull();
+  expect(formatDictationSpeed(1500, 2)).toEqual({
+   durationSeconds: "1.5",
+   cpm: 80,
+  });
+  expect(formatDictationSpeed(3000, 20)).toEqual({
+   durationSeconds: "3.0",
+   cpm: 400,
   });
  });
 });

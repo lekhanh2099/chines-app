@@ -984,6 +984,7 @@ export function StudioDictationWorkspace({
         activeIndex={effectiveActiveEntryIndex}
         autoAdvance={autoAdvance}
         checkedCount={checkedEntryIds.size}
+        checkedEntryIds={checkedEntryIds}
         entries={sourceEntries}
         isLoading={tts.isLoading}
         isPaused={tts.isPaused}

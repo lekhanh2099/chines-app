@@ -255,6 +255,16 @@ export function dictationResponseMs(
  return startedAt === undefined ? null : Math.max(0, submittedAt - startedAt);
 }
 
+export function formatDictationSpeed(
+ responseMs: number | null,
+ characterCount: number,
+): { durationSeconds: string; cpm: number } | null {
+ if (responseMs === null || responseMs <= 0 || characterCount <= 0) return null;
+ const durationSeconds = (responseMs / 1000).toFixed(1);
+ const cpm = Math.round(characterCount / (responseMs / 60000));
+ return { durationSeconds, cpm };
+}
+
 export function studioDictationEditorModel(input: {
  entry: ListeningTranscriptEntry;
  answer: string;

@@ -4,7 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import type { ListeningTranscriptEntry } from "@/features/hanzihome/listening/listening.view-model";
 import { createDictationAttempt, type DictationAttempt } from "./dictation-session";
-import { dictationCardModels, studioDictationEditorModel } from "./dictation-workspace-utils";
+import {
+ dictationCardModels,
+ dictationResponseMs,
+ studioDictationEditorModel,
+} from "./dictation-workspace-utils";
 
 export function useStudioDictationSession({
  entry,
@@ -37,6 +41,7 @@ export function useStudioDictationSession({
  );
  useUnsavedDraftGuard(hasUnsavedAnswer);
  const autoNextTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+ const startTimeRef = useRef<number | null>(null);
  const model = studioDictationEditorModel({
   entry,
   index,
@@ -54,6 +59,7 @@ export function useStudioDictationSession({
  };
 
  useEffect(() => {
+  startTimeRef.current = null;
   return () => {
    if (autoNextTimerRef.current !== undefined) {
     clearTimeout(autoNextTimerRef.current);
@@ -63,6 +69,9 @@ export function useStudioDictationSession({
  }, [entry.id]);
 
  const updateAnswer = (value: string) => {
+  if (startTimeRef.current === null && value.trim().length > 0) {
+   startTimeRef.current = Date.now();
+  }
   setAnswers((current) => ({ ...current, [entry.id]: value }));
   setDirtyAnswers((current) => ({ ...current, [entry.id]: true }));
  };
@@ -79,7 +88,9 @@ export function useStudioDictationSession({
 
  const checkCurrent = () => {
   if (!model.answer.trim()) return;
-  const nextAttempt = createDictationAttempt(entry.id, model.target, model.answer, null);
+  const now = Date.now();
+  const responseMs = dictationResponseMs(now, startTimeRef.current ?? undefined);
+  const nextAttempt = createDictationAttempt(entry.id, model.target, model.answer, responseMs);
   setAttemptHistory((current) => ({
    ...current,
    [entry.id]: [...(current[entry.id] ?? []), nextAttempt],
@@ -95,6 +106,7 @@ export function useStudioDictationSession({
 
  const editAgain = () => {
   cancelAutoNext();
+  startTimeRef.current = Date.now();
   setDirtyAnswers((current) => ({ ...current, [entry.id]: true }));
  };
 

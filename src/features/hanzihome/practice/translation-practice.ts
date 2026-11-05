@@ -459,6 +459,7 @@ export function dictationSourcesFromTextbook(
 
  for (const section of lesson.sections) {
   if (section.title.includes("DỊCH BÀI KHÓA")) continue;
+  if (section.category === "vocab") continue;
   const label = stripLeadingEmoji(section.title) || section.title || "Bài khóa";
   const entries: Array<{ id: string; zh: string; pinyin: string; vi: string }> = [];
 
@@ -528,6 +529,19 @@ export function dictationSourcesFromTextbook(
     entries,
    });
   }
+ }
+
+ if (lesson.vocab && lesson.vocab.length > 0) {
+  sources.push({
+   id: "vocab",
+   label: `生词 (Từ vựng · ${lesson.vocab.length} từ)`,
+   entries: lesson.vocab.map((v, i) => ({
+    id: `vocab-${v.id || i + 1}`,
+    zh: v.hanzi,
+    pinyin: v.pinyin,
+    vi: v.meaning,
+   })),
+  });
  }
 
  return sources;
