@@ -410,7 +410,7 @@ export function DailyReadingWorkspace({
       value={activeTab}
       items={dailyTabs.map((tab) => ({ key: tab.id, label: tab.label }))}
       onValueChange={(tab) => setQuery({ document: resource.document.id, tab })}
-      listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
+      listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30"
       aria-label={t("tabs.aria")}
      >
       <TabsContent value={activeTab} className="grid gap-3 pt-4 sm:pt-5">

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, FileText, History, Search, Settings } from "lucide-react";
+import { ArrowLeft, BookOpen, FileText, History, Languages, Search, Settings } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { type ComponentProps, useEffect, useMemo, useState } from "react";
@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
+import { Input } from "@/components/ui/forms/input";
 import { PageHeader } from "@/components/ui/layout/page-header";
 import { Separator } from "@/components/ui/layout/separator";
 import { Spinner } from "@/components/ui/feedback/spinner";
@@ -30,6 +31,7 @@ import type { JsonFieldValue } from "@/types/json";
 import { Reader } from "@/features/reader/components/Reader";
 import { useMandarinReaderSpeechService } from "@/features/speech/MandarinTtsProvider";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { useReaderSessionPronunciation } from "@/features/reading/hooks/useReaderSessionPronunciation";
 import { DailyReadingLearningSupportPanel } from "@/features/daily-reading/components/DailyReadingLearningSupportPanel";
 import { DailyReadingActivityLog } from "@/features/daily-reading/components/DailyReadingActivityLog";
@@ -207,6 +209,21 @@ export function DailyReadingLibrary() {
   router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
  }
 
+ const [articleSearchQuery, setArticleSearchQuery] = useState("");
+ const filteredArticles = useMemo(() => {
+  if (!articleSearchQuery.trim()) return library.items;
+  const q = articleSearchQuery.trim().toLowerCase();
+  return library.items.filter((reading) => {
+   const titleZh = reading.article.titleZh.toLowerCase();
+   const publisher = reading.source.publisher.toLowerCase();
+   const titleVi =
+    reading.enrichment.translation.status === "ready"
+     ? reading.enrichment.translation.data.titleVi.toLowerCase()
+     : "";
+   return titleZh.includes(q) || publisher.includes(q) || titleVi.includes(q);
+  });
+ }, [library.items, articleSearchQuery]);
+
  async function captureArticle() {
   setCapturing(true);
   try {
@@ -284,19 +301,80 @@ export function DailyReadingLibrary() {
      { key: "activity", label: t("library.tabs.activity"), icon: History },
     ]}
     onValueChange={setView}
+    listClassName="hanzihome-liquid-toolbar flex"
     aria-label={t("library.tabs.aria")}
    >
     <TabsContent value="articles" className="pt-4">
-     {library.items.length === 0 ? (
-      <Card variant="subtle" padding="lg" className="grid gap-2">
-       <Typography weight="bold">{t("empty.title")}</Typography>
-       <Typography variant="bodySmall" tone="muted">
-        {t("library.description")}
-       </Typography>
-      </Card>
-     ) : (
-      <div className="grid gap-3">
-       {library.items.slice(0, 30).map((reading) => {
+     <div className="grid gap-3">
+      {library.items.length > 0 ? (
+       <Card
+        variant="subtle"
+        padding="sm"
+        className="flex min-w-0 flex-wrap items-center justify-between gap-2.5"
+       >
+        <div className="flex min-w-0 items-center gap-2">
+         <Typography
+          variant="caption"
+          tone="muted"
+          weight="bold"
+          tracking="wide"
+          transform="uppercase"
+          className="hidden sm:inline"
+         >
+          {t("library.tabs.articles")}
+         </Typography>
+         <Badge variant="default" casing="natural">
+          {library.items.length} bài
+         </Badge>
+         <div className="relative min-w-[150px] sm:min-w-[220px]">
+          <Input
+           type="search"
+           density="compact"
+           adornment="start"
+           value={articleSearchQuery}
+           onChange={(e) => setArticleSearchQuery(e.target.value)}
+           placeholder="Tìm bài đọc..."
+          />
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+         </div>
+         {articleSearchQuery ? (
+          <Typography variant="caption" tone="secondary">
+           ({filteredArticles.length} kết quả)
+          </Typography>
+         ) : null}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+         <Button
+          type="button"
+          size="toolbar"
+          onClick={() => void captureArticle()}
+          disabled={capturing}
+         >
+          {capturing ? <Spinner data-icon="inline-start" /> : <Search data-icon="inline-start" />}
+          {capturing ? t("actions.findingArticle") : t("actions.findNewArticle")}
+         </Button>
+        </div>
+       </Card>
+      ) : null}
+
+      {filteredArticles.length === 0 && articleSearchQuery ? (
+       <Card variant="subtle" padding="lg" className="text-center">
+        <Typography variant="bodySmall" tone="muted">
+         Không tìm thấy bài đọc nào khớp với &ldquo;{articleSearchQuery}&rdquo;
+        </Typography>
+       </Card>
+      ) : null}
+
+      {library.items.length === 0 ? (
+       <Card variant="subtle" padding="lg" className="grid gap-2">
+        <Typography weight="bold">{t("empty.title")}</Typography>
+        <Typography variant="bodySmall" tone="muted">
+         {t("library.description")}
+        </Typography>
+       </Card>
+      ) : (
+       filteredArticles.slice(0, 30).map((reading) => {
         const translation =
          reading.enrichment.translation.status === "ready"
           ? reading.enrichment.translation.data
@@ -360,9 +438,9 @@ export function DailyReadingLibrary() {
           </Link>
          </Card>
         );
-       })}
-      </div>
-     )}
+       })
+      )}
+     </div>
     </TabsContent>
     <TabsContent value="activity" className="pt-4">
      <div className="grid gap-3">
@@ -501,6 +579,26 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
   [locale],
  );
 
+ const [vocabSearchQuery, setVocabSearchQuery] = useState("");
+ const [vocabShowPinyin, setVocabShowPinyin] = useState(true);
+ const [vocabShowMeaning, setVocabShowMeaning] = useState(true);
+
+ const rawVocabItems =
+  reading?.enrichment.vocabulary.status === "ready"
+   ? reading.enrichment.vocabulary.data.items
+   : null;
+ const vocabItems = rawVocabItems ?? [];
+ const trimmedVocabQuery = vocabSearchQuery.trim().toLowerCase();
+ const filteredVocabItems = trimmedVocabQuery
+  ? vocabItems.filter(
+     (item) =>
+      item.hanzi.toLowerCase().includes(trimmedVocabQuery) ||
+      item.meaningVi.toLowerCase().includes(trimmedVocabQuery) ||
+      item.categoryVi.toLowerCase().includes(trimmedVocabQuery) ||
+      item.meaningInContextVi.toLowerCase().includes(trimmedVocabQuery),
+    )
+  : vocabItems;
+
  useEffect(() => {
   if (
    translationWorkflowRunId.length === 0 ||
@@ -594,17 +692,6 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
  const learning = getDailyReadingLearningSummary(reading);
  return (
   <div className="grid min-w-0 gap-4">
-   <Button
-    type="button"
-    variant="ghost"
-    size="toolbar"
-    className="justify-self-start"
-    onClick={onBack}
-   >
-    <ArrowLeft data-icon="inline-start" />
-    {t("document.back")}
-   </Button>
-
    <header className="grid min-w-0 gap-3 border-b border-border-default pb-4 sm:pb-5">
     <div className="flex min-w-0 flex-wrap items-center gap-2">
      {reading.classification.targetLevel !== null ? (
@@ -647,7 +734,26 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
     </div>
    </header>
 
-   <Tabs value={effectiveTab} items={tabItems} onValueChange={setTab} aria-label={t("tabs.aria")}>
+   <Tabs
+    value={effectiveTab}
+    items={tabItems}
+    onValueChange={setTab}
+    actions={
+     <Button
+      type="button"
+      variant="ghost"
+      size="compact"
+      className="gap-1.5 shrink-0"
+      onClick={onBack}
+      title={t("document.back")}
+     >
+      <ArrowLeft className="size-3.5" />
+      <span className="hidden sm:inline">{t("document.back")}</span>
+     </Button>
+    }
+    listClassName="hanzihome-liquid-toolbar flex"
+    aria-label={t("tabs.aria")}
+   >
     <TabsContent value="reader" className="grid gap-3 pt-4">
      {latestTranslationProgress !== undefined && translation === null ? (
       <Card variant="subtle" padding="sm" className="flex flex-wrap items-center gap-2">
@@ -703,31 +809,111 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
 
     <TabsContent value="vocabulary" className="pt-4">
      {reading.enrichment.vocabulary.status === "ready" ? (
-      <div className="grid gap-3 sm:grid-cols-2">
-       {reading.enrichment.vocabulary.data.items.map((item) => {
-        const pronunciation = analyzeDailyReadingText(item.hanzi);
-        return (
-         <Card key={item.id} variant="section" padding="md" className="grid gap-1">
-          <div className="flex flex-wrap items-center gap-2">
-           <HanziText as="h3" size="medium" weight="black">
-            {item.hanzi}
-           </HanziText>
-           <Badge size="sm">{item.categoryVi}</Badge>
-          </div>
-          {displayMode.showPinyin && pronunciation !== null ? (
-           <PinyinText as="p" variant="caption" tone="accent">
-            {formatContextualReadingPinyin(pronunciation)}
-           </PinyinText>
-          ) : null}
-          <Typography variant="bodySmall" weight="semibold">
-           {item.meaningVi}
+      <div className="grid gap-3">
+       <Card
+        variant="subtle"
+        padding="sm"
+        className="flex min-w-0 flex-wrap items-center justify-between gap-2.5"
+       >
+        <div className="flex min-w-0 items-center gap-2">
+         <Typography
+          variant="caption"
+          tone="muted"
+          weight="bold"
+          tracking="wide"
+          transform="uppercase"
+          className="hidden sm:inline"
+         >
+          {t("tabs.vocabulary")}
+         </Typography>
+         <Badge variant="default" casing="natural">
+          {vocabItems.length} từ
+         </Badge>
+         <div className="relative min-w-[140px] sm:min-w-[200px]">
+          <Input
+           type="search"
+           density="compact"
+           adornment="start"
+           value={vocabSearchQuery}
+           onChange={(e) => setVocabSearchQuery(e.target.value)}
+           placeholder="Tìm từ vựng..."
+          />
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+         </div>
+         {vocabSearchQuery ? (
+          <Typography variant="caption" tone="secondary">
+           ({filteredVocabItems.length} kết quả)
           </Typography>
-          <Typography variant="bodySmall" tone="muted">
-           {t("generated.vocabulary.inContext", { meaning: item.meaningInContextVi })}
-          </Typography>
-         </Card>
-        );
-       })}
+         ) : null}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-1.5">
+         <Button
+          type="button"
+          size="compact"
+          variant={vocabShowPinyin ? "active" : "outline"}
+          onClick={() => setVocabShowPinyin((v) => !v)}
+          aria-pressed={vocabShowPinyin}
+          title="Bật / tắt phiên âm Pinyin"
+         >
+          <Languages data-icon="inline-start" />
+          Pinyin
+         </Button>
+         <Button
+          type="button"
+          size="compact"
+          variant={vocabShowMeaning ? "active" : "outline"}
+          onClick={() => setVocabShowMeaning((v) => !v)}
+          aria-pressed={vocabShowMeaning}
+          title="Bật / tắt nghĩa tiếng Việt"
+         >
+          <BookOpen data-icon="inline-start" />
+          Bản dịch
+         </Button>
+        </div>
+       </Card>
+
+       {filteredVocabItems.length === 0 && vocabSearchQuery ? (
+        <Card variant="subtle" padding="lg" className="text-center">
+         <Typography variant="bodySmall" tone="muted">
+          Không tìm thấy từ vựng nào khớp với &ldquo;{vocabSearchQuery}&rdquo;
+         </Typography>
+        </Card>
+       ) : null}
+
+       <div className="grid gap-3 sm:grid-cols-2">
+        {filteredVocabItems.map((item) => {
+         const pronunciation = analyzeDailyReadingText(item.hanzi);
+         return (
+          <Card key={item.id} variant="section" padding="md" className="grid gap-1.5">
+           <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+             <HanziText as="h3" size="medium" weight="black">
+              {item.hanzi}
+             </HanziText>
+             <Badge size="sm">{item.categoryVi}</Badge>
+            </div>
+            <MandarinSpeakButton text={item.hanzi} />
+           </div>
+           {vocabShowPinyin && displayMode.showPinyin && pronunciation !== null ? (
+            <PinyinText as="p" variant="caption" tone="accent">
+             {formatContextualReadingPinyin(pronunciation)}
+            </PinyinText>
+           ) : null}
+           {vocabShowMeaning ? (
+            <>
+             <Typography variant="bodySmall" weight="semibold">
+              {item.meaningVi}
+             </Typography>
+             <Typography variant="bodySmall" tone="muted">
+              {t("generated.vocabulary.inContext", { meaning: item.meaningInContextVi })}
+             </Typography>
+            </>
+           ) : null}
+          </Card>
+         );
+        })}
+       </div>
       </div>
      ) : null}
     </TabsContent>

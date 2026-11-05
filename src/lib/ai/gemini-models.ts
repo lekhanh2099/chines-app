@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const DEFAULT_GEMINI_MODEL = "models/gemini-2.5-flash";
+export const DEFAULT_GEMINI_MODEL = "models/gemini-3.5-flash";
 export const DEFAULT_GEMINI_QUICK_MODEL = "models/gemini-3.1-flash-lite";
 
 export const GEMINI_TEXT_MODEL_OPTIONS = [
