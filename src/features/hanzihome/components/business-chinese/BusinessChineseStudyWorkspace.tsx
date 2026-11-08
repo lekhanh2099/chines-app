@@ -65,6 +65,7 @@ import { BusinessChineseContextualDrills } from "./BusinessChineseContextualDril
 import { UniversalExerciseRunner } from "@/features/hanzihome/components/practice/UniversalExerciseRunner";
 import { adaptAllLessonExercises } from "@/features/hanzihome/components/practice/universal-exercise-adapter";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
+import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import { BusinessChineseLessonSelector } from "./BusinessChineseLessonSelector";
@@ -2186,6 +2187,34 @@ function BusinessChineseStudyWorkspaceContent({
        ) : null}
        {lesson.title}
       </Typography>
+      {activeView !== "text" && activeView !== "all" ? (
+       <div className="shrink-0 xl:hidden">
+        <WorkspaceToolbar>
+         <div className="flex min-w-0 flex-1 items-center gap-2">
+          <Typography variant="bodySmall" weight="bold" clamp="one">
+           {tabs.find((tab) => tab.key === activeView)?.label ?? t("tabsLabel")}
+          </Typography>
+         </div>
+         <div className="flex shrink-0 items-center gap-1.5">
+          <Button
+           variant={isLessonBookmarked ? "warning" : "ghost"}
+           size="icon-toolbar"
+           onClick={onToggleLessonBookmark}
+           title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+           aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+          >
+           <Bookmark
+            className={cn(
+             "size-4",
+             isLessonBookmarked ? "fill-current text-warning" : "text-muted-foreground",
+            )}
+           />
+          </Button>
+          {toolbarNavMenu}
+         </div>
+        </WorkspaceToolbar>
+       </div>
+      ) : null}
       <Tabs
        value={activeView}
        items={tabs}

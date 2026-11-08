@@ -559,7 +559,7 @@ test.describe(() => {
     await page.reload();
     await expect(selector).toContainText(book.first);
     await selector.click();
-    await page.getByRole("button", { name: book.second, exact: true }).click();
+    await page.getByRole("menuitem").filter({ hasText: book.second }).click();
     await expect(selector).toContainText(book.second);
     await expect(page).toHaveURL(new RegExp(`book=${book.key}&lesson=2`));
     await page.getByRole("tab", { name: "Từ vựng", exact: true }).click();
