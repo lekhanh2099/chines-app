@@ -143,6 +143,7 @@ import {
 import { TextbookNoteAccessCard } from "./TextbookNoteAccessCard";
 import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
 import { LessonDictationWorkspace } from "@/features/hanzihome/practice/LessonDictationWorkspace";
+import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettingsDialog";
 import {
  dictationSourcesFromTextbook,
  translationSegmentsFromTextbook,
@@ -2129,41 +2130,44 @@ function BusinessChineseStudyWorkspaceContent({
   [annotationServices, renderReaderSection],
  );
 
- const tabActions = (
-  <div className="flex shrink-0 items-center gap-1.5">
-   <Button
-    variant="ghost"
-    size="sm"
-    className="gap-1.5 shrink-0"
-    onClick={onToggleLessonBookmark}
-    title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-    aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-   >
-    <Bookmark
-     className={cn(
-      "size-3.5",
-      isLessonBookmarked ? "fill-warning text-warning" : "text-muted-foreground",
-     )}
-    />
-    <span
-     className={cn("hidden sm:inline", isLessonBookmarked && "font-semibold text-warning-text")}
-    >
-     {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
-    </span>
-   </Button>
-   {isLessonOfflineReady ? (
-    <Badge
-     variant="success"
+ const desktopTabActions = (
+  <>
+   <OfflineAudioSettingsDialog lesson={lesson} />
+   <div className="flex shrink-0 items-center gap-1.5">
+    <Button
+     variant="ghost"
      size="sm"
-     casing="natural"
-     className="cursor-default gap-1 shrink-0 hidden md:inline-flex"
-     title={t("offlineDescription")}
+     className="gap-1.5 shrink-0"
+     onClick={onToggleLessonBookmark}
+     title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+     aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
     >
-     <CloudCheck data-icon="inline-start" />
-     <span>{t("offlineReady")}</span>
-    </Badge>
-   ) : null}
-  </div>
+     <Bookmark
+      className={cn(
+       "size-3.5",
+       isLessonBookmarked ? "fill-warning text-warning" : "text-muted-foreground",
+      )}
+     />
+     <span
+      className={cn("hidden sm:inline", isLessonBookmarked && "font-semibold text-warning-text")}
+     >
+      {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
+     </span>
+    </Button>
+    {isLessonOfflineReady ? (
+     <Badge
+      variant="success"
+      size="sm"
+      casing="natural"
+      className="cursor-default gap-1 shrink-0 hidden md:inline-flex"
+      title={t("offlineDescription")}
+     >
+      <CloudCheck data-icon="inline-start" />
+      <span>{t("offlineReady")}</span>
+     </Badge>
+    ) : null}
+   </div>
+  </>
  );
 
  return (
@@ -2186,7 +2190,7 @@ function BusinessChineseStudyWorkspaceContent({
        value={activeView}
        items={tabs}
        onValueChange={onActiveViewChange}
-       actions={tabActions}
+       actions={desktopTabActions}
        aria-label={t("tabsLabel")}
        className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
        listClassName="hanzihome-liquid-toolbar flex"

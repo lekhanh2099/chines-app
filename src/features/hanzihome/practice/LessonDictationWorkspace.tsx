@@ -27,6 +27,7 @@ import type { DictationAttempt } from "@/features/dictation/dictation-session";
 import { StudioDictationPracticePanel } from "@/features/dictation/StudioDictationPracticePanel";
 import { StudioDictationReferencePanel } from "@/features/dictation/StudioDictationReferencePanel";
 import type { StudioDictationScriptMode } from "@/features/dictation/StudioDictationSettingsMenu";
+import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettingsDialog";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { dictationSourcesFromLesson, type DictationSource } from "./translation-practice";
 
@@ -41,6 +42,7 @@ export type LessonDictationWorkspaceProps = {
 };
 
 export function LessonDictationWorkspace({
+ lesson,
  sourceLesson,
  sources: explicitSources,
  titleVi,
@@ -225,6 +227,7 @@ export function LessonDictationWorkspace({
       <Badge casing="natural">
        {selectedSource.id === "vocab" ? `${entries.length} từ` : `${entries.length} phần`}
       </Badge>
+      <OfflineAudioSettingsDialog lesson={lesson} />
       {onOpenPip ? (
        <Button
         type="button"
