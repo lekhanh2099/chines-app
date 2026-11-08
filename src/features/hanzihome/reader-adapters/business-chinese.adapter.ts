@@ -64,8 +64,9 @@ export function splitDialogueTurn(value: string) {
 
 export function getChineseSpeechSegments(value: string) {
  const { source } = splitTrailingTranslation(value);
- return (source.match(chineseSpeechSegmentPattern) ?? [])
-  .map((segment) => segment.trim())
+ const withoutOutlineNumber = source.replace(/^\s*\([一二三四五六七八九十]+\)\s*/u, "");
+ return (withoutOutlineNumber.match(chineseSpeechSegmentPattern) ?? [])
+  .map((segment) => segment.replace(/…+/gu, "").trim())
   .filter((segment) => containsHanziText(segment));
 }
 

@@ -18,6 +18,10 @@ class EdgeTTSProbe extends EdgeTTSV2 {
  endpoint() {
   return this.options.wssUrl;
  }
+
+ ssml(text: string, voice: string) {
+  return this.buildSSML(text, voice);
+ }
 }
 
 afterEach(() => {
@@ -84,5 +88,12 @@ describe("Edge Read Aloud GEC v2", () => {
   await expect(new EdgeTTSProbe().authenticationToken()).resolves.toBe(
    "492D7694A183A45E-56E821F95D4579C5B7C7E33DC7303FF379EC36D510213555BBBB9EB17EF15876",
   );
+ });
+
+ it("sets SSML xml:lang from the requested voice locale instead of hardcoding en-US", () => {
+  const client = new EdgeTTSProbe();
+  expect(client.ssml("Xin chào", "vi-VN-HoaiMyNeural")).toContain('xml:lang="vi-VN"');
+  expect(client.ssml("Xin chào", "vi-VN-HoaiMyNeural")).not.toContain('xml:lang="en-US"');
+  expect(client.ssml("你好", "zh-CN-XiaoxiaoNeural")).toContain('xml:lang="zh-CN"');
  });
 });

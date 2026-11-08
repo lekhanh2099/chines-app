@@ -1,7 +1,16 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
+
+vi.mock("@/components/providers/QueryProvider", () => ({
+ useClientSession: () => ({
+  supabase: {},
+  userId: "user-1",
+  isResolved: true,
+ }),
+}));
 
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
@@ -163,6 +172,9 @@ vi.mock("@/features/speech/MandarinTtsProvider", () => ({
   speakingRequestText: null,
   stop: vi.fn(),
  }),
+ useSharedMandarinTts: () => ({
+  speakSequence: vi.fn(),
+ }),
 }));
 
 vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
@@ -176,20 +188,40 @@ vi.mock("@/features/reading/hooks/useReaderSessionPronunciation", () => ({
 }));
 
 vi.mock("@/features/reader/components/Reader", () => ({
- Reader: () => <div data-testid="reader-mock">Reader Mock</div>,
+ Reader: ({ services }: { services?: { annotations?: unknown } }) => (
+  <div
+   data-testid="reader-mock"
+   data-has-annotations={Boolean(services?.annotations) ? "true" : "false"}
+  >
+   Reader Mock
+  </div>
+ ),
+}));
+
+vi.mock("@/features/speech/OfflineAudioSettingsDialog", () => ({
+ OfflineAudioSettingsDialog: () => <div data-testid="offline-dialog-mock">Offline Audio Mock</div>,
+}));
+
+vi.mock("@/features/daily-reading/components/DailyReadingNoteCard", () => ({
+ DailyReadingNoteCard: () => <div data-testid="note-card-mock">Note Card Mock</div>,
 }));
 
 import { DailyReadingLibrary, DailyReadingView } from "./DailyReadingLibrary";
 
 describe("DailyReadingLibrary UI enhancements", () => {
  const locale: AppLocale = "vi";
+ const queryClient = new QueryClient({
+  defaultOptions: { queries: { retry: false } },
+ });
 
  it("renders the library tab with compact action bar, search input, and article count", async () => {
   const messages = await loadAppMessages(locale);
   const markup = renderToStaticMarkup(
-   <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <DailyReadingLibrary />
-   </NextIntlClientProvider>,
+   <QueryClientProvider client={queryClient}>
+    <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <DailyReadingLibrary />
+    </NextIntlClientProvider>
+   </QueryClientProvider>,
   );
 
   expect(markup).toContain("hanzihome-liquid-toolbar");
@@ -201,13 +233,18 @@ describe("DailyReadingLibrary UI enhancements", () => {
  it("renders DailyReadingView with liquid toolbar, back action in tabs, and enhanced vocabulary tab with pinyin/meaning toggles", async () => {
   const messages = await loadAppMessages(locale);
   const markup = renderToStaticMarkup(
-   <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <DailyReadingView id="sample-reading-1" onBack={vi.fn()} />
-   </NextIntlClientProvider>,
+   <QueryClientProvider client={queryClient}>
+    <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <DailyReadingView id="sample-reading-1" onBack={vi.fn()} />
+    </NextIntlClientProvider>
+   </QueryClientProvider>,
   );
 
   expect(markup).toContain("hanzihome-liquid-toolbar");
   // The tabs should contain back action
   expect(markup).toContain(messages.DailyReading.document.back);
+  // The tabs should contain notes tab and offline voice action
+  expect(markup).toContain(messages.DailyReading.tabs.notes);
+  expect(markup).toContain('data-has-annotations="true"');
  });
 });

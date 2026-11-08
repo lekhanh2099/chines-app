@@ -57,11 +57,20 @@ import type { TextbookLesson } from "@/features/hanzihome/static-json/business-c
 
 export type OfflineAudioSettingsDialogProps = {
  readonly lesson?: TextbookLesson | null;
- readonly trigger?: ReactNode;
+ readonly trigger?: ReactNode | null;
+ readonly open?: boolean;
+ readonly onOpenChange?: (open: boolean) => void;
 };
 
-export function OfflineAudioSettingsDialog({ lesson, trigger }: OfflineAudioSettingsDialogProps) {
- const [open, setOpen] = useState(false);
+export function OfflineAudioSettingsDialog({
+ lesson,
+ trigger,
+ open: controlledOpen,
+ onOpenChange: setControlledOpen,
+}: OfflineAudioSettingsDialogProps) {
+ const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
+ const isControlled = controlledOpen !== undefined;
+ const open = isControlled ? controlledOpen : uncontrolledOpen;
  const [cacheEntries, setCacheEntries] = useState(0);
  const [cacheBytes, setCacheBytes] = useState(0);
  const [aiModelStatus, setAiModelStatus] = useState<AiModelStatus>("not_downloaded");
@@ -147,7 +156,11 @@ export function OfflineAudioSettingsDialog({ lesson, trigger }: OfflineAudioSett
  };
 
  const handleOpenChange = (nextOpen: boolean) => {
-  setOpen(nextOpen);
+  if (isControlled) {
+   setControlledOpen?.(nextOpen);
+  } else {
+   setUncontrolledOpen(nextOpen);
+  }
   if (!nextOpen) {
    fastSpeech.stop();
    setIsTestingVoice(false);
@@ -187,19 +200,21 @@ export function OfflineAudioSettingsDialog({ lesson, trigger }: OfflineAudioSett
 
  return (
   <Dialog open={open} onOpenChange={handleOpenChange}>
-   <DialogTrigger asChild>
-    {trigger ?? (
-     <Button
-      type="button"
-      variant="outline"
-      size="compact"
-      aria-label="Cài đặt giọng đọc và bộ nhớ offline"
-     >
-      <DownloadCloud className="size-3.5" />
-      <span>Offline & Giọng đọc</span>
-     </Button>
-    )}
-   </DialogTrigger>
+   {trigger !== null ? (
+    <DialogTrigger asChild>
+     {trigger ?? (
+      <Button
+       type="button"
+       variant="outline"
+       size="compact"
+       aria-label="Cài đặt giọng đọc và bộ nhớ offline"
+      >
+       <DownloadCloud className="size-3.5" />
+       <span>Offline & Giọng đọc</span>
+      </Button>
+     )}
+    </DialogTrigger>
+   ) : null}
 
    <DialogContent size="md">
     <DialogHeader>

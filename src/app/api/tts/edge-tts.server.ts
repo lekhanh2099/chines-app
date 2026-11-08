@@ -1,7 +1,12 @@
 import "server-only";
 
 import { createHash } from "node:crypto";
-import { Constants, EdgeTTS, type EdgeTTSOptions } from "@andresaya/edge-tts";
+import {
+ Constants,
+ EdgeTTS,
+ type EdgeTTSOptions,
+ type SynthesisOptions,
+} from "@andresaya/edge-tts";
 import { now } from "@andresaya/edge-tts/dist/core/clock.js";
 
 function rotate16(value: number) {
@@ -98,5 +103,11 @@ export class EdgeTTSV2 extends EdgeTTS {
 
  protected override signature() {
   return Promise.resolve(generateSecMsGecV2());
+ }
+
+ protected override buildSSML(text: string, voice: string, options: SynthesisOptions = {}) {
+  const localeMatch = /^([a-z]{2,3}-[A-Z]{2,3})/i.exec(voice.trim());
+  const xmlLang = localeMatch?.[1] ?? "zh-CN";
+  return super.buildSSML(text, voice, options).replace('xml:lang="en-US"', `xml:lang="${xmlLang}"`);
  }
 }

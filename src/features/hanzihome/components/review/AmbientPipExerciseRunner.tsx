@@ -46,6 +46,7 @@ export type AmbientPipExerciseRunnerProps = {
  readonly lessonTitle?: string;
  readonly onClose?: () => void;
  readonly isFloatingInApp?: boolean;
+ readonly isInline?: boolean;
  readonly extraHeaderActions?: ReactNode;
 };
 
@@ -54,6 +55,7 @@ export function AmbientPipExerciseRunner({
  lessonTitle = "Luyện tập bài tập",
  onClose,
  isFloatingInApp = false,
+ isInline = false,
  extraHeaderActions,
 }: AmbientPipExerciseRunnerProps) {
  const [retryingMistakes, setRetryingMistakes] = useState<readonly UniversalExerciseItem[] | null>(
@@ -288,7 +290,17 @@ export function AmbientPipExerciseRunner({
        type="button"
        variant="ghost"
        size="toolbar"
-       onClick={() => speak(currentItem.audioText || currentItem.prompt)}
+       onClick={() => {
+        const shouldSpeakPrompt =
+         !isCurrentSubmitted &&
+         currentItem.interaction.type === "choice" &&
+         !/[\u4e00-\u9fff]/u.test(currentItem.prompt);
+        if (shouldSpeakPrompt) {
+         speak(currentItem.prompt, { lang: "vi-VN" });
+         return;
+        }
+        speak(currentItem.audioText || currentItem.prompt);
+       }}
        aria-label="Phát âm câu hỏi"
       >
        <Volume2 className="size-3.5 text-primary" />
@@ -432,6 +444,17 @@ export function AmbientPipExerciseRunner({
    >
     {content}
    </Card>
+  );
+ }
+
+ if (isInline) {
+  return (
+   <div
+    ref={rootRef}
+    className="flex h-96 w-full flex-col justify-between overflow-hidden rounded-xl border border-border-default/60 bg-surface select-none"
+   >
+    {content}
+   </div>
   );
  }
 

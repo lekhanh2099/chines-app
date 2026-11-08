@@ -90,7 +90,19 @@
   "lessonNavigationAria": "Quickly switch HanziHome lessons",
   "chooseLessonAria": "Choose a HanziHome lesson",
   "lessonOption": "Lesson {number}: {title}",
-  "openAllSettings": "Open all settings"
+  "openAllSettings": "Open all settings",
+  "showPinyin": "Show Pinyin",
+  "hidePinyin": "Hide Pinyin",
+  "showMeaning": "Show Vietnamese translation",
+  "hideMeaning": "Hide Vietnamese translation",
+  "meaning": "Translation",
+  "displaySettings": "Content display",
+  "readingDisplay": "Content display",
+  "displayModeBoth": "Pinyin & Meaning",
+  "displayModePinyinOnly": "Pinyin",
+  "displayModeMeaningOnly": "Meaning",
+  "displayModeHanziOnly": "Hanzi only",
+  "voiceSettings": "Voice & Audio settings"
  },
  "breadcrumbs": {
   "study": "Learn",

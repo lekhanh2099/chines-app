@@ -23,6 +23,7 @@ import {
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
+ DEFAULT_VIETNAMESE_VOICE,
  prefetchMandarinAudio,
  useFastMandarinSpeech,
 } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
@@ -40,11 +41,15 @@ import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import { cn } from "@/lib/utils";
 
+export type DictationMode = "zh-to-zh" | "vi-to-zh";
+
 export type AmbientPipDictationCardProps = {
  readonly items: readonly HanziHomeVocabItem[];
  readonly lessonTitle?: string;
+ readonly initialMode?: DictationMode;
  readonly onClose?: () => void;
  readonly isFloatingInApp?: boolean;
+ readonly isInline?: boolean;
  readonly extraHeaderActions?: ReactNode;
 };
 
@@ -62,10 +67,24 @@ type SummaryStats = {
 export function AmbientPipDictationCard({
  items,
  lessonTitle = "Nghe chép từ vựng",
+ initialMode,
  onClose,
  isFloatingInApp = false,
+ isInline = false,
  extraHeaderActions,
 }: AmbientPipDictationCardProps) {
+ const [dictationMode, setDictationMode] = useState<DictationMode>(() => {
+  if (initialMode) return initialMode;
+  if (typeof window !== "undefined") {
+   try {
+    const saved = window.localStorage.getItem("hanzihome:pip-dictation-mode");
+    if (saved === "vi-to-zh" || saved === "zh-to-zh") return saved;
+   } catch {
+    // Ignore storage errors
+   }
+  }
+  return "zh-to-zh";
+ });
  const [mistakesItems, setMistakesItems] = useState<readonly HanziHomeVocabItem[] | null>(null);
  const [shuffledIndices, setShuffledIndices] = useState<readonly number[] | null>(null);
  const [speechRate, setSpeechRate] = useState<number>(1.0);
@@ -108,10 +127,53 @@ export function AmbientPipDictationCard({
   }
  }, []);
 
+ const handleToggleDictationMode = useCallback(() => {
+  cancelAutoNext();
+  setDictationMode((prev) => {
+   const next = prev === "zh-to-zh" ? "vi-to-zh" : "zh-to-zh";
+   if (typeof window !== "undefined") {
+    try {
+     window.localStorage.setItem("hanzihome:pip-dictation-mode", next);
+    } catch {
+     // Ignore storage errors
+    }
+   }
+   return next;
+  });
+  setAnswer("");
+  setIsChecked(false);
+  setAttempt(null);
+  setShowHint(false);
+  startTimeRef.current = null;
+ }, [cancelAutoNext]);
+
  const playCurrentAudio = useCallback(() => {
-  if (!currentItem?.hanzi) return;
-  speak(currentItem.hanzi, { rate: speechRate });
- }, [currentItem, speak, speechRate]);
+  if (!currentItem) return;
+  if (dictationMode === "vi-to-zh") {
+   const viMeaning = getVocabDisplayMeaning(currentItem);
+   if (viMeaning) {
+    speak(viMeaning, { rate: speechRate, lang: "vi-VN", voice: DEFAULT_VIETNAMESE_VOICE });
+   }
+  } else {
+   if (currentItem.hanzi) {
+    speak(currentItem.hanzi, { rate: speechRate, lang: "zh-CN" });
+   }
+  }
+ }, [currentItem, dictationMode, speak, speechRate]);
+
+ const playSecondaryAudio = useCallback(() => {
+  if (!currentItem) return;
+  if (dictationMode === "vi-to-zh") {
+   if (currentItem.hanzi) {
+    speak(currentItem.hanzi, { rate: speechRate, lang: "zh-CN" });
+   }
+  } else {
+   const viMeaning = getVocabDisplayMeaning(currentItem);
+   if (viMeaning) {
+    speak(viMeaning, { rate: speechRate, lang: "vi-VN", voice: DEFAULT_VIETNAMESE_VOICE });
+   }
+  }
+ }, [currentItem, dictationMode, speak, speechRate]);
 
  const handleNext = useCallback(() => {
   if (totalCount === 0) return;
@@ -388,20 +450,30 @@ export function AmbientPipDictationCard({
 
  // Speak audio on word load
  useEffect(() => {
-  if (isAutoSpeak && currentItem?.hanzi && !isCompleted) {
-   speak(currentItem.hanzi, { rate: speechRate });
+  if (isAutoSpeak && currentItem && !isCompleted) {
+   if (dictationMode === "vi-to-zh") {
+    const viMeaning = getVocabDisplayMeaning(currentItem);
+    if (viMeaning) {
+     speak(viMeaning, { rate: speechRate, lang: "vi-VN", voice: DEFAULT_VIETNAMESE_VOICE });
+    }
+   } else if (currentItem.hanzi) {
+    speak(currentItem.hanzi, { rate: speechRate, lang: "zh-CN" });
+   }
   }
- }, [currentIndex, currentItem, isAutoSpeak, isCompleted, speak, speechRate]);
+ }, [currentIndex, currentItem, dictationMode, isAutoSpeak, isCompleted, speak, speechRate]);
 
  // Background prefetch upcoming audio
  useEffect(() => {
   if (totalCount === 0 || isCompleted) return;
-  const upcoming = activeItems
-   .slice(currentIndex, currentIndex + 4)
-   .map((it) => it?.hanzi)
-   .filter(Boolean);
-  prefetchMandarinAudio(upcoming, undefined, speechRate);
- }, [currentIndex, activeItems, totalCount, isCompleted, speechRate]);
+  const upcoming = activeItems.slice(currentIndex + 1, currentIndex + 3);
+  if (dictationMode === "vi-to-zh") {
+   const viTexts = upcoming.map((it) => getVocabDisplayMeaning(it)).filter(Boolean);
+   prefetchMandarinAudio(viTexts, DEFAULT_VIETNAMESE_VOICE, speechRate);
+  } else {
+   const zhTexts = upcoming.map((it) => it?.hanzi).filter(Boolean);
+   prefetchMandarinAudio(zhTexts, undefined, speechRate);
+  }
+ }, [currentIndex, activeItems, totalCount, isCompleted, speechRate, dictationMode]);
 
  useEffect(() => {
   return () => {
@@ -426,12 +498,31 @@ export function AmbientPipDictationCard({
        {isCompleted ? "Xong" : `${currentIndex + 1}/${totalCount}`}
       </Badge>
       <StudyInstructionText tone="secondary" weight="bold" clamp="one">
-       {isRetryingMistakes ? `${lessonTitle} (Luyện từ sai)` : lessonTitle}
+       {isRetryingMistakes
+        ? `${lessonTitle} (${dictationMode === "vi-to-zh" ? "Việt ➔ Hán" : "Trung ➔ Hán"}, Luyện từ sai)`
+        : `${lessonTitle} (${dictationMode === "vi-to-zh" ? "Việt ➔ Hán" : "Trung ➔ Hán"})`}
       </StudyInstructionText>
      </div>
 
      <div className="flex shrink-0 items-center gap-1">
       {extraHeaderActions}
+
+      <Button
+       type="button"
+       variant={dictationMode === "vi-to-zh" ? "active" : "ghost"}
+       size="compact"
+       onClick={handleToggleDictationMode}
+       title={
+        dictationMode === "vi-to-zh"
+         ? "Đang chế độ: Nghe nghĩa tiếng Việt ➔ Chép chữ Hán (Bấm để đổi sang Nghe tiếng Trung)"
+         : "Đang chế độ: Nghe tiếng Trung ➔ Chép chữ Hán (Bấm để đổi sang Nghe tiếng Việt)"
+       }
+       aria-label={`Chế độ nghe chép: ${dictationMode === "vi-to-zh" ? "Việt sang Hán" : "Trung sang Hán"}`}
+      >
+       <span className="text-xs font-semibold">
+        {dictationMode === "vi-to-zh" ? "🇻🇳 Việt ➔ Hán" : "🇨🇳 Trung ➔ Hán"}
+       </span>
+      </Button>
 
       <Button
        type="button"
@@ -540,10 +631,45 @@ export function AmbientPipDictationCard({
      <div className="grid gap-2.5">
       {/* Audio Play Trigger & Hint Area */}
       <div className="flex items-center justify-between gap-2">
-       <Button type="button" variant="outline" size="compact" onClick={playCurrentAudio}>
-        <Volume2 className="size-3.5" />
-        <span>Nghe lại (Ctrl+R)</span>
-       </Button>
+       <div className="flex items-center gap-1.5">
+        <Button
+         type="button"
+         variant="outline"
+         size="compact"
+         onClick={playCurrentAudio}
+         title={
+          dictationMode === "vi-to-zh"
+           ? "Nghe nghĩa tiếng Việt (Ctrl+R)"
+           : "Nghe phát âm tiếng Trung (Ctrl+R)"
+         }
+        >
+         <Volume2 className={cn("size-3.5", dictationMode === "vi-to-zh" && "text-primary")} />
+         <span>
+          {dictationMode === "vi-to-zh" ? "Nghe tiếng Việt (Ctrl+R)" : "Nghe lại (Ctrl+R)"}
+         </span>
+        </Button>
+
+        <Button
+         type="button"
+         variant="ghost"
+         size="compact"
+         onClick={playSecondaryAudio}
+         title={
+          dictationMode === "vi-to-zh"
+           ? "Nghe thêm phát âm tiếng Trung"
+           : "Nghe thêm nghĩa tiếng Việt"
+         }
+         aria-label={
+          dictationMode === "vi-to-zh"
+           ? "Nghe thêm phát âm tiếng Trung"
+           : "Nghe thêm nghĩa tiếng Việt"
+         }
+        >
+         <span className="text-xs font-semibold">
+          {dictationMode === "vi-to-zh" ? "🇨🇳 Trung" : "🇻🇳 Việt"}
+         </span>
+        </Button>
+       </div>
 
        <Button
         type="button"
@@ -560,10 +686,18 @@ export function AmbientPipDictationCard({
       {/* Hint Display (if toggled or if checked) */}
       {showHint && !isChecked ? (
        <div className="rounded-lg border border-border-default/50 bg-bg-subtle p-2 text-center">
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-2">
          <StudyInstructionText tone="accent" weight="bold">
           {currentItem.pinyin}
          </StudyInstructionText>
+         {currentItem.meaning.hanviet ? (
+          <>
+           <StudyInstructionText tone="muted">·</StudyInstructionText>
+           <StudyInstructionText tone="secondary" weight="semibold">
+            {`[${currentItem.meaning.hanviet}]`}
+           </StudyInstructionText>
+          </>
+         ) : null}
          <StudyInstructionText tone="muted">·</StudyInstructionText>
          <StudyInstructionText tone="secondary" weight="semibold">
           {getVocabDisplayMeaning(currentItem)}
@@ -627,6 +761,14 @@ export function AmbientPipDictationCard({
          <StudyInstructionText tone="accent" weight="bold">
           {currentItem.pinyin}
          </StudyInstructionText>
+         {currentItem.meaning.hanviet ? (
+          <>
+           <StudyInstructionText tone="muted">·</StudyInstructionText>
+           <StudyInstructionText tone="secondary" weight="bold">
+            {`[${currentItem.meaning.hanviet}]`}
+           </StudyInstructionText>
+          </>
+         ) : null}
          <StudyInstructionText tone="muted">·</StudyInstructionText>
          <StudyInstructionText tone="secondary" weight="semibold">
           {getVocabDisplayMeaning(currentItem)}
@@ -645,13 +787,19 @@ export function AmbientPipDictationCard({
          autoCapitalize="off"
          autoCorrect="off"
          spellCheck={false}
-         placeholder="Gõ chữ Hán rồi bấm Enter..."
+         placeholder={
+          dictationMode === "vi-to-zh"
+           ? "Nghe nghĩa tiếng Việt, gõ chữ Hán..."
+           : "Gõ chữ Hán rồi bấm Enter..."
+         }
          aria-label={`Gõ chữ Hán cho từ số ${currentIndex + 1}`}
          onChange={(e) => handleAnswerChange(e.target.value)}
          onKeyDown={handleKeyDown}
         />
         <StudyInstructionText variant="caption" tone="muted" className="text-center">
-         Bấm Enter để kiểm tra · Ctrl+R để nghe lại
+         {dictationMode === "vi-to-zh"
+          ? "Bấm Enter để kiểm tra · Ctrl+R nghe tiếng Việt"
+          : "Bấm Enter để kiểm tra · Ctrl+R để nghe lại"}
         </StudyInstructionText>
        </div>
       )}
@@ -736,6 +884,17 @@ export function AmbientPipDictationCard({
      {content}
     </div>
    </Card>
+  );
+ }
+
+ if (isInline) {
+  return (
+   <div
+    ref={rootRef}
+    className="flex h-96 w-full flex-col justify-between overflow-hidden rounded-xl border border-border-default/60 bg-surface select-none"
+   >
+    {content}
+   </div>
   );
  }
 

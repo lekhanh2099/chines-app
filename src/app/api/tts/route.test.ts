@@ -190,9 +190,12 @@ describe("/api/tts", () => {
 
  it.each([
   { rate: 0.75, percentage: "-25%" },
+  { rate: 0.8, percentage: "-20%" },
   { rate: 0.9, percentage: "-10%" },
   { rate: 1, percentage: "+0%" },
   { rate: 1.1, percentage: "+10%" },
+  { rate: 1.15, percentage: "+15%" },
+  { rate: 1.2, percentage: "+20%" },
   { rate: 1.25, percentage: "+25%" },
  ])("preserves synthesis rate $rate", async ({ rate, percentage }) => {
   const response = await POST(postRequest({ text: "你好", voice: xiaoxiaoVoice.ShortName, rate }));

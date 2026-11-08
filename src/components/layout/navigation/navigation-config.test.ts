@@ -58,10 +58,10 @@ describe("navigation configuration", () => {
   expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
  });
 
- it("exposes the three extended textbooks while retaining the lesson library aliases", () => {
+ it("exposes the four extended textbooks while retaining the lesson library aliases", () => {
   expect(
    navigationGroups[0]?.sections.find((section) => section.id === "textbooks")?.itemIds,
-  ).toEqual(["businessChinese", "chineseBridge", "spokenChinese"]);
+  ).toEqual(["businessChinese", "chineseBridge", "readingComprehension", "spokenChinese"]);
   expect(navigationItems.lessons.href).toBe("/hanzihome");
   expect(navigationItems.lessons.aliases).toEqual([
    navigationItems.businessChinese.href,

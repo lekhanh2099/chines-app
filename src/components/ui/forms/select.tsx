@@ -8,7 +8,7 @@ import { focusRingClassName, invalidFocusRingClassName } from "@/components/ui/f
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react";
 
-const SelectTriggerSizeSchema = z.enum(["sm", "default"]);
+const SelectTriggerSizeSchema = z.enum(["compact", "sm", "default"]);
 const SelectTriggerWidthSchema = z.enum(["content", "full"]);
 const SelectTriggerVariantSchema = z.enum(["default", "breadcrumb"]);
 
@@ -45,7 +45,7 @@ function SelectTrigger({
  hideIcon?: boolean;
 }) {
  const defaultAppearance =
-  "border-input bg-bg-input py-2 pr-2 pl-2.5 text-sm data-[size=default]:h-11 data-[size=sm]:h-9";
+  "border-input bg-bg-input py-2 pr-2 pl-2.5 text-sm data-[size=default]:h-11 data-[size=sm]:h-9 data-[size=compact]:h-7 data-[size=compact]:py-1 data-[size=compact]:text-xs";
  const breadcrumbAppearance =
   "h-11 min-h-11 border-transparent bg-transparent px-1.5 text-sm font-bold text-text-primary shadow-none hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle sm:h-8 sm:min-h-8 sm:px-2 [&_svg]:text-text-muted";
 

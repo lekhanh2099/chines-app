@@ -10,12 +10,12 @@ export type NativeSelectProps = React.ComponentProps<"select"> & {
 export const NativeSelect = React.forwardRef<HTMLSelectElement, NativeSelectProps>(
  ({ className, density = "compact", children, ...props }, ref) => {
   return (
-   <div className="relative inline-flex items-center">
+   <div className="relative inline-flex max-w-full min-w-0 items-center">
     <select
      ref={ref}
      data-slot="native-select"
      className={cn(
-      "appearance-none rounded-lg border border-border-default/80 bg-surface-muted/50 font-medium text-foreground outline-none transition-colors select-none",
+      "max-w-full min-w-0 truncate appearance-none rounded-lg border border-border-default/80 bg-surface-muted/50 font-medium text-foreground outline-none transition-colors select-none",
       "hover:bg-surface-muted hover:border-primary/40 focus:border-primary",
       focusRingClassName,
       density === "compact"

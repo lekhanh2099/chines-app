@@ -79,7 +79,11 @@ function extractionMethodScore(method: DailyReadingExtractionMethod) {
 }
 
 function preferredLengthScore(hanCharacters: number, preference: DailyReadingLengthPreference) {
- if (preference === "any") return 14;
+ if (preference === "any") {
+  if (hanCharacters >= 350 && hanCharacters <= 1_000) return 20;
+  if (hanCharacters > 1_600) return Math.max(0, 14 - ((hanCharacters - 1_600) / 200) * 3);
+  return 14;
+ }
  const target = preference === "short" ? 550 : preference === "medium" ? 1_100 : 2_200;
  const distanceRatio = Math.abs(hanCharacters - target) / target;
  return Math.max(0, 18 - distanceRatio * 12);
@@ -129,7 +133,10 @@ export function assessDailyReadingSourceQuality(input: {
  else if (ageDays > input.maximumFreshnessDays) rejection = "stale";
 
  const densityScore = Math.min(22, Math.max(0, input.document.chineseDensity * 22));
- const paragraphScore = Math.min(14, paragraphCount * 1.8);
+ const paragraphScore =
+  paragraphCount > 15
+   ? Math.max(0, 14 - (paragraphCount - 15) * 1.5)
+   : Math.min(14, paragraphCount * 1.8);
  const coherenceScore = coherence * 16;
  const titleScore = Math.min(18, titleBodyCoverage * 14 + pageTitleSimilarity * 8);
  const freshnessScore = Math.max(

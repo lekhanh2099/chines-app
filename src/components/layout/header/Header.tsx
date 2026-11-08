@@ -65,7 +65,12 @@ type SimpleHeaderBreadcrumb = {
  };
 };
 
-export function Header() {
+export type HeaderProps = {
+ actions?: ReactNode;
+ quickSettingsExtras?: ReactNode;
+};
+
+export function Header({ actions, quickSettingsExtras }: HeaderProps = {}) {
  const t = useTranslations("Shell");
  const { user } = useClientSession();
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
@@ -122,7 +127,7 @@ export function Header() {
      className={cn(
       "grid h-12 w-full min-w-0 items-center gap-1.5 sm:h-14 sm:gap-3",
       hasRouteToolbar
-       ? "grid-cols-[minmax(0,1fr)_auto] xl:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)_auto]"
+       ? "grid-cols-[minmax(0,1fr)_auto] xl:grid-cols-[minmax(0,1fr)_minmax(14rem,20rem)_auto]"
        : "grid-cols-[minmax(0,1fr)_auto]",
      )}
     >
@@ -159,6 +164,8 @@ export function Header() {
       onToggleTheme={toggleTheme}
       onLookupEnabledChange={(enabled) => setLookupEnabled(pathname, enabled)}
       onFocusModeEnabledChange={setFocusModeEnabled}
+      actions={actions}
+      quickSettingsExtras={quickSettingsExtras}
      />
     </div>
    </header>
@@ -283,7 +290,7 @@ function HeaderSearchForm({
     density="search"
     surface="card"
     adornment="start"
-    className={cn("w-full", routeToolbarActive && "xl:w-[min(34rem,34vw)]")}
+    className={cn("w-full", routeToolbarActive && "xl:w-[min(20rem,20vw)]")}
    />
   </form>
  );
@@ -299,6 +306,8 @@ function HeaderUtilityArea({
  onToggleTheme,
  onLookupEnabledChange,
  onFocusModeEnabledChange,
+ actions,
+ quickSettingsExtras,
 }: {
  routeToolbarActive: boolean;
  focusModeEnabled: boolean;
@@ -309,6 +318,8 @@ function HeaderUtilityArea({
  onToggleTheme: () => void;
  onLookupEnabledChange: (enabled: boolean) => void;
  onFocusModeEnabledChange: (enabled: boolean) => void;
+ actions?: ReactNode;
+ quickSettingsExtras?: ReactNode;
 }) {
  const t = useTranslations("Shell");
 
@@ -335,6 +346,8 @@ function HeaderUtilityArea({
 
    {focusModeEnabled ? <FocusModePill /> : null}
    <OfflinePill />
+
+   {actions}
 
    <DropdownMenu>
     <DropdownMenuTrigger asChild>
@@ -380,6 +393,7 @@ function HeaderUtilityArea({
       <LockKeyhole />
       {t("header.focusMode")}
      </DropdownMenuCheckboxItem>
+     {quickSettingsExtras}
      <DropdownMenuSeparator />
      <DropdownMenuItem asChild>
       <Link href="/settings?section=app">

@@ -3,6 +3,7 @@ import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.type
 import type { DeepVocabularyItem } from "@/features/hanzihome/schemas/vocab.types";
 import { z } from "zod";
 import {
+ customVocabItemSchema,
  hanziReaderFontSchema,
  hanziReaderSizeSchema,
  learningStatusSchema,
@@ -11,6 +12,8 @@ import {
  reviewResultSchema,
  userLearningStateSchema,
 } from "@/features/hanzihome/schemas/learning-state.schema";
+
+export type CustomVocabItem = z.infer<typeof customVocabItemSchema>;
 
 export type HanziHomeModule = z.infer<typeof moduleSchema>;
 

@@ -1,6 +1,5 @@
 import { PageContainer } from "@/components/layout/workspace/page-container";
 import { Card } from "@/components/ui/layout/card";
-import { Separator } from "@/components/ui/layout/separator";
 import { useTranslations } from "next-intl";
 
 export function HomeDashboardSkeleton() {
@@ -16,6 +15,38 @@ export function HomeDashboardSkeleton() {
     <div className="grid min-w-0 animate-pulse gap-3">
      <div className="h-8 w-48 rounded-lg bg-bg-subtle sm:h-9" />
      <div className="h-5 w-full max-w-96 rounded-md bg-bg-subtle" />
+    </div>
+
+    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] xl:items-stretch">
+     <Card variant="section" padding="md" className="grid min-w-0 animate-pulse gap-3">
+      <div className="flex items-center justify-between gap-2">
+       <div className="h-4 w-36 rounded-md bg-bg-subtle" />
+       <div className="h-5 w-24 rounded-full bg-bg-subtle" />
+      </div>
+      <div className="h-5 w-56 max-w-full rounded-md bg-bg-subtle" />
+      <div className="flex items-center justify-between gap-2 border-t border-border-default/60 pt-2">
+       <div className="h-3.5 w-44 rounded-md bg-bg-subtle" />
+       <div className="h-3.5 w-20 rounded-md bg-bg-subtle" />
+      </div>
+     </Card>
+
+     <Card variant="section" padding="md" className="grid min-w-0 animate-pulse gap-3">
+      <div className="flex items-center justify-between gap-2">
+       <div className="h-4 w-40 rounded-md bg-bg-subtle" />
+       <div className="h-5 w-28 rounded-full bg-bg-subtle" />
+      </div>
+      <div className="h-5 w-64 max-w-full rounded-md bg-bg-subtle" />
+      <div className="flex items-center justify-between gap-2 border-t border-border-default/60 pt-2">
+       <div className="flex items-center gap-1.5">
+        <div className="h-7 w-32 rounded-lg bg-bg-subtle" />
+        <div className="h-7 w-40 rounded-lg bg-bg-subtle" />
+       </div>
+       <div className="flex items-center gap-1.5">
+        <div className="h-7 w-28 rounded-lg bg-bg-subtle" />
+        <div className="h-7 w-24 rounded-lg bg-bg-subtle" />
+       </div>
+      </div>
+     </Card>
     </div>
 
     <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.75fr)] xl:items-start">
@@ -40,35 +71,6 @@ export function HomeDashboardSkeleton() {
      </div>
 
      <aside className="grid min-w-0 gap-4 sm:gap-5">
-      <Card variant="section" padding="lg" className="grid min-w-0 animate-pulse gap-5">
-       <div className="flex flex-wrap items-start justify-between gap-3">
-        <div className="grid gap-2">
-         <div className="h-5 w-24 rounded-md bg-bg-subtle" />
-         <div className="h-3 w-48 max-w-full rounded-full bg-bg-subtle" />
-        </div>
-        <div className="h-9 w-20 rounded-lg bg-bg-subtle" />
-       </div>
-       <div className="grid divide-y divide-border-default/70">
-        {Array.from({ length: 3 }, (_, index) => (
-         <div key={index} className="flex items-center gap-3 py-2 first:pt-0 last:pb-0">
-          <div className="size-8 rounded-lg bg-bg-subtle" />
-          <div className="h-3 w-24 rounded-full bg-bg-subtle" />
-          <div className="ml-auto h-4 w-8 rounded-md bg-bg-subtle" />
-         </div>
-        ))}
-       </div>
-       <Separator />
-       <div className="grid gap-x-5 gap-y-1 sm:grid-cols-2">
-        {Array.from({ length: 4 }, (_, index) => (
-         <div key={index} className="flex items-center gap-3 py-2 first:pt-0 last:pb-0">
-          <div className="size-8 rounded-lg bg-bg-subtle" />
-          <div className="h-3 w-24 rounded-full bg-bg-subtle" />
-          <div className="ml-auto h-4 w-8 rounded-md bg-bg-subtle" />
-         </div>
-        ))}
-       </div>
-      </Card>
-
       <Card variant="section" padding="md" className="min-w-0 min-h-28 animate-pulse">
        <div className="flex items-center gap-3">
         <div className="size-9 rounded-lg bg-bg-subtle" />

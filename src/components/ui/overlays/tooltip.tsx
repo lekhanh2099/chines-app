@@ -11,7 +11,7 @@ const tooltipContentVariants = cva(
  {
   variants: {
    variant: {
-    default: "bg-bg-inverse text-text-inverse",
+    default: "border border-border-default/40 bg-bg-inverse text-text-inverse shadow-theme-md",
     surface: "border border-border-default bg-bg-elevated text-text-primary",
     accent: "bg-primary text-primary-foreground",
    },

@@ -37,6 +37,7 @@ import {
 } from "@/features/hanzihome/components/aggregate-library/aggregate-utils";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
 import { VocabReviewSkeleton } from "@/features/hanzihome/components/VocabReviewSkeleton";
+import { UnifiedVocabStudyHub } from "@/features/hanzihome/components/review/UnifiedVocabStudyHub";
 import type { ReviewItem } from "@/features/hanzihome/context/types";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
@@ -296,6 +297,8 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       </Typography>
      }
     />
+
+    {kind === "vocab" ? <UnifiedVocabStudyHub /> : null}
 
     <Card variant="section" padding="md" className="grid gap-3">
      <ReviewLessonMultiSelect

@@ -20,6 +20,8 @@ export type UniversalAmbientPipProps = {
  readonly practiceItems?: readonly UniversalExerciseItem[];
  readonly onClose?: () => void;
  readonly isFloatingInApp?: boolean;
+ readonly isInline?: boolean;
+ readonly hideModeSwitcher?: boolean;
 };
 
 export function UniversalAmbientPip({
@@ -30,6 +32,8 @@ export function UniversalAmbientPip({
  practiceItems = [],
  onClose,
  isFloatingInApp = false,
+ isInline = false,
+ hideModeSwitcher,
 }: UniversalAmbientPipProps) {
  const availableModes = useMemo(() => {
   const modes: { mode: UniversalPipMode; label: string; count: number }[] = [];
@@ -73,8 +77,10 @@ export function UniversalAmbientPip({
   return availableModes[0]?.mode ?? "vocab";
  }, [availableModes, initialMode, userSelectedMode]);
 
+ const shouldHideModeSwitcher = hideModeSwitcher ?? isInline;
+
  const modeSwitcher =
-  availableModes.length > 1 ? (
+  !shouldHideModeSwitcher && availableModes.length > 1 ? (
    <NativeSelect
     aria-label="Chọn phần học"
     value={activeMode}
@@ -102,6 +108,7 @@ export function UniversalAmbientPip({
     lessonTitle={lessonTitle}
     onClose={onClose}
     isFloatingInApp={isFloatingInApp}
+    isInline={isInline}
     extraHeaderActions={modeSwitcher}
    />
   );
@@ -114,6 +121,7 @@ export function UniversalAmbientPip({
     lessonTitle={lessonTitle}
     onClose={onClose}
     isFloatingInApp={isFloatingInApp}
+    isInline={isInline}
     extraHeaderActions={modeSwitcher}
    />
   );
@@ -126,6 +134,7 @@ export function UniversalAmbientPip({
     lessonTitle={lessonTitle}
     onClose={onClose}
     isFloatingInApp={isFloatingInApp}
+    isInline={isInline}
     extraHeaderActions={modeSwitcher}
    />
   );
@@ -137,6 +146,7 @@ export function UniversalAmbientPip({
    lessonTitle={lessonTitle}
    onClose={onClose}
    isFloatingInApp={isFloatingInApp}
+   isInline={isInline}
    extraHeaderActions={modeSwitcher}
   />
  );

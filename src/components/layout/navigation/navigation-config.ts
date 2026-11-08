@@ -206,7 +206,6 @@ export const compatibilityNavigationItemIds: readonly NavigationItemId[] = [
  "readerCourse",
  "readerPractice",
  "readerMock",
- "readingComprehension",
 ] satisfies readonly NavigationItemId[];
 
 type NavigationSectionConfig = {
@@ -244,7 +243,7 @@ export const navigationGroups = [
     id: "textbooks",
     messageKey: "navigation.sections.textbooks",
     collapsible: true,
-    itemIds: ["businessChinese", "chineseBridge", "spokenChinese"],
+    itemIds: ["businessChinese", "chineseBridge", "readingComprehension", "spokenChinese"],
    },
    {
     id: "learning-more",
