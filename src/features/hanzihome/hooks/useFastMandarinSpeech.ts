@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
-import { DEFAULT_MANDARIN_VOICE } from "@/hooks/useTTS";
+import { DEFAULT_MANDARIN_VOICE, MANDARIN_VOICE_STORAGE_KEY } from "@/hooks/useTTS";
 import { buildCacheKey, getCachedAudio, setCachedAudio } from "@/lib/audio/tts-cache";
 
 export const DEFAULT_VIETNAMESE_VOICE = "vi-VN-HoaiMyNeural";
@@ -375,6 +375,15 @@ export function useFastMandarinSpeech() {
     options?.lang === "vi-VN" || options?.voice?.startsWith("vi-") === true;
    const explicitMandarin = options?.lang === "zh-CN" || options?.voice?.startsWith("zh-") === true;
    const rate = normalizeSpeechRate(options?.rate ?? 1.1);
+   let preferredMandarinVoice = DEFAULT_MANDARIN_VOICE;
+   if (typeof window !== "undefined") {
+    try {
+     preferredMandarinVoice =
+      window.localStorage.getItem(MANDARIN_VOICE_STORAGE_KEY) ?? DEFAULT_MANDARIN_VOICE;
+    } catch {
+     // Ignore storage errors in restricted contexts
+    }
+   }
 
    const resolvedSegments = rawSegments
     .map((segment) => {
@@ -382,7 +391,7 @@ export function useFastMandarinSpeech() {
       explicitVietnamese ||
       (!explicitMandarin && !/[\u4e00-\u9fff]/u.test(segment) && /[A-Za-zÀ-ỹ]/u.test(segment));
      const segmentVoice =
-      options?.voice ?? (isSegmentVietnamese ? DEFAULT_VIETNAMESE_VOICE : DEFAULT_MANDARIN_VOICE);
+      options?.voice ?? (isSegmentVietnamese ? DEFAULT_VIETNAMESE_VOICE : preferredMandarinVoice);
      const cleanedText = sanitizeSpeechTextForVoice(segment, segmentVoice);
      return {
       text: cleanedText,

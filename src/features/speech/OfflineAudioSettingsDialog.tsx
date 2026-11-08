@@ -2,9 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import {
- AlertCircle,
  CheckCircle2,
- Cpu,
  DownloadCloud,
  HardDrive,
  Loader2,
@@ -42,12 +40,6 @@ import {
  countCachedEntries,
  estimateCacheSizeBytes,
 } from "@/lib/audio/tts-cache";
-import {
- deleteAiModel,
- downloadAiModel,
- getAiModelStorageEstimate,
- type AiModelStatus,
-} from "@/features/speech/offline-ai-model";
 import { useLessonAudioPack } from "@/features/speech/useLessonAudioPack";
 import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { useOptionalSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
@@ -73,9 +65,6 @@ export function OfflineAudioSettingsDialog({
  const open = isControlled ? controlledOpen : uncontrolledOpen;
  const [cacheEntries, setCacheEntries] = useState(0);
  const [cacheBytes, setCacheBytes] = useState(0);
- const [aiModelStatus, setAiModelStatus] = useState<AiModelStatus>("not_downloaded");
- const [aiModelBytes, setAiModelBytes] = useState(0);
- const [aiDownloadPercent, setAiDownloadPercent] = useState(0);
  const [isTestingVoice, setIsTestingVoice] = useState(false);
 
  const tts = useOptionalSharedMandarinTts();
@@ -90,16 +79,10 @@ export function OfflineAudioSettingsDialog({
   STANDARD_MANDARIN_VOICES[0];
 
  const refreshStats = async () => {
-  const [entries, bytes, modelEst] = await Promise.all([
-   countCachedEntries(),
-   estimateCacheSizeBytes(),
-   getAiModelStorageEstimate(),
-  ]);
+  const [entries, bytes] = await Promise.all([countCachedEntries(), estimateCacheSizeBytes()]);
 
   setCacheEntries(entries);
   setCacheBytes(bytes);
-  setAiModelBytes(modelEst.sizeBytes);
-  setAiModelStatus(modelEst.isReady ? "ready" : "not_downloaded");
  };
 
  useEffect(() => {
@@ -107,16 +90,10 @@ export function OfflineAudioSettingsDialog({
   if (!open) return;
 
   void (async () => {
-   const [entries, bytes, modelEst] = await Promise.all([
-    countCachedEntries(),
-    estimateCacheSizeBytes(),
-    getAiModelStorageEstimate(),
-   ]);
+   const [entries, bytes] = await Promise.all([countCachedEntries(), estimateCacheSizeBytes()]);
    if (!isMounted) return;
    setCacheEntries(entries);
    setCacheBytes(bytes);
-   setAiModelBytes(modelEst.sizeBytes);
-   setAiModelStatus(modelEst.isReady ? "ready" : "not_downloaded");
   })();
 
   return () => {
@@ -173,30 +150,7 @@ export function OfflineAudioSettingsDialog({
   await lessonPack.refreshStatus();
  };
 
- const handleDownloadAiModel = async () => {
-  setAiModelStatus("downloading");
-  setAiDownloadPercent(0);
-
-  const success = await downloadAiModel((_received, _total, percent) => {
-   setAiDownloadPercent(percent);
-  });
-
-  if (success) {
-   setAiModelStatus("ready");
-   await refreshStats();
-  } else {
-   setAiModelStatus("error");
-  }
- };
-
- const handleDeleteAiModel = async () => {
-  await deleteAiModel();
-  setAiModelStatus("not_downloaded");
-  await refreshStats();
- };
-
  const cacheMb = (cacheBytes / (1024 * 1024)).toFixed(1);
- const aiModelMb = (aiModelBytes / (1024 * 1024)).toFixed(1);
 
  return (
   <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -356,87 +310,7 @@ export function OfflineAudioSettingsDialog({
       </Card>
      ) : null}
 
-     {/* Section 4: Hugging Face Local AI Model */}
-     <Card variant="subtle" padding="md" className="grid gap-3">
-      <div className="flex items-start justify-between gap-2">
-       <div className="grid gap-1">
-        <div className="flex items-center gap-1.5">
-         <Cpu className="size-4 text-purple-text" />
-         <Typography variant="body" weight="bold">
-          Mô hình AI Offline (Hugging Face VITS)
-         </Typography>
-         <Badge variant={aiModelStatus === "ready" ? "success" : "purple"} casing="natural">
-          {aiModelStatus === "ready"
-           ? "Đã sẵn sàng"
-           : aiModelStatus === "downloading"
-             ? "Đang tải"
-             : "Tùy chọn"}
-         </Badge>
-        </div>
-        <Typography variant="caption" tone="muted">
-         Tự sinh âm thanh trực tiếp trong máy cho chữ Hán bất kỳ mà không cần Internet (~43MB).
-        </Typography>
-       </div>
-
-       {aiModelStatus === "ready" ? (
-        <Button
-         type="button"
-         variant="outline"
-         size="compact"
-         onClick={handleDeleteAiModel}
-         title="Xóa model khỏi máy để giải phóng bộ nhớ"
-        >
-         <Trash2 className="size-3 text-danger-text" />
-         <span>Xóa model</span>
-        </Button>
-       ) : (
-        <Button
-         type="button"
-         variant="default"
-         size="compact"
-         disabled={aiModelStatus === "downloading"}
-         onClick={handleDownloadAiModel}
-        >
-         {aiModelStatus === "downloading" ? (
-          <>
-           <Loader2 className="size-3.5 animate-spin" />
-           <span>{`Đang tải ${aiDownloadPercent}%...`}</span>
-          </>
-         ) : (
-          <>
-           <DownloadCloud className="size-3.5" />
-           <span>Tải Model AI (~43MB)</span>
-          </>
-         )}
-        </Button>
-       )}
-      </div>
-
-      {aiModelStatus === "downloading" ? (
-       <div className="h-1.5 w-full overflow-hidden rounded-full bg-border-default/40">
-        <div
-         className="h-full bg-purple-text transition-all duration-300"
-         style={{ width: `${aiDownloadPercent}%` }}
-        />
-       </div>
-      ) : null}
-
-      {aiModelStatus === "ready" ? (
-       <div className="flex items-center gap-2 text-xs text-text-muted">
-        <CheckCircle2 className="size-3.5 text-success-text" />
-        <span>{`Mô hình đã lưu an toàn trong Cache trình duyệt (${aiModelMb} MB)`}</span>
-       </div>
-      ) : null}
-
-      {aiModelStatus === "error" ? (
-       <div className="flex items-center gap-2 text-xs text-danger-text">
-        <AlertCircle className="size-3.5" />
-        <span>Tải mô hình không thành công. Vui lòng thử lại.</span>
-       </div>
-      ) : null}
-     </Card>
-
-     {/* Section 5: Storage Overview & Clear Cache */}
+     {/* Section 4: Storage Overview & Clear Cache */}
      <Card variant="section" padding="md" className="grid gap-3">
       <div className="flex items-center justify-between gap-2">
        <div className="flex items-center gap-2">

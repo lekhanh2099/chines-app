@@ -114,6 +114,26 @@ function mergeMembershipList(base: string[], local: string[], remote: string[]) 
  return merged;
 }
 
+function mergeCustomVocabItem(
+ base: CustomVocabItem,
+ local: CustomVocabItem,
+ remote: CustomVocabItem,
+): CustomVocabItem {
+ return {
+  id: remote.id,
+  hanzi: mergeScalarField(base.hanzi, local.hanzi, remote.hanzi),
+  pinyin: mergeScalarField(base.pinyin, local.pinyin, remote.pinyin),
+  meaning: mergeScalarField(base.meaning, local.meaning, remote.meaning),
+  hanviet: mergeScalarField(base.hanviet, local.hanviet, remote.hanviet),
+  pos: mergeScalarField(base.pos, local.pos, remote.pos),
+  note: mergeScalarField(base.note, local.note, remote.note),
+  exampleZh: mergeScalarField(base.exampleZh, local.exampleZh, remote.exampleZh),
+  exampleVi: mergeScalarField(base.exampleVi, local.exampleVi, remote.exampleVi),
+  sourceLabel: mergeScalarField(base.sourceLabel, local.sourceLabel, remote.sourceLabel),
+  createdAt: mergeScalarField(base.createdAt, local.createdAt, remote.createdAt),
+ };
+}
+
 function mergeCustomVocabList(
  base: UserLearningState["settings"]["customVocab"],
  local: UserLearningState["settings"]["customVocab"],
@@ -137,9 +157,12 @@ function mergeCustomVocabList(
  }
  for (const [id, localItem] of localById.entries()) {
   const baseItem = baseById.get(id);
-  if (!baseItem || JSON.stringify(baseItem) !== JSON.stringify(localItem)) {
+  const remoteItem = remoteById.get(id);
+  if (!baseItem || !remoteItem) {
    mergedMap.set(id, localItem);
+   continue;
   }
+  mergedMap.set(id, mergeCustomVocabItem(baseItem, localItem, remoteItem));
  }
 
  return Array.from(mergedMap.values());

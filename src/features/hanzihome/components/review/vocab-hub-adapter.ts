@@ -146,15 +146,11 @@ export function parseBulkCustomVocabInput(
 
   let parts: string[] = [];
   if (line.includes("|")) {
-   parts = line
-    .split("|")
-    .map((p) => p.trim())
-    .filter((p) => p.length > 0);
+   parts = line.split("|").map((p) => p.trim());
+   if (parts[0] === "") parts.shift();
+   if (parts.at(-1) === "") parts.pop();
   } else if (line.includes("\t")) {
-   parts = line
-    .split("\t")
-    .map((p) => p.trim())
-    .filter((p) => p.length > 0);
+   parts = line.split("\t").map((p) => p.trim());
   } else if (/\s+[-–—:]\s+/u.test(line)) {
    parts = line
     .split(/\s+[-–—:]\s+/u)
@@ -250,10 +246,12 @@ export function buildExercisesFromVocabItems(
 
   if (items.length >= 4) {
    const distractors: HanziHomeVocabItem[] = [];
+   const distractorHanzi = new Set<string>();
    for (let offset = 1; offset < items.length && distractors.length < 3; offset++) {
-    const candidate = items[(index + offset * 3) % items.length];
-    if (candidate && candidate.hanzi !== item.hanzi) {
+    const candidate = items[(index + offset) % items.length];
+    if (candidate && candidate.hanzi !== item.hanzi && !distractorHanzi.has(candidate.hanzi)) {
      distractors.push(candidate);
+     distractorHanzi.add(candidate.hanzi);
     }
    }
 

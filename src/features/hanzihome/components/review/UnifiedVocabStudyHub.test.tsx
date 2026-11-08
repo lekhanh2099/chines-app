@@ -131,6 +131,14 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
   expect(parsed[1]?.hanzi).toBe("联调");
   expect(parsed[2]?.hanzi).toBe("上线");
 
+  const positionalEmpty = parseBulkCustomVocabInput("需求\t\tyêu cầu\t我有需求。");
+  expect(positionalEmpty[0]).toMatchObject({
+   hanzi: "需求",
+   pinyin: "",
+   meaning: "yêu cầu",
+   exampleZh: "我有需求。",
+  });
+
   const vocabItems = customVocabListToHanziHomeVocabItems(
    parsed.map((item, idx) => ({
     ...item,
@@ -141,6 +149,13 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
   const exercises = buildExercisesFromVocabItems(vocabItems);
   expect(exercises.length).toBeGreaterThanOrEqual(4);
   expect(exercises.some((ex) => ex.category === "vocab_cloze")).toBe(true);
+
+  const choice = buildExercisesFromVocabItems(
+   getItWebVocabItemsByFilter({ preset: "core20" }).slice(0, 6),
+  ).find((exercise) => exercise.interaction.type === "choice");
+  expect(choice?.interaction.type).toBe("choice");
+  if (!choice || choice.interaction.type !== "choice") throw new Error("Expected choice exercise");
+  expect(new Set(choice.interaction.options.map((option) => option.label)).size).toBe(4);
  });
 
  it("merges customVocab items without data loss on conflict", () => {
