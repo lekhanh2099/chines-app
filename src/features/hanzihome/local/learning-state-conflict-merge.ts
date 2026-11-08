@@ -1,4 +1,5 @@
 import type {
+ CustomVocabItem,
  LearningProgressItem,
  LessonTextDisplaySettings,
  UserLearningState,
@@ -113,6 +114,60 @@ function mergeMembershipList(base: string[], local: string[], remote: string[]) 
  return merged;
 }
 
+function mergeCustomVocabItem(
+ base: CustomVocabItem,
+ local: CustomVocabItem,
+ remote: CustomVocabItem,
+): CustomVocabItem {
+ return {
+  id: remote.id,
+  hanzi: mergeScalarField(base.hanzi, local.hanzi, remote.hanzi),
+  pinyin: mergeScalarField(base.pinyin, local.pinyin, remote.pinyin),
+  meaning: mergeScalarField(base.meaning, local.meaning, remote.meaning),
+  hanviet: mergeScalarField(base.hanviet, local.hanviet, remote.hanviet),
+  pos: mergeScalarField(base.pos, local.pos, remote.pos),
+  note: mergeScalarField(base.note, local.note, remote.note),
+  exampleZh: mergeScalarField(base.exampleZh, local.exampleZh, remote.exampleZh),
+  exampleVi: mergeScalarField(base.exampleVi, local.exampleVi, remote.exampleVi),
+  sourceLabel: mergeScalarField(base.sourceLabel, local.sourceLabel, remote.sourceLabel),
+  createdAt: mergeScalarField(base.createdAt, local.createdAt, remote.createdAt),
+ };
+}
+
+function mergeCustomVocabList(
+ base: UserLearningState["settings"]["customVocab"],
+ local: UserLearningState["settings"]["customVocab"],
+ remote: UserLearningState["settings"]["customVocab"],
+): UserLearningState["settings"]["customVocab"] {
+ if (!base && !local && !remote) return undefined;
+ const baseById = new Map((base ?? []).map((item) => [item.id, item]));
+ const localById = new Map((local ?? []).map((item) => [item.id, item]));
+ const remoteById = new Map((remote ?? []).map((item) => [item.id, item]));
+
+ const removedLocally = new Set<string>();
+ for (const id of baseById.keys()) {
+  if (!localById.has(id)) removedLocally.add(id);
+ }
+
+ const mergedMap = new Map<string, CustomVocabItem>();
+ for (const [id, remoteItem] of remoteById.entries()) {
+  if (!removedLocally.has(id)) {
+   mergedMap.set(id, remoteItem);
+  }
+ }
+ for (const [id, localItem] of localById.entries()) {
+  const baseItem = baseById.get(id);
+  const remoteItem = remoteById.get(id);
+  if (!baseItem || !remoteItem) {
+   mergedMap.set(id, localItem);
+   continue;
+  }
+  mergedMap.set(id, mergeCustomVocabItem(baseItem, localItem, remoteItem));
+ }
+
+ return Array.from(mergedMap.values());
+}
+
 function reviewKey(item: UserLearningState["reviewHistory"][number]) {
  return `${item.type}:${item.id}:${item.result}:${item.answeredAt}`;
 }
@@ -213,6 +268,13 @@ export function mergeLearningStateAfterConflict({
   }
  }
  if (Object.keys(bookResume).length) settings.bookResume = bookResume;
+ const mergedCustomVocab = mergeCustomVocabList(
+  base.settings.customVocab,
+  local.settings.customVocab,
+  remote.settings.customVocab,
+ );
+ if (mergedCustomVocab === undefined) delete settings.customVocab;
+ else settings.customVocab = mergedCustomVocab;
 
  const vocab = mergeProgressMap(
   base.progress.vocab ?? {},

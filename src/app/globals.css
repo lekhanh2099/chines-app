@@ -217,7 +217,7 @@
  --text-primary: var(--theme-foreground);
  --text-secondary: var(--theme-foreground-muted);
  --text-muted: var(--theme-foreground-subtle);
- --text-inverse: var(--theme-primary-foreground);
+ --text-inverse: var(--theme-inverse-foreground);
  --accent-hover: var(--theme-primary-hover);
  --accent-subtle: var(--theme-primary-soft);
  --accent-muted: var(--theme-primary-soft);

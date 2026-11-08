@@ -17,6 +17,7 @@ import {
 } from "@/features/hanzihome/components/aggregate-library/aggregate-utils";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
 import { VocabReviewSkeleton } from "@/features/hanzihome/components/VocabReviewSkeleton";
+import { UnifiedVocabStudyHub } from "@/features/hanzihome/components/review/UnifiedVocabStudyHub";
 import type { ReviewItem } from "@/features/hanzihome/context/types";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
@@ -118,15 +119,18 @@ export function HanziHomeVocabReviewPage({
     />
 
     {lessonIds.length === 0 ? (
-     <EmptyState
-      title={t("noLessonSelectedTitle")}
-      description={t("noLessonSelectedDescription")}
-      actions={
-       <Button asChild>
-        <Link href="/vocab">{t("selectLessonsAction")}</Link>
-       </Button>
-      }
-     />
+     <div className="grid gap-4">
+      <UnifiedVocabStudyHub defaultOpenInline />
+      <EmptyState
+       title={t("noLessonSelectedTitle")}
+       description={t("noLessonSelectedDescription")}
+       actions={
+        <Button asChild>
+         <Link href="/vocab">{t("selectLessonsAction")}</Link>
+        </Button>
+       }
+      />
+     </div>
     ) : null}
 
     {error instanceof Error ? (

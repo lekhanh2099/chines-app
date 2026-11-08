@@ -5,7 +5,12 @@ import { useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
-import type { LearningStatus, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
+import type {
+ CustomVocabItem,
+ LearningStatus,
+ ReviewResult,
+ UserLearningState,
+} from "@/features/hanzihome/types";
 import {
  loadLearningStateLocalFirst,
  refreshLearningStateFromRemoteIfClean,
@@ -553,6 +558,113 @@ export function useLearningState() {
      return {
       ...current,
       bookmarks: { ...current.bookmarks, [scope]: nextItems },
+     };
+    }),
+
+   addCustomVocab: (items: readonly Omit<CustomVocabItem, "id" | "createdAt">[]) =>
+    updateState((current) => {
+     const existing = current.settings.customVocab ?? [];
+     const nextMap = new Map(existing.map((item) => [item.hanzi.trim(), item]));
+     const now = new Date().toISOString();
+
+     items.forEach((raw, idx) => {
+      const hanzi = raw.hanzi.trim();
+      const meaning = raw.meaning.trim();
+      if (!hanzi || !meaning) return;
+      const prev = nextMap.get(hanzi);
+      nextMap.set(hanzi, {
+       id:
+        prev?.id ?? `custom-vocab-${Date.now()}-${idx}-${Math.random().toString(36).slice(2, 7)}`,
+       hanzi,
+       pinyin: raw.pinyin.trim() || prev?.pinyin || "",
+       meaning,
+       pos: raw.pos?.trim() || prev?.pos,
+       note: raw.note?.trim() || prev?.note,
+       exampleZh: raw.exampleZh?.trim() || prev?.exampleZh,
+       exampleVi: raw.exampleVi?.trim() || prev?.exampleVi,
+       createdAt: prev?.createdAt ?? now,
+      });
+     });
+
+     return {
+      ...current,
+      settings: {
+       ...current.settings,
+       customVocab: Array.from(nextMap.values()),
+      },
+     };
+    }),
+
+   updateCustomVocab: (id: string, patch: Partial<Omit<CustomVocabItem, "id" | "createdAt">>) =>
+    updateState((current) => {
+     const existing = current.settings.customVocab ?? [];
+     const nextItems = existing.map((item) => {
+      if (item.id !== id) return item;
+      const nextHanzi = patch.hanzi !== undefined ? patch.hanzi.trim() : item.hanzi;
+      const nextMeaning = patch.meaning !== undefined ? patch.meaning.trim() : item.meaning;
+      return {
+       ...item,
+       hanzi: nextHanzi || item.hanzi,
+       pinyin: patch.pinyin !== undefined ? patch.pinyin.trim() : item.pinyin,
+       meaning: nextMeaning || item.meaning,
+       pos: patch.pos !== undefined ? patch.pos.trim() || undefined : item.pos,
+       note: patch.note !== undefined ? patch.note.trim() || undefined : item.note,
+       exampleZh:
+        patch.exampleZh !== undefined ? patch.exampleZh.trim() || undefined : item.exampleZh,
+       exampleVi:
+        patch.exampleVi !== undefined ? patch.exampleVi.trim() || undefined : item.exampleVi,
+      };
+     });
+
+     return {
+      ...current,
+      settings: {
+       ...current.settings,
+       customVocab: nextItems,
+      },
+     };
+    }),
+
+   removeCustomVocab: (id: string) =>
+    updateState((current) => {
+     const existing = current.settings.customVocab ?? [];
+     return {
+      ...current,
+      settings: {
+       ...current.settings,
+       customVocab: existing.filter((item) => item.id !== id),
+      },
+     };
+    }),
+
+   toggleCustomVocabByHanzi: (item: Omit<CustomVocabItem, "id" | "createdAt">) =>
+    updateState((current) => {
+     const existing = current.settings.customVocab ?? [];
+     const targetHanzi = item.hanzi.trim();
+     if (!targetHanzi) return current;
+     const exists = existing.some((entry) => entry.hanzi.trim() === targetHanzi);
+     const nextCustomVocab = exists
+      ? existing.filter((entry) => entry.hanzi.trim() !== targetHanzi)
+      : [
+         ...existing,
+         {
+          id: `custom-vocab-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+          hanzi: targetHanzi,
+          pinyin: item.pinyin.trim(),
+          meaning: item.meaning.trim() || targetHanzi,
+          pos: item.pos?.trim() || undefined,
+          note: item.note?.trim() || undefined,
+          exampleZh: item.exampleZh?.trim() || undefined,
+          exampleVi: item.exampleVi?.trim() || undefined,
+          createdAt: new Date().toISOString(),
+         },
+        ];
+     return {
+      ...current,
+      settings: {
+       ...current.settings,
+       customVocab: nextCustomVocab,
+      },
      };
     }),
 

@@ -15,12 +15,9 @@ import { useReaderSessionPronunciation } from "@/features/reading/hooks/useReade
 import { useReadingSourceTarget } from "@/features/reading/hooks/useReadingSourceTarget";
 import { useLessonAnnotationContext } from "../annotations/LessonAnnotationProvider";
 import { useLearningState } from "../hooks/useLearningState";
-import {
- DEFAULT_LESSON_DISPLAY_MODE,
- type LessonDisplayMode,
-} from "../components/lesson-overview/types";
+import { type LessonDisplayMode } from "../components/lesson-overview/types";
 import { useHanziHomeLessonDetailResource } from "../hooks/useHanziHomeLessonResources";
-import { lessonBookKey } from "../utils/learning-state";
+import { defaultTextbookDisplaySettings, lessonBookKey } from "../utils/learning-state";
 import { LessonReaderTools } from "./LessonReaderTools";
 
 export function useLessonReader({
@@ -44,20 +41,35 @@ export function useLessonReader({
  const lesson = useHanziHomeLessonDetailResource(bookKey ? "" : (lessonId ?? ""));
  const resolvedBookKey = bookKey ?? (lesson.data ? lessonBookKey(lesson.data) : undefined);
  const [localDisplay, setLocalDisplay] = useState(initialDisplayMode);
- const displayMode =
-  (resolvedBookKey ? learning.state.settings.bookDisplayModes?.[resolvedBookKey] : undefined) ??
-  localDisplay ??
-  learning.state.settings.lessonTextDisplayMode ??
-  DEFAULT_LESSON_DISPLAY_MODE;
+ const globalPinyin = learning.state.settings.lessonTextDisplayMode?.showPinyin;
+ const bookDisplay = resolvedBookKey
+  ? learning.state.settings.bookDisplayModes?.[resolvedBookKey]
+  : undefined;
+
+ const displayMode: LessonDisplayMode = useMemo(
+  () => ({
+   ...defaultTextbookDisplaySettings,
+   ...(localDisplay ?? {}),
+   ...(bookDisplay ?? {}),
+   ...(bookDisplay?.showPinyin === undefined && globalPinyin !== undefined
+    ? { showPinyin: globalPinyin }
+    : {}),
+  }),
+  [localDisplay, bookDisplay, globalPinyin],
+ );
+
  const updateDisplay = useCallback(
   (updates: Partial<LessonDisplayMode>) => {
    if (learning.isLoading || (lessonId && !resolvedBookKey)) return;
-   if (resolvedBookKey)
-    learning.updateSettings({
-     bookDisplayModes: { [resolvedBookKey]: { ...displayMode, ...updates } },
-    });
-   else if (localDisplay) setLocalDisplay({ ...localDisplay, ...updates });
-   else learning.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...updates } });
+   learning.updateSettings({
+    lessonTextDisplayMode: { ...displayMode, ...updates },
+    ...(resolvedBookKey
+     ? { bookDisplayModes: { [resolvedBookKey]: { ...displayMode, ...updates } } }
+     : {}),
+   });
+   if (localDisplay) {
+    setLocalDisplay((prev) => (prev ? { ...prev, ...updates } : undefined));
+   }
   },
   [learning, lessonId, resolvedBookKey, displayMode, localDisplay],
  );

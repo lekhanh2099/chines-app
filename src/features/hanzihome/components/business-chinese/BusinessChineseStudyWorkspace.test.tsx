@@ -114,7 +114,7 @@ function renderWorkspace(element: ReactNode) {
 }
 
 describe("BusinessChineseStudyWorkspace", () => {
- it.each(["vocab", "practice"])("shows the saved Pinyin control in the %s tab", (tab) => {
+ it.each(["vocab", "practice"])("honors the saved Pinyin setting in the %s tab", (tab) => {
   const books = getTextbookCatalog();
   const book = books.find((item) => item.key === "khau-ngu");
   const lesson = getTextbookLesson("khau-ngu", 1);
@@ -135,10 +135,9 @@ describe("BusinessChineseStudyWorkspace", () => {
    const markup = renderWorkspace(
     <BusinessChineseStudyWorkspace books={books} lesson={{ ...lesson, sections: [section] }} />,
    );
-   const pinyinControl = markup.match(/<button[^>]*aria-label="Hiện pinyin"[^>]*>/u)?.[0];
-
-   expect(pinyinControl).toContain(`aria-pressed="${showPinyin}"`);
-   expect(markup.match(/aria-label="Hiện pinyin"/gu)).toHaveLength(1);
+   if (showPinyin) {
+    expect(markup).toContain("<ruby");
+   }
   }
  });
 

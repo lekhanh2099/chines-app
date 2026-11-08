@@ -38,14 +38,14 @@ const localeCases = [
 }>;
 
 describe("Home messages", () => {
- it("opens the Learning Loop only for its own due items", async () => {
+ it("omits legacy Learning Loop banner and personal vocab progress from TodayFocusWidget", async () => {
   const messages = await loadAppMessages("vi");
   const pulse: HomeDashboardModel["learningPulse"] = {
-   trackedCount: 0,
-   reviewCount: 0,
-   knownCount: 0,
+   trackedCount: 57,
+   reviewCount: 34,
+   knownCount: 23,
    reviewedTodayCount: 0,
-   bookmarkedCount: 0,
+   bookmarkedCount: 9,
    srsDueCount: 5,
    learningLoopDueCount: 2,
    readerCompletedCount: 0,
@@ -58,22 +58,14 @@ describe("Home messages", () => {
    reviewedTodayUnavailable: false,
   };
 
-  const due = renderToStaticMarkup(
+  const emptyMarkup = renderToStaticMarkup(
    <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
     <TodayFocusWidget courses={[]} pulse={pulse} />
    </NextIntlClientProvider>,
   );
-  expect(due).toContain('href="/learning-loop"');
-  expect(due).toContain(messages.Home.focus.reviewNow.replace("{count}", "2"));
-  expect(due).not.toContain('href="/dictionary"');
-
-  const srsOnly = renderToStaticMarkup(
-   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <TodayFocusWidget courses={[]} pulse={{ ...pulse, learningLoopDueCount: 0 }} />
-   </NextIntlClientProvider>,
-  );
-  expect(srsOnly).toContain('href="/dictionary"');
-  expect(srsOnly).not.toContain('href="/learning-loop"');
+  expect(emptyMarkup).toBe("");
+  expect(emptyMarkup).not.toContain('href="/learning-loop"');
+  expect(emptyMarkup).not.toContain("Tiến độ từ vựng cá nhân");
  });
 
  it("keeps a resumed Khẩu ngữ review title in both continuation surfaces", async () => {

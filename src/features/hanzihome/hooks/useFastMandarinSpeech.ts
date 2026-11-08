@@ -1,12 +1,88 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
-import { DEFAULT_MANDARIN_VOICE } from "@/hooks/useTTS";
+import { DEFAULT_MANDARIN_VOICE, MANDARIN_VOICE_STORAGE_KEY } from "@/hooks/useTTS";
 import { buildCacheKey, getCachedAudio, setCachedAudio } from "@/lib/audio/tts-cache";
+
+export const DEFAULT_VIETNAMESE_VOICE = "vi-VN-HoaiMyNeural";
+
+const SUPPORTED_TTS_RATES: readonly number[] = [0.75, 0.8, 0.9, 1, 1.1, 1.15, 1.2, 1.25];
+
+export function normalizeSpeechRate(rate: number): number {
+ if (!Number.isFinite(rate)) return 1;
+ let bestRate = 1;
+ let smallestDiff = Number.POSITIVE_INFINITY;
+ for (const candidate of SUPPORTED_TTS_RATES) {
+  const diff = Math.abs(candidate - rate);
+  if (diff < smallestDiff) {
+   smallestDiff = diff;
+   bestRate = candidate;
+  }
+ }
+ return bestRate;
+}
+
+export function cleanVietnameseSpeechText(text: string): string {
+ return text
+  .replace(/(?:^|(?<=[\s(,;]))VD\s*:/giu, "Ví dụ:")
+  .replace(/(?:^|(?<=[\s(,;]))đt\.?(?=\s|$|[),;])/giu, "động từ")
+  .replace(/(?:^|(?<=[\s(,;]))dt\.?(?=\s|$|[),;])/giu, "danh từ")
+  .replace(/(?:^|(?<=[\s(,;]))tt\.?(?=\s|$|[),;])/giu, "tính từ")
+  .replace(/(?:^|(?<=[\s(,;]))pt\.?(?=\s|$|[),;])/giu, "phó từ")
+  .replace(/(?:^|(?<=[\s(,;]))lt\.?(?=\s|$|[),;])/giu, "lượng từ")
+  .replace(/[\u4e00-\u9fff]+/gu, " ")
+  .replace(/[，。！？；：、“”‘’（）【】《》〈〉]/gu, " ")
+  .replace(/[_＿]{2,}/gu, ", ")
+  .replace(/(?:…+|\.{2,})/gu, ", ")
+  .replace(/\s*(?:\/|→|➔|=>|;)\s*/gu, ", ")
+  .replace(/\(\s*[,;.]*\s*\)/gu, "")
+  .replace(/\[\s*[,;.]*\s*\]/gu, "")
+  .replace(/\s+,/gu, ",")
+  .replace(/(?:,\s*){2,}/gu, ", ")
+  .replace(/^\s*[,;.]+\s*|\s*[,;]+\s*$/gu, "")
+  .replace(/\s+/gu, " ")
+  .trim();
+}
+
+export function cleanMandarinSpeechText(text: string): string {
+ const withoutNumbering = text
+  .replace(/^\s*(?:\([0-9一二三四五六七八九十]+\)|[①②③④⑤⑥⑦⑧⑨⑩]|\d+[.、)）])\s*/u, "")
+  .replace(/[_＿]{2,}/gu, "，")
+  .replace(/…+/gu, "，")
+  .replace(/\([^()\u4e00-\u9fff]*[A-Za-zÀ-ỹ][^()\u4e00-\u9fff]*\)/gu, "")
+  .replace(/（[^（）\u4e00-\u9fff]*[A-Za-zÀ-ỹ][^（）\u4e00-\u9fff]*）/gu, "")
+  .replace(/\[[^[\]\u4e00-\u9fff]*[A-Za-zÀ-ỹ][^[\]\u4e00-\u9fff]*\]/gu, "")
+  .trim();
+
+ if (/[\u4e00-\u9fff]/u.test(withoutNumbering) && /[À-ỹ]/u.test(withoutNumbering)) {
+  const chineseChunks = (
+   withoutNumbering.match(/[\p{Script=Han}\p{Number}%％，。！？；：、“”‘’《》]+/gu) ?? []
+  )
+   .map((segment) => segment.trim())
+   .filter((segment) => /[\u4e00-\u9fff]/u.test(segment));
+  if (chineseChunks.length > 0) {
+   return chineseChunks.join("，");
+  }
+ }
+
+ return withoutNumbering
+  .replace(/(?:，\s*){2,}/gu, "，")
+  .replace(/^\s*，+\s*|\s*，+\s*$/gu, "")
+  .replace(/\s+/gu, " ")
+  .trim();
+}
+
+export function sanitizeSpeechTextForVoice(text: string, voice: string): string {
+ const isVietnameseVoice = voice.trim().toLowerCase().startsWith("vi");
+ return isVietnameseVoice ? cleanVietnameseSpeechText(text) : cleanMandarinSpeechText(text);
+}
+
+const inFlightAudioRequests = new Map<string, Promise<Blob | null>>();
 
 export type FastSpeechOptions = {
  rate?: number;
  voice?: string;
+ lang?: "zh-CN" | "vi-VN";
  onFinish?: () => void;
 };
 
@@ -140,16 +216,30 @@ export function selectBestMandarinVoice(
  return bestVoice;
 }
 
+export function selectBestVietnameseVoice(
+ voices: readonly SpeechSynthesisVoice[],
+): SpeechSynthesisVoice | null {
+ for (const voice of voices) {
+  const lang = voice.lang.toLowerCase().replace(/_/g, "-");
+  if (lang === "vi-vn" || lang.startsWith("vi")) {
+   return voice;
+  }
+ }
+ return null;
+}
+
 export async function fetchMandarinAudioBlob(
  text: string,
  voice = DEFAULT_MANDARIN_VOICE,
  rate = 1.1,
  abortSignal?: AbortSignal,
 ): Promise<Blob | null> {
- const trimmed = text.trim();
- if (!trimmed) return null;
+ const sanitized = sanitizeSpeechTextForVoice(text, voice);
+ if (!sanitized) return null;
+ if (abortSignal?.aborted) return null;
 
- const cacheKey = buildCacheKey(trimmed, voice, rate);
+ const normalizedRate = normalizeSpeechRate(rate);
+ const cacheKey = buildCacheKey(sanitized, voice, normalizedRate);
  const cached = await getCachedAudio(cacheKey);
  if (cached) {
   return cached;
@@ -159,24 +249,44 @@ export async function fetchMandarinAudioBlob(
   return null;
  }
 
- try {
-  const response = await fetch("/api/tts", {
-   method: "POST",
-   headers: { "Content-Type": "application/json" },
-   body: JSON.stringify({ text: trimmed, voice, rate }),
-   signal: abortSignal,
-  });
+ let requestPromise = inFlightAudioRequests.get(cacheKey);
+ if (!requestPromise) {
+  requestPromise = (async () => {
+   try {
+    const response = await fetch("/api/tts", {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify({ text: sanitized, voice, rate: normalizedRate }),
+    });
 
-  if (!response.ok) {
-   return null;
-  }
+    if (!response.ok) {
+     return null;
+    }
 
-  const blob = await response.blob();
-  void setCachedAudio(cacheKey, blob);
-  return blob;
- } catch {
-  return null;
+    const blob = await response.blob();
+    void setCachedAudio(cacheKey, blob);
+    return blob;
+   } catch {
+    return null;
+   } finally {
+    inFlightAudioRequests.delete(cacheKey);
+   }
+  })();
+  inFlightAudioRequests.set(cacheKey, requestPromise);
  }
+
+ if (!abortSignal) {
+  return requestPromise;
+ }
+
+ return new Promise<Blob | null>((resolve) => {
+  const onAbort = () => resolve(null);
+  abortSignal.addEventListener("abort", onAbort, { once: true });
+  void requestPromise.then((blob) => {
+   abortSignal.removeEventListener("abort", onAbort);
+   resolve(abortSignal.aborted ? null : blob);
+  });
+ });
 }
 
 export function prefetchMandarinAudio(
@@ -188,25 +298,7 @@ export function prefetchMandarinAudio(
 
  for (const text of texts) {
   if (!text) continue;
-  const trimmed = text.trim();
-  if (!trimmed) continue;
-  const cacheKey = buildCacheKey(trimmed, voice, rate);
-  void getCachedAudio(cacheKey).then((cached) => {
-   if (cached) return;
-   void fetch("/api/tts", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: trimmed, voice, rate }),
-   })
-    .then((res) => {
-     if (res.ok) {
-      void res.blob().then((blob) => setCachedAudio(cacheKey, blob));
-     }
-    })
-    .catch(() => {
-     // Ignore prefetch error
-    });
-  });
+  void fetchMandarinAudioBlob(text, voice, rate);
  }
 }
 
@@ -269,18 +361,53 @@ export function useFastMandarinSpeech() {
 
  const speak = useCallback(
   (input: string | readonly string[], options?: FastSpeechOptions) => {
-   const segments = (Array.isArray(input) ? input : [input]).map((s) => s.trim()).filter(Boolean);
+   const rawSegments = (Array.isArray(input) ? input : [input])
+    .map((s) => s.trim())
+    .filter(Boolean);
 
-   if (segments.length === 0) return;
+   if (rawSegments.length === 0) return;
 
    stop();
    const runId = runIdRef.current;
    isSpeakingRef.current = true;
 
-   const voice = options?.voice ?? DEFAULT_MANDARIN_VOICE;
-   const rate = options?.rate ?? 1.1;
+   const explicitVietnamese =
+    options?.lang === "vi-VN" || options?.voice?.startsWith("vi-") === true;
+   const explicitMandarin = options?.lang === "zh-CN" || options?.voice?.startsWith("zh-") === true;
+   const rate = normalizeSpeechRate(options?.rate ?? 1.1);
+   let preferredMandarinVoice = DEFAULT_MANDARIN_VOICE;
+   if (typeof window !== "undefined") {
+    try {
+     preferredMandarinVoice =
+      window.localStorage.getItem(MANDARIN_VOICE_STORAGE_KEY) ?? DEFAULT_MANDARIN_VOICE;
+    } catch {
+     // Ignore storage errors in restricted contexts
+    }
+   }
 
-   const playNative = (text: string, onEnd: () => void) => {
+   const resolvedSegments = rawSegments
+    .map((segment) => {
+     const isSegmentVietnamese =
+      explicitVietnamese ||
+      (!explicitMandarin && !/[\u4e00-\u9fff]/u.test(segment) && /[A-Za-zÀ-ỹ]/u.test(segment));
+     const segmentVoice =
+      options?.voice ?? (isSegmentVietnamese ? DEFAULT_VIETNAMESE_VOICE : preferredMandarinVoice);
+     const cleanedText = sanitizeSpeechTextForVoice(segment, segmentVoice);
+     return {
+      text: cleanedText,
+      voice: segmentVoice,
+      isVietnamese: isSegmentVietnamese,
+     };
+    })
+    .filter((item) => item.text.length > 0);
+
+   if (resolvedSegments.length === 0) {
+    isSpeakingRef.current = false;
+    options?.onFinish?.();
+    return;
+   }
+
+   const playNative = (text: string, isVietnamese: boolean, onEnd: () => void) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
      onEnd();
      return;
@@ -289,16 +416,27 @@ export function useFastMandarinSpeech() {
      const synth = window.speechSynthesis;
      synth.cancel();
      const utterance = new SpeechSynthesisUtterance(text);
-     let nativeVoice = cachedVoiceRef.current;
-     if (!nativeVoice) {
-      nativeVoice = selectBestMandarinVoice(synth.getVoices());
-      cachedVoiceRef.current = nativeVoice;
-     }
-     if (nativeVoice) {
-      utterance.voice = nativeVoice;
-      utterance.lang = nativeVoice.lang;
+     if (isVietnamese) {
+      const viVoice = selectBestVietnameseVoice(synth.getVoices());
+      if (!viVoice) {
+       // Never let an English/Chinese system voice read Vietnamese text as gibberish
+       onEnd();
+       return;
+      }
+      utterance.voice = viVoice;
+      utterance.lang = viVoice.lang;
      } else {
-      utterance.lang = "zh-CN";
+      let nativeVoice = cachedVoiceRef.current;
+      if (!nativeVoice) {
+       nativeVoice = selectBestMandarinVoice(synth.getVoices());
+       cachedVoiceRef.current = nativeVoice;
+      }
+      if (nativeVoice) {
+       utterance.voice = nativeVoice;
+       utterance.lang = nativeVoice.lang;
+      } else {
+       utterance.lang = "zh-CN";
+      }
      }
      utterance.rate = rate;
      utterance.onend = () => onEnd();
@@ -314,14 +452,14 @@ export function useFastMandarinSpeech() {
 
    const playSegment = (index: number) => {
     if (runId !== runIdRef.current) return;
-    if (index >= segments.length) {
+    if (index >= resolvedSegments.length) {
      isSpeakingRef.current = false;
      options?.onFinish?.();
      return;
     }
 
-    const currentText = segments[index];
-    if (!currentText) {
+    const currentSegment = resolvedSegments[index];
+    if (!currentSegment || !currentSegment.text) {
      playSegment(index + 1);
      return;
     }
@@ -329,7 +467,7 @@ export function useFastMandarinSpeech() {
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
-    void fetchMandarinAudioBlob(currentText, voice, rate, controller.signal)
+    void fetchMandarinAudioBlob(currentSegment.text, currentSegment.voice, rate, controller.signal)
      .then((blob) => {
       if (runId !== runIdRef.current) return;
       if (blob && typeof Audio !== "undefined") {
@@ -346,7 +484,7 @@ export function useFastMandarinSpeech() {
         }
         currentAudioRef.current = null;
 
-        if (index + 1 < segments.length) {
+        if (index + 1 < resolvedSegments.length) {
          timeoutRef.current = setTimeout(() => {
           playSegment(index + 1);
          }, 350);
@@ -357,16 +495,16 @@ export function useFastMandarinSpeech() {
 
        audio.onended = proceedNext;
        audio.onerror = () => {
-        playNative(currentText, proceedNext);
+        playNative(currentSegment.text, currentSegment.isVietnamese, proceedNext);
        };
 
        audio.play().catch(() => {
-        playNative(currentText, proceedNext);
+        playNative(currentSegment.text, currentSegment.isVietnamese, proceedNext);
        });
       } else {
-       playNative(currentText, () => {
+       playNative(currentSegment.text, currentSegment.isVietnamese, () => {
         if (runId !== runIdRef.current) return;
-        if (index + 1 < segments.length) {
+        if (index + 1 < resolvedSegments.length) {
          timeoutRef.current = setTimeout(() => {
           playSegment(index + 1);
          }, 350);
@@ -378,7 +516,7 @@ export function useFastMandarinSpeech() {
      })
      .catch(() => {
       if (runId !== runIdRef.current) return;
-      playNative(currentText, () => playSegment(index + 1));
+      playNative(currentSegment.text, currentSegment.isVietnamese, () => playSegment(index + 1));
      });
    };
 

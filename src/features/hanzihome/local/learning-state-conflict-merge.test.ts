@@ -256,6 +256,34 @@ describe("mergeLearningStateAfterConflict", () => {
   });
  });
 
+ it("merges concurrent custom vocabulary edits field by field", () => {
+  const baseItem = {
+   id: "custom-1",
+   hanzi: "排期",
+   pinyin: "páiqī",
+   meaning: "Lên lịch",
+   note: "Ghi chú gốc",
+   createdAt: "2026-08-20T01:00:00.000Z",
+  };
+  const base = stateWith({ settings: { customVocab: [baseItem] } });
+  const local = stateWith({
+   settings: { customVocab: [{ ...baseItem, note: "Ghi chú cục bộ" }] },
+  });
+  const remote = stateWith({
+   settings: { customVocab: [{ ...baseItem, meaning: "Lập lịch" }] },
+  });
+
+  const merged = mergeLearningStateAfterConflict({ base, local, remote });
+
+  expect(merged.settings.customVocab).toEqual([
+   {
+    ...baseItem,
+    meaning: "Lập lịch",
+    note: "Ghi chú cục bộ",
+   },
+  ]);
+ });
+
  it("applies local bookmark additions over unrelated remote additions", () => {
   const base = stateWith({ bookmarks: { lessons: ["A"] } });
   const local = stateWith({ bookmarks: { lessons: ["A", "B"] } });

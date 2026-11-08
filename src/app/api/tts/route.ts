@@ -12,7 +12,7 @@ const MAX_TEXT_LENGTH = 10_000;
 const MAX_SYNTHESIS_TEXT_BYTES = 4_096;
 const MAX_SYNTHESIS_RETRIES = 2;
 const VOICE_LIST_TTL_MS = 5 * 60 * 1_000;
-const supportedRates = [0.75, 0.9, 1, 1.1, 1.25];
+const supportedRates = [0.75, 0.8, 0.9, 1, 1.1, 1.15, 1.2, 1.25];
 const ttsSchema = z.object({
  text: z
   .string()
@@ -36,14 +36,20 @@ type EdgeVoiceList = Awaited<ReturnType<EdgeTTS["getVoices"]>>;
 let voiceListCache: { expiresAt: number; voices: EdgeVoiceList } | null = null;
 let voiceListInFlight: Promise<EdgeVoiceList> | null = null;
 
-async function getMandarinVoices() {
+async function getSupportedVoices() {
  const now = Date.now();
  if (voiceListCache !== null && voiceListCache.expiresAt > now) {
-  return voiceListCache.voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
+  return voiceListCache.voices.filter((voice) => {
+   const loc = voice.Locale.toLowerCase();
+   return loc === "zh-cn" || loc.startsWith("vi");
+  });
  }
  if (voiceListInFlight !== null) {
   const voices = await voiceListInFlight;
-  return voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
+  return voices.filter((voice) => {
+   const loc = voice.Locale.toLowerCase();
+   return loc === "zh-cn" || loc.startsWith("vi");
+  });
  }
  voiceListInFlight = new EdgeTTSV2({ voicesCacheTtl: 0 }).getVoices();
  let voices: EdgeVoiceList;
@@ -53,6 +59,14 @@ async function getMandarinVoices() {
  } finally {
   voiceListInFlight = null;
  }
+ return voices.filter((voice) => {
+  const loc = voice.Locale.toLowerCase();
+  return loc === "zh-cn" || loc.startsWith("vi");
+ });
+}
+
+async function getMandarinVoices() {
+ const voices = await getSupportedVoices();
  return voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
 }
 
@@ -103,9 +117,9 @@ export async function POST(request: NextRequest) {
  const { text, voice, rate } = parsed.data;
 
  try {
-  const voices = await getMandarinVoices();
+  const voices = await getSupportedVoices();
   if (!voices.some((candidate) => candidate.ShortName === voice)) {
-   return NextResponse.json({ error: "Giọng Mandarin không hợp lệ" }, { status: 400 });
+   return NextResponse.json({ error: "Giọng đọc không hợp lệ" }, { status: 400 });
   }
 
   const synthesisTexts: string[] = [];

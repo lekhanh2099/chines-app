@@ -48,8 +48,12 @@ export function ReaderToolbar() {
 
  const hasPinyin = capabilities.includes("pinyin");
  const hasTranslation = capabilities.includes("translation");
+ const showPinyinButton = hasPinyin && !toolbar?.hidePinyinToggle;
+ const showTranslationButton = hasTranslation && !toolbar?.hideTranslationToggle;
  const showContentDisplay =
-  !toolbar?.hideContentDisplay && Boolean(onDisplayChange) && (hasPinyin || hasTranslation);
+  !toolbar?.hideContentDisplay &&
+  Boolean(onDisplayChange) &&
+  (showPinyinButton || showTranslationButton);
  const showAdvancedTools = !toolbar?.hideAdvancedTools;
 
  const label =
@@ -71,6 +75,7 @@ export function ReaderToolbar() {
  return (
   <Card
    padding="sm"
+   variant={toolbar?.stickyOffset ? "elevated" : "default"}
    className={
     toolbar?.stickyOffset === "tabs"
      ? "sticky top-12 z-20"
@@ -193,7 +198,7 @@ export function ReaderToolbar() {
     {/* Nhóm 3: Quick Toggles (Pinyin, Bản dịch) - Hiển thị trực tiếp từ màn hình md trở lên */}
     {showContentDisplay ? (
      <div className="hidden md:flex shrink-0 items-center gap-1" data-reader-group="display">
-      {hasPinyin ? (
+      {showPinyinButton ? (
        <Button
         variant={display?.showPinyin ? "active" : "outline"}
         size="toolbar"
@@ -206,7 +211,7 @@ export function ReaderToolbar() {
         <span>{toolsLabels("pinyin")}</span>
        </Button>
       ) : null}
-      {hasTranslation ? (
+      {showTranslationButton ? (
        <Button
         variant={display?.showMeaning ? "active" : "outline"}
         size="toolbar"

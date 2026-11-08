@@ -54,6 +54,20 @@ const lessonTextDisplayModeSchema = z.object({
  revealMode: lessonTextRevealModeSchema.optional().default("always"),
 });
 
+export const customVocabItemSchema = z.object({
+ id: z.string().min(1),
+ hanzi: z.string().trim().min(1),
+ pinyin: z.string().trim().default(""),
+ meaning: z.string().trim().min(1),
+ hanviet: z.string().trim().optional(),
+ pos: z.string().trim().optional(),
+ note: z.string().trim().optional(),
+ exampleZh: z.string().trim().optional(),
+ exampleVi: z.string().trim().optional(),
+ sourceLabel: z.string().trim().optional(),
+ createdAt: z.string(),
+});
+
 export const userLearningStateSchema = z.object({
  settings: z
   .object({
@@ -75,6 +89,7 @@ export const userLearningStateSchema = z.object({
      }),
     )
     .optional(),
+   customVocab: z.array(customVocabItemSchema).optional(),
   })
   .default({}),
  progress: z

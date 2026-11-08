@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/header/Header";
 import { MobileBottomNavigation, Sidebar } from "@/components/layout/navigation/Sidebar";
 import { UnsavedDraftNavigationGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { DailyReadingSchedulerAgent } from "@/features/daily-reading/runtime/DailyReadingSchedulerAgent";
+import { GlobalHeaderStudyActions } from "@/features/hanzihome/components/layout/GlobalHeaderControls";
 import { HanziHomeGlobalSearchBridge } from "@/features/hanzihome/search/HanziHomeGlobalSearchBridge";
 import { HanziTypographyPreferenceBridge } from "@/features/hanzihome/typography/HanziTypographyPreferenceBridge";
 import { LearningStateSyncAgent } from "@/features/hanzihome/hooks/useLearningState";
@@ -29,7 +30,7 @@ export default async function AppLayout({
     <DailyReadingSchedulerAgent />
     <Sidebar canManageContent={canManageContent} />
     <div className="flex h-dvh min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
-     <Header />
+     <Header actions={<GlobalHeaderStudyActions />} />
      <HanziHomeGlobalSearchBridge />
      <AppScrollViewport className="page-shell nova-page scrollbar-soft">
       {children}

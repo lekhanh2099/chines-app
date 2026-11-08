@@ -113,7 +113,7 @@ describe("Sidebar translations", () => {
    expect(markup).toContain('id="sidebar-section-textbooks"');
    expect(markup).toContain(messages.Shell.navigation.sections.textbooks);
    expect(markup).toContain(chineseBridge);
-   expect(markup).not.toContain(readingComprehension);
+   expect(markup).toContain(readingComprehension);
    expect(markup).toContain(spokenChinese);
    expect(markup).not.toContain(dataQuality);
    expect(markup).not.toContain(apiDocs);
@@ -136,10 +136,7 @@ describe("Sidebar translations", () => {
     );
     expect(groupMarkup).toContain(`id="sidebar-group-${group.id}"`);
     for (const section of group.sections) {
-     if (section.collapsible) {
-      expect(groupMarkup).toContain(`aria-controls="sidebar-section-${section.id}"`);
-      expect(groupMarkup).toContain(`id="sidebar-section-${section.id}"`);
-     }
+     expect(groupMarkup).toContain(`id="sidebar-section-${section.id}"`);
      for (const itemId of section.itemIds) {
       const href = navigationItems[itemId].href;
       expect(groupMarkup.split(`href="${href}"`)).toHaveLength(itemId === "home" ? 3 : 2);
@@ -211,18 +208,11 @@ describe("Sidebar translations", () => {
     </NextIntlClientProvider>,
    );
    const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
-   const textbookSection = markup.match(/<div id="sidebar-section-textbooks"[^>]*>/)?.[0] ?? "";
 
    expect(activeLinks).toHaveLength(1);
-   expect(activeLinks[0]).toContain(
-    `href="${pathname === "/hsk/doc-hieu" ? "/hanzihome" : pathname}"`,
-   );
+   expect(activeLinks[0]).toContain(`href="${pathname}"`);
    expect(activeLinks[0]).not.toContain('href="/hsk"');
-   expect(markup).toContain('aria-controls="sidebar-section-textbooks"');
-   expect(markup).toMatch(
-    /<div id="sidebar-section-textbooks"[^>]*><div class="[^"]*border-l[^"]*border-border-default/,
-   );
-   expect(textbookSection.includes("hidden")).toBe(pathname === "/hsk/doc-hieu");
+   expect(markup).toContain('id="sidebar-section-textbooks"');
    currentPathname = "/reader";
   },
  );
@@ -311,9 +301,7 @@ describe("Sidebar translations", () => {
   expect(markup).toMatch(
    /<button(?=[^>]*data-variant="navigation")(?=[^>]*aria-controls="sidebar-group-learning")/,
   );
-  expect(markup).toMatch(
-   /<button(?=[^>]*data-variant="navigation")(?=[^>]*aria-controls="sidebar-section-hsk-reading")/,
-  );
+  expect(markup).toContain('id="sidebar-section-hsk-reading"');
   expect(activeLink).toContain('href="/reader"');
   expect(activeLink).toContain("h-9");
   expect(activeLink).toContain("min-h-9");
@@ -322,7 +310,6 @@ describe("Sidebar translations", () => {
   expect(activeLink).toContain("border-border-default");
   expect(activeLink).toContain("shadow-xs");
   expect(activeLink).toMatch(/class="[^"]*size-1\.5 rounded-full bg-primary/);
-  expect(markup).toContain("bg-surface-subtle/40");
   expect(markup).not.toContain("Lê Khánh");
   expect(markup).not.toContain("HSK 4");
   expect(markup).not.toContain("5 ngày");

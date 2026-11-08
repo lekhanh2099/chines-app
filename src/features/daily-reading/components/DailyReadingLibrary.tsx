@@ -1,14 +1,25 @@
 "use client";
 
-import { ArrowLeft, FileText, History, Search, Settings } from "lucide-react";
+import {
+ ArrowLeft,
+ FileText,
+ History,
+ PictureInPicture2,
+ Search,
+ Settings,
+ Volume2,
+} from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { type ComponentProps, useEffect, useMemo, useState } from "react";
+import { type ComponentProps, useCallback, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
+import { useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
+import { Input } from "@/components/ui/forms/input";
 import { PageHeader } from "@/components/ui/layout/page-header";
 import { Separator } from "@/components/ui/layout/separator";
 import { Spinner } from "@/components/ui/feedback/spinner";
@@ -18,7 +29,17 @@ import {
  HanziText,
  PinyinText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import {
+ UniversalAmbientPip,
+ type UniversalPipMode,
+} from "@/features/hanzihome/components/review/UniversalAmbientPip";
+import {
+ buildExercisesFromVocabItems,
+ customVocabListToHanziHomeVocabItems,
+} from "@/features/hanzihome/components/review/vocab-hub-adapter";
+import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  analyzeContextualPronunciation,
@@ -27,9 +48,30 @@ import {
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import type { JsonFieldValue } from "@/types/json";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+import { fetchReaderAnnotations } from "@/features/reading/services/reading-annotation-api";
+import { useReaderSelectionActions } from "@/features/reading/hooks/useReaderSelectionActions";
+import { ReaderNotes } from "@/features/reading/components/ReaderStudyModules";
+import {
+ businessChinesePronunciationAnalyses,
+ businessChineseReaderAnnotations,
+} from "@/features/hanzihome/components/business-chinese/business-chinese-study-utils";
+import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
+import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
+import {
+ AppHeaderBreadcrumb,
+ AppHeaderBreadcrumbItem,
+ AppHeaderBreadcrumbLink,
+ AppHeaderBreadcrumbPage,
+ AppHeaderBreadcrumbSeparator,
+} from "@/components/layout/header/app-header-breadcrumb";
+import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
+import { DailyReadingNoteCard } from "@/features/daily-reading/components/DailyReadingNoteCard";
 import { Reader } from "@/features/reader/components/Reader";
 import { useMandarinReaderSpeechService } from "@/features/speech/MandarinTtsProvider";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { useReaderSessionPronunciation } from "@/features/reading/hooks/useReaderSessionPronunciation";
 import { DailyReadingLearningSupportPanel } from "@/features/daily-reading/components/DailyReadingLearningSupportPanel";
 import { DailyReadingActivityLog } from "@/features/daily-reading/components/DailyReadingActivityLog";
@@ -56,17 +98,40 @@ import {
 import { resolveDailyReadingReleaseState } from "@/features/daily-reading/model/daily-reading.scheduler";
 
 type LibraryView = "articles" | "activity";
-type DailyReadingTab = "reader" | "support" | "questions" | "vocabulary" | "grammar" | "source";
+type DailyReadingTab =
+ | "reader"
+ | "notes"
+ | "support"
+ | "questions"
+ | "vocabulary"
+ | "grammar"
+ | "source";
 type DailyReadingTabTranslationKey =
  | "tabs.reader"
+ | "tabs.notes"
  | "detail.supportTab"
  | "tabs.questions"
  | "tabs.vocabulary"
  | "tabs.grammar"
  | "tabs.source";
 
-const fallbackTabs: readonly DailyReadingTab[] = ["reader", "support", "source"];
+const fallbackTabs: readonly DailyReadingTab[] = ["reader", "notes", "support", "source"];
 const contextualPronunciationMaximumCharacters = 2_000;
+
+const emptyReaderDocument: ReaderDocumentModel = {
+ id: "empty",
+ language: "zh-CN",
+ source: {
+  kind: "article",
+  sourceId: "empty",
+  href: "",
+  label: "",
+ },
+ sections: [],
+ segments: [],
+ metadata: [],
+ capabilities: ["pinyin", "translation"],
+};
 
 type TopicTranslationKey =
  | "generated.topic.culture"
@@ -103,7 +168,7 @@ function getTopicTranslationKey(topic: DailyReadingTopic): TopicTranslationKey {
 }
 
 function availableTabs(reading: DailyReading): readonly DailyReadingTab[] {
- const tabs: DailyReadingTab[] = ["reader", "support"];
+ const tabs: DailyReadingTab[] = ["reader", "notes", "support"];
  if (reading.enrichment.vocabulary.status === "ready") tabs.push("vocabulary");
  if (reading.enrichment.grammar.status === "ready") tabs.push("grammar");
  if (reading.enrichment.questions.status === "ready") tabs.push("questions");
@@ -115,6 +180,8 @@ function tabLabelKey(tab: DailyReadingTab): DailyReadingTabTranslationKey {
  switch (tab) {
   case "reader":
    return "tabs.reader";
+  case "notes":
+   return "tabs.notes";
   case "support":
    return "detail.supportTab";
   case "questions":
@@ -207,6 +274,21 @@ export function DailyReadingLibrary() {
   router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
  }
 
+ const [articleSearchQuery, setArticleSearchQuery] = useState("");
+ const filteredArticles = useMemo(() => {
+  if (!articleSearchQuery.trim()) return library.items;
+  const q = articleSearchQuery.trim().toLowerCase();
+  return library.items.filter((reading) => {
+   const titleZh = reading.article.titleZh.toLowerCase();
+   const publisher = reading.source.publisher.toLowerCase();
+   const titleVi =
+    reading.enrichment.translation.status === "ready"
+     ? reading.enrichment.translation.data.titleVi.toLowerCase()
+     : "";
+   return titleZh.includes(q) || publisher.includes(q) || titleVi.includes(q);
+  });
+ }, [library.items, articleSearchQuery]);
+
  async function captureArticle() {
   setCapturing(true);
   try {
@@ -284,19 +366,80 @@ export function DailyReadingLibrary() {
      { key: "activity", label: t("library.tabs.activity"), icon: History },
     ]}
     onValueChange={setView}
+    listClassName="hanzihome-liquid-toolbar flex"
     aria-label={t("library.tabs.aria")}
    >
     <TabsContent value="articles" className="pt-4">
-     {library.items.length === 0 ? (
-      <Card variant="subtle" padding="lg" className="grid gap-2">
-       <Typography weight="bold">{t("empty.title")}</Typography>
-       <Typography variant="bodySmall" tone="muted">
-        {t("library.description")}
-       </Typography>
-      </Card>
-     ) : (
-      <div className="grid gap-3">
-       {library.items.slice(0, 30).map((reading) => {
+     <div className="grid gap-3">
+      {library.items.length > 0 ? (
+       <Card
+        variant="subtle"
+        padding="sm"
+        className="flex min-w-0 flex-wrap items-center justify-between gap-2.5"
+       >
+        <div className="flex min-w-0 items-center gap-2">
+         <Typography
+          variant="caption"
+          tone="muted"
+          weight="bold"
+          tracking="wide"
+          transform="uppercase"
+          className="hidden sm:inline"
+         >
+          {t("library.tabs.articles")}
+         </Typography>
+         <Badge variant="default" casing="natural">
+          {library.items.length} bài
+         </Badge>
+         <div className="relative min-w-[150px] sm:min-w-[220px]">
+          <Input
+           type="search"
+           density="compact"
+           adornment="start"
+           value={articleSearchQuery}
+           onChange={(e) => setArticleSearchQuery(e.target.value)}
+           placeholder="Tìm bài đọc..."
+          />
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+         </div>
+         {articleSearchQuery ? (
+          <Typography variant="caption" tone="secondary">
+           ({filteredArticles.length} kết quả)
+          </Typography>
+         ) : null}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+         <Button
+          type="button"
+          size="toolbar"
+          onClick={() => void captureArticle()}
+          disabled={capturing}
+         >
+          {capturing ? <Spinner data-icon="inline-start" /> : <Search data-icon="inline-start" />}
+          {capturing ? t("actions.findingArticle") : t("actions.findNewArticle")}
+         </Button>
+        </div>
+       </Card>
+      ) : null}
+
+      {filteredArticles.length === 0 && articleSearchQuery ? (
+       <Card variant="subtle" padding="lg" className="text-center">
+        <Typography variant="bodySmall" tone="muted">
+         Không tìm thấy bài đọc nào khớp với &ldquo;{articleSearchQuery}&rdquo;
+        </Typography>
+       </Card>
+      ) : null}
+
+      {library.items.length === 0 ? (
+       <Card variant="subtle" padding="lg" className="grid gap-2">
+        <Typography weight="bold">{t("empty.title")}</Typography>
+        <Typography variant="bodySmall" tone="muted">
+         {t("library.description")}
+        </Typography>
+       </Card>
+      ) : (
+       filteredArticles.slice(0, 30).map((reading) => {
         const translation =
          reading.enrichment.translation.status === "ready"
           ? reading.enrichment.translation.data
@@ -360,9 +503,9 @@ export function DailyReadingLibrary() {
           </Link>
          </Card>
         );
-       })}
-      </div>
-     )}
+       })
+      )}
+     </div>
     </TabsContent>
     <TabsContent value="activity" className="pt-4">
      <div className="grid gap-3">
@@ -453,6 +596,8 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
  const learningState = useLearningState();
  const speech = useMandarinReaderSpeechService();
  const { openInspector } = useVocabInspector();
+ const { userId, isResolved } = useClientSession();
+ const [annotationError, setAnnotationError] = useState("");
  const displayMode =
   learningState.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const reading = library.items.find((item) => item.id === id) ?? null;
@@ -500,6 +645,120 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
    }),
   [locale],
  );
+
+ const annotationsQuery = useQuery({
+  queryKey: hanzihomeQueryKeys.readerAnnotations(userId, reading?.id ?? ""),
+  queryFn: () => (reading ? fetchReaderAnnotations(userId, reading.id) : []),
+  enabled: isResolved && Boolean(userId) && Boolean(reading),
+  staleTime: 60_000,
+ });
+
+ useEffect(() => {
+  if (annotationError) {
+   toast.error(annotationError);
+  }
+ }, [annotationError]);
+
+ const readerVocabulary: ReaderDocumentResource["vocabulary"] =
+  reading && reading.enrichment.vocabulary.status === "ready"
+   ? reading.enrichment.vocabulary.data.items.map((item) => ({
+      id: item.id,
+      word: item.hanzi,
+      pinyin: "",
+      meaning: item.meaningVi,
+     }))
+   : [];
+
+ const analysisBySegmentId = readerDocument
+  ? businessChinesePronunciationAnalyses(readerDocument)
+  : new Map();
+
+ const selection = useReaderSelectionActions({
+  document: readerDocument ?? emptyReaderDocument,
+  vocabulary: readerVocabulary,
+  stateOwner: "daily",
+  analysisBySegmentId,
+  setSaveError: setAnnotationError,
+  selectSegment: () => {},
+  stop: () => speech.stop(),
+ });
+
+ const [vocabSearchQuery, setVocabSearchQuery] = useState("");
+ const {
+  isSupported: isPipSupported,
+  isOpen: isPipOpen,
+  pipWindow,
+  openPip,
+  closePip,
+ } = useDocumentPip();
+ const [isInAppFloatingOpen, setIsInAppFloatingOpen] = useState(false);
+ const [pipMode, setPipMode] = useState<UniversalPipMode>("vocab");
+
+ const handleTogglePip = useCallback(
+  async (targetMode: UniversalPipMode = "vocab") => {
+   setPipMode(targetMode);
+   if (isPipOpen) {
+    if (pipMode === targetMode) {
+     closePip();
+    }
+    return;
+   }
+   if (isInAppFloatingOpen) {
+    if (pipMode === targetMode) {
+     setIsInAppFloatingOpen(false);
+    }
+    return;
+   }
+   if (isPipSupported) {
+    const win = await openPip({ width: 440, height: 380 });
+    if (!win) {
+     setIsInAppFloatingOpen(true);
+    }
+   } else {
+    setIsInAppFloatingOpen(true);
+   }
+  },
+  [
+   closePip,
+   isInAppFloatingOpen,
+   isPipOpen,
+   isPipSupported,
+   openPip,
+   pipMode,
+   setIsInAppFloatingOpen,
+  ],
+ );
+
+ const rawVocabItems =
+  reading?.enrichment.vocabulary.status === "ready"
+   ? reading.enrichment.vocabulary.data.items
+   : null;
+ const vocabItems = rawVocabItems ?? [];
+ const pipVocabItems = customVocabListToHanziHomeVocabItems(
+  vocabItems.map((item) => {
+   const itemPronunciation = analyzeDailyReadingText(item.hanzi);
+   return {
+    id: item.id,
+    hanzi: item.hanzi,
+    pinyin: itemPronunciation ? formatContextualReadingPinyin(itemPronunciation) : "",
+    meaning: item.meaningVi,
+    pos: item.categoryVi,
+    note: item.meaningInContextVi,
+    createdAt: reading?.capturedAt ?? "",
+   };
+  }),
+ );
+ const pipPracticeItems = buildExercisesFromVocabItems(pipVocabItems);
+ const trimmedVocabQuery = vocabSearchQuery.trim().toLowerCase();
+ const filteredVocabItems = trimmedVocabQuery
+  ? vocabItems.filter(
+     (item) =>
+      item.hanzi.toLowerCase().includes(trimmedVocabQuery) ||
+      item.meaningVi.toLowerCase().includes(trimmedVocabQuery) ||
+      item.categoryVi.toLowerCase().includes(trimmedVocabQuery) ||
+      item.meaningInContextVi.toLowerCase().includes(trimmedVocabQuery),
+    )
+  : vocabItems;
 
  useEffect(() => {
   if (
@@ -572,6 +831,32 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
   return () => controller.abort();
  }, [streamArticleFingerprint, streamArticleId, translationRunId, translationWorkflowRunId]);
 
+ useEffect(() => {
+  if (reading === null) return;
+  const content = (
+   <AppHeaderBreadcrumb
+    aria-label="Daily Reading navigation"
+    className="min-w-0 max-w-[min(44rem,78vw)]"
+   >
+    <AppHeaderBreadcrumbItem className="hidden md:flex">
+     <AppHeaderBreadcrumbLink href="/daily-reading" title="Daily Reading">
+      Daily Reading
+     </AppHeaderBreadcrumbLink>
+    </AppHeaderBreadcrumbItem>
+    <AppHeaderBreadcrumbSeparator className="hidden md:flex" />
+    <AppHeaderBreadcrumbItem className="min-w-0 flex-1 truncate">
+     <AppHeaderBreadcrumbPage title={reading.article.titleZh}>
+      {reading.article.titleZh}
+     </AppHeaderBreadcrumbPage>
+    </AppHeaderBreadcrumbItem>
+   </AppHeaderBreadcrumb>
+  );
+  headerToolbarStore.actions.setOwnedContent("daily-reading-view", content);
+  return () => {
+   headerToolbarStore.actions.clearOwnedContent("daily-reading-view");
+  };
+ }, [reading]);
+
  if (reading === null || readerDocument === null) {
   return (
    <Card variant="subtle" padding="lg" className="grid gap-3">
@@ -594,17 +879,6 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
  const learning = getDailyReadingLearningSummary(reading);
  return (
   <div className="grid min-w-0 gap-4">
-   <Button
-    type="button"
-    variant="ghost"
-    size="toolbar"
-    className="justify-self-start"
-    onClick={onBack}
-   >
-    <ArrowLeft data-icon="inline-start" />
-    {t("document.back")}
-   </Button>
-
    <header className="grid min-w-0 gap-3 border-b border-border-default pb-4 sm:pb-5">
     <div className="flex min-w-0 flex-wrap items-center gap-2">
      {reading.classification.targetLevel !== null ? (
@@ -647,7 +921,28 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
     </div>
    </header>
 
-   <Tabs value={effectiveTab} items={tabItems} onValueChange={setTab} aria-label={t("tabs.aria")}>
+   <Tabs
+    value={effectiveTab}
+    items={tabItems}
+    onValueChange={setTab}
+    actions={
+     <div className="flex shrink-0 items-center gap-1.5">
+      <Button
+       type="button"
+       variant="ghost"
+       size="compact"
+       className="gap-1.5 shrink-0"
+       onClick={onBack}
+       title={t("document.back")}
+      >
+       <ArrowLeft className="size-3.5" />
+       <span className="hidden sm:inline">{t("document.back")}</span>
+      </Button>
+     </div>
+    }
+    listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30 bg-background/95 backdrop-blur-md"
+    aria-label={t("tabs.aria")}
+   >
     <TabsContent value="reader" className="grid gap-3 pt-4">
      {latestTranslationProgress !== undefined && translation === null ? (
       <Card variant="subtle" padding="sm" className="flex flex-wrap items-center gap-2">
@@ -683,7 +978,24 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
       }}
       services={{
        speech,
-       toolbar: { stickyOffset: "tabs" },
+       toolbar: {
+        stickyOffset: "tabs",
+        hidePinyinToggle: true,
+        hideTranslationToggle: true,
+       },
+       annotations: {
+        items: businessChineseReaderAnnotations(annotationsQuery.data ?? []),
+        onOpen: (annotation, rect) => {
+         const source = annotationsQuery.data?.find((item) => item.id === annotation.id);
+         if (source) selection.handleOpenAnnotation(source, rect);
+        },
+        onSelection: (target) => {
+         if (!readerDocument) return;
+         const index = readerDocument.segments.findIndex((s) => s.id === target.segmentId);
+         const segment = readerDocument.segments[index];
+         if (segment) selection.handleSelection({ ...target, segment, index });
+        },
+       },
        lookup: (selection) => {
         void openInspector(selection.text, { anchorRect: selection.rect });
        },
@@ -691,6 +1003,14 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
       }}
      />
      {pronunciation.popover}
+     {selection.popover}
+    </TabsContent>
+
+    <TabsContent value="notes" className="grid gap-4 pt-4">
+     {annotationsQuery.data && annotationsQuery.data.length > 0 ? (
+      <ReaderNotes annotations={annotationsQuery.data} onRemove={selection.removeAnnotation} />
+     ) : null}
+     <DailyReadingNoteCard reading={reading} />
     </TabsContent>
 
     <TabsContent value="support" className="pt-4">
@@ -703,31 +1023,115 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
 
     <TabsContent value="vocabulary" className="pt-4">
      {reading.enrichment.vocabulary.status === "ready" ? (
-      <div className="grid gap-3 sm:grid-cols-2">
-       {reading.enrichment.vocabulary.data.items.map((item) => {
-        const pronunciation = analyzeDailyReadingText(item.hanzi);
-        return (
-         <Card key={item.id} variant="section" padding="md" className="grid gap-1">
-          <div className="flex flex-wrap items-center gap-2">
-           <HanziText as="h3" size="medium" weight="black">
-            {item.hanzi}
-           </HanziText>
-           <Badge size="sm">{item.categoryVi}</Badge>
-          </div>
-          {displayMode.showPinyin && pronunciation !== null ? (
-           <PinyinText as="p" variant="caption" tone="accent">
-            {formatContextualReadingPinyin(pronunciation)}
-           </PinyinText>
-          ) : null}
-          <Typography variant="bodySmall" weight="semibold">
-           {item.meaningVi}
+      <div className="grid gap-3">
+       <Card
+        variant="subtle"
+        padding="sm"
+        className="flex min-w-0 flex-wrap items-center justify-between gap-2.5"
+       >
+        <div className="flex min-w-0 items-center gap-2">
+         <Typography
+          variant="caption"
+          tone="muted"
+          weight="bold"
+          tracking="wide"
+          transform="uppercase"
+          className="hidden sm:inline"
+         >
+          {t("tabs.vocabulary")}
+         </Typography>
+         <Badge variant="default" casing="natural">
+          {vocabItems.length} từ
+         </Badge>
+         <div className="relative min-w-[140px] sm:min-w-[200px]">
+          <Input
+           type="search"
+           density="compact"
+           adornment="start"
+           value={vocabSearchQuery}
+           onChange={(e) => setVocabSearchQuery(e.target.value)}
+           placeholder="Tìm từ vựng..."
+          />
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+         </div>
+         {vocabSearchQuery ? (
+          <Typography variant="caption" tone="secondary">
+           ({filteredVocabItems.length} kết quả)
           </Typography>
-          <Typography variant="bodySmall" tone="muted">
-           {t("generated.vocabulary.inContext", { meaning: item.meaningInContextVi })}
-          </Typography>
-         </Card>
-        );
-       })}
+         ) : null}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-1.5">
+         <Button
+          type="button"
+          size="compact"
+          variant={
+           (isPipOpen || isInAppFloatingOpen) && pipMode === "dictation" ? "active" : "outline"
+          }
+          onClick={() => void handleTogglePip("dictation")}
+          title="Mở cửa sổ nổi nghe chép từ vựng (hỗ trợ nghe tiếng Trung hoặc nghe tiếng Việt)"
+         >
+          <Volume2 className="size-3.5" />
+          <span>Chép từ vựng</span>
+         </Button>
+         <Button
+          type="button"
+          size="compact"
+          variant={(isPipOpen || isInAppFloatingOpen) && pipMode === "vocab" ? "active" : "outline"}
+          onClick={() => void handleTogglePip("vocab")}
+          title="Mở cửa sổ nổi ôn tập từ vựng & bài tập"
+         >
+          <PictureInPicture2 className="size-3.5" />
+          <span>Mở PiP</span>
+         </Button>
+        </div>
+       </Card>
+
+       {filteredVocabItems.length === 0 && vocabSearchQuery ? (
+        <Card variant="subtle" padding="lg" className="text-center">
+         <Typography variant="bodySmall" tone="muted">
+          Không tìm thấy từ vựng nào khớp với &ldquo;{vocabSearchQuery}&rdquo;
+         </Typography>
+        </Card>
+       ) : null}
+
+       <div className="grid gap-2 sm:grid-cols-2">
+        {filteredVocabItems.map((item) => {
+         const itemPronunciation = analyzeDailyReadingText(item.hanzi);
+         const resolvedPinyin =
+          itemPronunciation !== null ? formatContextualReadingPinyin(itemPronunciation) : "";
+         return (
+          <VocabPreviewRow
+           key={item.id}
+           hanzi={item.hanzi}
+           pinyin={resolvedPinyin}
+           hanviet=""
+           category={item.categoryVi}
+           meaning={displayMode.showMeaning ? item.meaningVi : ""}
+           rawMeaning={item.meaningVi}
+           header={
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
+             <HanziText as="span" size="card" weight="black" leading="none">
+              {item.hanzi}
+             </HanziText>
+             {displayMode.showPinyin && resolvedPinyin ? (
+              <PinyinText as="span" tone="accent" weight="bold">
+               {resolvedPinyin}
+              </PinyinText>
+             ) : null}
+             <MandarinSpeakButton text={item.hanzi} />
+            </div>
+           }
+          >
+           {displayMode.showMeaning && item.meaningInContextVi ? (
+            <Typography variant="caption" tone="muted">
+             {t("generated.vocabulary.inContext", { meaning: item.meaningInContextVi })}
+            </Typography>
+           ) : null}
+          </VocabPreviewRow>
+         );
+        })}
+       </div>
       </div>
      ) : null}
     </TabsContent>
@@ -782,6 +1186,28 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
      </Card>
     </TabsContent>
    </Tabs>
+   {isPipOpen && pipWindow
+    ? createPortal(
+       <UniversalAmbientPip
+        initialMode={pipMode}
+        lessonTitle={reading.article.titleZh}
+        vocabItems={pipVocabItems}
+        practiceItems={pipPracticeItems}
+        onClose={closePip}
+       />,
+       pipWindow.document.body,
+      )
+    : null}
+   {isInAppFloatingOpen ? (
+    <UniversalAmbientPip
+     initialMode={pipMode}
+     lessonTitle={reading.article.titleZh}
+     vocabItems={pipVocabItems}
+     practiceItems={pipPracticeItems}
+     onClose={() => setIsInAppFloatingOpen(false)}
+     isFloatingInApp
+    />
+   ) : null}
   </div>
  );
 }

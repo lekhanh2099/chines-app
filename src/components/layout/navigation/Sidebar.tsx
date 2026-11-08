@@ -99,6 +99,7 @@ function isActive(pathname: string, searchParams: URLSearchParams, itemId: Navig
   [
    navigationItems.businessChinese.href,
    navigationItems.chineseBridge.href,
+   navigationItems.readingComprehension.href,
    navigationItems.spokenChinese.href,
   ].includes(pathname)
  ) {
@@ -120,29 +121,15 @@ function groupHasActiveRoute(
  );
 }
 
-function activeSectionId(
- group: NavigationGroup | undefined,
- pathname: string,
- searchParams: URLSearchParams,
-) {
- return (
-  group?.sections.find((section) =>
-   section.itemIds.some((itemId) => isActive(pathname, searchParams, itemId)),
-  )?.id ?? ""
- );
-}
-
 function NavRow({
  itemId,
  active,
  collapsed,
- nested = false,
  onNavigate,
 }: {
  itemId: NavigationItemId;
  active: boolean;
  collapsed: boolean;
- nested?: boolean;
  onNavigate?: () => void;
 }) {
  const t = useTranslations("Shell");
@@ -157,13 +144,13 @@ function NavRow({
  return (
   <Button
    variant={active ? "navigationActive" : "navigation"}
-   size={collapsed ? "icon-sm" : onNavigate ? "menu" : nested && !active ? "compact" : "toolbar"}
+   size={collapsed ? "icon-sm" : onNavigate ? "menu" : "toolbar"}
    align={collapsed ? "center" : "between"}
    asChild
    aria-current={active ? "page" : undefined}
    aria-busy={isPendingThisItem ? "true" : undefined}
-   aria-label={collapsed ? label : undefined}
-   title={collapsed ? label : undefined}
+   aria-label={label}
+   title={label}
    className={cn(
     collapsed ? "w-10" : "w-full min-w-0",
     isPendingThisItem && "pointer-events-none opacity-80",
@@ -282,22 +269,22 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
  const activeGroupId = visibleNavigationGroups.find((group) =>
   groupHasActiveRoute(group, pathname, searchParams),
  )?.id;
- const activeGroup = visibleNavigationGroups.find((group) => group.id === activeGroupId);
- const routeSectionId = activeSectionId(activeGroup, pathname, searchParams);
  const routeKey = `${pathname}?${searchParams.toString()}`;
- const [navigationState, setNavigationState] = useState({
-  routeKey,
-  expandedGroupId: activeGroupId ?? "",
-  expandedSectionId: routeSectionId,
- });
- const currentNavigationState =
-  navigationState.routeKey === routeKey
-   ? navigationState
-   : {
-      routeKey,
-      expandedGroupId: activeGroupId ?? "",
-      expandedSectionId: routeSectionId,
-     };
+ const [openGroupOverrides, setOpenGroupOverrides] = useState<Record<string, boolean>>({});
+ const [lastRouteKey, setLastRouteKey] = useState(routeKey);
+
+ if (lastRouteKey !== routeKey) {
+  setLastRouteKey(routeKey);
+  if (activeGroupId && openGroupOverrides[activeGroupId] === false) {
+   setOpenGroupOverrides((prev) => ({ ...prev, [activeGroupId]: true }));
+  }
+ }
+
+ const isGroupExpanded = (groupId: string) => {
+  const override = openGroupOverrides[groupId];
+  if (override !== undefined) return override;
+  return groupId === activeGroupId;
+ };
 
  useEffect(() => {
   hydrateSidebar();
@@ -376,157 +363,83 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
       ))}
      </div>
     ) : (
-     <div className="grid content-start gap-2">
+     <div className="grid content-start gap-1.5">
       {visibleNavigationGroups.map((group) => {
-       const groupOpen = group.id === currentNavigationState.expandedGroupId;
+       const groupOpen = isGroupExpanded(group.id);
        const GroupIcon = group.icon;
        const groupLabel = t(group.messageKey);
 
        return (
-        <section key={group.id} aria-label={groupLabel}>
-         <div
-          className={
-           groupOpen
-            ? "grid gap-1 rounded-xl border border-border-default/70 bg-surface-subtle/40 p-2"
-            : undefined
-          }
+        <section key={group.id} aria-label={groupLabel} className="grid content-start">
+         <Button
+          type="button"
+          variant="navigation"
+          size="toolbar"
+          align="between"
+          className="w-full min-w-0"
+          aria-expanded={groupOpen}
+          aria-controls={`sidebar-group-${group.id}`}
+          onClick={() => {
+           const currentOpen = isGroupExpanded(group.id);
+           setOpenGroupOverrides((prev) => ({
+            ...prev,
+            [group.id]: !currentOpen,
+           }));
+          }}
          >
-          <Button
-           type="button"
-           variant="navigation"
-           size={groupOpen ? "compact" : "toolbar"}
-           align="between"
-           className={cn("w-full min-w-0", groupOpen && "h-8")}
-           aria-expanded={groupOpen}
-           aria-controls={groupOpen ? `sidebar-group-${group.id}` : undefined}
-           onClick={() => {
-            setNavigationState({
-             ...currentNavigationState,
-             routeKey,
-             expandedGroupId: groupOpen ? "" : group.id,
-            });
-           }}
-          >
-           <span
-            className={cn(
-             "flex min-w-0 flex-1 items-center gap-2.5",
-             groupOpen && "text-foreground",
-            )}
-           >
-            <GroupIcon className={cn("size-4 shrink-0", groupOpen && "text-primary")} />
-            <Typography
-             as="span"
-             variant={groupOpen ? "caption" : "bodySmall"}
-             tone={groupOpen ? "default" : "inherit"}
-             weight={groupOpen ? "bold" : "medium"}
-             clamp="one"
-             className="min-w-0 flex-1 text-start"
-            >
-             {groupLabel}
-            </Typography>
-           </span>
-           <ChevronRight
-            data-icon="inline-end"
-            className={cn("size-3.5 shrink-0 transition-transform", groupOpen && "rotate-90")}
+          <span className="flex min-w-0 flex-1 items-center gap-2.5">
+           <GroupIcon
+            className={cn("size-4 shrink-0", groupOpen ? "text-primary" : "text-foreground-muted")}
            />
-          </Button>
+           <Typography
+            as="span"
+            variant="bodySmall"
+            tone={groupOpen ? "default" : "inherit"}
+            weight={groupOpen ? "bold" : "medium"}
+            clamp="one"
+            className="min-w-0 flex-1 text-start"
+           >
+            {groupLabel}
+           </Typography>
+          </span>
+          <ChevronRight
+           data-icon="inline-end"
+           className={cn(
+            "size-3.5 shrink-0 text-foreground-muted transition-transform duration-200",
+            groupOpen && "rotate-90",
+           )}
+          />
+         </Button>
 
-          {groupOpen ? (
-           <div id={`sidebar-group-${group.id}`} className="grid gap-0.5 pt-0.5">
-            {group.sections.map((section) => {
-             const sectionActive = section.itemIds.some((itemId) =>
-              isActive(pathname, searchParams, itemId),
-             );
-             const sectionOpen = section.id === currentNavigationState.expandedSectionId;
-             const SectionIcon =
-              section.id === "textbooks" ? navigationItems.lessons.icon : GroupIcon;
-
-             if (!section.collapsible) {
-              return section.itemIds.map((itemId) => (
-               <NavRow
-                key={itemId}
-                itemId={itemId}
-                active={isActive(pathname, searchParams, itemId)}
-                collapsed={false}
-               />
-              ));
-             }
-
-             return (
-              <div key={section.id} className="grid gap-0.5">
-               <Button
-                type="button"
-                variant="navigation"
-                size="compact"
-                align="between"
-                className="w-full min-w-0 h-8"
-                aria-expanded={sectionOpen}
-                aria-controls={`sidebar-section-${section.id}`}
-                onClick={() =>
-                 setNavigationState({
-                  ...currentNavigationState,
-                  routeKey,
-                  expandedSectionId:
-                   currentNavigationState.expandedSectionId === section.id ? "" : section.id,
-                 })
-                }
+         {groupOpen ? (
+          <div id={`sidebar-group-${group.id}`} className="grid gap-0.5 pt-0.5 pb-2">
+           {group.sections.map((section) => (
+            <div key={section.id} id={`sidebar-section-${section.id}`} className="grid gap-0.5">
+             {section.collapsible ? (
+              <div className="px-2.5 pt-2.5 pb-1">
+               <Typography
+                as="h3"
+                variant="overline"
+                tone="muted"
+                weight="bold"
+                className="select-none"
                >
-                <span className="flex min-w-0 flex-1 items-center gap-2">
-                 {section.id === "hsk-reading" ? (
-                  <span
-                   aria-hidden="true"
-                   className="grid size-4 shrink-0 place-items-center rounded-sm border border-current text-primary text-[0.625rem] font-bold"
-                  >
-                   H
-                  </span>
-                 ) : (
-                  <SectionIcon
-                   data-icon="inline-start"
-                   className={sectionActive ? "text-primary" : undefined}
-                  />
-                 )}
-                 <Typography
-                  as="span"
-                  variant="bodySmall"
-                  tone="inherit"
-                  weight="medium"
-                  clamp="one"
-                  className="min-w-0 flex-1 text-start"
-                 >
-                  {t(section.messageKey)}
-                 </Typography>
-                </span>
-                <ChevronRight
-                 data-icon="inline-end"
-                 className={cn(
-                  "size-3.5 shrink-0 transition-transform",
-                  sectionOpen && "rotate-90",
-                 )}
-                />
-               </Button>
-               <div
-                id={`sidebar-section-${section.id}`}
-                hidden={!sectionOpen}
-                className="pt-0.5 pl-5"
-               >
-                <div className="grid gap-0.5 border-l border-border-default/80 pl-2.5">
-                 {section.itemIds.map((itemId) => (
-                  <NavRow
-                   key={itemId}
-                   itemId={itemId}
-                   active={isActive(pathname, searchParams, itemId)}
-                   collapsed={false}
-                   nested
-                  />
-                 ))}
-                </div>
-               </div>
+                {t(section.messageKey)}
+               </Typography>
               </div>
-             );
-            })}
-           </div>
-          ) : null}
-         </div>
+             ) : null}
+             {section.itemIds.map((itemId) => (
+              <NavRow
+               key={itemId}
+               itemId={itemId}
+               active={isActive(pathname, searchParams, itemId)}
+               collapsed={false}
+              />
+             ))}
+            </div>
+           ))}
+          </div>
+         ) : null}
         </section>
        );
       })}

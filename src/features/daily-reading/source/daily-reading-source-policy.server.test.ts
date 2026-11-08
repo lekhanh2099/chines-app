@@ -39,6 +39,11 @@ describe("Daily Reading source policy", () => {
   expect(isEligibleDailyReadingTitle("暴雨事故最新通报会议举行")).toBe(false);
   expect(resolveDailyReadingTopic("城市博物馆推出非遗文化展览")).toBe("culture");
   expect(resolveDailyReadingTopic("学校开展汉语阅读课堂活动")).toBe("education");
+  expect(isEligibleDailyReadingTitle("中越高校开展青年科技与文化交流活动")).toBe(true);
+  expect(isEligibleDailyReadingTitle("青年求职者在秋季招聘会寻找数字化岗位机会")).toBe(true);
+  expect(resolveDailyReadingTopic("世界互联网大会闭幕 绘就人工智能发展新图景")).toBe("science");
+  expect(resolveDailyReadingTopic("青年求职者在秋季招聘会寻找岗位机会")).toBe("society");
+  expect(resolveDailyReadingTopic("中越边境跨境电商产业园发展势头良好")).toBe("society");
  });
 
  it("rewards a fresh diverse official source over a repeated topic", () => {

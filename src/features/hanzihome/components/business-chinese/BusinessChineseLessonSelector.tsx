@@ -9,6 +9,7 @@ import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuGroup,
+ DropdownMenuItem,
  DropdownMenuLabel,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
@@ -38,27 +39,17 @@ function LessonDropdownRow({
  bookmarkAriaLabel: string;
 }) {
  return (
-  <div
-   className={cn(
-    "group relative flex min-h-10 w-full items-center justify-between gap-2 rounded-lg py-1.5 pr-2 pl-2.5 transition-colors select-none",
-    isCurrent ? "bg-accent/60 font-medium text-foreground" : "text-foreground hover:bg-accent/40",
-   )}
+  <DropdownMenuItem
+   className="group flex min-h-10 w-full items-center justify-between gap-2 cursor-pointer select-none"
+   onSelect={onSelectLesson}
   >
+   <span className="truncate text-sm flex-1">{item.title}</span>
+   {isCurrent ? <Check className="ml-auto size-4 shrink-0 text-primary" /> : null}
    <Button
     type="button"
     variant="ghost"
-    className="min-w-0 flex-1 justify-start gap-2 text-left"
-    onClick={onSelectLesson}
-   >
-    {isBookmarked ? <Bookmark className="size-3.5 shrink-0 fill-current text-primary" /> : null}
-    <span className="truncate text-sm">{item.title}</span>
-    {isCurrent ? <Check className="ml-auto size-4 shrink-0 text-primary" /> : null}
-   </Button>
-   <Button
-    type="button"
-    variant={isBookmarked ? "warning" : "ghost"}
-    size="icon-toolbar"
-    className="shrink-0 transition-opacity"
+    size="icon-xs"
+    className="shrink-0"
     onClick={(event) => {
      event.stopPropagation();
      event.preventDefault();
@@ -68,10 +59,13 @@ function LessonDropdownRow({
     aria-label={bookmarkAriaLabel}
    >
     <Bookmark
-     className={cn("size-4 transition-colors", isBookmarked ? "fill-current" : "text-current")}
+     className={cn(
+      "size-3.5 transition-colors",
+      isBookmarked ? "fill-warning text-warning" : "text-muted-foreground",
+     )}
     />
    </Button>
-  </div>
+  </DropdownMenuItem>
  );
 }
 
@@ -136,12 +130,12 @@ export function BusinessChineseLessonSelector({
      disabled={focusModeEnabled}
      aria-label={t("lessonSelectLabel")}
      className={cn(
-      "w-[min(11rem,44vw)] justify-between md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
+      "w-auto min-w-[9rem] max-w-[min(20rem,44vw)] justify-between md:max-w-[min(24rem,35vw)] xl:max-w-[28rem]",
      )}
     >
      <span className="flex min-w-0 items-center gap-1.5 truncate">
       {isCurrentLessonBookmarked ? (
-       <Bookmark className="size-3.5 shrink-0 fill-current text-primary" />
+       <Bookmark className="size-3.5 shrink-0 fill-current text-warning" />
       ) : null}
       <span className="truncate">{lesson.title}</span>
      </span>

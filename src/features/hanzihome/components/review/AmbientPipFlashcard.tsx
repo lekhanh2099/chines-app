@@ -10,6 +10,8 @@ import {
  RotateCw,
  Volume2,
  VolumeX,
+ BookmarkPlus,
+ Check,
 } from "lucide-react";
 import { ActionCard } from "@/components/ui/actions/action-card";
 import { Button } from "@/components/ui/actions/button";
@@ -23,6 +25,7 @@ import {
  prefetchMandarinAudio,
  useFastMandarinSpeech,
 } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
+import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
@@ -31,6 +34,7 @@ export type AmbientPipFlashcardProps = {
  readonly lessonTitle?: string;
  readonly onClose?: () => void;
  readonly isFloatingInApp?: boolean;
+ readonly isInline?: boolean;
  readonly extraHeaderActions?: ReactNode;
 };
 
@@ -62,6 +66,7 @@ export function AmbientPipFlashcard({
  lessonTitle = "Ôn tập nhận diện",
  onClose,
  isFloatingInApp = false,
+ isInline = false,
  extraHeaderActions,
 }: AmbientPipFlashcardProps) {
  const [currentIndex, setCurrentIndex] = useState(0);
@@ -72,9 +77,27 @@ export function AmbientPipFlashcard({
  const [remainingSeconds, setRemainingSeconds] = useState<number>(15);
 
  const { speak, stop } = useFastMandarinSpeech();
+ const learning = useLearningState();
 
  const totalCount = items.length;
  const currentItem = items[currentIndex] ?? items[0];
+ const customVocabList = learning.state.settings.customVocab ?? [];
+ const isCurrentInVault = Boolean(
+  currentItem && customVocabList.some((word) => word.hanzi.trim() === currentItem.hanzi.trim()),
+ );
+
+ const handleToggleCurrentVault = useCallback(() => {
+  if (!currentItem) return;
+  learning.toggleCustomVocabByHanzi({
+   hanzi: currentItem.hanzi,
+   pinyin: currentItem.pinyin,
+   meaning: getVocabDisplayMeaning(currentItem),
+   hanviet: currentItem.meaning.hanviet || undefined,
+   exampleZh: currentItem.examples[0]?.zh,
+   exampleVi: currentItem.examples[0]?.vi,
+   note: lessonTitle,
+  });
+ }, [currentItem, learning, lessonTitle]);
 
  const handleNext = useCallback(() => {
   if (totalCount === 0) return;
@@ -383,6 +406,21 @@ export function AmbientPipFlashcard({
     </div>
 
     <div className="flex items-center gap-1">
+     <Button
+      type="button"
+      variant={isCurrentInVault ? "active" : "ghost"}
+      size="compact"
+      onClick={handleToggleCurrentVault}
+      title={
+       isCurrentInVault
+        ? "Đã lưu trong Kho riêng (nhấn để gỡ)"
+        : "Thêm từ này vào Kho từ vựng riêng"
+      }
+      aria-label={isCurrentInVault ? "Đã lưu trong Kho riêng" : "Thêm vào Kho riêng"}
+     >
+      {isCurrentInVault ? <Check className="size-3.5" /> : <BookmarkPlus className="size-3.5" />}
+      <span className="hidden sm:inline">{isCurrentInVault ? "Trong kho" : "Kho riêng"}</span>
+     </Button>
      <StudyInstructionText variant="caption" tone="muted">
       Chu kỳ:
      </StudyInstructionText>
@@ -409,6 +447,14 @@ export function AmbientPipFlashcard({
    >
     {content}
    </Card>
+  );
+ }
+
+ if (isInline) {
+  return (
+   <div className="flex h-96 w-full flex-col justify-between overflow-hidden rounded-xl border border-border-default/60 bg-surface select-none">
+    {content}
+   </div>
   );
  }
 

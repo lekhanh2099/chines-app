@@ -33,7 +33,6 @@ import {
  AppHeaderBreadcrumb,
  AppHeaderBreadcrumbItem,
  AppHeaderBreadcrumbLink,
- AppHeaderBreadcrumbPage,
  AppHeaderBreadcrumbSeparator,
 } from "@/components/layout/header/app-header-breadcrumb";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
@@ -43,7 +42,15 @@ import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
-import { Bookmark, CloudCheck, Languages, PictureInPicture2, Sparkles, Tags } from "lucide-react";
+import {
+ Bookmark,
+ CloudCheck,
+ PictureInPicture2,
+ Search,
+ Sparkles,
+ Tags,
+ Volume2,
+} from "lucide-react";
 import { createPortal } from "react-dom";
 import {
  UniversalAmbientPip,
@@ -52,23 +59,14 @@ import {
 import { adaptTextbookGrammarToPip } from "@/features/hanzihome/components/review/pip-grammar-adapter";
 import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
 import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
-import {
- SegmentedControl,
- type SegmentedControlItem,
-} from "@/components/ui/forms/segmented-control";
+import { type SegmentedControlItem } from "@/components/ui/forms/segmented-control";
 import { Typography, type TypographyProps } from "@/components/ui/display/typography";
-import { VocabReviewPanel } from "@/features/hanzihome/components/review/VocabReviewPanel";
 import { BusinessChineseContextualDrills } from "./BusinessChineseContextualDrills";
 import { UniversalExerciseRunner } from "@/features/hanzihome/components/practice/UniversalExerciseRunner";
-import { adaptTextbookPracticeToUniversal } from "@/features/hanzihome/components/practice/universal-exercise-adapter";
-import type {
- ReviewAnswerHandler,
- ReviewBookmarkHandler,
-} from "@/features/hanzihome/components/review/types";
-import type { UserLearningState } from "@/features/hanzihome/types";
+import { adaptAllLessonExercises } from "@/features/hanzihome/components/practice/universal-exercise-adapter";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
-import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
+import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import { BusinessChineseLessonSelector } from "./BusinessChineseLessonSelector";
 import {
@@ -203,25 +201,30 @@ function BusinessChineseHeaderContextBridge({
   () => (
    <AppHeaderBreadcrumb
     aria-label={t("lessonSelectLabel")}
-    className="min-w-0 max-w-[min(12rem,48vw)] justify-self-start md:max-w-[min(42rem,70vw)]"
+    className="min-w-0 max-w-full justify-self-start"
    >
-    <AppHeaderBreadcrumbItem className="hidden md:flex">
+    <AppHeaderBreadcrumbItem className="hidden 2xl:inline-flex shrink-0">
      <AppHeaderBreadcrumbLink
-      href={buildTextbookHref(lesson.bookKey, 1)}
+      href="/hanzihome"
       disabled={focusModeEnabled}
-      className="max-w-36"
+      className="shrink-0"
       title="HanziHome"
      >
       HanziHome
      </AppHeaderBreadcrumbLink>
     </AppHeaderBreadcrumbItem>
-    <AppHeaderBreadcrumbSeparator className="hidden md:flex" />
-    <AppHeaderBreadcrumbItem className="hidden 2xl:flex">
-     <AppHeaderBreadcrumbPage title={selectedBook?.label ?? lesson.bookLabel}>
+    <AppHeaderBreadcrumbSeparator className="hidden 2xl:inline-flex" />
+    <AppHeaderBreadcrumbItem className="min-w-0 shrink-0">
+     <AppHeaderBreadcrumbLink
+      href={buildTextbookHref(lesson.bookKey, 1)}
+      disabled={focusModeEnabled}
+      className="max-w-[10rem] sm:max-w-[14rem] truncate font-medium text-foreground shrink-0"
+      title={selectedBook?.label ?? lesson.bookLabel}
+     >
       {selectedBook?.label ?? lesson.bookLabel}
-     </AppHeaderBreadcrumbPage>
+     </AppHeaderBreadcrumbLink>
     </AppHeaderBreadcrumbItem>
-    <AppHeaderBreadcrumbSeparator className="hidden 2xl:flex" />
+    <AppHeaderBreadcrumbSeparator />
     <AppHeaderBreadcrumbItem className="min-w-0">
      <BusinessChineseLessonSelector
       books={books}
@@ -891,20 +894,9 @@ function TextbookVocabularyPreview({
 }) {
  const t = useTranslations("BusinessChinese");
 
- return (
-  <LessonPreviewCard
-   icon={Tags}
-   eyebrow={t("vocabularyPreview.eyebrow")}
-   title={t("vocabularyPreview.title", { count: vocabulary.length })}
-   actionLabel={onOpenVocabulary ? t("vocabularyPreview.open") : undefined}
-   onAction={onOpenVocabulary}
-  >
-   <div
-    className={cn(
-     "grid gap-2 sm:grid-cols-2",
-     onOpenVocabulary && "max-h-80 overflow-y-auto pr-1 scrollbar-soft",
-    )}
-   >
+ if (!onOpenVocabulary) {
+  return (
+   <div className="grid gap-2 sm:grid-cols-2">
     {vocabulary.map((word) => (
      <VocabPreviewRow
       key={word.id}
@@ -913,6 +905,42 @@ function TextbookVocabularyPreview({
       hanviet={displayMode.showMeaning ? word.hanviet : ""}
       category={word.pos}
       meaning={displayMode.showMeaning ? word.meaning : ""}
+      rawMeaning={word.meaning}
+      rawHanviet={word.hanviet}
+      header={
+       <SpeakableBusinessChineseText
+        pronunciationId={word.id}
+        text={word.hanzi}
+        sourcePinyin={word.pinyin}
+        displayMode={displayMode}
+        variant="body"
+       />
+      }
+     />
+    ))}
+   </div>
+  );
+ }
+
+ return (
+  <LessonPreviewCard
+   icon={Tags}
+   eyebrow={t("vocabularyPreview.eyebrow")}
+   title={t("vocabularyPreview.title", { count: vocabulary.length })}
+   actionLabel={t("vocabularyPreview.open")}
+   onAction={onOpenVocabulary}
+  >
+   <div className="grid max-h-80 gap-2 overflow-y-auto pr-1 scrollbar-soft sm:grid-cols-2">
+    {vocabulary.map((word) => (
+     <VocabPreviewRow
+      key={word.id}
+      hanzi={word.hanzi}
+      pinyin={word.pinyin}
+      hanviet={displayMode.showMeaning ? word.hanviet : ""}
+      category={word.pos}
+      meaning={displayMode.showMeaning ? word.meaning : ""}
+      rawMeaning={word.meaning}
+      rawHanviet={word.hanviet}
       header={
        <SpeakableBusinessChineseText
         pronunciationId={word.id}
@@ -1173,19 +1201,20 @@ function BusinessChineseTextBlock({
  const inlineText = grammarFormula
   ? { source: text.trim(), translation: "" }
   : splitTrailingTranslation(text);
- const grammarExample = grammar
-  ? splitBusinessChineseGrammarExample(inlineText.source)
-  : inlineText;
+ const grammarExample =
+  grammar || !practice ? splitBusinessChineseGrammarExample(inlineText.source) : inlineText;
  const sourceTurn =
-  grammar && grammarExample.translation
+  (grammar || !practice) && grammarExample.translation
    ? { speaker: "", content: grammarExample.source }
    : splitDialogueTurn(grammarExample.source);
  const resolvedTranslation =
   translation?.trim() || grammarExample.translation || inlineText.translation;
- const grammarNote = grammar && grammarExample.translation ? inlineText.translation : "";
- const translationTurn = grammar
-  ? { speaker: "", content: resolvedTranslation }
-  : splitDialogueTurn(resolvedTranslation);
+ const grammarNote =
+  (grammar || !practice) && grammarExample.translation ? inlineText.translation : "";
+ const translationTurn =
+  grammar || Boolean(grammarExample.translation)
+   ? { speaker: "", content: resolvedTranslation }
+   : splitDialogueTurn(resolvedTranslation);
  const progressiveReveal =
   displayMode.revealMode === "tap" &&
   containsHanziText(sourceTurn.content) &&
@@ -1620,12 +1649,17 @@ export function BusinessChineseStudyWorkspace({
   !searchParams.has("lesson") &&
   !learning.isLoading &&
   Boolean(resumeLesson && resumeLesson.id !== lesson.id);
+ const globalPinyin = learningState.settings.lessonTextDisplayMode?.showPinyin;
+ const bookDisplay = learningState.settings.bookDisplayModes?.[bookKey];
  const displayMode: LessonDisplayMode = useMemo(
   () => ({
    ...defaultTextbookDisplaySettings,
-   ...(learningState.settings.bookDisplayModes?.[bookKey] ?? {}),
+   ...(bookDisplay ?? {}),
+   ...(bookDisplay?.showPinyin === undefined && globalPinyin !== undefined
+    ? { showPinyin: globalPinyin }
+    : {}),
   }),
-  [bookKey, learningState.settings.bookDisplayModes],
+  [bookDisplay, globalPinyin],
  );
  const isLessonBookmarked = (learningState.bookmarks.lessons ?? []).includes(lesson.id);
  const lastBookmarkClickRef = useRef(0);
@@ -1731,24 +1765,6 @@ export function BusinessChineseStudyWorkspace({
   currentPath,
  ]);
 
- const navMenu = useMemo(
-  () => (
-   <BusinessChineseWorkspaceNavMenu
-    tabs={tabs}
-    activeView={activeView}
-    onActiveViewChange={setActiveView}
-    isLessonBookmarked={isLessonBookmarked}
-    onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
-    bookmarkLabel={t("bookmarkLesson")}
-    bookmarkedLabel={t("bookmarked")}
-    offlineReadyLabel={t("offlineReady")}
-    offlineDescription={t("offlineDescription")}
-    menuLabel={t("tabsLabel")}
-   />
-  ),
-  [tabs, activeView, setActiveView, isLessonBookmarked, handleToggleCurrentLessonBookmark, t],
- );
-
  const toolbarNavMenu = useMemo(
   () => (
    <BusinessChineseWorkspaceNavMenu
@@ -1772,6 +1788,8 @@ export function BusinessChineseStudyWorkspace({
   () => ({
    toolbar: {
     actions: toolbarNavMenu,
+    hidePinyinToggle: true,
+    hideTranslationToggle: true,
    },
    renderReader: ({ content }) => (
     <BusinessChineseStudyWorkspaceContent
@@ -1782,19 +1800,14 @@ export function BusinessChineseStudyWorkspace({
      tabs={tabs}
      isLessonBookmarked={isLessonBookmarked}
      onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
-     navMenu={navMenu}
      readerContent={content}
      bookKey={bookKey}
      displayMode={displayMode}
-     learningState={learningState}
-     onRecordReview={learning.recordReview}
-     onToggleBookmark={toggleBookmark}
     />
    ),
   }),
   [
    toolbarNavMenu,
-   navMenu,
    books,
    lesson,
    activeView,
@@ -1804,9 +1817,6 @@ export function BusinessChineseStudyWorkspace({
    handleToggleCurrentLessonBookmark,
    bookKey,
    displayMode,
-   learningState,
-   learning.recordReview,
-   toggleBookmark,
   ],
  );
 
@@ -1837,7 +1847,6 @@ function BusinessChineseReader({
 }) {
  const integration = useLessonReader({
   document,
-  displayMode: defaultTextbookDisplaySettings,
   bookKey,
  });
 
@@ -1847,6 +1856,8 @@ function BusinessChineseReader({
    ...services,
    toolbar: {
     stickyOffset: "page",
+    hidePinyinToggle: true,
+    hideTranslationToggle: true,
     ...integration.services.toolbar,
     ...services?.toolbar,
    },
@@ -1871,13 +1882,9 @@ function BusinessChineseStudyWorkspaceContent({
  tabs,
  isLessonBookmarked,
  onToggleLessonBookmark,
- navMenu,
  readerContent,
  bookKey,
  displayMode,
- learningState,
- onRecordReview,
- onToggleBookmark,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
@@ -1886,25 +1893,13 @@ function BusinessChineseStudyWorkspaceContent({
  tabs: SegmentedControlItem<string>[];
  isLessonBookmarked: boolean;
  onToggleLessonBookmark: () => void;
- navMenu: ReactNode;
  readerContent: ReactNode;
  bookKey: string;
  displayMode: LessonDisplayMode;
- learningState: UserLearningState;
- onRecordReview: ReviewAnswerHandler;
- onToggleBookmark: ReviewBookmarkHandler;
 }) {
  const t = useTranslations("BusinessChinese");
  const reviewLesson = useMemo(() => textbookLessonToReviewLesson(lesson), [lesson]);
  const contextualDrills = useMemo(() => generateContextualVocabDrills(lesson), [lesson]);
- const [reviewMode, setReviewMode] = useState<"flashcard" | "drills">("flashcard");
- const reviewModeItems = useMemo<SegmentedControlItem<"flashcard" | "drills">[]>(
-  () => [
-   { key: "flashcard", label: t("vocabReview.modeFlashcard") },
-   { key: "drills", label: t("vocabReview.modeDrills") },
-  ],
-  [t],
- );
  const {
   isSupported: isPipSupported,
   isOpen: isPipOpen,
@@ -1914,7 +1909,20 @@ function BusinessChineseStudyWorkspaceContent({
  } = useDocumentPip();
  const [isInAppFloatingOpen, setIsInAppFloatingOpen] = useState(false);
  const [pipMode, setPipMode] = useState<UniversalPipMode>("vocab");
+ const [reviewMode, setReviewMode] = useState<"flashcard" | "dictation" | "drills">("flashcard");
  const [isInteractivePracticeOpen, setIsInteractivePracticeOpen] = useState(false);
+ const [vocabSearchQuery, setVocabSearchQuery] = useState("");
+ const filteredVocab = useMemo(() => {
+  if (!vocabSearchQuery.trim()) return lesson.vocab;
+  const q = vocabSearchQuery.trim().toLowerCase();
+  return lesson.vocab.filter(
+   (w) =>
+    w.hanzi.toLowerCase().includes(q) ||
+    w.pinyin.toLowerCase().includes(q) ||
+    w.meaning.toLowerCase().includes(q) ||
+    w.hanviet.toLowerCase().includes(q),
+  );
+ }, [lesson.vocab, vocabSearchQuery]);
 
  const handleTogglePip = useCallback(
   async (targetMode: UniversalPipMode = "vocab") => {
@@ -1942,25 +1950,6 @@ function BusinessChineseStudyWorkspaceContent({
   },
   [closePip, isInAppFloatingOpen, isPipOpen, isPipSupported, openPip, pipMode],
  );
- const safeLearningState = useMemo<UserLearningState>(
-  () => ({
-   ...learningState,
-   progress: {
-    vocab: {},
-    grammar: {},
-    ...(learningState?.progress ?? {}),
-   },
-   bookmarks: {
-    lessons: [],
-    vocab: [],
-    grammar: [],
-    radicals: [],
-    ...(learningState?.bookmarks ?? {}),
-   },
-  }),
-  [learningState],
- );
- const toolsLabels = useTranslations("Reader.study.chrome.tools");
  const isLessonOfflineReady = useIsLessonCached(lesson.id);
  const textReaderDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, "text"),
@@ -1977,7 +1966,7 @@ function BusinessChineseStudyWorkspaceContent({
   [textReaderDocument],
  );
  const readerCommands = useReaderCommands();
- const { value: readerDisplay, onChange: onReaderDisplayChange } = useReaderDisplay();
+ const { value: readerDisplay } = useReaderDisplay();
  const { actions: readerActions } = useReaderStore();
  const parentServices = useReaderServices();
  const {
@@ -2060,16 +2049,18 @@ function BusinessChineseStudyWorkspaceContent({
   () => businessChineseVisibleSections(contentSections, activeView),
   [activeView, contentSections],
  );
+ const effectiveDisplayMode: LessonDisplayMode = useMemo(
+  () => ({
+   ...displayMode,
+   showPinyin: readerDisplay?.showPinyin ?? displayMode.showPinyin,
+   showMeaning: readerDisplay?.showMeaning ?? displayMode.showMeaning,
+  }),
+  [displayMode, readerDisplay?.showMeaning, readerDisplay?.showPinyin],
+ );
  const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
  const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
  const intro = lesson.intro.join(" ");
- const universalTextbookPracticeItems = useMemo(() => {
-  const blocks: TextbookLesson["sections"][number]["blocks"][number][] = [];
-  lesson.sections.forEach((sec) => {
-   if (sec.category === "practice") blocks.push(...sec.blocks);
-  });
-  return adaptTextbookPracticeToUniversal(blocks);
- }, [lesson.sections]);
+ const universalTextbookPracticeItems = useMemo(() => adaptAllLessonExercises(lesson), [lesson]);
  const textbookGrammarPoints = useMemo(
   () => adaptTextbookGrammarToPip(lesson.sections),
   [lesson.sections],
@@ -2108,6 +2099,8 @@ function BusinessChineseStudyWorkspaceContent({
   () => ({
    ...annotationServices,
    toolbar: {
+    hidePinyinToggle: true,
+    hideTranslationToggle: true,
     leadingActions:
      visibleSections.length > 1 ? (
       <CompactSectionNavigation
@@ -2141,36 +2134,40 @@ function BusinessChineseStudyWorkspaceContent({
  const desktopTabActions = (
   <>
    <OfflineAudioSettingsDialog lesson={lesson} />
-   <Button
-    variant="ghost"
-    size="sm"
-    className="gap-1.5 shrink-0"
-    onClick={onToggleLessonBookmark}
-    title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-    aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-   >
-    <Bookmark
-     className={cn(
-      "size-3.5",
-      isLessonBookmarked ? "fill-warning text-warning" : "text-muted-foreground",
-     )}
-    />
-    <span className={cn(isLessonBookmarked && "font-semibold text-warning-text")}>
-     {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
-    </span>
-   </Button>
-   {isLessonOfflineReady ? (
-    <Badge
-     variant="success"
+   <div className="flex shrink-0 items-center gap-1.5">
+    <Button
+     variant="ghost"
      size="sm"
-     casing="natural"
-     className="cursor-default gap-1 shrink-0"
-     title={t("offlineDescription")}
+     className="gap-1.5 shrink-0"
+     onClick={onToggleLessonBookmark}
+     title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
+     aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
     >
-     <CloudCheck data-icon="inline-start" />
-     <span>{t("offlineReady")}</span>
-    </Badge>
-   ) : null}
+     <Bookmark
+      className={cn(
+       "size-3.5",
+       isLessonBookmarked ? "fill-warning text-warning" : "text-muted-foreground",
+      )}
+     />
+     <span
+      className={cn("hidden sm:inline", isLessonBookmarked && "font-semibold text-warning-text")}
+     >
+      {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
+     </span>
+    </Button>
+    {isLessonOfflineReady ? (
+     <Badge
+      variant="success"
+      size="sm"
+      casing="natural"
+      className="cursor-default gap-1 shrink-0 hidden md:inline-flex"
+      title={t("offlineDescription")}
+     >
+      <CloudCheck data-icon="inline-start" />
+      <span>{t("offlineReady")}</span>
+     </Badge>
+    ) : null}
+   </div>
   </>
  );
 
@@ -2213,7 +2210,7 @@ function BusinessChineseStudyWorkspaceContent({
             )}
            />
           </Button>
-          {navMenu}
+          {toolbarNavMenu}
          </div>
         </WorkspaceToolbar>
        </div>
@@ -2224,8 +2221,8 @@ function BusinessChineseStudyWorkspaceContent({
        onValueChange={onActiveViewChange}
        actions={desktopTabActions}
        aria-label={t("tabsLabel")}
-       className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden xl:grid-rows-[auto_minmax(0,1fr)]"
-       listClassName="hanzihome-liquid-toolbar hidden xl:flex"
+       className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
+       listClassName="hanzihome-liquid-toolbar flex"
       >
        <TabsContent value={activeView} className="min-h-0 overflow-hidden">
         <div className="relative h-full min-h-0 min-w-0 overflow-y-auto overflow-x-hidden pr-1 scrollbar-soft">
@@ -2266,9 +2263,9 @@ function BusinessChineseStudyWorkspaceContent({
           ) : null}
 
           {activeView === "text" ? (
-           <Card variant="section" padding="lg" data-textbook-document className="min-w-0">
+           <div data-textbook-document className="min-w-0">
             {readerContent}
-           </Card>
+           </div>
           ) : null}
 
           {activeView === "notes" ? <TextbookNoteAccessCard lesson={lesson} /> : null}
@@ -2290,43 +2287,219 @@ function BusinessChineseStudyWorkspaceContent({
 
           {activeView === "review" ? (
            <div data-textbook-document className="mx-auto grid w-full max-w-4xl min-w-0 gap-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-1">
-             <SegmentedControl
-              value={reviewMode}
-              items={reviewModeItems}
-              onChange={setReviewMode}
-              className="w-auto"
-             />
-             <Button
-              type="button"
-              variant={isPipOpen || isInAppFloatingOpen ? "active" : "outline"}
-              size="compact"
-              onClick={() => handleTogglePip("vocab")}
-              title={t("vocabReview.pipTooltip")}
-             >
-              <PictureInPicture2 className="size-3.5" />
-              <span>
-               {isPipOpen || isInAppFloatingOpen
-                ? t("vocabReview.pipActive")
-                : t("vocabReview.pipButton")}
-              </span>
-             </Button>
-            </div>
+            <Card
+             variant="subtle"
+             padding="sm"
+             className="flex min-w-0 flex-wrap items-center justify-between gap-3"
+            >
+             <div className="flex min-w-0 items-center gap-2">
+              <Typography variant="overline" tone="muted" weight="black" tracking="wide">
+               {t("vocabReview.eyebrow")}
+              </Typography>
+              <Badge variant="accent" size="sm" casing="natural">
+               {t("vocabReview.title", { count: lesson.vocab.length })}
+              </Badge>
+             </div>
 
-            {reviewMode === "flashcard" ? (
-             <VocabReviewPanel
-              lesson={reviewLesson}
-              learningState={safeLearningState}
-              onAnswer={onRecordReview}
-              onToggleBookmark={onToggleBookmark}
-              title={t("vocabReview.title", { count: lesson.vocab.length })}
-              description={t("vocabReview.eyebrow")}
-              availableModes={["all", "hard"]}
-              initialMode="all"
-             />
-            ) : (
+             <div className="flex shrink-0 items-center gap-1.5">
+              <Button
+               type="button"
+               size="compact"
+               variant={reviewMode === "flashcard" ? "active" : "ghost"}
+               onClick={() => setReviewMode("flashcard")}
+              >
+               {t("vocabReview.modeFlashcard")}
+              </Button>
+              <Button
+               type="button"
+               size="compact"
+               variant={reviewMode === "dictation" ? "active" : "ghost"}
+               onClick={() => setReviewMode("dictation")}
+              >
+               Chép từ
+              </Button>
+              {contextualDrills.length > 0 ? (
+               <Button
+                type="button"
+                size="compact"
+                variant={reviewMode === "drills" ? "active" : "ghost"}
+                onClick={() => setReviewMode("drills")}
+               >
+                {t("vocabReview.modeDrills")}
+               </Button>
+              ) : null}
+
+              <Button
+               type="button"
+               variant={isPipOpen || isInAppFloatingOpen ? "active" : "outline"}
+               size="compact"
+               onClick={() =>
+                handleTogglePip(
+                 reviewMode === "dictation"
+                  ? "dictation"
+                  : reviewMode === "drills"
+                    ? "practice"
+                    : "vocab",
+                )
+               }
+               title={t("vocabReview.pipTooltip")}
+              >
+               <PictureInPicture2 className="size-3.5" />
+               <span>
+                {isPipOpen || isInAppFloatingOpen
+                 ? t("vocabReview.pipActive")
+                 : t("vocabReview.pipButton")}
+               </span>
+              </Button>
+             </div>
+            </Card>
+
+            {reviewMode === "drills" && contextualDrills.length > 0 ? (
              <BusinessChineseContextualDrills drills={contextualDrills} />
+            ) : (
+             <UniversalAmbientPip
+              key={reviewMode}
+              initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
+              lessonTitle={lesson.title}
+              vocabItems={reviewLesson.vocab}
+              grammarItems={textbookGrammarPoints}
+              practiceItems={universalTextbookPracticeItems}
+              isInline
+             />
             )}
+           </div>
+          ) : null}
+
+          {activeView === "vocab" ? (
+           <div data-textbook-document className="grid min-w-0 gap-3">
+            {lesson.vocab.length > 0 ? (
+             <Card
+              variant="subtle"
+              padding="sm"
+              className="flex min-w-0 flex-wrap items-center justify-between gap-2"
+             >
+              <div className="flex min-w-0 items-center gap-2">
+               <Typography
+                variant="caption"
+                tone="muted"
+                weight="bold"
+                tracking="wide"
+                transform="uppercase"
+                className="hidden sm:inline"
+               >
+                {t("vocabularyPreview.eyebrow")}
+               </Typography>
+               <Badge variant="default" casing="natural">
+                {lesson.vocab.length} từ
+               </Badge>
+               <div className="relative min-w-[140px] sm:min-w-[180px]">
+                <Input
+                 type="search"
+                 density="compact"
+                 adornment="start"
+                 value={vocabSearchQuery}
+                 onChange={(e) => setVocabSearchQuery(e.target.value)}
+                 placeholder="Tìm từ vựng..."
+                />
+                <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+               </div>
+               {vocabSearchQuery ? (
+                <Typography variant="caption" tone="secondary">
+                 ({filteredVocab.length} kết quả)
+                </Typography>
+               ) : null}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-1.5">
+               <Button
+                type="button"
+                size="compact"
+                variant="default"
+                onClick={() => onActiveViewChange("review")}
+               >
+                {t("vocabReview.startReview")}
+               </Button>
+               <Button
+                type="button"
+                size="compact"
+                variant={
+                 (isPipOpen || isInAppFloatingOpen) && pipMode === "dictation"
+                  ? "active"
+                  : "outline"
+                }
+                onClick={() => handleTogglePip("dictation")}
+                title="Mở cửa sổ nổi nghe chép từ vựng (hỗ trợ nghe tiếng Trung hoặc nghe tiếng Việt)"
+               >
+                <Volume2 className="size-3.5" />
+                <span>Chép từ vựng</span>
+               </Button>
+               <Button
+                type="button"
+                size="compact"
+                variant={
+                 (isPipOpen || isInAppFloatingOpen) && pipMode === "vocab" ? "active" : "outline"
+                }
+                onClick={() => handleTogglePip("vocab")}
+                title={t("vocabReview.pipTooltip")}
+               >
+                <PictureInPicture2 className="size-3.5" />
+                <span>{t("vocabReview.pipButton")}</span>
+               </Button>
+              </div>
+             </Card>
+            ) : null}
+
+            {filteredVocab.length === 0 && vocabSearchQuery ? (
+             <Card variant="subtle" padding="lg" className="text-center">
+              <Typography variant="bodySmall" tone="muted">
+               Không tìm thấy từ vựng nào khớp với &ldquo;{vocabSearchQuery}&rdquo;
+              </Typography>
+             </Card>
+            ) : null}
+
+            {filteredVocab.length > 0 && canonicalVocabularyTableIds.length === 0 ? (
+             <div className="grid gap-2 sm:grid-cols-2">
+              {filteredVocab.map((word) => (
+               <VocabPreviewRow
+                key={word.id}
+                hanzi={word.hanzi}
+                pinyin={word.pinyin}
+                hanviet={effectiveDisplayMode.showMeaning ? word.hanviet : ""}
+                category={word.pos}
+                meaning={effectiveDisplayMode.showMeaning ? word.meaning : ""}
+                rawMeaning={word.meaning}
+                rawHanviet={word.hanviet}
+                header={
+                 <SpeakableBusinessChineseText
+                  pronunciationId={word.id}
+                  text={word.hanzi}
+                  sourcePinyin={word.pinyin}
+                  displayMode={effectiveDisplayMode}
+                  variant="body"
+                 />
+                }
+               />
+              ))}
+             </div>
+            ) : null}
+
+            {visibleSections.map((section) => (
+             <BusinessChineseSection
+              key={section.id}
+              section={section}
+              displayMode={effectiveDisplayMode}
+              translations={pairedTranslations}
+              canonicalVocabularyTableIds={canonicalVocabularyTableIds}
+              vocabularyPreview={
+               section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
+                <TextbookVocabularyPreview
+                 vocabulary={filteredVocab}
+                 displayMode={effectiveDisplayMode}
+                />
+               ) : undefined
+              }
+             />
+            ))}
            </div>
           ) : null}
 
@@ -2334,7 +2507,8 @@ function BusinessChineseStudyWorkspaceContent({
           activeView !== "notes" &&
           activeView !== "translation" &&
           activeView !== "dictation" &&
-          activeView !== "review" ? (
+          activeView !== "review" &&
+          activeView !== "vocab" ? (
            <div
             className={cn(
              "grid min-w-0 gap-3",
@@ -2351,74 +2525,13 @@ function BusinessChineseStudyWorkspaceContent({
               data-textbook-document
               className="grid min-w-0 gap-6"
              >
-              {(activeView === "vocab" || activeView === "practice") && onReaderDisplayChange ? (
-               <div className="flex min-w-0 justify-end" data-reader-group="display">
-                <Button
-                 type="button"
-                 variant={readerDisplay.showPinyin ? "active" : "outline"}
-                 size="toolbar"
-                 aria-label={toolsLabels("showPinyin")}
-                 aria-pressed={readerDisplay.showPinyin}
-                 disabled={activeView === "practice" && readerDisplay.revealMode === "tap"}
-                 onClick={() =>
-                  onReaderDisplayChange({
-                   ...readerDisplay,
-                   showPinyin: !readerDisplay.showPinyin,
-                  })
-                 }
-                >
-                 <Languages data-icon="inline-start" />
-                 <span>{toolsLabels("pinyin")}</span>
-                </Button>
-               </div>
-              ) : null}
-              {lesson.vocab.length > 0 && activeView === "vocab" ? (
-               <Card
-                variant="subtle"
-                padding="md"
-                className="flex min-w-0 flex-wrap items-center justify-between gap-3"
-               >
-                <div className="grid min-w-0 gap-1">
-                 <Typography variant="body" weight="semibold">
-                  {t("vocabReview.title", { count: lesson.vocab.length })}
-                 </Typography>
-                 <Typography variant="bodySmall" tone="secondary">
-                  {t("vocabReview.clozeDescription")}
-                 </Typography>
-                </div>
-                <div className="flex flex-wrap items-center gap-2">
-                 <Button
-                  type="button"
-                  size="compact"
-                  variant="default"
-                  onClick={() => onActiveViewChange("review")}
-                 >
-                  {t("vocabReview.startReview")}
-                 </Button>
-                 <Button
-                  type="button"
-                  size="compact"
-                  variant={
-                   (isPipOpen || isInAppFloatingOpen) && pipMode === "vocab" ? "active" : "outline"
-                  }
-                  onClick={() => handleTogglePip("vocab")}
-                  title={t("vocabReview.pipTooltip")}
-                 >
-                  <PictureInPicture2 className="size-3.5" />
-                  <span>{t("vocabReview.pipButton")}</span>
-                 </Button>
-                </div>
-               </Card>
-              ) : null}
               {lesson.vocab.length > 0 &&
               canonicalVocabularyTableIds.length === 0 &&
-              (activeView === "all" || activeView === "vocab") ? (
+              activeView === "all" ? (
                <TextbookVocabularyPreview
                 vocabulary={lesson.vocab}
                 displayMode={displayMode}
-                onOpenVocabulary={
-                 activeView === "all" ? () => onActiveViewChange("vocab") : undefined
-                }
+                onOpenVocabulary={() => onActiveViewChange("vocab")}
                />
               ) : null}
               {activeView === "practice" &&

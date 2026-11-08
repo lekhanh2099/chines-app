@@ -101,11 +101,7 @@ export function BusinessChineseContextualDrills({
 
    {/* Focus Mode (Step-by-Step with UniversalExerciseRunner) */}
    {viewMode === "focus" ? (
-    <UniversalExerciseRunner
-     items={universalItems}
-     title={t("vocabReview.clozeTitle")}
-     description={t("vocabReview.clozeDescription")}
-    />
+    <UniversalExerciseRunner items={universalItems} title="" description="" />
    ) : (
     /* Classic List Mode */
     <div className="grid min-w-0 gap-4">

@@ -62,4 +62,19 @@ describe("AmbientPipDictationCard", () => {
   expect(html).toContain("fixed bottom-5 right-5");
   expect(html).toContain("Đóng");
  });
+
+ it("renders Vietnamese-to-Chinese dictation mode with Vietnamese audio prompt and helper", () => {
+  const html = renderToStaticMarkup(
+   createElement(AmbientPipDictationCard, {
+    items: reviewLesson.vocab,
+    lessonTitle: "Nhịp cầu Bài 5",
+    initialMode: "vi-to-zh",
+   }),
+  );
+
+  expect(html).toContain("Việt ➔ Hán");
+  expect(html).toContain("Nghe tiếng Việt (Ctrl+R)");
+  expect(html).toContain("Nghe nghĩa tiếng Việt, gõ chữ Hán...");
+  expect(html).toContain("🇨🇳 Trung");
+ });
 });

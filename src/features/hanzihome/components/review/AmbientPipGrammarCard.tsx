@@ -17,6 +17,7 @@ export type AmbientPipGrammarCardProps = {
  readonly lessonTitle?: string;
  readonly onClose?: () => void;
  readonly isFloatingInApp?: boolean;
+ readonly isInline?: boolean;
  readonly extraHeaderActions?: ReactNode;
 };
 
@@ -27,6 +28,7 @@ export function AmbientPipGrammarCard({
  lessonTitle = "Ngữ pháp trọng điểm",
  onClose,
  isFloatingInApp = false,
+ isInline = false,
  extraHeaderActions,
 }: AmbientPipGrammarCardProps) {
  const [currentIndex, setCurrentIndex] = useState(0);
@@ -95,12 +97,11 @@ export function AmbientPipGrammarCard({
  // Auto-speak current grammar item
  useEffect(() => {
   if (isAutoSpeak && currentItem) {
-   const segments: string[] = [];
-   if (currentItem.title) segments.push(currentItem.title);
    const firstEx = currentItem.examples[0];
-   if (firstEx?.zh) segments.push(firstEx.zh);
-   if (segments.length > 0) {
-    speak(segments);
+   if (firstEx?.zh) {
+    speak(firstEx.zh, { lang: "zh-CN" });
+   } else if (currentItem.title && /[\u4e00-\u9fff]/u.test(currentItem.title)) {
+    speak(currentItem.title, { lang: "zh-CN" });
    }
   }
  }, [currentIndex, currentItem, isAutoSpeak, speak]);
@@ -378,6 +379,14 @@ export function AmbientPipGrammarCard({
    >
     {content}
    </Card>
+  );
+ }
+
+ if (isInline) {
+  return (
+   <div className="flex h-96 w-full flex-col justify-between overflow-hidden rounded-xl border border-border-default/60 bg-surface select-none">
+    {content}
+   </div>
   );
  }
 

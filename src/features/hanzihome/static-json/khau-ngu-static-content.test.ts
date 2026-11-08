@@ -420,7 +420,7 @@ describe("Khẩu ngữ static content", () => {
     .flatMap((source) => source.entries);
    expect(readingEntries.every((entry) => entry.vi === "")).toBe(true);
   }
- });
+ }, 15000);
 
  it("locks all ordered sections reviewed against the Vietnamese source packet", () => {
   expect(

@@ -2,10 +2,14 @@ import { describe, expect, it, vi } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import {
+ cleanMandarinSpeechText,
+ cleanVietnameseSpeechText,
  fetchMandarinAudioBlob,
+ normalizeSpeechRate,
  prefetchMandarinAudio,
  scoreMandarinVoice,
  selectBestMandarinVoice,
+ selectBestVietnameseVoice,
  useFastMandarinSpeech,
 } from "./useFastMandarinSpeech";
 
@@ -93,6 +97,28 @@ describe("selectBestMandarinVoice", () => {
  });
 });
 
+describe("selectBestVietnameseVoice", () => {
+ it("finds and returns Vietnamese voice from voices list", () => {
+  const voices: readonly SpeechSynthesisVoice[] = [
+   createMockVoice("Google US English", "en-US"),
+   createMockVoice("Linh", "vi-VN"),
+   createMockVoice("Tingting", "zh-CN"),
+  ];
+
+  const selected = selectBestVietnameseVoice(voices);
+  expect(selected?.name).toBe("Linh");
+ });
+
+ it("returns null when no Vietnamese voice is present", () => {
+  const voices: readonly SpeechSynthesisVoice[] = [
+   createMockVoice("Google US English", "en-US"),
+   createMockVoice("Tingting", "zh-CN"),
+  ];
+
+  expect(selectBestVietnameseVoice(voices)).toBeNull();
+ });
+});
+
 describe("fetchMandarinAudioBlob and prefetch", () => {
  it("handles empty string gracefully", async () => {
   const result = await fetchMandarinAudioBlob("   ");
@@ -101,6 +127,22 @@ describe("fetchMandarinAudioBlob and prefetch", () => {
 
  it("prefetches multiple texts without throwing", () => {
   expect(() => prefetchMandarinAudio(["面的", "自行车"])).not.toThrow();
+ });
+
+ it("normalizes speech rates and cleans Vietnamese / Mandarin text for natural TTS", () => {
+  expect(normalizeSpeechRate(0.8)).toBe(0.8);
+  expect(normalizeSpeechRate(1.15)).toBe(1.15);
+  expect(normalizeSpeechRate(1.2)).toBe(1.2);
+  expect(normalizeSpeechRate(0.82)).toBe(0.8);
+
+  expect(cleanVietnameseSpeechText("lên lịch / sắp xếp (排期); đt.")).toBe(
+   "lên lịch, sắp xếp, động từ",
+  );
+  expect(cleanVietnameseSpeechText("VD: gửi file ➔ báo cáo")).toBe("Ví dụ: gửi file, báo cáo");
+  expect(cleanMandarinSpeechText('(一) "陈静心里却紧张起来" – "……起来" (……qǐlái)')).toBe(
+   '"陈静心里却紧张起来" – "，起来"',
+  );
+  expect(cleanMandarinSpeechText("1. Trợ từ kết cấu 的")).toBe("的");
  });
 });
 

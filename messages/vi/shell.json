@@ -90,7 +90,19 @@
   "lessonNavigationAria": "Chuyển nhanh bài HanziHome",
   "chooseLessonAria": "Chọn bài học HanziHome",
   "lessonOption": "Bài {number}: {title}",
-  "openAllSettings": "Mở tất cả cài đặt"
+  "openAllSettings": "Mở tất cả cài đặt",
+  "showPinyin": "Hiện phiên âm Pinyin",
+  "hidePinyin": "Ẩn phiên âm Pinyin",
+  "showMeaning": "Hiện bản dịch tiếng Việt",
+  "hideMeaning": "Ẩn bản dịch tiếng Việt",
+  "meaning": "Bản dịch",
+  "displaySettings": "Hiển thị nội dung",
+  "readingDisplay": "Hiển thị nội dung",
+  "displayModeBoth": "Pinyin & Dịch",
+  "displayModePinyinOnly": "Pinyin",
+  "displayModeMeaningOnly": "Bản dịch",
+  "displayModeHanziOnly": "Chữ Hán",
+  "voiceSettings": "Cài đặt giọng đọc & Âm thanh"
  },
  "breadcrumbs": {
   "study": "Học",

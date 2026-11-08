@@ -26,6 +26,8 @@ export type ReaderServices = {
   leadingActions?: ReactNode;
   hideAdvancedTools?: boolean;
   hideContentDisplay?: boolean;
+  hidePinyinToggle?: boolean;
+  hideTranslationToggle?: boolean;
  };
  renderReader?: (input: { content: ReactNode }) => ReactNode;
  renderTools?: (input: { content: ReactNode }) => ReactNode;

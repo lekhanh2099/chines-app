@@ -16,6 +16,7 @@ describe("OfflineAudioSettingsDialog", () => {
   );
 
   expect(html).toContain("Offline &amp; Giọng đọc");
+  expect(html).not.toContain("Tải Model AI");
  });
 
  it("renders custom trigger if provided", () => {

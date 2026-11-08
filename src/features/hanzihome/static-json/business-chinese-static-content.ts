@@ -70,8 +70,6 @@ const businessChineseCorpusSchema = z.object({
  books: z.array(businessChineseBookSchema).length(2),
 });
 
-const businessChineseCorpus = businessChineseCorpusSchema.parse(businessChineseSeed);
-
 const textbookLessonSchema = businessChineseLessonSchema.extend({
  bookKey: z.enum(["tm2", "tm3", "nhip-cau", "doc-hieu", "khau-ngu"]),
  number: z.number().int().positive(),
@@ -82,30 +80,77 @@ const textbookBookSchema = businessChineseBookSchema.extend({
  lessons: z.array(textbookLessonSchema).min(1),
 });
 
-const chineseBridgeBook = textbookBookSchema
- .extend({
-  key: z.literal("nhip-cau"),
-  lessons: z.array(textbookLessonSchema.extend({ bookKey: z.literal("nhip-cau") })).length(15),
- })
- .parse(chineseBridgeSeed);
-const readingComprehensionBook = textbookBookSchema
- .extend({
-  key: z.literal("doc-hieu"),
-  lessons: z.array(textbookLessonSchema.extend({ bookKey: z.literal("doc-hieu") })).length(18),
- })
- .parse(readingComprehensionSeed);
-const spokenChineseBook = textbookBookSchema
- .extend({
-  key: z.literal("khau-ngu"),
-  lessons: z.array(textbookLessonSchema.extend({ bookKey: z.literal("khau-ngu") })).length(24),
- })
- .parse(spokenChineseSeed);
-const textbookBooks = [
- ...businessChineseCorpus.books,
- chineseBridgeBook,
- readingComprehensionBook,
- spokenChineseBook,
-];
+export type TextbookBook = z.infer<typeof textbookBookSchema>;
+
+let _businessChineseCorpus: z.infer<typeof businessChineseCorpusSchema> | null = null;
+export function getBusinessChineseCorpus() {
+ if (!_businessChineseCorpus) {
+  _businessChineseCorpus = businessChineseCorpusSchema.parse(businessChineseSeed);
+ }
+ return _businessChineseCorpus;
+}
+
+let _chineseBridgeBook: TextbookBook | null = null;
+function getChineseBridgeBook(): TextbookBook {
+ if (!_chineseBridgeBook) {
+  _chineseBridgeBook = textbookBookSchema
+   .extend({
+    key: z.literal("nhip-cau"),
+    lessons: z.array(textbookLessonSchema.extend({ bookKey: z.literal("nhip-cau") })).length(15),
+   })
+   .parse(chineseBridgeSeed);
+ }
+ return _chineseBridgeBook;
+}
+
+let _readingComprehensionBook: TextbookBook | null = null;
+function getReadingComprehensionBook(): TextbookBook {
+ if (!_readingComprehensionBook) {
+  _readingComprehensionBook = textbookBookSchema
+   .extend({
+    key: z.literal("doc-hieu"),
+    lessons: z.array(textbookLessonSchema.extend({ bookKey: z.literal("doc-hieu") })).length(18),
+   })
+   .parse(readingComprehensionSeed);
+ }
+ return _readingComprehensionBook;
+}
+
+let _spokenChineseBook: TextbookBook | null = null;
+function getSpokenChineseBook(): TextbookBook {
+ if (!_spokenChineseBook) {
+  _spokenChineseBook = textbookBookSchema
+   .extend({
+    key: z.literal("khau-ngu"),
+    lessons: z.array(textbookLessonSchema.extend({ bookKey: z.literal("khau-ngu") })).length(24),
+   })
+   .parse(spokenChineseSeed);
+ }
+ return _spokenChineseBook;
+}
+
+function getBookByKey(key: TextbookLesson["bookKey"]): TextbookBook | null {
+ switch (key) {
+  case "tm2":
+  case "tm3":
+   return getBusinessChineseCorpus().books.find((b) => b.key === key) ?? null;
+  case "nhip-cau":
+   return getChineseBridgeBook();
+  case "doc-hieu":
+   return getReadingComprehensionBook();
+  case "khau-ngu":
+   return getSpokenChineseBook();
+ }
+}
+
+function getAllTextbookBooks(): readonly TextbookBook[] {
+ return [
+  ...getBusinessChineseCorpus().books,
+  getChineseBridgeBook(),
+  getReadingComprehensionBook(),
+  getSpokenChineseBook(),
+ ];
+}
 
 export type TextbookLesson = z.infer<typeof textbookLessonSchema>;
 
@@ -129,7 +174,7 @@ export type BusinessChineseBookSummary = {
 };
 
 export function getBusinessChineseCatalog(): BusinessChineseBookSummary[] {
- return businessChineseCorpus.books.map((book) => ({
+ return getBusinessChineseCorpus().books.map((book) => ({
   id: book.id,
   key: book.key,
   label: book.label,
@@ -147,16 +192,12 @@ export function getBusinessChineseLesson(
  bookKey: BusinessChineseLesson["bookKey"],
  lessonNumber: number,
 ): BusinessChineseLesson | null {
- const book = businessChineseCorpus.books.find((item) => item.key === bookKey);
+ const book = getBusinessChineseCorpus().books.find((item) => item.key === bookKey);
  return book?.lessons.find((lesson) => lesson.number === lessonNumber) ?? null;
 }
 
-export function getBusinessChineseCorpus() {
- return businessChineseCorpus;
-}
-
 export function getTextbookCatalog() {
- return textbookBooks.map((book) => ({
+ return getAllTextbookBooks().map((book) => ({
   id: book.id,
   key: book.key,
   label: book.label,
@@ -171,13 +212,24 @@ export function getTextbookCatalog() {
 }
 
 export function getTextbookCatalogForBookKeys(bookKeys: readonly TextbookLesson["bookKey"][]) {
- return getTextbookCatalog().filter((book) => bookKeys.includes(book.key));
+ return bookKeys
+  .map((key) => getBookByKey(key))
+  .filter((book): book is TextbookBook => book !== null)
+  .map((book) => ({
+   id: book.id,
+   key: book.key,
+   label: book.label,
+   lessons: book.lessons.map((lesson) => ({
+    id: lesson.id,
+    bookKey: lesson.bookKey,
+    number: lesson.number,
+    title: lesson.title,
+    vocabCount: lesson.vocab.length,
+   })),
+  }));
 }
 
 export function getTextbookLesson(bookKey: TextbookLesson["bookKey"], lessonNumber: number) {
- return (
-  textbookBooks
-   .find((book) => book.key === bookKey)
-   ?.lessons.find((lesson) => lesson.number === lessonNumber) ?? null
- );
+ const book = getBookByKey(bookKey);
+ return book?.lessons.find((lesson) => lesson.number === lessonNumber) ?? null;
 }

@@ -90,7 +90,19 @@
   "lessonNavigationAria": "快速切换 HanziHome 课时",
   "chooseLessonAria": "选择 HanziHome 课时",
   "lessonOption": "第 {number} 课：{title}",
-  "openAllSettings": "打开全部设置"
+  "openAllSettings": "打开全部设置",
+  "showPinyin": "显示拼音",
+  "hidePinyin": "隐藏拼音",
+  "showMeaning": "显示越南语翻译",
+  "hideMeaning": "隐藏越南语翻译",
+  "meaning": "翻译",
+  "displaySettings": "内容显示",
+  "readingDisplay": "内容显示",
+  "displayModeBoth": "拼音与翻译",
+  "displayModePinyinOnly": "拼音",
+  "displayModeMeaningOnly": "翻译",
+  "displayModeHanziOnly": "仅汉字",
+  "voiceSettings": "语音与音频设置"
  },
  "breadcrumbs": {
   "study": "学习",
