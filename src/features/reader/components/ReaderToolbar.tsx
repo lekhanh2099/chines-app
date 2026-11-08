@@ -32,7 +32,7 @@ import {
 import { ReaderOutline } from "./ReaderOutline";
 import { ReaderTools } from "./ReaderTools";
 
-export function ReaderToolbar() {
+export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
  const t = useTranslations("Reader.study.chrome.commands");
  const toolsLabels = useTranslations("Reader.study.chrome.tools");
  const commands = useReaderCommands();
@@ -72,18 +72,8 @@ export function ReaderToolbar() {
   else commands.playCurrent();
  };
 
- return (
-  <Card
-   padding="sm"
-   variant={toolbar?.stickyOffset ? "elevated" : "default"}
-   className={
-    toolbar?.stickyOffset === "tabs"
-     ? "sticky top-12 z-20"
-     : toolbar?.stickyOffset === "page"
-       ? "sticky top-0 z-20"
-       : undefined
-   }
-  >
+ const controls = (
+  <>
    <div
     className="flex min-w-0 items-center gap-1.5 overflow-x-auto scrollbar-none"
     data-reader-toolbar
@@ -244,6 +234,23 @@ export function ReaderToolbar() {
      {error}
     </Typography>
    ) : null}
+  </>
+ );
+ return inline ? (
+  <div className="min-w-0">{controls}</div>
+ ) : (
+  <Card
+   padding="sm"
+   variant={toolbar?.stickyOffset ? "elevated" : "default"}
+   className={
+    toolbar?.stickyOffset === "tabs"
+     ? "sticky top-12 z-20"
+     : toolbar?.stickyOffset === "page"
+       ? "sticky top-0 z-20"
+       : undefined
+   }
+  >
+   {controls}
   </Card>
  );
 }

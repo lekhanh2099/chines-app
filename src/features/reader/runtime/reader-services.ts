@@ -29,7 +29,8 @@ export type ReaderServices = {
   hidePinyinToggle?: boolean;
   hideTranslationToggle?: boolean;
  };
- renderReader?: (input: { content: ReactNode }) => ReactNode;
+ renderReader?: (input: { content: ReactNode; toolbar: ReactNode }) => ReactNode;
+ placeToolbarInLayout?: boolean;
  renderTools?: (input: { content: ReactNode }) => ReactNode;
  renderHanzi?: (input: { segment: ReaderSegment; content: ReactNode }) => ReactNode;
  renderSegment?: (input: { segment: ReaderSegment; content: ReactNode }) => ReactNode;

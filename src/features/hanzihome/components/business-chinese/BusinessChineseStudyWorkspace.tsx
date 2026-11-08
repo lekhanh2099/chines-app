@@ -1712,6 +1712,15 @@ export function BusinessChineseStudyWorkspace({
      ? resume.module
      : "all");
  const activeView = tabs.find((item) => item.key === requestedView)?.key ?? "all";
+ const [hasWideToolbar, setHasWideToolbar] = useState(false);
+ useEffect(() => {
+  const query = window.matchMedia("(min-width: 96rem)");
+  const updateToolbar = () => setHasWideToolbar(query.matches);
+  updateToolbar();
+  query.addEventListener("change", updateToolbar);
+  return () => query.removeEventListener("change", updateToolbar);
+ }, []);
+ const placeToolbarInLayout = activeView === "text" && hasWideToolbar;
  const readerDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, activeView),
   [activeView, lesson],
@@ -1786,12 +1795,13 @@ export function BusinessChineseStudyWorkspace({
 
  const workspaceReaderServices = useMemo<ReaderServices>(
   () => ({
+   placeToolbarInLayout,
    toolbar: {
     actions: toolbarNavMenu,
-    hidePinyinToggle: true,
-    hideTranslationToggle: true,
+    hidePinyinToggle: !placeToolbarInLayout,
+    hideTranslationToggle: !placeToolbarInLayout,
    },
-   renderReader: ({ content }) => (
+   renderReader: ({ content, toolbar }) => (
     <BusinessChineseStudyWorkspaceContent
      books={books}
      lesson={lesson}
@@ -1801,12 +1811,14 @@ export function BusinessChineseStudyWorkspace({
      isLessonBookmarked={isLessonBookmarked}
      onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
      readerContent={content}
+     readerToolbar={toolbar}
      bookKey={bookKey}
      displayMode={displayMode}
     />
    ),
   }),
   [
+   placeToolbarInLayout,
    toolbarNavMenu,
    books,
    lesson,
@@ -1861,10 +1873,12 @@ function BusinessChineseReader({
     ...integration.services.toolbar,
     ...services?.toolbar,
    },
-   renderReader: ({ content }) => {
-    const workspace = services?.renderReader ? services.renderReader({ content }) : content;
+   renderReader: ({ content, toolbar }) => {
+    const workspace = services?.renderReader
+     ? services.renderReader({ content, toolbar })
+     : content;
     return integration.services.renderReader
-     ? integration.services.renderReader({ content: workspace })
+     ? integration.services.renderReader({ content: workspace, toolbar: null })
      : workspace;
    },
   }),
@@ -1883,6 +1897,7 @@ function BusinessChineseStudyWorkspaceContent({
  isLessonBookmarked,
  onToggleLessonBookmark,
  readerContent,
+ readerToolbar,
  bookKey,
  displayMode,
 }: {
@@ -1894,6 +1909,7 @@ function BusinessChineseStudyWorkspaceContent({
  isLessonBookmarked: boolean;
  onToggleLessonBookmark: () => void;
  readerContent: ReactNode;
+ readerToolbar: ReactNode;
  bookKey: string;
  displayMode: LessonDisplayMode;
 }) {
@@ -2133,6 +2149,7 @@ function BusinessChineseStudyWorkspaceContent({
 
  const desktopTabActions = (
   <>
+   {readerToolbar}
    <OfflineAudioSettingsDialog lesson={lesson} />
    <div className="flex shrink-0 items-center gap-1.5">
     <Button

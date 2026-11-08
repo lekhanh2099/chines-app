@@ -53,7 +53,8 @@ function ReaderFrame({ className }: { className?: string }) {
  const t = useTranslations("Reader.study.chrome.surface");
  const commands = useReaderCommands();
  const { actions } = useReaderStore();
- const { speech, renderReader } = useReaderServices();
+ const { speech, renderReader, placeToolbarInLayout } = useReaderServices();
+ const inlineToolbar = Boolean(renderReader && placeToolbarInLayout);
  const status = useReaderSelector((state) => state.playback.status);
  const focus = useReaderSelector((state) => state.ui.focusMode);
  const content = (
@@ -110,9 +111,11 @@ function ReaderFrame({ className }: { className?: string }) {
     event.clipboardData.setData("text/plain", fragment.textContent ?? "");
    }}
   >
-   <ReaderToolbar />
+   {inlineToolbar ? null : <ReaderToolbar />}
    <ReaderContent />
   </section>
  );
- return renderReader ? renderReader({ content }) : content;
+ return renderReader
+  ? renderReader({ content, toolbar: inlineToolbar ? <ReaderToolbar inline /> : null })
+  : content;
 }

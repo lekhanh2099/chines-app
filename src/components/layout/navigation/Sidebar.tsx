@@ -365,79 +365,147 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
     ) : (
      <div className="grid content-start gap-1.5">
       {visibleNavigationGroups.map((group) => {
-       const groupOpen = isGroupExpanded(group.id);
+       const isLearning = group.id === "learning";
+       const groupOpen = isLearning || isGroupExpanded(group.id);
        const GroupIcon = group.icon;
        const groupLabel = t(group.messageKey);
+       const activeSection =
+        group.id === "learning"
+         ? group.sections.find(
+            (section) =>
+             section.collapsible &&
+             section.itemIds.some((itemId) => isActive(pathname, searchParams, itemId)),
+           )
+         : undefined;
+       const sections = activeSection
+        ? [
+           ...group.sections.filter((section) => !section.collapsible),
+           activeSection,
+           ...group.sections.filter((section) => section.collapsible && section !== activeSection),
+          ]
+        : group.sections;
 
        return (
         <section key={group.id} aria-label={groupLabel} className="grid content-start">
-         <Button
-          type="button"
-          variant="navigation"
-          size="toolbar"
-          align="between"
-          className="w-full min-w-0"
-          aria-expanded={groupOpen}
-          aria-controls={`sidebar-group-${group.id}`}
-          onClick={() => {
-           const currentOpen = isGroupExpanded(group.id);
-           setOpenGroupOverrides((prev) => ({
-            ...prev,
-            [group.id]: !currentOpen,
-           }));
-          }}
-         >
-          <span className="flex min-w-0 flex-1 items-center gap-2.5">
-           <GroupIcon
-            className={cn("size-4 shrink-0", groupOpen ? "text-primary" : "text-foreground-muted")}
+         {!isLearning ? (
+          <Button
+           type="button"
+           variant="navigation"
+           size="toolbar"
+           align="between"
+           className="w-full min-w-0"
+           aria-expanded={groupOpen}
+           aria-controls={`sidebar-group-${group.id}`}
+           onClick={() => {
+            const currentOpen = isGroupExpanded(group.id);
+            setOpenGroupOverrides((prev) => ({
+             ...prev,
+             [group.id]: !currentOpen,
+            }));
+           }}
+          >
+           <span className="flex min-w-0 flex-1 items-center gap-2.5">
+            <GroupIcon
+             className={cn("size-4 shrink-0", groupOpen ? "text-primary" : "text-foreground-muted")}
+            />
+            <Typography
+             as="span"
+             variant="bodySmall"
+             tone={groupOpen ? "default" : "inherit"}
+             weight={groupOpen ? "bold" : "medium"}
+             clamp="one"
+             className="min-w-0 flex-1 text-start"
+            >
+             {groupLabel}
+            </Typography>
+           </span>
+           <ChevronRight
+            data-icon="inline-end"
+            className={cn(
+             "size-3.5 shrink-0 text-foreground-muted transition-transform duration-200",
+             groupOpen && "rotate-90",
+            )}
            />
-           <Typography
-            as="span"
-            variant="bodySmall"
-            tone={groupOpen ? "default" : "inherit"}
-            weight={groupOpen ? "bold" : "medium"}
-            clamp="one"
-            className="min-w-0 flex-1 text-start"
-           >
-            {groupLabel}
-           </Typography>
-          </span>
-          <ChevronRight
-           data-icon="inline-end"
-           className={cn(
-            "size-3.5 shrink-0 text-foreground-muted transition-transform duration-200",
-            groupOpen && "rotate-90",
-           )}
-          />
-         </Button>
+          </Button>
+         ) : null}
 
          {groupOpen ? (
           <div id={`sidebar-group-${group.id}`} className="grid gap-0.5 pt-0.5 pb-2">
-           {group.sections.map((section) => (
-            <div key={section.id} id={`sidebar-section-${section.id}`} className="grid gap-0.5">
-             {section.collapsible ? (
-              <div className="px-2.5 pt-2.5 pb-1">
-               <Typography
-                as="h3"
-                variant="overline"
-                tone="muted"
-                weight="bold"
-                className="select-none"
-               >
-                {t(section.messageKey)}
-               </Typography>
+           {sections.map((section) => {
+            if (group.id === "learning" && section.collapsible) {
+             const activeItem = section.itemIds.find((itemId) =>
+              isActive(pathname, searchParams, itemId),
+             );
+             return (
+              <div key={section.id} id={`sidebar-section-${section.id}`} className="grid gap-0.5">
+               {activeItem ? (
+                <>
+                 {section.id === "textbooks" ? (
+                  <Typography
+                   as="h3"
+                   variant="overline"
+                   tone="muted"
+                   weight="bold"
+                   className="px-2.5 pt-2"
+                  >
+                   {t("search.quickAccess")}
+                  </Typography>
+                 ) : null}
+                 <NavRow itemId={activeItem} active collapsed={false} />
+                </>
+               ) : null}
+               <details className="group/section">
+                <summary
+                 className={cn(
+                  "flex min-h-9 cursor-pointer list-none items-center justify-between rounded-lg px-2.5 [&::-webkit-details-marker]:hidden",
+                  focusRingClassName,
+                 )}
+                >
+                 <Typography as="span" variant="overline" tone="muted" weight="bold">
+                  {t(section.messageKey)}
+                 </Typography>
+                 <ChevronRight
+                  aria-hidden="true"
+                  className="size-3.5 shrink-0 text-foreground-muted group-open/section:rotate-90"
+                 />
+                </summary>
+                <div className="grid gap-0.5">
+                 {section.itemIds
+                  .filter((itemId) => itemId !== activeItem)
+                  .map((itemId) => (
+                   <NavRow key={itemId} itemId={itemId} active={false} collapsed={false} />
+                  ))}
+                </div>
+               </details>
               </div>
-             ) : null}
-             {section.itemIds.map((itemId) => (
-              <NavRow
-               key={itemId}
-               itemId={itemId}
-               active={isActive(pathname, searchParams, itemId)}
-               collapsed={false}
-              />
-             ))}
-            </div>
-           ))}
+             );
+            }
+            return (
+             <div key={section.id} id={`sidebar-section-${section.id}`} className="grid gap-0.5">
+              {section.collapsible ? (
+               <div className="px-2.5 pt-2.5 pb-1">
+                <Typography
+                 as="h3"
+                 variant="overline"
+                 tone="muted"
+                 weight="bold"
+                 className="select-none"
+                >
+                 {t(section.messageKey)}
+                </Typography>
+               </div>
+              ) : null}
+              {section.itemIds.map((itemId) => (
+               <NavRow
+                key={itemId}
+                itemId={itemId}
+                active={isActive(pathname, searchParams, itemId)}
+                collapsed={false}
+               />
+              ))}
+             </div>
+            );
+           })}
           </div>
          ) : null}
         </section>
