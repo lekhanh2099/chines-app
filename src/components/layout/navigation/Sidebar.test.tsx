@@ -129,11 +129,12 @@ describe("Sidebar translations", () => {
       <Sidebar canManageContent />
      </NextIntlClientProvider>,
     );
-    expect(groupMarkup).toMatch(
-     new RegExp(
-      `<button(?=[^>]*aria-expanded="true")(?=[^>]*aria-controls="sidebar-group-${group.id}")`,
-     ),
-    );
+    if (group.id !== "learning")
+     expect(groupMarkup).toMatch(
+      new RegExp(
+       `<button(?=[^>]*aria-expanded="true")(?=[^>]*aria-controls="sidebar-group-${group.id}")`,
+      ),
+     );
     expect(groupMarkup).toContain(`id="sidebar-group-${group.id}"`);
     for (const section of group.sections) {
      expect(groupMarkup).toContain(`id="sidebar-section-${section.id}"`);
@@ -213,6 +214,15 @@ describe("Sidebar translations", () => {
    expect(activeLinks[0]).toContain(`href="${pathname}"`);
    expect(activeLinks[0]).not.toContain('href="/hsk"');
    expect(markup).toContain('id="sidebar-section-textbooks"');
+   const textbookSection = markup.split('id="sidebar-section-textbooks"')[1] ?? "";
+   expect(markup.indexOf('id="sidebar-section-textbooks"')).toBeLessThan(
+    markup.indexOf('id="sidebar-section-hsk-reading"'),
+   );
+   const textbookDisclosure = textbookSection.match(/<details\b[^>]*>/)?.[0];
+   expect(textbookDisclosure).toBeDefined();
+   expect(textbookDisclosure).not.toContain("open=");
+   expect(textbookSection.split("<details")[0]).toContain(messages.Shell.search.quickAccess);
+   expect(textbookSection.split("<details")[0]).toContain(`href="${pathname}"`);
    currentPathname = "/reader";
   },
  );
@@ -298,7 +308,7 @@ describe("Sidebar translations", () => {
   );
   const activeLink = markup.match(/<a(?=[^>]*aria-current="page")[^>]*>.*?<\/a>/)?.[0] ?? "";
 
-  expect(markup).toMatch(
+  expect(markup).not.toMatch(
    /<button(?=[^>]*data-variant="navigation")(?=[^>]*aria-controls="sidebar-group-learning")/,
   );
   expect(markup).toContain('id="sidebar-section-hsk-reading"');

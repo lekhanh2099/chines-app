@@ -21,6 +21,32 @@ function IntegratedWorkspace({ children }: { children: ReactNode }) {
 }
 
 describe("standalone Reader facade", () => {
+ it.each([false, true])(
+  "renders exactly one toolbar with layout placement %s",
+  async (placeToolbarInLayout) => {
+   const messages = await loadAppMessages("vi");
+   const html = renderToStaticMarkup(
+    <NextIntlClientProvider locale="vi" messages={messages}>
+     <Reader
+      data={[{ id: "line", zh: "你好。" }]}
+      services={{
+       placeToolbarInLayout,
+       renderReader: ({ content, toolbar }) => (
+        <>
+         <header>{toolbar}</header>
+         {content}
+        </>
+       ),
+      }}
+     />
+    </NextIntlClientProvider>,
+   );
+   expect(html.match(/data-reader-toolbar/g)).toHaveLength(1);
+   expect(html.indexOf("data-reader-toolbar") < html.indexOf("</header>")).toBe(
+    placeToolbarInLayout,
+   );
+  },
+ );
  it("composes workspace and edit wrappers inside the facade runtime using source IDs", async () => {
   const messages = await loadAppMessages("vi");
   const html = renderToStaticMarkup(
@@ -109,6 +135,7 @@ describe("standalone Reader facade", () => {
   if (!firstArticle || !secondArticle) throw new Error("Expected both source paragraph cards.");
 
   expect(articles).toHaveLength(2);
+  expect(html.match(/data-reader-toolbar/g)).toHaveLength(1);
   expect(firstArticle).toContain('data-reader-segment="first"');
   expect(firstArticle).toContain('data-active="true"');
   expect(firstArticle).toContain('aria-current="true"');
