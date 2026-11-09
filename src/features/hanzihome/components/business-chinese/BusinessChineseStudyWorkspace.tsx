@@ -38,6 +38,7 @@ import {
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
+import { IconTile } from "@/components/ui/display/icon-tile";
 import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
@@ -1915,7 +1916,11 @@ function BusinessChineseStudyWorkspaceContent({
 }) {
  const t = useTranslations("BusinessChinese");
  const reviewLesson = useMemo(() => textbookLessonToReviewLesson(lesson), [lesson]);
- const contextualDrills = useMemo(() => generateContextualVocabDrills(lesson), [lesson]);
+ const isReviewView = activeView === "review";
+ const contextualDrills = useMemo(
+  () => (isReviewView ? generateContextualVocabDrills(lesson) : []),
+  [isReviewView, lesson],
+ );
  const {
   isSupported: isPipSupported,
   isOpen: isPipOpen,
@@ -2076,7 +2081,12 @@ function BusinessChineseStudyWorkspaceContent({
  const translationSegments = useMemo(() => translationSegmentsFromTextbook(lesson), [lesson]);
  const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
  const intro = lesson.intro.join(" ");
- const universalTextbookPracticeItems = useMemo(() => adaptAllLessonExercises(lesson), [lesson]);
+ const needsPracticeItems =
+  activeView === "practice" || isReviewView || isPipOpen || isInAppFloatingOpen;
+ const universalTextbookPracticeItems = useMemo(
+  () => (needsPracticeItems ? adaptAllLessonExercises(lesson) : []),
+  [lesson, needsPracticeItems],
+ );
  const textbookGrammarPoints = useMemo(
   () => adaptTextbookGrammarToPip(lesson.sections),
   [lesson.sections],
@@ -2374,15 +2384,49 @@ function BusinessChineseStudyWorkspaceContent({
             {reviewMode === "drills" && contextualDrills.length > 0 ? (
              <BusinessChineseContextualDrills drills={contextualDrills} />
             ) : (
-             <UniversalAmbientPip
-              key={reviewMode}
-              initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
-              lessonTitle={lesson.title}
-              vocabItems={reviewLesson.vocab}
-              grammarItems={textbookGrammarPoints}
-              practiceItems={universalTextbookPracticeItems}
-              isInline
-             />
+             <>
+              <div hidden={isPipOpen || isInAppFloatingOpen}>
+               <UniversalAmbientPip
+                key={reviewMode}
+                initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
+                lessonTitle={lesson.title}
+                vocabItems={reviewLesson.vocab}
+                grammarItems={textbookGrammarPoints}
+                practiceItems={universalTextbookPracticeItems}
+                isInline
+               />
+              </div>
+              {isPipOpen || isInAppFloatingOpen ? (
+               <Card
+                variant="subtle"
+                padding="lg"
+                className="flex min-h-[360px] flex-col items-center justify-center gap-3 text-center"
+               >
+                <IconTile size="lg" tone="accent" className="mx-auto">
+                 <PictureInPicture2 />
+                </IconTile>
+                <div className="grid gap-1">
+                 <Typography variant="sectionTitle" weight="black">
+                  {t("vocabReview.pipActiveTitle")}
+                 </Typography>
+                 <Typography variant="bodySmall" tone="muted" className="max-w-md">
+                  {t("vocabReview.pipActiveDescription")}
+                 </Typography>
+                </div>
+                <Button
+                 type="button"
+                 variant="outline"
+                 size="compact"
+                 onClick={() => {
+                  if (isPipOpen) closePip();
+                  if (isInAppFloatingOpen) setIsInAppFloatingOpen(false);
+                 }}
+                >
+                 {t("vocabReview.pipReturn")}
+                </Button>
+               </Card>
+              ) : null}
+             </>
             )}
            </div>
           ) : null}
@@ -2707,6 +2751,7 @@ function BusinessChineseStudyWorkspaceContent({
       {isPipOpen && pipWindow
        ? createPortal(
           <UniversalAmbientPip
+           key={pipMode}
            initialMode={pipMode}
            lessonTitle={lesson.title}
            vocabItems={reviewLesson.vocab}
@@ -2719,6 +2764,7 @@ function BusinessChineseStudyWorkspaceContent({
        : null}
       {isInAppFloatingOpen ? (
        <UniversalAmbientPip
+        key={pipMode}
         initialMode={pipMode}
         lessonTitle={lesson.title}
         vocabItems={reviewLesson.vocab}

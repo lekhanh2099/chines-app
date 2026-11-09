@@ -21,6 +21,8 @@ import {
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { appLocales } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
+import * as exerciseAdapter from "../practice/universal-exercise-adapter";
+import * as pipHook from "@/features/hanzihome/hooks/useDocumentPip";
 
 const routerPushMock = vi.hoisted(() => vi.fn());
 const readerDocumentMock = vi.hoisted(() => vi.fn<(document: ReaderDocumentModel) => void>());
@@ -114,6 +116,25 @@ function renderWorkspace(element: ReactNode) {
 }
 
 describe("BusinessChineseStudyWorkspace", () => {
+ it("prepares interactive exercises for Practice without doing that work on lesson open", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm3", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+  const adaptExercises = vi.spyOn(exerciseAdapter, "adaptAllLessonExercises");
+
+  try {
+   mockParams = new URLSearchParams("lesson=1");
+   renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+   expect(adaptExercises).not.toHaveBeenCalled();
+
+   mockParams.set("tab", "practice");
+   renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+   expect(adaptExercises).toHaveBeenCalledOnce();
+  } finally {
+   adaptExercises.mockRestore();
+  }
+ });
+
  it.each(["vocab", "practice"])("honors the saved Pinyin setting in the %s tab", (tab) => {
   const books = getTextbookCatalog();
   const book = books.find((item) => item.key === "khau-ngu");
@@ -1461,6 +1482,31 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("Ôn tập chủ động");
   expect(markup).toContain("Thẻ Flashcard");
   expect(markup).toContain("Ứng dụng ngữ cảnh");
+ });
+
+ it("renders the floating PiP active notice instead of the inline card when PiP is open", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  const pipSpy = vi.spyOn(pipHook, "useDocumentPip").mockReturnValue({
+   isSupported: true,
+   isOpen: true,
+   pipWindow: null,
+   openPip: vi.fn(),
+   closePip: vi.fn(),
+  });
+
+  try {
+   mockParams = new URLSearchParams("lesson=1&tab=review");
+   const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
+
+   expect(markup).toContain("Đang ôn tập trong cửa sổ nổi");
+   expect(markup).toContain("Đưa về trang này (Đóng cửa sổ nổi)");
+   expect(markup).toContain('hidden=""');
+  } finally {
+   pipSpy.mockRestore();
+  }
  });
 
  it("renders the vocab review CTA card when tab=vocab is active", () => {

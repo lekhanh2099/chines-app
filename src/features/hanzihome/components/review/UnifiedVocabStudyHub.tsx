@@ -5,7 +5,9 @@ import { createPortal } from "react-dom";
 import { FolderPlus, PictureInPicture2 } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
+import { IconTile } from "@/components/ui/display/icon-tile";
 import { Typography } from "@/components/ui/display/typography";
+import { useTranslations } from "next-intl";
 import {
  Select,
  SelectContent,
@@ -60,6 +62,7 @@ export function UnifiedVocabStudyHub({
  defaultSource = "bookmarked-lessons",
  defaultOpenInline = false,
 }: UnifiedVocabStudyHubProps) {
+ const t = useTranslations("BusinessChinese");
  const learning = useLearningState();
  const bookmarkedLessonIds = useMemo(
   () => learning.state.bookmarks.lessons ?? [],
@@ -381,16 +384,44 @@ export function UnifiedVocabStudyHub({
     {isInlineOpen && (hasActiveVocab || hasActivePractice) ? (
      <div className="mx-auto w-full max-w-3xl pt-1">
       <Card variant="default" padding="none" className="min-h-[380px] overflow-hidden">
-       <UniversalAmbientPip
-        key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
-        initialMode={activeFlowMode}
-        lessonTitle={activeBundle.title}
-        vocabItems={activeBundle.vocabItems}
-        grammarItems={activeBundle.grammarItems}
-        practiceItems={activeBundle.practiceItems}
-        onClose={() => setIsInlineOpen(false)}
-        isInline
-       />
+       <div hidden={isPipOpen || isInAppFloatingOpen}>
+        <UniversalAmbientPip
+         key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
+         initialMode={activeFlowMode}
+         lessonTitle={activeBundle.title}
+         vocabItems={activeBundle.vocabItems}
+         grammarItems={activeBundle.grammarItems}
+         practiceItems={activeBundle.practiceItems}
+         onClose={() => setIsInlineOpen(false)}
+         isInline
+        />
+       </div>
+       {isPipOpen || isInAppFloatingOpen ? (
+        <div className="flex min-h-[380px] flex-col items-center justify-center gap-3 p-8 text-center">
+         <IconTile size="lg" tone="accent" className="mx-auto">
+          <PictureInPicture2 />
+         </IconTile>
+         <div className="grid gap-1">
+          <Typography variant="sectionTitle" weight="black">
+           {t("vocabReview.pipActiveTitle")}
+          </Typography>
+          <Typography variant="bodySmall" tone="muted" className="max-w-md">
+           {t("vocabReview.pipActiveDescription")}
+          </Typography>
+         </div>
+         <Button
+          type="button"
+          variant="outline"
+          size="compact"
+          onClick={() => {
+           if (isPipOpen) closePip();
+           if (isInAppFloatingOpen) setIsInAppFloatingOpen(false);
+          }}
+         >
+          {t("vocabReview.pipReturn")}
+         </Button>
+        </div>
+       ) : null}
       </Card>
      </div>
     ) : null}

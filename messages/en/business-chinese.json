@@ -88,6 +88,9 @@
   },
   "pipButton": "Floating Card (PiP)",
   "pipTooltip": "Open floating card on desktop for ambient vocabulary recognition",
-  "pipActive": "Floating card active"
+  "pipActive": "Floating card active",
+  "pipActiveTitle": "Reviewing in floating window",
+  "pipActiveDescription": "Review session is currently running in the Picture-in-Picture window. You can browse other lesson sections or switch to other apps.",
+  "pipReturn": "Bring back to page (Close floating window)"
  }
 }
