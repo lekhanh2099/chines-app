@@ -156,9 +156,10 @@ Example HanziHome pilot: a Pinyin bug with a current reproduction, verified expe
 Retain [affected CI selection](../../.github/workflows/ci.yml), configured npm commands and [test proof boundaries](../testing/frontend-flow-coverage.md). Before adding a dependency checker, SAST tool or orchestrator, identify a concrete gap in existing guards.
 
 Use a draft PR during implementation. Synchronized pushes verify the new change
-and affected consumers, with full coverage for uncertain history. Mark the PR
-ready after reviewing the diff and evidence. The required gate checks the entire
-PR scope with the suites defined in the test coverage document above.
+and affected consumers when the previous head is usable. With a verified merge
+snapshot, CI can fall back to the full PR diff. Mark the PR ready after reviewing
+the diff and evidence. The required gate selects suites from the entire PR scope
+as defined in the test coverage document above.
 
 PR jobs test GitHub's merge snapshot. Protected `main` requires the PR branch
 to be up to date. An integration update triggers verification of the new

@@ -82,15 +82,15 @@ function select({
    EVENT_ACTION: "synchronize",
    PR_DRAFT: "true",
    PR_BASE: base,
-   PUSH_BASE: previous,
+   BEFORE_SHA: previous,
    PR_HEAD: head,
    GITHUB_OUTPUT: output,
    GITHUB_STEP_SUMMARY: path.join(directory, "summary"),
    ...event,
   };
   if (event.PR_BASE === "advanced") env.PR_BASE = head;
-  if (event.PUSH_BASE === "rewritten") {
-   env.PUSH_BASE = git("commit-tree", previous + "^{tree}", "-m", "discarded old head");
+  if (event.BEFORE_SHA === "rewritten") {
+   env.BEFORE_SHA = git("commit-tree", previous + "^{tree}", "-m", "discarded old head");
   }
   execFileSync(process.execPath, ["--input-type=module"], {
    cwd: directory,
@@ -117,6 +117,140 @@ describe("CI affected selection with actual Git history", () => {
   expect(JSON.parse(result.unit_files)).toEqual(["src/features/notes/hooks/useNoteDetail.ts"]);
   expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
   expect(result.unit_full).toBe("false");
+ });
+
+ it.each([
+  "",
+  "0000000000000000000000000000000000000000",
+  "1111111111111111111111111111111111111111",
+  "rewritten",
+ ])("uses the complete PR diff when the previous draft head is unusable: %j", (before) => {
+  const result = select({
+   earlier: ["src/features/home/HomeDashboard.tsx"],
+   event: { BEFORE_SHA: before },
+  });
+  expect(JSON.parse(result.unit_files)).toEqual([
+   "src/features/home/HomeDashboard.tsx",
+   "src/features/notes/hooks/useNoteDetail.ts",
+  ]);
+  expect(result.browser_files).toContain("HomeDashboard.browser.test.ts");
+  expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
+  expect(result).toMatchObject({
+   unit_full: "false",
+   e2e_grep: "keeps two Notes drafts|fences linked Reader Notes",
+  });
+ });
+
+ it("uses the complete PR diff when the merge base advanced past the previous draft head", () => {
+  const result = select({
+   earlier: ["src/features/home/HomeDashboard.tsx"],
+   baseOnly: ["src/lib/supabase/server.ts"],
+  });
+  expect(JSON.parse(result.unit_files)).toEqual([
+   "src/features/home/HomeDashboard.tsx",
+   "src/features/notes/hooks/useNoteDetail.ts",
+  ]);
+  expect(result.unit_full).toBe("false");
+ });
+
+ it("selects the mounted Home fixture for a scoped ready PR", () => {
+  expect(
+   select({
+    earlier: [],
+    latest: ["src/features/home/HomeDashboard.tsx"],
+    event: { PR_DRAFT: "false", EVENT_ACTION: "ready_for_review" },
+   }),
+  ).toMatchObject({
+   code: "true",
+   guidance: "false",
+   unit_full: "false",
+   browser_files: "src/features/home/HomeDashboard.browser.test.ts",
+   e2e_grep: "",
+  });
+ });
+
+ it("combines affected consumers from the whole ready PR, including earlier product changes", () => {
+  const result = select({
+   earlier: ["src/features/notes/hooks/useNoteDetail.ts"],
+   latest: ["src/features/home/HomeDashboard.tsx"],
+   event: { PR_DRAFT: "false" },
+  });
+  expect(JSON.parse(result.unit_files)).toEqual([
+   "src/features/home/HomeDashboard.tsx",
+   "src/features/notes/hooks/useNoteDetail.ts",
+  ]);
+  expect(result.browser_files.split(" ")).toEqual([
+   "src/features/home/HomeDashboard.browser.test.ts",
+   "src/features/notes/hooks/NoteEditor.browser.test.ts",
+   "src/features/notes/hooks/NoteOwner.browser.test.ts",
+  ]);
+  expect(result).toMatchObject({
+   unit_full: "false",
+   e2e_grep: "keeps two Notes drafts|fences linked Reader Notes",
+  });
+ });
+
+ it.each([
+  "src/app/auth/callback/route.ts",
+  "src/app/api/ai/conversation/route.ts",
+  "public/sw.js",
+  "src/components/ui/actions/button.tsx",
+  "e2e/hanzihome.spec.ts",
+  "src/features/hanzihome/unmapped-owner.ts",
+  "src/lib/supabase/server.ts",
+ ])("keeps full coverage for a risky or unmapped ready PR path: %s", (file) => {
+  const result = select({
+   earlier: [],
+   latest: ["src/features/home/HomeDashboard.tsx", file],
+   event: { PR_DRAFT: "false" },
+  });
+  expect(result).toMatchObject({ code: "true", unit_full: "true", e2e_grep: "." });
+  expect(result.browser_files.split(" ")).toHaveLength(15);
+ });
+
+ it("uses the product cases covering a mapped annotations API", () => {
+  const result = select({
+   earlier: [],
+   latest: ["src/app/api/hanzihome/lesson-annotations/route.ts"],
+   event: { PR_DRAFT: "false" },
+  });
+  expect(result.browser_files).toContain("LessonAnnotations.browser.test.ts");
+  expect(result).toMatchObject({
+   unit_full: "true",
+   e2e_grep: "keeps two Notes drafts|fences linked Reader Notes",
+  });
+ });
+
+ it.each(["true", "false"])(
+  "retains full coverage for the shared learning-state hook (draft: %s)",
+  (draft) => {
+   const result = select({
+    earlier: [],
+    latest: ["src/features/hanzihome/hooks/useLearningState.ts"],
+    event: { PR_DRAFT: draft },
+   });
+   expect(result).toMatchObject({ unit_full: "true", e2e_grep: "." });
+   expect(result.browser_files.split(" ")).toHaveLength(15);
+  },
+ );
+
+ it.each([
+  "src/features/notes/hooks/useCreateLessonLinkedNote.ts",
+  "src/features/notes/components/NoteConflictDialog.tsx",
+ ])("tests Notes and textbook consumers of shared note editing: %s", (file) => {
+  const result = select({ earlier: [], latest: [file], event: { PR_DRAFT: "false" } });
+  expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
+  expect(result.browser_files).toContain("Reading.browser.test.ts");
+  expect(result.e2e_grep).toBe("keeps two Notes drafts|fences linked Reader Notes");
+ });
+
+ it("includes Home when its recent-notes dependency changes", () => {
+  const result = select({
+   earlier: [],
+   latest: ["src/features/notes/hooks/useRecentNotes.ts"],
+   event: { PR_DRAFT: "false" },
+  });
+  expect(result.browser_files).toContain("HomeDashboard.browser.test.ts");
  });
 
  it.each([
@@ -162,12 +296,19 @@ describe("CI affected selection with actual Git history", () => {
   expect(result.e2e_grep).toBe("keeps two Notes drafts|fences linked Reader Notes");
  });
 
- it("uses all mounted consumers for global CSS without a database run", () => {
-  const result = select({ latest: ["src/app/globals.css"] });
-  expect(result.browser_files.split(" ")).toHaveLength(15);
-  expect(result.e2e_grep).toBe("");
-  expect(result.unit_full).toBe("true");
- });
+ it.each(["true", "false"])(
+  "uses all mounted consumers for global CSS without a database run (draft: %s)",
+  (draft) => {
+   const result = select({
+    earlier: [],
+    latest: ["src/app/globals.css"],
+    event: { PR_DRAFT: draft },
+   });
+   expect(result.browser_files.split(" ")).toHaveLength(15);
+   expect(result.e2e_grep).toBe("");
+   expect(result.unit_full).toBe("true");
+  },
+ );
 
  it("selects the unsaved-draft navigation browser regression", () => {
   const result = select({
@@ -241,8 +382,10 @@ describe("CI affected selection with actual Git history", () => {
   },
  );
 
- it("falls back to full coverage when the tested merge base is newer than the previous draft head", () => {
-  expect(select({ baseOnly: ["src/lib/supabase/server.ts"] }).e2e_grep).toBe(".");
+ it("still runs full coverage when the whole PR fallback includes an earlier dependency change", () => {
+  const result = select({ baseOnly: ["src/lib/supabase/server.ts"] });
+  expect(JSON.parse(result.unit_files)).toContain("package.json");
+  expect(result.e2e_grep).toBe(".");
  });
 
  it.each([
@@ -251,13 +394,13 @@ describe("CI affected selection with actual Git history", () => {
   { EVENT_ACTION: "ready_for_review", PR_DRAFT: "false" },
   { PR_DRAFT: "false" },
   { EVENT_NAME: "workflow_dispatch" },
-  { PUSH_BASE: "" },
-  { PUSH_BASE: "0000000000000000000000000000000000000000" },
-  { PUSH_BASE: "1111111111111111111111111111111111111111" },
+  { EVENT_NAME: "push", BEFORE_SHA: "" },
+  { EVENT_NAME: "push", BEFORE_SHA: "0000000000000000000000000000000000000000" },
+  { EVENT_NAME: "push", BEFORE_SHA: "1111111111111111111111111111111111111111" },
   { PR_BASE: "" },
   { PR_HEAD: "" },
   { PR_BASE: "advanced" },
-  { PUSH_BASE: "rewritten" },
+  { EVENT_NAME: "push", BEFORE_SHA: "rewritten" },
  ])("requires full product coverage for unsafe or full-run events: %j", (event) => {
   expect(select({ event }).e2e_grep).toBe(".");
  });

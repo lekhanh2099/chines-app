@@ -10,31 +10,41 @@ Source of truth: [CI workflow](../../.github/workflows/ci.yml), [package scripts
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Commit                                       | Existing staged-only Oxfmt/Oxlint; không full test suite.                                                                                                 |
 | Guidance-only PR or push                     | Install, format, guidance contracts và tooling regression tests.                                                                                          |
-| Affected code push/draft update              | Full static contract/type checks; Vitest related graph hoặc full Node nếu broad/deleted paths; owner/consumer map chọn mounted fixtures và product cases. |
+| Mapped code in PRs or pushes                 | Full static contract/type checks; Vitest related graph hoặc full Node nếu broad/deleted paths; owner/consumer map chọn mounted fixtures và product cases. |
 | Runtime-loaded fixtures                      | Explicit map trong workflow, vì Vite URL imports không thuộc Vitest static graph. Mounted job riêng, không cần Supabase.                                  |
 | Shared/auth/schema/dependency/unmapped paths | Conservative full Node/browser/product path; không silently mất consumer coverage.                                                                        |
 | Ready PR đổi đúng breakpoint toolbar Reader  | Full static checks, Vitest related, mounted `Reading.browser.test.ts`, production build và production audit.                                              |
-| Other ready code PR, pipeline change, manual | Full Node, mounted fixtures và product/SQL suite cùng static checks, production build và audit.                                                           |
+| High-risk ready PR, pipeline change, manual  | Full Node, mounted fixtures và product/SQL suite cùng static checks, production build và audit.                                                           |
 | Local merge/release                          | `npm run check`; required mounted/SQL/product/coverage/corpus proof theo contract của slice. Performance profiling chạy manual khi cần.                   |
 
 Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify, mounted browser và product E2E chạy độc lập sau selection. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
 
-During draft PR development, each synchronized push selects tests from the
-previous head to the new head. Initial/reopened drafts use the whole PR scope.
-Dependency/shared-owner fallback applies to that selected diff, so an earlier
-dependency patch does not keep forcing full E2E for unrelated draft updates.
-Missing history, rewritten history or an integration base newer than the
-previous head falls back to full validation. The selector fetches full commit
-history to prove ancestry. Selection and all test jobs check out the event SHA
-(`refs/pull/<number>/merge` snapshot for a PR).
+All jobs check out the event SHA. For a PR, the selector verifies the parents
+of GitHub's merge snapshot against the event's base and head. A draft
+`synchronize` uses the delta from `before` when that SHA is between the tested
+base and PR head. Initial and reopened drafts use the whole PR diff. An absent
+or unusable `before`, a rebase or an advanced base also uses the whole PR diff.
+CI runs the full suites if it cannot establish the merge snapshot's ancestry.
 
-Ready PRs compare the tested merge tree with its base parent. The initial
-layout pilot accepts a diff that replaces only the toolbar `matchMedia`
-breakpoint line in `BusinessChineseStudyWorkspace.tsx`. The mounted test
-asserts toolbar placement at 1279px and 1280px on the textbook's Text tab.
-Other code changes in that workspace, mixed scopes and pipeline changes run
-the full ready-PR suite. Draft green covers its selected diff. The readiness
-gate checks the whole PR before merge. Title/body edits leave CI untouched.
+Ready PRs always use the whole PR diff. Mapped owners select the union of
+affected mounted fixtures and product cases across the PR. Those product cases
+serve as pre-merge smoke coverage for the flows they exercise. For example, the
+Notes cases cover requests to the lesson annotations API. Any product run also
+checks the local database contracts. Shared Notes hooks select fixtures for
+their actual Home, Notes and Reader consumers.
+
+Authentication, shared learning state, offline owners, shared UI components
+and contracts, API routes without mapped product cases, pipeline changes,
+dependency changes, deleted code and unmapped owners retain full coverage
+before merge. The broad HanziHome/HSK map is a fallback for draft and push
+feedback. App stylesheets use all mounted fixtures. The toolbar breakpoint
+pilot uses the mounted textbook test at 1279px and 1280px when the diff changes
+only that breakpoint line. Use manual dispatch for full regression before a
+major release. Title and description edits leave CI untouched.
+
+Jobs install locked dependencies independently with the npm package cache and
+`npm ci --prefer-offline`. Mounted and product tests use Chromium Headless Shell
+with Playwright's system dependencies.
 
 Base retargeting alone also does not rerun CI. This relies on `main` protection
 requiring an up-to-date branch and a successful PR-triggered `CI gate`, including
