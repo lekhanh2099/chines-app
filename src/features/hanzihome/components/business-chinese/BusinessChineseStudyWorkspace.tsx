@@ -1715,7 +1715,7 @@ export function BusinessChineseStudyWorkspace({
  const activeView = tabs.find((item) => item.key === requestedView)?.key ?? "all";
  const [hasWideToolbar, setHasWideToolbar] = useState(false);
  useEffect(() => {
-  const query = window.matchMedia("(min-width: 96rem)");
+  const query = window.matchMedia("(min-width: 80rem)");
   const updateToolbar = () => setHasWideToolbar(query.matches);
   updateToolbar();
   query.addEventListener("change", updateToolbar);
