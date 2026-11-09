@@ -2383,45 +2383,50 @@ function BusinessChineseStudyWorkspaceContent({
 
             {reviewMode === "drills" && contextualDrills.length > 0 ? (
              <BusinessChineseContextualDrills drills={contextualDrills} />
-            ) : isPipOpen || isInAppFloatingOpen ? (
-             <Card
-              variant="subtle"
-              padding="lg"
-              className="flex min-h-[360px] flex-col items-center justify-center gap-3 text-center"
-             >
-              <IconTile size="lg" tone="accent" className="mx-auto">
-               <PictureInPicture2 />
-              </IconTile>
-              <div className="grid gap-1">
-               <Typography variant="sectionTitle" weight="black">
-                {t("vocabReview.pipActiveTitle")}
-               </Typography>
-               <Typography variant="bodySmall" tone="muted" className="max-w-md">
-                {t("vocabReview.pipActiveDescription")}
-               </Typography>
-              </div>
-              <Button
-               type="button"
-               variant="outline"
-               size="compact"
-               onClick={() => {
-                if (isPipOpen) closePip();
-                if (isInAppFloatingOpen) setIsInAppFloatingOpen(false);
-               }}
-              >
-               {t("vocabReview.pipReturn")}
-              </Button>
-             </Card>
             ) : (
-             <UniversalAmbientPip
-              key={reviewMode}
-              initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
-              lessonTitle={lesson.title}
-              vocabItems={reviewLesson.vocab}
-              grammarItems={textbookGrammarPoints}
-              practiceItems={universalTextbookPracticeItems}
-              isInline
-             />
+             <>
+              <div hidden={isPipOpen || isInAppFloatingOpen}>
+               <UniversalAmbientPip
+                key={reviewMode}
+                initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
+                lessonTitle={lesson.title}
+                vocabItems={reviewLesson.vocab}
+                grammarItems={textbookGrammarPoints}
+                practiceItems={universalTextbookPracticeItems}
+                isInline
+               />
+              </div>
+              {isPipOpen || isInAppFloatingOpen ? (
+               <Card
+                variant="subtle"
+                padding="lg"
+                className="flex min-h-[360px] flex-col items-center justify-center gap-3 text-center"
+               >
+                <IconTile size="lg" tone="accent" className="mx-auto">
+                 <PictureInPicture2 />
+                </IconTile>
+                <div className="grid gap-1">
+                 <Typography variant="sectionTitle" weight="black">
+                  {t("vocabReview.pipActiveTitle")}
+                 </Typography>
+                 <Typography variant="bodySmall" tone="muted" className="max-w-md">
+                  {t("vocabReview.pipActiveDescription")}
+                 </Typography>
+                </div>
+                <Button
+                 type="button"
+                 variant="outline"
+                 size="compact"
+                 onClick={() => {
+                  if (isPipOpen) closePip();
+                  if (isInAppFloatingOpen) setIsInAppFloatingOpen(false);
+                 }}
+                >
+                 {t("vocabReview.pipReturn")}
+                </Button>
+               </Card>
+              ) : null}
+             </>
             )}
            </div>
           ) : null}

@@ -1503,6 +1503,7 @@ describe("BusinessChineseStudyWorkspace", () => {
 
    expect(markup).toContain("Đang ôn tập trong cửa sổ nổi");
    expect(markup).toContain("Đưa về trang này (Đóng cửa sổ nổi)");
+   expect(markup).toContain('hidden=""');
   } finally {
    pipSpy.mockRestore();
   }

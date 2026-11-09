@@ -1,8 +1,12 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import type { ReactNode } from "react";
+import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it, vi } from "vitest";
 
+import { appLocales } from "@/i18n/config";
+import { loadAppMessages } from "@/i18n/messages";
 import type { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import * as pipHook from "@/features/hanzihome/hooks/useDocumentPip";
 import { getTextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import {
  getItWebVocabCorpus,
@@ -194,8 +198,13 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
   expect(merged.settings.customVocab?.map((w) => w.hanzi)).toEqual(["联调", "排期"]);
  });
 
- it("renders UnifiedVocabStudyHub as a compact 2-row hub with custom Select triggers", () => {
-  const markup = renderToStaticMarkup(<UnifiedVocabStudyHub />);
+ it("renders UnifiedVocabStudyHub as a compact 2-row hub with custom Select triggers", async () => {
+  const messages = await loadAppMessages("vi");
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <UnifiedVocabStudyHub />
+   </NextIntlClientProvider>,
+  );
   expect(markup).toContain("Học từ vựng &amp; Bài tập PiP");
   expect(markup).toContain("Bài đã mark (1)");
   expect(markup).toContain("Ôn tất cả (1 bài · 60 từ)");
@@ -203,4 +212,55 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
   expect(markup).toContain("Chọn nguồn từ vựng");
   expect(markup).toContain("Chọn bài học đã đánh dấu");
  });
+
+ it.each([
+  {
+   locale: appLocales[0],
+   title: "Đang ôn tập trong cửa sổ nổi",
+   description:
+    "Thẻ ôn tập đang chạy trong cửa sổ Picture-in-Picture. Bạn có thể duyệt bài học hoặc chuyển sang ứng dụng khác trong khi học.",
+   returnLabel: "Đưa về trang này (Đóng cửa sổ nổi)",
+  },
+  {
+   locale: appLocales[1],
+   title: "Reviewing in floating window",
+   description:
+    "Review session is currently running in the Picture-in-Picture window. You can browse other lesson sections or switch to other apps.",
+   returnLabel: "Bring back to page (Close floating window)",
+  },
+  {
+   locale: appLocales[2],
+   title: "正在画中画浮窗中复习",
+   description:
+    "复习会话当前正在画中画独立浮窗中运行。你可以浏览其他内容或在切换其他应用时继续学习。",
+   returnLabel: "收回至本页（关闭浮窗）",
+  },
+ ])(
+  "renders the PiP notice in $locale and keeps the inline session mounted",
+  async ({ locale, title, description, returnLabel }) => {
+   const messages = await loadAppMessages(locale);
+   const pipSpy = vi.spyOn(pipHook, "useDocumentPip").mockReturnValue({
+    isSupported: true,
+    isOpen: true,
+    pipWindow: null,
+    openPip: async () => null,
+    closePip: () => undefined,
+   });
+
+   try {
+    const markup = renderToStaticMarkup(
+     <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+      <UnifiedVocabStudyHub defaultOpenInline />
+     </NextIntlClientProvider>,
+    );
+
+    expect(markup).toContain(title);
+    expect(markup).toContain(description);
+    expect(markup).toContain(returnLabel);
+    expect(markup).toContain('hidden=""');
+   } finally {
+    pipSpy.mockRestore();
+   }
+  },
+ );
 });
