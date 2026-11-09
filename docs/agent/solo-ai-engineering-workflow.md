@@ -78,7 +78,7 @@ PREVIEW VALIDATED → RELEASE APPROVED → DEPLOYED → OBSERVED
 
 An authorized draft PR may open early, and CI may run during rework. Documentation/audit tasks can finish without deployment. A task requiring release closes only after its release acceptance passes; local-only tasks must state that they remain unpublished. Agent completion, green CI, acceptance, merge and deployment are distinct states.
 
-Iterative draft validation reports `CI draft`; the full PR readiness run reports
+Iterative draft validation reports `CI draft`. Ready PRs targeting `main` report
 the required `CI gate`. Keep those contexts separate so a cancelled draft cannot
 leave a failed required check beside a successful readiness check on the same
 commit. PR metadata edits do not start CI; a newer empty workflow suite must not
@@ -155,16 +155,14 @@ Example HanziHome pilot: a Pinyin bug with a current reproduction, verified expe
 
 Retain [affected CI selection](../../.github/workflows/ci.yml), configured npm commands and [test proof boundaries](../testing/frontend-flow-coverage.md). Before adding a dependency checker, SAST tool or orchestrator, identify a concrete gap in existing guards.
 
-Use a draft PR during implementation: synchronized pushes verify the new change
-and affected consumers, with conservative fallback for shared/dependency changes
-or uncertain history. A green draft run is partial feedback. Mark the PR ready
-for review when the implementation is ready to close; readiness and subsequent
-non-draft updates run the full suites before the required merge gate can pass.
-Title/body edits do not start a workflow run or replace the real gate result.
-Tests check out the exact PR head; protected `main` requires that head to be up
-to date before merge. Base retargeting alone does not rerun CI; an integration
-update commit triggers full non-draft validation. Exact selection and proof
-limits belong to the test coverage document linked above.
+Use a draft PR during implementation. Synchronized pushes verify the new change
+and affected consumers, with full coverage for uncertain history. Mark the PR
+ready after reviewing the diff and evidence. The required gate checks the entire
+PR scope with the suites defined in the test coverage document above.
+
+PR jobs test GitHub's merge snapshot. Protected `main` requires the PR branch
+to be up to date. An integration update triggers verification of the new
+snapshot. Title and description edits leave the existing checks in place.
 
 Before pilot publication, inspect actual GitHub rulesets/protection, required checks, bypass permissions and repository plan. A solo contributor must not depend on approving their own PR to satisfy another reviewer's approval requirement; use human diff acceptance and required CI compatible with actual permissions. Mark uninspected settings as not verified.
 
@@ -175,6 +173,29 @@ Do not grant production secrets or customer data by default. External documents,
 A release receipt records the target, commit/deployment ID, migration compatibility when relevant, checks actually run, smoke acceptance, rollback and observation. Reuse [AI runtime operations](../architecture/ai-runtime-daily-reading-operations.md) for that domain. Code rollback does not prove database recovery; retain compatible rollout/expand steps under the applicable migration contracts and approvals. Historical production snapshots in the master are not new live verification.
 
 For each release, identify the errors/latency to observe, rollback conditions, responsible person and observation period. Backup/restore drills, spend alerts and incident handling require separate evidence before claiming they operate.
+
+### Production Deployment Check
+
+Vercel builds `main` through its Git integration. In the `chines-app` project,
+require the GitHub check `CI production` under **Settings → Build and Deployment
+→ Deployment Checks** with automatic assignment of production domains enabled.
+The check aggregates the selected jobs for the `main` push. Vercel can build
+while CI runs and assigns production domains once the same SHA passes.
+[Vercel Deployment Checks](https://vercel.com/docs/deployment-checks#github-checks)
+
+If Vercel needs a first `CI production` result before the check can be selected,
+disable **Auto-assign Custom Production Domains** before the rollout merge.
+Wait for `CI production` to pass for the staged deployment's SHA. Enable
+automatic assignment and require the new check before the next merge. If the
+checked rollout deployment is still staged, promote that SHA.
+[Staging production deployments](https://vercel.com/docs/deployments/promoting-a-deployment)
+
+For acceptance, compare the GitHub check and Vercel deployment SHA. Verify that
+pending or failed CI leaves the previous deployment current, and that a green
+check allows its deployment to receive the production domains. Record both the
+check and the production assignment. To revert the workflow, coordinate removal
+of the required `CI production` context with the revert so Vercel has a valid
+check for subsequent deployments.
 
 ## 8. Daily loop and effectiveness
 

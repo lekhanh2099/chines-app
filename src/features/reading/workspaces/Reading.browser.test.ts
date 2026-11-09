@@ -1919,6 +1919,20 @@ it
          .bookResume?.[`static:${textbookBook.id}`],
       )
       .toEqual({ lessonId: textbook.id, module: "text" });
+     const readerToolbar = page.locator("[data-reader] [data-reader-toolbar]");
+     const tabsToolbar = page
+      .getByRole("tablist", { name: labels.tabsLabel, exact: true })
+      .locator("..")
+      .locator("[data-reader-toolbar]");
+     for (const { width, toolbar } of [
+      { width: 1279, toolbar: readerToolbar },
+      { width: 1280, toolbar: tabsToolbar },
+      { width: 1279, toolbar: readerToolbar },
+     ]) {
+      await page.setViewportSize({ width, height: 900 });
+      await browserExpect(toolbar, `Reader toolbar at ${width}px (${locale})`).toBeVisible();
+      await browserExpect(page.locator("[data-reader-toolbar]")).toHaveCount(1);
+     }
     }
     expect(errors).toEqual([]);
    } finally {

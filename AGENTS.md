@@ -13,6 +13,37 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 This file defines repository-wide engineering rules for AI agents and contributors.
 More specific `AGENTS.md` files override this file for their subtree.
 
+## 0. Workflow Role: Semi-Controlled Dual Mode (Antigravity ⇄ Codex Desktop)
+
+In this repository (`chines-app`), the **Solo AI Engineering Workflow (Semi-Controlled)** gives the developer explicit control over execution:
+
+### Mode 1 — Handoff / Autonomous Execution (Codex Desktop)
+
+- **Trigger**: When the user requests a handoff plan (e.g. "lập plan", "handoff", "bàn giao Codex", "viết plan", task created via Control Center) OR when tackling complex features/refactors intended for delegation.
+- **Antigravity Action**:
+  1. Inspect the codebase in read-only mode to locate root causes.
+  2. Write a standardized implementation plan markdown file to:
+     `~/Documents/AI-Handoffs/chines-app/<TASK-ID>.md`
+     (Include Task ID, Project Path, Revision, Status: `APPROVED_FOR_CODEX`, Branch, Scope, Steps, and Verification commands).
+  3. **DO NOT edit source files**. Direct the user:
+     "Kế hoạch đã được lưu tại `~/Documents/AI-Handoffs/chines-app/<TASK-ID>.md`. Bạn hãy mở Solo AI Control Center tại **http://localhost:3100** và bấm **Bàn giao sang Codex** để Codex Desktop thực thi nhé!"
+
+### Mode 2 — Direct Pair-Programming (Antigravity Direct Code)
+
+- **Trigger**: When the user requests a quick fix, prototyping, debugging, or explicitly instructs Antigravity to code directly (e.g. "sửa trực tiếp", "code luôn đi", "sửa giúp tôi tại đây").
+- **Antigravity Action**:
+  1. Analyze the issue and explain the root cause.
+  2. Perform the required code edits directly using `edit_file` / `write_file`.
+  3. Run targeted tests and verify zero regressions.
+
+### Ambiguous Bug Reports & Feature Requests
+
+When the user simply reports an issue without specifying the mode (e.g. "Có vẻ đang có bug nè...", "Tính năng này bị lỗi..."):
+
+1. First, inspect and explain the root cause clearly (read-only).
+2. Explicitly ask the user for their preferred execution mode:
+   _"Tôi đã tìm ra nguyên nhân bug. Bạn muốn tôi (1) Lập plan bàn giao sang Codex Desktop qua Control Center (http://localhost:3100) để làm việc độc lập, hay (2) Sửa trực tiếp ngay tại đây luôn?"_
+
 Authority order is:
 
 1. explicit user requirements;

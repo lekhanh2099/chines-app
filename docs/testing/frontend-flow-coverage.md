@@ -9,11 +9,12 @@ Source of truth: [CI workflow](../../.github/workflows/ci.yml), [package scripts
 | Trigger / scope                              | Checks                                                                                                                                                    |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Commit                                       | Existing staged-only Oxfmt/Oxlint; không full test suite.                                                                                                 |
-| Guidance/workflow-only draft update          | Install, format, guidance contracts và tooling regression tests; không application build/browser/product E2E.                                             |
+| Guidance-only PR or push                     | Install, format, guidance contracts và tooling regression tests.                                                                                          |
 | Affected code push/draft update              | Full static contract/type checks; Vitest related graph hoặc full Node nếu broad/deleted paths; owner/consumer map chọn mounted fixtures và product cases. |
 | Runtime-loaded fixtures                      | Explicit map trong workflow, vì Vite URL imports không thuộc Vitest static graph. Mounted job riêng, không cần Supabase.                                  |
 | Shared/auth/schema/dependency/unmapped paths | Conservative full Node/browser/product path; không silently mất consumer coverage.                                                                        |
-| Ready/non-draft code update/manual           | Full Node, toàn bộ 14 mounted files và product/SQL suite.                                                                                                 |
+| Ready PR đổi đúng breakpoint toolbar Reader  | Full static checks, Vitest related, mounted `Reading.browser.test.ts`, production build và production audit.                                              |
+| Other ready code PR, pipeline change, manual | Full Node, mounted fixtures và product/SQL suite cùng static checks, production build và audit.                                                           |
 | Local merge/release                          | `npm run check`; required mounted/SQL/product/coverage/corpus proof theo contract của slice. Performance profiling chạy manual khi cần.                   |
 
 Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify, mounted browser và product E2E chạy độc lập sau selection. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
@@ -24,34 +25,31 @@ Dependency/shared-owner fallback applies to that selected diff, so an earlier
 dependency patch does not keep forcing full E2E for unrelated draft updates.
 Missing history, rewritten history or an integration base newer than the
 previous head falls back to full validation. The selector fetches full commit
-history to prove ancestry. Selection and all test jobs check out the exact PR
-head SHA; push/manual runs check out their event SHA.
+history to prove ancestry. Selection and all test jobs check out the event SHA
+(`refs/pull/<number>/merge` snapshot for a PR).
 
-Marking a PR ready for review, updating a non-draft PR's code or running the
-workflow manually selects the full suites. Draft green is partial development
-feedback and does not clear earlier failed or cancelled coverage; the full
-readiness gate must pass before merge. PR `edited` events are not subscribed:
-title/body edits cannot create a newer empty CI suite or cancel code validation.
+Ready PRs compare the tested merge tree with its base parent. The initial
+layout pilot accepts a diff that replaces only the toolbar `matchMedia`
+breakpoint line in `BusinessChineseStudyWorkspace.tsx`. The mounted test
+asserts toolbar placement at 1279px and 1280px on the textbook's Text tab.
+Other code changes in that workspace, mixed scopes and pipeline changes run
+the full ready-PR suite. Draft green covers its selected diff. The readiness
+gate checks the whole PR before merge. Title/body edits leave CI untouched.
 
 Base retargeting alone also does not rerun CI. This relies on `main` protection
 requiring an up-to-date branch and a successful PR-triggered `CI gate`, including
 admins. When `main` is an ancestor of the tested head, their merge tree is the
 same source tree already tested. If it is not, strict protection blocks merge
-until the head is updated; that commit triggers full non-draft verification.
+until the head is updated. That commit triggers verification of the new merge tree.
 This policy does not establish safe integration for loosely protected branches.
 
-Draft validation reports `CI draft`; readiness, non-draft code, main pushes and
-manual full runs report `CI gate`. Both retain strict aggregation. A cancelled
-draft must not publish a failed required context on the same SHA as its later
-successful readiness run: GitHub can otherwise keep the PR blocked by both
-checks. Only the PR-triggered full readiness gate establishes merge eligibility;
-draft checks are separate feedback. The final aggregate always evaluates its
-selected jobs; there is no metadata-only success path.
+Draft validation reports `CI draft`. A ready PR targeting `main` reports the
+required `CI gate`. A push to `main` reports `CI production`, and other runs
+report `CI validation`. Each aggregate requires all selected jobs to pass.
+Manual dispatches use a separate concurrency group from pushes.
 
-Workflow/guidance-only draft updates run the existing guidance, formatting and
-tooling regression checks, without application static checks, dependency audit,
-build or browser/database setup. Readiness and manual full validation still run
-the complete application gate.
+Production uses the post-merge result for the deployment's exact commit.
+Activation and rollback are part of the [release workflow](../agent/solo-ai-engineering-workflow.md#production-deployment-check).
 
 `scripts/check-ci-workflow.test.mjs` executes the workflow's inline selector and
 aggregate gate. Real temporary Git histories cover incremental draft updates,

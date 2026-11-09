@@ -6,6 +6,16 @@ import vm from "node:vm";
 import { describe, expect, it } from "vitest";
 
 const workflow = readFileSync(new URL("../.github/workflows/ci.yml", import.meta.url), "utf8");
+const toolbarWorkspace =
+ "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx";
+const oldToolbarEffect = [
+ " useEffect(() => {",
+ '  const query = window.matchMedia("(min-width: 96rem)");',
+ "  const updateToolbar = () => setHasWideToolbar(query.matches);",
+ "  updateToolbar();",
+ " }, []);\n",
+].join("\n");
+const xlToolbarEffect = oldToolbarEffect.replace("96rem", "80rem");
 
 function jobSource(name) {
  const source = workflow.split(`\n ${name}:\n`)[1];
@@ -27,17 +37,21 @@ function field(name, key) {
 
 function select({
  latest = ["src/features/notes/hooks/useNoteDetail.ts"],
+ earlier = ["package.json"],
+ baseOnly = [],
+ initialContents = {},
+ latestContents = {},
  event = {},
  remove = [],
 } = {}) {
  const directory = mkdtempSync(path.join(tmpdir(), "hanzihome-ci-test-"));
  const git = (...args) =>
   execFileSync("git", args, { cwd: directory, encoding: "utf8", stdio: "pipe" }).trim();
- const commit = (files, message) => {
+ const commit = (files, message, contents = {}) => {
   for (const file of files) {
    const target = path.join(directory, file);
    mkdirSync(path.dirname(target), { recursive: true });
-   writeFileSync(target, message);
+   writeFileSync(target, contents[file] ?? message);
   }
   git("add", ".");
   git("commit", "--quiet", "-m", message);
@@ -47,10 +61,20 @@ function select({
   git("init", "--quiet", "-b", "main");
   git("config", "user.name", "CI fixture");
   git("config", "user.email", "ci@example.test");
-  const base = commit(["README.md", ...remove], "baseline");
-  const previous = commit(["package.json"], "earlier dependency patch");
+  let base = commit(
+   ["README.md", ...remove, ...Object.keys(initialContents)],
+   "baseline",
+   initialContents,
+  );
+  git("switch", "--quiet", "-c", "pr");
+  const previous = earlier.length ? commit(earlier, "earlier PR change") : base;
   for (const file of remove) rmSync(path.join(directory, file));
-  const head = commit(latest, "current update");
+  const head = commit(latest, "current update", latestContents);
+  if ((event.EVENT_NAME ?? "pull_request") === "pull_request") {
+   git("switch", "--quiet", "main");
+   if (baseOnly.length) base = commit(baseOnly, "integration base update");
+   git("merge", "--quiet", "--no-ff", "-m", "test merge", head);
+  }
   const output = path.join(directory, "output");
   const env = {
    ...process.env,
@@ -66,8 +90,7 @@ function select({
   };
   if (event.PR_BASE === "advanced") env.PR_BASE = head;
   if (event.PUSH_BASE === "rewritten") {
-   env.PUSH_BASE = head;
-   env.PR_HEAD = previous;
+   env.PUSH_BASE = git("commit-tree", previous + "^{tree}", "-m", "discarded old head");
   }
   execFileSync(process.execPath, ["--input-type=module"], {
    cwd: directory,
@@ -96,33 +119,47 @@ describe("CI affected selection with actual Git history", () => {
   expect(result.unit_full).toBe("false");
  });
 
- it.each(["docs/testing/example.md", ".github/workflows/ci.yml"])(
-  "keeps guidance-only draft changes in tooling checks: %s",
+ it.each([
+  { earlier: ["package.json"], event: { PR_DRAFT: "true", EVENT_ACTION: "synchronize" } },
+  { earlier: [], event: { PR_DRAFT: "false", EVENT_ACTION: "ready_for_review" } },
+ ])("keeps guidance-only changes in tooling checks: %j", ({ earlier, event }) => {
+  const result = select({
+   earlier,
+   latest: ["docs/testing/example.md"],
+   event,
+  });
+  expect(result).toMatchObject({
+   code: "false",
+   guidance: "true",
+   browser_files: "",
+   e2e_grep: "",
+  });
+ });
+
+ it.each([".github/workflows/ci.yml", "scripts/check-ci-workflow.test.mjs", "vercel.json"])(
+  "requires full coverage for changes to the pipeline: %s",
   (file) => {
    const result = select({ latest: [file] });
-   expect(result).toMatchObject({
-    code: "false",
-    guidance: "true",
-    browser_files: "",
-    e2e_grep: "",
-   });
+   expect(result).toMatchObject({ code: "true", unit_full: "true", e2e_grep: "." });
+   expect(result.browser_files.split(" ")).toHaveLength(15);
+   if (file.endsWith("/ci.yml")) expect(result.guidance).toBe("true");
   },
  );
 
  it.each([
   "src/features/hsk/HskWorkspace.tsx",
   "src/features/hanzihome/HanziHomeLibraryHome.tsx",
-  "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx",
+  toolbarWorkspace,
  ])("selects the actual mounted Reading consumer for %s", (file) => {
   expect(select({ latest: [file] }).browser_files).toContain(
    "src/features/reading/workspaces/Reading.browser.test.ts",
   );
  });
 
- it("keeps component-only changes out of the product database setup", () => {
+ it("retains product database coverage for a component that handles note conflicts", () => {
   const result = select({ latest: ["src/features/notes/components/NoteConflictDialog.tsx"] });
   expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
-  expect(result.e2e_grep).toBe("");
+  expect(result.e2e_grep).toBe("keeps two Notes drafts|fences linked Reader Notes");
  });
 
  it("uses all mounted consumers for global CSS without a database run", () => {
@@ -165,6 +202,47 @@ describe("CI affected selection with actual Git history", () => {
   expect(result.unit_full).toBe("true");
   expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
   expect(result.e2e_grep).toContain("keeps two Notes drafts");
+ });
+
+ it("uses the tested merge tree for a ready PR that only changes the Reader breakpoint", () => {
+  const result = select({
+   earlier: [],
+   baseOnly: ["src/lib/supabase/server.ts"],
+   latest: [toolbarWorkspace],
+   initialContents: { [toolbarWorkspace]: oldToolbarEffect },
+   latestContents: { [toolbarWorkspace]: xlToolbarEffect },
+   event: { EVENT_ACTION: "ready_for_review", PR_DRAFT: "false" },
+  });
+  expect(JSON.parse(result.unit_files)).toEqual([toolbarWorkspace]);
+  expect(result).toMatchObject({
+   code: "true",
+   guidance: "false",
+   unit_full: "false",
+   browser_files: "src/features/reading/workspaces/Reading.browser.test.ts",
+   e2e_grep: "",
+  });
+ });
+
+ it.each([
+  { earlier: ["package.json"], latestContents: { [toolbarWorkspace]: xlToolbarEffect } },
+  { earlier: [], latestContents: { [toolbarWorkspace]: xlToolbarEffect + "saveProgress();\n" } },
+ ])(
+  "retains full coverage for a ready PR with other changes: %j",
+  ({ earlier, latestContents }) => {
+   const result = select({
+    earlier,
+    latest: [toolbarWorkspace],
+    initialContents: { [toolbarWorkspace]: oldToolbarEffect },
+    latestContents,
+    event: { PR_DRAFT: "false" },
+   });
+   expect(result).toMatchObject({ code: "true", unit_full: "true", e2e_grep: "." });
+   expect(result.browser_files.split(" ")).toHaveLength(15);
+  },
+ );
+
+ it("falls back to full coverage when the tested merge base is newer than the previous draft head", () => {
+  expect(select({ baseOnly: ["src/lib/supabase/server.ts"] }).e2e_grep).toBe(".");
  });
 
  it.each([
@@ -211,26 +289,41 @@ describe("CI aggregation and metadata isolation", () => {
  });
 
  it("aggregates every triggered validation without a metadata success path", () => {
-  expect(workflow).toContain("group: ci-${{ github.ref }}\n");
   expect(jobSource("changes")).not.toMatch(/^  if:/m);
   expect(jobSource("gate")).not.toMatch(/^     if:/m);
   for (const action of ["opened", "reopened", "synchronize", "ready_for_review"]) {
    for (const draft of [false, true, undefined]) {
     const github = {
      event_name: "pull_request",
+     base_ref: "main",
      event: { action, pull_request: { draft } },
     };
     expect(Boolean(evaluate(field("gate", "if"), github))).toBe(true);
     expect(evaluate(field("gate", "name"), github)).toBe(draft ? "CI draft" : "CI gate");
    }
   }
-  for (const eventName of ["push", "workflow_dispatch"]) {
-   expect(evaluate(field("gate", "name"), { event_name: eventName, event: {} })).toBe("CI gate");
-  }
+ });
+
+ it("reports the production check only for a push to main", () => {
+  const name = field("gate", "name");
+  const mainPush = { event_name: "push", ref: "refs/heads/main", event: {} };
+  expect(evaluate(name, mainPush)).toBe("CI production");
+  expect(evaluate(name, { ...mainPush, event_name: "workflow_dispatch" })).toBe("CI validation");
+  expect(
+   evaluate(name, { ...mainPush, ref: "refs/heads/refactor/hanzihome-integrity-remediation" }),
+  ).toBe("CI validation");
+  expect(
+   evaluate(name, {
+    event_name: "pull_request",
+    base_ref: "refactor/hanzihome-integrity-remediation",
+    event: { pull_request: { draft: false } },
+   }),
+  ).toBe("CI validation");
+  expect(workflow).toContain("group: ci-${{ github.event_name }}-${{ github.ref }}\n");
  });
 
  it.each(["changes", "verify", "browser", "e2e"])(
-  "tests the exact head in %s so unchanged-source readiness is independent of retargeting",
+  "checks out the tested merge SHA in %s for a PR",
   (job) => {
    const checkout = jobSource(job).match(/uses: actions\/checkout@v5\n     with:\n      ref: (.+)/);
    if (!checkout) throw new Error(`Missing exact-source checkout for ${job}`);
@@ -240,7 +333,7 @@ describe("CI aggregation and metadata isolation", () => {
      event: { pull_request: { head: { sha: "pr-head" } } },
      sha: "merge",
     }),
-   ).toBe("pr-head");
+   ).toBe("merge");
    for (const eventName of ["push", "workflow_dispatch"]) {
     expect(evaluate(checkout[1], { event_name: eventName, event: {}, sha: "event-head" })).toBe(
      "event-head",
@@ -255,6 +348,7 @@ describe("CI aggregation and metadata isolation", () => {
    const github = {
     sha: "same-commit",
     event_name: "pull_request",
+    base_ref: "main",
     event: {
      action: draft ? "synchronize" : "ready_for_review",
      changes: {},
