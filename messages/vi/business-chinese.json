@@ -88,6 +88,9 @@
   },
   "pipButton": "Cửa sổ nổi (PiP)",
   "pipTooltip": "Mở thẻ trôi nổi trên desktop để nhận diện từ vựng khi làm việc",
-  "pipActive": "Đang mở cửa sổ nổi"
+  "pipActive": "Đang mở cửa sổ nổi",
+  "pipActiveTitle": "Đang ôn tập trong cửa sổ nổi",
+  "pipActiveDescription": "Thẻ ôn tập đang chạy trong cửa sổ Picture-in-Picture. Bạn có thể duyệt bài học hoặc chuyển sang ứng dụng khác trong khi học.",
+  "pipReturn": "Đưa về trang này (Đóng cửa sổ nổi)"
  }
 }

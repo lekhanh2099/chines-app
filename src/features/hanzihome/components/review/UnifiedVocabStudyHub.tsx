@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { FolderPlus, PictureInPicture2 } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
+import { IconTile } from "@/components/ui/display/icon-tile";
 import { Typography } from "@/components/ui/display/typography";
 import {
  Select,
@@ -381,16 +382,44 @@ export function UnifiedVocabStudyHub({
     {isInlineOpen && (hasActiveVocab || hasActivePractice) ? (
      <div className="mx-auto w-full max-w-3xl pt-1">
       <Card variant="default" padding="none" className="min-h-[380px] overflow-hidden">
-       <UniversalAmbientPip
-        key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
-        initialMode={activeFlowMode}
-        lessonTitle={activeBundle.title}
-        vocabItems={activeBundle.vocabItems}
-        grammarItems={activeBundle.grammarItems}
-        practiceItems={activeBundle.practiceItems}
-        onClose={() => setIsInlineOpen(false)}
-        isInline
-       />
+       {isPipOpen || isInAppFloatingOpen ? (
+        <div className="flex min-h-[380px] flex-col items-center justify-center gap-3 p-8 text-center">
+         <IconTile size="lg" tone="accent" className="mx-auto">
+          <PictureInPicture2 />
+         </IconTile>
+         <div className="grid gap-1">
+          <Typography variant="sectionTitle" weight="black">
+           Đang ôn tập trong cửa sổ nổi
+          </Typography>
+          <Typography variant="bodySmall" tone="muted" className="max-w-md">
+           Thẻ ôn tập đang chạy trong cửa sổ Picture-in-Picture. Bạn có thể thu nhỏ hoặc chuyển sang
+           ứng dụng khác trong khi học.
+          </Typography>
+         </div>
+         <Button
+          type="button"
+          variant="outline"
+          size="compact"
+          onClick={() => {
+           if (isPipOpen) closePip();
+           if (isInAppFloatingOpen) setIsInAppFloatingOpen(false);
+          }}
+         >
+          Đưa về trang này (Đóng cửa sổ nổi)
+         </Button>
+        </div>
+       ) : (
+        <UniversalAmbientPip
+         key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
+         initialMode={activeFlowMode}
+         lessonTitle={activeBundle.title}
+         vocabItems={activeBundle.vocabItems}
+         grammarItems={activeBundle.grammarItems}
+         practiceItems={activeBundle.practiceItems}
+         onClose={() => setIsInlineOpen(false)}
+         isInline
+        />
+       )}
       </Card>
      </div>
     ) : null}

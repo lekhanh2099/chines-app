@@ -88,6 +88,9 @@
   },
   "pipButton": "画中画浮窗",
   "pipTooltip": "在桌面开启画中画浮窗，工作时沉浸式认读生词",
-  "pipActive": "浮窗已开启"
+  "pipActive": "浮窗已开启",
+  "pipActiveTitle": "正在画中画浮窗中复习",
+  "pipActiveDescription": "复习会话当前正在画中画独立浮窗中运行。你可以浏览其他内容或在切换其他应用时继续学习。",
+  "pipReturn": "收回至本页（关闭浮窗）"
  }
 }
