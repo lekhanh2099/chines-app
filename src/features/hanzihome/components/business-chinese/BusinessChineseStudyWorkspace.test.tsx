@@ -9,6 +9,7 @@ import businessChineseMessages from "../../../../../messages/vi/business-chinese
 import ttsStudioMessages from "../../../../../messages/vi/tts-studio.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
+import { HanziInlineText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import type { UserLearningState, LessonTextDisplaySettings } from "@/features/hanzihome/types";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
@@ -495,7 +496,7 @@ describe("BusinessChineseStudyWorkspace", () => {
    ...navigation.matchAll(/<button\b[^>]* aria-controls="([^"]+)"[^>]*>(.*?)<\/button>/gu),
   ];
 
-  expect(buttons.map(([, , label]) => label.replace(/<[^>]*>/gu, ""))).toEqual([
+  const labels = [
    "1. ……得慌",
    "2. 至多",
    "3. 一……就……",
@@ -504,7 +505,12 @@ describe("BusinessChineseStudyWorkspace", () => {
    "6. ……过来",
    "7. 无论",
    "8. ……下来",
-  ]);
+  ];
+  for (const [index, label] of labels.entries()) {
+   expect(buttons[index]?.[2]).toContain(
+    `>${renderToStaticMarkup(<HanziInlineText text={label} />)}<`,
+   );
+  }
   expect(buttons.map(([, id]) => id)).toEqual([
    "nhip-cau-lesson-05-section-4",
    ...[418, 440, 458, 478, 494, 514, 532].map(
