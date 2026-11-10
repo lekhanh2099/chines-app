@@ -129,7 +129,7 @@ export function GrammarSectionNavigation({
  }, [sections]);
 
  return (
-  <nav aria-label={t("tocLabel")} className="flex min-w-0 gap-2 overflow-x-auto p-1 scrollbar-soft">
+  <nav aria-label={t("tocLabel")} className="grid min-w-0 gap-1">
    {sections.map((section, index) => {
     const title = stripLeadingEmoji(section.title);
     const heading = title.replace(/^(?:\([一二三四五六七八九十]+\)|\[\d+\]|\d+\.?)\s+/u, "");
@@ -142,15 +142,17 @@ export function GrammarSectionNavigation({
      <Button
       key={section.id}
       type="button"
-      size="compact"
-      variant={active ? "active" : "outline"}
-      className="max-w-60"
+      size="menu"
+      variant={active ? "active" : "navigation"}
+      align="start"
+      wrap="normal"
+      className="min-w-0"
       aria-controls={section.id}
       aria-current={active ? "location" : undefined}
       title={title}
       onClick={() => onSelect(section.id)}
      >
-      <span className="min-w-0 truncate">
+      <span className="min-w-0">
        <HanziInlineText text={`${index + 1}. ${shortTitle}`} />
       </span>
      </Button>

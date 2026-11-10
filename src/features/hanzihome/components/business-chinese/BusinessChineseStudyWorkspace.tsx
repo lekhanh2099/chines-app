@@ -43,9 +43,12 @@ import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import {
  Bookmark,
+ BookOpen,
  CloudCheck,
+ DownloadCloud,
  PictureInPicture2,
  Search,
  Sparkles,
@@ -1819,6 +1822,7 @@ export function BusinessChineseStudyWorkspace({
      onToggleLessonBookmark={handleToggleCurrentLessonBookmark}
      readerContent={content}
      readerToolbar={toolbar}
+     hasWideToolbar={hasWideToolbar}
      bookKey={bookKey}
      displayMode={displayMode}
     />
@@ -1834,6 +1838,7 @@ export function BusinessChineseStudyWorkspace({
    tabs,
    isLessonBookmarked,
    handleToggleCurrentLessonBookmark,
+   hasWideToolbar,
    bookKey,
    displayMode,
   ],
@@ -1905,6 +1910,7 @@ function BusinessChineseStudyWorkspaceContent({
  onToggleLessonBookmark,
  readerContent,
  readerToolbar,
+ hasWideToolbar,
  bookKey,
  displayMode,
 }: {
@@ -1917,10 +1923,13 @@ function BusinessChineseStudyWorkspaceContent({
  onToggleLessonBookmark: () => void;
  readerContent: ReactNode;
  readerToolbar: ReactNode;
+ hasWideToolbar: boolean;
  bookKey: string;
  displayMode: LessonDisplayMode;
 }) {
  const t = useTranslations("BusinessChinese");
+ const common = useTranslations("Common");
+ const shellHeader = useTranslations("Shell.header");
  const reviewLesson = useMemo(() => textbookLessonToReviewLesson(lesson), [lesson]);
  const isReviewView = activeView === "review";
  const contextualDrills = useMemo(
@@ -1938,6 +1947,9 @@ function BusinessChineseStudyWorkspaceContent({
  const [pipMode, setPipMode] = useState<UniversalPipMode>("vocab");
  const [reviewMode, setReviewMode] = useState<"flashcard" | "dictation" | "drills">("flashcard");
  const [isInteractivePracticeOpen, setIsInteractivePracticeOpen] = useState(false);
+ const [isGrammarNavigationOpen, setIsGrammarNavigationOpen] = useState(false);
+ const grammarNavigationTriggerRef = useRef<HTMLButtonElement>(null);
+ const grammarNavigationPanelRef = useRef<HTMLElement>(null);
  const [vocabSearchQuery, setVocabSearchQuery] = useState("");
  const filteredVocab = useMemo(() => {
   if (!vocabSearchQuery.trim()) return lesson.vocab;
@@ -2077,6 +2089,8 @@ function BusinessChineseStudyWorkspaceContent({
   [activeView, contentSections],
  );
  const showGrammarNavigation = activeView === "grammar" && visibleSections.length > 0;
+ const showCompactGrammarToolbar = showGrammarNavigation && !hasWideToolbar;
+ const showWideGrammarNavigation = showGrammarNavigation && hasWideToolbar;
  const showDesktopSectionNavigation =
   !showGrammarNavigation && !focusMode && visibleSections.length > 1;
  const effectiveDisplayMode: LessonDisplayMode = useMemo(
@@ -2166,10 +2180,73 @@ function BusinessChineseStudyWorkspaceContent({
   [annotationServices, renderReaderSection],
  );
 
+ const grammarNavigationSummary = (
+  <>
+   <div className="flex min-w-0 flex-wrap items-center justify-between gap-2">
+    <Badge variant="default" size="sm">
+     {`${visibleSections.length} điểm ngữ pháp`}
+    </Badge>
+    {textbookGrammarPoints.length > 0 ? (
+     <Button
+      type="button"
+      size="compact"
+      variant={(isPipOpen || isInAppFloatingOpen) && pipMode === "grammar" ? "active" : "outline"}
+      onClick={() => {
+       setIsGrammarNavigationOpen(false);
+       void handleTogglePip("grammar");
+      }}
+      title="Mở cửa sổ nổi PiP để ôn tập ngữ pháp"
+     >
+      <PictureInPicture2 className="size-3.5" />
+      <span>
+       {(isPipOpen || isInAppFloatingOpen) && pipMode === "grammar"
+        ? "Đang mở PiP"
+        : "Cửa sổ nổi (PiP)"}
+      </span>
+     </Button>
+    ) : null}
+   </div>
+   <Typography variant="bodySmall" tone="secondary">
+    Cấu trúc ngữ pháp và câu ví dụ kèm phiên âm
+   </Typography>
+  </>
+ );
+
  const desktopTabActions = (
   <>
    {readerToolbar}
-   <OfflineAudioSettingsDialog lesson={lesson} />
+   {showCompactGrammarToolbar ? (
+    <Button
+     ref={grammarNavigationTriggerRef}
+     type="button"
+     variant="outline"
+     size="toolbar"
+     aria-label={t("tocLabel")}
+     aria-haspopup="dialog"
+     aria-expanded={isGrammarNavigationOpen}
+     title={t("tocLabel")}
+     onClick={() => setIsGrammarNavigationOpen(true)}
+    >
+     <BookOpen data-icon="inline-start" />
+     <span>{t("tocLabel")}</span>
+    </Button>
+   ) : null}
+   <OfflineAudioSettingsDialog
+    lesson={lesson}
+    trigger={
+     showCompactGrammarToolbar ? (
+      <Button
+       type="button"
+       variant="outline"
+       size="icon-toolbar"
+       aria-label={shellHeader("voiceSettings")}
+       title={shellHeader("voiceSettings")}
+      >
+       <DownloadCloud />
+      </Button>
+     ) : undefined
+    }
+   />
    <div className="flex shrink-0 items-center gap-1.5">
     <Button
      variant="ghost"
@@ -2204,6 +2281,7 @@ function BusinessChineseStudyWorkspaceContent({
      </Badge>
     ) : null}
    </div>
+   {showCompactGrammarToolbar ? toolbarNavMenu : null}
   </>
  );
 
@@ -2223,7 +2301,7 @@ function BusinessChineseStudyWorkspaceContent({
        ) : null}
        {lesson.title}
       </Typography>
-      {activeView !== "text" && activeView !== "all" ? (
+      {activeView !== "text" && activeView !== "all" && !showGrammarNavigation ? (
        <div className="shrink-0 xl:hidden">
         <WorkspaceToolbar>
          <div className="flex min-w-0 flex-1 items-center gap-2">
@@ -2253,7 +2331,7 @@ function BusinessChineseStudyWorkspaceContent({
       ) : null}
       <Tabs
        value={activeView}
-       items={tabs}
+       items={showCompactGrammarToolbar ? tabs.filter((tab) => tab.key === activeView) : tabs}
        onValueChange={onActiveViewChange}
        actions={desktopTabActions}
        aria-label={t("tabsLabel")}
@@ -2264,40 +2342,26 @@ function BusinessChineseStudyWorkspaceContent({
         value={activeView}
         className={cn(
          "min-h-0 overflow-hidden",
-         showGrammarNavigation && "grid grid-rows-[auto_minmax(0,1fr)] gap-2",
+         showWideGrammarNavigation &&
+          "grid grid-cols-[15rem_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] gap-3",
         )}
        >
-        {showGrammarNavigation ? (
-         <Card variant="section" padding="sm" className="grid min-w-0 gap-2">
-          <div className="flex min-w-0 flex-wrap items-center justify-between gap-2">
-           <div className="flex min-w-0 items-center gap-2">
-            <Badge variant="default" size="sm">
-             {`${visibleSections.length} điểm ngữ pháp`}
-            </Badge>
-            <Typography variant="bodySmall" tone="secondary">
-             Cấu trúc ngữ pháp và câu ví dụ kèm phiên âm
+        {showWideGrammarNavigation ? (
+         <Card
+          asChild
+          variant="section"
+          padding="sm"
+          className="max-h-full min-w-0 self-start overflow-y-auto scrollbar-soft"
+         >
+          <aside ref={grammarNavigationPanelRef} tabIndex={-1} aria-label={t("tocLabel")}>
+           <div className="grid min-w-0 gap-2">
+            <Typography variant="overline" tone="muted">
+             {t("tocLabel")}
             </Typography>
+            {grammarNavigationSummary}
+            <GrammarSectionNavigation sections={visibleSections} onSelect={selectSection} />
            </div>
-           {textbookGrammarPoints.length > 0 ? (
-            <Button
-             type="button"
-             size="compact"
-             variant={
-              (isPipOpen || isInAppFloatingOpen) && pipMode === "grammar" ? "active" : "outline"
-             }
-             onClick={() => handleTogglePip("grammar")}
-             title="Mở cửa sổ nổi PiP để ôn tập ngữ pháp"
-            >
-             <PictureInPicture2 className="size-3.5" />
-             <span>
-              {(isPipOpen || isInAppFloatingOpen) && pipMode === "grammar"
-               ? "Đang mở PiP"
-               : "Cửa sổ nổi (PiP)"}
-             </span>
-            </Button>
-           ) : null}
-          </div>
-          <GrammarSectionNavigation sections={visibleSections} onSelect={selectSection} />
+          </aside>
          </Card>
         ) : null}
         <div className="relative h-full min-h-0 min-w-0 overflow-y-auto overflow-x-hidden pr-1 scrollbar-soft">
@@ -2769,6 +2833,36 @@ function BusinessChineseStudyWorkspaceContent({
         </div>
        </TabsContent>
       </Tabs>
+      {showCompactGrammarToolbar ? (
+       <Sheet
+        open={isGrammarNavigationOpen}
+        onOpenChange={setIsGrammarNavigationOpen}
+        side="bottom"
+        onCloseAutoFocus={(event) => {
+         event.preventDefault();
+         setIsGrammarNavigationOpen(false);
+         const focusTarget =
+          grammarNavigationTriggerRef.current ?? grammarNavigationPanelRef.current;
+         focusTarget?.focus({ preventScroll: true });
+        }}
+       >
+        <SheetHeader
+         title={t("tocLabel")}
+         onClose={() => setIsGrammarNavigationOpen(false)}
+         closeLabel={common("actions.close")}
+        />
+        <SheetBody className="grid content-start gap-3 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+         {grammarNavigationSummary}
+         <GrammarSectionNavigation
+          sections={visibleSections}
+          onSelect={(sectionId) => {
+           setIsGrammarNavigationOpen(false);
+           selectSection(sectionId);
+          }}
+         />
+        </SheetBody>
+       </Sheet>
+      ) : null}
       {selectionPopover}
       {isPipOpen && pipWindow
        ? createPortal(
