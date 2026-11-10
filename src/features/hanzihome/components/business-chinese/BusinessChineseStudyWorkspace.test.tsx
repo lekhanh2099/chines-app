@@ -480,6 +480,41 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).not.toContain("max-w-5xl");
  });
 
+ it("lists all eight grammar points in lesson 5 with short labels and section targets", () => {
+  const lesson = getTextbookLesson("nhip-cau", 5);
+  if (!lesson) throw new Error("Expected Nhịp cầu lesson 5.");
+  mockParams = new URLSearchParams("lesson=5&tab=grammar");
+
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
+  );
+
+  const navigation = markup.match(/<nav\b[^>]* aria-label="Trong trang"[^>]*>(.*?)<\/nav>/u)?.[1];
+  if (!navigation) throw new Error("Expected the grammar section navigation.");
+  const buttons = [
+   ...navigation.matchAll(/<button\b[^>]* aria-controls="([^"]+)"[^>]*>(.*?)<\/button>/gu),
+  ];
+
+  expect(buttons.map(([, , label]) => label.replace(/<[^>]*>/gu, ""))).toEqual([
+   "1. ……得慌",
+   "2. 至多",
+   "3. 一……就……",
+   "4. 不仅",
+   "5. 从而",
+   "6. ……过来",
+   "7. 无论",
+   "8. ……下来",
+  ]);
+  expect(buttons.map(([, id]) => id)).toEqual([
+   "nhip-cau-lesson-05-section-4",
+   ...[418, 440, 458, 478, 494, 514, 532].map(
+    (source) => `nhip-cau-lesson-05-section-4:nhip-cau-lesson-05-source-${source}`,
+   ),
+  ]);
+  for (const [, id] of buttons) expect(markup).toContain(`<section id="${id}"`);
+  expect(navigation.match(/aria-current="location"/gu)).toHaveLength(1);
+ });
+
  it.each([true, false])("applies grammar reader size and pinyin visibility (%s)", (showPinyin) => {
   const books = getTextbookCatalog();
   const book = books.find((item) => item.key === "nhip-cau");

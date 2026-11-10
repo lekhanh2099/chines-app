@@ -73,6 +73,7 @@ import { BusinessChineseLessonSelector } from "./BusinessChineseLessonSelector";
 import {
  DesktopSectionNavigation,
  CompactSectionNavigation,
+ GrammarSectionNavigation,
 } from "./BusinessChineseSectionNavigation";
 import {
  containsHanziText,
@@ -1367,12 +1368,14 @@ function BusinessChineseSection({
  translations,
  canonicalVocabularyTableIds,
  vocabularyPreview,
+ deferLayout = true,
 }: {
  section: TextbookLesson["sections"][number];
  displayMode: LessonDisplayMode;
  translations: ReadonlyMap<string, string>;
  canonicalVocabularyTableIds: readonly string[];
  vocabularyPreview?: ReactNode;
+ deferLayout?: boolean;
 }) {
  const t = useTranslations("BusinessChinese");
  const visibleBlocks = businessChineseVisibleBlocks(section, canonicalVocabularyTableIds);
@@ -1410,7 +1413,10 @@ function BusinessChineseSection({
  }
 
  return (
-  <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4 content-auto">
+  <section
+   id={section.id}
+   className={cn("grid min-w-0 scroll-mt-3 gap-4", deferLayout && "content-auto")}
+  >
    {visibleBlocks.length > 0 &&
    !(section.category === "grammar" && visibleBlocks[0]?.type === "subheading") ? (
     <header>
@@ -2070,6 +2076,9 @@ function BusinessChineseStudyWorkspaceContent({
   () => businessChineseVisibleSections(contentSections, activeView),
   [activeView, contentSections],
  );
+ const showGrammarNavigation = activeView === "grammar" && visibleSections.length > 0;
+ const showDesktopSectionNavigation =
+  !showGrammarNavigation && !focusMode && visibleSections.length > 1;
  const effectiveDisplayMode: LessonDisplayMode = useMemo(
   () => ({
    ...displayMode,
@@ -2251,7 +2260,46 @@ function BusinessChineseStudyWorkspaceContent({
        className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
        listClassName="hanzihome-liquid-toolbar flex"
       >
-       <TabsContent value={activeView} className="min-h-0 overflow-hidden">
+       <TabsContent
+        value={activeView}
+        className={cn(
+         "min-h-0 overflow-hidden",
+         showGrammarNavigation && "grid grid-rows-[auto_minmax(0,1fr)] gap-2",
+        )}
+       >
+        {showGrammarNavigation ? (
+         <Card variant="section" padding="sm" className="grid min-w-0 gap-2">
+          <div className="flex min-w-0 flex-wrap items-center justify-between gap-2">
+           <div className="flex min-w-0 items-center gap-2">
+            <Badge variant="default" size="sm">
+             {`${visibleSections.length} điểm ngữ pháp`}
+            </Badge>
+            <Typography variant="bodySmall" tone="secondary">
+             Cấu trúc ngữ pháp và câu ví dụ kèm phiên âm
+            </Typography>
+           </div>
+           {textbookGrammarPoints.length > 0 ? (
+            <Button
+             type="button"
+             size="compact"
+             variant={
+              (isPipOpen || isInAppFloatingOpen) && pipMode === "grammar" ? "active" : "outline"
+             }
+             onClick={() => handleTogglePip("grammar")}
+             title="Mở cửa sổ nổi PiP để ôn tập ngữ pháp"
+            >
+             <PictureInPicture2 className="size-3.5" />
+             <span>
+              {(isPipOpen || isInAppFloatingOpen) && pipMode === "grammar"
+               ? "Đang mở PiP"
+               : "Cửa sổ nổi (PiP)"}
+             </span>
+            </Button>
+           ) : null}
+          </div>
+          <GrammarSectionNavigation sections={visibleSections} onSelect={selectSection} />
+         </Card>
+        ) : null}
         <div className="relative h-full min-h-0 min-w-0 overflow-y-auto overflow-x-hidden pr-1 scrollbar-soft">
          <div className="grid min-w-0 gap-3 pb-4">
           {annotationError || annotationsQuery.error ? (
@@ -2573,10 +2621,10 @@ function BusinessChineseStudyWorkspaceContent({
            <div
             className={cn(
              "grid min-w-0 gap-3",
-             !focusMode && visibleSections.length > 1 && "2xl:grid-cols-[15rem_minmax(0,1fr)]",
+             showDesktopSectionNavigation && "2xl:grid-cols-[15rem_minmax(0,1fr)]",
             )}
            >
-            {!focusMode && visibleSections.length > 1 ? (
+            {showDesktopSectionNavigation ? (
              <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
             ) : null}
             <div className="grid min-w-0 gap-3">
@@ -2674,41 +2722,15 @@ function BusinessChineseStudyWorkspaceContent({
                 onClose={() => setIsInteractivePracticeOpen(false)}
                />
               ) : null}
-              {activeView === "grammar" && textbookGrammarPoints.length > 0 ? (
-               <div className="flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl border border-border-default/60 bg-surface-muted/30 p-2">
-                <div className="flex items-center gap-2">
-                 <Badge variant="default" size="sm">
-                  {`${textbookGrammarPoints.length} điểm ngữ pháp`}
-                 </Badge>
-                 <Typography variant="bodySmall" tone="secondary">
-                  Cấu trúc ngữ pháp và câu ví dụ kèm phiên âm
-                 </Typography>
-                </div>
-                <Button
-                 type="button"
-                 size="compact"
-                 variant={
-                  (isPipOpen || isInAppFloatingOpen) && pipMode === "grammar" ? "active" : "outline"
-                 }
-                 onClick={() => handleTogglePip("grammar")}
-                 title="Mở cửa sổ nổi PiP để ôn tập ngữ pháp"
-                >
-                 <PictureInPicture2 className="size-3.5" />
-                 <span>
-                  {(isPipOpen || isInAppFloatingOpen) && pipMode === "grammar"
-                   ? "Đang mở PiP"
-                   : "Cửa sổ nổi (PiP)"}
-                 </span>
-                </Button>
-               </div>
-              ) : null}
               {visibleSections.map((section, index) => {
+               // Grammar jumps need the measured height of the preceding sections.
                const content = (
                 <BusinessChineseSection
                  section={section}
                  displayMode={displayMode}
                  translations={pairedTranslations}
                  canonicalVocabularyTableIds={canonicalVocabularyTableIds}
+                 deferLayout={!showGrammarNavigation}
                  vocabularyPreview={
                   section.blocks.some((block) => block.id === canonicalVocabularyTableIds[0]) ? (
                    <TextbookVocabularyPreview
