@@ -11,7 +11,7 @@ permissions:
  contents: read
 
 concurrency:
- group: ci-${{ github.ref }}
+ group: ci-${{ github.event_name }}-${{ github.ref }}
  cancel-in-progress: true
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
   steps:
    - uses: actions/checkout@v5
      with:
-      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+      ref: ${{ github.sha }}
       fetch-depth: 0
    - uses: actions/setup-node@v5
      with:
@@ -38,7 +38,7 @@ jobs:
      env:
       EVENT_NAME: ${{ github.event_name }}
       EVENT_ACTION: ${{ github.event.action }}
-      PUSH_BASE: ${{ github.event.before }}
+      BEFORE_SHA: ${{ github.event.before }}
       PR_BASE: ${{ github.event.pull_request.base.sha }}
       PR_HEAD: ${{ github.event.pull_request.head.sha }}
       PR_DRAFT: ${{ github.event.pull_request.draft }}
@@ -48,28 +48,29 @@ jobs:
       import { appendFileSync } from "node:fs";
 
       const pullRequest = process.env.EVENT_NAME === "pull_request";
-      const incremental = pullRequest && process.env.PR_DRAFT === "true" && process.env.EVENT_ACTION === "synchronize";
-      const base = pullRequest && !incremental ? process.env.PR_BASE : process.env.PUSH_BASE;
-      const head = incremental ? process.env.PR_HEAD : "HEAD";
-      let full = process.env.EVENT_NAME === "workflow_dispatch" || (pullRequest && process.env.PR_DRAFT !== "true") || !base || /^0+$/.test(base) || !head || (incremental && !process.env.PR_BASE);
-      if (!full) {
-       for (const commit of incremental ? [base, head, process.env.PR_BASE] : [base]) {
-        try {
-         execFileSync("git", ["cat-file", "-e", commit + "^{commit}"], { stdio: "ignore" });
-        } catch {
-         try {
-          execFileSync("git", ["fetch", "--no-tags", "--depth=1", "origin", commit], { stdio: "inherit" });
-         } catch {
-          full = true;
-          break;
-         }
-        }
+      const draftUpdate = pullRequest && process.env.PR_DRAFT === "true" && process.env.EVENT_ACTION === "synchronize";
+      const ready = pullRequest && process.env.PR_DRAFT !== "true";
+      const before = process.env.BEFORE_SHA;
+      let base = pullRequest ? process.env.PR_BASE : before;
+      const head = execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+      let incremental = false;
+      let full = process.env.EVENT_NAME === "workflow_dispatch" || !base || /^0+$/.test(base);
+      if (pullRequest && !full) {
+       const parents = execFileSync("git", ["show", "-s", "--format=%P", head], { encoding: "utf8" }).trim();
+       full = parents !== `${base} ${process.env.PR_HEAD}`;
+      }
+      if (draftUpdate && !full && before && !/^0+$/.test(before)) {
+       try {
+        execFileSync("git", ["merge-base", "--is-ancestor", base, before], { stdio: "ignore" });
+        execFileSync("git", ["merge-base", "--is-ancestor", before, process.env.PR_HEAD], { stdio: "ignore" });
+        base = before;
+        incremental = true;
+       } catch {
+        // Use the entire PR diff when the previous draft head cannot be trusted.
        }
       }
-      if (incremental && !full) {
+      if (!pullRequest && !full) {
        try {
-        // A changed integration base or rewritten history cannot use a draft delta.
-        execFileSync("git", ["merge-base", "--is-ancestor", process.env.PR_BASE, base], { stdio: "ignore" });
         execFileSync("git", ["merge-base", "--is-ancestor", base, head], { stdio: "ignore" });
        } catch {
         full = true;
@@ -77,8 +78,20 @@ jobs:
       }
       const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
       const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
-      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|[.]github[/]workflows[/]ci[.]yml$|skills-lock[.]json$)/;
-      const guidance = full || deleted.length > 0 || paths.some((file) => guidancePath.test(file) || file === ".github/workflows/ci.yml" || file === "package.json");
+      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|skills-lock[.]json$)/;
+      const pipelinePath = /^(?:[.]github[/]workflows[/]|[.]husky[/]|scripts[/]check-ci-workflow[.]test[.]mjs$|vercel[.]json$)/;
+      const guidance = full || deleted.length > 0 || paths.some((file) => guidancePath.test(file) || file.startsWith(".github/workflows/") || file === "package.json");
+      const toolbarWorkspace = "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx";
+      let toolbarBreakpointOnly = false;
+      if (paths.length === 1 && paths[0] === toolbarWorkspace && deleted.length === 0) {
+       // The mounted textbook fixture covers this breakpoint on both sides of xl.
+       // The workspace also owns offline and persisted state, so require a single line replacement.
+       const patch = execFileSync("git", ["diff", "--no-color", "--no-ext-diff", "--no-textconv", "--unified=1", base, head, "--", toolbarWorkspace], { encoding: "utf8" }).trimEnd().split("\n");
+       const [hunk, effect, removed, added, update] = patch.slice(4);
+       const breakpoint = /^[-+]  const query = window[.]matchMedia[(]"\(min-width: \d+rem\)"[)];$/;
+       toolbarBreakpointOnly = patch.length === 9 && hunk.startsWith("@@ ") && effect === "  useEffect(() => {" && breakpoint.test(removed) && breakpoint.test(added) && update === "   const updateToolbar = () => setHasWideToolbar(query.matches);";
+      }
+      const fullSuite = full || paths.some((file) => pipelinePath.test(file)) || (ready && deleted.some((file) => !guidancePath.test(file)));
       const browserFiles = {
        notes: ["src/features/notes/hooks/NoteEditor.browser.test.ts", "src/features/notes/hooks/NoteOwner.browser.test.ts"],
        srs: ["src/features/dictionary/dictionary-srs-outbox.browser.test.ts", "src/features/dictionary/DictionarySrsPage.test.tsx"],
@@ -105,7 +118,9 @@ jobs:
       // Browser fixtures load component modules through Vite URLs, so Git/Vitest's
       // static import graph alone cannot select their affected consumers.
       const scopes = [
-       { match: /^src[/](?:services[/]notes|stores[/]notes)[/]/, browser: ["notes", "home", "annotations", "reader"], product: ["notes"] },
+       { match: /^src[/](?:services[/]notes|stores[/]notes)[/]/, browser: ["notes", "home", "annotations", "reader", "reading"], product: ["notes"] },
+       { match: /^src[/]features[/]notes[/]hooks[/]useRecentNotes[.]ts$/, browser: ["notes", "home"], product: ["notes"] },
+       { match: /^src[/]features[/]notes[/](?:hooks[/]use(?:CreateLessonLinkedNote|LessonLinkedNote|NoteEditor)[.]ts|components[/]NoteConflictDialog[.]tsx)$/, browser: ["notes", "annotations", "reader", "reading"], product: ["notes"] },
        { match: /^src[/]features[/](?:notes|notebook)[/]|^src[/]features[/]hanzihome[/]components[/]notes[/]|^src[/]app[/].*[/](?:notes|note|notebook)[/]/, browser: ["notes"], product: ["notes"] },
        { match: /^src[/]features[/]home[/]|^src[/]app[/][^/]+[/][(]app[)][/]page[.]tsx$/, browser: ["home"], product: [] },
        { match: /^src[/](?:features[/](?:dictionary|personal-learning)|stores[/]dictionary|services[/]vocab)[/]|^src[/]app[/].*[/](?:dictionary|vocab|personal-learning)[/]/, browser: ["srs", "reader", "translation"], product: ["learning"] },
@@ -121,34 +136,42 @@ jobs:
        { match: /^src[/]components[/]layout[/]navigation[/]UnsavedDraftNavigationGuard[.]/, browser: ["navigation"], product: [] },
        { match: /^src[/]features[/]hanzihome[/]search[/]|^src[/]app[/]api[/]hanzihome[/]search-index[/]/, browser: ["home"], product: ["search"] },
        { match: /^src[/]features[/]hanzihome[/]learning-loop[/]|^src[/]features[/]hanzihome[/]hooks[/]useHanziHomeLearningLoop[.]|^src[/]app[/].*[/]learning-loop[/]/, browser: ["srs"], product: ["learning"] },
-       { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, browser: ["reader"], product: ["offline"] },
+       { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, browser: ["reader"], product: ["offline"], fullOnReady: true },
        { match: /^src[/]features[/]daily-reading[/]|^src[/]app[/]api[/]daily-reading[/]/, browser: ["reading", "recorder"], product: ["reading"] },
-       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "reading", "tts", "listening", "annotations", "home"], product: ["offline", "search"] },
+       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "reading", "tts", "listening", "annotations", "home"], product: ["offline", "search"], fullOnReady: true },
       ];
-      let code = full;
-      let unitFull = full || deleted.some((file) => !guidancePath.test(file));
-      let allBrowser = full;
-      let allProduct = full;
+      let code = fullSuite;
+      let unitFull = fullSuite || deleted.some((file) => !guidancePath.test(file));
+      let allBrowser = fullSuite;
+      let allProduct = fullSuite;
       const selectedBrowser = new Set();
       const selectedProduct = new Set();
-      for (const file of paths) {
+      for (const file of fullSuite ? [] : paths) {
        if (guidancePath.test(file)) continue;
        code = true;
-       if (/^([.]github[/]|[.]husky[/]|scripts[/]check-|[.]ox|[.]gitignore$)/.test(file) || file === "scripts/npm-audit-baseline.json") {
+       if (toolbarBreakpointOnly) {
+        for (const fixture of browserFiles.reading) selectedBrowser.add(fixture);
+        continue;
+       }
+       if (/^([.]github[/]|scripts[/]check-|[.]ox|[.]gitignore$)/.test(file) || file === "scripts/npm-audit-baseline.json") {
         unitFull = true;
+        allBrowser ||= ready;
+        allProduct ||= ready;
         continue;
        }
        if (/^(e2e[/]|scripts[/]e2e[/]|playwright[.]config[.])/.test(file)) {
+        allBrowser ||= ready;
         allProduct = true;
         unitFull = true;
         continue;
        }
        if (/^src[/]components[/]ui[/]|^src[/]app[/].*[.](?:css|scss)$/.test(file)) {
         allBrowser = true;
+        allProduct ||= ready && file.startsWith("src/components/ui/");
         unitFull = true;
         continue;
        }
-       if (/[/](?:query-keys|types|index)[.][cm]?[jt]sx?$/.test(file)) {
+       if (/[/](?:query-keys|types|index)[.][cm]?[jt]sx?$/.test(file) || file === "src/features/hanzihome/hooks/useLearningState.ts") {
         unitFull = true;
         allBrowser = true;
         allProduct = true;
@@ -156,17 +179,17 @@ jobs:
        }
        if (file.startsWith("src/app/") || file.endsWith(".json")) unitFull = true;
        const scope = scopes.find((candidate) => candidate.match.test(file));
-       if (scope) {
+       const apiWithoutProductCase = file.startsWith("src/app/api/") && !scope?.product.length;
+       if (scope && !(ready && (scope.fullOnReady || apiWithoutProductCase))) {
         for (const group of scope.browser) {
          for (const fixture of browserFiles[group]) selectedBrowser.add(fixture);
         }
-        // Component and test-only edits are covered by mounted/Node tests.
-        if (!/[/]components[/]|[.](?:test|spec)[.]|[.]browser[.]fixture[.]|[.](?:css|scss)$/.test(file) || file.endsWith("/PwaServiceWorkerRegister.tsx")) {
+        // Component location alone does not rule out product state or offline behavior.
+        if (!/[.](?:test|spec)[.]|[.]browser[.]fixture[.]|[.](?:css|scss)$/.test(file)) {
          for (const group of scope.product) selectedProduct.add(productPatterns[group]);
         }
        } else {
-        // Shared/auth/schema/config/data and unmapped owners must not silently
-        // lose coverage. A manual dispatch also takes this full-suite path.
+        // Unmapped owners and broad fallback scopes need full coverage before merge.
         unitFull = true;
         allBrowser = true;
         allProduct = true;
@@ -183,7 +206,7 @@ jobs:
       };
       const newline = String.fromCharCode(10);
       appendFileSync(process.env.GITHUB_OUTPUT, Object.entries(output).map(([key, value]) => key + "=" + value).join(newline) + newline);
-      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (full ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Diff head: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (unitFull && allBrowser && allProduct ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Tested SHA: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
       JS
 
  verify:
@@ -198,7 +221,7 @@ jobs:
   steps:
    - uses: actions/checkout@v5
      with:
-      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+      ref: ${{ github.sha }}
 
    - uses: actions/setup-node@v5
      with:
@@ -206,7 +229,7 @@ jobs:
       cache: npm
 
    - run: npm install --global npm@12.2.0
-   - run: npm ci
+   - run: npm ci --prefer-offline
    - name: Agent guidance contracts
      if: needs.changes.outputs.guidance == 'true'
      run: |
@@ -341,14 +364,14 @@ jobs:
   steps:
    - uses: actions/checkout@v5
      with:
-      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+      ref: ${{ github.sha }}
    - uses: actions/setup-node@v5
      with:
       node-version: 22
       cache: npm
    - run: npm install --global npm@12.2.0
-   - run: npm ci
-   - run: npx playwright install --with-deps chromium
+   - run: npm ci --prefer-offline
+   - run: npx playwright install --with-deps --only-shell chromium
    - name: Affected mounted browser fixtures
      env:
       BROWSER_FILES: ${{ needs.changes.outputs.browser_files }}
@@ -372,7 +395,7 @@ jobs:
   steps:
    - uses: actions/checkout@v5
      with:
-      ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+      ref: ${{ github.sha }}
 
    - uses: actions/setup-node@v5
      with:
@@ -380,8 +403,8 @@ jobs:
       cache: npm
 
    - run: npm install --global npm@12.2.0
-   - run: npm ci
-   - run: npx playwright install --with-deps chromium
+   - run: npm ci --prefer-offline
+   - run: npx playwright install --with-deps --only-shell chromium
    - name: Apply canonical local schema baseline
      shell: bash
      run: |
@@ -432,7 +455,7 @@ jobs:
      run: npx supabase stop
 
  gate:
-  name: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft && 'CI draft' || 'CI gate' }}
+  name: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'CI production' || github.event_name == 'pull_request' && (github.event.pull_request.draft && 'CI draft' || github.base_ref == 'main' && 'CI gate') || 'CI validation' }}
   needs: [changes, verify, browser, e2e]
   if: always()
   runs-on: ubuntu-latest
