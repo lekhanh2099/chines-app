@@ -3,7 +3,7 @@
 import { useMemo, type ComponentProps, type KeyboardEvent } from "react";
 import { useTranslations } from "next-intl";
 
-import { focusRingClassName } from "@/components/ui/focus-ring";
+import { glyphActionClassName } from "@/components/ui/focus-ring";
 import {
  PinyinText,
  ReaderHanziText,
@@ -158,14 +158,12 @@ export function ContextualReaderText({
   };
   const hanziClassName = hanziInteractive
    ? cn(
-      "cursor-pointer rounded-sm select-text",
-      focusRingClassName,
+      glyphActionClassName,
+      "select-text",
       (annotation || readerAnnotation) && "reading-highlight",
      )
    : "select-text";
-  const pinyinClassName = pinyinInteractive
-   ? cn("cursor-pointer rounded-sm", focusRingClassName)
-   : undefined;
+  const pinyinClassName = pinyinInteractive ? glyphActionClassName : undefined;
   const needsPronunciationReview =
    glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
   const hanziActionLabel = annotation
@@ -298,11 +296,7 @@ export function ContextualReaderText({
       return pinyinInteractive ? (
        <span
         key={`${glyph.start}:${glyph.end}`}
-        className={cn(
-         "cursor-pointer rounded-sm",
-         focusRingClassName,
-         needsPronunciationReview && "text-warning",
-        )}
+        className={cn(glyphActionClassName, needsPronunciationReview && "text-warning")}
         onClick={(event) => {
          event.stopPropagation();
          activatePinyin(event.currentTarget);

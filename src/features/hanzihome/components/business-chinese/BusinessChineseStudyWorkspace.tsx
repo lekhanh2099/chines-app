@@ -41,7 +41,7 @@ import { Button } from "@/components/ui/actions/button";
 import { IconTile } from "@/components/ui/display/icon-tile";
 import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
-import { focusRingClassName } from "@/components/ui/focus-ring";
+import { glyphActionClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
 import {
  Bookmark,
@@ -557,8 +557,8 @@ function BusinessChineseMixedText({
       displayMode={displayMode}
       size={learnerContent ? undefined : "inherit"}
       className={cn(
-       onGlyphClick && "cursor-pointer rounded-sm select-text",
-       onGlyphClick && focusRingClassName,
+       onGlyphClick && glyphActionClassName,
+       onGlyphClick && "select-text",
        active && "reading-progress-highlight",
       )}
       onClick={onGlyphClick ? activateHanzi : undefined}
@@ -595,11 +595,7 @@ function BusinessChineseMixedText({
         tone="secondary"
         weight="medium"
         scale={learnerContent ? "inherit" : "cloze"}
-        className={cn(
-         "cursor-pointer rounded-sm",
-         focusRingClassName,
-         needsPronunciationReview && "text-warning",
-        )}
+        className={cn(glyphActionClassName, needsPronunciationReview && "text-warning")}
         role="button"
         tabIndex={0}
         aria-label={

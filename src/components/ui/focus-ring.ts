@@ -6,3 +6,6 @@ export const focusWithinRingClassName =
 
 export const invalidFocusRingClassName =
  "aria-invalid:border-destructive aria-invalid:focus-visible:border-destructive/60 aria-invalid:focus-visible:ring-destructive/20";
+
+/** Pointer + focus ring for per-glyph Hanzi/Pinyin actions (see `@utility glyph-action`). */
+export const glyphActionClassName = "glyph-action";
