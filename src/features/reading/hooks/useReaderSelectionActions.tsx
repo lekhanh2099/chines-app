@@ -154,12 +154,13 @@ export function useReaderSelectionActions({
   },
   [documentModel.segments],
  );
+ // Annotation caches are owned per (owner, document); prefix keys would write
+ // this document's annotation into every other cached Reader document.
+ const annotationsQueryKey = hanzihomeQueryKeys.readerAnnotations(userId, documentModel.id);
+ const readerStateQueryKey = hanzihomeQueryKeys.readerState(userId, documentModel.id);
  const invalidateAnnotations = () =>
   queryClient.invalidateQueries({
-   queryKey:
-    stateOwner === "reader"
-     ? hanzihomeQueryKeys.readerState(documentModel.id)
-     : hanzihomeQueryKeys.readerAnnotations(documentModel.id),
+   queryKey: stateOwner === "reader" ? readerStateQueryKey : annotationsQueryKey,
   });
  const sourceHref = (
   current: ReaderSurfaceSelection,
@@ -209,31 +210,25 @@ export function useReaderSelectionActions({
      );
   void request
    .then((savedAnnotation) => {
-    queryClient.setQueriesData<readonly ReaderAnnotationRow[]>(
-     { queryKey: ["hanzihome", "reader", "annotations"] },
-     (current) => {
-      if (!current) return [savedAnnotation];
-      const exists = current.some((item) => item.id === savedAnnotation.id);
-      return exists
-       ? current.map((item) => (item.id === savedAnnotation.id ? savedAnnotation : item))
-       : [...current, savedAnnotation];
-     },
-    );
-    queryClient.setQueriesData<ReaderStateBootstrap | null>(
-     { queryKey: ["hanzihome", "reader", "state"] },
-     (current) => {
-      if (!current) return current;
-      const exists = current.annotations.some((item) => item.id === savedAnnotation.id);
-      return {
-       ...current,
-       annotations: exists
-        ? current.annotations.map((item) =>
-           item.id === savedAnnotation.id ? savedAnnotation : item,
-          )
-        : [...current.annotations, savedAnnotation],
-      };
-     },
-    );
+    queryClient.setQueryData<readonly ReaderAnnotationRow[]>(annotationsQueryKey, (current) => {
+     if (!current) return [savedAnnotation];
+     const exists = current.some((item) => item.id === savedAnnotation.id);
+     return exists
+      ? current.map((item) => (item.id === savedAnnotation.id ? savedAnnotation : item))
+      : [...current, savedAnnotation];
+    });
+    queryClient.setQueryData<ReaderStateBootstrap | null>(readerStateQueryKey, (current) => {
+     if (!current) return current;
+     const exists = current.annotations.some((item) => item.id === savedAnnotation.id);
+     return {
+      ...current,
+      annotations: exists
+       ? current.annotations.map((item) =>
+          item.id === savedAnnotation.id ? savedAnnotation : item,
+         )
+       : [...current.annotations, savedAnnotation],
+     };
+    });
     if (annotationType === "highlight") {
      const now = new Date().toISOString();
      void upsertLearningLoopItem({
@@ -269,19 +264,16 @@ export function useReaderSelectionActions({
   setSaveError("");
   void deleteReaderAnnotation(annotationId, revision, documentModel.id, userId ?? undefined)
    .then(() => {
-    queryClient.setQueriesData<readonly ReaderAnnotationRow[]>(
-     { queryKey: ["hanzihome", "reader", "annotations"] },
-     (current) => (current ? current.filter((item) => item.id !== annotationId) : []),
+    queryClient.setQueryData<readonly ReaderAnnotationRow[]>(annotationsQueryKey, (current) =>
+     current ? current.filter((item) => item.id !== annotationId) : current,
     );
-    queryClient.setQueriesData<ReaderStateBootstrap | null>(
-     { queryKey: ["hanzihome", "reader", "state"] },
-     (current) =>
-      current
-       ? {
-          ...current,
-          annotations: current.annotations.filter((item) => item.id !== annotationId),
-         }
-       : current,
+    queryClient.setQueryData<ReaderStateBootstrap | null>(readerStateQueryKey, (current) =>
+     current
+      ? {
+         ...current,
+         annotations: current.annotations.filter((item) => item.id !== annotationId),
+        }
+      : current,
     );
     clear();
     return invalidateAnnotations();
