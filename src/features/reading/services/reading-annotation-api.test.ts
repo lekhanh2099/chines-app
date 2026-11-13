@@ -16,6 +16,8 @@ const localStore = vi.hoisted(() => ({
  acknowledgePendingAnnotationDelete: vi.fn(),
  acknowledgeLocalReaderAnnotationCreate: vi.fn(),
  saveLocalReaderAnnotationIfCurrent: vi.fn(),
+ rejectPendingAnnotationMutation: vi.fn(),
+ getLocalReaderAnnotationById: vi.fn(),
 }));
 
 vi.mock("../local/reader-annotation-local-store", () => ({
@@ -34,6 +36,8 @@ vi.mock("../local/reader-annotation-local-store", () => ({
  acknowledgePendingAnnotationDelete: localStore.acknowledgePendingAnnotationDelete,
  acknowledgeLocalReaderAnnotationCreate: localStore.acknowledgeLocalReaderAnnotationCreate,
  saveLocalReaderAnnotationIfCurrent: localStore.saveLocalReaderAnnotationIfCurrent,
+ rejectPendingAnnotationMutation: localStore.rejectPendingAnnotationMutation,
+ getLocalReaderAnnotationById: localStore.getLocalReaderAnnotationById,
 }));
 
 import {
@@ -42,6 +46,7 @@ import {
  fetchReaderAnnotations,
  syncPendingReaderAnnotations,
  updateReaderAnnotation,
+ type ReaderAnnotationInput,
 } from "./reading-annotation-api";
 import type { ReaderAnnotationRow } from "../model/reading-annotation.schemas";
 import type { PendingAnnotationMutation } from "../local/reader-annotation-local-store";
@@ -93,6 +98,8 @@ describe("reading-annotation-api offline resiliency", () => {
    localAnnotation: mockAnnotation,
   });
   localStore.saveLocalReaderAnnotationIfCurrent.mockResolvedValue(true);
+  localStore.rejectPendingAnnotationMutation.mockResolvedValue(true);
+  localStore.getLocalReaderAnnotationById.mockResolvedValue(null);
  });
 
  afterEach(() => {
@@ -597,5 +604,142 @@ describe("reading-annotation-api offline resiliency", () => {
   );
   expect(fetchMock).toHaveBeenCalledTimes(1);
   expect(fetchMock).toHaveBeenCalledWith("/api/reading/annotations", expect.any(Object));
+ });
+ describe("permanent rejections and pending edits", () => {
+  const onlineAnnotation: ReaderAnnotationRow = {
+   ...mockAnnotation,
+   id: "44444444-4444-4444-8444-444444444444",
+   user_id: "11111111-1111-4111-8111-111111111111",
+  };
+  const createInput: ReaderAnnotationInput = {
+   documentId: "doc-1",
+   paragraphId: "p-1",
+   assetId: null,
+   annotationType: "note",
+   pageNumber: null,
+   startOffset: 0,
+   endOffset: 2,
+   selectedText: "你好",
+   noteText: "note",
+   color: "yellow",
+   payload: {},
+  };
+
+  it("rejects an online create that the server refuses with 400 instead of queueing a false success", async () => {
+   vi.stubGlobal("navigator", { onLine: true });
+   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({}, { status: 400 })));
+
+   await expect(
+    createReaderAnnotation(createInput, onlineAnnotation.user_id),
+   ).rejects.toMatchObject({
+    status: 400,
+   });
+   expect(localStore.enqueuePendingAnnotationMutation).not.toHaveBeenCalled();
+   expect(localStore.deleteLocalReaderAnnotation).toHaveBeenCalledTimes(1);
+  });
+
+  it("still queues an online create when the server fails transiently", async () => {
+   vi.stubGlobal("navigator", { onLine: true });
+   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({}, { status: 503 })));
+
+   const result = await createReaderAnnotation(createInput, onlineAnnotation.user_id);
+   expect(result.note_text).toBe("note");
+   expect(localStore.enqueuePendingAnnotationMutation).toHaveBeenCalledWith(
+    expect.objectContaining({ type: "reader_annotation.create" }),
+   );
+  });
+
+  it("rejects an online update conflict and restores the previous local copy", async () => {
+   vi.stubGlobal("navigator", { onLine: true });
+   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({}, { status: 409 })));
+
+   await expect(
+    updateReaderAnnotation(onlineAnnotation, "changed", onlineAnnotation.user_id),
+   ).rejects.toMatchObject({ status: 409 });
+   expect(localStore.enqueuePendingAnnotationMutation).not.toHaveBeenCalled();
+   expect(localStore.saveLocalReaderAnnotation).toHaveBeenLastCalledWith(onlineAnnotation);
+  });
+
+  it("drops a queued create the server permanently rejects instead of retrying it forever", async () => {
+   vi.stubGlobal("navigator", { onLine: true });
+   const mutation: PendingAnnotationMutation = {
+    id: "reader_annotation:create:temp-1",
+    type: "reader_annotation.create",
+    status: "failed",
+    userId: "user-1",
+    tempId: "temp-1",
+    documentId: "doc-1",
+    annotation: { ...mockAnnotation, id: "temp-1" },
+    createdAt: "2026-09-10T00:00:00.000Z",
+    updatedAt: "2026-09-10T00:00:00.000Z",
+    attemptCount: 3,
+   };
+   localStore.getPendingAnnotationMutations.mockResolvedValue([mutation]);
+   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({}, { status: 400 })));
+
+   const result = await syncPendingReaderAnnotations("user-1");
+   expect(result.errorCount).toBe(1);
+   expect(localStore.rejectPendingAnnotationMutation).toHaveBeenCalledWith(
+    expect.objectContaining({ id: mutation.id }),
+   );
+   expect(localStore.markPendingAnnotationMutationFailed).not.toHaveBeenCalled();
+  });
+
+  it("keeps an unsynced local edit when the server list is refetched", async () => {
+   vi.stubGlobal("navigator", { onLine: true });
+   const pendingEdit: ReaderAnnotationRow = { ...onlineAnnotation, note_text: "offline edit" };
+   localStore.getPendingAnnotationMutations.mockResolvedValue([
+    {
+     id: `reader_annotation:update:${onlineAnnotation.id}`,
+     type: "reader_annotation.update",
+     status: "pending",
+     userId: onlineAnnotation.user_id,
+     annotationId: onlineAnnotation.id,
+     documentId: "doc-1",
+     noteText: "offline edit",
+     expectedRevision: 1,
+     annotation: pendingEdit,
+     createdAt: "2026-09-10T00:00:00.000Z",
+     updatedAt: "2026-09-10T00:00:00.000Z",
+     attemptCount: 0,
+    },
+   ]);
+   vi.stubGlobal(
+    "fetch",
+    vi.fn().mockResolvedValue(Response.json({ annotations: [onlineAnnotation] })),
+   );
+
+   const result = await fetchReaderAnnotations(onlineAnnotation.user_id, "doc-1");
+   expect(result.map((item) => item.note_text)).toEqual(["offline edit"]);
+   expect(localStore.saveLocalReaderAnnotations).toHaveBeenCalledWith([pendingEdit]);
+  });
+
+  it("keeps queued work when another account owns the session (412) instead of dropping it", async () => {
+   vi.stubGlobal("navigator", { onLine: true });
+   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({}, { status: 412 })));
+
+   const result = await createReaderAnnotation(createInput, onlineAnnotation.user_id);
+   expect(result.note_text).toBe("note");
+   expect(localStore.enqueuePendingAnnotationMutation).toHaveBeenCalledWith(
+    expect.objectContaining({ type: "reader_annotation.create" }),
+   );
+   expect(localStore.deleteLocalReaderAnnotation).not.toHaveBeenCalled();
+  });
+
+  it("restores the offline copy when the server permanently rejects a delete", async () => {
+   vi.stubGlobal("navigator", { onLine: true });
+   localStore.getLocalReaderAnnotationById.mockResolvedValue(onlineAnnotation);
+   localStore.cancelPendingMutationsForAnnotation.mockResolvedValue({
+    hadPendingCreate: false,
+    pendingCreateIsSyncing: false,
+   });
+   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({}, { status: 409 })));
+
+   await expect(
+    deleteReaderAnnotation(onlineAnnotation.id, 1, "doc-1", onlineAnnotation.user_id),
+   ).rejects.toMatchObject({ status: 409 });
+   expect(localStore.saveLocalReaderAnnotation).toHaveBeenCalledWith(onlineAnnotation);
+   expect(localStore.enqueuePendingAnnotationMutation).not.toHaveBeenCalled();
+  });
  });
 });

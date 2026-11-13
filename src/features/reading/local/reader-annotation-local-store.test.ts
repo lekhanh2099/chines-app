@@ -31,6 +31,7 @@ import {
  enqueuePendingAnnotationMutation,
  getLocalReaderAnnotations,
  getPendingAnnotationMutations,
+ rejectPendingAnnotationMutation,
  removePendingAnnotationMutation,
  saveLocalReaderAnnotation,
  type PendingAnnotationMutation,
@@ -338,5 +339,76 @@ describe("reader-annotation-local-store", () => {
   expect(acknowledged).toBe(false);
   expect(pending.get(previous.id)).toMatchObject({ noteText: "Second edit" });
   expect(annotations.get(sampleAnnotation1.id)).toMatchObject({ note_text: "Second edit" });
+ });
+ it("removes a rejected create together with its optimistic row and follow-up edits", async () => {
+  const create: PendingAnnotationMutation = {
+   id: "reader_annotation:create:" + sampleAnnotation1.id,
+   type: "reader_annotation.create",
+   status: "syncing",
+   userId: sampleAnnotation1.user_id,
+   tempId: sampleAnnotation1.id,
+   documentId: sampleAnnotation1.document_id,
+   annotation: sampleAnnotation1,
+   createdAt: "2026-09-10T12:00:00.000Z",
+   updatedAt: "2026-09-10T12:00:01.000Z",
+   attemptCount: 2,
+  };
+  const update: PendingAnnotationMutation = {
+   id: "reader_annotation:update:" + sampleAnnotation1.id,
+   type: "reader_annotation.update",
+   status: "pending",
+   userId: sampleAnnotation1.user_id,
+   annotationId: sampleAnnotation1.id,
+   documentId: sampleAnnotation1.document_id,
+   noteText: "edit",
+   expectedRevision: 1,
+   createdAt: "2026-09-10T12:00:02.000Z",
+   updatedAt: "2026-09-10T12:00:02.000Z",
+   attemptCount: 0,
+  };
+  const pending = new Map<string, PendingAnnotationMutation>([
+   [create.id, create],
+   [update.id, update],
+  ]);
+  const annotations = new Map<string, ReaderAnnotationRow>([
+   [sampleAnnotation1.id, sampleAnnotation1],
+   [sampleAnnotation2.id, sampleAnnotation2],
+  ]);
+  localDb.transaction.mockImplementationOnce(
+   createReaderAnnotationTransaction(pending, annotations),
+  );
+
+  await expect(rejectPendingAnnotationMutation(create)).resolves.toBe(true);
+  expect(pending.size).toBe(0);
+  expect([...annotations.keys()]).toEqual([sampleAnnotation2.id]);
+ });
+
+ it("does not reject a mutation that a newer local edit has already replaced", async () => {
+  const stale: PendingAnnotationMutation = {
+   id: "reader_annotation:update:" + sampleAnnotation1.id,
+   type: "reader_annotation.update",
+   status: "syncing",
+   userId: sampleAnnotation1.user_id,
+   annotationId: sampleAnnotation1.id,
+   documentId: sampleAnnotation1.document_id,
+   noteText: "old",
+   expectedRevision: 1,
+   createdAt: "2026-09-10T12:00:00.000Z",
+   updatedAt: "2026-09-10T12:00:01.000Z",
+   attemptCount: 1,
+  };
+  const newer: PendingAnnotationMutation = {
+   ...stale,
+   status: "pending",
+   noteText: "new",
+   updatedAt: "2026-09-10T12:00:05.000Z",
+  };
+  const pending = new Map<string, PendingAnnotationMutation>([[newer.id, newer]]);
+  localDb.transaction.mockImplementationOnce(
+   createReaderAnnotationTransaction(pending, new Map<string, ReaderAnnotationRow>()),
+  );
+
+  await expect(rejectPendingAnnotationMutation(stale)).resolves.toBe(false);
+  expect(pending.get(newer.id)).toMatchObject({ noteText: "new" });
  });
 });
