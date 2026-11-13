@@ -32,6 +32,11 @@ all consume the dedicated normalized vocabulary resource through the same
 TanStack Query cache. Derived mini-grid items must never be persisted back into
 the lesson-section payload.
 
+Section updates treat `changes.payload` as a patch: the server merges the sent
+keys over the stored payload (the rendered section is a read model and is never
+written back wholesale) and rejects a vocabulary section payload whose `items`
+is non-empty. `expectedUpdatedAt` still guards the merged write.
+
 An active word or phrase is unique within its lesson by
 `(lesson_id, word, pinyin)`. Recurrence across different lessons is allowed.
 This invariant is enforced by the active database unique index and by seed

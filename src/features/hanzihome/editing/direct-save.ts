@@ -77,6 +77,7 @@ const editableDetailSectionSchema = z.looseObject({
 const editableSectionSchema = z.looseObject({
  title: z.string().default(""),
  title_vi: z.string().default(""),
+ empty_reason_vi: z.string().default(""),
 });
 
 const mutationErrorPayloadSchema = z.object({
@@ -153,10 +154,13 @@ function mapLesson(value: Parameters<typeof editableLessonSchema.parse>[0]) {
 
 function mapSection(value: Parameters<typeof editableSectionSchema.parse>[0]) {
  const section = editableSectionSchema.parse(value);
+ // The rendered section is a read model (canonical vocabulary attached,
+ // soft-deleted nested nodes removed). Only the payload keys this form edits
+ // are sent; the server merges them over the stored payload.
  return {
   title: section.title,
   title_vi: section.title_vi,
-  payload: section,
+  payload: { empty_reason_vi: section.empty_reason_vi },
  };
 }
 
