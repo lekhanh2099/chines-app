@@ -38,7 +38,7 @@ import {
 import {
  buildExercisesFromVocabItems,
  customVocabListToHanziHomeVocabItems,
-} from "@/features/hanzihome/components/review/vocab-hub-adapter";
+} from "@/features/hanzihome/components/review/vocab-hub-custom";
 import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {

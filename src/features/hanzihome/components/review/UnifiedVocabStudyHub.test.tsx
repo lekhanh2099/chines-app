@@ -1,9 +1,11 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { renderToStaticMarkup } from "react-dom/server";
 import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it, vi } from "vitest";
 
 import { appLocales } from "@/i18n/config";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { loadAppMessages } from "@/i18n/messages";
 import type { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import * as pipHook from "@/features/hanzihome/hooks/useDocumentPip";
@@ -15,12 +17,14 @@ import {
 import { mergeLearningStateAfterConflict } from "@/features/hanzihome/local/learning-state-conflict-merge";
 import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
 import {
- buildExercisesFromVocabItems,
  buildStudyBundleFromBookmarkedLessons,
- customVocabListToHanziHomeVocabItems,
  getBookmarkedTextbookGroups,
- parseBulkCustomVocabInput,
 } from "./vocab-hub-adapter";
+import {
+ buildExercisesFromVocabItems,
+ customVocabListToHanziHomeVocabItems,
+ parseBulkCustomVocabInput,
+} from "./vocab-hub-custom";
 import { UnifiedVocabStudyHub } from "./UnifiedVocabStudyHub";
 
 const { mockLearningState } = vi.hoisted(() => ({
@@ -200,9 +204,18 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
 
  it("renders UnifiedVocabStudyHub as a compact 2-row hub with custom Select triggers", async () => {
   const messages = await loadAppMessages("vi");
+  // Bookmarked textbook data is loaded on demand; seed it as it is once loaded.
+  const bookmarkedLessonIds = ["nhip-cau-lesson-01", "doc-hieu-lesson-01"];
+  const queryClient = new QueryClient();
+  queryClient.setQueryData(
+   hanzihomeQueryKeys.bookmarkedTextbookGroups(bookmarkedLessonIds),
+   getBookmarkedTextbookGroups(bookmarkedLessonIds),
+  );
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <UnifiedVocabStudyHub />
+    <QueryClientProvider client={queryClient}>
+     <UnifiedVocabStudyHub />
+    </QueryClientProvider>
    </NextIntlClientProvider>,
   );
   expect(markup).toContain("Học từ vựng &amp; Bài tập PiP");
@@ -250,7 +263,9 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
    try {
     const markup = renderToStaticMarkup(
      <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
-      <UnifiedVocabStudyHub defaultOpenInline />
+      <QueryClientProvider client={new QueryClient()}>
+       <UnifiedVocabStudyHub defaultOpenInline />
+      </QueryClientProvider>
      </NextIntlClientProvider>,
     );
 
