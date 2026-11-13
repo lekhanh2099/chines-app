@@ -128,6 +128,9 @@ export function attachLessonVocabularyResource(
              })),
              audio_key: item.audio_key,
              check_needed: item.check_needed,
+             // Mini-grid edits must target the canonical hanzihome_vocab_items
+             // row, not the (empty) section payload copy.
+             ...(item.editMeta ? { editMeta: item.editMeta } : {}),
             }),
            ),
           }

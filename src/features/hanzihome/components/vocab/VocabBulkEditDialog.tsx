@@ -77,7 +77,10 @@ type Props<TItem extends EditableItem> = {
  label?: string;
 };
 
-function coreRow<TItem extends EditableItem>(item: TItem, getId: (item: TItem) => string): CoreRow {
+export function coreRow<TItem extends EditableItem>(
+ item: TItem,
+ getId: (item: TItem) => string,
+): CoreRow {
  const record = asRecord(item);
  const meaning = asRecord(record.meaning);
  const pos = asRecord(record.pos);
@@ -86,14 +89,19 @@ function coreRow<TItem extends EditableItem>(item: TItem, getId: (item: TItem) =
   hanzi: item.hanzi,
   pinyin: item.pinyin,
   meaningVi: stringValue(meaning, "meaning_vi") || stringValue(record, "meaning_vi"),
-  pos: stringValue(pos, "raw_vi") || stringValue(pos, "normalized"),
+  // Lesson-shaped items carry the normalized POS as a plain string.
+  pos:
+   typeof record.pos === "string"
+    ? record.pos
+    : stringValue(pos, "raw_vi") || stringValue(pos, "normalized"),
   category: stringValue(record, "category") || "Từ vựng",
  };
 }
 
-function applyCore<TItem extends EditableItem>(item: TItem, row: CoreRow): TItem {
- const next = structuredClone(item);
- const record = JsonObjectSchema.parse(next);
+// JsonObjectSchema.parse returns a new object, so the edited record itself is
+// the save payload (mutating it never reached the cloned item).
+export function applyCore(item: EditableItem, row: CoreRow): JsonObject {
+ const record = JsonObjectSchema.parse(structuredClone(item));
  const meaning = asRecord(record.meaning);
  const pos = asRecord(record.pos);
  record.hanzi = row.hanzi.trim();
@@ -104,8 +112,11 @@ function applyCore<TItem extends EditableItem>(item: TItem, row: CoreRow): TItem
   meaning_vi: row.meaningVi.trim(),
   short_definition_vi: row.meaningVi.trim(),
  };
+ // Lesson-shaped items keep the meaning flat; mapVocabItem prefers that field,
+ // so leaving it stale would silently drop the edit.
+ if (typeof record.meaning_vi === "string") record.meaning_vi = row.meaningVi.trim();
  record.pos = { ...pos, raw_vi: row.pos.trim(), normalized: row.pos.trim() || "unknown" };
- return next;
+ return record;
 }
 
 const PreviewSchema = z.object({
