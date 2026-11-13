@@ -42,10 +42,10 @@ export async function mergeSectionPayloadChanges({
  changes: JsonObject;
 }): Promise<JsonObject> {
  const payloadPatch = JsonObjectSchema.safeParse(changes.payload);
- if (!payloadPatch.success) return changes;
+ if (!payloadPatch.success && typeof changes.section_type !== "string") return changes;
 
  if (operation === "create") {
-  if (typeof changes.section_type === "string") {
+  if (payloadPatch.success && typeof changes.section_type === "string") {
    rejectVocabularyItems(changes.section_type, payloadPatch.data);
   }
   return changes;
@@ -60,7 +60,11 @@ export async function mergeSectionPayloadChanges({
  if (error) throw new SectionPayloadRejection(error.message, 500);
  if (!row) throw new SectionPayloadRejection("Section not found", 404);
 
- rejectVocabularyItems(row.section_type, payloadPatch.data);
  const storedPayload = JsonObjectSchema.parse(row.payload);
- return { ...changes, payload: { ...storedPayload, ...payloadPatch.data } };
+ const payload = payloadPatch.success ? { ...storedPayload, ...payloadPatch.data } : storedPayload;
+ rejectVocabularyItems(
+  typeof changes.section_type === "string" ? changes.section_type : row.section_type,
+  payload,
+ );
+ return payloadPatch.success ? { ...changes, payload } : changes;
 }
