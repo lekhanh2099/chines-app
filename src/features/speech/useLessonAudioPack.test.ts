@@ -37,6 +37,12 @@ describe("useLessonAudioPack", () => {
    vi.unstubAllGlobals();
   });
 
+  it("counts a shared sanitized cache key only once", () => {
+   const entries = lessonAudioPackEntries(["1. 你好", "你好"], DEFAULT_MANDARIN_VOICE);
+
+   expect(entries).toHaveLength(1);
+  });
+
   it("checks the same key the audio writer stores, for every text of a real lesson", async () => {
    vi.stubGlobal(
     "fetch",

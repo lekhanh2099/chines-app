@@ -54,9 +54,14 @@ export function lessonAudioPackEntries(
  voice: string,
 ): LessonAudioPackEntry[] {
  const rate = normalizeSpeechRate(LESSON_AUDIO_PACK_RATE);
+ const seenKeys = new Set<string>();
  return texts.flatMap((text) => {
   const sanitized = sanitizeSpeechTextForVoice(text, voice);
-  return sanitized ? [{ text, cacheKey: buildCacheKey(sanitized, voice, rate) }] : [];
+  if (!sanitized) return [];
+  const cacheKey = buildCacheKey(sanitized, voice, rate);
+  if (seenKeys.has(cacheKey)) return [];
+  seenKeys.add(cacheKey);
+  return [{ text, cacheKey }];
  });
 }
 
