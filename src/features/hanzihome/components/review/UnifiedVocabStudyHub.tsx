@@ -93,7 +93,10 @@ export function UnifiedVocabStudyHub({
   // Keep the previous deck while a new selection loads instead of flashing empty.
   placeholderData: keepPreviousData,
  });
- const bookmarkedGroups = bookmarkedGroupsQuery.data ?? NO_BOOKMARKED_GROUPS;
+ const bookmarkedGroups =
+  bookmarkedLessonIds.length > 0
+   ? (bookmarkedGroupsQuery.data ?? NO_BOOKMARKED_GROUPS)
+   : NO_BOOKMARKED_GROUPS;
  const allBookmarkedLessons = useMemo(
   () => bookmarkedGroups.flatMap((g) => g.lessons),
   [bookmarkedGroups],
@@ -163,7 +166,8 @@ export function UnifiedVocabStudyHub({
   // Keep the previous deck while a new selection loads instead of flashing empty.
   placeholderData: keepPreviousData,
  });
- const bookmarkedBundle = bookmarkedBundleQuery.data;
+ const bookmarkedBundle =
+  selectedBookmarkedLessons.length > 0 ? bookmarkedBundleQuery.data : EMPTY_BOOKMARKED_BUNDLE;
 
  const activeBundle = useMemo<StudyBundle>(() => {
   if (sourceMode === "it-quick") {

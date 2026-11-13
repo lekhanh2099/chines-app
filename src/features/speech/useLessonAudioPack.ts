@@ -128,7 +128,7 @@ export function useLessonAudioPack(
    abortControllerRef.current?.abort();
    abortControllerRef.current = null;
   },
-  [],
+  [entries],
  );
 
  const downloadLessonAudio = useCallback(async () => {
@@ -146,6 +146,7 @@ export function useLessonAudioPack(
   setErrorMessage(null);
 
   const cachedKeys = await checkAudioKeysCached(entries.map((entry) => entry.cacheKey));
+  if (controller.signal.aborted) return;
   let currentCached = cachedKeys.size;
   setCheck({ entries, cachedCount: currentCached });
 
@@ -170,6 +171,7 @@ export function useLessonAudioPack(
       LESSON_AUDIO_PACK_RATE,
       controller.signal,
      );
+     if (controller.signal.aborted) return;
      if (blob) {
       currentCached += 1;
       setCheck({ entries, cachedCount: currentCached });
@@ -190,14 +192,17 @@ export function useLessonAudioPack(
 
   if (controller.signal.aborted) return;
 
-  const finalCached = await checkCacheStatus();
+  const finalCachedKeys = await checkAudioKeysCached(entries.map((entry) => entry.cacheKey));
+  if (controller.signal.aborted) return;
+  const finalCached = finalCachedKeys.size;
+  setCheck({ entries, cachedCount: finalCached });
   if (failedCount > 0 && finalCached < entries.length) {
    setActivity("error");
    setErrorMessage(`Không tải được ${failedCount} đoạn audio. Hãy kiểm tra kết nối rồi thử lại.`);
    return;
   }
   setActivity("idle");
- }, [checkCacheStatus, entries, targetVoice]);
+ }, [entries, targetVoice]);
 
  const cancelDownload = useCallback(() => {
   if (abortControllerRef.current !== null) {
