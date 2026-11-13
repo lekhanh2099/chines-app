@@ -2,6 +2,7 @@ import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/
 import { z } from "zod";
 
 import { mutationError } from "@/features/hanzihome/server/canonical-content-mutation";
+import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import { EditableEntityTypeSchema } from "@/features/hanzihome/editing/store/types";
 import type {
  DeletedContentItem,
@@ -96,6 +97,11 @@ export async function GET() {
   data: { user },
  } = await sessionClient.auth.getUser();
  if (!user) return mutationError("Unauthorized", 401);
+ // Deleted-content recovery is an editor tool. RLS already hides deleted rows
+ // from learners, but the route must refuse them explicitly like its siblings.
+ if (!(await hasHanziHomeContentCapability(sessionClient, user.id))) {
+  return mutationError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
+ }
 
  const [
   courses,
