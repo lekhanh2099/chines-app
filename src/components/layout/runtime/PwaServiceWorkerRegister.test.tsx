@@ -30,7 +30,7 @@ describe("PwaServiceWorkerRegister", () => {
   expect(html).toBe("");
  });
 
- it("refreshes public shells on reload and warms study routes only when the controller changes", async () => {
+ it("refreshes public shells on reload and warms only the current route when the controller changes", async () => {
   vi.stubEnv("NODE_ENV", "production");
   const postMessage = vi.fn();
   const controllerEvents = new EventTarget();
@@ -71,19 +71,11 @@ describe("PwaServiceWorkerRegister", () => {
   });
   controllerEvents.dispatchEvent(new Event("controllerchange"));
   expect(postMessage).toHaveBeenCalledTimes(2);
+  // Study routes are warmed by the worker's own install step; the page only
+  // adds the route it is on instead of re-fetching the whole list.
   expect(postMessage).toHaveBeenNthCalledWith(2, {
    type: "WARMUP_OFFLINE_CACHE",
-   routes: [
-    "/vi/reader",
-    "/vi/offline",
-    "/en/offline",
-    "/zh-CN/offline",
-    "/vi/hanzihome",
-    "/vi/hsk/han-thuong-mai",
-    "/vi/hsk/nhip-cau-han-ngu",
-    "/vi/hsk/doc-hieu",
-    "/vi/hsk/khau-ngu-tc1",
-   ],
+   routes: ["/vi/reader"],
   });
  });
 

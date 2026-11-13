@@ -42,20 +42,13 @@ export function PwaServiceWorkerRegister() {
    return;
   }
 
+  // The worker's install step already warms its PRECACHE_ROUTES (public/sw.js);
+  // repeating them here re-fetched every route as a full SSR on first install.
+  // The newly controlled page only needs its own route's assets added.
   const sendWarmup = (controller: ServiceWorker) => {
    controller.postMessage({
     type: "WARMUP_OFFLINE_CACHE",
-    routes: [
-     window.location.pathname,
-     "/vi/offline",
-     "/en/offline",
-     "/zh-CN/offline",
-     "/vi/hanzihome",
-     "/vi/hsk/han-thuong-mai",
-     "/vi/hsk/nhip-cau-han-ngu",
-     "/vi/hsk/doc-hieu",
-     "/vi/hsk/khau-ngu-tc1",
-    ],
+    routes: [window.location.pathname],
    });
   };
 
