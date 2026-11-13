@@ -55,6 +55,13 @@
  contain-intrinsic-size: auto 500px;
 }
 
+/* Per-character Hanzi/Pinyin actions render thousands of times per lesson.
+   One short class keeps lesson HTML small; it must stay equal to
+   "cursor-pointer rounded-sm" + focusRingClassName (src/components/ui/focus-ring.ts). */
+@utility glyph-action {
+ @apply cursor-pointer rounded-sm outline-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20;
+}
+
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 

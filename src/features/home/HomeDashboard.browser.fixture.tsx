@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createClient } from "@supabase/supabase-js";
 import { NextIntlClientProvider } from "next-intl";
 import { createRoot } from "react-dom/client";
-import { Profiler, useState, type ComponentProps } from "react";
+import { Profiler, useMemo, useState, type ComponentProps } from "react";
 
 import type { useClientSession as sessionHook } from "@/components/providers/QueryProvider";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
@@ -26,6 +26,11 @@ import { ReadonlyURLSearchParams } from "next/dist/client/components/navigation.
 import { HomeDashboard } from "@/features/home/HomeDashboard";
 import { isAppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
+import { useLessonAudioPack } from "@/features/speech/useLessonAudioPack";
+import { getTextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { sanitizeSpeechTextForVoice } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
+import { buildCacheKey, clearAllCachedAudio, setCachedAudio } from "@/lib/audio/tts-cache";
+import { DEFAULT_MANDARIN_VOICE } from "@/hooks/useTTS";
 import "@/app/globals.css";
 import homeMessages from "../../../messages/vi/home.json";
 import commonMessages from "../../../messages/vi/common.json";
@@ -94,6 +99,45 @@ function SearchProbe() {
   </>
  );
 }
+function AudioPackProbe() {
+ const lesson = useMemo(() => {
+  const source = getTextbookLesson("nhip-cau", 1);
+  if (!source) throw new Error("Missing audio-pack lesson fixture");
+  return { ...source, vocab: source.vocab.slice(0, 1), sections: [] };
+ }, []);
+ const [voice, setVoice] = useState(DEFAULT_MANDARIN_VOICE);
+ const [downloadFinished, setDownloadFinished] = useState(false);
+ const pack = useLessonAudioPack(lesson, voice);
+ return (
+  <>
+   <output data-audio-pack>{`${pack.status}:${pack.cachedCount}/${pack.totalCount}`}</output>
+   <output data-audio-download-finished>{String(downloadFinished)}</output>
+   <Button
+    onClick={async () => {
+     await clearAllCachedAudio();
+     await pack.downloadLessonAudio();
+     setDownloadFinished(true);
+    }}
+   >
+    Download audio fixture
+   </Button>
+   <Button
+    onClick={async () => {
+     const nextVoice = "zh-CN-YunxiNeural";
+     for (const item of lesson.vocab) {
+      await setCachedAudio(
+       buildCacheKey(sanitizeSpeechTextForVoice(item.hanzi, nextVoice), nextVoice, 1),
+       new Blob(["fixture audio"], { type: "audio/mpeg" }),
+      );
+     }
+     setVoice(nextVoice);
+    }}
+   >
+    Switch to cached voice fixture
+   </Button>
+  </>
+ );
+}
 const container = document.createElement("main");
 document.body.append(container);
 const root = createRoot(container);
@@ -108,8 +152,16 @@ root.render(
   timeZone="Asia/Ho_Chi_Minh"
  >
   <QueryClientProvider client={queryClient}>
-   {fullDashboard ? (
-    <HomeDashboard textbooks={[]} />
+   {params.has("audio") ? (
+    <AudioPackProbe />
+   ) : fullDashboard ? (
+    <>
+     <Button onClick={() => harness.updateBookmarkedLessons(["nhip-cau-lesson-01"])}>
+      Bookmark lesson fixture
+     </Button>
+     <Button onClick={() => harness.updateBookmarkedLessons([])}>Clear bookmarks fixture</Button>
+     <HomeDashboard textbooks={[]} />
+    </>
    ) : (
     <>
      <Probe />
@@ -154,6 +206,15 @@ const harness = {
   fontCommits = 0;
  },
  fontCommits: () => fontCommits,
+ updateBookmarkedLessons(lessons: UserLearningState["bookmarks"]["lessons"]) {
+  queryClient.setQueryData<UserLearningState>(
+   hanzihomeQueryKeys.learningState(ownerId),
+   (current) => {
+    const state = current ?? emptyLearningState;
+    return { ...state, bookmarks: { ...state.bookmarks, lessons } };
+   },
+  );
+ },
  updateProgress(id: string) {
   queryClient.setQueryData<UserLearningState>(
    hanzihomeQueryKeys.learningState(ownerId),

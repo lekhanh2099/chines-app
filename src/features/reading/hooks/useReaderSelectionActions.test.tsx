@@ -11,6 +11,12 @@ import { useReaderSelectionActions } from "./useReaderSelectionActions";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type { ReaderAnnotationRow } from "../model/reading-annotation.schemas";
 
+const { deleteReaderAnnotation } = vi.hoisted(() => ({ deleteReaderAnnotation: vi.fn() }));
+vi.mock("@/features/reading/services/reading-annotation-api", async (importOriginal) => ({
+ ...(await importOriginal<typeof import("@/features/reading/services/reading-annotation-api")>()),
+ deleteReaderAnnotation,
+}));
+
 vi.mock("@/components/providers/QueryProvider", () => ({
  useClientSession: () => ({
   supabase: {},
@@ -145,5 +151,41 @@ describe("useReaderSelectionActions", () => {
    toJSON: () => ({}),
   };
   capturedActions?.handleOpenAnnotation(sampleAnnotation, mockRect);
+ });
+ it("only updates the annotation cache of the document being edited", async () => {
+  deleteReaderAnnotation.mockResolvedValue(undefined);
+  vi.stubGlobal("window", { getSelection: () => ({ removeAllRanges: () => {} }) });
+  const otherDocumentKey = ["hanzihome", "reader", "annotations", "user-1", "doc-2"];
+  const otherDocumentAnnotations: readonly ReaderAnnotationRow[] = [
+   { ...sampleAnnotation, id: "ann-2", document_id: "doc-2" },
+  ];
+  queryClient.setQueryData(
+   ["hanzihome", "reader", "annotations", "user-1", "doc-1"],
+   [sampleAnnotation],
+  );
+  queryClient.setQueryData(otherDocumentKey, otherDocumentAnnotations);
+  const invalidate = vi.spyOn(queryClient, "invalidateQueries");
+  let capturedActions: ReturnType<typeof useReaderSelectionActions> | undefined;
+  renderToStaticMarkup(
+   wrapWithProviders(
+    <TestSelectionHarness
+     onActions={(actions) => {
+      capturedActions = actions;
+     }}
+    />,
+   ),
+  );
+
+  capturedActions?.removeAnnotation(sampleAnnotation.id, sampleAnnotation.revision);
+  await vi.waitFor(() => expect(invalidate).toHaveBeenCalled());
+
+  expect(
+   queryClient.getQueryData(["hanzihome", "reader", "annotations", "user-1", "doc-1"]),
+  ).toEqual([]);
+  expect(queryClient.getQueryData(otherDocumentKey)).toBe(otherDocumentAnnotations);
+  expect(invalidate).toHaveBeenCalledWith({
+   queryKey: ["hanzihome", "reader", "annotations", "user-1", "doc-1"],
+  });
+  vi.unstubAllGlobals();
  });
 });

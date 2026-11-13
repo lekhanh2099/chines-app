@@ -565,8 +565,28 @@ describe("useTTS terminal lifecycle", () => {
   await activeAudio();
   await tts.speak("二");
   expect(complete).not.toHaveBeenCalled();
+  const successor = await activeAudio(1);
+  successor.onended();
   tts.stop();
-  expect(complete).toHaveBeenCalledOnce();
+  expect(complete).not.toHaveBeenCalled();
+ });
+
+ it("does not report a stopped sequence as completed", async () => {
+  const tts = controller();
+  const complete = vi.fn();
+  tts.speakSequence(["一"], complete);
+  await activeAudio();
+  tts.stop();
+  expect(complete).not.toHaveBeenCalled();
+ });
+
+ it("does not report a failed sequence as completed", async () => {
+  const tts = controller();
+  const complete = vi.fn();
+  tts.speakSequence(["一"], complete);
+  const audio = await activeAudio();
+  audio.onerror();
+  expect(complete).not.toHaveBeenCalled();
  });
 
  it("adapts character offsets and cannot stop a legacy successor in the same tick", async () => {

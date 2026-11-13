@@ -68,4 +68,20 @@ describe("GET /auth/callback", () => {
 
   expect(response.headers.get("location")).toBe("https://app.example/");
  });
+ it.each([
+  "%2F%5Cevil.example",
+  "%2F%09%2Fevil.example",
+  "%2F%0D%2Fevil.example",
+  "%2F.%2F%2Fevil.example",
+  "%2F%2e%2F%2Fevil.example",
+ ])("keeps a parser-normalized next=%s on the app origin", async (next) => {
+  exchangeCodeForSession.mockResolvedValue({ error: null });
+
+  const response = await GET(
+   new Request(`https://app.example/auth/callback?code=code-1&next=${next}`),
+  );
+
+  const location = response.headers.get("location") ?? "";
+  expect(new URL(location).origin).toBe("https://app.example");
+ });
 });

@@ -52,10 +52,13 @@ export const listeningItemEditAdapter: EditAdapter = {
   if (explanationVi) output.explanationVi = explanationVi;
   else delete output.explanationVi;
 
-  output.transcript = JSON.parse(values.transcript ?? "null");
-  output.options = JSON.parse(values.options ?? "null");
-  output.answer = JSON.parse(values.answer ?? "null");
-  output.metadata = JSON.parse(values.metadata ?? "null");
+  // The runtime schema models these as optional/defaulted, not nullable: an
+  // absent field rendered as "null" must stay absent instead of becoming null.
+  for (const key of ["transcript", "options", "answer", "metadata"]) {
+   const parsed: JsonFieldValue = JSON.parse(values[key] ?? "null");
+   if (parsed === null) delete output[key];
+   else output[key] = parsed;
+  }
   return output;
  },
 };

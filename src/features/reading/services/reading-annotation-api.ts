@@ -13,10 +13,12 @@ import {
  cancelPendingMutationsForAnnotation,
  deleteLocalReaderAnnotation,
  enqueuePendingAnnotationMutation,
+ getLocalReaderAnnotationById,
  getLocalReaderAnnotations,
  getPendingAnnotationMutations,
  markPendingAnnotationMutationFailed,
  markPendingAnnotationMutationSyncing,
+ rejectPendingAnnotationMutation,
  saveLocalReaderAnnotation,
  saveLocalReaderAnnotations,
  saveLocalReaderAnnotationIfCurrent,
@@ -72,6 +74,26 @@ function ownerHeaders(ownerUserId: string) {
  return { [expectedAuthenticatedOwnerHeader]: ownerUserId };
 }
 
+// Only transient failures belong in the offline outbox. Other 4xx responses
+// (invalid payload, revision conflict) fail identically on every replay, so
+// queueing them would report a save that never happens. 401 and 412 stay
+// retryable: they describe the session (expired, or another account signed in
+// via the shared cookie), not the mutation, so the owner's queued work must
+// survive until that owner is signed in again.
+function isRetryableAnnotationStatus(status: number): boolean {
+ return status === 401 || status === 408 || status === 412 || status === 429 || status >= 500;
+}
+
+class ReaderAnnotationRejectedError extends Error {
+ readonly status: number;
+
+ constructor(status: number) {
+  super("Không thể lưu ghi chú/đánh dấu. Vui lòng thử lại.");
+  this.name = "ReaderAnnotationRejectedError";
+  this.status = status;
+ }
+}
+
 function isBrowserOnline(): boolean {
  return typeof navigator === "undefined" || navigator.onLine;
 }
@@ -121,16 +143,29 @@ export async function fetchReaderAnnotations(
    const pending = await getPendingAnnotationMutations(userId);
    const pendingCreates: ReaderAnnotationRow[] = [];
    const pendingDeletes = new Set<string>();
+   const pendingUpdates = new Map<
+    string,
+    Extract<(typeof pending)[number], { type: "reader_annotation.update" }>
+   >();
 
    for (const mutation of pending) {
     if (mutation.type === "reader_annotation.create" && mutation.documentId === documentId) {
      pendingCreates.push(mutation.annotation);
     } else if (mutation.type === "reader_annotation.delete") {
      pendingDeletes.add(mutation.annotationId);
+    } else if (mutation.type === "reader_annotation.update") {
+     pendingUpdates.set(mutation.annotationId, mutation);
     }
    }
 
-   const filteredServer = serverAnnotations.filter((item) => !pendingDeletes.has(item.id));
+   // An unsynced local edit wins over the server copy until the outbox replays it.
+   const filteredServer = serverAnnotations
+    .filter((item) => !pendingDeletes.has(item.id))
+    .map((item) => {
+     const update = pendingUpdates.get(item.id);
+     if (!update) return item;
+     return update.annotation ?? { ...item, note_text: update.noteText };
+    });
    const result = [...filteredServer, ...pendingCreates].sort(
     (a, b) => (a.start_offset ?? 0) - (b.start_offset ?? 0),
    );
@@ -203,6 +238,10 @@ export async function createReaderAnnotation(
    body: JSON.stringify(payload),
   });
   const value = await response.json().catch(() => null);
+  if (!response.ok && !isRetryableAnnotationStatus(response.status)) {
+   if (typeof window !== "undefined") await deleteLocalReaderAnnotation(optimisticId);
+   throw new ReaderAnnotationRejectedError(response.status);
+  }
   if (!response.ok) {
    if (typeof window !== "undefined") {
     await enqueuePendingAnnotationMutation({
@@ -235,7 +274,8 @@ export async function createReaderAnnotation(
    return acknowledgement.localAnnotation ?? optimistic;
   }
   return canonical;
- } catch {
+ } catch (error) {
+  if (error instanceof ReaderAnnotationRejectedError) throw error;
   if (typeof window !== "undefined") {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:create:${optimisticId}`,
@@ -266,6 +306,10 @@ export async function deleteReaderAnnotation(
 
  let hadPendingCreate = false;
  let pendingCreateIsSyncing = false;
+ // Kept so a delete the server permanently rejects (e.g. a revision conflict)
+ // does not leave the annotation missing from the offline copy.
+ const localBeforeDelete =
+  typeof window !== "undefined" ? await getLocalReaderAnnotationById(annotationId, userId) : null;
  if (typeof window !== "undefined") {
   await deleteLocalReaderAnnotation(annotationId);
   const cancelResult = await cancelPendingMutationsForAnnotation(annotationId, userId);
@@ -319,6 +363,10 @@ export async function deleteReaderAnnotation(
    headers: { "Content-Type": "application/json", ...ownerHeaders(userId) },
    body: JSON.stringify({ expectedRevision }),
   });
+  if (!response.ok && response.status !== 404 && !isRetryableAnnotationStatus(response.status)) {
+   if (localBeforeDelete) await saveLocalReaderAnnotation(localBeforeDelete);
+   throw new ReaderAnnotationRejectedError(response.status);
+  }
   if (!response.ok && response.status !== 404 && typeof window !== "undefined") {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:delete:${annotationId}`,
@@ -333,7 +381,8 @@ export async function deleteReaderAnnotation(
     attemptCount: 0,
    });
   }
- } catch {
+ } catch (error) {
+  if (error instanceof ReaderAnnotationRejectedError) throw error;
   if (typeof window !== "undefined") {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:delete:${annotationId}`,
@@ -408,6 +457,10 @@ export async function updateReaderAnnotation(
     expectedRevision: annotation.revision,
    }),
   });
+  if (!response.ok && !isRetryableAnnotationStatus(response.status)) {
+   if (typeof window !== "undefined") await saveLocalReaderAnnotation(annotation);
+   throw new ReaderAnnotationRejectedError(response.status);
+  }
   if (!response.ok && typeof window !== "undefined") {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:update:${annotation.id}`,
@@ -435,7 +488,8 @@ export async function updateReaderAnnotation(
    return saved ? serverAnnotation : updated;
   }
   return serverAnnotation;
- } catch {
+ } catch (error) {
+  if (error instanceof ReaderAnnotationRejectedError) throw error;
   if (typeof window !== "undefined") {
    await enqueuePendingAnnotationMutation({
     id: `reader_annotation:update:${annotation.id}`,
@@ -506,6 +560,9 @@ async function drainPendingReaderAnnotations(userId: string): Promise<ReaderAnno
       await markPendingAnnotationMutationFailed(active, "Invalid Reader annotation response.");
       errorCount += 1;
      }
+    } else if (!isRetryableAnnotationStatus(response.status)) {
+     await rejectPendingAnnotationMutation(active);
+     errorCount += 1;
     } else {
      await markPendingAnnotationMutationFailed(active, "Could not save Reader annotation.");
      errorCount += 1;
@@ -545,6 +602,9 @@ async function drainPendingReaderAnnotations(userId: string): Promise<ReaderAnno
       await markPendingAnnotationMutationFailed(active, "Invalid Reader annotation response.");
       errorCount += 1;
      }
+    } else if (!isRetryableAnnotationStatus(response.status)) {
+     await rejectPendingAnnotationMutation(active);
+     errorCount += 1;
     } else {
      await markPendingAnnotationMutationFailed(active, "Could not update Reader annotation.");
      errorCount += 1;
@@ -564,6 +624,9 @@ async function drainPendingReaderAnnotations(userId: string): Promise<ReaderAnno
     }
     if (response.ok || response.status === 404) {
      if (await acknowledgePendingAnnotationDelete(active)) syncedCount += 1;
+    } else if (!isRetryableAnnotationStatus(response.status)) {
+     await rejectPendingAnnotationMutation(active);
+     errorCount += 1;
     } else {
      await markPendingAnnotationMutationFailed(active, "Could not delete Reader annotation.");
      errorCount += 1;

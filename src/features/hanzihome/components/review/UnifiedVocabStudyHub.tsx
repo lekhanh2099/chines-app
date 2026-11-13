@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { createPortal } from "react-dom";
 import { FolderPlus, PictureInPicture2 } from "lucide-react";
 
@@ -20,6 +21,7 @@ import {
 } from "@/components/ui/forms/select";
 import { Card } from "@/components/ui/layout/card";
 import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
+import { FastSpeechSuspendedContext } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  getItWebVocabCorpus,
@@ -28,13 +30,23 @@ import {
 } from "@/features/hanzihome/static-json/it-web-vocab-static-content";
 import { CustomVocabVaultManager } from "./CustomVocabVaultManager";
 import { UniversalAmbientPip, type UniversalPipMode } from "./UniversalAmbientPip";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+import type { BookmarkedTextbookGroup, StudyBundle } from "./vocab-hub-adapter";
 import {
  buildExercisesFromVocabItems,
- buildStudyBundleFromBookmarkedLessons,
  customVocabListToHanziHomeVocabItems,
- getBookmarkedTextbookGroups,
- type StudyBundle,
-} from "./vocab-hub-adapter";
+} from "./vocab-hub-custom";
+
+// The textbook corpus (~4 MB) is only needed for bookmarked lessons, so it is
+// loaded on demand instead of being bundled into every route that shows the hub.
+const loadTextbookStudy = () => import("./vocab-hub-adapter");
+const NO_BOOKMARKED_GROUPS: readonly BookmarkedTextbookGroup[] = [];
+const EMPTY_BOOKMARKED_BUNDLE: StudyBundle = {
+ title: "Bài đã đánh dấu",
+ vocabItems: [],
+ grammarItems: [],
+ practiceItems: [],
+};
 
 export type HubSourceMode = "it-quick" | "bookmarked-lessons" | "custom-vault";
 
@@ -73,10 +85,18 @@ export function UnifiedVocabStudyHub({
   [learning.state.settings.customVocab],
  );
 
- const bookmarkedGroups = useMemo(
-  () => getBookmarkedTextbookGroups(bookmarkedLessonIds),
-  [bookmarkedLessonIds],
- );
+ const bookmarkedGroupsQuery = useQuery({
+  queryKey: hanzihomeQueryKeys.bookmarkedTextbookGroups(bookmarkedLessonIds),
+  queryFn: async () => (await loadTextbookStudy()).getBookmarkedTextbookGroups(bookmarkedLessonIds),
+  enabled: bookmarkedLessonIds.length > 0,
+  staleTime: Number.POSITIVE_INFINITY,
+  // Keep the previous deck while a new selection loads instead of flashing empty.
+  placeholderData: keepPreviousData,
+ });
+ const bookmarkedGroups =
+  bookmarkedLessonIds.length > 0
+   ? (bookmarkedGroupsQuery.data ?? NO_BOOKMARKED_GROUPS)
+   : NO_BOOKMARKED_GROUPS;
  const allBookmarkedLessons = useMemo(
   () => bookmarkedGroups.flatMap((g) => g.lessons),
   [bookmarkedGroups],
@@ -135,6 +155,20 @@ export function UnifiedVocabStudyHub({
   return allBookmarkedLessons;
  }, [allBookmarkedLessons, bookmarkedGroups, bookmarkedSelection]);
 
+ const bookmarkedBundleQuery = useQuery({
+  queryKey: hanzihomeQueryKeys.bookmarkedTextbookBundle(
+   selectedBookmarkedLessons.map((lesson) => lesson.id),
+  ),
+  queryFn: async () =>
+   (await loadTextbookStudy()).buildStudyBundleFromBookmarkedLessons(selectedBookmarkedLessons),
+  enabled: sourceMode === "bookmarked-lessons" && selectedBookmarkedLessons.length > 0,
+  staleTime: Number.POSITIVE_INFINITY,
+  // Keep the previous deck while a new selection loads instead of flashing empty.
+  placeholderData: keepPreviousData,
+ });
+ const bookmarkedBundle =
+  selectedBookmarkedLessons.length > 0 ? bookmarkedBundleQuery.data : EMPTY_BOOKMARKED_BUNDLE;
+
  const activeBundle = useMemo<StudyBundle>(() => {
   if (sourceMode === "it-quick") {
    const isGroup = itSelection.startsWith("group:");
@@ -167,7 +201,7 @@ export function UnifiedVocabStudyHub({
   }
 
   if (sourceMode === "bookmarked-lessons") {
-   return buildStudyBundleFromBookmarkedLessons(selectedBookmarkedLessons);
+   return bookmarkedBundle ?? EMPTY_BOOKMARKED_BUNDLE;
   }
 
   const vocabItems = customVocabListToHanziHomeVocabItems(customVocabItems);
@@ -178,7 +212,7 @@ export function UnifiedVocabStudyHub({
    grammarItems: [],
    practiceItems,
   };
- }, [customVocabItems, itCorpus.groups, itSelection, selectedBookmarkedLessons, sourceMode]);
+ }, [bookmarkedBundle, customVocabItems, itCorpus.groups, itSelection, sourceMode]);
 
  const handleLaunchPip = useCallback(async () => {
   if (isPipOpen) {
@@ -385,16 +419,20 @@ export function UnifiedVocabStudyHub({
      <div className="mx-auto w-full max-w-3xl pt-1">
       <Card variant="default" padding="none" className="min-h-[380px] overflow-hidden">
        <div hidden={isPipOpen || isInAppFloatingOpen}>
-        <UniversalAmbientPip
-         key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
-         initialMode={activeFlowMode}
-         lessonTitle={activeBundle.title}
-         vocabItems={activeBundle.vocabItems}
-         grammarItems={activeBundle.grammarItems}
-         practiceItems={activeBundle.practiceItems}
-         onClose={() => setIsInlineOpen(false)}
-         isInline
-        />
+        {/* Kept mounted to preserve progress, but muted while the same deck runs in
+            the PiP/floating window; otherwise both cards read aloud at once. */}
+        <FastSpeechSuspendedContext.Provider value={isPipOpen || isInAppFloatingOpen}>
+         <UniversalAmbientPip
+          key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
+          initialMode={activeFlowMode}
+          lessonTitle={activeBundle.title}
+          vocabItems={activeBundle.vocabItems}
+          grammarItems={activeBundle.grammarItems}
+          practiceItems={activeBundle.practiceItems}
+          onClose={() => setIsInlineOpen(false)}
+          isInline
+         />
+        </FastSpeechSuspendedContext.Provider>
        </div>
        {isPipOpen || isInAppFloatingOpen ? (
         <div className="flex min-h-[380px] flex-col items-center justify-center gap-3 p-8 text-center">

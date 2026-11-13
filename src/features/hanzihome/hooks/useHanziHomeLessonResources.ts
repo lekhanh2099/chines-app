@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { type QueryClient, useQuery, useQueryClient } from "@tanstack/react-query";
+import { type QueryClient, queryOptions, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
@@ -9,7 +9,6 @@ import {
  buildLessonSectionsResource,
  attachLessonVocabularyResource,
  type LessonSectionsResource,
- type LessonVocabularyListResource,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import {
  getErrorHttpStatus,
@@ -80,11 +79,49 @@ export async function hydrateCachedLessonVocabulary(
  return false;
 }
 
+function retryLessonResource(failureCount: number, error: Error) {
+ const status = getErrorHttpStatus(error);
+ if (status === 401 || status === 403 || status === 404 || status === 412) {
+  return false;
+ }
+ return failureCount < 2;
+}
+
+/** Shared by every consumer of a lesson's detail so the query key has one loader. */
+export function lessonDetailQueryOptions(
+ queryClient: QueryClient,
+ ownerId: string,
+ lessonId: string,
+) {
+ return queryOptions({
+  queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
+  queryFn: ({ signal }) => loadLessonDetailWithCache({ queryClient, ownerId, lessonId, signal }),
+  staleTime: lessonResourceStaleTime,
+  enabled: Boolean(lessonId),
+  retry: retryLessonResource,
+ });
+}
+
+/** Shared by every consumer of the canonical lesson vocabulary resource. */
+export function lessonVocabularyQueryOptions(
+ queryClient: QueryClient,
+ ownerId: string,
+ lessonId: string,
+) {
+ return queryOptions({
+  queryKey: hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary"),
+  queryFn: ({ signal }) =>
+   loadLessonVocabularyWithCache({ queryClient, ownerId, lessonId, signal }),
+  staleTime: lessonResourceStaleTime,
+  enabled: Boolean(lessonId),
+  retry: retryLessonResource,
+ });
+}
+
 export function useHanziHomeLessonDetailResource(lessonId: string) {
  const { user } = useClientSession();
  const ownerId = user?.id ?? "anonymous";
  const queryClient = useQueryClient();
- const queryKey = hanzihomeQueryKeys.lessonDetail(lessonId);
 
  useEffect(() => {
   if (!lessonId) return;
@@ -98,19 +135,7 @@ export function useHanziHomeLessonDetailResource(lessonId: string) {
   };
  }, [lessonId, ownerId, queryClient]);
 
- return useQuery({
-  queryKey,
-  queryFn: ({ signal }) => loadLessonDetailWithCache({ queryClient, ownerId, lessonId, signal }),
-  staleTime: lessonResourceStaleTime,
-  enabled: Boolean(lessonId),
-  retry: (failureCount, error) => {
-   const status = getErrorHttpStatus(error);
-   if (status === 401 || status === 403 || status === 404 || status === 412) {
-    return false;
-   }
-   return failureCount < 2;
-  },
- });
+ return useQuery(lessonDetailQueryOptions(queryClient, ownerId, lessonId));
 }
 
 export function useHanziHomeLessonSections(lessonId: string): LessonSectionsResource | null {
@@ -128,7 +153,6 @@ export function useHanziHomeLessonVocabulary(lessonId: string) {
  const { user } = useClientSession();
  const ownerId = user?.id ?? "anonymous";
  const queryClient = useQueryClient();
- const queryKey = hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary");
 
  useEffect(() => {
   if (!lessonId) return;
@@ -142,20 +166,7 @@ export function useHanziHomeLessonVocabulary(lessonId: string) {
   };
  }, [lessonId, ownerId, queryClient]);
 
- return useQuery<LessonVocabularyListResource | null>({
-  queryKey,
-  queryFn: ({ signal }) =>
-   loadLessonVocabularyWithCache({ queryClient, ownerId, lessonId, signal }),
-  staleTime: lessonResourceStaleTime,
-  enabled: Boolean(lessonId),
-  retry: (failureCount, error) => {
-   const status = getErrorHttpStatus(error);
-   if (status === 401 || status === 403 || status === 404 || status === 412) {
-    return false;
-   }
-   return failureCount < 2;
-  },
- });
+ return useQuery(lessonVocabularyQueryOptions(queryClient, ownerId, lessonId));
 }
 
 export function useIsLessonCached(lessonId: string): boolean {

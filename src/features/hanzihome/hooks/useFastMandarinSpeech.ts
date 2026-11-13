@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef } from "react";
 import { DEFAULT_MANDARIN_VOICE, MANDARIN_VOICE_STORAGE_KEY } from "@/hooks/useTTS";
 import { buildCacheKey, getCachedAudio, setCachedAudio } from "@/lib/audio/tts-cache";
 
@@ -302,7 +302,16 @@ export function prefetchMandarinAudio(
  }
 }
 
+/**
+ * True for a subtree whose study card is kept mounted but hidden (e.g. the
+ * inline session while the same deck runs in a PiP or floating window). Speech
+ * from that subtree is muted so two cards never read over each other.
+ */
+export const FastSpeechSuspendedContext = createContext(false);
+
 export function useFastMandarinSpeech() {
+ const suspended = useContext(FastSpeechSuspendedContext);
+ const suspendedRef = useRef(suspended);
  const isSpeakingRef = useRef(false);
  const currentAudioRef = useRef<HTMLAudioElement | null>(null);
  const currentObjectUrlRef = useRef<string | null>(null);
@@ -365,7 +374,7 @@ export function useFastMandarinSpeech() {
     .map((s) => s.trim())
     .filter(Boolean);
 
-   if (rawSegments.length === 0) return;
+   if (rawSegments.length === 0 || suspendedRef.current) return;
 
    stop();
    const runId = runIdRef.current;
@@ -493,14 +502,22 @@ export function useFastMandarinSpeech() {
         }
        };
 
-       audio.onended = proceedNext;
-       audio.onerror = () => {
+       // stop() pauses this element, which rejects a still-pending play(). Without
+       // the run check the stale segment would be re-read by the native voice on
+       // top of the next card's audio; onerror and the play() rejection can also
+       // both fire for one segment, so fall back at most once.
+       let fellBackToNative = false;
+       const fallBackToNative = () => {
+        if (runId !== runIdRef.current || fellBackToNative) return;
+        fellBackToNative = true;
+        audio.onended = null;
+        audio.onerror = null;
         playNative(currentSegment.text, currentSegment.isVietnamese, proceedNext);
        };
 
-       audio.play().catch(() => {
-        playNative(currentSegment.text, currentSegment.isVietnamese, proceedNext);
-       });
+       audio.onended = proceedNext;
+       audio.onerror = fallBackToNative;
+       audio.play().catch(fallBackToNative);
       } else {
        playNative(currentSegment.text, currentSegment.isVietnamese, () => {
         if (runId !== runIdRef.current) return;
@@ -524,6 +541,11 @@ export function useFastMandarinSpeech() {
   },
   [stop],
  );
+
+ useEffect(() => {
+  suspendedRef.current = suspended;
+  if (suspended) stop();
+ }, [stop, suspended]);
 
  useEffect(() => {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {

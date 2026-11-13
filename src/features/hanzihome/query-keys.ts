@@ -105,6 +105,19 @@ export const hanzihomeQueryKeys = {
  canEditForUser: (userId: UserScope) => ["hanzihome", "can-edit", userId],
  searchIndexRoot: ["hanzihome", "search-index"],
  searchIndex: ["hanzihome", "search-index", "v2"],
+ // Derived from the static textbook corpus, which is loaded on demand.
+ bookmarkedTextbookGroups: (lessonIds: readonly string[]) => [
+  "hanzihome",
+  "bookmarked-textbook",
+  "groups",
+  [...lessonIds],
+ ],
+ bookmarkedTextbookBundle: (lessonIds: readonly string[]) => [
+  "hanzihome",
+  "bookmarked-textbook",
+  "bundle",
+  [...lessonIds],
+ ],
  vocabChildManagerRoot: ["hanzihome", "vocab-child-manager"],
  deletedContent: ["hanzihome", "deleted-content"],
 };

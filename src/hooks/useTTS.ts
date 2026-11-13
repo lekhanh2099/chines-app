@@ -150,7 +150,9 @@ export function useTTS() {
    const callback = settledCallbackRef.current;
    settledCallbackRef.current = null;
    settleLifecycle(completed, error);
-   callback?.();
+   // The sequence callback means "finished naturally": callers use it for
+   // loop/auto-advance, so stop, errors and interruptions must not fire it.
+   if (completed && !error) callback?.();
   },
   [settleLifecycle],
  );
@@ -479,6 +481,7 @@ export function useTTS() {
    playbackRunRef.current += 1;
    cancelPreparation();
    const runId = playbackRunRef.current;
+   settledCallbackRef.current = null;
    settleLifecycle(false);
    abortControllerRef.current?.abort();
    cleanupAudio();
@@ -704,6 +707,7 @@ export function useTTS() {
    playbackRunRef.current += 1;
    cancelPreparation();
    const runId = playbackRunRef.current;
+   settledCallbackRef.current = null;
    settleLifecycle(false);
    abortControllerRef.current?.abort();
    cleanupAudio();

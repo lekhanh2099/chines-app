@@ -8,7 +8,7 @@ import { LearnerHanziText } from "@/components/patterns/learner-text";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { Typography } from "@/components/ui/display/typography";
-import { focusRingClassName } from "@/components/ui/focus-ring";
+import { glyphActionClassName } from "@/components/ui/focus-ring";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/overlays/tooltip";
 import { cn } from "@/lib/utils";
 import {
@@ -120,8 +120,8 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
    <span
     key={grapheme.index}
     className={cn(
-     playable && focusRingClassName,
-     playable && "cursor-pointer rounded-sm select-text",
+     playable && glyphActionClassName,
+     playable && "select-text",
      highlighted && "reading-progress-highlight",
      annotation && "reading-highlight",
     )}
@@ -180,11 +180,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
      <span
       role="button"
       tabIndex={0}
-      className={cn(
-       "cursor-pointer rounded-sm",
-       focusRingClassName,
-       needsPronunciationReview && "text-warning",
-      )}
+      className={cn(glyphActionClassName, needsPronunciationReview && "text-warning")}
       aria-label={textLabels(
        needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",
        { character: grapheme.segment },
@@ -243,11 +239,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
         key={`${glyph.start}:${glyph.end}`}
         role="button"
         tabIndex={0}
-        className={cn(
-         "cursor-pointer rounded-sm",
-         focusRingClassName,
-         needsPronunciationReview && "text-warning",
-        )}
+        className={cn(glyphActionClassName, needsPronunciationReview && "text-warning")}
         aria-label={textLabels(
          needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",
          { character: grapheme.segment },

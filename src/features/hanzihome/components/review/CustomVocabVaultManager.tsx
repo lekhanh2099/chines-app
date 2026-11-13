@@ -27,7 +27,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import type { CustomVocabItem } from "@/features/hanzihome/types";
-import { parseBulkCustomVocabInput } from "./vocab-hub-adapter";
+import { parseBulkCustomVocabInput } from "./vocab-hub-custom";
 
 export type CustomVocabVaultManagerProps = {
  readonly items: readonly CustomVocabItem[];
