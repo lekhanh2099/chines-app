@@ -2,7 +2,7 @@ name: CI
 
 on:
  push:
-  branches: [main, refactor/hanzihome-integrity-remediation]
+  branches: [main]
  pull_request:
   types: [opened, reopened, synchronize, ready_for_review]
  workflow_dispatch:
@@ -195,6 +195,18 @@ jobs:
         allProduct = true;
        }
       }
+      // main requires a strict (up-to-date) "CI gate", so a pull-request merge
+      // commit's tree already passed the browser and product suites as the PR's
+      // merge result. Re-running them on push only repeats that work; unit and
+      // static checks still run. Direct pushes and unsafe bases keep full rules.
+      const [mergeSubject, mergeParents] = execFileSync("git", ["show", "-s", "--format=%s%n%P", head], { encoding: "utf8" }).trim().split(String.fromCharCode(10));
+      const verifiedPullRequestMerge = process.env.EVENT_NAME === "push" && !full && mergeParents.split(" ").length === 2 && /^Merge pull request #[0-9]+ /.test(mergeSubject);
+      if (verifiedPullRequestMerge) {
+       allBrowser = false;
+       allProduct = false;
+       selectedBrowser.clear();
+       selectedProduct.clear();
+      }
       const output = {
        base: full ? "" : base,
        code: String(code),
@@ -206,7 +218,7 @@ jobs:
       };
       const newline = String.fromCharCode(10);
       appendFileSync(process.env.GITHUB_OUTPUT, Object.entries(output).map(([key, value]) => key + "=" + value).join(newline) + newline);
-      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (unitFull && allBrowser && allProduct ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Tested SHA: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (verifiedPullRequestMerge ? "merged pull request (browser and product suites ran on the PR)" : unitFull && allBrowser && allProduct ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Tested SHA: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
       JS
 
  verify:
