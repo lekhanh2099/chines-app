@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { useQueries } from "@tanstack/react-query";
+import { type UseQueryResult, useQueries, useQueryClient } from "@tanstack/react-query";
 import { ArrowLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { PageHeader } from "@/components/ui/layout/page-header";
@@ -20,15 +21,27 @@ import { VocabReviewSkeleton } from "@/features/hanzihome/components/VocabReview
 import { UnifiedVocabStudyHub } from "@/features/hanzihome/components/review/UnifiedVocabStudyHub";
 import type { ReviewItem } from "@/features/hanzihome/context/types";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import {
+ lessonDetailQueryOptions,
+ lessonVocabularyQueryOptions,
+} from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
+import { attachLessonVocabularyResource } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
 import {
  parseReviewLessonTokensParam,
  resolveReviewLessonTokens,
 } from "@/features/hanzihome/utils/review-selection-route";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
+
+// Stable reference so useQueries memoizes the combined result between renders.
+function combineLessonResourceQueries<TData>(results: UseQueryResult<TData, Error>[]) {
+ return {
+  data: results.map((result) => result.data),
+  isLoading: results.some((result) => result.isLoading),
+  error: results.find((result) => result.isError)?.error ?? null,
+ };
+}
 
 export function HanziHomeVocabReviewPage({
  reviewLessonsParam,
@@ -47,21 +60,33 @@ export function HanziHomeVocabReviewPage({
   [catalog.lessons, lessonTokens],
  );
  const learning = useLearningState();
+ const queryClient = useQueryClient();
+ const { user } = useClientSession();
+ const ownerId = user?.id ?? "anonymous";
 
- const lessonQueries = useQueries({
-  queries: lessonIds.map((lessonId) => ({
-   queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
-   queryFn: () => fetchHanziHomeLessonDetail(lessonId),
-   enabled: Boolean(lessonId),
-   staleTime: Infinity,
-  })),
+ // Lesson detail never carries vocabulary; the canonical vocabulary resource
+ // (hanzihome_vocab_items) is attached exactly as the lesson workspace does.
+ const details = useQueries({
+  queries: lessonIds.map((lessonId) => lessonDetailQueryOptions(queryClient, ownerId, lessonId)),
+  combine: combineLessonResourceQueries,
+ });
+ const vocabularies = useQueries({
+  queries: lessonIds.map((lessonId) =>
+   lessonVocabularyQueryOptions(queryClient, ownerId, lessonId),
+  ),
+  combine: combineLessonResourceQueries,
  });
 
- const lessons = lessonQueries
-  .map((query) => query.data)
-  .filter((lesson): lesson is HanziHomeLesson => Boolean(lesson));
- const isLoading = lessonIds.length > 0 && lessonQueries.some((query) => query.isLoading);
- const error = lessonQueries.find((query) => query.isError)?.error;
+ const lessons = useMemo(
+  () =>
+   details.data.flatMap((detail, index) => {
+    const vocabulary = vocabularies.data[index];
+    return detail && vocabulary ? [attachLessonVocabularyResource(detail, vocabulary)] : [];
+   }),
+  [details.data, vocabularies.data],
+ );
+ const isLoading = lessonIds.length > 0 && (details.isLoading || vocabularies.isLoading);
+ const error = details.error ?? vocabularies.error;
  const combinedReviewLesson = useMemo(
   () => (lessons.length > 0 ? combineReviewLessons(lessons, "vocab") : null),
   [lessons],
