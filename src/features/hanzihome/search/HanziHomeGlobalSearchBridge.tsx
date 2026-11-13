@@ -8,6 +8,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
@@ -32,9 +33,12 @@ export function HanziHomeGlobalSearchBridge() {
  const searchParams = useSearchParams();
  const queryClient = useQueryClient();
  const open = useSelector(globalSearchStore, (state) => state.open);
+ const { userId, isResolved } = useClientSession();
 
  useEffect(() => {
-  if (typeof window === "undefined") return;
+  // The search index route requires a session; prefetching as a guest only
+  // produced 401s (two, with the default query retry) on every public page.
+  if (typeof window === "undefined" || !isResolved || !userId) return;
 
   const scheduleIdle =
    window.requestIdleCallback || ((callback: () => void) => window.setTimeout(callback, 1000));
@@ -49,7 +53,7 @@ export function HanziHomeGlobalSearchBridge() {
     cancelIdle(handle);
    }
   };
- }, [queryClient]);
+ }, [isResolved, queryClient, userId]);
  const query = useSelector(globalSearchStore, (state) => state.query);
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { openInspector } = useVocabInspector();
