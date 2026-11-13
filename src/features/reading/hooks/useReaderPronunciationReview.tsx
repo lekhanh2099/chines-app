@@ -3,6 +3,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useCallback, useMemo, useState } from "react";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { ReaderSurfacePronunciationTarget } from "@/features/reading/model/reading-interactions";
 import {
@@ -32,6 +33,7 @@ export function useReaderPronunciationReview({
  setSaveError: (error: string) => void;
 }) {
  const queryClient = useQueryClient();
+ const { userId } = useClientSession();
  const { actions: runtimeActions } = useReaderStore();
  const [target, setTarget] = useState<ReaderSurfacePronunciationTarget | null>(null);
  const reviewRange = useMemo(() => {
@@ -67,10 +69,10 @@ export function useReaderPronunciationReview({
    queryClient.invalidateQueries({
     queryKey:
      stateOwner === "reader"
-      ? hanzihomeQueryKeys.readerState(resource.document.id)
-      : hanzihomeQueryKeys.readerPronunciationOverrides(resource.document.id),
+      ? hanzihomeQueryKeys.readerState(userId, resource.document.id)
+      : hanzihomeQueryKeys.readerPronunciationOverrides(userId, resource.document.id),
    }),
-  [queryClient, resource.document.id, stateOwner],
+  [queryClient, resource.document.id, stateOwner, userId],
  );
  const handleInspect = useCallback(
   (next: ReaderSurfacePronunciationTarget) => {

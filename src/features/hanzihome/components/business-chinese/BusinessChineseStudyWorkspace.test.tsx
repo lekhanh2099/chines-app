@@ -2,7 +2,7 @@ import type { ReaderDisplayAdapter } from "@/features/reader/model/reader-displa
 import type { ComponentProps, ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
@@ -121,6 +121,12 @@ function renderWorkspace(element: ReactNode) {
   </NextIntlClientProvider>,
  );
 }
+
+// The static textbook corpus is parsed lazily on first access. Parse it once as
+// fixture setup so that one-time cost is not charged to whichever test runs first.
+beforeAll(() => {
+ getTextbookCatalog();
+});
 
 describe("BusinessChineseStudyWorkspace", () => {
  it("prepares interactive exercises for Practice without doing that work on lesson open", () => {

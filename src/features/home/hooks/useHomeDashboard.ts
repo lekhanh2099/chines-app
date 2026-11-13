@@ -126,13 +126,13 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
    retryRecentNotes: () => {
     void refetchRecentNotes();
    },
+   // Only data rendered above the fold gates the skeleton. learningPulse
+   // (overview + reviewed-today count) has no rendered consumer, so its
+   // queries must not hold the whole dashboard behind a skeleton.
    isLoading:
     catalogQuery.isPending ||
     learning.isLoading ||
-    (userId !== null &&
-     ((reviewAttemptsQuery.isPending && !reviewAttemptsQuery.isFetched) ||
-      (reviewTodayCountQuery.isPending && !reviewTodayCountQuery.isFetched) ||
-      (learningOverviewQuery.isPending && !learningOverviewQuery.isFetched))),
+    (userId !== null && reviewAttemptsQuery.isPending && !reviewAttemptsQuery.isFetched),
   };
  }, [
   textbooks,
@@ -148,8 +148,6 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
   learningOverviewQuery.data,
   learningOverviewQuery.isError,
   learningOverviewQuery.isFetching,
-  learningOverviewQuery.isFetched,
-  learningOverviewQuery.isPending,
   reviewAttemptsQuery.data,
   reviewAttemptsQuery.isError,
   reviewAttemptsQuery.isFetching,
@@ -158,8 +156,6 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
   reviewTodayCountQuery.data,
   reviewTodayCountQuery.isError,
   reviewTodayCountQuery.isFetching,
-  reviewTodayCountQuery.isFetched,
-  reviewTodayCountQuery.isPending,
   refetchLearningOverview,
   refetchRecentActivity,
   refetchReviewedToday,

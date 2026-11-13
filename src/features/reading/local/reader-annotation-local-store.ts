@@ -446,6 +446,41 @@ export async function acknowledgePendingAnnotationDelete(
  }
 }
 
+/**
+ * Drops a mutation the server permanently rejected so the outbox does not
+ * retry it forever. A rejected create also removes its optimistic row and any
+ * follow-up mutations keyed to the temporary id, because they can never sync.
+ */
+export async function rejectPendingAnnotationMutation(
+ mutation: PendingAnnotationMutation,
+): Promise<boolean> {
+ try {
+  return await runInLocalTransaction(
+   [HANZIHOME_LOCAL_STORES.pendingMutations, HANZIHOME_LOCAL_STORES.readerAnnotations],
+   "readwrite",
+   async (stores) => {
+    const mutationStore = stores[HANZIHOME_LOCAL_STORES.pendingMutations];
+    const annotationStore = stores[HANZIHOME_LOCAL_STORES.readerAnnotations];
+    const rawCurrent = await promisifyRequest(mutationStore.get(mutation.id));
+    const parsedCurrent = pendingAnnotationMutationSchema.safeParse(rawCurrent);
+    if (!parsedCurrent.success || !isSameMutationGeneration(parsedCurrent.data, mutation)) {
+     return false;
+    }
+    mutationStore.delete(mutation.id);
+    if (parsedCurrent.data.type === "reader_annotation.create") {
+     const tempId = parsedCurrent.data.tempId;
+     mutationStore.delete(annotationMutationId("update", tempId));
+     mutationStore.delete(annotationMutationId("delete", tempId));
+     annotationStore.delete(tempId);
+    }
+    return true;
+   },
+  );
+ } catch {
+  return false;
+ }
+}
+
 export async function saveLocalReaderAnnotationIfCurrent(
  annotation: ReaderAnnotationRow,
  expectedUpdatedAt: string,

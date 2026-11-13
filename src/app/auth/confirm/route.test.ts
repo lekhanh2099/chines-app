@@ -49,6 +49,24 @@ describe("GET /auth/confirm", () => {
   expect(response.headers.get("location")).toBe("https://app.example/");
  });
 
+ it.each([
+  "%2F%5Cevil.test",
+  "%2F%09%2Fevil.test",
+  "%2F%0A%2Fevil.test",
+  "%2F%5C%2Fevil.test",
+  "%2F.%2F%2Fevil.test",
+  "%2F%2e%2F%2Fevil.test",
+ ])("keeps a parser-normalized next=%s on the app origin", async (next) => {
+  verifyOtp.mockResolvedValue({ error: null });
+
+  const response = await GET(
+   new Request(`https://app.example/auth/confirm?token_hash=token&type=signup&next=${next}`),
+  );
+
+  const location = response.headers.get("location") ?? "";
+  expect(new URL(location).origin).toBe("https://app.example");
+ });
+
  it("returns to login when token verification fails", async () => {
   verifyOtp.mockResolvedValue({ error: new Error("expired") });
 

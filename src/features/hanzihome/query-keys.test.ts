@@ -66,4 +66,16 @@ describe("hanzihomeQueryKeys", () => {
   expect(isInvalidated(queryClient, vocabularyKey)).toBe(true);
   expect(isInvalidated(queryClient, lessonKey)).toBe(false);
  });
+ it("invalidates the search index after any content mutation", async () => {
+  const queryClient = new QueryClient();
+  queryClient.setQueryData(hanzihomeQueryKeys.searchIndex, []);
+
+  await invalidateHanziHomeContent({
+   queryClient,
+   lessonId: "lesson-1",
+   entityType: "section",
+  });
+
+  expect(isInvalidated(queryClient, hanzihomeQueryKeys.searchIndex)).toBe(true);
+ });
 });

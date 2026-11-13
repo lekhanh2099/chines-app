@@ -41,7 +41,7 @@ import { Button } from "@/components/ui/actions/button";
 import { IconTile } from "@/components/ui/display/icon-tile";
 import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
-import { focusRingClassName } from "@/components/ui/focus-ring";
+import { glyphActionClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/layout/separator";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import {
@@ -146,6 +146,7 @@ import {
  type TextbookBookSummary,
  type TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { FastSpeechSuspendedContext } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { TextbookNoteAccessCard } from "./TextbookNoteAccessCard";
 import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
 import { LessonDictationWorkspace } from "@/features/hanzihome/practice/LessonDictationWorkspace";
@@ -560,8 +561,8 @@ function BusinessChineseMixedText({
       displayMode={displayMode}
       size={learnerContent ? undefined : "inherit"}
       className={cn(
-       onGlyphClick && "cursor-pointer rounded-sm select-text",
-       onGlyphClick && focusRingClassName,
+       onGlyphClick && glyphActionClassName,
+       onGlyphClick && "select-text",
        active && "reading-progress-highlight",
       )}
       onClick={onGlyphClick ? activateHanzi : undefined}
@@ -598,11 +599,7 @@ function BusinessChineseMixedText({
         tone="secondary"
         weight="medium"
         scale={learnerContent ? "inherit" : "cloze"}
-        className={cn(
-         "cursor-pointer rounded-sm",
-         focusRingClassName,
-         needsPronunciationReview && "text-warning",
-        )}
+        className={cn(glyphActionClassName, needsPronunciationReview && "text-warning")}
         role="button"
         tabIndex={0}
         aria-label={
@@ -2498,15 +2495,19 @@ function BusinessChineseStudyWorkspaceContent({
             ) : (
              <>
               <div hidden={isPipOpen || isInAppFloatingOpen}>
-               <UniversalAmbientPip
-                key={reviewMode}
-                initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
-                lessonTitle={lesson.title}
-                vocabItems={reviewLesson.vocab}
-                grammarItems={textbookGrammarPoints}
-                practiceItems={universalTextbookPracticeItems}
-                isInline
-               />
+               {/* Kept mounted to preserve progress, but muted while the same deck
+                   runs in the PiP/floating window so the two never read at once. */}
+               <FastSpeechSuspendedContext.Provider value={isPipOpen || isInAppFloatingOpen}>
+                <UniversalAmbientPip
+                 key={reviewMode}
+                 initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
+                 lessonTitle={lesson.title}
+                 vocabItems={reviewLesson.vocab}
+                 grammarItems={textbookGrammarPoints}
+                 practiceItems={universalTextbookPracticeItems}
+                 isInline
+                />
+               </FastSpeechSuspendedContext.Provider>
               </div>
               {isPipOpen || isInAppFloatingOpen ? (
                <Card

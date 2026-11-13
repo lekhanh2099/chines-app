@@ -3,13 +3,10 @@ import "server-only";
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import type { AiTaskId, AiTaskResolutionSource } from "@/lib/ai/ai-task-contract";
 import {
- resolveUserAiTaskRuntime,
+ resolveUserAiTaskRuntimeWithCredentials,
  type ResolvedUserAiRuntime,
 } from "@/services/ai/ai-runtime.service";
-import {
- getActiveUserApiKeyCredentials,
- type UserApiKeyCredential,
-} from "@/services/ai/user-api-keys.service";
+import type { UserApiKeyCredential } from "@/services/ai/user-api-keys.service";
 
 export type ResolvedAiCredentialRuntime =
  | {
@@ -36,14 +33,14 @@ export async function resolveAiCredentialRuntime(input: {
  userId: string;
  taskId: AiTaskId;
 }): Promise<ResolvedAiCredentialRuntime> {
- const resolution = await resolveUserAiTaskRuntime({
+ // The credential comes from the same key read that selected the runtime.
+ const { resolution, credentials } = await resolveUserAiTaskRuntimeWithCredentials({
   supabase: input.supabase,
   userId: input.userId,
   taskId: input.taskId,
  });
  if (!resolution.ok) return resolution;
 
- const credentials = await getActiveUserApiKeyCredentials(input.supabase, input.userId);
  const credential = credentials.find((item) => item.id === resolution.runtime.keyId);
  if (!credential) {
   return {

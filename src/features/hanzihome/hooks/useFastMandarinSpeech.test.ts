@@ -11,6 +11,7 @@ import {
  selectBestMandarinVoice,
  selectBestVietnameseVoice,
  useFastMandarinSpeech,
+ FastSpeechSuspendedContext,
 } from "./useFastMandarinSpeech";
 
 function createMockVoice(name: string, lang: string): SpeechSynthesisVoice {
@@ -219,6 +220,117 @@ describe("useFastMandarinSpeech", () => {
    expect(mockCancel.mock.calls.length).toBeGreaterThanOrEqual(2);
   }
 
+  vi.unstubAllGlobals();
+ });
+});
+
+describe("useFastMandarinSpeech overlapping playback", () => {
+ // Browser-like audio element: play() stays pending until the test settles it,
+ // and pause() rejects a pending play() the way real media elements do.
+ class PendingPlayAudio {
+  static instances: PendingPlayAudio[] = [];
+  onended: (() => void) | null = null;
+  onerror: (() => void) | null = null;
+  rejectPlay: (error: Error) => void = () => {};
+  constructor() {
+   PendingPlayAudio.instances.push(this);
+  }
+  play() {
+   return new Promise<void>((_, reject) => {
+    this.rejectPlay = reject;
+   });
+  }
+  pause() {
+   this.rejectPlay(new Error("The play() request was interrupted by a call to pause()."));
+  }
+  removeAttribute() {}
+ }
+
+ function setup() {
+  PendingPlayAudio.instances = [];
+  const nativeSpeak = vi.fn();
+  vi.stubGlobal("Audio", PendingPlayAudio);
+  vi.stubGlobal("URL", { createObjectURL: () => "blob:audio", revokeObjectURL: () => {} });
+  vi.stubGlobal(
+   "fetch",
+   vi.fn(async () => new Response(new Blob(["audio"], { type: "audio/mpeg" }))),
+  );
+  vi.stubGlobal(
+   "SpeechSynthesisUtterance",
+   class {
+    text: string;
+    constructor(text: string) {
+     this.text = text;
+    }
+   },
+  );
+  vi.stubGlobal("window", {
+   speechSynthesis: { speak: nativeSpeak, cancel: vi.fn(), getVoices: () => [] },
+  });
+  const hookRef: { current: ReturnType<typeof useFastMandarinSpeech> | null } = { current: null };
+  function TestConsumer() {
+   hookRef.current = useFastMandarinSpeech();
+   return null;
+  }
+  renderToStaticMarkup(createElement(TestConsumer));
+  if (!hookRef.current) throw new Error("Expected the speech hook.");
+  return { speech: hookRef.current, nativeSpeak };
+ }
+
+ async function waitForAudio(count: number) {
+  await vi.waitFor(() => expect(PendingPlayAudio.instances).toHaveLength(count));
+ }
+
+ it("does not re-read the previous card with the native voice after moving on", async () => {
+  const { speech, nativeSpeak } = setup();
+
+  speech.speak(["今天是大年三十。"]);
+  await waitForAudio(1);
+  speech.speak(["春节"]);
+  await waitForAudio(2);
+  await new Promise((resolve) => setTimeout(resolve, 0));
+
+  expect(nativeSpeak).not.toHaveBeenCalled();
+  vi.unstubAllGlobals();
+ });
+
+ it("stays silent inside a suspended (hidden, still mounted) study card", async () => {
+  setup();
+  const fetchMock = vi.fn(async () => new Response(new Blob(["audio"], { type: "audio/mpeg" })));
+  vi.stubGlobal("fetch", fetchMock);
+  const hookRef: { current: ReturnType<typeof useFastMandarinSpeech> | null } = { current: null };
+  function SuspendedConsumer() {
+   hookRef.current = useFastMandarinSpeech();
+   return null;
+  }
+  renderToStaticMarkup(
+   createElement(
+    FastSpeechSuspendedContext.Provider,
+    { value: true },
+    createElement(SuspendedConsumer),
+   ),
+  );
+
+  hookRef.current?.speak(["今天是大年三十。"]);
+  await new Promise((resolve) => setTimeout(resolve, 20));
+
+  expect(fetchMock).not.toHaveBeenCalled();
+  expect(PendingPlayAudio.instances).toHaveLength(0);
+  vi.unstubAllGlobals();
+ });
+
+ it("falls back to the native voice only once when both error paths fire", async () => {
+  const { speech, nativeSpeak } = setup();
+
+  speech.speak(["春节"]);
+  await waitForAudio(1);
+  const audio = PendingPlayAudio.instances[0];
+  audio?.onerror?.();
+  audio?.rejectPlay(new Error("NotSupportedError"));
+  await new Promise((resolve) => setTimeout(resolve, 0));
+
+  expect(nativeSpeak).toHaveBeenCalledTimes(1);
+  speech.stop();
   vi.unstubAllGlobals();
  });
 });

@@ -25,9 +25,7 @@ import {
 } from "@/lib/ai/ai-task-contract";
 import { isByokEncryptionConfigured } from "@/lib/security/encryption";
 import {
- getActiveUserApiKeyCredentials,
- getUserApiKeysSchemaStatus,
- listUserApiKeys,
+ loadUserApiKeyInventory,
  type UserApiKey,
  type UserApiKeyCredential,
 } from "@/services/ai/user-api-keys.service";
@@ -373,8 +371,8 @@ export async function loadUserAiRuntimeInventory(
  supabase: AuthenticatedRouteContext["supabase"],
  userId: string,
 ): Promise<AiRuntimeInventory> {
- const schemaStatus = await getUserApiKeysSchemaStatus(supabase, userId);
- if (!schemaStatus.ready) {
+ const keyInventory = await loadUserApiKeyInventory(supabase, userId);
+ if (!keyInventory.schemaStatus.ready) {
   return {
    storageIssue: "schema-unavailable",
    activeKeys: [],
@@ -390,8 +388,7 @@ export async function loadUserAiRuntimeInventory(
   };
  }
 
- const keys = await listUserApiKeys(supabase, userId);
- const activeKeys = keys.filter((key) => key.isActive);
+ const activeKeys = keyInventory.keys.filter((key) => key.isActive);
  if (activeKeys.length === 0) {
   return {
    storageIssue: null,
@@ -400,11 +397,10 @@ export async function loadUserAiRuntimeInventory(
   };
  }
 
- const credentials = await getActiveUserApiKeyCredentials(supabase, userId);
  return {
   storageIssue: null,
   activeKeys,
-  credentials,
+  credentials: keyInventory.decryptActiveCredentials(),
  };
 }
 
@@ -498,22 +494,39 @@ export async function resolveUserAiRuntime(input: {
  });
 }
 
-export async function resolveUserAiTaskRuntime(input: {
+type ResolveUserAiTaskRuntimeInput = {
  supabase: AuthenticatedRouteContext["supabase"];
  userId: string;
  taskId: AiTaskId;
  sessionOverride?: AiTaskSessionOverride;
-}): Promise<UserAiTaskRuntimeResolution> {
+};
+
+/** Resolves a task runtime and returns the credentials it was selected from. */
+export async function resolveUserAiTaskRuntimeWithCredentials(
+ input: ResolveUserAiTaskRuntimeInput,
+): Promise<{
+ resolution: UserAiTaskRuntimeResolution;
+ credentials: AiRuntimeInventory["credentials"];
+}> {
  const [inventory, assignment] = await Promise.all([
   loadUserAiRuntimeInventory(input.supabase, input.userId),
   getUserAiTaskAssignment(input.userId, input.taskId),
  ]);
- return resolveAiTaskRuntimeFromInventory({
-  inventory,
-  taskId: input.taskId,
-  ...(assignment ? { assignment } : {}),
-  ...(input.sessionOverride ? { sessionOverride: input.sessionOverride } : {}),
- });
+ return {
+  resolution: resolveAiTaskRuntimeFromInventory({
+   inventory,
+   taskId: input.taskId,
+   ...(assignment ? { assignment } : {}),
+   ...(input.sessionOverride ? { sessionOverride: input.sessionOverride } : {}),
+  }),
+  credentials: inventory.credentials,
+ };
+}
+
+export async function resolveUserAiTaskRuntime(
+ input: ResolveUserAiTaskRuntimeInput,
+): Promise<UserAiTaskRuntimeResolution> {
+ return (await resolveUserAiTaskRuntimeWithCredentials(input)).resolution;
 }
 
 export async function resolveUserAiRuntimeSnapshot(input: {

@@ -14,6 +14,10 @@ import {
  type CanonicalEntityType,
  type CanonicalMutationOperation,
 } from "@/features/hanzihome/schemas/canonical-content.schema";
+import {
+ mergeSectionPayloadChanges,
+ SectionPayloadRejection,
+} from "@/features/hanzihome/server/section-payload-merge";
 import { createClient } from "@/lib/supabase/server";
 import { jsonValueSchema } from "@/lib/schema/json-schema";
 
@@ -75,9 +79,23 @@ export async function mutateCanonicalContent({
   return mutationError("expectedUpdatedAt is required", 400);
  }
 
- const inputChanges = transformChanges
+ const transformedChanges = transformChanges
   ? transformChanges(JsonObjectSchema.parse(parsedBody.data.changes))
-  : parsedBody.data.changes;
+  : JsonObjectSchema.parse(parsedBody.data.changes);
+ let inputChanges = transformedChanges;
+ if (parsedEntityType === "section") {
+  try {
+   inputChanges = await mergeSectionPayloadChanges({
+    client: sessionClient,
+    operation: parsedOperation,
+    sectionId: entityId,
+    changes: transformedChanges,
+   });
+  } catch (error) {
+   if (error instanceof SectionPayloadRejection) return mutationError(error.message, error.status);
+   throw error;
+  }
+ }
  const parsedChanges = getCanonicalChangesSchema(parsedEntityType, parsedOperation).safeParse(
   inputChanges,
  );

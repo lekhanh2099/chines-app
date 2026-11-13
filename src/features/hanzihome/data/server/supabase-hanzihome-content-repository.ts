@@ -737,6 +737,7 @@ async function getLessonDetailRow(lessonId: string) {
     .is("deleted_at", null)
     .is("course.deleted_at", null)
     .is("book.deleted_at", null)
+    .is("texts.deleted_at", null)
     .limit(1),
    z.array(lessonShellRowSchema),
   ),
@@ -748,6 +749,7 @@ async function getLessonDetailRow(lessonId: string) {
      "id,lesson_id,source_section_id,section_key,section_type,title,title_vi,section_order,payload,source_file,updated_at",
     )
     .eq("lesson_id", lessonId)
+    .is("deleted_at", null)
     .order("section_order"),
    z.array(lessonSectionRowSchema),
   ),
@@ -764,6 +766,8 @@ async function getLessonDetailRow(lessonId: string) {
     )
     .eq("lesson_id", lessonId)
     .is("deleted_at", null)
+    .is("examples.deleted_at", null)
+    .is("details.deleted_at", null)
     .order("point_order"),
    z.array(grammarRowSchema),
   ),
@@ -806,7 +810,12 @@ async function getLessonSectionRow(sectionId: string) {
  const client = await createClient();
  const rows = await requireRows(
   `lesson section ${sectionId}`,
-  client.from("hanzihome_lesson_sections").select("*").eq("id", sectionId).limit(1),
+  client
+   .from("hanzihome_lesson_sections")
+   .select("*")
+   .eq("id", sectionId)
+   .is("deleted_at", null)
+   .limit(1),
   z.array(lessonSectionRowSchema),
  );
  return rows[0] ?? null;
@@ -973,6 +982,8 @@ function buildMeta(lessons: HanziHomeLesson[], radicals: StaticRadicalData[] = [
  };
 }
 
+// RLS lets editors read soft-deleted rows, so learner-facing reads filter
+// deleted_at explicitly instead of relying on the policy.
 async function getSearchData(): Promise<HanziHomeData> {
  const summaries = await getLessonSummaryRows();
  const client = await createClient();
@@ -981,6 +992,7 @@ async function getSearchData(): Promise<HanziHomeData> {
    client
     .from("hanzihome_lesson_sections")
     .select("*")
+    .is("deleted_at", null)
     .order("lesson_id")
     .order("section_order")
     .range(from, to),
@@ -989,6 +1001,7 @@ async function getSearchData(): Promise<HanziHomeData> {
    client
     .from("hanzihome_lesson_texts")
     .select("*")
+    .is("deleted_at", null)
     .order("lesson_id")
     .order("text_key")
     .range(from, to),
@@ -997,6 +1010,7 @@ async function getSearchData(): Promise<HanziHomeData> {
    client
     .from("hanzihome_vocab_items")
     .select("*")
+    .is("deleted_at", null)
     .order("lesson_id")
     .order("item_order")
     .range(from, to),
@@ -1005,6 +1019,7 @@ async function getSearchData(): Promise<HanziHomeData> {
    client
     .from("hanzihome_grammar_points")
     .select("*")
+    .is("deleted_at", null)
     .order("lesson_id")
     .order("point_order")
     .range(from, to),

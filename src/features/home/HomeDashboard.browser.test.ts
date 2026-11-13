@@ -410,11 +410,49 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(dashboardViewportCases)(
     ).toBeEnabled();
     await browserExpect(page.locator("#home-learning-pulse-title")).toHaveCount(0);
     await browserExpect(page.locator("#today-focus-heading")).toHaveCount(0);
+    await page.getByRole("button", { name: "Bookmark lesson fixture", exact: true }).click();
+    const sourceSelector = hub.getByRole("combobox", { name: "Chọn nguồn từ vựng" });
+    await browserExpect(sourceSelector).toHaveText("Bài đã mark (1)");
+    await sourceSelector.click();
+    await page.getByRole("option", { name: /^Học nhanh IT/ }).click();
+    await sourceSelector.click();
+    await page.getByRole("option", { name: "Bài đã mark (1)", exact: true }).click();
+    await browserExpect(hub.locator("#unified-vocab-hub-heading")).toContainText("· 60 từ,");
+    await page.getByRole("button", { name: "Clear bookmarks fixture", exact: true }).click();
+    await browserExpect(sourceSelector).toHaveText("Bài đã mark (0)");
+    await browserExpect(hub.locator("#unified-vocab-hub-heading")).toHaveText(
+     "Bài đã đánh dấu · 0 từ, 0 bài tập",
+    );
+    await browserExpect(
+     hub.getByRole("button", { name: "Mở PiP học ngay", exact: true }),
+    ).toBeDisabled();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
      true,
     );
     expect(await page.locator("main").innerText()).not.toMatch(/Home\.(pulse|activity|focus)/);
 
+    await page.evaluate(() => window.homeDashboardHarness.close());
+    let releaseAudio = () => {};
+    let audioRequested = false;
+    let audioReleased = false;
+    await page.route("**/api/tts", async (route) => {
+     audioRequested = true;
+     await new Promise<void>((resolve) => {
+      releaseAudio = resolve;
+     });
+     await route.fulfill({ contentType: "audio/mpeg", body: "fixture audio" });
+     audioReleased = true;
+    });
+    await page.goto(url + "home-audit?audio");
+    await browserExpect(page.locator("[data-audio-pack]")).toHaveText("idle:0/1");
+    await page.getByRole("button", { name: "Download audio fixture", exact: true }).click();
+    await browserExpect.poll(() => audioRequested).toBe(true);
+    await page.getByRole("button", { name: "Switch to cached voice fixture", exact: true }).click();
+    await browserExpect(page.locator("[data-audio-pack]")).toHaveText("ready:1/1");
+    releaseAudio();
+    await browserExpect.poll(() => audioReleased).toBe(true);
+    await browserExpect(page.locator("[data-audio-download-finished]")).toHaveText("true");
+    await browserExpect(page.locator("[data-audio-pack]")).toHaveText("ready:1/1");
     await page.evaluate(() => window.homeDashboardHarness.close());
     expect(errors).toEqual([]);
     expect(unexpected).toEqual([]);

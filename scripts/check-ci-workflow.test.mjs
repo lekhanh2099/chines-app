@@ -43,6 +43,7 @@ function select({
  latestContents = {},
  event = {},
  remove = [],
+ pushMergeMessage = "",
 } = {}) {
  const directory = mkdtempSync(path.join(tmpdir(), "hanzihome-ci-test-"));
  const git = (...args) =>
@@ -75,6 +76,12 @@ function select({
    if (baseOnly.length) base = commit(baseOnly, "integration base update");
    git("merge", "--quiet", "--no-ff", "-m", "test merge", head);
   }
+  // A push to main that lands the PR: main's previous tip is the push "before".
+  const mainBeforeMerge = base;
+  if (pushMergeMessage) {
+   git("switch", "--quiet", "main");
+   git("merge", "--quiet", "--no-ff", "-m", pushMergeMessage, head);
+  }
   const output = path.join(directory, "output");
   const env = {
    ...process.env,
@@ -89,6 +96,7 @@ function select({
    ...event,
   };
   if (event.PR_BASE === "advanced") env.PR_BASE = head;
+  if (event.BEFORE_SHA === "main-before-merge") env.BEFORE_SHA = mainBeforeMerge;
   if (event.BEFORE_SHA === "rewritten") {
    env.BEFORE_SHA = git("commit-tree", previous + "^{tree}", "-m", "discarded old head");
   }
@@ -403,6 +411,36 @@ describe("CI affected selection with actual Git history", () => {
   { EVENT_NAME: "push", BEFORE_SHA: "rewritten" },
  ])("requires full product coverage for unsafe or full-run events: %j", (event) => {
   expect(select({ event }).e2e_grep).toBe(".");
+ });
+
+ it("does not repeat browser and product suites for a merged pull request on main", () => {
+  const result = select({
+   latest: ["src/features/hanzihome/components/review/AmbientPipFlashcard.tsx"],
+   pushMergeMessage: "Merge pull request #42 from owner/feature",
+   event: { EVENT_NAME: "push", BEFORE_SHA: "main-before-merge" },
+  });
+  expect(result).toMatchObject({ code: "true", browser_files: "", e2e_grep: "" });
+  expect(JSON.parse(result.unit_files)).toContain(
+   "src/features/hanzihome/components/review/AmbientPipFlashcard.tsx",
+  );
+ });
+
+ it("keeps the affected suites for a direct push that is not a pull-request merge", () => {
+  const result = select({
+   latest: ["src/features/hanzihome/components/review/AmbientPipFlashcard.tsx"],
+   pushMergeMessage: "Merge branch 'hotfix'",
+   event: { EVENT_NAME: "push", BEFORE_SHA: "main-before-merge" },
+  });
+  expect(result.browser_files).not.toBe("");
+  expect(result.e2e_grep).not.toBe("");
+ });
+
+ it("keeps full coverage for a merged pull request pushed over an unsafe base", () => {
+  const result = select({
+   pushMergeMessage: "Merge pull request #42 from owner/feature",
+   event: { EVENT_NAME: "push", BEFORE_SHA: "" },
+  });
+  expect(result.e2e_grep).toBe(".");
  });
 
  it("uses only the new push scope on main", () => {

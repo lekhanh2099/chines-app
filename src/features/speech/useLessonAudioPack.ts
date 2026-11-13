@@ -3,7 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { DEFAULT_MANDARIN_VOICE } from "@/hooks/useTTS";
 import { buildCacheKey, checkAudioKeysCached } from "@/lib/audio/tts-cache";
-import { fetchMandarinAudioBlob } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
+import {
+ fetchMandarinAudioBlob,
+ normalizeSpeechRate,
+ sanitizeSpeechTextForVoice,
+} from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { dictationSourcesFromTextbook } from "@/features/hanzihome/practice/translation-practice";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
@@ -36,123 +40,180 @@ export function extractLessonMandarinTexts(
  return Array.from(textSet);
 }
 
+const LESSON_AUDIO_PACK_RATE = 1.0;
+
+type LessonAudioPackEntry = { text: string; cacheKey: string };
+
+/**
+ * Mirrors fetchMandarinAudioBlob: audio is cached under the sanitized text and
+ * normalized rate, so cache lookups must use the same key. Texts that sanitize
+ * to nothing are never synthesized and do not count toward the pack.
+ */
+export function lessonAudioPackEntries(
+ texts: readonly string[],
+ voice: string,
+): LessonAudioPackEntry[] {
+ const rate = normalizeSpeechRate(LESSON_AUDIO_PACK_RATE);
+ const seenKeys = new Set<string>();
+ return texts.flatMap((text) => {
+  const sanitized = sanitizeSpeechTextForVoice(text, voice);
+  if (!sanitized) return [];
+  const cacheKey = buildCacheKey(sanitized, voice, rate);
+  if (seenKeys.has(cacheKey)) return [];
+  seenKeys.add(cacheKey);
+  return [{ text, cacheKey }];
+ });
+}
+
+const NO_ENTRIES: LessonAudioPackEntry[] = [];
+
+type CacheCheck = { entries: LessonAudioPackEntry[]; cachedCount: number };
+type ActivityState = { entries: LessonAudioPackEntry[]; status: LessonAudioPackStatus };
+
 export function useLessonAudioPack(
  lesson: TextbookLesson | null | undefined,
  voiceName: string = DEFAULT_MANDARIN_VOICE,
 ) {
- const [status, setStatus] = useState<LessonAudioPackStatus>("checking");
- const [cachedCount, setCachedCount] = useState(0);
- const [totalCount, setTotalCount] = useState(0);
+ // Download lifecycle only; checking/ready are derived from the cache check.
+ // It is tied to the entries it describes, so another lesson starts idle.
+ const [activityState, setActivityState] = useState<ActivityState>({
+  entries: NO_ENTRIES,
+  status: "idle",
+ });
+ const [check, setCheck] = useState<CacheCheck>({ entries: NO_ENTRIES, cachedCount: 0 });
  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
  const abortControllerRef = useRef<AbortController | null>(null);
  const texts = useMemo(() => extractLessonMandarinTexts(lesson), [lesson]);
  const targetVoice = voiceName || DEFAULT_MANDARIN_VOICE;
+ const entries = useMemo(() => lessonAudioPackEntries(texts, targetVoice), [targetVoice, texts]);
+
+ const activity = activityState.entries === entries ? activityState.status : "idle";
+ const visibleErrorMessage = activity === "error" ? errorMessage : null;
+ const totalCount = entries.length;
+ const isChecked = check.entries === entries;
+ const cachedCount = isChecked ? check.cachedCount : 0;
+ const isFullyCached = totalCount > 0 && cachedCount >= totalCount;
+ const status: LessonAudioPackStatus =
+  totalCount === 0
+   ? "idle"
+   : activity !== "idle"
+     ? activity
+     : !isChecked
+       ? "checking"
+       : isFullyCached
+         ? "ready"
+         : "idle";
 
  const checkCacheStatus = useCallback(async () => {
-  if (texts.length === 0) {
-   setTotalCount(0);
-   setCachedCount(0);
-   setStatus("idle");
-   return;
-  }
-
-  setTotalCount(texts.length);
-  const keys = texts.map((t) => buildCacheKey(t, targetVoice, 1.0));
-  const cachedKeys = await checkAudioKeysCached(keys);
-
-  setCachedCount(cachedKeys.size);
-  setStatus(cachedKeys.size >= texts.length ? "ready" : "idle");
- }, [targetVoice, texts]);
+  if (entries.length === 0) return 0;
+  const cachedKeys = await checkAudioKeysCached(entries.map((entry) => entry.cacheKey));
+  setCheck({ entries, cachedCount: cachedKeys.size });
+  return cachedKeys.size;
+ }, [entries]);
 
  useEffect(() => {
+  if (entries.length === 0) return;
   let isMounted = true;
-  if (texts.length === 0) {
-   return;
-  }
-
-  const keys = texts.map((t) => buildCacheKey(t, targetVoice, 1.0));
-  void (async () => {
-   const cachedKeys = await checkAudioKeysCached(keys);
-   if (!isMounted) return;
-   setTotalCount(texts.length);
-   setCachedCount(cachedKeys.size);
-   setStatus(cachedKeys.size >= texts.length ? "ready" : "idle");
-  })();
-
+  void checkAudioKeysCached(entries.map((entry) => entry.cacheKey)).then((cachedKeys) => {
+   if (isMounted) setCheck({ entries, cachedCount: cachedKeys.size });
+  });
   return () => {
    isMounted = false;
   };
- }, [targetVoice, texts]);
+ }, [entries]);
+
+ useEffect(
+  () => () => {
+   abortControllerRef.current?.abort();
+   abortControllerRef.current = null;
+  },
+  [entries],
+ );
 
  const downloadLessonAudio = useCallback(async () => {
-  if (texts.length === 0) return;
+  if (entries.length === 0) return;
 
-  if (abortControllerRef.current !== null) {
-   abortControllerRef.current.abort();
-  }
+  abortControllerRef.current?.abort();
   const controller = new AbortController();
   abortControllerRef.current = controller;
+  // A superseded download must not overwrite the status of the one replacing it.
+  const setActivity = (status: LessonAudioPackStatus) => {
+   if (abortControllerRef.current === controller) setActivityState({ entries, status });
+  };
 
-  setStatus("downloading");
+  setActivity("downloading");
   setErrorMessage(null);
 
-  const keys = texts.map((t) => buildCacheKey(t, targetVoice, 1.0));
-  const cachedKeys = await checkAudioKeysCached(keys);
+  const cachedKeys = await checkAudioKeysCached(entries.map((entry) => entry.cacheKey));
+  if (controller.signal.aborted) return;
   let currentCached = cachedKeys.size;
-  setCachedCount(currentCached);
+  setCheck({ entries, cachedCount: currentCached });
 
-  const missingTexts = texts.filter((t) => !cachedKeys.has(buildCacheKey(t, targetVoice, 1.0)));
+  const missingEntries = entries.filter((entry) => !cachedKeys.has(entry.cacheKey));
+  let failedCount = 0;
 
   // Concurrency pool of 3 to avoid overwhelming server while maintaining high speed
   const concurrency = 3;
   let index = 0;
 
   async function downloadNext(): Promise<void> {
-   while (index < missingTexts.length) {
+   while (index < missingEntries.length) {
     if (controller.signal.aborted) return;
-    const currentIndex = index;
+    const entry = missingEntries[index];
     index += 1;
-    const text = missingTexts[currentIndex];
-    if (!text) continue;
+    if (!entry) continue;
 
     try {
-     const blob = await fetchMandarinAudioBlob(text, targetVoice, 1.0, controller.signal);
+     const blob = await fetchMandarinAudioBlob(
+      entry.text,
+      targetVoice,
+      LESSON_AUDIO_PACK_RATE,
+      controller.signal,
+     );
+     if (controller.signal.aborted) return;
      if (blob) {
       currentCached += 1;
-      setCachedCount(currentCached);
+      setCheck({ entries, cachedCount: currentCached });
+     } else {
+      failedCount += 1;
      }
     } catch {
-     // Ignore individual text download error, continue next
+     failedCount += 1;
     }
    }
   }
 
-  const workers = Array.from({ length: Math.min(concurrency, missingTexts.length) }, () =>
+  const workers = Array.from({ length: Math.min(concurrency, missingEntries.length) }, () =>
    downloadNext(),
   );
 
   await Promise.all(workers);
 
-  if (controller.signal.aborted) {
-   setStatus("idle");
+  if (controller.signal.aborted) return;
+
+  const finalCachedKeys = await checkAudioKeysCached(entries.map((entry) => entry.cacheKey));
+  if (controller.signal.aborted) return;
+  const finalCached = finalCachedKeys.size;
+  setCheck({ entries, cachedCount: finalCached });
+  if (failedCount > 0 && finalCached < entries.length) {
+   setActivity("error");
+   setErrorMessage(`Không tải được ${failedCount} đoạn audio. Hãy kiểm tra kết nối rồi thử lại.`);
    return;
   }
-
-  void checkCacheStatus();
- }, [checkCacheStatus, targetVoice, texts]);
+  setActivity("idle");
+ }, [entries, targetVoice]);
 
  const cancelDownload = useCallback(() => {
   if (abortControllerRef.current !== null) {
    abortControllerRef.current.abort();
    abortControllerRef.current = null;
   }
-  setStatus("idle");
- }, []);
+  setActivityState({ entries, status: "idle" });
+ }, [entries]);
 
  const progressPercent =
   totalCount > 0 ? Math.min(100, Math.round((cachedCount / totalCount) * 100)) : 0;
- const isFullyCached = totalCount > 0 && cachedCount >= totalCount;
 
  return {
   status,
@@ -161,7 +222,7 @@ export function useLessonAudioPack(
   progressPercent,
   isFullyCached,
   isDownloading: status === "downloading",
-  errorMessage,
+  errorMessage: visibleErrorMessage,
   downloadLessonAudio,
   cancelDownload,
   refreshStatus: checkCacheStatus,
