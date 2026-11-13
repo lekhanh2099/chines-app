@@ -74,6 +74,28 @@ Normal content writes use the smallest stable entity ID and the smallest owning 
 
 Generated database types live in `src/types/supabase.generated.ts`. Zod schemas define network and form boundaries; generated types define database client boundaries. Neither replaces the other.
 
+Production migration checkpoint, 2026-11-13, project `pdrzkirlhbkmfpbcsujp`:
+
+- Separately approved history-only repairs recorded `20261024124241` and
+  `20260915160000` after proving their existing ACL and Auth function effects
+  matched the repository. No Auth hook replay or session mutation occurred.
+- Separately approved applications: `20261008113000` at 09:38:44 UTC,
+  `20261113120000` at 09:42:47 UTC, and `20261113121000` at 09:45:12 UTC.
+  Connector-generated versions `20261113093844`, `20261113094247` and
+  `20261113094512` were reconciled to those canonical versions only after
+  individual approval. Final registry matches all 17 repository migration files.
+- Direct Notes/PDF writes and retired RPCs are revoked; CAS RPC ACLs are unchanged.
+  Service-only browser RPC exposure is zero; 15 function changes add role guards
+  only. The enrichment-job CHECK is validated and permits a deleted key's null
+  live reference while preserving its required snapshot; 718 jobs, zero violations.
+- Generated database types are unchanged. DATA-02 has zero cleanup candidates;
+  no cleanup or business-row smoke writes occurred. The owner explicitly waived
+  backup/PITR and production smoke; neither was verified. Local/CI regression
+  success does not establish those production flows. Rollback requires separate
+  approval: restore captured Notes/PDF grants, SEC-01 guard removal while retaining
+  browser revokes, or DATA-07's prior strict CHECK as NOT VALID. Full grant restoration
+  that would expose service-only RPCs to browsers is prohibited on production.
+
 ## Content modes
 
 - Study Mode renders typed learner-facing view models and keeps answers collapsed.
