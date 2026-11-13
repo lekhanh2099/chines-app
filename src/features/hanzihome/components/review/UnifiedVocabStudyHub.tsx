@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/forms/select";
 import { Card } from "@/components/ui/layout/card";
 import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
+import { FastSpeechSuspendedContext } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  getItWebVocabCorpus,
@@ -414,16 +415,20 @@ export function UnifiedVocabStudyHub({
      <div className="mx-auto w-full max-w-3xl pt-1">
       <Card variant="default" padding="none" className="min-h-[380px] overflow-hidden">
        <div hidden={isPipOpen || isInAppFloatingOpen}>
-        <UniversalAmbientPip
-         key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
-         initialMode={activeFlowMode}
-         lessonTitle={activeBundle.title}
-         vocabItems={activeBundle.vocabItems}
-         grammarItems={activeBundle.grammarItems}
-         practiceItems={activeBundle.practiceItems}
-         onClose={() => setIsInlineOpen(false)}
-         isInline
-        />
+        {/* Kept mounted to preserve progress, but muted while the same deck runs in
+            the PiP/floating window; otherwise both cards read aloud at once. */}
+        <FastSpeechSuspendedContext.Provider value={isPipOpen || isInAppFloatingOpen}>
+         <UniversalAmbientPip
+          key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
+          initialMode={activeFlowMode}
+          lessonTitle={activeBundle.title}
+          vocabItems={activeBundle.vocabItems}
+          grammarItems={activeBundle.grammarItems}
+          practiceItems={activeBundle.practiceItems}
+          onClose={() => setIsInlineOpen(false)}
+          isInline
+         />
+        </FastSpeechSuspendedContext.Provider>
        </div>
        {isPipOpen || isInAppFloatingOpen ? (
         <div className="flex min-h-[380px] flex-col items-center justify-center gap-3 p-8 text-center">

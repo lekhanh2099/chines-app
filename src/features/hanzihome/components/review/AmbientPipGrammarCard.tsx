@@ -11,6 +11,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import type { PipGrammarPoint } from "./pip-grammar-adapter";
+import { usePipAutoAdvance } from "./usePipAutoAdvance";
 
 export type AmbientPipGrammarCardProps = {
  readonly items: readonly PipGrammarPoint[];
@@ -36,28 +37,34 @@ export function AmbientPipGrammarCard({
  const [isAutoPlay, setIsAutoPlay] = useState(false);
  const [isAutoSpeak, setIsAutoSpeak] = useState(true);
  const [intervalSeconds, setIntervalSeconds] = useState<number>(20);
- const [remainingSeconds, setRemainingSeconds] = useState<number>(20);
 
  const { speak, stop } = useFastMandarinSpeech();
 
  const totalCount = items.length;
+ const { remainingSeconds, resetRemaining, speakTracked, stopTracked } = usePipAutoAdvance({
+  enabled: isAutoPlay && totalCount > 1,
+  intervalSeconds,
+  speak,
+  stop,
+  onAdvance: () => handleNext(),
+ });
  const currentItem = items[currentIndex] ?? items[0];
 
  const handleNext = useCallback(() => {
   if (totalCount === 0) return;
-  stop();
+  stopTracked();
   setCurrentIndex((prev) => (prev + 1) % totalCount);
   setExampleIndex(0);
-  setRemainingSeconds(intervalSeconds);
- }, [totalCount, intervalSeconds, stop]);
+  resetRemaining(intervalSeconds);
+ }, [totalCount, intervalSeconds, resetRemaining, stopTracked]);
 
  const handlePrev = useCallback(() => {
   if (totalCount === 0) return;
-  stop();
+  stopTracked();
   setCurrentIndex((prev) => (prev - 1 + totalCount) % totalCount);
   setExampleIndex(0);
-  setRemainingSeconds(intervalSeconds);
- }, [totalCount, intervalSeconds, stop]);
+  resetRemaining(intervalSeconds);
+ }, [totalCount, intervalSeconds, resetRemaining, stopTracked]);
 
  const handleToggleAuto = useCallback(() => {
   setIsAutoPlay((prev) => !prev);
@@ -68,43 +75,24 @@ export function AmbientPipGrammarCard({
  }, []);
 
  const handleCycleInterval = useCallback(() => {
-  setIntervalSeconds((prev) => {
-   const idx = INTERVAL_OPTIONS.indexOf(prev);
-   const nextIdx = idx >= 0 && idx < INTERVAL_OPTIONS.length - 1 ? idx + 1 : 0;
-   const nextSec = INTERVAL_OPTIONS[nextIdx] ?? 20;
-   setRemainingSeconds(nextSec);
-   return nextSec;
-  });
- }, []);
-
- // Auto-play timer
- useEffect(() => {
-  if (!isAutoPlay || totalCount <= 1) return;
-
-  const timer = setInterval(() => {
-   setRemainingSeconds((prev) => {
-    if (prev <= 1) {
-     handleNext();
-     return intervalSeconds;
-    }
-    return prev - 1;
-   });
-  }, 1000);
-
-  return () => clearInterval(timer);
- }, [handleNext, intervalSeconds, isAutoPlay, totalCount]);
+  const idx = INTERVAL_OPTIONS.indexOf(intervalSeconds);
+  const nextIdx = idx >= 0 && idx < INTERVAL_OPTIONS.length - 1 ? idx + 1 : 0;
+  const nextSec = INTERVAL_OPTIONS[nextIdx] ?? 20;
+  setIntervalSeconds(nextSec);
+  resetRemaining(nextSec);
+ }, [intervalSeconds, resetRemaining]);
 
  // Auto-speak current grammar item
  useEffect(() => {
   if (isAutoSpeak && currentItem) {
    const firstEx = currentItem.examples[0];
    if (firstEx?.zh) {
-    speak(firstEx.zh, { lang: "zh-CN" });
+    speakTracked(firstEx.zh, { lang: "zh-CN" });
    } else if (currentItem.title && /[\u4e00-\u9fff]/u.test(currentItem.title)) {
-    speak(currentItem.title, { lang: "zh-CN" });
+    speakTracked(currentItem.title, { lang: "zh-CN" });
    }
   }
- }, [currentIndex, currentItem, isAutoSpeak, speak]);
+ }, [currentIndex, currentItem, isAutoSpeak, speakTracked]);
 
  // Keyboard navigation: Left/Right arrow keys
  useEffect(() => {
@@ -127,9 +115,9 @@ export function AmbientPipGrammarCard({
 
  useEffect(() => {
   return () => {
-   stop();
+   stopTracked();
   };
- }, [stop]);
+ }, [stopTracked]);
 
  if (!currentItem) {
   return null;
@@ -217,7 +205,7 @@ export function AmbientPipGrammarCard({
       type="button"
       variant="ghost"
       size="icon-xs"
-      onClick={() => speak(currentItem.title)}
+      onClick={() => speakTracked(currentItem.title)}
       aria-label={`Phát âm ${currentItem.title}`}
       className="shrink-0"
      >
@@ -256,7 +244,7 @@ export function AmbientPipGrammarCard({
         type="button"
         variant="outline"
         size="compact"
-        onClick={() => speak(phrase)}
+        onClick={() => speakTracked(phrase)}
         title={`Bấm để nghe phát âm "${phrase}"`}
        >
         {phrase}
@@ -305,7 +293,7 @@ export function AmbientPipGrammarCard({
          type="button"
          variant="ghost"
          size="icon-xs"
-         onClick={() => speak(currentExample.zh)}
+         onClick={() => speakTracked(currentExample.zh)}
          aria-label="Phát âm câu ví dụ"
         >
          <Volume2 className="size-3.5 text-primary" />

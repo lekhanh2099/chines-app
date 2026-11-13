@@ -29,6 +29,8 @@ import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
+import { usePipAutoAdvance } from "./usePipAutoAdvance";
+
 export type AmbientPipFlashcardProps = {
  readonly items: readonly HanziHomeVocabItem[];
  readonly lessonTitle?: string;
@@ -74,12 +76,19 @@ export function AmbientPipFlashcard({
  const [isAutoPlay, setIsAutoPlay] = useState(true);
  const [isAutoSpeak, setIsAutoSpeak] = useState(true);
  const [intervalSeconds, setIntervalSeconds] = useState<number>(15);
- const [remainingSeconds, setRemainingSeconds] = useState<number>(15);
 
  const { speak, stop } = useFastMandarinSpeech();
  const learning = useLearningState();
 
  const totalCount = items.length;
+ const { remainingSeconds, resetRemaining, speakTracked, stopTracked } = usePipAutoAdvance({
+  enabled: isAutoPlay && totalCount > 1,
+  intervalSeconds,
+  speak,
+  stop,
+  onAdvance: () => handleNext(),
+  onHalfway: () => setIsFlipped(true),
+ });
  const currentItem = items[currentIndex] ?? items[0];
  const customVocabList = learning.state.settings.customVocab ?? [];
  const isCurrentInVault = Boolean(
@@ -103,15 +112,15 @@ export function AmbientPipFlashcard({
   if (totalCount === 0) return;
   setCurrentIndex((prev) => (prev + 1) % totalCount);
   setIsFlipped(false);
-  setRemainingSeconds(intervalSeconds);
- }, [totalCount, intervalSeconds]);
+  resetRemaining(intervalSeconds);
+ }, [totalCount, intervalSeconds, resetRemaining]);
 
  const handlePrev = useCallback(() => {
   if (totalCount === 0) return;
   setCurrentIndex((prev) => (prev - 1 + totalCount) % totalCount);
   setIsFlipped(false);
-  setRemainingSeconds(intervalSeconds);
- }, [totalCount, intervalSeconds]);
+  resetRemaining(intervalSeconds);
+ }, [totalCount, intervalSeconds, resetRemaining]);
 
  const handleToggleFlip = useCallback(() => {
   setIsFlipped((prev) => !prev);
@@ -126,43 +135,20 @@ export function AmbientPipFlashcard({
  }, []);
 
  const handleCycleInterval = useCallback(() => {
-  setIntervalSeconds((prev) => {
-   const idx = INTERVAL_OPTIONS.indexOf(prev);
-   const nextIdx = idx >= 0 && idx < INTERVAL_OPTIONS.length - 1 ? idx + 1 : 0;
-   const nextSec = INTERVAL_OPTIONS[nextIdx] ?? 15;
-   setRemainingSeconds(nextSec);
-   return nextSec;
-  });
- }, []);
-
- useEffect(() => {
-  if (!isAutoPlay || totalCount <= 1) return;
-
-  const timer = setInterval(() => {
-   setRemainingSeconds((prev) => {
-    if (prev <= 1) {
-     handleNext();
-     return intervalSeconds;
-    }
-
-    if (prev === Math.floor(intervalSeconds / 2) && !isFlipped) {
-     setIsFlipped(true);
-    }
-
-    return prev - 1;
-   });
-  }, 1000);
-
-  return () => clearInterval(timer);
- }, [handleNext, intervalSeconds, isAutoPlay, isFlipped, totalCount]);
+  const idx = INTERVAL_OPTIONS.indexOf(intervalSeconds);
+  const nextIdx = idx >= 0 && idx < INTERVAL_OPTIONS.length - 1 ? idx + 1 : 0;
+  const nextSec = INTERVAL_OPTIONS[nextIdx] ?? 15;
+  setIntervalSeconds(nextSec);
+  resetRemaining(nextSec);
+ }, [intervalSeconds, resetRemaining]);
 
  useEffect(() => {
   if (isAutoSpeak && currentItem?.hanzi) {
    const exampleZh = currentItem.examples[0]?.zh;
    const segments = exampleZh ? [currentItem.hanzi, exampleZh] : [currentItem.hanzi];
-   speak(segments);
+   speakTracked(segments);
   }
- }, [currentIndex, currentItem, isAutoSpeak, speak]);
+ }, [currentIndex, currentItem, isAutoSpeak, speakTracked]);
 
  // Proactive background prefetch for next card's audio
  useEffect(() => {
@@ -175,9 +161,9 @@ export function AmbientPipFlashcard({
 
  useEffect(() => {
   return () => {
-   stop();
+   stopTracked();
   };
- }, [stop]);
+ }, [stopTracked]);
 
  if (!currentItem) {
   return null;
@@ -277,7 +263,7 @@ export function AmbientPipFlashcard({
           size="icon-xs"
           onClick={(e) => {
            e.stopPropagation();
-           speak(currentItem.hanzi, { rate: 1.15 });
+           speakTracked(currentItem.hanzi, { rate: 1.15 });
           }}
           aria-label={`Phát âm ${currentItem.hanzi}`}
          >
@@ -300,7 +286,7 @@ export function AmbientPipFlashcard({
            size="icon-xs"
            onClick={(e) => {
             e.stopPropagation();
-            speak(example.zh);
+            speakTracked(example.zh);
            }}
            aria-label="Phát âm câu ví dụ"
           >
@@ -350,7 +336,7 @@ export function AmbientPipFlashcard({
            size="icon-xs"
            onClick={(e) => {
             e.stopPropagation();
-            speak(example.zh);
+            speakTracked(example.zh);
            }}
            aria-label="Phát âm câu ví dụ"
           >

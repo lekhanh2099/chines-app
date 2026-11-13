@@ -143,6 +143,7 @@ import {
  type TextbookBookSummary,
  type TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { FastSpeechSuspendedContext } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { TextbookNoteAccessCard } from "./TextbookNoteAccessCard";
 import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
 import { LessonDictationWorkspace } from "@/features/hanzihome/practice/LessonDictationWorkspace";
@@ -2430,15 +2431,19 @@ function BusinessChineseStudyWorkspaceContent({
             ) : (
              <>
               <div hidden={isPipOpen || isInAppFloatingOpen}>
-               <UniversalAmbientPip
-                key={reviewMode}
-                initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
-                lessonTitle={lesson.title}
-                vocabItems={reviewLesson.vocab}
-                grammarItems={textbookGrammarPoints}
-                practiceItems={universalTextbookPracticeItems}
-                isInline
-               />
+               {/* Kept mounted to preserve progress, but muted while the same deck
+                   runs in the PiP/floating window so the two never read at once. */}
+               <FastSpeechSuspendedContext.Provider value={isPipOpen || isInAppFloatingOpen}>
+                <UniversalAmbientPip
+                 key={reviewMode}
+                 initialMode={reviewMode === "dictation" ? "dictation" : "vocab"}
+                 lessonTitle={lesson.title}
+                 vocabItems={reviewLesson.vocab}
+                 grammarItems={textbookGrammarPoints}
+                 practiceItems={universalTextbookPracticeItems}
+                 isInline
+                />
+               </FastSpeechSuspendedContext.Provider>
               </div>
               {isPipOpen || isInAppFloatingOpen ? (
                <Card
