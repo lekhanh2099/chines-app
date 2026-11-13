@@ -276,55 +276,19 @@ async function migrateLegacyDeepSeekKeyForUser(
  }
 }
 
-export async function listUserApiKeys(
- supabase: AppSupabaseClient,
- userId: string,
-): Promise<UserApiKey[]> {
+// One user_api_keys read per call; the legacy DeepSeek migration re-reads only
+// when it actually inserted a key. Schema status, the key list and decrypted
+// credentials all derive from these rows instead of re-querying the table.
+async function loadUserApiKeyRows(supabase: AppSupabaseClient, userId: string) {
  const initial = await listUserApiKeysRaw(supabase, userId);
- if (!initial.schemaStatus.ready) {
-  return [];
- }
-
- if (initial.data.length === 0) {
-  const migrated = await migrateLegacyDeepSeekKeyForUser(supabase, userId, initial.data);
-
-  if (migrated) {
-   const afterMigration = await listUserApiKeysRaw(supabase, userId);
-   return afterMigration.data.map(normalizeUserApiKey);
-  }
- }
-
- return initial.data.map(normalizeUserApiKey);
+ if (!initial.schemaStatus.ready || initial.data.length > 0) return initial;
+ const migrated = await migrateLegacyDeepSeekKeyForUser(supabase, userId, initial.data);
+ return migrated ? listUserApiKeysRaw(supabase, userId) : initial;
 }
 
-export async function getActiveUserApiKeyCredentials(
- supabase: AppSupabaseClient,
- userId: string,
-): Promise<UserApiKeyCredential[]> {
- const existingKeys = await listUserApiKeys(supabase, userId);
- if (existingKeys.length === 0) {
-  return [];
- }
-
- const { data, error } = await supabase
-  .from("user_api_keys")
-  .select(
-   "id, user_id, provider, label, masked_key, encrypted_key, is_active, priority, default_model, last_validated_at, created_at, updated_at",
-  )
-  .eq("user_id", userId)
-  .eq("is_active", true)
-  .order("priority", { ascending: true })
-  .order("created_at", { ascending: true });
-
- if (error || !data) {
-  if (error) {
-   logger.error("[ApiKeys] credential list error:", error);
-  }
-  return [];
- }
-
- const credentials = DbUserApiKeySchema.array()
-  .parse(data)
+function decryptActiveCredentials(rows: readonly DbUserApiKey[]): UserApiKeyCredential[] {
+ const credentials = rows
+  .filter((row) => row.is_active)
   .map((row) => {
    try {
     return {
@@ -339,6 +303,33 @@ export async function getActiveUserApiKeyCredentials(
   .filter((item): item is UserApiKeyCredential => !!item);
 
  return sortRuntimeCredentials(credentials);
+}
+
+export type UserApiKeyInventory = {
+ schemaStatus: UserApiKeysSchemaStatus;
+ keys: UserApiKey[];
+ /** Decrypts lazily so callers can skip it when BYOK encryption is unavailable. */
+ decryptActiveCredentials: () => UserApiKeyCredential[];
+};
+
+export async function loadUserApiKeyInventory(
+ supabase: AppSupabaseClient,
+ userId: string,
+): Promise<UserApiKeyInventory> {
+ const result = await loadUserApiKeyRows(supabase, userId);
+ return {
+  schemaStatus: result.schemaStatus,
+  keys: result.data.map(normalizeUserApiKey),
+  decryptActiveCredentials: () => decryptActiveCredentials(result.data),
+ };
+}
+
+export async function listUserApiKeys(
+ supabase: AppSupabaseClient,
+ userId: string,
+): Promise<UserApiKey[]> {
+ const result = await loadUserApiKeyRows(supabase, userId);
+ return result.data.map(normalizeUserApiKey);
 }
 
 export async function createUserApiKey(

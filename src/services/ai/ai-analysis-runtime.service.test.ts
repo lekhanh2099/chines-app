@@ -4,16 +4,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { Database } from "@/types/supabase.generated";
 
 const mocks = vi.hoisted(() => ({
- getActiveUserApiKeyCredentials: vi.fn(),
- resolveUserAiTaskRuntime: vi.fn(),
+ resolveUserAiTaskRuntimeWithCredentials: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/services/ai/ai-runtime.service", () => ({
- resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
-}));
-vi.mock("@/services/ai/user-api-keys.service", () => ({
- getActiveUserApiKeyCredentials: mocks.getActiveUserApiKeyCredentials,
+ resolveUserAiTaskRuntimeWithCredentials: mocks.resolveUserAiTaskRuntimeWithCredentials,
 }));
 
 import { resolveAiCredentialRuntime } from "./ai-analysis-runtime.service";
@@ -50,14 +46,17 @@ const selectedRuntime = {
 };
 
 describe("AI credential runtime compatibility bridge", () => {
+ const credentials = [
+  { ...selectedCredential, id: "22222222-2222-4222-8222-222222222222", priority: 1 },
+  selectedCredential,
+ ];
+
  beforeEach(() => {
-  mocks.resolveUserAiTaskRuntime.mockReset();
-  mocks.getActiveUserApiKeyCredentials.mockReset();
-  mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime: selectedRuntime });
-  mocks.getActiveUserApiKeyCredentials.mockResolvedValue([
-   { ...selectedCredential, id: "22222222-2222-4222-8222-222222222222", priority: 1 },
-   selectedCredential,
-  ]);
+  mocks.resolveUserAiTaskRuntimeWithCredentials.mockReset();
+  mocks.resolveUserAiTaskRuntimeWithCredentials.mockResolvedValue({
+   resolution: { ok: true, runtime: selectedRuntime },
+   credentials,
+  });
  });
 
  it("keeps shared runtime capability selection authoritative", async () => {
@@ -67,7 +66,8 @@ describe("AI credential runtime compatibility bridge", () => {
    taskId: "lookup.deep",
   });
 
-  expect(mocks.resolveUserAiTaskRuntime).toHaveBeenCalledWith({
+  expect(mocks.resolveUserAiTaskRuntimeWithCredentials).toHaveBeenCalledTimes(1);
+  expect(mocks.resolveUserAiTaskRuntimeWithCredentials).toHaveBeenCalledWith({
    supabase,
    userId: "user-1",
    taskId: "lookup.deep",
@@ -79,11 +79,10 @@ describe("AI credential runtime compatibility bridge", () => {
   });
  });
 
- it("does not decrypt credentials when runtime selection is blocked", async () => {
-  mocks.resolveUserAiTaskRuntime.mockResolvedValue({
-   ok: false,
-   status: "missing-key",
-   reason: "capability-unavailable",
+ it("returns a blocked runtime selection without a second key lookup", async () => {
+  mocks.resolveUserAiTaskRuntimeWithCredentials.mockResolvedValue({
+   resolution: { ok: false, status: "missing-key", reason: "capability-unavailable" },
+   credentials,
   });
 
   const result = await resolveAiCredentialRuntime({
@@ -93,11 +92,14 @@ describe("AI credential runtime compatibility bridge", () => {
   });
 
   expect(result).toMatchObject({ ok: false, status: "missing-key" });
-  expect(mocks.getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
+  expect(mocks.resolveUserAiTaskRuntimeWithCredentials).toHaveBeenCalledTimes(1);
  });
 
  it("fails closed if the selected runtime credential cannot be recovered", async () => {
-  mocks.getActiveUserApiKeyCredentials.mockResolvedValue([]);
+  mocks.resolveUserAiTaskRuntimeWithCredentials.mockResolvedValue({
+   resolution: { ok: true, runtime: selectedRuntime },
+   credentials: [],
+  });
 
   const result = await resolveAiCredentialRuntime({
    supabase,
