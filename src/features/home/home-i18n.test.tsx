@@ -1,0 +1,343 @@
+import { NextIntlClientProvider } from "next-intl";
+import type { ReactNode } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { describe, expect, it, vi } from "vitest";
+
+import { ContinueLearningPanel } from "@/features/home/components/ContinueLearningPanel";
+import { HomeLearningPulse } from "@/features/home/components/HomeLearningPulse";
+import { RecentLearningActivityPanel } from "@/features/home/components/RecentLearningActivityPanel";
+import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
+import { TodayFocusWidget } from "@/features/home/components/TodayFocusWidget";
+import type { HomeDashboardModel, HomeLessonTarget } from "@/features/home/types";
+import type { AppLocale } from "@/i18n/config";
+import { loadAppMessages } from "@/i18n/messages";
+
+vi.mock("@/i18n/navigation", () => ({
+ Link: ({ children, href }: { children: ReactNode; href: string }) => <a href={href}>{children}</a>,
+}));
+
+const lesson = {
+ href: "/hanzihome?lesson=1",
+ title: "Welcome",
+ titleZh: "你好",
+ courseTitle: "HSK 1",
+ lessonNumber: 1,
+ module: "vocab",
+ isRecent: true,
+} satisfies HomeLessonTarget;
+
+const localeCases = [
+ { locale: "vi", heading: "Học tiếp", module: "Từ vựng", lesson: "Bài 1: 你好" },
+ { locale: "en", heading: "Continue learning", module: "Vocabulary", lesson: "Lesson 1: 你好" },
+ { locale: "zh-CN", heading: "继续学习", module: "词汇", lesson: "第 1 课：你好" },
+] satisfies ReadonlyArray<{
+ locale: AppLocale;
+ heading: string;
+ module: string;
+ lesson: string;
+}>;
+
+describe("Home messages", () => {
+ it("omits legacy Learning Loop banner and personal vocab progress from TodayFocusWidget", async () => {
+  const messages = await loadAppMessages("vi");
+  const pulse: HomeDashboardModel["learningPulse"] = {
+   trackedCount: 57,
+   reviewCount: 34,
+   knownCount: 23,
+   reviewedTodayCount: 0,
+   bookmarkedCount: 9,
+   srsDueCount: 5,
+   learningLoopDueCount: 2,
+   readerCompletedCount: 0,
+   readerDocumentCount: 0,
+   overviewAvailable: true,
+   overviewLoading: false,
+   overviewUnavailable: false,
+   reviewedTodayAvailable: true,
+   reviewedTodayLoading: false,
+   reviewedTodayUnavailable: false,
+  };
+
+  const emptyMarkup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <TodayFocusWidget courses={[]} pulse={pulse} />
+   </NextIntlClientProvider>,
+  );
+  expect(emptyMarkup).toBe("");
+  expect(emptyMarkup).not.toContain('href="/learning-loop"');
+  expect(emptyMarkup).not.toContain("Tiến độ từ vựng cá nhân");
+ });
+
+ it("keeps a resumed Khẩu ngữ review title in both continuation surfaces", async () => {
+  const messages = await loadAppMessages("vi");
+  const review = {
+   ...lesson,
+   href: "/hsk/khau-ngu-tc1?lesson=24&tab=practice",
+   title: "ÔN TẬP 4: 国际婚姻",
+   titleZh: "",
+   courseTitle: "Khẩu ngữ Trung cấp 1",
+   lessonNumber: 24,
+   module: "practice",
+  } satisfies HomeLessonTarget;
+  const courses = [
+   {
+    id: "static:khau-ngu",
+    title: review.courseTitle,
+    books: [{ id: "static:khau-ngu", title: review.courseTitle, lesson: review }],
+   },
+  ];
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <ContinueLearningPanel courses={courses} unavailable={false} />
+    <TodayFocusWidget
+     courses={courses}
+     pulse={{
+      trackedCount: 0,
+      reviewCount: 0,
+      knownCount: 0,
+      reviewedTodayCount: 0,
+      bookmarkedCount: 0,
+      srsDueCount: 0,
+      learningLoopDueCount: 0,
+      readerCompletedCount: 0,
+      readerDocumentCount: 0,
+      overviewAvailable: true,
+      overviewLoading: false,
+      overviewUnavailable: false,
+      reviewedTodayAvailable: true,
+      reviewedTodayLoading: false,
+      reviewedTodayUnavailable: false,
+     }}
+    />
+   </NextIntlClientProvider>,
+  );
+  expect(markup.match(/ÔN TẬP 4: 国际婚姻/gu)).toHaveLength(2);
+  expect(markup).not.toContain("Bài 24");
+  expect(markup).toContain(review.href.replaceAll("&", "&amp;"));
+ });
+
+ it.each(localeCases)("renders the learning continuation chrome for $locale", async (testCase) => {
+  const messages = await loadAppMessages(testCase.locale);
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale={testCase.locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <ContinueLearningPanel
+     courses={[{ id: "course", title: "HSK 1", books: [{ id: "book", title: "HSK 1", lesson }] }]}
+     unavailable={false}
+    />
+   </NextIntlClientProvider>,
+  );
+
+  expect(markup).toContain(testCase.heading);
+  expect(markup).toContain(testCase.module);
+  expect(markup).toContain(testCase.lesson);
+  expect(markup).not.toContain("Home.");
+ });
+
+ it.each(localeCases)(
+  "shows only resumed books once and links to the library for $locale",
+  async (testCase) => {
+   const messages = await loadAppMessages(testCase.locale);
+   const courses: HomeDashboardModel["courses"] = [
+    {
+     id: "course",
+     title: "Course",
+     books: [
+      { id: "continued", title: "Continued volume", lesson },
+      {
+       id: "unstarted",
+       title: "Unstarted volume",
+       lesson: { ...lesson, href: "/hanzihome?lesson=2", isRecent: false },
+      },
+      { id: "empty", title: "Empty volume", lesson: null },
+     ],
+    },
+   ];
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider
+     locale={testCase.locale}
+     messages={messages}
+     timeZone="Asia/Ho_Chi_Minh"
+    >
+     <ContinueLearningPanel courses={courses} unavailable={false} />
+    </NextIntlClientProvider>,
+   );
+
+   expect(markup.split(`href="${lesson.href}"`)).toHaveLength(2);
+   expect(markup).toContain("Continued volume");
+   expect(markup).not.toContain("Unstarted volume");
+   expect(markup).not.toContain("Empty volume");
+   expect(markup).not.toContain("<details");
+   expect(markup).toContain('href="/hanzihome"');
+   expect(markup).toContain(messages.Home.continueLearning.browseLibrary);
+   expect(markup).not.toContain("Home.");
+  },
+ );
+
+ it.each(
+  localeCases.flatMap(({ locale }) =>
+   [true, false].map((unavailable) => ({ locale, unavailable })),
+  ),
+ )(
+  "keeps the resume empty state distinct from an unavailable catalog for $locale ($unavailable)",
+  async ({ locale, unavailable }) => {
+   const messages = await loadAppMessages(locale);
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <ContinueLearningPanel
+      courses={[
+       {
+        id: "course",
+        title: "Course",
+        books: [
+         { id: "unstarted", title: "Unstarted volume", lesson: { ...lesson, isRecent: false } },
+        ],
+       },
+      ]}
+      unavailable={unavailable}
+     />
+    </NextIntlClientProvider>,
+   );
+
+   expect(markup.includes(messages.Home.continueLearning.empty)).toBe(!unavailable);
+   expect(markup.includes(messages.Home.continueLearning.catalogUnavailable)).toBe(unavailable);
+   expect(markup).not.toContain("Unstarted volume");
+   expect(markup).toContain('href="/hanzihome"');
+   expect(markup).not.toContain("Home.");
+  },
+ );
+
+ it("keeps learning pulse values subordinate to the section heading", async () => {
+  const messages = await loadAppMessages("vi");
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <HomeLearningPulse
+     onRetryOverview={() => {}}
+     onRetryReviewedToday={() => {}}
+     pulse={{
+      trackedCount: 12,
+      reviewCount: 3,
+      knownCount: 9,
+      reviewedTodayCount: 4,
+      bookmarkedCount: 2,
+      srsDueCount: 5,
+      learningLoopDueCount: 1,
+      readerCompletedCount: 2,
+      readerDocumentCount: 6,
+      overviewUnavailable: false,
+      overviewAvailable: true,
+      overviewLoading: false,
+      reviewedTodayAvailable: true,
+      reviewedTodayLoading: false,
+      reviewedTodayUnavailable: false,
+     }}
+    />
+   </NextIntlClientProvider>,
+  );
+
+  expect(markup).toContain("Nhịp học");
+  expect((markup.match(/data-variant="sectionTitle"/g) ?? []).length).toBe(1);
+ });
+
+ it.each(localeCases)(
+  "formats relative activity dates without environment fallback for $locale",
+  async (testCase) => {
+   const messages = await loadAppMessages(testCase.locale);
+   const consoleError = vi.spyOn(console, "error").mockImplementation(() => undefined);
+
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider
+     locale={testCase.locale}
+     messages={messages}
+     timeZone="Asia/Ho_Chi_Minh"
+    >
+     <RecentNotesPanel
+      loading={false}
+      unavailable={false}
+      onRetry={() => {}}
+      notes={[
+       {
+        id: "00000000-0000-4000-8000-000000000001",
+        title: "Study note",
+        tags: [],
+        status: "draft",
+        category: "general",
+        short_id: null,
+        updated_at: "2026-08-25T10:00:00.000Z",
+        linked_lesson_id: null,
+        folder_id: null,
+        reading_status: null,
+        source_url: null,
+        source_host: null,
+        source_label: null,
+        source_author: null,
+        source_published_at: null,
+        source_captured_at: null,
+        revision: 0,
+        links: [],
+       },
+      ]}
+     />
+     <RecentLearningActivityPanel
+      loading={false}
+      unavailable={false}
+      onRetry={() => {}}
+      items={[
+       {
+        key: "00000000-0000-4000-8000-000000000002",
+        label: "坚持",
+        kindLabel: "Vocabulary",
+        result: "known",
+        answeredAt: "2026-08-25T10:00:00.000Z",
+       },
+      ]}
+     />
+    </NextIntlClientProvider>,
+   );
+
+   expect(markup).toContain("Study note");
+   expect(markup).toContain("坚持");
+   expect(consoleError).not.toHaveBeenCalled();
+   consoleError.mockRestore();
+  },
+ );
+
+ it.each([
+  {
+   locale: "vi",
+   error: "Không tải được ghi chú gần đây",
+   empty: "Chưa có ghi chú gần đây",
+   retry: "Thử lại",
+  },
+  { locale: "en", error: "Could not load recent notes", empty: "No recent notes", retry: "Retry" },
+  { locale: "zh-CN", error: "无法加载最近的笔记", empty: "没有最近笔记", retry: "重试" },
+ ] satisfies ReadonlyArray<{ locale: AppLocale; error: string; empty: string; retry: string }>)(
+  "keeps failed recent-notes reads separate from a valid empty list for $locale",
+  async (testCase) => {
+   const messages = await loadAppMessages(testCase.locale);
+   const render = (unavailable: boolean, loading = false) =>
+    renderToStaticMarkup(
+     <NextIntlClientProvider
+      locale={testCase.locale}
+      messages={messages}
+      timeZone="Asia/Ho_Chi_Minh"
+     >
+      <RecentNotesPanel notes={[]} loading={loading} unavailable={unavailable} onRetry={() => {}} />
+     </NextIntlClientProvider>,
+    );
+   const failed = render(true);
+   expect(failed).toContain('role="alert"');
+   expect(failed).toContain(testCase.error);
+   expect(failed).toContain(testCase.retry);
+   expect(failed).not.toContain(testCase.empty);
+   expect(failed).not.toContain("Home.");
+   const empty = render(false);
+   expect(empty).not.toContain('role="alert"');
+   expect(empty).toContain(testCase.empty);
+   const pending = render(false, true);
+   expect(pending).toContain('aria-busy="true"');
+   expect(pending).not.toContain(testCase.empty);
+   expect(pending).not.toContain('role="alert"');
+   expect(pending).not.toContain("Home.");
+  },
+ );
+});

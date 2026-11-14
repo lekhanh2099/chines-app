@@ -1,0 +1,63 @@
+import type { FieldItemProps } from "./FieldItem";
+import { FieldItem } from "./FieldItem";
+import { useFieldContext } from "../hooks/form-context";
+import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
+import { IconButton } from "@/components/ui/actions/icon-button";
+import { Input } from "@/components/ui/forms/input";
+import { useTranslations } from "next-intl";
+
+type ControlledPasswordProps = {
+ value?: never;
+ onChange?: never;
+ onBlur?: never;
+ type?: never;
+};
+
+export function PasswordField({
+ label,
+ description,
+ helperText,
+ ...rest
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledPasswordProps> &
+ Omit<FieldItemProps, "field">) {
+ const field = useFieldContext<string>();
+ const t = useTranslations("Common.passwordVisibility");
+ const [showPassword, setShowPassword] = useState(false);
+ const visibilityLabel = showPassword ? t("hide") : t("show");
+
+ return (
+  <FieldItem
+   field={field}
+   label={label}
+   description={description}
+   required={rest?.required || false}
+   helperText={helperText}
+  >
+   <div className="relative">
+    <Input
+     id={field.name}
+     type={showPassword ? "text" : "password"}
+     name={field.name}
+     value={field.state.value || ""}
+     onChange={(e) => field.handleChange(e.target.value)}
+     onBlur={field.handleBlur}
+     density="comfortable"
+     surface="field"
+     adornment="end"
+     {...rest}
+    />
+    <IconButton
+     variant="ghost"
+     size="lg"
+     aria-label={visibilityLabel}
+     title={visibilityLabel}
+     onClick={() => setShowPassword((current) => !current)}
+     className="absolute right-1 top-1/2 -translate-y-1/2"
+    >
+     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+    </IconButton>
+   </div>
+  </FieldItem>
+ );
+}

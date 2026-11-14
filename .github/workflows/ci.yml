@@ -1,0 +1,500 @@
+name: CI
+
+on:
+ push:
+  branches: [main]
+ pull_request:
+  types: [opened, reopened, synchronize, ready_for_review]
+ workflow_dispatch:
+
+permissions:
+ contents: read
+
+concurrency:
+ group: ci-${{ github.event_name }}-${{ github.ref }}
+ cancel-in-progress: true
+
+jobs:
+ changes:
+  runs-on: ubuntu-latest
+  timeout-minutes: 5
+  outputs:
+   unit_files: ${{ steps.scope.outputs.unit_files }}
+   code: ${{ steps.scope.outputs.code }}
+   unit_full: ${{ steps.scope.outputs.unit_full }}
+   browser_files: ${{ steps.scope.outputs.browser_files }}
+   e2e_grep: ${{ steps.scope.outputs.e2e_grep }}
+   run_verify: ${{ steps.scope.outputs.run_verify }}
+   run_browser: ${{ steps.scope.outputs.run_browser }}
+   run_e2e: ${{ steps.scope.outputs.run_e2e }}
+   guidance: ${{ steps.scope.outputs.guidance }}
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.sha }}
+      fetch-depth: 0
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+   - name: Select checks from the tested Git diff
+     id: scope
+     env:
+      EVENT_NAME: ${{ github.event_name }}
+      EVENT_ACTION: ${{ github.event.action }}
+      BEFORE_SHA: ${{ github.event.before }}
+      PR_BASE: ${{ github.event.pull_request.base.sha }}
+      PR_HEAD: ${{ github.event.pull_request.head.sha }}
+      PR_DRAFT: ${{ github.event.pull_request.draft }}
+     run: |
+      node --input-type=module <<'JS'
+      import { execFileSync } from "node:child_process";
+      import { appendFileSync } from "node:fs";
+
+      const pullRequest = process.env.EVENT_NAME === "pull_request";
+      const draftUpdate = pullRequest && process.env.PR_DRAFT === "true" && process.env.EVENT_ACTION === "synchronize";
+      const ready = pullRequest && process.env.PR_DRAFT !== "true";
+      const before = process.env.BEFORE_SHA;
+      let base = pullRequest ? process.env.PR_BASE : before;
+      const head = execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+      let incremental = false;
+      let full = process.env.EVENT_NAME === "workflow_dispatch" || !base || /^0+$/.test(base);
+      if (pullRequest && !full) {
+       const parents = execFileSync("git", ["show", "-s", "--format=%P", head], { encoding: "utf8" }).trim();
+       full = parents !== `${base} ${process.env.PR_HEAD}`;
+      }
+      if (draftUpdate && !full && before && !/^0+$/.test(before)) {
+       try {
+        execFileSync("git", ["merge-base", "--is-ancestor", base, before], { stdio: "ignore" });
+        execFileSync("git", ["merge-base", "--is-ancestor", before, process.env.PR_HEAD], { stdio: "ignore" });
+        base = before;
+        incremental = true;
+       } catch {
+        // Use the entire PR diff when the previous draft head cannot be trusted.
+       }
+      }
+      if (!pullRequest && !full) {
+       try {
+        execFileSync("git", ["merge-base", "--is-ancestor", base, head], { stdio: "ignore" });
+       } catch {
+        full = true;
+       }
+      }
+      const paths = full ? [] : execFileSync("git", ["diff", "--name-only", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
+      const deleted = full ? [] : execFileSync("git", ["diff", "--name-only", "--diff-filter=D", "--no-renames", "-z", base, head], { encoding: "utf8" }).split(String.fromCharCode(0)).filter(Boolean);
+      const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|skills-lock[.]json$)/;
+      const pipelinePath = /^(?:[.]github[/]workflows[/]|[.]husky[/]|scripts[/]check-ci-workflow[.]test[.]mjs$|vercel[.]json$)/;
+      const guidance = full || deleted.length > 0 || paths.some((file) => guidancePath.test(file) || file.startsWith(".github/workflows/") || file === "package.json");
+      const toolbarWorkspace = "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx";
+      let toolbarBreakpointOnly = false;
+      if (paths.length === 1 && paths[0] === toolbarWorkspace && deleted.length === 0) {
+       // The mounted textbook fixture covers this breakpoint on both sides of xl.
+       // The workspace also owns offline and persisted state, so require a single line replacement.
+       const patch = execFileSync("git", ["diff", "--no-color", "--no-ext-diff", "--no-textconv", "--unified=1", base, head, "--", toolbarWorkspace], { encoding: "utf8" }).trimEnd().split("\n");
+       const [hunk, effect, removed, added, update] = patch.slice(4);
+       const breakpoint = /^[-+]  const query = window[.]matchMedia[(]"\(min-width: \d+rem\)"[)];$/;
+       toolbarBreakpointOnly = patch.length === 9 && hunk.startsWith("@@ ") && effect === "  useEffect(() => {" && breakpoint.test(removed) && breakpoint.test(added) && update === "   const updateToolbar = () => setHasWideToolbar(query.matches);";
+      }
+      const fullSuite = full || paths.some((file) => pipelinePath.test(file)) || (ready && deleted.some((file) => !guidancePath.test(file)));
+      const browserFiles = {
+       notes: ["src/features/notes/hooks/NoteEditor.browser.test.ts", "src/features/notes/hooks/NoteOwner.browser.test.ts"],
+       srs: ["src/features/dictionary/dictionary-srs-outbox.browser.test.ts", "src/features/dictionary/DictionarySrsPage.test.tsx"],
+       pdf: ["src/features/reading/pdf/PdfAnnotations.browser.test.ts"],
+       tts: ["src/features/hanzihome/tts/TtsAudioPreview.browser.test.ts"],
+       listening: ["src/features/hanzihome/listening/ListeningExercises.browser.test.ts"],
+       recorder: ["src/features/reading/hooks/ShadowingRecorder.browser.test.ts"],
+       reading: ["src/features/reading/workspaces/Reading.browser.test.ts"],
+       reader: ["src/features/reader/runtime/Reader.browser.test.ts"],
+       translation: ["src/features/translation/TranslationWorkspace.browser.test.ts"],
+       home: ["src/features/home/HomeDashboard.browser.test.ts"],
+       annotations: ["src/features/hanzihome/annotations/LessonAnnotations.browser.test.ts"],
+       conversation: ["src/features/hanzihome/ai-conversation/AiConversation.browser.test.ts"],
+       navigation: ["src/components/layout/navigation/UnsavedDraftNavigationGuard.browser.test.ts"],
+      };
+      const productPatterns = {
+       search: "loads the authenticated Search index",
+       offline: "serves a public offline shell|reopens the downloaded Reader|restarts Chromium offline|keeps cached lessons|reopens static textbook|keeps offline textbook|ignores a late offline library read|preserves downloaded lessons|keeps private page responses",
+       learning: "schedules a review|surfaces a revision conflict",
+       reading: "keeps Reader completion explicit|keeps guest Daily Reading",
+       pdf: "retains failed PDF strokes|serializes two PDF first creators",
+       notes: "keeps two Notes drafts|fences linked Reader Notes",
+      };
+      // Browser fixtures load component modules through Vite URLs, so Git/Vitest's
+      // static import graph alone cannot select their affected consumers.
+      const scopes = [
+       { match: /^src[/](?:services[/]notes|stores[/]notes)[/]/, browser: ["notes", "home", "annotations", "reader", "reading"], product: ["notes"] },
+       { match: /^src[/]features[/]notes[/]hooks[/]useRecentNotes[.]ts$/, browser: ["notes", "home"], product: ["notes"] },
+       { match: /^src[/]features[/]notes[/](?:hooks[/]use(?:CreateLessonLinkedNote|LessonLinkedNote|NoteEditor)[.]ts|components[/]NoteConflictDialog[.]tsx)$/, browser: ["notes", "annotations", "reader", "reading"], product: ["notes"] },
+       { match: /^src[/]features[/](?:notes|notebook)[/]|^src[/]features[/]hanzihome[/]components[/]notes[/]|^src[/]app[/].*[/](?:notes|note|notebook)[/]/, browser: ["notes"], product: ["notes"] },
+       { match: /^src[/]features[/]home[/]|^src[/]app[/][^/]+[/][(]app[)][/]page[.]tsx$/, browser: ["home"], product: [] },
+       { match: /^src[/](?:features[/](?:dictionary|personal-learning)|stores[/]dictionary|services[/]vocab)[/]|^src[/]app[/].*[/](?:dictionary|vocab|personal-learning)[/]/, browser: ["srs", "reader", "translation"], product: ["learning"] },
+       { match: /^src[/]features[/]translation[/]|^src[/]app[/].*[/]translation[/]/, browser: ["translation"], product: [] },
+       { match: /^src[/]features[/]reading[/]pdf[/]|^src[/]app[/]api[/](?:reading[/]pdf[/]annotations|hanzihome[/]reader[/]pdf-annotations)[/]/, browser: ["pdf"], product: ["pdf"] },
+       { match: /^src[/]app[/]api[/]reading[/]annotations[/]/, browser: ["pdf", "reader", "reading"], product: ["pdf", "reading"] },
+       { match: /^src[/]features[/]reading[/]|^src[/]app[/][^/]+[/][(]app[)][/]reader[/]/, browser: ["reading", "recorder", "reader"], product: ["reading"] },
+       { match: /^src[/]features[/]reader[/]/, browser: ["reader", "annotations"], product: ["reading", "notes"] },
+       { match: /^src[/]features[/]hanzihome[/]tts[/]|^src[/]hooks[/]useTTS[.]|^src[/]app[/].*[/]tts[/]/, browser: ["tts", "listening", "reader", "reading"], product: [] },
+       { match: /^src[/]features[/](?:hanzihome[/]listening|dictation|speech)[/]/, browser: ["listening", "recorder"], product: [] },
+       { match: /^src[/]features[/]hanzihome[/]annotations[/]|^src[/]app[/]api[/]hanzihome[/](?:reader[/]annotations|lesson-annotations)[/]/, browser: ["annotations", "notes", "reader"], product: ["notes"] },
+       { match: /^src[/]features[/]hanzihome[/]ai-conversation[/]|^src[/]app[/]api[/]ai[/]conversation[/]/, browser: ["conversation"], product: [] },
+       { match: /^src[/]components[/]layout[/]navigation[/]UnsavedDraftNavigationGuard[.]/, browser: ["navigation"], product: [] },
+       { match: /^src[/]features[/]hanzihome[/]search[/]|^src[/]app[/]api[/]hanzihome[/]search-index[/]/, browser: ["home"], product: ["search"] },
+       { match: /^src[/]features[/]hanzihome[/]learning-loop[/]|^src[/]features[/]hanzihome[/]hooks[/]useHanziHomeLearningLoop[.]|^src[/]app[/].*[/]learning-loop[/]/, browser: ["srs"], product: ["learning"] },
+       { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, browser: ["reader"], product: ["offline"], fullOnReady: true },
+       { match: /^src[/]features[/]daily-reading[/]|^src[/]app[/]api[/]daily-reading[/]/, browser: ["reading", "recorder"], product: ["reading"] },
+       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "reading", "tts", "listening", "annotations", "home"], product: ["offline", "search"], fullOnReady: true },
+      ];
+      let code = fullSuite;
+      let unitFull = fullSuite || deleted.some((file) => !guidancePath.test(file));
+      let allBrowser = fullSuite;
+      let allProduct = fullSuite;
+      const selectedBrowser = new Set();
+      const selectedProduct = new Set();
+      for (const file of fullSuite ? [] : paths) {
+       if (guidancePath.test(file)) continue;
+       code = true;
+       if (toolbarBreakpointOnly) {
+        for (const fixture of browserFiles.reading) selectedBrowser.add(fixture);
+        continue;
+       }
+       if (/^([.]github[/]|scripts[/]check-|[.]ox|[.]gitignore$)/.test(file) || file === "scripts/npm-audit-baseline.json") {
+        unitFull = true;
+        allBrowser ||= ready;
+        allProduct ||= ready;
+        continue;
+       }
+       if (/^(e2e[/]|scripts[/]e2e[/]|playwright[.]config[.])/.test(file)) {
+        allBrowser ||= ready;
+        allProduct = true;
+        unitFull = true;
+        continue;
+       }
+       if (/^src[/]components[/]ui[/]|^src[/]app[/].*[.](?:css|scss)$/.test(file)) {
+        allBrowser = true;
+        allProduct ||= ready && file.startsWith("src/components/ui/");
+        unitFull = true;
+        continue;
+       }
+       if (/[/](?:query-keys|types|index)[.][cm]?[jt]sx?$/.test(file) || file === "src/features/hanzihome/hooks/useLearningState.ts") {
+        unitFull = true;
+        allBrowser = true;
+        allProduct = true;
+        continue;
+       }
+       if (file.startsWith("src/app/") || file.endsWith(".json")) unitFull = true;
+       const scope = scopes.find((candidate) => candidate.match.test(file));
+       const apiWithoutProductCase = file.startsWith("src/app/api/") && !scope?.product.length;
+       if (scope && !(ready && (scope.fullOnReady || apiWithoutProductCase))) {
+        for (const group of scope.browser) {
+         for (const fixture of browserFiles[group]) selectedBrowser.add(fixture);
+        }
+        // Component location alone does not rule out product state or offline behavior.
+        if (!/[.](?:test|spec)[.]|[.]browser[.]fixture[.]|[.](?:css|scss)$/.test(file)) {
+         for (const group of scope.product) selectedProduct.add(productPatterns[group]);
+        }
+       } else {
+        // Unmapped owners and broad fallback scopes need full coverage before merge.
+        unitFull = true;
+        allBrowser = true;
+        allProduct = true;
+       }
+      }
+      // main requires a strict (up-to-date) "CI gate", so a pull-request merge
+      // commit's tree already passed every selected suite as the PR's merge
+      // result; Vercel deploys main without waiting for CI. Nothing is re-run on
+      // that push. Direct pushes and unsafe bases keep the normal rules.
+      const [mergeSubject, mergeParents] = execFileSync("git", ["show", "-s", "--format=%s%n%P", head], { encoding: "utf8" }).trim().split(String.fromCharCode(10));
+      const verifiedPullRequestMerge = process.env.EVENT_NAME === "push" && !full && mergeParents.split(" ").length === 2 && /^Merge pull request #[0-9]+ /.test(mergeSubject);
+      // Drafts run the fast verify job only; browser and product suites run once
+      // the PR is ready (ready_for_review and later pushes to a ready PR).
+      const draft = pullRequest && process.env.PR_DRAFT === "true";
+      const output = {
+       base: full ? "" : base,
+       code: String(code),
+       guidance: String(guidance),
+       unit_full: String(unitFull),
+       unit_files: JSON.stringify(paths.filter((file) => !guidancePath.test(file))),
+       browser_files: (allBrowser ? Object.values(browserFiles).flat() : [...selectedBrowser]).join(" "),
+       e2e_grep: allProduct ? "." : [...selectedProduct].join("|"),
+      };
+      output.run_verify = String(!verifiedPullRequestMerge);
+      output.run_browser = String(!verifiedPullRequestMerge && !draft && output.browser_files !== "");
+      output.run_e2e = String(!verifiedPullRequestMerge && !draft && output.e2e_grep !== "");
+      const newline = String.fromCharCode(10);
+      appendFileSync(process.env.GITHUB_OUTPUT, Object.entries(output).map(([key, value]) => key + "=" + value).join(newline) + newline);
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (verifiedPullRequestMerge ? "merged pull request (verified on the PR; nothing re-run)" : draft ? "draft (verify only; browser and product suites run when ready)" : unitFull && allBrowser && allProduct ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Tested SHA: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.run_browser === "true" ? output.browser_files : "not run"), "Product E2E: " + (output.run_e2e === "true" ? output.e2e_grep : "not run")].join(newline) + newline);
+      JS
+
+ verify:
+  needs: changes
+  if: needs.changes.outputs.run_verify == 'true'
+  runs-on: ubuntu-latest
+  timeout-minutes: 15
+  env:
+   HUSKY: 0
+   VITEST_MAX_WORKERS: 2
+   NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.sha }}
+
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+
+   - run: npm install --global npm@12.2.0
+   - run: npm ci --prefer-offline
+   - name: Agent guidance contracts
+     if: needs.changes.outputs.guidance == 'true'
+     run: |
+      node --input-type=module <<'JS'
+      import { execFileSync } from "node:child_process";
+      import { existsSync, readFileSync, readdirSync } from "node:fs";
+      import path from "node:path";
+      import { format } from "prettier";
+
+      const failures = [];
+      const issueTemplates = readdirSync(".github/ISSUE_TEMPLATE").filter((file) => /[.]ya?ml$/.test(file));
+      for (const file of issueTemplates) {
+       await format(readFileSync(`.github/ISSUE_TEMPLATE/${file}`, "utf8"), { parser: "yaml" });
+      }
+      const rootContract = readFileSync("AGENTS.md", "utf8");
+      const scripts = JSON.parse(readFileSync("package.json", "utf8")).scripts;
+      for (const match of rootContract.matchAll(/`((?:docs[/]|[.]agents[/]skills[/])[a-zA-Z0-9/_.-]+[.]md)`/g)) {
+       if (!existsSync(match[1])) failures.push(`AGENTS.md: missing contract ${match[1]}`);
+      }
+      const folders = readdirSync(".agents/skills", { withFileTypes: true }).filter((entry) => entry.isDirectory());
+      for (const folder of folders) {
+       const skillFile = `.agents/skills/${folder.name}/SKILL.md`;
+       if (!existsSync(skillFile)) {
+        failures.push(`${skillFile}: missing entrypoint`);
+        continue;
+       }
+       const content = readFileSync(skillFile, "utf8");
+       const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(content);
+       if (!frontmatter) {
+        failures.push(`${skillFile}: missing YAML frontmatter`);
+        continue;
+       }
+       try {
+        await format(frontmatter[1], { parser: "yaml" });
+       } catch (error) {
+        failures.push(`${skillFile}: invalid YAML: ${error.message}`);
+       }
+       const name = /^name:\s*["']?([a-z0-9]+(?:-[a-z0-9]+)*)["']?[ \t]*$/m.exec(frontmatter[1]);
+       if (!name || name[1] !== folder.name || name[1].length > 64) failures.push(`${skillFile}: name must match its folder`);
+       const description = /^description:[ \t]*([^\r\n]+)$/m.exec(frontmatter[1]);
+       if (!description || !description[1].trim().replace(/^["']|["']$/g, "").trim()) failures.push(`${skillFile}: missing description`);
+       if (!rootContract.includes(`\`${skillFile}\``)) failures.push(`${skillFile}: missing root routing`);
+       for (const match of content.matchAll(/npm run ([a-zA-Z0-9:._-]+)/g)) {
+        if (!Object.hasOwn(scripts, match[1])) failures.push(`${skillFile}: missing npm script ${match[1]}`);
+       }
+       const metadataFile = `.agents/skills/${folder.name}/agents/openai.yaml`;
+       if (existsSync(metadataFile)) {
+        const metadata = readFileSync(metadataFile, "utf8");
+        try {
+         await format(metadata, { parser: "yaml" });
+        } catch (error) {
+         failures.push(`${metadataFile}: invalid YAML: ${error.message}`);
+        }
+        const prompt = /^\s*default_prompt:[ \t]*([^\r\n]*)$/m.exec(metadata);
+        if (prompt && !new RegExp(`\\$${folder.name}(?![a-zA-Z0-9-])`).test(prompt[1])) failures.push(`${metadataFile}: default prompt must invoke its skill`);
+       }
+      }
+      const files = execFileSync("git", ["ls-files", "-z"], { encoding: "utf8" }).split(String.fromCharCode(0)).filter((file) => file.endsWith(".md") && existsSync(file));
+      let references = 0;
+      for (const file of files) {
+       const content = readFileSync(file, "utf8");
+       for (const match of content.matchAll(/\]\((<[^>]+>|[^\s)]+)/g)) {
+        const target = match[1].replace(/^<|>$/g, "");
+        if (/^[a-zA-Z][a-zA-Z0-9+.-]*:|^#/.test(target)) continue;
+        const fileTarget = target.split("#", 1)[0];
+        if (!fileTarget) continue;
+        references += 1;
+        if (!existsSync(path.resolve(path.dirname(file), decodeURIComponent(fileTarget)))) failures.push(`${file}: missing reference ${target}`);
+       }
+      }
+      if (failures.length > 0) {
+       console.error(failures.join(String.fromCharCode(10)));
+       process.exit(1);
+      }
+      console.log(`Agent guidance contracts passed: ${folders.length} skills, ${files.length} Markdown files, ${references} local file references. Behavioral routing and model benchmarks are separate proof.`);
+      JS
+   - run: npm run format:check
+   - name: Tooling regression tests
+     if: needs.changes.outputs.guidance == 'true' && needs.changes.outputs.code != 'true'
+     run: npm run test:run -- scripts --maxWorkers=2
+   - name: Static checks
+     if: needs.changes.outputs.code == 'true'
+     run: |
+      npm run lint
+      npm run source:check
+      npm run route:check
+      npm run ui:check
+      npm run api:check
+      npm run typecheck
+   - name: Node regression tests
+     if: needs.changes.outputs.code == 'true'
+     env:
+      UNIT_FULL: ${{ needs.changes.outputs.unit_full }}
+      UNIT_FILES: ${{ needs.changes.outputs.unit_files }}
+     run: |
+      if [ "$UNIT_FULL" = "true" ]; then
+       npm run test:run -- --maxWorkers=2
+      else
+       node --input-type=module <<'JS'
+      import { execFileSync } from "node:child_process";
+      const files = JSON.parse(process.env.UNIT_FILES);
+      execFileSync("npm", ["exec", "--", "vitest", "related", "--run", "--maxWorkers=2", ...files], { stdio: "inherit" });
+      JS
+      fi
+   - run: npm run audit:prod
+     if: needs.changes.outputs.code == 'true'
+   - name: Production build when E2E does not already build it
+     if: needs.changes.outputs.code == 'true' && needs.changes.outputs.run_e2e != 'true'
+     run: npm run build
+
+ browser:
+  needs: changes
+  if: needs.changes.outputs.run_browser == 'true'
+  runs-on: ubuntu-latest
+  timeout-minutes: 15
+  env:
+   HUSKY: 0
+   NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+   NOTES_BROWSER_TEST: "1"
+   SRS_BROWSER_TEST: "1"
+   PDF_BROWSER_TEST: "1"
+   TTS_BROWSER_TEST: "1"
+   LISTENING_BROWSER_TEST: "1"
+   RECORDER_BROWSER_TEST: "1"
+   READER_BROWSER_TEST: "1"
+   TRANSLATION_BROWSER_TEST: "1"
+   HOME_BROWSER_TEST: "1"
+   LESSON_ANNOTATIONS_BROWSER_TEST: "1"
+   AI_CONVERSATION_BROWSER_TEST: "1"
+   NAVIGATION_BROWSER_TEST: "1"
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.sha }}
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+   - run: npm install --global npm@12.2.0
+   - run: npm ci --prefer-offline
+   - run: npx playwright install --with-deps --only-shell chromium
+   - name: Affected mounted browser fixtures
+     env:
+      BROWSER_FILES: ${{ needs.changes.outputs.browser_files }}
+     run: |
+      read -r -a files <<< "$BROWSER_FILES"
+      npm run test:run -- --maxWorkers=2 "${files[@]}"
+
+ e2e:
+  needs: changes
+  if: needs.changes.outputs.run_e2e == 'true'
+  runs-on: ubuntu-latest
+  timeout-minutes: 20
+  env:
+   HUSKY: 0
+   # Use the CLI's original pinned images; the ECR mirror repeatedly rate-limits CI pulls.
+   SUPABASE_INTERNAL_IMAGE_REGISTRY: docker.io
+   E2E_BASE_URL: http://127.0.0.1:3001
+   E2E_USER_A_EMAIL: hanzihome-e2e-a@example.test
+   E2E_USER_B_EMAIL: hanzihome-e2e-b@example.test
+   E2E_FIXTURE_PASSWORD: HanziHome-E2E!2026
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.sha }}
+
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+
+   - run: npm install --global npm@12.2.0
+   - run: npm ci --prefer-offline
+   - run: npx playwright install --with-deps --only-shell chromium
+   - name: Apply canonical local schema baseline
+     shell: bash
+     run: |
+      # A fresh hosted runner applies migrations and seed during start, without a second reset.
+      npx supabase start --exclude studio,imgproxy,logflare,vector,supavisor,postgres-meta,edge-runtime
+   - name: Export local Supabase environment
+     shell: bash
+     run: |
+      eval "$(npx supabase status -o env)"
+      {
+       echo "NEXT_PUBLIC_SUPABASE_URL=$API_URL"
+       echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$ANON_KEY"
+       echo "SUPABASE_SECRET_KEY=$SERVICE_ROLE_KEY"
+      } >> "$GITHUB_ENV"
+   - name: Verify local Supabase REST readiness
+     shell: bash
+     run: |
+      for attempt in {1..30}; do
+       response_code="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \
+        -H "apikey: $NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY" \
+        "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/" || true)"
+       if [ "$response_code" = "200" ]; then
+        echo "Local Supabase REST is ready on attempt $attempt."
+        exit 0
+       fi
+       echo "Waiting for local Supabase REST (attempt $attempt, HTTP $response_code)."
+       sleep 2
+      done
+      echo "Local Supabase REST did not become ready." >&2
+      exit 1
+   - name: Verify local database contracts
+     run: |
+      npx supabase test db --local supabase/tests/hanzihome_full_crud_test.sql supabase/tests/user_ai_task_routing_rls.test.sql supabase/tests/notes_revision_cas.test.sql supabase/tests/linked_annotation_notes_cas.test.sql supabase/tests/notes_rollout_compatibility.test.sql supabase/tests/pdf_annotation_absence_cas.test.sql supabase/tests/dictionary_write_permissions.test.sql supabase/tests/service_only_definer_permissions.test.sql supabase/tests/enrichment_job_key_delete.test.sql
+      docker exec -i supabase_db_chines-app psql -U postgres -d postgres -v ON_ERROR_STOP=1 < supabase/tests/auth_session_limit.test.sql
+   - run: npm run e2e:seed
+   - name: Affected product E2E
+     env:
+      E2E_GREP: ${{ needs.changes.outputs.e2e_grep }}
+     run: npm run test:e2e -- --grep "$E2E_GREP"
+   - name: Preserve failed local-fixture E2E evidence
+     if: failure()
+     uses: actions/upload-artifact@v4
+     with:
+      name: product-e2e-failures
+      path: test-results/
+      retention-days: 1
+   - if: always()
+     run: npx supabase stop
+
+ gate:
+  name: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'CI production' || github.event_name == 'pull_request' && (github.event.pull_request.draft && 'CI draft' || github.base_ref == 'main' && 'CI gate') || 'CI validation' }}
+  needs: [changes, verify, browser, e2e]
+  if: always()
+  runs-on: ubuntu-latest
+  timeout-minutes: 2
+  steps:
+   - name: Require every selected check to pass
+     env:
+      CHECK_RESULTS: ${{ toJSON(needs) }}
+     run: |
+      node --input-type=module <<'JS'
+      const checks = JSON.parse(process.env.CHECK_RESULTS);
+      const failures = [];
+      if (checks.changes.result !== "success") failures.push(`changes: ${checks.changes.result}`);
+      for (const [job, output] of [["verify", "run_verify"], ["browser", "run_browser"], ["e2e", "run_e2e"]]) {
+       const selected = checks.changes.outputs[output] === "true";
+       const result = checks[job].result;
+       if (selected ? result !== "success" : result !== "success" && result !== "skipped") {
+        failures.push(`${job}: ${result} (selected: ${selected})`);
+       }
+      }
+      if (failures.length) {
+       console.error(failures.join("\n"));
+       process.exit(1);
+      }
+      console.log("All selected CI checks passed; unselected suites may be skipped.");
+      JS

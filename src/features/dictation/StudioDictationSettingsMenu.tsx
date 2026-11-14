@@ -1,0 +1,125 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
+import { ChevronDown, Settings2 } from "lucide-react";
+
+import { Button } from "@/components/ui/actions/button";
+import {
+ DropdownMenu,
+ DropdownMenuCheckboxItem,
+ DropdownMenuContent,
+ DropdownMenuLabel,
+ DropdownMenuRadioGroup,
+ DropdownMenuRadioItem,
+ DropdownMenuSeparator,
+ DropdownMenuSub,
+ DropdownMenuSubContent,
+ DropdownMenuSubTrigger,
+ DropdownMenuTrigger,
+} from "@/components/ui/overlays/dropdown-menu";
+import type { TTSVoice } from "@/hooks/useTTS";
+
+export type StudioDictationScriptMode = "hidden" | "pinyin" | "hanzi";
+
+const rateOptions = [0.65, 0.8, 0.9, 1, 1.1, 1.25, 1.35];
+
+export function StudioDictationSettingsMenu({
+ autoAdvance,
+ loopCurrent,
+ rate,
+ scriptMode,
+ selectedVoiceName,
+ voices,
+ onAutoAdvanceChange,
+ onLoopCurrentChange,
+ onRateChange,
+ onScriptModeChange,
+ onVoiceChange,
+}: {
+ autoAdvance: boolean;
+ loopCurrent: boolean;
+ rate: number;
+ scriptMode: StudioDictationScriptMode;
+ selectedVoiceName: string;
+ voices: TTSVoice[];
+ onAutoAdvanceChange: (next: boolean) => void;
+ onLoopCurrentChange: (next: boolean) => void;
+ onRateChange: (next: number) => void;
+ onScriptModeChange: (next: StudioDictationScriptMode) => void;
+ onVoiceChange: (next: string) => void;
+}) {
+ const t = useTranslations("Dictation");
+ return (
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button type="button" variant="outline" size="toolbar">
+     <Settings2 data-icon="inline-start" />
+     {t("settings")}
+     <ChevronDown data-icon="inline-end" />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="end" width="lg">
+    <DropdownMenuLabel>{t("dictationLabel")}</DropdownMenuLabel>
+    <DropdownMenuCheckboxItem
+     checked={loopCurrent}
+     onCheckedChange={(next) => onLoopCurrentChange(next === true)}
+    >
+     {t("loopCurrent")}
+    </DropdownMenuCheckboxItem>
+    <DropdownMenuCheckboxItem
+     checked={autoAdvance}
+     onCheckedChange={(next) => onAutoAdvanceChange(next === true)}
+    >
+     {t("autoAdvance")}
+    </DropdownMenuCheckboxItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuSub>
+     <DropdownMenuSubTrigger>{t("voice")}</DropdownMenuSubTrigger>
+     <DropdownMenuSubContent width="lg">
+      <DropdownMenuLabel>{t("voice")}</DropdownMenuLabel>
+      <DropdownMenuRadioGroup value={selectedVoiceName} onValueChange={onVoiceChange}>
+       {voices.map((voice) => (
+        <DropdownMenuRadioItem key={voice.shortName} value={voice.shortName}>
+         {voice.name} · {voice.gender}
+        </DropdownMenuRadioItem>
+       ))}
+      </DropdownMenuRadioGroup>
+     </DropdownMenuSubContent>
+    </DropdownMenuSub>
+    <DropdownMenuSub>
+     <DropdownMenuSubTrigger>{t("rate", { rate: rate.toFixed(2) })}</DropdownMenuSubTrigger>
+     <DropdownMenuSubContent width="sm">
+      <DropdownMenuRadioGroup
+       value={String(rate)}
+       onValueChange={(value) => {
+        const next = Number(value);
+        if (Number.isFinite(next)) onRateChange(next);
+       }}
+      >
+       {rateOptions.map((option) => (
+        <DropdownMenuRadioItem key={option} value={String(option)}>
+         {option.toFixed(2)}×
+        </DropdownMenuRadioItem>
+       ))}
+      </DropdownMenuRadioGroup>
+     </DropdownMenuSubContent>
+    </DropdownMenuSub>
+    <DropdownMenuSeparator />
+    <DropdownMenuLabel>{t("support")}</DropdownMenuLabel>
+    <DropdownMenuRadioGroup
+     value={scriptMode}
+     onValueChange={(value) => {
+      if (value === "hidden" || value === "pinyin" || value === "hanzi") {
+       onScriptModeChange(value);
+      }
+     }}
+    >
+     <DropdownMenuRadioItem value="hidden">{t("hideHints")}</DropdownMenuRadioItem>
+     <DropdownMenuRadioItem value="pinyin">{t("showPinyin")}</DropdownMenuRadioItem>
+     <DropdownMenuRadioItem value="hanzi">{t("showHanzi")}</DropdownMenuRadioItem>
+    </DropdownMenuRadioGroup>
+   </DropdownMenuContent>
+  </DropdownMenu>
+ );
+}

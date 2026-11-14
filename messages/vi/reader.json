@@ -1,0 +1,177 @@
+{
+ "home": {
+  "header": {
+   "title": "Đọc bài",
+   "description": "Tiếp tục bài đang học hoặc chọn một bộ đọc. Reader giữ phần đọc, nghe, tra từ và bài tập trong cùng một luồng học."
+  },
+  "options": {
+   "daily": {
+    "badge": "Mỗi ngày 1 bài mới",
+    "title": "Bài đọc hôm nay",
+    "description": "Đọc báo bản học tập, nghe, tra từ, làm câu hỏi và lưu toàn bộ lịch sử ngay trên thiết bị."
+   },
+   "core": {
+    "badge": "12 bài chính",
+    "title": "Giáo trình U3–U5",
+    "description": "Đọc bài, làm bài tập, tra từ đúng vùng chọn, phân tích mạch bài và tóm tắt."
+   },
+   "hsk": {
+    "badge": "50 đoạn HSK",
+    "title": "Đọc HSK",
+    "description": "Đọc 50 đoạn văn HSK 3–4 với TTS chạy theo chữ, pinyin, nghĩa tiếng Việt và tra từ dùng chung."
+   },
+   "reinforcement": {
+    "badge": "24 bài PDF",
+    "title": "Luyện củng cố",
+    "description": "PDF có phóng to, toàn màn hình, bút vẽ và đánh dấu lưu riêng theo từng trang."
+   },
+   "mock": {
+    "badge": "12 bài đọc lạ",
+    "title": "Thi thử / đọc lạ",
+    "description": "Luyện văn bản chưa gặp, bám cấu trúc kỹ năng của ba đơn nguyên."
+   }
+  },
+  "resume": {
+   "loadingAria": "Đang tải hoạt động học",
+   "error": "Không tải được trạng thái học tiếp. Các khu vực Reader vẫn sẵn sàng.",
+   "badge": "Học tiếp",
+   "dueCount": "{count} mục đến hạn",
+   "readingKind": "Đọc bài",
+   "reviewKind": "Ôn tập",
+   "ready": "Sẵn sàng ôn tập",
+   "continue": "Tiếp tục",
+   "reviewNow": "Ôn ngay"
+  },
+  "primary": {
+   "startPoint": "Điểm bắt đầu chính",
+   "openCourse": "Mở giáo trình"
+  },
+  "otherCollections": {
+   "title": "Chọn bộ đọc khác",
+   "description": "Chuyển sang bài đọc hằng ngày, HSK, PDF củng cố hoặc đọc lạ khi đúng mục tiêu buổi học."
+  },
+  "catalog": {
+   "aria": "Danh mục Reader đã nhập",
+   "back": "← Thư viện Reader",
+   "collectionsAria": "Bộ Reader",
+   "emptyStatic": "Chưa có static Reader content trong app. Kiểm tra file JSON đã được đóng gói.",
+   "otherDocuments": "Tài liệu khác",
+   "unit": "Đơn nguyên {id}",
+   "chooseDocument": "Chọn một bài để mở Reader",
+   "documentCount": "{count} bài",
+   "metadata": "{paragraphs} đoạn · {vocabulary} từ · {exercises} bài",
+   "notFound": "Không tìm thấy tài liệu Reader trong static package."
+  }
+ },
+ "collection": {
+  "kinds": {
+   "core": {
+    "title": "Giáo trình chính",
+    "description": "12 bài U3–U5 với đầy đủ dữ liệu đọc, bài tập, từ vựng, phân tích và ghi chú."
+   },
+   "hsk": {
+    "title": "Thư viện bài đọc HSK",
+    "description": "50 bài đọc HSK 3–4 được sắp theo cấp độ, quyển và bài. Mỗi bài dùng chung trình đọc có TTS chạy theo chữ, pinyin, nghĩa và tra từ."
+   },
+   "reinforcement": {
+    "title": "Luyện củng cố PDF",
+    "description": "Tài liệu luyện đọc từ PDF nguồn, giữ metadata trang và workspace học theo tài liệu."
+   },
+   "mock": {
+    "title": "Đọc lạ / mô phỏng kiểm tra",
+    "description": "Các bài đọc mô phỏng được sắp theo đơn nguyên để luyện đọc ngoài bài đã học."
+   },
+   "daily": {
+    "title": "Bài đọc hằng ngày",
+    "description": "Bài đọc mới theo ngày, dùng chung Reader để nghe, tra từ, làm câu hỏi và lưu tiến độ."
+   },
+   "personal": {
+    "title": "Học tập cá nhân",
+    "description": "Curriculum và bài tập cá nhân đã nhập, với tiến độ thuộc HanziHome."
+   },
+   "humanities": {
+    "title": "Văn sử & Dịch thuật",
+    "description": "Văn học, lịch sử, biên dịch và phiên dịch trong Reader HanziHome."
+   }
+  },
+  "hskVolumes": {
+   "hsk3": "HSK 3 · Bài đọc",
+   "hsk4Upper": "HSK 4 · Quyển thượng",
+   "hsk4Lower": "HSK 4 · Quyển hạ",
+   "default": "Bài đọc HSK"
+  },
+  "readingCount": "{count} bài đọc",
+  "empty": "Chưa có bài đọc trong thư viện hiện tại.",
+  "otherDocuments": "Tài liệu khác",
+  "unitTitle": "Đơn nguyên {id} · {title}",
+  "hskLessonReading": "Bài {lesson} · Bài đọc {reading}",
+  "hskLevel": "HSK {level}",
+  "paragraphs": "{count} đoạn",
+  "vocabulary": "{count} từ",
+  "exercises": "{count} bài tập",
+  "reinforcementLabel": "Luyện củng cố",
+  "readingNumber": "Bài {number}",
+  "minutes": "{count} phút",
+  "page": "Trang {page}",
+  "printedPage": "Trang sách {page}",
+  "unitBadge": "Đơn nguyên {id}",
+  "notFoundLibrary": "Không tìm thấy tài liệu trong thư viện bài đọc.",
+  "notFoundCatalog": "Không tìm thấy bài đọc trong danh mục hiện tại.",
+  "reinforcementBack": "Danh sách củng cố",
+  "coreBack": "Danh sách giáo trình",
+  "backToList": "Danh sách {title}"
+ },
+ "study": {
+  "completion": {
+   "done": "Đã hoàn thành",
+   "pending": "Chưa hoàn thành",
+   "markDone": "Đánh dấu đã học xong"
+  }
+ },
+ "pdf": {
+  "heading": "Tài liệu Hán ngữ",
+  "description": "Trang preview đã được kiểm checksum; mở PDF gốc khi cần chuyển tới trang bất kỳ.",
+  "badge": "Reader PDF",
+  "back": "Quay lại",
+  "noAssets": "Chưa có tài liệu PDF được import.",
+  "guide": "Hướng dẫn luyện",
+  "pagePicker": "Chọn trang PDF",
+  "previewPages": "{count} trang preview",
+  "pageLabel": "Trang in {printed} · PDF {pdf}",
+  "zoomOut": "Thu nhỏ PDF",
+  "fitWidth": "Vừa khung",
+  "zoomIn": "Phóng to PDF",
+  "fitPage": "Vừa trang",
+  "openOriginal": "Mở PDF gốc",
+  "fullscreen": "Toàn màn hình",
+  "annotationError": "Không tải được ghi chú PDF; nét mới sẽ được giữ trong phiên này.",
+  "annotationQueued": "Đã giữ nét vẽ trên thiết bị, đang chờ server xác nhận.",
+  "annotationSaveError": "Chưa lưu được ghi chú PDF. Nét vẽ vẫn còn trong phiên này; hãy thử lưu lại.",
+  "pan": "Di chuyển PDF",
+  "pen": "Bút vẽ",
+  "highlighter": "Bút highlight",
+  "eraser": "Tẩy",
+  "undo": "Hoàn tác",
+  "redo": "Làm lại",
+  "clear": "Xóa nét vẽ",
+  "touch": "Cho phép viết bằng cảm ứng",
+  "penColor": "Màu bút",
+  "customColor": "Màu tùy chỉnh",
+  "strokeWidth": "Độ dày {width}",
+  "eraserSize": "Cỡ tẩy {size}",
+  "annotationLayer": "Lớp ghi chú PDF",
+  "previewError": "Không tải được trang preview",
+  "originalPdf": "Mở PDF gốc",
+  "conflict": {
+   "title": "Ghi chú PDF đã thay đổi",
+   "description": "Trang này đã được lưu từ thiết bị khác. Các nét trên thiết bị này vẫn được giữ; hãy xem hai bản trước khi chọn.",
+   "review": "Xem hai bản",
+   "local": "Bản trên thiết bị này",
+   "server": "Bản đã lưu trên server",
+   "strokeCount": "{count} nét",
+   "useServer": "Dùng bản server",
+   "keepLocal": "Giữ nét của tôi và lưu tiếp",
+   "error": "Chưa giải quyết được xung đột. Các nét trên thiết bị này vẫn được giữ."
+  }
+ }
+}

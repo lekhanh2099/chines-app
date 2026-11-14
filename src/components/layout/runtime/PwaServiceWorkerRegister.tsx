@@ -1,0 +1,134 @@
+"use client";
+
+import { useEffect } from "react";
+import { useClientSession } from "@/components/providers/QueryProvider";
+import { logger } from "@/lib/logger";
+
+export function PwaServiceWorkerRegister() {
+ const { isResolved, userId } = useClientSession();
+
+ useEffect(() => {
+  if (typeof window === "undefined" || !("serviceWorker" in navigator)) {
+   return;
+  }
+
+  if (process.env.NODE_ENV === "development") {
+   void navigator.serviceWorker
+    .getRegistrations()
+    .then((registrations) =>
+     Promise.all(
+      registrations
+       .filter((registration) => {
+        const worker = registration.active ?? registration.waiting ?? registration.installing;
+        return worker && new URL(worker.scriptURL).pathname === "/sw.js";
+       })
+       .map((registration) => registration.unregister()),
+     ),
+    )
+    .catch((error) => logger.error("[PWA] Development worker cleanup failed:", error));
+   return;
+  }
+
+  // Only register on secure origin or localhost
+  const isLocalhost =
+   window.location.hostname === "localhost" ||
+   window.location.hostname === "127.0.0.1" ||
+   window.location.hostname.endsWith(".localhost");
+
+  const isSecure =
+   window.location.protocol === "https:" || isLocalhost || Boolean(window.isSecureContext);
+
+  if (!isSecure) {
+   return;
+  }
+
+  // The worker's install step already warms its PRECACHE_ROUTES (public/sw.js);
+  // repeating them here re-fetched every route as a full SSR on first install.
+  // The newly controlled page only needs its own route's assets added.
+  const sendWarmup = (controller: ServiceWorker) => {
+   controller.postMessage({
+    type: "WARMUP_OFFLINE_CACHE",
+    routes: [window.location.pathname],
+   });
+  };
+
+  const handleLoad = () => {
+   navigator.serviceWorker
+    .register("/sw.js", { scope: "/" })
+    .then((registration) => {
+     // Existing controllers cache loaded assets; refresh only public shells on reload.
+     if (navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({
+       type: "WARMUP_OFFLINE_CACHE",
+       routes: ["/vi/offline", "/en/offline", "/zh-CN/offline"],
+      });
+     }
+
+     registration.addEventListener("updatefound", () => {
+      const installingWorker = registration.installing;
+      if (!installingWorker) return;
+      installingWorker.addEventListener("statechange", () => {
+       if (installingWorker.state === "installed" && navigator.serviceWorker.controller) {
+        logger.info("[PWA] New version available in background.");
+       }
+      });
+     });
+    })
+    .catch((error: unknown) => {
+     logger.error("[PWA] Service worker registration failed:", error);
+    });
+  };
+
+  const handleControllerChange = () => {
+   if (navigator.serviceWorker.controller) {
+    sendWarmup(navigator.serviceWorker.controller);
+   }
+  };
+
+  navigator.serviceWorker.addEventListener("controllerchange", handleControllerChange);
+
+  if (document.readyState === "complete") {
+   handleLoad();
+   return () => {
+    navigator.serviceWorker.removeEventListener("controllerchange", handleControllerChange);
+   };
+  }
+
+  window.addEventListener("load", handleLoad);
+  return () => {
+   window.removeEventListener("load", handleLoad);
+   navigator.serviceWorker.removeEventListener("controllerchange", handleControllerChange);
+  };
+ }, []);
+
+ useEffect(() => {
+  if (
+   process.env.NODE_ENV === "development" ||
+   !isResolved ||
+   typeof window === "undefined" ||
+   !("serviceWorker" in navigator)
+  ) {
+   return;
+  }
+
+  let active = true;
+  const sendOwner = (worker: ServiceWorker | null) => {
+   if (!active || !worker) return;
+   worker.postMessage({ type: "SET_OFFLINE_OWNER", ownerId: userId });
+  };
+  const handleControllerChange = () => sendOwner(navigator.serviceWorker.controller);
+
+  sendOwner(navigator.serviceWorker.controller);
+  navigator.serviceWorker.addEventListener("controllerchange", handleControllerChange);
+  void navigator.serviceWorker.ready
+   .then((registration) => sendOwner(registration.active))
+   .catch(() => {});
+
+  return () => {
+   active = false;
+   navigator.serviceWorker.removeEventListener("controllerchange", handleControllerChange);
+  };
+ }, [isResolved, userId]);
+
+ return null;
+}

@@ -1,0 +1,80 @@
+{
+ "title": "速记提示",
+ "description": "保存公式、易混淆知识点和容易忘记的例句，学习时随时回顾。",
+ "count": "正在使用 {count} 条",
+ "add": "添加速记提示",
+ "listAria": "速记提示列表",
+ "types": {
+  "grammar": "语法",
+  "vocab": "词汇",
+  "formula": "公式",
+  "custom": "自定义"
+ },
+ "toast": {
+  "unpinned": "已取消置顶",
+  "pinned": "已置顶",
+  "updateError": "无法更新速记提示",
+  "archived": "已将速记提示移至已删除项目",
+  "archiveError": "无法删除速记提示"
+ },
+ "loadError": {
+  "title": "无法加载速记提示",
+  "description": "速记提示数据暂时不可用。"
+ },
+ "empty": {
+  "title": "还没有速记提示",
+  "description": "在这里添加提示，或从词汇和语法内容中保存提示，方便以后回顾。",
+  "addFirst": "添加第一条提示"
+ },
+ "card": {
+  "pinned": "已置顶",
+  "actionsAria": "{title} 的操作",
+  "actions": "操作",
+  "edit": "编辑",
+  "unpin": "取消置顶",
+  "pin": "置顶",
+  "delete": "删除"
+ },
+ "global": {
+  "loading": "正在加载速记提示",
+  "emptyTitle": "还没有提示",
+  "emptyDescription": "添加一条简短提示，返回学习页面时即可看到提醒。",
+  "addShort": "添加",
+  "manage": "管理",
+  "pinnedAria": "已置顶的提示",
+  "nextTip": "换一条"
+ },
+ "saveButton": {
+  "label": "保存速记提示",
+  "saved": "速记提示已保存",
+  "saveError": "无法保存速记提示"
+ },
+ "dialog": {
+  "updated": "速记提示已更新",
+  "created": "速记提示已添加",
+  "duplicate": "这条提示已经保存。",
+  "createError": "无法添加速记提示",
+  "addShort": "+ 添加",
+  "editTitle": "编辑速记提示",
+  "createTitle": "添加速记提示",
+  "editDescription": "更新要记住的公式、易混点或例句。",
+  "createDescription": "保存公式、易混点或例句，方便快速回顾。",
+  "type": "类型",
+  "source": "来源",
+  "lesson": "课程",
+  "titleLabel": "标题",
+  "titleRequired": "请输入标题",
+  "titlePlaceholder": "例如：又和再的用法不同",
+  "bodyLabel": "主要内容",
+  "bodyRequired": "请输入主要内容",
+  "bodyPlaceholder": "简要记录容易忘记的知识点。",
+  "exampleZh": "中文例句",
+  "exampleVi": "越南语释义",
+  "exampleViPlaceholder": "例如：Tôi làm xong bài tập rồi.",
+  "tags": "标签",
+  "tagsDescription": "多个标签请用逗号分隔。",
+  "pinTip": "置顶这条提示",
+  "update": "更新",
+  "save": "保存速记提示"
+ }
+}

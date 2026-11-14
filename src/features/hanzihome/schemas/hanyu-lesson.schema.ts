@@ -1,0 +1,1208 @@
+import { z } from "zod";
+
+// Common primitives
+
+export const LocalizedTextSchema = z.object({
+ zh: z.string().optional().default(""),
+ pinyin: z.string().optional().default(""),
+ vi: z.string().optional().default(""),
+ en: z.string().optional().default(""),
+});
+
+const JsonValueSchema = z.json();
+const JsonRecordSchema = z.record(z.string(), JsonValueSchema);
+type JsonInput = Parameters<typeof JsonValueSchema.safeParse>[0];
+type JsonValue = z.infer<typeof JsonValueSchema>;
+type JsonRecord = z.infer<typeof JsonRecordSchema>;
+
+function schemaRecord(value: JsonInput): JsonRecord {
+ const parsed = JsonRecordSchema.safeParse(value);
+ return parsed.success ? parsed.data : {};
+}
+
+function optionalString(value: JsonInput) {
+ return typeof value === "string" ? value.trim() : "";
+}
+
+function optionalArray(value: JsonInput): JsonValue[] {
+ return Array.isArray(value) ? value : [];
+}
+
+function hasTextLikeValue(value: JsonInput): boolean {
+ if (typeof value === "string") return Boolean(value.trim());
+ if (typeof value === "number" || typeof value === "boolean") return true;
+ if (Array.isArray(value)) return value.some(hasTextLikeValue);
+
+ const record = schemaRecord(value);
+ return Object.values(record).some(hasTextLikeValue);
+}
+
+export const InstructionSchema = z.object({
+ zh: z.string().optional().default(""),
+ vi: z.string().optional().default(""),
+});
+
+export const RenderingSchema = z
+ .object({
+  renderer: z.string(),
+  input_mode: z.string().optional(),
+  show_word_bank: z.boolean().optional(),
+  show_answer_after_submit: z.boolean().optional(),
+  shuffle_questions: z.boolean().optional(),
+  shuffle_choices: z.boolean().optional(),
+ })
+ .catchall(JsonValueSchema);
+
+export const GradingModeSchema = z.enum([
+ "exact",
+ "choice",
+ "pattern",
+ "keyword",
+ "semantic",
+ "manual",
+ "none",
+]);
+
+export const GradingSchema = z
+ .object({
+  mode: GradingModeSchema,
+  required_pattern: z.string().optional(),
+  required_keywords: z.array(z.string()).optional(),
+  case_sensitive: z.boolean().optional(),
+  reason: z.string().optional(),
+ })
+ .catchall(JsonValueSchema);
+
+export const EvidenceSchema = z.object({
+ paragraph_id: z.string(),
+ quote: z.string(),
+});
+
+export const ExampleSchema = z.object({
+ id: z.string(),
+ zh: z.string(),
+ pinyin: z.string().optional().default(""),
+ vi: z.string().optional().default(""),
+ en: z.string().optional().default(""),
+ highlight: z.array(z.string()).optional().default([]),
+ grammar_refs: z.array(z.string()).optional().default([]),
+ vocab_refs: z.array(z.string()).optional().default([]),
+ source_ref: z.string().optional().default(""),
+ note_vi: z.string().optional().default(""),
+ audio_key: z.string().optional().default(""),
+});
+
+// Source / root
+
+export const SourceFileSchema = z
+ .object({
+  name: z.string(),
+  type: z.string(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+export const SourceSchema = z.object({
+ book: z.string(),
+ volume: z.string(),
+ volume_vi: z.string().optional().default(""),
+ lesson_index: z.number().int().positive(),
+ lesson_number_cn: z.string(),
+ lesson_title_cn: z.string(),
+ lesson_title_pinyin: z.string().optional().default(""),
+ lesson_title_vi: z.string().optional().default(""),
+ lesson_title_en: z.string().optional().default(""),
+ source_files: z.array(SourceFileSchema).optional().default([]),
+});
+
+export const LessonMetadataSchema = z
+ .object({
+  legacy_id: z.string().optional().default(""),
+  book: z.string().optional().default(""),
+  volume: z.string().optional().default(""),
+  volume_vi: z.string().optional().default(""),
+  lesson_index: z.number().int().positive(),
+  lesson_number_cn: z.string().optional().default(""),
+  lesson_title_cn: z.string().optional().default(""),
+  lesson_title_pinyin: z.string().optional().default(""),
+  lesson_title_vi: z.string().optional().default(""),
+  lesson_title_en: z.string().optional().default(""),
+  source_files: z.array(SourceFileSchema).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+// Text section
+
+export const TextLineSchema = z
+ .object({
+  id: z.string(),
+  order: z.number().int().positive(),
+  speaker: z.string().optional().default(""),
+  zh: z.string(),
+  pinyin: z.string().optional().default(""),
+  vi: z.string().optional().default(""),
+  audio_key: z.string().optional().default(""),
+  vocab_refs: z.array(z.string()).optional().default([]),
+  grammar_refs: z.array(z.string()).optional().default([]),
+  notes: z.array(z.string()).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+export const TextSceneSchema = z
+ .object({
+  id: z.string(),
+  order: z.number().int().positive(),
+  summary_vi: z.string().optional().default(""),
+  lines: z.array(TextLineSchema),
+ })
+ .catchall(JsonValueSchema);
+
+export const TextDialogueBlockSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("text_dialogue"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  scenes: z.array(TextSceneSchema).optional().default([]),
+  lines: z.array(TextLineSchema).optional().default([]),
+  comprehension_questions: z.array(JsonValueSchema).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+export const TextParagraphSchema = z
+ .object({
+  id: z.string(),
+  order: z.number().int().positive(),
+  zh: z.string(),
+  pinyin: z.string().optional().default(""),
+  vi: z.string().optional().default(""),
+  audio_key: z.string().optional().default(""),
+  vocab_refs: z.array(z.string()).optional().default([]),
+  grammar_refs: z.array(z.string()).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+export const TextNarrativeBlockSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("text_narrative"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  paragraphs: z.array(TextParagraphSchema).optional().default([]),
+  lines: z.array(TextLineSchema).optional().default([]),
+  comprehension_questions: z.array(JsonValueSchema).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+export const TextBlockSchema = z.discriminatedUnion("type", [
+ TextDialogueBlockSchema,
+ TextNarrativeBlockSchema,
+]);
+
+// Vocabulary section
+
+export const PartOfSpeechSchema = z.string().min(1).default("unknown");
+
+export const VocabularyExampleSchema = z.object({
+ id: z.string(),
+ zh: z.string(),
+ pinyin: z.string().optional().default(""),
+ vi: z.string().optional().default(""),
+ source_ref: z.string().optional().default(""),
+ grammar_refs: z.array(z.string()).optional().default([]),
+ vocab_refs: z.array(z.string()).optional().default([]),
+});
+
+export const FlashcardSchema = z.object({
+ front: z.string(),
+ back: z.string(),
+ modes: z.array(
+  z.enum(["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]),
+ ),
+});
+
+export const VocabularyItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("vocabulary_item"),
+  order: z.number().int().positive(),
+  hanzi: z.string(),
+  pinyin: z.string().optional().default(""),
+  meaning_vi: z.string(),
+  meaning_en: z.string().optional().default(""),
+  pos: PartOfSpeechSchema.optional().default("unknown"),
+  tags: z.array(z.string()).optional().default([]),
+  examples: z.array(VocabularyExampleSchema).optional().default([]),
+  flashcard: FlashcardSchema.optional(),
+  audio_key: z.string().optional().default(""),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+// Notes section
+
+export const NoteItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("note"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  structure: z.string().optional().default(""),
+  meaning_vi: z.string(),
+  examples: z.array(ExampleSchema).optional().default([]),
+  source_refs: z.array(z.string()).optional().default([]),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+// Grammar section
+
+export const FormulaSchema = z.object({
+ label: z.string(),
+ pattern: z.string(),
+});
+
+export const GrammarOverviewBlockSchema = z.object({
+ id: z.string(),
+ type: z.literal("grammar_overview"),
+ order: z.number().int().positive(),
+ title: z.string(),
+ content_vi: z.string(),
+ examples: z.array(ExampleSchema).optional().default([]),
+});
+
+export const GrammarStructureBlockSchema = z.object({
+ id: z.string(),
+ type: z.literal("grammar_structure"),
+ order: z.number().int().positive(),
+ title: z.string(),
+ pattern: z.string(),
+ meaning_vi: z.string(),
+ formulas: z.array(FormulaSchema).optional().default([]),
+ examples: z.array(ExampleSchema).optional().default([]),
+ notes_vi: z.array(z.string()).optional().default([]),
+});
+
+export const GrammarQuestionFormBlockSchema = z.object({
+ id: z.string(),
+ type: z.literal("grammar_question_form"),
+ order: z.number().int().positive(),
+ title: z.string(),
+ pattern: z.string(),
+ meaning_vi: z.string(),
+ examples: z.array(ExampleSchema).optional().default([]),
+});
+
+export const CorrectWrongExampleSchema = z.object({
+ id: z.string(),
+ zh: z.string(),
+ pinyin: z.string().optional().default(""),
+ vi: z.string().optional().default(""),
+ highlight: z.array(z.string()).optional().default([]),
+ explanation_vi: z.string().optional().default(""),
+});
+
+export const GrammarNegativeFormBlockSchema = z.object({
+ id: z.string(),
+ type: z.literal("grammar_negative_form"),
+ order: z.number().int().positive(),
+ title: z.string(),
+ pattern: z.string(),
+ wrong_pattern: z.string().optional().default(""),
+ meaning_vi: z.string(),
+ correct_examples: z.array(CorrectWrongExampleSchema).optional().default([]),
+ wrong_examples: z.array(CorrectWrongExampleSchema).optional().default([]),
+});
+
+export const GrammarComparisonItemSchema = z.object({
+ aspect: z.string(),
+ left: z.object({
+  label: z.string(),
+  value: z.string(),
+ }),
+ right: z.object({
+  label: z.string(),
+  value: z.string(),
+ }),
+});
+
+export const GrammarComparisonBlockSchema = z.object({
+ id: z.string(),
+ type: z.enum(["grammar_comparison", "grammar_compare"]),
+ order: z.number().int().positive(),
+ title: z.string(),
+ items: z.array(GrammarComparisonItemSchema),
+});
+
+export const GrammarCommonMistakeSchema = z.object({
+ id: z.string(),
+ wrong: z.string(),
+ correct: z.string(),
+ explanation_vi: z.string(),
+});
+
+export const GrammarCommonMistakesBlockSchema = z.object({
+ id: z.string(),
+ type: z.literal("grammar_common_mistakes"),
+ order: z.number().int().positive(),
+ title: z.string(),
+ items: z.array(GrammarCommonMistakeSchema),
+});
+
+export const GrammarUsageNotesBlockSchema = z.object({
+ id: z.string(),
+ type: z.literal("grammar_usage_notes"),
+ order: z.number().int().positive(),
+ title: z.string(),
+ notes_vi: z.array(z.string()),
+ examples: z.array(ExampleSchema).optional().default([]),
+});
+
+export const GrammarMicroPracticeQuestionSchema = z
+ .object({
+  id: z.string(),
+  type: z.string(),
+  prompt: z.string(),
+  answer: z.string().optional(),
+  acceptable_answers: z.array(z.string()).optional().default([]),
+  explanation_vi: z.string().optional().default(""),
+  grading: GradingSchema.optional(),
+ })
+ .catchall(JsonValueSchema);
+
+export const GrammarMicroPracticeBlockSchema = z.object({
+ id: z.string(),
+ type: z.literal("grammar_micro_practice"),
+ order: z.number().int().positive(),
+ title: z.string(),
+ questions: z.array(GrammarMicroPracticeQuestionSchema),
+});
+
+export const GenericGrammarBlockSchema = z
+ .object({
+  id: z.string(),
+  type: z.string(),
+  order: z.number().int().positive(),
+  title: z.string(),
+ })
+ .catchall(JsonValueSchema);
+
+export const GrammarBlockSchema = z
+ .discriminatedUnion("type", [
+  GrammarOverviewBlockSchema,
+  GrammarStructureBlockSchema,
+  GrammarQuestionFormBlockSchema,
+  GrammarNegativeFormBlockSchema,
+  GrammarComparisonBlockSchema,
+  GrammarCommonMistakesBlockSchema,
+  GrammarUsageNotesBlockSchema,
+  GrammarMicroPracticeBlockSchema,
+ ])
+ .or(GenericGrammarBlockSchema);
+
+const GrammarPointBaseSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("grammar_point"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  level: z.string().optional().default(""),
+  tags: z.array(z.string()).optional().default([]),
+  blocks: z.array(GrammarBlockSchema),
+ })
+ .catchall(JsonValueSchema);
+
+export const GrammarPointSchema = z.preprocess((value) => {
+ const record = schemaRecord(value);
+ const currentType = optionalString(record.type);
+ const blocks = optionalArray(record.blocks);
+
+ if ((currentType !== "grammar_item" && currentType !== "grammar_point") || blocks.length > 0) {
+  return currentType === "grammar_item" ? { ...record, type: "grammar_point" } : value;
+ }
+
+ const structure = optionalString(record.structure);
+ const meaning = optionalString(record.meaning_vi);
+ const examples = optionalArray(record.examples);
+
+ return {
+  ...record,
+  type: "grammar_point",
+  blocks:
+   structure || meaning || examples.length > 0
+    ? [
+       {
+        id: `${optionalString(record.id) || "grammar"}_legacy_content`,
+        type: "grammar_legacy_item",
+        order: 1,
+        title: optionalString(record.title_vi) || optionalString(record.title) || "Nội dung",
+        pattern: structure,
+        content_vi: meaning,
+        examples,
+       },
+      ]
+    : [],
+ };
+}, GrammarPointBaseSchema);
+
+// Exercises
+
+export const ExerciseBaseSchema = z
+ .object({
+  id: z.string(),
+  type: z.string(),
+  variant: z.string().optional().default(""),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  instruction: InstructionSchema.optional().default({ zh: "", vi: "" }),
+  difficulty: z.enum(["easy", "normal", "hard"]).optional().default("normal"),
+  skill_focus: z.array(z.string()).optional().default([]),
+  grammar_refs: z.array(z.string()).optional().default([]),
+  vocab_refs: z.array(z.string()).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+export const PhoneticsPairSchema = z.object({
+ id: z.string(),
+ left: z.string(),
+ right: z.string(),
+ audio_keys: z.array(z.string()).optional().default([]),
+});
+
+export const ReadAloudItemSchema = z.object({
+ id: z.string(),
+ text: z.string(),
+ pinyin: z.string().optional().default(""),
+ audio_key: z.string().optional().default(""),
+});
+
+export const PhoneticsPartSchema = z.discriminatedUnion("type", [
+ z.object({
+  id: z.string(),
+  type: z.literal("minimal_pair"),
+  title: z.string(),
+  instruction_vi: z.string().optional().default(""),
+  items: z.array(PhoneticsPairSchema),
+ }),
+ z.object({
+  id: z.string(),
+  type: z.literal("read_aloud"),
+  title: z.string(),
+  instruction_vi: z.string().optional().default(""),
+  items: z.array(ReadAloudItemSchema),
+ }),
+]);
+
+export const PhoneticsExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("phonetics"),
+ parts: z.array(PhoneticsPartSchema),
+});
+
+export const SubstitutionItemSchema = z.object({
+ id: z.string(),
+ substitution: z.string(),
+ expected_dialogue: z.array(z.string()).optional().default([]),
+ grammar_refs: z.array(z.string()).optional().default([]),
+ vocab_refs: z.array(z.string()).optional().default([]),
+});
+
+export const SubstitutionExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("substitution"),
+ model: z.array(z.string()),
+ items: z.array(SubstitutionItemSchema),
+ answer_mode: z.enum(["generated", "manual"]).optional().default("generated"),
+});
+
+export const FillBlankQuestionSchema = z.object({
+ id: z.string(),
+ prompt: z.string(),
+ answer: z.string(),
+ acceptable_answers: z.array(z.string()).optional().default([]),
+ explanation_vi: z.string().optional().default(""),
+ grammar_refs: z.array(z.string()).optional().default([]),
+ vocab_refs: z.array(z.string()).optional().default([]),
+ grading: GradingSchema.optional(),
+});
+
+export const AnswerKeyItemSchema = z
+ .object({
+  question_id: z.string().optional(),
+  blank_id: z.string().optional(),
+  answer: z.union([z.string(), z.boolean(), z.number()]).optional(),
+  sample_answer: z.string().optional(),
+  label: z.string().optional(),
+  check_needed: z.boolean().optional(),
+ })
+ .catchall(JsonValueSchema);
+
+export const ChooseWordsFillBlankExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("choose_words_fill_blank"),
+ word_bank: z.array(z.string()),
+ word_bank_vi: z.array(z.string()).optional().default([]),
+ questions: z.array(FillBlankQuestionSchema),
+ answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+});
+
+export const FillBlankExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("fill_blank"),
+ questions: z.array(FillBlankQuestionSchema),
+ answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+});
+
+export const AnswerWithPatternQuestionSchema = z.object({
+ id: z.string(),
+ prompt: z.string(),
+ response_prompt: z.string().optional(),
+ sample_answer: z.string(),
+ acceptable_answers: z.array(z.string()).optional().default([]),
+ grading: GradingSchema.optional(),
+ grammar_refs: z.array(z.string()).optional().default([]),
+});
+
+export const AnswerWithPatternExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("answer_with_pattern"),
+ pattern: z.string(),
+ model: z.object({
+  prompt: z.string(),
+  answer: z.string(),
+ }),
+ questions: z.array(AnswerWithPatternQuestionSchema),
+ answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+});
+
+export const CompleteDialogueLineSchema = z.object({
+ speaker: z.string().optional(),
+ text: z.string(),
+ blank_id: z.string().optional(),
+});
+
+export const CompleteDialogueSampleAnswerSchema = z.object({
+ blank_id: z.string(),
+ answer: z.string(),
+ explanation_vi: z.string().optional().default(""),
+});
+
+export const CompleteDialogueItemSchema = z.object({
+ id: z.string(),
+ lines: z.array(CompleteDialogueLineSchema),
+ sample_answers: z.array(CompleteDialogueSampleAnswerSchema).optional().default([]),
+ grading: GradingSchema.optional(),
+});
+
+export const CompleteDialogueExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("complete_dialogue"),
+ dialogues: z.array(CompleteDialogueItemSchema),
+});
+
+export const CorrectSentenceQuestionSchema = z.object({
+ id: z.string(),
+ wrong_sentence: z.string(),
+ correct_sentence: z.string(),
+ acceptable_answers: z.array(z.string()).optional().default([]),
+ explanation_vi: z.string().optional().default(""),
+ grammar_refs: z.array(z.string()).optional().default([]),
+ check_needed: z.boolean().optional().default(false),
+});
+
+export const CorrectSentenceExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("correct_sentence"),
+ questions: z.array(CorrectSentenceQuestionSchema),
+ answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+});
+
+export const ChoiceSchema = z.object({
+ id: z.string(),
+ text: z.string(),
+});
+
+export const MultipleChoiceQuestionSchema = z.object({
+ id: z.string(),
+ prompt: z.string(),
+ choices: z.array(ChoiceSchema),
+ answer: z.string(),
+ explanation_vi: z.string().optional().default(""),
+ grammar_refs: z.array(z.string()).optional().default([]),
+ evidence: EvidenceSchema.optional(),
+});
+
+export const MultipleChoiceExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("multiple_choice"),
+ questions: z.array(MultipleChoiceQuestionSchema),
+ answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+});
+
+export const CommunicationDialogueLineSchema = z.object({
+ speaker: z.string(),
+ text: z.string(),
+});
+
+export const CommunicationPracticeTaskSchema = z
+ .object({
+  id: z.string(),
+  type: z.string(),
+  instruction_vi: z.string(),
+  sample_answer: z.array(z.string()).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+export const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
+ type: z.literal("communication_dialogue"),
+ function: z.string().optional().default(""),
+ function_vi: z.string().optional().default(""),
+ dialogue: z.array(CommunicationDialogueLineSchema),
+ practice_tasks: z.array(CommunicationPracticeTaskSchema).optional().default([]),
+});
+
+export const GenericExerciseSchema = ExerciseBaseSchema.catchall(JsonValueSchema);
+
+export const ExerciseSchema = z
+ .discriminatedUnion("type", [
+  PhoneticsExerciseSchema,
+  SubstitutionExerciseSchema,
+  ChooseWordsFillBlankExerciseSchema,
+  FillBlankExerciseSchema,
+  AnswerWithPatternExerciseSchema,
+  CompleteDialogueExerciseSchema,
+  CorrectSentenceExerciseSchema,
+  MultipleChoiceExerciseSchema,
+  CommunicationDialogueExerciseSchema,
+ ])
+ .or(GenericExerciseSchema);
+
+// Reading section
+
+export const SupplementaryWordSchema = z.object({
+ id: z.string(),
+ hanzi: z.string(),
+ pinyin: z.string().optional().default(""),
+ meaning_vi: z.string(),
+ vocab_ref: z.string().optional().default(""),
+});
+
+export const ReadingParagraphSchema = z.object({
+ id: z.string(),
+ order: z.number().int().positive(),
+ zh: z.string(),
+ pinyin: z.string().optional().default(""),
+ vi: z.string().optional().default(""),
+ grammar_refs: z.array(z.string()).optional().default([]),
+ vocab_refs: z.array(z.string()).optional().default([]),
+});
+
+export const ReadingTextItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_text"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  supplementary_words: z.array(SupplementaryWordSchema).optional().default([]),
+  paragraphs: z.array(ReadingParagraphSchema).optional().default([]),
+  text: z.string().optional().default(""),
+  pinyin: z.string().optional().default(""),
+  vi: z.string().optional().default(""),
+  questions: z.array(JsonValueSchema).optional().default([]),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+export const ReadingShortAnswerQuestionSchema = z.object({
+ id: z.string(),
+ question: z.object({
+  zh: z.string(),
+  vi: z.string().optional().default(""),
+ }),
+ answer: z.object({
+  zh: z.string(),
+  vi: z.string().optional().default(""),
+ }),
+ acceptable_answers: z.array(z.string()).optional().default([]),
+ evidence: EvidenceSchema.optional(),
+ grading: GradingSchema.optional(),
+});
+
+export const ReadingShortAnswerItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_short_answer"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  source_text_ref: z.string(),
+  questions: z.array(ReadingShortAnswerQuestionSchema),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+export const ReadingTrueFalseQuestionSchema = z.object({
+ id: z.string(),
+ statement: z.object({
+  zh: z.string(),
+  vi: z.string().optional().default(""),
+ }),
+ answer: z.boolean(),
+ correct_answer_label: z.string().optional(),
+ evidence: EvidenceSchema.optional(),
+ explanation_vi: z.string().optional().default(""),
+});
+
+export const ReadingTrueFalseItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_true_false"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  source_text_ref: z.string(),
+  questions: z.array(ReadingTrueFalseQuestionSchema),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+export const ClozeTextSegmentSchema = z.object({
+ id: z.string(),
+ type: z.literal("text"),
+ text: z.string(),
+});
+
+export const ClozeBlankSegmentSchema = z.object({
+ id: z.string(),
+ type: z.literal("blank"),
+ blank_id: z.string(),
+});
+
+export const ClozeSegmentSchema = z.discriminatedUnion("type", [
+ ClozeTextSegmentSchema,
+ ClozeBlankSegmentSchema,
+]);
+
+export const ClozePassageSchema = z.object({
+ id: z.string(),
+ segments: z.array(ClozeSegmentSchema),
+});
+
+export const ClozeAnswerSchema = z.object({
+ blank_id: z.string(),
+ answer: z.string(),
+ acceptable_answers: z.array(z.string()).optional().default([]),
+ explanation_vi: z.string().optional().default(""),
+ grammar_refs: z.array(z.string()).optional().default([]),
+});
+
+export const ReadingClozeItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_cloze"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  instruction: InstructionSchema.optional().default({ zh: "", vi: "" }),
+  word_bank: z.array(z.string()).optional().default([]),
+  passage: ClozePassageSchema,
+  answers: z.array(ClozeAnswerSchema),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+export const ReadingMultipleChoiceItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_multiple_choice"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  source_text_ref: z.string(),
+  questions: z.array(MultipleChoiceQuestionSchema),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+export const GenericReadingItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.string(),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+export const ReadingItemSchema = z
+ .discriminatedUnion("type", [
+  ReadingTextItemSchema,
+  ReadingShortAnswerItemSchema,
+  ReadingTrueFalseItemSchema,
+  ReadingClozeItemSchema,
+  ReadingMultipleChoiceItemSchema,
+ ])
+ .or(GenericReadingItemSchema);
+
+// Character writing section
+
+export const CharacterWritingItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.string().optional().default("character_writing_item"),
+  order: z.number().int().positive(),
+  hanzi: z.string().optional().default(""),
+  pinyin: z.string().optional().default(""),
+  vocab_ref: z.string().optional().default(""),
+  stroke_count: z.number().int().positive().nullable().optional(),
+  radical: z.string().optional().default(""),
+  stroke_order_key: z.string().optional().default(""),
+  practice: z
+   .object({
+    grid_type: z.string().optional().default("田字格"),
+    repeat_count: z.number().int().positive().optional().default(6),
+   })
+   .optional()
+   .default({ grid_type: "田字格", repeat_count: 6 }),
+ })
+ .catchall(JsonValueSchema);
+
+// Sections
+
+export const TextSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("text"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  blocks: z.array(TextBlockSchema),
+ })
+ .catchall(JsonValueSchema);
+
+export const VocabularySectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("vocabulary"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(VocabularyItemSchema),
+ })
+ .catchall(JsonValueSchema);
+
+export const NotesSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("notes"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(NoteItemSchema),
+ })
+ .catchall(JsonValueSchema);
+
+const GrammarSectionBaseSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("grammar"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(GrammarPointSchema),
+ })
+ .catchall(JsonValueSchema);
+
+export const GrammarSectionSchema = z.preprocess((value) => {
+ const record = schemaRecord(value);
+ const items = optionalArray(record.items);
+
+ if (optionalString(record.type) !== "grammar" || items.length === 0) {
+  return value;
+ }
+
+ const firstItemType = optionalString(schemaRecord(items[0]).type);
+ const itemsAreBlocks =
+  firstItemType.startsWith("grammar_") &&
+  firstItemType !== "grammar_point" &&
+  firstItemType !== "grammar_item";
+
+ return itemsAreBlocks
+  ? {
+     ...record,
+     items: [
+      {
+       id: `${optionalString(record.id) || "grammar"}_point`,
+       type: "grammar_point",
+       order: 1,
+       title: optionalString(record.title) || "语法",
+       title_vi: optionalString(record.title_vi) || "Ngữ pháp",
+       blocks: items,
+      },
+     ],
+    }
+  : value;
+}, GrammarSectionBaseSchema);
+
+export const ExercisesSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("exercises"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(ExerciseSchema),
+ })
+ .catchall(JsonValueSchema);
+
+const ReadingSectionBaseSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(ReadingItemSchema),
+ })
+ .catchall(JsonValueSchema);
+
+export const ReadingSectionSchema = z.preprocess((value) => {
+ const record = schemaRecord(value);
+ const items = optionalArray(record.items);
+ const blocks = optionalArray(record.blocks);
+
+ if (optionalString(record.type) !== "reading" || items.length > 0) {
+  return value;
+ }
+
+ if (blocks.length > 0) return { ...record, items: blocks };
+
+ const rootReadingPayloadKeys = [
+  "passage",
+  "text",
+  "text_with_blanks",
+  "passage_with_blanks",
+  "passage_blanked",
+  "passage_complete",
+  "completed_passage",
+  "completed_text",
+  "completed_text_zh",
+  "translation_vi",
+  "paragraphs",
+  "questions",
+  "answer_key",
+  "supplementary_words",
+  "supplementary_vocab",
+  "generated_comprehension_questions",
+  "retell_outline",
+  "sample_retelling",
+ ];
+ const hasRootPayload = rootReadingPayloadKeys.some((key) => hasTextLikeValue(record[key]));
+
+ return hasRootPayload
+  ? {
+     ...record,
+     items: [
+      {
+       ...record,
+       id: `${optionalString(record.id) || "reading"}_item`,
+       type: "reading_text",
+       order: 1,
+       title: optionalString(record.title) || "阅读",
+       title_vi: optionalString(record.title_vi) || "Đọc hiểu",
+      },
+     ],
+    }
+  : value;
+}, ReadingSectionBaseSchema);
+
+export const CharacterWritingSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("character_writing"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(CharacterWritingItemSchema),
+ })
+ .catchall(JsonValueSchema);
+
+export const ProperNounsSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("proper_nouns"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(JsonValueSchema).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+export const CommunicationSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("communication"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(JsonValueSchema).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+export const SummarySectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("summary"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(JsonValueSchema).optional().default([]),
+  blocks: z.array(JsonValueSchema).optional().default([]),
+ })
+ .catchall(JsonValueSchema);
+
+function normalizeSectionInput(value: JsonInput): JsonValue {
+ const parsed = JsonValueSchema.safeParse(value);
+ if (!parsed.success) return null;
+
+ const jsonValue = parsed.data;
+ const record = schemaRecord(jsonValue);
+ const type = optionalString(record.type);
+ const id = optionalString(record.id) || "section";
+ const blocks = optionalArray(record.blocks);
+ const items = optionalArray(record.items);
+ const normalizedType =
+  type === "reading_comprehension"
+   ? "reading"
+   : type === "writing_characters"
+     ? "character_writing"
+     : type === "proper_names"
+       ? "proper_nouns"
+       : type;
+
+ if (normalizedType === "grammar" && items.length === 0 && blocks.length > 0) {
+  return {
+   ...record,
+   type: normalizedType,
+   items: [
+    {
+     id: `${id}_point`,
+     type: "grammar_point",
+     order: 1,
+     title: optionalString(record.title) || "语法",
+     title_vi: optionalString(record.title_vi) || "Ngữ pháp",
+     blocks,
+    },
+   ],
+  };
+ }
+
+ if (normalizedType === "exercises" && items.length === 0 && blocks.length > 0) {
+  return { ...record, type: normalizedType, items: blocks };
+ }
+
+ if (normalizedType === "reading" && items.length === 0 && blocks.length > 0) {
+  return { ...record, type: normalizedType, items: blocks };
+ }
+
+ if (normalizedType === "character_writing") {
+  return {
+   ...record,
+   type: normalizedType,
+   items: items.map((itemValue, index) => {
+    const item = schemaRecord(itemValue);
+    return {
+     ...item,
+     id: optionalString(item.id) || `${id}_character_${index + 1}`,
+     type: optionalString(item.type) || "character_writing_item",
+     order: typeof item.order === "number" && Number.isFinite(item.order) ? item.order : index + 1,
+    };
+   }),
+  };
+ }
+
+ return normalizedType && normalizedType !== type ? { ...record, type: normalizedType } : jsonValue;
+}
+
+export const SectionSchema = z.preprocess(
+ normalizeSectionInput,
+ z.union([
+  TextSectionSchema,
+  VocabularySectionSchema,
+  ProperNounsSectionSchema,
+  NotesSectionSchema,
+  GrammarSectionSchema,
+  ExercisesSectionSchema,
+  CommunicationSectionSchema,
+  ReadingSectionSchema,
+  CharacterWritingSectionSchema,
+  SummarySectionSchema,
+ ]),
+);
+
+// Summary
+
+export const SummaryGrammarPointSchema = z.object({
+ id: z.string(),
+ title: z.string(),
+});
+
+export const SummaryPatternSchema = z
+ .object({
+  pattern: z.string(),
+  grammar_ref: z.string().optional().default(""),
+ })
+ .catchall(JsonValueSchema);
+
+export const LessonSummarySchema = z
+ .object({
+  lesson_parts: z.array(z.string()).optional().default([]),
+  grammar_points: z.array(SummaryGrammarPointSchema).optional().default([]),
+  main_patterns: z
+   .array(z.union([SummaryPatternSchema, z.string()]))
+   .optional()
+   .default([]),
+  exercise_types: z.array(z.string()).optional().default([]),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .catchall(JsonValueSchema);
+
+// Final lesson schema
+
+export const LessonSchema = z
+ .object({
+  id: z.string(),
+  title: LocalizedTextSchema,
+  tags: z.array(z.string()).optional().default([]),
+  metadata: LessonMetadataSchema.optional(),
+  sections: z.array(SectionSchema),
+  summary: LessonSummarySchema.optional().default({
+   lesson_parts: [],
+   grammar_points: [],
+   main_patterns: [],
+   exercise_types: [],
+   check_needed: false,
+  }),
+ })
+ .catchall(JsonValueSchema);
+
+export const HanyuLessonSchema = z
+ .object({
+  schema_version: z.string().min(1).optional(),
+  content_type: z.literal("chinese_textbook_lesson").optional(),
+  verification_status: z.string().optional(),
+  source: SourceSchema.optional(),
+  lesson: LessonSchema,
+  coverage_report: JsonValueSchema.optional(),
+  schema_extension_notes: JsonValueSchema.optional(),
+ })
+ .catchall(JsonValueSchema);

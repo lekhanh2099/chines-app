@@ -1,0 +1,4 @@
+interface:
+  display_name: "HanziHome Supabase Migration"
+  short_description: "Plan and verify safe HanziHome migrations"
+  default_prompt: "Use $hanzihome-supabase-migration to design and verify this HanziHome database migration."

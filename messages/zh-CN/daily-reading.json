@@ -1,0 +1,443 @@
+{
+ "header": {
+  "eyebrow": "今日阅读",
+  "title": "每日中文阅读",
+  "description": "HanziHome 中已经审核并保存的每日阅读资料库。",
+  "settings": "阅读设置",
+  "openSample": "打开示例"
+ },
+ "empty": {
+  "title": "还没有已收集的阅读",
+  "description": "HanziHome 目前只显示已经打包并审核的阅读内容。"
+ },
+ "sample": {
+  "eyebrow": "离线示例",
+  "title": "用示例体验 Reader，并非已收集文章",
+  "badge": "示例",
+  "topicCulture": "文化",
+  "topicFallback": "示例",
+  "levelFallback": "Daily",
+  "dateFallback": "示例",
+  "minutes": "{count} 分钟",
+  "read": "阅读"
+ },
+ "tabs": {
+  "reader": "阅读",
+  "notes": "笔记",
+  "questions": "问题",
+  "vocabulary": "词汇",
+  "grammar": "语法",
+  "translation": "翻译",
+  "source": "来源",
+  "aria": "每日阅读各部分"
+ },
+ "document": {
+  "notFound": "现有数据中未找到这篇每日阅读。",
+  "back": "每日阅读列表",
+  "minutes": "{count} 分钟"
+ },
+ "attempts": {
+  "anonymousLocalOnly": "你尚未登录。本次学习中的答案仍可用于练习，但练习历史不会保存到账号。"
+ },
+ "grammar": {
+  "empty": "这篇阅读还没有单独的语法项目。",
+  "evidence": "阅读原文中的例句"
+ },
+ "source": {
+  "title": "来源与编写说明",
+  "fallbackNotice": "该内容在加入资料库之前已经过审核。",
+  "fallbackSource": "Hanzi Studio 来源"
+ },
+ "generated": {
+  "description": "先寻找真实中文新闻、提取来源内容，再生成包含词汇、语法和问题的学习版。生成的阅读保存在当前设备。",
+  "generateNow": "立即查找并生成",
+  "resume": "继续未完成的阅读",
+  "progressHint": "寻找来源、编写、校验和保存需要依次完成，因此可能需要几分钟。",
+  "notFound": "未找到当前设备上已保存的这篇 Daily Reading。",
+  "library": {
+   "eyebrow": "本地资料库",
+   "title": "基于真实来源生成的阅读",
+   "description": "每篇阅读都先检查新闻来源域名和可提取正文，再由 AI 编写成学习版。",
+   "autoOn": "10:00 自动生成已开启",
+   "autoOff": "仅手动生成",
+   "emptyTitle": "当前设备还没有 AI 生成的阅读。",
+   "emptyDescription": "现在生成第一篇，或保持自动生成开启，在 10:00 后创建一篇 {level} 阅读。"
+  },
+  "toast": {
+   "created": "已生成：{title}",
+   "failed": "无法生成 Daily Reading。"
+  },
+  "kind": {
+   "scheduled": "自动",
+   "manual": "手动"
+  },
+  "stage": {
+   "discovering": "正在寻找新来源",
+   "extracting": "正在提取来源文章",
+   "drafting": "正在编写阅读",
+   "repairingCore": "正在修正阅读稿",
+   "enriching": "正在生成词汇、语法和问题",
+   "repairingLearning": "正在修正学习内容",
+   "validating": "正在校验内容",
+   "finalizing": "正在完成阅读",
+   "saving": "正在保存阅读",
+   "completed": "已完成"
+  },
+  "topic": {
+   "culture": "文化",
+   "education": "教育",
+   "history": "历史",
+   "language": "语言",
+   "science": "科学",
+   "society": "生活与社会",
+   "travel": "旅行",
+   "environment": "环境",
+   "health": "健康"
+  },
+  "questions": {
+   "showAnswer": "查看答案",
+   "hideAnswer": "隐藏答案"
+  },
+  "vocabulary": {
+   "inContext": "文中含义：{meaning}"
+  },
+  "source": {
+   "open": "打开来源文章",
+   "generatedBy": "AI：{provider} · {model}"
+  }
+ },
+ "settings": {
+  "title": "Daily Reading",
+  "description": "配置 HanziHome 如何寻找来源文章以及是否补充 AI 学习辅助。状态、资料库和任务历史统一放在 Daily Reading 页面。",
+  "tabs": {
+   "overview": "总览",
+   "pipeline": "进度",
+   "history": "历史",
+   "aria": "Daily Reading 设置分区"
+  },
+  "auto": {
+   "title": "自动生成",
+   "description": "每天最多生成一篇自动阅读。临时失败会有限重试，多标签页不会重复生成。",
+   "on": "自动生成已开启",
+   "off": "自动生成已关闭",
+   "aria": "开启或关闭 Daily Reading 自动生成"
+  },
+  "level": {
+   "label": "默认等级"
+  },
+  "summary": {
+   "scheduleLabel": "发布时间",
+   "scheduleValue": "每天 10:00",
+   "libraryLabel": "本地资料库",
+   "libraryValue": "已保存 {count} 篇",
+   "todayLabel": "今天",
+   "todayReady": "自动阅读已生成",
+   "todayDue": "等待生成",
+   "todayWaiting": "还未到时间"
+  },
+  "actions": {
+   "testSource": "检查真实来源",
+   "generateNow": "立即查找并生成",
+   "resume": "继续未完成的阅读",
+   "retry": "重新生成",
+   "clear": "删除已生成阅读",
+   "viewPipeline": "查看进度",
+   "openAiSettings": "打开 AI 设置"
+  },
+  "pipeline": {
+   "title": "来源检查与生成",
+   "description": "显示最近一次任务的当前进度。校验步骤确保学习版有来源依据并符合数据结构。",
+   "failedAt": "最近一次任务停在：{stage}",
+   "schedule": "到达发布时间",
+   "scheduleDescription": "等待 10:00，或手动执行。",
+   "source": "寻找来源",
+   "sourceDescription": "从允许的来源中寻找并提取一篇新文章。",
+   "reading": "编写阅读",
+   "readingDescription": "根据来源事实写一篇新的学习版。",
+   "learning": "生成学习内容",
+   "learningDescription": "生成词汇、语法、问题和证据。",
+   "validate": "校验",
+   "validateDescription": "检查数据结构、来源依据、重复内容和证据。",
+   "save": "保存",
+   "saveDescription": "将通过校验的阅读保存到当前设备。"
+  },
+  "history": {
+   "title": "任务历史",
+   "description": "当前设备最近六次运行。每一项都会显示实际运行或失败的具体阶段。",
+   "empty": "还没有生成任务。",
+   "succeeded": "已完成",
+   "pending": "运行中",
+   "failed": "失败",
+   "latest": "最近一次"
+  },
+  "errors": {
+   "tooShort": "草稿未通过质量检查。系统已经尝试自动修正，但仍未完成。",
+   "schema": "AI 返回的草稿结构或字段值不符合要求。系统已经尝试自动修正，但仍未完成。",
+   "provider": "没有个人 AI provider 完成这篇阅读。请在 AI 设置中检查当前 API 密钥和所选模型。",
+   "showTechnical": "查看技术细节"
+  },
+  "clearDialog": {
+   "title": "删除已生成的 Daily Reading？",
+   "description": "这会删除当前浏览器中自动或手动生成的阅读。",
+   "body": "将删除 {count} 篇已保存阅读。任务历史仍会保留用于排查。",
+   "cancel": "取消",
+   "confirm": "删除已生成阅读"
+  },
+  "toast": {
+   "sourceReady": "来源可用：{publisher} · {title}",
+   "sourceFailed": "无法按当前条件检查来源。",
+   "created": "已生成：{title}",
+   "generationFailed": "无法生成 Daily Reading。",
+   "generationFailedAtStage": "生成在 {stage} 阶段失败：{detail}",
+   "cleared": "已删除当前设备上的生成阅读。",
+   "articleReady": "已保存来源文章：{title}",
+   "captureFailed": "无法找到新的来源文章。",
+   "settingFailed": "无法在当前设备保存 Daily Reading 设置。"
+  },
+  "capture": {
+   "title": "来源文章",
+   "description": "选择 HanziHome 何时、按什么条件寻找文章。文章一旦保存就视为成功，即使 AI 学习辅助尚未完成。",
+   "autoTitle": "每天自动寻找一篇文章",
+   "autoDescription": "到达设定时间后应用会寻找新文章；如果当时应用未打开，则会在下次打开时补跑。",
+   "timeLabel": "寻找文章时间",
+   "timeDescription": "使用越南时区（Asia/Ho_Chi_Minh）。",
+   "levelLabel": "目标学习等级",
+   "levelDescription": "只用于指导学习辅助，不会改写中文来源文章。",
+   "todayLabel": "今天",
+   "todayReady": "自动文章已就绪",
+   "todayDue": "已到时间，等待寻找文章",
+   "todayWaiting": "还未到时间",
+   "libraryCount": "当前设备已保存 {count} 篇文章",
+   "testSource": "检查来源",
+   "testingSource": "正在检查来源",
+   "findNow": "寻找新文章",
+   "findingNow": "正在寻找文章",
+   "sourceIndependent": "来源检查只验证发现与提取能力，不使用 AI API key。"
+  },
+  "sourcePreview": {
+   "title": "最近一次来源检查",
+   "notPersisted": "这只是来源检查结果，文章尚未加入资料库。",
+   "report": "{publisher} · {paragraphs} 段 · 约 {minutes} 分钟",
+   "window": "使用的新鲜度窗口：{days} 天",
+   "candidates": "{count} 个候选通过筛选",
+   "extractions": "已尝试提取 {count} 篇文章"
+  },
+  "ai": {
+   "title": "AI 学习辅助",
+   "description": "来源文章保存后，AI 再生成越南语翻译、词汇、语法和阅读问题。",
+   "autoTitle": "找到文章后自动补充学习辅助",
+   "autoDescription": "有可用 API key 时，应用会在保存文章后生成缺失的学习模块。AI 失败不会让来源文章失败。",
+   "translationTitle": "翻译",
+   "translationDescription": "生成来源文章的越南语翻译。",
+   "vocabularyTitle": "词汇",
+   "vocabularyDescription": "按配置数量选择学习词汇。",
+   "grammarTitle": "语法",
+   "grammarDescription": "按配置数量选择有原文证据的语法点。",
+   "questionsTitle": "问题",
+   "questionsDescription": "按配置数量生成阅读理解问题。",
+   "vocabularyCount": "词汇数量",
+   "grammarCount": "语法点数量",
+   "questionsCount": "问题数量",
+   "ready": "已就绪：{provider} · {model}",
+   "missing": "还没有 AI API key。仍可正常寻找和阅读来源文章。",
+   "storageUnavailable": "服务端安全 API key 存储尚未就绪。来源文章不受影响。",
+   "credentialUnreadable": "已保存的 key 当前无法读取。可以添加替代 key，不会影响来源文章。",
+   "articleIndependent": "来源文章和 AI 是两个独立状态：先完成文章保存，学习辅助可以之后补充或重试。",
+   "addKey": "添加 API key",
+   "addReplacementKey": "添加替代 key",
+   "manageKeys": "管理 API key"
+  },
+  "advanced": {
+   "title": "高级来源与筛选条件",
+   "description": "只有在需要更严格控制来源、新鲜度、篇幅或主题多样性时才需要调整。",
+   "show": "展开高级条件",
+   "hide": "收起高级条件",
+   "freshnessLabel": "优先新鲜度",
+   "freshnessDescription": "优先只考虑这个时间范围内发布的文章。",
+   "freshness1": "1 天内",
+   "freshness3": "3 天内",
+   "freshness7": "7 天内",
+   "freshness14": "14 天内",
+   "lengthLabel": "文章长度",
+   "lengthAny": "不限长度",
+   "lengthShort": "短",
+   "lengthMedium": "中等",
+   "lengthLong": "长",
+   "noMatchLabel": "没有匹配文章时",
+   "skipDay": "跳过，不降低条件",
+   "expandWindow": "将新鲜度扩大到最多 14 天",
+   "diversityTitle": "优先主题多样性",
+   "diversityDescription": "降低重复最近阅读主题的概率。",
+   "avoidRecentTitle": "避免已读文章",
+   "avoidRecentDescription": "下次搜索时排除本地资料库中已有的 URL。",
+   "topicsTitle": "允许的主题",
+   "topicsDescription": "至少选择一个主题。系统仍会继续应用内容安全筛选。",
+   "sourcesTitle": "允许的来源",
+   "sourcesDescription": "只搜索已经审核并加入 allowlist 的媒体来源。",
+   "atLeastOneTopic": "至少保留一个主题。",
+   "atLeastOneSource": "至少保留一个来源。"
+  }
+ },
+ "actions": {
+  "findNewArticle": "寻找新文章",
+  "findingArticle": "正在寻找文章",
+  "openSettings": "Daily Reading 设置"
+ },
+ "library": {
+  "description": "先保存中文来源文章。翻译、词汇、语法和问题是独立的 AI 学习辅助，可以之后再补充。",
+  "autoOn": "自动寻找文章已开启",
+  "autoOff": "仅手动寻找文章",
+  "learningReady": "已完成 {ready}/{total} 个学习模块",
+  "tabs": {
+   "articles": "已找到的文章",
+   "activity": "活动记录",
+   "aria": "Daily Reading 资料库与活动记录"
+  },
+  "status": {
+   "todayLabel": "今天",
+   "todayRunning": "正在寻找文章",
+   "todayReady": "今天的文章已就绪",
+   "todayFailed": "今天最近一次寻找失败",
+   "manualOnly": "仅手动寻找",
+   "todayDue": "已到时间，等待执行任务",
+   "todayWaiting": "还未到寻找时间",
+   "scheduleLabel": "自动计划",
+   "scheduleEnabled": "每天 {time}",
+   "scheduleDisabled": "已关闭",
+   "libraryLabel": "资料库"
+  },
+  "article": {
+   "sourceReady": "来源文章已就绪",
+   "learningComplete": "AI 已完成",
+   "learningRunning": "AI 正在生成",
+   "learningAttention": "AI 需要处理",
+   "learningPending": "AI {ready}/{total}"
+  }
+ },
+ "activity": {
+  "title": "活动历史",
+  "description": "当前设备上真实的文章寻找和 AI 学习辅助运行记录，最新记录在最上方。",
+  "emptyTitle": "还没有活动记录",
+  "emptyDescription": "Daily Reading 寻找文章或生成学习辅助后，状态和时间会显示在这里。",
+  "captureTitle": "寻找来源文章",
+  "enrichmentTitle": "AI 学习辅助",
+  "captureDetail": "{mode} · {stage}",
+  "enrichmentDetail": "{module}",
+  "openArticle": "打开文章",
+  "retryCapture": "重新寻找",
+  "startedAt": "开始于 {time}",
+  "timeRange": "开始 {start} · 结束 {end}",
+  "status": {
+   "pending": "运行中",
+   "succeeded": "已完成",
+   "failed": "失败",
+   "blocked": "已阻止"
+  },
+  "stage": {
+   "discovering": "寻找来源",
+   "extracting": "提取文章",
+   "ranking": "评估文章",
+   "saving": "保存文章",
+   "completed": "已保存"
+  }
+ },
+ "detail": {
+  "supportTab": "AI 辅助",
+  "capturedMeta": "保存于 {time} · {publisher} · {minutes} 分钟",
+  "translationRunning": "正在生成翻译",
+  "temporaryTranslation": "临时翻译 — 尚未保存",
+  "translationProgress": "已翻译 {completed}/{total} 段"
+ },
+ "management": {
+  "title": "已保存文章",
+  "description": "当前设备保存了 {count} 篇文章。可在这里管理文章内容；任务历史会单独保留用于诊断。",
+  "open": "管理文章",
+  "dialogTitle": "管理 Daily Reading 文章",
+  "dialogDescription": "查看或删除当前设备上的已保存文章。删除文章不会删除寻找文章或 AI 活动历史。",
+  "emptyTitle": "还没有已保存文章",
+  "emptyDescription": "找到新文章后会显示在这里。",
+  "learningState": "AI 辅助：已完成 {ready}/{total} 个模块",
+  "deleteArticle": "删除文章",
+  "deleteAll": "删除全部文章",
+  "close": "关闭",
+  "confirmArticleTitle": "删除这篇文章？",
+  "confirmArticleDescription": "文章“{title}”将从当前设备的资料库中删除。",
+  "confirmAllTitle": "删除全部 Daily Reading 文章？",
+  "confirmAllDescription": "将从当前设备删除 {count} 篇已保存文章。",
+  "historyPreserved": "任务历史会继续保留，以便查看时间、状态和之前发生的错误。",
+  "cancel": "取消",
+  "confirmDelete": "确认删除",
+  "toast": {
+   "articleDeleted": "文章已从资料库删除。",
+   "allDeleted": "已从资料库删除 {count} 篇文章。",
+   "deleteFailed": "无法删除当前设备上的 Daily Reading 文章。"
+  }
+ },
+ "enrichment": {
+  "title": "AI 学习辅助",
+  "description": "上方中文始终是已保存的来源文章。下面的模块只补充释义和练习，不会改写来源。",
+  "summary": "已完成 {ready}/{total} 个模块",
+  "runtimeReady": "正在使用 {provider} · {model}",
+  "runtimePlanned": "将使用 {provider} · {key} · {model}",
+  "runtimeRunning": "正在使用 {provider} · {key} · {model} — {completed}/{total}",
+  "runtimeQueued": "已于 {time} 排队，使用 {provider} · {key} · {model}",
+  "runtimeReused": "已复用 {provider} · {key} · {model} 的结果；未再次调用 AI",
+  "runtimeStarted": "开始于 {time}",
+  "runtimeTimeRange": "开始 {start} · 结束 {end}",
+  "runtimeFailed": "已尝试 {provider} · {key} · {model} — {code}",
+  "runtimeUnavailable": "没有可用的 AI 来源 — {reason}",
+  "runtimeMissing": "还没有 AI API key。仍可阅读完整来源文章。",
+  "runtimeStorageUnavailable": "服务端 API key 存储尚未就绪；来源文章仍可正常阅读。",
+  "runtimeCheckFailed": "当前无法检查 AI 状态。来源文章仍可阅读，请稍后重新检查。",
+  "modules": {
+   "translation": {
+    "title": "越南语翻译",
+    "description": "逐段贴近原文翻译，并保留原 paragraph ID。"
+   },
+   "vocabulary": {
+    "title": "文中词汇",
+    "description": "只接受确实出现在来源文章中的词语和短语。"
+   },
+   "grammar": {
+    "title": "有原文证据的语法",
+    "description": "每个语法点都必须附上来源文章中的完整句子。"
+   },
+   "questions": {
+    "title": "阅读理解问题",
+    "description": "问题和答案都必须对应具体的来源段落。"
+   }
+  },
+  "status": {
+   "idle": "尚未生成",
+   "queued": "排队中",
+   "running": "正在生成",
+   "ready": "已就绪",
+   "failed": "需要重试",
+   "missingKey": "需要 API key",
+   "invalidKey": "Key 无效",
+   "quota": "API 限制",
+   "providerUnavailable": "Provider 暂时受限",
+   "taskDisabled": "AI 任务已关闭"
+  },
+  "actions": {
+   "create": "生成此模块",
+   "retry": "重新生成",
+   "createAll": "生成学习辅助",
+   "completeMissing": "生成缺失模块",
+   "addKey": "添加 API key",
+   "addKeyAndCreate": "添加 key 并生成辅助",
+   "addReplacementKey": "添加替代 key",
+   "manageKeys": "管理 API key",
+   "configureTask": "配置任务",
+   "checkingRuntime": "正在检查 AI",
+   "checkRuntimeAgain": "重新检查 AI"
+  },
+  "toast": {
+   "moduleReady": "已生成：{module}",
+   "moduleReadyFallback": "学习辅助模块已生成。",
+   "allReady": "所有学习辅助模块均已就绪。",
+   "queued": "AI 任务已进入队列。你可以离开此页面，完成后结果会自动导入。",
+   "failed": "无法生成学习辅助。"
+  }
+ }
+}

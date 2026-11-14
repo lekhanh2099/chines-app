@@ -1,0 +1,263 @@
+{
+ "chrome": {
+  "tabs": {
+   "overview": "Tổng quan",
+   "reader": "Đọc bài",
+   "exercises": "Bài tập",
+   "vocabulary": "Từ vựng",
+   "translation": "Luyện dịch",
+   "dictation": "Chép chính tả",
+   "analysis": "Mạch bài",
+   "summary": "Tóm tắt",
+   "notes": "Ghi chú"
+  },
+  "groups": {
+   "reading": "Bài đọc",
+   "practice": "Luyện tập",
+   "resources": "Tài liệu"
+  },
+  "backToReader": "Danh sách Reader",
+  "defaultReading": "Bài đọc",
+  "unit": "Đơn nguyên {unit}",
+  "progressLoading": "Đang tải tiến độ Reader; nội dung tĩnh vẫn sẵn sàng để đọc.",
+  "progressUnavailable": "Không tải được tiến độ Reader. Bạn vẫn có thể đọc; thay đổi mới sẽ được lưu khi kết nối được khôi phục.",
+  "tabsAria": "Các phần của bài Reader",
+  "subtabsAria": "Nội dung trong phần Reader",
+  "commands": {
+   "segment": "Đoạn {current} / {total}",
+   "lesson": "Bài {current} / {total}",
+   "pause": "Tạm dừng",
+   "resume": "Tiếp tục",
+   "stop": "Dừng",
+   "listen": "Nghe bài",
+   "previous": "Đoạn trước",
+   "restart": "Nghe lại đoạn",
+   "stopReading": "Dừng đọc",
+   "next": "Đoạn sau",
+   "rate": "Tốc độ đọc",
+   "openOutline": "Mở mục lục đoạn",
+   "outline": "Mục lục đoạn"
+  },
+  "surface": {
+   "empty": "Nội dung này chưa có đoạn tiếng Trung để đọc.",
+   "aria": "Trình đọc tiếng Trung",
+   "outlineTitle": "Mục lục bài đọc"
+  },
+  "tools": {
+   "title": "Công cụ học",
+   "shortTitle": "Công cụ",
+   "listening": "Luyện nghe",
+   "playAll": "Đọc cả bài",
+   "loop": "Lặp đoạn",
+   "autoAdvance": "Tự chuyển",
+   "display": "Hiển thị",
+   "pinyin": "Pinyin",
+   "translation": "Bản dịch",
+   "showPinyin": "Hiện pinyin",
+   "showTranslation": "Hiện bản dịch",
+   "font": "Phông chữ",
+   "size": "Cỡ chữ",
+   "reveal": "Cách mở nội dung",
+   "revealModes": { "always": "Hiện sẵn", "tap": "Bấm để mở" },
+   "fonts": {
+    "system": "Hệ thống",
+    "songti": "Noto Serif SC",
+    "noto-sans": "Noto Sans SC",
+    "pinyin": "Pinyin",
+    "kaiti": "Khải thư · 楷体",
+    "fangsong": "Phỏng Tống · 仿宋",
+    "ma-shan": "Ma Shan Zheng",
+    "xiaowei": "ZCOOL XiaoWei"
+   },
+   "sizes": { "md": "Vừa", "lg": "Lớn", "xl": "Rất lớn", "2xl": "Siêu lớn", "3xl": "Cực lớn" },
+   "revealNext": "Mở thêm nội dung",
+   "focus": "Tập trung",
+   "shadowing": "Shadowing",
+   "autoPinyin": "Tự nhận diện pinyin",
+   "autoPinyinDescription": "Ưu tiên pinyin có sẵn nếu căn được; phần còn thiếu sẽ được ứng dụng phân tích theo ngữ cảnh."
+  },
+  "outline": {
+   "segments": "Mục lục đoạn",
+   "aria": "Mục lục bài đọc",
+   "lesson": "Bài {number}",
+   "segment": "Đoạn {number}",
+   "metadata": "Thông tin bài"
+  },
+  "segment": {
+   "dialogue": "Lượt {speaker}",
+   "dialogueFallback": "thoại",
+   "reading": "Đoạn đọc",
+   "sampleRetelling": "Bài kể mẫu"
+  },
+  "overview": {
+   "whatIsThis": "Bài này là gì?",
+   "defaultDescription": "Đọc để nắm nội dung chính và cách triển khai của văn bản.",
+   "objectives": "Mục tiêu bài học",
+   "defaultObjectives": "Đọc hiểu nội dung, nhận diện từ vựng trọng tâm và diễn đạt lại ý chính."
+  },
+  "dictation": {
+   "badge": "Luyện nghe chép",
+   "title": "Nghe và chép lại bài đọc",
+   "description": "Mở workspace Dictation với toàn bộ nội dung Reader hiện tại.",
+   "open": "Mở chép chính tả →",
+   "openTts": "Mở tạo giọng đọc"
+  },
+  "analysis": {
+   "title": "Phân tích bài đọc",
+   "empty": "Chưa có mô tả phân tích chính.",
+   "contextualPinyin": "Pinyin theo ngữ cảnh",
+   "segment": "Đoạn {number}",
+   "sourceAligned": "Pinyin nguồn đã căn",
+   "sourceRejected": "Pinyin nguồn bị từ chối",
+   "generated": "Pinyin sinh theo ngữ cảnh",
+   "unresolved": "Chưa nhận diện: {items}"
+  },
+  "summary": {
+   "title": "Tóm tắt",
+   "empty": "Bài này chưa có summary được review."
+  },
+  "notes": {
+   "empty": "Đoạn hiện tại chưa có ghi chú hoặc đánh dấu.",
+   "title": "Ghi chú của đoạn này",
+   "selectedFallback": "Đoạn đánh dấu",
+   "delete": "Xoá"
+  },
+  "pronunciation": {
+   "appliedSession": "Đã áp dụng trong phiên",
+   "confirmed": "Đã xác nhận",
+   "needsReview": "Cần kiểm tra · đa âm",
+   "source": "Theo pinyin nguồn",
+   "dictionary": "Theo từ vựng bài",
+   "context": "Theo ngữ cảnh",
+   "missing": "Chưa xác định pinyin",
+   "description": "Pinyin là đề xuất theo ngữ cảnh, không được mặc định xem là đúng. Với chữ đa âm, hãy xác nhận cách đọc phù hợp câu này.",
+   "sessionDescription": "Thay đổi ở nguồn này chỉ áp dụng trong phiên đọc hiện tại và không được ghi là dữ liệu đã xác nhận lâu dài.",
+   "meaning": "Nghĩa trong ngữ cảnh",
+   "choose": "Cách đọc",
+   "noReading": "Chưa có cách đọc khả dụng.",
+   "openInspector": "Mở phân tích đầy đủ",
+   "resetSession": "Bỏ áp dụng",
+   "resetPersistent": "Bỏ xác nhận",
+   "close": "Đóng",
+   "applySession": "Áp dụng",
+   "sessionOnly": "Chỉ trong phiên này",
+   "confirm": "Xác nhận"
+  },
+  "selection": {
+   "missingPinyin": "Chưa xác định pinyin",
+   "closeAria": "Đóng thanh công cụ",
+   "missingMeaning": "Chưa có nghĩa offline chính xác cho cụm này.",
+   "actionsAria": "Thao tác đoạn chọn",
+   "lookup": "Tra từ",
+   "highlight": "Đánh dấu",
+   "note": "Ghi chú",
+   "notePlaceholder": "Ghi chú cho đoạn chọn…",
+   "noteAria": "Ghi chú cho đoạn chọn",
+   "cancel": "Huỷ",
+   "saveNote": "Lưu",
+   "listen": "Nghe",
+   "playFromHere": "Đọc tiếp",
+   "review": "Ôn lại",
+   "understand": "Hiểu sâu"
+  }
+ },
+ "completion": {
+  "done": "Đã hoàn thành",
+  "pending": "Chưa hoàn thành",
+  "markDone": "Đánh dấu đã học xong"
+ },
+ "exercise": {
+  "groupLabels": {
+   "notes": "Ghi chú",
+   "vocabulary_review": "Ôn từ vựng",
+   "true_false": "Đúng / sai",
+   "multiple_choice": "Trắc nghiệm",
+   "short_answer": "Trả lời ngắn",
+   "fill_blank": "Điền từ",
+   "discussion": "Thảo luận",
+   "mock_questions": "Câu hỏi luyện tập"
+  },
+  "title": "Bài luyện tập",
+  "description": "Làm theo từng nhóm bài; câu trả lời được lưu cùng tiến độ của bài đọc.",
+  "fallbackTitle": "Bài tập",
+  "status": {
+   "correct": "Đúng",
+   "incorrect": "Chưa đúng",
+   "answered": "Đã trả lời"
+  },
+  "true": "Đúng",
+  "false": "Sai",
+  "reviewNote": "Xem lại ghi chú của bài học.",
+  "discussionPlaceholder": "Viết câu trả lời của bạn…",
+  "fillBlankPlaceholder": "Điền chữ Hán…",
+  "answerPlaceholder": "Câu trả lời…",
+  "check": "Kiểm tra",
+  "saveAnswer": "Lưu câu trả lời",
+  "referenceAnswer": "Đáp án tham chiếu:"
+ },
+ "vocabulary": {
+  "title": "Từ vựng bài đọc",
+  "description": "Tra nhanh theo chữ Hán, pinyin hoặc nghĩa trong bài.",
+  "count": "{count} từ",
+  "searchLabel": "Tìm từ vựng",
+  "searchPlaceholder": "Tìm chữ Hán, pinyin hoặc nghĩa…",
+  "empty": "Bài này chưa có từ vựng liên kết.",
+  "noResults": "Không có từ nào khớp với tìm kiếm này.",
+  "tableAria": "Từ vựng bài đọc",
+  "word": "Từ / cụm từ",
+  "pinyin": "Pinyin",
+  "meaning": "Nghĩa trong bài",
+  "missingPinyin": "Chưa có pinyin",
+  "missingMeaning": "Chưa có nghĩa"
+ },
+ "translation": {
+  "empty": "Bài này chưa có đủ bản dịch để luyện.",
+  "badge": "Luyện dịch hai chiều",
+  "title": "Dịch theo từng đoạn, rồi đối chiếu",
+  "description": "Trung → Việt ưu tiên bám nghĩa và quan hệ logic. Việt → Trung ưu tiên cấu trúc câu, trật tự thành phần và chữ Hán chính xác.",
+  "completed": "{completed}/{total} đoạn đã đối chiếu",
+  "directionZhVi": "中文 → Tiếng Việt",
+  "directionViZh": "Tiếng Việt → 中文",
+  "directionAria": "Hướng dịch Reader",
+  "segmentsAria": "Đoạn dịch Reader",
+  "segment": "Đoạn {order}",
+  "characters": "{count} ký tự",
+  "showPinyin": "Xem pinyin khi bí",
+  "myTranslation": "Bản dịch của tôi",
+  "answerAria": "Câu trả lời dịch Reader",
+  "placeholderZhVi": "Dịch sát nghĩa, giữ rõ chủ ngữ, quan hệ logic và sắc thái…",
+  "placeholderViZh": "Viết lại bằng tiếng Trung tự nhiên…",
+  "check": "Đối chiếu bản dịch",
+  "previous": "← Đoạn trước",
+  "next": "Đoạn sau →",
+  "match": "Mức khớp: {score}/100",
+  "scoreNote": "Dùng đáp án tham chiếu để tự rà cách diễn đạt, không coi điểm là đáp án duy nhất.",
+  "reference": "Đáp án tham chiếu"
+ },
+ "shadowing": {
+  "description": "Nghe mẫu, chờ {delay}ms rồi đọc theo đoạn {current}/{total}.",
+  "previous": "Đoạn trước",
+  "next": "Đoạn sau",
+  "delay": "Khoảng chờ: {delay}ms",
+  "delayAria": "Khoảng chờ shadowing",
+  "markDifficult": "Đánh dấu khó",
+  "listen": "Nghe mẫu",
+  "stopRecording": "Dừng ghi",
+  "requestingPermission": "Đang xin quyền…",
+  "start": "Bắt đầu shadowing",
+  "recording": "Đang ghi {seconds}s",
+  "sessionRecordings": "Bản ghi trong phiên này",
+  "attempt": "Lần {number} · {seconds}s",
+  "audioAria": "Bản ghi shadowing",
+  "transcriptLabel": "Tự ghi transcript (không bắt buộc)",
+  "transcriptPlaceholder": "Ghi lại câu bạn vừa nói…",
+  "saved": "Đã lưu",
+  "saving": "Đang lưu…",
+  "saveAttempt": "Lưu attempt",
+  "errors": {
+   "permissionDenied": "Trình duyệt chưa cấp quyền microphone.",
+   "unsupported": "Thiết bị/trình duyệt này chưa hỗ trợ ghi âm.",
+   "recordingFailed": "Không tạo được bản ghi. Hãy thử lại."
+  }
+ }
+}

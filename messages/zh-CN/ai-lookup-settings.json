@@ -1,0 +1,17 @@
+{
+ "modelProvider": {
+  "title": "模型与 Provider",
+  "description": "选择详细查询使用的系统模型，并管理个人 API key。基础设施设置放在会话与记忆之后，避免压过学习任务本身。",
+  "dirty": "模型有未保存的更改",
+  "synced": "模型已同步",
+  "reset": "重置模型",
+  "save": "保存模型",
+  "keyActions": "API key {label} 的操作"
+ },
+ "advanced": {
+  "title": "高级设置",
+  "description": "用于微调查词和句子查询行为的 prompt。默认收起，让常用设置更容易浏览。",
+  "open": "打开高级设置",
+  "close": "关闭高级设置"
+ }
+}

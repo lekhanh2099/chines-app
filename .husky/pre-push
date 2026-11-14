@@ -1,0 +1,2 @@
+# Same fast checks CI fails on, so a push is not spent on a lint/format/type error.
+npm run --silent lint && npm run --silent format:check && npm run --silent typecheck

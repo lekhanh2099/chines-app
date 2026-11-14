@@ -1,0 +1,199 @@
+"use client";
+
+import { useCallback, useMemo, useState, type ReactNode } from "react";
+import {
+ analyzeContextualPronunciation,
+ formatContextualReadingPinyin,
+} from "@/lib/pronunciation/contextual-pronunciation";
+import { containsHanziText } from "../components/lesson-overview/hanzi-typography";
+import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
+import type { ReaderServices } from "@/features/reader/runtime/reader-services";
+import type { ReaderDisplayAdapter } from "@/features/reader/model/reader-display";
+import { useMandarinReaderSpeechService } from "@/features/speech/MandarinTtsProvider";
+import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
+import { useReaderSessionPronunciation } from "@/features/reading/hooks/useReaderSessionPronunciation";
+import { useReadingSourceTarget } from "@/features/reading/hooks/useReadingSourceTarget";
+import { useLessonAnnotationContext } from "../annotations/LessonAnnotationProvider";
+import { useLearningState } from "../hooks/useLearningState";
+import { type LessonDisplayMode } from "../components/lesson-overview/types";
+import { useHanziHomeLessonDetailResource } from "../hooks/useHanziHomeLessonResources";
+import { defaultTextbookDisplaySettings, lessonBookKey } from "../utils/learning-state";
+import { LessonReaderTools } from "./LessonReaderTools";
+
+export function useLessonReader({
+ document,
+ lessonId,
+ annotationNodeType,
+ bookKey,
+ displayMode: initialDisplayMode,
+ menuContent,
+ sheetContent,
+}: {
+ document: ReaderDocumentModel;
+ lessonId?: string;
+ annotationNodeType?: string;
+ bookKey?: string;
+ displayMode?: LessonDisplayMode;
+ menuContent?: ReactNode;
+ sheetContent?: ReactNode;
+}) {
+ const learning = useLearningState();
+ const lesson = useHanziHomeLessonDetailResource(bookKey ? "" : (lessonId ?? ""));
+ const resolvedBookKey = bookKey ?? (lesson.data ? lessonBookKey(lesson.data) : undefined);
+ const [localDisplay, setLocalDisplay] = useState(initialDisplayMode);
+ const globalPinyin = learning.state.settings.lessonTextDisplayMode?.showPinyin;
+ const bookDisplay = resolvedBookKey
+  ? learning.state.settings.bookDisplayModes?.[resolvedBookKey]
+  : undefined;
+
+ const displayMode: LessonDisplayMode = useMemo(
+  () => ({
+   ...defaultTextbookDisplaySettings,
+   ...(localDisplay ?? {}),
+   ...(bookDisplay ?? {}),
+   ...(bookDisplay?.showPinyin === undefined && globalPinyin !== undefined
+    ? { showPinyin: globalPinyin }
+    : {}),
+  }),
+  [localDisplay, bookDisplay, globalPinyin],
+ );
+
+ const updateDisplay = useCallback(
+  (updates: Partial<LessonDisplayMode>) => {
+   if (learning.isLoading || (lessonId && !resolvedBookKey)) return;
+   learning.updateSettings({
+    lessonTextDisplayMode: { ...displayMode, ...updates },
+    ...(resolvedBookKey
+     ? { bookDisplayModes: { [resolvedBookKey]: { ...displayMode, ...updates } } }
+     : {}),
+   });
+   if (localDisplay) {
+    setLocalDisplay((prev) => (prev ? { ...prev, ...updates } : undefined));
+   }
+  },
+  [learning, lessonId, resolvedBookKey, displayMode, localDisplay],
+ );
+ const speech = useMandarinReaderSpeechService();
+ const { openInspector } = useVocabInspector();
+ const annotationContext = useLessonAnnotationContext();
+ const pronunciation = useReaderSessionPronunciation(
+  document.segments,
+  displayMode.autoDetectPinyin,
+ );
+ const data = useMemo(
+  () => ({
+   ...document,
+   titlePinyin:
+    document.titlePinyin ||
+    (displayMode.autoDetectPinyin && document.title && containsHanziText(document.title)
+     ? formatContextualReadingPinyin(analyzeContextualPronunciation({ text: document.title }))
+     : undefined),
+   segments: pronunciation.segments,
+  }),
+  [document, pronunciation.segments, displayMode.autoDetectPinyin],
+ );
+ const annotations = useMemo(
+  () =>
+   document.segments.flatMap((segment) =>
+    lessonId && annotationContext
+     ? annotationContext.getAnnotations(
+        {
+         lessonId,
+         nodeId: segment.id,
+         nodeType:
+          annotationNodeType ?? (segment.kind === "paragraph" ? "text_paragraph" : "text_line"),
+        },
+        segment.zh,
+       )
+     : [],
+   ),
+  [document.segments, lessonId, annotationContext, annotationNodeType],
+ );
+ const display: ReaderDisplayAdapter = useMemo(
+  () => ({ value: displayMode, onChange: updateDisplay }),
+  [displayMode, updateDisplay],
+ );
+ const services: ReaderServices = useMemo(
+  () => ({
+   speech,
+   toolbar: { stickyOffset: "page" },
+   pronunciationReview: pronunciation.service,
+   renderReader: ({ content }) => (
+    <LessonReaderContent>
+     {content}
+     {pronunciation.popover}
+    </LessonReaderContent>
+   ),
+   renderTools: () => (
+    <LessonReaderTools
+     displayMode={displayMode}
+     onDisplayModeChange={updateDisplay}
+     menuContent={menuContent}
+     sheetContent={sheetContent}
+    />
+   ),
+   renderHanzi: ({ segment, content }) =>
+    lessonId && annotationContext ? (
+     <div
+      data-study-annotation-node
+      data-lesson-id={lessonId}
+      data-node-id={segment.id}
+      data-node-type={
+       annotationNodeType ?? (segment.kind === "paragraph" ? "text_paragraph" : "text_line")
+      }
+     >
+      {content}
+     </div>
+    ) : (
+     content
+    ),
+   lookup:
+    lessonId && annotationContext
+     ? undefined
+     : (selection) => {
+        void openInspector(selection.text, { anchorRect: selection.rect });
+       },
+   annotations:
+    lessonId && annotationContext
+     ? {
+        items: annotations
+         .filter((annotation) => !annotation.stale)
+         .map((annotation) => ({
+          id: annotation.id,
+          segmentId: annotation.nodeId,
+          text: annotation.selectedText,
+          noteText: annotation.noteText,
+          start: annotation.resolvedStartOffset,
+          end: annotation.resolvedEndOffset,
+         })),
+        onOpen: (annotation) => {
+         const source = annotations.find((item) => item.id === annotation.id);
+         if (source) annotationContext.openAnnotation(source);
+        },
+        // LessonAnnotationProvider owns selection capture and the existing save menu.
+        onSelection: () => {},
+       }
+     : undefined,
+  }),
+  [
+   speech,
+   pronunciation.service,
+   pronunciation.popover,
+   displayMode,
+   updateDisplay,
+   menuContent,
+   sheetContent,
+   lessonId,
+   annotationContext,
+   annotationNodeType,
+   openInspector,
+   annotations,
+  ],
+ );
+ return { data, display, displayMode, services };
+}
+
+function LessonReaderContent({ children }: { children: ReactNode }) {
+ useReadingSourceTarget(true);
+ return children;
+}

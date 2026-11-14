@@ -1,0 +1,118 @@
+{
+ "eyebrow": "HanziHome Library",
+ "title": {
+  "vocab": "Vocabulary overview",
+  "grammar": "Grammar overview"
+ },
+ "description": {
+  "vocab": "Browse vocabulary by course, book, lesson, pinyin, and meaning.",
+  "grammar": "Browse grammar points by course, book, lesson, and core content."
+ },
+ "showing": "{count} items shown",
+ "search": {
+  "label": "Keyword",
+  "vocabAria": "Search vocabulary",
+  "grammarAria": "Search grammar",
+  "vocabPlaceholder": "Chinese characters, pinyin, meaning...",
+  "grammarPlaceholder": "Title, structure..."
+ },
+ "filters": {
+  "course": "Course",
+  "book": "Book",
+  "lesson": "Lesson",
+  "lessonOption": "Lesson {number}: {title}",
+  "all": "All",
+  "reset": "Reset filters",
+  "clear": "Clear filters"
+ },
+ "review": {
+  "grammarTitle": "Review grammar flashcards",
+  "selectedLesson": "Selected lesson"
+ },
+ "reviewPicker": {
+  "eyebrow": "Choose lessons to review",
+  "vocabTitle": "Review vocabulary by lesson",
+  "grammarTitle": "Review grammar by lesson",
+  "selectedCount": "{count} lessons",
+  "activeCount": "Reviewing {count} lessons",
+  "close": "Close review",
+  "choose": "Choose lessons",
+  "start": "Start review",
+  "selected": "Selected",
+  "remove": "Remove {title}",
+  "more": "+{count} more lessons",
+  "clear": "Clear all",
+  "noSelection": "No lessons selected. Choose lessons to search by number or title.",
+  "searchAria": "Search lessons to review",
+  "searchPlaceholder": "Search lessons, for example: Lesson 10...",
+  "noMatches": "No matching lessons."
+ },
+ "preview": {
+  "step": "Step 2 · Content to show",
+  "title": "Choose which parts of the lesson to view",
+  "description": "Toggle sections or use a preset. The preview below updates for the selected lessons.",
+  "selectedCount": "{count} sections",
+  "clear": "Clear selection",
+  "presetLabel": "Presets",
+  "viewing": "Viewing:",
+  "noModules": "No content selected",
+  "selectLessons": "Choose one or more lessons above to preview their sections.",
+  "selectModule": "Choose at least one content section to show.",
+  "loading": "Loading the selected lesson content",
+  "quickView": "Quick view of selected lesson content",
+  "moreLines": "+{count} more lines in the lesson.",
+  "moreWords": "+{count} more words.",
+  "moreItems": "+{count} more items.",
+  "grammarPoint": "Grammar point",
+  "itemNumber": "Item {number}",
+  "modules": {
+   "lessonText": {
+    "label": "Lesson text",
+    "description": "Dialogs, passages, and the lesson's main content."
+   },
+   "vocab": {
+    "label": "Vocabulary",
+    "description": "Main vocabulary and proper names, when available."
+   },
+   "grammar": { "label": "Grammar", "description": "Grammar points and examples from the lesson." },
+   "exercises": {
+    "label": "Exercises",
+    "description": "Practice groups, sentence correction, fill-ins, and dialogs."
+   },
+   "reading": {
+    "label": "Reading",
+    "description": "Reading passages, comprehension questions, and gap fills."
+   }
+  },
+  "presets": {
+   "lessonTextOnly": "Lesson text only",
+   "grammarOnly": "Grammar only",
+   "vocabOnly": "Vocabulary only",
+   "lessonTextVocab": "Lesson text + Vocabulary",
+   "vocabExercises": "Vocabulary + Exercises",
+   "all": "All"
+  },
+  "empty": {
+   "lessonText": "No lesson text yet.",
+   "vocab": "No vocabulary yet.",
+   "grammar": "No grammar yet.",
+   "exercises": "No exercises yet.",
+   "reading": "No reading passage yet.",
+   "unavailable": "This section has no preview data for the selected lesson."
+  }
+ },
+ "loadError": {
+  "vocabTitle": "Could not load vocabulary",
+  "grammarTitle": "Could not load grammar",
+  "description": "The combined data is currently unavailable."
+ },
+ "empty": {
+  "title": "No matching items",
+  "description": "Try a different keyword or change the selected filters."
+ },
+ "list": {
+  "count": "{count} items",
+  "openLesson": "Open lesson",
+  "reviewLesson": "Review lesson"
+ }
+}

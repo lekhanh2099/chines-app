@@ -1,0 +1,195 @@
+"use client";
+
+import { Label } from "@/components/ui/forms/label";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { useId } from "react";
+import { useTranslations } from "next-intl";
+import { Pause, Play, Square, Volume2 } from "lucide-react";
+
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Checkbox } from "@/components/ui/forms/checkbox";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import {
+ Select,
+ SelectContent,
+ SelectGroup,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/forms/select";
+import { Separator } from "@/components/ui/layout/separator";
+
+import type { useTTS } from "@/hooks/useTTS";
+
+export type MandarinTtsController = ReturnType<typeof useTTS>;
+
+const rateOptions = [
+ { value: "0.75", rate: 0.75 },
+ { value: "0.9", rate: 0.9 },
+ { value: "1", rate: 1 },
+ { value: "1.1", rate: 1.1 },
+ { value: "1.25", rate: 1.25 },
+];
+
+type MandarinTtsControlsProps = {
+ text: string;
+ tts: MandarinTtsController;
+ onPlayAll?: () => void;
+ hideScriptBeforeCheck?: boolean;
+ onHideScriptBeforeCheckChange?: (checked: boolean) => void;
+ showTranslationAfterCheck?: boolean;
+ onShowTranslationAfterCheckChange?: (checked: boolean) => void;
+};
+
+export function MandarinTtsControls({
+ text,
+ tts,
+ onPlayAll,
+ hideScriptBeforeCheck,
+ onHideScriptBeforeCheckChange,
+ showTranslationAfterCheck,
+ onShowTranslationAfterCheckChange,
+}: MandarinTtsControlsProps) {
+ const t = useTranslations("TtsStudio");
+ const hideScriptId = useId();
+ const showTranslationId = useId();
+ const loadVoices = tts.loadVoices;
+ const showPracticePreferences =
+  onHideScriptBeforeCheckChange !== undefined && onShowTranslationAfterCheckChange !== undefined;
+
+ return (
+  <Card variant="subtle" padding="md" className="grid gap-3">
+   <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
+    <div className="flex min-w-0 items-start gap-2">
+     <IconTile tone="accent" size="sm">
+      <Volume2 />
+     </IconTile>
+     <div className="min-w-0">
+      <StudyInstructionText variant="label" tone="default" weight="black">
+       {t("controlsTitle")}
+      </StudyInstructionText>
+      <StudyInstructionText variant="caption" tone="muted" weight="medium" leading="relaxed">
+       {tts.error ? t("generateError") : t("provider")}
+      </StudyInstructionText>
+     </div>
+    </div>
+
+    <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
+     <Select
+      value={tts.selectedVoiceName}
+      onValueChange={tts.setSelectedVoiceName}
+      onOpenChange={(open) => {
+       if (open) void loadVoices();
+      }}
+     >
+      <SelectTrigger
+       size="sm"
+       aria-label={t("voiceAria")}
+       className="min-w-52 max-w-full sm:min-w-64"
+      >
+       <SelectValue placeholder={t("voicePlaceholder")} />
+      </SelectTrigger>
+      <SelectContent align="end">
+       <SelectGroup>
+        {tts.voices.map((voice) => (
+         <SelectItem key={voice.shortName} value={voice.shortName}>
+          {voice.name} · {voice.gender}
+         </SelectItem>
+        ))}
+       </SelectGroup>
+      </SelectContent>
+     </Select>
+
+     <Select
+      value={rateOptions.find((option) => option.rate === tts.rate)?.value}
+      onValueChange={(value) => {
+       const option = rateOptions.find((candidate) => candidate.value === value);
+       if (option) tts.setRate(option.rate);
+      }}
+     >
+      <SelectTrigger size="sm" aria-label={t("rateTitle")} className="w-24">
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="end">
+       <SelectGroup>
+        {rateOptions.map((option) => (
+         <SelectItem key={option.value} value={option.value}>
+          {option.value}×
+         </SelectItem>
+        ))}
+       </SelectGroup>
+      </SelectContent>
+     </Select>
+
+     <Button
+      type="button"
+      variant="surfaceCard"
+      size="toolbar"
+      disabled={!text.trim() || tts.isLoading}
+      onClick={() => (onPlayAll ? onPlayAll() : tts.speakSequence(text.split("\n")))}
+     >
+      <Play data-icon="inline-start" />
+      {t("playAll")}
+     </Button>
+     <Button
+      type="button"
+      variant="ghost"
+      size="toolbar"
+      disabled={!tts.isSpeaking && !tts.isPaused}
+      onClick={tts.isPaused ? tts.resume : tts.pause}
+     >
+      {tts.isPaused ? <Play data-icon="inline-start" /> : <Pause data-icon="inline-start" />}
+      {tts.isPaused ? t("resume") : t("pause")}
+     </Button>
+     <Button
+      type="button"
+      variant="ghost"
+      size="toolbar"
+      disabled={!tts.isSpeaking && !tts.isPaused && !tts.isLoading}
+      onClick={tts.stop}
+     >
+      <Square data-icon="inline-start" />
+      {t("stop")}
+     </Button>
+    </div>
+   </div>
+
+   {showPracticePreferences ? (
+    <>
+     <Separator />
+     <div className="flex flex-wrap gap-x-5 gap-y-2">
+      <Label
+       htmlFor={hideScriptId}
+       variant="caption"
+       tone="secondary"
+       weight="bold"
+       className="flex min-h-9 items-center gap-2"
+      >
+       <Checkbox
+        id={hideScriptId}
+        checked={hideScriptBeforeCheck}
+        onCheckedChange={(checked) => onHideScriptBeforeCheckChange(checked === true)}
+       />
+       {t("hideScript")}
+      </Label>
+      <Label
+       htmlFor={showTranslationId}
+       variant="caption"
+       tone="secondary"
+       weight="bold"
+       className="flex min-h-9 items-center gap-2"
+      >
+       <Checkbox
+        id={showTranslationId}
+        checked={showTranslationAfterCheck}
+        onCheckedChange={(checked) => onShowTranslationAfterCheckChange(checked === true)}
+       />
+       {t("showTranslation")}
+      </Label>
+     </div>
+    </>
+   ) : null}
+  </Card>
+ );
+}

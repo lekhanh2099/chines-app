@@ -1,0 +1,18 @@
+{
+ "autoProvider": "Detect provider automatically",
+ "autoProviderHint": "Recommended. The app detects the provider from the key and only shows models this key can actually use.",
+ "checking": "Checking key and loading models…",
+ "ready": "Valid key · {provider} · {count} compatible models found",
+ "recommended": "Recommended",
+ "modelHint": "The app filters the provider's live model list to models compatible with the current AI flow.",
+ "modelWaiting": "Paste an API key first. The app will validate it and load available models automatically.",
+ "modelEmpty": "No compatible model is available yet.",
+ "recheck": "Check again",
+ "checkError": "Could not validate the key or load models.",
+ "saveError": "Could not save the API key.",
+ "manualProvider": "Choose provider manually",
+ "providerDetected": "Detected: {provider}",
+ "pasteAndCheck": "Paste a key to load models automatically",
+ "storageUnavailableTitle": "Secure API key storage is not ready",
+ "storageUnavailableDescription": "The server-side key store is not ready or cannot read an encrypted key. This is not a normal missing-key state; fix secure key storage before retrying."
+}

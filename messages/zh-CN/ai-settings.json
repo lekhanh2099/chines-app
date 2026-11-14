@@ -1,0 +1,151 @@
+{
+ "tabs": {
+  "tasks": "AI 任务",
+  "conversation": "对话与记忆",
+  "dailyReading": "每日阅读",
+  "providers": "API 密钥",
+  "usage": "活动",
+  "aria": "AI 设置分区"
+ },
+ "taskRouting": {
+  "title": "AI 任务分配",
+  "description": "为每个任务选择实际使用的 AI 来源。指定密钥失败后不会切换服务商。",
+  "loading": "正在加载 AI 任务…",
+  "loadError": "无法加载或保存 AI 任务。",
+  "saveError": "无法保存此任务分配。",
+  "retry": "重试",
+  "checkRuntime": "检查来源",
+  "checkSucceeded": "来源可用",
+  "checkFailed": "来源不可用",
+  "checkRequestFailed": "目前无法执行来源检查。",
+  "dataSent": "发送的数据",
+  "expectedOutput": "预期输出",
+  "storage": "保存位置",
+  "mode": "模式",
+  "source": "AI 来源",
+  "key": "API 密钥",
+  "model": "模型",
+  "autoStatus": "按优先级选择首个兼容的启用密钥",
+  "disabledStatus": "不调用 AI",
+  "customizeLookup": "自定义查询结果",
+  "lookupPromptScope": "仅影响深度分析。服务商和模型由上方任务分配决定。",
+  "technicalPrompt": "技术提示词",
+  "keyPaused": "已暂停",
+  "keyUnreadable": "需要重新添加",
+  "keyUnreadableHelp": "服务器无法解密此密钥。请在 API 密钥中重新添加，再次分配。",
+  "sources": {
+   "auto": "自动",
+   "autoWithRuntime": "自动 — {provider} · {key} · {model}",
+   "disabled": "关闭任务"
+  },
+  "runtimeReasons": {
+   "ok": "可用",
+   "no-active-key": "没有启用的 API 密钥",
+   "schema-unavailable": "API 密钥存储尚未就绪",
+   "vault-unavailable": "加密密钥库尚未就绪",
+   "credential-unreadable": "无法解密已存密钥，请重新添加",
+   "selected-key-unavailable": "所选密钥不可用",
+   "capability-unavailable": "没有兼容此任务的密钥",
+   "task-disabled": "任务已关闭",
+   "assigned-key-unavailable": "已分配密钥不再启用",
+   "assigned-model-unavailable": "已分配模型不可用"
+  },
+  "groups": { "main": "主要任务", "advanced": "高级任务" },
+  "modes": { "auto": "自动", "assigned": "指定", "disabled": "关闭" },
+  "tasks": {
+   "conversationReply": {
+    "title": "聊天回复",
+    "when": "在 AI 对话中发送消息时。",
+    "data": "角色、关系、摘要、最近消息和启用的记忆。",
+    "output": "已移除隐藏推理的一轮对话回复。",
+    "storage": "对话中的记录和 receipt。"
+   },
+   "lookupQuick": {
+    "title": "快速查询",
+    "when": "词典或缓存不足，或 SRS 需要补充基础释义时。",
+    "data": "所查词语，不发送整课内容。",
+    "output": "拼音、简短释义和基础词汇字段。",
+    "storage": "AI 结果为临时数据；仅在保存后进入个人数据。"
+   },
+   "lookupDeep": {
+    "title": "深度分析",
+    "when": "查看词句详情、编辑器上下文或生成词汇时。",
+    "data": "选中的词句、上下文及兼容的专家提示词。",
+    "output": "按当前界面 schema 验证的结构化分析。",
+    "storage": "请求内临时数据，需主动保存。"
+   },
+   "dailyReadingTranslation": {
+    "title": "每日阅读 · 翻译",
+    "when": "为来源文章启用翻译模块时。",
+    "data": "不可变的来源文章。",
+    "output": "结构化翻译。",
+    "storage": "本设备浏览器及 receipt。"
+   },
+   "dailyReadingVocabulary": {
+    "title": "每日阅读 · 词汇",
+    "when": "启用词汇模块时。",
+    "data": "来源文章。",
+    "output": "符合配置数量的词汇列表。",
+    "storage": "本设备浏览器及 receipt。"
+   },
+   "dailyReadingGrammar": {
+    "title": "每日阅读 · 语法",
+    "when": "启用语法模块时。",
+    "data": "来源文章。",
+    "output": "符合配置数量的语法点。",
+    "storage": "本设备浏览器及 receipt。"
+   },
+   "dailyReadingQuestions": {
+    "title": "每日阅读 · 问题",
+    "when": "启用阅读理解问题时。",
+    "data": "来源文章。",
+    "output": "符合配置数量的理解问题。",
+    "storage": "本设备浏览器及 receipt。"
+   },
+   "conversationSummary": {
+    "title": "对话摘要",
+    "when": "对话上下文需要压缩时。",
+    "data": "摘要覆盖的对话消息。",
+    "output": "结构化摘要。",
+    "storage": "保存在对话中，可独立关闭。"
+   },
+   "conversationMemoryExtraction": {
+    "title": "记忆提取",
+    "when": "轮次后的记忆流程运行时。",
+    "data": "相关消息和现有记忆。",
+    "output": "结构化记忆变更。",
+    "storage": "策略检查后的账户长期记忆。"
+   },
+   "conversationSemanticMemory": {
+    "title": "语义记忆",
+    "when": "创建或搜索记忆 embedding 时。",
+    "data": "需要 embedding 的记忆文本或查询。",
+    "output": "向量；关闭时仍可使用词法回退。",
+    "storage": "服务端记忆 embedding，不新增 transcript。"
+   }
+  }
+ },
+ "activity": {
+  "title": "AI 活动",
+  "description": "仅保留 90 天元数据；不保存提示词、查询文本、对话、输出或原始服务商错误。",
+  "clear": "清除历史",
+  "taskFilter": "按任务筛选",
+  "providerFilter": "按服务商筛选",
+  "statusFilter": "按状态筛选",
+  "allTasks": "全部任务",
+  "allProviders": "全部服务商",
+  "allStatuses": "全部状态",
+  "statuses": { "success": "成功", "failure": "失败", "cancelled": "已取消", "blocked": "已阻止" },
+  "loadError": "无法加载 AI 活动。",
+  "retry": "重试",
+  "empty": "暂无符合条件的 AI 活动。",
+  "loading": "正在加载…",
+  "loadMore": "下一页",
+  "openConversation": "打开对话",
+  "noRuntime": "未选择 runtime",
+  "metricsLatency": "{latency} 毫秒",
+  "metricsTokens": "输入 {inputTokens} token · 输出 {outputTokens} token",
+  "summary": "{attempts} 次 · 成功率 {successRate}% · 输入/输出 {inputTokens}/{outputTokens} token",
+  "summaryLatency": "平均延迟 {latency} 毫秒"
+ }
+}

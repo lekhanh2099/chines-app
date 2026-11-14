@@ -1,0 +1,113 @@
+import { JsonObjectSchema } from "@/types/json";
+import { z } from "zod";
+
+import {
+ practiceAttemptRowSchema,
+ practiceAttemptSurfaceSchema,
+} from "@/features/hanzihome/practice/practice-attempt.schemas";
+
+const practiceAttemptPayloadSchema = z.strictObject({
+ attemptId: z.uuid().optional(),
+ surface: practiceAttemptSurfaceSchema,
+ contentId: z.string().min(1),
+ direction: z.string().min(1).nullable(),
+ answer: JsonObjectSchema,
+ scorePercent: z.number().int().min(0).max(100).nullable(),
+ responseMs: z.number().int().nonnegative().nullable(),
+});
+const practiceAttemptResponseSchema = z.strictObject({ attempt: practiceAttemptRowSchema });
+const practiceAttemptsResponseSchema = z.strictObject({
+ attempts: z.array(practiceAttemptRowSchema),
+});
+const practiceAttemptCountResponseSchema = z.strictObject({
+ count: z.number().int().nonnegative(),
+});
+
+export type PracticeAttemptPayload = z.output<typeof practiceAttemptPayloadSchema>;
+
+export class PracticeAttemptApiError extends Error {
+ constructor(
+  message: string,
+  readonly status: number,
+  readonly code?: string,
+ ) {
+  super(message);
+  this.name = "PracticeAttemptApiError";
+ }
+}
+
+export async function savePracticeAttempt(
+ input: PracticeAttemptPayload,
+ options?: { expectedOwnerId?: string },
+) {
+ const payload = practiceAttemptPayloadSchema.parse(input);
+ const headers: Record<string, string> = { "Content-Type": "application/json" };
+ if (options?.expectedOwnerId) {
+  headers["X-HanziHome-Owner-Id"] = options.expectedOwnerId;
+ }
+
+ const response = await fetch("/api/hanzihome/practice/attempts", {
+  method: "POST",
+  headers,
+  body: JSON.stringify(payload),
+ });
+ const value = await response.json().catch(() => null);
+ if (!response.ok) {
+  const message =
+   value && typeof value === "object" && "error" in value && typeof value.error === "string"
+    ? value.error
+    : "Không lưu được lịch sử luyện tập.";
+  const code =
+   value && typeof value === "object" && "code" in value && typeof value.code === "string"
+    ? value.code
+    : undefined;
+  throw new PracticeAttemptApiError(message, response.status, code);
+ }
+ return practiceAttemptResponseSchema.parse(value).attempt;
+}
+
+export async function fetchPracticeAttempts(input: {
+ surface: z.output<typeof practiceAttemptSurfaceSchema>;
+ contentId: string;
+}) {
+ const response = await fetch(
+  `/api/hanzihome/practice/attempts?surface=${encodeURIComponent(input.surface)}&contentId=${encodeURIComponent(input.contentId)}`,
+  { cache: "no-store" },
+ );
+ const value = await response.json().catch(() => null);
+ if (!response.ok) throw new Error("Không tải được lịch sử luyện tập.");
+ return practiceAttemptsResponseSchema.parse(value).attempts;
+}
+
+export async function fetchRecentPracticeAttempts(input: {
+ surface: z.output<typeof practiceAttemptSurfaceSchema>;
+ limit?: number;
+}) {
+ const limit = Math.max(1, Math.min(input.limit ?? 50, 100));
+ const response = await fetch(
+  `/api/hanzihome/practice/attempts?surface=${encodeURIComponent(input.surface)}&limit=${limit}`,
+  { cache: "no-store" },
+ );
+ const value = await response.json().catch(() => null);
+ if (!response.ok) throw new Error("Không tải được lịch sử luyện tập gần đây.");
+ return practiceAttemptsResponseSchema.parse(value).attempts;
+}
+
+export async function fetchPracticeAttemptCount(input: {
+ surface: z.output<typeof practiceAttemptSurfaceSchema>;
+ since: string;
+ until: string;
+}) {
+ const params = new URLSearchParams({
+  mode: "count",
+  surface: input.surface,
+  since: input.since,
+  until: input.until,
+ });
+ const response = await fetch(`/api/hanzihome/practice/attempts?${params.toString()}`, {
+  cache: "no-store",
+ });
+ const value = await response.json().catch(() => null);
+ if (!response.ok) throw new Error("Không đếm được lịch sử luyện tập.");
+ return practiceAttemptCountResponseSchema.parse(value).count;
+}

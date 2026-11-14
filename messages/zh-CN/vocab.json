@@ -1,0 +1,106 @@
+{
+ "eyebrow": "HanziHome 资料库",
+ "title": {
+  "vocab": "词汇总览",
+  "grammar": "语法总览"
+ },
+ "description": {
+  "vocab": "按课程、册、课、拼音和词义浏览全部词汇。",
+  "grammar": "按课程、册、课和核心内容浏览全部语法点。"
+ },
+ "showing": "显示 {count} 项",
+ "search": {
+  "label": "关键词",
+  "vocabAria": "搜索词汇",
+  "grammarAria": "搜索语法",
+  "vocabPlaceholder": "汉字、拼音、词义...",
+  "grammarPlaceholder": "标题、结构..."
+ },
+ "filters": {
+  "course": "课程",
+  "book": "册",
+  "lesson": "课",
+  "lessonOption": "第 {number} 课：{title}",
+  "all": "全部",
+  "reset": "重置筛选",
+  "clear": "清除筛选"
+ },
+ "review": {
+  "grammarTitle": "复习语法闪卡",
+  "selectedLesson": "所选课程"
+ },
+ "reviewPicker": {
+  "eyebrow": "选择要复习的课程",
+  "vocabTitle": "按课复习词汇",
+  "grammarTitle": "按课复习语法",
+  "selectedCount": "已选 {count} 课",
+  "activeCount": "正在复习 {count} 课",
+  "close": "结束复习",
+  "choose": "选择课程",
+  "start": "开始复习",
+  "selected": "已选择",
+  "remove": "移除 {title}",
+  "more": "还有 {count} 课",
+  "clear": "全部清除",
+  "noSelection": "尚未选择课程。点击“选择课程”可按课号或标题快速查找。",
+  "searchAria": "搜索要复习的课程",
+  "searchPlaceholder": "搜索课程，例如：第 10 课...",
+  "noMatches": "没有匹配的课程。"
+ },
+ "preview": {
+  "step": "第 2 步 · 显示内容",
+  "title": "选择要查看的课程部分",
+  "description": "逐项开启或关闭，也可以使用快捷预设。下方预览会随所选课程更新。",
+  "selectedCount": "已选 {count} 个部分",
+  "clear": "取消选择",
+  "presetLabel": "预设",
+  "viewing": "正在查看：",
+  "noModules": "尚未选择内容",
+  "selectLessons": "请先在上方选择一课或多课，再按部分预览内容。",
+  "selectModule": "请至少选择一个要显示的内容部分。",
+  "loading": "正在加载所选课程内容",
+  "quickView": "快速预览所选课程内容",
+  "moreLines": "本课还有 {count} 行。",
+  "moreWords": "还有 {count} 个词。",
+  "moreItems": "还有 {count} 项。",
+  "grammarPoint": "语法点",
+  "itemNumber": "第 {number} 项",
+  "modules": {
+   "lessonText": { "label": "课文", "description": "对话、段落和课程主要内容。" },
+   "vocab": { "label": "词汇", "description": "主要词汇和专有名词，如有。" },
+   "grammar": { "label": "语法", "description": "本课语法点及例句。" },
+   "exercises": { "label": "练习", "description": "练习组、病句修改、填空和对话。" },
+   "reading": { "label": "阅读理解", "description": "阅读材料、理解题和填空题。" }
+  },
+  "presets": {
+   "lessonTextOnly": "只看课文",
+   "grammarOnly": "只看语法",
+   "vocabOnly": "只看词汇",
+   "lessonTextVocab": "课文 + 词汇",
+   "vocabExercises": "词汇 + 练习",
+   "all": "全部"
+  },
+  "empty": {
+   "lessonText": "暂无课文。",
+   "vocab": "暂无词汇。",
+   "grammar": "暂无语法。",
+   "exercises": "暂无练习。",
+   "reading": "暂无阅读材料。",
+   "unavailable": "所选课程的这一部分暂无可预览的数据。"
+  }
+ },
+ "loadError": {
+  "vocabTitle": "无法加载词汇",
+  "grammarTitle": "无法加载语法",
+  "description": "汇总数据暂时不可用。"
+ },
+ "empty": {
+  "title": "没有匹配的项目",
+  "description": "请更换关键词或调整筛选条件。"
+ },
+ "list": {
+  "count": "{count} 项",
+  "openLesson": "打开课程",
+  "reviewLesson": "复习课程"
+ }
+}

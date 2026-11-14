@@ -1,0 +1,3860 @@
+{
+ "meta": {
+  "title": "Từ vựng tiếng Trung giao tiếp khi làm website (IT / Web)",
+  "version": 1,
+  "groupCount": 10,
+  "vocabCount": 270,
+  "sentenceCount": 16
+ },
+ "groups": [
+  {
+   "id": "it-group-1",
+   "key": "req-comm",
+   "label": "1. Nhận yêu cầu & trao đổi với sếp",
+   "priority": "1-3",
+   "items": [
+    {
+     "id": "it-group-1-word-01",
+     "hanzi": "需求",
+     "pinyin": "xūqiú",
+     "meaning": "yêu cầu, nhu cầu về sản phẩm/tính năng",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-02",
+     "hanzi": "功能",
+     "pinyin": "gōngnéng",
+     "meaning": "chức năng",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-1-word-02-ex-1",
+       "zh": "我想跟您确认一下，这个页面需要增加哪些功能？",
+       "pinyin": "Wǒ xiǎng gēn nín quèrèn yíxià, zhège yèmiàn xūyào zēngjiā nǎxiē gōngnéng?",
+       "vi": "Tôi muốn xác nhận với anh/chị một chút: trang này cần bổ sung những chức năng nào?"
+      },
+      {
+       "id": "it-group-1-word-02-ex-8",
+       "zh": "我会先处理这个问题，其他功能稍后再做。",
+       "pinyin": "Wǒ huì xiān chǔlǐ zhège wèntí, qítā gōngnéng shāohòu zài zuò.",
+       "vi": "Tôi sẽ xử lý vấn đề này trước; các chức năng khác lát nữa/sau đó mới làm."
+      },
+      {
+       "id": "it-group-1-word-02-ex-16",
+       "zh": "如果今天要完成，可能需要先简化一部分功能。",
+       "pinyin": "Rúguǒ jīntiān yào wánchéng, kěnéng xūyào xiān jiǎnhuà yí bùfen gōngnéng.",
+       "vi": "Nếu hôm nay cần hoàn thành, có lẽ cần đơn giản hóa một phần chức năng trước."
+      }
+     ]
+    },
+    {
+     "id": "it-group-1-word-03",
+     "hanzi": "要求",
+     "pinyin": "yāoqiú",
+     "meaning": "yêu cầu, tiêu chí cần đáp ứng",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-1-word-03-ex-12",
+       "zh": "我已经按照您的要求调整好了，您可以看一下最新版本。",
+       "pinyin": "Wǒ yǐjīng ànzhào nín de yāoqiú tiáozhěng hǎo le, nín kěyǐ kàn yíxià zuìxīn bǎnběn.",
+       "vi": "Tôi đã điều chỉnh xong theo yêu cầu của anh/chị rồi, anh/chị có thể xem phiên bản mới nhất một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-1-word-04",
+     "hanzi": "想法",
+     "pinyin": "xiǎngfǎ",
+     "meaning": "ý tưởng, suy nghĩ",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-05",
+     "hanzi": "意见",
+     "pinyin": "yìjiàn",
+     "meaning": "ý kiến",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-06",
+     "hanzi": "建议",
+     "pinyin": "jiànyì",
+     "meaning": "đề xuất, gợi ý",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-07",
+     "hanzi": "方案",
+     "pinyin": "fāng'àn",
+     "meaning": "phương án, giải pháp",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-08",
+     "hanzi": "参考",
+     "pinyin": "cānkǎo",
+     "meaning": "tham khảo",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-09",
+     "hanzi": "示例",
+     "pinyin": "shìlì",
+     "meaning": "ví dụ mẫu",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-10",
+     "hanzi": "确认",
+     "pinyin": "quèrèn",
+     "meaning": "xác nhận",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-1-word-10-ex-1",
+       "zh": "我想跟您确认一下，这个页面需要增加哪些功能？",
+       "pinyin": "Wǒ xiǎng gēn nín quèrèn yíxià, zhège yèmiàn xūyào zēngjiā nǎxiē gōngnéng?",
+       "vi": "Tôi muốn xác nhận với anh/chị một chút: trang này cần bổ sung những chức năng nào?"
+      },
+      {
+       "id": "it-group-1-word-10-ex-14",
+       "zh": "您确认后，我再继续开发下一部分。",
+       "pinyin": "Nín quèrèn hòu, wǒ zài jìxù kāifā xià yí bùfen.",
+       "vi": "Sau khi anh/chị xác nhận, tôi mới tiếp tục phát triển phần kế tiếp."
+      }
+     ]
+    },
+    {
+     "id": "it-group-1-word-11",
+     "hanzi": "核对",
+     "pinyin": "héduì",
+     "meaning": "đối chiếu, kiểm tra lại",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-12",
+     "hanzi": "澄清",
+     "pinyin": "chéngqīng",
+     "meaning": "làm rõ một vấn đề",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-13",
+     "hanzi": "沟通",
+     "pinyin": "gōutōng",
+     "meaning": "trao đổi, giao tiếp công việc",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-14",
+     "hanzi": "讨论",
+     "pinyin": "tǎolùn",
+     "meaning": "thảo luận",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-15",
+     "hanzi": "反馈",
+     "pinyin": "fǎnkuì",
+     "meaning": "phản hồi, góp ý",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-16",
+     "hanzi": "回复",
+     "pinyin": "huífù",
+     "meaning": "trả lời tin nhắn, email",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-17",
+     "hanzi": "跟进",
+     "pinyin": "gēnjìn",
+     "meaning": "theo dõi và tiếp tục xử lý",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-18",
+     "hanzi": "修改",
+     "pinyin": "xiūgǎi",
+     "meaning": "sửa đổi nội dung, tính năng, mã",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "Phân biệt: 修改 (sửa đổi nội dung/chức năng) / 调整 (chỉnh thông số, bố cục) / 优化 (cải thiện chất lượng, hiệu năng).",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-19",
+     "hanzi": "调整",
+     "pinyin": "tiáozhěng",
+     "meaning": "điều chỉnh",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "Phân biệt: 修改 (sửa đổi nội dung/chức năng) / 调整 (chỉnh thông số, bố cục) / 优化 (cải thiện chất lượng, hiệu năng).",
+     "examples": [
+      {
+       "id": "it-group-1-word-19-ex-4",
+       "zh": "这部分是按照设计稿做，还是需要另外调整？",
+       "pinyin": "Zhè bùfen shì ànzhào shèjìgǎo zuò, háishi xūyào lìngwài tiáozhěng?",
+       "vi": "Phần này làm theo bản thiết kế, hay cần điều chỉnh riêng?"
+      },
+      {
+       "id": "it-group-1-word-19-ex-12",
+       "zh": "我已经按照您的要求调整好了，您可以看一下最新版本。",
+       "pinyin": "Wǒ yǐjīng ànzhào nín de yāoqiú tiáozhěng hǎo le, nín kěyǐ kàn yíxià zuìxīn bǎnběn.",
+       "vi": "Tôi đã điều chỉnh xong theo yêu cầu của anh/chị rồi, anh/chị có thể xem phiên bản mới nhất một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-1-word-20",
+     "hanzi": "优化",
+     "pinyin": "yōuhuà",
+     "meaning": "tối ưu, cải thiện",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "Phân biệt: 修改 (sửa đổi nội dung/chức năng) / 调整 (chỉnh thông số, bố cục) / 优化 (cải thiện chất lượng, hiệu năng).",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-21",
+     "hanzi": "补充",
+     "pinyin": "bǔchōng",
+     "meaning": "bổ sung",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-22",
+     "hanzi": "删除",
+     "pinyin": "shānchú",
+     "meaning": "xóa",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-23",
+     "hanzi": "保留",
+     "pinyin": "bǎoliú",
+     "meaning": "giữ nguyên, giữ lại",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-24",
+     "hanzi": "替换",
+     "pinyin": "tìhuàn",
+     "meaning": "thay thế",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-25",
+     "hanzi": "选择",
+     "pinyin": "xuǎnzé",
+     "meaning": "lựa chọn",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-26",
+     "hanzi": "决定",
+     "pinyin": "juédìng",
+     "meaning": "quyết định",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-27",
+     "hanzi": "同意",
+     "pinyin": "tóngyì",
+     "meaning": "đồng ý",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-28",
+     "hanzi": "合适",
+     "pinyin": "héshì",
+     "meaning": "phù hợp",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-29",
+     "hanzi": "可行",
+     "pinyin": "kěxíng",
+     "meaning": "khả thi",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1-word-30",
+     "hanzi": "不太合适",
+     "pinyin": "bú tài héshì",
+     "meaning": "chưa thật phù hợp",
+     "groupId": "it-group-1",
+     "groupLabel": "1. Nhận yêu cầu & trao đổi với sếp",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-1b",
+   "key": "wechat-files",
+   "label": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+   "priority": "1-3",
+   "items": [
+    {
+     "id": "it-group-1b-word-01",
+     "hanzi": "微信",
+     "pinyin": "Wēixìn",
+     "meaning": "WeChat",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-02",
+     "hanzi": "群",
+     "pinyin": "qún",
+     "meaning": "nhóm chat",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-03",
+     "hanzi": "消息",
+     "pinyin": "xiāoxi",
+     "meaning": "tin nhắn, thông tin",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-04",
+     "hanzi": "发",
+     "pinyin": "fā",
+     "meaning": "gửi (tin nhắn, file)",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-1b-word-04-ex-14",
+       "zh": "您确认后，我再继续开发下一部分。",
+       "pinyin": "Nín quèrèn hòu, wǒ zài jìxù kāifā xià yí bùfen.",
+       "vi": "Sau khi anh/chị xác nhận, tôi mới tiếp tục phát triển phần kế tiếp."
+      }
+     ]
+    },
+    {
+     "id": "it-group-1b-word-05",
+     "hanzi": "收到",
+     "pinyin": "shōudào",
+     "meaning": "nhận được",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-06",
+     "hanzi": "链接",
+     "pinyin": "liànjiē",
+     "meaning": "đường liên kết/link",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-07",
+     "hanzi": "截图",
+     "pinyin": "jiétú",
+     "meaning": "ảnh chụp màn hình; chụp màn hình",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-08",
+     "hanzi": "文件",
+     "pinyin": "wénjiàn",
+     "meaning": "tệp/file",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-09",
+     "hanzi": "文档",
+     "pinyin": "wéndàng",
+     "meaning": "tài liệu",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-10",
+     "hanzi": "附件",
+     "pinyin": "fùjiàn",
+     "meaning": "tệp đính kèm",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-11",
+     "hanzi": "资料",
+     "pinyin": "zīliào",
+     "meaning": "tài liệu, tư liệu/thông tin đầu vào",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-12",
+     "hanzi": "内容",
+     "pinyin": "nèiróng",
+     "meaning": "nội dung",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-13",
+     "hanzi": "方便",
+     "pinyin": "fāngbiàn",
+     "meaning": "thuận tiện, tiện (làm việc gì)",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-1b-word-13-ex-5",
+       "zh": "这个页面我已经做好了，您方便看一下吗？",
+       "pinyin": "Zhège yèmiàn wǒ yǐjīng zuò hǎo le, nín fāngbiàn kàn yíxià ma?",
+       "vi": "Trang này tôi đã làm xong rồi, anh/chị có tiện xem một chút không?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-1b-word-14",
+     "hanzi": "麻烦",
+     "pinyin": "máfan",
+     "meaning": "phiền, nhờ làm giúp (lời nói lịch sự)",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-1b-word-14-ex-11",
+       "zh": "问题已经修复了，麻烦您再测试一下。",
+       "pinyin": "Wèntí yǐjīng xiūfù le, máfan nín zài cèshì yíxià.",
+       "vi": "Vấn đề đã được sửa rồi, phiền anh/chị kiểm tra thử lại một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-1b-word-15",
+     "hanzi": "稍等",
+     "pinyin": "shāoděng",
+     "meaning": "chờ một lát",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-16",
+     "hanzi": "稍后",
+     "pinyin": "shāohòu",
+     "meaning": "lát nữa, sau một chút",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-1b-word-16-ex-8",
+       "zh": "我会先处理这个问题，其他功能稍后再做。",
+       "pinyin": "Wǒ huì xiān chǔlǐ zhège wèntí, qítā gōngnéng shāohòu zài zuò.",
+       "vi": "Tôi sẽ xử lý vấn đề này trước; các chức năng khác lát nữa/sau đó mới làm."
+      }
+     ]
+    },
+    {
+     "id": "it-group-1b-word-17",
+     "hanzi": "重新",
+     "pinyin": "chóngxīn",
+     "meaning": "làm lại, lại từ đầu",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-18",
+     "hanzi": "具体",
+     "pinyin": "jùtǐ",
+     "meaning": "cụ thể",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-19",
+     "hanzi": "清楚",
+     "pinyin": "qīngchu",
+     "meaning": "rõ ràng",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-20",
+     "hanzi": "收集",
+     "pinyin": "shōují",
+     "meaning": "thu thập (nội dung, thông tin)",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-21",
+     "hanzi": "整理",
+     "pinyin": "zhěnglǐ",
+     "meaning": "tổng hợp, sắp xếp cho có trật tự",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-22",
+     "hanzi": "预算",
+     "pinyin": "yùsuàn",
+     "meaning": "ngân sách dự kiến",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-23",
+     "hanzi": "费用",
+     "pinyin": "fèiyòng",
+     "meaning": "chi phí",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-1b-word-24",
+     "hanzi": "效果",
+     "pinyin": "xiàoguǒ",
+     "meaning": "hiệu quả, kết quả thể hiện",
+     "groupId": "it-group-1b",
+     "groupLabel": "1B. Nhắn WeChat, gửi file & hỏi thông tin",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-2",
+   "key": "plan-progress",
+   "label": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+   "priority": "1-3",
+   "items": [
+    {
+     "id": "it-group-2-word-01",
+     "hanzi": "项目",
+     "pinyin": "xiàngmù",
+     "meaning": "dự án",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-02",
+     "hanzi": "任务",
+     "pinyin": "rènwu",
+     "meaning": "nhiệm vụ",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-03",
+     "hanzi": "进度",
+     "pinyin": "jìndù",
+     "meaning": "tiến độ",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-04",
+     "hanzi": "安排",
+     "pinyin": "ānpái",
+     "meaning": "sắp xếp, bố trí",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-2-word-04-ex-13",
+       "zh": "如果没有其他问题，我们就可以安排上线了。",
+       "pinyin": "Rúguǒ méiyǒu qítā wèntí, wǒmen jiù kěyǐ ānpái shàngxiàn le.",
+       "vi": "Nếu không còn vấn đề nào khác thì chúng ta có thể sắp xếp đưa lên vận hành rồi."
+      }
+     ]
+    },
+    {
+     "id": "it-group-2-word-05",
+     "hanzi": "计划",
+     "pinyin": "jìhuà",
+     "meaning": "kế hoạch",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-06",
+     "hanzi": "排期",
+     "pinyin": "páiqī",
+     "meaning": "lên lịch triển khai, xếp lịch công việc",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-07",
+     "hanzi": "优先级",
+     "pinyin": "yōuxiānjí",
+     "meaning": "mức độ ưu tiên",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-08",
+     "hanzi": "截止时间",
+     "pinyin": "jiézhǐ shíjiān",
+     "meaning": "thời hạn chót",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-09",
+     "hanzi": "预计",
+     "pinyin": "yùjì",
+     "meaning": "dự kiến, ước tính",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-2-word-09-ex-7",
+       "zh": "我预计周三可以完成，如果有变化，我会及时告诉您。",
+       "pinyin": "Wǒ yùjì Zhōusān kěyǐ wánchéng, rúguǒ yǒu biànhuà, wǒ huì jíshí gàosu nín.",
+       "vi": "Tôi dự kiến thứ Tư có thể hoàn thành; nếu có thay đổi, tôi sẽ báo anh/chị kịp thời."
+      }
+     ]
+    },
+    {
+     "id": "it-group-2-word-10",
+     "hanzi": "大概",
+     "pinyin": "dàgài",
+     "meaning": "khoảng chừng, đại khái",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-11",
+     "hanzi": "按时",
+     "pinyin": "ànshí",
+     "meaning": "đúng hạn",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-12",
+     "hanzi": "提前",
+     "pinyin": "tíqián",
+     "meaning": "sớm hơn dự kiến",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-13",
+     "hanzi": "延期",
+     "pinyin": "yánqī",
+     "meaning": "hoãn, dời hạn",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-14",
+     "hanzi": "推迟",
+     "pinyin": "tuīchí",
+     "meaning": "lùi thời gian",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-15",
+     "hanzi": "尽快",
+     "pinyin": "jǐnkuài",
+     "meaning": "càng sớm càng tốt",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-16",
+     "hanzi": "优先处理",
+     "pinyin": "yōuxiān chǔlǐ",
+     "meaning": "xử lý trước, ưu tiên xử lý",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-17",
+     "hanzi": "目前",
+     "pinyin": "mùqián",
+     "meaning": "hiện tại, tính đến thời điểm này",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-2-word-17-ex-15",
+       "zh": "目前还不能确定完成时间，我需要先检查一下。",
+       "pinyin": "Mùqián hái bù néng quèdìng wánchéng shíjiān, wǒ xūyào xiān jiǎnchá yíxià.",
+       "vi": "Hiện tại vẫn chưa thể xác định thời gian hoàn thành, tôi cần kiểm tra trước một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-2-word-18",
+     "hanzi": "暂时",
+     "pinyin": "zànshí",
+     "meaning": "tạm thời",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-19",
+     "hanzi": "已经",
+     "pinyin": "yǐjīng",
+     "meaning": "đã",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-2-word-19-ex-5",
+       "zh": "这个页面我已经做好了，您方便看一下吗？",
+       "pinyin": "Zhège yèmiàn wǒ yǐjīng zuò hǎo le, nín fāngbiàn kàn yíxià ma?",
+       "vi": "Trang này tôi đã làm xong rồi, anh/chị có tiện xem một chút không?"
+      },
+      {
+       "id": "it-group-2-word-19-ex-6",
+       "zh": "前端部分已经完成了，现在还在等后端接口。",
+       "pinyin": "Qiánduān bùfen yǐjīng wánchéng le, xiànzài hái zài děng hòuduān jiēkǒu.",
+       "vi": "Phần front-end đã hoàn thành rồi, hiện giờ vẫn đang chờ API của back-end."
+      },
+      {
+       "id": "it-group-2-word-19-ex-9",
+       "zh": "我这边已经复现了这个问题，正在排查原因。",
+       "pinyin": "Wǒ zhèbiān yǐjīng fùxiàn le zhège wèntí, zhèngzài páichá yuányīn.",
+       "vi": "Phía tôi đã tái hiện được vấn đề này, đang rà soát tìm nguyên nhân."
+      },
+      {
+       "id": "it-group-2-word-19-ex-11",
+       "zh": "问题已经修复了，麻烦您再测试一下。",
+       "pinyin": "Wèntí yǐjīng xiūfù le, máfan nín zài cèshì yíxià.",
+       "vi": "Vấn đề đã được sửa rồi, phiền anh/chị kiểm tra thử lại một chút."
+      },
+      {
+       "id": "it-group-2-word-19-ex-12",
+       "zh": "我已经按照您的要求调整好了，您可以看一下最新版本。",
+       "pinyin": "Wǒ yǐjīng ànzhào nín de yāoqiú tiáozhěng hǎo le, nín kěyǐ kàn yíxià zuìxīn bǎnběn.",
+       "vi": "Tôi đã điều chỉnh xong theo yêu cầu của anh/chị rồi, anh/chị có thể xem phiên bản mới nhất một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-2-word-20",
+     "hanzi": "还没",
+     "pinyin": "hái méi",
+     "meaning": "vẫn chưa",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-21",
+     "hanzi": "正在",
+     "pinyin": "zhèngzài",
+     "meaning": "đang (tiến hành hành động)",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-2-word-21-ex-9",
+       "zh": "我这边已经复现了这个问题，正在排查原因。",
+       "pinyin": "Wǒ zhèbiān yǐjīng fùxiàn le zhège wèntí, zhèngzài páichá yuányīn.",
+       "vi": "Phía tôi đã tái hiện được vấn đề này, đang rà soát tìm nguyên nhân."
+      }
+     ]
+    },
+    {
+     "id": "it-group-2-word-22",
+     "hanzi": "完成",
+     "pinyin": "wánchéng",
+     "meaning": "hoàn thành",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "Phân biệt: 完成 (hoàn thành) / 做好 (làm xong, đã sẵn sàng) / 修复 (sửa lỗi).",
+     "examples": [
+      {
+       "id": "it-group-2-word-22-ex-6",
+       "zh": "前端部分已经完成了，现在还在等后端接口。",
+       "pinyin": "Qiánduān bùfen yǐjīng wánchéng le, xiànzài hái zài děng hòuduān jiēkǒu.",
+       "vi": "Phần front-end đã hoàn thành rồi, hiện giờ vẫn đang chờ API của back-end."
+      },
+      {
+       "id": "it-group-2-word-22-ex-7",
+       "zh": "我预计周三可以完成，如果有变化，我会及时告诉您。",
+       "pinyin": "Wǒ yùjì Zhōusān kěyǐ wánchéng, rúguǒ yǒu biànhuà, wǒ huì jíshí gàosu nín.",
+       "vi": "Tôi dự kiến thứ Tư có thể hoàn thành; nếu có thay đổi, tôi sẽ báo anh/chị kịp thời."
+      },
+      {
+       "id": "it-group-2-word-22-ex-15",
+       "zh": "目前还不能确定完成时间，我需要先检查一下。",
+       "pinyin": "Mùqián hái bù néng quèdìng wánchéng shíjiān, wǒ xūyào xiān jiǎnchá yíxià.",
+       "vi": "Hiện tại vẫn chưa thể xác định thời gian hoàn thành, tôi cần kiểm tra trước một chút."
+      },
+      {
+       "id": "it-group-2-word-22-ex-16",
+       "zh": "如果今天要完成，可能需要先简化一部分功能。",
+       "pinyin": "Rúguǒ jīntiān yào wánchéng, kěnéng xūyào xiān jiǎnhuà yí bùfen gōngnéng.",
+       "vi": "Nếu hôm nay cần hoàn thành, có lẽ cần đơn giản hóa một phần chức năng trước."
+      }
+     ]
+    },
+    {
+     "id": "it-group-2-word-23",
+     "hanzi": "做好",
+     "pinyin": "zuòhǎo",
+     "meaning": "làm xong và đạt trạng thái sẵn sàng",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "Phân biệt: 做好 có bổ ngữ kết quả 好 nhấn mạnh trạng thái đã sẵn sàng; khác với 修复 (chỉ sửa lỗi).",
+     "examples": [
+      {
+       "id": "it-group-2-word-23-ex-5",
+       "zh": "这个页面我已经做好了，您方便看一下吗？",
+       "pinyin": "Zhège yèmiàn wǒ yǐjīng zuò hǎo le, nín fāngbiàn kàn yíxià ma?",
+       "vi": "Trang này tôi đã làm xong rồi, anh/chị có tiện xem một chút không?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-2-word-24",
+     "hanzi": "交付",
+     "pinyin": "jiāofù",
+     "meaning": "bàn giao sản phẩm/kết quả",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-25",
+     "hanzi": "负责人",
+     "pinyin": "fùzérén",
+     "meaning": "người phụ trách",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-26",
+     "hanzi": "影响",
+     "pinyin": "yǐngxiǎng",
+     "meaning": "ảnh hưởng",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-27",
+     "hanzi": "风险",
+     "pinyin": "fēngxiǎn",
+     "meaning": "rủi ro",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-28",
+     "hanzi": "依赖",
+     "pinyin": "yīlài",
+     "meaning": "phụ thuộc vào (điều kiện, hệ thống)",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-29",
+     "hanzi": "紧急",
+     "pinyin": "jǐnjí",
+     "meaning": "khẩn cấp",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-2-word-30",
+     "hanzi": "重要",
+     "pinyin": "zhòngyào",
+     "meaning": "quan trọng",
+     "groupId": "it-group-2",
+     "groupLabel": "2. Kế hoạch, tiến độ, báo cáo & deadline",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-3",
+   "key": "web-ui",
+   "label": "3. Website, trang và giao diện (FE/UI)",
+   "priority": "1-3",
+   "items": [
+    {
+     "id": "it-group-3-word-01",
+     "hanzi": "网站",
+     "pinyin": "wǎngzhàn",
+     "meaning": "website",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-02",
+     "hanzi": "网页",
+     "pinyin": "wǎngyè",
+     "meaning": "trang web",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-03",
+     "hanzi": "页面",
+     "pinyin": "yèmiàn",
+     "meaning": "trang/màn hình giao diện",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-3-word-03-ex-1",
+       "zh": "我想跟您确认一下，这个页面需要增加哪些功能？",
+       "pinyin": "Wǒ xiǎng gēn nín quèrèn yíxià, zhège yèmiàn xūyào zēngjiā nǎxiē gōngnéng?",
+       "vi": "Tôi muốn xác nhận với anh/chị một chút: trang này cần bổ sung những chức năng nào?"
+      },
+      {
+       "id": "it-group-3-word-03-ex-3",
+       "zh": "这个按钮点击后，需要跳转到哪个页面？",
+       "pinyin": "Zhège ànniǔ diǎnjī hòu, xūyào tiàozhuǎn dào nǎge yèmiàn?",
+       "vi": "Sau khi nhấp nút này, cần chuyển đến trang nào?"
+      },
+      {
+       "id": "it-group-3-word-03-ex-5",
+       "zh": "这个页面我已经做好了，您方便看一下吗？",
+       "pinyin": "Zhège yèmiàn wǒ yǐjīng zuò hǎo le, nín fāngbiàn kàn yíxià ma?",
+       "vi": "Trang này tôi đã làm xong rồi, anh/chị có tiện xem một chút không?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-3-word-04",
+     "hanzi": "首页",
+     "pinyin": "shǒuyè",
+     "meaning": "trang chủ",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-05",
+     "hanzi": "登录页",
+     "pinyin": "dēnglù yè",
+     "meaning": "trang đăng nhập",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-06",
+     "hanzi": "详情页",
+     "pinyin": "xiángqíng yè",
+     "meaning": "trang chi tiết",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-07",
+     "hanzi": "设置页",
+     "pinyin": "shèzhì yè",
+     "meaning": "trang cài đặt",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-08",
+     "hanzi": "管理后台",
+     "pinyin": "guǎnlǐ hòutái",
+     "meaning": "giao diện quản trị (admin dashboard)",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "Phân biệt: 管理后台 (giao diện quản trị admin) / 后端 (back-end kỹ thuật).",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-09",
+     "hanzi": "前端",
+     "pinyin": "qiánduān",
+     "meaning": "front-end",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-3-word-09-ex-6",
+       "zh": "前端部分已经完成了，现在还在等后端接口。",
+       "pinyin": "Qiánduān bùfen yǐjīng wánchéng le, xiànzài hái zài děng hòuduān jiēkǒu.",
+       "vi": "Phần front-end đã hoàn thành rồi, hiện giờ vẫn đang chờ API của back-end."
+      }
+     ]
+    },
+    {
+     "id": "it-group-3-word-10",
+     "hanzi": "后端",
+     "pinyin": "hòuduān",
+     "meaning": "back-end",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "Phân biệt: 后端 (back-end kỹ thuật) / 管理后台 (giao diện quản trị admin).",
+     "examples": [
+      {
+       "id": "it-group-3-word-10-ex-6",
+       "zh": "前端部分已经完成了，现在还在等后端接口。",
+       "pinyin": "Qiánduān bùfen yǐjīng wánchéng le, xiànzài hái zài děng hòuduān jiēkǒu.",
+       "vi": "Phần front-end đã hoàn thành rồi, hiện giờ vẫn đang chờ API của back-end."
+      }
+     ]
+    },
+    {
+     "id": "it-group-3-word-11",
+     "hanzi": "界面",
+     "pinyin": "jièmiàn",
+     "meaning": "giao diện",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-12",
+     "hanzi": "设计稿",
+     "pinyin": "shèjìgǎo",
+     "meaning": "bản thiết kế giao diện",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-3-word-12-ex-4",
+       "zh": "这部分是按照设计稿做，还是需要另外调整？",
+       "pinyin": "Zhè bùfen shì ànzhào shèjìgǎo zuò, háishi xūyào lìngwài tiáozhěng?",
+       "vi": "Phần này làm theo bản thiết kế, hay cần điều chỉnh riêng?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-3-word-13",
+     "hanzi": "效果图",
+     "pinyin": "xiàoguǒtú",
+     "meaning": "hình minh họa hiệu quả/diện mạo thiết kế",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-14",
+     "hanzi": "样式",
+     "pinyin": "yàngshì",
+     "meaning": "kiểu hiển thị, style",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-15",
+     "hanzi": "布局",
+     "pinyin": "bùjú",
+     "meaning": "bố cục",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-16",
+     "hanzi": "排版",
+     "pinyin": "páibǎn",
+     "meaning": "dàn trang, bố trí văn bản/hình ảnh",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-17",
+     "hanzi": "字体",
+     "pinyin": "zìtǐ",
+     "meaning": "phông chữ",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-18",
+     "hanzi": "字号",
+     "pinyin": "zìhào",
+     "meaning": "cỡ chữ",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-19",
+     "hanzi": "颜色",
+     "pinyin": "yánsè",
+     "meaning": "màu sắc",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-20",
+     "hanzi": "背景",
+     "pinyin": "bèijǐng",
+     "meaning": "nền, background",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-21",
+     "hanzi": "边框",
+     "pinyin": "biānkuàng",
+     "meaning": "đường viền",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-22",
+     "hanzi": "圆角",
+     "pinyin": "yuánjiǎo",
+     "meaning": "góc bo tròn",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-23",
+     "hanzi": "间距",
+     "pinyin": "jiànjù",
+     "meaning": "khoảng cách",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-24",
+     "hanzi": "对齐",
+     "pinyin": "duìqí",
+     "meaning": "căn chỉnh thẳng hàng",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-25",
+     "hanzi": "图片",
+     "pinyin": "túpiàn",
+     "meaning": "hình ảnh",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-26",
+     "hanzi": "图标",
+     "pinyin": "túbiāo",
+     "meaning": "biểu tượng, icon",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-27",
+     "hanzi": "素材",
+     "pinyin": "sùcái",
+     "meaning": "tài nguyên nội dung như ảnh, icon, video",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-28",
+     "hanzi": "文案",
+     "pinyin": "wén'àn",
+     "meaning": "câu chữ/copy hiển thị trên website",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-29",
+     "hanzi": "组件",
+     "pinyin": "zǔjiàn",
+     "meaning": "component, thành phần giao diện",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-30",
+     "hanzi": "模块",
+     "pinyin": "mókuài",
+     "meaning": "module, khối chức năng",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-31",
+     "hanzi": "导航栏",
+     "pinyin": "dǎohánglán",
+     "meaning": "thanh điều hướng",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-32",
+     "hanzi": "侧边栏",
+     "pinyin": "cèbiānlán",
+     "meaning": "thanh bên",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-33",
+     "hanzi": "页脚",
+     "pinyin": "yèjiǎo",
+     "meaning": "footer",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-34",
+     "hanzi": "弹窗",
+     "pinyin": "tánchuāng",
+     "meaning": "popup, cửa sổ bật lên",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-35",
+     "hanzi": "按钮",
+     "pinyin": "ànniǔ",
+     "meaning": "nút bấm",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-3-word-35-ex-3",
+       "zh": "这个按钮点击后，需要跳转到哪个页面？",
+       "pinyin": "Zhège ànniǔ diǎnjī hòu, xūyào tiàozhuǎn dào nǎge yèmiàn?",
+       "vi": "Sau khi nhấp nút này, cần chuyển đến trang nào?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-3-word-36",
+     "hanzi": "输入框",
+     "pinyin": "shūrùkuāng",
+     "meaning": "ô nhập liệu",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-37",
+     "hanzi": "下拉菜单",
+     "pinyin": "xiàlā càidān",
+     "meaning": "menu thả xuống",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-38",
+     "hanzi": "表单",
+     "pinyin": "biǎodān",
+     "meaning": "form",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-39",
+     "hanzi": "表格",
+     "pinyin": "biǎogé",
+     "meaning": "bảng",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-40",
+     "hanzi": "列表",
+     "pinyin": "lièbiǎo",
+     "meaning": "danh sách",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-41",
+     "hanzi": "响应式",
+     "pinyin": "xiǎngyìngshì",
+     "meaning": "responsive",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-42",
+     "hanzi": "适配",
+     "pinyin": "shìpèi",
+     "meaning": "điều chỉnh để tương thích màn hình/thiết bị",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-43",
+     "hanzi": "手机端",
+     "pinyin": "shǒujī duān",
+     "meaning": "giao diện phía điện thoại",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-3-word-44",
+     "hanzi": "电脑端",
+     "pinyin": "diànnǎo duān",
+     "meaning": "giao diện phía máy tính",
+     "groupId": "it-group-3",
+     "groupLabel": "3. Website, trang và giao diện (FE/UI)",
+     "priorityBand": "1-3",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-4",
+   "key": "user-actions",
+   "label": "4. Thao tác người dùng & tính năng",
+   "priority": "4-6",
+   "items": [
+    {
+     "id": "it-group-4-word-01",
+     "hanzi": "点击",
+     "pinyin": "diǎnjī",
+     "meaning": "nhấp/chạm vào",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-4-word-01-ex-3",
+       "zh": "这个按钮点击后，需要跳转到哪个页面？",
+       "pinyin": "Zhège ànniǔ diǎnjī hòu, xūyào tiàozhuǎn dào nǎge yèmiàn?",
+       "vi": "Sau khi nhấp nút này, cần chuyển đến trang nào?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-4-word-02",
+     "hanzi": "进入",
+     "pinyin": "jìnrù",
+     "meaning": "đi vào một trang/mục",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-03",
+     "hanzi": "跳转",
+     "pinyin": "tiàozhuǎn",
+     "meaning": "điều hướng/chuyển sang trang khác",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-4-word-03-ex-3",
+       "zh": "这个按钮点击后，需要跳转到哪个页面？",
+       "pinyin": "Zhège ànniǔ diǎnjī hòu, xūyào tiàozhuǎn dào nǎge yèmiàn?",
+       "vi": "Sau khi nhấp nút này, cần chuyển đến trang nào?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-4-word-04",
+     "hanzi": "返回",
+     "pinyin": "fǎnhuí",
+     "meaning": "quay lại; trả về dữ liệu, tùy ngữ cảnh",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-4-word-04-ex-10",
+       "zh": "这个问题是接口返回的数据不一致导致的。",
+       "pinyin": "Zhège wèntí shì jiēkǒu fǎnhuí de shùjù bù yízhì dǎozhì de.",
+       "vi": "Vấn đề này là do dữ liệu do API trả về không nhất quán gây ra."
+      }
+     ]
+    },
+    {
+     "id": "it-group-4-word-05",
+     "hanzi": "打开",
+     "pinyin": "dǎkāi",
+     "meaning": "mở",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-06",
+     "hanzi": "关闭",
+     "pinyin": "guānbì",
+     "meaning": "đóng/tắt",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-07",
+     "hanzi": "显示",
+     "pinyin": "xiǎnshì",
+     "meaning": "hiển thị",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-08",
+     "hanzi": "隐藏",
+     "pinyin": "yǐncáng",
+     "meaning": "ẩn",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-09",
+     "hanzi": "加载",
+     "pinyin": "jiāzài",
+     "meaning": "tải dữ liệu/tài nguyên để hiển thị",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-10",
+     "hanzi": "刷新",
+     "pinyin": "shuāxīn",
+     "meaning": "làm mới/reload",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-11",
+     "hanzi": "输入",
+     "pinyin": "shūrù",
+     "meaning": "nhập",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-12",
+     "hanzi": "搜索",
+     "pinyin": "sōusuǒ",
+     "meaning": "tìm kiếm",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-13",
+     "hanzi": "筛选",
+     "pinyin": "shāixuǎn",
+     "meaning": "lọc theo điều kiện",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-14",
+     "hanzi": "排序",
+     "pinyin": "páixù",
+     "meaning": "sắp xếp theo thứ tự",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-15",
+     "hanzi": "分页",
+     "pinyin": "fēnyè",
+     "meaning": "phân trang",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-16",
+     "hanzi": "新增",
+     "pinyin": "xīnzēng",
+     "meaning": "thêm mới",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-17",
+     "hanzi": "编辑",
+     "pinyin": "biānjí",
+     "meaning": "chỉnh sửa",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-18",
+     "hanzi": "保存",
+     "pinyin": "bǎocún",
+     "meaning": "lưu",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-19",
+     "hanzi": "提交",
+     "pinyin": "tíjiāo",
+     "meaning": "gửi/nộp form hoặc dữ liệu",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-20",
+     "hanzi": "取消",
+     "pinyin": "qǔxiāo",
+     "meaning": "hủy",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-21",
+     "hanzi": "上传",
+     "pinyin": "shàngchuán",
+     "meaning": "tải lên",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "Lưu ý phát âm: 上传 đọc là shàngchuán (tải lên), đối lập với 下载 xiàzài (tải xuống).",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-22",
+     "hanzi": "下载",
+     "pinyin": "xiàzài",
+     "meaning": "tải xuống",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "Lưu ý phát âm: 下载 đọc là xiàzài (tải xuống), đối lập với 上传 shàngchuán (tải lên).",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-23",
+     "hanzi": "复制",
+     "pinyin": "fùzhì",
+     "meaning": "sao chép",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-24",
+     "hanzi": "粘贴",
+     "pinyin": "zhāntiē",
+     "meaning": "dán",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-25",
+     "hanzi": "批量操作",
+     "pinyin": "pīliàng cāozuò",
+     "meaning": "thao tác hàng loạt",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-26",
+     "hanzi": "登录",
+     "pinyin": "dēnglù",
+     "meaning": "đăng nhập",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-27",
+     "hanzi": "注册",
+     "pinyin": "zhùcè",
+     "meaning": "đăng ký tài khoản",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-28",
+     "hanzi": "退出登录",
+     "pinyin": "tuìchū dēnglù",
+     "meaning": "đăng xuất",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-29",
+     "hanzi": "权限",
+     "pinyin": "quánxiàn",
+     "meaning": "quyền truy cập/thao tác",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-30",
+     "hanzi": "验证码",
+     "pinyin": "yànzhèngmǎ",
+     "meaning": "mã xác minh",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-31",
+     "hanzi": "提示",
+     "pinyin": "tíshì",
+     "meaning": "nhắc/hiển thị lời gợi ý",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-32",
+     "hanzi": "通知",
+     "pinyin": "tōngzhī",
+     "meaning": "thông báo",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-4-word-33",
+     "hanzi": "多语言",
+     "pinyin": "duō yǔyán",
+     "meaning": "đa ngôn ngữ",
+     "groupId": "it-group-4",
+     "groupLabel": "4. Thao tác người dùng & tính năng",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-5",
+   "key": "web-tech",
+   "label": "5. Kỹ thuật web (API, DB, Server, Cache)",
+   "priority": "4-6",
+   "items": [
+    {
+     "id": "it-group-5-word-01",
+     "hanzi": "开发",
+     "pinyin": "kāifā",
+     "meaning": "phát triển phần mềm",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-5-word-01-ex-14",
+       "zh": "您确认后，我再继续开发下一部分。",
+       "pinyin": "Nín quèrèn hòu, wǒ zài jìxù kāifā xià yí bùfen.",
+       "vi": "Sau khi anh/chị xác nhận, tôi mới tiếp tục phát triển phần kế tiếp."
+      }
+     ]
+    },
+    {
+     "id": "it-group-5-word-02",
+     "hanzi": "实现",
+     "pinyin": "shíxiàn",
+     "meaning": "hiện thực hóa/triển khai một chức năng",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-03",
+     "hanzi": "技术",
+     "pinyin": "jìshù",
+     "meaning": "kỹ thuật/công nghệ",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-04",
+     "hanzi": "代码",
+     "pinyin": "dàimǎ",
+     "meaning": "mã nguồn",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-05",
+     "hanzi": "数据",
+     "pinyin": "shùjù",
+     "meaning": "dữ liệu",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-5-word-05-ex-10",
+       "zh": "这个问题是接口返回的数据不一致导致的。",
+       "pinyin": "Zhège wèntí shì jiēkǒu fǎnhuí de shùjù bù yízhì dǎozhì de.",
+       "vi": "Vấn đề này là do dữ liệu do API trả về không nhất quán gây ra."
+      }
+     ]
+    },
+    {
+     "id": "it-group-5-word-06",
+     "hanzi": "数据库",
+     "pinyin": "shùjùkù",
+     "meaning": "cơ sở dữ liệu",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-07",
+     "hanzi": "接口",
+     "pinyin": "jiēkǒu",
+     "meaning": "API/interface (thường là API khi nói liên kết FE–BE)",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-5-word-07-ex-6",
+       "zh": "前端部分已经完成了，现在还在等后端接口。",
+       "pinyin": "Qiánduān bùfen yǐjīng wánchéng le, xiànzài hái zài děng hòuduān jiēkǒu.",
+       "vi": "Phần front-end đã hoàn thành rồi, hiện giờ vẫn đang chờ API của back-end."
+      },
+      {
+       "id": "it-group-5-word-07-ex-10",
+       "zh": "这个问题是接口返回的数据不一致导致的。",
+       "pinyin": "Zhège wèntí shì jiēkǒu fǎnhuí de shùjù bù yízhì dǎozhì de.",
+       "vi": "Vấn đề này là do dữ liệu do API trả về không nhất quán gây ra."
+      }
+     ]
+    },
+    {
+     "id": "it-group-5-word-08",
+     "hanzi": "接口文档",
+     "pinyin": "jiēkǒu wéndàng",
+     "meaning": "tài liệu API",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-09",
+     "hanzi": "接口返回",
+     "pinyin": "jiēkǒu fǎnhuí",
+     "meaning": "dữ liệu API trả về",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-5-word-09-ex-10",
+       "zh": "这个问题是接口返回的数据不一致导致的。",
+       "pinyin": "Zhège wèntí shì jiēkǒu fǎnhuí de shùjù bù yízhì dǎozhì de.",
+       "vi": "Vấn đề này là do dữ liệu do API trả về không nhất quán gây ra."
+      }
+     ]
+    },
+    {
+     "id": "it-group-5-word-10",
+     "hanzi": "请求",
+     "pinyin": "qǐngqiú",
+     "meaning": "request, yêu cầu gửi đến hệ thống",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-11",
+     "hanzi": "响应",
+     "pinyin": "xiǎngyìng",
+     "meaning": "response/phản hồi của hệ thống",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-12",
+     "hanzi": "对接",
+     "pinyin": "duìjiē",
+     "meaning": "phối hợp tích hợp với hệ thống/bên khác",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-13",
+     "hanzi": "前后端联调",
+     "pinyin": "qiánhòuduān liántiáo",
+     "meaning": "kiểm thử tích hợp phối hợp FE–BE",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-14",
+     "hanzi": "配置",
+     "pinyin": "pèizhì",
+     "meaning": "cấu hình",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-15",
+     "hanzi": "服务器",
+     "pinyin": "fúwùqì",
+     "meaning": "máy chủ",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-16",
+     "hanzi": "域名",
+     "pinyin": "yùmíng",
+     "meaning": "tên miền",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-17",
+     "hanzi": "缓存",
+     "pinyin": "huǎncún",
+     "meaning": "bộ nhớ đệm/lưu đệm",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-18",
+     "hanzi": "清除缓存",
+     "pinyin": "qīngchú huǎncún",
+     "meaning": "xóa bộ nhớ đệm",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-19",
+     "hanzi": "数据同步",
+     "pinyin": "shùjù tóngbù",
+     "meaning": "đồng bộ dữ liệu",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-20",
+     "hanzi": "实时更新",
+     "pinyin": "shíshí gēngxīn",
+     "meaning": "cập nhật thời gian thực",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-21",
+     "hanzi": "自动保存",
+     "pinyin": "zìdòng bǎocún",
+     "meaning": "tự động lưu",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-22",
+     "hanzi": "第三方服务",
+     "pinyin": "dì sānfāng fúwù",
+     "meaning": "dịch vụ bên thứ ba",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-23",
+     "hanzi": "支持",
+     "pinyin": "zhīchí",
+     "meaning": "hỗ trợ, có hỗ trợ tính năng",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-5-word-24",
+     "hanzi": "兼容",
+     "pinyin": "jiānróng",
+     "meaning": "tương thích",
+     "groupId": "it-group-5",
+     "groupLabel": "5. Kỹ thuật web (API, DB, Server, Cache)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-6",
+   "key": "bug-debug",
+   "label": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+   "priority": "4-6",
+   "items": [
+    {
+     "id": "it-group-6-word-01",
+     "hanzi": "问题",
+     "pinyin": "wèntí",
+     "meaning": "vấn đề",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": true,
+     "note": "Phân biệt: 问题 (vấn đề nói chung) / 报错 (hệ thống hiện thông báo lỗi) / 故障 (sự cố hệ thống trục trặc).",
+     "examples": [
+      {
+       "id": "it-group-6-word-01-ex-8",
+       "zh": "我会先处理这个问题，其他功能稍后再做。",
+       "pinyin": "Wǒ huì xiān chǔlǐ zhège wèntí, qítā gōngnéng shāohòu zài zuò.",
+       "vi": "Tôi sẽ xử lý vấn đề này trước; các chức năng khác lát nữa/sau đó mới làm."
+      },
+      {
+       "id": "it-group-6-word-01-ex-9",
+       "zh": "我这边已经复现了这个问题，正在排查原因。",
+       "pinyin": "Wǒ zhèbiān yǐjīng fùxiàn le zhège wèntí, zhèngzài páichá yuányīn.",
+       "vi": "Phía tôi đã tái hiện được vấn đề này, đang rà soát tìm nguyên nhân."
+      },
+      {
+       "id": "it-group-6-word-01-ex-10",
+       "zh": "这个问题是接口返回的数据不一致导致的。",
+       "pinyin": "Zhège wèntí shì jiēkǒu fǎnhuí de shùjù bù yízhì dǎozhì de.",
+       "vi": "Vấn đề này là do dữ liệu do API trả về không nhất quán gây ra."
+      },
+      {
+       "id": "it-group-6-word-01-ex-11",
+       "zh": "问题已经修复了，麻烦您再测试一下。",
+       "pinyin": "Wèntí yǐjīng xiūfù le, máfan nín zài cèshì yíxià.",
+       "vi": "Vấn đề đã được sửa rồi, phiền anh/chị kiểm tra thử lại một chút."
+      },
+      {
+       "id": "it-group-6-word-01-ex-13",
+       "zh": "如果没有其他问题，我们就可以安排上线了。",
+       "pinyin": "Rúguǒ méiyǒu qítā wèntí, wǒmen jiù kěyǐ ānpái shàngxiàn le.",
+       "vi": "Nếu không còn vấn đề nào khác thì chúng ta có thể sắp xếp đưa lên vận hành rồi."
+      }
+     ]
+    },
+    {
+     "id": "it-group-6-word-02",
+     "hanzi": "错误",
+     "pinyin": "cuòwù",
+     "meaning": "lỗi/sai sót",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-03",
+     "hanzi": "报错",
+     "pinyin": "bàocuò",
+     "meaning": "báo lỗi (hệ thống hiển thị lỗi)",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": true,
+     "note": "Phân biệt: 报错 (có thông báo lỗi hiển thị) / 问题 (vấn đề nói chung) / 故障 (hệ thống trục trặc).",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-04",
+     "hanzi": "异常",
+     "pinyin": "yìcháng",
+     "meaning": "bất thường",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-05",
+     "hanzi": "故障",
+     "pinyin": "gùzhàng",
+     "meaning": "sự cố hệ thống",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "Phân biệt: 故障 (hệ thống trục trặc/sự cố) / 问题 (vấn đề chung) / 报错 (báo lỗi).",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-06",
+     "hanzi": "失败",
+     "pinyin": "shībài",
+     "meaning": "thất bại/không thành công",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-07",
+     "hanzi": "无法访问",
+     "pinyin": "wúfǎ fǎngwèn",
+     "meaning": "không thể truy cập",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-08",
+     "hanzi": "无法显示",
+     "pinyin": "wúfǎ xiǎnshì",
+     "meaning": "không thể hiển thị",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-09",
+     "hanzi": "页面空白",
+     "pinyin": "yèmiàn kòngbái",
+     "meaning": "trang hiển thị trắng/trống",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-10",
+     "hanzi": "卡顿",
+     "pinyin": "kǎdùn",
+     "meaning": "giật, lag",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-11",
+     "hanzi": "加载缓慢",
+     "pinyin": "jiāzài huǎnmàn",
+     "meaning": "tải chậm",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-12",
+     "hanzi": "数据丢失",
+     "pinyin": "shùjù diūshī",
+     "meaning": "mất dữ liệu",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-13",
+     "hanzi": "数据不一致",
+     "pinyin": "shùjù bù yízhì",
+     "meaning": "dữ liệu không nhất quán",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-6-word-13-ex-10",
+       "zh": "这个问题是接口返回的数据不一致导致的。",
+       "pinyin": "Zhège wèntí shì jiēkǒu fǎnhuí de shùjù bù yízhì dǎozhì de.",
+       "vi": "Vấn đề này là do dữ liệu do API trả về không nhất quán gây ra."
+      }
+     ]
+    },
+    {
+     "id": "it-group-6-word-14",
+     "hanzi": "重复",
+     "pinyin": "chóngfù",
+     "meaning": "trùng lặp",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-15",
+     "hanzi": "排查",
+     "pinyin": "páichá",
+     "meaning": "rà soát để tìm nguyên nhân",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-6-word-15-ex-9",
+       "zh": "我这边已经复现了这个问题，正在排查原因。",
+       "pinyin": "Wǒ zhèbiān yǐjīng fùxiàn le zhège wèntí, zhèngzài páichá yuányīn.",
+       "vi": "Phía tôi đã tái hiện được vấn đề này, đang rà soát tìm nguyên nhân."
+      }
+     ]
+    },
+    {
+     "id": "it-group-6-word-16",
+     "hanzi": "定位问题",
+     "pinyin": "dìngwèi wèntí",
+     "meaning": "xác định vị trí/nguyên nhân lỗi",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-17",
+     "hanzi": "复现问题",
+     "pinyin": "fùxiàn wèntí",
+     "meaning": "tái hiện lỗi",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-18",
+     "hanzi": "修复",
+     "pinyin": "xiūfù",
+     "meaning": "sửa lỗi, khắc phục",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": true,
+     "note": "Phân biệt: 修复 (sửa lỗi/khắc phục sự cố) / 完成 (hoàn thành) / 做好 (làm xong sẵn sàng).",
+     "examples": [
+      {
+       "id": "it-group-6-word-18-ex-11",
+       "zh": "问题已经修复了，麻烦您再测试一下。",
+       "pinyin": "Wèntí yǐjīng xiūfù le, máfan nín zài cèshì yíxià.",
+       "vi": "Vấn đề đã được sửa rồi, phiền anh/chị kiểm tra thử lại một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-6-word-19",
+     "hanzi": "解决",
+     "pinyin": "jiějué",
+     "meaning": "giải quyết",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-20",
+     "hanzi": "重新测试",
+     "pinyin": "chóngxīn cèshì",
+     "meaning": "kiểm thử lại",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "Lưu ý: Trong giao tiếp thường nói 再测试一下 (dùng 再 cho hành động kiểm tra thêm một lần nữa trong tương lai).",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-21",
+     "hanzi": "检查",
+     "pinyin": "jiǎnchá",
+     "meaning": "kiểm tra",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-6-word-21-ex-15",
+       "zh": "目前还不能确定完成时间，我需要先检查一下。",
+       "pinyin": "Mùqián hái bù néng quèdìng wánchéng shíjiān, wǒ xūyào xiān jiǎnchá yíxià.",
+       "vi": "Hiện tại vẫn chưa thể xác định thời gian hoàn thành, tôi cần kiểm tra trước một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-6-word-22",
+     "hanzi": "测试",
+     "pinyin": "cèshì",
+     "meaning": "kiểm thử",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-6-word-22-ex-11",
+       "zh": "问题已经修复了，麻烦您再测试一下。",
+       "pinyin": "Wèntí yǐjīng xiūfù le, máfan nín zài cèshì yíxià.",
+       "vi": "Vấn đề đã được sửa rồi, phiền anh/chị kiểm tra thử lại một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-6-word-23",
+     "hanzi": "兼容性问题",
+     "pinyin": "jiānróngxìng wèntí",
+     "meaning": "lỗi tương thích",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-24",
+     "hanzi": "性能",
+     "pinyin": "xìngnéng",
+     "meaning": "hiệu năng",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-6-word-25",
+     "hanzi": "稳定性",
+     "pinyin": "wěndìngxìng",
+     "meaning": "tính ổn định",
+     "groupId": "it-group-6",
+     "groupLabel": "6. Lỗi, kiểm tra & xử lý sự cố (Bug/Test)",
+     "priorityBand": "4-6",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-7",
+   "key": "deploy-release",
+   "label": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+   "priority": "7-9",
+   "items": [
+    {
+     "id": "it-group-7-word-01",
+     "hanzi": "演示",
+     "pinyin": "yǎnshì",
+     "meaning": "trình diễn/demo",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-02",
+     "hanzi": "预览",
+     "pinyin": "yùlǎn",
+     "meaning": "xem trước",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-03",
+     "hanzi": "测试环境",
+     "pinyin": "cèshì huánjìng",
+     "meaning": "môi trường kiểm thử",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-04",
+     "hanzi": "生产环境",
+     "pinyin": "shēngchǎn huánjìng",
+     "meaning": "môi trường production",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-05",
+     "hanzi": "正式环境",
+     "pinyin": "zhèngshì huánjìng",
+     "meaning": "môi trường chính thức",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-06",
+     "hanzi": "测试版本",
+     "pinyin": "cèshì bǎnběn",
+     "meaning": "phiên bản thử nghiệm",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-07",
+     "hanzi": "正式版本",
+     "pinyin": "zhèngshì bǎnběn",
+     "meaning": "phiên bản chính thức",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-08",
+     "hanzi": "版本",
+     "pinyin": "bǎnběn",
+     "meaning": "phiên bản",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": true,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-7-word-08-ex-12",
+       "zh": "我已经按照您的要求调整好了，您可以看一下最新版本。",
+       "pinyin": "Wǒ yǐjīng ànzhào nín de yāoqiú tiáozhěng hǎo le, nín kěyǐ kàn yíxià zuìxīn bǎnběn.",
+       "vi": "Tôi đã điều chỉnh xong theo yêu cầu của anh/chị rồi, anh/chị có thể xem phiên bản mới nhất một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-7-word-09",
+     "hanzi": "更新",
+     "pinyin": "gēngxīn",
+     "meaning": "cập nhật",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-10",
+     "hanzi": "发布",
+     "pinyin": "fābù",
+     "meaning": "phát hành/công bố bản cập nhật",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "Phân biệt: 发布 (phát hành bản cập nhật) / 部署 (triển khai lên môi trường) / 上线 (đưa vào vận hành chính thức).",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-11",
+     "hanzi": "部署",
+     "pinyin": "bùshǔ",
+     "meaning": "triển khai phần mềm lên môi trường",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "Phân biệt: 部署 (triển khai phần mềm lên server/môi trường) / 发布 (phát hành) / 上线 (vận hành chính thức).",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-12",
+     "hanzi": "上线",
+     "pinyin": "shàngxiàn",
+     "meaning": "đưa hệ thống/tính năng vào vận hành trực tuyến",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": true,
+     "note": "Phân biệt: 上线 (đưa hệ thống vào vận hành thực tế) / 发布 (phát hành) / 部署 (triển khai).",
+     "examples": [
+      {
+       "id": "it-group-7-word-12-ex-13",
+       "zh": "如果没有其他问题，我们就可以安排上线了。",
+       "pinyin": "Rúguǒ méiyǒu qítā wèntí, wǒmen jiù kěyǐ ānpái shàngxiàn le.",
+       "vi": "Nếu không còn vấn đề nào khác thì chúng ta có thể sắp xếp đưa lên vận hành rồi."
+      }
+     ]
+    },
+    {
+     "id": "it-group-7-word-13",
+     "hanzi": "维护",
+     "pinyin": "wéihù",
+     "meaning": "bảo trì",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-14",
+     "hanzi": "自测",
+     "pinyin": "zìcè",
+     "meaning": "tự kiểm thử",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-15",
+     "hanzi": "提测",
+     "pinyin": "tícè",
+     "meaning": "chuyển sang bước kiểm thử chính thức",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-16",
+     "hanzi": "验收",
+     "pinyin": "yànshōu",
+     "meaning": "nghiệm thu, chấp nhận kết quả",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-17",
+     "hanzi": "回滚",
+     "pinyin": "huígǔn",
+     "meaning": "quay lại bản trước",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-18",
+     "hanzi": "备份",
+     "pinyin": "bèifèn",
+     "meaning": "sao lưu",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-19",
+     "hanzi": "确认无误",
+     "pinyin": "quèrèn wúwù",
+     "meaning": "xác nhận không có sai sót",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-7-word-20",
+     "hanzi": "正常运行",
+     "pinyin": "zhèngcháng yùnxíng",
+     "meaning": "hoạt động bình thường",
+     "groupId": "it-group-7",
+     "groupLabel": "7. Demo, test, nghiệm thu & đưa web lên chạy",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-8",
+   "key": "biz-users",
+   "label": "8. Nội dung doanh nghiệp & người dùng web",
+   "priority": "7-9",
+   "items": [
+    {
+     "id": "it-group-8-word-01",
+     "hanzi": "公司介绍",
+     "pinyin": "gōngsī jièshào",
+     "meaning": "giới thiệu công ty",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-02",
+     "hanzi": "产品介绍",
+     "pinyin": "chǎnpǐn jièshào",
+     "meaning": "giới thiệu sản phẩm",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-03",
+     "hanzi": "产品列表",
+     "pinyin": "chǎnpǐn lièbiǎo",
+     "meaning": "danh sách sản phẩm",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-04",
+     "hanzi": "商品详情",
+     "pinyin": "shāngpǐn xiángqíng",
+     "meaning": "chi tiết hàng hóa",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-05",
+     "hanzi": "联系方式",
+     "pinyin": "liánxì fāngshì",
+     "meaning": "thông tin liên hệ",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-06",
+     "hanzi": "联系我们",
+     "pinyin": "liánxì wǒmen",
+     "meaning": "liên hệ chúng tôi",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-07",
+     "hanzi": "客户",
+     "pinyin": "kèhù",
+     "meaning": "khách hàng",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-08",
+     "hanzi": "用户",
+     "pinyin": "yònghù",
+     "meaning": "người dùng",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-09",
+     "hanzi": "访客",
+     "pinyin": "fǎngkè",
+     "meaning": "khách truy cập",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-10",
+     "hanzi": "账号",
+     "pinyin": "zhànghào",
+     "meaning": "tài khoản",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-11",
+     "hanzi": "订单",
+     "pinyin": "dìngdān",
+     "meaning": "đơn hàng",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-12",
+     "hanzi": "价格",
+     "pinyin": "jiàgé",
+     "meaning": "giá cả",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-13",
+     "hanzi": "支付",
+     "pinyin": "zhīfù",
+     "meaning": "thanh toán",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-14",
+     "hanzi": "购物车",
+     "pinyin": "gòuwùchē",
+     "meaning": "giỏ hàng",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-15",
+     "hanzi": "运营",
+     "pinyin": "yùnyíng",
+     "meaning": "vận hành nội dung/kinh doanh của sản phẩm",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-16",
+     "hanzi": "管理员",
+     "pinyin": "guǎnlǐyuán",
+     "meaning": "quản trị viên",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-17",
+     "hanzi": "统计",
+     "pinyin": "tǒngjì",
+     "meaning": "thống kê",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-18",
+     "hanzi": "报表",
+     "pinyin": "bàobiǎo",
+     "meaning": "báo cáo dạng bảng",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-19",
+     "hanzi": "数据展示",
+     "pinyin": "shùjù zhǎnshì",
+     "meaning": "hiển thị dữ liệu",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-8-word-20",
+     "hanzi": "内容管理",
+     "pinyin": "nèiróng guǎnlǐ",
+     "meaning": "quản lý nội dung",
+     "groupId": "it-group-8",
+     "groupLabel": "8. Nội dung doanh nghiệp & người dùng web",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": "it-group-9",
+   "key": "work-phrases",
+   "label": "9. Cụm từ giao tiếp công việc thường dùng",
+   "priority": "7-9",
+   "items": [
+    {
+     "id": "it-group-9-word-01",
+     "hanzi": "看一下",
+     "pinyin": "kàn yíxià",
+     "meaning": "xem một chút",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "Lưu ý: 一下 giúp giảm nhẹ yêu cầu, khiến lời nhờ xem/xác nhận tự nhiên và lịch sự hơn.",
+     "examples": [
+      {
+       "id": "it-group-9-word-01-ex-5",
+       "zh": "这个页面我已经做好了，您方便看一下吗？",
+       "pinyin": "Zhège yèmiàn wǒ yǐjīng zuò hǎo le, nín fāngbiàn kàn yíxià ma?",
+       "vi": "Trang này tôi đã làm xong rồi, anh/chị có tiện xem một chút không?"
+      },
+      {
+       "id": "it-group-9-word-01-ex-12",
+       "zh": "我已经按照您的要求调整好了，您可以看一下最新版本。",
+       "pinyin": "Wǒ yǐjīng ànzhào nín de yāoqiú tiáozhěng hǎo le, nín kěyǐ kàn yíxià zuìxīn bǎnběn.",
+       "vi": "Tôi đã điều chỉnh xong theo yêu cầu của anh/chị rồi, anh/chị có thể xem phiên bản mới nhất một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-9-word-02",
+     "hanzi": "确认一下",
+     "pinyin": "quèrèn yíxià",
+     "meaning": "xác nhận một chút",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "Lưu ý: 一下 giúp giảm nhẹ yêu cầu, khiến lời nhờ xác nhận tự nhiên và lịch sự hơn.",
+     "examples": [
+      {
+       "id": "it-group-9-word-02-ex-1",
+       "zh": "我想跟您确认一下，这个页面需要增加哪些功能？",
+       "pinyin": "Wǒ xiǎng gēn nín quèrèn yíxià, zhège yèmiàn xūyào zēngjiā nǎxiē gōngnéng?",
+       "vi": "Tôi muốn xác nhận với anh/chị một chút: trang này cần bổ sung những chức năng nào?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-9-word-03",
+     "hanzi": "改一下",
+     "pinyin": "gǎi yíxià",
+     "meaning": "sửa một chút",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-04",
+     "hanzi": "调整一下",
+     "pinyin": "tiáozhěng yíxià",
+     "meaning": "điều chỉnh một chút",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-05",
+     "hanzi": "处理一下",
+     "pinyin": "chǔlǐ yíxià",
+     "meaning": "xử lý một chút",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-06",
+     "hanzi": "我这边",
+     "pinyin": "wǒ zhèbiān",
+     "meaning": "phía tôi/bên tôi",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-9-word-06-ex-9",
+       "zh": "我这边已经复现了这个问题，正在排查原因。",
+       "pinyin": "Wǒ zhèbiān yǐjīng fùxiàn le zhège wèntí, zhèngzài páichá yuányīn.",
+       "vi": "Phía tôi đã tái hiện được vấn đề này, đang rà soát tìm nguyên nhân."
+      }
+     ]
+    },
+    {
+     "id": "it-group-9-word-07",
+     "hanzi": "您那边",
+     "pinyin": "nín nèibiān",
+     "meaning": "phía anh/chị (kính trọng)",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-08",
+     "hanzi": "没问题",
+     "pinyin": "méi wèntí",
+     "meaning": "không vấn đề gì",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-09",
+     "hanzi": "还需要",
+     "pinyin": "hái xūyào",
+     "meaning": "vẫn còn cần",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-10",
+     "hanzi": "先……再……",
+     "pinyin": "xiān… zài…",
+     "meaning": "trước tiên… rồi mới…",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-9-word-10-ex-8",
+       "zh": "我会先处理这个问题，其他功能稍后再做。",
+       "pinyin": "Wǒ huì xiān chǔlǐ zhège wèntí, qítā gōngnéng shāohòu zài zuò.",
+       "vi": "Tôi sẽ xử lý vấn đề này trước; các chức năng khác lát nữa/sau đó mới làm."
+      }
+     ]
+    },
+    {
+     "id": "it-group-9-word-11",
+     "hanzi": "如果……就……",
+     "pinyin": "rúguǒ… jiù…",
+     "meaning": "nếu… thì…",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-9-word-11-ex-13",
+       "zh": "如果没有其他问题，我们就可以安排上线了。",
+       "pinyin": "Rúguǒ méiyǒu qítā wèntí, wǒmen jiù kěyǐ ānpái shàngxiàn le.",
+       "vi": "Nếu không còn vấn đề nào khác thì chúng ta có thể sắp xếp đưa lên vận hành rồi."
+      }
+     ]
+    },
+    {
+     "id": "it-group-9-word-12",
+     "hanzi": "按照设计稿",
+     "pinyin": "ànzhào shèjìgǎo",
+     "meaning": "theo bản thiết kế",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-9-word-12-ex-4",
+       "zh": "这部分是按照设计稿做，还是需要另外调整？",
+       "pinyin": "Zhè bùfen shì ànzhào shèjìgǎo zuò, háishi xūyào lìngwài tiáozhěng?",
+       "vi": "Phần này làm theo bản thiết kế, hay cần điều chỉnh riêng?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-9-word-13",
+     "hanzi": "按照您的要求",
+     "pinyin": "ànzhào nín de yāoqiú",
+     "meaning": "theo yêu cầu của anh/chị",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-9-word-13-ex-12",
+       "zh": "我已经按照您的要求调整好了，您可以看一下最新版本。",
+       "pinyin": "Wǒ yǐjīng ànzhào nín de yāoqiú tiáozhěng hǎo le, nín kěyǐ kàn yíxià zuìxīn bǎnběn.",
+       "vi": "Tôi đã điều chỉnh xong theo yêu cầu của anh/chị rồi, anh/chị có thể xem phiên bản mới nhất một chút."
+      }
+     ]
+    },
+    {
+     "id": "it-group-9-word-14",
+     "hanzi": "跟您确认一下",
+     "pinyin": "gēn nín quèrèn yíxià",
+     "meaning": "xác nhận lại với anh/chị một chút",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": [
+      {
+       "id": "it-group-9-word-14-ex-1",
+       "zh": "我想跟您确认一下，这个页面需要增加哪些功能？",
+       "pinyin": "Wǒ xiǎng gēn nín quèrèn yíxià, zhège yèmiàn xūyào zēngjiā nǎxiē gōngnéng?",
+       "vi": "Tôi muốn xác nhận với anh/chị một chút: trang này cần bổ sung những chức năng nào?"
+      }
+     ]
+    },
+    {
+     "id": "it-group-9-word-15",
+     "hanzi": "麻烦您看一下",
+     "pinyin": "máfan nín kàn yíxià",
+     "meaning": "phiền anh/chị xem giúp một chút",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-16",
+     "hanzi": "有什么需要调整的",
+     "pinyin": "yǒu shénme xūyào tiáozhěng de",
+     "meaning": "có chỗ nào cần điều chỉnh",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-17",
+     "hanzi": "还在处理中",
+     "pinyin": "hái zài chǔlǐ zhōng",
+     "meaning": "vẫn đang trong quá trình xử lý",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-18",
+     "hanzi": "预计明天完成",
+     "pinyin": "yùjì míngtiān wánchéng",
+     "meaning": "dự kiến mai hoàn thành",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-19",
+     "hanzi": "需要一点时间",
+     "pinyin": "xūyào yìdiǎn shíjiān",
+     "meaning": "cần một ít thời gian",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    },
+    {
+     "id": "it-group-9-word-20",
+     "hanzi": "暂时还不确定",
+     "pinyin": "zànshí hái bù quèdìng",
+     "meaning": "tạm thời vẫn chưa chắc chắn",
+     "groupId": "it-group-9",
+     "groupLabel": "9. Cụm từ giao tiếp công việc thường dùng",
+     "priorityBand": "7-9",
+     "isCore20": false,
+     "note": "",
+     "examples": []
+    }
+   ]
+  }
+ ],
+ "sentences": [
+  {
+   "id": "it-wechat-sentence-1",
+   "order": 1,
+   "zh": "我想跟您确认一下，这个页面需要增加哪些功能？",
+   "pinyin": "Wǒ xiǎng gēn nín quèrèn yíxià, zhège yèmiàn xūyào zēngjiā nǎxiē gōngnéng?",
+   "vi": "Tôi muốn xác nhận với anh/chị một chút: trang này cần bổ sung những chức năng nào?"
+  },
+  {
+   "id": "it-wechat-sentence-2",
+   "order": 2,
+   "zh": "您希望先做电脑版，还是先做手机版？",
+   "pinyin": "Nín xīwàng xiān zuò diànnǎo bǎn, háishi xiān zuò shǒujī bǎn?",
+   "vi": "Anh/chị muốn làm bản máy tính trước, hay làm bản điện thoại trước?"
+  },
+  {
+   "id": "it-wechat-sentence-3",
+   "order": 3,
+   "zh": "这个按钮点击后，需要跳转到哪个页面？",
+   "pinyin": "Zhège ànniǔ diǎnjī hòu, xūyào tiàozhuǎn dào nǎge yèmiàn?",
+   "vi": "Sau khi nhấp nút này, cần chuyển đến trang nào?"
+  },
+  {
+   "id": "it-wechat-sentence-4",
+   "order": 4,
+   "zh": "这部分是按照设计稿做，还是需要另外调整？",
+   "pinyin": "Zhè bùfen shì ànzhào shèjìgǎo zuò, háishi xūyào lìngwài tiáozhěng?",
+   "vi": "Phần này làm theo bản thiết kế, hay cần điều chỉnh riêng?"
+  },
+  {
+   "id": "it-wechat-sentence-5",
+   "order": 5,
+   "zh": "这个页面我已经做好了，您方便看一下吗？",
+   "pinyin": "Zhège yèmiàn wǒ yǐjīng zuò hǎo le, nín fāngbiàn kàn yíxià ma?",
+   "vi": "Trang này tôi đã làm xong rồi, anh/chị có tiện xem một chút không?"
+  },
+  {
+   "id": "it-wechat-sentence-6",
+   "order": 6,
+   "zh": "前端部分已经完成了，现在还在等后端接口。",
+   "pinyin": "Qiánduān bùfen yǐjīng wánchéng le, xiànzài hái zài děng hòuduān jiēkǒu.",
+   "vi": "Phần front-end đã hoàn thành rồi, hiện giờ vẫn đang chờ API của back-end."
+  },
+  {
+   "id": "it-wechat-sentence-7",
+   "order": 7,
+   "zh": "我预计周三可以完成，如果有变化，我会及时告诉您。",
+   "pinyin": "Wǒ yùjì Zhōusān kěyǐ wánchéng, rúguǒ yǒu biànhuà, wǒ huì jíshí gàosu nín.",
+   "vi": "Tôi dự kiến thứ Tư có thể hoàn thành; nếu có thay đổi, tôi sẽ báo anh/chị kịp thời."
+  },
+  {
+   "id": "it-wechat-sentence-8",
+   "order": 8,
+   "zh": "我会先处理这个问题，其他功能稍后再做。",
+   "pinyin": "Wǒ huì xiān chǔlǐ zhège wèntí, qítā gōngnéng shāohòu zài zuò.",
+   "vi": "Tôi sẽ xử lý vấn đề này trước; các chức năng khác lát nữa/sau đó mới làm."
+  },
+  {
+   "id": "it-wechat-sentence-9",
+   "order": 9,
+   "zh": "我这边已经复现了这个问题，正在排查原因。",
+   "pinyin": "Wǒ zhèbiān yǐjīng fùxiàn le zhège wèntí, zhèngzài páichá yuányīn.",
+   "vi": "Phía tôi đã tái hiện được vấn đề này, đang rà soát tìm nguyên nhân."
+  },
+  {
+   "id": "it-wechat-sentence-10",
+   "order": 10,
+   "zh": "这个问题是接口返回的数据不一致导致的。",
+   "pinyin": "Zhège wèntí shì jiēkǒu fǎnhuí de shùjù bù yízhì dǎozhì de.",
+   "vi": "Vấn đề này là do dữ liệu do API trả về không nhất quán gây ra."
+  },
+  {
+   "id": "it-wechat-sentence-11",
+   "order": 11,
+   "zh": "问题已经修复了，麻烦您再测试一下。",
+   "pinyin": "Wèntí yǐjīng xiūfù le, máfan nín zài cèshì yíxià.",
+   "vi": "Vấn đề đã được sửa rồi, phiền anh/chị kiểm tra thử lại một chút."
+  },
+  {
+   "id": "it-wechat-sentence-12",
+   "order": 12,
+   "zh": "我已经按照您的要求调整好了，您可以看一下最新版本。",
+   "pinyin": "Wǒ yǐjīng ànzhào nín de yāoqiú tiáozhěng hǎo le, nín kěyǐ kàn yíxià zuìxīn bǎnběn.",
+   "vi": "Tôi đã điều chỉnh xong theo yêu cầu của anh/chị rồi, anh/chị có thể xem phiên bản mới nhất một chút."
+  },
+  {
+   "id": "it-wechat-sentence-13",
+   "order": 13,
+   "zh": "如果没有其他问题，我们就可以安排上线了。",
+   "pinyin": "Rúguǒ méiyǒu qítā wèntí, wǒmen jiù kěyǐ ānpái shàngxiàn le.",
+   "vi": "Nếu không còn vấn đề nào khác thì chúng ta có thể sắp xếp đưa lên vận hành rồi."
+  },
+  {
+   "id": "it-wechat-sentence-14",
+   "order": 14,
+   "zh": "您确认后，我再继续开发下一部分。",
+   "pinyin": "Nín quèrèn hòu, wǒ zài jìxù kāifā xià yí bùfen.",
+   "vi": "Sau khi anh/chị xác nhận, tôi mới tiếp tục phát triển phần kế tiếp."
+  },
+  {
+   "id": "it-wechat-sentence-15",
+   "order": 15,
+   "zh": "目前还不能确定完成时间，我需要先检查一下。",
+   "pinyin": "Mùqián hái bù néng quèdìng wánchéng shíjiān, wǒ xūyào xiān jiǎnchá yíxià.",
+   "vi": "Hiện tại vẫn chưa thể xác định thời gian hoàn thành, tôi cần kiểm tra trước một chút."
+  },
+  {
+   "id": "it-wechat-sentence-16",
+   "order": 16,
+   "zh": "如果今天要完成，可能需要先简化一部分功能。",
+   "pinyin": "Rúguǒ jīntiān yào wánchéng, kěnéng xūyào xiān jiǎnhuà yí bùfen gōngnéng.",
+   "vi": "Nếu hôm nay cần hoàn thành, có lẽ cần đơn giản hóa một phần chức năng trước."
+  }
+ ]
+}

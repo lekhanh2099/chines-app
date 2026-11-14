@@ -1,0 +1,17 @@
+{
+ "modelProvider": {
+  "title": "Model & provider",
+  "description": "Choose the system model for detailed lookup and manage personal API keys. Infrastructure controls stay below conversation and memory so they do not dominate the learning workflow.",
+  "dirty": "Model has unsaved changes",
+  "synced": "Model is synced",
+  "reset": "Reset model",
+  "save": "Save model",
+  "keyActions": "Actions for API key {label}"
+ },
+ "advanced": {
+  "title": "Advanced",
+  "description": "Word and sentence lookup prompts for fine-tuning lookup behavior. This stays collapsed by default so common settings remain easier to scan.",
+  "open": "Open advanced settings",
+  "close": "Close advanced settings"
+ }
+}

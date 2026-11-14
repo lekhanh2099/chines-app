@@ -1,0 +1,192 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+import { type QueryClient, queryOptions, useQuery, useQueryClient } from "@tanstack/react-query";
+
+import { useClientSession } from "@/components/providers/QueryProvider";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+import {
+ buildLessonSectionsResource,
+ attachLessonVocabularyResource,
+ type LessonSectionsResource,
+} from "@/features/hanzihome/repositories/hanzihome-content-resources";
+import {
+ getErrorHttpStatus,
+ loadLessonDetailWithCache,
+ loadLessonVocabularyWithCache,
+ readCachedLessonDetail,
+ readCachedLessonVocabulary,
+} from "@/features/hanzihome/local/lesson-content-cache";
+import type { useRouter } from "@/i18n/navigation";
+import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import {
+ lessonResourceStaleTime,
+ prefetchHanziHomeLessonResources,
+} from "@/features/hanzihome/utils/lesson-prefetch";
+
+export { lessonResourceStaleTime };
+
+export function usePrefetchHanziHomeLesson(
+ prefetchRoute: ReturnType<typeof useRouter>["prefetch"],
+) {
+ const queryClient = useQueryClient();
+ const { userId } = useClientSession();
+ return useCallback(
+  (lessonId: HanziHomeLesson["id"], href: string) => {
+   if (!lessonId) return;
+   prefetchRoute(href);
+   prefetchHanziHomeLessonResources(queryClient, lessonId, userId || "anonymous");
+  },
+  [prefetchRoute, queryClient, userId],
+ );
+}
+
+export async function hydrateCachedLessonDetail(
+ queryClient: QueryClient,
+ ownerId: string,
+ lessonId: string,
+): Promise<boolean> {
+ const queryKey = hanzihomeQueryKeys.lessonDetail(lessonId);
+ if (queryClient.getQueryData(queryKey)) return false;
+ try {
+  const cached = await readCachedLessonDetail(ownerId, lessonId);
+  if (cached && !queryClient.getQueryData(queryKey)) {
+   queryClient.setQueryData(queryKey, cached, { updatedAt: 0 });
+   return true;
+  }
+ } catch {
+  // Non-fatal
+ }
+ return false;
+}
+
+export async function hydrateCachedLessonVocabulary(
+ queryClient: QueryClient,
+ ownerId: string,
+ lessonId: string,
+): Promise<boolean> {
+ const queryKey = hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary");
+ if (queryClient.getQueryData(queryKey)) return false;
+ try {
+  const cached = await readCachedLessonVocabulary(ownerId, lessonId);
+  if (cached && !queryClient.getQueryData(queryKey)) {
+   queryClient.setQueryData(queryKey, cached, { updatedAt: 0 });
+   return true;
+  }
+ } catch {
+  // Non-fatal
+ }
+ return false;
+}
+
+function retryLessonResource(failureCount: number, error: Error) {
+ const status = getErrorHttpStatus(error);
+ if (status === 401 || status === 403 || status === 404 || status === 412) {
+  return false;
+ }
+ return failureCount < 2;
+}
+
+/** Shared by every consumer of a lesson's detail so the query key has one loader. */
+export function lessonDetailQueryOptions(
+ queryClient: QueryClient,
+ ownerId: string,
+ lessonId: string,
+) {
+ return queryOptions({
+  queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
+  queryFn: ({ signal }) => loadLessonDetailWithCache({ queryClient, ownerId, lessonId, signal }),
+  staleTime: lessonResourceStaleTime,
+  enabled: Boolean(lessonId),
+  retry: retryLessonResource,
+ });
+}
+
+/** Shared by every consumer of the canonical lesson vocabulary resource. */
+export function lessonVocabularyQueryOptions(
+ queryClient: QueryClient,
+ ownerId: string,
+ lessonId: string,
+) {
+ return queryOptions({
+  queryKey: hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary"),
+  queryFn: ({ signal }) =>
+   loadLessonVocabularyWithCache({ queryClient, ownerId, lessonId, signal }),
+  staleTime: lessonResourceStaleTime,
+  enabled: Boolean(lessonId),
+  retry: retryLessonResource,
+ });
+}
+
+export function useHanziHomeLessonDetailResource(lessonId: string) {
+ const { user } = useClientSession();
+ const ownerId = user?.id ?? "anonymous";
+ const queryClient = useQueryClient();
+
+ useEffect(() => {
+  if (!lessonId) return;
+  let active = true;
+  void hydrateCachedLessonDetail(queryClient, ownerId, lessonId).then(() => {
+   if (!active) return;
+  });
+
+  return () => {
+   active = false;
+  };
+ }, [lessonId, ownerId, queryClient]);
+
+ return useQuery(lessonDetailQueryOptions(queryClient, ownerId, lessonId));
+}
+
+export function useHanziHomeLessonSections(lessonId: string): LessonSectionsResource | null {
+ const detailQuery = useHanziHomeLessonDetailResource(lessonId);
+ const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId);
+
+ return detailQuery.data && vocabularyQuery.data
+  ? buildLessonSectionsResource(
+     attachLessonVocabularyResource(detailQuery.data, vocabularyQuery.data),
+    )
+  : null;
+}
+
+export function useHanziHomeLessonVocabulary(lessonId: string) {
+ const { user } = useClientSession();
+ const ownerId = user?.id ?? "anonymous";
+ const queryClient = useQueryClient();
+
+ useEffect(() => {
+  if (!lessonId) return;
+  let active = true;
+  void hydrateCachedLessonVocabulary(queryClient, ownerId, lessonId).then(() => {
+   if (!active) return;
+  });
+
+  return () => {
+   active = false;
+  };
+ }, [lessonId, ownerId, queryClient]);
+
+ return useQuery(lessonVocabularyQueryOptions(queryClient, ownerId, lessonId));
+}
+
+export function useIsLessonCached(lessonId: string): boolean {
+ const { user } = useClientSession();
+ const ownerId = user?.id ?? "anonymous";
+ const [isCached, setIsCached] = useState(false);
+
+ useEffect(() => {
+  if (!lessonId) return;
+  let active = true;
+  void readCachedLessonDetail(ownerId, lessonId).then((cached) => {
+   if (active) {
+    setIsCached(Boolean(cached));
+   }
+  });
+
+  return () => {
+   active = false;
+  };
+ }, [lessonId, ownerId]);
+
+ return isCached;
+}

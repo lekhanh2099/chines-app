@@ -1,0 +1,96 @@
+{
+ "bookSelectLabel": "选择教材",
+ "lessonSelectLabel": "选择课文",
+ "bookLabel": "教材",
+ "sidebarLabel": "教材与课文",
+ "tocLabel": "本页内容",
+ "tabsLabel": "课文内容",
+ "lessonPosition": "第 {lesson}/{count} 课",
+ "lessonMeta": "{sections} 个内容部分 · {vocab} 个生词",
+ "sectionCount": "{count} 个部分",
+ "vocabCount": "{count} 个词",
+ "vocabularyPreview": {
+  "eyebrow": "本课词汇",
+  "title": "{count} 个重点词",
+  "open": "打开词汇"
+ },
+ "tabs": {
+  "all": "完整课文",
+  "overview": "概览",
+  "core": "核心句",
+  "text": "课文",
+  "notes": "笔记",
+  "translation": "翻译练习",
+  "dictation": "听写练习",
+  "vocab": "词汇",
+  "review": "复习",
+  "grammar": "语法",
+  "practice": "练习"
+ },
+ "content": {
+  "explanation": "用法说明",
+  "examples": "例句"
+ },
+ "actions": {
+  "showPinyin": "显示拼音",
+  "hidePinyin": "隐藏拼音",
+  "showAnswer": "显示答案",
+  "hideAnswer": "隐藏答案",
+  "revealHanzi": "显示汉字",
+  "revealPinyin": "显示拼音",
+  "revealMeaning": "显示释义"
+ },
+ "offlineReady": "已离线就绪",
+ "offlineDescription": "此教材已内置于应用程序中，可随时离线学习。",
+ "semesterBookmarks": "本学期书签",
+ "semesterBookmarksCount": "本学期书签 ({count})",
+ "bookmarkLesson": "标记为本学期课程",
+ "unbookmarkLesson": "取消标记",
+ "bookmarked": "已标记",
+ "utilities": "工具",
+ "practice": {
+  "inputPlaceholder": "输入中文答案...",
+  "checkAnswer": "检查",
+  "resetAnswer": "重置",
+  "keywordHint": "指定词语：{keyword}",
+  "trueChoice": "对 (Đ)",
+  "falseChoice": "错 (S)",
+  "feedback": {
+   "correct": "回答正确！与参考答案一致。",
+   "keywordMatch": "已使用指定词语，请对照参考答案。",
+   "incorrect": "与参考答案不符，请重试或查看答案。"
+  },
+  "translation": {
+   "description": "练习本课句子和段落的双向翻译。",
+   "open": "打开翻译练习（{count} 段）"
+  },
+  "dictation": {
+   "description": "练习听写本课的短句。",
+   "open": "打开听写练习（{count} 句）"
+  }
+ },
+ "vocabReview": {
+  "eyebrow": "本课词汇复习",
+  "title": "主动复习（{count} 个词）",
+  "startReview": "抽认卡复习",
+  "startDrills": "应用巩固练习",
+  "modeFlashcard": "抽认卡",
+  "modeDrills": "语境练习",
+  "clozeTitle": "课文语境填空",
+  "clozeDescription": "根据课文语境填入恰当的生词：",
+  "keywordHint": "提示词：{pinyin} · {meaning}",
+  "inputPlaceholder": "输入中文生词...",
+  "checkAnswer": "检查",
+  "resetAnswer": "重置",
+  "feedback": {
+   "correct": "正确！你已掌握该词的语境用法。",
+   "incorrect": "未填对。参考答案：{answer}"
+  },
+  "pipButton": "画中画浮窗",
+  "pipTooltip": "在桌面开启画中画浮窗，工作时沉浸式认读生词",
+  "pipActive": "浮窗已开启",
+  "pipActiveTitle": "正在画中画浮窗中复习",
+  "pipActiveDescription": "复习会话当前正在画中画独立浮窗中运行。你可以浏览其他内容或在切换其他应用时继续学习。",
+  "pipReturn": "收回至本页（关闭浮窗）"
+ }
+}

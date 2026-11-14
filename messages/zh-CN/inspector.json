@@ -1,0 +1,29 @@
+{
+ "title": "汉字检查器",
+ "description": "使用 HanziHome 词典查询词条并检查语境中的读音。",
+ "fields": {
+  "term": "词语或汉字",
+  "context": "语境句（可选）",
+  "termPlaceholder": "例如：行",
+  "contextPlaceholder": "例如：我去银行办事。"
+ },
+ "actions": {
+  "inspect": "检查",
+  "inspecting": "查询中…"
+ },
+ "errors": {
+  "contract": "查询结果不符合预期的数据契约。",
+  "lookup": "无法获取查询数据。",
+  "complete": "无法完成查询。"
+ },
+ "result": {
+  "missingPinyin": "暂无拼音",
+  "meaning": "释义",
+  "missingMeaning": "暂无释义",
+  "sinoVietnamese": "汉越音：{value}",
+  "contextReading": "语境中的读音",
+  "unresolvedReading": "暂时无法确定读音",
+  "unresolvedWarning": "部分字符的读音仍不确定，请重新检查语境或词典条目。",
+  "rejectedSourcePinyin": "来源拼音的长度与文本不匹配，因此未作为回退数据使用。"
+ }
+}

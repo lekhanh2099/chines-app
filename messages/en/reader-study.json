@@ -1,0 +1,269 @@
+{
+ "chrome": {
+  "tabs": {
+   "overview": "Overview",
+   "reader": "Read",
+   "exercises": "Exercises",
+   "vocabulary": "Vocabulary",
+   "translation": "Translation",
+   "dictation": "Dictation",
+   "analysis": "Structure",
+   "summary": "Summary",
+   "notes": "Notes"
+  },
+  "groups": {
+   "reading": "Reading",
+   "practice": "Practice",
+   "resources": "Resources"
+  },
+  "backToReader": "Reader library",
+  "defaultReading": "Reading",
+  "unit": "Unit {unit}",
+  "progressLoading": "Loading Reader progress; the static content is still ready to read.",
+  "progressUnavailable": "Reader progress could not be loaded. You can still read; new changes will be saved when the connection is restored.",
+  "tabsAria": "Reader sections",
+  "subtabsAria": "Reader subsection",
+  "commands": {
+   "segment": "Segment {current} / {total}",
+   "lesson": "Lesson {current} / {total}",
+   "pause": "Pause",
+   "resume": "Resume",
+   "stop": "Stop",
+   "listen": "Listen",
+   "previous": "Previous segment",
+   "restart": "Replay segment",
+   "stopReading": "Stop reading",
+   "next": "Next segment",
+   "rate": "Reading speed",
+   "openOutline": "Open segment outline",
+   "outline": "Segment outline"
+  },
+  "surface": {
+   "empty": "This content has no Chinese segments to read yet.",
+   "aria": "Chinese reader",
+   "outlineTitle": "Reading outline"
+  },
+  "tools": {
+   "title": "Study tools",
+   "shortTitle": "Tools",
+   "listening": "Listening practice",
+   "playAll": "Read all",
+   "loop": "Loop segment",
+   "autoAdvance": "Auto-advance",
+   "display": "Display",
+   "pinyin": "Pinyin",
+   "translation": "Translation",
+   "showPinyin": "Show pinyin",
+   "showTranslation": "Show translation",
+   "font": "Font",
+   "size": "Text size",
+   "reveal": "Content reveal",
+   "revealModes": { "always": "Always visible", "tap": "Tap to reveal" },
+   "fonts": {
+    "system": "System",
+    "songti": "Noto Serif SC",
+    "noto-sans": "Noto Sans SC",
+    "pinyin": "Pinyin",
+    "kaiti": "Kaiti · 楷体",
+    "fangsong": "Fangsong · 仿宋",
+    "ma-shan": "Ma Shan Zheng",
+    "xiaowei": "ZCOOL XiaoWei"
+   },
+   "sizes": {
+    "md": "Medium",
+    "lg": "Large",
+    "xl": "Extra large",
+    "2xl": "Very large",
+    "3xl": "Largest"
+   },
+   "revealNext": "Reveal more content",
+   "focus": "Focus",
+   "shadowing": "Shadowing",
+   "autoPinyin": "Auto-detect pinyin",
+   "autoPinyinDescription": "Use aligned source pinyin first; the app analyzes any remaining text in context."
+  },
+  "outline": {
+   "segments": "Segment outline",
+   "aria": "Reading outline",
+   "lesson": "Lesson {number}",
+   "segment": "Segment {number}",
+   "metadata": "Reading details"
+  },
+  "segment": {
+   "dialogue": "Turn {speaker}",
+   "dialogueFallback": "dialogue",
+   "reading": "Reading segment",
+   "sampleRetelling": "Sample retelling"
+  },
+  "overview": {
+   "whatIsThis": "What is this reading?",
+   "defaultDescription": "Read to grasp the main idea and how the text is structured.",
+   "objectives": "Learning objectives",
+   "defaultObjectives": "Understand the content, identify key vocabulary, and express the main idea."
+  },
+  "dictation": {
+   "badge": "Listening dictation",
+   "title": "Listen and transcribe the reading",
+   "description": "Open the Dictation workspace with the full current Reader content.",
+   "open": "Open dictation →",
+   "openTts": "Open text-to-speech"
+  },
+  "analysis": {
+   "title": "Reading analysis",
+   "empty": "No analysis description is available yet.",
+   "contextualPinyin": "Contextual pinyin",
+   "segment": "Segment {number}",
+   "sourceAligned": "Source pinyin aligned",
+   "sourceRejected": "Source pinyin rejected",
+   "generated": "Contextual pinyin generated",
+   "unresolved": "Unresolved: {items}"
+  },
+  "summary": {
+   "title": "Summary",
+   "empty": "This reading has no reviewed summary yet."
+  },
+  "notes": {
+   "empty": "The current segment has no notes or highlights.",
+   "title": "Notes for this segment",
+   "selectedFallback": "Highlighted segment",
+   "delete": "Delete"
+  },
+  "pronunciation": {
+   "appliedSession": "Applied in this session",
+   "confirmed": "Confirmed",
+   "needsReview": "Review needed · polyphonic",
+   "source": "Using source pinyin",
+   "dictionary": "Using lesson vocabulary",
+   "context": "Using context",
+   "missing": "Pinyin is not available",
+   "description": "Pinyin is a contextual suggestion and must not be assumed correct. For polyphonic characters, confirm the reading that fits this sentence.",
+   "sessionDescription": "This change applies only to the current reading session and is not stored as a long-term confirmed value.",
+   "meaning": "Meaning in context",
+   "choose": "Reading",
+   "noReading": "No reading is available.",
+   "openInspector": "Open full analysis",
+   "resetSession": "Remove session change",
+   "resetPersistent": "Remove confirmation",
+   "close": "Close",
+   "applySession": "Apply",
+   "sessionOnly": "This session only",
+   "confirm": "Confirm"
+  },
+  "selection": {
+   "missingPinyin": "Pinyin is not available",
+   "closeAria": "Close tools",
+   "missingMeaning": "No exact offline meaning is available for this phrase.",
+   "actionsAria": "Selected segment actions",
+   "lookup": "Look up",
+   "highlight": "Highlight",
+   "note": "Note",
+   "notePlaceholder": "Add a note for the selected segment…",
+   "noteAria": "Note for selected segment",
+   "cancel": "Cancel",
+   "saveNote": "Save",
+   "listen": "Listen",
+   "playFromHere": "Play from here",
+   "review": "Review",
+   "understand": "Understand"
+  }
+ },
+ "completion": {
+  "done": "Completed",
+  "pending": "Not completed",
+  "markDone": "Mark as completed"
+ },
+ "exercise": {
+  "groupLabels": {
+   "notes": "Notes",
+   "vocabulary_review": "Vocabulary review",
+   "true_false": "True / false",
+   "multiple_choice": "Multiple choice",
+   "short_answer": "Short answer",
+   "fill_blank": "Fill in the blank",
+   "discussion": "Discussion",
+   "mock_questions": "Practice questions"
+  },
+  "title": "Practice exercises",
+  "description": "Work through each exercise group; your answers are saved with the reading progress.",
+  "fallbackTitle": "Exercise",
+  "status": {
+   "correct": "Correct",
+   "incorrect": "Not correct yet",
+   "answered": "Answered"
+  },
+  "true": "True",
+  "false": "False",
+  "reviewNote": "Review the lesson note.",
+  "discussionPlaceholder": "Write your answer…",
+  "fillBlankPlaceholder": "Enter Hanzi…",
+  "answerPlaceholder": "Your answer…",
+  "check": "Check",
+  "saveAnswer": "Save answer",
+  "referenceAnswer": "Reference answer:"
+ },
+ "vocabulary": {
+  "title": "Reading vocabulary",
+  "description": "Quickly search Hanzi, pinyin, or meanings used in this reading.",
+  "count": "{count, plural, one {# word} other {# words}}",
+  "searchLabel": "Search vocabulary",
+  "searchPlaceholder": "Search Hanzi, pinyin, or meaning…",
+  "empty": "This reading has no linked vocabulary yet.",
+  "noResults": "No vocabulary matches this search.",
+  "tableAria": "Reading vocabulary",
+  "word": "Word / phrase",
+  "pinyin": "Pinyin",
+  "meaning": "Meaning in this reading",
+  "missingPinyin": "No pinyin available",
+  "missingMeaning": "No meaning available"
+ },
+ "translation": {
+  "empty": "This reading does not have enough translation data for practice yet.",
+  "badge": "Two-way translation practice",
+  "title": "Translate segment by segment, then compare",
+  "description": "Chinese → Vietnamese prioritizes meaning and logical relations. Vietnamese → Chinese prioritizes sentence structure, constituent order, and accurate Hanzi.",
+  "completed": "{completed}/{total} segments compared",
+  "directionZhVi": "Chinese → Vietnamese",
+  "directionViZh": "Vietnamese → Chinese",
+  "directionAria": "Reader translation direction",
+  "segmentsAria": "Reader translation segments",
+  "segment": "Segment {order}",
+  "characters": "{count, plural, one {# character} other {# characters}}",
+  "showPinyin": "Show pinyin when needed",
+  "myTranslation": "My translation",
+  "answerAria": "Reader translation answer",
+  "placeholderZhVi": "Translate faithfully, keeping the subject, logical relations, and nuance clear…",
+  "placeholderViZh": "Rewrite it in natural Chinese…",
+  "check": "Compare translation",
+  "previous": "← Previous segment",
+  "next": "Next segment →",
+  "match": "Match: {score}/100",
+  "scoreNote": "Use the reference to review your wording; do not treat the score as the only correct answer.",
+  "reference": "Reference answer"
+ },
+ "shadowing": {
+  "description": "Listen to the model, wait {delay}ms, then shadow segment {current}/{total}.",
+  "previous": "Previous segment",
+  "next": "Next segment",
+  "delay": "Delay: {delay}ms",
+  "delayAria": "Shadowing delay",
+  "markDifficult": "Mark difficult",
+  "listen": "Listen to model",
+  "stopRecording": "Stop recording",
+  "requestingPermission": "Requesting permission…",
+  "start": "Start shadowing",
+  "recording": "Recording {seconds}s",
+  "sessionRecordings": "Recordings from this session",
+  "attempt": "Attempt {number} · {seconds}s",
+  "audioAria": "Shadowing recording",
+  "transcriptLabel": "Write your own transcript (optional)",
+  "transcriptPlaceholder": "Write what you just said…",
+  "saved": "Saved",
+  "saving": "Saving…",
+  "saveAttempt": "Save attempt",
+  "errors": {
+   "permissionDenied": "The browser has not granted microphone permission.",
+   "unsupported": "This device or browser does not support recording.",
+   "recordingFailed": "Unable to create a recording. Try again."
+  }
+ }
+}

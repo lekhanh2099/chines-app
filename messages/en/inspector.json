@@ -1,0 +1,29 @@
+{
+ "title": "Hanzi Inspector",
+ "description": "Look up HanziHome dictionary entries and verify contextual pronunciation.",
+ "fields": {
+  "term": "Word or Hanzi",
+  "context": "Context sentence (optional)",
+  "termPlaceholder": "例如：行",
+  "contextPlaceholder": "例如：我去银行办事。"
+ },
+ "actions": {
+  "inspect": "Inspect",
+  "inspecting": "Looking up…"
+ },
+ "errors": {
+  "contract": "The lookup response does not match the expected contract.",
+  "lookup": "Unable to retrieve lookup data.",
+  "complete": "Unable to complete the lookup."
+ },
+ "result": {
+  "missingPinyin": "No pinyin available",
+  "meaning": "Meaning",
+  "missingMeaning": "No meaning available",
+  "sinoVietnamese": "Sino-Vietnamese: {value}",
+  "contextReading": "Contextual pronunciation",
+  "unresolvedReading": "Pronunciation could not be resolved",
+  "unresolvedWarning": "Some characters still have uncertain readings; verify the context or dictionary entry.",
+  "rejectedSourcePinyin": "The source pinyin length did not match the text, so it was not used as a fallback."
+ }
+}

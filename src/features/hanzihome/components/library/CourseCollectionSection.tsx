@@ -1,0 +1,161 @@
+"use client";
+
+import { BookCopy, BookOpenCheck, Headphones, LibraryBig, Shapes } from "lucide-react";
+import { useTranslations } from "next-intl";
+
+import { EmptyState } from "@/components/patterns/empty-state";
+import { Badge } from "@/components/ui/display/badge";
+import { Card } from "@/components/ui/layout/card";
+import { IconTile } from "@/components/ui/display/icon-tile";
+import { Separator } from "@/components/ui/layout/separator";
+import { Typography } from "@/components/ui/display/typography";
+import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
+import { CourseCrudActions } from "@/features/hanzihome/components/library/CourseCrudActions";
+import {
+ getLibraryCourseEntries,
+ type LibraryCourseGroup,
+ type LibraryCourseGroupKey,
+} from "@/features/hanzihome/components/library/library-course-groups";
+import type { HanziHomeCourseBook, HanziHomeLesson } from "@/features/hanzihome/types";
+import { isPublishedStudioContentId } from "@/features/hanzihome/static-json/studio-published-content-id";
+
+const groupIcons = {
+ hanyu: LibraryBig,
+ boya: BookCopy,
+ boyaSecondEdition: BookCopy,
+ listening: Headphones,
+ other: Shapes,
+} satisfies Record<LibraryCourseGroupKey, typeof LibraryBig>;
+
+export function CourseCollectionSection({
+ group,
+ books,
+ lessons,
+ editMode,
+}: {
+ group: LibraryCourseGroup;
+ books: HanziHomeCourseBook[];
+ lessons: HanziHomeLesson[];
+ editMode: boolean;
+}) {
+ const t = useTranslations("Common.library");
+ const GroupIcon = groupIcons[group.key];
+ const coursesWithBooks = getLibraryCourseEntries(group, books, lessons);
+ const hasBooks = coursesWithBooks.some((entry) => entry.books.length > 0);
+
+ return (
+  <Card variant="section" padding="md" className="grid gap-4">
+   <header className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+    <div className="flex min-w-0 items-start gap-3">
+     <IconTile>
+      <GroupIcon />
+     </IconTile>
+     <div className="grid min-w-0 gap-1">
+      <Typography variant="overline" tone="accent" weight="black" tracking="wide">
+       {t("collection")}
+      </Typography>
+      <div className="flex flex-wrap items-center gap-2">
+       <Typography
+        as="h1"
+        variant="pageTitle"
+        id={`${group.key}-collection-heading`}
+        weight="black"
+       >
+        {t(`groups.${group.key}.title`)}
+       </Typography>
+       {group.isDraft ? <Badge variant="warning">{t("draft")}</Badge> : null}
+       {group.key === "boyaSecondEdition" ? (
+        <Badge variant="warning">{t("missingAdvancedVolume")}</Badge>
+       ) : null}
+      </div>
+      <Typography as="p" variant="bodySmall" tone="muted">
+       {t(`groups.${group.key}.description`)}
+      </Typography>
+     </div>
+    </div>
+    <Typography variant="caption" tone="muted" weight="bold" className="shrink-0 sm:pt-1">
+     {t("collectionCounts", {
+      levels: group.courses.length,
+      books: group.bookCount,
+      lessons: group.lessonCount,
+     })}
+    </Typography>
+   </header>
+
+   <Separator />
+
+   {hasBooks ? (
+    <div className="grid gap-4" aria-labelledby={`${group.key}-collection-heading`}>
+     {coursesWithBooks.map(
+      ({ course, books: courseBooks, lessons: courseLessons }, courseIndex) => {
+       const canEditCourse = editMode && !isPublishedStudioContentId(course.id);
+
+       return (
+        <section key={course.id} aria-labelledby={`${course.id}-heading`} className="grid gap-3">
+         {courseIndex > 0 ? <Separator /> : null}
+         <header className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex min-w-0 items-start gap-2.5">
+           <IconTile size="sm" tone="neutral">
+            <BookOpenCheck />
+           </IconTile>
+           <div className="grid min-w-0 gap-0.5">
+            <div className="flex flex-wrap items-center gap-2">
+             <Typography variant="caption" tone="accent" weight="black">
+              {t("levelPosition", { current: courseIndex + 1, total: group.courses.length })}
+             </Typography>
+             <Typography as="h2" variant="cardTitle" id={`${course.id}-heading`} weight="black">
+              {course.title}
+             </Typography>
+             {canEditCourse ? <CourseCrudActions course={course} /> : null}
+            </div>
+            {course.subtitle ? (
+             <Typography as="p" variant="caption" tone="muted" weight="semibold">
+              {course.subtitle}
+             </Typography>
+            ) : null}
+           </div>
+          </div>
+          <Typography variant="caption" tone="muted" weight="bold" className="pl-10 sm:pl-0">
+           {t("courseCounts", { books: courseBooks.length, lessons: course.stats.lessonCount })}
+          </Typography>
+         </header>
+
+         {courseBooks.length > 0 ? (
+          <div className="grid gap-3 md:grid-cols-2">
+           {courseBooks.map((book, bookIndex) => (
+            <CourseCard
+             key={book.id}
+             course={course}
+             book={book}
+             lessons={courseLessons}
+             editMode={canEditCourse}
+             canMoveBookUp={bookIndex > 0}
+             canMoveBookDown={bookIndex < courseBooks.length - 1}
+            />
+           ))}
+          </div>
+         ) : (
+          <EmptyState
+           size="compact"
+           surface="subtle"
+           align="start"
+           title={t("noBooksTitle")}
+           description={t("noBooksDescription")}
+          />
+         )}
+        </section>
+       );
+      },
+     )}
+    </div>
+   ) : (
+    <EmptyState
+     size="compact"
+     surface="subtle"
+     title={t("noCollectionBooksTitle")}
+     description={t("noCollectionBooksDescription")}
+    />
+   )}
+  </Card>
+ );
+}

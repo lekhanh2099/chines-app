@@ -1,0 +1,263 @@
+{
+ "chrome": {
+  "tabs": {
+   "overview": "概览",
+   "reader": "阅读",
+   "exercises": "练习",
+   "vocabulary": "词汇",
+   "translation": "翻译练习",
+   "dictation": "听写",
+   "analysis": "结构",
+   "summary": "总结",
+   "notes": "笔记"
+  },
+  "groups": {
+   "reading": "阅读",
+   "practice": "练习",
+   "resources": "资料"
+  },
+  "backToReader": "Reader 目录",
+  "defaultReading": "阅读",
+  "unit": "单元 {unit}",
+  "progressLoading": "正在加载 Reader 进度；静态内容仍可阅读。",
+  "progressUnavailable": "无法加载 Reader 进度。你仍可阅读；连接恢复后会保存新的更改。",
+  "tabsAria": "Reader 分区",
+  "subtabsAria": "Reader 分区内容",
+  "commands": {
+   "segment": "第 {current} / {total} 段",
+   "lesson": "第 {current} / {total} 课",
+   "pause": "暂停",
+   "resume": "继续",
+   "stop": "停止",
+   "listen": "听读",
+   "previous": "上一段",
+   "restart": "重听本段",
+   "stopReading": "停止朗读",
+   "next": "下一段",
+   "rate": "朗读速度",
+   "openOutline": "打开段落目录",
+   "outline": "段落目录"
+  },
+  "surface": {
+   "empty": "此内容暂时没有可阅读的中文段落。",
+   "aria": "中文阅读器",
+   "outlineTitle": "阅读目录"
+  },
+  "tools": {
+   "title": "学习工具",
+   "shortTitle": "工具",
+   "listening": "听力练习",
+   "playAll": "朗读全文",
+   "loop": "循环本段",
+   "autoAdvance": "自动前进",
+   "display": "显示",
+   "pinyin": "拼音",
+   "translation": "译文",
+   "showPinyin": "显示拼音",
+   "showTranslation": "显示译文",
+   "font": "字体",
+   "size": "字号",
+   "reveal": "内容显示方式",
+   "revealModes": { "always": "始终显示", "tap": "点击显示" },
+   "fonts": {
+    "system": "系统字体",
+    "songti": "Noto Serif SC",
+    "noto-sans": "Noto Sans SC",
+    "pinyin": "拼音字体",
+    "kaiti": "楷体",
+    "fangsong": "仿宋",
+    "ma-shan": "马善政毛笔楷书",
+    "xiaowei": "站酷小薇"
+   },
+   "sizes": { "md": "中", "lg": "大", "xl": "特大", "2xl": "超大", "3xl": "最大" },
+   "revealNext": "显示更多内容",
+   "focus": "专注",
+   "shadowing": "跟读",
+   "autoPinyin": "自动识别拼音",
+   "autoPinyinDescription": "优先使用能对齐的课程拼音；其余内容由应用按语境分析。"
+  },
+  "outline": {
+   "segments": "段落目录",
+   "aria": "阅读目录",
+   "lesson": "第 {number} 课",
+   "segment": "第 {number} 段",
+   "metadata": "阅读信息"
+  },
+  "segment": {
+   "dialogue": "第 {speaker} 轮",
+   "dialogueFallback": "对话",
+   "reading": "阅读段落",
+   "sampleRetelling": "复述范文"
+  },
+  "overview": {
+   "whatIsThis": "这篇阅读是什么？",
+   "defaultDescription": "通过阅读把握文章主旨和展开方式。",
+   "objectives": "学习目标",
+   "defaultObjectives": "理解内容，识别重点词汇，并表达中心思想。"
+  },
+  "dictation": {
+   "badge": "听写练习",
+   "title": "听读并抄写文章",
+   "description": "使用当前 Reader 全文打开听写工作区。",
+   "open": "打开听写 →",
+   "openTts": "打开语音生成"
+  },
+  "analysis": {
+   "title": "阅读分析",
+   "empty": "暂时没有分析说明。",
+   "contextualPinyin": "语境拼音",
+   "segment": "第 {number} 段",
+   "sourceAligned": "已对齐原始拼音",
+   "sourceRejected": "已拒绝原始拼音",
+   "generated": "已生成语境拼音",
+   "unresolved": "未识别：{items}"
+  },
+  "summary": {
+   "title": "总结",
+   "empty": "这篇阅读暂时没有已审核的总结。"
+  },
+  "notes": {
+   "empty": "当前段落没有笔记或标记。",
+   "title": "本段笔记",
+   "selectedFallback": "标记的段落",
+   "delete": "删除"
+  },
+  "pronunciation": {
+   "appliedSession": "已应用于本次学习",
+   "confirmed": "已确认",
+   "needsReview": "需要检查 · 多音字",
+   "source": "采用原始拼音",
+   "dictionary": "采用课文词汇",
+   "context": "采用语境判断",
+   "missing": "暂无拼音",
+   "description": "拼音是基于语境的建议，不能默认正确。对于多音字，请确认适合当前句子的读音。",
+   "sessionDescription": "此更改仅应用于当前阅读会话，不会保存为长期确认的数据。",
+   "meaning": "语境中的含义",
+   "choose": "读音",
+   "noReading": "没有可用读音。",
+   "openInspector": "打开完整分析",
+   "resetSession": "取消本次应用",
+   "resetPersistent": "取消确认",
+   "close": "关闭",
+   "applySession": "应用",
+   "sessionOnly": "仅本次学习",
+   "confirm": "确认"
+  },
+  "selection": {
+   "missingPinyin": "暂无拼音",
+   "closeAria": "关闭工具栏",
+   "missingMeaning": "此词组暂时没有准确的离线释义。",
+   "actionsAria": "已选段落操作",
+   "lookup": "查词",
+   "highlight": "标记",
+   "note": "笔记",
+   "notePlaceholder": "为所选段落添加笔记…",
+   "noteAria": "所选段落的笔记",
+   "cancel": "取消",
+   "saveNote": "保存",
+   "listen": "听",
+   "playFromHere": "从这里朗读",
+   "review": "复习",
+   "understand": "深入理解"
+  }
+ },
+ "completion": {
+  "done": "已完成",
+  "pending": "未完成",
+  "markDone": "标记为已完成"
+ },
+ "exercise": {
+  "groupLabels": {
+   "notes": "笔记",
+   "vocabulary_review": "词汇复习",
+   "true_false": "判断题",
+   "multiple_choice": "选择题",
+   "short_answer": "简答题",
+   "fill_blank": "填空题",
+   "discussion": "讨论",
+   "mock_questions": "练习题"
+  },
+  "title": "阅读练习",
+  "description": "按练习组逐项完成；答案会和阅读进度一起保存。",
+  "fallbackTitle": "练习",
+  "status": {
+   "correct": "正确",
+   "incorrect": "还不正确",
+   "answered": "已作答"
+  },
+  "true": "正确",
+  "false": "错误",
+  "reviewNote": "请复习本课笔记。",
+  "discussionPlaceholder": "写下你的回答…",
+  "fillBlankPlaceholder": "填写汉字…",
+  "answerPlaceholder": "你的回答…",
+  "check": "检查",
+  "saveAnswer": "保存回答",
+  "referenceAnswer": "参考答案："
+ },
+ "vocabulary": {
+  "title": "阅读词汇",
+  "description": "按汉字、拼音或本文释义快速查找。",
+  "count": "{count} 个词",
+  "searchLabel": "搜索词汇",
+  "searchPlaceholder": "搜索汉字、拼音或释义…",
+  "empty": "这篇阅读还没有关联词汇。",
+  "noResults": "没有符合当前搜索条件的词汇。",
+  "tableAria": "阅读词汇",
+  "word": "词 / 短语",
+  "pinyin": "拼音",
+  "meaning": "本文释义",
+  "missingPinyin": "暂无拼音",
+  "missingMeaning": "暂无释义"
+ },
+ "translation": {
+  "empty": "这篇阅读目前没有足够的翻译数据用于练习。",
+  "badge": "双向翻译练习",
+  "title": "逐段翻译，再进行对照",
+  "description": "中译越优先把握意义和逻辑关系；越译中优先关注句子结构、成分顺序和汉字准确性。",
+  "completed": "已对照 {completed}/{total} 段",
+  "directionZhVi": "中文 → 越南语",
+  "directionViZh": "越南语 → 中文",
+  "directionAria": "Reader 翻译方向",
+  "segmentsAria": "Reader 翻译段落",
+  "segment": "第 {order} 段",
+  "characters": "{count} 个字符",
+  "showPinyin": "需要时查看拼音",
+  "myTranslation": "我的译文",
+  "answerAria": "Reader 翻译答案",
+  "placeholderZhVi": "忠实翻译，保持主语、逻辑关系和语气清晰…",
+  "placeholderViZh": "用自然的中文重新表达…",
+  "check": "对照译文",
+  "previous": "← 上一段",
+  "next": "下一段 →",
+  "match": "匹配度：{score}/100",
+  "scoreNote": "请用参考答案检查表达方式，不要把分数视为唯一正确答案。",
+  "reference": "参考答案"
+ },
+ "shadowing": {
+  "description": "先听示范，等待 {delay}ms，再跟读第 {current}/{total} 段。",
+  "previous": "上一段",
+  "next": "下一段",
+  "delay": "等待时间：{delay}ms",
+  "delayAria": "Shadowing 等待时间",
+  "markDifficult": "标记为难",
+  "listen": "听示范",
+  "stopRecording": "停止录音",
+  "requestingPermission": "正在请求权限…",
+  "start": "开始 shadowing",
+  "recording": "正在录音 {seconds}s",
+  "sessionRecordings": "本次学习的录音",
+  "attempt": "第 {number} 次 · {seconds}s",
+  "audioAria": "Shadowing 录音",
+  "transcriptLabel": "自行记录 transcript（可选）",
+  "transcriptPlaceholder": "写下你刚才说的内容…",
+  "saved": "已保存",
+  "saving": "保存中…",
+  "saveAttempt": "保存练习",
+  "errors": {
+   "permissionDenied": "浏览器尚未授予麦克风权限。",
+   "unsupported": "当前设备或浏览器不支持录音。",
+   "recordingFailed": "无法创建录音，请重试。"
+  }
+ }
+}

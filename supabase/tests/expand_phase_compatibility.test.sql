@@ -1,0 +1,38 @@
+-- Run ONLY before the enforcement migration; transaction rollback leaves no fixtures.
+begin;
+select plan(16);
+select ok(has_table_privilege('authenticated', 'public.notes', 'UPDATE'), 'expand retains old Notes writes');
+select ok(has_function_privilege('service_role', 'public.hanzihome_update_lesson_text_annotation_note_as_server(uuid,uuid,text)', 'EXECUTE'), 'expand retains old Reader server RPC');
+select ok(has_function_privilege('authenticated', 'public.hanzihome_upsert_pdf_annotation(text,integer,jsonb,integer)', 'EXECUTE'), 'expand retains old PDF RPC');
+select ok(has_table_privilege('authenticated', 'public.hanzihome_pdf_annotations', 'UPDATE'), 'expand retains original PDF privileges');
+select ok(has_function_privilege('authenticated', 'public.update_note_with_revision(uuid,uuid,integer,jsonb)', 'EXECUTE'), 'new Notes CAS is available before enforcement');
+select ok(has_function_privilege('service_role', 'public.hanzihome_update_lesson_text_annotation_note_cas_as_server(uuid,uuid,text,integer)', 'EXECUTE'), 'new Reader CAS is available before enforcement');
+select ok(has_function_privilege('authenticated', 'public.hanzihome_upsert_pdf_annotation_cas(text,integer,jsonb,integer,boolean)', 'EXECUTE'), 'new PDF CAS is available before enforcement');
+insert into auth.users (id,email) values ('00000000-0000-4000-8000-000000004001','expand-fixture@example.test');
+insert into public.notes (id,user_id,title,content) values ('00000000-0000-4000-8000-000000004011','00000000-0000-4000-8000-000000004001','Expand original','{"text":"original"}');
+insert into public.hanzihome_courses (id,slug,title,source,user_id) values ('expand-course','expand-course','Expand fixture','custom','00000000-0000-4000-8000-000000004001');
+insert into public.hanzihome_course_books (id,course_id,title,source,user_id) values ('expand-book','expand-course','Expand fixture','custom','00000000-0000-4000-8000-000000004001');
+insert into public.hanzihome_lessons (id,course_id,book_id,lesson_number,lesson_order,title_zh,source,owner_id) values ('expand-lesson','expand-course','expand-book',1,1,'Expand fixture','custom','00000000-0000-4000-8000-000000004001');
+insert into public.lesson_text_annotations (id,user_id,lesson_id,node_type,node_id,start_offset,end_offset,selected_text,note_id) values ('00000000-0000-4000-8000-000000004021','00000000-0000-4000-8000-000000004001','expand-lesson','paragraph','expand-node',0,2,'你好','00000000-0000-4000-8000-000000004011');
+
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-4000-8000-000000004001","role":"authenticated"}',true);
+update public.notes set content='{"text":"old client"}' where id='00000000-0000-4000-8000-000000004011';
+select is((select revision from public.notes where id='00000000-0000-4000-8000-000000004011'),1,'old direct Notes writer advances the new revision');
+select throws_ok($$select public.update_note_with_revision('00000000-0000-4000-8000-000000004011','00000000-0000-4000-8000-000000004001',0,'{"title":"stale"}')$$,'40001','NOTE_REVISION_CONFLICT','new Notes detects the old writer');
+select is((public.update_note_with_revision('00000000-0000-4000-8000-000000004011','00000000-0000-4000-8000-000000004001',1,'{"title":"current CAS"}')->>'revision')::integer,2,'current new Notes writer still saves');
+reset role;
+set local role service_role;
+select set_config('request.jwt.claims','{"role":"service_role"}',true);
+select public.hanzihome_update_lesson_text_annotation_note_as_server('00000000-0000-4000-8000-000000004001','00000000-0000-4000-8000-000000004021','old Reader');
+select is((select revision from public.notes where id='00000000-0000-4000-8000-000000004011'),3,'legacy Reader remains writable during expand');
+select is(public.hanzihome_update_lesson_text_annotation_note_cas_as_server('00000000-0000-4000-8000-000000004001','00000000-0000-4000-8000-000000004021','stale new Reader',2)->>'saved','false','new Reader detects a legacy write');
+reset role;
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-4000-8000-000000004001","role":"authenticated"}',true);
+select is((public.hanzihome_upsert_pdf_annotation('expand-pdf',1,'{"strokes":[]}',0)).revision,0,'legacy PDF creates during expand');
+select is(public.hanzihome_upsert_pdf_annotation_cas('expand-pdf',1,'{"strokes":[]}',0,true)->>'saved','false','new PDF sees the legacy creator');
+select is(public.hanzihome_upsert_pdf_annotation_cas('expand-pdf',1,'{"strokes":[]}',0,false)#>>'{annotation,revision}','1','new PDF updates a loaded legacy revision zero');
+select is((public.hanzihome_upsert_pdf_annotation('expand-pdf',1,'{"strokes":[]}',1)).revision,2,'legacy PDF remains writable until enforcement');
+select * from finish();
+rollback;

@@ -1,0 +1,177 @@
+import type { JsonFieldValue } from "@/types/json";
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { EdgeTTSError, type EdgeTTS } from "@andresaya/edge-tts";
+import { createClient } from "@/lib/supabase/server";
+import { logger } from "@/lib/logger";
+import { EdgeTTSV2 } from "./edge-tts.server";
+
+export const runtime = "nodejs";
+
+const MAX_TEXT_LENGTH = 10_000;
+const MAX_SYNTHESIS_TEXT_BYTES = 4_096;
+const MAX_SYNTHESIS_RETRIES = 2;
+const VOICE_LIST_TTL_MS = 5 * 60 * 1_000;
+const supportedRates = [0.75, 0.8, 0.9, 1, 1.1, 1.15, 1.2, 1.25];
+const ttsSchema = z.object({
+ text: z
+  .string()
+  .trim()
+  .min(1, "Text không được để trống")
+  .max(MAX_TEXT_LENGTH, `Tối đa ${MAX_TEXT_LENGTH} ký tự`),
+ voice: z.string().trim().min(1).max(100),
+ rate: z.number().refine((rate) => supportedRates.includes(rate), "Tốc độ đọc không hợp lệ"),
+});
+
+async function getAuthenticatedUser() {
+ const supabase = await createClient();
+ const {
+  data: { user },
+ } = await supabase.auth.getUser();
+ return user;
+}
+
+type EdgeVoiceList = Awaited<ReturnType<EdgeTTS["getVoices"]>>;
+
+let voiceListCache: { expiresAt: number; voices: EdgeVoiceList } | null = null;
+let voiceListInFlight: Promise<EdgeVoiceList> | null = null;
+
+async function getSupportedVoices() {
+ const now = Date.now();
+ if (voiceListCache !== null && voiceListCache.expiresAt > now) {
+  return voiceListCache.voices.filter((voice) => {
+   const loc = voice.Locale.toLowerCase();
+   return loc === "zh-cn" || loc.startsWith("vi");
+  });
+ }
+ if (voiceListInFlight !== null) {
+  const voices = await voiceListInFlight;
+  return voices.filter((voice) => {
+   const loc = voice.Locale.toLowerCase();
+   return loc === "zh-cn" || loc.startsWith("vi");
+  });
+ }
+ voiceListInFlight = new EdgeTTSV2({ voicesCacheTtl: 0 }).getVoices();
+ let voices: EdgeVoiceList;
+ try {
+  voices = await voiceListInFlight;
+  voiceListCache = { expiresAt: Date.now() + VOICE_LIST_TTL_MS, voices };
+ } finally {
+  voiceListInFlight = null;
+ }
+ return voices.filter((voice) => {
+  const loc = voice.Locale.toLowerCase();
+  return loc === "zh-cn" || loc.startsWith("vi");
+ });
+}
+
+async function getMandarinVoices() {
+ const voices = await getSupportedVoices();
+ return voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
+}
+
+function formatRate(rate: number) {
+ const percentage = Math.round((rate - 1) * 100);
+ return `${percentage >= 0 ? "+" : ""}${percentage}%`;
+}
+
+export async function GET() {
+ const user = await getAuthenticatedUser();
+ if (!user) {
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+ }
+
+ try {
+  const voices = await getMandarinVoices();
+  return NextResponse.json(
+   voices.map((voice) => ({
+    name: voice.FriendlyName,
+    shortName: voice.ShortName,
+    gender: voice.Gender,
+    locale: voice.Locale,
+   })),
+   { headers: { "Cache-Control": "private, no-store" } },
+  );
+ } catch (error) {
+  const message = error instanceof Error ? error.message : "Không tải được danh sách giọng đọc";
+  logger.error("[TTS] Edge voice list error:", message);
+  return NextResponse.json({ error: "Không tải được danh sách giọng đọc" }, { status: 502 });
+ }
+}
+
+export async function POST(request: NextRequest) {
+ const user = await getAuthenticatedUser();
+ if (!user) {
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+ }
+ const payload: JsonFieldValue = await request.json();
+ const parsed = ttsSchema.safeParse(payload);
+
+ if (!parsed.success) {
+  return NextResponse.json(
+   { error: "Payload không hợp lệ", issues: z.flattenError(parsed.error) },
+   { status: 400 },
+  );
+ }
+
+ const { text, voice, rate } = parsed.data;
+
+ try {
+  const voices = await getSupportedVoices();
+  if (!voices.some((candidate) => candidate.ShortName === voice)) {
+   return NextResponse.json({ error: "Giọng đọc không hợp lệ" }, { status: 400 });
+  }
+
+  const synthesisTexts: string[] = [];
+  let synthesisText = "";
+  let synthesisTextBytes = 0;
+  for (const character of text) {
+   const characterBytes = Buffer.byteLength(character);
+   if (synthesisTextBytes + characterBytes > MAX_SYNTHESIS_TEXT_BYTES) {
+    synthesisTexts.push(synthesisText);
+    synthesisText = "";
+    synthesisTextBytes = 0;
+   }
+   synthesisText += character;
+   synthesisTextBytes += characterBytes;
+  }
+  if (synthesisText) synthesisTexts.push(synthesisText);
+
+  const communication = new EdgeTTSV2();
+  const chunks: Uint8Array[] = [];
+  for (const synthesisText of synthesisTexts) {
+   for (let attempt = 0; attempt <= MAX_SYNTHESIS_RETRIES; attempt += 1) {
+    try {
+     const { audio } = await communication.generate(synthesisText, voice, {
+      rate: formatRate(rate),
+     });
+     if (audio.length === 0) throw new Error("Edge TTS returned no audio");
+     chunks.push(audio);
+     break;
+    } catch (error) {
+     if (
+      !(error instanceof EdgeTTSError && error.status === 429) ||
+      attempt === MAX_SYNTHESIS_RETRIES
+     ) {
+      throw error;
+     }
+     await new Promise<void>((resolve) => setTimeout(resolve, 1_000 * 2 ** attempt));
+    }
+   }
+  }
+  const buffer = Buffer.concat(chunks);
+
+  return new NextResponse(buffer, {
+   status: 200,
+   headers: {
+    "Content-Type": "audio/mpeg",
+    "Content-Length": String(buffer.length),
+    "Cache-Control": "private, no-store",
+   },
+  });
+ } catch (error) {
+  const message = error instanceof Error ? error.message : "TTS generation failed";
+  logger.error("[TTS] Edge synthesis error:", message);
+  return NextResponse.json({ error: "Không thể tạo audio" }, { status: 502 });
+ }
+}

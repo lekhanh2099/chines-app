@@ -1,0 +1,360 @@
+"use client";
+
+import { memo, useCallback, useMemo, useState } from "react";
+import { Volume2 } from "lucide-react";
+import { useTranslations } from "next-intl";
+
+import { LearnerHanziText } from "@/components/patterns/learner-text";
+import { Button } from "@/components/ui/actions/button";
+import { Card } from "@/components/ui/layout/card";
+import { Typography } from "@/components/ui/display/typography";
+import { glyphActionClassName } from "@/components/ui/focus-ring";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/overlays/tooltip";
+import { cn } from "@/lib/utils";
+import {
+ formatContextualPinyinRange,
+ formatContextualReadingPinyin,
+ formatContextualReadingUnitPinyin,
+ formatContextualSpokenPinyin,
+ shouldSeparatePinyinSyllables,
+ type ContextualReadingUnit,
+} from "@/lib/pronunciation/contextual-pronunciation";
+import { captureReaderSelection } from "../runtime/reader-selection";
+import { getReaderTypographyStyle } from "./reader-typography";
+import { nextAvailableRevealStage, type RevealStage } from "../model/progressive-reveal";
+import {
+ useReaderCommands,
+ useReaderDisplay,
+ useReaderPlaybackProgress,
+ useReaderPlaybackStatus,
+ useReaderPlaybackStartOffset,
+ useReaderRegistry,
+ useReaderSegment,
+ useReaderSegmentIsActive,
+ useReaderServices,
+} from "../runtime/reader-context";
+
+export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmentId: string }) {
+ const commands = useReaderCommands();
+ const { value: display } = useReaderDisplay();
+ const services = useReaderServices();
+ const registry = useReaderRegistry();
+ const segment = useReaderSegment(segmentId);
+ const active = useReaderSegmentIsActive(segmentId);
+ const progress = useReaderPlaybackProgress(segmentId);
+ const status = useReaderPlaybackStatus(segmentId);
+ const startOffset = useReaderPlaybackStartOffset(segmentId);
+ const graphemes = useMemo(
+  () => [...new Intl.Segmenter("zh-CN", { granularity: "grapheme" }).segment(segment?.zh ?? "")],
+  [segment?.zh],
+ );
+ const textLabels = useTranslations("Reader.document.text");
+ const commandLabels = useTranslations("Reader.study.chrome.commands");
+ const toolsLabels = useTranslations("Reader.study.chrome.tools");
+ const [stage, setStage] = useState<RevealStage>(0);
+ const providedAnalysis = services.pronunciationReview?.analyses.get(segmentId);
+ const analysis = providedAnalysis?.normalizedText === segment?.zh ? providedAnalysis : undefined;
+ const glyphs = useMemo(
+  () => new Map(analysis?.glyphs.map((glyph) => [glyph.start, glyph]) ?? []),
+  [analysis],
+ );
+ const readingUnits =
+  analysis === undefined
+   ? []
+   : (services.pronunciationReview?.readingUnitsBySegmentId.get(segmentId) ?? []);
+ const annotations =
+  services.annotations?.items.filter((item) => item.segmentId === segmentId) ?? [];
+ const register = useCallback(
+  (element: HTMLElement | null) => registry.set(segmentId, element),
+  [registry, segmentId],
+ );
+ if (!segment) return null;
+ const tapMode = display.revealMode === "tap";
+ const inlinePinyin =
+  !tapMode &&
+  analysis !== undefined &&
+  (!segment.pinyin ||
+   segment.pinyin === formatContextualSpokenPinyin(analysis) ||
+   segment.pinyin === formatContextualReadingPinyin(analysis) ||
+   analysis.sourcePinyinStatus === "aligned" ||
+   analysis.glyphs.some((glyph) => glyph.evidence.includes("manual-override")));
+ const nextStage = nextAvailableRevealStage(stage, {
+  hasPinyin: Boolean(segment.pinyin),
+  hasMeaning: Boolean(segment.vi),
+ });
+ const captureSelection = (element: HTMLElement) => {
+  if (!services.lookup && !services.annotations) return;
+  const selection = captureReaderSelection(element, segment);
+  if (!selection) return;
+  if (services.annotations) services.annotations.onSelection(selection);
+  else services.lookup?.(selection);
+ };
+ const renderGrapheme = (grapheme: Intl.SegmentData, index: number, includePinyin = true) => {
+  const glyph = glyphs.get(grapheme.index);
+  const annotation = annotations.find(
+   (item) =>
+    item.start <= grapheme.index &&
+    item.end >= grapheme.index + grapheme.segment.length &&
+    segment.zh.slice(item.start, item.end) === item.text,
+  );
+  const playable =
+   Boolean(annotation) || (Boolean(services.speech) && /\p{Script=Han}/u.test(grapheme.segment));
+  const currentOffset = Math.min(
+   segment.zh.length - 1,
+   startOffset + (segment.zh.length - startOffset) * progress,
+  );
+  const highlighted =
+   status !== "idle" &&
+   grapheme.index <= currentOffset &&
+   currentOffset < grapheme.index + grapheme.segment.length;
+  const play = (element: HTMLElement, event?: React.SyntheticEvent) => {
+   event?.stopPropagation();
+   if (window.getSelection()?.isCollapsed === false) return;
+   if (annotation) {
+    services.annotations?.onOpen(annotation, element.getBoundingClientRect());
+    return;
+   }
+   commands.playFromCharacter(segmentId, grapheme.index);
+  };
+  const hanzi = (
+   <span
+    key={grapheme.index}
+    className={cn(
+     playable && glyphActionClassName,
+     playable && "select-text",
+     highlighted && "reading-progress-highlight",
+     annotation && "reading-highlight",
+    )}
+    data-color={annotation?.color}
+    role={playable ? "button" : undefined}
+    tabIndex={playable ? 0 : undefined}
+    aria-label={
+     annotation
+      ? textLabels("openAnnotation", { text: annotation.text })
+      : playable
+        ? textLabels("playFromCharacter", { character: grapheme.segment })
+        : undefined
+    }
+    aria-current={highlighted ? "true" : undefined}
+    onClick={playable ? (event) => play(event.currentTarget, event) : undefined}
+    onKeyDown={
+     playable
+      ? (event) => {
+         if (event.key !== "Enter" && event.key !== " ") return;
+         event.preventDefault();
+         play(event.currentTarget, event);
+        }
+      : undefined
+    }
+   >
+    {grapheme.segment}
+   </span>
+  );
+  const annotatedHanzi = annotation?.noteText.trim() ? (
+   <Tooltip key={grapheme.index}>
+    <TooltipTrigger asChild>{hanzi}</TooltipTrigger>
+    <TooltipContent side="top">
+     <Typography as="span" variant="caption" tone="inherit" wrapping="preWrap">
+      {annotation.noteText}
+     </Typography>
+    </TooltipContent>
+   </Tooltip>
+  ) : (
+   hanzi
+  );
+  if (!includePinyin || !inlinePinyin || !display.showPinyin || !glyph?.spokenPinyin || !analysis)
+   return annotatedHanzi;
+  const needsPronunciationReview =
+   glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
+  const inspect = (element: HTMLElement) =>
+   services.pronunciationReview?.onInspect({
+    segmentId,
+    analysis,
+    glyph,
+    rect: element.getBoundingClientRect(),
+   });
+  return (
+   <ruby key={grapheme.index}>
+    {annotatedHanzi}
+    <rt className="select-none font-pinyin text-[0.45em] font-medium text-text-secondary">
+     <span
+      role="button"
+      tabIndex={0}
+      className={cn(glyphActionClassName, needsPronunciationReview && "text-warning")}
+      aria-label={textLabels(
+       needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",
+       { character: grapheme.segment },
+      )}
+      onClick={(event) => {
+       event.stopPropagation();
+       inspect(event.currentTarget);
+      }}
+      onKeyDown={(event) => {
+       if (event.key !== "Enter" && event.key !== " ") return;
+       event.preventDefault();
+       event.stopPropagation();
+       inspect(event.currentTarget);
+      }}
+     >
+      {glyph.spokenPinyin}
+     </span>
+    </rt>
+   </ruby>
+  );
+ };
+ const renderReadingUnit = (unit: ContextualReadingUnit) => {
+  const unitGraphemes = graphemes.filter(
+   (grapheme) => grapheme.index >= unit.start && grapheme.index < unit.end,
+  );
+  const unitPinyin =
+   inlinePinyin && display.showPinyin && analysis && unit.type === "hanzi"
+    ? formatContextualReadingUnitPinyin(analysis, unit)
+    : null;
+  if (unitPinyin === null || analysis === undefined) {
+   return unitGraphemes.map((grapheme) => renderGrapheme(grapheme, graphemes.indexOf(grapheme)));
+  }
+
+  let previousPinyin = "";
+  return (
+   <ruby key={unit.id} className="whitespace-nowrap">
+    {unitGraphemes.map((grapheme) => renderGrapheme(grapheme, graphemes.indexOf(grapheme), false))}
+    <rt className="select-none font-pinyin text-[0.45em] font-medium text-text-secondary">
+     {unitGraphemes.map((grapheme) => {
+      const glyph = glyphs.get(grapheme.index);
+      if (glyph === undefined) return null;
+      const pinyin = formatContextualPinyinRange(analysis, glyph.start, glyph.end);
+      const separator = shouldSeparatePinyinSyllables(previousPinyin, pinyin) ? "'" : "";
+      previousPinyin = pinyin;
+      const needsPronunciationReview =
+       glyph.isPolyphonic && !glyph.evidence.includes("manual-override");
+      const inspect = (element: HTMLElement) =>
+       services.pronunciationReview?.onInspect({
+        segmentId,
+        analysis,
+        glyph,
+        rect: element.getBoundingClientRect(),
+       });
+      return (
+       <span
+        key={`${glyph.start}:${glyph.end}`}
+        role="button"
+        tabIndex={0}
+        className={cn(glyphActionClassName, needsPronunciationReview && "text-warning")}
+        aria-label={textLabels(
+         needsPronunciationReview ? "inspectUnconfirmedPinyin" : "inspectPinyin",
+         { character: grapheme.segment },
+        )}
+        onClick={(event) => {
+         event.stopPropagation();
+         inspect(event.currentTarget);
+        }}
+        onKeyDown={(event) => {
+         if (event.key !== "Enter" && event.key !== " ") return;
+         event.preventDefault();
+         event.stopPropagation();
+         inspect(event.currentTarget);
+        }}
+       >
+        {separator}
+        {pinyin}
+       </span>
+      );
+     })}
+    </rt>
+   </ruby>
+  );
+ };
+ const hanziContent = (
+  <LearnerHanziText
+   as={segment.kind === "heading" ? "h3" : "p"}
+   variant={segment.kind === "heading" ? "sectionTitle" : "body"}
+   leading="learner"
+   wrapping="preWrap"
+   style={getReaderTypographyStyle(display)}
+   data-reader-source
+   hidden={tapMode && stage !== 0}
+   aria-hidden={tapMode && stage !== 0}
+  >
+   {services.speech || annotations.length > 0 || inlinePinyin
+    ? readingUnits.length > 0
+     ? readingUnits.map(renderReadingUnit)
+     : graphemes.map((grapheme, index) => renderGrapheme(grapheme, index))
+    : segment.zh}
+  </LearnerHanziText>
+ );
+ const content = (
+  <Card asChild variant={active ? "subtle" : "section"}>
+   <article
+    ref={register}
+    data-reader-segment={segmentId}
+    data-active={active}
+    aria-current={active ? "true" : undefined}
+    data-no-inspector="true"
+    className="grid min-w-0 gap-2"
+    onMouseUp={(event) => captureSelection(event.currentTarget)}
+    onTouchEnd={(event) => captureSelection(event.currentTarget)}
+    onKeyUp={(event) => captureSelection(event.currentTarget)}
+   >
+    <div className="flex min-w-0 flex-wrap items-center gap-2">
+     {segment.speaker?.label ? (
+      <Typography variant="caption" tone="muted" weight="semibold">
+       {segment.speaker.label}
+      </Typography>
+     ) : null}
+     {segment.role ? (
+      <Typography variant="caption" tone="muted">
+       {segment.role}
+      </Typography>
+     ) : null}
+    </div>
+    <div className="flex min-w-0 items-end gap-2">
+     <div className="min-w-0 flex-1">
+      {services.renderHanzi ? (
+       <div hidden={tapMode && stage !== 0} aria-hidden={tapMode && stage !== 0}>
+        {services.renderHanzi({ segment, content: hanziContent })}
+       </div>
+      ) : (
+       hanziContent
+      )}
+      {(tapMode ? stage === 1 : display.showPinyin && !inlinePinyin) && segment.pinyin ? (
+       <Typography lang="zh-Latn-pinyin" tone="muted" wrapping="preWrap">
+        {segment.pinyin}
+       </Typography>
+      ) : null}
+      {(tapMode ? stage === 2 : display.showMeaning) && segment.vi ? (
+       <Typography wrapping="preWrap">{segment.vi}</Typography>
+      ) : null}
+      {tapMode ? (
+       <Button
+        variant="ghost"
+        size="touch"
+        disabled={nextStage === stage}
+        onClick={() => setStage(nextStage)}
+       >
+        {toolsLabels("revealNext")}
+       </Button>
+      ) : null}
+     </div>
+     {services.speech ? (
+      <Button
+       type="button"
+       variant={active ? "active" : "ghost"}
+       size="icon"
+       className="shrink-0 self-end"
+       aria-label={commandLabels("listen")}
+       onClick={() => commands.playFromCharacter(segmentId, 0)}
+      >
+       <Volume2 />
+      </Button>
+     ) : null}
+    </div>
+    {status !== "idle" ? (
+     <Typography variant="caption" tone="muted" aria-live="off">
+      {Math.round(progress * 100)}%
+     </Typography>
+    ) : null}
+   </article>
+  </Card>
+ );
+ return services.renderSegment ? services.renderSegment({ segment, content }) : content;
+});

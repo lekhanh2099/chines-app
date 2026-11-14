@@ -1,0 +1,96 @@
+{
+ "bookSelectLabel": "Select a textbook",
+ "lessonSelectLabel": "Select a lesson",
+ "bookLabel": "Book",
+ "sidebarLabel": "Book and lesson",
+ "tocLabel": "On this page",
+ "tabsLabel": "Lesson content",
+ "lessonPosition": "Lesson {lesson}/{count}",
+ "lessonMeta": "{sections} content sections · {vocab} new words",
+ "sectionCount": "{count} sections",
+ "vocabCount": "{count} words",
+ "vocabularyPreview": {
+  "eyebrow": "Lesson vocabulary",
+  "title": "{count} core words",
+  "open": "Open vocabulary"
+ },
+ "tabs": {
+  "all": "Full lesson",
+  "overview": "Overview",
+  "core": "Core sentences",
+  "text": "Lesson text",
+  "notes": "Notes",
+  "translation": "Translation",
+  "dictation": "Dictation",
+  "vocab": "Vocabulary",
+  "review": "Review",
+  "grammar": "Grammar",
+  "practice": "Exercises"
+ },
+ "content": {
+  "explanation": "Explanation",
+  "examples": "Examples"
+ },
+ "actions": {
+  "showPinyin": "Show pinyin",
+  "hidePinyin": "Hide pinyin",
+  "showAnswer": "Show answer",
+  "hideAnswer": "Hide answer",
+  "revealHanzi": "Show Hanzi",
+  "revealPinyin": "Show pinyin",
+  "revealMeaning": "Show meaning"
+ },
+ "offlineReady": "Offline ready",
+ "offlineDescription": "This textbook is built into the application and is always available offline.",
+ "semesterBookmarks": "Semester Bookmarks",
+ "semesterBookmarksCount": "Semester Bookmarks ({count})",
+ "bookmarkLesson": "Bookmark for this semester",
+ "unbookmarkLesson": "Remove bookmark",
+ "bookmarked": "Bookmarked",
+ "utilities": "Tools",
+ "practice": {
+  "inputPlaceholder": "Type your Chinese answer...",
+  "checkAnswer": "Check",
+  "resetAnswer": "Reset",
+  "keywordHint": "Target word: {keyword}",
+  "trueChoice": "True (Đ)",
+  "falseChoice": "False (S)",
+  "feedback": {
+   "correct": "Correct! Matches the model answer.",
+   "keywordMatch": "Valid! Uses the target word — compare with the model answer.",
+   "incorrect": "Does not match the model answer yet. Try again or show the answer."
+  },
+  "translation": {
+   "description": "Practice translating the sentences and paragraphs in this lesson in both directions.",
+   "open": "Open translation ({count} segments)"
+  },
+  "dictation": {
+   "description": "Practice listening and transcribing short sentences from this lesson.",
+   "open": "Open dictation ({count} sentences)"
+  }
+ },
+ "vocabReview": {
+  "eyebrow": "Vocabulary Review",
+  "title": "Active Review ({count} words)",
+  "startReview": "Flashcard Review",
+  "startDrills": "Contextual Drills",
+  "modeFlashcard": "Flashcards",
+  "modeDrills": "Context Drills",
+  "clozeTitle": "Contextual Fill-in-the-Blank",
+  "clozeDescription": "Use target vocabulary to complete the sentence from the lesson:",
+  "keywordHint": "Target word: {pinyin} · {meaning}",
+  "inputPlaceholder": "Type Chinese word...",
+  "checkAnswer": "Check",
+  "resetAnswer": "Reset",
+  "feedback": {
+   "correct": "Correct! You remembered this word in context.",
+   "incorrect": "Incorrect. Suggested answer: {answer}"
+  },
+  "pipButton": "Floating Card (PiP)",
+  "pipTooltip": "Open floating card on desktop for ambient vocabulary recognition",
+  "pipActive": "Floating card active",
+  "pipActiveTitle": "Reviewing in floating window",
+  "pipActiveDescription": "Review session is currently running in the Picture-in-Picture window. You can browse other lesson sections or switch to other apps.",
+  "pipReturn": "Bring back to page (Close floating window)"
+ }
+}

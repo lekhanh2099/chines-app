@@ -1,0 +1,405 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
+import {
+ emptyLearningState,
+ defaultTextbookDisplaySettings,
+ defaultLessonTextDisplaySettings,
+} from "@/features/hanzihome/utils/learning-state";
+import type { UserLearningState } from "@/features/hanzihome/types";
+import type { PendingLearningStateMutation } from "./learning-state-local-store";
+
+const store = vi.hoisted(() => ({
+ acknowledgeSyncAtomic: vi.fn(),
+ captureGeneration: vi.fn(),
+ commitCleanRemoteRefreshAtomic: vi.fn(),
+ markFailedAtomic: vi.fn(),
+ markSyncing: vi.fn(),
+ rebaseMutationAtomic: vi.fn(),
+ saveAtomic: vi.fn(),
+ list: vi.fn(),
+ readLocal: vi.fn(),
+ readPending: vi.fn(),
+ writeLocal: vi.fn(),
+}));
+
+const api = vi.hoisted(() => ({
+ fetch: vi.fn(),
+ save: vi.fn(),
+ ApiError: class extends Error {
+  constructor(readonly status: number) {
+   super("request failed");
+  }
+ },
+}));
+
+vi.mock("./learning-state-local-store", () => ({
+ acknowledgeLearningStateSyncAtomic: store.acknowledgeSyncAtomic,
+ captureLearningStateGeneration: store.captureGeneration,
+ commitCleanRemoteRefreshAtomic: store.commitCleanRemoteRefreshAtomic,
+ markLearningStateMutationFailedAtomic: store.markFailedAtomic,
+ markLearningStateMutationSyncing: store.markSyncing,
+ rebaseLearningStateMutationAtomic: store.rebaseMutationAtomic,
+ saveLearningStateAtomic: store.saveAtomic,
+ listPendingLearningStateMutations: store.list,
+ readLocalLearningState: store.readLocal,
+ readPendingLearningStateMutation: store.readPending,
+ writeLocalLearningState: store.writeLocal,
+}));
+
+vi.mock("@/features/hanzihome/repositories/hanzihome-content-api-client", () => ({
+ fetchHanziHomeLearningState: api.fetch,
+ saveHanziHomeLearningState: api.save,
+ HanziHomeApiError: api.ApiError,
+}));
+
+import {
+ loadLearningStateLocalFirst,
+ mergeLearningStateAfterConflict,
+ refreshLearningStateFromRemoteIfClean,
+ syncPendingLearningStateMutations,
+} from "./learning-state-local-first";
+
+const ownerUserId = "user-a";
+const pendingMutation: PendingLearningStateMutation = {
+ id: `learning_state:${ownerUserId}:pending`,
+ ownerUserId,
+ type: "learning_state.replace",
+ status: "pending",
+ payload: emptyLearningState,
+ baseState: emptyLearningState,
+ expectedUpdatedAt: null,
+ createdAt: "2026-07-14T00:00:00.000Z",
+ updatedAt: "2026-07-14T00:00:01.000Z",
+ attemptCount: 0,
+};
+
+let testClock = 0;
+
+describe("learning-state local-first sync", () => {
+ beforeEach(() => {
+  vi.clearAllMocks();
+  vi.useFakeTimers();
+  testClock += 1;
+  vi.setSystemTime(new Date(2_000_000_000_000 + testClock * 60_000));
+  vi.stubGlobal("navigator", { onLine: true });
+  store.list.mockReset();
+  store.readPending.mockReset();
+  api.fetch.mockReset();
+  api.save.mockReset();
+  store.list.mockResolvedValueOnce([pendingMutation]).mockResolvedValue([]);
+  store.markSyncing.mockImplementation((mutation) => Promise.resolve(mutation));
+  store.rebaseMutationAtomic.mockImplementation(
+   ({ mutation, baseState, mergedState, remoteUpdatedAt }) =>
+    Promise.resolve({
+     ...mutation,
+     payload: mergedState,
+     baseState,
+     expectedUpdatedAt: remoteUpdatedAt,
+     updatedAt: "2026-07-14T00:00:01.500Z",
+    }),
+  );
+  store.readPending.mockResolvedValue(pendingMutation);
+  store.acknowledgeSyncAtomic.mockResolvedValue(true);
+  store.markFailedAtomic.mockResolvedValue(true);
+  store.captureGeneration.mockResolvedValue({
+   localUpdatedAt: "2026-07-14T00:00:01.000Z",
+   hasPending: false,
+  });
+  store.commitCleanRemoteRefreshAtomic.mockResolvedValue(true);
+  api.save.mockResolvedValue({ state: emptyLearningState, updatedAt: "2026-07-14T00:00:02.000Z" });
+ });
+
+ afterEach(() => {
+  vi.useRealTimers();
+ });
+
+ it("backs off after a failed clean-state refresh", async () => {
+  store.captureGeneration.mockResolvedValue({
+   localUpdatedAt: "2026-07-14T00:00:01.000Z",
+   hasPending: false,
+  });
+  api.fetch.mockRejectedValue(new Error("Unauthorized"));
+
+  await expect(refreshLearningStateFromRemoteIfClean(ownerUserId)).rejects.toThrow("Unauthorized");
+  expect(await refreshLearningStateFromRemoteIfClean(ownerUserId)).toBeNull();
+
+  expect(api.fetch).toHaveBeenCalledOnce();
+  expect(api.fetch).toHaveBeenCalledWith(ownerUserId);
+ });
+
+ it("does not refresh again immediately after remote local-first bootstrap", async () => {
+  store.readLocal.mockResolvedValue(null);
+  store.captureGeneration.mockResolvedValue({ localUpdatedAt: null, hasPending: false });
+  api.fetch.mockResolvedValue({ state: emptyLearningState, updatedAt: null });
+
+  await expect(loadLearningStateLocalFirst(ownerUserId)).resolves.toEqual(emptyLearningState);
+  await expect(refreshLearningStateFromRemoteIfClean(ownerUserId)).resolves.toBeNull();
+
+  expect(api.fetch).toHaveBeenCalledOnce();
+  expect(store.writeLocal).toHaveBeenCalledWith({
+   ownerUserId,
+   state: emptyLearningState,
+   lastSyncedState: emptyLearningState,
+   remoteUpdatedAt: null,
+   lastSyncedAt: expect.any(String),
+  });
+ });
+
+ it("deduplicates concurrent clean-state refreshes per owner", async () => {
+  store.captureGeneration.mockResolvedValue({
+   localUpdatedAt: "2026-07-14T00:00:01.000Z",
+   hasPending: false,
+  });
+  api.fetch.mockResolvedValue({ state: emptyLearningState, updatedAt: null });
+
+  const [first, second] = await Promise.all([
+   refreshLearningStateFromRemoteIfClean(ownerUserId),
+   refreshLearningStateFromRemoteIfClean(ownerUserId),
+  ]);
+  const cooldownResult = await refreshLearningStateFromRemoteIfClean(ownerUserId);
+
+  expect(api.fetch).toHaveBeenCalledOnce();
+  expect(api.fetch).toHaveBeenCalledWith(ownerUserId);
+  expect(first).toEqual(emptyLearningState);
+  expect(second).toEqual(emptyLearningState);
+  expect(cooldownResult).toBeNull();
+  expect(store.commitCleanRemoteRefreshAtomic).toHaveBeenCalledOnce();
+ });
+
+ it("deduplicates concurrent pending-state syncs for the same owner", async () => {
+  const first = syncPendingLearningStateMutations(ownerUserId);
+  const second = syncPendingLearningStateMutations(ownerUserId);
+
+  await expect(Promise.all([first, second])).resolves.toEqual([
+   expect.objectContaining({ status: "synced", syncedCount: 1, pendingCount: 0 }),
+   expect.objectContaining({ status: "synced", syncedCount: 1, pendingCount: 0 }),
+  ]);
+  expect(api.save).toHaveBeenCalledOnce();
+  expect(store.markSyncing).toHaveBeenCalledOnce();
+  expect(store.acknowledgeSyncAtomic).toHaveBeenCalledOnce();
+ });
+
+ it("clears the queue atomically only after the matching owner mutation is saved", async () => {
+  const result = await syncPendingLearningStateMutations(ownerUserId);
+
+  expect(api.save).toHaveBeenCalledWith(emptyLearningState, null, ownerUserId);
+  expect(store.acknowledgeSyncAtomic).toHaveBeenCalledWith({
+   ownerUserId,
+   expectedMutationUpdatedAt: pendingMutation.updatedAt,
+   savedState: emptyLearningState,
+   remoteUpdatedAt: "2026-07-14T00:00:02.000Z",
+  });
+  expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
+ });
+
+ it("drains a newer mutation that replaced the in-flight generation without another browser event", async () => {
+  const newerMutation: PendingLearningStateMutation = {
+   ...pendingMutation,
+   payload: {
+    ...emptyLearningState,
+    settings: { ...emptyLearningState.settings, lastLessonId: "lesson-2" },
+   },
+   updatedAt: "2026-07-14T00:00:02.000Z",
+  };
+
+  store.list.mockReset();
+  store.list
+   .mockResolvedValueOnce([pendingMutation])
+   .mockResolvedValueOnce([newerMutation])
+   .mockResolvedValueOnce([newerMutation])
+   .mockResolvedValueOnce([]);
+  store.readPending.mockReset();
+  store.readPending.mockResolvedValueOnce(newerMutation).mockResolvedValueOnce(newerMutation);
+  store.acknowledgeSyncAtomic.mockReset();
+  store.acknowledgeSyncAtomic.mockResolvedValueOnce(false).mockResolvedValueOnce(true);
+
+  const result = await syncPendingLearningStateMutations(ownerUserId);
+
+  expect(api.save).toHaveBeenCalledTimes(2);
+  expect(api.save).toHaveBeenNthCalledWith(1, emptyLearningState, null, ownerUserId);
+  expect(api.save).toHaveBeenNthCalledWith(2, newerMutation.payload, null, ownerUserId);
+  expect(store.acknowledgeSyncAtomic).toHaveBeenCalledTimes(2);
+  expect(store.acknowledgeSyncAtomic).toHaveBeenNthCalledWith(1, {
+   ownerUserId,
+   expectedMutationUpdatedAt: pendingMutation.updatedAt,
+   savedState: emptyLearningState,
+   remoteUpdatedAt: "2026-07-14T00:00:02.000Z",
+  });
+  expect(store.acknowledgeSyncAtomic).toHaveBeenNthCalledWith(2, {
+   ownerUserId,
+   expectedMutationUpdatedAt: newerMutation.updatedAt,
+   savedState: emptyLearningState,
+   remoteUpdatedAt: "2026-07-14T00:00:02.000Z",
+  });
+  expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
+ });
+
+ it("marks the matching mutation failed and preserves it for retry", async () => {
+  api.save.mockRejectedValue(new Error("network down"));
+  store.list.mockReset();
+  store.list.mockResolvedValueOnce([pendingMutation]).mockResolvedValueOnce([pendingMutation]);
+
+  const result = await syncPendingLearningStateMutations(ownerUserId);
+
+  expect(store.markFailedAtomic).toHaveBeenCalledWith({
+   ownerUserId,
+   expectedMutationUpdatedAt: pendingMutation.updatedAt,
+   error: "network down",
+  });
+  expect(result).toMatchObject({
+   status: "error",
+   syncedCount: 0,
+   pendingCount: 1,
+   error: "network down",
+  });
+ });
+
+ it("rebases local changes over a newer remote state after a conflict", async () => {
+  const localState: UserLearningState = {
+   ...emptyLearningState,
+   settings: { ...emptyLearningState.settings, lastCourseId: "local-course" },
+  };
+  const remoteState: UserLearningState = {
+   ...emptyLearningState,
+   settings: { ...emptyLearningState.settings, density: "compact" },
+  };
+  const localMutation = { ...pendingMutation, payload: localState };
+  const rebasedMutation = {
+   ...localMutation,
+   payload: {
+    ...remoteState,
+    settings: { ...remoteState.settings, lastCourseId: "local-course" },
+   },
+   baseState: remoteState,
+   expectedUpdatedAt: "2026-07-14T00:00:02.000Z",
+   updatedAt: "2026-07-14T00:00:01.500Z",
+  };
+  store.list.mockReset();
+  store.list.mockResolvedValueOnce([localMutation]).mockResolvedValue([]);
+  store.markSyncing.mockResolvedValue(localMutation);
+  store.rebaseMutationAtomic.mockResolvedValue(rebasedMutation);
+  store.readPending.mockResolvedValue(rebasedMutation);
+  api.save.mockRejectedValueOnce(new api.ApiError(409)).mockResolvedValueOnce({
+   state: rebasedMutation.payload,
+   updatedAt: "2026-07-14T00:00:03.000Z",
+  });
+  api.fetch.mockResolvedValue({
+   state: remoteState,
+   updatedAt: "2026-07-14T00:00:02.000Z",
+  });
+
+  const result = await syncPendingLearningStateMutations(ownerUserId);
+
+  expect(store.rebaseMutationAtomic).toHaveBeenCalledWith({
+   ownerUserId,
+   expectedMutationUpdatedAt: localMutation.updatedAt,
+   baseState: remoteState,
+   mergedState: rebasedMutation.payload,
+   remoteUpdatedAt: "2026-07-14T00:00:02.000Z",
+  });
+  expect(api.fetch).toHaveBeenCalledWith(ownerUserId);
+  expect(api.save).toHaveBeenLastCalledWith(
+   rebasedMutation.payload,
+   "2026-07-14T00:00:02.000Z",
+   ownerUserId,
+  );
+  expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
+ });
+
+ it("keeps unrelated remote fields while applying local field changes", () => {
+  const local: UserLearningState = {
+   ...emptyLearningState,
+   settings: { ...emptyLearningState.settings, lastLessonId: "local-lesson" },
+  };
+  const remote: UserLearningState = {
+   ...emptyLearningState,
+   settings: { ...emptyLearningState.settings, density: "compact" },
+  };
+
+  const merged = mergeLearningStateAfterConflict({ base: emptyLearningState, local, remote });
+
+  expect(merged.settings.lastLessonId).toBe("local-lesson");
+  expect(merged.settings.density).toBe("compact");
+ });
+});
+
+describe("per-book settings conflict rebase", () => {
+ it("preserves independent books and merges display fields without splitting resume targets", () => {
+  const base: UserLearningState = {
+   ...emptyLearningState,
+   settings: {
+    bookDisplayModes: { "catalog:a": defaultLessonTextDisplaySettings },
+    bookResume: { "catalog:a": { lessonId: "a1", module: "overview" } },
+   },
+  };
+  const local: UserLearningState = {
+   ...base,
+   settings: {
+    bookDisplayModes: { "catalog:a": { ...defaultLessonTextDisplaySettings, hanziSize: "xl" } },
+    bookResume: { "catalog:a": { lessonId: "a2", module: "lessonText" } },
+   },
+  };
+  const remote: UserLearningState = {
+   ...base,
+   settings: {
+    bookDisplayModes: {
+     "catalog:a": { ...defaultLessonTextDisplaySettings, showMeaning: true },
+     "static:b": { ...defaultLessonTextDisplaySettings, hanziFont: "system" },
+    },
+    bookResume: {
+     "catalog:a": { lessonId: "a3", module: "vocab" },
+     "static:b": { lessonId: "b2", module: "text" },
+    },
+   },
+  };
+  const merged = mergeLearningStateAfterConflict({ base, local, remote });
+  expect(merged.settings.bookDisplayModes?.["catalog:a"]).toMatchObject({
+   hanziSize: "xl",
+   showMeaning: true,
+  });
+  expect(merged.settings.bookDisplayModes?.["static:b"]).toEqual(
+   remote.settings.bookDisplayModes?.["static:b"],
+  );
+  expect(merged.settings.bookResume).toEqual({
+   "catalog:a": { lessonId: "a2", module: "lessonText" },
+   "static:b": { lessonId: "b2", module: "text" },
+  });
+ });
+ it("retains untouched remote resume changes and legacy settings", () => {
+  const remote: UserLearningState = {
+   ...emptyLearningState,
+   settings: {
+    lessonTextDisplayMode: defaultLessonTextDisplaySettings,
+    bookResume: { "static:b": { lessonId: "b2", module: "notes" } },
+   },
+  };
+  expect(
+   mergeLearningStateAfterConflict({ base: emptyLearningState, local: emptyLearningState, remote })
+    .settings,
+  ).toMatchObject(remote.settings);
+ });
+});
+
+it("merges first-time textbook preferences against the actual inherited defaults", () => {
+ const local: UserLearningState = {
+  ...emptyLearningState,
+  settings: {
+   bookDisplayModes: {
+    "static:new": { ...defaultTextbookDisplaySettings, showMeaning: false },
+   },
+  },
+ };
+ const remote: UserLearningState = {
+  ...emptyLearningState,
+  settings: {
+   bookDisplayModes: {
+    "static:new": { ...defaultTextbookDisplaySettings, hanziSize: "3xl" },
+   },
+  },
+ };
+ const merged = mergeLearningStateAfterConflict({ base: emptyLearningState, local, remote });
+ expect(merged.settings.bookDisplayModes?.["static:new"]).toMatchObject({
+  showMeaning: false,
+  hanziSize: "3xl",
+ });
+});

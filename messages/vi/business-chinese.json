@@ -1,0 +1,96 @@
+{
+ "bookSelectLabel": "Chọn giáo trình",
+ "lessonSelectLabel": "Chọn bài học",
+ "bookLabel": "Quyển",
+ "sidebarLabel": "Quyển và bài",
+ "tocLabel": "Trong trang",
+ "tabsLabel": "Nội dung bài học",
+ "lessonPosition": "Bài {lesson}/{count}",
+ "lessonMeta": "{sections} mục nội dung · {vocab} từ mới",
+ "sectionCount": "{count} mục",
+ "vocabCount": "{count} từ",
+ "vocabularyPreview": {
+  "eyebrow": "Từ vựng bài này",
+  "title": "{count} từ chính",
+  "open": "Mở từ vựng"
+ },
+ "tabs": {
+  "all": "Toàn bài",
+  "overview": "Tổng quan",
+  "core": "Câu chủ đề",
+  "text": "Bài khóa",
+  "notes": "Ghi chú",
+  "translation": "Luyện dịch",
+  "dictation": "Nghe chép",
+  "vocab": "Từ vựng",
+  "review": "Ôn tập",
+  "grammar": "Ngữ pháp",
+  "practice": "Bài tập"
+ },
+ "content": {
+  "explanation": "Giải thích",
+  "examples": "Ví dụ"
+ },
+ "actions": {
+  "showPinyin": "Hiện pinyin",
+  "hidePinyin": "Ẩn pinyin",
+  "showAnswer": "Hiện đáp án",
+  "hideAnswer": "Ẩn đáp án",
+  "revealHanzi": "Hiện Hán tự",
+  "revealPinyin": "Hiện pinyin",
+  "revealMeaning": "Hiện nghĩa"
+ },
+ "offlineReady": "Đã sẵn sàng offline",
+ "offlineDescription": "Giáo trình này đã được tích hợp sẵn trong ứng dụng, có thể học ngoại tuyến mọi lúc.",
+ "semesterBookmarks": "Bài học kỳ này",
+ "semesterBookmarksCount": "Bài học kỳ này ({count})",
+ "bookmarkLesson": "Đánh dấu bài học kỳ này",
+ "unbookmarkLesson": "Bỏ đánh dấu bài học",
+ "bookmarked": "Đã đánh dấu",
+ "utilities": "Tiện ích",
+ "practice": {
+  "inputPlaceholder": "Nhập câu trả lời tiếng Trung...",
+  "checkAnswer": "Kiểm tra",
+  "resetAnswer": "Làm lại",
+  "keywordHint": "Từ gợi ý: {keyword}",
+  "trueChoice": "Đúng (Đ)",
+  "falseChoice": "Sai (S)",
+  "feedback": {
+   "correct": "Chính xác! Khớp với đáp án mẫu.",
+   "keywordMatch": "Hợp lệ! Đã dùng đúng từ gợi ý — hãy đối chiếu đáp án mẫu.",
+   "incorrect": "Chưa khớp đáp án mẫu. Hãy thử lại hoặc mở đáp án."
+  },
+  "translation": {
+   "description": "Luyện dịch hai chiều câu và đoạn văn của bài này.",
+   "open": "Mở Luyện dịch ({count} đoạn)"
+  },
+  "dictation": {
+   "description": "Luyện nghe chép chính tả từng câu ngắn trong bài.",
+   "open": "Mở Nghe chép ({count} câu)"
+  }
+ },
+ "vocabReview": {
+  "eyebrow": "Ôn tập từ vựng",
+  "title": "Ôn tập chủ động ({count} từ)",
+  "startReview": "Ôn tập Flashcard",
+  "startDrills": "Luyện nhớ ứng dụng",
+  "modeFlashcard": "Thẻ Flashcard",
+  "modeDrills": "Ứng dụng ngữ cảnh",
+  "clozeTitle": "Điền từ theo ngữ cảnh bài học",
+  "clozeDescription": "Vận dụng từ vựng mới để điền vào câu bài khóa phù hợp:",
+  "keywordHint": "Từ gợi ý: {pinyin} · {meaning}",
+  "inputPlaceholder": "Nhập từ tiếng Trung...",
+  "checkAnswer": "Kiểm tra",
+  "resetAnswer": "Làm lại",
+  "feedback": {
+   "correct": "Chính xác! Bạn đã nhớ từ này trong ngữ cảnh.",
+   "incorrect": "Chưa chính xác. Đáp án gợi ý: {answer}"
+  },
+  "pipButton": "Cửa sổ nổi (PiP)",
+  "pipTooltip": "Mở thẻ trôi nổi trên desktop để nhận diện từ vựng khi làm việc",
+  "pipActive": "Đang mở cửa sổ nổi",
+  "pipActiveTitle": "Đang ôn tập trong cửa sổ nổi",
+  "pipActiveDescription": "Thẻ ôn tập đang chạy trong cửa sổ Picture-in-Picture. Bạn có thể duyệt bài học hoặc chuyển sang ứng dụng khác trong khi học.",
+  "pipReturn": "Đưa về trang này (Đóng cửa sổ nổi)"
+ }
+}

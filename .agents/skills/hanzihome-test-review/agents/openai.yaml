@@ -1,0 +1,4 @@
+interface:
+  display_name: "HanziHome Test Review"
+  short_description: "Review HanziHome tests against real contracts"
+  default_prompt: "Use $hanzihome-test-review to review coverage for this HanziHome change."

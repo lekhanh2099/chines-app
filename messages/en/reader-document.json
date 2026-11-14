@@ -1,0 +1,19 @@
+{
+ "header": {
+  "navigationAria": "Reading navigation",
+  "study": "Study",
+  "hskSection": "HSK reading",
+  "lessonSection": "Lesson",
+  "chooseReading": "Choose another reading",
+  "coreNavigationLabel": "Topic {unit} · Reading {reading} — {title}",
+  "hskNavigationLabel": "{volume}{lesson}{reading} — {title}",
+  "lessonPart": " · Lesson {lesson}",
+  "readingPart": " · Reading {reading}"
+ },
+ "text": {
+  "openAnnotation": "Open note for {text}",
+  "playFromCharacter": "Play from character {character}",
+  "inspectPinyin": "Check pinyin for {character}",
+  "inspectUnconfirmedPinyin": "Pinyin for {character} needs review"
+ }
+}

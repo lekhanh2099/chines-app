@@ -1,0 +1,20 @@
+{
+ "openTabs": "Ghi chú đang mở",
+ "options": "Tùy chọn tab {title}",
+ "moveLeft": "Di chuyển sang trái",
+ "moveRight": "Di chuyển sang phải",
+ "closeCurrent": "Đóng tab hiện tại",
+ "closeOthers": "Đóng các tab khác",
+ "closeAll": "Đóng tất cả tab",
+ "focusBlocksNew": "Focus mode đang khóa mở ghi chú mới",
+ "openMore": "Mở thêm ghi chú",
+ "focusSelectBlocked": "Focus mode đang bật. Chỉ chọn được tab ghi chú đang mở.",
+ "focusOpenBlocked": "Focus mode đang bật. Không mở thêm ghi chú mới.",
+ "empty": "Chọn một ghi chú để bắt đầu",
+ "untitled": "Ghi chú chưa đặt tên",
+ "navigation": "Điều hướng ghi chú",
+ "back": "Ghi chú",
+ "focusBlocksLeave": "Focus mode đang khóa rời khỏi ghi chú hiện tại",
+ "quickSelect": "Chọn nhanh ghi chú",
+ "selectPlaceholder": "Chọn ghi chú"
+}
