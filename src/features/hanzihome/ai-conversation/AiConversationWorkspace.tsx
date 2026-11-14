@@ -1,423 +1,71 @@
 "use client";
 
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import {
- Archive,
- History,
- MessageSquarePlus,
- Mic,
- MoreHorizontal,
- Send,
- Settings2,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { z } from "zod";
 
-import { useAppForm } from "@/components/form";
-import { Avatar, AvatarFallback } from "@/components/ui/display/avatar";
-import { Badge } from "@/components/ui/display/badge";
-import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
-import {
- Dialog,
- DialogBody,
- DialogContent,
- DialogDescription,
- DialogFooter,
- DialogHeader,
- DialogTitle,
-} from "@/components/ui/overlays/dialog";
-import {
- DropdownMenu,
- DropdownMenuCheckboxItem,
- DropdownMenuContent,
- DropdownMenuItem,
- DropdownMenuSeparator,
- DropdownMenuTrigger,
-} from "@/components/ui/overlays/dropdown-menu";
-import { Label } from "@/components/ui/forms/label";
-import { Textarea } from "@/components/ui/forms/textarea";
 import { Typography } from "@/components/ui/display/typography";
-import { fetchManagedApiKeys } from "@/features/settings/services/api-key-manager.client";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import { getApiKeyModelOptions } from "@/lib/ai/api-key-models";
-import { aiTaskSessionOverrideSchema } from "@/lib/ai/ai-task-contract";
 
-import {
- archiveAiConversation,
- createAiConversation,
- ensureAiConversationSession,
- fetchAiConversationHistory,
- fetchAiConversationRuntimeHealth,
- fetchAiConversationSession,
- sendPersistedAiConversationMessage,
- updateAiConversationMemoryPolicy,
- updateAiConversationSettings,
-} from "./services/ai-conversation-api";
-import { AiConversationHistorySheet } from "./components/AiConversationHistorySheet";
-import {
- AiConversationMessageBubble,
- AiConversationTypingBubble,
-} from "./components/AiConversationMessageBubble";
-import { deriveAiConversationRelationshipBand } from "./model/ai-conversation-relationship";
+import { AiConversationComposer } from "./components/AiConversationComposer";
+import { AiConversationHeader } from "./components/AiConversationHeader";
+import { AiConversationMessageLog } from "./components/AiConversationMessageLog";
+import { AiConversationOverlays } from "./components/AiConversationOverlays";
 import {
  aiConversationModeSchema,
- aiConversationSettingsUpdateSchema,
  type AiConversationMode,
- type AiConversationSession,
- type AiConversationSettingsUpdate,
 } from "./model/ai-conversation-session.schemas";
-import {
- aiConversationCorrectionStyleSchema,
- aiConversationLearnerLevelSchema,
- aiConversationReplyModeSchema,
- type AiConversationMessage,
-} from "./model/ai-conversation.schemas";
-import {
- AiConversationRuntimeMenu,
- AUTO_RUNTIME_KEY_ID,
-} from "./components/AiConversationRuntimeMenu";
-
-const RUNTIME_OVERRIDE_STORAGE_PREFIX = "hanzihome.ai-conversation.runtime-override.v2";
-const SESSION_QUERY_ROOT = ["hanzihome", "ai-conversation", "session"];
-const HISTORY_QUERY_KEY = ["hanzihome", "ai-conversation", "history"];
-const SESSION_STALE_TIME_MS = 30_000;
-
-interface BrowserSpeechRecognition {
- lang: string;
- continuous: boolean;
- interimResults: boolean;
- onstart: () => void;
- onresult: (event: SpeechRecognitionEvent) => void;
- onerror: (event: SpeechRecognitionErrorEvent) => void;
- onend: () => void;
- start(): void;
- stop(): void;
- abort(): void;
-}
-
-declare global {
- interface Window {
-  SpeechRecognition?: new () => BrowserSpeechRecognition;
-  webkitSpeechRecognition?: new () => BrowserSpeechRecognition;
- }
-}
-
-type RetryTurn = { clientMessageId: string; content: string };
-type ArchiveTarget = { id: string; title: string };
-type RuntimeSelection = {
- conversationId: string | null;
- keyId: string;
- model: string | null;
-};
-
-function conversationSessionQueryKey(conversationId: string | null) {
- return [...SESSION_QUERY_ROOT, conversationId ?? "latest"];
-}
-
-function runtimeOverrideStorageKey(conversationId: string) {
- return `${RUNTIME_OVERRIDE_STORAGE_PREFIX}:${conversationId}`;
-}
-
-function readRuntimeOverride(value: string | null) {
- if (!value) return null;
- try {
-  const parsed = aiTaskSessionOverrideSchema.safeParse(JSON.parse(value));
-  return parsed.success ? parsed.data : null;
- } catch {
-  return null;
- }
-}
+import { aiConversationLearnerLevelSchema } from "./model/ai-conversation.schemas";
+import type { RetryTurn } from "./ai-conversation-workspace-utils";
+import { useAiConversationManagement } from "./useAiConversationManagement";
+import { useAiConversationRuntime } from "./useAiConversationRuntime";
+import { useAiConversationSend } from "./useAiConversationSend";
+import { useAiConversationSessionQuery } from "./useAiConversationSessionQuery";
+import { useAiConversationSpeech } from "./useAiConversationSpeech";
 
 export function AiConversationWorkspace() {
  const t = useTranslations("AiConversation");
- const queryClient = useQueryClient();
- const router = useRouter();
- const pathname = usePathname();
- const searchParams = useSearchParams();
- const searchParamsString = searchParams.toString();
- const rawConversationId = searchParams.get("conversation");
- const parsedConversationId = z.uuid().safeParse(rawConversationId);
- const conversationIdFromUrl = parsedConversationId.success ? parsedConversationId.data : null;
+ const { conversationIdFromUrl, navigateToConversation, sessionQuery } =
+  useAiConversationSessionQuery();
 
- const [isSetupOpen, setIsSetupOpen] = useState(false);
- const [isHistoryOpen, setIsHistoryOpen] = useState(false);
- const [archiveTarget, setArchiveTarget] = useState<ArchiveTarget | null>(null);
  const [draft, setDraft] = useState("");
- const [isSpeechSupported, setIsSpeechSupported] = useState(false);
- const [isListening, setIsListening] = useState(false);
- const [isSpeechPending, setIsSpeechPending] = useState(false);
- const [speechError, setSpeechError] = useState("");
- const [runtimeSelection, setRuntimeSelection] = useState<RuntimeSelection>({
-  conversationId: null,
-  keyId: AUTO_RUNTIME_KEY_ID,
-  model: null,
- });
- const [streamContent, setStreamContent] = useState("");
- const [streamStop, setStreamStop] = useState<(() => void) | null>(null);
- const requestRef = useRef<AbortController | null>(null);
  const retryTurnRef = useRef<RetryTurn | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
- const speechRecognitionRef = useRef<BrowserSpeechRecognition | null>(null);
 
- const abortSpeech = useCallback(() => {
-  setSpeechError("");
-  const recognition = speechRecognitionRef.current;
-  if (!recognition) return;
-  speechRecognitionRef.current = null;
-  recognition.abort();
-  setIsListening(false);
-  setIsSpeechPending(false);
- }, [setSpeechError, setIsListening, setIsSpeechPending]);
+ const speech = useAiConversationSpeech({ conversationIdFromUrl, draft, setDraft, retryTurnRef });
+ const { abortSpeech, speechRecognitionRef, isListening, isSpeechPending } = speech;
 
- const navigateToConversation = useCallback(
-  (conversationId: string) => {
-   const nextParams = new URLSearchParams(searchParamsString);
-   nextParams.set("conversation", conversationId);
-   router.replace(`${pathname}?${nextParams.toString()}`, { scroll: false });
-  },
-  [pathname, router, searchParamsString],
- );
-
- const sessionQuery = useQuery({
-  queryKey: conversationSessionQueryKey(conversationIdFromUrl),
-  queryFn: ({ signal }) =>
-   conversationIdFromUrl
-    ? fetchAiConversationSession({ conversationId: conversationIdFromUrl, signal })
-    : ensureAiConversationSession({ signal }),
-  staleTime: SESSION_STALE_TIME_MS,
-  refetchOnWindowFocus: false,
-  retry: false,
- });
-
- const historyQuery = useQuery({
-  queryKey: HISTORY_QUERY_KEY,
-  queryFn: ({ signal }) => fetchAiConversationHistory({ signal }),
-  enabled: isHistoryOpen,
-  staleTime: 15_000,
-  retry: false,
- });
-
- const runtimeKeysQuery = useQuery({
-  queryKey: ["settings", "api-keys"],
-  queryFn: fetchManagedApiKeys,
-  retry: false,
- });
- const runtimeKeys = runtimeKeysQuery.data?.keys.filter((key) => key.isActive) ?? [];
  const activeConversationId = sessionQuery.data?.conversation?.id ?? null;
- const storedRuntimeOverride =
-  activeConversationId && typeof window !== "undefined"
-   ? readRuntimeOverride(
-      window.sessionStorage.getItem(runtimeOverrideStorageKey(activeConversationId)),
-     )
-   : null;
- const requestedRuntimeOverride =
-  runtimeSelection.conversationId === activeConversationId
-   ? { keyId: runtimeSelection.keyId, model: runtimeSelection.model }
-   : storedRuntimeOverride;
- const requestedRuntimeKey = runtimeKeys.find((key) => key.id === requestedRuntimeOverride?.keyId);
- const requestedRuntimeModelSupported = Boolean(
-  requestedRuntimeKey &&
-  requestedRuntimeOverride?.model &&
-  (requestedRuntimeKey.defaultModel === requestedRuntimeOverride.model ||
-   getApiKeyModelOptions(requestedRuntimeKey.provider).some(
-    (option) => option.value === requestedRuntimeOverride.model,
-   )),
- );
- const runtimeKeyId =
-  requestedRuntimeKey && requestedRuntimeModelSupported
-   ? requestedRuntimeKey.id
-   : AUTO_RUNTIME_KEY_ID;
- const runtimeModel =
-  requestedRuntimeKey && requestedRuntimeModelSupported
-   ? (requestedRuntimeOverride?.model ?? null)
-   : null;
- const isRuntimeLoading = runtimeKeysQuery.isPending;
- const runtimeLoadError = runtimeKeysQuery.isError;
+ const runtime = useAiConversationRuntime(activeConversationId);
+ const { runtimeKeyId, runtimeHealthQuery } = runtime;
 
- const runtimeHealthQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.aiConversationRuntimeHealth(runtimeKeyId),
-  queryFn: ({ signal }) =>
-   fetchAiConversationRuntimeHealth({
-    ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
-    signal,
-   }),
-  enabled: !isRuntimeLoading,
-  retry: false,
+ const { sendMutation, streamContent, streamStop, startSend } = useAiConversationSend({
+  sessionQuery,
+  runtimeKeyId,
+  runtimeModel: runtime.runtimeModel,
+  runtimeHealthQuery,
+  retryTurnRef,
+  setDraft,
  });
 
- const settingsMutation = useMutation({
-  retry: false,
-  mutationFn: async (settings: AiConversationSettingsUpdate) => {
-   const session = sessionQuery.data?.conversation
-    ? sessionQuery.data
-    : await ensureAiConversationSession();
-   const conversation = session.conversation;
-   if (!conversation) throw new Error(t("setup.saveError"));
-   return updateAiConversationSettings(conversation.id, settings);
-  },
-  onSuccess: (settings) => {
-   queryClient.setQueryData<AiConversationSession>(
-    conversationSessionQueryKey(settings.conversationId),
-    (current) => {
-     if (!current?.conversation || current.conversation.id !== settings.conversationId) {
-      return current;
-     }
-     return {
-      ...current,
-      learnerLevel: settings.learnerLevel,
-      conversation: {
-       ...current.conversation,
-       mode: settings.mode,
-       correctionStyle: settings.correctionStyle,
-       replyMode: settings.replyMode,
-      },
-     };
-    },
-   );
-   setIsSetupOpen(false);
-   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
-  },
-  onError: () => {
-   void sessionQuery.refetch();
-  },
- });
-
- const sendMutation = useMutation({
-  retry: false,
-  mutationFn: async ({
-   content,
-   clientMessageId,
-   controller,
-  }: {
-   content: string;
-   clientMessageId: string;
-   controller: AbortController;
-  }) => {
-   const session = sessionQuery.data?.conversation
-    ? sessionQuery.data
-    : await ensureAiConversationSession({ signal: controller.signal });
-   const conversation = session.conversation;
-   if (!conversation) throw new Error(t("message.sendError"));
-
-   const turn = await sendPersistedAiConversationMessage(
-    conversation.id,
-    {
-     clientMessageId,
-     content,
-     ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
-     ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID && runtimeModel ? { model: runtimeModel } : {}),
-    },
-    {
-     signal: controller.signal,
-     onDelta: (text) => setStreamContent((current) => `${current}${text}`),
-     onStreamReady: (stop) => setStreamStop(() => stop),
-     onStreamEnd: () => setStreamStop(null),
-    },
-   );
-   return { session, turn };
-  },
-  onSuccess: ({ session, turn }) => {
-   retryTurnRef.current = null;
-   const retainedMessages = session.messages.filter(
-    (message) => message.id !== turn.userMessage.id && message.id !== turn.assistantMessage.id,
-   );
-   const nextSession: AiConversationSession = {
-    ...session,
-    messages: [...retainedMessages, turn.userMessage, turn.assistantMessage].sort(
-     (left, right) => left.seq - right.seq,
-    ),
-   };
-   queryClient.setQueryData(conversationSessionQueryKey(turn.conversationId), nextSession);
-   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
-  },
-  onError: (_error, variables) => {
-   if (!variables.controller.signal.aborted) {
-    retryTurnRef.current = {
-     clientMessageId: variables.clientMessageId,
-     content: variables.content,
-    };
-    setDraft((current) => current || variables.content);
-    void sessionQuery.refetch();
-    void runtimeHealthQuery.refetch();
-   }
-  },
-  onSettled: (_data, _error, variables) => {
-   if (requestRef.current === variables.controller) requestRef.current = null;
-   setStreamContent("");
-   setStreamStop(null);
-  },
- });
-
- const createConversationMutation = useMutation({
-  retry: false,
-  mutationFn: () => createAiConversation(),
-  onSuccess: (session) => {
-   const conversation = session.conversation;
-   if (!conversation) return;
-   abortSpeech();
-   queryClient.setQueryData(conversationSessionQueryKey(conversation.id), session);
+ const management = useAiConversationManagement({
+  sessionQuery,
+  navigateToConversation,
+  abortSpeech,
+  resetTurn: () => {
    retryTurnRef.current = null;
    setDraft("");
    sendMutation.reset();
-   setIsHistoryOpen(false);
-   navigateToConversation(conversation.id);
-   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
   },
  });
-
- const memoryPolicyMutation = useMutation({
-  retry: false,
-  mutationFn: async (useMemory: boolean) => {
-   const conversation = sessionQuery.data?.conversation;
-   if (!conversation) throw new Error(t("memory.updateError"));
-   return updateAiConversationMemoryPolicy(conversation.id, useMemory ? "inherit" : "disabled");
-  },
-  onSuccess: (state) => {
-   queryClient.setQueryData<AiConversationSession>(
-    conversationSessionQueryKey(state.conversationId),
-    (current) => {
-     if (!current?.conversation) return current;
-     return {
-      ...current,
-      memoryEnabled: state.memoryEnabled,
-      conversation: {
-       ...current.conversation,
-       memoryPolicy: state.memoryPolicy,
-      },
-     };
-    },
-   );
-   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
-  },
-  onError: () => {
-   void sessionQuery.refetch();
-  },
- });
-
- const archiveConversationMutation = useMutation({
-  retry: false,
-  mutationFn: async ({ id, isCurrent }: { id: string; isCurrent: boolean }) => {
-   await archiveAiConversation(id);
-   const nextSession = isCurrent ? await ensureAiConversationSession() : null;
-   return { archivedId: id, nextSession };
-  },
-  onSuccess: ({ archivedId, nextSession }) => {
-   queryClient.removeQueries({ queryKey: conversationSessionQueryKey(archivedId), exact: true });
-   if (nextSession?.conversation) {
-    abortSpeech();
-    queryClient.setQueryData(conversationSessionQueryKey(nextSession.conversation.id), nextSession);
-    retryTurnRef.current = null;
-    setDraft("");
-    sendMutation.reset();
-    navigateToConversation(nextSession.conversation.id);
-   }
-   setArchiveTarget(null);
-   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
-  },
- });
+ const {
+  setIsSetupOpen,
+  setIsHistoryOpen,
+  setArchiveTarget,
+  settingsMutation,
+  createConversationMutation,
+  memoryPolicyMutation,
+  archiveConversationMutation,
+ } = management;
 
  const runtimeHealth = runtimeHealthQuery.data ?? null;
  const isHealthChecking = runtimeHealthQuery.isFetching;
@@ -433,71 +81,13 @@ export function AiConversationWorkspace() {
   "grammar-coach": t("modes.grammarCoach"),
   "hskk-practice": t("modes.hskkPractice"),
  };
- const levelLabels: Record<AiConversationSettingsUpdate["learnerLevel"], string> = {
-  beginner: t("levels.beginner"),
-  intermediate: t("levels.intermediate"),
-  advanced: t("levels.advanced"),
- };
- const relationshipBand = deriveAiConversationRelationshipBand(
-  session?.relationship?.familiarityScore ?? null,
- );
- const relationshipLabels = {
-  new: t("relationship.new"),
-  familiar: t("relationship.familiar"),
-  friends: t("relationship.friends"),
-  close: t("relationship.close"),
- } satisfies Record<typeof relationshipBand, string>;
  const assistantName = character?.displayName ?? t("character.defaultName");
  const activeMode = conversation?.mode ?? aiConversationModeSchema.enum.natural;
- const greeting: AiConversationMessage = {
-  role: "assistant",
-  content: t("greeting", {
-   name: assistantName,
-   mode: modeLabels[activeMode],
-  }),
- };
- const renderedMessages =
-  sessionQuery.isPending || sessionQuery.isError
-   ? []
-   : persistedMessages.length > 0
-     ? persistedMessages.map((message) => ({
-        key: message.id,
-        message,
-       }))
-     : [{ key: "greeting", message: greeting }];
- const pendingMessage =
-  sendMutation.isPending && sendMutation.variables
-   ? {
-      key: `pending-${sendMutation.variables.clientMessageId}`,
-      message: {
-       role: "user",
-       content: sendMutation.variables.content,
-      } satisfies AiConversationMessage,
-     }
-   : null;
- const profileAvatar = assistantName.trim().slice(0, 1) || "AI";
- const characterSummary = character
-  ? [character.city, ...character.interests.slice(0, 2)].filter(Boolean).join(" · ")
-  : t("fallbackInterest");
  const sessionError = sessionQuery.error instanceof Error ? sessionQuery.error.message : null;
  const sendError = sendMutation.error instanceof Error ? sendMutation.error.message : null;
  const memoryError =
   memoryPolicyMutation.error instanceof Error ? memoryPolicyMutation.error.message : null;
  const visibleError = sendError || memoryError || sessionError;
- const currentSettings: AiConversationSettingsUpdate | null = conversation
-  ? {
-     mode: conversation.mode,
-     correctionStyle: conversation.correctionStyle,
-     replyMode: conversation.replyMode,
-     learnerLevel,
-    }
-  : null;
- const historyError =
-  createConversationMutation.error instanceof Error
-   ? createConversationMutation.error.message
-   : historyQuery.error instanceof Error
-     ? historyQuery.error.message
-     : null;
  const currentTitle = conversation?.title.trim() || t("history.untitled");
  const isNavigationLocked =
   isSending ||
@@ -506,64 +96,10 @@ export function AiConversationWorkspace() {
   sessionQuery.isFetching;
 
  useEffect(() => {
-  const frame = window.requestAnimationFrame(() => {
-   setIsSpeechSupported(Boolean(window.SpeechRecognition || window.webkitSpeechRecognition));
-  });
-  return () => {
-   window.cancelAnimationFrame(frame);
-   requestRef.current?.abort();
-  };
- }, []);
-
- useEffect(() => () => abortSpeech(), [abortSpeech, conversationIdFromUrl]);
-
- useEffect(() => {
-  const resolvedConversationId = sessionQuery.data?.conversation?.id;
-  if (!resolvedConversationId || resolvedConversationId === conversationIdFromUrl) return;
-  queryClient.setQueryData(conversationSessionQueryKey(resolvedConversationId), sessionQuery.data);
-  navigateToConversation(resolvedConversationId);
- }, [conversationIdFromUrl, navigateToConversation, queryClient, sessionQuery.data]);
-
- useEffect(() => {
   const viewport = messageViewportRef.current;
   if (!viewport) return;
   viewport.scrollTop = viewport.scrollHeight;
  }, [conversation?.id, isSending, persistedMessages.length, streamContent]);
-
- const selectRuntimeKey = (value: string) => {
-  const nextValue =
-   value === AUTO_RUNTIME_KEY_ID || runtimeKeys.some((key) => key.id === value)
-    ? value
-    : AUTO_RUNTIME_KEY_ID;
-  const selectedKey = runtimeKeys.find((key) => key.id === nextValue);
-  const nextModel = selectedKey?.defaultModel ?? null;
-  const conversationId = sessionQuery.data?.conversation?.id ?? null;
-  setRuntimeSelection({ conversationId, keyId: nextValue, model: nextModel });
-  sendMutation.reset();
-  if (!conversationId) return;
-  const storageKey = runtimeOverrideStorageKey(conversationId);
-  if (nextValue === AUTO_RUNTIME_KEY_ID || !nextModel) {
-   window.sessionStorage.removeItem(storageKey);
-   return;
-  }
-  window.sessionStorage.setItem(storageKey, JSON.stringify({ keyId: nextValue, model: nextModel }));
- };
-
- const selectRuntimeModel = (model: string) => {
-  const selectedKey = runtimeKeys.find((key) => key.id === runtimeKeyId);
-  if (!selectedKey) return;
-  const supported =
-   selectedKey.defaultModel === model ||
-   getApiKeyModelOptions(selectedKey.provider).some((option) => option.value === model);
-  if (!supported) return;
-  const conversationId = sessionQuery.data?.conversation?.id ?? null;
-  setRuntimeSelection({ conversationId, keyId: selectedKey.id, model });
-  if (!conversationId) return;
-  window.sessionStorage.setItem(
-   runtimeOverrideStorageKey(conversationId),
-   JSON.stringify({ keyId: selectedKey.id, model }),
-  );
- };
 
  const updateDraft = (value: string) => {
   abortSpeech();
@@ -598,17 +134,7 @@ export function AiConversationWorkspace() {
   )
    return;
 
-  requestRef.current?.abort();
-  const controller = new AbortController();
-  const retryTurn = retryTurnRef.current;
-  const clientMessageId =
-   retryTurn?.content === content ? retryTurn.clientMessageId : crypto.randomUUID();
-  requestRef.current = controller;
-  retryTurnRef.current = null;
-  setDraft("");
-  setStreamContent("");
-  setStreamStop(null);
-  sendMutation.mutate({ content, clientMessageId, controller });
+  startSend(content);
  };
 
  const canSend =
@@ -620,218 +146,62 @@ export function AiConversationWorkspace() {
   !sessionQuery.isFetching &&
   !sessionQuery.isError;
 
- const toggleSpeech = () => {
-  const activeRecognition = speechRecognitionRef.current;
-  if (activeRecognition) {
-   setIsSpeechPending(true);
-   activeRecognition.stop();
-   return;
-  }
-
-  const SpeechRecognition = window.SpeechRecognition ?? window.webkitSpeechRecognition;
-  if (!SpeechRecognition) {
-   setSpeechError(t("message.speechUnsupported"));
-   return;
-  }
-
-  try {
-   const recognition = new SpeechRecognition();
-   const baseDraft = draft;
-   recognition.lang = "zh-CN";
-   recognition.continuous = false;
-   recognition.interimResults = true;
-   recognition.onstart = () => {
-    if (speechRecognitionRef.current !== recognition) return;
-    setIsSpeechPending(false);
-    setIsListening(true);
-   };
-   recognition.onresult = (event) => {
-    if (speechRecognitionRef.current !== recognition) return;
-    let transcript = "";
-    for (let index = 0; index < event.results.length; index += 1) {
-     transcript += event.results[index][0]?.transcript ?? "";
-    }
-    setDraft(`${baseDraft}${baseDraft && transcript ? " " : ""}${transcript}`.slice(0, 6000));
-    retryTurnRef.current = null;
-   };
-   recognition.onerror = (event) => {
-    if (speechRecognitionRef.current !== recognition || event.error === "aborted") return;
-    speechRecognitionRef.current = null;
-    setIsListening(false);
-    setIsSpeechPending(false);
-    const errorKey =
-     event.error === "not-allowed" || event.error === "service-not-allowed"
-      ? "message.speechPermissionError"
-      : event.error === "no-speech"
-        ? "message.speechNoSpeech"
-        : event.error === "audio-capture"
-          ? "message.speechMicrophoneError"
-          : "message.speechStartError";
-    setSpeechError(t(errorKey));
-   };
-   recognition.onend = () => {
-    if (speechRecognitionRef.current !== recognition) return;
-    speechRecognitionRef.current = null;
-    setIsListening(false);
-    setIsSpeechPending(false);
-   };
-   speechRecognitionRef.current = recognition;
-   setSpeechError("");
-   setIsSpeechPending(true);
-   recognition.start();
-  } catch {
-   speechRecognitionRef.current = null;
-   setIsListening(false);
-   setIsSpeechPending(false);
-   setSpeechError(t("message.speechStartError"));
-  }
- };
-
  return (
   <Card
    variant="section"
    padding="none"
    className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden"
   >
-   <div className="flex min-w-0 shrink-0 flex-col gap-3 px-3 py-3 sm:px-4 lg:flex-row lg:items-center lg:justify-between">
-    <div className="flex min-w-0 items-center gap-3">
-     <Avatar size="md" shape="rounded" tone="accent" aria-hidden="true">
-      <AvatarFallback>{profileAvatar}</AvatarFallback>
-     </Avatar>
-     <div className="grid min-w-0 gap-1">
-      <Typography as="span" variant="caption" tone="muted">
-       {t("title")} · {levelLabels[learnerLevel]}
-      </Typography>
-      <div className="flex min-w-0 flex-wrap items-center gap-2">
-       <Typography as="h1" variant="cardTitle" weight="black">
-        {assistantName}
-       </Typography>
-       <Badge variant="accent" casing="natural">
-        {relationshipLabels[relationshipBand]}
-       </Badge>
-       <Badge variant="default" casing="natural">
-        {modeLabels[activeMode]}
-       </Badge>
-       {session && !session.memoryEnabled ? (
-        <Badge variant="warning" casing="natural">
-         {t("memory.offShort")}
-        </Badge>
-       ) : null}
-      </div>
-      <Typography variant="caption" tone="muted" clamp="one">
-       {characterSummary}
-      </Typography>
-     </div>
-    </div>
+   <AiConversationHeader
+    assistantName={assistantName}
+    character={character}
+    learnerLevel={learnerLevel}
+    familiarityScore={session?.relationship?.familiarityScore ?? null}
+    activeModeLabel={modeLabels[activeMode]}
+    isMemoryOff={Boolean(session && !session.memoryEnabled)}
+    isNavigationLocked={isNavigationLocked}
+    onCreateConversation={() => createConversationMutation.mutate()}
+    onOpenHistory={() => setIsHistoryOpen(true)}
+    runtimeMenu={{
+     runtimeKeys: runtime.runtimeKeys,
+     runtimeKeyId,
+     runtimeModel: runtime.runtimeModel,
+     runtimeHealth,
+     isRuntimeLoading: runtime.isRuntimeLoading,
+     isHealthChecking,
+     runtimeLoadError: runtime.runtimeLoadError,
+     onSelectRuntime: (value) => runtime.selectRuntimeKey(value, () => sendMutation.reset()),
+     onSelectModel: runtime.selectRuntimeModel,
+     onRecheck: () => void runtimeHealthQuery.refetch(),
+    }}
+    actionsMenu={{
+     disabled: !conversation || isNavigationLocked,
+     canOpenSetup: Boolean(conversation),
+     isMemoryEnabled: conversation?.memoryPolicy !== "disabled",
+     isMemoryUpdating: memoryPolicyMutation.isPending,
+     onOpenSetup: () => {
+      settingsMutation.reset();
+      setIsSetupOpen(true);
+     },
+     onMemoryChange: (useMemory) => memoryPolicyMutation.mutate(useMemory),
+     onArchive: () => {
+      if (conversation) setArchiveTarget({ id: conversation.id, title: currentTitle });
+     },
+    }}
+   />
 
-    <div className="flex min-w-0 flex-wrap items-center gap-1">
-     <Button
-      type="button"
-      variant="ghost"
-      size="icon"
-      aria-label={t("history.newConversation")}
-      onClick={() => createConversationMutation.mutate()}
-      disabled={isNavigationLocked}
-     >
-      <MessageSquarePlus />
-     </Button>
-     <Button
-      type="button"
-      variant="ghost"
-      size="icon"
-      aria-label={t("history.open")}
-      onClick={() => setIsHistoryOpen(true)}
-      disabled={isNavigationLocked}
-     >
-      <History />
-     </Button>
-     <AiConversationRuntimeMenu
-      runtimeKeys={runtimeKeys}
-      runtimeKeyId={runtimeKeyId}
-      runtimeModel={runtimeModel}
-      runtimeHealth={runtimeHealth}
-      isRuntimeLoading={isRuntimeLoading}
-      isHealthChecking={isHealthChecking}
-      runtimeLoadError={runtimeLoadError}
-      onSelectRuntime={selectRuntimeKey}
-      onSelectModel={selectRuntimeModel}
-      onRecheck={() => void runtimeHealthQuery.refetch()}
-     />
-     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-       <Button
-        type="button"
-        variant="ghost"
-        size="icon"
-        aria-label={t("actions.more")}
-        disabled={!conversation || isNavigationLocked}
-       >
-        <MoreHorizontal />
-       </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" width="md">
-       <DropdownMenuItem
-        onSelect={() => {
-         settingsMutation.reset();
-         setIsSetupOpen(true);
-        }}
-        disabled={!currentSettings}
-       >
-        <Settings2 />
-        {t("actions.setup")}
-       </DropdownMenuItem>
-       <DropdownMenuCheckboxItem
-        checked={conversation?.memoryPolicy !== "disabled"}
-        onCheckedChange={(checked) => memoryPolicyMutation.mutate(checked === true)}
-        disabled={memoryPolicyMutation.isPending}
-       >
-        {t("memory.useLongTerm")}
-       </DropdownMenuCheckboxItem>
-       <DropdownMenuSeparator />
-       <DropdownMenuItem
-        onSelect={() => {
-         if (conversation) setArchiveTarget({ id: conversation.id, title: currentTitle });
-        }}
-       >
-        <Archive />
-        {t("history.archive")}
-       </DropdownMenuItem>
-      </DropdownMenuContent>
-     </DropdownMenu>
-    </div>
-   </div>
-
-   <div
-    ref={messageViewportRef}
-    className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-bg-subtle px-3 py-4 sm:px-5"
-    role="log"
-    aria-live="polite"
-    aria-relevant="additions text"
-   >
-    {sessionQuery.isPending ? (
-     <Typography as="p" variant="bodySmall" tone="muted">
-      {t("message.loadingConversation")}
-     </Typography>
-    ) : null}
-    {renderedMessages.map(({ key, message }) => (
-     <AiConversationMessageBubble key={key} message={message} assistantName={assistantName} />
-    ))}
-    {pendingMessage ? (
-     <AiConversationMessageBubble
-      key={pendingMessage.key}
-      message={pendingMessage.message}
-      assistantName={assistantName}
-     />
-    ) : null}
-    {isSending ? (
-     <AiConversationTypingBubble
-      assistantName={assistantName}
-      label={t("message.replying", { name: assistantName })}
-      streamContent={streamContent}
-      onStop={streamStop}
-     />
-    ) : null}
-   </div>
+   <AiConversationMessageLog
+    viewportRef={messageViewportRef}
+    isSessionPending={sessionQuery.isPending}
+    isSessionError={sessionQuery.isError}
+    persistedMessages={persistedMessages}
+    assistantName={assistantName}
+    activeModeLabel={modeLabels[activeMode]}
+    isSending={isSending}
+    pendingTurn={sendMutation.variables}
+    streamContent={streamContent}
+    streamStop={streamStop}
+   />
 
    {visibleError ? (
     <div className="shrink-0 border-t border-border-default px-3 py-2 sm:px-4" role="alert">
@@ -841,290 +211,23 @@ export function AiConversationWorkspace() {
     </div>
    ) : null}
 
-   <form
-    className="grid shrink-0 gap-2 border-t border-border-default bg-surface px-3 py-3 sm:px-4"
-    onSubmit={(event) => {
-     event.preventDefault();
-     send();
-    }}
-   >
-    <Label htmlFor="ai-conversation-message" className="sr-only">
-     {t("message.label")}
-    </Label>
-    <div className="flex items-end gap-2">
-     <Textarea
-      id="ai-conversation-message"
-      value={draft}
-      onChange={(event) => updateDraft(event.target.value)}
-      onKeyDown={(event) => {
-       if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
-        event.preventDefault();
-        send();
-       }
-      }}
-      rows={1}
-      maxLength={6000}
-      disabled={isSending || sessionQuery.isError}
-      placeholder={t("message.placeholder")}
-      className="min-h-11 max-h-40 flex-1"
-     />
-     {isSpeechSupported ? (
-      <Button
-       type="button"
-       variant="outline"
-       size="icon"
-       onClick={toggleSpeech}
-       disabled={isSpeechPending || isSending || sessionQuery.isError}
-       aria-label={isListening ? t("actions.stopVoice") : t("actions.startVoice")}
-       aria-pressed={isListening}
-       title={isListening ? t("actions.stopVoice") : t("actions.startVoice")}
-      >
-       <Mic className={isListening ? "motion-safe:animate-pulse text-danger" : undefined} />
-      </Button>
-     ) : null}
-     <Button
-      type="submit"
-      size="icon"
-      disabled={!draft.trim() || !canSend}
-      aria-label={isSending ? t("actions.sending") : t("actions.send")}
-     >
-      <Send />
-     </Button>
-    </div>
-    <Typography variant="caption" tone="muted">
-     {t("message.hint")}
-    </Typography>
-    {isSpeechSupported ? (
-     <Typography
-      variant="caption"
-      tone={speechError ? "danger" : "muted"}
-      role={speechError ? "alert" : "status"}
-     >
-      {speechError ||
-       (isSpeechPending && isListening
-        ? t("message.speechStopping")
-        : isSpeechPending
-          ? t("message.speechPending")
-          : isListening
-            ? t("message.speechListening")
-            : t("message.speechHint"))}
-     </Typography>
-    ) : null}
-   </form>
-
-   <AiConversationHistorySheet
-    open={isHistoryOpen}
-    currentConversationId={conversation?.id ?? null}
-    items={historyQuery.data ?? []}
-    isLoading={historyQuery.isPending && isHistoryOpen}
-    error={historyError}
-    disabled={isNavigationLocked}
-    isCreating={createConversationMutation.isPending}
-    archivingConversationId={archiveConversationMutation.variables?.id ?? null}
-    onOpenChange={setIsHistoryOpen}
-    onCreate={() => createConversationMutation.mutate()}
-    onSelect={selectConversation}
-    onRequestArchive={(item) => {
-     setIsHistoryOpen(false);
-     setArchiveTarget({ id: item.id, title: item.title.trim() || t("history.untitled") });
-    }}
+   <AiConversationComposer
+    draft={draft}
+    isSending={isSending}
+    isSessionError={sessionQuery.isError}
+    canSend={canSend}
+    speech={speech}
+    onDraftChange={updateDraft}
+    onSend={send}
    />
 
-   {archiveTarget ? (
-    <ArchiveConversationDialog
-     target={archiveTarget}
-     isArchiving={archiveConversationMutation.isPending}
-     error={
-      archiveConversationMutation.error instanceof Error
-       ? archiveConversationMutation.error.message
-       : null
-     }
-     onOpenChange={(open) => {
-      if (!open && !archiveConversationMutation.isPending) {
-       archiveConversationMutation.reset();
-       setArchiveTarget(null);
-      }
-     }}
-     onConfirm={() =>
-      archiveConversationMutation.mutate({
-       id: archiveTarget.id,
-       isCurrent: archiveTarget.id === conversation?.id,
-      })
-     }
-    />
-   ) : null}
-
-   {isSetupOpen && currentSettings ? (
-    <ConversationSettingsDialog
-     initialSettings={currentSettings}
-     isSaving={settingsMutation.isPending}
-     saveError={settingsMutation.error instanceof Error ? settingsMutation.error.message : null}
-     onOpenChange={(open) => {
-      if (!settingsMutation.isPending) {
-       if (!open) settingsMutation.reset();
-       setIsSetupOpen(open);
-      }
-     }}
-     onSave={(settings) => settingsMutation.mutate(settings)}
-    />
-   ) : null}
+   <AiConversationOverlays
+    management={management}
+    conversation={conversation}
+    learnerLevel={learnerLevel}
+    isNavigationLocked={isNavigationLocked}
+    onSelectConversation={selectConversation}
+   />
   </Card>
- );
-}
-
-function ArchiveConversationDialog({
- target,
- isArchiving,
- error,
- onOpenChange,
- onConfirm,
-}: {
- target: ArchiveTarget;
- isArchiving: boolean;
- error: string | null;
- onOpenChange: (open: boolean) => void;
- onConfirm: () => void;
-}) {
- const t = useTranslations("AiConversation");
- return (
-  <Dialog open onOpenChange={onOpenChange}>
-   <DialogContent size="sm">
-    <DialogHeader>
-     <DialogTitle>{t("history.archiveTitle")}</DialogTitle>
-     <DialogDescription>
-      {t("history.archiveDescription", { title: target.title })}
-     </DialogDescription>
-    </DialogHeader>
-    {error ? (
-     <DialogBody>
-      <Typography as="p" variant="bodySmall" tone="danger" role="alert">
-       {error}
-      </Typography>
-     </DialogBody>
-    ) : null}
-    <DialogFooter>
-     <Button
-      type="button"
-      variant="outline"
-      onClick={() => onOpenChange(false)}
-      disabled={isArchiving}
-     >
-      {t("actions.cancel")}
-     </Button>
-     <Button type="button" variant="warning" onClick={onConfirm} disabled={isArchiving}>
-      {isArchiving ? t("history.archiving") : t("history.archiveConfirm")}
-     </Button>
-    </DialogFooter>
-   </DialogContent>
-  </Dialog>
- );
-}
-
-function ConversationSettingsDialog({
- initialSettings,
- isSaving,
- saveError,
- onOpenChange,
- onSave,
-}: {
- initialSettings: AiConversationSettingsUpdate;
- isSaving: boolean;
- saveError: string | null;
- onOpenChange: (open: boolean) => void;
- onSave: (settings: AiConversationSettingsUpdate) => void;
-}) {
- const t = useTranslations("AiConversation");
- const modeOptions = [
-  { value: aiConversationModeSchema.enum.natural, label: t("modes.natural") },
-  {
-   value: aiConversationModeSchema.enum["speaking-practice"],
-   label: t("modes.speakingPractice"),
-  },
-  {
-   value: aiConversationModeSchema.enum["grammar-coach"],
-   label: t("modes.grammarCoach"),
-  },
-  {
-   value: aiConversationModeSchema.enum["hskk-practice"],
-   label: t("modes.hskkPractice"),
-  },
- ];
- const levelOptions = [
-  { value: aiConversationLearnerLevelSchema.enum.beginner, label: t("levels.beginner") },
-  { value: aiConversationLearnerLevelSchema.enum.intermediate, label: t("levels.intermediate") },
-  { value: aiConversationLearnerLevelSchema.enum.advanced, label: t("levels.advanced") },
- ];
- const correctionOptions = [
-  { value: aiConversationCorrectionStyleSchema.enum.light, label: t("corrections.light") },
-  { value: aiConversationCorrectionStyleSchema.enum.balanced, label: t("corrections.balanced") },
-  { value: aiConversationCorrectionStyleSchema.enum.strict, label: t("corrections.strict") },
- ];
- const replyModeOptions = [
-  { value: aiConversationReplyModeSchema.enum.adaptive, label: t("replyModes.adaptive") },
-  { value: aiConversationReplyModeSchema.enum.chinese, label: t("replyModes.chinese") },
-  { value: aiConversationReplyModeSchema.enum.bilingual, label: t("replyModes.bilingual") },
- ];
- const form = useAppForm({
-  defaultValues: initialSettings,
-  validators: { onSubmit: aiConversationSettingsUpdateSchema },
-  onSubmit: ({ value }) => {
-   onSave(value);
-  },
- });
-
- return (
-  <Dialog open onOpenChange={onOpenChange}>
-   <DialogContent size="lg">
-    <DialogHeader>
-     <DialogTitle>{t("setup.title")}</DialogTitle>
-     <DialogDescription>{t("setup.description")}</DialogDescription>
-    </DialogHeader>
-    <form
-     onSubmit={(event) => {
-      event.preventDefault();
-      void form.handleSubmit();
-     }}
-    >
-     <DialogBody className="grid gap-5 md:grid-cols-2">
-      <form.AppField name="mode">
-       {(field) => <field.Select label={t("setup.mode")} options={modeOptions} required />}
-      </form.AppField>
-      <form.AppField name="learnerLevel">
-       {(field) => <field.Select label={t("setup.learnerLevel")} options={levelOptions} required />}
-      </form.AppField>
-      <form.AppField name="correctionStyle">
-       {(field) => (
-        <field.Select label={t("setup.correctionStyle")} options={correctionOptions} required />
-       )}
-      </form.AppField>
-      <form.AppField name="replyMode">
-       {(field) => (
-        <field.Select label={t("setup.replyMode")} options={replyModeOptions} required />
-       )}
-      </form.AppField>
-      {saveError ? (
-       <div className="md:col-span-2">
-        <Typography variant="bodySmall" tone="danger">
-         {saveError}
-        </Typography>
-       </div>
-      ) : null}
-     </DialogBody>
-     <DialogFooter>
-      <Button
-       type="button"
-       variant="outline"
-       onClick={() => onOpenChange(false)}
-       disabled={isSaving}
-      >
-       {t("actions.cancel")}
-      </Button>
-      <Button type="submit" disabled={isSaving}>
-       {isSaving ? t("actions.saving") : t("actions.save")}
-      </Button>
-     </DialogFooter>
-    </form>
-   </DialogContent>
-  </Dialog>
  );
 }
