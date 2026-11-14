@@ -413,16 +413,13 @@ describe("CI affected selection with actual Git history", () => {
   expect(select({ event }).e2e_grep).toBe(".");
  });
 
- it("does not repeat browser and product suites for a merged pull request on main", () => {
+ it("re-runs nothing for a merged pull request on main", () => {
   const result = select({
    latest: ["src/features/hanzihome/components/review/AmbientPipFlashcard.tsx"],
    pushMergeMessage: "Merge pull request #42 from owner/feature",
    event: { EVENT_NAME: "push", BEFORE_SHA: "main-before-merge" },
   });
-  expect(result).toMatchObject({ code: "true", browser_files: "", e2e_grep: "" });
-  expect(JSON.parse(result.unit_files)).toContain(
-   "src/features/hanzihome/components/review/AmbientPipFlashcard.tsx",
-  );
+  expect(result).toMatchObject({ run_verify: "false", run_browser: "false", run_e2e: "false" });
  });
 
  it("keeps the affected suites for a direct push that is not a pull-request merge", () => {
@@ -431,8 +428,19 @@ describe("CI affected selection with actual Git history", () => {
    pushMergeMessage: "Merge branch 'hotfix'",
    event: { EVENT_NAME: "push", BEFORE_SHA: "main-before-merge" },
   });
-  expect(result.browser_files).not.toBe("");
-  expect(result.e2e_grep).not.toBe("");
+  expect(result).toMatchObject({ run_verify: "true", run_browser: "true", run_e2e: "true" });
+ });
+
+ it("runs only verify for a draft and the selected suites once the PR is ready", () => {
+  const latest = ["src/features/hanzihome/components/review/AmbientPipFlashcard.tsx"];
+  expect(select({ latest, event: { PR_DRAFT: "true" } })).toMatchObject({
+   run_verify: "true",
+   run_browser: "false",
+   run_e2e: "false",
+  });
+  expect(
+   select({ latest, event: { PR_DRAFT: "false", EVENT_ACTION: "ready_for_review" } }),
+  ).toMatchObject({ run_verify: "true", run_browser: "true", run_e2e: "true" });
  });
 
  it("keeps full coverage for a merged pull request pushed over an unsafe base", () => {
@@ -558,6 +566,35 @@ describe("CI aggregation and metadata isolation", () => {
   expect(names).toEqual(["CI draft", "CI gate"]);
  });
 
+ it("accepts a skipped verify only when it was not selected", () => {
+  const run = (runVerify, verify) => {
+   let passed = true;
+   vm.runInNewContext(inlineSource("gate"), {
+    process: {
+     env: {
+      CHECK_RESULTS: JSON.stringify({
+       changes: {
+        result: "success",
+        outputs: { run_verify: runVerify, run_browser: "false", run_e2e: "false" },
+       },
+       verify: { result: verify },
+       browser: { result: "skipped" },
+       e2e: { result: "skipped" },
+      }),
+     },
+     exit: () => {
+      passed = false;
+     },
+    },
+    console: { error: () => {}, log: () => {} },
+   });
+   return passed;
+  };
+  expect(run("false", "skipped")).toBe(true);
+  expect(run("true", "skipped")).toBe(false);
+  expect(run("false", "failure")).toBe(false);
+ });
+
  it("rejects failed or cancelled checks across all 1,024 selection/result combinations", () => {
   const results = ["success", "failure", "cancelled", "skipped"];
   for (const changes of results)
@@ -570,6 +607,9 @@ describe("CI aggregation and metadata isolation", () => {
          changes: {
           result: changes,
           outputs: {
+           run_verify: "true",
+           run_browser: String(browserSelected),
+           run_e2e: String(e2eSelected),
            browser_files: browserSelected ? "fixture.ts" : "",
            e2e_grep: e2eSelected ? "." : "",
           },
