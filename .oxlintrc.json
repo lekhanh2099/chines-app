@@ -166,19 +166,11 @@
   },
   {
    "files": [
-    "src/components/editor/EditorFloatingMenu.tsx",
     "src/components/editor/plugins/ToolbarPlugin.tsx",
-    "src/features/daily-reading/components/DailyReadingLibrary.tsx",
-    "src/features/dictation/StudioDictationWorkspace.tsx",
-    "src/features/hanzihome/ai-conversation/AiConversationWorkspace.tsx",
     "src/features/hanzihome/ai-conversation/server/ai-conversation-persistence.server.ts",
-    "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx",
-    "src/features/hanzihome/components/review/AmbientPipDictationCard.tsx",
-    "src/features/hanzihome/components/vocab/VocabBulkEditDialog.tsx",
     "src/features/hanzihome/data/server/supabase-hanzihome-content-repository.ts",
     "src/features/hanzihome/html-artifacts/HanziHomeHtmlArtifactsPage.tsx",
     "src/features/hanzihome/listening/ListeningExerciseItems.tsx",
-    "src/features/translation/TranslationWorkspace.tsx",
     "src/lib/pronunciation/contextual-pronunciation.ts",
     "src/services/ai/ai.service.ts",
     "src/services/vocab/vocab.service.ts"
@@ -190,28 +182,21 @@
   {
    "files": [
     "src/app/api/ai/conversation/route.ts",
-    "src/components/editor/EditorFloatingMenu.tsx",
     "src/features/daily-reading/components/DailyReadingLearningSupportPanel.tsx",
-    "src/features/daily-reading/components/DailyReadingLibrary.tsx",
     "src/features/daily-reading/components/DailyReadingSettingsPanel.tsx",
     "src/features/developer-api/DeveloperApiPage.tsx",
     "src/features/dictation/StudioDictationEditor.tsx",
-    "src/features/dictation/StudioDictationWorkspace.tsx",
     "src/features/hanzihome/HanziHomeAggregateLibrary.tsx",
     "src/features/hanzihome/HanziHomeLibraryHome.tsx",
-    "src/features/hanzihome/ai-conversation/AiConversationWorkspace.tsx",
     "src/features/hanzihome/annotations/LessonAnnotationProvider.tsx",
-    "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx",
     "src/features/hanzihome/components/layout/ModuleSplitWorkspaceContent.tsx",
     "src/features/hanzihome/components/lesson-overview/exercise-section/QuestionExerciseBody.tsx",
     "src/features/hanzihome/components/lesson-overview/exercise-section/SubstitutionExerciseBody.tsx",
     "src/features/hanzihome/components/practice/UniversalExerciseRunner.tsx",
-    "src/features/hanzihome/components/review/AmbientPipDictationCard.tsx",
     "src/features/hanzihome/components/review/AmbientPipExerciseRunner.tsx",
     "src/features/hanzihome/components/review/AmbientPipFlashcard.tsx",
     "src/features/hanzihome/components/review/AmbientPipGrammarCard.tsx",
     "src/features/hanzihome/components/review/UnifiedVocabStudyHub.tsx",
-    "src/features/hanzihome/components/vocab/VocabBulkEditDialog.tsx",
     "src/features/hanzihome/hooks/useLearningState.ts",
     "src/features/hanzihome/html-artifacts/HanziHomeHtmlArtifactsPage.tsx",
     "src/features/hanzihome/learning-loop/LearningLoopWorkspace.tsx",
@@ -227,9 +212,7 @@
     "src/features/reading/workspaces/ReaderDocumentStudy.tsx",
     "src/features/reading/workspaces/ReaderWorkspace.tsx",
     "src/features/settings/components/AddApiKeyDialog.tsx",
-    "src/features/settings/components/AiTaskSettingsSection.tsx",
-    "src/features/translation/TranslationWorkspace.tsx",
-    "src/hooks/useTTS.ts"
+    "src/features/settings/components/AiTaskSettingsSection.tsx"
    ],
    "rules": {
     "eslint/max-lines-per-function": "off"
