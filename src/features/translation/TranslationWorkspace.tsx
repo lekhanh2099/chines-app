@@ -9,7 +9,6 @@ import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import type { TranslationDirection } from "@/features/hanzihome/practice/translation-practice";
 import type { HumanitiesDocumentResource } from "@/features/humanities/model/humanities-resource.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
-import { usePathname, useRouter } from "@/i18n/navigation";
 import type { HumanitiesPracticeTrack } from "@/features/humanities/humanities-practice-content";
 
 import {
@@ -26,6 +25,7 @@ import { TranslationSourcePanel } from "./TranslationSourcePanel";
 import { TranslationTrackGuide } from "./TranslationTrackGuide";
 import { useTranslationAnswerDrafts } from "./useTranslationAnswerDrafts";
 import { useTranslationAttempts } from "./useTranslationAttempts";
+import { useTranslationDocumentNavigation } from "./useTranslationDocumentNavigation";
 import { useTranslationPreparation } from "./useTranslationPreparation";
 
 export function TranslationWorkspace({
@@ -37,8 +37,6 @@ export function TranslationWorkspace({
 }) {
  const t = useTranslations("HumanitiesPractice");
  const tts = useSharedMandarinTts();
- const router = useRouter();
- const pathname = usePathname();
  const searchParams = useSearchParams();
  const [activeTrack, setActiveTrack] = useState<HumanitiesPracticeTrack>(() =>
   searchParams.get("track") === "interpreting" ? "interpreting" : "translation",
@@ -92,20 +90,10 @@ export function TranslationWorkspace({
  const backTranslation = key ? (backTranslations[key] ?? "") : "";
  const isChecked = key ? checked[key] === true : false;
 
- const selectDocument = (documentId: string) => {
-  const next = new URLSearchParams(searchParams.toString());
-  next.set("document", documentId);
-  resetDocumentDrafts(documentId);
-  clearSaveError();
-  router.push(`${pathname}?${next.toString()}`, { scroll: false });
- };
- const clearDocument = () => {
-  const next = new URLSearchParams(searchParams.toString());
-  next.delete("document");
-  resetDocumentDrafts("");
-  clearSaveError();
-  router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
- };
+ const { selectDocument, clearDocument } = useTranslationDocumentNavigation({
+  resetDocumentDrafts,
+  clearSaveError,
+ });
 
  const updateDraft = (value: string) => {
   if (!key) return;
