@@ -1,4 +1,4 @@
-export type AiConversationRelationshipBand = "new" | "familiar" | "friends" | "close";
+type AiConversationRelationshipBand = "new" | "familiar" | "friends" | "close";
 
 export function deriveAiConversationRelationshipBand(
  score: number | null,

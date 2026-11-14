@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const NotebookSectionIdSchema = z.enum([
+const NotebookSectionIdSchema = z.enum([
  "conjunctions",
  "adverbs",
  "pronouns",
@@ -11,12 +11,12 @@ export const NotebookSectionIdSchema = z.enum([
  "grammar_q2",
 ]);
 
-export const NotebookGroupSchema = z.object({
+const NotebookGroupSchema = z.object({
  id: z.string(),
  name: z.string(),
 });
 
-export const NotebookDeepDiveSourceSchema = z.enum([
+const NotebookDeepDiveSourceSchema = z.enum([
  "prepositions",
  "particles",
  "discourse",
@@ -40,7 +40,7 @@ export const NotebookDeepDiveSchema = z.object({
  src: z.array(NotebookDeepDiveSourceSchema),
 });
 
-export const NotebookTermSchema = z.object({
+const NotebookTermSchema = z.object({
  g: z.string(),
  term: z.string(),
  p: z.string(),
@@ -58,7 +58,7 @@ export const NotebookTermSchema = z.object({
  src: z.array(NotebookDeepDiveSourceSchema).optional(),
 });
 
-export const NotebookComparisonSchema = z.object({
+const NotebookComparisonSchema = z.object({
  title: z.string(),
  note: z.string(),
  terms: z.array(z.string()),
@@ -66,7 +66,7 @@ export const NotebookComparisonSchema = z.object({
  danger: z.string(),
 });
 
-export const NotebookSectionSchema = z.object({
+const NotebookSectionSchema = z.object({
  label: z.string(),
  zh: z.string(),
  desc: z.string(),
@@ -92,11 +92,11 @@ export type NotebookSectionId = z.infer<typeof NotebookSectionIdSchema>;
 export type NotebookGroup = z.infer<typeof NotebookGroupSchema>;
 export type NotebookDeepDive = z.infer<typeof NotebookDeepDiveSchema>;
 export type NotebookDeepDiveSource = z.infer<typeof NotebookDeepDiveSourceSchema>;
-export type NotebookTerm = z.infer<typeof NotebookTermSchema>;
-export type NotebookComparison = z.infer<typeof NotebookComparisonSchema>;
+type NotebookTerm = z.infer<typeof NotebookTermSchema>;
+type NotebookComparison = z.infer<typeof NotebookComparisonSchema>;
 export type NotebookSection = z.infer<typeof NotebookSectionSchema>;
 export type NotebookSeedData = z.infer<typeof NotebookSeedDataSchema>;
-export const NotebookViewModeSchema = z.enum(["cards", "compare", "matrix"]);
+const NotebookViewModeSchema = z.enum(["cards", "compare", "matrix"]);
 export type NotebookViewMode = z.infer<typeof NotebookViewModeSchema>;
 
 export type NotebookItem = NotebookTerm & {

@@ -1,6 +1,6 @@
 import { createStore } from "@tanstack/react-store";
 
-export type SpeechDialogStoreState = {
+type SpeechDialogStoreState = {
  open: boolean;
 };
 

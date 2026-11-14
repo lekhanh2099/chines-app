@@ -21,7 +21,7 @@ import { DecoratorNode, $applyNodeReplacement } from "lexical";
 import type { JSX, ReactNode } from "react";
 import { z } from "zod";
 
-export type SerializedInlineNoteNode = Spread<
+type SerializedInlineNoteNode = Spread<
  {
   text: string;
   noteText: string;

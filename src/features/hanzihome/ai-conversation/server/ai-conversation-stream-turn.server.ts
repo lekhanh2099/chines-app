@@ -31,7 +31,7 @@ const encoder = new TextEncoder();
 const heartbeatMilliseconds = 10_000;
 const maximumAssistantCharacters = 6_000;
 
-export type AiConversationStreamTurnResult =
+type AiConversationStreamTurnResult =
  | { ok: true; response: Response }
  | { ok: false; status: number; code: string; message: string };
 

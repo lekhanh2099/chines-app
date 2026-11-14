@@ -1,14 +1,12 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { useSelector } from "@tanstack/react-store";
-import { useQueryClient } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-import { useClientSession } from "@/components/providers/QueryProvider";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
@@ -17,8 +15,7 @@ import {
  clearHanziHomeSearchNavigationIntent,
  setHanziHomeSearchNavigationIntent,
 } from "@/features/hanzihome/search/searchNavigationStore";
-import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
-import { prefetchHanziHomeSearchIndex } from "@/features/hanzihome/search/useHanziHomeSearchIndex";
+import type { HanziHomeSearchResultItem } from "@/features/hanzihome/search/types";
 import { findLessonByRouteParam } from "@/features/hanzihome/utils/lesson-route";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { containsChinese } from "@/lib/text/chinese-utils";
@@ -31,29 +28,7 @@ export function HanziHomeGlobalSearchBridge() {
  const router = useRouter();
  const requestNavigation = useUnsavedDraftGuard(false);
  const searchParams = useSearchParams();
- const queryClient = useQueryClient();
  const open = useSelector(globalSearchStore, (state) => state.open);
- const { userId, isResolved } = useClientSession();
-
- useEffect(() => {
-  // The search index route requires a session; prefetching as a guest only
-  // produced 401s (two, with the default query retry) on every public page.
-  if (typeof window === "undefined" || !isResolved || !userId) return;
-
-  const scheduleIdle =
-   window.requestIdleCallback || ((callback: () => void) => window.setTimeout(callback, 1000));
-  const cancelIdle = window.cancelIdleCallback || ((handle: number) => window.clearTimeout(handle));
-
-  const handle = scheduleIdle(() => {
-   void prefetchHanziHomeSearchIndex(queryClient);
-  });
-
-  return () => {
-   if (typeof handle === "number") {
-    cancelIdle(handle);
-   }
-  };
- }, [isResolved, queryClient, userId]);
  const query = useSelector(globalSearchStore, (state) => state.query);
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { openInspector } = useVocabInspector();
@@ -99,7 +74,7 @@ export function HanziHomeGlobalSearchBridge() {
   closeAndClear();
  };
 
- const handleOpenSearchResult = (item: HanziHomeSearchIndexItem) => {
+ const handleOpenSearchResult = (item: HanziHomeSearchResultItem) => {
   if (focusModeEnabled && item.lessonId && item.lessonId !== selectedLesson?.id) {
    toast.warning(tHeader("focusModeLessonBlocked"));
    return;

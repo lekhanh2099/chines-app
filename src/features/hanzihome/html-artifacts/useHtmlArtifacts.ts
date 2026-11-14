@@ -34,7 +34,7 @@ type HtmlArtifactsData = {
  folders: HtmlArtifactFolder[];
 };
 
-export function useHtmlArtifactsQuery() {
+function useHtmlArtifactsQuery() {
  return useQuery({
   queryKey: htmlArtifactsQueryKey,
   queryFn: getHtmlArtifacts,

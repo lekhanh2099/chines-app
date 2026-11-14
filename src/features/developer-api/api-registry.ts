@@ -2061,6 +2061,16 @@ export const currentApiInventory = [
   internalReason: null,
  }),
  inventoryEntry({
+  currentPath: "/api/hanzihome/search",
+  methods: ["GET"],
+  source: "route",
+  group: "HanziHome đọc",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "Global search ranks the authenticated user's own notes with course and static content.",
+ }),
+ inventoryEntry({
   currentPath: "/api/home/learning-overview",
   methods: ["GET"],
   source: "route",

@@ -2,15 +2,15 @@ import { z } from "zod";
 
 // Common helpers
 
-export const NonEmptyStringSchema = z.string().trim().min(1);
+const NonEmptyStringSchema = z.string().trim().min(1);
 
-export const OptionalStringSchema = z
+const OptionalStringSchema = z
  .string()
  .optional()
  .default("")
  .transform((s) => s.trim());
 
-export const StringArraySchema = z
+const StringArraySchema = z
  .preprocess((value) => {
   if (typeof value === "string") {
    return value
@@ -23,7 +23,7 @@ export const StringArraySchema = z
  }, z.array(z.string()).optional().default([]))
  .transform((arr) => arr.map((x) => x.trim()).filter(Boolean));
 
-export const IdSchema = z.string().trim().min(1);
+const IdSchema = z.string().trim().min(1);
 
 const FlexibleStringSchema = z.preprocess((value) => {
  if (typeof value === "string") {
@@ -40,7 +40,7 @@ const FlexibleStringSchema = z.preprocess((value) => {
 
 // Universal notes
 
-export const NoteKindSchema = z.enum([
+const NoteKindSchema = z.enum([
  "general",
  "usage",
  "warning",
@@ -54,7 +54,7 @@ export const NoteKindSchema = z.enum([
  "culture",
 ]);
 
-export const NoteSchema = z.object({
+const NoteSchema = z.object({
  id: IdSchema.optional(),
  kind: NoteKindSchema.default("general"),
  text_vi: NonEmptyStringSchema,
@@ -93,7 +93,7 @@ export const PartOfSpeechSchema = z.enum([
  "unknown",
 ]);
 
-export const PosSchema = z.preprocess(
+const PosSchema = z.preprocess(
  (value) => {
   if (typeof value === "string") {
    return {
@@ -137,7 +137,7 @@ export const MeaningSchema = z.object({
 
 // Radical-aware character / word formation
 
-export const ComponentRoleSchema = z.enum([
+const ComponentRoleSchema = z.enum([
  "radical",
  "semantic",
  "phonetic",
@@ -148,7 +148,7 @@ export const ComponentRoleSchema = z.enum([
  "unknown",
 ]);
 
-export const RadicalFormSchema = z.enum([
+const RadicalFormSchema = z.enum([
  "main",
  "variant",
  "simplified",
@@ -158,7 +158,7 @@ export const RadicalFormSchema = z.enum([
  "unknown",
 ]);
 
-export const RadicalInfoSchema = z.object({
+const RadicalInfoSchema = z.object({
  radical: FlexibleStringSchema, // ví dụ: 糸
  radical_variant: OptionalStringSchema, // ví dụ: 纟
  radical_name_vi: OptionalStringSchema, // ví dụ: bộ Mịch
@@ -172,7 +172,7 @@ export const RadicalInfoSchema = z.object({
  check_needed: z.boolean().default(false),
 });
 
-export const CharacterComponentSchema = z.object({
+const CharacterComponentSchema = z.object({
  text: NonEmptyStringSchema,
 
  hanviet: OptionalStringSchema,
@@ -240,7 +240,7 @@ export const WordFormationSchema = z.object({
 
 // Comparisons
 
-export const RelatedWordSchema = z.preprocess(
+const RelatedWordSchema = z.preprocess(
  (value) => {
   if (Array.isArray(value)) {
    const [word, pinyin, meaningVi, differenceVi] = value;
@@ -280,7 +280,7 @@ export const RelatedWordSchema = z.preprocess(
  }),
 );
 
-export const ContrastPairSchema = z.preprocess(
+const ContrastPairSchema = z.preprocess(
  (value) => {
   if (Array.isArray(value)) {
    const [left, right, meaningVi, noteVi] = value;
@@ -335,7 +335,7 @@ export const CollocationSchema = z.object({
 
 // Examples
 
-export const ExampleLevelSchema = z.preprocess(
+const ExampleLevelSchema = z.preprocess(
  (value) => {
   if (value === "application" || value === "lesson" || value === "lesson_context") {
    return "applied";
@@ -384,7 +384,7 @@ export const CultureNoteSchema = z.object({
 
 // Warnings / common mistakes
 
-export const UsageExampleSchema = z.object({
+const UsageExampleSchema = z.object({
  zh: NonEmptyStringSchema,
  pinyin: OptionalStringSchema,
  vi: OptionalStringSchema,
@@ -392,7 +392,7 @@ export const UsageExampleSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-export const UsageExampleInputSchema = z.union([
+const UsageExampleInputSchema = z.union([
  UsageExampleSchema,
  NonEmptyStringSchema.transform((value) => ({
   zh: value,
@@ -423,7 +423,7 @@ export const WarningSchema = z.object({
 
 // Flashcards
 
-export const FlashcardModeSchema = z.enum([
+const FlashcardModeSchema = z.enum([
  "hanzi_to_meaning",
  "meaning_to_hanzi",
  "pinyin_to_hanzi",
@@ -432,7 +432,7 @@ export const FlashcardModeSchema = z.enum([
  "example_sentence",
 ]);
 
-export const FlashcardSchema = z.object({
+const FlashcardSchema = z.object({
  front: NonEmptyStringSchema,
  back: NonEmptyStringSchema,
 

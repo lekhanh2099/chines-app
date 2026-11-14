@@ -27,7 +27,7 @@ export const aiConversationPersistedMessageSchema = z.strictObject({
  runtimeReceipt: aiRuntimeReceiptSchema.optional(),
 });
 
-export const aiConversationThreadSchema = z.strictObject({
+const aiConversationThreadSchema = z.strictObject({
  id: z.uuid(),
  characterId: z.uuid(),
  title: z.string(),
@@ -37,14 +37,14 @@ export const aiConversationThreadSchema = z.strictObject({
  memoryPolicy: aiConversationMemoryPolicySchema,
 });
 
-export const aiConversationCharacterPresentationSchema = z.strictObject({
+const aiConversationCharacterPresentationSchema = z.strictObject({
  id: z.uuid(),
  displayName: z.string().trim().min(1),
  city: z.string(),
  interests: z.array(z.string()),
 });
 
-export const aiConversationRelationshipPresentationSchema = z.strictObject({
+const aiConversationRelationshipPresentationSchema = z.strictObject({
  nickname: z.string(),
  familiarityScore: z.number().min(0).max(1),
 });
@@ -58,7 +58,7 @@ export const aiConversationSessionSchema = z.strictObject({
  messages: z.array(aiConversationPersistedMessageSchema),
 });
 
-export const aiConversationHistoryItemSchema = z.strictObject({
+const aiConversationHistoryItemSchema = z.strictObject({
  id: z.uuid(),
  characterId: z.uuid(),
  title: z.string(),
@@ -92,11 +92,6 @@ export const aiConversationMemoryPolicyStateSchema = z.strictObject({
 export const aiConversationArchiveResponseSchema = z.strictObject({
  conversationId: z.uuid(),
  archived: z.literal(true),
-});
-
-export const aiConversationPostTurnProcessResponseSchema = z.strictObject({
- processed: z.number().int().nonnegative(),
- ready: z.boolean(),
 });
 
 export const aiConversationTurnRequestSchema = z.strictObject({

@@ -8,14 +8,14 @@ import {
 const optionalTrimmedText = z.string().trim().min(1).optional();
 const itemTypeSchema = z.enum(LISTENING_ITEM_TYPES);
 
-export const listeningTranscriptSpeakerSchema = z.object({
+const listeningTranscriptSpeakerSchema = z.object({
  id: z.string().min(1),
  labelZh: z.string().min(1),
  labelVi: z.string().min(1),
  voice: z.enum(["male", "female", "neutral"]),
 });
 
-export const listeningTranscriptLineSchema = z.object({
+const listeningTranscriptLineSchema = z.object({
  order: z.number().int().positive(),
  speakerId: z.string().min(1),
  zh: z.string().trim().min(1),
@@ -23,7 +23,7 @@ export const listeningTranscriptLineSchema = z.object({
  vi: optionalTrimmedText,
 });
 
-export const listeningTranscriptTextSchema = z.object({
+const listeningTranscriptTextSchema = z.object({
  zh: z.string().trim().min(1),
  pinyin: z.string().trim().min(1),
  vi: optionalTrimmedText,
@@ -143,7 +143,7 @@ export const updateListeningItemChangesSchema = z
  })
  .refine((value) => Object.keys(value).length > 0, "At least one changed field is required");
 
-export const listeningRuntimeSectionSchema = z.object({
+const listeningRuntimeSectionSchema = z.object({
  id: z.string().min(1),
  sourceSectionId: z.string().min(1),
  order: z.number().int().positive(),

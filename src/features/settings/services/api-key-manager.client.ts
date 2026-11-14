@@ -13,7 +13,7 @@ import { ApiKeyProviderSchema } from "@/lib/ai/api-key-providers";
 
 const endpoint = "/api/settings/api-keys";
 type ApiKeyProviderInput = z.infer<z.ZodUnion<[typeof ApiKeyProviderSchema, z.ZodLiteral<"auto">]>>;
-export const ApiKeyMoveDirectionSchema = z.enum(["up", "down"]);
+const ApiKeyMoveDirectionSchema = z.enum(["up", "down"]);
 
 async function requestApiKeys<T>(
  url: string,

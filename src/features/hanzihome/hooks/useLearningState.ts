@@ -1,89 +1,41 @@
 "use client";
 
-import { createStore, useSelector } from "@tanstack/react-store";
-import { useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
+import { useSelector } from "@tanstack/react-store";
+import { useEffect, useMemo, useSyncExternalStore } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
 import type {
  CustomVocabItem,
  LearningStatus,
- ReviewResult,
  UserLearningState,
 } from "@/features/hanzihome/types";
-import {
- loadLearningStateLocalFirst,
- refreshLearningStateFromRemoteIfClean,
- saveLearningStateLocalFirst,
- syncPendingLearningStateMutations,
- type LearningStateSyncResult,
- type LearningStateSyncStatus,
-} from "@/features/hanzihome/local/learning-state-local-first";
-import {
- enqueueReviewAttempt,
- syncPendingReviewAttempts,
- type ReviewAttemptInput,
-} from "@/features/hanzihome/local/review-attempt-outbox";
+import { loadLearningStateLocalFirst } from "@/features/hanzihome/local/learning-state-local-first";
 import {
  emptyLearningState,
- nextProgress,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
-export type DurabilityStatus = "durable" | "memory-only" | "failed";
+import {
+ defaultSyncUiState,
+ learningStateSyncStore,
+ syncLearningState,
+ updateOwnerSyncUiState,
+} from "./learning-state-sync-store";
+import {
+ applyBookmarkToggle,
+ applyCustomVocabAdd,
+ applyCustomVocabRemove,
+ applyCustomVocabToggleByHanzi,
+ applyCustomVocabUpdate,
+ applyGrammarProgress,
+ applySettingsUpdate,
+ applyVocabProgress,
+} from "./learning-state-update-model";
+import { useLearningStateWrites } from "./useLearningStateWrites";
 
-type LearningStateSyncUiState = {
- status: LearningStateSyncStatus;
- durability: DurabilityStatus;
- pendingCount: number;
- lastError: string | null;
- isOnline: boolean;
-};
-
-type LearningStateSyncStoreState = {
- byOwner: Map<string, LearningStateSyncUiState>;
-};
-
-type ReviewItem = Pick<UserLearningState["reviewHistory"][number], "type" | "id" | "label">;
-
-const defaultSyncUiState: LearningStateSyncUiState = {
- status: "synced",
- durability: "durable",
- pendingCount: 0,
- lastError: null,
- isOnline: true,
-};
-
-const learningStateSyncStore = createStore<LearningStateSyncStoreState>({
- byOwner: new Map(),
-});
-const learningStateWriteChains = new Map<string, Promise<void>>();
-
-type FailedLearningStateWriteIntent = {
- baseState: UserLearningState;
- nextState: UserLearningState;
- reviewAttempt?: {
-  attemptId: string;
-  input: ReviewAttemptInput;
- };
-};
-
-type FailedReviewEvidenceIntent = {
- attemptId: string;
- input: ReviewAttemptInput;
-};
-
-const failedWriteIntents = new Map<string, FailedLearningStateWriteIntent[]>();
-const failedReviewIntents = new Map<string, FailedReviewEvidenceIntent[]>();
-
-export function getLearningStateSyncState(ownerUserId: string): LearningStateSyncUiState {
- return learningStateSyncStore.state.byOwner.get(ownerUserId) ?? defaultSyncUiState;
-}
-
-function getOwnerSyncUiState(ownerUserId: string): LearningStateSyncUiState {
- return getLearningStateSyncState(ownerUserId);
-}
+export { getLearningStateSyncState, type DurabilityStatus } from "./learning-state-sync-store";
 
 function getBrowserOnlineState() {
  return typeof window === "undefined" ? true : navigator.onLine;
@@ -103,78 +55,6 @@ function subscribeToBrowserOnlineState(onStoreChange: () => void) {
   window.removeEventListener("online", onStoreChange);
   window.removeEventListener("offline", onStoreChange);
  };
-}
-
-function updateOwnerSyncUiState(
- ownerUserId: string,
- update: (current: LearningStateSyncUiState) => LearningStateSyncUiState,
-) {
- learningStateSyncStore.setState((state) => {
-  const byOwner = new Map(state.byOwner);
-  byOwner.set(ownerUserId, update(byOwner.get(ownerUserId) ?? defaultSyncUiState));
-  return { byOwner };
- });
-}
-
-function updateSyncUiState(ownerUserId: string, result: LearningStateSyncResult) {
- updateOwnerSyncUiState(ownerUserId, (state) => ({
-  ...state,
-  status: result.status,
-  pendingCount: result.pendingCount,
-  lastError: result.error ?? null,
- }));
-}
-
-function reviewResultToLearningStatus(result: ReviewResult): LearningStatus {
- if (result === "known") return "known";
- if (result === "hard") return "hard";
- return "learning";
-}
-
-function reviewAttemptInput(item: ReviewItem, result: ReviewResult): ReviewAttemptInput {
- return {
-  itemType: item.type,
-  itemId: item.id,
-  label: item.label,
-  result,
- };
-}
-
-async function syncLearningState(
- queryClient: ReturnType<typeof useQueryClient>,
- ownerUserId: string,
-): Promise<LearningStateSyncResult> {
- updateOwnerSyncUiState(ownerUserId, (state) => ({ ...state, status: "syncing" }));
- const learningResult = await syncPendingLearningStateMutations(ownerUserId);
- const reviewResult = await syncPendingReviewAttempts(ownerUserId);
- const combined: LearningStateSyncResult = {
-  ...learningResult,
-  status:
-   learningResult.status === "error" || reviewResult.status === "error"
-    ? "error"
-    : learningResult.pendingCount + reviewResult.pendingCount > 0
-      ? "pending"
-      : "synced",
-  pendingCount: learningResult.pendingCount + reviewResult.pendingCount,
-  error: learningResult.error ?? reviewResult.error,
- };
- updateSyncUiState(ownerUserId, combined);
- const queryKey = hanzihomeQueryKeys.learningState(ownerUserId);
-
- if (combined.state) {
-  queryClient.setQueryData(queryKey, normalizeLearningState(combined.state));
- }
- if (combined.status === "synced") {
-  try {
-   const remoteState = await refreshLearningStateFromRemoteIfClean(ownerUserId);
-   if (remoteState) {
-    queryClient.setQueryData(queryKey, normalizeLearningState(remoteState));
-   }
-  } catch {
-   // Remote refresh is opportunistic. Pending local writes remain observable in the owner sync state.
-  }
- }
- return combined;
 }
 
 export function LearningStateSyncAgent() {
@@ -253,252 +133,12 @@ export function useLearningState() {
   () => normalizeLearningState(query.data ?? emptyLearningState),
   [query.data],
  );
- const retrySync = useCallback(async (): Promise<LearningStateSyncResult> => {
-  if (!userId) {
-   return {
-    status: "synced",
-    syncedCount: 0,
-    pendingCount: 0,
-   };
-  }
-
-  // 1. Recover in the same owner write chain as fresh actions. Every failed
-  // intent keeps its review evidence, while state replay uses the latest
-  // optimistic snapshot so an older retry cannot overwrite a newer action.
-  const previous = learningStateWriteChains.get(userId) ?? Promise.resolve();
-  const retryWrites = previous
-   .catch(() => undefined)
-   .then(async () => {
-    let pendingWrites = failedWriteIntents.get(userId);
-    while (pendingWrites && pendingWrites.length > 0) {
-     failedWriteIntents.delete(userId);
-     for (const [index, intent] of pendingWrites.entries()) {
-      const latestState = normalizeLearningState(
-       queryClient.getQueryData<UserLearningState>(queryKey) ?? intent.nextState,
-      );
-      try {
-       await saveLearningStateLocalFirst(userId, latestState, latestState, {
-        reviewAttempt: intent.reviewAttempt,
-       });
-      } catch (writeErr) {
-       const remaining = failedWriteIntents.get(userId) ?? [];
-       failedWriteIntents.set(userId, [...pendingWrites.slice(index), ...remaining]);
-       throw writeErr;
-      }
-     }
-     pendingWrites = failedWriteIntents.get(userId);
-    }
-   });
-  learningStateWriteChains.set(userId, retryWrites);
-
-  try {
-   await retryWrites;
-  } catch (writeErr) {
-   const message =
-    writeErr instanceof Error ? writeErr.message : "Could not save learning state locally.";
-   updateOwnerSyncUiState(userId, (value) => ({
-    ...value,
-    status: "error",
-    durability: "failed",
-    lastError: message,
-   }));
-   return {
-    status: "error",
-    syncedCount: 0,
-    pendingCount: Math.max(1, getOwnerSyncUiState(userId).pendingCount),
-    error: message,
-   };
-  } finally {
-   if (learningStateWriteChains.get(userId) === retryWrites) {
-    learningStateWriteChains.delete(userId);
-   }
-  }
-
-  // 2. Recover and enqueue failed review evidence to outbox
-  const pendingReviews = failedReviewIntents.get(userId);
-  if (pendingReviews && pendingReviews.length > 0) {
-   failedReviewIntents.delete(userId);
-   for (const [index, review] of pendingReviews.entries()) {
-    try {
-     await enqueueReviewAttempt(userId, review.input, review.attemptId);
-    } catch (reviewErr) {
-     const remaining = failedReviewIntents.get(userId) ?? [];
-     failedReviewIntents.set(userId, [...pendingReviews.slice(index), ...remaining]);
-     const message =
-      reviewErr instanceof Error ? reviewErr.message : "Could not queue review evidence.";
-     updateOwnerSyncUiState(userId, (value) => ({
-      ...value,
-      status: "error",
-      durability: "failed",
-      lastError: message,
-     }));
-     return {
-      status: "error",
-      syncedCount: 0,
-      pendingCount: Math.max(1, getOwnerSyncUiState(userId).pendingCount),
-      error: message,
-     };
-    }
-   }
-  }
-
-  // 3. Mark local state as durable
-  updateOwnerSyncUiState(userId, (value) => ({
-   ...value,
-   durability: "durable",
-   lastError: null,
-  }));
-
-  // 4. Drain from durable storage to remote
-  return syncLearningState(queryClient, userId);
- }, [queryClient, queryKey, userId]);
-
- const updateState = useCallback(
-  (
-   recipe: (state: UserLearningState) => UserLearningState,
-   options?: {
-    reviewAttempt?: {
-     attemptId: string;
-     input: ReviewAttemptInput;
-    };
-   },
-  ) => {
-   const current = normalizeLearningState(
-    queryClient.getQueryData<UserLearningState>(queryKey) ?? query.data ?? emptyLearningState,
-   );
-   const nextState = normalizeLearningState(recipe(current));
-
-   queryClient.setQueryData(queryKey, nextState);
-   if (!userId) return;
-
-   updateOwnerSyncUiState(userId, (value) => ({
-    ...value,
-    status: "pending",
-    durability: "memory-only",
-    pendingCount: Math.max(1, value.pendingCount),
-    lastError: null,
-   }));
-
-   const previous = learningStateWriteChains.get(userId) ?? Promise.resolve();
-   const nextWrite = previous
-    .catch(() => undefined)
-    .then(async () => {
-     await saveLearningStateLocalFirst(userId, current, nextState, {
-      reviewAttempt: options?.reviewAttempt,
-     });
-     updateOwnerSyncUiState(userId, (value) => ({
-      ...value,
-      durability: "durable",
-     }));
-    });
-   learningStateWriteChains.set(userId, nextWrite);
-
-   void nextWrite
-    .then(() => syncLearningState(queryClient, userId))
-    .catch((error: unknown) => {
-     const message =
-      error instanceof Error ? error.message : "Could not save learning state locally.";
-     const userFailed = failedWriteIntents.get(userId) ?? [];
-     userFailed.push({
-      baseState: current,
-      nextState,
-      reviewAttempt: options?.reviewAttempt,
-     });
-     failedWriteIntents.set(userId, userFailed);
-
-     updateOwnerSyncUiState(userId, (value) => ({
-      ...value,
-      status: "error",
-      durability: "failed",
-      pendingCount: Math.max(1, value.pendingCount),
-      lastError: message,
-     }));
-    })
-    .finally(() => {
-     if (learningStateWriteChains.get(userId) === nextWrite) {
-      learningStateWriteChains.delete(userId);
-     }
-    });
-  },
-  [query.data, queryClient, queryKey, userId],
- );
-
- const queueReviewEvidence = useCallback(
-  (item: ReviewItem, result: ReviewResult) => {
-   if (!userId) return;
-   const input = reviewAttemptInput(item, result);
-   const attemptId = crypto.randomUUID();
-   updateOwnerSyncUiState(userId, (value) => ({
-    ...value,
-    status: "pending",
-    durability: "memory-only",
-    pendingCount: Math.max(1, value.pendingCount),
-    lastError: null,
-   }));
-   void enqueueReviewAttempt(userId, input, attemptId)
-    .then(() => {
-     updateOwnerSyncUiState(userId, (value) => ({
-      ...value,
-      durability: "durable",
-     }));
-     return item.type === "radical" ? syncLearningState(queryClient, userId) : undefined;
-    })
-    .catch((error: unknown) => {
-     const userFailed = failedReviewIntents.get(userId) ?? [];
-     userFailed.push({
-      attemptId,
-      input,
-     });
-     failedReviewIntents.set(userId, userFailed);
-
-     updateOwnerSyncUiState(userId, (value) => ({
-      ...value,
-      status: "error",
-      durability: "failed",
-      pendingCount: Math.max(1, value.pendingCount),
-      lastError: error instanceof Error ? error.message : "Could not queue review evidence.",
-     }));
-    });
-  },
-  [queryClient, userId],
- );
-
- const recordReview = useCallback(
-  (item: ReviewItem, result: ReviewResult) => {
-   if (!userId) return;
-   const attemptInput = reviewAttemptInput(item, result);
-
-   if (item.type === "radical") {
-    queueReviewEvidence(item, result);
-    return;
-   }
-
-   const attemptId = crypto.randomUUID();
-   const status = reviewResultToLearningStatus(result);
-   updateState(
-    (current) => ({
-     ...current,
-     progress:
-      item.type === "vocab"
-       ? {
-          ...current.progress,
-          vocab: { ...current.progress.vocab, [item.id]: nextProgress(status) },
-         }
-       : {
-          ...current.progress,
-          grammar: { ...current.progress.grammar, [item.id]: nextProgress(status) },
-         },
-    }),
-    {
-     reviewAttempt: {
-      attemptId,
-      input: attemptInput,
-     },
-    },
-   );
-  },
-  [queueReviewEvidence, updateState, userId],
- );
+ const { retrySync, updateState, queueReviewEvidence, recordReview } = useLearningStateWrites({
+  userId,
+  queryClient,
+  queryKey,
+  queryData: query.data,
+ });
 
  return useMemo(
   () => ({
@@ -514,159 +154,27 @@ export function useLearningState() {
    retrySync,
 
    updateSettings: (settings: Partial<UserLearningState["settings"]>) =>
-    updateState((current) => ({
-     ...current,
-     settings: {
-      ...current.settings,
-      ...settings,
-      ...(settings.bookDisplayModes
-       ? {
-          bookDisplayModes: { ...current.settings.bookDisplayModes, ...settings.bookDisplayModes },
-         }
-       : {}),
-      ...(settings.bookResume
-       ? { bookResume: { ...current.settings.bookResume, ...settings.bookResume } }
-       : {}),
-     },
-    })),
+    updateState((current) => applySettingsUpdate(current, settings)),
 
    updateVocabProgress: (id: string, status: LearningStatus) =>
-    updateState((current) => ({
-     ...current,
-     progress: {
-      ...current.progress,
-      vocab: { ...current.progress.vocab, [id]: nextProgress(status) },
-     },
-    })),
+    updateState((current) => applyVocabProgress(current, id, status)),
 
    updateGrammarProgress: (id: string, status: LearningStatus) =>
-    updateState((current) => ({
-     ...current,
-     progress: {
-      ...current.progress,
-      grammar: { ...current.progress.grammar, [id]: nextProgress(status) },
-     },
-    })),
+    updateState((current) => applyGrammarProgress(current, id, status)),
 
    toggleBookmark: (scope: keyof UserLearningState["bookmarks"], id: string) =>
-    updateState((current) => {
-     const existing = current.bookmarks[scope] || [];
-     const nextItems = existing.includes(id)
-      ? existing.filter((item) => item !== id)
-      : [...existing, id];
-
-     return {
-      ...current,
-      bookmarks: { ...current.bookmarks, [scope]: nextItems },
-     };
-    }),
+    updateState((current) => applyBookmarkToggle(current, scope, id)),
 
    addCustomVocab: (items: readonly Omit<CustomVocabItem, "id" | "createdAt">[]) =>
-    updateState((current) => {
-     const existing = current.settings.customVocab ?? [];
-     const nextMap = new Map(existing.map((item) => [item.hanzi.trim(), item]));
-     const now = new Date().toISOString();
-
-     items.forEach((raw, idx) => {
-      const hanzi = raw.hanzi.trim();
-      const meaning = raw.meaning.trim();
-      if (!hanzi || !meaning) return;
-      const prev = nextMap.get(hanzi);
-      nextMap.set(hanzi, {
-       id:
-        prev?.id ?? `custom-vocab-${Date.now()}-${idx}-${Math.random().toString(36).slice(2, 7)}`,
-       hanzi,
-       pinyin: raw.pinyin.trim() || prev?.pinyin || "",
-       meaning,
-       pos: raw.pos?.trim() || prev?.pos,
-       note: raw.note?.trim() || prev?.note,
-       exampleZh: raw.exampleZh?.trim() || prev?.exampleZh,
-       exampleVi: raw.exampleVi?.trim() || prev?.exampleVi,
-       createdAt: prev?.createdAt ?? now,
-      });
-     });
-
-     return {
-      ...current,
-      settings: {
-       ...current.settings,
-       customVocab: Array.from(nextMap.values()),
-      },
-     };
-    }),
+    updateState((current) => applyCustomVocabAdd(current, items)),
 
    updateCustomVocab: (id: string, patch: Partial<Omit<CustomVocabItem, "id" | "createdAt">>) =>
-    updateState((current) => {
-     const existing = current.settings.customVocab ?? [];
-     const nextItems = existing.map((item) => {
-      if (item.id !== id) return item;
-      const nextHanzi = patch.hanzi !== undefined ? patch.hanzi.trim() : item.hanzi;
-      const nextMeaning = patch.meaning !== undefined ? patch.meaning.trim() : item.meaning;
-      return {
-       ...item,
-       hanzi: nextHanzi || item.hanzi,
-       pinyin: patch.pinyin !== undefined ? patch.pinyin.trim() : item.pinyin,
-       meaning: nextMeaning || item.meaning,
-       pos: patch.pos !== undefined ? patch.pos.trim() || undefined : item.pos,
-       note: patch.note !== undefined ? patch.note.trim() || undefined : item.note,
-       exampleZh:
-        patch.exampleZh !== undefined ? patch.exampleZh.trim() || undefined : item.exampleZh,
-       exampleVi:
-        patch.exampleVi !== undefined ? patch.exampleVi.trim() || undefined : item.exampleVi,
-      };
-     });
+    updateState((current) => applyCustomVocabUpdate(current, id, patch)),
 
-     return {
-      ...current,
-      settings: {
-       ...current.settings,
-       customVocab: nextItems,
-      },
-     };
-    }),
-
-   removeCustomVocab: (id: string) =>
-    updateState((current) => {
-     const existing = current.settings.customVocab ?? [];
-     return {
-      ...current,
-      settings: {
-       ...current.settings,
-       customVocab: existing.filter((item) => item.id !== id),
-      },
-     };
-    }),
+   removeCustomVocab: (id: string) => updateState((current) => applyCustomVocabRemove(current, id)),
 
    toggleCustomVocabByHanzi: (item: Omit<CustomVocabItem, "id" | "createdAt">) =>
-    updateState((current) => {
-     const existing = current.settings.customVocab ?? [];
-     const targetHanzi = item.hanzi.trim();
-     if (!targetHanzi) return current;
-     const exists = existing.some((entry) => entry.hanzi.trim() === targetHanzi);
-     const nextCustomVocab = exists
-      ? existing.filter((entry) => entry.hanzi.trim() !== targetHanzi)
-      : [
-         ...existing,
-         {
-          id: `custom-vocab-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
-          hanzi: targetHanzi,
-          pinyin: item.pinyin.trim(),
-          meaning: item.meaning.trim() || targetHanzi,
-          pos: item.pos?.trim() || undefined,
-          note: item.note?.trim() || undefined,
-          exampleZh: item.exampleZh?.trim() || undefined,
-          exampleVi: item.exampleVi?.trim() || undefined,
-          createdAt: new Date().toISOString(),
-         },
-        ];
-     return {
-      ...current,
-      settings: {
-       ...current.settings,
-       customVocab: nextCustomVocab,
-      },
-     };
-    }),
+    updateState((current) => applyCustomVocabToggleByHanzi(current, item)),
 
    // Compatibility name for existing review surfaces: it now queues immutable
    // attempt evidence and deliberately never appends user_learning_state.review_history.

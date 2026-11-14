@@ -1,66 +1,43 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import {
- ArrowLeft,
- ArrowDown,
- ArrowRight,
- ArrowUp,
- ArrowUpDown,
- Ellipsis,
- ImageIcon,
- Search,
-} from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { PageContainer } from "@/components/layout/workspace/page-container";
 import { getAppScrollContainer } from "@/components/layout/scroll/app-scroll";
 import { EmptyState } from "@/components/patterns/empty-state";
 import { Button } from "@/components/ui/actions/button";
-import { Chip } from "@/components/ui/actions/chip";
-import { Input } from "@/components/ui/forms/input";
 import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
-import { Card } from "@/components/ui/layout/card";
 import { Typography } from "@/components/ui/display/typography";
-import {
- Dialog,
- DialogBody,
- DialogContent,
- DialogDescription,
- DialogHeader,
- DialogTitle,
- DialogTrigger,
-} from "@/components/ui/overlays/dialog";
-import {
- DropdownMenu,
- DropdownMenuContent,
- DropdownMenuItem,
- DropdownMenuTrigger,
-} from "@/components/ui/overlays/dropdown-menu";
-import { CourseCollectionSection } from "@/features/hanzihome/components/library/CourseCollectionSection";
 import { HanziHomeLibrarySkeleton } from "@/features/hanzihome/components/library/HanziHomeLibrarySkeleton";
 import { HanziHomeLibraryCrudToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryCrudToolbar";
+import { LibraryArrangeDialog } from "@/features/hanzihome/components/library/LibraryArrangeDialog";
+import { LibraryCollectionCard } from "@/features/hanzihome/components/library/LibraryCollectionCard";
+import {
+ LibraryCollectionFilters,
+ LibrarySelectedCollection,
+ LibrarySyncNotice,
+} from "@/features/hanzihome/components/library/LibraryHomeSections";
 import {
  groupLibraryCourses,
  libraryCourseGroupCharacters,
  libraryTextbookCharacters,
 } from "@/features/hanzihome/components/library/library-course-groups";
-import { RecentLearningCard } from "@/features/hanzihome/components/library/RecentLearningCard";
+import {
+ buildLibraryCollectionOrder,
+ filterLibraryGroups,
+ filterLibraryTextbooks,
+ filterVisibleLibraryCollectionIds,
+} from "@/features/hanzihome/components/library/library-home-model";
 import { LibraryCoverDialog } from "@/features/hanzihome/components/library/LibraryCoverDialog";
 import { useLibraryCovers } from "@/features/hanzihome/components/library/useLibraryCovers";
 import { resolveLibraryResumes } from "@/features/hanzihome/components/library/recent-learning";
-import { HanziInlineText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import {
- buildTextbookHref,
- lessonDisplayTitle,
-} from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
 import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
-import { lessonBookKey } from "@/features/hanzihome/utils/learning-state";
 import { Link } from "@/i18n/navigation";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { cn } from "@/lib/utils";
@@ -105,36 +82,23 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
   textbooks,
   settings: learning.state.settings,
  });
- const visibleGroups = courseGroups.filter(
-  (group) =>
-   (filter === "all" ||
-    (filter === "hanyu" && group.key === "hanyu") ||
-    (filter === "boya" && (group.key === "boya" || group.key === "boyaSecondEdition")) ||
-    (filter === "specialized" && (group.key === "listening" || group.key === "other"))) &&
-   (t(`groups.${group.key}.title`).toLocaleLowerCase().includes(searchTerm) ||
-    group.courses.some(
-     (course) =>
-      course.title.toLocaleLowerCase().includes(searchTerm) ||
-      books.some(
-       (book) => book.courseId === course.id && book.title.toLocaleLowerCase().includes(searchTerm),
-      ),
-    )),
+ const visibleGroups = filterLibraryGroups({
+  groups: courseGroups,
+  books,
+  filter,
+  searchTerm,
+  getGroupTitle: (key) => t(`groups.${key}.title`),
+ });
+ const visibleTextbooks = filterLibraryTextbooks(textbooks, filter, searchTerm);
+ const collectionOrder = buildLibraryCollectionOrder(
+  learning.state.settings.libraryCollectionOrder ?? [],
+  courseGroups,
+  textbooks,
  );
- const visibleTextbooks =
-  filter === "all" || filter === "specialized"
-   ? textbooks.filter((book) => book.label.toLocaleLowerCase().includes(searchTerm))
-   : [];
- const collectionOrder = [
-  ...new Set([
-   ...(learning.state.settings.libraryCollectionOrder ?? []),
-   ...courseGroups.map((group) => `group:${group.key}`),
-   ...textbooks.map((book) => `static:${book.id}`),
-  ]),
- ];
- const visibleCollectionIds = collectionOrder.filter(
-  (id) =>
-   visibleGroups.some((group) => id === `group:${group.key}`) ||
-   visibleTextbooks.some((book) => id === `static:${book.id}`),
+ const visibleCollectionIds = filterVisibleLibraryCollectionIds(
+  collectionOrder,
+  visibleGroups,
+  visibleTextbooks,
  );
  const canReorder = !learning.isLoading && !learning.isError;
  const moveCollection = (sourceId: string, targetId: string) => {
@@ -146,12 +110,6 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
   nextOrder.splice(targetIndex, 0, sourceId);
   learning.updateSettings({ libraryCollectionOrder: nextOrder });
  };
- const filters = [
-  { value: "all", label: t("filters.all") },
-  { value: "hanyu", label: t("filters.hanyu") },
-  { value: "boya", label: t("filters.boya") },
-  { value: "specialized", label: t("filters.specialized") },
- ];
 
  return (
   <PageContainer>
@@ -177,88 +135,19 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
      />
     ) : null}
 
-    {learning.pendingSyncCount > 0 && !learning.isError ? (
-     <Typography as="p" variant="bodySmall" tone="muted" role="status">
-      {common(
-       learning.durability === "memory-only"
-        ? "syncStatus.localSavePending"
-        : learning.isOnline
-          ? "syncStatus.syncing"
-          : "syncStatus.durablySavedOffline",
-      )}
-     </Typography>
-    ) : null}
-
-    {learning.isError ? (
-     <QueryErrorCard
-      title={common(
-       learning.durability === "failed" ? "syncStatus.localStorageFailed" : "syncStatus.syncError",
-      )}
-      description={t("orderSaveError")}
-      retryLabel={common("actions.retry")}
-      onRetry={() => void learning.retrySync()}
-     />
-    ) : null}
+    <LibrarySyncNotice learning={learning} />
 
     {selectedCollectionId ? (
-     <>
-      {catalogQuery.isError ? (
-       <QueryErrorCard
-        title={t("loadErrorTitle")}
-        description={t("loadErrorDescription")}
-        retryLabel={common("actions.retry")}
-        onRetry={() => void catalogQuery.refetch()}
-       />
-      ) : null}
-      {selectedGroup ? (
-       <CourseCollectionSection
-        group={selectedGroup}
-        books={books}
-        lessons={lessons}
-        editMode={canEdit && editMode}
-       />
-      ) : selectedTextbook ? (
-       <section className="grid min-w-0 gap-4">
-        <div className="grid gap-1">
-         <Typography as="h1" variant="pageTitle" wrapping="breakWords">
-          <HanziInlineText text={selectedTextbook.label} />
-         </Typography>
-         <Typography variant="bodySmall" tone="muted">
-          {t("lessonCount", { count: selectedTextbook.lessons.length })}
-         </Typography>
-        </div>
-        <Card variant="section" padding="md" className="grid gap-2">
-         {selectedTextbook.lessons.map((lesson) => (
-          <Button key={lesson.id} asChild variant="ghost" align="between" wrap="normal">
-           <Link href={buildTextbookHref(selectedTextbook.key, lesson.number)}>
-            <span className="min-w-0 flex-1">
-             <HanziInlineText
-              text={
-               lesson.title.startsWith("ÔN TẬP ")
-                ? lesson.title
-                : t("lessonLabel", {
-                   number: lesson.number,
-                   title: lessonDisplayTitle(lesson.title),
-                  })
-              }
-             />
-            </span>
-            <ArrowRight data-icon="inline-end" />
-           </Link>
-          </Button>
-         ))}
-        </Card>
-       </section>
-      ) : catalogQuery.isPending ? (
-       <HanziHomeLibrarySkeleton />
-      ) : !catalogQuery.isError ? (
-       <EmptyState
-        surface="subtle"
-        title={t("noMatchesTitle")}
-        description={t("noMatchesDescription")}
-       />
-      ) : null}
-     </>
+     <LibrarySelectedCollection
+      selectedGroup={selectedGroup}
+      selectedTextbook={selectedTextbook}
+      books={books}
+      lessons={lessons}
+      editMode={canEdit && editMode}
+      isCatalogError={catalogQuery.isError}
+      isCatalogPending={catalogQuery.isPending}
+      onRetryCatalog={() => void catalogQuery.refetch()}
+     />
     ) : null}
     <section
      aria-labelledby="course-library-heading"
@@ -270,94 +159,24 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
      </Typography>
 
      <div className="flex min-w-0 flex-wrap items-center gap-3">
-      <div className="relative w-full sm:max-w-xs">
-       <Search
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-text-muted"
-       />
-       <Input
-        type="search"
-        adornment="start"
-        density="search"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder={t("searchPlaceholder")}
-        aria-label={t("searchPlaceholder")}
-       />
-      </div>
-      <div className="flex flex-wrap gap-2" role="group" aria-label={t("filterLabel")}>
-       {filters.map((item) => (
-        <Chip
-         key={item.value}
-         pressed={filter === item.value}
-         variant={filter === item.value ? "accent" : "outline"}
-         onClick={() => setFilter(item.value)}
-        >
-         {item.label}
-        </Chip>
-       ))}
-      </div>
-      <Dialog>
-       <DialogTrigger asChild>
-        <Button variant="outline" size="toolbar" className="sm:ml-auto">
-         <ArrowUpDown data-icon="inline-start" />
-         {t("arrange")}
-        </Button>
-       </DialogTrigger>
-       <DialogContent size="lg" closeLabel={common("actions.close")}>
-        <DialogHeader>
-         <DialogTitle>{t("arrange")}</DialogTitle>
-         <DialogDescription>{t("arrangeDescription")}</DialogDescription>
-        </DialogHeader>
-        <DialogBody className="grid gap-5">
-         <div className="grid gap-2">
-          {visibleCollectionIds.map((id, index) => {
-           const group = visibleGroups.find((item) => id === `group:${item.key}`);
-           const book = visibleTextbooks.find((item) => id === `static:${item.id}`);
-           const title = group ? t(`groups.${group.key}.title`) : book?.label;
-           if (!title) return null;
-           return (
-            <div key={id} className="flex min-w-0 items-center gap-2">
-             <Typography variant="bodySmall" className="min-w-0 flex-1" wrapping="breakWords">
-              <HanziInlineText text={title} />
-             </Typography>
-             <Button
-              variant="ghost"
-              size={isCoarsePointer ? "icon" : "icon-toolbar"}
-              aria-label={`${t("moveEarlier")}: ${title}`}
-              disabled={!canReorder || index === 0}
-              onClick={() => {
-               const previousId = visibleCollectionIds[index - 1];
-               if (previousId) moveCollection(id, previousId);
-              }}
-             >
-              <ArrowUp />
-             </Button>
-             <Button
-              variant="ghost"
-              size={isCoarsePointer ? "icon" : "icon-toolbar"}
-              aria-label={`${t("moveLater")}: ${title}`}
-              disabled={!canReorder || index === visibleCollectionIds.length - 1}
-              onClick={() => {
-               const nextId = visibleCollectionIds[index + 1];
-               if (nextId) moveCollection(id, nextId);
-              }}
-             >
-              <ArrowDown />
-             </Button>
-            </div>
-           );
-          })}
-         </div>
-         <RecentLearningCard
-          courses={courses}
-          books={books}
-          lessons={lessons}
-          textbooks={textbooks}
-         />
-        </DialogBody>
-       </DialogContent>
-      </Dialog>
+      <LibraryCollectionFilters
+       query={query}
+       filter={filter}
+       onQueryChange={setQuery}
+       onFilterChange={setFilter}
+      />
+      <LibraryArrangeDialog
+       visibleCollectionIds={visibleCollectionIds}
+       visibleGroups={visibleGroups}
+       visibleTextbooks={visibleTextbooks}
+       canReorder={canReorder}
+       isCoarsePointer={isCoarsePointer}
+       courses={courses}
+       books={books}
+       lessons={lessons}
+       textbooks={textbooks}
+       onMoveCollection={moveCollection}
+      />
      </div>
 
      {catalogQuery.isError ? (
@@ -388,203 +207,35 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
        const title = group ? t(`groups.${group.key}.title`) : book?.label;
        const collectionKey = group?.key ?? book?.id;
        if (!title || !collectionKey) return null;
-       const character = group
-        ? libraryCourseGroupCharacters[group.key]
-        : book
-          ? libraryTextbookCharacters[book.key]
-          : "";
-       const resumeId = resumes.order.find((key) =>
-        resumes.catalog.some(
-         (item) =>
-          lessonBookKey(item.lesson) === key &&
-          group?.courses.some((course) => course.id === item.course.id),
-        ),
-       );
-       const recent = resumes.catalog.find((item) => lessonBookKey(item.lesson) === resumeId);
-       const textbookResume = resumes.textbooks.find((item) => item.book.id === book?.id);
-       const cover = coversQuery.data?.find((item) => item.collectionId === id);
-       const coverRevision = cover ? `${id}:${cover.updatedAt}` : "";
-       const hasCustomCover = cover && !failedCoverRevisions.includes(coverRevision);
-       const resumeHref =
-        recent?.href ??
-        (textbookResume
-         ? `${buildTextbookHref(textbookResume.book.key, textbookResume.lesson.number)}&tab=${encodeURIComponent(textbookResume.module)}`
-         : "");
 
        return (
-        <article
+        <LibraryCollectionCard
          key={id}
-         data-library-collection={id}
-         className={cn("grid min-w-0 gap-2", draggedCollection === id && "opacity-40")}
-         onDragOver={(event) => {
-          if (draggedCollection && canReorder) {
-           event.preventDefault();
-           event.dataTransfer.dropEffect = "move";
-          }
+         id={id}
+         index={index}
+         title={title}
+         collectionKey={collectionKey}
+         group={group}
+         book={book}
+         resumes={resumes}
+         covers={coversQuery.data}
+         failedCoverRevisions={failedCoverRevisions}
+         draggedCollection={draggedCollection}
+         visibleCollectionIds={visibleCollectionIds}
+         canReorder={canReorder}
+         canEditCovers={canEdit && editMode}
+         canLoadCovers={coversQuery.isSuccess}
+         isCoarsePointer={isCoarsePointer}
+         onCoverFailed={(coverRevision) =>
+          setFailedCoverRevisions((current) => [...current, coverRevision])
+         }
+         onDraggedCollectionChange={setDraggedCollection}
+         onEditCover={setEditingCoverId}
+         onMenuTriggerInteract={(trigger) => {
+          coverMenuTrigger.current = trigger;
          }}
-         onDrop={(event) => {
-          event.preventDefault();
-          if (draggedCollection) moveCollection(draggedCollection, id);
-          setDraggedCollection("");
-         }}
-        >
-         <div
-          draggable={!isCoarsePointer && canReorder && visibleCollectionIds.length > 1}
-          className={cn(
-           "grid min-w-0 gap-2",
-           !isCoarsePointer && canReorder && "cursor-grab active:cursor-grabbing",
-          )}
-          onDragStart={(event) => {
-           setDraggedCollection(id);
-           event.dataTransfer.effectAllowed = "move";
-           event.dataTransfer.setData("text/plain", id);
-          }}
-          onDragEnd={() => setDraggedCollection("")}
-         >
-          <Button
-           asChild
-           variant="ghost"
-           size="inline"
-           className="relative aspect-[4/5] w-full"
-           aria-label={`${t("viewLessons")}: ${title}`}
-          >
-           <Link href={`/hanzihome?collection=${encodeURIComponent(collectionKey)}`}>
-            <Image
-             src={hasCustomCover ? cover.coverUrl : "/textbooks/common-cover.svg"}
-             alt=""
-             width={600}
-             height={750}
-             unoptimized
-             draggable={false}
-             className="pointer-events-none absolute inset-0 size-full object-cover"
-             onError={() => {
-              if (hasCustomCover) setFailedCoverRevisions((current) => [...current, coverRevision]);
-             }}
-            />
-            {!hasCustomCover ? (
-             <span aria-hidden="true" className="pointer-events-none absolute inset-0 select-none">
-              <svg viewBox="0 0 600 750" className="size-full" color="#24384b">
-               <foreignObject x="92" y="94" width="180" height="170">
-                <span className="block text-left font-serif text-2xl leading-snug tracking-wide whitespace-normal uppercase wrap-break-word">
-                 <HanziInlineText text={title} />
-                </span>
-               </foreignObject>
-               <text
-                x="398"
-                y="350"
-                textAnchor="middle"
-                fontSize="320"
-                fill="currentColor"
-                lang="zh-CN"
-                className="font-hanzi"
-               >
-                {character}
-               </text>
-              </svg>
-             </span>
-            ) : null}
-           </Link>
-          </Button>
-         </div>
-         <div className="flex min-w-0 items-start gap-1">
-          <div className="grid min-w-0 flex-1 gap-1">
-           <Typography as="h3" variant="cardTitle" weight="bold" wrapping="breakWords">
-            {group ? title : <HanziInlineText text={title} />}
-           </Typography>
-           <Typography variant="bodySmall" tone="muted">
-            {group
-             ? t("bookCount", { count: group.bookCount })
-             : book && t("lessonCount", { count: book.lessons.length })}
-           </Typography>
-          </div>
-          <DropdownMenu>
-           <DropdownMenuTrigger asChild>
-            <Button
-             type="button"
-             variant="ghost"
-             size={isCoarsePointer ? "icon" : "icon-toolbar"}
-             disabled={(!canReorder || visibleCollectionIds.length < 2) && !(canEdit && editMode)}
-             aria-label={t("reorderCollection", { title })}
-             aria-describedby="library-order-hint"
-             title={t("reorderCollection", { title })}
-             onPointerDown={(event) => {
-              coverMenuTrigger.current = event.currentTarget;
-             }}
-             onKeyDown={(event) => {
-              coverMenuTrigger.current = event.currentTarget;
-             }}
-            >
-             <Ellipsis />
-            </Button>
-           </DropdownMenuTrigger>
-           <DropdownMenuContent align="end">
-            <DropdownMenuItem
-             disabled={!canReorder || index === 0}
-             onSelect={() => {
-              const previousId = visibleCollectionIds[index - 1];
-              if (previousId) moveCollection(id, previousId);
-             }}
-            >
-             <ArrowUp />
-             {t("moveEarlier")}
-            </DropdownMenuItem>
-            <DropdownMenuItem
-             disabled={!canReorder || index === visibleCollectionIds.length - 1}
-             onSelect={() => {
-              const nextId = visibleCollectionIds[index + 1];
-              if (nextId) moveCollection(id, nextId);
-             }}
-            >
-             <ArrowDown />
-             {t("moveLater")}
-            </DropdownMenuItem>
-            {canEdit && editMode ? (
-             <DropdownMenuItem
-              disabled={!coversQuery.isSuccess}
-              onSelect={() => setEditingCoverId(id)}
-             >
-              <ImageIcon />
-              {t("cover.edit")}
-             </DropdownMenuItem>
-            ) : null}
-           </DropdownMenuContent>
-          </DropdownMenu>
-         </div>
-         {cover && !hasCustomCover ? (
-          <Typography variant="caption" tone="muted" role="status">
-           {t("cover.previewError")}
-          </Typography>
-         ) : null}
-         {resumeHref ? (
-          <Button
-           asChild
-           variant="link"
-           size="inline"
-           align="start"
-           wrap="normal"
-           className="w-full"
-          >
-           <Link href={resumeHref}>
-            <Typography as="span" variant="caption" tone="inherit" clamp="two">
-             <HanziInlineText
-              text={
-               recent
-                ? `${recent.book?.shortTitle || recent.book?.title || recent.course.title} · ${t("lessonLabel", { number: recent.lesson.lessonNumber, title: recent.lesson.titleZh || recent.lesson.title })}`
-                : textbookResume
-                  ? textbookResume.lesson.title.startsWith("ÔN TẬP ")
-                   ? textbookResume.lesson.title
-                   : t("lessonLabel", {
-                      number: textbookResume.lesson.number,
-                      title: lessonDisplayTitle(textbookResume.lesson.title),
-                     })
-                  : t("resume")
-              }
-             />
-            </Typography>
-           </Link>
-          </Button>
-         ) : null}
-        </article>
+         onMoveCollection={moveCollection}
+        />
        );
       })}
      </div>

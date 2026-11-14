@@ -9,7 +9,7 @@ import type { Database } from "@/types/supabase.generated";
 type AuthorityClient = SupabaseClient<Database>;
 type DictionaryEntry = DbDictionaryCore;
 
-export type ServerSrsSaveResult = {
+type ServerSrsSaveResult = {
  vocabId: string;
  dictionaryId: string;
  contextSchemaAvailable: true;
@@ -23,7 +23,7 @@ export type ServerSrsSaveResult = {
  * execution of that RPC is being revoked, and server authority can write the
  * cache table directly without depending on auth.uid() semantics.
  */
-export async function upsertLegacyVocabularyCacheAsServer(
+async function upsertLegacyVocabularyCacheAsServer(
  authority: AuthorityClient,
  vocabData: VocabData,
 ): Promise<{ id: string } | null> {
@@ -48,7 +48,7 @@ export async function upsertLegacyVocabularyCacheAsServer(
  return { id: data.id };
 }
 
-export async function syncDictionaryEntryToLegacyCacheAsServer(
+async function syncDictionaryEntryToLegacyCacheAsServer(
  authority: AuthorityClient,
  entry: DictionaryEntry,
 ) {

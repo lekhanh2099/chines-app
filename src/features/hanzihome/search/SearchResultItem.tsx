@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import type { ComponentProps } from "react";
-import { splitSearchHighlight } from "./searchHanziHomeIndex";
+import { splitSearchHighlight } from "./search-results";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -11,6 +11,7 @@ import { Typography } from "@/components/ui/display/typography";
 import { cn } from "@/lib/utils";
 import {
  BookOpen,
+ BookOpenText,
  BookText,
  GraduationCap,
  Languages,
@@ -20,7 +21,7 @@ import {
  SquareCheckBig,
 } from "lucide-react";
 
-import type { HanziHomeSearchIndexItem } from "./types";
+import type { HanziHomeSearchResultItem } from "./types";
 
 type KindConfigEntry = {
  icon: typeof BookOpen;
@@ -28,7 +29,7 @@ type KindConfigEntry = {
  badgeVariant: NonNullable<ComponentProps<typeof Badge>["variant"]>;
 };
 
-const kindConfig: Record<HanziHomeSearchIndexItem["kind"], KindConfigEntry> = {
+const kindConfig: Record<HanziHomeSearchResultItem["kind"], KindConfigEntry> = {
  vocab: {
   icon: Languages,
   tileTone: "accent",
@@ -69,6 +70,11 @@ const kindConfig: Record<HanziHomeSearchIndexItem["kind"], KindConfigEntry> = {
   tileTone: "neutral",
   badgeVariant: "default",
  },
+ reader_document: {
+  icon: BookOpenText,
+  tileTone: "info",
+  badgeVariant: "info",
+ },
 };
 
 function HighlightedText({
@@ -96,10 +102,12 @@ function HighlightedText({
 
 type SearchResultItemProps = {
  id: string;
- item: HanziHomeSearchIndexItem;
+ item: HanziHomeSearchResultItem;
  selected: boolean;
  query?: string;
  matchedSnippet?: string;
+ /** The original text that matched inside the snippet (diacritics may differ from the query). */
+ matchedText?: string;
  onSelect: () => void;
  onOpen: () => void;
 };
@@ -110,6 +118,7 @@ export function SearchResultItem({
  selected,
  query,
  matchedSnippet,
+ matchedText,
  onSelect,
  onOpen,
 }: SearchResultItemProps) {
@@ -167,7 +176,7 @@ export function SearchResultItem({
       className="block min-w-0"
      >
       <em>
-       <HighlightedText text={matchedSnippet} query={query} />
+       <HighlightedText text={matchedSnippet} query={matchedText ?? query} />
       </em>
      </Typography>
     ) : null}

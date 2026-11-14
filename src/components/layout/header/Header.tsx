@@ -65,7 +65,7 @@ type SimpleHeaderBreadcrumb = {
  };
 };
 
-export type HeaderProps = {
+type HeaderProps = {
  actions?: ReactNode;
  quickSettingsExtras?: ReactNode;
 };

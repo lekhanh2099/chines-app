@@ -1,13 +1,13 @@
 import { z } from "zod";
 
-export const readerSourceKindSchema = z.enum([
+const readerSourceKindSchema = z.enum([
  "reader-resource",
  "lesson",
  "article",
  "plain-text",
  "conversation",
 ]);
-export const readerSegmentKindSchema = z.enum([
+const readerSegmentKindSchema = z.enum([
  "paragraph",
  "sentence",
  "dialogue-turn",
@@ -22,13 +22,13 @@ export const readerCapabilitySchema = z.enum([
  "analysis",
  "summary",
 ]);
-export const readerSourceSchema = z.strictObject({
+const readerSourceSchema = z.strictObject({
  kind: readerSourceKindSchema,
  sourceId: z.string().optional(),
  href: z.string().optional(),
  label: z.string().optional(),
 });
-export const readerSpeakerSchema = z.strictObject({ id: z.string().optional(), label: z.string() });
+const readerSpeakerSchema = z.strictObject({ id: z.string().optional(), label: z.string() });
 export const readerSegmentSchema = z.strictObject({
  id: z.string().min(1),
  kind: readerSegmentKindSchema,
@@ -107,7 +107,7 @@ export const readerDocumentSchema = z
   }
  });
 
-export const readerRawSegmentSchema = readerSegmentSchema
+const readerRawSegmentSchema = readerSegmentSchema
  .partial({ id: true, kind: true, zh: true })
  .extend({
   hanzi: z.string().min(1).optional(),
@@ -134,7 +134,7 @@ export const readerDataSchema = z.union([
 export const cookReaderOptionsSchema = z.strictObject({
  pronunciation: z.enum(["source-only", "generate-missing"]).default("source-only"),
 });
-export const readerContentSchema = z.strictObject({
+const readerContentSchema = z.strictObject({
  id: z.string().min(1),
  language: z.literal("zh-CN"),
  source: readerSourceSchema,
@@ -155,7 +155,7 @@ export const readerContentSchema = z.strictObject({
 export type ReaderDataInput = z.input<typeof readerDataSchema>;
 export type ReaderContentState = z.output<typeof readerContentSchema>;
 export type CookReaderDataOptions = z.input<typeof cookReaderOptionsSchema>;
-export const readerStateSchema = z.strictObject({
+const readerStateSchema = z.strictObject({
  content: readerContentSchema,
  navigation: z.strictObject({
   activeIndex: z.number().int().nonnegative(),

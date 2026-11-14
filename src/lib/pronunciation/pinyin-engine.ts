@@ -1915,7 +1915,7 @@ const COMPLEMENTS_AFTER_DE = new Set([
 const LAND_VERBS_BEFORE_DI = new Set(["挖", "锄", "耕", "种", "租", "买", "卖", "占", "征", "犁"]);
 
 /** Recognize a modifier plus predicate without enumerating whole pinyin phrases. */
-export function isAdverbialDe(chineseChars: readonly string[], index: number): boolean {
+function isAdverbialDe(chineseChars: readonly string[], index: number): boolean {
  if (chineseChars[index] !== "地") return false;
  const prev = chineseChars[index - 1];
  const prevPrev = chineseChars[index - 2];
@@ -2564,10 +2564,7 @@ export function getToneSandhiPinyin(chineseChars: readonly string[], index: numb
  * Apply grammatical contextual rules across syllables, including particles
  * 得, 地, 了, 着 and the existing 倒, 只, 为, 长, 还 heuristics.
  */
-export function applyGrammarHeuristics(
- chineseChars: readonly string[],
- syllables: string[],
-): string[] {
+function applyGrammarHeuristics(chineseChars: readonly string[], syllables: string[]): string[] {
  const len = Math.min(chineseChars.length, syllables.length);
 
  for (let i = 0; i < len; i++) {
@@ -2700,7 +2697,7 @@ export function isPolyphonicCharacter(char: string): boolean {
  return getPolyphonicAlternatives(char).length > 1;
 }
 
-export type SmartPinyinResult = {
+type SmartPinyinResult = {
  /** Space-separated pinyin string */
  pinyin: string;
  /** Syllable per character, strictly 1-to-1 aligned */

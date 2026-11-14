@@ -82,7 +82,7 @@ const integerRpcSchema = z.union([
  z.tuple([z.number().int().nonnegative()]).transform(([value]) => value),
 ]);
 
-export type AiConversationPostTurnJob = z.output<typeof postTurnJobRowSchema>;
+type AiConversationPostTurnJob = z.output<typeof postTurnJobRowSchema>;
 export type AiConversationSummaryState = z.output<typeof summaryConversationRowSchema>;
 export type AiConversationPipelineMessage = z.output<typeof conversationMessageRowSchema>;
 

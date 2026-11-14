@@ -16,10 +16,10 @@ import {
  replaceInStoreIf,
 } from "./hanzihome-local-db";
 
-export const reviewItemTypeSchema = z.enum(["vocab", "grammar", "radical"]);
-export const pendingReviewAttemptStatusSchema = z.enum(["pending", "syncing", "failed"]);
+const reviewItemTypeSchema = z.enum(["vocab", "grammar", "radical"]);
+const pendingReviewAttemptStatusSchema = z.enum(["pending", "syncing", "failed"]);
 
-export const pendingReviewAttemptMutationSchema = z.object({
+const pendingReviewAttemptMutationSchema = z.object({
  id: z.string().min(1),
  ownerUserId: z.string().min(1),
  type: z.literal("review_attempt.append"),
@@ -44,7 +44,7 @@ export type ReviewAttemptInput = Pick<
  "itemType" | "itemId" | "label" | "result"
 >;
 
-export type ReviewAttemptSyncResult = {
+type ReviewAttemptSyncResult = {
  status: "synced" | "pending" | "error";
  syncedCount: number;
  pendingCount: number;
@@ -54,7 +54,7 @@ export type ReviewAttemptSyncResult = {
 
 const inFlightByOwner = new Map<string, Promise<ReviewAttemptSyncResult>>();
 
-export function reviewAttemptMutationId(ownerUserId: string, attemptId: string) {
+function reviewAttemptMutationId(ownerUserId: string, attemptId: string) {
  return `review_attempt:${ownerUserId}:${attemptId}`;
 }
 
@@ -115,7 +115,7 @@ export async function enqueueReviewAttempt(
  return mutation;
 }
 
-export async function listPendingReviewAttemptMutations(
+async function listPendingReviewAttemptMutations(
  ownerUserId: string,
 ): Promise<PendingReviewAttemptMutation[]> {
  const mutations = await getAllFromStoreMatching(

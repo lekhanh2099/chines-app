@@ -11,7 +11,7 @@ import {
 import { dictationSourcesFromTextbook } from "@/features/hanzihome/practice/translation-practice";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
-export type LessonAudioPackStatus = "idle" | "checking" | "downloading" | "ready" | "error";
+type LessonAudioPackStatus = "idle" | "checking" | "downloading" | "ready" | "error";
 
 export function extractLessonMandarinTexts(
  lesson: TextbookLesson | null | undefined,

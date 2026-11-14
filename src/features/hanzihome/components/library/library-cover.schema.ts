@@ -10,7 +10,7 @@ const coverUrlSchema = z
  .max(2048)
  .regex(/^https?:\/\/[^\s/?#]+[^\s]*$/i);
 
-export const libraryCoverSchema = z.object({
+const libraryCoverSchema = z.object({
  collectionId: libraryCollectionIdSchema,
  coverUrl: coverUrlSchema,
  createdAt: z.iso.datetime({ offset: true }),

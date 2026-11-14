@@ -6,11 +6,11 @@ type NoteWithContextMap = {
  list: NoteListItem;
  detail: NoteDetail;
 };
-export type NoteWithContext = NoteWithContextMap[keyof NoteWithContextMap];
+type NoteWithContext = NoteWithContextMap[keyof NoteWithContextMap];
 
-export type NoteContextKind = "lesson" | "quick" | "normal";
+type NoteContextKind = "lesson" | "quick" | "normal";
 
-export type NoteContextView = {
+type NoteContextView = {
  kind: NoteContextKind;
  displayTitle: string;
  title: string;

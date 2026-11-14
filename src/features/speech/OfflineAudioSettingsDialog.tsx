@@ -47,7 +47,7 @@ import { DEFAULT_MANDARIN_VOICE, MANDARIN_VOICE_STORAGE_KEY } from "@/hooks/useT
 import { STANDARD_MANDARIN_VOICES } from "@/features/speech/mandarin-voices";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
-export type OfflineAudioSettingsDialogProps = {
+type OfflineAudioSettingsDialogProps = {
  readonly lesson?: TextbookLesson | null;
  readonly trigger?: ReactNode | null;
  readonly open?: boolean;

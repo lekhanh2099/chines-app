@@ -8,7 +8,7 @@ export type AttemptResult = Pick<DictationAttempt, "score" | "responseMs"> & {
  diff: DictationDiffToken[];
 };
 
-export type SummaryStats = {
+type SummaryStats = {
  accuracy: number;
  avgCpm: number;
  perfectCount: number;

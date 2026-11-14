@@ -11,12 +11,6 @@ export const aiRuntimeCapabilitySchema = z.enum([
  "semantic-memory",
 ]);
 
-export const aiRuntimeReadinessStatusSchema = z.enum([
- "ready",
- "missing-key",
- "storage-unavailable",
-]);
-
 export const aiRuntimeReadinessReasonSchema = z.enum([
  "ok",
  "no-active-key",
@@ -39,7 +33,7 @@ export const aiRuntimeOperationErrorCodeSchema = z.enum([
  "cancelled",
 ]);
 
-export const aiRuntimeSafeKeySchema = z.strictObject({
+const aiRuntimeSafeKeySchema = z.strictObject({
  keyId: z.uuid(),
  provider: ApiKeyProviderSchema,
  providerLabel: z.string().min(1).max(80),

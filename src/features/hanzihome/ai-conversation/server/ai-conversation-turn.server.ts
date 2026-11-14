@@ -30,7 +30,7 @@ import {
 } from "./ai-conversation-stream-provider.server";
 import type { AiConversationMessage } from "../model/ai-conversation.schemas";
 
-export type PersistedTurnGenerationResult =
+type PersistedTurnGenerationResult =
  | {
     ok: true;
     message: string;

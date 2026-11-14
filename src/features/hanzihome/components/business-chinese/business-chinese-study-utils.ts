@@ -126,12 +126,12 @@ export function pairPracticeBlankAnswers(
  return { pairedAnswers, consumedAnswerBlockIds };
 }
 
-export type ParsedPracticeChoice = {
+type ParsedPracticeChoice = {
  key: string;
  text: string;
 };
 
-export type ParsedPracticeExerciseItem = {
+type ParsedPracticeExerciseItem = {
  prompt: string;
  displayPrompt: string;
  answer: string;
@@ -166,9 +166,12 @@ export function parsePracticeExerciseItem(
  const choices: ParsedPracticeChoice[] = [];
  let correctChoice = "";
  const choiceMatch = displayPrompt.match(
-  /^([\s\S]*?)\s+A[.．、]\s*([\s\S]+?)\s+B[.．、]\s*([\s\S]+?)\s+C[.．、]\s*([\s\S]+?)(?:\s+D[.．、]\s*([\s\S]+?))?$/u,
+  /^([\s\S]*?)\s+A[.．、]\s*([\s\S]+?)\s+B[.．、]\s*([\s\S]+?)(?:\s+C[.．、]\s*([\s\S]+?))?(?:\s+D[.．、]\s*([\s\S]+?))?$/u,
  );
- const choiceAnswer = cleanAnswer.match(/^(?:Đáp án|正确答案)\s*[:：]?\s*([A-D])\b/iu);
+ // Source keys appear as "Đáp án: C", "👉 Đáp án: C (…)", "C. 很早 ✓\n👉 Đáp án: C", "C. 时候" or a bare "C".
+ const choiceAnswer =
+  cleanAnswer.match(/(?:Đáp án|正确答案)\s*[:：]?\s*([A-D])\b/iu) ??
+  cleanAnswer.match(/^([A-D])(?:[.．、]|$)/u);
  if (choiceMatch && choiceAnswer) {
   displayPrompt = choiceMatch[1].trim();
   ["A", "B", "C", "D"].forEach((key, index) => {

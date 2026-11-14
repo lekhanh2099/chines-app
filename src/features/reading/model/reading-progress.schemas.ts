@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const readerAnswerStateSchema = z.strictObject({
+const readerAnswerStateSchema = z.strictObject({
  answer: z.string(),
  score: z.number().min(0).max(1).nullable(),
  completed: z.boolean(),

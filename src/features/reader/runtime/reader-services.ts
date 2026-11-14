@@ -9,7 +9,7 @@ import type {
 import type { ReaderSpeechService } from "./reader-speech";
 import type { ReaderSelection } from "./reader-selection";
 
-export const readerAnnotationSchema = z.strictObject({
+const readerAnnotationSchema = z.strictObject({
  id: z.string().min(1),
  segmentId: z.string().min(1),
  text: z.string().min(1),

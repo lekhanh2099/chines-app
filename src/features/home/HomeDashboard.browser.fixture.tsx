@@ -201,7 +201,7 @@ const harness = {
    predicate: (query) => query.queryKey[1] === "practice-attempts" && query.queryKey[4] === "count",
   }),
  refreshNotes: () => queryClient.refetchQueries({ queryKey: noteQueryKeys.recent(ownerId, 3) }),
- refreshSearch: () => queryClient.refetchQueries({ queryKey: hanzihomeQueryKeys.searchIndex }),
+ refreshSearch: () => queryClient.refetchQueries({ queryKey: hanzihomeQueryKeys.searchRoot }),
  resetFontCommits: () => {
   fontCommits = 0;
  },

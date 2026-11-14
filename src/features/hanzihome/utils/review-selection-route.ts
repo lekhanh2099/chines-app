@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const REVIEW_LESSONS_QUERY_KEY = "reviewLessons";
 
-export type ReviewLessonRouteOption = {
+type ReviewLessonRouteOption = {
  id: string;
  lessonNumber: number;
  courseId?: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
@@ -28,7 +28,7 @@ function inferBookToken(lesson: ReviewLessonRouteOption) {
  return "";
 }
 
-export function getReviewLessonToken(lesson: ReviewLessonRouteOption) {
+function getReviewLessonToken(lesson: ReviewLessonRouteOption) {
  const bookToken = inferBookToken(lesson);
 
  if (!bookToken || !Number.isFinite(lesson.lessonNumber)) {

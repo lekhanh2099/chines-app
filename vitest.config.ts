@@ -16,7 +16,14 @@ export default defineConfig({
    NEXT_PUBLIC_SUPABASE_URL: "https://example.supabase.co",
    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: "sb_publishable_ci_placeholder",
   },
-  exclude: ["node_modules/**", ".next/**", "coverage/**", "dist/**", "e2e/**"],
+  exclude: [
+   "node_modules/**",
+   ".next/**",
+   "coverage/**",
+   "dist/**",
+   "e2e/**",
+   ".claude/worktrees/**",
+  ],
   coverage: {
    provider: "v8",
    reporter: ["text", "html"],

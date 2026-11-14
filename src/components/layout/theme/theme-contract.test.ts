@@ -3,7 +3,10 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { THEME_PALETTE_META, ThemePaletteSchema } from "./theme-contract";
+import { appLocales } from "@/i18n/config";
+import { loadAppMessages } from "@/i18n/messages";
+
+import { ThemePaletteSchema } from "./theme-contract";
 
 const globalsCss = fs.readFileSync(path.join(process.cwd(), "src/app/globals.css"), "utf8");
 const paletteCss = fs.readFileSync(path.join(process.cwd(), "src/app/theme-palettes.css"), "utf8");
@@ -31,12 +34,15 @@ const percentageColorRecipe = /(?:color-mix\([^\n]*%|hsla?\([^\n]*%)/;
 const decorativeGradient = /(?:linear-gradient|radial-gradient|conic-gradient)\(/;
 
 describe("theme palette contract", () => {
- it("keeps palette metadata complete, including the tea compatibility palette", () => {
+ it("keeps palette copy complete in every locale, including the tea compatibility palette", async () => {
   expect(ThemePaletteSchema.options).toContain("tea");
 
-  for (const palette of ThemePaletteSchema.options) {
-   expect(THEME_PALETTE_META[palette].label.length).toBeGreaterThan(0);
-   expect(THEME_PALETTE_META[palette].description.length).toBeGreaterThan(0);
+  for (const locale of appLocales) {
+   const { palettes } = (await loadAppMessages(locale)).Settings.appearance;
+   for (const palette of ThemePaletteSchema.options) {
+    expect(palettes[palette].label.length, `${locale}:${palette}`).toBeGreaterThan(0);
+    expect(palettes[palette].description.length, `${locale}:${palette}`).toBeGreaterThan(0);
+   }
   }
  });
 

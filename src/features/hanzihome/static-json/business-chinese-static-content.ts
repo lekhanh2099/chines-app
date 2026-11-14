@@ -158,36 +158,6 @@ export type TextbookBookSummary = ReturnType<typeof getTextbookCatalog>[number];
 
 export type BusinessChineseLesson = z.infer<typeof businessChineseLessonSchema>;
 
-export type BusinessChineseLessonSummary = {
- id: string;
- bookKey: BusinessChineseLesson["bookKey"];
- number: number;
- title: string;
- vocabCount: number;
-};
-
-export type BusinessChineseBookSummary = {
- id: string;
- key: BusinessChineseLesson["bookKey"];
- label: string;
- lessons: BusinessChineseLessonSummary[];
-};
-
-export function getBusinessChineseCatalog(): BusinessChineseBookSummary[] {
- return getBusinessChineseCorpus().books.map((book) => ({
-  id: book.id,
-  key: book.key,
-  label: book.label,
-  lessons: book.lessons.map((lesson) => ({
-   id: lesson.id,
-   bookKey: lesson.bookKey,
-   number: lesson.number,
-   title: lesson.title,
-   vocabCount: lesson.vocab.length,
-  })),
- }));
-}
-
 export function getBusinessChineseLesson(
  bookKey: BusinessChineseLesson["bookKey"],
  lessonNumber: number,

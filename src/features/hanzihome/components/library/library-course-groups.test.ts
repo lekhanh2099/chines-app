@@ -7,7 +7,6 @@ import type {
 } from "@/features/hanzihome/types";
 
 import {
- getLibraryStats,
  getLibraryCourseEntries,
  getLibraryBookStudy,
  groupLibraryCourses,
@@ -110,23 +109,6 @@ describe("library summary policies", () => {
   grammarCount: 3,
  };
  const otherBookLesson: HanziHomeLesson = { ...first, id: "other", bookId: "other-book" };
- it("counts only catalog summaries, including zero counts", () => {
-  expect(getLibraryStats([], [])).toEqual({
-   courseCount: 0,
-   bookCount: 0,
-   lessonCount: 0,
-   grammarCount: 0,
-  });
-  expect(
-   getLibraryStats(
-    [
-     { ...course, stats: { ...course.stats, grammarCount: 5 } },
-     createCourse("course-b", "custom", 2, 7),
-    ],
-    [book],
-   ),
-  ).toEqual({ courseCount: 2, bookCount: 1, lessonCount: 9, grammarCount: 5 });
- });
  it("keeps course order, orders only its books and retains lesson order without mutating inputs", () => {
   const laterBook = { ...book, id: "book-later", order: 3 };
   const courseBooks = [laterBook, book, { ...book, id: "foreign", courseId: "course-b" }];

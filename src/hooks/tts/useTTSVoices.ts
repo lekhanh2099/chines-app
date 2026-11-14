@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState, useSyncExternalStore } from "react";
 import type { Dispatch, SetStateAction } from "react";
 
 import type { JsonFieldValue } from "@/types/json";
@@ -12,30 +12,44 @@ import {
 } from "./tts-contract";
 import type { TTSState, TTSVoice } from "./tts-contract";
 
-/** Restores a saved zh-CN voice preference after mount, unless a voice is already selected. */
-function useStoredVoicePreference(setSelectedVoiceName: Dispatch<SetStateAction<string>>) {
- useEffect(() => {
-  if (typeof window === "undefined") return;
-  try {
-   const saved = window.localStorage.getItem(MANDARIN_VOICE_STORAGE_KEY);
-   if (saved && typeof saved === "string" && saved.startsWith("zh-CN-")) {
-    setSelectedVoiceName((current) => current || saved);
-   }
-  } catch {
-   // Ignore storage errors in restricted contexts
-  }
- }, [setSelectedVoiceName]);
+function readStoredVoiceName() {
+ try {
+  return window.localStorage.getItem(MANDARIN_VOICE_STORAGE_KEY) ?? "";
+ } catch {
+  // Ignore storage errors in restricted contexts
+  return "";
+ }
+}
+
+function subscribeStoredVoice(onChange: () => void) {
+ window.addEventListener("storage", onChange);
+ return () => window.removeEventListener("storage", onChange);
+}
+
+/** Saved zh-CN voice preference; empty during server render and hydration. */
+function getStoredMandarinVoiceSnapshot() {
+ const saved = readStoredVoiceName();
+ return saved.startsWith("zh-CN-") ? saved : "";
+}
+
+function getServerStoredVoiceSnapshot() {
+ return "";
 }
 
 /** Mandarin voice list (fetched once, de-duplicated) and the persisted voice preference. */
 export function useTTSVoices(setState: Dispatch<SetStateAction<TTSState>>) {
  const [voices, setVoices] = useState<TTSVoice[]>([]);
- const [selectedVoiceName, setSelectedVoiceName] = useState("");
+ // An explicit or resolved choice wins over the saved preference.
+ const [chosenVoiceName, setChosenVoiceName] = useState("");
+ const storedVoiceName = useSyncExternalStore(
+  subscribeStoredVoice,
+  getStoredMandarinVoiceSnapshot,
+  getServerStoredVoiceSnapshot,
+ );
+ const selectedVoiceName = chosenVoiceName || storedVoiceName;
  const voiceLoadControllerRef = useRef<AbortController>(null);
  const voiceLoadPromiseRef = useRef<Promise<TTSVoice[]> | null>(null);
  const voiceLoadErrorRef = useRef<Error>(null);
-
- useStoredVoicePreference(setSelectedVoiceName);
 
  const loadVoices = useCallback((): Promise<TTSVoice[]> => {
   if (voices.length > 0) return Promise.resolve(voices);
@@ -54,16 +68,8 @@ export function useTTSVoices(setState: Dispatch<SetStateAction<TTSState>>) {
     const voicePayload: JsonFieldValue = await response.json();
     const nextVoices = TTSVoiceListSchema.parse(voicePayload);
     setVoices(nextVoices);
-    setSelectedVoiceName((current) => {
-     let preferred = current;
-     if (!preferred && typeof window !== "undefined") {
-      try {
-       const saved = window.localStorage.getItem(MANDARIN_VOICE_STORAGE_KEY);
-       if (saved && typeof saved === "string") preferred = saved;
-      } catch {
-       // Ignore storage error
-      }
-     }
+    setChosenVoiceName((current) => {
+     const preferred = current || readStoredVoiceName();
      return nextVoices.some((voice) => voice.shortName === preferred)
       ? preferred
       : (nextVoices[0]?.shortName ?? DEFAULT_MANDARIN_VOICE);
@@ -96,9 +102,10 @@ export function useTTSVoices(setState: Dispatch<SetStateAction<TTSState>>) {
 
  const handleSetSelectedVoiceName = useCallback(
   (nextVoice: string | ((current: string) => string)) => {
-   setSelectedVoiceName((current) => {
+   setChosenVoiceName((chosen) => {
+    const current = chosen || getStoredMandarinVoiceSnapshot();
     const resolved = typeof nextVoice === "function" ? nextVoice(current) : nextVoice;
-    if (typeof window !== "undefined" && resolved) {
+    if (resolved) {
      try {
       window.localStorage.setItem(MANDARIN_VOICE_STORAGE_KEY, resolved);
      } catch {

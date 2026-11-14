@@ -9,7 +9,7 @@ type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 export const BLANK_MARKER_SOURCE =
  "(?:([①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\\d+)|[（(]\\s*(\\d+)\\s*[）)]|\\[\\s*(\\d+)\\s*\\])\\s*(?:[_＿]{2,}|…{2,}|\\.\\.\\.+)";
 
-export const PLAIN_BLANK_SOURCE = "[_＿]{2,}|…{2,}|\\.\\.\\.+";
+const PLAIN_BLANK_SOURCE = "[_＿]{2,}|…{2,}|\\.\\.\\.+";
 
 const CIRCLED_NUMBER_MAP: Record<string, number> = {
  "①": 1,
@@ -61,7 +61,7 @@ function numberFromLabelSuffix(label: string): Nullable<number> {
  return Number.isFinite(suffixNumber) ? suffixNumber : null;
 }
 
-export function answerIndexFromRecord(record: JsonObject) {
+function answerIndexFromRecord(record: JsonObject) {
  const directNumber =
   numberValue(record, "blank") ??
   numberValue(record, "blank_no") ??

@@ -136,8 +136,8 @@
  },
  "search": {
   "title": "Search HanziHome",
-  "description": "Search vocabulary, grammar, lessons and notes in HanziHome.",
-  "placeholder": "Search vocabulary, grammar, lessons…",
+  "description": "Search all textbooks, extended textbooks, readings and your notes.",
+  "placeholder": "Search Hanzi, pinyin or Vietnamese…",
   "inputAria": "Search HanziHome",
   "clear": "Clear search",
   "resultsAria": "Search results",
@@ -154,7 +154,7 @@
   "close": "Close",
   "empty": "No results in {category}",
   "emptyDescription": "Try another search term or category.",
-  "loadError": "Unable to load the search index",
+  "loadError": "Search is unavailable right now",
   "loadErrorDescription": "Check your connection and try again.",
   "retry": "Retry",
   "categories": {
@@ -163,6 +163,8 @@
    "grammar": "Grammar",
    "exercise": "Exercises",
    "lesson": "Lessons",
+   "reading": "Readings",
+   "note": "Notes",
    "radical": "Radicals"
   },
   "kinds": {
@@ -173,7 +175,8 @@
    "exercise": "Exercise",
    "radical": "Radical",
    "note": "Note",
-   "navigation": "Navigation"
+   "navigation": "Navigation",
+   "reader_document": "Reading"
   }
  },
  "workspace": {

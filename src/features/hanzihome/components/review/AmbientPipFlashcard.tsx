@@ -1,26 +1,11 @@
 "use client";
 
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import {
- Play,
- Pause,
- ChevronLeft,
- ChevronRight,
- X,
- RotateCw,
- Volume2,
- VolumeX,
- BookmarkPlus,
- Check,
-} from "lucide-react";
-import { ActionCard } from "@/components/ui/actions/action-card";
+import { Play, Pause, X, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
 import { Card } from "@/components/ui/layout/card";
-import {
- HanziText,
- StudyInstructionText,
-} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  prefetchMandarinAudio,
  useFastMandarinSpeech,
@@ -29,9 +14,11 @@ import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
+import { AmbientPipFlashcardFooter } from "./AmbientPipFlashcardFooter";
+import { AmbientPipFlashcardSurface } from "./AmbientPipFlashcardSurface";
 import { usePipAutoAdvance } from "./usePipAutoAdvance";
 
-export type AmbientPipFlashcardProps = {
+type AmbientPipFlashcardProps = {
  readonly items: readonly HanziHomeVocabItem[];
  readonly lessonTitle?: string;
  readonly onClose?: () => void;
@@ -41,27 +28,6 @@ export type AmbientPipFlashcardProps = {
 };
 
 const INTERVAL_OPTIONS: readonly number[] = [10, 15, 30, 60];
-
-function renderHighlightedZh(text: string, targetHanzi: string) {
- if (!targetHanzi || !text.includes(targetHanzi)) {
-  return text;
- }
- const parts = text.split(targetHanzi);
- return (
-  <>
-   {parts.map((part, index) => (
-    <span key={index}>
-     {part}
-     {index < parts.length - 1 ? (
-      <StudyInstructionText as="span" tone="accent" weight="black">
-       {targetHanzi}
-      </StudyInstructionText>
-     ) : null}
-    </span>
-   ))}
-  </>
- );
-}
 
 export function AmbientPipFlashcard({
  items,
@@ -169,7 +135,6 @@ export function AmbientPipFlashcard({
   return null;
  }
 
- const example = currentItem.examples[0];
  const progressPercent = Math.max(0, Math.min(100, (remainingSeconds / intervalSeconds) * 100));
 
  const content = (
@@ -240,187 +205,23 @@ export function AmbientPipFlashcard({
    </div>
 
    {/* Card Interactive Surface */}
-   <div className="relative flex flex-1 flex-col justify-center px-4 py-2 text-center">
-    <ActionCard
-     padding="none"
-     onClick={handleToggleFlip}
-     className="absolute inset-0 h-full w-full"
-     aria-label="Lật thẻ xem phiên âm hoặc nghĩa"
-    />
-
-    <div className="pointer-events-none relative z-10 grid gap-2">
-     {!isFlipped ? (
-      /* Front: Hanzi Hero + Context Sentence */
-      <div className="grid gap-2">
-       <div className="flex items-center justify-center gap-2">
-        <HanziText as="h3" size="card" weight="black" tracking="normal">
-         {currentItem.hanzi}
-        </HanziText>
-        <div className="pointer-events-auto">
-         <Button
-          type="button"
-          variant="ghost"
-          size="icon-xs"
-          onClick={(e) => {
-           e.stopPropagation();
-           speakTracked(currentItem.hanzi, { rate: 1.15 });
-          }}
-          aria-label={`Phát âm ${currentItem.hanzi}`}
-         >
-          <Volume2 className="size-3.5" />
-         </Button>
-        </div>
-       </div>
-
-       {example ? (
-        <div className="mx-auto flex max-w-xs items-start gap-1.5 rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
-         <div className="flex-1">
-          <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
-           {renderHighlightedZh(example.zh, currentItem.hanzi)}
-          </HanziText>
-         </div>
-         <div className="pointer-events-auto shrink-0">
-          <Button
-           type="button"
-           variant="ghost"
-           size="icon-xs"
-           onClick={(e) => {
-            e.stopPropagation();
-            speakTracked(example.zh);
-           }}
-           aria-label="Phát âm câu ví dụ"
-          >
-           <Volume2 className="size-3 text-muted-foreground hover:text-primary" />
-          </Button>
-         </div>
-        </div>
-       ) : null}
-
-       <StudyInstructionText variant="caption" tone="muted">
-        Nhấn để xem phiên âm & nghĩa
-       </StudyInstructionText>
-      </div>
-     ) : (
-      /* Back: Pinyin, Hanviet, Meaning, Sentence Translation */
-      <div className="grid gap-1.5">
-       <div className="flex flex-wrap items-center justify-center gap-1.5">
-        <StudyInstructionText tone="accent" weight="bold">
-         {currentItem.pinyin}
-        </StudyInstructionText>
-        <StudyInstructionText tone="muted">·</StudyInstructionText>
-        <StudyInstructionText tone="default" weight="bold">
-         {currentItem.meaning.hanviet}
-        </StudyInstructionText>
-       </div>
-
-       <StudyInstructionText tone="secondary" weight="semibold">
-        {getVocabDisplayMeaning(currentItem)}
-       </StudyInstructionText>
-
-       {example ? (
-        <div className="mx-auto flex max-w-xs items-start gap-1.5 rounded-xl border border-border-default/50 bg-bg-subtle p-2 text-left">
-         <div className="grid flex-1 gap-1">
-          <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
-           {renderHighlightedZh(example.zh, currentItem.hanzi)}
-          </HanziText>
-          {example.vi ? (
-           <StudyInstructionText tone="secondary" variant="caption">
-            {example.vi}
-           </StudyInstructionText>
-          ) : null}
-         </div>
-         <div className="pointer-events-auto shrink-0">
-          <Button
-           type="button"
-           variant="ghost"
-           size="icon-xs"
-           onClick={(e) => {
-            e.stopPropagation();
-            speakTracked(example.zh);
-           }}
-           aria-label="Phát âm câu ví dụ"
-          >
-           <Volume2 className="size-3 text-muted-foreground hover:text-primary" />
-          </Button>
-         </div>
-        </div>
-       ) : null}
-
-       <StudyInstructionText variant="caption" tone="muted">
-        Nhấn để quay lại mặt chữ Hán
-       </StudyInstructionText>
-      </div>
-     )}
-    </div>
-   </div>
+   <AmbientPipFlashcardSurface
+    currentItem={currentItem}
+    isFlipped={isFlipped}
+    onToggleFlip={handleToggleFlip}
+    speakTracked={speakTracked}
+   />
 
    {/* Bottom Navigation Toolbar */}
-   <div className="flex items-center justify-between border-t border-border-default/40 bg-surface-muted/20 px-3 py-1.5 text-xs">
-    <div className="flex items-center gap-1">
-     <Button
-      type="button"
-      variant="ghost"
-      size="compact"
-      onClick={handlePrev}
-      aria-label="Từ trước đó"
-     >
-      <ChevronLeft className="size-3.5" />
-      <span className="hidden sm:inline">Trước</span>
-     </Button>
-
-     <Button
-      type="button"
-      variant="outline"
-      size="compact"
-      onClick={handleToggleFlip}
-      aria-label="Lật thẻ"
-     >
-      <RotateCw className="size-3" />
-      <span>Lật thẻ</span>
-     </Button>
-
-     <Button
-      type="button"
-      variant="ghost"
-      size="compact"
-      onClick={handleNext}
-      aria-label="Từ tiếp theo"
-     >
-      <span className="hidden sm:inline">Tiếp</span>
-      <ChevronRight className="size-3.5" />
-     </Button>
-    </div>
-
-    <div className="flex items-center gap-1">
-     <Button
-      type="button"
-      variant={isCurrentInVault ? "active" : "ghost"}
-      size="compact"
-      onClick={handleToggleCurrentVault}
-      title={
-       isCurrentInVault
-        ? "Đã lưu trong Kho riêng (nhấn để gỡ)"
-        : "Thêm từ này vào Kho từ vựng riêng"
-      }
-      aria-label={isCurrentInVault ? "Đã lưu trong Kho riêng" : "Thêm vào Kho riêng"}
-     >
-      {isCurrentInVault ? <Check className="size-3.5" /> : <BookmarkPlus className="size-3.5" />}
-      <span className="hidden sm:inline">{isCurrentInVault ? "Trong kho" : "Kho riêng"}</span>
-     </Button>
-     <StudyInstructionText variant="caption" tone="muted">
-      Chu kỳ:
-     </StudyInstructionText>
-     <Button
-      type="button"
-      variant="ghost"
-      size="compact"
-      onClick={handleCycleInterval}
-      aria-label={`Chu kỳ đổi từ: ${intervalSeconds} giây`}
-     >
-      {`${intervalSeconds}s`}
-     </Button>
-    </div>
-   </div>
+   <AmbientPipFlashcardFooter
+    handlePrev={handlePrev}
+    handleToggleFlip={handleToggleFlip}
+    handleNext={handleNext}
+    isCurrentInVault={isCurrentInVault}
+    handleToggleCurrentVault={handleToggleCurrentVault}
+    handleCycleInterval={handleCycleInterval}
+    intervalSeconds={intervalSeconds}
+   />
   </>
  );
 

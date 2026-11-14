@@ -30,7 +30,7 @@ import {
 
 export { mergeLearningStateAfterConflict };
 
-export const LearningStateSyncStatusSchema = z.enum(["synced", "pending", "syncing", "error"]);
+const LearningStateSyncStatusSchema = z.enum(["synced", "pending", "syncing", "error"]);
 export type LearningStateSyncStatus = z.infer<typeof LearningStateSyncStatusSchema>;
 type Nullable<T> = T | null;
 type Optional<T> = T | undefined;

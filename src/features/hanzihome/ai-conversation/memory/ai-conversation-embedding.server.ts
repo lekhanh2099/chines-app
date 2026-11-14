@@ -27,7 +27,7 @@ const embeddingResponseSchema = z.strictObject({
 
 type MemoryEmbeddingTask = "RETRIEVAL_DOCUMENT" | "RETRIEVAL_QUERY";
 
-export type AiConversationMemoryEmbeddingResult =
+type AiConversationMemoryEmbeddingResult =
  | { available: true; values: number[] }
  | {
     available: false;

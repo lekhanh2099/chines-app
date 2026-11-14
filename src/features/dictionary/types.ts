@@ -34,12 +34,12 @@ export type DictionarySentenceViewModel = {
  error: string | null;
 };
 
-export type DictionaryWordLoadingViewModel = {
+type DictionaryWordLoadingViewModel = {
  mode: "word";
  state: "loading";
 };
 
-export type DictionaryWordNotFoundViewModel = {
+type DictionaryWordNotFoundViewModel = {
  mode: "word";
  state: "not-found";
 };

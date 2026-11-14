@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const pdfDrawingToolSchema = z.enum(["pen", "highlighter"]);
+const pdfDrawingToolSchema = z.enum(["pen", "highlighter"]);
 export type PdfDrawingTool = z.output<typeof pdfDrawingToolSchema>;
 
 const pdfPointSchema = z.strictObject({
@@ -9,7 +9,7 @@ const pdfPointSchema = z.strictObject({
 });
 const pdfColorSchema = z.string().regex(/^#[0-9a-f]{6}$/iu);
 
-export const pdfStrokeSchema = z.strictObject({
+const pdfStrokeSchema = z.strictObject({
  id: z.string().min(1),
  tool: pdfDrawingToolSchema,
  color: pdfColorSchema,
@@ -104,11 +104,7 @@ export function pdfStrokePath(stroke: PdfStroke): string {
  return path;
 }
 
-export function strokeTouchesPoint(
- stroke: PdfStroke,
- point: PdfPoint,
- eraserRadius = 0.018,
-): boolean {
+function strokeTouchesPoint(stroke: PdfStroke, point: PdfPoint, eraserRadius = 0.018): boolean {
  const strokeRadius = Math.max(0.0025, stroke.width / 1000 / 2);
  const threshold = eraserRadius + strokeRadius;
  return stroke.points.some(

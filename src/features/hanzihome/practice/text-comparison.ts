@@ -15,7 +15,7 @@ export function normalizeVietnameseAnswer(text: string): string {
   .trim();
 }
 
-export function levenshteinDistance(left: string, right: string): number {
+function levenshteinDistance(left: string, right: string): number {
  const leftCharacters = Array.from(left);
  const rightCharacters = Array.from(right);
  const previous = Array.from({ length: rightCharacters.length + 1 }, (_, index) => index);

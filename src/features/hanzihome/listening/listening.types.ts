@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const LISTENING_CATEGORIES = ["listening_comprehension", "pronunciation", "extra_practice"];
 
-export type ListeningCategory = (typeof LISTENING_CATEGORIES)[number];
+type ListeningCategory = (typeof LISTENING_CATEGORIES)[number];
 
 export const LISTENING_ITEM_TYPES = [
  "sentence_mcq",
@@ -19,21 +19,21 @@ export const LISTENING_ITEM_TYPES = [
  "dictation",
 ];
 
-export type ListeningItemType = (typeof LISTENING_ITEM_TYPES)[number];
+type ListeningItemType = (typeof LISTENING_ITEM_TYPES)[number];
 
-export const ListeningTranscriptVoiceSchema = z.enum(["male", "female", "neutral"]);
-export type ListeningTranscriptVoice = z.infer<typeof ListeningTranscriptVoiceSchema>;
-export const ListeningTranscriptModeSchema = z.enum(["dialogue", "monologue"]);
-export type ListeningTranscriptMode = z.infer<typeof ListeningTranscriptModeSchema>;
+const ListeningTranscriptVoiceSchema = z.enum(["male", "female", "neutral"]);
+type ListeningTranscriptVoice = z.infer<typeof ListeningTranscriptVoiceSchema>;
+const ListeningTranscriptModeSchema = z.enum(["dialogue", "monologue"]);
+type ListeningTranscriptMode = z.infer<typeof ListeningTranscriptModeSchema>;
 
-export type ListeningTranscriptSpeaker = {
+type ListeningTranscriptSpeaker = {
  id: string;
  labelZh: string;
  labelVi: string;
  voice: ListeningTranscriptVoice;
 };
 
-export type ListeningTranscriptLine = {
+type ListeningTranscriptLine = {
  order: number;
  speakerId: string;
  zh: string;
@@ -41,7 +41,7 @@ export type ListeningTranscriptLine = {
  vi?: string;
 };
 
-export type ListeningTranscriptText = {
+type ListeningTranscriptText = {
  zh: string;
  pinyin: string;
  vi?: string;
@@ -54,13 +54,13 @@ export type ListeningTranscript = {
  full: ListeningTranscriptText;
 };
 
-export type ListeningOption = {
+type ListeningOption = {
  key: string;
  textZh: string;
  textVi?: string;
 };
 
-export const ListeningAnswerSchema = z.discriminatedUnion("type", [
+const ListeningAnswerSchema = z.discriminatedUnion("type", [
  z.object({ type: z.literal("choice"), value: z.string() }),
  z.object({ type: z.literal("boolean"), value: z.boolean() }),
  z.object({ type: z.literal("text"), accepted: z.array(z.string()) }),
@@ -69,7 +69,7 @@ export const ListeningAnswerSchema = z.discriminatedUnion("type", [
   pairs: z.array(z.object({ left: z.string(), right: z.string() })),
  }),
 ]);
-export type ListeningAnswer = z.infer<typeof ListeningAnswerSchema>;
+type ListeningAnswer = z.infer<typeof ListeningAnswerSchema>;
 
 export type ListeningItemQuery = {
  lessonId: string;
@@ -104,7 +104,7 @@ export type ListeningMatchingSide = {
  textVi?: string;
 };
 
-export type ListeningItemMetadata = {
+type ListeningItemMetadata = {
  variant?: ListeningExerciseType;
  promptVi?: string;
  sampleAnswerZh?: string;

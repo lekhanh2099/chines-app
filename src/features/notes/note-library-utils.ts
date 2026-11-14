@@ -5,7 +5,6 @@ import type {
 } from "@/services/notes/notes.service";
 import { ReadingStatusSchema } from "@/types/database";
 import type { NoteCategory } from "@/types/database";
-import type { JsonObject } from "./note-export.schema";
 import type { NoteTab } from "@/stores/notes/note-tabs-store";
 import {
  getNoteContext,
@@ -101,20 +100,6 @@ export function createNoteLibraryMetadataInput(
  };
 }
 
-export function plainTextToEditorDocument(value: string): JsonObject {
- const paragraphs = value
-  .replace(/\r\n?/g, "\n")
-  .split(/\n{2,}/)
-  .map((paragraph) => paragraph.replace(/\n/g, " ").trim())
-  .filter(Boolean)
-  .map((text) => ({ type: "paragraph", content: [{ type: "text", text }] }));
-
- return {
-  type: "doc",
-  content: paragraphs.length > 0 ? paragraphs : [{ type: "paragraph" }],
- };
-}
-
 export function buildNoteFolderTree(folders: NoteFolder[]): NoteFolderTreeNode[] {
  const nodes = new Map<string, NoteFolderTreeNode>(
   folders.map((folder) => [folder.id, { ...folder, children: [] }]),
@@ -132,7 +117,7 @@ export function buildNoteFolderTree(folders: NoteFolder[]): NoteFolderTreeNode[]
  return roots;
 }
 
-export function matchesNoteLibraryView(note: NoteListItem, view: NoteLibraryView): boolean {
+function matchesNoteLibraryView(note: NoteListItem, view: NoteLibraryView): boolean {
  if (view === "recent") return true;
  if (view === "lesson") return note.links.length > 0 || Boolean(note.linked_lesson_id);
  if (view === "quick") return note.tags.includes("quick-note");
@@ -141,7 +126,7 @@ export function matchesNoteLibraryView(note: NoteListItem, view: NoteLibraryView
  return note.reading_status === view;
 }
 
-export function matchesNoteFacets(
+function matchesNoteFacets(
  note: NoteListItem,
  input: {
   category: NoteCategory | "all";

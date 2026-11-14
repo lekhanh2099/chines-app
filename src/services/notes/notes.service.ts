@@ -522,6 +522,30 @@ export async function searchNotesByTitle(
  return attachLessonLinks(supabase, userId, NoteListRowSchema.array().parse(data || []));
 }
 
+const NoteSearchRowSchema = DbNoteSchema.pick({
+ id: true,
+ title: true,
+ tags: true,
+ updated_at: true,
+}).extend({ content: DbNoteSchema.shape.content.nullable() });
+export type NoteSearchRow = z.infer<typeof NoteSearchRowSchema>;
+
+/** The user's most recently updated notes with their content, for full-text search. */
+export async function getUserNotesForSearch(
+ supabase: AppSupabaseClient,
+ userId: string,
+ limit: number,
+): Promise<NoteSearchRow[]> {
+ const { data, error } = await supabase
+  .from("notes")
+  .select("id, title, tags, updated_at, content")
+  .eq("user_id", userId)
+  .order("updated_at", { ascending: false })
+  .limit(limit);
+ if (error) throw error;
+ return NoteSearchRowSchema.array().parse(data ?? []);
+}
+
 export async function getNoteFolders(
  supabase: AppSupabaseClient,
  userId: string,

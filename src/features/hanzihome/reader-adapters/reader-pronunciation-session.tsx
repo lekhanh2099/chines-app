@@ -5,7 +5,7 @@ import { createContext, useContext, useState, type ReactNode } from "react";
 
 import type { PronunciationOverride } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 
-export type ReaderPronunciationSessionInput = {
+type ReaderPronunciationSessionInput = {
  text: string;
  readings: readonly string[];
  start: number;

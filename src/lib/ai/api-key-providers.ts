@@ -4,7 +4,7 @@ export const AUTO_API_KEY_PROVIDER = "auto";
 
 export const ApiKeyProviderSchema = z.enum(["groq", "deepseek", "gemini", "openai"]);
 export type ApiKeyProvider = z.infer<typeof ApiKeyProviderSchema>;
-export type ApiKeyAccessTier = "free-tier" | "paid";
+type ApiKeyAccessTier = "free-tier" | "paid";
 
 export const API_KEY_PROVIDER_OPTIONS: {
  value: ApiKeyProvider;

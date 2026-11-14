@@ -1,19 +1,18 @@
 "use client";
 
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { ChevronLeft, ChevronRight, Pause, Play, Volume2, VolumeX, X } from "lucide-react";
+import { Pause, Play, Volume2, VolumeX, X } from "lucide-react";
 import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
 import { Card } from "@/components/ui/layout/card";
-import {
- HanziText,
- StudyInstructionText,
-} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
+import { AmbientPipGrammarFooter } from "./AmbientPipGrammarFooter";
+import { AmbientPipGrammarPointBody } from "./AmbientPipGrammarPointBody";
 import type { PipGrammarPoint } from "./pip-grammar-adapter";
 import { usePipAutoAdvance } from "./usePipAutoAdvance";
 
-export type AmbientPipGrammarCardProps = {
+type AmbientPipGrammarCardProps = {
  readonly items: readonly PipGrammarPoint[];
  readonly lessonTitle?: string;
  readonly onClose?: () => void;
@@ -123,8 +122,6 @@ export function AmbientPipGrammarCard({
   return null;
  }
 
- const examples = currentItem.examples;
- const currentExample = examples[exampleIndex] ?? examples[0];
  const progressPercent = Math.max(0, Math.min(100, (remainingSeconds / intervalSeconds) * 100));
 
  const content = (
@@ -195,166 +192,20 @@ export function AmbientPipGrammarCard({
    </div>
 
    {/* Main Grammar Point Content Surface */}
-   <div className="flex flex-1 flex-col justify-start gap-2.5 overflow-y-auto px-4 py-3">
-    {/* Title & Pattern */}
-    <div className="flex items-start justify-between gap-2">
-     <HanziText as="h3" size="card" weight="black" leading="snug" className="text-left">
-      {currentItem.title}
-     </HanziText>
-     <Button
-      type="button"
-      variant="ghost"
-      size="icon-xs"
-      onClick={() => speakTracked(currentItem.title)}
-      aria-label={`Phát âm ${currentItem.title}`}
-      className="shrink-0"
-     >
-      <Volume2 className="size-3.5" />
-     </Button>
-    </div>
-
-    {/* Formula Pill if present */}
-    {currentItem.formula ? (
-     <div className="rounded-lg border border-primary/20 bg-primary/5 px-2.5 py-1.5 text-left">
-      <StudyInstructionText variant="caption" tone="accent" weight="bold">
-       Công thức:
-      </StudyInstructionText>{" "}
-      <span className="text-xs font-semibold text-foreground">{currentItem.formula}</span>
-     </div>
-    ) : null}
-
-    {/* Explanation / Cách dùng */}
-    {currentItem.explanation ? (
-     <div className="text-left">
-      <StudyInstructionText variant="bodySmall" tone="secondary" leading="relaxed">
-       {currentItem.explanation}
-      </StudyInstructionText>
-     </div>
-    ) : null}
-
-    {/* Common Collocations / Cụm từ thường gặp */}
-    {currentItem.commonPhrases && currentItem.commonPhrases.length > 0 ? (
-     <div className="flex flex-wrap items-center gap-1.5 pt-0.5 text-left">
-      <StudyInstructionText variant="caption" tone="muted" weight="bold">
-       Cụm từ:
-      </StudyInstructionText>
-      {currentItem.commonPhrases.map((phrase) => (
-       <Button
-        key={phrase}
-        type="button"
-        variant="outline"
-        size="compact"
-        onClick={() => speakTracked(phrase)}
-        title={`Bấm để nghe phát âm "${phrase}"`}
-       >
-        {phrase}
-       </Button>
-      ))}
-     </div>
-    ) : null}
-
-    {/* Example Sentences */}
-    {currentExample ? (
-     <div className="mt-auto flex flex-col gap-1.5 rounded-xl border border-border-default/60 bg-surface-subtle p-2.5 text-left">
-      <div className="flex items-center justify-between gap-1.5">
-       <div className="flex items-center gap-1">
-        <Badge variant="default" size="sm">
-         {`Ví dụ ${exampleIndex + 1}/${examples.length}`}
-        </Badge>
-       </div>
-
-       <div className="flex items-center gap-1">
-        {examples.length > 1 ? (
-         <>
-          <Button
-           type="button"
-           variant="ghost"
-           size="icon-xs"
-           disabled={exampleIndex === 0}
-           onClick={() => setExampleIndex((prev) => prev - 1)}
-           aria-label="Ví dụ trước"
-          >
-           <ChevronLeft className="size-3" />
-          </Button>
-          <Button
-           type="button"
-           variant="ghost"
-           size="icon-xs"
-           disabled={exampleIndex >= examples.length - 1}
-           onClick={() => setExampleIndex((prev) => prev + 1)}
-           aria-label="Ví dụ sau"
-          >
-           <ChevronRight className="size-3" />
-          </Button>
-         </>
-        ) : null}
-
-        <Button
-         type="button"
-         variant="ghost"
-         size="icon-xs"
-         onClick={() => speakTracked(currentExample.zh)}
-         aria-label="Phát âm câu ví dụ"
-        >
-         <Volume2 className="size-3.5 text-primary" />
-        </Button>
-       </div>
-      </div>
-
-      <HanziText as="p" size="inherit" weight="semibold" leading="relaxed">
-       {currentExample.zh}
-      </HanziText>
-
-      {currentExample.vi ? (
-       <StudyInstructionText variant="caption" tone="secondary">
-        {currentExample.vi}
-       </StudyInstructionText>
-      ) : null}
-     </div>
-    ) : null}
-   </div>
+   <AmbientPipGrammarPointBody
+    currentItem={currentItem}
+    exampleIndex={exampleIndex}
+    setExampleIndex={setExampleIndex}
+    speakTracked={speakTracked}
+   />
 
    {/* Bottom Navigation Toolbar */}
-   <div className="flex items-center justify-between border-t border-border-default/40 bg-surface-muted/20 px-3 py-1.5 text-xs">
-    <div className="flex items-center gap-1">
-     <Button
-      type="button"
-      variant="ghost"
-      size="compact"
-      onClick={handlePrev}
-      aria-label="Điểm ngữ pháp trước"
-     >
-      <ChevronLeft className="size-3.5" />
-      <span className="hidden sm:inline">Trước</span>
-     </Button>
-
-     <Button
-      type="button"
-      variant="ghost"
-      size="compact"
-      onClick={handleNext}
-      aria-label="Điểm ngữ pháp tiếp theo"
-     >
-      <span className="hidden sm:inline">Tiếp</span>
-      <ChevronRight className="size-3.5" />
-     </Button>
-    </div>
-
-    <div className="flex items-center gap-1">
-     <StudyInstructionText variant="caption" tone="muted">
-      Chu kỳ:
-     </StudyInstructionText>
-     <Button
-      type="button"
-      variant="ghost"
-      size="compact"
-      onClick={handleCycleInterval}
-      aria-label={`Chu kỳ đổi ngữ pháp: ${intervalSeconds} giây`}
-     >
-      {`${intervalSeconds}s`}
-     </Button>
-    </div>
-   </div>
+   <AmbientPipGrammarFooter
+    handlePrev={handlePrev}
+    handleNext={handleNext}
+    handleCycleInterval={handleCycleInterval}
+    intervalSeconds={intervalSeconds}
+   />
   </>
  );
 

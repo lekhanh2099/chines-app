@@ -2,44 +2,12 @@
 
 import { lessonDisplaySettings, lessonBookKey } from "@/features/hanzihome/utils/learning-state";
 
-import {
- AlertTriangle,
- Columns2,
- CloudOff,
- Lock,
- RefreshCcw,
- SlidersHorizontal,
- WifiOff,
-} from "lucide-react";
-import { useEffect, useState } from "react";
+import { Columns2, Lock } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/display/badge";
 import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
-import { Button } from "@/components/ui/actions/button";
 import { DropdownMenuItem } from "@/components/ui/overlays/dropdown-menu";
-import {
- DropdownMenu,
- DropdownMenuContent,
- DropdownMenuLabel,
- DropdownMenuSeparator,
- DropdownMenuTrigger,
-} from "@/components/ui/overlays/dropdown-menu";
-import {
- Select,
- SelectContent,
- SelectGroup,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/forms/select";
-import { SegmentedControl } from "@/components/ui/forms/segmented-control";
-import {
- ResizableHandle,
- ResizablePanel,
- ResizablePanelGroup,
-} from "@/components/ui/layout/resizable";
-import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
+import { DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/overlays/dropdown-menu";
 import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import {
  HanziHomeDeveloperTools,
@@ -47,9 +15,18 @@ import {
  HanziHomeDeveloperToolsSheetContent,
 } from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
 import { HanziHomeReadingSettingsTrigger } from "@/features/hanzihome/components/layout/HanziHomeReadingSettingsTrigger";
-import { WorkspacePane } from "@/features/hanzihome/components/layout/WorkspacePane";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
-import { moduleMeta, tabsForLesson } from "@/features/hanzihome/components/layout/moduleMeta";
+import { tabsForLesson } from "@/features/hanzihome/components/layout/moduleMeta";
+import { LearningSyncStatus } from "@/features/hanzihome/components/layout/LearningSyncStatus";
+import {
+ ModuleSelectorControls,
+ ModuleSplitPanes,
+ ReadOnlyWorkspaceToolsMenu,
+} from "@/features/hanzihome/components/layout/ModuleSplitWorkspaceViews";
+import {
+ useModuleSplitActivePaneSync,
+ useModuleSplitViewport,
+} from "@/features/hanzihome/components/layout/useModuleSplitWorkspaceLayout";
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
 import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/DebugRawDataPanel";
 import { HanziHomeEditingDialogShell } from "@/features/hanzihome/editing";
@@ -63,103 +40,9 @@ import {
  useHanziHomeWorkspaceLayout,
 } from "@/features/hanzihome/context/selectors";
 import type { PaneId, StudyModule } from "@/features/hanzihome/context/types";
-import {
- developerToolsEnabled,
- parseStudyModule,
- setPaneActive,
-} from "@/features/hanzihome/context/workspaceLayout";
+import { developerToolsEnabled, setPaneActive } from "@/features/hanzihome/context/workspaceLayout";
 
-export function LearningSyncStatus() {
- const tSync = useTranslations("Common.syncStatus");
- const runtime = useHanziHomeRuntime();
- const sync = runtime.learningSync;
-
- if (!sync) return null;
-
- if (sync.durability === "failed") {
-  return (
-   <div className="flex shrink-0 items-center gap-1">
-    <Badge variant="danger" size="md" title={sync.lastError || tSync("localStorageFailed")}>
-     <AlertTriangle className="h-3.5 w-3.5" />
-     <span className="hidden sm:inline">{tSync("localStorageFailed")}</span>
-     <span className="sm:hidden">{tSync("localStorageFailed")}</span>
-    </Badge>
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
-     aria-label={tSync("retry")}
-     title={tSync("retry")}
-     onClick={() => {
-      void sync.retry();
-     }}
-    >
-     <RefreshCcw className="h-3.5 w-3.5" />
-    </Button>
-   </div>
-  );
- }
-
- if (sync.durability === "memory-only") {
-  return (
-   <Badge variant="default" size="md">
-    <RefreshCcw className="h-3.5 w-3.5 animate-spin" />
-    <span className="hidden sm:inline">{tSync("localSavePending")}</span>
-    <span className="sm:hidden">...</span>
-   </Badge>
-  );
- }
-
- const hasOfflinePendingWrites =
-  !sync.isOnline &&
-  (sync.durability === undefined || sync.durability === "durable") &&
-  sync.pendingCount > 0;
- if (hasOfflinePendingWrites) {
-  return (
-   <Badge variant="warning" size="md">
-    <WifiOff className="h-3.5 w-3.5" />
-    <span className="hidden sm:inline">{tSync("durablySavedOffline")}</span>
-    <span className="sm:hidden">{tSync("offline")}</span>
-   </Badge>
-  );
- }
-
- if (sync.isOnline && sync.status === "syncing") {
-  return (
-   <Badge variant="default" size="md">
-    <RefreshCcw className="h-3.5 w-3.5 animate-spin" />
-    <span className="hidden sm:inline">{tSync("syncing")}</span>
-    <span className="sm:hidden">...</span>
-   </Badge>
-  );
- }
-
- if (sync.status === "error") {
-  return (
-   <div className="flex shrink-0 items-center gap-1">
-    <Badge variant="danger" size="md" title={sync.lastError || tSync("syncError")}>
-     <CloudOff className="h-3.5 w-3.5" />
-     <span className="hidden sm:inline">{tSync("syncError")}</span>
-     <span className="sm:hidden">{tSync("syncError")}</span>
-    </Badge>
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
-     aria-label={tSync("retry")}
-     title={tSync("retry")}
-     onClick={() => {
-      void sync.retry();
-     }}
-    >
-     <RefreshCcw className="h-3.5 w-3.5" />
-    </Button>
-   </div>
-  );
- }
-
- return null;
-}
+export { LearningSyncStatus };
 
 export function ModuleSplitWorkspaceContent() {
  const tModules = useTranslations("Shell.studyModules");
@@ -173,52 +56,18 @@ export function ModuleSplitWorkspaceContent() {
  const lessonTextSelectedSectionId = useHanziHomeFeatureSelector(
   (state) => state.lessonTextSelectedSectionId,
  );
- const [isMobileSplit, setIsMobileSplit] = useState(false);
- const [isHorizontalSplit, setIsHorizontalSplit] = useState(false);
+ const { isMobileSplit, isHorizontalSplit } = useModuleSplitViewport();
  const isListeningLesson = runtime.lesson.tags?.includes("listening") ?? false;
  const effectiveSplitEnabled = splitEnabled && !isListeningLesson && !runtime.readOnly;
  const lessonTabs = tabsForLesson(runtime.lesson, tModules);
 
- useEffect(() => {
-  const mobileQuery = window.matchMedia("(max-width: 39.999rem)");
-  const horizontalQuery = window.matchMedia("(min-width: 64rem)");
-  const updateLayout = () => {
-   setIsMobileSplit(mobileQuery.matches);
-   setIsHorizontalSplit(horizontalQuery.matches);
-  };
-
-  updateLayout();
-  mobileQuery.addEventListener("change", updateLayout);
-  horizontalQuery.addEventListener("change", updateLayout);
-
-  return () => {
-   mobileQuery.removeEventListener("change", updateLayout);
-   horizontalQuery.removeEventListener("change", updateLayout);
-  };
- }, []);
-
- useEffect(() => {
-  if (!effectiveSplitEnabled) return;
-
-  const activePaneModules = activePane === "left" ? paneLayout.left : paneLayout.right;
-  if (activePaneModules.includes(runtime.activeModule)) {
-   const activePaneModule = activePane === "left" ? paneLayout.activeLeft : paneLayout.activeRight;
-   if (activePaneModule !== runtime.activeModule) {
-    actions.setPaneLayout(setPaneActive(paneLayout, activePane, runtime.activeModule));
-   }
-   return;
-  }
-
-  const otherPane = activePane === "left" ? "right" : "left";
-  const otherPaneModules = otherPane === "left" ? paneLayout.left : paneLayout.right;
-  if (otherPaneModules.includes(runtime.activeModule)) {
-   actions.setActivePane(otherPane);
-   const otherPaneModule = otherPane === "left" ? paneLayout.activeLeft : paneLayout.activeRight;
-   if (otherPaneModule !== runtime.activeModule) {
-    actions.setPaneLayout(setPaneActive(paneLayout, otherPane, runtime.activeModule));
-   }
-  }
- }, [actions, activePane, effectiveSplitEnabled, paneLayout, runtime.activeModule]);
+ useModuleSplitActivePaneSync({
+  actions,
+  activeModule: runtime.activeModule,
+  activePane,
+  effectiveSplitEnabled,
+  paneLayout,
+ });
 
  const selectModule = (module: StudyModule) => {
   if (module !== runtime.activeModule) requestNavigation(() => runtime.selectModule(module));
@@ -243,21 +92,7 @@ export function ModuleSplitWorkspaceContent() {
  };
 
  const workspaceTools = runtime.readOnly ? (
-  <DropdownMenu>
-   <DropdownMenuTrigger asChild>
-    <Button type="button" variant="outline" size="toolbar" aria-label={tModules("openTools")}>
-     <SlidersHorizontal />
-     <span className="hidden sm:inline">{tModules("tools")}</span>
-    </Button>
-   </DropdownMenuTrigger>
-   <DropdownMenuContent align="end" width="md">
-    <DropdownMenuLabel>{tModules("workspace")}</DropdownMenuLabel>
-    <DropdownMenuItem disabled>
-     <Lock />
-     {tModules("readOnlyContent")}
-    </DropdownMenuItem>
-   </DropdownMenuContent>
-  </DropdownMenu>
+  <ReadOnlyWorkspaceToolsMenu />
  ) : (
   <HanziHomeDeveloperTools inline>
    <DropdownMenuItem onSelect={enableSplit}>
@@ -338,44 +173,11 @@ export function ModuleSplitWorkspaceContent() {
   </div>
  ) : (
   <>
-   <div className="min-w-0 flex-1">
-    <div className="xl:hidden">
-     <Select
-      value={runtime.activeModule}
-      onValueChange={(module) => {
-       const selectedModule = parseStudyModule(module);
-       if (selectedModule) selectModule(selectedModule);
-      }}
-     >
-      <SelectTrigger aria-label={tModules("selectAria")} size="sm" width="full">
-       <SelectValue>{tModules(moduleMeta[runtime.activeModule].key)}</SelectValue>
-      </SelectTrigger>
-      <SelectContent
-       side="bottom"
-       align="start"
-       collisionPadding={8}
-       className="max-h-80 min-w-[var(--radix-select-trigger-width)]"
-      >
-       <SelectGroup>
-        {lessonTabs.map((item) => (
-         <SelectItem key={item.key} value={item.key}>
-          {item.label}
-         </SelectItem>
-        ))}
-       </SelectGroup>
-      </SelectContent>
-     </Select>
-    </div>
-    <div className="hidden xl:block">
-     <HanziHomeStudyTabs
-      value={runtime.activeModule}
-      items={lessonTabs}
-      onChange={selectModule}
-      compact
-      surface="transparent"
-     />
-    </div>
-   </div>
+   <ModuleSelectorControls
+    activeModule={runtime.activeModule}
+    lessonTabs={lessonTabs}
+    onSelectModule={selectModule}
+   />
    <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
     <LearningSyncStatus />
     <div
@@ -439,82 +241,17 @@ export function ModuleSplitWorkspaceContent() {
     {runtime.activeModule === "lessonText" && !runtime.readOnly ? (
      <HanziHomeEditingDialogShell />
     ) : null}
-    {isMobileSplit ? (
-     <div className="grid h-full min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-      <SegmentedControl<PaneId>
-       value={activePane}
-       items={[
-        {
-         key: "left",
-         label: tModules("paneLabel", {
-          number: 1,
-          module: tModules(moduleMeta[paneLayout.activeLeft].key),
-         }),
-        },
-        {
-         key: "right",
-         label: tModules("paneLabel", {
-          number: 2,
-          module: tModules(moduleMeta[paneLayout.activeRight].key),
-         }),
-        },
-       ]}
-       onChange={selectActivePane}
-       density="touch"
-       aria-label={tModules("activePaneAria")}
-      />
-      <div className="grid min-h-0 min-w-0 overflow-hidden">
-       <div className={activePane === "left" ? "min-h-0 min-w-0 overflow-hidden" : "hidden"}>
-        <WorkspacePane
-         paneId="left"
-         readerToolsMenuContent={readerToolsMenuContent}
-         readerToolsSheetContent={readerToolsSheetContent}
-        />
-       </div>
-       <div className={activePane === "right" ? "min-h-0 min-w-0 overflow-hidden" : "hidden"}>
-        <WorkspacePane
-         paneId="right"
-         readerToolsMenuContent={readerToolsMenuContent}
-         readerToolsSheetContent={readerToolsSheetContent}
-        />
-       </div>
-      </div>
-     </div>
-    ) : (
-     <ResizablePanelGroup
-      key={isHorizontalSplit ? "horizontal" : "vertical"}
-      orientation={isHorizontalSplit ? "horizontal" : "vertical"}
-      defaultLayout={{ left: splitPaneSize, right: 100 - splitPaneSize }}
-      className="min-h-0 min-w-0 overflow-hidden"
-     >
-      <ResizablePanel
-       id="left"
-       className="min-h-0 min-w-0 overflow-hidden"
-       minSize={isHorizontalSplit ? 38 : 30}
-       defaultSize={splitPaneSize}
-       onResize={(size) => actions.setSplitPaneSize(Math.round(size.asPercentage))}
-      >
-       <WorkspacePane
-        paneId="left"
-        readerToolsMenuContent={readerToolsMenuContent}
-        readerToolsSheetContent={readerToolsSheetContent}
-       />
-      </ResizablePanel>
-      <ResizableHandle />
-      <ResizablePanel
-       id="right"
-       className="min-h-0 min-w-0 overflow-hidden"
-       minSize={isHorizontalSplit ? 38 : 30}
-       defaultSize={100 - splitPaneSize}
-      >
-       <WorkspacePane
-        paneId="right"
-        readerToolsMenuContent={readerToolsMenuContent}
-        readerToolsSheetContent={readerToolsSheetContent}
-       />
-      </ResizablePanel>
-     </ResizablePanelGroup>
-    )}
+    <ModuleSplitPanes
+     activePane={activePane}
+     isHorizontalSplit={isHorizontalSplit}
+     isMobileSplit={isMobileSplit}
+     paneLayout={paneLayout}
+     readerToolsMenuContent={readerToolsMenuContent}
+     readerToolsSheetContent={readerToolsSheetContent}
+     splitPaneSize={splitPaneSize}
+     onSelectActivePane={selectActivePane}
+     onSplitPaneResize={actions.setSplitPaneSize}
+    />
     {debugPanel}
    </div>
   </div>

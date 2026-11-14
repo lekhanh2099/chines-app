@@ -20,10 +20,10 @@ export function importedPdfAssetId(asset: ReaderPdfAsset) {
  return `hanzihome-studio-asset:public/resources/${asset.resourceFile}`;
 }
 
-export const PDF_BASE_PAGE_WIDTH_REM = 45;
+const PDF_BASE_PAGE_WIDTH_REM = 45;
 export const PDF_MIN_ZOOM = 60;
 export const PDF_MAX_ZOOM = 300;
-export const PDF_ZOOM_STEP = 25;
+const PDF_ZOOM_STEP = 25;
 
 export function clampPdfZoom(value: number): number {
  if (!Number.isFinite(value)) return 100;

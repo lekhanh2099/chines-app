@@ -17,7 +17,7 @@ import {
 import type { PracticeAttemptRow } from "@/features/hanzihome/practice/practice-attempt.schemas";
 import type { HomeRecentActivityItem } from "@/features/home/types";
 
-export type HomeReviewEvidence = {
+type HomeReviewEvidence = {
  key: string;
  label: string;
  kindLabel: string;

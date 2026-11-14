@@ -53,8 +53,8 @@ export const artifactTypeLabels: Record<HtmlArtifactType, string> = {
  other: "Khác",
 };
 
-export const artifactTypes = htmlArtifactTypeSchema.options;
-export const noFolderValue = "__none__";
+const artifactTypes = htmlArtifactTypeSchema.options;
+const noFolderValue = "__none__";
 const htmlEditorExtensions = [html({ autoCloseTags: true, matchClosingTags: true })];
 
 export function EditorPane(props: {
@@ -83,7 +83,7 @@ export function EditorPane(props: {
  );
 }
 
-export function ArtifactForm({
+function ArtifactForm({
  artifact,
  defaultFolderId,
  folders,
@@ -332,7 +332,7 @@ export function ArtifactForm({
  );
 }
 
-export function HtmlSourceEditor({
+function HtmlSourceEditor({
  ariaLabelledBy,
  fullHeight = false,
  value,

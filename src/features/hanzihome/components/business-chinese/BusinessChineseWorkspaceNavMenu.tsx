@@ -20,7 +20,7 @@ export type BusinessChineseNavTab<T extends string = string> = {
  label: string;
 };
 
-export type BusinessChineseWorkspaceNavMenuProps<T extends string = string> = {
+type BusinessChineseWorkspaceNavMenuProps<T extends string = string> = {
  tabs: ReadonlyArray<BusinessChineseNavTab<T>>;
  activeView: T;
  onActiveViewChange: (view: T) => void;

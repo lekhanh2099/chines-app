@@ -11,7 +11,7 @@ export const notebookSeedData = NotebookSeedDataSchema.parse(rawNotebookSeedData
 
 export const notebookSectionIds = NotebookSeedDataSchema.keyof().options;
 
-export const notebookItems: NotebookItem[] = notebookSectionIds.flatMap((sectionId) =>
+const notebookItems: NotebookItem[] = notebookSectionIds.flatMap((sectionId) =>
  notebookSeedData[sectionId].terms.map((term, index) => ({
   ...term,
   id: `${sectionId}-term-${index + 1}`,
@@ -19,13 +19,12 @@ export const notebookItems: NotebookItem[] = notebookSectionIds.flatMap((section
  })),
 );
 
-export const notebookComparisons: NotebookComparisonItem[] = notebookSectionIds.flatMap(
- (sectionId) =>
-  notebookSeedData[sectionId].compares.map((comparison, index) => ({
-   ...comparison,
-   id: `${sectionId}-compare-${index + 1}`,
-   sectionId,
-  })),
+const notebookComparisons: NotebookComparisonItem[] = notebookSectionIds.flatMap((sectionId) =>
+ notebookSeedData[sectionId].compares.map((comparison, index) => ({
+  ...comparison,
+  id: `${sectionId}-compare-${index + 1}`,
+  sectionId,
+ })),
 );
 
 export function getNotebookSectionItems(sectionId: NotebookSectionId) {

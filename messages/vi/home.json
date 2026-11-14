@@ -32,26 +32,6 @@
   "radicals": "Bộ thủ",
   "review": "Ôn tập"
  },
- "pulse": {
-  "title": "Nhịp học",
-  "description": "Những tín hiệu cần chú ý từ tiến độ hiện tại.",
-  "openSrs": "Mở SRS",
-  "reviewCount": "Đang học / còn khó",
-  "knownCount": "Đã biết",
-  "reviewedTodayCount": "Đã ôn hôm nay",
-  "bookmarkedCount": "Đã đánh dấu",
-  "srsDueCount": "SRS đến hạn",
-  "learningLoopDueCount": "Learning Loop đến hạn",
-  "readerCompletedCount": "Reader đã hoàn thành",
-  "tracked": "{count} mục đã có trạng thái học. Nhóm đầu gồm các mục đang học hoặc đang đánh dấu khó; đây không phải lịch đến hạn SRS.",
-  "empty": "Chưa có tiến độ để tổng hợp. Bắt đầu học hoặc đánh dấu trạng thái để dashboard tự cập nhật.",
-  "unavailable": "Không tải được phần tổng quan SRS, Learning Loop và Reader. Tiến độ học hiện tại vẫn hiển thị.",
-  "overviewErrorTitle": "Không tải được tổng quan học tập",
-  "overviewLoading": "Đang tải tổng quan học tập",
-  "reviewedTodayLoading": "Đang tải số lượt ôn hôm nay",
-  "reviewedTodayErrorTitle": "Không tải được số lượt ôn hôm nay",
-  "reviewedTodayErrorDescription": "Vui lòng thử tải lại số lượt ôn. Các phần khác vẫn hiển thị."
- },
  "focus": {
   "overviewUnknownTitle": "Tiếp tục học và ôn tập hôm nay",
   "overviewUnknownDescription": "Chưa có số liệu đến hạn để xác nhận tiến độ hôm nay. Bạn vẫn có thể mở kho thẻ hoặc tiếp tục bài học.",

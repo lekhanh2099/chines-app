@@ -464,6 +464,7 @@ describe("CI aggregation and metadata isolation", () => {
   vm.runInNewContext(expression.replace(/^\$\{\{\s*|\s*\}\}$/g, ""), {
    github,
    always: () => true,
+   cancelled: () => false,
   });
 
  it("subscribes to code and readiness events without replacing checks on metadata edits", () => {
@@ -530,6 +531,19 @@ describe("CI aggregation and metadata isolation", () => {
    }
   },
  );
+
+ it("skips only a cancelled draft gate and always reports the required gate", () => {
+  const condition = field("gate", "if").replace(/^\$\{\{\s*|\s*\}\}$/g, "");
+  const runs = (cancelled, draft) =>
+   vm.runInNewContext(condition, {
+    cancelled: () => cancelled,
+    github: { event: { pull_request: { draft } } },
+   });
+  expect(runs(true, true)).toBe(false);
+  expect(runs(true, false)).toBe(true);
+  expect(runs(false, true)).toBe(true);
+  expect(runs(false, false)).toBe(true);
+ });
 
  it("keeps cancelled draft validation separate from the required gate on the same commit", () => {
   const names = [];

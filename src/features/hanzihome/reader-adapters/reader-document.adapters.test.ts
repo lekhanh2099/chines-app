@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
-import { readerHasCapability } from "@/features/reader/model/reader-capabilities";
 import { readerResourceToDocument } from "@/features/reading/adapters/reading-resource.adapter";
 import {
  buildBusinessChineseReaderDocument,
@@ -127,11 +126,13 @@ describe("unified reader source adapters", () => {
   expect(document.source.kind).toBe("reader-resource");
   expect(document.segments.map((segment) => segment.id)).toEqual(["paragraph-1", "paragraph-2"]);
   expect(document.segments[0]?.role).toBe("Mở đầu");
-  expect(readerHasCapability(document, "pinyin")).toBe(true);
-  expect(readerHasCapability(document, "translation")).toBe(true);
-  expect(readerHasCapability(document, "vocabulary")).toBe(true);
-  expect(readerHasCapability(document, "exercises")).toBe(true);
-  expect(readerHasCapability(document, "analysis")).toBe(true);
-  expect(readerHasCapability(document, "summary")).toBe(true);
+  expect(document.capabilities).toEqual([
+   "pinyin",
+   "translation",
+   "vocabulary",
+   "exercises",
+   "analysis",
+   "summary",
+  ]);
  });
 });

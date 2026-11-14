@@ -11,7 +11,7 @@ const homeLearningOverviewResponseSchema = z.strictObject({
  overview: homeLearningOverviewSchema,
 });
 
-export type HomeLearningOverview = z.output<typeof homeLearningOverviewSchema>;
+type HomeLearningOverview = z.output<typeof homeLearningOverviewSchema>;
 
 export async function fetchHomeLearningOverview(): Promise<HomeLearningOverview> {
  const response = await fetch("/api/home/learning-overview", { cache: "no-store" });

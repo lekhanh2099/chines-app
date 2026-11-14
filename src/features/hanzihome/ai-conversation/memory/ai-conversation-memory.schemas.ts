@@ -10,7 +10,7 @@ export const aiConversationMemoryKindSchema = z.enum([
  "inside_joke",
 ]);
 
-export const aiConversationMemoryActionSchema = z.enum([
+const aiConversationMemoryActionSchema = z.enum([
  "ignore",
  "add",
  "reinforce",
@@ -19,9 +19,9 @@ export const aiConversationMemoryActionSchema = z.enum([
  "forget",
 ]);
 
-export const aiConversationMemoryScopeSchema = z.enum(["global", "character"]);
+const aiConversationMemoryScopeSchema = z.enum(["global", "character"]);
 
-export const aiConversationMemoryCandidateSchema = z
+const aiConversationMemoryCandidateSchema = z
  .strictObject({
   action: aiConversationMemoryActionSchema,
   kind: aiConversationMemoryKindSchema.nullable(),
@@ -70,7 +70,7 @@ export const aiConversationMemoryExtractionSchema = z.strictObject({
  changes: z.array(aiConversationMemoryCandidateSchema).max(6),
 });
 
-export const aiConversationStoredMemorySchema = z.strictObject({
+const aiConversationStoredMemorySchema = z.strictObject({
  id: z.uuid(),
  characterId: z.uuid().nullable(),
  kind: aiConversationMemoryKindSchema,
@@ -82,7 +82,7 @@ export const aiConversationStoredMemorySchema = z.strictObject({
  updatedAt: z.iso.datetime({ offset: true }),
 });
 
-export const aiConversationRecalledMemorySchema = aiConversationStoredMemorySchema.extend({
+const aiConversationRecalledMemorySchema = aiConversationStoredMemorySchema.extend({
  similarity: z.number().min(-1).max(1).nullable(),
 });
 

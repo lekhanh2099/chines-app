@@ -125,15 +125,6 @@ function resolveCourseGroupKey(course: HanziHomeCatalogCourse): LibraryCourseGro
  return "other";
 }
 
-export function getLibraryStats(courses: HanziHomeCatalogCourse[], books: HanziHomeCourseBook[]) {
- return {
-  courseCount: courses.length,
-  bookCount: books.length,
-  lessonCount: courses.reduce((sum, course) => sum + course.stats.lessonCount, 0),
-  grammarCount: courses.reduce((sum, course) => sum + course.stats.grammarCount, 0),
- };
-}
-
 export function getLibraryCourseEntries(
  group: LibraryCourseGroup,
  books: HanziHomeCourseBook[],

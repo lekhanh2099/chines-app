@@ -30,7 +30,7 @@ export const DbUserApiKeySchema = z.object({
 export type DbUserApiKey = z.infer<typeof DbUserApiKeySchema>;
 
 export const NoteCategorySchema = z.enum(["grammar", "vocabulary", "culture", "general"]);
-export const NoteStatusSchema = z.enum(["draft", "reviewed", "mastered"]);
+const NoteStatusSchema = z.enum(["draft", "reviewed", "mastered"]);
 export const ReadingStatusSchema = z.enum(["inbox", "reading", "completed"]);
 export const PersonalNoteModeSchema = z.enum(["normal", "important"]);
 
@@ -78,25 +78,25 @@ export type PersonalNoteMode = z.infer<typeof PersonalNoteModeSchema>;
    Zod Validators (for untrusted data)
    ══════════════════════════════════════════ */
 
-export const aiRadicalSchema = z.object({
+const aiRadicalSchema = z.object({
  char: z.string().optional(),
  pinyin: z.string().optional(),
  meaning: z.string().optional(),
 });
 
-export const aiDefinitionExampleSchema = z.object({
+const aiDefinitionExampleSchema = z.object({
  cn: z.string().optional(),
  py: z.string().optional(),
  pinyin: z.string().optional(),
  vi: z.string().optional(),
 });
 
-export const aiDefinitionMeaningSchema = z.object({
+const aiDefinitionMeaningSchema = z.object({
  meaning: z.string().optional(),
  examples: z.array(aiDefinitionExampleSchema).optional(),
 });
 
-export const aiDefinitionSchema = z.object({
+const aiDefinitionSchema = z.object({
  pos: z.string().optional(),
  text: z.string().optional(),
  meaning: z.string().optional(),
@@ -105,13 +105,13 @@ export const aiDefinitionSchema = z.object({
  meanings: z.array(aiDefinitionMeaningSchema).optional(),
 });
 
-export const aiGrammarPointSchema = z.object({
+const aiGrammarPointSchema = z.object({
  pattern: z.string().optional(),
  structure: z.string().optional(),
  explanation: z.string().optional(),
 });
 
-export const aiMeaningSchema = z.object({
+const aiMeaningSchema = z.object({
  part_of_speech: z.string().optional(),
  definition: z.string().optional(),
  example: z
@@ -123,28 +123,28 @@ export const aiMeaningSchema = z.object({
   .optional(),
 });
 
-export const aiEtymologySchema = z.object({
+const aiEtymologySchema = z.object({
  type: z.string().optional(),
  origin: z.string().optional(),
  mnemonic: z.string().optional(),
  explanation: z.string().optional(),
 });
 
-export const aiWordRelationSchema = z.object({
+const aiWordRelationSchema = z.object({
  word: z.string().optional(),
  pinyin: z.string().optional(),
  meaning: z.string().optional(),
 });
 
-export const aiRelatedCompoundSchema = aiWordRelationSchema;
+const aiRelatedCompoundSchema = aiWordRelationSchema;
 
-export const aiComponentSchema = z.object({
+const aiComponentSchema = z.object({
  part: z.string().optional(),
  name: z.string().optional(),
  meaning: z.string().optional(),
 });
 
-export const aiSourceMetadataSchema = z.object({
+const aiSourceMetadataSchema = z.object({
  course_key: z.string().optional(),
  lesson_key: z.string().optional(),
  lesson_number: z.number().optional().nullable(),
@@ -154,7 +154,7 @@ export const aiSourceMetadataSchema = z.object({
  source_file: z.string().optional(),
 });
 
-export const aiExampleSchema = z.object({
+const aiExampleSchema = z.object({
  zh: z.string(),
  pinyin: z.string(),
  vi: z.string(),
@@ -201,14 +201,14 @@ export const aiAnalysisSchema = z.object({
  grammar_breakdown: z.array(aiGrammarPointSchema).optional(),
 });
 
-export const dictionaryCoreDefinitionSchema = z.object({
+const dictionaryCoreDefinitionSchema = z.object({
  part_of_speech: z.string().optional(),
  meaning: z.string().optional(),
  example: z.string().optional(),
  examples: z.array(aiDefinitionExampleSchema).optional(),
 });
 
-export const DictionaryCoreDataSchema = z.object({
+const DictionaryCoreDataSchema = z.object({
  definitions: z.array(dictionaryCoreDefinitionSchema).optional(),
  ai_analysis: aiAnalysisSchema.optional(),
 });

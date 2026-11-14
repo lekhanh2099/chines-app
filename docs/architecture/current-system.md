@@ -53,6 +53,16 @@ validation.
 | Learning state          | `/api/learning-state`                          | Authenticated user state only               | `hanzihome/learning-state`   |
 | Studio Reader catalog   | `/api/hanzihome/reader/documents`              | One selected static collection at a time    | `hanzihome/reader/documents` |
 | Studio Reader document  | `/api/hanzihome/reader/documents/[documentId]` | One static document and resolved references | `hanzihome/reader/document`  |
+| Global search           | `/api/hanzihome/search`                        | Ranked, capped results + category counts    | `hanzihome/search`           |
+
+Global search is server-side (`src/features/hanzihome/search/server/`, MiniSearch).
+The static index (extended textbooks, Studio grammar course, Studio Reader) is built
+lazily from the checked-in corpus once per process, so new static lessons are
+included on deploy without an index step. Supabase course content is re-read per
+owner on a 5-minute TTL (RLS visibility); the user's own notes are read live per
+request and never cached across users. Exercise answers stay out of the index. The
+browser never downloads the index. The legacy `/api/hanzihome/search-index` route
+remains only as the documented public-v1 index export.
 
 The browser client validates every response envelope before data reaches UI state. Loading, error, and empty are separate states; an API failure must not become an empty catalog.
 

@@ -23,8 +23,8 @@ import {
 } from "./content-cache-store";
 import { getAllFromStoreMatching, HANZIHOME_LOCAL_STORES } from "./hanzihome-local-db";
 
-export const LESSON_DETAIL_RESOURCE_TYPE = "lesson_detail";
-export const LESSON_VOCAB_RESOURCE_TYPE = "lesson_vocab";
+const LESSON_DETAIL_RESOURCE_TYPE = "lesson_detail";
+const LESSON_VOCAB_RESOURCE_TYPE = "lesson_vocab";
 
 const lessonVocabularyResourceSchema = lessonVocabularyApiResponseSchema.shape.resource;
 
@@ -175,7 +175,7 @@ export function getErrorHttpStatus(error: unknown): number | null {
  return null;
 }
 
-export const DEFAULT_CONTENT_READ_TIMEOUT_MS = 3500;
+const DEFAULT_CONTENT_READ_TIMEOUT_MS = 3500;
 
 function isDefinitelyOffline(): boolean {
  return (
@@ -186,7 +186,7 @@ function isDefinitelyOffline(): boolean {
  );
 }
 
-export function createBoundedTimeoutSignal(
+function createBoundedTimeoutSignal(
  callerSignal?: AbortSignal,
  timeoutMs: number = DEFAULT_CONTENT_READ_TIMEOUT_MS,
 ): { signal: AbortSignal; cleanup: () => void } {

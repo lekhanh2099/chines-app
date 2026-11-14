@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 export const DEFAULT_GEMINI_MODEL = "models/gemini-3.5-flash";
-export const DEFAULT_GEMINI_QUICK_MODEL = "models/gemini-3.1-flash-lite";
 
 export const GEMINI_TEXT_MODEL_OPTIONS = [
  {
@@ -91,14 +90,4 @@ export function normalizeGeminiModel(
 ): GeminiModelId {
  const matched = GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === model);
  return matched?.value || DEFAULT_GEMINI_MODEL;
-}
-
-export function getGeminiModelLabel(
- model?: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
-): string {
- return (
-  GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === model)?.label ||
-  GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === DEFAULT_GEMINI_MODEL)?.label ||
-  DEFAULT_GEMINI_MODEL
- );
 }

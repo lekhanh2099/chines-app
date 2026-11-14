@@ -198,14 +198,8 @@ export const navigationItems = {
 
 export type NavigationItemId = keyof typeof navigationItems;
 
-export const contentCapabilityNavigationItemIds: readonly NavigationItemId[] = [
+const contentCapabilityNavigationItemIds: readonly NavigationItemId[] = [
  "htmlArtifacts",
-] satisfies readonly NavigationItemId[];
-
-export const compatibilityNavigationItemIds: readonly NavigationItemId[] = [
- "readerCourse",
- "readerPractice",
- "readerMock",
 ] satisfies readonly NavigationItemId[];
 
 type NavigationSectionConfig = {

@@ -6,7 +6,7 @@ import { expect, it } from "vitest";
 import type { HanziHomeCatalogData } from "@/features/hanzihome/types";
 import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
 import type { NoteListItem } from "@/services/notes/notes.service";
-import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
+import type { HanziHomeSearchResult } from "@/features/hanzihome/search/types";
 import type {} from "./HomeDashboard.browser.fixture";
 
 it.runIf(process.env.HOME_BROWSER_TEST === "1")(
@@ -144,16 +144,16 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
      });
     });
     await page.route("**/rest/v1/lesson_note_links?**", (route) => route.fulfill({ json: [] }));
-    const searchItems: HanziHomeSearchIndexItem[] = [
-     { id: "hope-vocab", kind: "vocab", title: "希望", searchText: "希望 hy vọng" },
-     { id: "hope-lesson", kind: "lesson_text", title: "希望工程", searchText: "希望工程" },
+    const searchResults: HanziHomeSearchResult[] = [
+     { item: { id: "hope-vocab", kind: "vocab", title: "希望" }, score: 2 },
+     { item: { id: "hope-lesson", kind: "lesson_text", title: "希望工程" }, score: 1 },
     ];
     const searchRequests: string[] = [];
     let searchStatus = 503;
     let holdSearch = true;
     let releaseSearch = () => {};
     let malformedSearch = false;
-    await page.route("**/api/hanzihome/search-index**", async (route) => {
+    await page.route("**/api/hanzihome/search?**", async (route) => {
      searchRequests.push(route.request().url());
      if (holdSearch)
       await new Promise<void>((resolve) => {
@@ -163,10 +163,24 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
       status: searchStatus,
       json:
        searchStatus !== 200
-        ? { error: "Could not load search index", code: "SEARCH_INDEX_UNAVAILABLE" }
+        ? { error: "Could not search HanziHome", code: "SEARCH_UNAVAILABLE" }
         : malformedSearch
-          ? { items: [{ id: "invalid-index-item" }] }
-          : { items: searchItems },
+          ? { results: [{ id: "invalid-search-result" }] }
+          : {
+             query: "希望",
+             category: "all",
+             results: searchResults,
+             counts: {
+              all: searchResults.length,
+              vocab: searchResults.filter((result) => result.item.kind === "vocab").length,
+              grammar: 0,
+              exercise: 0,
+              lesson: searchResults.filter((result) => result.item.kind === "lesson_text").length,
+              reading: 0,
+              note: 0,
+              radical: 0,
+             },
+            },
      });
     });
     await page.goto(url + "home-audit");
@@ -242,7 +256,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
     holdSearch = false;
     releaseSearch();
     await browserExpect(searchDialog.getByRole("alert")).toContainText(
-     "Không thể tải chỉ mục tìm kiếm",
+     "Không thể tìm kiếm lúc này",
     );
     expect(searchRequests).toHaveLength(2);
     await browserExpect(searchDialog.getByText(/Không tìm thấy kết quả/)).toHaveCount(0);
@@ -279,7 +293,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
     await browserExpect(searchDialog.getByRole("alert")).toBeVisible();
     await browserExpect(searchDialog.getByRole("option")).toHaveCount(2);
     malformedSearch = false;
-    searchItems.length = 0;
+    searchResults.length = 0;
     await searchDialog.getByRole("button", { name: "Thử lại", exact: true }).click();
     await browserExpect(searchDialog.getByText(/Không tìm thấy kết quả/)).toBeVisible();
     await browserExpect(searchDialog.getByRole("alert")).toHaveCount(0);
@@ -287,7 +301,9 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
     await searchInput.press("Escape");
     await browserExpect(searchDialog).toHaveCount(0);
     for (const request of searchRequests) {
-     expect(new URL(request).searchParams.get("v")).toBe("2");
+     const searchParams = new URL(request).searchParams;
+     expect(searchParams.get("q")).toBe("希望");
+     expect(searchParams.get("category")).toBe("all");
     }
     await page.evaluate(() => window.homeDashboardHarness.close());
     await browserExpect(page.locator("html")).not.toHaveAttribute("data-hanzi-reader-font");

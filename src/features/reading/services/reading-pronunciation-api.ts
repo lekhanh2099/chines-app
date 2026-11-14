@@ -26,7 +26,7 @@ const deletePayloadSchema = z.strictObject({
  expectedRevision: z.number().int().nonnegative(),
 });
 
-export type ReaderPronunciationOverridePayload = z.output<typeof payloadSchema>;
+type ReaderPronunciationOverridePayload = z.output<typeof payloadSchema>;
 
 export async function fetchReaderPronunciationOverrides(documentId: string) {
  const query = querySchema.parse({ documentId });

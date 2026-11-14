@@ -1,4 +1,4 @@
-export const APP_SCROLL_COMPACT_ENTER_PX = 96;
+const APP_SCROLL_COMPACT_ENTER_PX = 96;
 export const APP_SCROLL_COMPACT_EXIT_PX = 16;
 
 export function resolveAppScrollChromeHidden({

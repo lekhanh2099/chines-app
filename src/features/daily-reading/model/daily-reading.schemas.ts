@@ -36,7 +36,7 @@ function hasUniqueStrings(values: readonly string[]) {
  return new Set(values).size === values.length;
 }
 
-export const dailyReadingProvenanceSchema = z.enum(["source-captured", "legacy-adapted"]);
+const dailyReadingProvenanceSchema = z.enum(["source-captured", "legacy-adapted"]);
 export const dailyReadingEnrichmentModuleSchema = z.enum([
  "translation",
  "vocabulary",
@@ -102,13 +102,13 @@ function createEnrichmentStateSchema<DataSchema extends z.ZodType>(dataSchema: D
  ]);
 }
 
-export const dailyReadingArticleParagraphSchema = z.strictObject({
+const dailyReadingArticleParagraphSchema = z.strictObject({
  id: nonEmptyTextSchema.max(80),
  order: z.number().int().positive(),
  zh: nonEmptyTextSchema.max(8_000),
 });
 
-export const dailyReadingArticleSchema = z.strictObject({
+const dailyReadingArticleSchema = z.strictObject({
  titleZh: nonEmptyTextSchema.max(240),
  paragraphs: z.array(dailyReadingArticleParagraphSchema).min(3).max(80),
  hanCharacterCount: z.number().int().positive(),
@@ -180,16 +180,14 @@ export const dailyReadingQuestionsDataSchema = z.strictObject({
  verificationSummaryVi: z.string().max(1_400),
 });
 
-export const dailyReadingTranslationStateSchema = createEnrichmentStateSchema(
+const dailyReadingTranslationStateSchema = createEnrichmentStateSchema(
  dailyReadingTranslationDataSchema,
 );
-export const dailyReadingVocabularyStateSchema = createEnrichmentStateSchema(
+const dailyReadingVocabularyStateSchema = createEnrichmentStateSchema(
  dailyReadingVocabularyDataSchema,
 );
-export const dailyReadingGrammarStateSchema = createEnrichmentStateSchema(
- dailyReadingGrammarDataSchema,
-);
-export const dailyReadingQuestionsStateSchema = createEnrichmentStateSchema(
+const dailyReadingGrammarStateSchema = createEnrichmentStateSchema(dailyReadingGrammarDataSchema);
+const dailyReadingQuestionsStateSchema = createEnrichmentStateSchema(
  dailyReadingQuestionsDataSchema,
 );
 
@@ -216,7 +214,7 @@ export const dailyReadingSchema = z.strictObject({
  }),
 });
 
-export const dailyReadingCaptureStageSchema = z.enum([
+const dailyReadingCaptureStageSchema = z.enum([
  "discovering",
  "extracting",
  "ranking",
@@ -237,7 +235,7 @@ export const dailyReadingCaptureRunSchema = z.strictObject({
  articleId: z.string().max(160),
 });
 
-export const dailyReadingLegacyEnrichmentRunSchema = z.strictObject({
+const dailyReadingLegacyEnrichmentRunSchema = z.strictObject({
  id: nonEmptyTextSchema.max(160),
  articleId: nonEmptyTextSchema.max(160),
  module: dailyReadingEnrichmentModuleSchema,
@@ -248,16 +246,14 @@ export const dailyReadingLegacyEnrichmentRunSchema = z.strictObject({
  errorDetail: z.string().max(1_000),
 });
 
-export const dailyReadingPreviousEnrichmentRunSchema = dailyReadingLegacyEnrichmentRunSchema.extend(
- {
-  runId: z.uuid(),
-  articleFingerprint: z.string().regex(/^[0-9a-f]{8}$/u),
-  workflowRunId: z.string().max(200),
-  progressCompleted: z.number().int().nonnegative(),
-  progressTotal: z.number().int().positive(),
-  receipt: aiRuntimeReceiptSchema.nullable(),
- },
-);
+const dailyReadingPreviousEnrichmentRunSchema = dailyReadingLegacyEnrichmentRunSchema.extend({
+ runId: z.uuid(),
+ articleFingerprint: z.string().regex(/^[0-9a-f]{8}$/u),
+ workflowRunId: z.string().max(200),
+ progressCompleted: z.number().int().nonnegative(),
+ progressTotal: z.number().int().positive(),
+ receipt: aiRuntimeReceiptSchema.nullable(),
+});
 
 export const dailyReadingEnrichmentRunSchema = dailyReadingPreviousEnrichmentRunSchema.extend({
  startedAt: dailyReadingCaptureRunSchema.shape.completedAt,
@@ -296,7 +292,7 @@ export const dailyReadingSettingsSchema = dailyReadingSettingsBaseSchema.extend(
  questionsCount: z.number().int().min(5).max(12),
 });
 
-export const dailyReadingCaptureHistoryItemSchema = z.strictObject({
+const dailyReadingCaptureHistoryItemSchema = z.strictObject({
  topic: dailyReadingTopicSchema,
  sourceUrl: z.url(),
  capturedAt: z.iso.datetime({ offset: true }),
@@ -308,7 +304,7 @@ export const dailyReadingCaptureRequestSchema = z.strictObject({
  history: z.array(dailyReadingCaptureHistoryItemSchema).max(120),
 });
 
-export const dailyReadingCaptureReportSchema = z.strictObject({
+const dailyReadingCaptureReportSchema = z.strictObject({
  discoveryEndpoints: z.number().int().nonnegative(),
  discoveryResponses: z.number().int().nonnegative(),
  metadataCandidates: z.number().int().nonnegative(),

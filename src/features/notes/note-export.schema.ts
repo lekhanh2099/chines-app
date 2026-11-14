@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { JsonObjectSchema, JsonValueSchema, type JsonObject, type JsonValue } from "@/types/json";
+import { JsonObjectSchema, JsonValueSchema, type JsonValue } from "@/types/json";
 
 export { JsonObjectSchema, JsonValueSchema };
-export type { JsonObject, JsonValue };
+export type { JsonValue };
 
 const NoteCategorySchema = z.enum(["grammar", "vocabulary", "culture", "general"]);
 const ReadingStatusSchema = z.enum(["inbox", "reading", "completed"]);

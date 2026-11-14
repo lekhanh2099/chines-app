@@ -95,37 +95,10 @@ export function adaptTextbookPracticeToUniversal(
   // Parse prompt and clean answer
   const parsed = parsePracticeExerciseItem(promptText, answerText);
 
-  // Check choices from parsed or directly from promptText
-  const choiceMatch = promptText.match(
-   /^([\s\S]*?)(?:\s*\n+\s*|\s+)(A)[.．、\s]\s*([\s\S]+?)(?:\s*\n+\s*|\s+)(B)[.．、\s]\s*([\s\S]+?)(?:(?:\s*\n+\s*|\s+)(C)[.．、\s]\s*([\s\S]+?))?(?:(?:\s*\n+\s*|\s+)(D)[.．、\s]\s*([\s\S]+?))?$/u,
-  );
-  const directChoiceMatch = answerText.match(
-   /(?:👉\s*Đáp án\s*[:：]?\s*|Đáp án\s*[:：]?\s*|^)([A-D])\b/iu,
-  );
-
-  if ((parsed.choices.length > 0 && parsed.correctChoice) || (choiceMatch && directChoiceMatch)) {
-   const optA = choiceMatch ? (choiceMatch[3]?.trim() ?? "") : "";
-   const optB = choiceMatch ? (choiceMatch[5]?.trim() ?? "") : "";
-   const optC = choiceMatch ? choiceMatch[7]?.trim() : undefined;
-   const optD = choiceMatch ? choiceMatch[9]?.trim() : undefined;
-
-   const options =
-    parsed.choices.length > 0
-     ? parsed.choices.map((c) => ({ key: c.key, label: c.text }))
-     : [
-        { key: "A", label: optA },
-        { key: "B", label: optB },
-        ...(optC ? [{ key: "C", label: optC }] : []),
-        ...(optD ? [{ key: "D", label: optD }] : []),
-       ];
-
-   const correctKey =
-    parsed.correctChoice ||
-    (directChoiceMatch ? (directChoiceMatch[1]?.toUpperCase() ?? "A") : "A");
-
-   const finalPrompt = choiceMatch
-    ? (choiceMatch[1]?.trim() ?? parsed.displayPrompt)
-    : parsed.displayPrompt;
+  if (parsed.choices.length > 0 && parsed.correctChoice) {
+   const options = parsed.choices.map((choice) => ({ key: choice.key, label: choice.text }));
+   const correctKey = parsed.correctChoice;
+   const finalPrompt = parsed.displayPrompt;
 
    items.push({
     id: block.id,

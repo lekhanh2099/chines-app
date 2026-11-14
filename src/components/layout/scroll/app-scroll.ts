@@ -1,4 +1,4 @@
-export type AppScrollBlock = "start" | "center" | "end" | "nearest";
+type AppScrollBlock = "start" | "center" | "end" | "nearest";
 
 type ScrollRect = {
  top: number;

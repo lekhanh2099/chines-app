@@ -32,26 +32,6 @@
   "radicals": "Radicals",
   "review": "Review"
  },
- "pulse": {
-  "title": "Learning pulse",
-  "description": "Signals that need attention in your current progress.",
-  "openSrs": "Open SRS",
-  "reviewCount": "Learning / difficult",
-  "knownCount": "Known",
-  "reviewedTodayCount": "Reviewed today",
-  "bookmarkedCount": "Bookmarked",
-  "srsDueCount": "SRS due",
-  "learningLoopDueCount": "Learning Loop due",
-  "readerCompletedCount": "Reader completed",
-  "tracked": "{count} items have a learning status. The first group contains items being learned or marked difficult; it is not the SRS due schedule.",
-  "empty": "There is no progress to summarize yet. Start learning or mark a status and the dashboard will update automatically.",
-  "unavailable": "The SRS, Learning Loop, and Reader overview could not be loaded. Current learning progress is still shown.",
-  "overviewErrorTitle": "Could not load learning overview",
-  "overviewLoading": "Loading learning overview",
-  "reviewedTodayLoading": "Loading today's review count",
-  "reviewedTodayErrorTitle": "Could not load today's review count",
-  "reviewedTodayErrorDescription": "Retry loading the review count. Other sections remain available."
- },
  "focus": {
   "overviewUnknownTitle": "Continue learning and reviewing today",
   "overviewUnknownDescription": "Due counts are not available to confirm today's progress yet. You can still open your cards or continue a lesson.",

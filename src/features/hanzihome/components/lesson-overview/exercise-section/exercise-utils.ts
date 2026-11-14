@@ -87,10 +87,10 @@ export function firstArraySource(
  return null;
 }
 
-export const CLOZE_MARKER_PATTERN =
+const CLOZE_MARKER_PATTERN =
  /(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\d+|[（(]\s*\d+\s*[）)]|\[\s*\d+\s*\])\s*(?:[_＿]{2,}|…{2,}|\.\.\.+)/g;
 
-export function passageTextForDiagnostics(passage: JsonFieldValue) {
+function passageTextForDiagnostics(passage: JsonFieldValue) {
  if (typeof passage === "string") return passage.trim();
 
  const record = asRecord(passage);

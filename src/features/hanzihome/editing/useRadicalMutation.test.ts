@@ -41,7 +41,7 @@ function controller() {
 beforeEach(() => {
  client = new QueryClient({ defaultOptions: { mutations: { retry: false } } });
  client.setQueryData(hanzihomeQueryKeys.catalogRoot, []);
- client.setQueryData(hanzihomeQueryKeys.searchIndexRoot, []);
+ client.setQueryData(hanzihomeQueryKeys.searchRoot, []);
  mocks.update.mockReset();
 });
 afterEach(() => client.clear());
@@ -51,19 +51,19 @@ it("invalidates catalog and search only after an acknowledged save", async () =>
  await controller().mutateAsync(input);
  expect(mocks.update).toHaveBeenCalledWith(input, expect.anything());
  expect(client.getQueryState(hanzihomeQueryKeys.catalogRoot)?.isInvalidated).toBe(true);
- expect(client.getQueryState(hanzihomeQueryKeys.searchIndexRoot)?.isInvalidated).toBe(true);
+ expect(client.getQueryState(hanzihomeQueryKeys.searchRoot)?.isInvalidated).toBe(true);
 });
 
 it("rejects a conflict and refreshes only the catalog revision", async () => {
  mocks.update.mockRejectedValue(new HanziHomeMutationError("Conflict", 409));
  await expect(controller().mutateAsync(input)).rejects.toThrow("Conflict");
  expect(client.getQueryState(hanzihomeQueryKeys.catalogRoot)?.isInvalidated).toBe(true);
- expect(client.getQueryState(hanzihomeQueryKeys.searchIndexRoot)?.isInvalidated).toBe(false);
+ expect(client.getQueryState(hanzihomeQueryKeys.searchRoot)?.isInvalidated).toBe(false);
 });
 
 it("retains cache state on a failed write instead of announcing a successful refresh", async () => {
  mocks.update.mockRejectedValue(new HanziHomeMutationError("Unavailable", 503));
  await expect(controller().mutateAsync(input)).rejects.toThrow("Unavailable");
  expect(client.getQueryState(hanzihomeQueryKeys.catalogRoot)?.isInvalidated).toBe(false);
- expect(client.getQueryState(hanzihomeQueryKeys.searchIndexRoot)?.isInvalidated).toBe(false);
+ expect(client.getQueryState(hanzihomeQueryKeys.searchRoot)?.isInvalidated).toBe(false);
 });

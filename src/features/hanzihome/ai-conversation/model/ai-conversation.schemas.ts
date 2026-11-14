@@ -2,22 +2,17 @@ import { z } from "zod";
 
 import { aiRuntimeReceiptSchema } from "@/lib/ai/ai-task-contract";
 
-export const aiConversationMessageSchema = z.strictObject({
+const aiConversationMessageSchema = z.strictObject({
  role: z.enum(["user", "assistant"]),
  content: z.string().trim().min(1).max(6000),
 });
 
-export const aiConversationPersonaSchema = z.enum([
- "tutor",
- "friend",
- "hsk-examiner",
- "grammar-coach",
-]);
+const aiConversationPersonaSchema = z.enum(["tutor", "friend", "hsk-examiner", "grammar-coach"]);
 export const aiConversationLearnerLevelSchema = z.enum(["beginner", "intermediate", "advanced"]);
 export const aiConversationCorrectionStyleSchema = z.enum(["light", "balanced", "strict"]);
 export const aiConversationReplyModeSchema = z.enum(["adaptive", "chinese", "bilingual"]);
 
-export const aiConversationProfileSchema = z.strictObject({
+const aiConversationProfileSchema = z.strictObject({
  persona: aiConversationPersonaSchema,
  displayName: z.string().trim().min(1).max(40),
  learnerLevel: aiConversationLearnerLevelSchema,
@@ -27,18 +22,6 @@ export const aiConversationProfileSchema = z.strictObject({
  characterNotes: z.string().trim().max(600),
  memoryNotes: z.string().trim().max(1200),
 });
-
-export const DEFAULT_AI_CONVERSATION_PROFILE: AiConversationProfile = {
- persona: "friend",
- displayName: "小林",
- learnerLevel: "intermediate",
- correctionStyle: "balanced",
- replyMode: "adaptive",
- interests: "đời sống Trung Quốc, phim ảnh, văn hóa, giao tiếp tự nhiên",
- characterNotes:
-  "Nói tự nhiên như một người bạn Trung Quốc kiên nhẫn, không nói kiểu trợ lý máy móc.",
- memoryNotes: "",
-};
 
 export const aiConversationRequestSchema = z.strictObject({
  messages: z.array(aiConversationMessageSchema).min(1).max(24),
@@ -62,7 +45,7 @@ export const aiConversationResponseSchema = z.strictObject({
  usage: aiConversationUsageSchema.nullable(),
 });
 
-export const aiConversationRuntimeHealthCodeSchema = z.enum([
+const aiConversationRuntimeHealthCodeSchema = z.enum([
  "ready",
  "key-unavailable",
  "missing-system-key",
@@ -82,5 +65,4 @@ export const aiConversationRuntimeHealthSchema = z.strictObject({
 
 export type AiConversationMessage = z.output<typeof aiConversationMessageSchema>;
 export type AiConversationProfile = z.output<typeof aiConversationProfileSchema>;
-export type AiConversationResponse = z.output<typeof aiConversationResponseSchema>;
 export type AiConversationRuntimeHealth = z.output<typeof aiConversationRuntimeHealthSchema>;

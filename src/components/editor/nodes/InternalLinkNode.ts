@@ -18,7 +18,7 @@ import {
  TextNode,
 } from "lexical";
 
-export type SerializedInternalLinkNode = Spread<
+type SerializedInternalLinkNode = Spread<
  {
   noteId: string;
   noteTitle: string;

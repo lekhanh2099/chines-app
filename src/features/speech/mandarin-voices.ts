@@ -1,4 +1,4 @@
-export type MandarinVoiceOption = {
+type MandarinVoiceOption = {
  readonly shortName: string;
  readonly label: string;
  readonly description: string;

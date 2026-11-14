@@ -17,7 +17,7 @@ export type DailyReadingProviderMetrics = {
  outputTokens: number | null;
 };
 
-export type DailyReadingProviderResult =
+type DailyReadingProviderResult =
  | {
     ok: true;
     content: string;

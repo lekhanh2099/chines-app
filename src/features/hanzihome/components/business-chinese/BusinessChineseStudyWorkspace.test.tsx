@@ -16,9 +16,9 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 import type { UserLearningState, LessonTextDisplaySettings } from "@/features/hanzihome/types";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import {
- getBusinessChineseCatalog,
  getBusinessChineseLesson,
  getTextbookCatalog,
+ getTextbookCatalogForBookKeys,
  getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
@@ -128,9 +128,13 @@ beforeAll(() => {
  getTextbookCatalog();
 });
 
-describe("BusinessChineseStudyWorkspace", () => {
+// Full-lesson server renders: the first one also initializes the Pinyin dictionary, so under a
+// loaded full-suite run single tests exceed Vitest's 5s default without hanging.
+const fullLessonRenderTimeout = { timeout: 20_000 };
+
+describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
  it("prepares interactive exercises for Practice without doing that work on lesson open", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm3", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
   const adaptExercises = vi.spyOn(exerciseAdapter, "adaptAllLessonExercises");
@@ -1348,7 +1352,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  );
 
  it("renders the ordered source document with tabs, ruby pinyin, and no connected content load", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 2);
   if (!lesson) throw new Error("Expected Business Chinese lesson 2.");
   const fetchSpy = vi.spyOn(globalThis, "fetch");
@@ -1379,7 +1383,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("keeps inline exercise answers hidden while preserving pinyin and TTS for the prompt", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 2);
   if (!lesson) throw new Error("Expected Business Chinese lesson 2.");
   const sourceSection = lesson.sections.find((section) =>
@@ -1405,7 +1409,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("pairs the separate lesson translation with each Chinese turn and excludes the speaker from TTS", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
   const mainSection = lesson.sections.find((section) => section.title.includes("BÀI KHÓA CHÍNH"));
@@ -1450,7 +1454,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("renders inline lesson translations with the same speaker and TTS structure", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 3);
   if (!lesson) throw new Error("Expected Business Chinese lesson 3.");
   const mainSection = lesson.sections.find((section) => section.title.includes("BÀI KHÓA CHÍNH"));
@@ -1483,7 +1487,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("includes Ghi chú and Luyện dịch in the workspace tabs", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
@@ -1502,7 +1506,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("renders the notes tab content when tab=notes is active", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
@@ -1517,7 +1521,7 @@ describe("BusinessChineseStudyWorkspace", () => {
 
  it("includes a Bookmark button on the lesson header and toolbar", () => {
   mockBookmarkedLessonIds = [];
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
@@ -1527,7 +1531,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("includes Ôn tập in the workspace tabs when lesson has vocabulary", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
@@ -1537,7 +1541,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("renders the review tab workspace when tab=review is active", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
@@ -1551,7 +1555,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("renders the floating PiP active notice instead of the inline card when PiP is open", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
@@ -1576,7 +1580,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 
  it("renders the vocab review CTA card when tab=vocab is active", () => {
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
@@ -1589,7 +1593,7 @@ describe("BusinessChineseStudyWorkspace", () => {
 
  it("indicates when the current lesson is bookmarked", () => {
   mockBookmarkedLessonIds = ["business-chinese-tm2-lesson-01"];
-  const books = getBusinessChineseCatalog();
+  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
   const lesson = getBusinessChineseLesson("tm2", 1);
   if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
 
@@ -1599,7 +1603,7 @@ describe("BusinessChineseStudyWorkspace", () => {
  });
 });
 
-describe("textbook persisted settings and view", () => {
+describe("textbook persisted settings and view", fullLessonRenderTimeout, () => {
  const displayBookKeys: TextbookLesson["bookKey"][] = ["nhip-cau", "doc-hieu"];
 
  it.each(displayBookKeys)("uses the saved display only for the matching book (%s)", (bookKey) => {

@@ -17,7 +17,7 @@ const editableRecordMetaSchema = z.object({
  orderField: z.string().optional(),
 });
 
-export const vocabExampleSchema = z.object({
+const vocabExampleSchema = z.object({
  id: z.string(),
  zh: z.string().trim().min(1, "Thiếu câu tiếng Trung"),
  pinyin: z.string().optional(),
@@ -50,7 +50,7 @@ export const hanziHomeVocabItemSchema = runtimeDeepVocabularyItemSchema.extend({
  editMeta: editableRecordMetaSchema.optional(),
 });
 
-export const grammarViewModelSchema = z.object({
+const grammarViewModelSchema = z.object({
  id: z.string(),
  title: z.string().optional(),
  titleVi: z.string().optional(),
@@ -66,7 +66,7 @@ export const grammarViewModelSchema = z.object({
  editMeta: editableRecordMetaSchema.optional(),
 });
 
-export const lessonNotesSchema = z.object({
+const lessonNotesSchema = z.object({
  overviewMarkdown: z.string().optional(),
  lessonTextMarkdown: z.string().optional(),
  exerciseMarkdown: z.string().optional(),
@@ -78,7 +78,7 @@ export const lessonNotesSchema = z.object({
  personalNote: z.string().optional(),
 });
 
-export const courseSchema = z.object({
+const courseSchema = z.object({
  id: z.string(),
  slug: z.string(),
  title: z.string(),
@@ -88,7 +88,7 @@ export const courseSchema = z.object({
  updatedAt: z.string().optional(),
 });
 
-export const catalogCourseSchema = courseSchema.extend({
+const catalogCourseSchema = courseSchema.extend({
  stats: z.object({
   bookCount: z.number(),
   lessonCount: z.number(),
@@ -99,7 +99,7 @@ export const catalogCourseSchema = courseSchema.extend({
  fallbackLessonId: z.string().optional(),
 });
 
-export const bookSchema = z.object({
+const bookSchema = z.object({
  id: z.string(),
  courseId: z.string(),
  title: z.string(),
@@ -178,7 +178,7 @@ const metaSchema = z.object({
  schemaNote: z.string().optional(),
 });
 
-export const hanziHomeCatalogSchema = z.object({
+const hanziHomeCatalogSchema = z.object({
  source: z.enum(["db", "empty"]),
  courses: z.array(catalogCourseSchema),
  books: z.array(bookSchema),

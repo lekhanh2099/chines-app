@@ -1,71 +1,34 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { useCallback, useState } from "react";
 import { createPortal } from "react-dom";
 import { FolderPlus, PictureInPicture2 } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
-import { IconTile } from "@/components/ui/display/icon-tile";
 import { Typography } from "@/components/ui/display/typography";
-import { useTranslations } from "next-intl";
 import {
  Select,
  SelectContent,
  SelectGroup,
  SelectItem,
- SelectLabel,
- SelectSeparator,
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/forms/select";
 import { Card } from "@/components/ui/layout/card";
 import { useDocumentPip } from "@/features/hanzihome/hooks/useDocumentPip";
-import { FastSpeechSuspendedContext } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
-import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import {
- getItWebVocabCorpus,
- getItWebVocabItemsByFilter,
- type ItWebQuickPreset,
-} from "@/features/hanzihome/static-json/it-web-vocab-static-content";
 import { CustomVocabVaultManager } from "./CustomVocabVaultManager";
 import { UniversalAmbientPip, type UniversalPipMode } from "./UniversalAmbientPip";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import type { BookmarkedTextbookGroup, StudyBundle } from "./vocab-hub-adapter";
+import { UnifiedVocabStudyHubInlineFlow } from "./UnifiedVocabStudyHubInlineFlow";
 import {
- buildExercisesFromVocabItems,
- customVocabListToHanziHomeVocabItems,
-} from "./vocab-hub-custom";
+ BookmarkedLessonScopeSelect,
+ ItVocabScopeSelect,
+} from "./UnifiedVocabStudyHubScopeSelects";
+import { useVocabStudyHubDeck } from "./useVocabStudyHubDeck";
+import { parseSourceMode, type HubSourceMode } from "./vocab-hub-model";
 
-// The textbook corpus (~4 MB) is only needed for bookmarked lessons, so it is
-// loaded on demand instead of being bundled into every route that shows the hub.
-const loadTextbookStudy = () => import("./vocab-hub-adapter");
-const NO_BOOKMARKED_GROUPS: readonly BookmarkedTextbookGroup[] = [];
-const EMPTY_BOOKMARKED_BUNDLE: StudyBundle = {
- title: "Bài đã đánh dấu",
- vocabItems: [],
- grammarItems: [],
- practiceItems: [],
-};
+export type { HubSourceMode } from "./vocab-hub-model";
 
-export type HubSourceMode = "it-quick" | "bookmarked-lessons" | "custom-vault";
-
-const IT_PRESET_ITEMS: readonly { key: ItWebQuickPreset; label: string }[] = [
- { key: "core20", label: "20 từ cốt lõi ngày đầu" },
- { key: "all", label: "Tất cả IT (~270 từ)" },
- { key: "band-1-3", label: "Nhóm 1–3 (Giao tiếp & Tiến độ)" },
- { key: "band-4-6", label: "Nhóm 4–6 (UI/FE/BE & Debug)" },
- { key: "band-7-9", label: "Nhóm 7–9 (Vận hành & Cụm câu)" },
-];
-
-function parseSourceMode(value: string): HubSourceMode {
- if (value === "bookmarked-lessons" || value === "it-quick" || value === "custom-vault") {
-  return value;
- }
- return "bookmarked-lessons";
-}
-
-export type UnifiedVocabStudyHubProps = {
+type UnifiedVocabStudyHubProps = {
  readonly defaultSource?: HubSourceMode;
  readonly defaultOpenInline?: boolean;
 };
@@ -74,56 +37,21 @@ export function UnifiedVocabStudyHub({
  defaultSource = "bookmarked-lessons",
  defaultOpenInline = false,
 }: UnifiedVocabStudyHubProps) {
- const t = useTranslations("BusinessChinese");
- const learning = useLearningState();
- const bookmarkedLessonIds = useMemo(
-  () => learning.state.bookmarks.lessons ?? [],
-  [learning.state.bookmarks.lessons],
- );
- const customVocabItems = useMemo(
-  () => learning.state.settings.customVocab ?? [],
-  [learning.state.settings.customVocab],
- );
-
- const bookmarkedGroupsQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.bookmarkedTextbookGroups(bookmarkedLessonIds),
-  queryFn: async () => (await loadTextbookStudy()).getBookmarkedTextbookGroups(bookmarkedLessonIds),
-  enabled: bookmarkedLessonIds.length > 0,
-  staleTime: Number.POSITIVE_INFINITY,
-  // Keep the previous deck while a new selection loads instead of flashing empty.
-  placeholderData: keepPreviousData,
- });
- const bookmarkedGroups =
-  bookmarkedLessonIds.length > 0
-   ? (bookmarkedGroupsQuery.data ?? NO_BOOKMARKED_GROUPS)
-   : NO_BOOKMARKED_GROUPS;
- const allBookmarkedLessons = useMemo(
-  () => bookmarkedGroups.flatMap((g) => g.lessons),
-  [bookmarkedGroups],
- );
- const totalBookmarkedLessons = allBookmarkedLessons.length;
- const allBookmarkedVocabCount = useMemo(
-  () => allBookmarkedLessons.reduce((sum, l) => sum + l.vocabCount, 0),
-  [allBookmarkedLessons],
- );
-
- // Derive active source mode dynamically when the user hasn't explicitly picked one yet,
- // so hydrated bookmarked lessons automatically activate "bookmarked-lessons".
- const [userSelectedSource, setUserSelectedSource] = useState<HubSourceMode | null>(null);
- const sourceMode: HubSourceMode = useMemo(() => {
-  if (userSelectedSource) return userSelectedSource;
-  if (defaultSource === "bookmarked-lessons") {
-   return totalBookmarkedLessons > 0 ? "bookmarked-lessons" : "it-quick";
-  }
-  return defaultSource;
- }, [defaultSource, totalBookmarkedLessons, userSelectedSource]);
-
- // IT Quick State (single selector value: "preset:<key>" or "group:<id>")
- const itCorpus = useMemo(() => getItWebVocabCorpus(), []);
- const [itSelection, setItSelection] = useState<string>("preset:core20");
-
- // Bookmarked Textbook Scope State ("all" | "book:<bookKey>" | "lesson:<lessonId>")
- const [bookmarkedSelection, setBookmarkedSelection] = useState<string>("all");
+ const {
+  learning,
+  customVocabItems,
+  bookmarkedGroups,
+  totalBookmarkedLessons,
+  allBookmarkedVocabCount,
+  sourceMode,
+  setUserSelectedSource,
+  itCorpus,
+  itSelection,
+  setItSelection,
+  bookmarkedSelection,
+  setBookmarkedSelection,
+  activeBundle,
+ } = useVocabStudyHubDeck({ defaultSource });
 
  // Custom Vault Drawer State
  const [isVaultDrawerOpen, setIsVaultDrawerOpen] = useState<boolean>(false);
@@ -139,80 +67,6 @@ export function UnifiedVocabStudyHub({
   openPip,
   closePip,
  } = useDocumentPip();
-
- const selectedBookmarkedLessons = useMemo(() => {
-  if (bookmarkedSelection === "all") return allBookmarkedLessons;
-  if (bookmarkedSelection.startsWith("book:")) {
-   const bookKey = bookmarkedSelection.slice("book:".length);
-   const matchedGroup = bookmarkedGroups.find((g) => g.bookKey === bookKey);
-   return matchedGroup ? matchedGroup.lessons : allBookmarkedLessons;
-  }
-  if (bookmarkedSelection.startsWith("lesson:")) {
-   const lessonId = bookmarkedSelection.slice("lesson:".length);
-   const matchedLesson = allBookmarkedLessons.find((l) => l.id === lessonId);
-   return matchedLesson ? [matchedLesson] : allBookmarkedLessons;
-  }
-  return allBookmarkedLessons;
- }, [allBookmarkedLessons, bookmarkedGroups, bookmarkedSelection]);
-
- const bookmarkedBundleQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.bookmarkedTextbookBundle(
-   selectedBookmarkedLessons.map((lesson) => lesson.id),
-  ),
-  queryFn: async () =>
-   (await loadTextbookStudy()).buildStudyBundleFromBookmarkedLessons(selectedBookmarkedLessons),
-  enabled: sourceMode === "bookmarked-lessons" && selectedBookmarkedLessons.length > 0,
-  staleTime: Number.POSITIVE_INFINITY,
-  // Keep the previous deck while a new selection loads instead of flashing empty.
-  placeholderData: keepPreviousData,
- });
- const bookmarkedBundle =
-  selectedBookmarkedLessons.length > 0 ? bookmarkedBundleQuery.data : EMPTY_BOOKMARKED_BUNDLE;
-
- const activeBundle = useMemo<StudyBundle>(() => {
-  if (sourceMode === "it-quick") {
-   const isGroup = itSelection.startsWith("group:");
-   const rawKey = itSelection.replace(/^(preset|group):/u, "");
-   const presetKey: ItWebQuickPreset =
-    !isGroup &&
-    (rawKey === "core20" ||
-     rawKey === "all" ||
-     rawKey === "band-1-3" ||
-     rawKey === "band-4-6" ||
-     rawKey === "band-7-9")
-     ? rawKey
-     : "core20";
-
-   const vocabItems = getItWebVocabItemsByFilter({
-    preset: isGroup ? "all" : presetKey,
-    groupIds: isGroup ? [rawKey] : undefined,
-   });
-   const practiceItems = buildExercisesFromVocabItems(vocabItems);
-   const groupLabel = isGroup
-    ? (itCorpus.groups.find((g) => g.id === rawKey)?.label ?? "Từ vựng IT")
-    : (IT_PRESET_ITEMS.find((p) => p.key === presetKey)?.label ?? "Từ vựng IT");
-
-   return {
-    title: `IT / Làm Web · ${groupLabel}`,
-    vocabItems,
-    grammarItems: [],
-    practiceItems,
-   };
-  }
-
-  if (sourceMode === "bookmarked-lessons") {
-   return bookmarkedBundle ?? EMPTY_BOOKMARKED_BUNDLE;
-  }
-
-  const vocabItems = customVocabListToHanziHomeVocabItems(customVocabItems);
-  const practiceItems = buildExercisesFromVocabItems(vocabItems);
-  return {
-   title: "Kho từ vựng riêng",
-   vocabItems,
-   grammarItems: [],
-   practiceItems,
-  };
- }, [bookmarkedBundle, customVocabItems, itCorpus.groups, itSelection, sourceMode]);
 
  const handleLaunchPip = useCallback(async () => {
   if (isPipOpen) {
@@ -290,89 +144,22 @@ export function UnifiedVocabStudyHub({
     <div className="flex items-center justify-between gap-2 border-t border-border-default/60 pt-2">
      <div className="min-w-0 flex-1">
       {sourceMode === "bookmarked-lessons" ? (
-       bookmarkedGroups.length > 0 ? (
-        <Select value={bookmarkedSelection} onValueChange={setBookmarkedSelection}>
-         <SelectTrigger
-          size="compact"
-          aria-label="Chọn bài học đã đánh dấu"
-          className="w-full max-w-72 min-w-0"
-         >
-          <SelectValue placeholder={bookmarkedSelectionLabel}>
-           {bookmarkedSelectionLabel}
-          </SelectValue>
-         </SelectTrigger>
-         <SelectContent align="start">
-          <SelectGroup>
-           <SelectItem value="all">
-            {`Ôn tất cả (${totalBookmarkedLessons} bài · ${allBookmarkedVocabCount} từ)`}
-           </SelectItem>
-          </SelectGroup>
-
-          {bookmarkedGroups.length > 1 ? (
-           <>
-            <SelectSeparator />
-            <SelectGroup>
-             <SelectLabel>Theo giáo trình đã đánh dấu</SelectLabel>
-             {bookmarkedGroups.map((group) => (
-              <SelectItem key={`book:${group.bookKey}`} value={`book:${group.bookKey}`}>
-               {`Cả bộ: ${group.bookLabel} (${group.lessons.length} bài · ${group.totalVocabCount} từ)`}
-              </SelectItem>
-             ))}
-            </SelectGroup>
-           </>
-          ) : null}
-
-          {bookmarkedGroups.map((group) => (
-           <div key={group.bookKey}>
-            <SelectSeparator />
-            <SelectGroup>
-             <SelectLabel>{group.bookLabel}</SelectLabel>
-             {group.lessons.map((lesson) => (
-              <SelectItem key={lesson.id} value={`lesson:${lesson.id}`}>
-               {`${lesson.title} (${lesson.vocabCount} từ)`}
-              </SelectItem>
-             ))}
-            </SelectGroup>
-           </div>
-          ))}
-         </SelectContent>
-        </Select>
-       ) : (
-        <Typography variant="caption" tone="muted" clamp="one">
-         Chưa có bài đã mark trong giáo trình
-        </Typography>
-       )
+       <BookmarkedLessonScopeSelect
+        bookmarkedGroups={bookmarkedGroups}
+        bookmarkedSelection={bookmarkedSelection}
+        setBookmarkedSelection={setBookmarkedSelection}
+        bookmarkedSelectionLabel={bookmarkedSelectionLabel}
+        totalBookmarkedLessons={totalBookmarkedLessons}
+        allBookmarkedVocabCount={allBookmarkedVocabCount}
+       />
       ) : null}
 
       {sourceMode === "it-quick" ? (
-       <Select value={itSelection} onValueChange={setItSelection}>
-        <SelectTrigger
-         size="compact"
-         aria-label="Chọn nhóm từ vựng IT"
-         className="w-full max-w-72 min-w-0"
-        >
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start">
-         <SelectGroup>
-          <SelectLabel>Lộ trình học nhanh</SelectLabel>
-          {IT_PRESET_ITEMS.map((preset) => (
-           <SelectItem key={preset.key} value={`preset:${preset.key}`}>
-            {preset.label}
-           </SelectItem>
-          ))}
-         </SelectGroup>
-         <SelectSeparator />
-         <SelectGroup>
-          <SelectLabel>Chọn riêng từng nhóm chuyên đề</SelectLabel>
-          {itCorpus.groups.map((group) => (
-           <SelectItem key={group.id} value={`group:${group.id}`}>
-            {`${group.label} (${group.items.length} từ)`}
-           </SelectItem>
-          ))}
-         </SelectGroup>
-        </SelectContent>
-       </Select>
+       <ItVocabScopeSelect
+        itCorpus={itCorpus}
+        itSelection={itSelection}
+        setItSelection={setItSelection}
+       />
       ) : null}
 
       {sourceMode === "custom-vault" ? (
@@ -416,52 +203,17 @@ export function UnifiedVocabStudyHub({
 
     {/* Inline Unified Study Flow (when defaultOpenInline is used on /vocab/review) */}
     {isInlineOpen && (hasActiveVocab || hasActivePractice) ? (
-     <div className="mx-auto w-full max-w-3xl pt-1">
-      <Card variant="default" padding="none" className="min-h-[380px] overflow-hidden">
-       <div hidden={isPipOpen || isInAppFloatingOpen}>
-        {/* Kept mounted to preserve progress, but muted while the same deck runs in
-            the PiP/floating window; otherwise both cards read aloud at once. */}
-        <FastSpeechSuspendedContext.Provider value={isPipOpen || isInAppFloatingOpen}>
-         <UniversalAmbientPip
-          key={`${sourceMode}-${activeBundle.title}-${activeFlowMode}`}
-          initialMode={activeFlowMode}
-          lessonTitle={activeBundle.title}
-          vocabItems={activeBundle.vocabItems}
-          grammarItems={activeBundle.grammarItems}
-          practiceItems={activeBundle.practiceItems}
-          onClose={() => setIsInlineOpen(false)}
-          isInline
-         />
-        </FastSpeechSuspendedContext.Provider>
-       </div>
-       {isPipOpen || isInAppFloatingOpen ? (
-        <div className="flex min-h-[380px] flex-col items-center justify-center gap-3 p-8 text-center">
-         <IconTile size="lg" tone="accent" className="mx-auto">
-          <PictureInPicture2 />
-         </IconTile>
-         <div className="grid gap-1">
-          <Typography variant="sectionTitle" weight="black">
-           {t("vocabReview.pipActiveTitle")}
-          </Typography>
-          <Typography variant="bodySmall" tone="muted" className="max-w-md">
-           {t("vocabReview.pipActiveDescription")}
-          </Typography>
-         </div>
-         <Button
-          type="button"
-          variant="outline"
-          size="compact"
-          onClick={() => {
-           if (isPipOpen) closePip();
-           if (isInAppFloatingOpen) setIsInAppFloatingOpen(false);
-          }}
-         >
-          {t("vocabReview.pipReturn")}
-         </Button>
-        </div>
-       ) : null}
-      </Card>
-     </div>
+     <UnifiedVocabStudyHubInlineFlow
+      isExternalOpen={isPipOpen || isInAppFloatingOpen}
+      sourceMode={sourceMode}
+      activeBundle={activeBundle}
+      activeFlowMode={activeFlowMode}
+      onCloseInline={() => setIsInlineOpen(false)}
+      onReturnFromExternal={() => {
+       if (isPipOpen) closePip();
+       if (isInAppFloatingOpen) setIsInAppFloatingOpen(false);
+      }}
+     />
     ) : null}
    </Card>
 

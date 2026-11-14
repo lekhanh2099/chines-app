@@ -13,7 +13,7 @@ import type {
 type TextSection = Extract<Section, { type: "text" }>;
 export type LessonReaderEditBinding = Omit<EditableNodeRequest, "description">;
 
-export type LessonTextReaderAdapterResult = {
+type LessonTextReaderAdapterResult = {
  document: ReaderDocumentModel;
  segmentBindings: ReadonlyMap<string, LessonReaderEditBinding>;
  sectionBindings: ReadonlyMap<string, LessonReaderEditBinding>;

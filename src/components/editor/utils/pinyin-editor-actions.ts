@@ -14,7 +14,7 @@ import { generateSmartPinyin } from "@/lib/pronunciation/pinyin-engine";
 import { toast } from "sonner";
 import { $createPinyinNode, $isPinyinNode, type PinyinNode } from "../nodes/PinyinNode";
 
-export const CHINESE_RUN_REGEX = /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)/g;
+const CHINESE_RUN_REGEX = /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+)/g;
 
 /**
  * Generate space-separated pinyin with tone marks for pure Chinese text.

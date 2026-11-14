@@ -9,7 +9,7 @@ const evaluationUnitResultSchema = z.strictObject({
  messageVi: z.string().min(1),
 });
 
-export const humanitiesEvaluationResultSchema = z.strictObject({
+const humanitiesEvaluationResultSchema = z.strictObject({
  score: z.number().int().min(0).max(100),
  evidenceCoverage: z.number().int().min(0).max(100),
  coveredRequiredUnits: z.number().int().min(0),
@@ -26,7 +26,7 @@ export const humanitiesEvaluationResultSchema = z.strictObject({
  ),
 });
 
-export type HumanitiesEvaluationResult = z.output<typeof humanitiesEvaluationResultSchema>;
+type HumanitiesEvaluationResult = z.output<typeof humanitiesEvaluationResultSchema>;
 
 const combiningMarks = /[\u0300-\u036f]/gu;
 const punctuation = /[\p{P}\p{S}\s]/gu;

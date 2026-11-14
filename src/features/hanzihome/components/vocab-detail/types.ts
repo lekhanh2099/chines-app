@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const SectionViewSchema = z.enum([
+const SectionViewSchema = z.enum([
  "all",
  "meaning",
  "etymology",

@@ -54,8 +54,7 @@ const itWebCorpusSchema = z.object({
  sentences: z.array(itWebSentenceSchema),
 });
 
-export type ItWebVocabWord = z.infer<typeof itWebVocabWordSchema>;
-export type ItWebVocabGroup = z.infer<typeof itWebGroupSchema>;
+type ItWebVocabWord = z.infer<typeof itWebVocabWordSchema>;
 export type ItWebVocabCorpus = z.infer<typeof itWebCorpusSchema>;
 export type ItWebQuickPreset = "all" | "core20" | "band-1-3" | "band-4-6" | "band-7-9";
 
@@ -68,10 +67,7 @@ export function getItWebVocabCorpus(): ItWebVocabCorpus {
  return _itWebCorpus;
 }
 
-export function itWebWordToHanziHomeVocabItem(
- item: ItWebVocabWord,
- order: number,
-): HanziHomeVocabItem {
+function itWebWordToHanziHomeVocabItem(item: ItWebVocabWord, order: number): HanziHomeVocabItem {
  const noteObjects = item.note ? [{ text_vi: item.note }] : [];
  const examples = item.examples.map((ex, idx) =>
   VocabularyExampleSchema.parse({

@@ -12,7 +12,7 @@ import {
  aggregateVocabItemSchema,
 } from "@/features/hanzihome/hanzihome-api.schemas";
 
-export const LessonSectionKindSchema = z.enum([
+const LessonSectionKindSchema = z.enum([
  "lessonText",
  "vocabulary",
  "grammar",
@@ -23,9 +23,9 @@ export const LessonSectionKindSchema = z.enum([
  "characterWriting",
  "summary",
 ]);
-export type LessonSectionKind = z.infer<typeof LessonSectionKindSchema>;
+type LessonSectionKind = z.infer<typeof LessonSectionKindSchema>;
 
-export type LessonSectionResource = {
+type LessonSectionResource = {
  id: string;
  lessonId: string;
  type: LessonSectionKind;
@@ -35,7 +35,7 @@ export type LessonSectionResource = {
  href: string;
 };
 
-export type LessonOverviewResource = {
+type LessonOverviewResource = {
  id: string;
  courseId: string;
  bookId: string;
@@ -61,7 +61,7 @@ export type LessonVocabularyListResource = {
  total: number;
 };
 
-export type LessonGrammarListResource = {
+type LessonGrammarListResource = {
  lessonId: string;
  items: GrammarViewModel[];
  total: number;

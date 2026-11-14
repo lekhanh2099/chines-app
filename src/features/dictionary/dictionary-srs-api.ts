@@ -29,7 +29,7 @@ const saveSrsResponseSchema = z.object({
  noteSchemaAvailable: z.boolean(),
 });
 
-export class DictionarySrsApiError extends Error {
+class DictionarySrsApiError extends Error {
  constructor(
   message: string,
   readonly status: number,

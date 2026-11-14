@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export type ListeningHotkeyHandlers = {
+type ListeningHotkeyHandlers = {
  enabled?: boolean;
  onConfirm?: () => void;
  onNext: () => void;

@@ -105,9 +105,10 @@ contrast in both light and dark definitions.
 
 Active text and icons use palette emphasis. Typography nested in an active
 Button/Menu item inherits the primitive's active color rather than resetting
-to normal body text. Add palettes through `ThemePaletteSchema`,
-`THEME_PALETTE_META` and `theme-palettes.css`, preserving the existing theme
-owner rather than adding a feature store or palette class system.
+to normal body text. Add palettes through `ThemePaletteSchema`, the
+`Settings.appearance.palettes` messages and `theme-palettes.css`, preserving
+the existing theme owner rather than adding a feature store or palette class
+system.
 
 ## 5. Geometry and motion
 

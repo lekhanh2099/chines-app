@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const ErrorLikeSchema = z.object({
+const ErrorLikeSchema = z.object({
  code: z.string().optional().default(""),
  message: z.string().optional().default(""),
  name: z.string().optional().default(""),

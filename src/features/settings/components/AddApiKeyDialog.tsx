@@ -1,21 +1,10 @@
 "use client";
 
-import {
- ClipboardPaste,
- ExternalLink,
- Eye,
- EyeOff,
- Plus,
- RefreshCcw,
- ShieldCheck,
-} from "lucide-react";
-import { useMemo, useId, useState, type ReactElement } from "react";
+import { ClipboardPaste, Eye, EyeOff, Plus, ShieldCheck } from "lucide-react";
+import { useId, type ReactElement } from "react";
 import { useTranslations } from "next-intl";
-import { toast } from "sonner";
 
-import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
-import { Card } from "@/components/ui/layout/card";
 import {
  Dialog,
  DialogBody,
@@ -37,25 +26,18 @@ import {
 } from "@/components/ui/forms/select";
 import { Spinner } from "@/components/ui/feedback/spinner";
 import { Typography } from "@/components/ui/display/typography";
-import { useAiRuntimeReadiness } from "@/features/ai-runtime/useAiRuntimeReadiness";
-import { discoverManagedApiKey } from "@/features/settings/services/api-key-manager.client";
-import type { DiscoverApiKeyResponse } from "@/features/settings/model/api-key-manager.schema";
-import {
- getApiKeyModelDescriptionKey,
- getApiKeyProviderDescriptionKey,
-} from "@/features/settings/model/model-description-keys";
-import { useManagedApiKeys } from "@/features/settings/hooks/useManagedApiKeys";
-import { getApiKeyModelOptions } from "@/lib/ai/api-key-models";
-import {
- AUTO_API_KEY_PROVIDER,
- API_KEY_PROVIDER_OPTIONS,
- ApiKeyProviderSchema,
- getApiKeyProviderDocsUrl,
- getApiKeyProviderLimitsUrl,
- type ApiKeyProvider,
-} from "@/lib/ai/api-key-providers";
+import { getApiKeyModelDescriptionKey } from "@/features/settings/model/model-description-keys";
+import { useAddApiKeyForm } from "@/features/settings/hooks/useAddApiKeyForm";
+import { AUTO_API_KEY_PROVIDER, API_KEY_PROVIDER_OPTIONS } from "@/lib/ai/api-key-providers";
 
-type ProviderSelection = typeof AUTO_API_KEY_PROVIDER | ApiKeyProvider;
+import {
+ ApiKeyDiscoveryChecking,
+ ApiKeyDiscoveryError,
+ ApiKeyDiscoveryReady,
+ ApiKeyProviderDetails,
+ ApiKeySetupGuide,
+ ApiKeyStorageWarning,
+} from "./AddApiKeyDialogSections";
 
 type AddApiKeyDialogProps = {
  trigger?: ReactElement;
@@ -71,142 +53,36 @@ export function AddApiKeyDialog({ trigger, onSaved }: AddApiKeyDialogProps) {
  const providerId = `api-key-provider-${generatedId}`;
  const modelId = `api-key-model-${generatedId}`;
  const labelId = `api-key-label-${generatedId}`;
- const [isOpen, setIsOpen] = useState(false);
- const [providerSelection, setProviderSelection] =
-  useState<ProviderSelection>(AUTO_API_KEY_PROVIDER);
- const [discovery, setDiscovery] = useState<DiscoverApiKeyResponse | null>(null);
- const [discoveryError, setDiscoveryError] = useState<string | null>(null);
- const [isDiscovering, setIsDiscovering] = useState(false);
- const [model, setModel] = useState("");
- const [label, setLabel] = useState("");
- const [apiKey, setApiKey] = useState("");
- const [showKey, setShowKey] = useState(false);
- const { query, addMutation } = useManagedApiKeys();
- const runtimeReadiness = useAiRuntimeReadiness();
- const schemaReady = query.data?.schemaReady ?? true;
- const runtimeStorageReason =
-  runtimeReadiness.data?.status === "storage-unavailable" ? runtimeReadiness.data.reason : null;
- const hardStorageBlocked =
-  !schemaReady ||
-  runtimeStorageReason === "schema-unavailable" ||
-  runtimeStorageReason === "vault-unavailable";
- const hasStorageWarning = !schemaReady || runtimeStorageReason !== null;
- const isLoading = query.isPending;
- const isSubmitting = addMutation.isPending;
- const formDisabled = hardStorageBlocked || isSubmitting;
-
- const effectiveProvider =
-  discovery?.provider ?? (providerSelection === AUTO_API_KEY_PROVIDER ? null : providerSelection);
- const selectedProviderOption = useMemo(
-  () => API_KEY_PROVIDER_OPTIONS.find((option) => option.value === effectiveProvider) ?? null,
-  [effectiveProvider],
- );
- const discoveredModelOptions = useMemo(() => {
-  if (!discovery) return [];
-  const available = new Set(discovery.models);
-  return getApiKeyModelOptions(discovery.provider).filter((option) => available.has(option.value));
- }, [discovery]);
- const selectedModelOption =
-  discoveredModelOptions.find((option) => option.value === model) ?? null;
-
- function resetForm() {
-  setProviderSelection(AUTO_API_KEY_PROVIDER);
-  setDiscovery(null);
-  setDiscoveryError(null);
-  setIsDiscovering(false);
-  setModel("");
-  setLabel("");
-  setApiKey("");
-  setShowKey(false);
- }
-
- async function runDiscovery(
-  rawKey: string,
-  selectedProvider: ProviderSelection = providerSelection,
- ) {
-  if (hardStorageBlocked) return;
-  const normalizedKey = rawKey.trim();
-  if (!normalizedKey) {
-   setDiscovery(null);
-   setDiscoveryError(null);
-   setModel("");
-   return;
-  }
-
-  setIsDiscovering(true);
-  setDiscovery(null);
-  setDiscoveryError(null);
-  setModel("");
-  try {
-   const result = await discoverManagedApiKey({
-    apiKey: normalizedKey,
-    provider: selectedProvider,
-   });
-   setDiscovery(result);
-   setModel(result.recommendedModel);
-   if (!label.trim()) setLabel(result.providerLabel);
-  } catch (caught) {
-   setDiscoveryError(caught instanceof Error ? caught.message : setupT("checkError"));
-  } finally {
-   setIsDiscovering(false);
-  }
- }
-
- async function handlePaste() {
-  if (formDisabled) return;
-  try {
-   const text = await navigator.clipboard.readText();
-   const normalized = text.trim();
-   if (!normalized) return;
-   setApiKey(normalized);
-   toast.info(t("apiKeys.pasted"));
-   await runDiscovery(normalized);
-  } catch {
-   toast.error(t("apiKeys.clipboardError"));
-  }
- }
-
- function handleProviderChange(value: string) {
-  const parsedProvider = ApiKeyProviderSchema.safeParse(value);
-  const nextProvider: ProviderSelection =
-   value === AUTO_API_KEY_PROVIDER
-    ? AUTO_API_KEY_PROVIDER
-    : parsedProvider.success
-      ? parsedProvider.data
-      : AUTO_API_KEY_PROVIDER;
-  setProviderSelection(nextProvider);
-  setDiscovery(null);
-  setDiscoveryError(null);
-  setModel("");
-  if (apiKey.trim() && !hardStorageBlocked) void runDiscovery(apiKey, nextProvider);
- }
-
- async function handleAddKey() {
-  if (hardStorageBlocked) return;
-  if (!apiKey.trim()) {
-   toast.error(t("apiKeys.keyRequired"));
-   return;
-  }
-  if (!discovery || !model) {
-   await runDiscovery(apiKey);
-   return;
-  }
-
-  try {
-   const result = await addMutation.mutateAsync({
-    apiKey: apiKey.trim(),
-    label: label.trim() || undefined,
-    provider: discovery.provider,
-    model,
-   });
-   toast.success(result.message || t("apiKeys.added"));
-   resetForm();
-   setIsOpen(false);
-   onSaved?.();
-  } catch (caught) {
-   toast.error(caught instanceof Error ? caught.message : setupT("saveError"));
-  }
- }
+ const {
+  isOpen,
+  setIsOpen,
+  providerSelection,
+  discovery,
+  discoveryError,
+  isDiscovering,
+  model,
+  setModel,
+  label,
+  setLabel,
+  apiKey,
+  showKey,
+  setShowKey,
+  schemaReady,
+  hardStorageBlocked,
+  hasStorageWarning,
+  isLoading,
+  isSubmitting,
+  formDisabled,
+  selectedProviderOption,
+  discoveredModelOptions,
+  selectedModelOption,
+  resetForm,
+  changeApiKey,
+  runDiscovery,
+  handlePaste,
+  handleProviderChange,
+  handleAddKey,
+ } = useAddApiKeyForm({ onSaved });
 
  return (
   <Dialog
@@ -231,25 +107,9 @@ export function AddApiKeyDialog({ trigger, onSaved }: AddApiKeyDialogProps) {
     </DialogHeader>
 
     <DialogBody>
-     {hasStorageWarning ? (
-      <Card variant="subtle" padding="md" className="grid gap-1">
-       <Typography weight="bold" tone="warning">
-        {setupT("storageUnavailableTitle")}
-       </Typography>
-       <Typography variant="bodySmall" tone="muted">
-        {!schemaReady ? t("apiKeys.schemaNotReady") : setupT("storageUnavailableDescription")}
-       </Typography>
-      </Card>
-     ) : null}
+     {hasStorageWarning ? <ApiKeyStorageWarning schemaReady={schemaReady} /> : null}
 
-     <Card variant="subtle" padding="md" className="grid gap-3">
-      <Typography weight="bold">{t("apiKeys.guideTitle")}</Typography>
-      <ol className="grid gap-2 pl-5 text-sm text-text-secondary [list-style:decimal]">
-       <li>{t("apiKeys.guideStep1")}</li>
-       <li>{t("apiKeys.guideStep2")}</li>
-       <li>{setupT("pasteAndCheck")}</li>
-      </ol>
-     </Card>
+     <ApiKeySetupGuide />
 
      <div className="grid gap-2">
       <Label htmlFor={valueId} variant="label" tone="default" weight="semibold">
@@ -261,19 +121,13 @@ export function AddApiKeyDialog({ trigger, onSaved }: AddApiKeyDialogProps) {
         type={showKey ? "text" : "password"}
         value={apiKey}
         onChange={(event) => {
-         setApiKey(event.target.value);
-         setDiscovery(null);
-         setDiscoveryError(null);
-         setModel("");
+         changeApiKey(event.target.value);
         }}
         onPaste={(event) => {
          const pasted = event.clipboardData.getData("text").trim();
          if (!pasted || formDisabled) return;
          event.preventDefault();
-         setApiKey(pasted);
-         setDiscovery(null);
-         setDiscoveryError(null);
-         setModel("");
+         changeApiKey(pasted);
          void runDiscovery(pasted);
         }}
         onBlur={() => {
@@ -338,98 +192,23 @@ export function AddApiKeyDialog({ trigger, onSaved }: AddApiKeyDialogProps) {
      </div>
 
      {isDiscovering ? (
-      <Card variant="subtle" padding="sm">
-       <div className="flex items-center gap-2">
-        <Spinner />
-        <Typography variant="bodySmall" tone="secondary">
-         {setupT("checking")}
-        </Typography>
-       </div>
-      </Card>
+      <ApiKeyDiscoveryChecking />
      ) : discovery ? (
-      <Card variant="subtle" padding="sm" className="grid">
-       <div className="flex flex-wrap items-center gap-2">
-        <Badge variant="success" casing="natural">
-         <ShieldCheck />
-         {setupT("ready", {
-          provider: discovery.providerLabel,
-          count: discovery.models.length,
-         })}
-        </Badge>
-        <Button
-         type="button"
-         variant="ghost"
-         size="sm"
-         onClick={() => void runDiscovery(apiKey)}
-         disabled={formDisabled}
-        >
-         <RefreshCcw data-icon="inline-start" />
-         {setupT("recheck")}
-        </Button>
-       </div>
-      </Card>
+      <ApiKeyDiscoveryReady
+       discovery={discovery}
+       disabled={formDisabled}
+       onRecheck={() => void runDiscovery(apiKey)}
+      />
      ) : discoveryError ? (
-      <Card variant="subtle" padding="sm" className="grid gap-2">
-       <Typography variant="bodySmall" tone="danger">
-        {discoveryError}
-       </Typography>
-       <Button
-        type="button"
-        variant="outline"
-        size="sm"
-        onClick={() => void runDiscovery(apiKey)}
-        disabled={formDisabled}
-       >
-        <RefreshCcw data-icon="inline-start" />
-        {setupT("recheck")}
-       </Button>
-      </Card>
+      <ApiKeyDiscoveryError
+       message={discoveryError}
+       disabled={formDisabled}
+       onRecheck={() => void runDiscovery(apiKey)}
+      />
      ) : null}
 
      {selectedProviderOption ? (
-      <div className="grid gap-3 border-y border-border-default py-3">
-       <div className="flex flex-wrap items-center gap-2">
-        <Typography weight="semibold">{selectedProviderOption.label}</Typography>
-        {discovery ? (
-         <Badge variant="info" casing="natural">
-          {setupT("providerDetected", { provider: selectedProviderOption.label })}
-         </Badge>
-        ) : null}
-        <Badge
-         variant={selectedProviderOption.accessTier === "free-tier" ? "success" : "default"}
-         casing="natural"
-        >
-         {selectedProviderOption.accessTier === "free-tier"
-          ? t("apiKeys.freeTierAvailable")
-          : t("apiKeys.paidUsage")}
-        </Badge>
-       </div>
-       <Typography as="p" variant="bodySmall" tone="secondary">
-        {t(getApiKeyProviderDescriptionKey(selectedProviderOption.value))}
-       </Typography>
-       <div className="flex flex-wrap gap-2">
-        <Button type="button" variant="outline" size="sm" asChild>
-         <a
-          href={getApiKeyProviderDocsUrl(selectedProviderOption.value)}
-          target="_blank"
-          rel="noreferrer"
-         >
-          {t("apiKeys.openDocs")}
-          <ExternalLink data-icon="inline-end" />
-         </a>
-        </Button>
-        <Button type="button" variant="ghost" size="sm" asChild>
-         <a
-          href={getApiKeyProviderLimitsUrl(selectedProviderOption.value)}
-          target="_blank"
-          rel="noreferrer"
-         >
-          {t("apiKeys.openLimits")}
-          <ExternalLink data-icon="inline-end" />
-         </a>
-        </Button>
-       </div>
-      </div>
+      <ApiKeyProviderDetails option={selectedProviderOption} detected={Boolean(discovery)} />
      ) : null}
 
      <div className="grid gap-2">

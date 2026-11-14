@@ -15,7 +15,7 @@ export const dailyReadingSourceIdSchema = z.enum([
 
 export type DailyReadingSourceId = z.output<typeof dailyReadingSourceIdSchema>;
 
-export type DailyReadingSourceCatalogEntry = {
+type DailyReadingSourceCatalogEntry = {
  id: DailyReadingSourceId;
  publisherLabelZh: string;
  domains: readonly string[];

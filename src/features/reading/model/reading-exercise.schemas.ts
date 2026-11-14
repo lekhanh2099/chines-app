@@ -2,7 +2,7 @@ import { z } from "zod";
 import { JsonObjectSchema } from "@/types/json";
 import { readerDocumentRowSchema } from "./reading-resource.schemas";
 const sourceSchema = readerDocumentRowSchema.shape.source;
-export const readerExerciseGroupTypeSchema = z.enum([
+const readerExerciseGroupTypeSchema = z.enum([
  "notes",
  "vocabulary_review",
  "true_false",
@@ -12,7 +12,7 @@ export const readerExerciseGroupTypeSchema = z.enum([
  "discussion",
  "mock_questions",
 ]);
-export const readerExerciseItemTypeSchema = z.enum([
+const readerExerciseItemTypeSchema = z.enum([
  "note",
  "multiple_choice",
  "true_false",
@@ -121,10 +121,3 @@ export const parsedReaderExerciseItemRowSchema = z.discriminatedUnion("item_type
   }),
  }),
 ]);
-
-export function parseReaderExerciseItemRow(value: z.input<typeof readerExerciseItemRowSchema>) {
- return parsedReaderExerciseItemRowSchema.parse(value);
-}
-
-export type ReaderExerciseGroupRow = z.output<typeof readerExerciseGroupRowSchema>;
-export type ReaderExerciseItemRow = z.output<typeof readerExerciseItemRowSchema>;

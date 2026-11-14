@@ -12,7 +12,7 @@ type SelectionAnchor = {
  contextElement?: Element;
 };
 
-export type DraftSelection = {
+type DraftSelection = {
  text: string;
  contextSentence: string;
 };

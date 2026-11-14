@@ -23,7 +23,7 @@ export const htmlArtifactSchema = htmlArtifactSummarySchema.extend({
  html: z.string(),
 });
 
-export const htmlArtifactFolderColorSchema = z.enum([
+const htmlArtifactFolderColorSchema = z.enum([
  "blue",
  "purple",
  "green",

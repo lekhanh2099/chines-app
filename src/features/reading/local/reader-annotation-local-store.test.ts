@@ -32,7 +32,6 @@ import {
  getLocalReaderAnnotations,
  getPendingAnnotationMutations,
  rejectPendingAnnotationMutation,
- removePendingAnnotationMutation,
  saveLocalReaderAnnotation,
  type PendingAnnotationMutation,
 } from "./reader-annotation-local-store";
@@ -227,9 +226,6 @@ describe("reader-annotation-local-store", () => {
   localDb.listMatching.mockResolvedValue([mutation, otherUserMutation]);
   const mutations = await getPendingAnnotationMutations(sampleAnnotation1.user_id);
   expect(mutations).toEqual([mutation]);
-
-  await removePendingAnnotationMutation(mutation.id);
-  expect(localDb.delete).toHaveBeenCalledWith("pending_mutations", mutation.id);
  });
 
  it("remaps an offline edit to the canonical id when its queued create is acknowledged", async () => {

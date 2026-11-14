@@ -7,7 +7,6 @@ const localStore = vi.hoisted(() => ({
  deleteLocalReaderAnnotation: vi.fn(),
  enqueuePendingAnnotationMutation: vi.fn(),
  getPendingAnnotationMutations: vi.fn(),
- removePendingAnnotationMutation: vi.fn(),
  cancelPendingMutationsForAnnotation: vi.fn(),
  markPendingAnnotationMutationSyncing: vi.fn(),
  markPendingAnnotationMutationFailed: vi.fn(),
@@ -27,7 +26,6 @@ vi.mock("../local/reader-annotation-local-store", () => ({
  deleteLocalReaderAnnotation: localStore.deleteLocalReaderAnnotation,
  enqueuePendingAnnotationMutation: localStore.enqueuePendingAnnotationMutation,
  getPendingAnnotationMutations: localStore.getPendingAnnotationMutations,
- removePendingAnnotationMutation: localStore.removePendingAnnotationMutation,
  cancelPendingMutationsForAnnotation: localStore.cancelPendingMutationsForAnnotation,
  markPendingAnnotationMutationSyncing: localStore.markPendingAnnotationMutationSyncing,
  markPendingAnnotationMutationFailed: localStore.markPendingAnnotationMutationFailed,
@@ -83,7 +81,6 @@ describe("reading-annotation-api offline resiliency", () => {
   localStore.deleteLocalReaderAnnotation.mockResolvedValue(undefined);
   localStore.enqueuePendingAnnotationMutation.mockResolvedValue(undefined);
   localStore.getPendingAnnotationMutations.mockResolvedValue([]);
-  localStore.removePendingAnnotationMutation.mockResolvedValue(undefined);
   localStore.cancelPendingMutationsForAnnotation.mockResolvedValue(undefined);
   localStore.markPendingAnnotationMutationSyncing.mockImplementation(async (mutation) => mutation);
   localStore.markPendingAnnotationMutationFailed.mockResolvedValue(null);

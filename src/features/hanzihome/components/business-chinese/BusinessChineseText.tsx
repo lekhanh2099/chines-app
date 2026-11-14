@@ -12,6 +12,7 @@ import {
 } from "react";
 import { useTranslations } from "next-intl";
 import { glyphActionClassName } from "@/components/ui/focus-ring";
+import { CopyBusinessChinesePinyinButton } from "./CopyBusinessChinesePinyinButton";
 import { Typography, type TypographyProps } from "@/components/ui/display/typography";
 import {
  containsHanziText,
@@ -303,6 +304,8 @@ function BusinessChineseMixedText({
    as={learnerContent ? undefined : "div"}
    variant={variant}
    weight={weight}
+   // Ruby Pinyin needs a line height relative to the enlarged Hanzi, as in ContextualReaderText.
+   leading={showPinyin ? "learner" : "inherit"}
    wrapping="preWrap"
    aria-label={
     learnerContent && (variant === "sectionTitle" || variant === "cardTitle")
@@ -459,7 +462,15 @@ export function SpeakableBusinessChineseText({
     />
    </div>
    {speechSegments.length > 0 ? (
-    <MandarinSpeakButton text={speechSegments.join(" ")} segments={speechSegments} touchTarget />
+    <div className="flex shrink-0 items-center">
+     <CopyBusinessChinesePinyinButton
+      pronunciationId={pronunciationId}
+      text={text}
+      sourcePinyin={sourcePinyin}
+      touchTarget
+     />
+     <MandarinSpeakButton text={speechSegments.join(" ")} segments={speechSegments} touchTarget />
+    </div>
    ) : null}
   </div>
  );

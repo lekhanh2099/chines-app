@@ -12,7 +12,7 @@ export function cleanGrammarDisplayLine(value: string) {
   .trim();
 }
 
-export function normalizeGrammarText(value: string) {
+function normalizeGrammarText(value: string) {
  return value
   .replace(/[#*_`>-]/g, "")
   .replace(/\s+/g, " ")

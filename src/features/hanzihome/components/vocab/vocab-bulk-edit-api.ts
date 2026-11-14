@@ -30,7 +30,6 @@ const ChildListSchema = z.object({
   }),
  ),
 });
-export type ChildList = z.infer<typeof ChildListSchema>;
 
 const BulkResponseSchema = z.object({
  list: ChildListSchema.optional(),

@@ -59,7 +59,7 @@ export const focusModeStore = createStore<
  }),
 );
 
-export function getNoteIdFromNotesPath(pathname: string): string | null {
+function getNoteIdFromNotesPath(pathname: string): string | null {
  const logicalPathname = stripLocaleFromPathname(pathname);
  const match = logicalPathname.match(/^\/notes\/([^/?#]+)/);
  return match?.[1] ? decodeURIComponent(match[1]) : null;

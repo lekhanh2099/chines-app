@@ -1,40 +1,18 @@
 "use client";
 
-import {
- BookOpenText,
- Check,
- Info,
- Keyboard,
- Languages,
- List,
- NotebookPen,
- Type,
- type LucideIcon,
-} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { memo, useMemo, useState, type ReactNode } from "react";
 
-import { Badge } from "@/components/ui/display/badge";
 import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
-import { SegmentedControl } from "@/components/ui/forms/segmented-control";
-import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
 import { Typography } from "@/components/ui/display/typography";
-import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 import {
  formatContextualReadingPinyin,
  getContextualReadingUnits,
 } from "@/lib/pronunciation/contextual-pronunciation";
-import {
- createTranslationAttempt,
- scoreTranslationAttempt,
- translationReferenceText,
- type TranslationDirection,
-} from "@/features/hanzihome/practice/translation-practice";
 
 import { Reader } from "@/features/reader/components/Reader";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
@@ -47,42 +25,27 @@ import {
 } from "@/features/reader/runtime/reader-context";
 import { useMandarinReaderSpeechService } from "@/features/speech/MandarinTtsProvider";
 import { useReadingSourceTarget } from "@/features/reading/hooks/useReadingSourceTarget";
-import {
- ReaderAnalysis,
- ReaderDictation,
- ReaderNotes,
- ReaderOverview,
- ReaderSummary,
-} from "@/features/reading/components/ReaderStudyModules";
-import { ReaderExercisePanel } from "@/features/reading/components/ReaderExercisePanel";
 import { ReaderHeaderContextBridge } from "@/features/reading/components/ReaderHeaderContextBridge";
-import { ReaderTranslationPracticePanel } from "@/features/reading/components/ReaderTranslationPracticePanel";
-import { ReaderVocabularyPanel } from "@/features/reading/components/ReaderVocabularyPanel";
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
 import { useReaderPronunciationReview } from "@/features/reading/hooks/useReaderPronunciationReview";
 import { useReaderSelectionActions } from "@/features/reading/hooks/useReaderSelectionActions";
+import { useReaderTranslationPractice } from "@/features/reading/hooks/useReaderTranslationPractice";
 import {
  useReaderStudyState,
  type ReaderProgressOwner,
 } from "@/features/reading/hooks/useReaderStudyState";
 import { ShadowingPracticePanel } from "@/features/reading/components/ShadowingPracticePanel";
-
-type ReaderWorkspaceTab =
- | "reader"
- | "overview"
- | "exercises"
- | "vocabulary"
- | "translation"
- | "dictation"
- | "analysis"
- | "summary"
- | "notes";
-
-function metadataString(resource: ReaderDocumentResource, key: string) {
- const value = resource.document.source_metadata[key];
- return typeof value === "string" ? value : null;
-}
+import { useReaderWorkspaceTabs } from "@/features/reading/hooks/useReaderWorkspaceTabs";
+import {
+ metadataString,
+ readerSurfaceAnnotations,
+} from "@/features/reading/workspaces/reader-document-study-model";
+import {
+ ReaderCompletionControl,
+ ReaderDocumentStudyHeading,
+} from "@/features/reading/workspaces/ReaderDocumentStudyHeading";
+import { ReaderDocumentStudyTabs } from "@/features/reading/workspaces/ReaderDocumentStudyTabs";
 
 export const ReaderDocumentStudy = memo(function ReaderDocumentStudy({
  resource,
@@ -171,33 +134,16 @@ function ReaderDocumentStudyContent({
  readerContent: ReactNode;
 }) {
  const t = useTranslations("Reader.study");
- const readerWorkspaceTabs = useMemo<
-  ReadonlyArray<{ id: ReaderWorkspaceTab; label: string; icon: LucideIcon }>
- >(
-  () => [
-   { id: "overview", label: t("chrome.tabs.overview"), icon: Info },
-   { id: "reader", label: t("chrome.tabs.reader"), icon: BookOpenText },
-   { id: "exercises", label: t("chrome.tabs.exercises"), icon: Check },
-   { id: "vocabulary", label: t("chrome.tabs.vocabulary"), icon: Type },
-   { id: "translation", label: t("chrome.tabs.translation"), icon: Languages },
-   { id: "dictation", label: t("chrome.tabs.dictation"), icon: Keyboard },
-   { id: "analysis", label: t("chrome.tabs.analysis"), icon: List },
-   { id: "summary", label: t("chrome.tabs.summary"), icon: List },
-   { id: "notes", label: t("chrome.tabs.notes"), icon: NotebookPen },
-  ],
-  [t],
- );
  const commands = useReaderCommands();
  const { actions } = useReaderStore();
  const services = useReaderServices();
  const activeIndex = useReaderSelector((state) => state.navigation.activeIndex);
  const focusMode = useReaderSelector((state) => state.ui.focusMode);
- const [workspaceTab, setWorkspaceTab] = useState<ReaderWorkspaceTab>("reader");
  const [shadowingOpen, setShadowingOpen] = useState(false);
- const [translationDirection, setTranslationDirection] = useState<TranslationDirection>("zh-vi");
- const [translationDrafts, setTranslationDrafts] = useState<Record<string, string>>({});
- const [translationChecked, setTranslationChecked] = useState<Record<string, boolean>>({});
- const [translationStartedAt, setTranslationStartedAt] = useState<Record<string, number>>({});
+ // A shadowing session pins the panel to its paragraph until the learner navigates or closes
+ // it; following scroll-driven active-paragraph changes would remount the panel and silently
+ // drop the recording or its attempts. -1 = follow the active paragraph.
+ const [pinnedShadowingIndex, setPinnedShadowingIndex] = useState(-1);
  const learning = useLearningState();
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const paragraphById = useMemo(
@@ -205,7 +151,14 @@ function ReaderDocumentStudyContent({
   [resource.paragraphs],
  );
  const activeSegment = study.documentModel.segments[activeIndex];
- const activeParagraph = activeSegment ? paragraphById.get(activeSegment.id) : undefined;
+ const shadowingIndex = pinnedShadowingIndex >= 0 ? pinnedShadowingIndex : activeIndex;
+ const moveShadowingParagraph = (offset: number) => {
+  const target = study.documentModel.segments[shadowingIndex + offset];
+  setPinnedShadowingIndex(-1);
+  if (target) commands.selectSegment(target.id);
+ };
+ const shadowingSegment = study.documentModel.segments[shadowingIndex];
+ const shadowingParagraph = shadowingSegment ? paragraphById.get(shadowingSegment.id) : undefined;
  const activeAnnotations = activeSegment
   ? study.annotations.filter((annotation) => annotation.paragraph_id === activeSegment.id)
   : [];
@@ -225,84 +178,20 @@ function ReaderDocumentStudyContent({
   pronunciationOverrides: study.pronunciationOverrides,
   setSaveError: study.setSaveError,
  });
- const translationSegments = useMemo(
-  () =>
-   resource.paragraphs
-    .filter((paragraph) => paragraph.zh.trim().length > 0 && paragraph.vi.trim().length > 0)
-    .map((paragraph, index) => ({
-     id: paragraph.id,
-     order: index + 1,
-     sourceLabel: "Bài đọc",
-     zh: paragraph.zh,
-     pinyin: paragraph.pinyin,
-     vi: paragraph.vi,
-    })),
-  [resource.paragraphs],
- );
- const translationActiveIndex = Math.max(
-  0,
-  translationSegments.findIndex((segment) => segment.id === activeSegment?.id),
- );
- const translationSegment = translationSegments[translationActiveIndex] ?? translationSegments[0];
- const translationKey = translationSegment
-  ? `${translationSegment.id}:${translationDirection}`
-  : "";
- const translationDraft = translationKey ? (translationDrafts[translationKey] ?? "") : "";
- const translationIsChecked = translationKey ? translationChecked[translationKey] === true : false;
- const translationScore =
-  translationSegment && translationIsChecked
-   ? scoreTranslationAttempt(translationSegment, translationDirection, translationDraft)
-   : null;
- const requestNavigation = useUnsavedDraftGuard(
-  Object.entries(translationDrafts).some(
-   ([key, value]) => value.trim().length > 0 && translationChecked[key] !== true,
-  ),
- );
- const workspaceTabsEnabled = stateOwner !== "daily";
- const availableTabs = useMemo(
-  () =>
-   workspaceTabsEnabled
-    ? readerWorkspaceTabs.filter((tab) => {
-       if (tab.id === "exercises") return resource.exerciseItems.length > 0;
-       if (tab.id === "vocabulary") return resource.vocabulary.length > 0;
-       if (tab.id === "translation") return translationSegments.length > 0;
-       if (tab.id === "analysis") return study.documentModel.capabilities.includes("analysis");
-       if (tab.id === "summary") return study.documentModel.capabilities.includes("summary");
-       return true;
-      })
-    : [],
-  [
-   readerWorkspaceTabs,
-   resource.exerciseItems.length,
-   resource.vocabulary.length,
-   study.documentModel.capabilities,
-   translationSegments.length,
-   workspaceTabsEnabled,
-  ],
- );
- const activeWorkspaceTab = availableTabs.some((tab) => tab.id === workspaceTab)
-  ? workspaceTab
-  : "reader";
- const readingTabs = availableTabs.filter(
-  (tab) => tab.id === "reader" || tab.id === "analysis" || tab.id === "summary",
- );
- const practiceTabs = availableTabs.filter(
-  (tab) => tab.id === "exercises" || tab.id === "translation" || tab.id === "dictation",
- );
- const resourceTabs = availableTabs.filter(
-  (tab) => tab.id === "vocabulary" || tab.id === "notes" || tab.id === "overview",
- );
- const activeGroup: ReaderWorkspaceTab = readingTabs.some((tab) => tab.id === activeWorkspaceTab)
-  ? "reader"
-  : practiceTabs.some((tab) => tab.id === activeWorkspaceTab)
-    ? "exercises"
-    : "vocabulary";
- const activeGroupTabs =
-  activeGroup === "reader"
-   ? readingTabs
-   : activeGroup === "exercises"
-     ? practiceTabs
-     : resourceTabs;
+ const translation = useReaderTranslationPractice({
+  paragraphs: resource.paragraphs,
+  activeSegmentId: activeSegment?.id,
+  commands,
+  setSaveError: study.setSaveError,
+ });
+ const requestNavigation = useUnsavedDraftGuard(translation.hasUncheckedDraft);
+ const { workspaceTabsEnabled, activeWorkspaceTab, setWorkspaceTab, tabGroups } =
+  useReaderWorkspaceTabs({
+   resource,
+   study,
+   stateOwner,
+   translationSegmentCount: translation.translationSegments.length,
+  });
  const readerUnitNumber = resource.document.unit_id?.replace(/^U/u, "") ?? "";
  const readerLessonLabel =
   metadataString(resource, "reading_label_vi") ??
@@ -311,53 +200,6 @@ function ReaderDocumentStudyContent({
    : `Bài ${resource.document.reading_number}`);
  const toolbarStickyOffset = workspaceTabsEnabled || stickyParentTabs ? "tabs" : "page";
  useReadingSourceTarget(focusMode || activeWorkspaceTab === "reader");
-
- const checkTranslation = () => {
-  if (!translationSegment || !translationKey || !translationDraft.trim()) return;
-  const startedAt = translationStartedAt[translationKey];
-  const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);
-  const attempt = createTranslationAttempt(
-   translationSegment,
-   translationDirection,
-   translationDraft,
-   responseMs,
-  );
-  setTranslationStartedAt((current) => {
-   const next = { ...current };
-   delete next[translationKey];
-   return next;
-  });
-  setTranslationChecked((current) => ({ ...current, [translationKey]: true }));
-  void savePracticeAttempt({
-   surface: "translation",
-   contentId: translationSegment.id,
-   direction: translationDirection,
-   answer: {
-    answer: attempt.answer,
-    reference: translationReferenceText(translationSegment, translationDirection),
-   },
-   scorePercent: attempt.score,
-   responseMs: attempt.responseMs,
-  }).catch((error: Error) => study.setSaveError(error.message));
- };
- const updateTranslationDraft = (value: string) => {
-  if (!translationKey) return;
-  if (value.trim() && translationStartedAt[translationKey] === undefined) {
-   setTranslationStartedAt((current) => ({
-    ...current,
-    [translationKey]: Date.now(),
-   }));
-  }
-  setTranslationDrafts((current) => ({ ...current, [translationKey]: value }));
-  setTranslationChecked((current) => ({ ...current, [translationKey]: false }));
- };
- const selectTranslationSegment = (segmentId: string) => {
-  commands.selectSegment(segmentId);
- };
- const moveTranslation = (offset: number) => {
-  const next = translationSegments[translationActiveIndex + offset];
-  if (next) selectTranslationSegment(next.id);
- };
  const readingUnitsBySegmentId = useMemo(() => {
   const result = new Map<string, ReturnType<typeof getContextualReadingUnits>>();
   if (!displayMode.autoDetectPinyin) return result;
@@ -377,32 +219,17 @@ function ReaderDocumentStudyContent({
      size="toolbar"
      variant="outline"
      aria-expanded={shadowingOpen}
-     onClick={() => setShadowingOpen((current) => !current)}
+     onClick={() => {
+      setPinnedShadowingIndex(-1);
+      setShadowingOpen((current) => !current);
+     }}
     >
      {t("chrome.tools.shadowing")}
     </Button>
    ),
   },
   annotations: {
-   items: study.annotations.flatMap((annotation) =>
-    annotation.paragraph_id !== null &&
-    annotation.start_offset !== null &&
-    annotation.end_offset !== null &&
-    annotation.end_offset > annotation.start_offset &&
-    annotation.selected_text.length > 0
-     ? [
-        {
-         id: annotation.id,
-         segmentId: annotation.paragraph_id,
-         text: annotation.selected_text,
-         noteText: annotation.note_text,
-         start: annotation.start_offset,
-         end: annotation.end_offset,
-         color: annotation.color,
-        },
-       ]
-     : [],
-   ),
+   items: readerSurfaceAnnotations(study.annotations),
    onSelection: (target) => {
     const index = study.documentModel.segments.findIndex(
      (segment) => segment.id === target.segmentId,
@@ -432,30 +259,24 @@ function ReaderDocumentStudyContent({
    <ReaderServicesContext.Provider value={readerServices}>
     {readerContent}
    </ReaderServicesContext.Provider>
-   {shadowingOpen && activeParagraph ? (
+   {shadowingOpen && shadowingParagraph ? (
     <ShadowingPracticePanel
-     key={activeParagraph.id}
-     paragraph={activeParagraph}
-     activeIndex={activeIndex}
+     key={shadowingParagraph.id}
+     paragraph={shadowingParagraph}
+     activeIndex={shadowingIndex}
+     onSessionStart={() => setPinnedShadowingIndex(shadowingIndex)}
      total={study.documentModel.segments.length}
-     onPrevious={commands.previous}
-     onNext={commands.next}
+     onPrevious={() => moveShadowingParagraph(-1)}
+     onNext={() => moveShadowingParagraph(1)}
     />
    ) : null}
   </>
  );
  const completionControl = (
-  <div className="flex flex-wrap items-center gap-2">
-   <Badge variant={study.featureState.completed ? "success" : "default"} casing="natural">
-    {study.featureState.completed ? t("completion.done") : t("completion.pending")}
-   </Badge>
-   {!study.featureState.completed ? (
-    <Button type="button" size="toolbar" variant="outline" onClick={study.markCompleted}>
-     <Check />
-     {t("completion.markDone")}
-    </Button>
-   ) : null}
-  </div>
+  <ReaderCompletionControl
+   completed={study.featureState.completed}
+   onMarkCompleted={study.markCompleted}
+  />
  );
 
  if (focusMode) {
@@ -477,34 +298,12 @@ function ReaderDocumentStudyContent({
     navigationDocuments={navigationDocuments}
     selectedDocument={resource.document}
    />
-   <div className="grid min-w-0 gap-2 border-b border-border-default pb-4 sm:pb-5">
-    <div className="flex flex-wrap gap-2">
-     <Badge variant="success" casing="natural">
-      {readerLessonLabel}
-     </Badge>
-     {readerUnitNumber ? (
-      <Badge variant="accent" casing="natural">
-       {t("chrome.unit", { unit: readerUnitNumber })}
-      </Badge>
-     ) : null}
-    </div>
-    {activeWorkspaceTab !== "reader" ? (
-     <>
-      <Typography as="h1" variant="sectionTitle" weight="black" clamp="two">
-       {resource.document.title_zh}
-      </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {resource.document.title_pinyin ? (
-        <PinyinText as="span" variant="caption" tone="accent">
-         {resource.document.title_pinyin}
-        </PinyinText>
-       ) : null}
-       {resource.document.title_pinyin ? " · " : ""}
-       {resource.document.title_vi || resource.document.genre_vi || t("chrome.defaultReading")}
-      </Typography>
-     </>
-    ) : null}
-   </div>
+   <ReaderDocumentStudyHeading
+    resource={resource}
+    lessonLabel={readerLessonLabel}
+    unitNumber={readerUnitNumber}
+    showTitle={activeWorkspaceTab !== "reader"}
+   />
    {study.pending ? (
     <Typography variant="caption" tone="muted">
      {t("chrome.progressLoading")}
@@ -520,82 +319,19 @@ function ReaderDocumentStudyContent({
    {completionControl}
 
    {workspaceTabsEnabled ? (
-    <Tabs
-     value={activeGroup}
-     items={[
-      { key: "reader", label: t("chrome.groups.reading"), icon: BookOpenText },
-      { key: "exercises", label: t("chrome.groups.practice"), icon: Check },
-      { key: "vocabulary", label: t("chrome.groups.resources"), icon: NotebookPen },
-     ]}
-     onValueChange={(group) => {
-      const nextTab =
-       group === "reader"
-        ? readingTabs[0]
-        : group === "exercises"
-          ? practiceTabs[0]
-          : resourceTabs[0];
-      if (nextTab) {
-       requestNavigation(() => setWorkspaceTab(nextTab.id));
-      }
-     }}
-     listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
-     aria-label={t("chrome.tabsAria")}
-    >
-     <TabsContent value={activeGroup} className="grid gap-4 pt-4 sm:pt-5">
-      <SegmentedControl<ReaderWorkspaceTab>
-       value={activeWorkspaceTab}
-       items={activeGroupTabs.map((tab) => ({ key: tab.id, label: tab.label, icon: tab.icon }))}
-       onChange={(nextTab) => {
-        requestNavigation(() => setWorkspaceTab(nextTab));
-       }}
-       layout="wrap"
-       aria-label={t("chrome.subtabsAria")}
-      />
-      {activeWorkspaceTab === "reader" ? readerSurface : null}
-      {activeWorkspaceTab === "overview" ? <ReaderOverview resource={resource} /> : null}
-      {activeWorkspaceTab === "exercises" ? (
-       <ReaderExercisePanel
-        resource={resource}
-        answers={study.featureState.answers}
-        onAnswer={study.saveExerciseAnswer}
-       />
-      ) : null}
-      {activeWorkspaceTab === "vocabulary" ? (
-       <ReaderVocabularyPanel vocabulary={resource.vocabulary} />
-      ) : null}
-      {activeWorkspaceTab === "translation" ? (
-       <ReaderTranslationPracticePanel
-        activeIndex={translationActiveIndex}
-        checked={translationIsChecked}
-        completedCount={
-         translationSegments.filter(
-          (candidate) => translationChecked[`${candidate.id}:${translationDirection}`] === true,
-         ).length
-        }
-        direction={translationDirection}
-        displayMode={displayMode}
-        draft={translationDraft}
-        score={translationScore}
-        segment={translationSegment}
-        segments={translationSegments}
-        onCheck={checkTranslation}
-        onDirectionChange={setTranslationDirection}
-        onDraftChange={updateTranslationDraft}
-        onNext={() => moveTranslation(1)}
-        onPrevious={() => moveTranslation(-1)}
-        onSelect={selectTranslationSegment}
-       />
-      ) : null}
-      {activeWorkspaceTab === "dictation" ? <ReaderDictation resource={resource} /> : null}
-      {activeWorkspaceTab === "analysis" ? (
-       <ReaderAnalysis resource={resource} analysisBySegmentId={study.analysisBySegmentId} />
-      ) : null}
-      {activeWorkspaceTab === "summary" ? <ReaderSummary resource={resource} /> : null}
-      {activeWorkspaceTab === "notes" ? (
-       <ReaderNotes annotations={activeAnnotations} onRemove={selection.removeAnnotation} />
-      ) : null}
-     </TabsContent>
-    </Tabs>
+    <ReaderDocumentStudyTabs
+     resource={resource}
+     study={study}
+     tabGroups={tabGroups}
+     activeWorkspaceTab={activeWorkspaceTab}
+     requestNavigation={requestNavigation}
+     onWorkspaceTabChange={setWorkspaceTab}
+     readerSurface={readerSurface}
+     translation={translation}
+     displayMode={displayMode}
+     activeAnnotations={activeAnnotations}
+     onRemoveAnnotation={selection.removeAnnotation}
+    />
    ) : (
     readerSurface
    )}

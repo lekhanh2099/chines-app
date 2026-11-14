@@ -6,7 +6,7 @@ import { GeminiModelIdSchema, normalizeGeminiModel } from "@/lib/ai/gemini-model
 import type { DbUserAiPromptSettings } from "@/types/database";
 import type { Database } from "@/types/supabase.generated";
 
-export type UserAiPromptSettings = z.infer<
+type UserAiPromptSettings = z.infer<
  z.ZodObject<{
   wordLookupPrompt: z.ZodString;
   sentenceLookupPrompt: z.ZodString;
@@ -42,7 +42,7 @@ export async function getUserAiPromptSettings(
  return normalizeRow(data);
 }
 
-export type UpsertPromptSettingsInput = UserAiPromptSettings;
+type UpsertPromptSettingsInput = UserAiPromptSettings;
 
 export async function upsertUserAiPromptSettings(
  supabase: AppSupabaseClient,

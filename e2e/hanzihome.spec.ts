@@ -19,7 +19,10 @@ import {
  LessonTextAnnotationSchema,
  LessonAnnotationNoteResultSchema,
 } from "../src/features/hanzihome/annotations/types";
-import { HanziHomeSearchIndexResponseSchema } from "../src/features/hanzihome/search/types";
+import {
+ HanziHomeSearchIndexResponseSchema,
+ HanziHomeSearchResponseSchema,
+} from "../src/features/hanzihome/search/types";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 if (!supabaseUrl || !["127.0.0.1", "localhost", "[::1]"].includes(new URL(supabaseUrl).hostname)) {
@@ -204,6 +207,18 @@ test("loads the authenticated Search index from the isolated content fixtures", 
  expect(response.headers()["cache-control"]).toContain("no-store");
  const index = HanziHomeSearchIndexResponseSchema.parse(await response.json());
  expect(index.items.some((item) => item.kind === "radical")).toBe(true);
+});
+
+test("searches static textbooks through the authenticated global search", async ({ page }) => {
+ const guest = await page.request.get("/api/hanzihome/search?q=%E5%9B%A2%E8%81%9A");
+ expect(guest.status()).toBe(401);
+ await login(page, accountA);
+ const response = await page.request.get("/api/hanzihome/search?q=%E5%9B%A2%E8%81%9A");
+ expect(response.status()).toBe(200);
+ expect(response.headers()["cache-control"]).toContain("no-store");
+ const search = HanziHomeSearchResponseSchema.parse(await response.json());
+ expect(search.results.some((result) => result.item.id.startsWith("textbook-"))).toBe(true);
+ expect(search.counts.all).toBeGreaterThanOrEqual(search.results.length);
 });
 
 test("serves a public offline shell without server account or lesson content", async ({ page }) => {
@@ -1042,6 +1057,17 @@ test("keeps Reader completion explicit and exercises microphone shadowing", asyn
  });
  await resetReaderProgress();
  await page.context().grantPermissions(["microphone"], { origin: new URL(baseURL).origin });
+ // Hold every provider request from the first navigation: a voice-list request that starts
+ // before the hold (Reader preparation) can fail fast and settle speech, which stops the
+ // recording before its first second. Holding keeps the recording window deterministic.
+ let releaseSpeechRequest = () => {};
+ const pendingSpeechRequest = new Promise<void>((resolve) => {
+  releaseSpeechRequest = resolve;
+ });
+ await page.route("**/api/tts**", async (route) => {
+  await pendingSpeechRequest;
+  await route.abort();
+ });
  await login(page, accountA);
  await openFirstCoreReading(page);
  await expect(page.getByText("Chưa hoàn thành", { exact: true })).toBeVisible();
@@ -1053,15 +1079,8 @@ test("keeps Reader completion explicit and exercises microphone shadowing", asyn
  await page.getByRole("option").last().click();
  await page.getByRole("button", { name: "Shadowing", exact: true }).click();
  await expect(page.getByRole("button", { name: "Bắt đầu shadowing", exact: true })).toBeVisible();
- // Keep provider completion independent of the platform's offline speech voices.
- let releaseSpeechRequest = () => {};
- const pendingSpeechRequest = new Promise<void>((resolve) => {
-  releaseSpeechRequest = resolve;
- });
- await page.route("**/api/tts**", async (route) => {
-  await pendingSpeechRequest;
-  await route.abort();
- });
+ // Start only once the panel follows the selected last paragraph.
+ await expect(page.getByText(/đoạn 4\/4\.$/u)).toBeVisible();
  try {
   await page.getByRole("button", { name: "Bắt đầu shadowing", exact: true }).click();
   await expect(page.getByText(/^Đang ghi [1-9]\d*s$/u)).toBeVisible();
@@ -1071,6 +1090,12 @@ test("keeps Reader completion explicit and exercises microphone shadowing", asyn
    "src",
    /^blob:/u,
   );
+  // A session pins the panel to its paragraph: moving the reader's active paragraph must not
+  // remount the panel (which would silently drop an in-flight take or these attempts).
+  await page.getByRole("combobox", { name: "Mở mục lục đoạn", exact: true }).click();
+  await page.getByRole("option").first().click();
+  await expect(page.getByText(/đoạn 4\/4\.$/u)).toBeVisible();
+  await expect(page.getByText("Bản ghi trong phiên này", { exact: true })).toBeVisible();
  } finally {
   releaseSpeechRequest();
   await page.unrouteAll({ behavior: "wait" });

@@ -4,7 +4,6 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 
 import { ContinueLearningPanel } from "@/features/home/components/ContinueLearningPanel";
-import { HomeLearningPulse } from "@/features/home/components/HomeLearningPulse";
 import { RecentLearningActivityPanel } from "@/features/home/components/RecentLearningActivityPanel";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
 import { TodayFocusWidget } from "@/features/home/components/TodayFocusWidget";
@@ -205,38 +204,6 @@ describe("Home messages", () => {
    expect(markup).not.toContain("Home.");
   },
  );
-
- it("keeps learning pulse values subordinate to the section heading", async () => {
-  const messages = await loadAppMessages("vi");
-  const markup = renderToStaticMarkup(
-   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <HomeLearningPulse
-     onRetryOverview={() => {}}
-     onRetryReviewedToday={() => {}}
-     pulse={{
-      trackedCount: 12,
-      reviewCount: 3,
-      knownCount: 9,
-      reviewedTodayCount: 4,
-      bookmarkedCount: 2,
-      srsDueCount: 5,
-      learningLoopDueCount: 1,
-      readerCompletedCount: 2,
-      readerDocumentCount: 6,
-      overviewUnavailable: false,
-      overviewAvailable: true,
-      overviewLoading: false,
-      reviewedTodayAvailable: true,
-      reviewedTodayLoading: false,
-      reviewedTodayUnavailable: false,
-     }}
-    />
-   </NextIntlClientProvider>,
-  );
-
-  expect(markup).toContain("Nhịp học");
-  expect((markup.match(/data-variant="sectionTitle"/g) ?? []).length).toBe(1);
- });
 
  it.each(localeCases)(
   "formats relative activity dates without environment fallback for $locale",

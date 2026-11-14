@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export type ShadowingRecorderError = "permission-denied" | "recording-failed" | "unsupported";
+type ShadowingRecorderError = "permission-denied" | "recording-failed" | "unsupported";
 
 type RecorderState = {
  audioBlob: Blob | null;

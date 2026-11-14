@@ -10,7 +10,6 @@ import {
 import {
  mergeSelectableNotes,
  normalizeReadingUrl,
- plainTextToEditorDocument,
  filterNoteLibrary,
  getNoteLibrarySources,
  getNoteLibraryPage,
@@ -393,16 +392,6 @@ describe("note library utilities", () => {
   expect(() => normalizeReadingUrl("file:///tmp/article.html")).toThrow(
    "URL phải bắt đầu bằng http:// hoặc https://.",
   );
- });
-
- it("converts pasted paragraphs into editor content", () => {
-  expect(plainTextToEditorDocument("Đoạn một.\n\nĐoạn hai.\nDòng tiếp.")).toEqual({
-   type: "doc",
-   content: [
-    { type: "paragraph", content: [{ type: "text", text: "Đoạn một." }] },
-    { type: "paragraph", content: [{ type: "text", text: "Đoạn hai. Dòng tiếp." }] },
-   ],
-  });
  });
 
  it("keeps open-tab order and localized untitled labels when the library is focus-locked", () => {

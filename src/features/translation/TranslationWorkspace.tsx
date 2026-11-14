@@ -6,7 +6,10 @@ import { useSearchParams } from "next/navigation";
 
 import { Typography } from "@/components/ui/display/typography";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
-import type { TranslationDirection } from "@/features/hanzihome/practice/translation-practice";
+import {
+ translationAttemptKey,
+ type TranslationDirection,
+} from "@/features/hanzihome/practice/translation-practice";
 import type { HumanitiesDocumentResource } from "@/features/humanities/model/humanities-resource.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
 import type { HumanitiesPracticeTrack } from "@/features/humanities/humanities-practice-content";
@@ -63,7 +66,7 @@ export function TranslationWorkspace({
   evaluation !== undefined && evaluation.direction === direction ? evaluation : undefined;
  const isInterpreting = humanitiesEvaluation?.mode === "interpreting";
  const preparation = useTranslationPreparation(segment?.id ?? "", direction, humanitiesEvaluation);
- const key = segment ? `${segment.id}:${direction}` : "";
+ const key = segment ? translationAttemptKey(segment.id, direction) : "";
  const { historyQuery, submitAttempt, saveError, clearSaveError } = useTranslationAttempts(
   segment?.id ?? "",
  );
