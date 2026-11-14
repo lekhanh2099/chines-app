@@ -33,10 +33,6 @@ export const HanziHomeSearchIndexItemSchema = z.object({
  metadata: z.record(z.string(), searchMetadataValueSchema).optional(),
 });
 
-export const HanziHomeSearchIndexResponseSchema = z.object({
- items: z.array(HanziHomeSearchIndexItemSchema),
-});
-
 export type HanziHomeSearchIndexItem = z.infer<typeof HanziHomeSearchIndexItemSchema>;
 
 /** The navigable, displayable part of an indexed item; the indexed text stays on the server. */

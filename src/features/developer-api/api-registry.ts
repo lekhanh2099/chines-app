@@ -244,23 +244,6 @@ export const publicV1Endpoints = [
   ],
  }),
  endpoint({
-  group: "HanziHome đọc",
-  methods: ["GET"],
-  path: "/api/v1/hanzihome/search-index",
-  scope: "content:read",
-  summary: "Search index của HanziHome.",
-  operations: [
-   {
-    method: "GET",
-    query: null,
-    requestBody: null,
-    responseStatus: 200,
-    responseContentType: "application/json",
-    responseBody: '{\n  "items": [{ "id": "LESSON_ID", "title": "Bài 8" }]\n}',
-   },
-  ],
- }),
- endpoint({
   group: "HanziHome content",
   methods: ["POST"],
   path: "/api/v1/hanzihome/content/mutations",
@@ -2050,15 +2033,6 @@ export const currentApiInventory = [
   exposure: "internal-only",
   v1Path: null,
   internalReason: "TTS Studio library metadata is owned by the authenticated HanziHome user.",
- }),
- inventoryEntry({
-  currentPath: "/api/hanzihome/search-index",
-  methods: ["GET"],
-  source: "route",
-  group: "HanziHome đọc",
-  exposure: "public-v1",
-  v1Path: "/api/v1/hanzihome/search-index",
-  internalReason: null,
  }),
  inventoryEntry({
   currentPath: "/api/hanzihome/search",

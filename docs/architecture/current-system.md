@@ -61,8 +61,7 @@ lazily from the checked-in corpus once per process, so new static lessons are
 included on deploy without an index step. Supabase course content is re-read per
 owner on a 5-minute TTL (RLS visibility); the user's own notes are read live per
 request and never cached across users. Exercise answers stay out of the index. The
-browser never downloads the index. The legacy `/api/hanzihome/search-index` route
-remains only as the documented public-v1 index export.
+browser never downloads the index.
 
 The browser client validates every response envelope before data reaches UI state. Loading, error, and empty are separate states; an API failure must not become an empty catalog.
 
