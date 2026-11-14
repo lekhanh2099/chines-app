@@ -239,6 +239,8 @@ mutations.
 
 There is no repository pre-commit gate that runs the full suite. Local commits must stay cheap; CI/PR owns full-repository validation. Developers may run targeted commands before commit and `npm run check` before merge/release when appropriate.
 
+A `pre-push` hook runs lint, format check and typecheck, the fast checks CI fails on. Fix what it reports before pushing; do not bypass it with `--no-verify`.
+
 Open pull requests as **draft** and push work-in-progress there: a draft runs only the fast `verify` job (lint, types, affected unit tests, build). Mark the PR ready for review once, when the work is complete; that run adds the selected browser and product suites and is the pre-merge verification. A ready PR repeats them on every push, so finish pushing first. A merged PR is not re-run on `main` (the required `CI gate` is strict and Vercel deploys `main` independently).
 
 Regression work reproduces the failure before or alongside the change and adds the smallest deterministic test that proves the invariant.
