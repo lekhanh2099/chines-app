@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
  emptyLearningState,
+ markBookStudied,
+ mostRecentStudiedBookKey,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
 
@@ -60,6 +62,34 @@ describe("learning state update model", () => {
    a: { lessonId: "lesson-1", module: "text" },
    b: { lessonId: "lesson-2", module: "vocab" },
   });
+ });
+
+ it("records book study times per book and keeps A → B → A recency", () => {
+  const studyA = applySettingsUpdate(base, {
+   ...markBookStudied(base.settings, "catalog:a", new Date("2026-11-12T08:00:00.000Z")),
+  });
+  const studyB = applySettingsUpdate(studyA, {
+   ...markBookStudied(studyA.settings, "static:nhip-cau", new Date("2026-11-12T09:00:00.000Z")),
+  });
+  expect(mostRecentStudiedBookKey(studyB.settings)).toBe("static:nhip-cau");
+  const backToA = applySettingsUpdate(studyB, {
+   ...markBookStudied(studyB.settings, "catalog:a", new Date("2026-11-12T10:00:00.000Z")),
+  });
+  expect(mostRecentStudiedBookKey(backToA.settings)).toBe("catalog:a");
+  expect(backToA.settings.bookLastStudiedAt).toEqual({
+   "catalog:a": "2026-11-12T10:00:00.000Z",
+   "static:nhip-cau": "2026-11-12T09:00:00.000Z",
+  });
+ });
+
+ it("marks a book as most recent even when another device's clock ran ahead", () => {
+  const ahead = applySettingsUpdate(base, {
+   bookLastStudiedAt: { "static:khau-ngu": "2030-01-01T00:00:00.000Z" },
+  });
+  const patch = markBookStudied(ahead.settings, "catalog:a", new Date("2026-11-12T08:00:00.000Z"));
+  expect(patch.bookLastStudiedAt?.["catalog:a"]).toBe("2030-01-01T00:00:00.001Z");
+  expect(mostRecentStudiedBookKey(applySettingsUpdate(ahead, patch).settings)).toBe("catalog:a");
+  expect(mostRecentStudiedBookKey(base.settings)).toBe("");
  });
 
  it("toggles bookmarks on and off", () => {

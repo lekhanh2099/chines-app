@@ -16,10 +16,20 @@ import {
 } from "@/features/hanzihome/static-json/it-web-vocab-static-content";
 import { mergeLearningStateAfterConflict } from "@/features/hanzihome/local/learning-state-conflict-merge";
 import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
+import type { HanziHomeCatalogData, HanziHomeLesson } from "@/features/hanzihome/types";
 import {
  buildStudyBundleFromBookmarkedLessons,
  getBookmarkedTextbookGroups,
+ getSelectableTextbookGroups,
+ type StudyBundle,
 } from "./vocab-hub-adapter";
+import {
+ buildCatalogLessonBundle,
+ buildCatalogLessonGroups,
+ buildTextbookLessonGroups,
+ findAnyLessonOption,
+ resolveAnyLessonDeck,
+} from "./vocab-hub-any-lesson";
 import {
  buildExercisesFromVocabItems,
  customVocabListToHanziHomeVocabItems,
@@ -76,6 +86,11 @@ const { mockLearningState } = vi.hoisted(() => ({
 
 vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
  useLearningState: () => mockLearningState,
+}));
+
+// The "any lesson" source reads lesson resources through the session-scoped cache.
+vi.mock("@/components/providers/QueryProvider", () => ({
+ useClientSession: () => ({ userId: null, user: null, isResolved: true }),
 }));
 
 vi.mock("@/i18n/navigation", () => ({
@@ -276,6 +291,211 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
    } finally {
     pipSpy.mockRestore();
    }
+  },
+ );
+});
+
+describe("PiP any-lesson source", () => {
+ const format = {
+  group: (course: string, book: string) => `${course} · ${book}`,
+  lesson: (number: number, title: string) => `Bài ${number}: ${title}`,
+ };
+ const catalogLesson = (id: string, bookId: string, lessonNumber: number): HanziHomeLesson => ({
+  id,
+  bookId,
+  courseId: "hanyu",
+  lessonNumber,
+  title: `title-${id}`,
+  titleZh: `课-${id}`,
+  vocabIds: [],
+  grammarPointIds: [],
+  vocab: [],
+  grammar: [],
+ });
+ const catalog = {
+  courses: [
+   {
+    id: "hanyu",
+    slug: "hanyu",
+    title: "Hán ngữ",
+    type: "hanyu",
+    order: 1,
+    stats: { bookCount: 2, lessonCount: 2, vocabCount: 0, grammarCount: 0 },
+   },
+  ],
+  books: [
+   { id: "q2", courseId: "hanyu", title: "Quyển 2", order: 2 },
+   { id: "q1", courseId: "hanyu", title: "Quyển 1", order: 1 },
+  ],
+  lessons: [catalogLesson("q2-3", "q2", 3), catalogLesson("q1-3", "q1", 3)],
+ } satisfies Pick<HanziHomeCatalogData, "courses" | "books" | "lessons">;
+ const emptyBundle: StudyBundle = {
+  title: "Chọn bài bất kỳ",
+  vocabItems: [],
+  grammarItems: [],
+  practiceItems: [],
+ };
+ const messages = {
+  placeholder: "placeholder",
+  loading: "loading",
+  error: "error",
+  missing: "missing",
+  empty: "empty",
+ };
+
+ it("lists every library textbook lesson, bookmarked or not, and keeps Hán thương mại 2 hidden", () => {
+  const groups = getSelectableTextbookGroups();
+  expect(groups.map((group) => group.bookKey)).toEqual(["tm3", "nhip-cau", "doc-hieu", "khau-ngu"]);
+  expect(groups.find((group) => group.bookKey === "khau-ngu")?.lessons).toHaveLength(24);
+  const options = buildTextbookLessonGroups(groups).flatMap((group) => group.lessons);
+  expect(options.some((option) => option.lessonId.includes("tm2"))).toBe(false);
+  expect(options.every((option) => option.value.startsWith("static:") && !option.isCatalog)).toBe(
+   true,
+  );
+ });
+
+ it("groups catalog summaries by course/book and keeps equal lesson numbers apart", () => {
+  const groups = buildCatalogLessonGroups(catalog, format);
+  expect(groups.map((group) => group.label)).toEqual(["Hán ngữ · Quyển 1", "Hán ngữ · Quyển 2"]);
+  const first = findAnyLessonOption(groups, "catalog:q1-3");
+  const second = findAnyLessonOption(groups, "catalog:q2-3");
+  expect(first).toMatchObject({
+   lessonId: "q1-3",
+   label: "Bài 3: 课-q1-3",
+   bookTitle: "Hán ngữ · Quyển 1",
+  });
+  expect(second).toMatchObject({ lessonId: "q2-3", bookTitle: "Hán ngữ · Quyển 2" });
+  expect(findAnyLessonOption(groups, "")).toBeUndefined();
+ });
+
+ it("builds a catalog deck from the canonical vocabulary resource and generated practice", () => {
+  const vocab = customVocabListToHanziHomeVocabItems([
+   {
+    id: "w1",
+    hanzi: "排期",
+    pinyin: "páiqī",
+    meaning: "Lên lịch",
+    exampleZh: "这个需求什么时候能排期？",
+    createdAt: "2026-11-07T00:00:00.000Z",
+   },
+  ]);
+  const lesson = { ...catalogLesson("q1-3", "q1", 3), vocab };
+  const bundle = buildCatalogLessonBundle(lesson, "Quyển 1 · Bài 3");
+  expect(bundle.title).toBe("Quyển 1 · Bài 3");
+  expect(bundle.vocabItems).toBe(lesson.vocab);
+  expect(bundle.practiceItems).toEqual(buildExercisesFromVocabItems(vocab));
+  expect(bundle.grammarItems).toEqual([]);
+ });
+
+ it("never auto-selects and never shows a stale deck while a new pick loads or fails", () => {
+  const groups = buildCatalogLessonGroups(catalog, format);
+  const ready: StudyBundle = { ...emptyBundle, title: "Quyển 1 · Bài 3", vocabItems: [] };
+  const base = {
+   isSummaryLoading: false,
+   isLoading: false,
+   isError: false,
+   isMissing: false,
+   emptyBundle,
+   messages,
+  };
+  expect(resolveAnyLessonDeck({ ...base, selection: "" })).toEqual({
+   bundle: emptyBundle,
+   status: "placeholder",
+   canRetry: false,
+  });
+  const option = findAnyLessonOption(groups, "catalog:q2-3");
+  // Switching to a new lesson whose deck is not built yet shows loading, not the old deck.
+  expect(
+   resolveAnyLessonDeck({ ...base, selection: "catalog:q2-3", option, isLoading: true }),
+  ).toEqual({ bundle: emptyBundle, status: "loading", canRetry: false });
+  expect(resolveAnyLessonDeck({ ...base, selection: "catalog:q2-3", option })).toMatchObject({
+   bundle: emptyBundle,
+   status: "loading",
+  });
+  expect(
+   resolveAnyLessonDeck({
+    ...base,
+    selection: "catalog:q2-3",
+    option,
+    isError: true,
+    bundle: ready,
+   }),
+  ).toEqual({ bundle: emptyBundle, status: "error", canRetry: true });
+  expect(
+   resolveAnyLessonDeck({
+    ...base,
+    selection: "catalog:q2-3",
+    option,
+    isMissing: true,
+    isError: true,
+   }),
+  ).toMatchObject({ status: "missing", canRetry: false });
+  expect(resolveAnyLessonDeck({ ...base, selection: "catalog:removed" })).toMatchObject({
+   status: "missing",
+  });
+  expect(
+   resolveAnyLessonDeck({ ...base, selection: "catalog:removed", isSummaryLoading: true }),
+  ).toMatchObject({ status: "loading" });
+  expect(
+   resolveAnyLessonDeck({ ...base, selection: "catalog:q2-3", option, bundle: ready }),
+  ).toEqual({ bundle: ready, status: "empty", canRetry: false });
+  const studyable = { ...ready, vocabItems: getItWebVocabItemsByFilter({ preset: "core20" }) };
+  expect(
+   resolveAnyLessonDeck({ ...base, selection: "catalog:q2-3", option, bundle: studyable }),
+  ).toEqual({ bundle: studyable, status: "", canRetry: false });
+ });
+
+ it("loads a static pick through the existing textbook pipeline", () => {
+  const entry = getSelectableTextbookGroups()
+   .flatMap((group) => group.lessons)
+   .find((lesson) => lesson.id === "khau-ngu-lesson-03");
+  if (!entry) throw new Error("Expected Khẩu ngữ lesson 3");
+  const bundle = buildStudyBundleFromBookmarkedLessons([entry]);
+  expect(bundle.title).toBe(`${entry.bookLabel} · ${entry.title}`);
+  expect(bundle.vocabItems.length).toBeGreaterThan(0);
+ });
+
+ it.each(appLocales)(
+  "renders the any-lesson source with a placeholder and no deck in %s",
+  async (locale) => {
+   const localeMessages = await loadAppMessages(locale);
+   const copy = localeMessages.BusinessChinese.vocabHub.anyLesson;
+   const queryClient = new QueryClient();
+   queryClient.setQueryData(hanzihomeQueryKeys.catalog(true, false), {
+    source: "db",
+    radicals: [],
+    meta: {
+     app: "hanzihome",
+     dataset: "test",
+     version: "1",
+     generatedAt: "",
+     sourceFiles: [],
+     counts: { lessons: 2, vocab: 0, grammarPoints: 0, radicals: 0, flashcards: 0 },
+    },
+    ...catalog,
+   } satisfies HanziHomeCatalogData);
+   queryClient.setQueryData(
+    hanzihomeQueryKeys.selectableTextbookGroups,
+    getSelectableTextbookGroups(),
+   );
+   const markup = renderToStaticMarkup(
+    <NextIntlClientProvider locale={locale} messages={localeMessages} timeZone="Asia/Ho_Chi_Minh">
+     <QueryClientProvider client={queryClient}>
+      <UnifiedVocabStudyHub defaultSource="lessons" />
+     </QueryClientProvider>
+    </NextIntlClientProvider>,
+   );
+   expect(markup).toContain(copy.source);
+   expect(markup).toContain(copy.selectLabel);
+   expect(markup).toContain(`>${copy.placeholder}</h3>`);
+   expect(markup).not.toContain(" từ, ");
+   // Only summaries are cached: no lesson detail/vocabulary query was started.
+   expect(
+    queryClient
+     .getQueryCache()
+     .getAll()
+     .some((query) => query.queryKey[1] === "lesson-detail" && query.queryKey[2]),
+   ).toBe(false);
   },
  );
 });

@@ -32,6 +32,7 @@ describe("parseSourceMode", () => {
  it("accepts known modes and falls back to bookmarked lessons", () => {
   expect(parseSourceMode("it-quick")).toBe("it-quick");
   expect(parseSourceMode("custom-vault")).toBe("custom-vault");
+  expect(parseSourceMode("lessons")).toBe("lessons");
   expect(parseSourceMode("unknown")).toBe("bookmarked-lessons");
  });
 });

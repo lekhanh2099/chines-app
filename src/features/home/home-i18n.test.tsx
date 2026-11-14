@@ -7,6 +7,7 @@ import { ContinueLearningPanel } from "@/features/home/components/ContinueLearni
 import { RecentLearningActivityPanel } from "@/features/home/components/RecentLearningActivityPanel";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
 import { TodayFocusWidget } from "@/features/home/components/TodayFocusWidget";
+import { buildHomeResumeBooks } from "@/features/home/home-dashboard.utils";
 import type { HomeDashboardModel, HomeLessonTarget } from "@/features/home/types";
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
@@ -39,32 +40,22 @@ const localeCases = [
 describe("Home messages", () => {
  it("omits legacy Learning Loop banner and personal vocab progress from TodayFocusWidget", async () => {
   const messages = await loadAppMessages("vi");
-  const pulse: HomeDashboardModel["learningPulse"] = {
-   trackedCount: 57,
-   reviewCount: 34,
-   knownCount: 23,
-   reviewedTodayCount: 0,
-   bookmarkedCount: 9,
-   srsDueCount: 5,
-   learningLoopDueCount: 2,
-   readerCompletedCount: 0,
-   readerDocumentCount: 0,
-   overviewAvailable: true,
-   overviewLoading: false,
-   overviewUnavailable: false,
-   reviewedTodayAvailable: true,
-   reviewedTodayLoading: false,
-   reviewedTodayUnavailable: false,
-  };
-
   const emptyMarkup = renderToStaticMarkup(
    <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <TodayFocusWidget courses={[]} pulse={pulse} />
+    <TodayFocusWidget book={{ id: "book", title: "Book", lesson: null }} />
    </NextIntlClientProvider>,
   );
   expect(emptyMarkup).toBe("");
-  expect(emptyMarkup).not.toContain('href="/learning-loop"');
-  expect(emptyMarkup).not.toContain("Tiến độ từ vựng cá nhân");
+
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <TodayFocusWidget book={{ id: "book", title: "HSK 1", lesson }} />
+   </NextIntlClientProvider>,
+  );
+  expect(markup).toContain("Bài 1: 你好");
+  expect(markup).toContain('href="/hanzihome?lesson=1"');
+  expect(markup).not.toContain('href="/learning-loop"');
+  expect(markup).not.toContain("Tiến độ từ vựng cá nhân");
  });
 
  it("keeps a resumed Khẩu ngữ review title in both continuation surfaces", async () => {
@@ -87,27 +78,8 @@ describe("Home messages", () => {
   ];
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <ContinueLearningPanel courses={courses} unavailable={false} />
-    <TodayFocusWidget
-     courses={courses}
-     pulse={{
-      trackedCount: 0,
-      reviewCount: 0,
-      knownCount: 0,
-      reviewedTodayCount: 0,
-      bookmarkedCount: 0,
-      srsDueCount: 0,
-      learningLoopDueCount: 0,
-      readerCompletedCount: 0,
-      readerDocumentCount: 0,
-      overviewAvailable: true,
-      overviewLoading: false,
-      overviewUnavailable: false,
-      reviewedTodayAvailable: true,
-      reviewedTodayLoading: false,
-      reviewedTodayUnavailable: false,
-     }}
-    />
+    <ContinueLearningPanel books={buildHomeResumeBooks(courses, undefined)} unavailable={false} />
+    <TodayFocusWidget book={courses[0].books[0]} />
    </NextIntlClientProvider>,
   );
   expect(markup.match(/ÔN TẬP 4: 国际婚姻/gu)).toHaveLength(2);
@@ -119,10 +91,7 @@ describe("Home messages", () => {
   const messages = await loadAppMessages(testCase.locale);
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider locale={testCase.locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <ContinueLearningPanel
-     courses={[{ id: "course", title: "HSK 1", books: [{ id: "book", title: "HSK 1", lesson }] }]}
-     unavailable={false}
-    />
+    <ContinueLearningPanel books={[{ id: "book", title: "HSK 1", lesson }]} unavailable={false} />
    </NextIntlClientProvider>,
   );
 
@@ -157,7 +126,7 @@ describe("Home messages", () => {
      messages={messages}
      timeZone="Asia/Ho_Chi_Minh"
     >
-     <ContinueLearningPanel courses={courses} unavailable={false} />
+     <ContinueLearningPanel books={buildHomeResumeBooks(courses, undefined)} unavailable={false} />
     </NextIntlClientProvider>,
    );
 
@@ -183,15 +152,18 @@ describe("Home messages", () => {
    const markup = renderToStaticMarkup(
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
      <ContinueLearningPanel
-      courses={[
-       {
-        id: "course",
-        title: "Course",
-        books: [
-         { id: "unstarted", title: "Unstarted volume", lesson: { ...lesson, isRecent: false } },
-        ],
-       },
-      ]}
+      books={buildHomeResumeBooks(
+       [
+        {
+         id: "course",
+         title: "Course",
+         books: [
+          { id: "unstarted", title: "Unstarted volume", lesson: { ...lesson, isRecent: false } },
+         ],
+        },
+       ],
+       undefined,
+      )}
       unavailable={unavailable}
      />
     </NextIntlClientProvider>,

@@ -17,7 +17,8 @@
   "books": "{count} quyển",
   "catalogUnavailable": "Chưa tải được danh sách Bài học. Các giáo trình khác vẫn khả dụng.",
   "browseLibrary": "Xem tất cả giáo trình",
-  "empty": "Bạn chưa bắt đầu bài học nào. Chọn một giáo trình để bắt đầu."
+  "empty": "Bạn chưa bắt đầu bài học nào. Chọn một giáo trình để bắt đầu.",
+  "otherBooks": "Các giáo trình khác đang học"
  },
  "modules": {
   "overview": "Tổng quan",
@@ -44,7 +45,6 @@
   "reviewNow": "Ôn tập ngay ({count})",
   "viewCards": "Xem kho thẻ từ",
   "resumeLesson": "Học tiếp bài học gần nhất",
-  "resumeHint": "Bấm để vào thẳng không gian bài học",
   "resumeNow": "Vào học ngay",
   "vocabProgress": "Tiến độ từ vựng cá nhân",
   "knownWords": "từ đã thuộc",

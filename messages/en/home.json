@@ -17,7 +17,8 @@
   "books": "{count} books",
   "catalogUnavailable": "The lesson catalog could not be loaded. Other textbooks are still available.",
   "browseLibrary": "Browse all textbooks",
-  "empty": "You haven’t started a lesson yet. Choose a textbook to begin."
+  "empty": "You haven’t started a lesson yet. Choose a textbook to begin.",
+  "otherBooks": "Other textbooks in progress"
  },
  "modules": {
   "overview": "Overview",
@@ -44,7 +45,6 @@
   "reviewNow": "Review now ({count})",
   "viewCards": "View saved cards",
   "resumeLesson": "Continue your most recent lesson",
-  "resumeHint": "Open the lesson workspace directly",
   "resumeNow": "Continue learning",
   "vocabProgress": "Your vocabulary progress",
   "knownWords": "words learned",

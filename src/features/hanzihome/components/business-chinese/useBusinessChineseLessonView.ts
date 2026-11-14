@@ -14,7 +14,11 @@ import {
  type TextbookBookSummary,
  type TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
-import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
+import {
+ defaultTextbookDisplaySettings,
+ markBookStudied,
+ mostRecentStudiedBookKey,
+} from "@/features/hanzihome/utils/learning-state";
 import { parseReaderSourceTarget } from "@/features/reading/model/reading-source-target";
 import { usePathname, useRouter as useLocalizedRouter } from "@/i18n/navigation";
 import {
@@ -198,7 +202,7 @@ export function useBusinessChineseWideToolbar() {
  return hasWideToolbar;
 }
 
-/** Restores the saved lesson for a book, otherwise persists the current lesson/tab. */
+/** Restores the saved lesson for a book, otherwise persists the current lesson/tab and book. */
 export function useBusinessChineseLessonResume({
  learning,
  shouldRestoreLesson,
@@ -226,9 +230,17 @@ export function useBusinessChineseLessonResume({
    );
    return;
   }
-  if (resume?.lessonId !== lesson.id || resume.module !== activeView) {
+  // After hydration/restore, persist this book's lesson/tab and record it as the
+  // most recently studied book. Revisiting a book's saved lesson/tab still makes it
+  // the most recent; once both hold, the effect writes nothing.
+  if (
+   resume?.lessonId !== lesson.id ||
+   resume.module !== activeView ||
+   mostRecentStudiedBookKey(learning.state.settings) !== bookKey
+  ) {
    learning.updateSettings({
     bookResume: { [bookKey]: { lessonId: lesson.id, module: activeView } },
+    ...markBookStudied(learning.state.settings, bookKey),
    });
   }
  }, [

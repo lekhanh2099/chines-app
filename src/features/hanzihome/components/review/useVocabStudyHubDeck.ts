@@ -5,6 +5,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { getItWebVocabCorpus } from "@/features/hanzihome/static-json/it-web-vocab-static-content";
+import { useVocabStudyHubAnyLesson } from "./useVocabStudyHubAnyLesson";
 import type { BookmarkedTextbookGroup, StudyBundle } from "./vocab-hub-adapter";
 import {
  buildCustomVaultBundle,
@@ -24,7 +25,7 @@ const EMPTY_BOOKMARKED_BUNDLE: StudyBundle = {
  practiceItems: [],
 };
 
-/** Owns the hub's deck: source selection, bookmarked/IT scope selection and the active bundle. */
+/** Owns the hub's deck: source selection, bookmarked/IT/any-lesson scope and the active bundle. */
 export function useVocabStudyHubDeck({ defaultSource }: { defaultSource: HubSourceMode }) {
  const learning = useLearningState();
  const bookmarkedLessonIds = useMemo(
@@ -95,7 +96,14 @@ export function useVocabStudyHubDeck({ defaultSource }: { defaultSource: HubSour
  const bookmarkedBundle =
   selectedBookmarkedLessons.length > 0 ? bookmarkedBundleQuery.data : EMPTY_BOOKMARKED_BUNDLE;
 
+ const anyLesson = useVocabStudyHubAnyLesson({ enabled: sourceMode === "lessons" });
+ const anyLessonBundle = anyLesson.bundle;
+
  const activeBundle = useMemo<StudyBundle>(() => {
+  if (sourceMode === "lessons") {
+   return anyLessonBundle;
+  }
+
   if (sourceMode === "it-quick") {
    return buildItQuickBundle(itSelection, itCorpus);
   }
@@ -105,7 +113,7 @@ export function useVocabStudyHubDeck({ defaultSource }: { defaultSource: HubSour
   }
 
   return buildCustomVaultBundle(customVocabItems);
- }, [bookmarkedBundle, customVocabItems, itCorpus, itSelection, sourceMode]);
+ }, [anyLessonBundle, bookmarkedBundle, customVocabItems, itCorpus, itSelection, sourceMode]);
 
  return {
   learning,
@@ -120,6 +128,7 @@ export function useVocabStudyHubDeck({ defaultSource }: { defaultSource: HubSour
   setItSelection,
   bookmarkedSelection,
   setBookmarkedSelection,
+  anyLesson,
   activeBundle,
  };
 }

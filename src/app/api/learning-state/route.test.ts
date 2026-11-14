@@ -107,6 +107,26 @@ describe("/api/learning-state", () => {
   });
  });
 
+ it("returns per-book study times and still reads legacy rows without them", async () => {
+  const settings = {
+   bookResume: { "static:khau-ngu": { lessonId: "khau-ngu-lesson-03", module: "practice" } },
+   bookLastStudiedAt: { "static:khau-ngu": "2026-08-18T00:00:00.000Z" },
+  };
+  supabase.from.mockReturnValue(createReadQuery("2026-08-19T00:00:00.000Z", { settings }));
+  const response = await GET(learningStateRequest("GET"));
+  expect(response.status).toBe(200);
+  await expect(response.json()).resolves.toMatchObject({ state: { settings } });
+
+  const legacySettings = { lastLessonId: "lesson-1", lastModule: "vocab" };
+  supabase.from.mockReturnValue(
+   createReadQuery("2026-08-19T00:00:00.000Z", { settings: legacySettings }),
+  );
+  const legacy = await GET(learningStateRequest("GET"));
+  expect(legacy.status).toBe(200);
+  const legacyBody = await legacy.json();
+  expect(legacyBody.state.settings).toEqual(legacySettings);
+ });
+
  it("fails closed when the authoritative row is incompatible", async () => {
   const query = createReadQuery("2026-08-19T00:00:00.000Z", {
    review_history: { legacy: "not-an-array" },

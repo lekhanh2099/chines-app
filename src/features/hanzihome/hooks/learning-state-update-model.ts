@@ -61,6 +61,14 @@ export function applySettingsUpdate(
    ...(settings.bookResume
     ? { bookResume: { ...current.settings.bookResume, ...settings.bookResume } }
     : {}),
+   ...(settings.bookLastStudiedAt
+    ? {
+       bookLastStudiedAt: {
+        ...current.settings.bookLastStudiedAt,
+        ...settings.bookLastStudiedAt,
+       },
+      }
+    : {}),
   },
  };
 }

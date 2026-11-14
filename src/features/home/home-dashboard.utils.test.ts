@@ -1,6 +1,6 @@
 import type { HanziHomeCatalogData } from "@/features/hanzihome/types";
 import { getTextbookCatalog } from "@/features/hanzihome/static-json/business-chinese-static-content";
-import { buildHomeCourseGroups } from "./home-dashboard.utils";
+import { buildHomeCourseGroups, buildHomeResumeBooks } from "./home-dashboard.utils";
 import { describe, expect, it } from "vitest";
 
 import type { PracticeAttemptRow } from "@/features/hanzihome/practice/practice-attempt.schemas";
@@ -230,6 +230,134 @@ describe("Home textbook continuation", () => {
    href: "/hsk/khau-ngu-tc1?lesson=9&tab=practice",
    lessonNumber: 9,
    isRecent: true,
+  });
+ });
+ describe("buildHomeResumeBooks", () => {
+  const textbooks = getTextbookCatalog();
+  const resumeAll = {
+   "catalog:a": { lessonId: "a1", module: "grammar" },
+   "catalog:b": { lessonId: "b1", module: "vocab" },
+   "static:nhip-cau": { lessonId: "nhip-cau-lesson-03", module: "text" },
+   "static:khau-ngu": { lessonId: "khau-ngu-lesson-03", module: "practice" },
+  };
+  const resumeOrder = (settings: Parameters<typeof buildHomeCourseGroups>[2]) =>
+   buildHomeResumeBooks(
+    buildHomeCourseGroups(catalog, textbooks, settings),
+    settings.bookLastStudiedAt,
+   ).map((book) => ({ id: book.id, href: book.lesson?.href }));
+
+  it("orders catalog and static books by real recency, not library order (catalog → static)", () => {
+   const order = resumeOrder({
+    bookResume: resumeAll,
+    bookLastStudiedAt: {
+     "catalog:a": "2026-11-10T08:00:00.000Z",
+     "static:khau-ngu": "2026-11-12T08:00:00.000Z",
+    },
+   });
+   expect(order[0]).toEqual({
+    id: "static:khau-ngu",
+    href: "/hsk/khau-ngu-tc1?lesson=3&tab=practice",
+   });
+   expect(order[1]?.id).toBe("catalog:a");
+   // Books without a recorded time follow in library order.
+   expect(order.slice(2).map((book) => book.id)).toEqual(["catalog:b", "static:nhip-cau"]);
+  });
+
+  it("puts a catalog book first after studying it after a static one (static → catalog)", () => {
+   const order = resumeOrder({
+    bookResume: resumeAll,
+    bookLastStudiedAt: {
+     "static:nhip-cau": "2026-11-10T08:00:00.000Z",
+     "catalog:b": "2026-11-11T08:00:00.000Z",
+    },
+   });
+   expect(order[0]).toEqual({
+    id: "catalog:b",
+    href: "/hanzihome?courseId=hanyu-q3&bookId=b&lesson=1&module=vocab",
+   });
+   expect(order[1]).toEqual({
+    id: "static:nhip-cau",
+    href: "/hsk/nhip-cau-han-ngu?lesson=3&tab=text",
+   });
+  });
+
+  it("makes A the most recent again after A → B → A", () => {
+   const order = resumeOrder({
+    bookResume: resumeAll,
+    bookLastStudiedAt: {
+     "catalog:a": "2026-11-12T09:00:00.000Z",
+     "static:nhip-cau": "2026-11-12T08:30:00.000Z",
+    },
+   });
+   expect(order[0]?.id).toBe("catalog:a");
+  });
+
+  it("never confuses the same lesson number in two books", () => {
+   const order = resumeOrder({
+    bookResume: resumeAll,
+    bookLastStudiedAt: {
+     "static:khau-ngu": "2026-11-12T08:00:00.000Z",
+     "static:nhip-cau": "2026-11-12T09:00:00.000Z",
+    },
+   });
+   expect(order[0]).toEqual({
+    id: "static:nhip-cau",
+    href: "/hsk/nhip-cau-han-ngu?lesson=3&tab=text",
+   });
+   expect(order[1]).toEqual({
+    id: "static:khau-ngu",
+    href: "/hsk/khau-ngu-tc1?lesson=3&tab=practice",
+   });
+  });
+
+  it("keeps the legacy first-recent-book order when no study time was recorded", () => {
+   expect(resumeOrder({ bookResume: resumeAll }).map((book) => book.id)).toEqual([
+    "catalog:a",
+    "catalog:b",
+    "static:nhip-cau",
+    "static:khau-ngu",
+   ]);
+  });
+
+  it("skips an invalid most-recent target instead of promoting another book in its place", () => {
+   const order = resumeOrder({
+    bookResume: {
+     ...resumeAll,
+     "static:doc-hieu": { lessonId: "removed-unit", module: "text" },
+     "static:business-chinese-tm2": { lessonId: "business-chinese-tm2-lesson-03", module: "all" },
+    },
+    bookLastStudiedAt: {
+     "static:doc-hieu": "2026-11-13T08:00:00.000Z",
+     "static:business-chinese-tm2": "2026-11-13T09:00:00.000Z",
+     "removed:book": "2026-11-14T08:00:00.000Z",
+     "catalog:b": "2026-11-12T08:00:00.000Z",
+    },
+   });
+   expect(order.map((book) => book.id)).not.toContain("static:doc-hieu");
+   expect(order.map((book) => book.id)).not.toContain("static:business-chinese-tm2");
+   expect(order[0]).toEqual({
+    id: "catalog:b",
+    href: "/hanzihome?courseId=hanyu-q3&bookId=b&lesson=1&module=vocab",
+   });
+  });
+
+  it("does not change with the library collection/resume arrangement", () => {
+   const studiedAt = {
+    "catalog:b": "2026-11-11T08:00:00.000Z",
+    "static:khau-ngu": "2026-11-12T08:00:00.000Z",
+   };
+   const reordered = resumeOrder({
+    bookResume: resumeAll,
+    bookLastStudiedAt: studiedAt,
+    libraryCollectionOrder: ["static:khau-ngu", "group:hanyu"],
+    libraryResumeOrder: ["catalog:b", "static:khau-ngu"],
+   });
+   expect(reordered).toEqual(resumeOrder({ bookResume: resumeAll, bookLastStudiedAt: studiedAt }));
+   expect(reordered[0]?.id).toBe("static:khau-ngu");
+  });
+
+  it("lists nothing before any lesson was studied", () => {
+   expect(resumeOrder({})).toEqual([]);
   });
  });
 });

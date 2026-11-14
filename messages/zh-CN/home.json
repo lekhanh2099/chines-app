@@ -17,7 +17,8 @@
   "books": "{count} 册",
   "catalogUnavailable": "课程目录暂时无法加载，其他教材仍可使用。",
   "browseLibrary": "浏览全部教材",
-  "empty": "你还没有开始学习。选择一本教材开始吧。"
+  "empty": "你还没有开始学习。选择一本教材开始吧。",
+  "otherBooks": "其他正在学习的教材"
  },
  "modules": {
   "overview": "概览",
@@ -44,7 +45,6 @@
   "reviewNow": "立即复习（{count}）",
   "viewCards": "查看已保存的词卡",
   "resumeLesson": "继续最近的课程",
-  "resumeHint": "直接进入课程学习区",
   "resumeNow": "立即学习",
   "vocabProgress": "个人词汇进度",
   "knownWords": "个词已掌握",

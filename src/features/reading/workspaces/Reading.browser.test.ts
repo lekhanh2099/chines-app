@@ -1934,6 +1934,32 @@ it
       await browserExpect(page.locator("[data-reader-toolbar]")).toHaveCount(1);
      }
     }
+    // Mounted resume effects record the most recently studied book: A → B → A.
+    const mostRecentBook = async () => {
+     const studiedAt =
+      (await page.evaluate(() => window.readingHarness.snapshot())).learningState.settings
+       .bookLastStudiedAt ?? {};
+     return Object.entries(studiedAt).toSorted(([, a], [, b]) => b.localeCompare(a))[0]?.[0];
+    };
+    const bridgeBook = getTextbookCatalog().find((book) => book.key === "nhip-cau");
+    if (!bridgeBook) throw new Error("Missing Nhịp cầu book");
+    await browserExpect.poll(mostRecentBook).toBe(`static:${textbookBook.id}`);
+    await page.evaluate(() => window.readingHarness.mountBusiness("nhip-cau", "vi", "text"));
+    await browserExpect.poll(mostRecentBook).toBe(`static:${bridgeBook.id}`);
+    const savedReadingResume = (await page.evaluate(() => window.readingHarness.snapshot()))
+     .learningState.settings.bookResume?.[`static:${textbookBook.id}`];
+    // Return to the Đọc hiểu lesson/tab that is already saved: it becomes the most recent again.
+    await page.evaluate(() => window.readingHarness.mountBusiness("doc-hieu", "vi", "text"));
+    await browserExpect.poll(mostRecentBook).toBe(`static:${textbookBook.id}`);
+    const settled = await page.evaluate(() => window.readingHarness.snapshot());
+    expect(settled.learningState.settings.bookResume?.[`static:${textbookBook.id}`]).toEqual(
+     savedReadingResume,
+    );
+    // The effect settles after its write instead of writing on every render.
+    await page.waitForTimeout(400);
+    expect(
+     (await page.evaluate(() => window.readingHarness.snapshot())).settingsWrites,
+    ).toHaveLength(settled.settingsWrites.length);
     expect(errors).toEqual([]);
    } finally {
     await browser.close();

@@ -3,6 +3,7 @@
 import { useCallback, useState } from "react";
 import { createPortal } from "react-dom";
 import { FolderPlus, PictureInPicture2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import { Typography } from "@/components/ui/display/typography";
@@ -20,6 +21,7 @@ import { CustomVocabVaultManager } from "./CustomVocabVaultManager";
 import { UniversalAmbientPip, type UniversalPipMode } from "./UniversalAmbientPip";
 import { UnifiedVocabStudyHubInlineFlow } from "./UnifiedVocabStudyHubInlineFlow";
 import {
+ AnyLessonScopeSelect,
  BookmarkedLessonScopeSelect,
  ItVocabScopeSelect,
 } from "./UnifiedVocabStudyHubScopeSelects";
@@ -37,6 +39,7 @@ export function UnifiedVocabStudyHub({
  defaultSource = "bookmarked-lessons",
  defaultOpenInline = false,
 }: UnifiedVocabStudyHubProps) {
+ const tAnyLesson = useTranslations("BusinessChinese.vocabHub.anyLesson");
  const {
   learning,
   customVocabItems,
@@ -50,6 +53,7 @@ export function UnifiedVocabStudyHub({
   setItSelection,
   bookmarkedSelection,
   setBookmarkedSelection,
+  anyLesson,
   activeBundle,
  } = useVocabStudyHubDeck({ defaultSource });
 
@@ -90,7 +94,16 @@ export function UnifiedVocabStudyHub({
    ? `Bài đã mark (${totalBookmarkedLessons})`
    : sourceMode === "it-quick"
      ? `Học nhanh IT (${itCorpus.meta.vocabCount})`
-     : `Kho riêng (${customVocabItems.length})`;
+     : sourceMode === "lessons"
+       ? tAnyLesson("source")
+       : `Kho riêng (${customVocabItems.length})`;
+
+ // The "any lesson" source shows its placeholder/loading/error/missing/empty
+ // state instead of a deck summary, so no stale counts appear under a new pick.
+ const headingText =
+  sourceMode === "lessons" && anyLesson.status
+   ? anyLesson.status
+   : `${activeBundle.title} · ${activeBundle.vocabItems.length} từ, ${activeBundle.practiceItems.length} bài tập`;
 
  const bookmarkedSelectionLabel =
   bookmarkedSelection === "all"
@@ -130,13 +143,21 @@ export function UnifiedVocabStudyHub({
          </SelectItem>
          <SelectItem value="it-quick">{`Học nhanh IT (${itCorpus.meta.vocabCount})`}</SelectItem>
          <SelectItem value="custom-vault">{`Kho riêng (${customVocabItems.length})`}</SelectItem>
+         <SelectItem value="lessons">{tAnyLesson("source")}</SelectItem>
         </SelectGroup>
        </SelectContent>
       </Select>
      </div>
 
-     <Typography id="unified-vocab-hub-heading" as="h3" variant="body" weight="black" clamp="one">
-      {`${activeBundle.title} · ${activeBundle.vocabItems.length} từ, ${activeBundle.practiceItems.length} bài tập`}
+     <Typography
+      id="unified-vocab-hub-heading"
+      as="h3"
+      variant="body"
+      weight="black"
+      clamp="one"
+      aria-live="polite"
+     >
+      {headingText}
      </Typography>
     </div>
 
@@ -161,6 +182,8 @@ export function UnifiedVocabStudyHub({
         setItSelection={setItSelection}
        />
       ) : null}
+
+      {sourceMode === "lessons" ? <AnyLessonScopeSelect anyLesson={anyLesson} /> : null}
 
       {sourceMode === "custom-vault" ? (
        <Button

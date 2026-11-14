@@ -306,6 +306,52 @@ describe("learning-state local-first sync", () => {
   expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
  });
 
+ it("rebases a local book study time over remote study of another book after a conflict", async () => {
+  const localState: UserLearningState = {
+   ...emptyLearningState,
+   settings: {
+    bookResume: { "static:nhip-cau": { lessonId: "nhip-cau-lesson-03", module: "text" } },
+    bookLastStudiedAt: { "static:nhip-cau": "2026-07-14T00:00:01.000Z" },
+   },
+  };
+  const remoteState: UserLearningState = {
+   ...emptyLearningState,
+   settings: {
+    density: "compact",
+    bookResume: { "catalog:a": { lessonId: "a1", module: "vocab" } },
+    bookLastStudiedAt: { "catalog:a": "2026-07-14T00:00:00.500Z" },
+   },
+  };
+  const localMutation = { ...pendingMutation, payload: localState };
+  store.list.mockReset();
+  store.list.mockResolvedValueOnce([localMutation]).mockResolvedValue([]);
+  store.markSyncing.mockResolvedValue(localMutation);
+  store.readPending.mockImplementation(() =>
+   Promise.resolve(store.rebaseMutationAtomic.mock.results.at(-1)?.value ?? localMutation),
+  );
+  api.save
+   .mockRejectedValueOnce(new api.ApiError(409))
+   .mockImplementation((state) =>
+    Promise.resolve({ state, updatedAt: "2026-07-14T00:00:03.000Z" }),
+   );
+  api.fetch.mockResolvedValue({ state: remoteState, updatedAt: "2026-07-14T00:00:02.000Z" });
+
+  await syncPendingLearningStateMutations(ownerUserId);
+
+  const merged = store.rebaseMutationAtomic.mock.calls[0]?.[0]?.mergedState;
+  expect(merged?.settings).toMatchObject({
+   density: "compact",
+   bookResume: {
+    "catalog:a": { lessonId: "a1", module: "vocab" },
+    "static:nhip-cau": { lessonId: "nhip-cau-lesson-03", module: "text" },
+   },
+   bookLastStudiedAt: {
+    "catalog:a": "2026-07-14T00:00:00.500Z",
+    "static:nhip-cau": "2026-07-14T00:00:01.000Z",
+   },
+  });
+ });
+
  it("keeps unrelated remote fields while applying local field changes", () => {
   const local: UserLearningState = {
    ...emptyLearningState,

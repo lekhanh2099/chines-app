@@ -17,7 +17,7 @@ export function HomeDashboardSkeleton() {
      <div className="h-5 w-full max-w-96 rounded-md bg-bg-subtle" />
     </div>
 
-    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] xl:items-stretch">
+    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.4fr)_minmax(22rem,1fr)] xl:items-start">
      <Card variant="section" padding="md" className="grid min-w-0 animate-pulse gap-3">
       <div className="flex items-center justify-between gap-2">
        <div className="h-4 w-36 rounded-md bg-bg-subtle" />
@@ -49,7 +49,7 @@ export function HomeDashboardSkeleton() {
      </Card>
     </div>
 
-    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.75fr)] xl:items-start">
+    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.4fr)_minmax(22rem,1fr)] xl:items-start">
      <div className="grid min-w-0 gap-4 sm:gap-5">
       <Card variant="section" padding="lg" className="grid min-w-0 animate-pulse gap-5">
        <div className="grid gap-2">

@@ -92,5 +92,22 @@
   "pipActiveTitle": "Reviewing in floating window",
   "pipActiveDescription": "Review session is currently running in the Picture-in-Picture window. You can browse other lesson sections or switch to other apps.",
   "pipReturn": "Bring back to page (Close floating window)"
+ },
+ "vocabHub": {
+  "anyLesson": {
+   "source": "Pick any lesson",
+   "selectLabel": "Pick any lesson",
+   "placeholder": "Choose a lesson to study",
+   "groupLabel": "{course} · {book}",
+   "lessonOption": "Lesson {number}: {title}",
+   "bundleTitle": "{book} · {lesson}",
+   "summariesLoading": "Loading lessons…",
+   "summariesError": "Part of the lesson list could not be loaded.",
+   "loading": "Loading lesson…",
+   "error": "This lesson could not be loaded.",
+   "missing": "The selected lesson was not found.",
+   "empty": "This lesson has no vocabulary to study in PiP yet.",
+   "retry": "Retry"
+  }
  }
 }

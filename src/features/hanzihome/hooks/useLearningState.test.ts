@@ -100,6 +100,38 @@ describe("A2 — Learning/Review Durability and Retry Intent Recovery", () => {
   });
  });
 
+ it("queues book study times per book alongside resume targets without replacing siblings", async () => {
+  localFirst.save.mockResolvedValue(undefined);
+  function Actions() {
+   const learning = useLearningState();
+   learning.updateSettings({
+    bookResume: { "catalog:a": { lessonId: "a1", module: "vocab" } },
+    bookLastStudiedAt: { "catalog:a": "2026-11-12T08:00:00.000Z" },
+   });
+   learning.updateSettings({
+    bookResume: { "static:nhip-cau": { lessonId: "nhip-cau-lesson-03", module: "text" } },
+    bookLastStudiedAt: { "static:nhip-cau": "2026-11-12T09:00:00.000Z" },
+   });
+   return null;
+  }
+  renderToStaticMarkup(
+   createElement(QueryClientProvider, { client: queryClient }, createElement(Actions)),
+  );
+  await vi.waitFor(() => expect(localFirst.save).toHaveBeenCalledTimes(2));
+  expect(localFirst.save.mock.calls[1]?.[2]).toMatchObject({
+   settings: {
+    bookResume: {
+     "catalog:a": { lessonId: "a1", module: "vocab" },
+     "static:nhip-cau": { lessonId: "nhip-cau-lesson-03", module: "text" },
+    },
+    bookLastStudiedAt: {
+     "catalog:a": "2026-11-12T08:00:00.000Z",
+     "static:nhip-cau": "2026-11-12T09:00:00.000Z",
+    },
+   },
+  });
+ });
+
  afterEach(() => {
   queryClient.clear();
  });

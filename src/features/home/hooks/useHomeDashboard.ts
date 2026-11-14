@@ -16,7 +16,7 @@ import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { useRecentNotes } from "@/features/notes/hooks/useRecentNotes";
 import { fetchHomeLearningOverview } from "@/features/home/home-learning-overview-api";
 import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
-import { buildHomeCourseGroups } from "@/features/home/home-dashboard.utils";
+import { buildHomeCourseGroups, buildHomeResumeBooks } from "@/features/home/home-dashboard.utils";
 import { buildHomeRecentActivity } from "@/features/home/home-dashboard.utils";
 import type { HomeDashboardModel } from "@/features/home/types";
 
@@ -88,8 +88,11 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
    },
   });
 
+  const courses = buildHomeCourseGroups(catalog, textbooks, learning.state.settings);
+
   return {
-   courses: buildHomeCourseGroups(catalog, textbooks, learning.state.settings),
+   courses,
+   resumeBooks: buildHomeResumeBooks(courses, learning.state.settings.bookLastStudiedAt),
    catalogUnavailable: catalogQuery.isError,
    learningPulse: {
     trackedCount: progressItems.length,

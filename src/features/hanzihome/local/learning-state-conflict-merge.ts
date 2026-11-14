@@ -5,6 +5,7 @@ import type {
  UserLearningState,
 } from "@/features/hanzihome/types";
 import {
+ bookStudiedAtMs,
  defaultLessonTextDisplaySettings,
  defaultTextbookDisplaySettings,
  normalizeLearningState,
@@ -168,6 +169,19 @@ function mergeCustomVocabList(
  return Array.from(mergedMap.values());
 }
 
+/** Per book, the later study time wins; books only one side knows are kept. */
+function mergeLatestTimestamps(
+ local: UserLearningState["settings"]["bookLastStudiedAt"],
+ remote: UserLearningState["settings"]["bookLastStudiedAt"],
+): UserLearningState["settings"]["bookLastStudiedAt"] {
+ if (!local && !remote) return undefined;
+ const merged = { ...remote };
+ for (const [key, studiedAt] of Object.entries(local ?? {})) {
+  if (bookStudiedAtMs(studiedAt) > bookStudiedAtMs(merged[key])) merged[key] = studiedAt;
+ }
+ return merged;
+}
+
 function reviewKey(item: UserLearningState["reviewHistory"][number]) {
  return `${item.type}:${item.id}:${item.result}:${item.answeredAt}`;
 }
@@ -179,6 +193,8 @@ function reviewKey(item: UserLearningState["reviewHistory"][number]) {
  * - scalar settings merge per field; a same-field conflict keeps the pending local intent;
  * - collection and resume orders compare IDs by position; changed local sequences win as a whole;
  * - lesson display settings merge per nested field against the product defaults when absent;
+ * - per-book study times (`bookLastStudiedAt`) keep the later timestamp per book, so recency
+ *   from either generation survives and the most recent book is the same on every device;
  * - bookmark arrays are membership sets: local add/remove deltas apply to the latest remote set;
  * - progress items are atomic review snapshots. If both sides changed the same item, the later
  *   valid `lastReviewedAt` wins; an exact/missing timestamp tie keeps the pending local intent;
@@ -268,6 +284,11 @@ export function mergeLearningStateAfterConflict({
   }
  }
  if (Object.keys(bookResume).length) settings.bookResume = bookResume;
+ const bookLastStudiedAt = mergeLatestTimestamps(
+  local.settings.bookLastStudiedAt,
+  remote.settings.bookLastStudiedAt,
+ );
+ if (bookLastStudiedAt) settings.bookLastStudiedAt = bookLastStudiedAt;
  const mergedCustomVocab = mergeCustomVocabList(
   base.settings.customVocab,
   local.settings.customVocab,
