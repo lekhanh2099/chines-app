@@ -26,7 +26,7 @@ import { Button } from "@/components/ui/actions/button";
 import { getPolyphonicAlternatives } from "@/lib/pronunciation/pinyin-engine";
 
 /* ── Serialized shape (stored in Supabase JSONB) ── */
-export type SerializedPinyinNode = Spread<
+type SerializedPinyinNode = Spread<
  {
   chinese: string;
   pinyin: string;

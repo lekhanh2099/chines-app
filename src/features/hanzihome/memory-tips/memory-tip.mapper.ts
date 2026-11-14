@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { memoryTipSchema, type MemoryTip } from "./memory-tip.schema";
 
-export const memoryTipRowSchema = z.object({
+const memoryTipRowSchema = z.object({
  id: z.string(),
  owner_id: z.string().nullable(),
  scope: z.enum(["system", "user"]),

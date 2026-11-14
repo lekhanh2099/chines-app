@@ -9,9 +9,9 @@ import { deriveAiConversationRelationshipBand } from "../model/ai-conversation-r
 
 export { deriveAiConversationRelationshipBand as deriveRelationshipBand } from "../model/ai-conversation-relationship";
 
-export type AiConversationLearnerLevel = "beginner" | "intermediate" | "advanced";
+type AiConversationLearnerLevel = "beginner" | "intermediate" | "advanced";
 
-export type AiConversationCharacterContext = {
+type AiConversationCharacterContext = {
  id: string;
  displayName: string;
  city: string;
@@ -23,13 +23,13 @@ export type AiConversationCharacterContext = {
  identityNotes: string;
 };
 
-export type AiConversationRelationshipContext = {
+type AiConversationRelationshipContext = {
  nickname: string;
  familiarityScore: number;
  revision: number;
 };
 
-export type AiConversationThreadContext = {
+type AiConversationThreadContext = {
  id: string;
  characterId: string;
  mode: AiConversationMode;
@@ -47,7 +47,7 @@ export type AiConversationContextState = {
  learnerLevel: AiConversationLearnerLevel;
 };
 
-export type AiConversationProviderContext = {
+type AiConversationProviderContext = {
  systemPrompt: string;
  messages: AiConversationPersistedMessage[];
 };

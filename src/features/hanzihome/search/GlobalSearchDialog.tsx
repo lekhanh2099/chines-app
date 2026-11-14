@@ -1,20 +1,9 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useDeferredValue, useId, useMemo, useState } from "react";
-import {
- BookOpenCheck,
- Compass,
- GraduationCap,
- Languages,
- LoaderCircle,
- NotebookPen,
- Search,
- Shapes,
- X,
-} from "lucide-react";
+import { useId, useState } from "react";
+import { Compass, LoaderCircle, Search, X } from "lucide-react";
 
-import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import {
  Dialog,
@@ -23,30 +12,23 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/overlays/dialog";
-import { IconTile } from "@/components/ui/display/icon-tile";
 import { Input } from "@/components/ui/forms/input";
 import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import { Typography } from "@/components/ui/display/typography";
 import { containsChinese } from "@/lib/text/chinese-utils";
 
 import {
- countSearchResultCategories,
- filterSearchResultCategory,
- selectSearchNavigationItems,
- searchHanziHomeIndex,
-} from "./searchHanziHomeIndex";
+ CATEGORIES,
+ SearchCategoryTabs,
+ SearchCommandFooter,
+ SearchDirectLookupAction,
+ SearchQuickAccessShortcuts,
+ useSearchQuickAccessItems,
+} from "./GlobalSearchDialogParts";
+import { emptySearchCategoryCounts } from "./search-results";
 import { SearchResultItem } from "./SearchResultItem";
-import type { HanziHomeSearchCategory, HanziHomeSearchIndexItem } from "./types";
-import { useHanziHomeSearchIndex } from "./useHanziHomeSearchIndex";
-
-const CATEGORIES: HanziHomeSearchCategory[] = [
- "all",
- "vocab",
- "grammar",
- "exercise",
- "lesson",
- "radical",
-];
+import type { HanziHomeSearchCategory, HanziHomeSearchResultItem } from "./types";
+import { useHanziHomeSearch } from "./useHanziHomeSearch";
 
 type GlobalSearchDialogProps = {
  open: boolean;
@@ -55,7 +37,7 @@ type GlobalSearchDialogProps = {
  lessonId?: string;
  onOpenChange: (open: boolean) => void;
  onQueryChange: (query: string) => void;
- onOpenResult: (item: HanziHomeSearchIndexItem) => void;
+ onOpenResult: (item: HanziHomeSearchResultItem) => void;
  onDirectLookup: (query: string) => void;
 };
 
@@ -73,32 +55,20 @@ export function GlobalSearchDialog({
  const [selectedIndex, setSelectedIndex] = useState(0);
  const [selectedCategory, setSelectedCategory] = useState<HanziHomeSearchCategory>("all");
  const listboxId = useId();
- const deferredQuery = useDeferredValue(query);
- const searchIndex = useHanziHomeSearchIndex(open);
-
- const allResults = useMemo(
-  () =>
-   searchHanziHomeIndex(searchIndex.data ?? [], deferredQuery, {
-    courseId,
-    lessonId,
-    includeGlobal: true,
-    limit: 60,
-   }),
-  [courseId, deferredQuery, lessonId, searchIndex.data],
- );
-
- const categoryCounts = useMemo(() => countSearchResultCategories(allResults), [allResults]);
- const visibleResults = useMemo(
-  () => filterSearchResultCategory(allResults, selectedCategory),
-  [allResults, selectedCategory],
- );
- const initialNavigationItems = useMemo(
-  () => selectSearchNavigationItems(searchIndex.data ?? [], { courseId, lessonId }),
-  [courseId, lessonId, searchIndex.data],
- );
-
  const trimmedQuery = query.trim();
  const isSearching = trimmedQuery.length > 0;
+ const search = useHanziHomeSearch({
+  enabled: open,
+  query,
+  category: selectedCategory,
+  courseId,
+  lessonId,
+ });
+ const visibleResults = isSearching ? (search.data?.results ?? []) : [];
+ const categoryCounts = search.data?.counts ?? emptySearchCategoryCounts();
+ const highlightQuery = search.data?.query ?? trimmedQuery;
+ const initialNavigationItems = useSearchQuickAccessItems();
+
  const displayItemsCount = isSearching ? visibleResults.length : initialNavigationItems.length;
  const safeSelectedIndex = Math.min(selectedIndex, Math.max(displayItemsCount - 1, 0));
  const activeOptionId =
@@ -186,7 +156,7 @@ export function GlobalSearchDialog({
       className="w-full"
      />
      <div className="absolute right-3.5 top-1/2 flex -translate-y-1/2 items-center gap-1.5">
-      {searchIndex.isFetching ? (
+      {isSearching && search.isUpdating ? (
        <LoaderCircle className="size-4 animate-spin text-text-muted" />
       ) : null}
       {isSearching ? (
@@ -208,77 +178,28 @@ export function GlobalSearchDialog({
     </div>
 
     {/* Category Filter Tabs */}
-    <div className="flex items-center gap-1 overflow-x-auto border-b border-border-default bg-bg-subtle/40 px-3 py-1.5 scrollbar-none">
-     {CATEGORIES.map((cat) => {
-      const isSelected = selectedCategory === cat;
-      const count = categoryCounts[cat];
-
-      return (
-       <Button
-        key={cat}
-        type="button"
-        variant={isSelected ? "active" : "ghost"}
-        size="compact"
-        onClick={() => {
-         setSelectedCategory(cat);
-         setSelectedIndex(0);
-        }}
-       >
-        <span>{t(`categories.${cat}`)}</span>
-        {isSearching && count > 0 ? (
-         <Badge size="sm" variant={isSelected ? "default" : "default"}>
-          {count}
-         </Badge>
-        ) : null}
-       </Button>
-      );
-     })}
-    </div>
+    <SearchCategoryTabs
+     selectedCategory={selectedCategory}
+     categoryCounts={categoryCounts}
+     isSearching={isSearching}
+     onSelectCategory={(cat) => {
+      setSelectedCategory(cat);
+      setSelectedIndex(0);
+     }}
+    />
 
     {/* Direct Dictionary Lookup Quick Action */}
     {canLookupDirectly ? (
-     <div className="border-b border-border-default p-2">
-      <Button
-       type="button"
-       onClick={() => onDirectLookup(trimmedQuery)}
-       variant="ghost"
-       align="start"
-       layout="grid"
-       className="w-full grid-cols-[2.25rem_minmax(0,1fr)_auto]"
-      >
-       <IconTile tone="accent" size="sm">
-        <BookOpenCheck />
-       </IconTile>
-       <span className="grid min-w-0 gap-0.5">
-        <span className="flex items-center gap-2">
-         <Typography as="span" variant="label" tone="default" weight="bold">
-          {t.rich("lookupTitle", {
-           term: trimmedQuery,
-           hanzi: (chunks) => <span className="font-hanzi text-primary">{chunks}</span>,
-          })}
-         </Typography>
-         <Badge size="sm" variant="accent">
-          {t("dictionary")}
-         </Badge>
-        </span>
-        <Typography as="span" variant="bodySmall" tone="muted" weight="medium">
-         {t("lookupDescription")}
-        </Typography>
-       </span>
-       <kbd className="rounded border border-border-default bg-bg-subtle px-2 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
-        ↵ Enter
-       </kbd>
-      </Button>
-     </div>
+     <SearchDirectLookupAction term={trimmedQuery} onLookup={onDirectLookup} />
     ) : null}
 
-    {searchIndex.isError ? (
+    {isSearching && search.isError ? (
      <QueryErrorCard
       title={t("loadError")}
       description={t("loadErrorDescription")}
       retryLabel={t("retry")}
       onRetry={() => {
-       void searchIndex.refetch();
+       void search.refetch();
       }}
      />
     ) : null}
@@ -297,15 +218,16 @@ export function GlobalSearchDialog({
          key={result.item.id}
          id={`${listboxId}-option-${index}`}
          item={result.item}
-         query={deferredQuery}
+         query={highlightQuery}
          matchedSnippet={result.matchedSnippet}
+         matchedText={result.matchedText}
          selected={index === safeSelectedIndex}
          onSelect={() => setSelectedIndex(index)}
          onOpen={() => onOpenResult(result.item)}
         />
        ))}
 
-       {!searchIndex.isLoading && !searchIndex.isError && visibleResults.length === 0 && (
+       {search.isCurrent && !search.isError && visibleResults.length === 0 && (
         <div className="grid gap-2 px-4 py-12 text-center">
          <Typography variant="label" tone="default" weight="bold">
           {t("empty", { category: t(`categories.${selectedCategory}`) })}
@@ -336,81 +258,13 @@ export function GlobalSearchDialog({
         />
        ))}
 
-       <div className="grid grid-cols-2 gap-2 border-t border-border-default px-2 pt-3 sm:grid-cols-4">
-        <Button
-         type="button"
-         variant="ghost"
-         size="compact"
-         onClick={() => handleQueryChange("bộ thủ")}
-         className="justify-start gap-2"
-        >
-         <Shapes className="size-3.5 text-accent-text" />
-         <span>{t("shortcuts.radicals")}</span>
-        </Button>
-        <Button
-         type="button"
-         variant="ghost"
-         size="compact"
-         onClick={() => handleQueryChange("ngữ pháp")}
-         className="justify-start gap-2"
-        >
-         <GraduationCap className="size-3.5 text-info-text" />
-         <span>{t("categories.grammar")}</span>
-        </Button>
-        <Button
-         type="button"
-         variant="ghost"
-         size="compact"
-         onClick={() => handleQueryChange("từ vựng")}
-         className="justify-start gap-2"
-        >
-         <Languages className="size-3.5 text-accent-text" />
-         <span>{t("categories.vocab")}</span>
-        </Button>
-        <Button
-         type="button"
-         variant="ghost"
-         size="compact"
-         onClick={() => handleQueryChange("ghi chú")}
-         className="justify-start gap-2"
-        >
-         <NotebookPen className="size-3.5 text-text-secondary" />
-         <span>{t("kinds.note")}</span>
-        </Button>
-       </div>
+       <SearchQuickAccessShortcuts onQueryChange={handleQueryChange} />
       </>
      )}
     </div>
 
     {/* Command Palette Footer */}
-    <div className="flex items-center justify-between border-t border-border-default bg-bg-subtle/30 px-4 py-2 text-xs text-text-muted">
-     <div className="flex items-center gap-3">
-      <span className="flex items-center gap-1">
-       <kbd className="rounded border border-border-default bg-bg-card px-1.5 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
-        ↑↓
-       </kbd>
-       <span>{t("move")}</span>
-      </span>
-      <span className="flex items-center gap-1">
-       <kbd className="rounded border border-border-default bg-bg-card px-1.5 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
-        ↵
-       </kbd>
-       <span>{t("select")}</span>
-      </span>
-      <span className="flex items-center gap-1">
-       <kbd className="rounded border border-border-default bg-bg-card px-1.5 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
-        Tab
-       </kbd>
-       <span>{t("changeCategory")}</span>
-      </span>
-     </div>
-     <span className="flex items-center gap-1">
-      <kbd className="rounded border border-border-default bg-bg-card px-1.5 py-0.5 font-mono text-[0.65rem] font-semibold text-text-secondary">
-       Esc
-      </kbd>
-      <span>{t("close")}</span>
-     </span>
-    </div>
+    <SearchCommandFooter />
    </DialogContent>
   </Dialog>
  );

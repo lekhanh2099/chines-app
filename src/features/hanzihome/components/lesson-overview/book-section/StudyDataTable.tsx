@@ -3,7 +3,7 @@ import type { LessonDisplayMode } from "../types";
 import { AdaptiveStudyText } from "../hanzi-typography";
 import { answerToString, asRecord, stringValue } from "../utils";
 
-export type StudyTableData = {
+type StudyTableData = {
  id: string;
  columns: string[];
  rows: string[][];

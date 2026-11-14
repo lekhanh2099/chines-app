@@ -29,7 +29,7 @@ import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandari
 import type { CustomVocabItem } from "@/features/hanzihome/types";
 import { parseBulkCustomVocabInput } from "./vocab-hub-custom";
 
-export type CustomVocabVaultManagerProps = {
+type CustomVocabVaultManagerProps = {
  readonly items: readonly CustomVocabItem[];
  readonly onAddItems: (items: readonly Omit<CustomVocabItem, "id" | "createdAt">[]) => void;
  readonly onUpdateItem: (

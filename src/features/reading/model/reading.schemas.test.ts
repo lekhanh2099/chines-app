@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
- parseReaderExerciseItemRow,
+ parsedReaderExerciseItemRowSchema,
  readerExerciseItemRowSchema,
 } from "@/features/reading/model/reading-exercise.schemas";
 import { readerAnnotationRowSchema } from "@/features/reading/model/reading-annotation.schemas";
@@ -31,7 +31,7 @@ describe("HanziHome Reader row contracts", () => {
    const row = readerExerciseItemRowSchema.parse(source);
    expect(parsedHumanitiesExerciseItemRowSchema.parse(row)).toEqual(source);
    if (row.payload.source !== undefined) {
-    expect(() => parseReaderExerciseItemRow(row), row.id).toThrow();
+    expect(() => parsedReaderExerciseItemRowSchema.parse(row), row.id).toThrow();
    }
    expect(
     parsedHumanitiesExerciseItemRowSchema.safeParse({
@@ -98,8 +98,10 @@ describe("HanziHome Reader row contracts", () => {
    updated_at: "2026-08-14T00:00:00Z",
   });
   expect(readerExerciseItemRowSchema.safeParse(row).success).toBe(true);
-  expect(parseReaderExerciseItemRow(row).payload.answer).toBe("A");
-  expect(() => parseReaderExerciseItemRow({ ...row, item_type: "true_false" })).toThrow();
+  expect(parsedReaderExerciseItemRowSchema.parse(row).payload.answer).toBe("A");
+  expect(() =>
+   parsedReaderExerciseItemRowSchema.parse({ ...row, item_type: "true_false" }),
+  ).toThrow();
  });
 
  it("requires a valid paragraph or PDF asset annotation target and range", () => {

@@ -43,8 +43,8 @@ export async function invalidateHanziHomeContent({
  }
 
  // Search results include every content family; a delete/restore/edit must not
- // stay searchable from the client cache (staleTime 10 min, gcTime infinite).
- await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.searchIndex });
+ // stay searchable from cached global-search results.
+ await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.searchRoot });
 
  if (!catalogEntityTypes.has(entityType)) return;
 

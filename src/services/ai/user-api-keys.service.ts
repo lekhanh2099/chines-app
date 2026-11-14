@@ -47,14 +47,14 @@ export type UserApiKeyCredential = z.infer<
  }>
 >;
 
-export type CreateUserApiKeyResult = z.infer<
+type CreateUserApiKeyResult = z.infer<
  z.ZodObject<{
   key: z.ZodNullable<z.ZodType<UserApiKey>>;
   error: z.ZodNullable<z.ZodString>;
  }>
 >;
 
-export type UserApiKeysSchemaStatus = z.infer<
+type UserApiKeysSchemaStatus = z.infer<
  z.ZodObject<{
   ready: z.ZodBoolean;
   reason: z.ZodEnum<{
@@ -305,7 +305,7 @@ function decryptActiveCredentials(rows: readonly DbUserApiKey[]): UserApiKeyCred
  return sortRuntimeCredentials(credentials);
 }
 
-export type UserApiKeyInventory = {
+type UserApiKeyInventory = {
  schemaStatus: UserApiKeysSchemaStatus;
  keys: UserApiKey[];
  /** Decrypts lazily so callers can skip it when BYOK encryption is unavailable. */
@@ -505,7 +505,7 @@ export async function moveUserApiKey(
  return resequenceUserApiKeys(supabase, userId);
 }
 
-export async function resequenceUserApiKeys(
+async function resequenceUserApiKeys(
  supabase: AppSupabaseClient,
  userId: string,
 ): Promise<UserApiKey[]> {

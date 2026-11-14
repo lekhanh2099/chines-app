@@ -450,8 +450,8 @@ export type PurgeableCanonicalEntityType = Extract<
  RestorableCanonicalEntityType,
  z.infer<typeof PurgeableCanonicalEntityTypeSchema>
 >;
-export const PurgeableCanonicalEntityTypeSchema = z.enum(["course", "book", "lesson"]);
-export const ReorderDirectionSchema = z.union([z.literal(-1), z.literal(1)]);
+const PurgeableCanonicalEntityTypeSchema = z.enum(["course", "book", "lesson"]);
+const ReorderDirectionSchema = z.union([z.literal(-1), z.literal(1)]);
 export type ReorderDirection = z.infer<typeof ReorderDirectionSchema>;
 
 export async function purgeDeletedCanonicalContent({

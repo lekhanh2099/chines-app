@@ -3,7 +3,7 @@ import "server-only";
 import { listReaderDocuments } from "@/features/reading/repositories/reading-content.repository";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role.server";
 
-export type HomeLearningOverview = {
+type HomeLearningOverview = {
  srsDueCount: number;
  learningLoopDueCount: number;
  readerCompletedCount: number;

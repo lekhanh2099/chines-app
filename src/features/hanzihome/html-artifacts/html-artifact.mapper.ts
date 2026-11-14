@@ -10,7 +10,7 @@ import {
  type HtmlArtifactSummary,
 } from "./html-artifact.schema";
 
-export const htmlArtifactRowSchema = z.object({
+const htmlArtifactRowSchema = z.object({
  id: z.string(),
  owner_id: z.string(),
  folder_id: z.string().nullable(),
@@ -22,7 +22,7 @@ export const htmlArtifactRowSchema = z.object({
  updated_at: z.string(),
 });
 
-export const htmlArtifactFolderRowSchema = z.object({
+const htmlArtifactFolderRowSchema = z.object({
  id: z.string(),
  owner_id: z.string(),
  parent_folder_id: z.string().nullable().optional(),
@@ -33,7 +33,7 @@ export const htmlArtifactFolderRowSchema = z.object({
  updated_at: z.string(),
 });
 
-export type HtmlArtifactRow = z.infer<typeof htmlArtifactRowSchema>;
+type HtmlArtifactRow = z.infer<typeof htmlArtifactRowSchema>;
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 function mapBase(row: HtmlArtifactRow) {
@@ -49,7 +49,7 @@ function mapBase(row: HtmlArtifactRow) {
  };
 }
 
-export function mapHtmlArtifactSummaryRow(row: JsonFieldValue): HtmlArtifactSummary {
+function mapHtmlArtifactSummaryRow(row: JsonFieldValue): HtmlArtifactSummary {
  const parsed = htmlArtifactRowSchema.parse(row);
 
  return htmlArtifactSummarySchema.parse(mapBase(parsed));

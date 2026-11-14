@@ -24,7 +24,7 @@ const progressPayloadSchema = z.strictObject({
  expectedRevision: z.number().int().nonnegative(),
 });
 
-export type ReaderProgressPayload = z.output<typeof progressPayloadSchema>;
+type ReaderProgressPayload = z.output<typeof progressPayloadSchema>;
 export type ReaderStateBootstrap = z.output<typeof readerStateResponseSchema>;
 
 export class ReaderProgressConflictError extends Error {

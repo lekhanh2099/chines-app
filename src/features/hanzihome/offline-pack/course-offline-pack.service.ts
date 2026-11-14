@@ -28,7 +28,7 @@ export interface CourseOfflineStatusResult {
  totalLessonsCount: number;
 }
 
-export interface DownloadCourseOfflinePackParams {
+interface DownloadCourseOfflinePackParams {
  courseId: string;
  userId: string;
  lessonIds?: string[];
@@ -36,7 +36,7 @@ export interface DownloadCourseOfflinePackParams {
  signal?: AbortSignal;
 }
 
-export interface DownloadCourseOfflinePackResult {
+interface DownloadCourseOfflinePackResult {
  success: boolean;
  downloadedCount: number;
  skippedCount: number;

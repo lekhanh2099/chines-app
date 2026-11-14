@@ -46,7 +46,6 @@ export type ContentCacheRecord<T = JsonFieldValue> = {
 };
 
 export const MAX_CACHE_ENTRIES_PER_OWNER = 250;
-export const TARGET_CACHE_ENTRIES_PER_OWNER = 200;
 
 function isDeletedContentCacheRecord(
  record: z.output<typeof ContentCacheRecordBaseSchema>,
@@ -388,39 +387,6 @@ export async function deleteContentCache(
   };
   cacheStore.put(tombstone);
  });
-}
-
-export async function clearContentCacheForOwner(ownerId: string): Promise<void> {
- const allEntries = await getAllFromStoreMatching(
-  HANZIHOME_LOCAL_STORES.contentCache,
-  ContentCacheRecordBaseSchema,
- );
- for (const entry of allEntries) {
-  if (entry.ownerId === ownerId && !isDeletedContentCacheRecord(entry)) {
-   await deleteContentCache(entry.ownerId, entry.resourceType, entry.resourceId).catch(() => {});
-  }
- }
-}
-
-export async function getContentCacheFootprint(
- ownerId: string,
-): Promise<{ entryCount: number; totalBytes: number }> {
- const allEntries = await getAllFromStoreMatching(
-  HANZIHOME_LOCAL_STORES.contentCache,
-  ContentCacheRecordBaseSchema,
- );
-
- let entryCount = 0;
- let totalBytes = 0;
-
- for (const entry of allEntries) {
-  if (entry.ownerId === ownerId && !isDeletedContentCacheRecord(entry)) {
-   entryCount++;
-   totalBytes += entry.metadata.byteSize;
-  }
- }
-
- return { entryCount, totalBytes };
 }
 
 export async function pruneContentCacheForOwner(params: {

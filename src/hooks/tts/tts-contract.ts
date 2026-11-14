@@ -16,7 +16,7 @@ export const TTS_AUTH_ERROR_MESSAGE =
 export const DEFAULT_MANDARIN_VOICE = "zh-CN-XiaoxiaoNeural";
 export const MANDARIN_VOICE_STORAGE_KEY = "mandarin_voice_pref";
 
-export const ttsPlaybackResultSchema = z.strictObject({
+const ttsPlaybackResultSchema = z.strictObject({
  completed: z.boolean(),
  cancelled: z.boolean(),
 });

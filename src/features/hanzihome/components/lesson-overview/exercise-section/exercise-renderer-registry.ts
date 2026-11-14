@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const ExerciseRendererFamilySchema = z.enum([
+const ExerciseRendererFamilySchema = z.enum([
  "phonetics",
  "substitution",
  "fill_blank",
@@ -17,9 +17,9 @@ export const ExerciseRendererFamilySchema = z.enum([
  "source_question",
  "generic",
 ]);
-export type ExerciseRendererFamily = z.infer<typeof ExerciseRendererFamilySchema>;
+type ExerciseRendererFamily = z.infer<typeof ExerciseRendererFamilySchema>;
 
-export type ExerciseRendererMeta = {
+type ExerciseRendererMeta = {
  family: ExerciseRendererFamily;
  label: string;
 };

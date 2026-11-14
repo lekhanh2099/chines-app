@@ -33,8 +33,8 @@ export const EditableEntityTypeSchema = z.enum([
 ]);
 export const editableEntityTypes = EditableEntityTypeSchema.options;
 
-export const EditableNodePathSchema = z.array(z.union([z.string(), z.number()]));
-export const NullableEditableNodePathSchema = EditableNodePathSchema.nullable();
+const EditableNodePathSchema = z.array(z.union([z.string(), z.number()]));
+const NullableEditableNodePathSchema = EditableNodePathSchema.nullable();
 export type EditableEntityType = z.infer<typeof EditableEntityTypeSchema>;
 export type EditableNodePath = z.infer<typeof EditableNodePathSchema>;
 export type NullableEditableNodePath = z.infer<typeof NullableEditableNodePathSchema>;

@@ -1,25 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useQueries, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Search } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useQueries, useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 
 import { PageContainer } from "@/components/layout/workspace/page-container";
-import { EmptyState } from "@/components/patterns/empty-state";
-import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
-import { Input } from "@/components/ui/forms/input";
-import { Label } from "@/components/ui/forms/label";
 import { PageHeader } from "@/components/ui/layout/page-header";
-import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
-import { Separator } from "@/components/ui/layout/separator";
 import { Typography } from "@/components/ui/display/typography";
-import { AggregateLibrarySkeleton } from "@/features/hanzihome/components/AggregateLibrarySkeleton";
-import { FilterSelect } from "@/features/hanzihome/components/aggregate-library/FilterSelect";
-import { GrammarAggregateRow } from "@/features/hanzihome/components/aggregate-library/GrammarAggregateRow";
 import {
  DEFAULT_SELECTED_CONTENT_MODULES,
  getOrderedLessonContentModules,
@@ -27,14 +16,20 @@ import {
  type LessonContentModule,
 } from "@/features/hanzihome/components/aggregate-library/LessonContentPreviewPanel";
 import { ReviewLessonMultiSelect } from "@/features/hanzihome/components/aggregate-library/ReviewLessonMultiSelect";
-import { VocabAggregateRow } from "@/features/hanzihome/components/aggregate-library/VocabAggregateRow";
 import {
  combineReviewLessons,
- formatLessonHeading,
  formatSelectedLessonsLabel,
  groupByLesson,
- isAggregateVocabItem,
 } from "@/features/hanzihome/components/aggregate-library/aggregate-utils";
+import {
+ applyAggregateFilterChange,
+ buildLessonByReviewItemId,
+ createEmptyAggregateFilters,
+} from "@/features/hanzihome/components/aggregate-library/aggregate-library-model";
+import { AggregateFiltersCard } from "@/features/hanzihome/components/aggregate-library/AggregateFiltersCard";
+import { useAggregateReviewLessonRoute } from "@/features/hanzihome/components/aggregate-library/useAggregateReviewLessonRoute";
+import { AggregateListStatus } from "@/features/hanzihome/components/aggregate-library/AggregateListStatus";
+import { AggregateLessonGroupList } from "@/features/hanzihome/components/aggregate-library/AggregateLessonGroupList";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
 import { VocabReviewSkeleton } from "@/features/hanzihome/components/VocabReviewSkeleton";
 import { UnifiedVocabStudyHub } from "@/features/hanzihome/components/review/UnifiedVocabStudyHub";
@@ -51,16 +46,7 @@ import type {
  AggregateKind,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
-import {
- buildReviewLessonsQueryFromLessons,
- buildVocabReviewHrefFromLessons,
- parseReviewLessonTokensParam,
- resolveReviewLessonTokens,
- REVIEW_LESSONS_QUERY_KEY,
-} from "@/features/hanzihome/utils/review-selection-route";
-import { prefetchHanziHomeLessonResources } from "@/features/hanzihome/utils/lesson-prefetch";
-import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
-import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
+import { buildVocabReviewHrefFromLessons } from "@/features/hanzihome/utils/review-selection-route";
 
 function useReviewLessons(lessonIds: string[]) {
  const queries = useQueries({
@@ -80,16 +66,9 @@ function useReviewLessons(lessonIds: string[]) {
 export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  const t = useTranslations("Vocab");
  const router = useRouter();
- const queryClient = useQueryClient();
- const searchParams = useSearchParams();
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const learning = useLearningState();
- const [filters, setFilters] = useState<AggregateFilters>({
-  courseId: "",
-  bookId: "",
-  lessonId: "",
-  q: "",
- });
+ const [filters, setFilters] = useState<AggregateFilters>(createEmptyAggregateFilters);
  const [activeReviewLessonIds, setActiveReviewLessonIds] = useState<string[]>([]);
  const [selectedContentModules, setSelectedContentModules] = useState<LessonContentModule[]>(
   DEFAULT_SELECTED_CONTENT_MODULES,
@@ -141,20 +120,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  const items = useMemo(() => query.data ?? [], [query.data]);
  const groupedItems = useMemo(() => groupByLesson(items), [items]);
  const reviewLessonOptions = filteredLessons;
- const routeReviewLessonTokens = useMemo(
-  () => parseReviewLessonTokensParam(searchParams.get(REVIEW_LESSONS_QUERY_KEY)),
-  [searchParams],
- );
-
- const routeSelectedReviewLessonIds = useMemo(
-  () => resolveReviewLessonTokens(routeReviewLessonTokens, reviewLessonOptions),
-  [reviewLessonOptions, routeReviewLessonTokens],
- );
-
- const availableReviewLessonIds = new Set(reviewLessonOptions.map((lesson) => lesson.id));
- const selectedAvailableReviewLessonIds = routeSelectedReviewLessonIds.filter((id) =>
-  availableReviewLessonIds.has(id),
- );
+ const {
+  availableReviewLessonIds,
+  selectedAvailableReviewLessonIds,
+  toggleReviewLesson,
+  updateReviewLessonSelection,
+ } = useAggregateReviewLessonRoute(reviewLessonOptions);
  const selectedLessonDetails = useReviewLessons(selectedAvailableReviewLessonIds);
  const activeReviewLessonSummaries = activeReviewLessonIds
   .map((lessonId) => aggregateLessons.find((lesson) => lesson.id === lessonId))
@@ -163,18 +134,10 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   () => (reviewLessons.length > 0 ? combineReviewLessons(reviewLessons, kind) : null),
   [kind, reviewLessons],
  );
- const lessonByReviewItemId = useMemo(() => {
-  const byId = new Map<string, HanziHomeLesson>();
-
-  for (const lesson of reviewLessons) {
-   for (const word of lesson.vocab) {
-    byId.set(`vocab:${getVocabItemKey(word)}`, lesson);
-   }
-   for (const point of lesson.grammar) byId.set(`grammar:${point.id}`, lesson);
-  }
-
-  return byId;
- }, [reviewLessons]);
+ const lessonByReviewItemId = useMemo(
+  () => buildLessonByReviewItemId(reviewLessons),
+  [reviewLessons],
+ );
  const isReviewActive = kind !== "vocab" && activeReviewLessonIds.length > 0;
  const activeReviewTitle = formatSelectedLessonsLabel(
   activeReviewLessonSummaries,
@@ -186,54 +149,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   filters.courseId || filters.bookId || filters.lessonId || filters.q.trim(),
  );
 
- const syncSelectedLessonsToUrl = (lessonIds: string[]) => {
-  const nextLessonIds = Array.from(new Set(lessonIds.filter(Boolean)));
-  const nextLessons = reviewLessonOptions.filter((lesson) => nextLessonIds.includes(lesson.id));
-  const nextParams = new URLSearchParams(searchParams.toString());
-  const queryString = buildReviewLessonsQueryFromLessons(nextLessons);
-
-  if (queryString) {
-   const reviewParams = new URLSearchParams(queryString);
-   nextParams.set(REVIEW_LESSONS_QUERY_KEY, reviewParams.get(REVIEW_LESSONS_QUERY_KEY) || "");
-  } else {
-   nextParams.delete(REVIEW_LESSONS_QUERY_KEY);
-  }
-
-  router.replace(nextParams.toString() ? `?${nextParams.toString()}` : "?", { scroll: false });
- };
-
- const updateReviewLessonSelection = (lessonIds: string[]) => {
-  const nextLessonIds = Array.from(
-   new Set(lessonIds.filter((lessonId) => availableReviewLessonIds.has(lessonId))),
-  );
-  syncSelectedLessonsToUrl(nextLessonIds);
- };
-
  const updateFilter = (key: keyof AggregateFilters, value: string) => {
-  setFilters((current) => {
-   const next = {
-    ...current,
-    [key]: value,
-   };
-
-   if (key === "courseId") {
-    next.bookId = "";
-    next.lessonId = "";
-   }
-
-   if (key === "bookId") next.lessonId = "";
-
-   return next;
-  });
+  setFilters((current) => applyAggregateFilterChange(current, key, value));
  };
 
  const resetFilters = () => {
-  setFilters({
-   courseId: "",
-   bookId: "",
-   lessonId: "",
-   q: "",
-  });
+  setFilters(createEmptyAggregateFilters());
  };
 
  const answerReview = (item: ReviewItem, result: ReviewResult) => {
@@ -252,15 +173,6 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
     result === "known" ? "known" : result === "hard" ? "hard" : "learning",
    );
   }
- };
-
- const toggleReviewLesson = (lessonId: string) => {
-  if (selectedAvailableReviewLessonIds.includes(lessonId)) {
-   updateReviewLessonSelection(selectedAvailableReviewLessonIds.filter((id) => id !== lessonId));
-   return;
-  }
-
-  updateReviewLessonSelection([...selectedAvailableReviewLessonIds, lessonId]);
  };
 
  const toggleContentModule = (module: LessonContentModule) => {
@@ -321,70 +233,16 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
      />
     </Card>
 
-    <Card variant="section" padding="md" className="sticky top-0 z-20">
-     <div className="grid gap-3 xl:grid-cols-[minmax(16rem,1.2fr)_repeat(3,minmax(9rem,0.8fr))_auto] xl:items-end">
-      <Label variant="label" className="grid gap-1.5">
-       <Typography variant="overline" tone="muted" weight="black">
-        {t("search.label")}
-       </Typography>
-       <div className="relative min-w-0">
-        <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
-        <Input
-         value={filters.q}
-         onChange={(event) => updateFilter("q", event.target.value)}
-         aria-label={kind === "vocab" ? t("search.vocabAria") : t("search.grammarAria")}
-         placeholder={
-          kind === "vocab" ? t("search.vocabPlaceholder") : t("search.grammarPlaceholder")
-         }
-         adornment="start"
-        />
-       </div>
-      </Label>
-
-      <FilterSelect
-       label={t("filters.course")}
-       value={filters.courseId}
-       onChange={(value) => updateFilter("courseId", value)}
-       options={aggregateCourses.map((course) => ({
-        value: course.id,
-        label: course.title,
-       }))}
-      />
-
-      <FilterSelect
-       label={t("filters.book")}
-       value={filters.bookId}
-       onChange={(value) => updateFilter("bookId", value)}
-       options={filteredBooks.map((book) => ({
-        value: book.id,
-        label: book.shortTitle || book.title,
-       }))}
-      />
-
-      <FilterSelect
-       label={t("filters.lesson")}
-       value={filters.lessonId}
-       onChange={(value) => updateFilter("lessonId", value)}
-       options={filteredLessons.map((lesson) => ({
-        value: lesson.id,
-        label: t("filters.lessonOption", {
-         number: lesson.lessonNumber,
-         title: lesson.titleZh,
-        }),
-       }))}
-      />
-
-      <Button
-       type="button"
-       onClick={resetFilters}
-       disabled={!hasActiveFilters}
-       variant="outline"
-       size="toolbar"
-      >
-       {t("filters.reset")}
-      </Button>
-     </div>
-    </Card>
+    <AggregateFiltersCard
+     kind={kind}
+     filters={filters}
+     courses={aggregateCourses}
+     books={filteredBooks}
+     lessons={filteredLessons}
+     hasActiveFilters={hasActiveFilters}
+     onFilterChange={updateFilter}
+     onReset={resetFilters}
+    />
 
     {isReviewActive ? (
      <Card variant="section" padding="md">
@@ -406,108 +264,21 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
      </Card>
     ) : null}
 
-    {shouldShowAggregateList && query.isLoading ? <AggregateLibrarySkeleton /> : null}
-
-    {shouldShowAggregateList && query.isError ? (
-     <QueryErrorCard
-      title={kind === "vocab" ? t("loadError.vocabTitle") : t("loadError.grammarTitle")}
-      description={query.error?.message ?? t("loadError.description")}
+    {shouldShowAggregateList ? (
+     <AggregateListStatus
+      kind={kind}
+      isLoading={query.isLoading}
+      isError={query.isError}
+      errorMessage={query.error?.message}
+      isEmpty={groupedItems.length === 0}
+      hasActiveFilters={hasActiveFilters}
+      onReset={resetFilters}
       onRetry={() => void query.refetch()}
      />
     ) : null}
 
-    {shouldShowAggregateList && !query.isLoading && !query.isError && groupedItems.length === 0 ? (
-     <EmptyState
-      surface="subtle"
-      title={t("empty.title")}
-      description={t("empty.description")}
-      actions={
-       hasActiveFilters ? (
-        <Button type="button" variant="outline" size="toolbar" onClick={resetFilters}>
-         {t("filters.clear")}
-        </Button>
-       ) : undefined
-      }
-     />
-    ) : null}
-
     {shouldShowAggregateList && groupedItems.length > 0 ? (
-     <Card variant="section" padding="md" className="grid gap-4">
-      {groupedItems.map((group, groupIndex) => (
-       <section key={group.lessonId} className="grid gap-3">
-        {groupIndex > 0 ? <Separator /> : null}
-        <div className="flex flex-wrap items-center justify-between gap-2">
-         <div>
-          <Typography as="h2" variant="sectionTitle" weight="black">
-           {formatLessonHeading(group.lessonNumber, group.lessonTitle, (number, title) =>
-            t("filters.lessonOption", { number, title }),
-           )}
-          </Typography>
-          <Typography variant="caption" tone="muted" weight="bold">
-           {t("list.count", { count: group.items.length })}
-          </Typography>
-         </div>
-
-         <div className="flex flex-wrap gap-1.5">
-          <Button asChild variant="outline" size="toolbar">
-           <Link
-            href={buildHanziHomeLessonHref({
-             courseId: group.courseId,
-             bookId: group.bookId,
-             lessonNumber: group.lessonNumber,
-             module: kind === "vocab" ? "vocab" : "grammar",
-            })}
-            onMouseEnter={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
-            onFocus={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
-            onTouchStart={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
-           >
-            {t("list.openLesson")}
-           </Link>
-          </Button>
-          {kind === "vocab" ? (
-           <Button asChild variant="outline" size="toolbar">
-            <Link
-             href={buildVocabReviewHrefFromLessons([
-              {
-               id: group.lessonId,
-               lessonNumber: group.lessonNumber,
-               courseId: group.courseId,
-               title: group.lessonTitle,
-               titleZh: group.lessonTitle,
-              },
-             ])}
-             onMouseEnter={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
-             onFocus={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
-             onTouchStart={() => prefetchHanziHomeLessonResources(queryClient, group.lessonId)}
-            >
-             {t("list.reviewLesson")}
-            </Link>
-           </Button>
-          ) : (
-           <Button
-            type="button"
-            variant="outline"
-            size="toolbar"
-            onClick={() => startReview([group.lessonId])}
-           >
-            {t("list.reviewLesson")}
-           </Button>
-          )}
-         </div>
-        </div>
-
-        <div className="grid gap-2">
-         {group.items.map((item) => {
-          if (isAggregateVocabItem(item)) {
-           return <VocabAggregateRow key={item.id} item={item} />;
-          }
-
-          return <GrammarAggregateRow key={item.id} item={item} />;
-         })}
-        </div>
-       </section>
-      ))}
-     </Card>
+     <AggregateLessonGroupList kind={kind} groups={groupedItems} onStartReview={startReview} />
     ) : null}
    </div>
   </PageContainer>

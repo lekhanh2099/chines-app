@@ -1,12 +1,12 @@
 export type HumanitiesPracticeTrack = "translation" | "interpreting";
 
-export type HumanitiesFoundationLesson = {
+type HumanitiesFoundationLesson = {
  title: string;
  question: string;
  explanation: string;
 };
 
-export type HumanitiesPracticeLevel = {
+type HumanitiesPracticeLevel = {
  title: string;
  description: string;
 };

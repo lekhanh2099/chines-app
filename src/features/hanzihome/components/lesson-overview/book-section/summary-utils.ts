@@ -6,12 +6,12 @@ import { hasRenderableValue } from "../CommonCards";
 import { arrayValue, asRecord, stringValue } from "../utils";
 import { z } from "zod";
 
-export const SummaryGroupSchema = z.object({
+const SummaryGroupSchema = z.object({
  id: z.string(),
  title: z.string(),
  items: z.array(z.object({ id: z.string(), label: z.string(), detail: z.string().optional() })),
 });
-export type SummaryGroup = z.infer<typeof SummaryGroupSchema>;
+type SummaryGroup = z.infer<typeof SummaryGroupSchema>;
 
 function titleFromValue(value: JsonFieldValue, fallback: string) {
  if (typeof value === "string") return value;

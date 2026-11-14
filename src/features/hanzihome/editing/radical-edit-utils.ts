@@ -2,7 +2,7 @@ import { z } from "zod";
 import type { JsonObject } from "@/types/json";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 
-export type RadicalFormValues = {
+type RadicalFormValues = {
  radical: string;
  nameVi: string;
  strokes: string;

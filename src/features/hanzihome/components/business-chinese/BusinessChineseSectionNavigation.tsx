@@ -71,18 +71,6 @@ export function CompactSectionNavigation({
  );
 }
 
-export function MobileSectionNavigation({
- sections,
- onSelect,
- className,
-}: {
- readonly sections: TextbookLesson["sections"];
- readonly onSelect: (sectionId: string) => void;
- readonly className?: string;
-}) {
- return <CompactSectionNavigation sections={sections} onSelect={onSelect} className={className} />;
-}
-
 export function GrammarSectionNavigation({
  sections,
  onSelect,

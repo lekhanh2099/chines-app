@@ -6,8 +6,8 @@ import { ReaderProvider } from "./ReaderProvider";
 import { defaultReaderDisplay } from "../model/reader-display";
 import {
  useReaderDisplay,
- useReaderSegmentIds,
  useReaderSegment,
+ useReaderSelector,
  useReaderServices,
 } from "./reader-context";
 
@@ -24,7 +24,7 @@ function Segment({ id }: { id: string }) {
 }
 
 function Content() {
- const ids = useReaderSegmentIds();
+ const ids = useReaderSelector((state) => state.content.segmentIds);
  return ids.map((id) => <Segment key={id} id={id} />);
 }
 

@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
-import { readerHasCapability } from "@/features/reader/model/reader-capabilities";
 import { lessonTextToReaderDocument } from "./lesson-text.adapter";
 
 type TextSection = Extract<Section, { type: "text" }>;
@@ -116,8 +115,8 @@ describe("lesson text reader adapter", () => {
   ]);
   expect(result.document.segments[1]?.speaker?.label).toBe("A");
   expect(result.document.segments[1]?.role).toBe("Gặp nhau");
-  expect(readerHasCapability(result.document, "pinyin")).toBe(true);
-  expect(readerHasCapability(result.document, "translation")).toBe(true);
+  expect(result.document.capabilities).toContain("pinyin");
+  expect(result.document.capabilities).toContain("translation");
  });
 
  it("keeps lesson edit paths outside the universal document model", () => {

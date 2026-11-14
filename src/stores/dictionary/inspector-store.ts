@@ -7,7 +7,7 @@ import { containsChinese, extractChinese } from "@/lib/text/chinese-utils";
 
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
-export type InspectorOpenOptions = {
+type InspectorOpenOptions = {
  lessonId?: string;
  anchorRect?: DOMRect;
 };

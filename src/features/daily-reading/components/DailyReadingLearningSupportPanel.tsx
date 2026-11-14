@@ -1,18 +1,8 @@
 "use client";
 
-import {
- BookOpen,
- CircleHelp,
- KeyRound,
- Languages,
- LibraryBig,
- RefreshCcw,
- Settings,
- Sparkles,
- type LucideIcon,
-} from "lucide-react";
+import { KeyRound, RefreshCcw, Settings, Sparkles } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { type ComponentProps, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/display/badge";
@@ -24,7 +14,7 @@ import { Typography } from "@/components/ui/display/typography";
 import { useAiRuntimeReadiness } from "@/features/ai-runtime/useAiRuntimeReadiness";
 import { AddApiKeyDialog } from "@/features/settings/components/AddApiKeyDialog";
 import { Link } from "@/i18n/navigation";
-import type { AiTaskId, AiTaskRuntimePreview } from "@/lib/ai/ai-task-contract";
+import type { AiTaskRuntimePreview } from "@/lib/ai/ai-task-contract";
 
 import { useDailyReadingLibrary } from "@/features/daily-reading/services/daily-reading.client";
 import {
@@ -36,94 +26,16 @@ import type {
  DailyReadingEnrichmentModule,
 } from "@/features/daily-reading/model/daily-reading.schemas";
 
-type EnrichmentState = DailyReading["enrichment"][DailyReadingEnrichmentModule];
+import {
+ configForModule,
+ moduleConfigs,
+ needsKeyManagement,
+ taskIdForModule,
+ type EnrichmentState,
+} from "./daily-reading-learning-support-model";
+import { DailyReadingEnrichmentModuleRow } from "./DailyReadingEnrichmentModuleRow";
+
 type PendingAction = DailyReadingEnrichmentModule | "all" | null;
-type EnrichmentStatusKey =
- | "enrichment.status.idle"
- | "enrichment.status.running"
- | "enrichment.status.ready"
- | "enrichment.status.failed"
- | "enrichment.status.missingKey"
- | "enrichment.status.invalidKey"
- | "enrichment.status.quota"
- | "enrichment.status.taskDisabled"
- | "enrichment.status.providerUnavailable";
-
-type ModuleConfig = {
- module: DailyReadingEnrichmentModule;
- icon: LucideIcon;
- titleKey:
-  | "enrichment.modules.translation.title"
-  | "enrichment.modules.vocabulary.title"
-  | "enrichment.modules.grammar.title"
-  | "enrichment.modules.questions.title";
-};
-
-const moduleConfigs: readonly ModuleConfig[] = [
- { module: "translation", icon: Languages, titleKey: "enrichment.modules.translation.title" },
- { module: "vocabulary", icon: LibraryBig, titleKey: "enrichment.modules.vocabulary.title" },
- { module: "grammar", icon: BookOpen, titleKey: "enrichment.modules.grammar.title" },
- { module: "questions", icon: CircleHelp, titleKey: "enrichment.modules.questions.title" },
-];
-
-function configForModule(module: DailyReadingEnrichmentModule) {
- return moduleConfigs.find((config) => config.module === module);
-}
-
-function taskIdForModule(module: DailyReadingEnrichmentModule): AiTaskId {
- if (module === "translation") return "daily-reading.translation";
- if (module === "vocabulary") return "daily-reading.vocabulary";
- if (module === "grammar") return "daily-reading.grammar";
- return "daily-reading.questions";
-}
-
-function statusBadgeVariant(state: EnrichmentState): ComponentProps<typeof Badge>["variant"] {
- switch (state.status) {
-  case "ready":
-   return "success";
-  case "running":
-   return "info";
-  case "blocked":
-   return "warning";
-  case "failed":
-   return "danger";
-  case "idle":
-   return "default";
- }
-}
-
-function statusKey(state: EnrichmentState): EnrichmentStatusKey {
- switch (state.status) {
-  case "idle":
-   return "enrichment.status.idle";
-  case "running":
-   return "enrichment.status.running";
-  case "ready":
-   return "enrichment.status.ready";
-  case "failed":
-   return "enrichment.status.failed";
-  case "blocked":
-   switch (state.reason) {
-    case "missing-ai-key":
-     return "enrichment.status.missingKey";
-    case "invalid-ai-key":
-     return "enrichment.status.invalidKey";
-    case "quota-exhausted":
-     return "enrichment.status.quota";
-    case "provider-unavailable":
-     return "enrichment.status.providerUnavailable";
-    case "task-disabled":
-     return "enrichment.status.taskDisabled";
-   }
- }
-}
-
-function needsKeyManagement(state: EnrichmentState) {
- return (
-  state.status === "blocked" &&
-  (state.reason === "invalid-ai-key" || state.reason === "quota-exhausted")
- );
-}
 
 export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyReading }) {
  const t = useTranslations("DailyReading");
@@ -365,107 +277,16 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
      const taskRuntime = runtime.data?.taskRuntimes.find(
       (preview) => preview.taskId === taskIdForModule(config.module),
      );
-     const latestRun = library.enrichmentRuns.find(
-      (run) =>
-       run.articleId === reading.id &&
-       run.articleFingerprint === reading.article.fingerprint &&
-       run.module === config.module,
-     );
-     const isQueued =
-      state.status === "running" &&
-      latestRun?.status === "pending" &&
-      latestRun.startedAt.length === 0;
-     const Icon = config.icon;
      return (
-      <div
+      <DailyReadingEnrichmentModuleRow
        key={config.module}
-       className="flex min-w-0 flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between"
-      >
-       <div className="grid min-w-0 gap-1">
-        <div className="flex min-w-0 items-center gap-2">
-         <Icon aria-hidden />
-         <Typography weight="bold">{t(config.titleKey)}</Typography>
-         <Badge variant={statusBadgeVariant(state)} size="sm">
-          {isQueued ? t("enrichment.status.queued") : t(statusKey(state))}
-         </Badge>
-        </div>
-        {latestRun?.reused && latestRun.receipt ? (
-         <Typography variant="caption" tone="muted" wrapping="breakWords">
-          {t("enrichment.runtimeReused", {
-           provider: latestRun.receipt.provider,
-           key: latestRun.receipt.keyLabel,
-           model: latestRun.receipt.model,
-          })}
-         </Typography>
-        ) : state.status === "ready" && state.generatedBy?.receipt ? (
-         <Typography variant="caption" tone="muted" wrapping="breakWords">
-          {state.generatedBy.receipt.provider} · {state.generatedBy.receipt.model} ·{" "}
-          {state.generatedBy.receipt.keyLabel}
-         </Typography>
-        ) : isQueued && latestRun?.receipt ? (
-         <Typography variant="caption" tone="muted" wrapping="breakWords">
-          {t("enrichment.runtimeQueued", {
-           provider: latestRun.receipt.provider,
-           key: latestRun.receipt.keyLabel,
-           model: latestRun.receipt.model,
-           time: dateFormatter.format(new Date(latestRun.attemptedAt)),
-          })}
-         </Typography>
-        ) : state.status === "running" && latestRun?.receipt ? (
-         <Typography variant="caption" tone="muted" wrapping="breakWords">
-          {t("enrichment.runtimeRunning", {
-           provider: latestRun.receipt.provider,
-           key: latestRun.receipt.keyLabel,
-           model: latestRun.receipt.model,
-           completed: latestRun.progressCompleted,
-           total: latestRun.progressTotal,
-          })}
-         </Typography>
-        ) : state.status === "failed" && latestRun?.receipt ? (
-         <Typography variant="caption" tone="warning" wrapping="breakWords">
-          {t("enrichment.runtimeFailed", {
-           provider: latestRun.receipt.provider,
-           key: latestRun.receipt.keyLabel,
-           model: latestRun.receipt.model,
-           code: latestRun.errorCode || "provider-unavailable",
-          })}
-         </Typography>
-        ) : taskRuntime?.status === "ready" ? (
-         <Typography variant="caption" tone="muted" wrapping="breakWords">
-          {t("enrichment.runtimePlanned", {
-           provider: taskRuntime.receipt.provider,
-           key: taskRuntime.receipt.keyLabel,
-           model: taskRuntime.receipt.model,
-          })}
-         </Typography>
-        ) : taskRuntime?.status === "task-disabled" ? (
-         <Typography variant="caption" tone="warning">
-          {t("enrichment.status.taskDisabled")}
-         </Typography>
-        ) : taskRuntime ? (
-         <Typography variant="caption" tone="warning" wrapping="breakWords">
-          {t("enrichment.runtimeUnavailable", { reason: taskRuntime.reason })}
-         </Typography>
-        ) : null}
-        {!isQueued && latestRun?.completedAt ? (
-         <Typography variant="caption" tone="muted">
-          {t("enrichment.runtimeTimeRange", {
-           start: dateFormatter.format(new Date(latestRun.startedAt || latestRun.attemptedAt)),
-           end: dateFormatter.format(new Date(latestRun.completedAt)),
-          })}
-         </Typography>
-        ) : !isQueued && state.status === "running" && latestRun ? (
-         <Typography variant="caption" tone="muted">
-          {t("enrichment.runtimeStarted", {
-           time: dateFormatter.format(new Date(latestRun.startedAt || latestRun.attemptedAt)),
-          })}
-         </Typography>
-        ) : null}
-       </div>
-       <div className="flex shrink-0 flex-wrap items-center gap-2">
-        {moduleAction(config.module, state, taskRuntime)}
-       </div>
-      </div>
+       config={config}
+       reading={reading}
+       enrichmentRuns={library.enrichmentRuns}
+       taskRuntime={taskRuntime}
+       dateFormatter={dateFormatter}
+       action={moduleAction(config.module, state, taskRuntime)}
+      />
      );
     })}
    </div>

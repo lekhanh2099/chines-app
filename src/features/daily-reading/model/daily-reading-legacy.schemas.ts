@@ -15,7 +15,7 @@ export const dailyReadingTopicSchema = z.enum([
 ]);
 export const dailyReadingLevelSchema = z.enum(["HSK4", "HSK5", "HSK6"]);
 export const dailyReadingGenerationKindSchema = z.enum(["scheduled", "manual"]);
-export const dailyReadingGenerationStageSchema = z.enum([
+const dailyReadingGenerationStageSchema = z.enum([
  "discovering",
  "extracting",
  "drafting",
@@ -27,7 +27,7 @@ export const dailyReadingGenerationStageSchema = z.enum([
  "saving",
  "completed",
 ]);
-export const dailyReadingErrorCodeSchema = z.enum([
+const dailyReadingErrorCodeSchema = z.enum([
  "invalid-request",
  "source-unavailable",
  "source-extraction-failed",
@@ -40,7 +40,7 @@ export const dailyReadingErrorCodeSchema = z.enum([
  "unauthorized",
 ]);
 
-export const dailyReadingParagraphSchema = z.strictObject({
+const dailyReadingParagraphSchema = z.strictObject({
  id: nonEmptyTextSchema,
  order: z.number().int().positive(),
  zh: nonEmptyTextSchema.max(1600),
@@ -49,7 +49,7 @@ export const dailyReadingParagraphSchema = z.strictObject({
  roleVi: z.string(),
 });
 
-export const dailyReadingVocabularySchema = z.strictObject({
+const dailyReadingVocabularySchema = z.strictObject({
  id: nonEmptyTextSchema,
  order: z.number().int().positive(),
  hanzi: nonEmptyTextSchema.max(24),
@@ -59,14 +59,14 @@ export const dailyReadingVocabularySchema = z.strictObject({
  categoryVi: nonEmptyTextSchema.max(120),
 });
 
-export const dailyReadingGrammarSchema = z.strictObject({
+const dailyReadingGrammarSchema = z.strictObject({
  id: nonEmptyTextSchema,
  patternZh: nonEmptyTextSchema.max(120),
  explanationVi: nonEmptyTextSchema.max(1000),
  evidenceSentenceZh: nonEmptyTextSchema.max(600),
 });
 
-export const dailyReadingQuestionSchema = z.strictObject({
+const dailyReadingQuestionSchema = z.strictObject({
  id: nonEmptyTextSchema,
  type: z.enum(["main_idea", "detail", "inference", "vocabulary", "summary"]),
  promptZh: nonEmptyTextSchema.max(600),
@@ -176,12 +176,5 @@ export type LegacyDailyReadingSettings = z.output<typeof legacyDailyReadingSetti
 export type DailyReadingLevel = z.output<typeof dailyReadingLevelSchema>;
 export type DailyReadingTopic = z.output<typeof dailyReadingTopicSchema>;
 export type DailyReadingGenerationKind = z.output<typeof dailyReadingGenerationKindSchema>;
-export type DailyReadingGenerationStage = z.output<typeof dailyReadingGenerationStageSchema>;
 export type DailyReadingErrorCode = z.output<typeof dailyReadingErrorCodeSchema>;
 export type DailyReadingSourceCandidate = z.output<typeof dailyReadingSourceCandidateSchema>;
-
-export const defaultLegacyDailyReadingSettings: LegacyDailyReadingSettings = {
- schemaVersion: "1.0.0",
- autoGenerateEnabled: true,
- preferredLevel: "HSK5",
-};

@@ -1,31 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Mic, Square, Star, Volume2 } from "lucide-react";
+import { useEffect, useRef, useState, type ChangeEvent } from "react";
+import { Mic, Square, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
-import { Input } from "@/components/ui/forms/input";
-import { Textarea } from "@/components/ui/forms/textarea";
 import { Typography } from "@/components/ui/display/typography";
-import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
-import { buildReaderSourceHref } from "@/features/reading/model/reading-source-target";
 import { useShadowingRecorder } from "@/features/reading/hooks/useShadowingRecorder";
-
-type ShadowingAttempt = {
- confirmed: boolean;
- durationSeconds: number;
- id: string;
- isSaving: boolean;
- saveError: string | null;
- transcript: string;
- url: string;
-};
+import {
+ ShadowingAttemptList,
+ type ShadowingAttempt,
+} from "@/features/reading/components/ShadowingAttemptList";
+import { ShadowingDelayControls } from "@/features/reading/components/ShadowingDelayControls";
+import { ShadowingPracticeHeader } from "@/features/reading/components/ShadowingPracticeHeader";
 
 type ShadowingPracticePanelProps = {
  paragraph: ReaderDocumentResource["paragraphs"][number];
@@ -33,6 +25,8 @@ type ShadowingPracticePanelProps = {
  total: number;
  onNext: () => void;
  onPrevious: () => void;
+ /** Called when a recording session starts, so the parent can pin this paragraph. */
+ onSessionStart: () => void;
 };
 
 export function ShadowingPracticePanel({
@@ -40,6 +34,7 @@ export function ShadowingPracticePanel({
  activeIndex,
  total,
  onNext,
+ onSessionStart,
  onPrevious,
 }: ShadowingPracticePanelProps) {
  const t = useTranslations("Reader.study.shadowing");
@@ -103,6 +98,7 @@ export function ShadowingPracticePanel({
  const startShadowing = async () => {
   stopShadowing();
   recorder.clear();
+  onSessionStart();
   const started = await recorder.start();
   if (!started) return;
   setIsShadowing(true);
@@ -159,6 +155,13 @@ export function ShadowingPracticePanel({
    });
  };
 
+ const updateTranscript = (attemptId: string, event: ChangeEvent<HTMLTextAreaElement>) =>
+  setAttempts((current) =>
+   current.map((item) =>
+    item.id === attemptId ? { ...item, transcript: event.target.value, saveError: null } : item,
+   ),
+  );
+
  const recorderError =
   recorder.error === "permission-denied"
    ? t("errors.permissionDenied")
@@ -172,103 +175,21 @@ export function ShadowingPracticePanel({
 
  return (
   <Card variant="section" padding="md" className="grid gap-3">
-   <div className="flex flex-wrap items-start justify-between gap-3">
-    <div className="grid gap-1">
-     <Typography as="h3" variant="cardTitle" weight="black">
-      Shadowing
-     </Typography>
-     <Typography variant="caption" tone="muted">
-      {t("description", { delay: delayMs, current: activeIndex + 1, total })}
-     </Typography>
-    </div>
-    <div className="flex items-center gap-1">
-     <Button
-      type="button"
-      size="icon-xs"
-      variant="ghost"
-      disabled={activeIndex === 0 || isShadowing}
-      onClick={onPrevious}
-      aria-label={t("previous")}
-     >
-      <ChevronLeft />
-     </Button>
-     <Button
-      type="button"
-      size="icon-xs"
-      variant="ghost"
-      disabled={activeIndex >= total - 1 || isShadowing}
-      onClick={onNext}
-      aria-label={t("next")}
-     >
-      <ChevronRight />
-     </Button>
-    </div>
-   </div>
+   <ShadowingPracticeHeader
+    delayMs={delayMs}
+    activeIndex={activeIndex}
+    total={total}
+    navigationDisabled={isShadowing}
+    onPrevious={onPrevious}
+    onNext={onNext}
+   />
 
-   <Card
-    variant="subtle"
-    padding="sm"
-    className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end"
-   >
-    <label className="grid gap-1">
-     <Typography as="span" variant="caption" tone="muted" weight="bold">
-      {t("delay", { delay: delayMs })}
-     </Typography>
-     <Input
-      type="range"
-      min={0}
-      max={1500}
-      step={250}
-      value={delayMs}
-      disabled={isShadowing}
-      onChange={(event) => setDelayMs(Number(event.target.value))}
-      aria-label={t("delayAria")}
-     />
-    </label>
-    <Button
-     type="button"
-     variant="outline"
-     size="sm"
-     onClick={() => {
-      void savePracticeAttempt({
-       surface: "shadowing",
-       contentId: paragraph.id,
-       direction: "review",
-       answer: { expectedText: paragraph.zh, pinyin: paragraph.pinyin },
-       scorePercent: null,
-       responseMs: null,
-      }).catch(() => undefined);
-      const now = new Date().toISOString();
-      void upsertLearningLoopItem({
-       id: `shadowing:${paragraph.id}`,
-       stable_key: `shadowing:${paragraph.id}`,
-       kind: "shadowing",
-       source_id: paragraph.id,
-       source_href: buildReaderSourceHref({
-        source: "shadowing",
-        documentId: paragraph.document_id,
-        paragraphId: paragraph.id,
-       }),
-       title_zh: "Shadowing",
-       title_vi: "Ôn nói theo mẫu",
-       prompt_zh: paragraph.zh,
-       pinyin: paragraph.pinyin,
-       meaning_vi: "",
-       user_answer: "",
-       error_key: "marked-difficult",
-       state: "new",
-       due_at: now,
-       interval_days: 0,
-       correct_streak: 0,
-       lapse_count: 0,
-       revision: 0,
-      }).catch(() => undefined);
-     }}
-    >
-     <Star data-icon="inline-start" />
-     {t("markDifficult")}
-    </Button>
-   </Card>
+   <ShadowingDelayControls
+    paragraph={paragraph}
+    delayMs={delayMs}
+    disabled={isShadowing}
+    onDelayChange={setDelayMs}
+   />
 
    <div className="flex flex-wrap gap-2">
     <Button
@@ -320,62 +241,11 @@ export function ShadowingPracticePanel({
    </div>
 
    {attempts.length > 0 ? (
-    <Card variant="subtle" padding="sm" className="grid gap-2">
-     <Typography as="h4" variant="caption" weight="black">
-      {t("sessionRecordings")}
-     </Typography>
-     {attempts.map((attempt, index) => (
-      <Card key={attempt.id} variant="default" padding="sm" className="grid gap-2">
-       <div className="flex min-w-0 flex-wrap items-center gap-2">
-        <Typography variant="caption" tone="muted">
-         {t("attempt", { number: attempts.length - index, seconds: attempt.durationSeconds })}
-        </Typography>
-        <audio
-         controls
-         preload="metadata"
-         src={attempt.url}
-         className="min-w-0 flex-1"
-         aria-label={t("audioAria")}
-        />
-       </div>
-       <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
-        <label className="grid gap-1">
-         <Typography as="span" variant="caption" tone="muted" weight="bold">
-          {t("transcriptLabel")}
-         </Typography>
-         <Textarea
-          value={attempt.transcript}
-          disabled={attempt.confirmed || attempt.isSaving}
-          onChange={(event) =>
-           setAttempts((current) =>
-            current.map((item) =>
-             item.id === attempt.id
-              ? { ...item, transcript: event.target.value, saveError: null }
-              : item,
-            ),
-           )
-          }
-          placeholder={t("transcriptPlaceholder")}
-          rows={2}
-         />
-        </label>
-        <Button
-         type="button"
-         size="sm"
-         disabled={!attempt.transcript.trim() || attempt.confirmed || attempt.isSaving}
-         onClick={() => confirmAttempt(attempt)}
-        >
-         {attempt.confirmed ? t("saved") : attempt.isSaving ? t("saving") : t("saveAttempt")}
-        </Button>
-       </div>
-       {attempt.saveError ? (
-        <Typography variant="caption" tone="danger">
-         {attempt.saveError}
-        </Typography>
-       ) : null}
-      </Card>
-     ))}
-    </Card>
+    <ShadowingAttemptList
+     attempts={attempts}
+     onTranscriptChange={updateTranscript}
+     onConfirm={confirmAttempt}
+    />
    ) : null}
 
    {recorderError ? (

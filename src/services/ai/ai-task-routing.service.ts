@@ -59,7 +59,7 @@ const activitySummaryRowSchema = z.strictObject({
 const activitySummaryRowsSchema = z.array(activitySummaryRowSchema);
 const postgrestErrorSchema = z.object({ code: z.string().nullable().optional() });
 
-export const createAiActivityEventSchema = aiActivityEventSchema.omit({
+const createAiActivityEventSchema = aiActivityEventSchema.omit({
  id: true,
  createdAt: true,
 });

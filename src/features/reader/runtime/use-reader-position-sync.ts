@@ -33,6 +33,10 @@ export function useReaderContentPositionSync() {
   const release = () => {
    followingCommand.current = false;
   };
+  // Scrollbar drags hit the scroll container itself (or the root element for the window).
+  const releaseOnScrollbar = (event: Event) => {
+   if (event.target === (container ?? document.documentElement)) release();
+  };
   const update = () => {
    cancelAnimationFrame(frame);
    frame = requestAnimationFrame(() => {
@@ -49,17 +53,20 @@ export function useReaderContentPositionSync() {
     if (closest) actions.selectSegment(closest, "scroll");
    });
   };
+  // A command or playback selection holds until the learner scrolls on purpose. Scrolls the
+  // learner did not start (scroll anchoring when content resizes, focus restoration, the
+  // command's own smooth scroll ending) must not move the selection to the reading line.
   target.addEventListener("scroll", update, { passive: true });
-  target.addEventListener("scrollend", release);
   target.addEventListener("wheel", release, { passive: true });
   target.addEventListener("touchstart", release, { passive: true });
+  target.addEventListener("pointerdown", releaseOnScrollbar, { passive: true });
   target.addEventListener("keydown", release);
   return () => {
    cancelAnimationFrame(frame);
    target.removeEventListener("scroll", update);
-   target.removeEventListener("scrollend", release);
    target.removeEventListener("wheel", release);
    target.removeEventListener("touchstart", release);
+   target.removeEventListener("pointerdown", releaseOnScrollbar);
    target.removeEventListener("keydown", release);
   };
  }, [ids, registry, actions]);

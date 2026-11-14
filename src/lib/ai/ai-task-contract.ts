@@ -24,7 +24,6 @@ export const aiTaskIdSchema = z.enum([
 
 export const AI_SEMANTIC_MEMORY_MODEL = "gemini-embedding-001";
 
-export const aiTaskRoutingModeSchema = z.enum(["auto", "assigned", "disabled"]);
 export const aiTaskResolutionSourceSchema = z.enum(["auto", "assigned", "session-override"]);
 export const aiTaskGroupSchema = z.enum(["main", "advanced"]);
 
@@ -175,9 +174,8 @@ export function getAiTaskDefinition(taskId: AiTaskId): AiTaskDefinition {
 }
 
 export type AiTaskId = z.output<typeof aiTaskIdSchema>;
-export type AiTaskRoutingMode = z.output<typeof aiTaskRoutingModeSchema>;
 export type AiTaskResolutionSource = z.output<typeof aiTaskResolutionSourceSchema>;
-export type AiTaskDefinition = z.output<typeof aiTaskDefinitionSchema>;
+type AiTaskDefinition = z.output<typeof aiTaskDefinitionSchema>;
 export type AiTaskAssignment = z.output<typeof aiTaskAssignmentSchema>;
 export type AiTaskSessionOverride = z.output<typeof aiTaskSessionOverrideSchema>;
 export type AiRuntimeReceipt = z.output<typeof aiRuntimeReceiptSchema>;
@@ -187,4 +185,3 @@ export type AiRuntimeWithTaskRuntimesResponse = z.output<
 >;
 export type AiActivityEvent = z.output<typeof aiActivityEventSchema>;
 export type AiActivityCursor = z.output<typeof aiActivityCursorSchema>;
-export type AiActivitySummaryGroup = z.output<typeof aiActivitySummaryGroupSchema>;

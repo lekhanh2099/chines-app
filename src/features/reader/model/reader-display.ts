@@ -12,7 +12,7 @@ export const readerFontSchema = z.enum([
 ]);
 export const readerSizeSchema = z.enum(["md", "lg", "xl", "2xl", "3xl"]);
 export const readerRevealModeSchema = z.enum(["always", "tap"]);
-export const readerDisplaySchema = z.strictObject({
+const readerDisplaySchema = z.strictObject({
  showPinyin: z.boolean(),
  showMeaning: z.boolean(),
  hanziFont: readerFontSchema,

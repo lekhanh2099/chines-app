@@ -2,7 +2,7 @@ import { z } from "zod";
 
 // Common primitives
 
-export const LocalizedTextSchema = z.object({
+const LocalizedTextSchema = z.object({
  zh: z.string().optional().default(""),
  pinyin: z.string().optional().default(""),
  vi: z.string().optional().default(""),
@@ -37,12 +37,12 @@ function hasTextLikeValue(value: JsonInput): boolean {
  return Object.values(record).some(hasTextLikeValue);
 }
 
-export const InstructionSchema = z.object({
+const InstructionSchema = z.object({
  zh: z.string().optional().default(""),
  vi: z.string().optional().default(""),
 });
 
-export const RenderingSchema = z
+const RenderingSchema = z
  .object({
   renderer: z.string(),
   input_mode: z.string().optional(),
@@ -53,7 +53,7 @@ export const RenderingSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const GradingModeSchema = z.enum([
+const GradingModeSchema = z.enum([
  "exact",
  "choice",
  "pattern",
@@ -63,7 +63,7 @@ export const GradingModeSchema = z.enum([
  "none",
 ]);
 
-export const GradingSchema = z
+const GradingSchema = z
  .object({
   mode: GradingModeSchema,
   required_pattern: z.string().optional(),
@@ -73,12 +73,12 @@ export const GradingSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const EvidenceSchema = z.object({
+const EvidenceSchema = z.object({
  paragraph_id: z.string(),
  quote: z.string(),
 });
 
-export const ExampleSchema = z.object({
+const ExampleSchema = z.object({
  id: z.string(),
  zh: z.string(),
  pinyin: z.string().optional().default(""),
@@ -94,7 +94,7 @@ export const ExampleSchema = z.object({
 
 // Source / root
 
-export const SourceFileSchema = z
+const SourceFileSchema = z
  .object({
   name: z.string(),
   type: z.string(),
@@ -102,7 +102,7 @@ export const SourceFileSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const SourceSchema = z.object({
+const SourceSchema = z.object({
  book: z.string(),
  volume: z.string(),
  volume_vi: z.string().optional().default(""),
@@ -115,7 +115,7 @@ export const SourceSchema = z.object({
  source_files: z.array(SourceFileSchema).optional().default([]),
 });
 
-export const LessonMetadataSchema = z
+const LessonMetadataSchema = z
  .object({
   legacy_id: z.string().optional().default(""),
   book: z.string().optional().default(""),
@@ -133,7 +133,7 @@ export const LessonMetadataSchema = z
 
 // Text section
 
-export const TextLineSchema = z
+const TextLineSchema = z
  .object({
   id: z.string(),
   order: z.number().int().positive(),
@@ -148,7 +148,7 @@ export const TextLineSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const TextSceneSchema = z
+const TextSceneSchema = z
  .object({
   id: z.string(),
   order: z.number().int().positive(),
@@ -157,7 +157,7 @@ export const TextSceneSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const TextDialogueBlockSchema = z
+const TextDialogueBlockSchema = z
  .object({
   id: z.string(),
   type: z.literal("text_dialogue"),
@@ -170,7 +170,7 @@ export const TextDialogueBlockSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const TextParagraphSchema = z
+const TextParagraphSchema = z
  .object({
   id: z.string(),
   order: z.number().int().positive(),
@@ -183,7 +183,7 @@ export const TextParagraphSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const TextNarrativeBlockSchema = z
+const TextNarrativeBlockSchema = z
  .object({
   id: z.string(),
   type: z.literal("text_narrative"),
@@ -203,9 +203,9 @@ export const TextBlockSchema = z.discriminatedUnion("type", [
 
 // Vocabulary section
 
-export const PartOfSpeechSchema = z.string().min(1).default("unknown");
+const PartOfSpeechSchema = z.string().min(1).default("unknown");
 
-export const VocabularyExampleSchema = z.object({
+const VocabularyExampleSchema = z.object({
  id: z.string(),
  zh: z.string(),
  pinyin: z.string().optional().default(""),
@@ -215,7 +215,7 @@ export const VocabularyExampleSchema = z.object({
  vocab_refs: z.array(z.string()).optional().default([]),
 });
 
-export const FlashcardSchema = z.object({
+const FlashcardSchema = z.object({
  front: z.string(),
  back: z.string(),
  modes: z.array(
@@ -259,12 +259,12 @@ export const NoteItemSchema = z
 
 // Grammar section
 
-export const FormulaSchema = z.object({
+const FormulaSchema = z.object({
  label: z.string(),
  pattern: z.string(),
 });
 
-export const GrammarOverviewBlockSchema = z.object({
+const GrammarOverviewBlockSchema = z.object({
  id: z.string(),
  type: z.literal("grammar_overview"),
  order: z.number().int().positive(),
@@ -273,7 +273,7 @@ export const GrammarOverviewBlockSchema = z.object({
  examples: z.array(ExampleSchema).optional().default([]),
 });
 
-export const GrammarStructureBlockSchema = z.object({
+const GrammarStructureBlockSchema = z.object({
  id: z.string(),
  type: z.literal("grammar_structure"),
  order: z.number().int().positive(),
@@ -285,7 +285,7 @@ export const GrammarStructureBlockSchema = z.object({
  notes_vi: z.array(z.string()).optional().default([]),
 });
 
-export const GrammarQuestionFormBlockSchema = z.object({
+const GrammarQuestionFormBlockSchema = z.object({
  id: z.string(),
  type: z.literal("grammar_question_form"),
  order: z.number().int().positive(),
@@ -295,7 +295,7 @@ export const GrammarQuestionFormBlockSchema = z.object({
  examples: z.array(ExampleSchema).optional().default([]),
 });
 
-export const CorrectWrongExampleSchema = z.object({
+const CorrectWrongExampleSchema = z.object({
  id: z.string(),
  zh: z.string(),
  pinyin: z.string().optional().default(""),
@@ -304,7 +304,7 @@ export const CorrectWrongExampleSchema = z.object({
  explanation_vi: z.string().optional().default(""),
 });
 
-export const GrammarNegativeFormBlockSchema = z.object({
+const GrammarNegativeFormBlockSchema = z.object({
  id: z.string(),
  type: z.literal("grammar_negative_form"),
  order: z.number().int().positive(),
@@ -316,7 +316,7 @@ export const GrammarNegativeFormBlockSchema = z.object({
  wrong_examples: z.array(CorrectWrongExampleSchema).optional().default([]),
 });
 
-export const GrammarComparisonItemSchema = z.object({
+const GrammarComparisonItemSchema = z.object({
  aspect: z.string(),
  left: z.object({
   label: z.string(),
@@ -328,7 +328,7 @@ export const GrammarComparisonItemSchema = z.object({
  }),
 });
 
-export const GrammarComparisonBlockSchema = z.object({
+const GrammarComparisonBlockSchema = z.object({
  id: z.string(),
  type: z.enum(["grammar_comparison", "grammar_compare"]),
  order: z.number().int().positive(),
@@ -336,14 +336,14 @@ export const GrammarComparisonBlockSchema = z.object({
  items: z.array(GrammarComparisonItemSchema),
 });
 
-export const GrammarCommonMistakeSchema = z.object({
+const GrammarCommonMistakeSchema = z.object({
  id: z.string(),
  wrong: z.string(),
  correct: z.string(),
  explanation_vi: z.string(),
 });
 
-export const GrammarCommonMistakesBlockSchema = z.object({
+const GrammarCommonMistakesBlockSchema = z.object({
  id: z.string(),
  type: z.literal("grammar_common_mistakes"),
  order: z.number().int().positive(),
@@ -351,7 +351,7 @@ export const GrammarCommonMistakesBlockSchema = z.object({
  items: z.array(GrammarCommonMistakeSchema),
 });
 
-export const GrammarUsageNotesBlockSchema = z.object({
+const GrammarUsageNotesBlockSchema = z.object({
  id: z.string(),
  type: z.literal("grammar_usage_notes"),
  order: z.number().int().positive(),
@@ -360,7 +360,7 @@ export const GrammarUsageNotesBlockSchema = z.object({
  examples: z.array(ExampleSchema).optional().default([]),
 });
 
-export const GrammarMicroPracticeQuestionSchema = z
+const GrammarMicroPracticeQuestionSchema = z
  .object({
   id: z.string(),
   type: z.string(),
@@ -372,7 +372,7 @@ export const GrammarMicroPracticeQuestionSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const GrammarMicroPracticeBlockSchema = z.object({
+const GrammarMicroPracticeBlockSchema = z.object({
  id: z.string(),
  type: z.literal("grammar_micro_practice"),
  order: z.number().int().positive(),
@@ -380,7 +380,7 @@ export const GrammarMicroPracticeBlockSchema = z.object({
  questions: z.array(GrammarMicroPracticeQuestionSchema),
 });
 
-export const GenericGrammarBlockSchema = z
+const GenericGrammarBlockSchema = z
  .object({
   id: z.string(),
   type: z.string(),
@@ -450,7 +450,7 @@ export const GrammarPointSchema = z.preprocess((value) => {
 
 // Exercises
 
-export const ExerciseBaseSchema = z
+const ExerciseBaseSchema = z
  .object({
   id: z.string(),
   type: z.string(),
@@ -468,21 +468,21 @@ export const ExerciseBaseSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const PhoneticsPairSchema = z.object({
+const PhoneticsPairSchema = z.object({
  id: z.string(),
  left: z.string(),
  right: z.string(),
  audio_keys: z.array(z.string()).optional().default([]),
 });
 
-export const ReadAloudItemSchema = z.object({
+const ReadAloudItemSchema = z.object({
  id: z.string(),
  text: z.string(),
  pinyin: z.string().optional().default(""),
  audio_key: z.string().optional().default(""),
 });
 
-export const PhoneticsPartSchema = z.discriminatedUnion("type", [
+const PhoneticsPartSchema = z.discriminatedUnion("type", [
  z.object({
   id: z.string(),
   type: z.literal("minimal_pair"),
@@ -499,12 +499,12 @@ export const PhoneticsPartSchema = z.discriminatedUnion("type", [
  }),
 ]);
 
-export const PhoneticsExerciseSchema = ExerciseBaseSchema.extend({
+const PhoneticsExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("phonetics"),
  parts: z.array(PhoneticsPartSchema),
 });
 
-export const SubstitutionItemSchema = z.object({
+const SubstitutionItemSchema = z.object({
  id: z.string(),
  substitution: z.string(),
  expected_dialogue: z.array(z.string()).optional().default([]),
@@ -512,14 +512,14 @@ export const SubstitutionItemSchema = z.object({
  vocab_refs: z.array(z.string()).optional().default([]),
 });
 
-export const SubstitutionExerciseSchema = ExerciseBaseSchema.extend({
+const SubstitutionExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("substitution"),
  model: z.array(z.string()),
  items: z.array(SubstitutionItemSchema),
  answer_mode: z.enum(["generated", "manual"]).optional().default("generated"),
 });
 
-export const FillBlankQuestionSchema = z.object({
+const FillBlankQuestionSchema = z.object({
  id: z.string(),
  prompt: z.string(),
  answer: z.string(),
@@ -530,7 +530,7 @@ export const FillBlankQuestionSchema = z.object({
  grading: GradingSchema.optional(),
 });
 
-export const AnswerKeyItemSchema = z
+const AnswerKeyItemSchema = z
  .object({
   question_id: z.string().optional(),
   blank_id: z.string().optional(),
@@ -541,7 +541,7 @@ export const AnswerKeyItemSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const ChooseWordsFillBlankExerciseSchema = ExerciseBaseSchema.extend({
+const ChooseWordsFillBlankExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("choose_words_fill_blank"),
  word_bank: z.array(z.string()),
  word_bank_vi: z.array(z.string()).optional().default([]),
@@ -549,13 +549,13 @@ export const ChooseWordsFillBlankExerciseSchema = ExerciseBaseSchema.extend({
  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
 });
 
-export const FillBlankExerciseSchema = ExerciseBaseSchema.extend({
+const FillBlankExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("fill_blank"),
  questions: z.array(FillBlankQuestionSchema),
  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
 });
 
-export const AnswerWithPatternQuestionSchema = z.object({
+const AnswerWithPatternQuestionSchema = z.object({
  id: z.string(),
  prompt: z.string(),
  response_prompt: z.string().optional(),
@@ -565,7 +565,7 @@ export const AnswerWithPatternQuestionSchema = z.object({
  grammar_refs: z.array(z.string()).optional().default([]),
 });
 
-export const AnswerWithPatternExerciseSchema = ExerciseBaseSchema.extend({
+const AnswerWithPatternExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("answer_with_pattern"),
  pattern: z.string(),
  model: z.object({
@@ -576,31 +576,31 @@ export const AnswerWithPatternExerciseSchema = ExerciseBaseSchema.extend({
  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
 });
 
-export const CompleteDialogueLineSchema = z.object({
+const CompleteDialogueLineSchema = z.object({
  speaker: z.string().optional(),
  text: z.string(),
  blank_id: z.string().optional(),
 });
 
-export const CompleteDialogueSampleAnswerSchema = z.object({
+const CompleteDialogueSampleAnswerSchema = z.object({
  blank_id: z.string(),
  answer: z.string(),
  explanation_vi: z.string().optional().default(""),
 });
 
-export const CompleteDialogueItemSchema = z.object({
+const CompleteDialogueItemSchema = z.object({
  id: z.string(),
  lines: z.array(CompleteDialogueLineSchema),
  sample_answers: z.array(CompleteDialogueSampleAnswerSchema).optional().default([]),
  grading: GradingSchema.optional(),
 });
 
-export const CompleteDialogueExerciseSchema = ExerciseBaseSchema.extend({
+const CompleteDialogueExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("complete_dialogue"),
  dialogues: z.array(CompleteDialogueItemSchema),
 });
 
-export const CorrectSentenceQuestionSchema = z.object({
+const CorrectSentenceQuestionSchema = z.object({
  id: z.string(),
  wrong_sentence: z.string(),
  correct_sentence: z.string(),
@@ -610,18 +610,18 @@ export const CorrectSentenceQuestionSchema = z.object({
  check_needed: z.boolean().optional().default(false),
 });
 
-export const CorrectSentenceExerciseSchema = ExerciseBaseSchema.extend({
+const CorrectSentenceExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("correct_sentence"),
  questions: z.array(CorrectSentenceQuestionSchema),
  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
 });
 
-export const ChoiceSchema = z.object({
+const ChoiceSchema = z.object({
  id: z.string(),
  text: z.string(),
 });
 
-export const MultipleChoiceQuestionSchema = z.object({
+const MultipleChoiceQuestionSchema = z.object({
  id: z.string(),
  prompt: z.string(),
  choices: z.array(ChoiceSchema),
@@ -631,18 +631,18 @@ export const MultipleChoiceQuestionSchema = z.object({
  evidence: EvidenceSchema.optional(),
 });
 
-export const MultipleChoiceExerciseSchema = ExerciseBaseSchema.extend({
+const MultipleChoiceExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("multiple_choice"),
  questions: z.array(MultipleChoiceQuestionSchema),
  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
 });
 
-export const CommunicationDialogueLineSchema = z.object({
+const CommunicationDialogueLineSchema = z.object({
  speaker: z.string(),
  text: z.string(),
 });
 
-export const CommunicationPracticeTaskSchema = z
+const CommunicationPracticeTaskSchema = z
  .object({
   id: z.string(),
   type: z.string(),
@@ -651,7 +651,7 @@ export const CommunicationPracticeTaskSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
+const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("communication_dialogue"),
  function: z.string().optional().default(""),
  function_vi: z.string().optional().default(""),
@@ -659,7 +659,7 @@ export const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
  practice_tasks: z.array(CommunicationPracticeTaskSchema).optional().default([]),
 });
 
-export const GenericExerciseSchema = ExerciseBaseSchema.catchall(JsonValueSchema);
+const GenericExerciseSchema = ExerciseBaseSchema.catchall(JsonValueSchema);
 
 export const ExerciseSchema = z
  .discriminatedUnion("type", [
@@ -677,7 +677,7 @@ export const ExerciseSchema = z
 
 // Reading section
 
-export const SupplementaryWordSchema = z.object({
+const SupplementaryWordSchema = z.object({
  id: z.string(),
  hanzi: z.string(),
  pinyin: z.string().optional().default(""),
@@ -685,7 +685,7 @@ export const SupplementaryWordSchema = z.object({
  vocab_ref: z.string().optional().default(""),
 });
 
-export const ReadingParagraphSchema = z.object({
+const ReadingParagraphSchema = z.object({
  id: z.string(),
  order: z.number().int().positive(),
  zh: z.string(),
@@ -713,7 +713,7 @@ export const ReadingTextItemSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const ReadingShortAnswerQuestionSchema = z.object({
+const ReadingShortAnswerQuestionSchema = z.object({
  id: z.string(),
  question: z.object({
   zh: z.string(),
@@ -728,7 +728,7 @@ export const ReadingShortAnswerQuestionSchema = z.object({
  grading: GradingSchema.optional(),
 });
 
-export const ReadingShortAnswerItemSchema = z
+const ReadingShortAnswerItemSchema = z
  .object({
   id: z.string(),
   type: z.literal("reading_short_answer"),
@@ -743,7 +743,7 @@ export const ReadingShortAnswerItemSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const ReadingTrueFalseQuestionSchema = z.object({
+const ReadingTrueFalseQuestionSchema = z.object({
  id: z.string(),
  statement: z.object({
   zh: z.string(),
@@ -755,7 +755,7 @@ export const ReadingTrueFalseQuestionSchema = z.object({
  explanation_vi: z.string().optional().default(""),
 });
 
-export const ReadingTrueFalseItemSchema = z
+const ReadingTrueFalseItemSchema = z
  .object({
   id: z.string(),
   type: z.literal("reading_true_false"),
@@ -770,29 +770,29 @@ export const ReadingTrueFalseItemSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const ClozeTextSegmentSchema = z.object({
+const ClozeTextSegmentSchema = z.object({
  id: z.string(),
  type: z.literal("text"),
  text: z.string(),
 });
 
-export const ClozeBlankSegmentSchema = z.object({
+const ClozeBlankSegmentSchema = z.object({
  id: z.string(),
  type: z.literal("blank"),
  blank_id: z.string(),
 });
 
-export const ClozeSegmentSchema = z.discriminatedUnion("type", [
+const ClozeSegmentSchema = z.discriminatedUnion("type", [
  ClozeTextSegmentSchema,
  ClozeBlankSegmentSchema,
 ]);
 
-export const ClozePassageSchema = z.object({
+const ClozePassageSchema = z.object({
  id: z.string(),
  segments: z.array(ClozeSegmentSchema),
 });
 
-export const ClozeAnswerSchema = z.object({
+const ClozeAnswerSchema = z.object({
  blank_id: z.string(),
  answer: z.string(),
  acceptable_answers: z.array(z.string()).optional().default([]),
@@ -800,7 +800,7 @@ export const ClozeAnswerSchema = z.object({
  grammar_refs: z.array(z.string()).optional().default([]),
 });
 
-export const ReadingClozeItemSchema = z
+const ReadingClozeItemSchema = z
  .object({
   id: z.string(),
   type: z.literal("reading_cloze"),
@@ -817,7 +817,7 @@ export const ReadingClozeItemSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const ReadingMultipleChoiceItemSchema = z
+const ReadingMultipleChoiceItemSchema = z
  .object({
   id: z.string(),
   type: z.literal("reading_multiple_choice"),
@@ -832,7 +832,7 @@ export const ReadingMultipleChoiceItemSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const GenericReadingItemSchema = z
+const GenericReadingItemSchema = z
  .object({
   id: z.string(),
   type: z.string(),
@@ -889,7 +889,7 @@ export const TextSectionSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const VocabularySectionSchema = z
+const VocabularySectionSchema = z
  .object({
   id: z.string(),
   type: z.literal("vocabulary"),
@@ -900,7 +900,7 @@ export const VocabularySectionSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const NotesSectionSchema = z
+const NotesSectionSchema = z
  .object({
   id: z.string(),
   type: z.literal("notes"),
@@ -922,7 +922,7 @@ const GrammarSectionBaseSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const GrammarSectionSchema = z.preprocess((value) => {
+const GrammarSectionSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
  const items = optionalArray(record.items);
 
@@ -953,7 +953,7 @@ export const GrammarSectionSchema = z.preprocess((value) => {
   : value;
 }, GrammarSectionBaseSchema);
 
-export const ExercisesSectionSchema = z
+const ExercisesSectionSchema = z
  .object({
   id: z.string(),
   type: z.literal("exercises"),
@@ -1025,7 +1025,7 @@ export const ReadingSectionSchema = z.preprocess((value) => {
   : value;
 }, ReadingSectionBaseSchema);
 
-export const CharacterWritingSectionSchema = z
+const CharacterWritingSectionSchema = z
  .object({
   id: z.string(),
   type: z.literal("character_writing"),
@@ -1036,7 +1036,7 @@ export const CharacterWritingSectionSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const ProperNounsSectionSchema = z
+const ProperNounsSectionSchema = z
  .object({
   id: z.string(),
   type: z.literal("proper_nouns"),
@@ -1047,7 +1047,7 @@ export const ProperNounsSectionSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const CommunicationSectionSchema = z
+const CommunicationSectionSchema = z
  .object({
   id: z.string(),
   type: z.literal("communication"),
@@ -1058,7 +1058,7 @@ export const CommunicationSectionSchema = z
  })
  .catchall(JsonValueSchema);
 
-export const SummarySectionSchema = z
+const SummarySectionSchema = z
  .object({
   id: z.string(),
   type: z.literal("summary"),
@@ -1151,19 +1151,19 @@ export const SectionSchema = z.preprocess(
 
 // Summary
 
-export const SummaryGrammarPointSchema = z.object({
+const SummaryGrammarPointSchema = z.object({
  id: z.string(),
  title: z.string(),
 });
 
-export const SummaryPatternSchema = z
+const SummaryPatternSchema = z
  .object({
   pattern: z.string(),
   grammar_ref: z.string().optional().default(""),
  })
  .catchall(JsonValueSchema);
 
-export const LessonSummarySchema = z
+const LessonSummarySchema = z
  .object({
   lesson_parts: z.array(z.string()).optional().default([]),
   grammar_points: z.array(SummaryGrammarPointSchema).optional().default([]),
@@ -1178,7 +1178,7 @@ export const LessonSummarySchema = z
 
 // Final lesson schema
 
-export const LessonSchema = z
+const LessonSchema = z
  .object({
   id: z.string(),
   title: LocalizedTextSchema,

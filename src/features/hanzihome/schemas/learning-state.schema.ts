@@ -23,7 +23,7 @@ export const hanziReaderFontSchema = z
  .transform((font) => (font === "kai" || font === "mengshen" ? "system" : font))
  .pipe(readerFontSchema);
 export const hanziReaderSizeSchema = readerSizeSchema;
-export const lessonTextRevealModeSchema = readerRevealModeSchema;
+const lessonTextRevealModeSchema = readerRevealModeSchema;
 export const moduleSchema = z.enum([
  "overview",
  "lessonText",

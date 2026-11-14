@@ -20,9 +20,9 @@ export type HanziHomeModule = z.infer<typeof moduleSchema>;
 export type LearningStatus = z.infer<typeof learningStatusSchema>;
 export type ReviewResult = z.infer<typeof reviewResultSchema>;
 
-export type HanziHomeCourseType = string;
+type HanziHomeCourseType = string;
 
-export type HanziHomeCourse = {
+type HanziHomeCourse = {
  id: string;
  slug: string;
  title: string;
@@ -41,7 +41,7 @@ export type HanziHomeCourseBook = {
  updatedAt?: string;
 };
 
-export const EditableFieldPathSchema = z.array(z.union([z.string(), z.number()]));
+const EditableFieldPathSchema = z.array(z.union([z.string(), z.number()]));
 
 export const HanziHomeEditableRecordMetaSchema = z.object({
  entityType: z.string(),
@@ -84,7 +84,7 @@ export type StaticRadicalData = {
  editMeta?: HanziHomeEditableRecordMeta;
 };
 
-export type HanziHomeMeta = {
+type HanziHomeMeta = {
  app: string;
  dataset: string;
  version: string;
@@ -100,7 +100,7 @@ export type HanziHomeMeta = {
  schemaNote?: string;
 };
 
-export type VocabExample = {
+type VocabExample = {
  id: string;
  zh: string;
  pinyin?: string;
@@ -109,7 +109,7 @@ export type VocabExample = {
  editMeta?: HanziHomeEditableRecordMeta;
 };
 
-export type VocabDetailSection = {
+type VocabDetailSection = {
  id: string;
  key: string;
  title: string;
@@ -151,7 +151,7 @@ export type GrammarViewModel = {
  editMeta?: HanziHomeEditableRecordMeta;
 };
 
-export type LessonNotesViewModel = {
+type LessonNotesViewModel = {
  overviewMarkdown?: string;
  lessonTextMarkdown?: string;
  exerciseMarkdown?: string;
@@ -211,11 +211,11 @@ export type HanziHomeData = {
  meta: HanziHomeMeta;
 };
 
-export const HanziHomeDatasetSchema = z.enum(["q2", "q3"]);
-export const HanziHomeCatalogSourceSchema = z.enum(["db", "static", "empty"]);
-export type HanziHomeCatalogSource = z.infer<typeof HanziHomeCatalogSourceSchema>;
+const HanziHomeDatasetSchema = z.enum(["q2", "q3"]);
+const HanziHomeCatalogSourceSchema = z.enum(["db", "static", "empty"]);
+type HanziHomeCatalogSource = z.infer<typeof HanziHomeCatalogSourceSchema>;
 
-export type HanziHomeCourseStats = {
+type HanziHomeCourseStats = {
  bookCount: number;
  lessonCount: number;
  vocabCount: number;

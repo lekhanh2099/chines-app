@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { reviewResultSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 
-export const reviewAttemptItemTypeSchema = z.enum(["vocab", "grammar", "radical"]);
+const reviewAttemptItemTypeSchema = z.enum(["vocab", "grammar", "radical"]);
 
 export const reviewAttemptAnswerSchema = z.strictObject({
  kind: z.literal("review"),

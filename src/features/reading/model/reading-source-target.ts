@@ -1,12 +1,8 @@
 import { z } from "zod";
 
-export const readerSourceSurfaceSchema = z.enum([
- "reader-selection",
- "reader-highlight",
- "shadowing",
-]);
+const readerSourceSurfaceSchema = z.enum(["reader-selection", "reader-highlight", "shadowing"]);
 
-export const readerSourceTargetSchema = z
+const readerSourceTargetSchema = z
  .strictObject({
   source: readerSourceSurfaceSchema,
   documentId: z.string().min(1),
@@ -23,7 +19,7 @@ export const readerSourceTargetSchema = z
   { message: "Reader source range must contain both ordered offsets" },
  );
 
-export type ReaderSourceTarget = z.output<typeof readerSourceTargetSchema>;
+type ReaderSourceTarget = z.output<typeof readerSourceTargetSchema>;
 
 export function buildReaderSourceHref(input: ReaderSourceTarget, baseHref = "/reader") {
  const target = readerSourceTargetSchema.parse(input);

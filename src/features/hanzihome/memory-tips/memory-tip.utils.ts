@@ -1,6 +1,6 @@
 import type { MemoryTip } from "./memory-tip.schema";
 
-export function isUserVisibleMemoryTip(tip: MemoryTip) {
+function isUserVisibleMemoryTip(tip: MemoryTip) {
  return tip.scope === "user" && tip.sourceType !== "system" && !tip.isArchived;
 }
 

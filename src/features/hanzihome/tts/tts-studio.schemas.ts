@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { buildCacheKey } from "@/lib/audio/tts-cache";
 
-export const ttsSegmentModeSchema = z.enum(["sentence", "paragraph"]);
+const ttsSegmentModeSchema = z.enum(["sentence", "paragraph"]);
 export type TtsSegmentMode = z.output<typeof ttsSegmentModeSchema>;
 
 export const ttsFolderRowSchema = z.strictObject({

@@ -472,14 +472,6 @@ export async function getUserAiTaskRuntimePreview(input: {
  );
 }
 
-export async function getUserAiRuntimeReadiness(
- supabase: AuthenticatedRouteContext["supabase"],
- userId: string,
-) {
- const inventory = await loadUserAiRuntimeInventory(supabase, userId);
- return getAiRuntimeReadinessFromInventory(inventory);
-}
-
 export async function resolveUserAiRuntime(input: {
  supabase: AuthenticatedRouteContext["supabase"];
  userId: string;

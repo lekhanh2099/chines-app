@@ -17,7 +17,7 @@ export type HomeCourseGroup = {
  books: { id: string; title: string; lesson: HomeLessonTarget | null }[];
 };
 
-export type HomeLearningPulse = {
+type HomeLearningPulse = {
  trackedCount: number;
  reviewCount: number;
  knownCount: number;

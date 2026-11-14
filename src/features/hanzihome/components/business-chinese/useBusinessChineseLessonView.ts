@@ -183,7 +183,7 @@ export function useBusinessChineseLessonView({
  };
 }
 
-export type BusinessChineseLessonView = ReturnType<typeof useBusinessChineseLessonView>;
+type BusinessChineseLessonView = ReturnType<typeof useBusinessChineseLessonView>;
 
 /** Tracks whether the viewport is wide enough (80rem) for the in-layout toolbar. */
 export function useBusinessChineseWideToolbar() {

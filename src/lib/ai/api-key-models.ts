@@ -1,13 +1,13 @@
 import type { ApiKeyProvider } from "@/lib/ai/api-key-providers";
 import { GEMINI_DETAIL_MODEL_OPTIONS } from "@/lib/ai/gemini-models";
 
-export type ApiKeyModelOption = {
+type ApiKeyModelOption = {
  value: string;
  label: string;
  description: string;
 };
 
-export const API_KEY_MODEL_OPTIONS: Record<ApiKeyProvider, readonly ApiKeyModelOption[]> = {
+const API_KEY_MODEL_OPTIONS: Record<ApiKeyProvider, readonly ApiKeyModelOption[]> = {
  groq: [
   {
    value: "openai/gpt-oss-20b",

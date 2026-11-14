@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 
-export type NativeSelectProps = React.ComponentProps<"select"> & {
+type NativeSelectProps = React.ComponentProps<"select"> & {
  readonly density?: "compact" | "default";
 };
 

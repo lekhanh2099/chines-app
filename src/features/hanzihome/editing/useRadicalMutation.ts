@@ -11,7 +11,7 @@ export function useRadicalMutation() {
   mutationFn: updateRadical,
   onSuccess: async () => {
    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
-   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.searchIndexRoot });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.searchRoot });
   },
   onError: async (error) => {
    if (isHanziHomeMutationConflict(error)) {

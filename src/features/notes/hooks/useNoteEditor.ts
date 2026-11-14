@@ -1,19 +1,16 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 import { useQueryClient } from "@tanstack/react-query";
 import { noteQueryKeys } from "../query-keys";
 import type { NoteDetail } from "@/services/notes/notes.service";
 import { useClientSession } from "@/components/providers/QueryProvider";
 import { useNoteDetail } from "./useNoteDetail";
-import {
- useNoteFolderMutations,
- useNoteFolders,
- useUpdateNoteLibraryMetadata,
-} from "./useNoteLibrary";
-import { getNoteDraft, saveNoteDraft, type NoteDraftRecord } from "../local/note-draft-store";
-import { normalizeImportedNotePayload, type NoteExportPayload } from "../note-export.schema";
+import { useNoteEditorAutosave } from "./useNoteEditorAutosave";
+import { useNoteEditorLibraryImport } from "./useNoteEditorLibraryImport";
+import { saveNoteDraft, type NoteDraftRecord } from "../local/note-draft-store";
+import { normalizeImportedNotePayload } from "../note-export.schema";
 import {
  createNoteDownloadFileName,
  createNoteExportPayload,
@@ -21,211 +18,48 @@ import {
 } from "../note-editor-utils";
 import { noteTabsStore } from "@/stores/notes/note-tabs-store";
 import { splitViewStore } from "@/stores/notes/split-view-store";
-import { JsonValueSchema, type JsonObject } from "@/types/json";
+import { JsonValueSchema } from "@/types/json";
 
 export function useNoteEditor(noteId: string) {
  const detail = useNoteDetail(noteId);
  const queryClient = useQueryClient();
- const {
-  note,
-  saveContent,
-  saveReadingContent,
-  stageContent,
-  stageReadingContent,
-  updateTitle,
-  updateCategory,
-  updateSplitView,
- } = detail;
+ const { note, stageContent, stageReadingContent, updateTitle, updateCategory, updateSplitView } =
+  detail;
  const { userId } = useClientSession();
- const foldersQuery = useNoteFolders();
- const { createMutation: createFolderMutation } = useNoteFolderMutations();
- const metadataMutation = useUpdateNoteLibraryMetadata(noteId);
- const [dirtyContent, setDirtyContent] = useState(false);
- const [dirtyReading, setDirtyReading] = useState(false);
- const [localDraftFailed, setLocalDraftFailed] = useState({ content: false, reading: false });
+ const { folders, applyImportedLibraryMetadata } = useNoteEditorLibraryImport({
+  noteId,
+  userId,
+  queryClient,
+ });
  const [isImporting, setIsImporting] = useState(false);
  const [importVersion, setImportVersion] = useState(0);
  const importingRef = useRef(false);
- const latestContent = useRef<JsonObject>(null);
- const latestReading = useRef<NoteExportPayload["note"]["readingContent"]>(undefined);
- const pendingContent = useRef<JsonObject>(null);
- const pendingReading = useRef<NoteExportPayload["note"]["readingContent"]>(undefined);
- const contentTimer = useRef<ReturnType<typeof setTimeout>>(null);
- const readingTimer = useRef<ReturnType<typeof setTimeout>>(null);
- const hasNote = note !== null;
- const awaitingRecovery = detail.recoverableDrafts.length > 0;
-
- const flushContent = useCallback(async () => {
-  if (contentTimer.current) clearTimeout(contentTimer.current);
-  const snapshot = pendingContent.current;
-  if (snapshot === null) return;
-  pendingContent.current = null;
-  try {
-   await saveContent(snapshot);
-   if (latestContent.current === snapshot) setDirtyContent(false);
-  } catch (error) {
-   if (pendingContent.current === null && latestContent.current === snapshot) {
-    pendingContent.current = snapshot;
-   }
-   throw error;
-  }
- }, [saveContent]);
-
- const flushReading = useCallback(async () => {
-  if (readingTimer.current) clearTimeout(readingTimer.current);
-  const snapshot = pendingReading.current;
-  if (snapshot === undefined) return;
-  pendingReading.current = undefined;
-  try {
-   await saveReadingContent(snapshot);
-   if (latestReading.current === snapshot) setDirtyReading(false);
-  } catch (error) {
-   if (pendingReading.current === undefined && latestReading.current === snapshot) {
-    pendingReading.current = snapshot;
-   }
-   throw error;
-  }
- }, [saveReadingContent]);
-
- const handleChange = useCallback(
-  (content: JsonObject) => {
-   if (importingRef.current || awaitingRecovery) return;
-   const currentNote = queryClient.getQueryData<NoteDetail>(noteQueryKeys.detail(userId, noteId));
-   if (!currentNote) return;
-   latestContent.current = content;
-   stageContent(content);
-   pendingContent.current = content;
-   setDirtyContent(true);
-   if (userId) {
-    void saveNoteDraft(userId, noteId, {
-     baseRevision: currentNote.revision,
-     content,
-     contentUpdatedAt: Date.now(),
-    }).then((saved) =>
-     setLocalDraftFailed((current) =>
-      current.content === !saved ? current : { ...current, content: !saved },
-     ),
-    );
-   }
-   if (contentTimer.current) clearTimeout(contentTimer.current);
-   contentTimer.current = setTimeout(() => {
-    void flushContent().catch(() => {});
-   }, 1000);
-  },
-  [awaitingRecovery, flushContent, noteId, queryClient, stageContent, userId],
- );
-
- const handleReadingChange = useCallback(
-  (readingContent: JsonObject) => {
-   if (importingRef.current || awaitingRecovery) return;
-   const currentNote = queryClient.getQueryData<NoteDetail>(noteQueryKeys.detail(userId, noteId));
-   if (!currentNote) return;
-   latestReading.current = readingContent;
-   stageReadingContent(readingContent);
-   pendingReading.current = readingContent;
-   setDirtyReading(true);
-   if (userId) {
-    void saveNoteDraft(userId, noteId, {
-     baseRevision: currentNote.revision,
-     content: latestContent.current ?? currentNote.content,
-     readingContent,
-     readingContentUpdatedAt: Date.now(),
-    }).then((saved) =>
-     setLocalDraftFailed((current) =>
-      current.reading === !saved ? current : { ...current, reading: !saved },
-     ),
-    );
-   }
-   if (readingTimer.current) clearTimeout(readingTimer.current);
-   readingTimer.current = setTimeout(() => {
-    void flushReading().catch(() => {});
-   }, 1000);
-  },
-  [awaitingRecovery, flushReading, noteId, queryClient, stageReadingContent, userId],
- );
-
- const retrySave = useCallback(async () => {
-  if ((localDraftFailed.content || localDraftFailed.reading) && userId && note) {
-   const content = latestContent.current;
-   const readingContent = latestReading.current;
-   const saved = await saveNoteDraft(userId, noteId, {
-    baseRevision: note.revision,
-    content: content ?? note?.content ?? {},
-    readingContent,
-    contentUpdatedAt: content === null ? undefined : Date.now(),
-    readingContentUpdatedAt: readingContent === undefined ? undefined : Date.now(),
-   });
-   if (!saved) throw new Error("Local note draft was not saved");
-   setLocalDraftFailed({ content: false, reading: false });
-   pendingContent.current = content;
-   pendingReading.current = readingContent;
-  }
-  await Promise.all([flushContent(), flushReading()]);
- }, [
-  flushContent,
-  flushReading,
-  localDraftFailed.content,
-  localDraftFailed.reading,
-  note,
-  noteId,
-  userId,
- ]);
-
- useEffect(() => {
-  if (!hasNote || !userId || detail.isLoading) return;
-  let disposed = false;
-  void getNoteDraft(userId, noteId).then((draft) => {
-   if (disposed || !draft) return;
-   if (draft.content !== null && latestContent.current === null) {
-    latestContent.current = draft.content;
-    pendingContent.current = draft.content;
-    stageContent(draft.content);
-    setDirtyContent(true);
-    void flushContent().catch(() => {});
-   }
-   if (draft.readingContent !== undefined && latestReading.current === undefined) {
-    latestReading.current = draft.readingContent;
-    pendingReading.current = draft.readingContent;
-    stageReadingContent(draft.readingContent);
-    setDirtyReading(true);
-    void flushReading().catch(() => {});
-   }
-  });
-  return () => {
-   disposed = true;
-  };
- }, [
-  detail.isLoading,
-  flushContent,
-  flushReading,
-  hasNote,
-  noteId,
-  stageContent,
-  stageReadingContent,
-  userId,
- ]);
-
- useEffect(() => {
-  const flush = () => {
-   void Promise.all([flushContent(), flushReading()]).catch(() => {});
-  };
-  window.addEventListener("beforeunload", flush);
-  return () => {
-   window.removeEventListener("beforeunload", flush);
-   if (contentTimer.current) clearTimeout(contentTimer.current);
-   if (readingTimer.current) clearTimeout(readingTimer.current);
-   flush();
-  };
- }, [flushContent, flushReading]);
+ const {
+  dirtyContent,
+  setDirtyContent,
+  dirtyReading,
+  setDirtyReading,
+  localDraftFailed,
+  setLocalDraftFailed,
+  latestContentRef,
+  latestReadingRef,
+  pendingContentRef,
+  pendingReadingRef,
+  contentTimerRef,
+  readingTimerRef,
+  handleChange,
+  handleReadingChange,
+  retrySave,
+ } = useNoteEditorAutosave({ noteId, detail, userId, queryClient, importingRef });
 
  const exportNote = useCallback(() => {
   if (!note) return;
   const payload = createNoteExportPayload({
    note,
-   folders: foldersQuery.data ?? [],
-   content: latestContent.current ?? note.content,
+   folders: folders ?? [],
+   content: latestContentRef.current ?? note.content,
    readingContent:
-    latestReading.current === undefined ? note.reading_content : latestReading.current,
+    latestReadingRef.current === undefined ? note.reading_content : latestReadingRef.current,
    exportedAt: new Date().toISOString(),
   });
   const url = URL.createObjectURL(
@@ -241,7 +75,7 @@ export function useNoteEditor(noteId: string) {
    link.remove();
    URL.revokeObjectURL(url);
   }
- }, [foldersQuery.data, note]);
+ }, [folders, latestContentRef, latestReadingRef, note]);
 
  const importNote = useCallback(
   async (file: File) => {
@@ -260,12 +94,12 @@ export function useNoteEditor(noteId: string) {
     await retrySave();
     const content = payload.note.content;
     const readingContent = payload.note.readingContent ?? null;
-    latestContent.current = content;
-    latestReading.current = readingContent;
+    latestContentRef.current = content;
+    latestReadingRef.current = readingContent;
     stageContent(content);
     stageReadingContent(readingContent);
-    pendingContent.current = content;
-    pendingReading.current = readingContent;
+    pendingContentRef.current = content;
+    pendingReadingRef.current = readingContent;
     setDirtyContent(true);
     setDirtyReading(true);
     setImportVersion((version) => version + 1);
@@ -290,58 +124,25 @@ export function useNoteEditor(noteId: string) {
      await updateSplitView(payload.note.splitViewEnabled);
      splitViewStore.actions.setSplitView(noteId, payload.note.splitViewEnabled);
     }
-    if (hasLibraryMetadata) {
-     let folderId: Parameters<typeof metadataMutation.mutateAsync>[0]["folderId"];
-     const folderSpec = payload.note.folder;
-     if (folderSpec) {
-      let parentId: Parameters<typeof createFolderMutation.mutateAsync>[0]["parentId"] = null;
-      if (folderSpec.parentName) {
-       parentId =
-        foldersQuery.data?.find(
-         (folder) => folder.parentId === null && folder.name === folderSpec.parentName,
-        )?.id ??
-        (
-         await createFolderMutation.mutateAsync({
-          name: folderSpec.parentName,
-          color: folderSpec.color,
-         })
-        ).id;
-      }
-      folderId =
-       foldersQuery.data?.find(
-        (folder) => folder.parentId === parentId && folder.name === folderSpec.name,
-       )?.id ??
-       (
-        await createFolderMutation.mutateAsync({
-         name: folderSpec.name,
-         parentId,
-         color: folderSpec.color,
-        })
-       ).id;
-     } else if (folderSpec === null) folderId = null;
-     const current = queryClient.getQueryData<NoteDetail>(noteQueryKeys.detail(userId, noteId));
-     if (!current) throw new Error("Note is not loaded");
-     await metadataMutation.mutateAsync({
-      expectedRevision: current.revision,
-      noteId,
-      folderId,
-      readingStatus: payload.note.readingStatus ?? null,
-      source: payload.note.source ?? null,
-     });
-    }
+    if (hasLibraryMetadata) await applyImportedLibraryMetadata(payload);
    } finally {
     importingRef.current = false;
     setIsImporting(false);
    }
   },
   [
-   createFolderMutation,
-   foldersQuery.data,
-   metadataMutation,
+   applyImportedLibraryMetadata,
+   latestContentRef,
+   latestReadingRef,
    note,
+   pendingContentRef,
+   pendingReadingRef,
    queryClient,
    noteId,
    retrySave,
+   setDirtyContent,
+   setDirtyReading,
+   setLocalDraftFailed,
    stageContent,
    stageReadingContent,
    updateCategory,
@@ -352,32 +153,32 @@ export function useNoteEditor(noteId: string) {
  );
 
  const resolveConflict = async (useServer: boolean) => {
-  if (contentTimer.current) clearTimeout(contentTimer.current);
-  if (readingTimer.current) clearTimeout(readingTimer.current);
+  if (contentTimerRef.current) clearTimeout(contentTimerRef.current);
+  if (readingTimerRef.current) clearTimeout(readingTimerRef.current);
   await detail.resolveConflict(useServer);
   if (useServer) {
-   pendingContent.current = null;
-   pendingReading.current = undefined;
-   latestContent.current = null;
-   latestReading.current = undefined;
+   pendingContentRef.current = null;
+   pendingReadingRef.current = undefined;
+   latestContentRef.current = null;
+   latestReadingRef.current = undefined;
    setDirtyContent(false);
    setDirtyReading(false);
    setLocalDraftFailed({ content: false, reading: false });
    setImportVersion((version) => version + 1);
   } else {
    await retrySave();
-   latestContent.current = null;
-   latestReading.current = undefined;
+   latestContentRef.current = null;
+   latestReadingRef.current = undefined;
    setImportVersion((version) => version + 1);
   }
  };
 
  const recoverDraft = async (source: NoteDraftRecord) => {
   const draft = await detail.recoverDraft(source);
-  latestContent.current = draft.content;
-  pendingContent.current = draft.content;
-  latestReading.current = draft.readingContent;
-  pendingReading.current = draft.readingContent;
+  latestContentRef.current = draft.content;
+  pendingContentRef.current = draft.content;
+  latestReadingRef.current = draft.readingContent;
+  pendingReadingRef.current = draft.readingContent;
   setDirtyContent(draft.content !== null);
   setDirtyReading(draft.readingContent !== undefined);
   setImportVersion((version) => version + 1);

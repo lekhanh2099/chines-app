@@ -75,6 +75,7 @@ function createItem(params: {
  module?: HanziHomeModule;
  targetId?: string;
  href?: string;
+ pinyin?: string;
  metadata?: HanziHomeSearchIndexItem["metadata"];
 }) {
  const { lesson } = params;
@@ -84,6 +85,7 @@ function createItem(params: {
   title: params.title,
   subtitle: params.subtitle,
   searchText: compactSearchText(params.title, params.subtitle, params.body),
+  pinyin: params.pinyin,
   courseId: lesson?.courseId,
   courseTitle: lesson?.courseTitle,
   bookId: lesson?.bookId,
@@ -126,6 +128,7 @@ function buildVocabItems(lesson: HanziHomeLesson) {
    lesson,
    module: "vocab",
    targetId: vocab.runtimeId,
+   pinyin: vocab.pinyin,
   });
  });
 }
@@ -342,15 +345,19 @@ function buildGlobalNavigationItems() {
  );
 }
 
+export function buildHanziHomeLessonSearchItems(lessons: readonly HanziHomeLesson[]) {
+ return lessons.flatMap((lesson) => [
+  ...buildLessonNavigationItems(lesson),
+  ...buildVocabItems(lesson),
+  ...buildGrammarItems(lesson),
+  ...buildTextItems(lesson),
+  ...buildExerciseItems(lesson),
+ ]);
+}
+
 export function buildHanziHomeSearchIndex(data: HanziHomeData) {
  return [
-  ...data.lessons.flatMap((lesson) => [
-   ...buildLessonNavigationItems(lesson),
-   ...buildVocabItems(lesson),
-   ...buildGrammarItems(lesson),
-   ...buildTextItems(lesson),
-   ...buildExerciseItems(lesson),
-  ]),
+  ...buildHanziHomeLessonSearchItems(data.lessons),
   ...buildRadicalItems(data.radicals),
   ...buildGlobalNavigationItems(),
  ];

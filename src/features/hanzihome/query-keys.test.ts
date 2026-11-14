@@ -66,9 +66,10 @@ describe("hanzihomeQueryKeys", () => {
   expect(isInvalidated(queryClient, vocabularyKey)).toBe(true);
   expect(isInvalidated(queryClient, lessonKey)).toBe(false);
  });
- it("invalidates the search index after any content mutation", async () => {
+ it("invalidates search results after any content mutation", async () => {
   const queryClient = new QueryClient();
-  queryClient.setQueryData(hanzihomeQueryKeys.searchIndex, []);
+  const searchKey = hanzihomeQueryKeys.search("user-1", { q: "团聚", category: "all" });
+  queryClient.setQueryData(searchKey, []);
 
   await invalidateHanziHomeContent({
    queryClient,
@@ -76,6 +77,6 @@ describe("hanzihomeQueryKeys", () => {
    entityType: "section",
   });
 
-  expect(isInvalidated(queryClient, hanzihomeQueryKeys.searchIndex)).toBe(true);
+  expect(isInvalidated(queryClient, searchKey)).toBe(true);
  });
 });

@@ -39,7 +39,7 @@ import type { useHtmlArtifactSummariesQuery } from "../useHtmlArtifacts";
 import { artifactTypeLabels, type Nullable } from "./HtmlArtifactEditor";
 import { ArtifactDirectorySkeleton } from "./HtmlArtifactPreview";
 
-export const folderColorClasses: Record<HtmlArtifactFolderColor, string> = {
+const folderColorClasses: Record<HtmlArtifactFolderColor, string> = {
  blue: "bg-info-subtle text-info-text border-info/20",
  purple: "bg-purple-subtle text-purple-text border-purple/20",
  green: "bg-success-subtle text-success-text border-success/20",
@@ -48,7 +48,7 @@ export const folderColorClasses: Record<HtmlArtifactFolderColor, string> = {
  slate: "bg-bg-subtle text-text-secondary border-border-default",
 };
 
-export const DragItemSchema = z.discriminatedUnion("type", [
+const DragItemSchema = z.discriminatedUnion("type", [
  z.object({ type: z.literal("artifact"), id: z.string() }),
  z.object({ type: z.literal("folder"), id: z.string() }),
 ]);
@@ -266,7 +266,7 @@ export function DirectoryPane({
  );
 }
 
-export function FolderRow({
+function FolderRow({
  acceptsFolderDrop = true,
  active,
  color,
@@ -390,7 +390,7 @@ export function FolderRow({
  );
 }
 
-export function FolderTreeRow({
+function FolderTreeRow({
  activeFolderId,
  artifacts,
  dragItem,
@@ -459,7 +459,7 @@ export function FolderTreeRow({
  );
 }
 
-export function ArtifactListButton({
+function ArtifactListButton({
  artifact,
  active,
  onCopyLink,
@@ -533,7 +533,7 @@ export function ArtifactListButton({
  );
 }
 
-export function ArtifactCardAction({
+function ArtifactCardAction({
  danger = false,
  icon: Icon,
  label,

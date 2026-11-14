@@ -1,8 +1,8 @@
 import { DEFAULT_GEMINI_MODEL, type GeminiModelId } from "@/lib/ai/gemini-models";
 import { z } from "zod";
 
-export const ProviderNameSchema = z.enum(["Gemini", "DeepSeek", "OpenAI"]);
-export type ProviderName = z.infer<typeof ProviderNameSchema>;
+const ProviderNameSchema = z.enum(["Gemini", "DeepSeek", "OpenAI"]);
+type ProviderName = z.infer<typeof ProviderNameSchema>;
 
 type ProviderOutageState = {
  unavailableUntil: number;

@@ -306,6 +306,44 @@ describe("Business Chinese study policies", () => {
   },
  );
 
+ it.each([
+  {
+   text:
+    "2. 团聚\nA. 很多人坐成一个圆圈\nB. 一家人坐成一个圆圈\nC. 很多人在一起\nD. 一家人在一起 → D. 一家人在一起 ✓\n👉 Đáp án: D",
+   prompt: "2. 团聚",
+   correct: "D",
+  },
+  {
+   text:
+    "5. 迷惑\nA. 不理解\nB. 糊涂\nC. 怀疑\nD. 疑问 → 👉 Đáp án: B (ngỡ ngàng, mơ hồ không hiểu)",
+   prompt: "5. 迷惑",
+   correct: "B",
+  },
+  {
+   text:
+    '3. "走东家串西家"的意思是\nA. 先去东边\nB. 去东边和西边\nC. 从东边走到西边\nD. 从这一家走到那一家 → 👉 Đáp án: D\nD. 从这一家走到那一家 ✓',
+   prompt: '3. "走东家串西家"的意思是',
+   correct: "D",
+  },
+  {
+   text: "总裁 ______ 我来探讨合作计划。 A. 给  B. 替  C. 帮  D. 派 → D. 派",
+   prompt: "总裁 ______ 我来探讨合作计划。",
+   correct: "D",
+  },
+  {
+   text: "1. 问题\nA. 一\nB. 二 → A",
+   prompt: "1. 问题",
+   correct: "A",
+  },
+ ])("splits $correct-keyed source choices into separate options", ({ text, prompt, correct }) => {
+  const exercise = splitBusinessChineseExercise(text);
+  const item = parsePracticeExerciseItem(exercise.prompt, exercise.answer);
+  expect(item.displayPrompt).toBe(prompt);
+  expect(item.correctChoice).toBe(correct);
+  expect(item.choices.length).toBeGreaterThanOrEqual(2);
+  expect(item.choices.every((choice) => !choice.text.includes("\n"))).toBe(true);
+ });
+
  it("evaluates the source reorder model and labelled alternative answers", () => {
   const prompt = "在 / 故意 / 他 / 借口 / 是 / 分明 / 找";
   const item = parsePracticeExerciseItem(prompt, "他分明是在故意找借口。");

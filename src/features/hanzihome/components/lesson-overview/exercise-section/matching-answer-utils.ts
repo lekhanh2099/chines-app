@@ -7,7 +7,7 @@ import {
  letterLabel,
 } from "./exercise-utils";
 
-export type MatchingAnswerView = {
+type MatchingAnswerView = {
  id: string;
  leftLabel: string;
  rightLabel: string;

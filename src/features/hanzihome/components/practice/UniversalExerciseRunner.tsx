@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { ChevronLeft, ChevronRight, RotateCcw, CheckCircle2, Trophy, Volume2 } from "lucide-react";
+import { useEffect, type ReactNode } from "react";
+import { CheckCircle2, Volume2 } from "lucide-react";
 import { Card } from "@/components/ui/layout/card";
 import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
@@ -10,10 +10,11 @@ import {
  HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { INTERACTION_REGISTRY } from "./exercise-interaction-registry";
-import { evaluateUniversalAnswer } from "./universal-exercise-adapter";
+import { UniversalExerciseActionBar } from "./UniversalExerciseActionBar";
+import { UniversalExerciseSummary } from "./UniversalExerciseSummary";
 import type { UniversalExerciseItem } from "./universal-exercise.types";
+import { useUniversalExerciseSession } from "./useUniversalExerciseSession";
 
 export type UniversalExerciseRunnerProps = {
  readonly items: readonly UniversalExerciseItem[];
@@ -32,101 +33,24 @@ export function UniversalExerciseRunner({
  onComplete,
  extraActions,
 }: UniversalExerciseRunnerProps) {
- const [retryingMistakes, setRetryingMistakes] = useState<readonly UniversalExerciseItem[] | null>(
-  null,
- );
- const [prevRawItems, setPrevRawItems] = useState(rawItems);
- const [currentIndex, setCurrentIndex] = useState(0);
- const [answers, setAnswers] = useState<ReadonlyMap<string, string>>(new Map());
- const [evaluations, setEvaluations] = useState<ReadonlyMap<string, boolean>>(new Map());
- const [isCompleted, setIsCompleted] = useState(false);
-
- if (rawItems !== prevRawItems) {
-  setPrevRawItems(rawItems);
-  setRetryingMistakes(null);
-  setCurrentIndex(0);
-  setAnswers(new Map());
-  setEvaluations(new Map());
-  setIsCompleted(false);
- }
-
- const activeItems = retryingMistakes ?? rawItems;
-
- const { speak, stop: stopSpeech } = useFastMandarinSpeech();
-
- const totalCount = activeItems.length;
- const currentItem = activeItems[currentIndex];
- const currentAnswer = currentItem ? (answers.get(currentItem.id) ?? "") : "";
- const currentEvaluation = currentItem ? evaluations.get(currentItem.id) : undefined;
- const isCurrentSubmitted = currentEvaluation !== undefined;
-
- const handleAnswerChange = useCallback(
-  (value: string) => {
-   if (!currentItem) return;
-   setAnswers((prev) => new Map(prev).set(currentItem.id, value));
-  },
-  [currentItem],
- );
-
- const handleCheckCurrent = useCallback(() => {
-  if (!currentItem) return;
-  const isCorrect = evaluateUniversalAnswer(currentItem, currentAnswer);
-  setEvaluations((prev) => new Map(prev).set(currentItem.id, isCorrect));
-
-  // If correct, play audio for linguistic context
-  if (isCorrect && currentItem.audioText) {
-   speak(currentItem.audioText);
-  }
- }, [currentAnswer, currentItem, speak]);
-
- const handleNext = useCallback(() => {
-  stopSpeech();
-  if (currentIndex + 1 < totalCount) {
-   setCurrentIndex((prev) => prev + 1);
-  } else {
-   setIsCompleted(true);
-   const correctCount = Array.from(evaluations.values()).filter(Boolean).length;
-   onComplete?.({ total: totalCount, correct: correctCount });
-  }
- }, [currentIndex, evaluations, onComplete, stopSpeech, totalCount]);
-
- const handlePrev = useCallback(() => {
-  stopSpeech();
-  if (currentIndex > 0) {
-   setCurrentIndex((prev) => prev - 1);
-  }
- }, [currentIndex, stopSpeech]);
-
- const handleRetryCurrent = useCallback(() => {
-  if (!currentItem) return;
-  stopSpeech();
-  setEvaluations((prev) => {
-   const next = new Map(prev);
-   next.delete(currentItem.id);
-   return next;
-  });
- }, [currentItem, stopSpeech]);
-
- const handleRetryMistakes = useCallback(() => {
-  stopSpeech();
-  const mistakeItems = activeItems.filter((item) => evaluations.get(item.id) === false);
-  if (mistakeItems.length > 0) {
-   setRetryingMistakes(mistakeItems);
-   setCurrentIndex(0);
-   setAnswers(new Map());
-   setEvaluations(new Map());
-   setIsCompleted(false);
-  }
- }, [activeItems, evaluations, stopSpeech]);
-
- const handleRestartAll = useCallback(() => {
-  stopSpeech();
-  setRetryingMistakes(null);
-  setCurrentIndex(0);
-  setAnswers(new Map());
-  setEvaluations(new Map());
-  setIsCompleted(false);
- }, [stopSpeech]);
+ const session = useUniversalExerciseSession({ rawItems, onComplete });
+ const {
+  totalCount,
+  currentIndex,
+  currentItem,
+  currentAnswer,
+  currentEvaluation,
+  isCurrentSubmitted,
+  evaluations,
+  isCompleted,
+  speak,
+  handleAnswerChange,
+  handleCheckCurrent,
+  handleNext,
+  handlePrev,
+  handleRetryMistakes,
+  handleRestartAll,
+ } = session;
 
  // Keyboard shortcuts (Enter to check/next, Left/Right arrows)
  useEffect(() => {
@@ -186,61 +110,15 @@ export function UniversalExerciseRunner({
 
  // Summary Screen
  if (isCompleted) {
-  const correctCount = Array.from(evaluations.values()).filter(Boolean).length;
-  const percentage = Math.round((correctCount / totalCount) * 100);
-  const mistakeCount = totalCount - correctCount;
-
   return (
-   <Card
-    variant="elevated"
-    padding="lg"
-    className="mx-auto flex max-w-xl flex-col items-center gap-5 text-center"
-   >
-    <div className="flex size-16 items-center justify-center rounded-xl bg-primary/10 text-primary">
-     <Trophy className="size-8" />
-    </div>
-
-    <div className="grid gap-1.5">
-     <Typography as="h3" variant="sectionTitle" weight="black">
-      Hoàn thành bài luyện tập!
-     </Typography>
-     <Typography variant="bodySmall" tone="secondary">
-      {description}
-     </Typography>
-    </div>
-
-    {/* Score Badge */}
-    <div className="flex flex-wrap items-center justify-center gap-3">
-     <Badge variant="accent" size="lg" casing="natural">
-      {`Kết quả: ${correctCount}/${totalCount} câu đúng (${percentage}%)`}
-     </Badge>
-     {percentage === 100 ? (
-      <Badge variant="success" size="lg" casing="natural">
-       Xuất sắc! 🎉
-      </Badge>
-     ) : null}
-    </div>
-
-    {/* Summary Action Buttons */}
-    <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
-     {mistakeCount > 0 ? (
-      <Button type="button" variant="default" size="sm" onClick={handleRetryMistakes}>
-       <RotateCcw className="size-4" />
-       <span>{`Làm lại ${mistakeCount} câu chưa đúng`}</span>
-      </Button>
-     ) : null}
-
-     <Button type="button" variant="outline" size="sm" onClick={handleRestartAll}>
-      Làm lại từ đầu
-     </Button>
-
-     {onClose ? (
-      <Button type="button" variant="ghost" size="sm" onClick={onClose}>
-       Đóng
-      </Button>
-     ) : null}
-    </div>
-   </Card>
+   <UniversalExerciseSummary
+    evaluations={evaluations}
+    totalCount={totalCount}
+    description={description}
+    onClose={onClose}
+    handleRetryMistakes={handleRetryMistakes}
+    handleRestartAll={handleRestartAll}
+   />
   );
  }
 
@@ -353,48 +231,7 @@ export function UniversalExerciseRunner({
     </div>
 
     {/* Question Action Toolbar */}
-    <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border-default/50 pt-3">
-     <Button
-      type="button"
-      variant="ghost"
-      size="compact"
-      disabled={currentIndex === 0}
-      onClick={handlePrev}
-      aria-label="Câu trước đó"
-     >
-      <ChevronLeft className="size-4" />
-      <span>Trước</span>
-     </Button>
-
-     <div className="flex items-center gap-2">
-      {!isCurrentSubmitted ? (
-       <Button
-        type="button"
-        variant="default"
-        size="compact"
-        disabled={!currentAnswer.trim()}
-        onClick={handleCheckCurrent}
-       >
-        <span>Kiểm tra</span>
-        <span className="hidden text-xs opacity-70 sm:inline">(Enter)</span>
-       </Button>
-      ) : (
-       <>
-        {currentEvaluation === false ? (
-         <Button type="button" variant="outline" size="compact" onClick={handleRetryCurrent}>
-          <RotateCcw className="size-3.5" />
-          <span>Thử lại</span>
-         </Button>
-        ) : null}
-
-        <Button type="button" variant="default" size="compact" onClick={handleNext}>
-         <span>{currentIndex + 1 === totalCount ? "Hoàn thành" : "Tiếp theo"}</span>
-         <ChevronRight className="size-4" />
-        </Button>
-       </>
-      )}
-     </div>
-    </div>
+    <UniversalExerciseActionBar session={session} />
    </Card>
   </div>
  );

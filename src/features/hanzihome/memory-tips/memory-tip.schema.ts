@@ -4,7 +4,7 @@ export const memoryTipTypeSchema = z.enum(["grammar", "vocab", "formula", "custo
 
 export const memoryTipSourceTypeSchema = z.enum(["grammar", "vocab", "lesson", "custom", "system"]);
 
-export const memoryTipScopeSchema = z.enum(["system", "user"]);
+const memoryTipScopeSchema = z.enum(["system", "user"]);
 
 export const memoryTipSchema = z.object({
  id: z.string(),

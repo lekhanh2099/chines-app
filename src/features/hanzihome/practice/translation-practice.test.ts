@@ -50,11 +50,17 @@ describe("HanziHome translation practice", () => {
   });
  });
 
- it("uses stable segment-direction keys and bounded navigation", () => {
-  expect(translationAttemptKey("segment-1", "zh-vi")).toBe("segment-1:zh-vi");
+ it("bounds navigation to the available segments", () => {
   expect(clampTranslationIndex(-1, 3)).toBe(0);
   expect(clampTranslationIndex(8, 3)).toBe(2);
   expect(clampTranslationIndex(8, 0)).toBe(0);
+ });
+
+ it("keys attempts by segment and direction in the persisted format", () => {
+  expect(translationAttemptKey("segment-1", "zh-vi")).toBe("segment-1:zh-vi");
+  expect(translationAttemptKey("segment-1", "vi-zh")).not.toBe(
+   translationAttemptKey("segment-1", "zh-vi"),
+  );
  });
 
  it("orders source segments without mutating the query result", () => {

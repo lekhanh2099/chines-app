@@ -11,7 +11,7 @@ export const AnnotationAnchorSchema = z.object({
  prefixText: z.string(),
  suffixText: z.string(),
 });
-export const NullableAnnotationAnchorSchema = AnnotationAnchorSchema.nullable();
+const NullableAnnotationAnchorSchema = AnnotationAnchorSchema.nullable();
 
 export type AnnotationAnchor = z.infer<typeof AnnotationAnchorSchema>;
 export type NullableAnnotationAnchor = z.infer<typeof NullableAnnotationAnchorSchema>;
@@ -41,7 +41,7 @@ export const LessonAnnotationNoteResultSchema = z.strictObject({
 });
 export type LessonAnnotationNoteResult = z.infer<typeof LessonAnnotationNoteResultSchema>;
 
-export const ResolvedLessonTextAnnotationSchema = LessonTextAnnotationSchema.extend({
+const ResolvedLessonTextAnnotationSchema = LessonTextAnnotationSchema.extend({
  resolvedStartOffset: z.number(),
  resolvedEndOffset: z.number(),
  stale: z.boolean(),

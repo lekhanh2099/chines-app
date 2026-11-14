@@ -31,7 +31,7 @@ import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettin
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { dictationSourcesFromLesson, type DictationSource } from "./translation-practice";
 
-export type LessonDictationWorkspaceProps = {
+type LessonDictationWorkspaceProps = {
  lesson?: TextbookLesson | null;
  sourceLesson?: HanyuLesson;
  sources?: DictationSource[];

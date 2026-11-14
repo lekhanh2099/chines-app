@@ -182,7 +182,7 @@ export function ArtifactDirectorySkeleton() {
  );
 }
 
-export function HtmlArtifactPreviewSkeleton() {
+function HtmlArtifactPreviewSkeleton() {
  return (
   <div
    className="grid h-full animate-pulse content-start gap-4 bg-bg-primary p-5"
@@ -201,14 +201,14 @@ export function HtmlArtifactPreviewSkeleton() {
  );
 }
 
-export function getHtmlArtifactFrameKey(artifactId: string, html: string) {
+function getHtmlArtifactFrameKey(artifactId: string, html: string) {
  let hash = 0;
  for (let index = 0; index < html.length; index += 1)
   hash = (hash * 31 + html.charCodeAt(index)) >>> 0;
  return `${artifactId}-${html.length}-${hash.toString(36)}`;
 }
 
-export function StableHtmlArtifactIframe({
+function StableHtmlArtifactIframe({
  artifact,
  initialSrcDoc,
  iframeRef,

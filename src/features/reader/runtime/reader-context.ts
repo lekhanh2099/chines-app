@@ -71,15 +71,3 @@ export function useReaderPlaybackProgress(id: string) {
 export function useReaderPlaybackStartOffset(id: string) {
  return useReaderSelector(selectPlaybackStartOffset(id));
 }
-export function useReaderActiveIndex() {
- return useReaderSelector((state) => state.navigation.activeIndex);
-}
-export function useReaderOutlineOpen() {
- return useReaderSelector((state) => state.ui.outlineOpen);
-}
-export function useReaderSegmentIds() {
- return useReaderSelector((state) => state.content.segmentIds);
-}
-export function useReaderSectionIds() {
- return useReaderSelector((state) => state.content.sectionIds);
-}

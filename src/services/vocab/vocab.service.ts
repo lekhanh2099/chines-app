@@ -7,12 +7,22 @@
  */
 
 import { JsonObjectSchema } from "@/types/json";
-import type { JsonFieldValue, JsonObject } from "@/types/json";
 import type { Tables } from "@/types/supabase.generated";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { logger } from "@/lib/logger";
 import { extractChinese } from "@/lib/text/chinese-utils";
+import {
+ mergeAnalysisPreferIncoming,
+ mergeAnalysisPreserveExisting,
+ normalizeAnalysis,
+} from "@/services/vocab/vocab-analysis-normalizers";
+import {
+ buildDictionaryCoreData,
+ getDictionaryCoreAnalysis,
+ getPrimaryMeaning,
+ getVocabularyAnalysis,
+} from "@/services/vocab/vocab-analysis-selectors";
 import {
  aiAnalysisSchema,
  DbDictionaryCoreSchema,
@@ -20,32 +30,28 @@ import {
  PersonalNoteModeSchema,
  VocabDataSchema,
 } from "@/types/database";
-import type {
- DbDictionaryCore,
- AiAnalysis,
- AiDefinition,
- AiDefinitionExample,
- AiDefinitionMeaning,
- AiRadical,
- AiRelatedCompound,
- AiWordRelation,
- DictionaryCoreData,
- DictionaryCoreDefinition,
- VocabData,
-} from "@/types/database";
+import type { AiAnalysis, VocabData } from "@/types/database";
 import type { Database } from "@/types/supabase.generated";
+
+export {
+ getBasicVocabData,
+ getBasicVocabularyAnalysis,
+ getDictionaryCoreAnalysis,
+ getNormalizedAntonyms,
+ getNormalizedDefinitions,
+ getNormalizedRadicals,
+ getNormalizedRelatedCompounds,
+ getNormalizedSynonyms,
+ getPrimaryMeaning,
+ getVocabularyAnalysis,
+ hasDetailedVocabAnalysis,
+ hasInspectorDeepDiveData,
+ isGenericEnglishFallbackAnalysis,
+ mapDictionaryEntryToVocabData,
+} from "@/services/vocab/vocab-analysis-selectors";
 
 type AppSupabaseClient = SupabaseClient<Database>;
 
-type VocabularyAnalysisSource = z.infer<
- z.ZodNullable<
-  z.ZodObject<{
-   analysis: typeof DbVocabularySchema.shape.analysis;
-   ai_analysis: typeof DbVocabularySchema.shape.ai_analysis;
-   sino_vietnamese: typeof DbVocabularySchema.shape.sino_vietnamese;
-  }>
- >
->;
 const DictionaryMergeModeSchema = z.enum(["preserve-existing", "prefer-incoming"]);
 
 type UserVocabProgressRow = Tables<"user_vocab_progress">;
@@ -109,198 +115,6 @@ export function normalizeDictionaryHeadword(text: string): string {
  const trimmed = text.trim();
  const chineseOnly = extractChinese(trimmed);
  return (chineseOnly || trimmed).trim();
-}
-
-function normalizeRelatedCompounds(source: AiAnalysis): AiAnalysis["related_compounds"] {
- const normalizedCompounds = normalizeWordRelations(source.related_compounds);
-
- if (Array.isArray(source.related_compounds)) {
-  return normalizedCompounds || [];
- }
-
- const legacyWords = Array.from(
-  new Set(
-   [...(source.related_words || []), ...(source.collocations || [])]
-    .map((word) => word.trim())
-    .filter(Boolean),
-  ),
- );
-
- if (!legacyWords.length) {
-  return undefined;
- }
-
- return legacyWords.map((word) => ({ word }));
-}
-
-function normalizeDefinitionExamples(examples?: AiDefinitionExample[]): AiDefinition["examples"] {
- return examples
-  ?.map((example) => ({
-   ...example,
-   py: example.py || example.pinyin,
-   pinyin: example.pinyin || example.py,
-  }))
-  .filter((example) => example.cn || example.vi || example.py || example.pinyin);
-}
-
-function normalizeDefinitionMeanings(meanings?: AiDefinitionMeaning[]): AiDefinition["meanings"] {
- return meanings
-  ?.map((item) => ({
-   meaning: item.meaning?.trim(),
-   examples: normalizeDefinitionExamples(item.examples),
-  }))
-  .filter((item) => item.meaning || item.examples?.length);
-}
-
-function normalizeWordRelations(relations?: AiWordRelation[]): AiAnalysis["synonyms"] {
- return relations
-  ?.map((relation) => ({
-   word: relation.word?.trim(),
-   pinyin: relation.pinyin?.trim(),
-   meaning: relation.meaning?.trim(),
-  }))
-  .filter((relation) => relation.word || relation.pinyin || relation.meaning);
-}
-
-function normalizeAnalysis(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
- sinoVietnamese?: z.infer<z.ZodNullable<z.ZodString>>,
-): AiAnalysis {
- const source = analysis || {};
- const normalizedEtymology =
-  typeof source.etymology === "string"
-   ? {
-      type: "Không xác định",
-      origin: source.etymology.trim(),
-      mnemonic: source.mnemonic_story?.trim() || "",
-      explanation: source.etymology.trim(),
-     }
-   : source.etymology
-     ? {
-        type: source.etymology.type?.trim() || "Không xác định",
-        origin: source.etymology.origin?.trim() || source.etymology.explanation?.trim() || "",
-        mnemonic: source.etymology.mnemonic?.trim() || source.mnemonic_story?.trim() || "",
-        explanation: source.etymology.explanation?.trim() || source.etymology.origin?.trim() || "",
-       }
-     : undefined;
- const normalizedDefinitions = source.definitions?.map((definition) => ({
-  ...definition,
-  meanings: normalizeDefinitionMeanings(definition.meanings),
-  text:
-   definition.text ||
-   definition.meaning ||
-   definition.meanings?.find((item) => item.meaning)?.meaning,
-  meaning:
-   definition.meaning ||
-   definition.text ||
-   definition.meanings?.find((item) => item.meaning)?.meaning,
-  examples:
-   normalizeDefinitionExamples(definition.examples) ||
-   normalizeDefinitionMeanings(definition.meanings)?.find((item) => item.examples?.length)
-    ?.examples,
- }));
-
- const normalizedGrammar = source.grammar_breakdown?.map((point) => ({
-  ...point,
-  pattern: point.pattern || point.structure,
-  structure: point.structure || point.pattern,
- }));
-
- const resolvedSinoVietnamese =
-  sinoVietnamese || source.sino_vietnamese || source.han_viet || undefined;
- const normalizedRelatedCompounds = normalizeRelatedCompounds(source);
- const normalizedSynonyms = normalizeWordRelations(source.synonyms);
- const normalizedAntonyms = normalizeWordRelations(source.antonyms);
-
- return {
-  ...source,
-  ...(resolvedSinoVietnamese
-   ? {
-      sino_vietnamese: resolvedSinoVietnamese,
-      han_viet: source.han_viet || resolvedSinoVietnamese,
-     }
-   : {}),
-  ...(normalizedDefinitions ? { definitions: normalizedDefinitions } : {}),
-  ...(normalizedEtymology ? { etymology: normalizedEtymology } : {}),
-  ...(normalizedGrammar ? { grammar_breakdown: normalizedGrammar } : {}),
-  ...(normalizedRelatedCompounds ? { related_compounds: normalizedRelatedCompounds } : {}),
-  ...(normalizedSynonyms ? { synonyms: normalizedSynonyms } : {}),
-  ...(normalizedAntonyms ? { antonyms: normalizedAntonyms } : {}),
-  ...(normalizedEtymology?.mnemonic || source.mnemonic_story
-   ? {
-      mnemonic_story: source.mnemonic_story || normalizedEtymology?.mnemonic || "",
-     }
-   : {}),
-  ...(typeof source.hsk_level === "string" ? { hsk_level: source.hsk_level.trim() } : {}),
-  ...(typeof source.tocfl_level === "string" ? { tocfl_level: source.tocfl_level.trim() } : {}),
-  ...(typeof source.notes === "string" ? { notes: source.notes.trim() } : {}),
-  ...(source.common_mistakes || source.confusion || source.confusion_warning
-   ? {
-      common_mistakes: source.common_mistakes || source.confusion || source.confusion_warning,
-      confusion: source.confusion || source.confusion_warning || source.common_mistakes,
-      confusion_warning: source.confusion_warning || source.confusion || source.common_mistakes,
-     }
-   : {}),
- };
-}
-
-function getDictionaryDefinitionsFromAnalysis(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
- fallbackMeaning = "",
-): DictionaryCoreDefinition[] {
- return getNormalizedDefinitions(analysis, fallbackMeaning)
-  .map((definition) => {
-   const firstExample = definition.examples?.find((example) => example.cn || example.vi);
-
-   return {
-    part_of_speech: definition.pos || "",
-    meaning: definition.meaning || definition.text || fallbackMeaning,
-    example: firstExample?.cn
-     ? `${firstExample.cn}${firstExample.vi ? ` (${firstExample.vi})` : ""}`
-     : firstExample?.vi || "",
-    examples: definition.examples,
-   };
-  })
-  .filter((definition) => definition.meaning);
-}
-
-function buildDictionaryCoreData(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
- fallbackMeaning = "",
-): DictionaryCoreData {
- const normalized = normalizeAnalysis(analysis);
- const definitions = getDictionaryDefinitionsFromAnalysis(normalized, fallbackMeaning);
-
- return {
-  definitions,
-  ai_analysis: Object.keys(normalized).length ? normalized : undefined,
- };
-}
-
-export function getDictionaryCoreAnalysis(
- entry?: z.infer<z.ZodNullable<typeof DbDictionaryCoreSchema>>,
-): AiAnalysis {
- const data = entry?.data || {};
- const embeddedAnalysis = normalizeAnalysis(data.ai_analysis || {}, entry?.sino_vietnamese || null);
- const definitions = (data.definitions || []).map((definition) => ({
-  pos: definition.part_of_speech || "",
-  meaning: definition.meaning || "",
-  text: definition.meaning || "",
-  examples: definition.examples,
- }));
-
- return normalizeAnalysis(
-  {
-   ...embeddedAnalysis,
-   definitions:
-    embeddedAnalysis.definitions && embeddedAnalysis.definitions.length > 0
-     ? embeddedAnalysis.definitions
-     : definitions,
-   sino_vietnamese: entry?.sino_vietnamese || undefined,
-   han_viet: entry?.sino_vietnamese || undefined,
-  },
-  entry?.sino_vietnamese || null,
- );
 }
 
 export async function getDictionaryEntryByHeadword(
@@ -414,373 +228,6 @@ export async function upsertDictionaryEntry(
  }
 
  return parsed.data;
-}
-
-function isMeaningfulValue(value: JsonFieldValue): boolean {
- if (value == null) return false;
- if (typeof value === "string") return value.trim().length > 0;
- if (Array.isArray(value)) return value.length > 0;
- if (typeof value === "object") return Object.keys(value).length > 0;
- return true;
-}
-
-function mergeAnalysisPreserveExisting(existing: JsonObject, incoming: JsonObject): JsonObject {
- const merged: JsonObject = { ...existing };
-
- for (const [key, incomingValue] of Object.entries(incoming)) {
-  if (!isMeaningfulValue(incomingValue)) continue;
-
-  const existingValue = merged[key];
-  if (!isMeaningfulValue(existingValue)) {
-   merged[key] = incomingValue;
-   continue;
-  }
-
-  const existingObject = JsonObjectSchema.safeParse(existingValue);
-  const incomingObject = JsonObjectSchema.safeParse(incomingValue);
-  if (existingObject.success && incomingObject.success) {
-   merged[key] = mergeAnalysisPreserveExisting(existingObject.data, incomingObject.data);
-  }
- }
-
- return merged;
-}
-
-function mergeAnalysisPreferIncoming(existing: JsonObject, incoming: JsonObject): JsonObject {
- const merged: JsonObject = { ...existing };
-
- for (const [key, incomingValue] of Object.entries(incoming)) {
-  if (!isMeaningfulValue(incomingValue)) continue;
-
-  const existingValue = merged[key];
-  const existingObject = JsonObjectSchema.safeParse(existingValue);
-  const incomingObject = JsonObjectSchema.safeParse(incomingValue);
-  if (existingObject.success && incomingObject.success) {
-   merged[key] = mergeAnalysisPreferIncoming(existingObject.data, incomingObject.data);
-   continue;
-  }
-
-  merged[key] = incomingValue;
- }
-
- return merged;
-}
-
-export function mapDictionaryEntryToVocabData(entry: DbDictionaryCore): VocabData {
- const analysis = getDictionaryCoreAnalysis(entry);
-
- return {
-  dictionary_id: entry.id,
-  hanzi: entry.headword,
-  pinyin: entry.pinyin || analysis.pinyin || "",
-  sino_vietnamese: entry.sino_vietnamese || analysis.sino_vietnamese || analysis.han_viet,
-  meaning: getPrimaryMeaning(analysis, ""),
-  ai_analysis: analysis,
- };
-}
-
-export function getVocabularyAnalysis(vocab?: VocabularyAnalysisSource): AiAnalysis {
- const parsed = aiAnalysisSchema.safeParse(vocab?.analysis || vocab?.ai_analysis || {});
- return normalizeAnalysis(parsed.success ? parsed.data : {}, vocab?.sino_vietnamese || null);
-}
-
-export function getPrimaryMeaning(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
- fallbackMeaning = "",
-): string {
- const normalized = normalizeAnalysis(analysis);
-
- return (
-  normalized.definitions?.find((item) => item.meaning || item.text)?.meaning ||
-  normalized.definitions?.find((item) => item.text)?.text ||
-  normalized.meanings?.find((item) => item.definition)?.definition ||
-  fallbackMeaning
- );
-}
-
-export function getBasicVocabularyAnalysis(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
- fallbackMeaning = "",
-): AiAnalysis {
- const normalized = normalizeAnalysis(analysis);
- const primaryDefinition = normalized.definitions?.find((item) => item.meaning || item.text);
- const meaningSummary =
-  normalized.meaning_summary || getPrimaryMeaning(normalized, fallbackMeaning);
-
- return normalizeAnalysis({
-  pinyin: normalized.pinyin,
-  sino_vietnamese: normalized.sino_vietnamese,
-  han_viet: normalized.han_viet,
-  meaning_summary: meaningSummary,
-  ...(primaryDefinition
-   ? {
-      definitions: [
-       {
-        pos: primaryDefinition.pos,
-        meaning:
-         primaryDefinition.meaning || primaryDefinition.text || meaningSummary || fallbackMeaning,
-        text:
-         primaryDefinition.text || primaryDefinition.meaning || meaningSummary || fallbackMeaning,
-       },
-      ],
-     }
-   : {}),
- });
-}
-
-export function getBasicVocabData(vocab: VocabData): VocabData {
- const basicAnalysis = getBasicVocabularyAnalysis(vocab.ai_analysis, vocab.meaning || "");
-
- return {
-  ...vocab,
-  pinyin: vocab.pinyin || basicAnalysis.pinyin || "",
-  sino_vietnamese: vocab.sino_vietnamese || basicAnalysis.sino_vietnamese || basicAnalysis.han_viet,
-  meaning: getPrimaryMeaning(basicAnalysis, vocab.meaning || ""),
-  ai_analysis: basicAnalysis,
- };
-}
-
-function hasStructuredEtymology(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): boolean {
- const normalized = normalizeAnalysis(analysis);
- const etymology = normalized.etymology;
-
- return (
-  typeof etymology === "object" &&
-  etymology !== null &&
-  (!!etymology.type || !!etymology.origin || !!etymology.explanation)
- );
-}
-
-function hasStructuredRelatedCompounds(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): boolean {
- return Array.isArray(analysis?.related_compounds);
-}
-
-function hasExtendedLexicalFields(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): boolean {
- return (
-  Array.isArray(analysis?.synonyms) &&
-  Array.isArray(analysis?.antonyms) &&
-  typeof analysis?.notes === "string" &&
-  typeof analysis?.hsk_level === "string" &&
-  typeof analysis?.tocfl_level === "string"
- );
-}
-
-export function hasInspectorDeepDiveData(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): boolean {
- const normalized = normalizeAnalysis(analysis);
-
- if (!hasStructuredEtymology(analysis)) {
-  return false;
- }
-
- if (!hasStructuredRelatedCompounds(analysis)) {
-  return false;
- }
-
- if (!hasExtendedLexicalFields(analysis)) {
-  return false;
- }
-
- return !!(
-  normalized.components?.length ||
-  normalized.etymology ||
-  normalized.mnemonic_story ||
-  normalized.usage_logic?.length ||
-  normalized.examples?.length ||
-  normalized.collocations?.length ||
-  normalized.related_compounds?.length ||
-  normalized.synonyms?.length ||
-  normalized.antonyms?.length ||
-  normalized.related_words?.length ||
-  normalized.notes ||
-  normalized.hsk_level ||
-  normalized.tocfl_level ||
-  normalized.vn_trap ||
-  normalized.common_mistakes ||
-  normalized.confusion ||
-  normalized.confusion_warning
- );
-}
-
-export function isGenericEnglishFallbackAnalysis(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): boolean {
- const normalized = normalizeAnalysis(analysis);
- if (!Object.keys(normalized).length) return false;
-
- const hasEnglishMarker =
-  normalized.definitions?.some((item) => item.pos?.trim().toUpperCase() === "EN") ||
-  normalized.meanings?.some((item) => item.part_of_speech?.trim().toUpperCase() === "EN");
-
- if (!hasEnglishMarker) {
-  return false;
- }
-
- const hasVietnameseSpecificData = !!(
-  normalized.sino_vietnamese ||
-  normalized.han_viet ||
-  normalized.radicals?.length ||
-  normalized.word_type ||
-  normalized.common_mistakes ||
-  normalized.confusion ||
-  normalized.confusion_warning ||
-  normalized.examples?.some((example) => example.vi) ||
-  normalized.definitions?.some((definition) => definition.examples?.some((example) => example.vi))
- );
-
- return !hasVietnameseSpecificData;
-}
-
-export function hasDetailedVocabAnalysis(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): boolean {
- const normalized = normalizeAnalysis(analysis);
- if (!Object.keys(normalized).length) return false;
-
- if (isGenericEnglishFallbackAnalysis(normalized)) {
-  return false;
- }
-
- return !!(
-  normalized.pinyin ||
-  normalized.word_type ||
-  normalized.sino_vietnamese ||
-  normalized.radicals?.length ||
-  normalized.definitions?.length ||
-  normalized.meanings?.length ||
-  normalized.etymology ||
-  normalized.examples?.length ||
-  normalized.related_compounds?.length ||
-  normalized.synonyms?.length ||
-  normalized.antonyms?.length ||
-  normalized.related_words?.length ||
-  normalized.usage_logic?.length ||
-  normalized.notes ||
-  normalized.hsk_level ||
-  normalized.tocfl_level ||
-  normalized.common_mistakes ||
-  normalized.sentence_translation ||
-  normalized.grammar_breakdown?.length
- );
-}
-
-export function getNormalizedRadicals(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): AiRadical[] {
- const normalized = normalizeAnalysis(analysis);
- if (!Object.keys(normalized).length) return [];
-
- if (normalized.radicals?.length) {
-  return normalized.radicals.filter((item) => item.char || item.meaning || item.pinyin);
- }
-
- if (normalized.radical) {
-  return [{ char: normalized.radical, meaning: normalized.radical }];
- }
-
- return [];
-}
-
-export function getNormalizedDefinitions(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
- fallbackMeaning = "",
-): AiDefinition[] {
- const normalized = normalizeAnalysis(analysis);
-
- if (normalized.definitions?.length) {
-  return normalized.definitions
-   .flatMap((item) => {
-    const normalizedMeanings = normalizeDefinitionMeanings(item.meanings);
-
-    if (normalizedMeanings?.length) {
-     return normalizedMeanings.map((meaning) => ({
-      ...item,
-      text: meaning.meaning || item.text || item.meaning,
-      meaning: meaning.meaning || item.meaning || item.text,
-      examples: meaning.examples || item.examples,
-      meanings: normalizedMeanings,
-     }));
-    }
-
-    return [
-     {
-      ...item,
-      text: item.text || item.meaning,
-      meaning: item.meaning || item.text,
-      examples: normalizeDefinitionExamples(item.examples),
-      meanings: normalizedMeanings,
-     },
-    ];
-   })
-   .filter((item) => item.text || item.meaning || item.pos);
- }
-
- if (normalized.meanings?.length) {
-  return normalized.meanings
-   .map((item) => ({
-    pos: item.part_of_speech,
-    text: item.definition,
-    meaning: item.definition,
-    examples: item.example
-     ? [
-        {
-         cn: item.example.cn,
-         pinyin: item.example.pinyin,
-         py: item.example.pinyin,
-         vi: item.example.vi,
-        },
-       ]
-     : undefined,
-   }))
-   .filter((item) => item.text || item.pos);
- }
-
- if (fallbackMeaning) {
-  return [{ text: fallbackMeaning, meaning: fallbackMeaning }];
- }
-
- return [];
-}
-
-export function getNormalizedRelatedCompounds(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): AiRelatedCompound[] {
- const normalized = normalizeAnalysis(analysis);
-
- return (
-  normalized.related_compounds?.filter(
-   (compound) => compound.word || compound.pinyin || compound.meaning,
-  ) || []
- );
-}
-
-export function getNormalizedSynonyms(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): AiWordRelation[] {
- const normalized = normalizeAnalysis(analysis);
-
- return (
-  normalized.synonyms?.filter((relation) => relation.word || relation.pinyin || relation.meaning) ||
-  []
- );
-}
-
-export function getNormalizedAntonyms(
- analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
-): AiWordRelation[] {
- const normalized = normalizeAnalysis(analysis);
-
- return (
-  normalized.antonyms?.filter((relation) => relation.word || relation.pinyin || relation.meaning) ||
-  []
- );
 }
 
 /* ══════════════════════════════════════════

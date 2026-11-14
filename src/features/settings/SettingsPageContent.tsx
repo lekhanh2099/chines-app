@@ -32,7 +32,7 @@ import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { AiSettingsWorkspace } from "./AiSettingsWorkspace";
 import { AppearanceSettingsSection } from "./components/AppearanceSettingsSection";
 
-export const SettingsSectionSchema = z.enum(["app", "reading", "ai", "management"]);
+const SettingsSectionSchema = z.enum(["app", "reading", "ai", "management"]);
 const SettingsSectionParamSchema = z.string().optional();
 
 export function resolveSettingsSection(

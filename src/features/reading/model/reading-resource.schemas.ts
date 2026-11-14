@@ -87,7 +87,3 @@ export const readerVocabularyRowSchema = z.strictObject({
 });
 
 export type ReaderDocumentRow = z.output<typeof readerDocumentRowSchema>;
-
-export type ReaderParagraphRow = z.output<typeof readerParagraphRowSchema>;
-
-export type ReaderVocabularyLinkRow = z.output<typeof readerVocabularyLinkRowSchema>;

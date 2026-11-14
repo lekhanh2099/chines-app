@@ -24,6 +24,7 @@ import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-atte
 import {
  createTranslationAttempt,
  scoreTranslationAttempt,
+ translationAttemptKey,
  type TranslationDirection,
 } from "@/features/hanzihome/practice/translation-practice";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
@@ -101,7 +102,7 @@ function DailyTranslationPanel({
  const score =
   segment !== undefined && checked ? scoreTranslationAttempt(segment, direction, draft) : null;
  const completedCount = segments.filter((candidate) =>
-  completedKeys.has(`${candidate.id}:${direction}`),
+  completedKeys.has(translationAttemptKey(candidate.id, direction)),
  ).length;
 
  const check = () => {
@@ -117,7 +118,7 @@ function DailyTranslationPanel({
   setChecked(true);
   setCompletedKeys((current) => {
    const next = new Set(current);
-   next.add(`${segment.id}:${direction}`);
+   next.add(translationAttemptKey(segment.id, direction));
    return next;
   });
   if (!canPersistAttempts) return;

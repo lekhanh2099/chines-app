@@ -21,12 +21,7 @@ import {
  type AiConversationTurnResponse,
 } from "../model/ai-conversation-session.schemas";
 import {
- aiConversationRequestSchema,
- aiConversationResponseSchema,
  aiConversationRuntimeHealthSchema,
- type AiConversationMessage,
- type AiConversationProfile,
- type AiConversationResponse,
  type AiConversationRuntimeHealth,
 } from "../model/ai-conversation.schemas";
 import { streamPersistedAiConversationMessage } from "./ai-conversation-stream-api";
@@ -237,26 +232,4 @@ export async function sendPersistedAiConversationMessage(
   options?.signal?.removeEventListener("abort", forwardAbort);
   options?.onStreamEnd?.();
  }
-}
-
-/**
- * Compatibility request retained until persisted conversation migration has been verified.
- * New conversation UI must use sendPersistedAiConversationMessage instead.
- */
-export async function sendAiConversationMessage(
- messages: AiConversationMessage[],
- profile: AiConversationProfile,
- options?: { apiKeyId?: string; model?: string; signal?: AbortSignal },
-): Promise<AiConversationResponse> {
- const payload = aiConversationRequestSchema.parse({
-  messages,
-  profile,
-  ...(options?.apiKeyId ? { apiKeyId: options.apiKeyId } : {}),
-  ...(options?.model ? { model: options.model } : {}),
- });
- const { response, payload: responseBody } = await postConversationAction(payload, options?.signal);
- if (!response.ok) {
-  throw new Error(readApiError(responseBody, "AI conversation không hoàn tất."));
- }
- return aiConversationResponseSchema.parse(responseBody);
 }

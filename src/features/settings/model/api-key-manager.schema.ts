@@ -5,7 +5,7 @@ import { aiTaskIdSchema } from "@/lib/ai/ai-task-contract";
 
 const apiKeyProviderSchema = z.enum(API_KEY_PROVIDER_OPTIONS.map((option) => option.value));
 
-export const managedApiKeySchema = z.object({
+const managedApiKeySchema = z.object({
  id: z.uuid(),
  provider: apiKeyProviderSchema,
  providerLabel: z.string(),

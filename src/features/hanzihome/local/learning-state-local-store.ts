@@ -8,7 +8,6 @@ import { z } from "zod";
 
 import {
  deleteFromStore,
- deleteFromStoreIf,
  getAllFromStoreMatching,
  HANZIHOME_LOCAL_STORES,
  promisifyRequest,
@@ -36,7 +35,7 @@ const LearningStateLocalRecordSchema = z.object({
  lastSyncedAt: z.string().optional(),
  lastSyncError: z.string().optional(),
 });
-export type LearningStateLocalRecord = z.infer<typeof LearningStateLocalRecordSchema>;
+type LearningStateLocalRecord = z.infer<typeof LearningStateLocalRecordSchema>;
 
 const PendingMutationStatusSchema = z.enum(["pending", "syncing", "failed"]);
 type Nullable<T> = T | null;
@@ -153,60 +152,6 @@ export async function writeLocalLearningState({
  return record;
 }
 
-export async function enqueueLearningStateSync(
- ownerUserId: string,
- baseState: UserLearningState,
- state: UserLearningState,
- expectedUpdatedAt: string | null,
-): Promise<PendingLearningStateMutation> {
- const now = new Date().toISOString();
- const existing = await readPendingLearningStateMutation(ownerUserId);
- const mutation: PendingLearningStateMutation = {
-  id: pendingLearningStateMutationId(ownerUserId),
-  ownerUserId,
-  type: "learning_state.replace",
-  status: "pending",
-  payload: normalizeLearningState(state),
-  baseState: existing?.baseState ?? normalizeLearningState(baseState),
-  expectedUpdatedAt: existing?.expectedUpdatedAt ?? expectedUpdatedAt,
-  createdAt: existing?.createdAt ?? now,
-  updatedAt: now,
-  attemptCount: existing?.attemptCount ?? 0,
-  lastError: existing?.lastError,
- };
-
- await putInStore(HANZIHOME_LOCAL_STORES.pendingMutations, mutation);
- return mutation;
-}
-
-export async function replacePendingLearningStateMutation({
- mutation,
- baseState,
- state,
- expectedUpdatedAt,
-}: {
- mutation: PendingLearningStateMutation;
- baseState: UserLearningState;
- state: UserLearningState;
- expectedUpdatedAt: string | null;
-}): Promise<Nullable<PendingLearningStateMutation>> {
- return replaceInStoreIf(
-  HANZIHOME_LOCAL_STORES.pendingMutations,
-  mutation.id,
-  PendingLearningStateMutationSchema,
-  (current) => isSameMutationGeneration(current, mutation),
-  (current) => ({
-   ...current,
-   status: "pending",
-   payload: normalizeLearningState(state),
-   baseState: normalizeLearningState(baseState),
-   expectedUpdatedAt,
-   updatedAt: new Date().toISOString(),
-   lastError: undefined,
-  }),
- );
-}
-
 export async function readPendingLearningStateMutation(
  ownerUserId: string,
 ): Promise<Nullable<PendingLearningStateMutation>> {
@@ -257,54 +202,6 @@ export async function markLearningStateMutationSyncing(
    attemptCount: current.attemptCount + 1,
    updatedAt: new Date().toISOString(),
   }),
- );
-}
-
-export async function markLearningStateMutationFailed({
- mutation,
- error,
-}: {
- mutation: PendingLearningStateMutation;
- error: string;
-}): Promise<Nullable<PendingLearningStateMutation>> {
- const failed = await replaceInStoreIf(
-  HANZIHOME_LOCAL_STORES.pendingMutations,
-  mutation.id,
-  PendingLearningStateMutationSchema,
-  (current) => isSameMutationGeneration(current, mutation),
-  (current): PendingLearningStateMutation => ({
-   ...current,
-   status: "failed",
-   lastError: error,
-   updatedAt: new Date().toISOString(),
-  }),
- );
-
- if (!failed) return null;
-
- await writeLocalLearningState({
-  ownerUserId: failed.ownerUserId,
-  state: failed.payload,
-  lastSyncedState: failed.baseState,
-  remoteUpdatedAt: failed.expectedUpdatedAt,
-  lastSyncError: error,
- });
- return failed;
-}
-
-export async function clearPendingLearningStateMutation(
- ownerUserId: string,
- expectedUpdatedAt: string,
-): Promise<boolean> {
- const expectedId = pendingLearningStateMutationId(ownerUserId);
- return deleteFromStoreIf(
-  HANZIHOME_LOCAL_STORES.pendingMutations,
-  expectedId,
-  PendingLearningStateMutationSchema,
-  (mutation) =>
-   mutation.ownerUserId === ownerUserId &&
-   mutation.id === expectedId &&
-   mutation.updatedAt === expectedUpdatedAt,
  );
 }
 

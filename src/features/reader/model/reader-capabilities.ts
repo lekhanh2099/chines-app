@@ -1,8 +1,4 @@
-import type {
- ReaderContentCapability,
- ReaderDocumentModel,
- ReaderSegment,
-} from "./reader-document.types";
+import type { ReaderContentCapability, ReaderSegment } from "./reader-document.types";
 
 const capabilityOrder: readonly ReaderContentCapability[] = [
  "pinyin",
@@ -27,11 +23,4 @@ export function deriveSegmentContentCapabilities(
  if (segments.some((segment) => segment.pinyin !== undefined)) capabilities.push("pinyin");
  if (segments.some((segment) => segment.vi !== undefined)) capabilities.push("translation");
  return createReaderContentCapabilities(capabilities);
-}
-
-export function readerHasCapability(
- document: Pick<ReaderDocumentModel, "capabilities">,
- capability: ReaderContentCapability,
-): boolean {
- return document.capabilities.includes(capability);
 }

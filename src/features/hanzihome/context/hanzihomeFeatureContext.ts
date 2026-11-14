@@ -7,7 +7,7 @@ import type { HanziHomeFeatureActions } from "./actions";
 import type { HanziHomeFeatureServices } from "./services";
 import type { HanziHomeFeatureRuntime } from "./types";
 
-export type HanziHomeFeatureContextValue = {
+type HanziHomeFeatureContextValue = {
  store: HanziHomeFeatureStore;
  actions: HanziHomeFeatureActions;
  services: HanziHomeFeatureServices;

@@ -18,7 +18,7 @@ import {
  type ReaderAnnotationRow,
 } from "@/features/reading/model/reading-annotation.schemas";
 
-export const pendingAnnotationMutationSchema = z.discriminatedUnion("type", [
+const pendingAnnotationMutationSchema = z.discriminatedUnion("type", [
  z.object({
   id: z.string().min(1),
   type: z.literal("reader_annotation.create"),
@@ -77,7 +77,7 @@ type PendingAnnotationDeleteMutation = Extract<
  { type: "reader_annotation.delete" }
 >;
 
-export type ReaderAnnotationCreateAcknowledgement = {
+type ReaderAnnotationCreateAcknowledgement = {
  applied: boolean;
  localAnnotation: ReaderAnnotationRow | null;
 };
@@ -218,14 +218,6 @@ export async function getPendingAnnotationMutations(
   return filtered.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
  } catch {
   return [];
- }
-}
-
-export async function removePendingAnnotationMutation(id: string): Promise<void> {
- try {
-  await deleteFromStore(HANZIHOME_LOCAL_STORES.pendingMutations, id);
- } catch {
-  // Non-fatal
  }
 }
 

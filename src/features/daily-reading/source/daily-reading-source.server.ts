@@ -92,7 +92,7 @@ type TextFetchResult =
     text: string;
    }
  | { failure: SourceFetchFailure };
-export type DailyReadingSourceAcquisitionPolicy = Pick<
+type DailyReadingSourceAcquisitionPolicy = Pick<
  ResolvedDailyReadingCollectionPolicy,
  | "freshness"
  | "selectedTopics"

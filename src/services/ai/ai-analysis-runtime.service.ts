@@ -8,7 +8,7 @@ import {
 } from "@/services/ai/ai-runtime.service";
 import type { UserApiKeyCredential } from "@/services/ai/user-api-keys.service";
 
-export type ResolvedAiCredentialRuntime =
+type ResolvedAiCredentialRuntime =
  | {
     ok: true;
     runtime: ResolvedUserAiRuntime & {

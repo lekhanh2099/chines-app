@@ -46,7 +46,7 @@ const geminiGenerationSchema = z.object({
 
 export type ApiKeyProviderSelection = typeof AUTO_API_KEY_PROVIDER | ApiKeyProvider;
 
-export type ApiKeyDiscoveryResult =
+type ApiKeyDiscoveryResult =
  | {
     ok: true;
     value: {

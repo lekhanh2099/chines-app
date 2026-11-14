@@ -13,18 +13,18 @@ import {
  dailyReadingVocabularyDataSchema,
 } from "@/features/daily-reading/model/daily-reading.schemas";
 
-export const dailyReadingGeneratedBySchema = z.strictObject({
+const dailyReadingGeneratedBySchema = z.strictObject({
  provider: z.string().trim().min(1).max(80),
  model: z.string().trim().min(1).max(160),
  receipt: aiRuntimeReceiptSchema.optional(),
 });
 
-export const dailyReadingEnrichmentErrorCodeSchema = z.union([
+const dailyReadingEnrichmentErrorCodeSchema = z.union([
  aiRuntimeOperationErrorCodeSchema,
  z.enum(["missing-ai-key", "storage-unavailable", "task-disabled"]),
 ]);
 
-export const dailyReadingEnrichmentArticleSchema = z.strictObject({
+const dailyReadingEnrichmentArticleSchema = z.strictObject({
  id: dailyReadingSchema.shape.id,
  source: dailyReadingSchema.shape.source,
  article: dailyReadingSchema.shape.article,
@@ -54,7 +54,7 @@ export const dailyReadingEnrichmentRequestSchema = z.discriminatedUnion("module"
  }),
 ]);
 
-export const dailyReadingEnrichmentJobModuleRequestSchema = z.discriminatedUnion("module", [
+const dailyReadingEnrichmentJobModuleRequestSchema = z.discriminatedUnion("module", [
  z.strictObject({ module: z.literal("translation"), targetCount: z.null() }),
  z.strictObject({
   module: z.literal("vocabulary"),

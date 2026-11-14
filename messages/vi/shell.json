@@ -136,8 +136,8 @@
  },
  "search": {
   "title": "Tìm kiếm HanziHome",
-  "description": "Tìm từ vựng, ngữ pháp, bài học và ghi chú trong HanziHome.",
-  "placeholder": "Tìm từ vựng, ngữ pháp, bài học…",
+  "description": "Tìm trong toàn bộ giáo trình, giáo trình mở rộng, bài đọc và ghi chú của bạn.",
+  "placeholder": "Tìm Hán tự, pinyin hoặc tiếng Việt…",
   "inputAria": "Tìm kiếm HanziHome",
   "clear": "Xóa tìm kiếm",
   "resultsAria": "Kết quả tìm kiếm",
@@ -154,7 +154,7 @@
   "close": "Đóng",
   "empty": "Không tìm thấy kết quả trong mục {category}",
   "emptyDescription": "Thử từ khóa khác hoặc chọn mục khác.",
-  "loadError": "Không thể tải chỉ mục tìm kiếm",
+  "loadError": "Không thể tìm kiếm lúc này",
   "loadErrorDescription": "Kiểm tra kết nối rồi thử lại.",
   "retry": "Thử lại",
   "categories": {
@@ -163,6 +163,8 @@
    "grammar": "Ngữ pháp",
    "exercise": "Bài tập",
    "lesson": "Bài học",
+   "reading": "Bài đọc",
+   "note": "Ghi chú",
    "radical": "Bộ thủ"
   },
   "kinds": {
@@ -173,7 +175,8 @@
    "exercise": "Bài tập",
    "radical": "Bộ thủ",
    "note": "Ghi chú",
-   "navigation": "Điều hướng"
+   "navigation": "Điều hướng",
+   "reader_document": "Bài đọc"
   }
  },
  "workspace": {

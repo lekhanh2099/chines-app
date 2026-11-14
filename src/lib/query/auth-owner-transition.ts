@@ -1,7 +1,7 @@
 import type { QueryClient } from "@tanstack/react-query";
 
 export type AuthenticatedOwner = string | null;
-export type PreviousAuthenticatedOwner = AuthenticatedOwner | undefined;
+type PreviousAuthenticatedOwner = AuthenticatedOwner | undefined;
 
 type AuthenticatedQueryOwnerTransition = {
  client: QueryClient;

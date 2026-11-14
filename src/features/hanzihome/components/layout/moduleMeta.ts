@@ -16,7 +16,7 @@ import type { HanziHomeStudyTab } from "@/features/hanzihome/components/HanziHom
 import type { StudyModule } from "@/features/hanzihome/context/types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
-export type ModuleMeta = {
+type ModuleMeta = {
  key: StudyModule;
  icon: LucideIcon;
 };

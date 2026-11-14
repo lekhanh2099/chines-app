@@ -49,3 +49,6 @@ next-env.d.ts
 .env.local
 .env.local.*
 /.swc
+
+# Agent worktrees (Claude Code)
+/.claude/worktrees/

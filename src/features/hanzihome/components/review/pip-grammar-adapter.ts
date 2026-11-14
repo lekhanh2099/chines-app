@@ -1,6 +1,6 @@
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
-export type PipGrammarExample = {
+type PipGrammarExample = {
  readonly zh: string;
  readonly vi?: string;
 };

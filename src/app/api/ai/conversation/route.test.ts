@@ -6,9 +6,9 @@ import type {
  AiConversationPersistedMessage,
  AiConversationSession,
 } from "@/features/hanzihome/ai-conversation/model/ai-conversation-session.schemas";
-import {
- DEFAULT_AI_CONVERSATION_PROFILE,
- type AiConversationMessage,
+import type {
+ AiConversationMessage,
+ AiConversationProfile,
 } from "@/features/hanzihome/ai-conversation/model/ai-conversation.schemas";
 import type { ResolvedUserAiRuntime } from "@/services/ai/ai-runtime.service";
 
@@ -189,10 +189,22 @@ function post(body: JsonFieldValue) {
  );
 }
 
+const conversationProfile: AiConversationProfile = {
+ persona: "friend",
+ displayName: "小林",
+ learnerLevel: "intermediate",
+ correctionStyle: "balanced",
+ replyMode: "adaptive",
+ interests: "đời sống Trung Quốc, phim ảnh, văn hóa, giao tiếp tự nhiên",
+ characterNotes:
+  "Nói tự nhiên như một người bạn Trung Quốc kiên nhẫn, không nói kiểu trợ lý máy móc.",
+ memoryNotes: "",
+};
+
 function requestBody(messages: AiConversationMessage[], apiKeyId?: string) {
  return {
   messages,
-  profile: DEFAULT_AI_CONVERSATION_PROFILE,
+  profile: conversationProfile,
   ...(apiKeyId ? { apiKeyId, model: runtime.model } : {}),
  };
 }

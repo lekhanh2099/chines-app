@@ -1,4 +1,5 @@
 import type { AggregateFilters, AggregateKind } from "./repositories/hanzihome-content-resources";
+import type { HanziHomeSearchRequest } from "./search/types";
 
 type LessonResourceKind = "overview" | "sections" | "vocabulary" | "grammar";
 type UserScope = string | null;
@@ -103,8 +104,12 @@ export const hanzihomeQueryKeys = {
  ttsLibraryForUser: (userId: UserScope) => ["hanzihome", "tts", "library", userId],
  canEdit: ["hanzihome", "can-edit"],
  canEditForUser: (userId: UserScope) => ["hanzihome", "can-edit", userId],
- searchIndexRoot: ["hanzihome", "search-index"],
- searchIndex: ["hanzihome", "search-index", "v2"],
+ searchRoot: ["hanzihome", "search"],
+ // Results include the user's own notes, so the owner is part of the key.
+ search: (
+  userId: UserScope,
+  params: Pick<HanziHomeSearchRequest, "q" | "category" | "courseId" | "lessonId">,
+ ) => ["hanzihome", "search", userId, params],
  // Derived from the static textbook corpus, which is loaded on demand.
  bookmarkedTextbookGroups: (lessonIds: readonly string[]) => [
   "hanzihome",

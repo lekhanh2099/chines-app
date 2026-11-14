@@ -15,7 +15,7 @@ import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-rout
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { z } from "zod";
 
-export const LessonContentModuleSchema = z.enum([
+const LessonContentModuleSchema = z.enum([
  "lessonText",
  "vocab",
  "grammar",

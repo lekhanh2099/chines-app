@@ -32,26 +32,6 @@
   "radicals": "部首",
   "review": "复习"
  },
- "pulse": {
-  "title": "学习动态",
-  "description": "当前进度中需要关注的信号。",
-  "openSrs": "打开 SRS",
-  "reviewCount": "学习中 / 较难",
-  "knownCount": "已掌握",
-  "reviewedTodayCount": "今日已复习",
-  "bookmarkedCount": "已收藏",
-  "srsDueCount": "SRS 待复习",
-  "learningLoopDueCount": "Learning Loop 待完成",
-  "readerCompletedCount": "Reader 已完成",
-  "tracked": "已有 {count} 个项目记录了学习状态。第一组包含正在学习或标记为较难的项目，并不代表 SRS 到期计划。",
-  "empty": "目前没有可汇总的进度。开始学习或标记状态后，主页会自动更新。",
-  "unavailable": "无法加载 SRS、Learning Loop 和 Reader 概览，但当前学习进度仍会显示。",
-  "overviewErrorTitle": "无法加载学习概览",
-  "overviewLoading": "正在加载学习概览",
-  "reviewedTodayLoading": "正在加载今日复习次数",
-  "reviewedTodayErrorTitle": "无法加载今日复习次数",
-  "reviewedTodayErrorDescription": "请重试加载复习次数，其他内容仍可查看。"
- },
  "focus": {
   "overviewUnknownTitle": "继续今天的学习与复习",
   "overviewUnknownDescription": "暂时没有到期数据，无法确认今日进度。你仍可打开闪卡或继续学习课程。",

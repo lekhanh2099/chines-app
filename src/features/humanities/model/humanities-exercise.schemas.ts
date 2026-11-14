@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { parsedReaderExerciseItemRowSchema } from "@/features/reading/model/reading-exercise.schemas";
-export const readerHumanitiesEvaluationSchema = z.strictObject({
+const readerHumanitiesEvaluationSchema = z.strictObject({
  mode: z.enum(["translation", "interpreting"]),
  direction: z.enum(["zh-vi", "vi-zh"]),
  informationUnits: z
@@ -78,7 +78,7 @@ const readerHumanitiesPersonSchema = z.strictObject({
  roleVi: z.string().min(1),
 });
 
-export const readerHumanitiesAnnotationSchema = z.strictObject({
+const readerHumanitiesAnnotationSchema = z.strictObject({
  id: z.string().min(1),
  segmentId: z.string().min(1),
  type: z.enum(["grammar", "allusion", "imagery", "prosody", "context", "translation-choice"]),
@@ -87,7 +87,7 @@ export const readerHumanitiesAnnotationSchema = z.strictObject({
  sourceIds: z.array(z.string()),
 });
 
-export const readerHumanitiesSourceSchema = z.strictObject({
+const readerHumanitiesSourceSchema = z.strictObject({
  sourceId: z.string().min(1),
  sourceType: z.string().min(1),
  title: z.string().min(1),
@@ -110,7 +110,7 @@ const readerHumanitiesClaimEvidenceSchema = z.strictObject({
  note: z.string(),
 });
 
-export const readerHumanitiesClaimSchema = z.strictObject({
+const readerHumanitiesClaimSchema = z.strictObject({
  id: z.string().min(1),
  type: z.enum(["fact", "interpretation", "contested-interpretation", "translation-choice"]),
  statementVi: z.string().min(1),
@@ -121,7 +121,7 @@ export const readerHumanitiesClaimSchema = z.strictObject({
  reviewStatus: z.enum(["verified", "reviewed-opinion", "contested", "unresolved"]),
 });
 
-export const readerHumanitiesPoetrySchema = z.strictObject({
+const readerHumanitiesPoetrySchema = z.strictObject({
  form: z.string().min(1),
  dynastyOrPeriod: z.string().nullable(),
  author: readerHumanitiesPersonSchema.nullable(),
@@ -171,7 +171,7 @@ export const readerHumanitiesPoetrySchema = z.strictObject({
   .min(1),
 });
 
-export const readerHumanitiesHistorySchema = z.strictObject({
+const readerHumanitiesHistorySchema = z.strictObject({
  periodVi: z.string().min(1),
  timeline: z
   .array(

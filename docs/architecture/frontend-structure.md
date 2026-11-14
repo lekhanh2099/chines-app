@@ -316,9 +316,8 @@ Lint enforces two hard limits (blank lines and comments excluded): a source file
 at most **800 lines** (`eslint/max-lines`) and a function or component at most
 **300 lines** (`eslint/max-lines-per-function`). Tests, fixtures, generated types
 and declarative data modules (API registry, pinyin dictionary, lesson schema)
-are exempt. Files that predated the limits are listed in the `.oxlintrc.json`
-baseline overrides; the list only shrinks. Remove a file from it once split,
-and never add one.
+are exempt. There is no baseline: every other source file must pass, so a change
+that crosses a limit is split in the same change instead of being exempted.
 
 Split before reaching the hard limits. Treat these as review triggers:
 

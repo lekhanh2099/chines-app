@@ -1,7 +1,7 @@
 import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
-export const EditFieldKindSchema = z.enum([
+const EditFieldKindSchema = z.enum([
  "text",
  "textarea",
  "string-list",

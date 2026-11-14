@@ -16,13 +16,13 @@ export const aiConversationAccountPreferencesSchema = z.strictObject({
  memoryEnabled: z.boolean(),
 });
 
-export const aiConversationSettingsCharacterSchema = z.strictObject({
+const aiConversationSettingsCharacterSchema = z.strictObject({
  id: z.uuid(),
  displayName: z.string().trim().min(1),
  city: z.string(),
 });
 
-export const aiConversationSettingsRelationshipSchema = z.strictObject({
+const aiConversationSettingsRelationshipSchema = z.strictObject({
  nickname: z.string(),
  familiarityScore: z.number().min(0).max(1),
 });

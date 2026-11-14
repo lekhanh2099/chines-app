@@ -5,27 +5,27 @@ import {
  aiConversationTurnResponseSchema,
 } from "./ai-conversation-session.schemas";
 
-export const aiConversationStreamStartEventSchema = z.strictObject({
+const aiConversationStreamStartEventSchema = z.strictObject({
  type: z.literal("start"),
  conversationId: z.uuid(),
  userMessage: aiConversationPersistedMessageSchema,
 });
 
-export const aiConversationStreamDeltaEventSchema = z.strictObject({
+const aiConversationStreamDeltaEventSchema = z.strictObject({
  type: z.literal("delta"),
  text: z.string().min(1).max(8_000),
 });
 
-export const aiConversationStreamHeartbeatEventSchema = z.strictObject({
+const aiConversationStreamHeartbeatEventSchema = z.strictObject({
  type: z.literal("heartbeat"),
 });
 
-export const aiConversationStreamFinalEventSchema = z.strictObject({
+const aiConversationStreamFinalEventSchema = z.strictObject({
  type: z.literal("final"),
  turn: aiConversationTurnResponseSchema,
 });
 
-export const aiConversationStreamErrorEventSchema = z.strictObject({
+const aiConversationStreamErrorEventSchema = z.strictObject({
  type: z.literal("error"),
  code: z.string().trim().min(1).max(80),
  message: z.string().trim().min(1).max(600),

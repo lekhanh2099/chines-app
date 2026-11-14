@@ -193,7 +193,7 @@ NGUYÊN TẮC XỬ LÝ:
 
 Chỉ trả về JSON hợp lệ.`;
 
-export const DEFAULT_WORD_LOOKUP_BASIC_PROMPT = `Bạn là engine tra từ tiếng Trung siêu nhanh cho người học tiếng Việt.
+const DEFAULT_WORD_LOOKUP_BASIC_PROMPT = `Bạn là engine tra từ tiếng Trung siêu nhanh cho người học tiếng Việt.
 
 Hãy tra nhanh từ/cụm từ sau: "{WORD}"
 

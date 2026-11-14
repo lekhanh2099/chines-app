@@ -10,10 +10,7 @@ import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 // routes that only need these (Daily Reading, the custom vault, IT presets) do
 // not ship the ~4 MB textbook bundle.
 
-export function customVocabToHanziHomeVocabItem(
- item: CustomVocabItem,
- order: number,
-): HanziHomeVocabItem {
+function customVocabToHanziHomeVocabItem(item: CustomVocabItem, order: number): HanziHomeVocabItem {
  const noteObjects = item.note ? [{ text_vi: item.note }] : [];
  const examples = item.exampleZh
   ? [

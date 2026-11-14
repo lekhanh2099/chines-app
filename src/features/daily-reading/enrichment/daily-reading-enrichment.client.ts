@@ -27,7 +27,7 @@ import {
 
 const enrichmentJobsEndpoint = "/api/daily-reading/enrichment-jobs";
 
-export class DailyReadingEnrichmentClientError extends Error {
+class DailyReadingEnrichmentClientError extends Error {
  constructor(
   readonly code: string,
   message: string,

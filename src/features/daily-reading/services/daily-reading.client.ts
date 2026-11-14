@@ -31,7 +31,7 @@ import {
  withDailyReadingGenerationLock,
 } from "@/features/daily-reading/local/daily-reading-lock.client";
 
-export class DailyReadingClientError extends Error {
+class DailyReadingClientError extends Error {
  constructor(
   readonly code: DailyReadingErrorCode,
   message: string,

@@ -9,7 +9,7 @@ import {
  promptFromQuestionRecord,
 } from "./exercise-utils";
 
-export type ExerciseQuestionViewModel = {
+type ExerciseQuestionViewModel = {
  id: string;
  title: string;
  answer: string;

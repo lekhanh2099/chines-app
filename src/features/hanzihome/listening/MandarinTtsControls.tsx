@@ -22,7 +22,7 @@ import { Separator } from "@/components/ui/layout/separator";
 
 import type { useTTS } from "@/hooks/useTTS";
 
-export type MandarinTtsController = ReturnType<typeof useTTS>;
+type MandarinTtsController = ReturnType<typeof useTTS>;
 
 const rateOptions = [
  { value: "0.75", rate: 0.75 },

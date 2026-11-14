@@ -136,8 +136,8 @@
  },
  "search": {
   "title": "搜索 HanziHome",
-  "description": "搜索 HanziHome 中的词汇、语法、课程和笔记。",
-  "placeholder": "搜索词汇、语法、课程…",
+  "description": "搜索全部教材、拓展教材、阅读材料和你的笔记。",
+  "placeholder": "搜索汉字、拼音或越南语…",
   "inputAria": "搜索 HanziHome",
   "clear": "清除搜索",
   "resultsAria": "搜索结果",
@@ -154,7 +154,7 @@
   "close": "关闭",
   "empty": "{category}中没有结果",
   "emptyDescription": "请尝试其他关键词或分类。",
-  "loadError": "无法加载搜索索引",
+  "loadError": "暂时无法搜索",
   "loadErrorDescription": "请检查网络连接后重试。",
   "retry": "重试",
   "categories": {
@@ -163,6 +163,8 @@
    "grammar": "语法",
    "exercise": "练习",
    "lesson": "课程",
+   "reading": "阅读",
+   "note": "笔记",
    "radical": "部首"
   },
   "kinds": {
@@ -173,7 +175,8 @@
    "exercise": "练习",
    "radical": "部首",
    "note": "笔记",
-   "navigation": "导航"
+   "navigation": "导航",
+   "reader_document": "阅读"
   }
  },
  "workspace": {

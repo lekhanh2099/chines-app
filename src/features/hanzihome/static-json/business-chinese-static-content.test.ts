@@ -2,9 +2,9 @@ import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 
 import {
- getBusinessChineseCatalog,
  getBusinessChineseCorpus,
  getBusinessChineseLesson,
+ getTextbookCatalogForBookKeys,
 } from "./business-chinese-static-content";
 
 const expectedSectionHashes = [
@@ -112,7 +112,9 @@ describe("Business Chinese static content", () => {
    { key: "tm2", lessons: 10, sections: 175, blocks: 1983, tables: 102, vocab: 167 },
    { key: "tm3", lessons: 10, sections: 170, blocks: 1890, tables: 111, vocab: 226 },
   ]);
-  expect(getBusinessChineseCatalog().map((book) => book.lessons.length)).toEqual([10, 10]);
+  expect(getTextbookCatalogForBookKeys(["tm2", "tm3"]).map((book) => book.lessons.length)).toEqual([
+   10, 10,
+  ]);
  });
 
  it("preserves representative source blocks, tables, and inline exercise answers", () => {

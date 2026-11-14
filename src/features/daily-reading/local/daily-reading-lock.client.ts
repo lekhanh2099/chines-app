@@ -15,7 +15,7 @@ const lockRecordSchema = z.strictObject({
  expiresAt: z.number().int().nonnegative(),
 });
 
-export type DailyReadingLockRecord = z.output<typeof lockRecordSchema>;
+type DailyReadingLockRecord = z.output<typeof lockRecordSchema>;
 
 export class DailyReadingGenerationBusyError extends Error {
  constructor() {

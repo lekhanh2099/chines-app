@@ -13,5 +13,3 @@ export const FONT_FAMILIES: [string, string][] = [
  ["Times New Roman", "Times New Roman"],
  ["Courier New", "Courier New"],
 ];
-
-export const QUICK_HANZI_FONT_FAMILIES = FONT_FAMILIES.slice(0, 3);

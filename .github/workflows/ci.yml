@@ -473,7 +473,10 @@ jobs:
  gate:
   name: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'CI production' || github.event_name == 'pull_request' && (github.event.pull_request.draft && 'CI draft' || github.base_ref == 'main' && 'CI gate') || 'CI validation' }}
   needs: [changes, verify, browser, e2e]
-  if: always()
+  # Run even when a check failed. Only a cancelled draft run (superseded when the PR becomes
+  # ready) is skipped: "CI draft" is not required, while a cancelled non-draft run must still
+  # report a failing "CI gate" so cancellation can never satisfy branch protection.
+  if: ${{ !cancelled() || !github.event.pull_request.draft }}
   runs-on: ubuntu-latest
   timeout-minutes: 2
   steps:

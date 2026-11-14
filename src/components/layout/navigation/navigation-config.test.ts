@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 
 import {
  filterNavigationGroupsForContentCapability,
- compatibilityNavigationItemIds,
  navigationGroups,
  navigationItems,
 } from "./navigation-config";
@@ -12,7 +11,8 @@ describe("navigation configuration", () => {
   const groupedItemIds = navigationGroups.flatMap((group) =>
    group.sections.flatMap((section) => section.itemIds),
   );
-  const compatibilityItemIds = new Set<string>(compatibilityNavigationItemIds);
+  // Compatibility items stay registered but are intentionally left out of every group.
+  const compatibilityItemIds = new Set(["readerCourse", "readerPractice", "readerMock"]);
   const primaryItemIds = Object.keys(navigationItems).filter(
    (itemId) => itemId !== "settings" && !compatibilityItemIds.has(itemId),
   );

@@ -19,7 +19,7 @@ const reportSchema = z.strictObject({
  issues: z.array(z.string()),
 });
 
-export type ReaderDataQualityReport = z.output<typeof reportSchema>;
+type ReaderDataQualityReport = z.output<typeof reportSchema>;
 
 export async function fetchReaderDataQualityReport(): Promise<ReaderDataQualityReport> {
  const response = await fetch("/api/reading/data-quality", { cache: "no-store" });

@@ -47,7 +47,7 @@ const deletedContentBaseSchema = z.object({
  updatedAt: z.string(),
 });
 
-export const deletedContentItemSchema = z.discriminatedUnion("kind", [
+const deletedContentItemSchema = z.discriminatedUnion("kind", [
  deletedContentBaseSchema.extend({
   kind: z.literal("canonical"),
   entityType: canonicalEntityTypeSchema,

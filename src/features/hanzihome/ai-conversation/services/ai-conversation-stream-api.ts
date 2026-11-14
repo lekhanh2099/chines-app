@@ -15,7 +15,7 @@ function readApiError(body: JsonFieldValue, fallback: string) {
  return typeof error === "string" ? error : fallback;
 }
 
-export class AiConversationStreamRequestError extends Error {
+class AiConversationStreamRequestError extends Error {
  readonly code: string;
 
  constructor(code: string, message: string) {

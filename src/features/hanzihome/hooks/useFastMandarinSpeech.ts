@@ -79,7 +79,7 @@ export function sanitizeSpeechTextForVoice(text: string, voice: string): string 
 
 const inFlightAudioRequests = new Map<string, Promise<Blob | null>>();
 
-export type FastSpeechOptions = {
+type FastSpeechOptions = {
  rate?: number;
  voice?: string;
  lang?: "zh-CN" | "vi-VN";

@@ -12,7 +12,7 @@ function hasText(value: Meaning["short_definition_vi"]) {
  return Boolean(value?.trim());
 }
 
-export function hasMeaningContent(meaning: Meaning) {
+function hasMeaningContent(meaning: Meaning) {
  return [
   meaning.short_definition_vi,
   meaning.meaning_vi,

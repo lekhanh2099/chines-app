@@ -19,8 +19,8 @@ export type SegmentedControlGroup<T extends string = string> = {
 };
 
 export type SegmentedControlSurface = "subtle" | "transparent";
-export type SegmentedControlDensity = "toolbar" | "touch";
-export type SegmentedControlLayout = "scroll" | "wrap";
+type SegmentedControlDensity = "toolbar" | "touch";
+type SegmentedControlLayout = "scroll" | "wrap";
 
 function getSegmentedControlGroups<T extends string>({
  items = [],

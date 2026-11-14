@@ -85,9 +85,7 @@ import {
  buildContentCacheKey,
  bumpContentCacheGeneration,
  bumpLessonCacheGenerations,
- clearContentCacheForOwner,
  deleteContentCache,
- getContentCacheFootprint,
  getContentCacheGeneration,
  hasContentCache,
  pinContentCache,
@@ -139,9 +137,15 @@ describe("content-cache-store", () => {
 
   expect(cached).toEqual(sampleLessonData);
 
-  const footprint = await getContentCacheFootprint("user-123");
-  expect(footprint.entryCount).toBe(1);
-  expect(footprint.totalBytes).toBeGreaterThan(0);
+  const stored = getStoreMap("content_cache").get(
+   buildContentCacheKey("user-123", "lesson_detail", "lesson-1"),
+  );
+  expect(stored).toEqual(
+   expect.objectContaining({
+    ownerId: "user-123",
+    metadata: expect.objectContaining({ byteSize: expect.any(Number) }),
+   }),
+  );
  });
 
  it("enforces strict owner isolation", async () => {
@@ -210,7 +214,7 @@ describe("content-cache-store", () => {
   );
  });
 
- it("deletes cached content individually and for entire owner", async () => {
+ it("deletes cached content individually without touching other entries", async () => {
   await writeContentCache({
    ownerId: "user-123",
    resourceType: "lesson_detail",
@@ -240,14 +244,23 @@ describe("content-cache-store", () => {
   });
   expect(readDeleted).toBeNull();
 
-  // Clear user-123's entire cache
-  await clearContentCacheForOwner("user-123");
-  const user123Footprint = await getContentCacheFootprint("user-123");
-  expect(user123Footprint.entryCount).toBe(0);
-
-  // user-456 remains intact
-  const user456Footprint = await getContentCacheFootprint("user-456");
-  expect(user456Footprint.entryCount).toBe(1);
+  // Other resources and other owners remain intact
+  await expect(
+   readContentCache({
+    ownerId: "user-123",
+    resourceType: "lesson_vocab",
+    resourceId: "lesson-1",
+    schema: z.object({ words: z.array(z.string()) }),
+   }),
+  ).resolves.toEqual({ words: ["你好"] });
+  await expect(
+   readContentCache({
+    ownerId: "user-456",
+    resourceType: "lesson_detail",
+    resourceId: "lesson-1",
+    schema: sampleLessonSchema,
+   }),
+  ).resolves.toEqual(sampleLessonData);
  });
 
  it("enforces bounded LRU eviction policy", async () => {

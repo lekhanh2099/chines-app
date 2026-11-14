@@ -30,8 +30,13 @@ const lessonPracticeReadingTextSchema = ReadingTextItemSchema.pick({
  vi: true,
 });
 
-export const translationDirectionSchema = z.enum(["zh-vi", "vi-zh"]);
+const translationDirectionSchema = z.enum(["zh-vi", "vi-zh"]);
 export type TranslationDirection = z.output<typeof translationDirectionSchema>;
+
+/** Key of one segment's attempt in one direction; persisted in practice state, keep the format stable. */
+export function translationAttemptKey(segmentId: string, direction: TranslationDirection) {
+ return `${segmentId}:${direction}`;
+}
 
 export const translationSegmentSchema = z.strictObject({
  id: z.string().min(1),
@@ -43,7 +48,7 @@ export const translationSegmentSchema = z.strictObject({
 });
 export type TranslationSegment = z.output<typeof translationSegmentSchema>;
 
-export const translationAttemptSchema = z.strictObject({
+const translationAttemptSchema = z.strictObject({
  segmentId: z.string().min(1),
  direction: translationDirectionSchema,
  answer: z.string(),
@@ -66,10 +71,6 @@ export const emptyTranslationPracticeState: TranslationPracticeState = {
  drafts: {},
  checked: {},
 };
-
-export function translationAttemptKey(segmentId: string, direction: TranslationDirection): string {
- return `${segmentId}:${direction}`;
-}
 
 export function translationSourceText(
  segment: TranslationSegment,
@@ -401,7 +402,7 @@ export type DictationSource = {
  entries: Array<{ id: string; zh: string; pinyin: string; vi: string }>;
 };
 
-export function splitChineseSentences(text: string): string[] {
+function splitChineseSentences(text: string): string[] {
  const sentences: string[] = [];
  let current = "";
  for (const char of text) {

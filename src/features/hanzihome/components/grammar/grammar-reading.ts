@@ -1,7 +1,7 @@
 import type { GrammarViewModel } from "@/features/hanzihome/types";
 import { z } from "zod";
 
-export const GrammarReadingSchema = z.object({
+const GrammarReadingSchema = z.object({
  title: z.string(),
  contentMd: z.string(),
  preview: z.string().optional(),

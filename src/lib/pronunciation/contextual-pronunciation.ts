@@ -1,5 +1,4 @@
-import { convert, pinyin, polyphonic } from "pinyin-pro";
-import { z } from "zod";
+import { pinyin, polyphonic } from "pinyin-pro";
 
 import {
  POLYPHONIC_DICTIONARY,
@@ -8,51 +7,46 @@ import {
  getGrammarPinyin,
  getToneSandhiPinyin,
 } from "./pinyin-engine.ts";
+import {
+ classify,
+ displayPinyin,
+ normalizeReading,
+ normalizeSourcePinyin,
+ readingKeys,
+ requestSchema,
+ sourcePinyinForms,
+ type ContextualPronunciationAnalysis,
+ type ContextualPronunciationGlyph,
+ type ContextualPronunciationRequest,
+ type ContextualPronunciationToken,
+ type PronunciationDictionaryEntry,
+ type PronunciationOverride,
+} from "./contextual-pronunciation-model.ts";
+import { wordSegmenter } from "./contextual-pronunciation-format.ts";
+
+export {
+ CONTEXTUAL_PRONUNCIATION_MAX_TEXT_LENGTH,
+ formatContextualReading,
+ type ContextualPronunciationAnalysis,
+ type ContextualPronunciationGlyph,
+ type ContextualPronunciationRequest,
+ type ContextualPronunciationToken,
+ type ContextualReadingUnit,
+ type PronunciationDictionaryEntry,
+ type PronunciationEvidence,
+ type PronunciationOverride,
+ type PronunciationTokenType,
+} from "./contextual-pronunciation-model.ts";
+export {
+ formatContextualPinyinRange,
+ formatContextualReadingPinyin,
+ formatContextualReadingUnitPinyin,
+ formatContextualSpokenPinyin,
+ getContextualReadingUnits,
+ shouldSeparatePinyinSyllables,
+} from "./contextual-pronunciation-format.ts";
 
 ensurePinyinEngineInitialized();
-
-const readingKeySchema = z.string().regex(/^[a-zv]+[1-5]$/u);
-const tokenTypeSchema = z.enum(["hanzi", "latin", "number", "punctuation", "whitespace", "other"]);
-const evidenceSchema = z.enum([
- "manual-override",
- "dictionary-exact",
- "source-pinyin",
- "context-library",
- "fallback",
-]);
-
-export const CONTEXTUAL_PRONUNCIATION_MAX_TEXT_LENGTH = 2_000;
-
-const requestSchema = z.strictObject({
- text: z.string().min(1).max(CONTEXTUAL_PRONUNCIATION_MAX_TEXT_LENGTH),
- sourcePinyin: z.string().max(8_000).nullable().default(null),
- overrides: z
-  .array(
-   z.strictObject({
-    id: z.string().min(1),
-    text: z.string().min(1),
-    readings: z.array(readingKeySchema).min(1),
-    scope: z.enum(["character-global", "phrase", "sentence-instance"]),
-    sentenceText: z.string().nullable().default(null),
-    start: z.number().int().nonnegative().nullable().default(null),
-    end: z.number().int().positive().nullable().default(null),
-    updatedAt: z.string(),
-   }),
-  )
-  .readonly()
-  .default([]),
-});
-
-export type ContextualPronunciationRequest = z.input<typeof requestSchema>;
-export type PronunciationEvidence = z.infer<typeof evidenceSchema>;
-export type PronunciationTokenType = z.infer<typeof tokenTypeSchema>;
-
-export type PronunciationDictionaryEntry = {
- id: string;
- text: string;
- pinyin: string;
- priority: number;
-};
 
 const engineEntries: PronunciationDictionaryEntry[] = Object.entries(POLYPHONIC_DICTIONARY).map(
  ([text, pinyin], index) => ({
@@ -74,423 +68,6 @@ const contextualPhraseDictionary: PronunciationDictionaryEntry[] = [
  { id: "modal-must-go", text: "我得去", pinyin: "wǒ děi qù", priority: 100 },
  ...engineEntries,
 ];
-
-export type PronunciationOverride = z.output<typeof requestSchema>["overrides"][number];
-
-export type ContextualPronunciationGlyph = {
- text: string;
- start: number;
- end: number;
- lexicalPinyin: string | null;
- spokenPinyin: string | null;
- lexicalReadingKey: string | null;
- spokenReadingKey: string | null;
- isPolyphonic: boolean;
- alternatives: string[];
- confidence: number;
- evidence: PronunciationEvidence[];
-};
-
-export type ContextualPronunciationToken = {
- id: string;
- text: string;
- start: number;
- end: number;
- type: PronunciationTokenType;
- source: "dictionary-exact" | "intl-segmenter" | "grapheme";
- pinyin: string;
-};
-
-export type ContextualReadingUnit = Pick<
- ContextualPronunciationToken,
- "id" | "text" | "start" | "end" | "type"
->;
-
-export type ContextualPronunciationAnalysis = {
- originalText: string;
- normalizedText: string;
- tokens: ContextualPronunciationToken[];
- glyphs: ContextualPronunciationGlyph[];
- unresolved: Array<{
-  start: number;
-  end: number;
-  text: string;
-  reason: "pronunciation-unavailable";
- }>;
- sourcePinyinStatus: "not-provided" | "aligned" | "rejected";
-};
-
-function preferredDisplayedPinyin(glyph: ContextualPronunciationGlyph): string | null {
- return glyph.evidence.includes("manual-override")
-  ? (glyph.lexicalPinyin ?? glyph.spokenPinyin)
-  : (glyph.spokenPinyin ?? glyph.lexicalPinyin);
-}
-
-const graphemeSegmenter = new Intl.Segmenter("zh-CN", { granularity: "grapheme" });
-const wordSegmenter = new Intl.Segmenter("zh-CN", { granularity: "word" });
-
-// These are spelling boundaries, not pronunciation corrections. Keep the list
-// constrained to the reviewed learner corpus; the contextual engine remains
-// the authority for every glyph's reading.
-const orthographicWords = [
- ...ERHUA_WORDS,
- "自行车",
- "冰激凌",
- "不太",
- "一双",
- "一个",
- "伤心",
- "回答",
- "很清楚",
- "很高兴",
- "怎么",
- "我得去",
- "西安",
- "女儿",
- "听得入迷",
-];
-
-const orthographicWordCandidates = [...new Set(orthographicWords)].sort(
- (left, right) => right.length - left.length,
-);
-
-const orthographicCandidateSplits = new Map<string, readonly string[]>([
- ["一会儿", ["一", "会儿"]],
- ["一点儿", ["一", "点儿"]],
- ["一个", ["一", "个"]],
- ["一双", ["一", "双"]],
- ["一句", ["一", "句"]],
- ["一座", ["一", "座"]],
- ["一起", ["一", "起"]],
- ["一点", ["一", "点"]],
- ["一天", ["一", "天"]],
- ["一连", ["一", "连"]],
- ["两只", ["两", "只"]],
- ["不太", ["不", "太"]],
- ["不很", ["不", "很"]],
- ["不好", ["不", "好"]],
- ["不错", ["不", "错"]],
- ["不是", ["不", "是"]],
- ["不能", ["不", "能"]],
- ["不见", ["不", "见"]],
- ["不小", ["不", "小"]],
- ["不多", ["不", "多"]],
- ["不懂", ["不", "懂"]],
- ["不舒服", ["不", "舒服"]],
- ["不清楚", ["不", "清楚"]],
- ["不分明", ["不", "分明"]],
- ["不知道", ["不", "知道"]],
- ["很好", ["很", "好"]],
- ["我得去", ["我", "得", "去"]],
- ["听得入迷", ["听", "得", "入迷"]],
-]);
-
-function isHanzi(value: string): boolean {
- return classify(value) === "hanzi";
-}
-
-function orthographicUnitTexts(value: string): string[] {
- const candidateByStart = new Map(
-  [...wordSegmenter.segment(value)].map((segment) => [segment.index, segment.segment]),
- );
- const units: string[] = [];
- let index = 0;
-
- while (index < value.length) {
-  const knownWord = orthographicWordCandidates.find(
-   (word) =>
-    value.startsWith(word, index) &&
-    !(
-     word.endsWith("儿") &&
-     /^儿[子女童歌科戏媳孙郎化音时]/u.test(candidateByStart.get(index + word.length - 1) ?? "")
-    ),
-  );
-  if (knownWord !== undefined) {
-   const split = orthographicCandidateSplits.get(knownWord);
-   units.push(...(split ?? [knownWord]));
-   index += knownWord.length;
-   continue;
-  }
-
-  const candidate = candidateByStart.get(index);
-  if (candidate !== undefined && isHanzi(candidate)) {
-   const split = orthographicCandidateSplits.get(candidate);
-   units.push(...(split ?? [candidate]));
-   index += candidate.length;
-   continue;
-  }
-
-  const grapheme = [...graphemeSegmenter.segment(value.slice(index))][0];
-  if (grapheme === undefined) break;
-  units.push(grapheme.segment);
-  index += grapheme.segment.length;
- }
-
- return units;
-}
-
-export function getContextualReadingUnits(
- analysis: ContextualPronunciationAnalysis,
-): ContextualReadingUnit[] {
- const graphemes = [...graphemeSegmenter.segment(analysis.normalizedText)];
- const units: ContextualReadingUnit[] = [];
- let graphemeIndex = 0;
-
- while (graphemeIndex < graphemes.length) {
-  const grapheme = graphemes[graphemeIndex];
-  if (grapheme === undefined) break;
-  const type = classify(grapheme.segment);
-  if (type !== "hanzi") {
-   units.push({
-    id: `reading:${grapheme.index}:${grapheme.index + grapheme.segment.length}`,
-    text: grapheme.segment,
-    start: grapheme.index,
-    end: grapheme.index + grapheme.segment.length,
-    type,
-   });
-   graphemeIndex += 1;
-   continue;
-  }
-
-  const start = grapheme.index;
-  let end = start;
-  let nextGraphemeIndex = graphemeIndex;
-  while (nextGraphemeIndex < graphemes.length) {
-   const candidate = graphemes[nextGraphemeIndex];
-   if (candidate === undefined || classify(candidate.segment) !== "hanzi") break;
-   end = candidate.index + candidate.segment.length;
-   nextGraphemeIndex += 1;
-  }
-
-  let offset = start;
-  for (const text of orthographicUnitTexts(analysis.normalizedText.slice(start, end))) {
-   units.push({
-    id: `reading:${offset}:${offset + text.length}`,
-    text,
-    start: offset,
-    end: offset + text.length,
-    type: "hanzi",
-   });
-   offset += text.length;
-  }
-  graphemeIndex = nextGraphemeIndex;
- }
-
- return units;
-}
-
-export function shouldSeparatePinyinSyllables(previous: string, next: string): boolean {
- if (!previous || !next) return false;
- const initial = next.normalize("NFD")[0];
- return initial === "a" || initial === "e" || initial === "o";
-}
-
-function joinPinyinSyllables(readings: readonly string[]): string {
- let output = "";
- for (const reading of readings) {
-  if (output && shouldSeparatePinyinSyllables(output, reading)) output += "'";
-  output += reading;
- }
- return output;
-}
-
-function readingsForUnit(
- analysis: ContextualPronunciationAnalysis,
- unit: ContextualReadingUnit,
-): string[] | null {
- const glyphs = analysis.glyphs.filter(
-  (glyph) => glyph.start >= unit.start && glyph.end <= unit.end,
- );
- const readings = glyphs.map(preferredDisplayedPinyin);
- if (glyphs.length === 0 || readings.some((reading) => reading === null)) return null;
- return readings.filter((reading): reading is string => reading !== null);
-}
-
-export function formatContextualReadingUnitPinyin(
- analysis: ContextualPronunciationAnalysis,
- unit: ContextualReadingUnit,
-): string | null {
- const readings = readingsForUnit(analysis, unit);
- return readings === null ? null : joinPinyinSyllables(readings);
-}
-
-export function formatContextualSpokenPinyin(analysis: ContextualPronunciationAnalysis): string {
- const glyphByStart = new Map(analysis.glyphs.map((glyph) => [glyph.start, glyph]));
- const graphemes = [...graphemeSegmenter.segment(analysis.normalizedText)];
- let output = "";
- let previousWasHanzi = false;
-
- for (const grapheme of graphemes) {
-  const glyph = glyphByStart.get(grapheme.index);
-  if (glyph !== undefined) {
-   const reading = preferredDisplayedPinyin(glyph);
-   if (reading !== null) {
-    if (previousWasHanzi && reading !== "r") output += " ";
-    output += reading;
-    previousWasHanzi = true;
-    continue;
-   }
-  }
-
-  output += grapheme.segment;
-  previousWasHanzi = false;
- }
-
- return output;
-}
-
-export function formatContextualReadingPinyin(analysis: ContextualPronunciationAnalysis): string {
- const glyphByStart = new Map(analysis.glyphs.map((glyph) => [glyph.start, glyph]));
- let output = "";
- let previousWasHanzi = false;
-
- for (const unit of getContextualReadingUnits(analysis)) {
-  if (unit.type === "hanzi") {
-   const reading = formatContextualReadingUnitPinyin(analysis, unit);
-   if (reading !== null) {
-    if (previousWasHanzi && reading !== "r") output += " ";
-    output += reading;
-    previousWasHanzi = true;
-    continue;
-   }
-
-   for (const grapheme of graphemeSegmenter.segment(unit.text)) {
-    const glyph = glyphByStart.get(unit.start + grapheme.index);
-    if (glyph !== undefined) {
-     const fallbackReading = preferredDisplayedPinyin(glyph);
-     if (fallbackReading !== null) {
-      if (previousWasHanzi && fallbackReading !== "r") output += " ";
-      output += fallbackReading;
-      previousWasHanzi = true;
-      continue;
-     }
-    }
-    output += grapheme.segment;
-    previousWasHanzi = false;
-   }
-   continue;
-  }
-
-  output += unit.text;
-  previousWasHanzi = false;
- }
-
- return output;
-}
-
-export function formatContextualPinyinRange(
- analysis: ContextualPronunciationAnalysis,
- start: number,
- end: number,
-): string {
- return analysis.glyphs
-  .filter((glyph) => glyph.start >= start && glyph.end <= end)
-  .map(preferredDisplayedPinyin)
-  .filter((reading): reading is string => reading !== null)
-  .join(" ")
-  .replace(/ r(?= |$)/gu, "r");
-}
-
-const hanziPattern = /\p{Script=Han}/u;
-const latinPattern = /^\p{Script=Latin}+$/u;
-const numberPattern = /^\p{Number}+$/u;
-const punctuationPattern = /^[\p{Punctuation}\p{Symbol}]+$/u;
-
-function classify(value: string): PronunciationTokenType {
- if (/^\s+$/u.test(value)) return "whitespace";
- if (hanziPattern.test(value)) return "hanzi";
- if (latinPattern.test(value)) return "latin";
- if (numberPattern.test(value)) return "number";
- if (punctuationPattern.test(value)) return "punctuation";
- return "other";
-}
-
-function normalizeReading(value: string): string | null {
- const direct = /^([a-zv]+)([0-5])$/u.exec(
-  value.normalize("NFC").toLocaleLowerCase().replaceAll("u:", "v").replaceAll("ü", "v"),
- );
- if (direct !== null) return `${direct[1]}${direct[2] === "0" ? "5" : direct[2]}`;
- const converted = convert(value, { format: "symbolToNum" });
- const compact = converted
-  .normalize("NFC")
-  .toLocaleLowerCase()
-  .replaceAll("u:", "v")
-  .replaceAll("ü", "v")
-  .replace(/[^a-zv0-5]/gu, "");
- const match = /^([a-zv]+)([0-5])$/u.exec(compact);
- return match === null ? null : `${match[1]}${match[2] === "0" ? "5" : match[2]}`;
-}
-
-function displayPinyin(key: string | null): string | null {
- if (key === null) return null;
- return convert(key, { format: "numToSymbol" })
-  .replace(/([a-zv]+)5$/u, "$1")
-  .replaceAll("v", "ü");
-}
-
-export function formatContextualReading(readingKey: string): string {
- return displayPinyin(readingKey) ?? readingKey;
-}
-
-function readingKeys(value: string[] | undefined): string[] {
- if (value === undefined) return [];
- return value.flatMap((item) => {
-  const key = normalizeReading(item);
-  return key === null ? [] : [key];
- });
-}
-
-function normalizeSourcePinyin(value: string): string {
- const toneMarks = new Set([
-  "ā",
-  "á",
-  "ǎ",
-  "à",
-  "ē",
-  "é",
-  "ě",
-  "è",
-  "ī",
-  "í",
-  "ǐ",
-  "ì",
-  "ō",
-  "ó",
-  "ǒ",
-  "ò",
-  "ū",
-  "ú",
-  "ǔ",
-  "ù",
-  "ǖ",
-  "ǘ",
-  "ǚ",
-  "ǜ",
-  "ü",
-  "ń",
-  "ň",
-  "ǹ",
-  "ḿ",
-  "\u0300",
-  "\u0304",
-  "\u030c",
- ]);
- const normalized = value.normalize("NFC").toLocaleLowerCase().replaceAll("u:", "v");
- let compact = "";
- for (const character of normalized) {
-  if (toneMarks.has(character) || /[a-zv0-5]/u.test(character)) compact += character;
- }
- return compact.replaceAll("ü", "v");
-}
-
-function sourcePinyinForms(key: string): string[] {
- const display = displayPinyin(key);
- const forms = [key, display === null ? null : normalizeSourcePinyin(display)];
- if (key.endsWith("5")) forms.push(key.slice(0, -1));
- if (key === "er2") forms.push("er");
- if (key === "er2" || key === "er5") forms.push("r");
- return [...new Set(forms)].filter((value): value is string => value !== null);
-}
 
 function overrideReadingForGlyph(
  overrides: readonly PronunciationOverride[],
