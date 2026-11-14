@@ -1,7 +1,6 @@
 "use client";
 
-import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { useSearchParams } from "next/navigation";
+import { Fragment, useCallback, useMemo, useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { Badge } from "@/components/ui/display/badge";
@@ -36,7 +35,6 @@ import { UniversalExerciseRunner } from "@/features/hanzihome/components/practic
 import { adaptAllLessonExercises } from "@/features/hanzihome/components/practice/universal-exercise-adapter";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
-import { defaultTextbookDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import {
  DesktopSectionNavigation,
@@ -49,13 +47,10 @@ import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-o
 import { MandarinTtsProvider } from "@/features/speech/MandarinTtsProvider";
 import {
  buildBusinessChineseReaderDocument,
- buildTextbookHref,
  lessonDisplayTitle,
  splitTrailingTranslation,
 } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
-import { parseReaderSourceTarget } from "@/features/reading/model/reading-source-target";
 import { useReaderSelectionActions } from "@/features/reading/hooks/useReaderSelectionActions";
-import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { useIsLessonCached } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { ReaderPronunciationSessionProvider } from "@/features/hanzihome/reader-adapters/reader-pronunciation-session";
@@ -68,8 +63,6 @@ import {
  useReaderSelector,
 } from "@/features/reader/runtime/reader-context";
 import {
- getTextbookCatalogForBookKeys,
- getTextbookLesson,
  type TextbookBookSummary,
  type TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
@@ -82,7 +75,6 @@ import {
  dictationSourcesFromTextbook,
  translationSegmentsFromTextbook,
 } from "@/features/hanzihome/practice/translation-practice";
-import { usePathname, useRouter as useLocalizedRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
  BusinessChineseAnnotationsContext,
@@ -97,7 +89,6 @@ import { TextbookVocabularyPreview } from "./TextbookVocabularyPreview";
 import {
  businessChineseContentSections,
  businessChineseSourceSections,
- businessChineseTabAvailable,
  businessChineseVocabularyTableIds,
  businessChineseVisibleSections,
  businessChineseReaderVocabulary,
@@ -111,6 +102,11 @@ import {
 } from "./business-chinese-study-utils";
 
 import { useBusinessChineseReaderAnnotations } from "./useBusinessChineseReaderAnnotations";
+import {
+ useBusinessChineseLessonResume,
+ useBusinessChineseLessonView,
+ useBusinessChineseWideToolbar,
+} from "./useBusinessChineseLessonView";
 
 export function BusinessChineseStudyWorkspace({
  books: initialBooks,
@@ -120,179 +116,26 @@ export function BusinessChineseStudyWorkspace({
  lesson: TextbookLesson;
 }) {
  const t = useTranslations("BusinessChinese");
- const searchParams = useSearchParams();
- const sourceTarget = parseReaderSourceTarget(new URLSearchParams(searchParams.toString()));
- const router = useLocalizedRouter();
- const learning = useLearningState();
- const learningState = learning.state;
- const { toggleBookmark } = learning;
-
- const currentPath = usePathname();
- const detectedBookKey: TextbookLesson["bookKey"] = currentPath.includes("/khau-ngu-tc1")
-  ? "khau-ngu"
-  : currentPath.includes("/doc-hieu")
-    ? "doc-hieu"
-    : currentPath.includes("/han-thuong-mai")
-      ? "tm3"
-      : currentPath.includes("/nhip-cau")
-        ? "nhip-cau"
-        : initialLesson.bookKey;
-
- const requestedLessonNumber =
-  typeof searchParams.get("lesson") === "string" ? Number(searchParams.get("lesson")) : null;
-
- const lesson = useMemo(() => {
-  const targetNumber =
-   requestedLessonNumber && Number.isInteger(requestedLessonNumber)
-    ? requestedLessonNumber
-    : detectedBookKey !== initialLesson.bookKey
-      ? 1
-      : initialLesson.number;
-
-  if (detectedBookKey !== initialLesson.bookKey || targetNumber !== initialLesson.number) {
-   const resolved = getTextbookLesson(detectedBookKey, targetNumber);
-   if (resolved) return resolved;
-  }
-  return initialLesson;
- }, [detectedBookKey, initialLesson, requestedLessonNumber]);
-
- const books = useMemo(() => {
-  if (initialBooks.some((b) => b.key === lesson.bookKey)) return initialBooks;
-  return getTextbookCatalogForBookKeys([lesson.bookKey]);
- }, [initialBooks, lesson.bookKey]);
-
- const book = books.find((item) => item.key === lesson.bookKey);
- const bookKey = `static:${book?.id ?? lesson.bookKey}`;
- const resume = learningState.settings.bookResume?.[bookKey];
- const resumeLesson = book?.lessons.find((item) => item.id === resume?.lessonId);
- const shouldRestoreLesson =
-  !searchParams.has("lesson") &&
-  !learning.isLoading &&
-  Boolean(resumeLesson && resumeLesson.id !== lesson.id);
- const globalPinyin = learningState.settings.lessonTextDisplayMode?.showPinyin;
- const bookDisplay = learningState.settings.bookDisplayModes?.[bookKey];
- const displayMode: LessonDisplayMode = useMemo(
-  () => ({
-   ...defaultTextbookDisplaySettings,
-   ...(bookDisplay ?? {}),
-   ...(bookDisplay?.showPinyin === undefined && globalPinyin !== undefined
-    ? { showPinyin: globalPinyin }
-    : {}),
-  }),
-  [bookDisplay, globalPinyin],
- );
- const isLessonBookmarked = (learningState.bookmarks.lessons ?? []).includes(lesson.id);
- const lastBookmarkClickRef = useRef(0);
- const handleToggleCurrentLessonBookmark = useCallback(() => {
-  const now = Date.now();
-  if (now - lastBookmarkClickRef.current < 400) return;
-  lastBookmarkClickRef.current = now;
-  toggleBookmark("lessons", lesson.id);
- }, [lesson.id, toggleBookmark]);
-
- const contentSections = useMemo(
-  () => businessChineseContentSections(lesson.sections),
-  [lesson.sections],
- );
-
- const dictationSources = useMemo(() => dictationSourcesFromTextbook(lesson), [lesson]);
-
- const tabs = useMemo<SegmentedControlItem<string>[]>(
-  () =>
-   [
-    { key: "all", label: t("tabs.all") },
-    { key: "overview", label: t("tabs.overview") },
-    { key: "core", label: t("tabs.core") },
-    { key: "text", label: t("tabs.text") },
-    { key: "notes", label: t("tabs.notes") },
-    { key: "translation", label: t("tabs.translation") },
-    { key: "dictation", label: t("tabs.dictation") },
-    { key: "vocab", label: t("tabs.vocab") },
-    { key: "review", label: t("tabs.review") },
-    { key: "grammar", label: t("tabs.grammar") },
-    { key: "practice", label: t("tabs.practice") },
-   ].filter((tab) =>
-    businessChineseTabAvailable(
-     tab.key,
-     contentSections,
-     dictationSources.length,
-     lesson.vocab.length,
-    ),
-   ),
-  [contentSections, dictationSources.length, lesson.vocab.length, t],
- );
-
- const [optimisticTab, setOptimisticTab] = useState<string | null>(null);
- const activeTabParam = optimisticTab ?? searchParams.get("tab");
- const requestedView =
-  activeTabParam ??
-  (sourceTarget?.documentId === `${lesson.id}:text`
-   ? "text"
-   : !searchParams.has("lesson") && resume?.lessonId === lesson.id
-     ? resume.module
-     : "all");
- const activeView = tabs.find((item) => item.key === requestedView)?.key ?? "all";
- const [hasWideToolbar, setHasWideToolbar] = useState(false);
- useEffect(() => {
-  const query = window.matchMedia("(min-width: 80rem)");
-  const updateToolbar = () => setHasWideToolbar(query.matches);
-  updateToolbar();
-  query.addEventListener("change", updateToolbar);
-  return () => query.removeEventListener("change", updateToolbar);
- }, []);
+ const lessonView = useBusinessChineseLessonView({ books: initialBooks, lesson: initialLesson });
+ const {
+  lesson,
+  books,
+  bookKey,
+  shouldRestoreLesson,
+  displayMode,
+  isLessonBookmarked,
+  handleToggleCurrentLessonBookmark,
+  tabs,
+  activeView,
+  setActiveView,
+ } = lessonView;
+ const hasWideToolbar = useBusinessChineseWideToolbar();
  const placeToolbarInLayout = activeView === "text" && hasWideToolbar;
  const readerDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, activeView),
   [activeView, lesson],
  );
- const setActiveView = useCallback(
-  (value: string) => {
-   setOptimisticTab(value);
-   const params = new URLSearchParams(searchParams.toString());
-   params.set("lesson", String(lesson.number));
-   params.set("tab", value);
-   if (currentPath.endsWith("/offline")) {
-    window.history.pushState(null, "", `?${params.toString()}`);
-    return;
-   }
-   router.push(`${buildTextbookHref(lesson.bookKey, lesson.number).split("?")[0]}?${params}`, {
-    scroll: false,
-   });
-  },
-  [currentPath, lesson.bookKey, lesson.number, router, searchParams],
- );
- useEffect(() => {
-  if (learning.isLoading) return;
-  if (shouldRestoreLesson && resumeLesson) {
-   if (currentPath.endsWith("/offline")) {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("lesson", String(resumeLesson.number));
-    params.set("tab", searchParams.get("tab") ?? resume?.module ?? "all");
-    window.history.replaceState(null, "", `?${params.toString()}`);
-    return;
-   }
-   router.replace(
-    `${buildTextbookHref(lesson.bookKey, resumeLesson.number)}&tab=${encodeURIComponent(searchParams.get("tab") ?? resume?.module ?? "all")}`,
-   );
-   return;
-  }
-  if (resume?.lessonId !== lesson.id || resume.module !== activeView) {
-   learning.updateSettings({
-    bookResume: { [bookKey]: { lessonId: lesson.id, module: activeView } },
-   });
-  }
- }, [
-  learning,
-  shouldRestoreLesson,
-  resumeLesson,
-  resume,
-  router,
-  lesson,
-  activeView,
-  bookKey,
-  searchParams,
-  currentPath,
- ]);
+ useBusinessChineseLessonResume(lessonView);
 
  const toolbarNavMenu = useMemo(
   () => (
