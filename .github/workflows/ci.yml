@@ -24,6 +24,9 @@ jobs:
    unit_full: ${{ steps.scope.outputs.unit_full }}
    browser_files: ${{ steps.scope.outputs.browser_files }}
    e2e_grep: ${{ steps.scope.outputs.e2e_grep }}
+   run_verify: ${{ steps.scope.outputs.run_verify }}
+   run_browser: ${{ steps.scope.outputs.run_browser }}
+   run_e2e: ${{ steps.scope.outputs.run_e2e }}
    guidance: ${{ steps.scope.outputs.guidance }}
   steps:
    - uses: actions/checkout@v5
@@ -196,17 +199,14 @@ jobs:
        }
       }
       // main requires a strict (up-to-date) "CI gate", so a pull-request merge
-      // commit's tree already passed the browser and product suites as the PR's
-      // merge result. Re-running them on push only repeats that work; unit and
-      // static checks still run. Direct pushes and unsafe bases keep full rules.
+      // commit's tree already passed every selected suite as the PR's merge
+      // result; Vercel deploys main without waiting for CI. Nothing is re-run on
+      // that push. Direct pushes and unsafe bases keep the normal rules.
       const [mergeSubject, mergeParents] = execFileSync("git", ["show", "-s", "--format=%s%n%P", head], { encoding: "utf8" }).trim().split(String.fromCharCode(10));
       const verifiedPullRequestMerge = process.env.EVENT_NAME === "push" && !full && mergeParents.split(" ").length === 2 && /^Merge pull request #[0-9]+ /.test(mergeSubject);
-      if (verifiedPullRequestMerge) {
-       allBrowser = false;
-       allProduct = false;
-       selectedBrowser.clear();
-       selectedProduct.clear();
-      }
+      // Drafts run the fast verify job only; browser and product suites run once
+      // the PR is ready (ready_for_review and later pushes to a ready PR).
+      const draft = pullRequest && process.env.PR_DRAFT === "true";
       const output = {
        base: full ? "" : base,
        code: String(code),
@@ -216,13 +216,17 @@ jobs:
        browser_files: (allBrowser ? Object.values(browserFiles).flat() : [...selectedBrowser]).join(" "),
        e2e_grep: allProduct ? "." : [...selectedProduct].join("|"),
       };
+      output.run_verify = String(!verifiedPullRequestMerge);
+      output.run_browser = String(!verifiedPullRequestMerge && !draft && output.browser_files !== "");
+      output.run_e2e = String(!verifiedPullRequestMerge && !draft && output.e2e_grep !== "");
       const newline = String.fromCharCode(10);
       appendFileSync(process.env.GITHUB_OUTPUT, Object.entries(output).map(([key, value]) => key + "=" + value).join(newline) + newline);
-      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (verifiedPullRequestMerge ? "merged pull request (browser and product suites ran on the PR)" : unitFull && allBrowser && allProduct ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Tested SHA: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.browser_files || "none"), "Product E2E: " + (output.e2e_grep || "none")].join(newline) + newline);
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (verifiedPullRequestMerge ? "merged pull request (verified on the PR; nothing re-run)" : draft ? "draft (verify only; browser and product suites run when ready)" : unitFull && allBrowser && allProduct ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Tested SHA: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.run_browser === "true" ? output.browser_files : "not run"), "Product E2E: " + (output.run_e2e === "true" ? output.e2e_grep : "not run")].join(newline) + newline);
       JS
 
  verify:
   needs: changes
+  if: needs.changes.outputs.run_verify == 'true'
   runs-on: ubuntu-latest
   timeout-minutes: 15
   env:
@@ -349,12 +353,12 @@ jobs:
    - run: npm run audit:prod
      if: needs.changes.outputs.code == 'true'
    - name: Production build when E2E does not already build it
-     if: needs.changes.outputs.code == 'true' && needs.changes.outputs.e2e_grep == ''
+     if: needs.changes.outputs.code == 'true' && needs.changes.outputs.run_e2e != 'true'
      run: npm run build
 
  browser:
   needs: changes
-  if: needs.changes.outputs.browser_files != ''
+  if: needs.changes.outputs.run_browser == 'true'
   runs-on: ubuntu-latest
   timeout-minutes: 15
   env:
@@ -393,7 +397,7 @@ jobs:
 
  e2e:
   needs: changes
-  if: needs.changes.outputs.e2e_grep != ''
+  if: needs.changes.outputs.run_e2e == 'true'
   runs-on: ubuntu-latest
   timeout-minutes: 20
   env:
@@ -480,11 +484,9 @@ jobs:
       node --input-type=module <<'JS'
       const checks = JSON.parse(process.env.CHECK_RESULTS);
       const failures = [];
-      for (const job of ["changes", "verify"]) {
-       if (checks[job].result !== "success") failures.push(`${job}: ${checks[job].result}`);
-      }
-      for (const [job, output] of [["browser", "browser_files"], ["e2e", "e2e_grep"]]) {
-       const selected = Boolean(checks.changes.outputs[output]);
+      if (checks.changes.result !== "success") failures.push(`changes: ${checks.changes.result}`);
+      for (const [job, output] of [["verify", "run_verify"], ["browser", "run_browser"], ["e2e", "run_e2e"]]) {
+       const selected = checks.changes.outputs[output] === "true";
        const result = checks[job].result;
        if (selected ? result !== "success" : result !== "success" && result !== "skipped") {
         failures.push(`${job}: ${result} (selected: ${selected})`);
