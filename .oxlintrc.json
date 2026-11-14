@@ -11,8 +11,14 @@
   "nursery": "off"
  },
  "jsPlugins": [
-  { "name": "react-eslint", "specifier": "eslint-plugin-react" },
-  { "name": "react-hooks-eslint", "specifier": "eslint-plugin-react-hooks" }
+  {
+   "name": "react-eslint",
+   "specifier": "eslint-plugin-react"
+  },
+  {
+   "name": "react-hooks-eslint",
+   "specifier": "eslint-plugin-react-hooks"
+  }
  ],
  "ignorePatterns": [".next/**", "out/**", "build/**", "scripts/**/*.js", "next-env.d.ts"],
  "options": {
@@ -61,7 +67,13 @@
   "typescript/prefer-namespace-keyword": "error",
   "typescript/triple-slash-reference": "error",
   "import/no-anonymous-default-export": "warn",
-  "jsx-a11y/alt-text": ["warn", { "elements": ["img"], "img": ["Image"] }],
+  "jsx-a11y/alt-text": [
+   "warn",
+   {
+    "elements": ["img"],
+    "img": ["Image"]
+   }
+  ],
   "jsx-a11y/aria-props": "warn",
   "jsx-a11y/aria-proptypes": "warn",
   "jsx-a11y/aria-unsupported-elements": "warn",
@@ -103,16 +115,125 @@
   "react/no-render-return-value": "error",
   "react/no-string-refs": "error",
   "react/no-unescaped-entities": "error",
-  "react/require-render-return": "error"
+  "react/require-render-return": "error",
+  "eslint/max-lines": [
+   "error",
+   {
+    "max": 800,
+    "skipBlankLines": true,
+    "skipComments": true
+   }
+  ],
+  "eslint/max-lines-per-function": [
+   "error",
+   {
+    "max": 300,
+    "skipBlankLines": true,
+    "skipComments": true
+   }
+  ]
  },
  "overrides": [
   {
    "files": ["src/**/*.{js,jsx,ts,tsx}"],
-   "rules": { "no-console": "error" }
+   "rules": {
+    "no-console": "error"
+   }
   },
   {
    "files": ["src/lib/logger.ts"],
-   "rules": { "no-console": "off" }
+   "rules": {
+    "no-console": "off"
+   }
+  },
+  {
+   "files": [
+    "e2e/**",
+    "**/*.test.mjs",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.fixture.ts",
+    "**/*.fixture.tsx",
+    "src/types/supabase.generated.ts",
+    "src/features/developer-api/api-registry.ts",
+    "src/lib/pronunciation/pinyin-engine.ts",
+    "src/features/hanzihome/schemas/hanyu-lesson.schema.ts"
+   ],
+   "rules": {
+    "eslint/max-lines": "off",
+    "eslint/max-lines-per-function": "off"
+   }
+  },
+  {
+   "files": [
+    "src/components/editor/EditorFloatingMenu.tsx",
+    "src/components/editor/plugins/ToolbarPlugin.tsx",
+    "src/features/daily-reading/components/DailyReadingLibrary.tsx",
+    "src/features/dictation/StudioDictationWorkspace.tsx",
+    "src/features/hanzihome/ai-conversation/AiConversationWorkspace.tsx",
+    "src/features/hanzihome/ai-conversation/server/ai-conversation-persistence.server.ts",
+    "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx",
+    "src/features/hanzihome/components/review/AmbientPipDictationCard.tsx",
+    "src/features/hanzihome/components/vocab/VocabBulkEditDialog.tsx",
+    "src/features/hanzihome/data/server/supabase-hanzihome-content-repository.ts",
+    "src/features/hanzihome/html-artifacts/HanziHomeHtmlArtifactsPage.tsx",
+    "src/features/hanzihome/listening/ListeningExerciseItems.tsx",
+    "src/features/translation/TranslationWorkspace.tsx",
+    "src/lib/pronunciation/contextual-pronunciation.ts",
+    "src/services/ai/ai.service.ts",
+    "src/services/vocab/vocab.service.ts"
+   ],
+   "rules": {
+    "eslint/max-lines": "off"
+   }
+  },
+  {
+   "files": [
+    "src/app/api/ai/conversation/route.ts",
+    "src/components/editor/EditorFloatingMenu.tsx",
+    "src/features/daily-reading/components/DailyReadingLearningSupportPanel.tsx",
+    "src/features/daily-reading/components/DailyReadingLibrary.tsx",
+    "src/features/daily-reading/components/DailyReadingSettingsPanel.tsx",
+    "src/features/developer-api/DeveloperApiPage.tsx",
+    "src/features/dictation/StudioDictationEditor.tsx",
+    "src/features/dictation/StudioDictationWorkspace.tsx",
+    "src/features/hanzihome/HanziHomeAggregateLibrary.tsx",
+    "src/features/hanzihome/HanziHomeLibraryHome.tsx",
+    "src/features/hanzihome/ai-conversation/AiConversationWorkspace.tsx",
+    "src/features/hanzihome/annotations/LessonAnnotationProvider.tsx",
+    "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx",
+    "src/features/hanzihome/components/layout/ModuleSplitWorkspaceContent.tsx",
+    "src/features/hanzihome/components/lesson-overview/exercise-section/QuestionExerciseBody.tsx",
+    "src/features/hanzihome/components/lesson-overview/exercise-section/SubstitutionExerciseBody.tsx",
+    "src/features/hanzihome/components/practice/UniversalExerciseRunner.tsx",
+    "src/features/hanzihome/components/review/AmbientPipDictationCard.tsx",
+    "src/features/hanzihome/components/review/AmbientPipExerciseRunner.tsx",
+    "src/features/hanzihome/components/review/AmbientPipFlashcard.tsx",
+    "src/features/hanzihome/components/review/AmbientPipGrammarCard.tsx",
+    "src/features/hanzihome/components/review/UnifiedVocabStudyHub.tsx",
+    "src/features/hanzihome/components/vocab/VocabBulkEditDialog.tsx",
+    "src/features/hanzihome/hooks/useLearningState.ts",
+    "src/features/hanzihome/html-artifacts/HanziHomeHtmlArtifactsPage.tsx",
+    "src/features/hanzihome/learning-loop/LearningLoopWorkspace.tsx",
+    "src/features/hanzihome/practice/LessonTranslationWorkspace.tsx",
+    "src/features/hanzihome/search/GlobalSearchDialog.tsx",
+    "src/features/hanzihome/tts/TtsStudioWorkspace.tsx",
+    "src/features/notes/components/NoteEditorPanel.tsx",
+    "src/features/notes/hooks/useNoteEditor.ts",
+    "src/features/reader/components/ReaderSegment.tsx",
+    "src/features/reading/components/ShadowingPracticePanel.tsx",
+    "src/features/reading/hooks/useReaderSelectionActions.tsx",
+    "src/features/reading/pdf/PdfReaderWorkspace.tsx",
+    "src/features/reading/workspaces/ReaderDocumentStudy.tsx",
+    "src/features/reading/workspaces/ReaderWorkspace.tsx",
+    "src/features/settings/components/AddApiKeyDialog.tsx",
+    "src/features/settings/components/AiTaskSettingsSection.tsx",
+    "src/features/translation/TranslationWorkspace.tsx",
+    "src/hooks/useTTS.ts"
+   ],
+   "rules": {
+    "eslint/max-lines-per-function": "off"
+   }
   }
  ]
 }

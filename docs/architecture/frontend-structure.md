@@ -310,6 +310,31 @@ Keep code local when:
 - the shared name would be generic and meaningless;
 - reuse is only visual coincidence.
 
+### Size and responsibility limits
+
+Lint enforces two hard limits (blank lines and comments excluded): a source file
+at most **800 lines** (`eslint/max-lines`) and a function or component at most
+**300 lines** (`eslint/max-lines-per-function`). Tests, fixtures, generated types
+and declarative data modules (API registry, pinyin dictionary, lesson schema)
+are exempt. Files that predated the limits are listed in the `.oxlintrc.json`
+baseline overrides; the list only shrinks. Remove a file from it once split,
+and never add one.
+
+Split before reaching the hard limits. Treat these as review triggers:
+
+- a component over ~200 lines, or one that renders several unrelated views
+  (tabs, modes, dialogs): extract each view into a sibling component file;
+- more than ~8 `useState`/`useEffect` in one component: move a coherent slice of
+  state and its effects into a feature hook (`use<Feature><Concern>`), or a
+  reducer when transitions depend on each other;
+- a file mixing UI with pure data shaping: move the pure functions to a
+  `*-utils.ts`/`*-model.ts` sibling and test them directly.
+
+A split keeps behaviour, props, exports and state ownership identical; it is a
+structural change, not a redesign. Keep the original module as the stable entry
+point (re-export moved pieces when external consumers import them), so callers
+and tests do not churn.
+
 ## 6. Naming
 
 Prefer responsibility names:
