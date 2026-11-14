@@ -34,17 +34,19 @@ import {
 import { useStudioDictationResume } from "./useStudioDictationResume";
 import { useStudioDictationSource } from "./useStudioDictationSource";
 
+export type StudioDictationWorkspaceProps = {
+ initialReaderDocuments: ReadonlyArray<ReaderDocumentRow>;
+ initialReaderResource: ReaderDocumentResource | null;
+ initialReaderCourseResource: ReaderDocumentResource | null;
+ initialDictationLessons: ReadonlyArray<HanziHomeLesson>;
+};
+
 export function StudioDictationWorkspace({
  initialReaderDocuments,
  initialReaderResource,
  initialReaderCourseResource,
  initialDictationLessons,
-}: {
- initialReaderDocuments: ReadonlyArray<ReaderDocumentRow>;
- initialReaderResource: ReaderDocumentResource | null;
- initialReaderCourseResource: ReaderDocumentResource | null;
- initialDictationLessons: ReadonlyArray<HanziHomeLesson>;
-}) {
+}: StudioDictationWorkspaceProps) {
  const t = useTranslations("Dictation");
  const requestNavigation = useUnsavedDraftGuard(false);
  const { userId, isResolved } = useClientSession();

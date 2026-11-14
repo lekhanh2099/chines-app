@@ -8,9 +8,9 @@ import {
  transcriptsForListeningSection,
 } from "@/features/hanzihome/listening/listening.view-model";
 import { useTtsLibrary } from "@/features/hanzihome/tts/useTtsLibrary";
-import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import type { StudioDictationWorkspaceProps } from "./StudioDictationWorkspace";
 import {
  dictationBookOptions,
  dictationLessonSelection,
@@ -34,8 +34,8 @@ export function useStudioDictationSource({
  t,
 }: {
  initialReaderDocuments: ReadonlyArray<ReaderDocumentRow>;
- initialReaderResource: ReaderDocumentResource | null;
- initialReaderCourseResource: ReaderDocumentResource | null;
+ initialReaderResource: StudioDictationWorkspaceProps["initialReaderResource"];
+ initialReaderCourseResource: StudioDictationWorkspaceProps["initialReaderCourseResource"];
  initialDictationLessons: ReadonlyArray<HanziHomeLesson>;
  requestedDocumentId: string;
  requestedReaderDocumentId: string;
