@@ -27,7 +27,10 @@ import { HomeDashboard } from "@/features/home/HomeDashboard";
 import { isAppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 import { useLessonAudioPack } from "@/features/speech/useLessonAudioPack";
-import { getTextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import {
+ getTextbookCatalog,
+ getTextbookLesson,
+} from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { sanitizeSpeechTextForVoice } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { buildCacheKey, clearAllCachedAudio, setCachedAudio } from "@/lib/audio/tts-cache";
 import { DEFAULT_MANDARIN_VOICE } from "@/hooks/useTTS";
@@ -160,7 +163,11 @@ root.render(
       Bookmark lesson fixture
      </Button>
      <Button onClick={() => harness.updateBookmarkedLessons([])}>Clear bookmarks fixture</Button>
-     <HomeDashboard textbooks={[]} />
+     <HomeDashboard
+      textbooks={
+       params.has("textbooks") ? getTextbookCatalog().filter((book) => book.key !== "tm2") : []
+      }
+     />
     </>
    ) : (
     <>
@@ -212,6 +219,15 @@ const harness = {
    (current) => {
     const state = current ?? emptyLearningState;
     return { ...state, bookmarks: { ...state.bookmarks, lessons } };
+   },
+  );
+ },
+ updateSettings(settings: Partial<UserLearningState["settings"]>) {
+  queryClient.setQueryData<UserLearningState>(
+   hanzihomeQueryKeys.learningState(ownerId),
+   (current) => {
+    const state = current ?? emptyLearningState;
+    return { ...state, settings: { ...state.settings, ...settings } };
    },
   );
  },

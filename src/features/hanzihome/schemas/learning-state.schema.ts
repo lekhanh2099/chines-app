@@ -68,6 +68,8 @@ export const customVocabItemSchema = z.object({
  createdAt: z.string(),
 });
 
+const bookStudiedAtSchema = z.iso.datetime();
+
 export const userLearningStateSchema = z.object({
  settings: z
   .object({
@@ -89,6 +91,10 @@ export const userLearningStateSchema = z.object({
      }),
     )
     .optional(),
+   // When each book was last studied, keyed like `bookResume` (`catalog:*` /
+   // `static:*`). Orders "continue learning" by real recency across catalog and
+   // static textbooks. Absent in legacy state written before it existed.
+   bookLastStudiedAt: z.record(z.string().min(1), bookStudiedAtSchema).optional(),
    customVocab: z.array(customVocabItemSchema).optional(),
   })
   .default({}),

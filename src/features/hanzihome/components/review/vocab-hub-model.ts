@@ -9,7 +9,7 @@ import {
  customVocabListToHanziHomeVocabItems,
 } from "./vocab-hub-custom";
 
-export type HubSourceMode = "it-quick" | "bookmarked-lessons" | "custom-vault";
+export type HubSourceMode = "it-quick" | "bookmarked-lessons" | "custom-vault" | "lessons";
 
 export const IT_PRESET_ITEMS: readonly { key: ItWebQuickPreset; label: string }[] = [
  { key: "core20", label: "20 từ cốt lõi ngày đầu" },
@@ -20,7 +20,12 @@ export const IT_PRESET_ITEMS: readonly { key: ItWebQuickPreset; label: string }[
 ];
 
 export function parseSourceMode(value: string): HubSourceMode {
- if (value === "bookmarked-lessons" || value === "it-quick" || value === "custom-vault") {
+ if (
+  value === "bookmarked-lessons" ||
+  value === "it-quick" ||
+  value === "custom-vault" ||
+  value === "lessons"
+ ) {
   return value;
  }
  return "bookmarked-lessons";

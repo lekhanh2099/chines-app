@@ -152,6 +152,10 @@ export function useLearningState() {
      ...settings,
      bookDisplayModes: { ...learningState.settings.bookDisplayModes, ...settings.bookDisplayModes },
      bookResume: { ...learningState.settings.bookResume, ...settings.bookResume },
+     bookLastStudiedAt: {
+      ...learningState.settings.bookLastStudiedAt,
+      ...settings.bookLastStudiedAt,
+     },
     },
    };
    listeners.forEach((listener) => listener());

@@ -117,6 +117,8 @@ export const hanzihomeQueryKeys = {
   "groups",
   [...lessonIds],
  ],
+ // Lesson summaries of every library textbook, for the PiP "any lesson" picker.
+ selectableTextbookGroups: ["hanzihome", "bookmarked-textbook", "selectable-groups"],
  bookmarkedTextbookBundle: (lessonIds: readonly string[]) => [
   "hanzihome",
   "bookmarked-textbook",

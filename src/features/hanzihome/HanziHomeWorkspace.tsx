@@ -3,7 +3,11 @@
 import { useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 
-import { lessonBookKey } from "@/features/hanzihome/utils/learning-state";
+import {
+ lessonBookKey,
+ markBookStudied,
+ mostRecentStudiedBookKey,
+} from "@/features/hanzihome/utils/learning-state";
 import { Typography } from "@/components/ui/display/typography";
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
 import { RadicalWorkspaceSkeleton } from "@/features/hanzihome/components/RadicalWorkspaceSkeleton";
@@ -29,6 +33,39 @@ import type { HanziHomeModule, LearningStatus, ReviewResult } from "@/features/h
 import type { ReviewItem } from "@/features/hanzihome/context/types";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
+
+/**
+ * Persists the open catalog lesson/module as its book's resume target and records
+ * the book as the most recently studied one (`bookLastStudiedAt`, same key as
+ * `bookResume`). Writes only when either differs, so it settles after one write.
+ */
+function useCatalogBookResumePersistence({
+ learning,
+ lessonId,
+ bookKey,
+ module,
+}: {
+ learning: ReturnType<typeof useLearningState>;
+ lessonId: string;
+ bookKey: string;
+ module: ReturnType<typeof resolveLessonModule>;
+}) {
+ useEffect(() => {
+  if (learning.isLoading || !lessonId) return;
+  const current = learning.state.settings.bookResume?.[bookKey];
+  if (
+   current?.lessonId === lessonId &&
+   current.module === module &&
+   mostRecentStudiedBookKey(learning.state.settings) === bookKey
+  ) {
+   return;
+  }
+  learning.updateSettings({
+   bookResume: { [bookKey]: { lessonId, module } },
+   ...markBookStudied(learning.state.settings, bookKey),
+  });
+ }, [learning, lessonId, bookKey, module]);
+}
 
 export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeModule }) {
  const tSync = useTranslations("Common.syncStatus");
@@ -170,15 +207,12 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   isListeningLesson,
  });
 
- useEffect(() => {
-  if (learning.isLoading || !selectedLesson || resolvedActiveModule === "radicals") return;
-  const key = lessonBookKey(selectedLesson);
-  const current = learning.state.settings.bookResume?.[key];
-  if (current?.lessonId === selectedLesson.id && current.module === activeLessonModule) return;
-  learning.updateSettings({
-   bookResume: { [key]: { lessonId: selectedLesson.id, module: activeLessonModule } },
-  });
- }, [learning, selectedLesson, activeLessonModule, resolvedActiveModule]);
+ useCatalogBookResumePersistence({
+  learning,
+  lessonId: resolvedActiveModule === "radicals" ? "" : lessonId,
+  bookKey: selectedLesson ? lessonBookKey(selectedLesson) : "",
+  module: activeLessonModule,
+ });
 
  const activeLessonDetail = useHanziHomeLesson(lessonId);
  const lesson = resolvedActiveModule === "radicals" ? null : activeLessonDetail.lesson;

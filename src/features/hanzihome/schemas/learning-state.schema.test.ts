@@ -165,3 +165,42 @@ describe("learning-state review history compatibility", () => {
   expect(parsed.reviewHistory[0]?.label).toBeUndefined();
  });
 });
+
+describe("learning-state book study recency", () => {
+ it("keeps legacy state without study times valid", () => {
+  const parsed = userLearningStateSchema.parse({
+   settings: {
+    bookResume: { "static:nhip-cau": { lessonId: "nhip-cau-lesson-02", module: "text" } },
+   },
+  });
+  expect(parsed.settings.bookLastStudiedAt).toBeUndefined();
+  expect(parsed.settings).not.toHaveProperty("bookLastStudiedAt");
+ });
+
+ it("round-trips per-book study times keyed like bookResume", () => {
+  const settings = {
+   bookLastStudiedAt: {
+    "catalog:book-a": "2026-11-12T08:00:00.000Z",
+    "static:khau-ngu": "2026-11-13T08:00:00.000Z",
+   },
+  };
+  const parsed = userLearningStateSchema.parse({ settings });
+  expect(parsed.settings.bookLastStudiedAt).toEqual(settings.bookLastStudiedAt);
+  expect(userLearningStateSchema.parse(JSON.parse(JSON.stringify(parsed))).settings).toEqual(
+   settings,
+  );
+ });
+
+ it("rejects study times that are not ISO timestamps and empty book keys", () => {
+  expect(
+   userLearningStateSchema.safeParse({
+    settings: { bookLastStudiedAt: { "static:khau-ngu": "yesterday" } },
+   }).success,
+  ).toBe(false);
+  expect(
+   userLearningStateSchema.safeParse({
+    settings: { bookLastStudiedAt: { "": "2026-11-13T08:00:00.000Z" } },
+   }).success,
+  ).toBe(false);
+ });
+});

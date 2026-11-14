@@ -384,3 +384,67 @@ describe("mergeLearningStateAfterConflict", () => {
   expect(merged.progress.grammar?.point).toEqual(local.progress.grammar?.point);
  });
 });
+
+describe("mergeLearningStateAfterConflict book study recency", () => {
+ it("keeps the later study time per book and unrelated remote changes", () => {
+  const base = stateWith({
+   settings: { bookLastStudiedAt: { "catalog:a": "2026-11-10T08:00:00.000Z" } },
+  });
+  const local = stateWith({
+   settings: {
+    bookResume: { "static:nhip-cau": { lessonId: "nhip-cau-lesson-03", module: "text" } },
+    bookLastStudiedAt: {
+     "catalog:a": "2026-11-10T08:00:00.000Z",
+     "static:nhip-cau": "2026-11-12T08:00:00.000Z",
+    },
+   },
+  });
+  const remote = stateWith({
+   settings: {
+    density: "compact",
+    bookResume: { "catalog:b": { lessonId: "b1", module: "vocab" } },
+    bookLastStudiedAt: {
+     "catalog:a": "2026-11-11T08:00:00.000Z",
+     "catalog:b": "2026-11-11T09:00:00.000Z",
+    },
+   },
+   bookmarks: { lessons: ["remote-lesson"] },
+  });
+
+  const merged = mergeLearningStateAfterConflict({ base, local, remote });
+
+  expect(merged.settings.bookLastStudiedAt).toEqual({
+   "catalog:a": "2026-11-11T08:00:00.000Z",
+   "catalog:b": "2026-11-11T09:00:00.000Z",
+   "static:nhip-cau": "2026-11-12T08:00:00.000Z",
+  });
+  expect(merged.settings.bookResume).toEqual({
+   "catalog:b": { lessonId: "b1", module: "vocab" },
+   "static:nhip-cau": { lessonId: "nhip-cau-lesson-03", module: "text" },
+  });
+  expect(merged.settings.density).toBe("compact");
+  expect(merged.bookmarks.lessons).toEqual(["remote-lesson"]);
+ });
+
+ it("keeps a newer remote study time over an older local one for the same book", () => {
+  const base = stateWith({});
+  const local = stateWith({
+   settings: { bookLastStudiedAt: { "static:khau-ngu": "2026-11-12T08:00:00.000Z" } },
+  });
+  const remote = stateWith({
+   settings: { bookLastStudiedAt: { "static:khau-ngu": "2026-11-13T08:00:00.000Z" } },
+  });
+  expect(
+   mergeLearningStateAfterConflict({ base, local, remote }).settings.bookLastStudiedAt,
+  ).toEqual({ "static:khau-ngu": "2026-11-13T08:00:00.000Z" });
+ });
+
+ it("leaves study times absent for legacy generations", () => {
+  const merged = mergeLearningStateAfterConflict({
+   base: emptyLearningState,
+   local: emptyLearningState,
+   remote: emptyLearningState,
+  });
+  expect(merged.settings).not.toHaveProperty("bookLastStudiedAt");
+ });
+});

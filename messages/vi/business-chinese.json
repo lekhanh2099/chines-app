@@ -92,5 +92,22 @@
   "pipActiveTitle": "Đang ôn tập trong cửa sổ nổi",
   "pipActiveDescription": "Thẻ ôn tập đang chạy trong cửa sổ Picture-in-Picture. Bạn có thể duyệt bài học hoặc chuyển sang ứng dụng khác trong khi học.",
   "pipReturn": "Đưa về trang này (Đóng cửa sổ nổi)"
+ },
+ "vocabHub": {
+  "anyLesson": {
+   "source": "Chọn bài bất kỳ",
+   "selectLabel": "Chọn bài học bất kỳ",
+   "placeholder": "Chọn một bài để học",
+   "groupLabel": "{course} · {book}",
+   "lessonOption": "Bài {number}: {title}",
+   "bundleTitle": "{book} · {lesson}",
+   "summariesLoading": "Đang tải danh sách bài…",
+   "summariesError": "Chưa tải được một phần danh sách bài.",
+   "loading": "Đang tải bài học…",
+   "error": "Không tải được bài học này.",
+   "missing": "Không tìm thấy bài đã chọn.",
+   "empty": "Bài này chưa có từ vựng để học bằng PiP.",
+   "retry": "Thử lại"
+  }
  }
 }

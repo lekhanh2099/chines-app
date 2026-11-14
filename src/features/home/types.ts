@@ -17,6 +17,9 @@ export type HomeCourseGroup = {
  books: { id: string; title: string; lesson: HomeLessonTarget | null }[];
 };
 
+/** One library book with its resume (or start) target; `id` is the `bookResume` key. */
+export type HomeResumeBook = HomeCourseGroup["books"][number];
+
 type HomeLearningPulse = {
  trackedCount: number;
  reviewCount: number;
@@ -45,6 +48,8 @@ export type HomeRecentActivityItem = {
 
 export type HomeDashboardModel = {
  courses: HomeCourseGroup[];
+ /** Books being studied, most recent first (see `buildHomeResumeBooks`). */
+ resumeBooks: HomeResumeBook[];
  catalogUnavailable: boolean;
  learningPulse: HomeLearningPulse;
  recentActivity: HomeRecentActivityItem[];

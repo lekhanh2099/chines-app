@@ -1,4 +1,5 @@
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 type PipGrammarExample = {
  readonly zh: string;
@@ -165,4 +166,38 @@ export function adaptTextbookGrammarToPip(
  flushCurrent();
 
  return points;
+}
+
+/**
+ * Projects a HanziHome catalog lesson's typed grammar view models onto PiP grammar
+ * points: structures become the formula, the core meaning plus notes the
+ * explanation, and parsed examples keep their Chinese/Vietnamese pair. Points
+ * without any learnable content are skipped, matching the textbook adapter.
+ */
+export function adaptHanziHomeGrammarToPip(
+ grammar: readonly HanziHomeLesson["grammar"][number][],
+): readonly PipGrammarPoint[] {
+ return grammar.flatMap((point) => {
+  const formula = point.structuresView
+   .map((structure) => structure.trim())
+   .filter(Boolean)
+   .join(" · ");
+  const explanation = [point.core, ...point.notes]
+   .map((line) => line.trim())
+   .filter(Boolean)
+   .join("\n");
+  const examples = point.examplesParsed
+   .filter((example) => example.zh.trim().length > 0)
+   .map((example) => ({ zh: example.zh, vi: example.vi || undefined }));
+  if (!formula && !explanation && examples.length === 0) return [];
+  return [
+   {
+    id: point.id,
+    title: point.cleanTitle || point.title || point.titleVi || point.id,
+    formula: formula || undefined,
+    explanation: explanation || undefined,
+    examples,
+   },
+  ];
+ });
 }

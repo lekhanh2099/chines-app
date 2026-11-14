@@ -37,12 +37,28 @@ export function getBookmarkedTextbookGroups(
  bookmarkedLessonIds: readonly string[],
 ): BookmarkedTextbookGroup[] {
  const bookmarkedSet = new Set(bookmarkedLessonIds);
+ return buildTextbookGroups((lesson) => bookmarkedSet.has(lesson.id));
+}
+
+/**
+ * Every lesson of the textbooks shown in the library (Hán thương mại 2 stays
+ * hidden), grouped by book, for the PiP "any lesson" picker. Summaries only.
+ */
+export function getSelectableTextbookGroups(): BookmarkedTextbookGroup[] {
+ return buildTextbookGroups((lesson) => lesson.bookKey !== "tm2");
+}
+
+function buildTextbookGroups(
+ includeLesson: (
+  lesson: ReturnType<typeof getTextbookCatalog>[number]["lessons"][number],
+ ) => boolean,
+): BookmarkedTextbookGroup[] {
  const catalog = getTextbookCatalog();
  const groups: BookmarkedTextbookGroup[] = [];
 
  for (const book of catalog) {
   const matchedLessons: BookmarkedLessonEntry[] = book.lessons
-   .filter((lesson) => bookmarkedSet.has(lesson.id))
+   .filter(includeLesson)
    .map((lesson) => ({
     id: lesson.id,
     bookKey: lesson.bookKey,

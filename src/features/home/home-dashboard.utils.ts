@@ -2,8 +2,8 @@ import { groupLibraryCourses } from "@/features/hanzihome/components/library/lib
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import type { HanziHomeCatalogData, UserLearningState } from "@/features/hanzihome/types";
 import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
-import type { HomeCourseGroup } from "@/features/home/types";
-import { lessonBookKey } from "@/features/hanzihome/utils/learning-state";
+import type { HomeCourseGroup, HomeResumeBook } from "@/features/home/types";
+import { bookStudiedAtMs, lessonBookKey } from "@/features/hanzihome/utils/learning-state";
 import { sortLessonsByCourseBookOrder } from "@/features/hanzihome/courses/course-catalog";
 import {
  buildTextbookHref,
@@ -158,4 +158,27 @@ export function buildHomeCourseGroups(
   });
  }
  return groups;
+}
+
+/**
+ * Orders the books the learner is studying (those with a valid resume target,
+ * across HanziHome catalog and static textbooks) by real recency: the latest
+ * `bookLastStudiedAt` first, then books without a recorded time in library order
+ * (legacy state). A recorded time whose book/lesson is no longer valid is skipped,
+ * never transferred to another book. Unstarted books are not listed: nothing is
+ * presented as "most recent" before the learner has studied it.
+ */
+export function buildHomeResumeBooks(
+ courses: readonly HomeCourseGroup[],
+ studiedAt: UserLearningState["settings"]["bookLastStudiedAt"],
+): HomeResumeBook[] {
+ return courses
+  .flatMap((course) => course.books)
+  .filter((book) => book.lesson?.isRecent)
+  .map((book, index) => ({ book, index, studiedMs: bookStudiedAtMs(studiedAt?.[book.id]) }))
+  .toSorted((a, b) => {
+   if (a.studiedMs !== b.studiedMs) return a.studiedMs > b.studiedMs ? -1 : 1;
+   return a.index - b.index;
+  })
+  .map((entry) => entry.book);
 }
