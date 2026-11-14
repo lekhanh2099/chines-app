@@ -1,53 +1,32 @@
 "use client";
 
-import { memo, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { Mic, Square } from "lucide-react";
+import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
-import { Badge } from "@/components/ui/display/badge";
-import { useUnsavedDraftGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
-import { Button } from "@/components/ui/actions/button";
-import { Card } from "@/components/ui/layout/card";
-import { SegmentedControl } from "@/components/ui/forms/segmented-control";
-import { Textarea } from "@/components/ui/forms/textarea";
 import { Typography } from "@/components/ui/display/typography";
-import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
-import {
- ReaderHanziText,
- PinyinText,
- TranslationText,
-} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
-import {
- scoreTranslationAttempt,
- type TranslationDirection,
-} from "@/features/hanzihome/practice/translation-practice";
+import type { TranslationDirection } from "@/features/hanzihome/practice/translation-practice";
 import type { HumanitiesDocumentResource } from "@/features/humanities/model/humanities-resource.schemas";
 import type { ReaderDocumentRow } from "@/features/reading/model/reading-resource.schemas";
-import { Link, usePathname, useRouter } from "@/i18n/navigation";
-
-import { evaluateHumanitiesAnswer } from "@/features/humanities/humanities-evaluator";
-import {
- humanitiesPracticeContent,
- type HumanitiesPracticeTrack,
-} from "@/features/humanities/humanities-practice-content";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import type { HumanitiesPracticeTrack } from "@/features/humanities/humanities-practice-content";
 
 import {
  createTranslationSubmission,
- createTranslationRevisionSubmission,
- createTranslationSelfMarkSubmission,
- interpretingMarks,
- translationCourseModuleOrder,
  translationResourceSegments,
  translationSourceKind,
  translationTrackDocuments,
- type HumanitiesUnitMark,
 } from "./translation-workspace-utils";
+import { TranslationAnswerPanel } from "./TranslationAnswerPanel";
+import { TranslationAttemptHistory } from "./TranslationAttemptHistory";
+import { TranslationInterpretingPanel } from "./TranslationInterpretingPanel";
+import { TranslationLessonGuide, TranslationLessonHeader } from "./TranslationLessonHeader";
+import { TranslationSourcePanel } from "./TranslationSourcePanel";
+import { TranslationTrackGuide } from "./TranslationTrackGuide";
+import { useTranslationAnswerDrafts } from "./useTranslationAnswerDrafts";
 import { useTranslationAttempts } from "./useTranslationAttempts";
 import { useTranslationPreparation } from "./useTranslationPreparation";
-import { useTranslationRecording } from "./useTranslationRecording";
 
 export function TranslationWorkspace({
  initialDocuments,
@@ -66,67 +45,14 @@ export function TranslationWorkspace({
  );
  const [directionPreference, setDirectionPreference] = useState<TranslationDirection | null>(null);
  const [activeIndex, setActiveIndex] = useState(0);
- const [drafts, setDrafts] = useState<Record<string, string>>({});
- const [backTranslations, setBackTranslations] = useState<Record<string, string>>({});
- const [checked, setChecked] = useState<Record<string, boolean>>({});
  const [replayCount, setReplayCount] = useState(0);
- const [interpretingNotes, setInterpretingNotes] = useState("");
- const [learnerTranscript, setLearnerTranscript] = useState("");
- const [submittedRecording, setSubmittedRecording] = useState({ notes: "", transcript: "" });
- const [unitMarks, setUnitMarks] = useState<Record<string, HumanitiesUnitMark>>({});
- const startedAtRef = useRef<Record<string, number>>({});
- const navigationRevisionRef = useRef(0);
  const requestedDocumentId = searchParams.get("document") ?? "";
  const selectedIdValue = initialDocuments.some((document) => document.id === requestedDocumentId)
   ? requestedDocumentId
   : "";
- const displayedDocumentIdRef = useRef(selectedIdValue);
  const resource = selectedIdValue.length > 0 ? initialResource : null;
- const content = humanitiesPracticeContent[activeTrack];
  const trackTitle =
   activeTrack === "translation" ? t("tracks.translation.title") : t("tracks.interpreting.title");
- const trackDescription =
-  activeTrack === "translation"
-   ? t("tracks.translation.description")
-   : t("tracks.interpreting.description");
- const markLabel = (mark: HumanitiesUnitMark) => {
-  if (mark === "kept") return t("answer.marks.kept");
-  if (mark === "partial") return t("answer.marks.partial");
-  if (mark === "missed") return t("answer.marks.missed");
-  return t("answer.marks.unsure");
- };
- const selectDocument = (documentId: string) => {
-  const next = new URLSearchParams(searchParams.toString());
-  next.set("document", documentId);
-  displayedDocumentIdRef.current = documentId;
-  navigationRevisionRef.current += 1;
-  setDrafts((current) =>
-   Object.fromEntries(Object.entries(current).filter(([draftKey]) => checked[draftKey])),
-  );
-  setBackTranslations({});
-  startedAtRef.current = {};
-  setInterpretingNotes("");
-  setLearnerTranscript("");
-  setSubmittedRecording({ notes: "", transcript: "" });
-  clearSaveError();
-  router.push(`${pathname}?${next.toString()}`, { scroll: false });
- };
- const clearDocument = () => {
-  const next = new URLSearchParams(searchParams.toString());
-  next.delete("document");
-  displayedDocumentIdRef.current = "";
-  navigationRevisionRef.current += 1;
-  setDrafts((current) =>
-   Object.fromEntries(Object.entries(current).filter(([draftKey]) => checked[draftKey])),
-  );
-  setBackTranslations({});
-  startedAtRef.current = {};
-  setInterpretingNotes("");
-  setLearnerTranscript("");
-  setSubmittedRecording({ notes: "", transcript: "" });
-  clearSaveError();
-  router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
- };
  const segments = useMemo(
   () => (resource ? translationResourceSegments(resource) : []),
   [resource],
@@ -143,53 +69,43 @@ export function TranslationWorkspace({
  const { historyQuery, submitAttempt, saveError, clearSaveError } = useTranslationAttempts(
   segment?.id ?? "",
  );
- const requestNavigation = useUnsavedDraftGuard(
-  Object.entries(drafts).some(
-   ([draftKey, value]) => value.trim().length > 0 && (!checked[draftKey] || Boolean(saveError)),
-  ) ||
-   Object.values(backTranslations).some((value) => value.trim().length > 0) ||
-   (interpretingNotes.trim().length > 0 && interpretingNotes !== submittedRecording.notes) ||
-   (learnerTranscript.trim().length > 0 && learnerTranscript !== submittedRecording.transcript),
- );
+ const answerDrafts = useTranslationAnswerDrafts({
+  selectedIdValue,
+  recordingContext: { contentId: segment?.id ?? "", direction },
+  submitAttempt,
+  saveError,
+  clearSaveError,
+ });
+ const {
+  drafts,
+  setDrafts,
+  backTranslations,
+  setBackTranslations,
+  checked,
+  setChecked,
+  startedAtRef,
+  requestNavigation,
+  recorder,
+  resetDocumentDrafts,
+ } = answerDrafts;
  const draft = key ? (drafts[key] ?? "") : "";
  const backTranslation = key ? (backTranslations[key] ?? "") : "";
  const isChecked = key ? checked[key] === true : false;
- const humanitiesResult = useMemo(
-  () =>
-   isChecked && humanitiesEvaluation !== undefined
-    ? evaluateHumanitiesAnswer(draft, humanitiesEvaluation)
-    : null,
-  [isChecked, draft, humanitiesEvaluation],
- );
- const score =
-  segment && isChecked
-   ? (humanitiesResult?.score ?? scoreTranslationAttempt(segment, direction, draft))
-   : null;
- const recordingRevision = navigationRevisionRef.current;
- const { recorder, startRecording } = useTranslationRecording({
-  context: { contentId: segment?.id ?? "", direction },
-  answer: { transcript: learnerTranscript, notes: interpretingNotes, unitMarks },
-  submitAttempt,
-  onSaved: (answer) => {
-   if (navigationRevisionRef.current !== recordingRevision) return;
-   setSubmittedRecording({ notes: answer.notes, transcript: answer.transcript });
-  },
- });
 
- useLayoutEffect(() => {
-  if (displayedDocumentIdRef.current === selectedIdValue) return;
-  displayedDocumentIdRef.current = selectedIdValue;
-  navigationRevisionRef.current += 1;
-  setDrafts((current) =>
-   Object.fromEntries(Object.entries(current).filter(([draftKey]) => checked[draftKey])),
-  );
-  setBackTranslations({});
-  startedAtRef.current = {};
-  setInterpretingNotes("");
-  setLearnerTranscript("");
-  setSubmittedRecording({ notes: "", transcript: "" });
+ const selectDocument = (documentId: string) => {
+  const next = new URLSearchParams(searchParams.toString());
+  next.set("document", documentId);
+  resetDocumentDrafts(documentId);
   clearSaveError();
- }, [checked, clearSaveError, selectedIdValue]);
+  router.push(`${pathname}?${next.toString()}`, { scroll: false });
+ };
+ const clearDocument = () => {
+  const next = new URLSearchParams(searchParams.toString());
+  next.delete("document");
+  resetDocumentDrafts("");
+  clearSaveError();
+  router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
+ };
 
  const updateDraft = (value: string) => {
   if (!key) return;
@@ -227,229 +143,23 @@ export function TranslationWorkspace({
 
  if (selectedIdValue.length === 0) {
   return (
-   <div className="grid min-w-0 gap-5">
-    <header className="grid gap-2">
-     <Typography as="span" variant="overline" tone="accent" weight="black">
-      {t("eyebrow")}
-     </Typography>
-     <Typography as="h1" variant="pageTitle" weight="black">
-      {trackTitle}
-     </Typography>
-     <Typography as="p" variant="body" tone="muted" className="max-w-3xl">
-      {trackDescription}
-     </Typography>
-    </header>
-    <nav className="grid grid-cols-2 gap-2 sm:grid-cols-5" aria-label={t("nav.aria")}>
-     <Button asChild variant="navigation" wrap="normal">
-      <Link href="/humanities">{t("nav.humanities")}</Link>
-     </Button>
-     <Button asChild variant="navigation" wrap="normal">
-      <Link href="/reader">{t("nav.reader")}</Link>
-     </Button>
-     <div className="col-span-2 sm:col-span-3">
-      <SegmentedControl<HumanitiesPracticeTrack>
-       value={activeTrack}
-       items={[
-        { key: "translation", label: t("tracks.translation.title") },
-        { key: "interpreting", label: t("tracks.interpreting.title") },
-       ]}
-       onChange={setActiveTrack}
-       aria-label={t("nav.chooseTrack")}
-      />
-     </div>
-    </nav>
-    <Card variant="section" padding="md" className="grid gap-3">
-     <div className="flex flex-wrap items-start justify-between gap-2">
-      <div className="grid gap-1">
-       <Typography as="span" variant="caption" tone="accent" weight="black">
-        {t("guide.beginner")}
-       </Typography>
-       <Typography as="h2" variant="sectionTitle" weight="black">
-        {trackTitle}
-       </Typography>
-      </div>
-      <Badge>{t("guide.count", { count: trackDocuments.length })}</Badge>
-     </div>
-     <Typography as="p" variant="bodySmall" tone="muted">
-      {content.definition}
-     </Typography>
-     <Typography as="p" variant="bodySmall" tone="muted">
-      {t("guide.chooseFoundation")}
-     </Typography>
-     <Card variant="subtle" padding="sm" className="grid gap-1">
-      <Typography as="strong" variant="caption" tone="accent" weight="black">
-       {t("guide.startHere")}
-      </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {content.beginnerStart}
-      </Typography>
-     </Card>
-    </Card>
-    <section className="grid gap-3" aria-labelledby="humanities-practice-levels">
-     <div className="grid gap-1">
-      <Typography as="h2" variant="sectionTitle" weight="black" id="humanities-practice-levels">
-       {t("guide.levelsTitle")}
-      </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {t("guide.levelsDescription")}
-      </Typography>
-     </div>
-     <div className="grid gap-3 md:grid-cols-3">
-      {content.levels.map((level, index) => (
-       <Card key={level.title} variant="subtle" padding="md" className="grid gap-2">
-        <Badge variant="purple" className="justify-self-start">
-         {index + 1}
-        </Badge>
-        <Typography as="h3" variant="cardTitle" weight="black">
-         {level.title}
-        </Typography>
-        <Typography as="p" variant="bodySmall" tone="muted">
-         {level.description}
-        </Typography>
-       </Card>
-      ))}
-     </div>
-    </section>
-    <section className="grid gap-3" aria-labelledby="humanities-foundation-lessons">
-     <div className="grid gap-1">
-      <Typography as="h2" variant="sectionTitle" weight="black" id="humanities-foundation-lessons">
-       {t("guide.foundationTitle")}
-      </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {t("guide.foundationDescription")}
-      </Typography>
-     </div>
-     <div className="grid gap-2">
-      {content.foundationLessons.map((lesson, index) => (
-       <Card asChild key={lesson.title} variant="default" padding="none" className="group">
-        <details open={index === 0}>
-         <summary className="flex min-h-12 cursor-pointer list-none items-start gap-3 p-3 [&::-webkit-details-marker]:hidden">
-          <Badge variant="purple">{index + 1}</Badge>
-          <span className="grid gap-1">
-           <Typography as="strong" variant="bodySmall" weight="black">
-            {lesson.title}
-           </Typography>
-           <Typography as="span" variant="caption" tone="muted">
-            {lesson.question}
-           </Typography>
-          </span>
-         </summary>
-         <div className="grid gap-2 border-t border-border-default p-4">
-          <Typography as="p" variant="bodySmall" tone="muted">
-           {lesson.explanation}
-          </Typography>
-          <Typography as="p" variant="caption" tone="muted">
-           {t("guide.understood")}
-          </Typography>
-         </div>
-        </details>
-       </Card>
-      ))}
-     </div>
-    </section>
-    <section className="grid gap-3 lg:grid-cols-2">
-     <Card variant="subtle" padding="md" className="grid gap-2">
-      <Typography as="h2" variant="cardTitle" weight="black">
-       {t("guide.knowledge")}
-      </Typography>
-      {content.knowledge.map((item) => (
-       <Typography key={item} as="p" variant="bodySmall" tone="muted">
-        ✓ {item}
-       </Typography>
-      ))}
-     </Card>
-     <Card variant="subtle" padding="md" className="grid gap-2">
-      <Typography as="h2" variant="cardTitle" weight="black">
-       {t("guide.skills")}
-      </Typography>
-      {content.skills.map((item) => (
-       <Typography key={item} as="p" variant="bodySmall" tone="muted">
-        ✓ {item}
-       </Typography>
-      ))}
-     </Card>
-    </section>
-    <section className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.65fr)]">
-     <Card variant="subtle" padding="md" className="grid gap-2">
-      <Typography as="h2" variant="cardTitle" weight="black">
-       {t("guide.workflow")}
-      </Typography>
-      {content.workflow.map((step, index) => (
-       <Typography key={step} as="p" variant="bodySmall" tone="muted">
-        {index + 1}. {step}
-       </Typography>
-      ))}
-     </Card>
-     <Card variant="subtle" padding="md" className="grid gap-2">
-      <Typography as="h2" variant="cardTitle" weight="black">
-       {t("guide.mistakes")}
-      </Typography>
-      {content.mistakes.map((item) => (
-       <Typography key={item} as="p" variant="caption" tone="muted">
-        • {item}
-       </Typography>
-      ))}
-     </Card>
-    </section>
-    <section className="grid gap-3" aria-labelledby="humanities-library">
-     <div className="grid gap-1">
-      <Typography as="h2" variant="sectionTitle" weight="black" id="humanities-library">
-       {t("guide.library")}
-      </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {t("guide.libraryDescription")}
-      </Typography>
-     </div>
-     <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-      {trackDocuments.map((document, index) => {
-       const lessonIndex = index + 1;
-       const directionLabel = document.genre_vi || t("guide.defaultGenre");
-       return (
-        <Button
-         key={document.id}
-         type="button"
-         size="lg"
-         align="start"
-         wrap="normal"
-         layout="grid"
-         variant="surfaceCard"
-         onClick={() => {
-          requestNavigation(() => {
-           selectDocument(document.id);
-           setActiveIndex(0);
-           setDirectionPreference(null);
-           setReplayCount(0);
-           preparation.reset();
-           setUnitMarks({});
-           recorder.clear();
-          });
-         }}
-        >
-         <Typography
-          as="span"
-          variant="caption"
-          tone="accent"
-          weight="black"
-          className="w-full text-left"
-         >
-          {t("guide.moduleLesson", {
-           module: translationCourseModuleOrder(activeTrack, lessonIndex),
-           lesson: lessonIndex,
-           total: trackDocuments.length,
-          })}
-         </Typography>
-         <Typography as="span" variant="bodySmall" weight="black" className="w-full text-left">
-          {document.title_zh}
-         </Typography>
-         <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
-          {document.title_vi} · {directionLabel}
-         </Typography>
-        </Button>
-       );
-      })}
-     </div>
-    </section>
-   </div>
+   <TranslationTrackGuide
+    activeTrack={activeTrack}
+    trackTitle={trackTitle}
+    trackDocuments={trackDocuments}
+    onTrackChange={setActiveTrack}
+    onSelectDocument={(documentId) => {
+     requestNavigation(() => {
+      selectDocument(documentId);
+      setActiveIndex(0);
+      setDirectionPreference(null);
+      setReplayCount(0);
+      preparation.reset();
+      answerDrafts.setUnitMarks({});
+      recorder.clear();
+     });
+    }}
+   />
   );
  }
 
@@ -469,181 +179,34 @@ export function TranslationWorkspace({
 
  return (
   <div className="grid min-w-0 gap-3">
-   <Card variant="section" padding="md" className="grid gap-3">
-    <Button
-     type="button"
-     variant="ghost"
-     align="start"
-     className="justify-self-start"
-     onClick={() => {
-      requestNavigation(() => {
-       clearDocument();
-       setActiveIndex(0);
-      });
-     }}
-    >
-     {t("detail.back", { track: trackTitle })}
-    </Button>
-    <div className="grid gap-1">
-     <Badge variant="purple" className="justify-self-start">
-      {t("detail.moduleLesson", {
-       module: translationCourseModuleOrder(activeTrack, selectedLessonIndex),
-       lesson: selectedLessonIndex,
-       total: trackDocuments.length,
-      })}
-     </Badge>
-     <Typography as="h1" variant="sectionTitle" weight="black">
-      {resource.document.title_zh}
-     </Typography>
-     <Typography as="p" variant="bodySmall" tone="muted">
-      {resource.document.title_vi} · {resource.document.genre_vi}
-     </Typography>
-    </div>
-   </Card>
-   <nav className="grid grid-cols-2 gap-2 sm:grid-cols-5" aria-label={t("nav.aria")}>
-    <Button type="button" variant="outline" onClick={() => requestNavigation(clearDocument)}>
-     {t("nav.lessonList")}
-    </Button>
-    <Button
-     type="button"
-     variant="outline"
-     disabled={selectedLessonIndex <= 1}
-     onClick={() => {
-      const previous = trackDocuments[selectedLessonIndex - 2];
-      if (previous !== undefined) requestNavigation(() => selectDocument(previous.id));
-     }}
-    >
-     {t("nav.previous")}
-    </Button>
-    <Button
-     type="button"
-     variant="outline"
-     disabled={selectedLessonIndex >= trackDocuments.length}
-     onClick={() => {
-      const next = trackDocuments[selectedLessonIndex];
-      if (next !== undefined) requestNavigation(() => selectDocument(next.id));
-     }}
-    >
-     {t("nav.next")}
-    </Button>
-    <Button
-     type="button"
-     variant={activeTrack === "translation" ? "active" : "outline"}
-     onClick={() => {
-      requestNavigation(() => {
-       setActiveTrack("translation");
-       clearDocument();
-      });
-     }}
-    >
-     {t("tracks.translation.title")}
-    </Button>
-    <Button
-     type="button"
-     variant={activeTrack === "interpreting" ? "active" : "outline"}
-     onClick={() => {
-      requestNavigation(() => {
-       setActiveTrack("interpreting");
-       clearDocument();
-      });
-     }}
-    >
-     {t("tracks.interpreting.title")}
-    </Button>
-   </nav>
-   <Card variant="subtle" padding="md" className="grid gap-3">
-    <div className="flex flex-wrap items-start justify-between gap-2">
-     <div className="grid gap-1">
-      <Typography as="span" variant="caption" tone="accent" weight="black">
-       {t("detail.beginner")}
-      </Typography>
-      <Typography as="strong" variant="bodySmall" weight="black">
-       {content.beginnerStart}
-      </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {content.detailStart}
-      </Typography>
-     </div>
-     <Badge>{t("guide.count", { count: trackDocuments.length })}</Badge>
-    </div>
-    <div className="grid gap-2">
-     <Typography as="strong" variant="caption" weight="black">
-      {t("detail.order")}
-     </Typography>
-     <ol className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-      {content.workflow.map((step, index) => (
-       <li key={step} className="grid grid-cols-[auto_minmax(0,1fr)] gap-2">
-        <Badge variant="purple">{index + 1}</Badge>
-        <Typography as="span" variant="caption" tone="muted">
-         {step}
-        </Typography>
-       </li>
-      ))}
-     </ol>
-    </div>
-   </Card>
-   {practiceMetadata !== undefined && humanitiesEvaluation !== undefined ? (
-    <Card variant="section" padding="md" className="grid gap-3">
-     <div className="grid gap-1">
-      <Typography as="span" variant="caption" tone="accent" weight="black">
-       {t("detail.newbieGuide")}
-      </Typography>
-      <Typography as="h2" variant="sectionTitle" weight="black">
-       {activeTrack === "translation"
-        ? t("detail.translationPrinciple")
-        : t("detail.interpretingPrinciple")}
-      </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {activeTrack === "translation"
-        ? t("detail.translationPrincipleDescription")
-        : t("detail.interpretingPrincipleDescription")}
-      </Typography>
-     </div>
-     <Typography as="strong" variant="bodySmall" weight="black">
-      {t("detail.requiredUnits", { count: humanitiesEvaluation.informationUnits.length })}
-     </Typography>
-     <ol className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-      {content.workflow.slice(0, 5).map((step, index) => (
-       <li key={step} className="grid grid-cols-[auto_minmax(0,1fr)] gap-2">
-        <Badge variant="purple">{index + 1}</Badge>
-        <Typography as="span" variant="caption" tone="muted">
-         {step}
-        </Typography>
-       </li>
-      ))}
-     </ol>
-     <Typography as="p" variant="caption" tone="muted">
-      {t("detail.referenceNotice")}
-     </Typography>
-    </Card>
-   ) : null}
-   {historyQuery.isPending ? (
-    <Typography as="p" variant="caption" tone="muted" role="status">
-     {t("detail.historyLoading")}
-    </Typography>
-   ) : null}
-   {historyQuery.isError ? (
-    <QueryErrorCard
-     title={t("detail.historyError")}
-     description={t("detail.historyErrorHelp")}
-     retryLabel={t("detail.historyRetry")}
-     onRetry={() => {
-      void historyQuery.refetch();
-     }}
-    />
-   ) : null}
-   {historyQuery.data && historyQuery.data.length > 0 ? (
-    <Card variant="subtle" padding="sm" className="flex flex-wrap items-center gap-2">
-     <Typography as="p" variant="caption" tone="muted" weight="black">
-      {t("detail.history", { count: historyQuery.data.length })}
-     </Typography>
-     {historyQuery.data.slice(0, 3).map((attempt) => (
-      <Badge key={attempt.id}>
-       {attempt.score === null ? t("detail.review") : `${Math.round(attempt.score * 100)}/100`}
-      </Badge>
-     ))}
-    </Card>
-   ) : null}
+   <TranslationLessonHeader
+    activeTrack={activeTrack}
+    trackTitle={trackTitle}
+    document={resource.document}
+    trackDocuments={trackDocuments}
+    selectedLessonIndex={selectedLessonIndex}
+    onBack={() => {
+     requestNavigation(() => {
+      clearDocument();
+      setActiveIndex(0);
+     });
+    }}
+    onLessonList={() => requestNavigation(clearDocument)}
+    onOpenDocument={(documentId) => requestNavigation(() => selectDocument(documentId))}
+    onSelectTrack={(track) => {
+     requestNavigation(() => {
+      setActiveTrack(track);
+      clearDocument();
+     });
+    }}
+   />
+   <TranslationLessonGuide
+    activeTrack={activeTrack}
+    lessonCount={trackDocuments.length}
+    hasPracticeMetadata={practiceMetadata !== undefined}
+    humanitiesEvaluation={humanitiesEvaluation}
+   />
+   <TranslationAttemptHistory historyQuery={historyQuery} />
    <div className="grid min-w-0 gap-3 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
     <TranslationSourcePanel
      segment={segment}
@@ -654,332 +217,56 @@ export function TranslationWorkspace({
      glossary={selectedPayload?.glossary}
      onDirectionChange={setDirectionPreference}
     />
-    <Card variant="subtle" padding="md" className="grid min-w-0 content-start gap-3">
-     <div className="flex flex-wrap items-center justify-between gap-2">
-      <div className="grid gap-0.5">
-       <Typography as="strong" variant="bodySmall" weight="black">
-        {t("answer.title")}
-       </Typography>
-       <Typography as="span" variant="caption" tone="muted">
-        {t("answer.unsaved")}
-       </Typography>
-      </div>
-      <Button
-       type="button"
-       variant="outline"
-       disabled={!draft.trim()}
-       onClick={() => {
-        if (!segment || !draft.trim()) return;
-        submitAttempt(
-         createTranslationRevisionSubmission({ contentId: segment.id, direction }, draft),
-        );
-       }}
-      >
-       {t("answer.saveRevision")}
-      </Button>
-     </div>
-     <Typography as="p" variant="caption" tone="muted">
-      {content.sourceReminder}
-     </Typography>
-     {isInterpreting ? (
-      <Card variant="subtle" padding="sm" className="grid gap-3">
-       <div className="flex flex-wrap items-center justify-between gap-2">
-        <Typography as="p" variant="caption" weight="black">
-         {t("answer.interpreting")}
-        </Typography>
-        <Badge>
-         {preparation.remaining > 0
-          ? t("answer.preparing", { seconds: preparation.remaining })
-          : t("answer.ready")}
-        </Badge>
-       </div>
-       {humanitiesEvaluation.noteTakingAllowed !== false ? (
-        <Textarea
-         value={interpretingNotes}
-         onChange={(event) => setInterpretingNotes(event.target.value)}
-         placeholder={t("answer.notesPlaceholder")}
-         aria-label={t("answer.notesAria")}
-         rows={2}
-        />
-       ) : null}
-       <div className="flex flex-wrap items-center gap-2">
-        {recorder.isRecording ? (
-         <Button type="button" variant="destructive" onClick={recorder.stop}>
-          <Square data-icon="inline-start" />
-          {t("answer.stopRecording", { seconds: recorder.durationSeconds })}
-         </Button>
-        ) : (
-         <Button
-          type="button"
-          disabled={recorder.isRequesting || !recorder.isSupported}
-          onClick={startRecording}
-         >
-          <Mic data-icon="inline-start" />
-          {recorder.isRequesting ? t("answer.requestingPermission") : t("answer.startRecording")}
-         </Button>
-        )}
-        {recorder.audioUrl ? (
-         <audio
-          controls
-          preload="metadata"
-          src={recorder.audioUrl}
-          className="min-w-0 max-w-full"
-         />
-        ) : null}
-       </div>
-       <Textarea
-        value={learnerTranscript}
-        onChange={(event) => setLearnerTranscript(event.target.value)}
-        placeholder={t("answer.transcriptPlaceholder")}
-        aria-label={t("answer.transcriptAria")}
-        rows={2}
+    <TranslationAnswerPanel
+     activeTrack={activeTrack}
+     segment={segment}
+     direction={direction}
+     humanitiesEvaluation={humanitiesEvaluation}
+     interpretingPanel={
+      isInterpreting ? (
+       <TranslationInterpretingPanel
+        context={{ contentId: segment.id, direction }}
+        evaluation={humanitiesEvaluation}
+        preparationRemaining={preparation.remaining}
+        interpretingNotes={answerDrafts.interpretingNotes}
+        learnerTranscript={answerDrafts.learnerTranscript}
+        unitMarks={answerDrafts.unitMarks}
+        recorder={recorder}
+        startRecording={answerDrafts.startRecording}
+        submitAttempt={submitAttempt}
+        onInterpretingNotesChange={answerDrafts.setInterpretingNotes}
+        onLearnerTranscriptChange={answerDrafts.setLearnerTranscript}
+        onUnitMarksChange={answerDrafts.setUnitMarks}
        />
-       {humanitiesEvaluation.informationUnits.length > 0 ? (
-        <div className="grid gap-2">
-         <Typography as="p" variant="caption" tone="muted" weight="black">
-          {t("answer.selfMark")}
-         </Typography>
-         {humanitiesEvaluation.informationUnits.map((unit) => (
-          <div key={unit.id} className="flex min-w-0 flex-wrap items-center gap-1">
-           <Typography as="span" variant="caption" className="min-w-40">
-            {unit.canonicalMeaningVi}
-           </Typography>
-           {interpretingMarks.map((mark) => (
-            <Button
-             key={mark}
-             type="button"
-             size="sm"
-             variant={unitMarks[unit.id] === mark ? "active" : "outline"}
-             onClick={() => {
-              const nextMarks = { ...unitMarks, [unit.id]: mark };
-              setUnitMarks(nextMarks);
-              submitAttempt(
-               createTranslationSelfMarkSubmission({ contentId: segment.id, direction }, nextMarks),
-              );
-             }}
-            >
-             {markLabel(mark)}
-            </Button>
-           ))}
-          </div>
-         ))}
-        </div>
-       ) : null}
-       {recorder.error ? (
-        <Typography as="p" variant="caption" tone="danger">
-         {t("answer.recordingError")}
-        </Typography>
-       ) : null}
-      </Card>
-     ) : null}
-     <Textarea
-      value={draft}
-      onChange={(event) => updateDraft(event.target.value)}
-      placeholder={t("answer.translationPlaceholder")}
-      aria-label={t("answer.translationAria")}
-      className="min-h-32"
-     />
-     <div className="flex flex-wrap gap-2">
-      <Button type="button" disabled={!draft.trim()} onClick={() => checkAnswer(Date.now())}>
-       {t("answer.check")}
-      </Button>
-      <Button
-       type="button"
-       variant="outline"
-       disabled={activeIndex === 0}
-       onClick={() => {
-        tts.stop();
-        setActiveIndex((index) => index - 1);
-       }}
-      >
-       {t("answer.previousSegment")}
-      </Button>
-      <Button
-       type="button"
-       variant="outline"
-       disabled={activeIndex >= segments.length - 1}
-       onClick={() => {
-        tts.stop();
-        setActiveIndex((index) => index + 1);
-       }}
-      >
-       {t("answer.nextSegment")}
-      </Button>
-      <Button
-       type="button"
-       variant="outline"
-       disabled={
-        humanitiesEvaluation?.mode === "interpreting" &&
-        humanitiesEvaluation.replayLimit !== null &&
-        replayCount >= humanitiesEvaluation.replayLimit
-       }
-       onClick={() => {
-        setReplayCount((count) => count + 1);
-        tts.speakSequence([segment.zh]);
-       }}
-      >
-       {t("answer.playSource")}
-       {humanitiesEvaluation?.mode === "interpreting" && humanitiesEvaluation.replayLimit !== null
-        ? ` (${replayCount}/${humanitiesEvaluation.replayLimit})`
-        : ""}
-      </Button>
-     </div>
-     {saveError ? (
-      <Typography as="p" variant="caption" tone="danger">
-       {saveError}
-      </Typography>
-     ) : null}
-     <Typography as="p" variant="caption" tone="muted">
-      {t("answer.evaluationNotice")}
-     </Typography>
-     {activeTrack === "translation" ? (
-      <Card variant="subtle" padding="sm" className="grid gap-2">
-       <Typography as="strong" variant="bodySmall" weight="black">
-        {t("answer.backTranslationTitle")}
-       </Typography>
-       <Typography as="span" variant="caption" tone="muted">
-        {t("answer.backTranslationDescription")}
-       </Typography>
-       <Textarea
-        value={backTranslation}
-        onChange={(event) =>
-         setBackTranslations((current) => ({ ...current, [key]: event.target.value }))
-        }
-        placeholder={t("answer.backTranslationPlaceholder")}
-        aria-label={t("answer.backTranslationAria")}
-        rows={3}
-       />
-      </Card>
-     ) : null}
-     {isChecked ? (
-      <Card variant="subtle" padding="sm" className="grid gap-2">
-       <Typography as="p" variant="bodySmall" weight="black">
-        {t("answer.score", { score: score ?? 0 })}
-       </Typography>
-       <TranslationText variant="bodySmall" tone="muted">
-        {t("answer.reference")}{" "}
-        {humanitiesEvaluation?.references[0]?.text ??
-         (direction === "zh-vi" ? segment.vi : segment.zh)}
-       </TranslationText>
-       {humanitiesResult ? (
-        <div className="grid gap-1">
-         {humanitiesResult.unitResults.map((unit) => (
-          <Typography
-           key={unit.unitId}
-           as="p"
-           variant="caption"
-           tone={
-            unit.status === "covered" ? "success" : unit.status === "missing" ? "danger" : "muted"
-           }
-          >
-           {unit.status === "covered" ? "✓" : "•"} {unit.messageVi}
-          </Typography>
-         ))}
-        </div>
-       ) : null}
-      </Card>
-     ) : null}
-    </Card>
+      ) : null
+     }
+     draft={draft}
+     backTranslation={backTranslation}
+     isChecked={isChecked}
+     saveError={saveError}
+     activeIndex={activeIndex}
+     segmentCount={segments.length}
+     replayCount={replayCount}
+     submitAttempt={submitAttempt}
+     onDraftChange={updateDraft}
+     onCheck={() => checkAnswer(Date.now())}
+     onPreviousSegment={() => {
+      tts.stop();
+      setActiveIndex((index) => index - 1);
+     }}
+     onNextSegment={() => {
+      tts.stop();
+      setActiveIndex((index) => index + 1);
+     }}
+     onPlaySource={() => {
+      setReplayCount((count) => count + 1);
+      tts.speakSequence([segment.zh]);
+     }}
+     onBackTranslationChange={(value) =>
+      setBackTranslations((current) => ({ ...current, [key]: value }))
+     }
+    />
    </div>
   </div>
  );
 }
-
-const TranslationSourcePanel = memo(function TranslationSourcePanel({
- segment,
- direction,
- titleVi,
- sourceKind,
- totalSegments,
- glossary,
- onDirectionChange,
-}: {
- segment: ReturnType<typeof translationResourceSegments>[number];
- direction: TranslationDirection;
- titleVi: HumanitiesDocumentResource["document"]["title_vi"];
- sourceKind: ReturnType<typeof translationSourceKind>;
- totalSegments: number;
- glossary: HumanitiesDocumentResource["exerciseItems"][number]["payload"]["glossary"];
- onDirectionChange: (direction: TranslationDirection) => void;
-}) {
- const t = useTranslations("HumanitiesPractice");
- return (
-  <Card variant="section" padding="md" className="grid min-w-0 content-start gap-3">
-   <div className="flex flex-wrap items-center justify-between gap-2">
-    <Typography as="h2" variant="cardTitle" weight="black">
-     {t("source.title")}
-    </Typography>
-    <Badge>{direction === "zh-vi" ? t("source.directionZhVi") : t("source.directionViZh")}</Badge>
-   </div>
-   <Typography as="p" variant="caption" tone="muted">
-    {t("source.segment", {
-     order: segment.order,
-     total: totalSegments,
-     source: sourceKind,
-    })}
-   </Typography>
-   {direction === "zh-vi" ? (
-    <ReaderHanziText
-     displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showPinyin: true, showMeaning: false }}
-     leading="learner"
-     wrapping="preWrap"
-    >
-     {segment.zh}
-    </ReaderHanziText>
-   ) : (
-    <Typography as="p" variant="body" wrapping="preWrap" leading="relaxed">
-     {segment.vi || titleVi}
-    </Typography>
-   )}
-   {segment.pinyin ? (
-    <PinyinText variant="bodySmall" tone="accent" weight="semibold">
-     {segment.pinyin}
-    </PinyinText>
-   ) : null}
-   <div className="grid gap-2 border-t border-border-default pt-3">
-    <Typography as="span" variant="caption" tone="muted" weight="black">
-     {t("source.glossary")}
-    </Typography>
-    {glossary === undefined || glossary.length === 0 ? (
-     <Typography as="p" variant="caption" tone="muted">
-      {t("source.noGlossary")}
-     </Typography>
-    ) : (
-     glossary.map((entry) => (
-      <div key={entry.id} className="grid gap-1 border-b border-border-default pb-2 last:border-0">
-       <Typography as="strong" variant="bodySmall" weight="black">
-        {entry.headword} {entry.pinyin === null ? "" : entry.pinyin}
-       </Typography>
-       <Typography as="p" variant="caption" tone="muted">
-        {entry.meaningVi}
-       </Typography>
-       <Typography as="p" variant="caption" tone="muted">
-        {entry.noteVi}
-       </Typography>
-      </div>
-     ))
-    )}
-   </div>
-   <div className="grid grid-cols-2 gap-2">
-    <Button
-     type="button"
-     variant={direction === "zh-vi" ? "active" : "outline"}
-     onClick={() => {
-      onDirectionChange("zh-vi");
-     }}
-    >
-     {t("source.zhViButton")}
-    </Button>
-    <Button
-     type="button"
-     variant={direction === "vi-zh" ? "active" : "outline"}
-     onClick={() => {
-      onDirectionChange("vi-zh");
-     }}
-    >
-     {t("source.viZhButton")}
-    </Button>
-   </div>
-  </Card>
- );
-});
