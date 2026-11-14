@@ -6,6 +6,8 @@ import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
+import commonMessages from "../../../../../messages/vi/common.json";
+import shellMessages from "../../../../../messages/vi/shell.json";
 import ttsStudioMessages from "../../../../../messages/vi/tts-studio.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
@@ -24,6 +26,8 @@ import { appLocales } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 import * as exerciseAdapter from "../practice/universal-exercise-adapter";
 import * as pipHook from "@/features/hanzihome/hooks/useDocumentPip";
+import { GrammarSectionNavigation } from "./BusinessChineseSectionNavigation";
+import { businessChineseVisibleSections } from "./business-chinese-study-utils";
 
 const routerPushMock = vi.hoisted(() => vi.fn());
 const readerDocumentMock = vi.hoisted(() => vi.fn<(document: ReaderDocumentModel) => void>());
@@ -103,6 +107,8 @@ function renderWorkspace(element: ReactNode) {
    locale="vi"
    messages={{
     BusinessChinese: businessChineseMessages,
+    Common: commonMessages,
+    Shell: shellMessages,
     TtsStudio: ttsStudioMessages,
     Reader: {
      document: readerDocumentMessages,
@@ -487,7 +493,7 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).not.toContain("max-w-5xl");
  });
 
- it("lists all eight grammar points in lesson 5 with short labels and section targets", () => {
+ it("opens grammar navigation from one compact toolbar and lists all eight section targets", () => {
   const lesson = getTextbookLesson("nhip-cau", 5);
   if (!lesson) throw new Error("Expected Nhịp cầu lesson 5.");
   mockParams = new URLSearchParams("lesson=5&tab=grammar");
@@ -496,8 +502,21 @@ describe("BusinessChineseStudyWorkspace", () => {
    <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
   );
 
-  const navigation = markup.match(/<nav\b[^>]* aria-label="Trong trang"[^>]*>(.*?)<\/nav>/u)?.[1];
-  if (!navigation) throw new Error("Expected the grammar section navigation.");
+  const trigger = markup.match(/<button\b[^>]* aria-label="Trong trang"[^>]*>/u)?.[0];
+  if (!trigger) throw new Error("Expected a grammar navigation trigger in the toolbar.");
+  expect(trigger).toContain('aria-haspopup="dialog"');
+  expect(trigger).toContain('aria-expanded="false"');
+  expect(markup.match(/role="tab"/gu)).toHaveLength(1);
+  expect(markup.match(/aria-label="Đánh dấu bài học kỳ này"/gu)).toHaveLength(1);
+  expect(markup).toContain('aria-label="Nội dung bài học: Ngữ pháp"');
+  expect(markup).not.toMatch(/<nav\b[^>]* aria-label="Trong trang"/u);
+
+  const navigation = renderWorkspace(
+   <GrammarSectionNavigation
+    sections={businessChineseVisibleSections(lesson.sections, "grammar")}
+    onSelect={vi.fn()}
+   />,
+  );
   const buttons = [
    ...navigation.matchAll(/<button\b[^>]* aria-controls="([^"]+)"[^>]*>(.*?)<\/button>/gu),
   ];
