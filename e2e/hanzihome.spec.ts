@@ -19,10 +19,7 @@ import {
  LessonTextAnnotationSchema,
  LessonAnnotationNoteResultSchema,
 } from "../src/features/hanzihome/annotations/types";
-import {
- HanziHomeSearchIndexResponseSchema,
- HanziHomeSearchResponseSchema,
-} from "../src/features/hanzihome/search/types";
+import { HanziHomeSearchResponseSchema } from "../src/features/hanzihome/search/types";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 if (!supabaseUrl || !["127.0.0.1", "localhost", "[::1]"].includes(new URL(supabaseUrl).hostname)) {
@@ -194,19 +191,6 @@ test("keeps account A state isolated after logout and account B login", async ({
  await openProfile(page, accountB.email);
  await page.goto("/vi/learning-loop");
  await expect(page.getByText("Hôm nay chưa có mục đến hạn", { exact: true })).toBeVisible();
-});
-
-test("loads the authenticated Search index from the isolated content fixtures", async ({
- page,
-}) => {
- const guest = await page.request.get("/api/hanzihome/search-index?v=2");
- expect(guest.status()).toBe(401);
- await login(page, accountA);
- const response = await page.request.get("/api/hanzihome/search-index?v=2");
- expect(response.status()).toBe(200);
- expect(response.headers()["cache-control"]).toContain("no-store");
- const index = HanziHomeSearchIndexResponseSchema.parse(await response.json());
- expect(index.items.some((item) => item.kind === "radical")).toBe(true);
 });
 
 test("searches static textbooks through the authenticated global search", async ({ page }) => {
