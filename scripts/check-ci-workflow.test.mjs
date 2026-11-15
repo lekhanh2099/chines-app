@@ -6,17 +6,6 @@ import vm from "node:vm";
 import { describe, expect, it } from "vitest";
 
 const workflow = readFileSync(new URL("../.github/workflows/ci.yml", import.meta.url), "utf8");
-const toolbarWorkspace =
- "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx";
-const oldToolbarEffect = [
- " useEffect(() => {",
- '  const query = window.matchMedia("(min-width: 96rem)");',
- "  const updateToolbar = () => setHasWideToolbar(query.matches);",
- "  updateToolbar();",
- " }, []);\n",
-].join("\n");
-const xlToolbarEffect = oldToolbarEffect.replace("96rem", "80rem");
-
 function jobSource(name) {
  const source = workflow.split(`\n ${name}:\n`)[1];
  if (!source) throw new Error(`Missing CI job ${name}`);
@@ -123,7 +112,6 @@ describe("CI affected selection with actual Git history", () => {
   const result = select();
   expect(result.e2e_grep).toBe("keeps two Notes drafts|fences linked Reader Notes");
   expect(JSON.parse(result.unit_files)).toEqual(["src/features/notes/hooks/useNoteDetail.ts"]);
-  expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
   expect(result.unit_full).toBe("false");
  });
 
@@ -141,8 +129,6 @@ describe("CI affected selection with actual Git history", () => {
    "src/features/home/HomeDashboard.tsx",
    "src/features/notes/hooks/useNoteDetail.ts",
   ]);
-  expect(result.browser_files).toContain("HomeDashboard.browser.test.ts");
-  expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
   expect(result).toMatchObject({
    unit_full: "false",
    e2e_grep: "keeps two Notes drafts|fences linked Reader Notes",
@@ -161,7 +147,7 @@ describe("CI affected selection with actual Git history", () => {
   expect(result.unit_full).toBe("false");
  });
 
- it("selects the mounted Home fixture for a scoped ready PR", () => {
+ it("selects no product cases for a scoped ready Home PR", () => {
   expect(
    select({
     earlier: [],
@@ -172,7 +158,6 @@ describe("CI affected selection with actual Git history", () => {
    code: "true",
    guidance: "false",
    unit_full: "false",
-   browser_files: "src/features/home/HomeDashboard.browser.test.ts",
    e2e_grep: "",
   });
  });
@@ -186,11 +171,6 @@ describe("CI affected selection with actual Git history", () => {
   expect(JSON.parse(result.unit_files)).toEqual([
    "src/features/home/HomeDashboard.tsx",
    "src/features/notes/hooks/useNoteDetail.ts",
-  ]);
-  expect(result.browser_files.split(" ")).toEqual([
-   "src/features/home/HomeDashboard.browser.test.ts",
-   "src/features/notes/hooks/NoteEditor.browser.test.ts",
-   "src/features/notes/hooks/NoteOwner.browser.test.ts",
   ]);
   expect(result).toMatchObject({
    unit_full: "false",
@@ -213,7 +193,6 @@ describe("CI affected selection with actual Git history", () => {
    event: { PR_DRAFT: "false" },
   });
   expect(result).toMatchObject({ code: "true", unit_full: "true", e2e_grep: "." });
-  expect(result.browser_files.split(" ")).toHaveLength(15);
  });
 
  it("uses the product cases covering a mapped annotations API", () => {
@@ -222,7 +201,6 @@ describe("CI affected selection with actual Git history", () => {
    latest: ["src/app/api/hanzihome/lesson-annotations/route.ts"],
    event: { PR_DRAFT: "false" },
   });
-  expect(result.browser_files).toContain("LessonAnnotations.browser.test.ts");
   expect(result).toMatchObject({
    unit_full: "true",
    e2e_grep: "keeps two Notes drafts|fences linked Reader Notes",
@@ -238,7 +216,6 @@ describe("CI affected selection with actual Git history", () => {
     event: { PR_DRAFT: draft },
    });
    expect(result).toMatchObject({ unit_full: "true", e2e_grep: "." });
-   expect(result.browser_files.split(" ")).toHaveLength(15);
   },
  );
 
@@ -247,18 +224,7 @@ describe("CI affected selection with actual Git history", () => {
   "src/features/notes/components/NoteConflictDialog.tsx",
  ])("tests Notes and textbook consumers of shared note editing: %s", (file) => {
   const result = select({ earlier: [], latest: [file], event: { PR_DRAFT: "false" } });
-  expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
-  expect(result.browser_files).toContain("Reading.browser.test.ts");
   expect(result.e2e_grep).toBe("keeps two Notes drafts|fences linked Reader Notes");
- });
-
- it("includes Home when its recent-notes dependency changes", () => {
-  const result = select({
-   earlier: [],
-   latest: ["src/features/notes/hooks/useRecentNotes.ts"],
-   event: { PR_DRAFT: "false" },
-  });
-  expect(result.browser_files).toContain("HomeDashboard.browser.test.ts");
  });
 
  it.each([
@@ -273,7 +239,6 @@ describe("CI affected selection with actual Git history", () => {
   expect(result).toMatchObject({
    code: "false",
    guidance: "true",
-   browser_files: "",
    e2e_grep: "",
   });
  });
@@ -283,50 +248,27 @@ describe("CI affected selection with actual Git history", () => {
   (file) => {
    const result = select({ latest: [file] });
    expect(result).toMatchObject({ code: "true", unit_full: "true", e2e_grep: "." });
-   expect(result.browser_files.split(" ")).toHaveLength(15);
    if (file.endsWith("/ci.yml")) expect(result.guidance).toBe("true");
   },
  );
 
- it.each([
-  "src/features/hsk/HskWorkspace.tsx",
-  "src/features/hanzihome/HanziHomeLibraryHome.tsx",
-  toolbarWorkspace,
- ])("selects the actual mounted Reading consumer for %s", (file) => {
-  expect(select({ latest: [file] }).browser_files).toContain(
-   "src/features/reading/workspaces/Reading.browser.test.ts",
-  );
- });
-
  it("retains product database coverage for a component that handles note conflicts", () => {
   const result = select({ latest: ["src/features/notes/components/NoteConflictDialog.tsx"] });
-  expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
   expect(result.e2e_grep).toBe("keeps two Notes drafts|fences linked Reader Notes");
  });
 
  it.each(["true", "false"])(
-  "uses all mounted consumers for global CSS without a database run (draft: %s)",
+  "runs full Node coverage for global CSS without a database run (draft: %s)",
   (draft) => {
    const result = select({
     earlier: [],
     latest: ["src/app/globals.css"],
     event: { PR_DRAFT: draft },
    });
-   expect(result.browser_files.split(" ")).toHaveLength(15);
    expect(result.e2e_grep).toBe("");
    expect(result.unit_full).toBe("true");
   },
  );
-
- it("selects the unsaved-draft navigation browser regression", () => {
-  const result = select({
-   latest: ["src/components/layout/navigation/UnsavedDraftNavigationGuard.tsx"],
-  });
-  expect(result.browser_files).toContain(
-   "src/components/layout/navigation/UnsavedDraftNavigationGuard.browser.test.ts",
-  );
-  expect(result.e2e_grep).toBe("");
- });
 
  it.each(["e2e/hanzihome.spec.ts", "scripts/e2e/seed-fixtures.mjs", "playwright.config.ts"])(
   "runs the full product suite when its harness changes: %s",
@@ -349,46 +291,8 @@ describe("CI affected selection with actual Git history", () => {
  it("retains full Node coverage and affected consumers for deleted owners", () => {
   const result = select({ latest: [], remove: ["src/features/notes/hooks/useNoteDetail.ts"] });
   expect(result.unit_full).toBe("true");
-  expect(result.browser_files).toContain("NoteEditor.browser.test.ts");
   expect(result.e2e_grep).toContain("keeps two Notes drafts");
  });
-
- it("uses the tested merge tree for a ready PR that only changes the Reader breakpoint", () => {
-  const result = select({
-   earlier: [],
-   baseOnly: ["src/lib/supabase/server.ts"],
-   latest: [toolbarWorkspace],
-   initialContents: { [toolbarWorkspace]: oldToolbarEffect },
-   latestContents: { [toolbarWorkspace]: xlToolbarEffect },
-   event: { EVENT_ACTION: "ready_for_review", PR_DRAFT: "false" },
-  });
-  expect(JSON.parse(result.unit_files)).toEqual([toolbarWorkspace]);
-  expect(result).toMatchObject({
-   code: "true",
-   guidance: "false",
-   unit_full: "false",
-   browser_files: "src/features/reading/workspaces/Reading.browser.test.ts",
-   e2e_grep: "",
-  });
- });
-
- it.each([
-  { earlier: ["package.json"], latestContents: { [toolbarWorkspace]: xlToolbarEffect } },
-  { earlier: [], latestContents: { [toolbarWorkspace]: xlToolbarEffect + "saveProgress();\n" } },
- ])(
-  "retains full coverage for a ready PR with other changes: %j",
-  ({ earlier, latestContents }) => {
-   const result = select({
-    earlier,
-    latest: [toolbarWorkspace],
-    initialContents: { [toolbarWorkspace]: oldToolbarEffect },
-    latestContents,
-    event: { PR_DRAFT: "false" },
-   });
-   expect(result).toMatchObject({ code: "true", unit_full: "true", e2e_grep: "." });
-   expect(result.browser_files.split(" ")).toHaveLength(15);
-  },
- );
 
  it("still runs full coverage when the whole PR fallback includes an earlier dependency change", () => {
   const result = select({ baseOnly: ["src/lib/supabase/server.ts"] });
@@ -419,7 +323,7 @@ describe("CI affected selection with actual Git history", () => {
    pushMergeMessage: "Merge pull request #42 from owner/feature",
    event: { EVENT_NAME: "push", BEFORE_SHA: "main-before-merge" },
   });
-  expect(result).toMatchObject({ run_verify: "false", run_browser: "false", run_e2e: "false" });
+  expect(result).toMatchObject({ run_verify: "false", run_e2e: "false" });
  });
 
  it("keeps the affected suites for a direct push that is not a pull-request merge", () => {
@@ -428,19 +332,18 @@ describe("CI affected selection with actual Git history", () => {
    pushMergeMessage: "Merge branch 'hotfix'",
    event: { EVENT_NAME: "push", BEFORE_SHA: "main-before-merge" },
   });
-  expect(result).toMatchObject({ run_verify: "true", run_browser: "true", run_e2e: "true" });
+  expect(result).toMatchObject({ run_verify: "true", run_e2e: "true" });
  });
 
  it("runs only verify for a draft and the selected suites once the PR is ready", () => {
   const latest = ["src/features/hanzihome/components/review/AmbientPipFlashcard.tsx"];
   expect(select({ latest, event: { PR_DRAFT: "true" } })).toMatchObject({
    run_verify: "true",
-   run_browser: "false",
    run_e2e: "false",
   });
   expect(
    select({ latest, event: { PR_DRAFT: "false", EVENT_ACTION: "ready_for_review" } }),
-  ).toMatchObject({ run_verify: "true", run_browser: "true", run_e2e: "true" });
+  ).toMatchObject({ run_verify: "true", run_e2e: "true" });
  });
 
  it("keeps full coverage for a merged pull request pushed over an unsafe base", () => {
@@ -512,25 +415,22 @@ describe("CI aggregation and metadata isolation", () => {
   expect(workflow).toContain("group: ci-${{ github.event_name }}-${{ github.ref }}\n");
  });
 
- it.each(["changes", "verify", "browser", "e2e"])(
-  "checks out the tested merge SHA in %s for a PR",
-  (job) => {
-   const checkout = jobSource(job).match(/uses: actions\/checkout@v5\n     with:\n      ref: (.+)/);
-   if (!checkout) throw new Error(`Missing exact-source checkout for ${job}`);
-   expect(
-    evaluate(checkout[1], {
-     event_name: "pull_request",
-     event: { pull_request: { head: { sha: "pr-head" } } },
-     sha: "merge",
-    }),
-   ).toBe("merge");
-   for (const eventName of ["push", "workflow_dispatch"]) {
-    expect(evaluate(checkout[1], { event_name: eventName, event: {}, sha: "event-head" })).toBe(
-     "event-head",
-    );
-   }
-  },
- );
+ it.each(["changes", "verify", "e2e"])("checks out the tested merge SHA in %s for a PR", (job) => {
+  const checkout = jobSource(job).match(/uses: actions\/checkout@v5\n     with:\n      ref: (.+)/);
+  if (!checkout) throw new Error(`Missing exact-source checkout for ${job}`);
+  expect(
+   evaluate(checkout[1], {
+    event_name: "pull_request",
+    event: { pull_request: { head: { sha: "pr-head" } } },
+    sha: "merge",
+   }),
+  ).toBe("merge");
+  for (const eventName of ["push", "workflow_dispatch"]) {
+   expect(evaluate(checkout[1], { event_name: eventName, event: {}, sha: "event-head" })).toBe(
+    "event-head",
+   );
+  }
+ });
 
  it("skips only a cancelled draft gate and always reports the required gate", () => {
   const condition = field("gate", "if").replace(/^\$\{\{\s*|\s*\}\}$/g, "");
@@ -560,9 +460,8 @@ describe("CI aggregation and metadata isolation", () => {
    };
    names.push(evaluate(field("gate", "name"), github));
    const checks = {
-    changes: { result: "success", outputs: { browser_files: "", e2e_grep: "" } },
+    changes: { result: "success", outputs: { e2e_grep: "" } },
     verify: { result: "cancelled" },
-    browser: { result: "skipped" },
     e2e: { result: "skipped" },
    };
    let passed = true;
@@ -589,10 +488,9 @@ describe("CI aggregation and metadata isolation", () => {
       CHECK_RESULTS: JSON.stringify({
        changes: {
         result: "success",
-        outputs: { run_verify: runVerify, run_browser: "false", run_e2e: "false" },
+        outputs: { run_verify: runVerify, run_e2e: "false" },
        },
        verify: { result: verify },
-       browser: { result: "skipped" },
        e2e: { result: "skipped" },
       }),
      },
@@ -609,45 +507,39 @@ describe("CI aggregation and metadata isolation", () => {
   expect(run("false", "failure")).toBe(false);
  });
 
- it("rejects failed or cancelled checks across all 1,024 selection/result combinations", () => {
+ it("rejects failed or cancelled checks across all 128 selection/result combinations", () => {
   const results = ["success", "failure", "cancelled", "skipped"];
   for (const changes of results)
    for (const verify of results)
-    for (const browser of results)
-     for (const e2e of results)
-      for (const browserSelected of [false, true])
-       for (const e2eSelected of [false, true]) {
-        const needs = {
-         changes: {
-          result: changes,
-          outputs: {
-           run_verify: "true",
-           run_browser: String(browserSelected),
-           run_e2e: String(e2eSelected),
-           browser_files: browserSelected ? "fixture.ts" : "",
-           e2e_grep: e2eSelected ? "." : "",
-          },
-         },
-         verify: { result: verify },
-         browser: { result: browser },
-         e2e: { result: e2e },
-        };
-        let passed = true;
-        vm.runInNewContext(inlineSource("gate"), {
-         process: {
-          env: { CHECK_RESULTS: JSON.stringify(needs) },
-          exit: () => {
-           passed = false;
-          },
-         },
-         console: { error: () => {}, log: () => {} },
-        });
-        expect(passed).toBe(
-         changes === "success" &&
-          verify === "success" &&
-          (browserSelected ? browser === "success" : ["success", "skipped"].includes(browser)) &&
-          (e2eSelected ? e2e === "success" : ["success", "skipped"].includes(e2e)),
-        );
-       }
+    for (const e2e of results)
+     for (const e2eSelected of [false, true]) {
+      const needs = {
+       changes: {
+        result: changes,
+        outputs: {
+         run_verify: "true",
+         run_e2e: String(e2eSelected),
+         e2e_grep: e2eSelected ? "." : "",
+        },
+       },
+       verify: { result: verify },
+       e2e: { result: e2e },
+      };
+      let passed = true;
+      vm.runInNewContext(inlineSource("gate"), {
+       process: {
+        env: { CHECK_RESULTS: JSON.stringify(needs) },
+        exit: () => {
+         passed = false;
+        },
+       },
+       console: { error: () => {}, log: () => {} },
+      });
+      expect(passed).toBe(
+       changes === "success" &&
+        verify === "success" &&
+        (e2eSelected ? e2e === "success" : ["success", "skipped"].includes(e2e)),
+      );
+     }
  });
 });

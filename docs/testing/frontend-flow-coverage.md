@@ -17,7 +17,7 @@ Source of truth: [CI workflow](../../.github/workflows/ci.yml), [package scripts
 | High-risk ready PR, pipeline change, manual  | Full Node, mounted fixtures và product/SQL suite cùng static checks, production build và audit.                                                           |
 | Local merge/release                          | `npm run check`; required mounted/SQL/product/coverage/corpus proof theo contract của slice. Performance profiling chạy manual khi cần.                   |
 
-Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify, mounted browser và product E2E chạy độc lập sau selection. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
+Job changes chọn diff base/outputs và ghi selected verification vào workflow summary. Verify và product E2E chạy độc lập sau selection; CI không chạy mounted browser fixtures. Product job build production app; verify build khi product job không build. E2E dùng isolated local Supabase và existing seed/SQL fixtures. Suite có một CI retry, 12-minute suite timeout; E2E job 20 phút bao gồm setup/build. Không giảm assertions/case deadlines để xanh.
 
 All jobs check out the event SHA. For a PR, the selector verifies the parents
 of GitHub's merge snapshot against the event's base and head. A draft
@@ -159,7 +159,7 @@ RECORDER_BROWSER_TEST=1 npm run test:run -- src/features/reading/hooks/Shadowing
 npm run format:check
 ```
 
-Full mounted CI bật các flags trong workflow và truyền selected files. Không yêu cầu mở external browser cho docs-only hoặc routine app edit; browser automation và seed/live targets phải giữ đúng authorization.
+Mounted browser fixtures chỉ chạy local, theo yêu cầu, bằng cách bật flag tương ứng; CI và `npm run check` không chạy chúng. Không yêu cầu mở external browser cho docs-only hoặc routine app edit; browser automation và seed/live targets phải giữ đúng authorization.
 
 ## Product/DB proof và boundary
 

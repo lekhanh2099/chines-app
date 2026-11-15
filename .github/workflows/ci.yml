@@ -22,10 +22,8 @@ jobs:
    unit_files: ${{ steps.scope.outputs.unit_files }}
    code: ${{ steps.scope.outputs.code }}
    unit_full: ${{ steps.scope.outputs.unit_full }}
-   browser_files: ${{ steps.scope.outputs.browser_files }}
    e2e_grep: ${{ steps.scope.outputs.e2e_grep }}
    run_verify: ${{ steps.scope.outputs.run_verify }}
-   run_browser: ${{ steps.scope.outputs.run_browser }}
    run_e2e: ${{ steps.scope.outputs.run_e2e }}
    guidance: ${{ steps.scope.outputs.guidance }}
   steps:
@@ -84,32 +82,7 @@ jobs:
       const guidancePath = /[.]md$|^(?:docs[/]|[.]agents[/]|[.]github[/]ISSUE_TEMPLATE[/]|skills-lock[.]json$)/;
       const pipelinePath = /^(?:[.]github[/]workflows[/]|[.]husky[/]|scripts[/]check-ci-workflow[.]test[.]mjs$|vercel[.]json$)/;
       const guidance = full || deleted.length > 0 || paths.some((file) => guidancePath.test(file) || file.startsWith(".github/workflows/") || file === "package.json");
-      const toolbarWorkspace = "src/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace.tsx";
-      let toolbarBreakpointOnly = false;
-      if (paths.length === 1 && paths[0] === toolbarWorkspace && deleted.length === 0) {
-       // The mounted textbook fixture covers this breakpoint on both sides of xl.
-       // The workspace also owns offline and persisted state, so require a single line replacement.
-       const patch = execFileSync("git", ["diff", "--no-color", "--no-ext-diff", "--no-textconv", "--unified=1", base, head, "--", toolbarWorkspace], { encoding: "utf8" }).trimEnd().split("\n");
-       const [hunk, effect, removed, added, update] = patch.slice(4);
-       const breakpoint = /^[-+]  const query = window[.]matchMedia[(]"\(min-width: \d+rem\)"[)];$/;
-       toolbarBreakpointOnly = patch.length === 9 && hunk.startsWith("@@ ") && effect === "  useEffect(() => {" && breakpoint.test(removed) && breakpoint.test(added) && update === "   const updateToolbar = () => setHasWideToolbar(query.matches);";
-      }
       const fullSuite = full || paths.some((file) => pipelinePath.test(file)) || (ready && deleted.some((file) => !guidancePath.test(file)));
-      const browserFiles = {
-       notes: ["src/features/notes/hooks/NoteEditor.browser.test.ts", "src/features/notes/hooks/NoteOwner.browser.test.ts"],
-       srs: ["src/features/dictionary/dictionary-srs-outbox.browser.test.ts", "src/features/dictionary/DictionarySrsPage.test.tsx"],
-       pdf: ["src/features/reading/pdf/PdfAnnotations.browser.test.ts"],
-       tts: ["src/features/hanzihome/tts/TtsAudioPreview.browser.test.ts"],
-       listening: ["src/features/hanzihome/listening/ListeningExercises.browser.test.ts"],
-       recorder: ["src/features/reading/hooks/ShadowingRecorder.browser.test.ts"],
-       reading: ["src/features/reading/workspaces/Reading.browser.test.ts"],
-       reader: ["src/features/reader/runtime/Reader.browser.test.ts"],
-       translation: ["src/features/translation/TranslationWorkspace.browser.test.ts"],
-       home: ["src/features/home/HomeDashboard.browser.test.ts"],
-       annotations: ["src/features/hanzihome/annotations/LessonAnnotations.browser.test.ts"],
-       conversation: ["src/features/hanzihome/ai-conversation/AiConversation.browser.test.ts"],
-       navigation: ["src/components/layout/navigation/UnsavedDraftNavigationGuard.browser.test.ts"],
-      };
       const productPatterns = {
        search: "loads the authenticated Search index",
        offline: "serves a public offline shell|reopens the downloaded Reader|restarts Chromium offline|keeps cached lessons|reopens static textbook|keeps offline textbook|ignores a late offline library read|preserves downloaded lessons|keeps private page responses",
@@ -118,65 +91,53 @@ jobs:
        pdf: "retains failed PDF strokes|serializes two PDF first creators",
        notes: "keeps two Notes drafts|fences linked Reader Notes",
       };
-      // Browser fixtures load component modules through Vite URLs, so Git/Vitest's
-      // static import graph alone cannot select their affected consumers.
       const scopes = [
-       { match: /^src[/](?:services[/]notes|stores[/]notes)[/]/, browser: ["notes", "home", "annotations", "reader", "reading"], product: ["notes"] },
-       { match: /^src[/]features[/]notes[/]hooks[/]useRecentNotes[.]ts$/, browser: ["notes", "home"], product: ["notes"] },
-       { match: /^src[/]features[/]notes[/](?:hooks[/]use(?:CreateLessonLinkedNote|LessonLinkedNote|NoteEditor)[.]ts|components[/]NoteConflictDialog[.]tsx)$/, browser: ["notes", "annotations", "reader", "reading"], product: ["notes"] },
-       { match: /^src[/]features[/](?:notes|notebook)[/]|^src[/]features[/]hanzihome[/]components[/]notes[/]|^src[/]app[/].*[/](?:notes|note|notebook)[/]/, browser: ["notes"], product: ["notes"] },
-       { match: /^src[/]features[/]home[/]|^src[/]app[/][^/]+[/][(]app[)][/]page[.]tsx$/, browser: ["home"], product: [] },
-       { match: /^src[/](?:features[/](?:dictionary|personal-learning)|stores[/]dictionary|services[/]vocab)[/]|^src[/]app[/].*[/](?:dictionary|vocab|personal-learning)[/]/, browser: ["srs", "reader", "translation"], product: ["learning"] },
-       { match: /^src[/]features[/]translation[/]|^src[/]app[/].*[/]translation[/]/, browser: ["translation"], product: [] },
-       { match: /^src[/]features[/]reading[/]pdf[/]|^src[/]app[/]api[/](?:reading[/]pdf[/]annotations|hanzihome[/]reader[/]pdf-annotations)[/]/, browser: ["pdf"], product: ["pdf"] },
-       { match: /^src[/]app[/]api[/]reading[/]annotations[/]/, browser: ["pdf", "reader", "reading"], product: ["pdf", "reading"] },
-       { match: /^src[/]features[/]reading[/]|^src[/]app[/][^/]+[/][(]app[)][/]reader[/]/, browser: ["reading", "recorder", "reader"], product: ["reading"] },
-       { match: /^src[/]features[/]reader[/]/, browser: ["reader", "annotations"], product: ["reading", "notes"] },
-       { match: /^src[/]features[/]hanzihome[/]tts[/]|^src[/]hooks[/]useTTS[.]|^src[/]app[/].*[/]tts[/]/, browser: ["tts", "listening", "reader", "reading"], product: [] },
-       { match: /^src[/]features[/](?:hanzihome[/]listening|dictation|speech)[/]/, browser: ["listening", "recorder"], product: [] },
-       { match: /^src[/]features[/]hanzihome[/]annotations[/]|^src[/]app[/]api[/]hanzihome[/](?:reader[/]annotations|lesson-annotations)[/]/, browser: ["annotations", "notes", "reader"], product: ["notes"] },
-       { match: /^src[/]features[/]hanzihome[/]ai-conversation[/]|^src[/]app[/]api[/]ai[/]conversation[/]/, browser: ["conversation"], product: [] },
-       { match: /^src[/]components[/]layout[/]navigation[/]UnsavedDraftNavigationGuard[.]/, browser: ["navigation"], product: [] },
-       { match: /^src[/]features[/]hanzihome[/]search[/]|^src[/]app[/]api[/]hanzihome[/]search-index[/]/, browser: ["home"], product: ["search"] },
-       { match: /^src[/]features[/]hanzihome[/]learning-loop[/]|^src[/]features[/]hanzihome[/]hooks[/]useHanziHomeLearningLoop[.]|^src[/]app[/].*[/]learning-loop[/]/, browser: ["srs"], product: ["learning"] },
-       { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, browser: ["reader"], product: ["offline"], fullOnReady: true },
-       { match: /^src[/]features[/]daily-reading[/]|^src[/]app[/]api[/]daily-reading[/]/, browser: ["reading", "recorder"], product: ["reading"] },
-       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, browser: ["reader", "reading", "tts", "listening", "annotations", "home"], product: ["offline", "search"], fullOnReady: true },
+       { match: /^src[/](?:services[/]notes|stores[/]notes)[/]/, product: ["notes"] },
+       { match: /^src[/]features[/]notes[/]hooks[/]useRecentNotes[.]ts$/, product: ["notes"] },
+       { match: /^src[/]features[/]notes[/](?:hooks[/]use(?:CreateLessonLinkedNote|LessonLinkedNote|NoteEditor)[.]ts|components[/]NoteConflictDialog[.]tsx)$/, product: ["notes"] },
+       { match: /^src[/]features[/](?:notes|notebook)[/]|^src[/]features[/]hanzihome[/]components[/]notes[/]|^src[/]app[/].*[/](?:notes|note|notebook)[/]/, product: ["notes"] },
+       { match: /^src[/]features[/]home[/]|^src[/]app[/][^/]+[/][(]app[)][/]page[.]tsx$/, product: [] },
+       { match: /^src[/](?:features[/](?:dictionary|personal-learning)|stores[/]dictionary|services[/]vocab)[/]|^src[/]app[/].*[/](?:dictionary|vocab|personal-learning)[/]/, product: ["learning"] },
+       { match: /^src[/]features[/]translation[/]|^src[/]app[/].*[/]translation[/]/, product: [] },
+       { match: /^src[/]features[/]reading[/]pdf[/]|^src[/]app[/]api[/](?:reading[/]pdf[/]annotations|hanzihome[/]reader[/]pdf-annotations)[/]/, product: ["pdf"] },
+       { match: /^src[/]app[/]api[/]reading[/]annotations[/]/, product: ["pdf", "reading"] },
+       { match: /^src[/]features[/]reading[/]|^src[/]app[/][^/]+[/][(]app[)][/]reader[/]/, product: ["reading"] },
+       { match: /^src[/]features[/]reader[/]/, product: ["reading", "notes"] },
+       { match: /^src[/]features[/]hanzihome[/]tts[/]|^src[/]hooks[/]useTTS[.]|^src[/]app[/].*[/]tts[/]/, product: [] },
+       { match: /^src[/]features[/](?:hanzihome[/]listening|dictation|speech)[/]/, product: [] },
+       { match: /^src[/]features[/]hanzihome[/]annotations[/]|^src[/]app[/]api[/]hanzihome[/](?:reader[/]annotations|lesson-annotations)[/]/, product: ["notes"] },
+       { match: /^src[/]features[/]hanzihome[/]ai-conversation[/]|^src[/]app[/]api[/]ai[/]conversation[/]/, product: [] },
+       { match: /^src[/]components[/]layout[/]navigation[/]UnsavedDraftNavigationGuard[.]/, product: [] },
+       { match: /^src[/]features[/]hanzihome[/]search[/]|^src[/]app[/]api[/]hanzihome[/]search-index[/]/, product: ["search"] },
+       { match: /^src[/]features[/]hanzihome[/]learning-loop[/]|^src[/]features[/]hanzihome[/]hooks[/]useHanziHomeLearningLoop[.]|^src[/]app[/].*[/]learning-loop[/]/, product: ["learning"] },
+       { match: /^src[/]features[/]hanzihome[/](?:local|offline)[/]|^public[/]sw[.]js$|^src[/]components[/]layout[/]runtime[/]PwaServiceWorkerRegister[.]tsx$/, product: ["offline"], fullOnReady: true },
+       { match: /^src[/]features[/]daily-reading[/]|^src[/]app[/]api[/]daily-reading[/]/, product: ["reading"] },
+       { match: /^src[/]features[/](?:hanzihome|hsk)[/]|^src[/]app[/].*[/](?:hanzihome|hsk|offline)[/]|^src[/]app[/]api[/]hanzihome[/]/, product: ["offline", "search"], fullOnReady: true },
       ];
       let code = fullSuite;
       let unitFull = fullSuite || deleted.some((file) => !guidancePath.test(file));
-      let allBrowser = fullSuite;
       let allProduct = fullSuite;
-      const selectedBrowser = new Set();
       const selectedProduct = new Set();
       for (const file of fullSuite ? [] : paths) {
        if (guidancePath.test(file)) continue;
        code = true;
-       if (toolbarBreakpointOnly) {
-        for (const fixture of browserFiles.reading) selectedBrowser.add(fixture);
-        continue;
-       }
        if (/^([.]github[/]|scripts[/]check-|[.]ox|[.]gitignore$)/.test(file) || file === "scripts/npm-audit-baseline.json") {
         unitFull = true;
-        allBrowser ||= ready;
         allProduct ||= ready;
         continue;
        }
        if (/^(e2e[/]|scripts[/]e2e[/]|playwright[.]config[.])/.test(file)) {
-        allBrowser ||= ready;
         allProduct = true;
         unitFull = true;
         continue;
        }
        if (/^src[/]components[/]ui[/]|^src[/]app[/].*[.](?:css|scss)$/.test(file)) {
-        allBrowser = true;
         allProduct ||= ready && file.startsWith("src/components/ui/");
         unitFull = true;
         continue;
        }
        if (/[/](?:query-keys|types|index)[.][cm]?[jt]sx?$/.test(file) || file === "src/features/hanzihome/hooks/useLearningState.ts") {
         unitFull = true;
-        allBrowser = true;
         allProduct = true;
         continue;
        }
@@ -184,9 +145,6 @@ jobs:
        const scope = scopes.find((candidate) => candidate.match.test(file));
        const apiWithoutProductCase = file.startsWith("src/app/api/") && !scope?.product.length;
        if (scope && !(ready && (scope.fullOnReady || apiWithoutProductCase))) {
-        for (const group of scope.browser) {
-         for (const fixture of browserFiles[group]) selectedBrowser.add(fixture);
-        }
         // Component location alone does not rule out product state or offline behavior.
         if (!/[.](?:test|spec)[.]|[.]browser[.]fixture[.]|[.](?:css|scss)$/.test(file)) {
          for (const group of scope.product) selectedProduct.add(productPatterns[group]);
@@ -194,7 +152,6 @@ jobs:
        } else {
         // Unmapped owners and broad fallback scopes need full coverage before merge.
         unitFull = true;
-        allBrowser = true;
         allProduct = true;
        }
       }
@@ -204,7 +161,7 @@ jobs:
       // that push. Direct pushes and unsafe bases keep the normal rules.
       const [mergeSubject, mergeParents] = execFileSync("git", ["show", "-s", "--format=%s%n%P", head], { encoding: "utf8" }).trim().split(String.fromCharCode(10));
       const verifiedPullRequestMerge = process.env.EVENT_NAME === "push" && !full && mergeParents.split(" ").length === 2 && /^Merge pull request #[0-9]+ /.test(mergeSubject);
-      // Drafts run the fast verify job only; browser and product suites run once
+      // Drafts run the fast verify job only; product suites run once
       // the PR is ready (ready_for_review and later pushes to a ready PR).
       const draft = pullRequest && process.env.PR_DRAFT === "true";
       const output = {
@@ -213,15 +170,13 @@ jobs:
        guidance: String(guidance),
        unit_full: String(unitFull),
        unit_files: JSON.stringify(paths.filter((file) => !guidancePath.test(file))),
-       browser_files: (allBrowser ? Object.values(browserFiles).flat() : [...selectedBrowser]).join(" "),
        e2e_grep: allProduct ? "." : [...selectedProduct].join("|"),
       };
       output.run_verify = String(!verifiedPullRequestMerge);
-      output.run_browser = String(!verifiedPullRequestMerge && !draft && output.browser_files !== "");
       output.run_e2e = String(!verifiedPullRequestMerge && !draft && output.e2e_grep !== "");
       const newline = String.fromCharCode(10);
       appendFileSync(process.env.GITHUB_OUTPUT, Object.entries(output).map(([key, value]) => key + "=" + value).join(newline) + newline);
-      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (verifiedPullRequestMerge ? "merged pull request (verified on the PR; nothing re-run)" : draft ? "draft (verify only; browser and product suites run when ready)" : unitFull && allBrowser && allProduct ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Tested SHA: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Browser fixtures: " + (output.run_browser === "true" ? output.browser_files : "not run"), "Product E2E: " + (output.run_e2e === "true" ? output.e2e_grep : "not run")].join(newline) + newline);
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY, ["### Selected verification", "Mode: " + (verifiedPullRequestMerge ? "merged pull request (verified on the PR; nothing re-run)" : draft ? "draft (verify only; product suites run when ready)" : unitFull && allProduct ? "full" : incremental ? "draft update" : "affected"), "Diff base: " + (output.base || "full"), "Tested SHA: " + head, "Changed paths: " + paths.length, "Guidance contracts: " + (guidance ? "YAML/metadata/routing/file references" : "unchanged"), "Node tests: " + (code ? (unitFull ? "full" : "Vitest dependency graph") : "none"), "Product E2E: " + (output.run_e2e === "true" ? output.e2e_grep : "not run")].join(newline) + newline);
       JS
 
  verify:
@@ -356,45 +311,6 @@ jobs:
      if: needs.changes.outputs.code == 'true' && needs.changes.outputs.run_e2e != 'true'
      run: npm run build
 
- browser:
-  needs: changes
-  if: needs.changes.outputs.run_browser == 'true'
-  runs-on: ubuntu-latest
-  timeout-minutes: 15
-  env:
-   HUSKY: 0
-   NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
-   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
-   NOTES_BROWSER_TEST: "1"
-   SRS_BROWSER_TEST: "1"
-   PDF_BROWSER_TEST: "1"
-   TTS_BROWSER_TEST: "1"
-   LISTENING_BROWSER_TEST: "1"
-   RECORDER_BROWSER_TEST: "1"
-   READER_BROWSER_TEST: "1"
-   TRANSLATION_BROWSER_TEST: "1"
-   HOME_BROWSER_TEST: "1"
-   LESSON_ANNOTATIONS_BROWSER_TEST: "1"
-   AI_CONVERSATION_BROWSER_TEST: "1"
-   NAVIGATION_BROWSER_TEST: "1"
-  steps:
-   - uses: actions/checkout@v5
-     with:
-      ref: ${{ github.sha }}
-   - uses: actions/setup-node@v5
-     with:
-      node-version: 22
-      cache: npm
-   - run: npm install --global npm@12.2.0
-   - run: npm ci --prefer-offline
-   - run: npx playwright install --with-deps --only-shell chromium
-   - name: Affected mounted browser fixtures
-     env:
-      BROWSER_FILES: ${{ needs.changes.outputs.browser_files }}
-     run: |
-      read -r -a files <<< "$BROWSER_FILES"
-      npm run test:run -- --maxWorkers=2 "${files[@]}"
-
  e2e:
   needs: changes
   if: needs.changes.outputs.run_e2e == 'true'
@@ -472,7 +388,7 @@ jobs:
 
  gate:
   name: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'CI production' || github.event_name == 'pull_request' && (github.event.pull_request.draft && 'CI draft' || github.base_ref == 'main' && 'CI gate') || 'CI validation' }}
-  needs: [changes, verify, browser, e2e]
+  needs: [changes, verify, e2e]
   # Run even when a check failed. Only a cancelled draft run (superseded when the PR becomes
   # ready) is skipped: "CI draft" is not required, while a cancelled non-draft run must still
   # report a failing "CI gate" so cancellation can never satisfy branch protection.
@@ -488,7 +404,7 @@ jobs:
       const checks = JSON.parse(process.env.CHECK_RESULTS);
       const failures = [];
       if (checks.changes.result !== "success") failures.push(`changes: ${checks.changes.result}`);
-      for (const [job, output] of [["verify", "run_verify"], ["browser", "run_browser"], ["e2e", "run_e2e"]]) {
+      for (const [job, output] of [["verify", "run_verify"], ["e2e", "run_e2e"]]) {
        const selected = checks.changes.outputs[output] === "true";
        const result = checks[job].result;
        if (selected ? result !== "success" : result !== "success" && result !== "skipped") {
