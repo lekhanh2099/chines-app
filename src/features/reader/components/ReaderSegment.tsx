@@ -11,15 +11,11 @@ import { Typography } from "@/components/ui/display/typography";
 import {
  formatContextualReadingPinyin,
  formatContextualSpokenPinyin,
- type ContextualReadingUnit,
 } from "@/lib/pronunciation/contextual-pronunciation";
 import { captureReaderSelection } from "../runtime/reader-selection";
 import { getReaderTypographyStyle } from "./reader-typography";
-import {
- renderReaderGrapheme,
- renderReaderReadingUnit,
- type ReaderSegmentGlyphContext,
-} from "./ReaderSegmentGlyphs";
+import { renderLearnerGrapheme, renderLearnerReadingUnit } from "./learner-glyphs";
+import { createReaderGlyphModel } from "./ReaderSegmentGlyphs";
 import { nextAvailableRevealStage, type RevealStage } from "../model/progressive-reveal";
 import {
  useReaderCommands,
@@ -88,7 +84,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   if (services.annotations) services.annotations.onSelection(selection);
   else services.lookup?.(selection);
  };
- const glyphContext: ReaderSegmentGlyphContext = {
+ const glyphModel = createReaderGlyphModel({
   segment,
   segmentId,
   graphemes,
@@ -103,11 +99,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   services,
   commands,
   textLabels,
- };
- const renderGrapheme = (grapheme: Intl.SegmentData, index: number) =>
-  renderReaderGrapheme(glyphContext, grapheme, index);
- const renderReadingUnit = (unit: ContextualReadingUnit) =>
-  renderReaderReadingUnit(glyphContext, unit);
+ });
  const hanziContent = (
   <LearnerHanziText
    as={segment.kind === "heading" ? "h3" : "p"}
@@ -120,9 +112,9 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
    aria-hidden={tapMode && stage !== 0}
   >
    {services.speech || annotations.length > 0 || inlinePinyin
-    ? readingUnits.length > 0
-     ? readingUnits.map(renderReadingUnit)
-     : graphemes.map((grapheme, index) => renderGrapheme(grapheme, index))
+    ? analysis !== undefined && readingUnits.length > 0
+     ? readingUnits.map((unit) => renderLearnerReadingUnit(glyphModel, analysis, unit))
+     : graphemes.map((grapheme, index) => renderLearnerGrapheme(glyphModel, grapheme, index))
     : segment.zh}
   </LearnerHanziText>
  );

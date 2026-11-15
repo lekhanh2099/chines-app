@@ -3,6 +3,7 @@ import { createElement, type ReactNode } from "react";
 import { renderToStaticMarkup as renderMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
+import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
 
 import { ProgressiveStudyText } from "./ProgressiveStudyText";
 import {
@@ -201,5 +202,52 @@ describe("progressive study text", () => {
 
   expect(markup).not.toContain('aria-label="Đọc từ chữ');
   expect(markup).toContain("离家的时候");
+ });
+
+ it("highlights Reader annotations by UTF-16 range and skips stale or overlapping ones", () => {
+  const reader: ReaderAnnotationRow = {
+   id: "00000000-0000-4000-8000-000000000001",
+   user_id: "00000000-0000-4000-8000-000000000002",
+   document_id: "document",
+   paragraph_id: "paragraph",
+   asset_id: null,
+   annotation_type: "highlight",
+   page_number: null,
+   start_offset: 0,
+   end_offset: 2,
+   selected_text: "𠮷",
+   note_text: "",
+   color: "green",
+   payload: {},
+   revision: 0,
+   created_at: "2026-10-04T00:00:00Z",
+   updated_at: "2026-10-04T00:00:00Z",
+   deleted_at: null,
+  };
+  const markup = renderToStaticMarkup(
+   createElement(ProgressiveStudyText, {
+    zh: "𠮷你。",
+    displayMode: {
+     showPinyin: false,
+     autoDetectPinyin: false,
+     showMeaning: false,
+     showAnswers: false,
+     hanziFont: "songti",
+     hanziSize: "lg",
+     revealMode: "always",
+    },
+    readerAnnotations: [
+     { ...reader, id: "stale", start_offset: 2, end_offset: 3, selected_text: "好" },
+     reader,
+    ],
+   }),
+  );
+
+  expect(markup).toContain(
+   'data-color="green" role="button" tabindex="0" aria-label="Mở ghi chú cho 𠮷"',
+  );
+  expect(markup.match(/reading-highlight/g)).toHaveLength(1);
+  expect(markup).not.toContain("Mở ghi chú cho 好");
+  expect(markup).toContain(">你</span>");
  });
 });
