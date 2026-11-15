@@ -80,9 +80,8 @@ describe("ContextualReaderText", () => {
    />,
   );
   expect(markup).toContain('aria-label="Mở ghi chú cho 乐器"');
-  expect(markup).toContain(
-   '<mark class="reading-highlight rounded-sm" data-color="yellow">乐器</mark>',
-  );
+  expect(markup.match(/reading-highlight/g)).toHaveLength(2);
+  expect(markup.match(/data-color="yellow"/g)).toHaveLength(2);
   expect(markup).toContain('data-reader-hanzi-content="true"');
  });
  const annotation: ResolvedLessonTextAnnotation = {
