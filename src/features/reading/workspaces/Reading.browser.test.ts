@@ -1733,6 +1733,22 @@ it
     await page.evaluate((article) => window.readingHarness.mountDaily(article), daily);
     await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(3);
     await browserExpect(page.locator('[aria-label^="Kiểm tra pinyin chữ"]').first()).toBeVisible();
+    // The Reader stays mounted under every article tab, so leaving the reader tab stops speech.
+    const speechStops = async () =>
+     (await page.evaluate(() => window.readingHarness.metrics())).speechStops;
+    await page
+     .locator("[data-reader-toolbar]")
+     .getByRole("button", { name: chrome.commands.listen, exact: true })
+     .click();
+    await browserExpect(
+     page.locator("[data-reader-toolbar]").getByRole("button", { name: chrome.commands.listen }),
+    ).toHaveCount(0);
+    const stopsBeforeLeaving = await speechStops();
+    await page.getByRole("tab", { name: messages.DailyReading.tabs.notes, exact: true }).click();
+    await browserExpect.poll(speechStops).toBeGreaterThan(stopsBeforeLeaving);
+    await browserExpect(page.locator("[data-reader-toolbar]")).toHaveCount(0);
+    await page.getByRole("tab", { name: messages.DailyReading.tabs.reader, exact: true }).click();
+    await browserExpect(page.locator("[data-reader-toolbar]")).toHaveCount(1);
     await page.evaluate((article) => window.readingHarness.mountDaily(article, true), daily);
     await page.getByRole("button", { name: chrome.commands.next, exact: true }).click();
     await browserExpect(page.locator('[data-reader-segment="source-p2"]')).toHaveAttribute(

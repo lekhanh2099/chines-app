@@ -168,6 +168,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
     displayMode={displayMode}
     titlePronunciation={titlePronunciation}
     dateFormatter={dateFormatter}
+    onBack={onBack}
    />
 
    <DailyReadingReaderTab
@@ -183,7 +184,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
     annotations={annotationsQuery.data}
     selection={selection}
     openInspector={openInspector}
-    toolbarInLayout={effectiveTab === "reader"}
+    readerTabActive={effectiveTab === "reader"}
     renderLayout={({ content, toolbar }) => (
      <Tabs
       value={effectiveTab}
@@ -207,7 +208,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
          type="button"
          variant="ghost"
          size="toolbar"
-         // Phones get back navigation from the header breadcrumb; the row keeps room for tabs.
+         // On phones the back action sits in the article header so the tab row keeps room.
          className="hidden shrink-0 sm:inline-flex"
          onClick={onBack}
          title={t("document.back")}
