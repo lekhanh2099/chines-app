@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import { Typography } from "@/components/ui/display/typography";
+import { SpeakableBusinessChineseText } from "@/features/hanzihome/components/business-chinese/BusinessChineseText";
 import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
 import {
  VocabularyCardList,
@@ -60,12 +61,20 @@ export function DailyReadingVocabularyTab({
      <VocabPreviewRow
       key={item.id}
       hanzi={item.hanzi}
-      pinyin={displayMode.showPinyin ? resolvedPinyin : ""}
-      rawPinyin={resolvedPinyin}
+      pinyin={resolvedPinyin}
       hanviet=""
       category={item.categoryVi}
       meaning={displayMode.showMeaning ? item.meaningVi : ""}
       rawMeaning={item.meaningVi}
+      header={
+       <SpeakableBusinessChineseText
+        pronunciationId={`daily-vocab-${item.id}`}
+        text={item.hanzi}
+        sourcePinyin={resolvedPinyin}
+        displayMode={displayMode}
+        variant="body"
+       />
+      }
      >
       {displayMode.showMeaning && item.meaningInContextVi ? (
        <Typography variant="caption" tone="muted">
