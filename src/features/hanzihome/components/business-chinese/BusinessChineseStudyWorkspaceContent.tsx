@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { type SegmentedControlItem } from "@/components/ui/forms/segmented-control";
@@ -16,6 +16,7 @@ import {
  useReaderDisplay,
  useReaderSelector,
 } from "@/features/reader/runtime/reader-context";
+import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettingsDialog";
 import { cn } from "@/lib/utils";
 import { BusinessChineseAnnotationsContext } from "./business-chinese-annotations-context";
 import {
@@ -29,11 +30,8 @@ import { BusinessChineseLessonHeading } from "./BusinessChineseOverviewCard";
 import { BusinessChinesePipWindows } from "./BusinessChinesePipWindows";
 import { type BusinessChineseReviewMode } from "./BusinessChineseReviewView";
 import { useBusinessChineseVocabSearch } from "./BusinessChineseVocabView";
-import {
- BusinessChineseCompactViewToolbar,
- BusinessChineseDesktopTabActions,
- useBusinessChineseToolbarNavMenu,
-} from "./BusinessChineseWorkspaceToolbar";
+import { BusinessChineseDesktopTabActions } from "./BusinessChineseWorkspaceToolbar";
+import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import { BusinessChineseWorkspaceViews } from "./BusinessChineseWorkspaceViews";
 import { useBusinessChineseAnnotationServices } from "./useBusinessChineseAnnotationServices";
 import {
@@ -72,6 +70,10 @@ export function BusinessChineseStudyWorkspaceContent({
 }) {
  const t = useTranslations("BusinessChinese");
  const isReviewView = activeView === "review";
+ const [audioSettingsOpen, setAudioSettingsOpen] = useState(false);
+ const lessonActionsTrigger = useRef<HTMLButtonElement>(null);
+ const openAudioSettings = useCallback(() => setAudioSettingsOpen(true), []);
+ const returnToLessonActions = useCallback(() => lessonActionsTrigger.current?.focus(), []);
  const pip = useBusinessChinesePip();
  const { isPipOpen, isInAppFloatingOpen, pipMode, handleTogglePip } = pip;
  const [reviewMode, setReviewMode] = useState<BusinessChineseReviewMode>("flashcard");
@@ -125,14 +127,26 @@ export function BusinessChineseStudyWorkspaceContent({
   });
  }, []);
 
- const toolbarNavMenu = useBusinessChineseToolbarNavMenu({
-  tabs,
-  activeView,
-  onActiveViewChange,
-  isLessonBookmarked,
-  onToggleLessonBookmark,
-  className: !focusMode ? "xl:hidden" : undefined,
- });
+ const [tabCapacity, setTabCapacity] = useState(1);
+ useEffect(() => {
+  const desktop = window.matchMedia("(min-width: 90rem)");
+  const tablet = window.matchMedia("(min-width: 40rem)");
+  const update = () =>
+   setTabCapacity(desktop.matches ? Number.MAX_SAFE_INTEGER : tablet.matches ? 3 : 1);
+  update();
+  desktop.addEventListener("change", update);
+  tablet.addEventListener("change", update);
+  return () => {
+   desktop.removeEventListener("change", update);
+   tablet.removeEventListener("change", update);
+  };
+ }, []);
+ const visibleTabs = tabs.slice(0, showCompactGrammarToolbar ? 1 : tabCapacity);
+ const activeTab = tabs.find((tab) => tab.key === activeView);
+ if (activeTab && !visibleTabs.some((tab) => tab.key === activeView)) {
+  visibleTabs.splice(visibleTabs.length - 1, 1, activeTab);
+ }
+ const overflowTabs = tabs.filter((tab) => !visibleTabs.some((visible) => visible.key === tab.key));
 
  const sectionReaders = useBusinessChineseSectionReaderServices({
   textReaderDocument,
@@ -140,7 +154,6 @@ export function BusinessChineseStudyWorkspaceContent({
   visibleSections,
   onSelectSection: selectSection,
   focusMode,
-  toolbarNavMenu,
  });
 
  const grammarNavigationSummary = (
@@ -158,35 +171,40 @@ export function BusinessChineseStudyWorkspaceContent({
  return (
   <BusinessChineseAnnotationsContext.Provider value={annotationsContextValue}>
    <ReaderServicesContext.Provider value={readerServicesValue}>
-    <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
+    <BusinessChineseHeaderContextBridge
+     books={books}
+     lesson={lesson}
+     isLessonBookmarked={isLessonBookmarked}
+     onToggleLessonBookmark={onToggleLessonBookmark}
+     isLessonOfflineReady={isLessonOfflineReady}
+     compact={!hasWideToolbar}
+     audioSettingsOpen={audioSettingsOpen}
+     onOpenAudioSettings={openAudioSettings}
+     actionsTriggerRef={lessonActionsTrigger}
+     onReturnFocus={returnToLessonActions}
+    />
     <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
-     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
+     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2">
       <BusinessChineseLessonHeading books={books} lesson={lesson} />
-      {activeView !== "text" && activeView !== "all" && !showGrammarNavigation ? (
-       <BusinessChineseCompactViewToolbar
-        tabs={tabs}
-        activeView={activeView}
-        isLessonBookmarked={isLessonBookmarked}
-        onToggleLessonBookmark={onToggleLessonBookmark}
-        toolbarNavMenu={toolbarNavMenu}
-       />
-      ) : null}
       <Tabs
        value={activeView}
-       items={showCompactGrammarToolbar ? tabs.filter((tab) => tab.key === activeView) : tabs}
+       items={visibleTabs}
        onValueChange={onActiveViewChange}
+       overflow={
+        <BusinessChineseWorkspaceNavMenu
+         tabs={overflowTabs}
+         activeView={activeView}
+         onActiveViewChange={onActiveViewChange}
+         compact={!hasWideToolbar}
+        />
+       }
        actions={
         <BusinessChineseDesktopTabActions
-         lesson={lesson}
          readerToolbar={readerToolbar}
          showCompactGrammarToolbar={showCompactGrammarToolbar}
          grammarNavigationTriggerRef={grammarNavigationTriggerRef}
          isGrammarNavigationOpen={isGrammarNavigationOpen}
          onOpenGrammarNavigation={() => setIsGrammarNavigationOpen(true)}
-         isLessonBookmarked={isLessonBookmarked}
-         onToggleLessonBookmark={onToggleLessonBookmark}
-         isLessonOfflineReady={isLessonOfflineReady}
-         toolbarNavMenu={toolbarNavMenu}
         />
        }
        aria-label={t("tabsLabel")}
@@ -248,6 +266,16 @@ export function BusinessChineseStudyWorkspaceContent({
         onSelect={selectSection}
        />
       ) : null}
+      <OfflineAudioSettingsDialog
+       lesson={lesson}
+       trigger={null}
+       open={audioSettingsOpen}
+       onOpenChange={setAudioSettingsOpen}
+       onCloseAutoFocus={(event) => {
+        event.preventDefault();
+        returnToLessonActions();
+       }}
+      />
       {selectionPopover}
       <BusinessChinesePipWindows
        pip={pip}

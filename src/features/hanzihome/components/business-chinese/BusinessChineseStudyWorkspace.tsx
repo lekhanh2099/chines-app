@@ -12,7 +12,6 @@ import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { MandarinTtsProvider } from "@/features/speech/MandarinTtsProvider";
 import { BusinessChineseReader } from "./BusinessChineseReader";
 import { BusinessChineseStudyWorkspaceContent } from "./BusinessChineseStudyWorkspaceContent";
-import { useBusinessChineseToolbarNavMenu } from "./BusinessChineseWorkspaceToolbar";
 import {
  useBusinessChineseLessonResume,
  useBusinessChineseLessonView,
@@ -40,29 +39,20 @@ export function BusinessChineseStudyWorkspace({
   setActiveView,
  } = lessonView;
  const hasWideToolbar = useBusinessChineseWideToolbar();
- const placeToolbarInLayout = activeView === "text" && hasWideToolbar;
+ const placeToolbarInLayout = activeView === "text";
  const readerDocument = useMemo(
   () => buildBusinessChineseReaderDocument(lesson, activeView),
   [activeView, lesson],
  );
  useBusinessChineseLessonResume(lessonView);
 
- const toolbarNavMenu = useBusinessChineseToolbarNavMenu({
-  tabs,
-  activeView,
-  onActiveViewChange: setActiveView,
-  isLessonBookmarked,
-  onToggleLessonBookmark: handleToggleCurrentLessonBookmark,
-  className: "xl:hidden",
- });
-
  const workspaceReaderServices = useMemo<ReaderServices>(
   () => ({
    placeToolbarInLayout,
+   compactContent: true,
    toolbar: {
-    actions: toolbarNavMenu,
-    hidePinyinToggle: !placeToolbarInLayout,
-    hideTranslationToggle: !placeToolbarInLayout,
+    hidePinyinToggle: true,
+    hideTranslationToggle: true,
    },
    renderReader: ({ content, toolbar }) => (
     <BusinessChineseStudyWorkspaceContent
@@ -83,7 +73,6 @@ export function BusinessChineseStudyWorkspace({
   }),
   [
    placeToolbarInLayout,
-   toolbarNavMenu,
    books,
    lesson,
    activeView,

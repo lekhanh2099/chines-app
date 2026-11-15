@@ -172,7 +172,7 @@ describe("BookSectionContent", () => {
   expect(html).toContain("Đoạn hai.");
   expect(html).toContain("Đoạn 1 / 2");
   expect(html).toContain("Nghe bài");
-  expect(html).toContain("Công cụ học");
+  expect(html).toContain("Tùy chọn đọc &amp; nghe");
 
   const readingHtml = renderToStaticMarkup(
    <MandarinTtsProvider>

@@ -1,19 +1,24 @@
 "use client";
 
-import { memo } from "react";
-import { Bookmark, Check, CloudCheck, Menu } from "lucide-react";
+import { memo, useRef, useState } from "react";
+import { Check, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuContent,
- DropdownMenuGroup,
  DropdownMenuItem,
  DropdownMenuLabel,
- DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 export type BusinessChineseNavTab<T extends string = string> = {
  key: T;
@@ -24,13 +29,7 @@ type BusinessChineseWorkspaceNavMenuProps<T extends string = string> = {
  tabs: ReadonlyArray<BusinessChineseNavTab<T>>;
  activeView: T;
  onActiveViewChange: (view: T) => void;
- isLessonBookmarked: boolean;
- onToggleLessonBookmark: () => void;
- bookmarkLabel: string;
- bookmarkedLabel: string;
- offlineReadyLabel: string;
- offlineDescription?: string;
- menuLabel?: string;
+ compact?: boolean;
  className?: string;
 };
 
@@ -40,87 +39,87 @@ export const BusinessChineseWorkspaceNavMenu = memo(function BusinessChineseWork
  tabs,
  activeView,
  onActiveViewChange,
- isLessonBookmarked,
- onToggleLessonBookmark,
- bookmarkLabel,
- bookmarkedLabel,
- offlineReadyLabel,
- offlineDescription,
- menuLabel,
+ compact = false,
  className,
 }: BusinessChineseWorkspaceNavMenuProps<T>) {
  const t = useTranslations("BusinessChinese");
- const resolvedMenuLabel = menuLabel ?? t("tabsLabel");
- const activeTab = tabs.find((tab) => tab.key === activeView);
- const title = activeTab ? `${resolvedMenuLabel}: ${activeTab.label}` : resolvedMenuLabel;
+ const common = useTranslations("Common.actions");
+ const coarsePointer = useCoarsePointer();
+ const [open, setOpen] = useState(false);
+ const trigger = useRef<HTMLButtonElement>(null);
+ const touch = compact || coarsePointer;
 
- return (
-  <DropdownMenu modal={false}>
+ if (tabs.length === 0) return null;
+
+ return touch ? (
+  <>
+   <Button
+    ref={trigger}
+    variant="navigation"
+    size="toolbar"
+    className={className}
+    aria-label={t("moreSectionsLabel")}
+    aria-haspopup="dialog"
+    aria-expanded={open}
+    onClick={() => setOpen(true)}
+   >
+    {t("moreSections")}
+    <ChevronDown className="hidden sm:inline" />
+   </Button>
+   <Dialog open={open} onOpenChange={setOpen}>
+    <DialogContent
+     size="sm"
+     closeLabel={common("close")}
+     aria-describedby={undefined}
+     onCloseAutoFocus={(event) => {
+      event.preventDefault();
+      trigger.current?.focus();
+     }}
+    >
+     <DialogHeader>
+      <DialogTitle>{t("tabsLabel")}</DialogTitle>
+     </DialogHeader>
+     <DialogBody className="content-start gap-1">
+      {tabs.map((tab) => (
+       <Button
+        key={tab.key}
+        variant={activeView === tab.key ? "menuActive" : "menu"}
+        size="menu"
+        align="between"
+        onClick={() => {
+         onActiveViewChange(tab.key);
+         setOpen(false);
+        }}
+       >
+        {tab.label}
+        {activeView === tab.key ? <Check /> : null}
+       </Button>
+      ))}
+     </DialogBody>
+    </DialogContent>
+   </Dialog>
+  </>
+ ) : (
+  <DropdownMenu>
    <DropdownMenuTrigger asChild>
     <Button
-     type="button"
-     variant="outline"
-     size="icon-toolbar"
-     className={cn("relative shrink-0", className)}
-     aria-label={title}
-     title={title}
+     variant="navigation"
+     size="toolbar"
+     className={className}
+     aria-label={t("moreSectionsLabel")}
     >
-     <Menu className="size-4.5" />
-     {isLessonBookmarked ? (
-      <span
-       className="absolute top-1.5 right-1.5 size-2 rounded-full bg-warning"
-       aria-label={bookmarkedLabel}
-      />
-     ) : null}
+     {t("moreSections")}
+     <ChevronDown />
     </Button>
    </DropdownMenuTrigger>
-   <DropdownMenuContent align="end" width="md">
-    <DropdownMenuLabel className="flex items-center justify-between text-xs font-medium uppercase tracking-wider text-muted-foreground">
-     <span>{resolvedMenuLabel}</span>
-     {activeTab ? (
-      <span className="text-[0.7rem] font-semibold normal-case text-accent-text">
-       {activeTab.label}
-      </span>
-     ) : null}
-    </DropdownMenuLabel>
-    <DropdownMenuGroup>
-     {tabs.map((tab) => {
-      const isSelected = tab.key === activeView;
-      return (
-       <DropdownMenuItem
-        key={tab.key}
-        onClick={() => onActiveViewChange(tab.key)}
-        className="flex cursor-pointer items-center justify-between"
-       >
-        <span className={cn(isSelected && "font-semibold text-accent-text")}>{tab.label}</span>
-        {isSelected ? <Check className="size-4 shrink-0 text-accent-text" /> : null}
-       </DropdownMenuItem>
-      );
-     })}
-    </DropdownMenuGroup>
-    <DropdownMenuSeparator />
-    <DropdownMenuLabel className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-     {t("utilities")}
-    </DropdownMenuLabel>
-    <DropdownMenuGroup>
-     <DropdownMenuItem onClick={onToggleLessonBookmark} className="cursor-pointer gap-2">
-      <Bookmark
-       className={cn(
-        "size-4 shrink-0",
-        isLessonBookmarked ? "fill-current text-warning" : "text-muted-foreground",
-       )}
-      />
-      <span>{isLessonBookmarked ? bookmarkedLabel : bookmarkLabel}</span>
+   <DropdownMenuContent align="start" width="md">
+    <DropdownMenuLabel>{t("tabsLabel")}</DropdownMenuLabel>
+    {tabs.map((tab) => (
+     <DropdownMenuItem key={tab.key} onSelect={() => onActiveViewChange(tab.key)}>
+      {tab.label}
+      {activeView === tab.key ? <Check /> : null}
      </DropdownMenuItem>
-     <DropdownMenuItem
-      disabled
-      className="cursor-default select-none gap-2 opacity-90"
-      title={offlineDescription}
-     >
-      <CloudCheck className="size-4 shrink-0 text-success" />
-      <span>{offlineReadyLabel}</span>
-     </DropdownMenuItem>
-    </DropdownMenuGroup>
+    ))}
    </DropdownMenuContent>
   </DropdownMenu>
  );

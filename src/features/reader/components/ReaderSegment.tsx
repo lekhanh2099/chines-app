@@ -127,7 +127,11 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
   </LearnerHanziText>
  );
  const content = (
-  <Card asChild variant={active ? "subtle" : "section"}>
+  <Card
+   asChild
+   variant={active ? "subtle" : "section"}
+   padding={services.compactContent ? "sm" : "md"}
+  >
    <article
     ref={register}
     data-reader-segment={segmentId}
@@ -139,18 +143,20 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
     onTouchEnd={(event) => captureSelection(event.currentTarget)}
     onKeyUp={(event) => captureSelection(event.currentTarget)}
    >
-    <div className="flex min-w-0 flex-wrap items-center gap-2">
-     {segment.speaker?.label ? (
-      <Typography variant="caption" tone="muted" weight="semibold">
-       {segment.speaker.label}
-      </Typography>
-     ) : null}
-     {segment.role ? (
-      <Typography variant="caption" tone="muted">
-       {segment.role}
-      </Typography>
-     ) : null}
-    </div>
+    {segment.speaker?.label || segment.role ? (
+     <div className="flex min-w-0 flex-wrap items-center gap-2">
+      {segment.speaker?.label ? (
+       <Typography variant="caption" tone="muted" weight="semibold">
+        {segment.speaker.label}
+       </Typography>
+      ) : null}
+      {segment.role ? (
+       <Typography variant="caption" tone="muted">
+        {segment.role}
+       </Typography>
+      ) : null}
+     </div>
+    ) : null}
     <div className="flex min-w-0 items-end gap-2">
      <div className="min-w-0 flex-1">
       {services.renderHanzi ? (

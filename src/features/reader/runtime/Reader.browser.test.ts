@@ -210,7 +210,7 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
       ),
      );
      await browserExpect(page.locator("[data-reader-segment]")).toHaveCount(100);
-     await page.getByRole("button", { name: "Công cụ học", exact: true }).click();
+     await page.getByRole("button", { name: "Tùy chọn đọc & nghe", exact: true }).click();
      await page.getByRole("menuitemcheckbox", { name: "Pinyin", exact: true }).click();
      await browserExpect(page.locator('[lang="zh-Latn-pinyin"]')).toHaveCount(0);
      await page.keyboard.press("Escape");

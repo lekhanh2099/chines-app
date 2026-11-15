@@ -17,14 +17,12 @@ export function useBusinessChineseSectionReaderServices({
  visibleSections,
  onSelectSection,
  focusMode,
- toolbarNavMenu,
 }: {
  textReaderDocument: ReaderDocumentModel;
  annotationServices: ReaderServices;
  visibleSections: TextbookLesson["sections"];
  onSelectSection: (sectionId: string) => void;
  focusMode: boolean;
- toolbarNavMenu: ReactNode;
 }) {
  const sectionDocuments = useMemo(
   () => businessChineseSectionDocuments(textReaderDocument),
@@ -52,18 +50,10 @@ export function useBusinessChineseSectionReaderServices({
        className={!focusMode ? "2xl:hidden" : undefined}
       />
      ) : undefined,
-    actions: toolbarNavMenu,
    },
    renderSection: renderReaderSection,
   }),
-  [
-   annotationServices,
-   visibleSections,
-   onSelectSection,
-   focusMode,
-   toolbarNavMenu,
-   renderReaderSection,
-  ],
+  [annotationServices, visibleSections, onSelectSection, focusMode, renderReaderSection],
  );
 
  const otherSectionServices = useMemo<ReaderServices>(

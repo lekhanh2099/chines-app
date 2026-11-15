@@ -51,6 +51,7 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
  const showPinyinButton = hasPinyin && !toolbar?.hidePinyinToggle;
  const showTranslationButton = hasTranslation && !toolbar?.hideTranslationToggle;
  const showContentDisplay =
+  !inline &&
   !toolbar?.hideContentDisplay &&
   Boolean(onDisplayChange) &&
   (showPinyinButton || showTranslationButton);
@@ -75,7 +76,11 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
  const controls = (
   <>
    <div
-    className="flex min-w-0 items-center gap-1.5 overflow-x-auto scrollbar-none"
+    className={
+     inline
+      ? "flex shrink-0 items-center gap-1"
+      : "flex min-w-0 items-center gap-1.5 overflow-x-auto scrollbar-none"
+    }
     data-reader-toolbar
    >
     {/* Nhóm 0: Điều hướng đầu toolbar (ví dụ: mục lục phần học) */}
@@ -90,7 +95,7 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
      {speech ? (
       <Button
        size="toolbar"
-       className="w-9 justify-center sm:w-auto"
+       className={inline ? "w-9 justify-center 2xl:w-auto" : "w-9 justify-center sm:w-auto"}
        aria-label={label}
        disabled={
         segmentCount === 0 ||
@@ -100,10 +105,10 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
        onClick={playback}
       >
        <PlaybackIcon data-icon="inline-start" />
-       <span className="hidden sm:inline">{label}</span>
+       <span className={inline ? "hidden 2xl:inline" : "hidden sm:inline"}>{label}</span>
       </Button>
      ) : null}
-     {speech && status !== "idle" ? (
+     {speech && status !== "idle" && !inline ? (
       <Button
        variant="ghost"
        size="icon-toolbar"
@@ -122,18 +127,22 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
      >
       <ChevronLeft />
      </Button>
-     <Typography
-      variant="caption"
-      weight="medium"
-      tone="muted"
-      className="hidden md:inline whitespace-nowrap px-1 select-none"
-      aria-label={t("segment", {
-       current: segmentCount === 0 ? 0 : index + 1,
-       total: segmentCount,
-      })}
-     >
-      {t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
-     </Typography>
+     {inline ? (
+      <ReaderOutline compact />
+     ) : (
+      <Typography
+       variant="caption"
+       weight="medium"
+       tone="muted"
+       className="hidden md:inline whitespace-nowrap px-1 select-none"
+       aria-label={t("segment", {
+        current: segmentCount === 0 ? 0 : index + 1,
+        total: segmentCount,
+       })}
+      >
+       {t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
+      </Typography>
+     )}
      <Button
       variant="ghost"
       size="icon-toolbar"
@@ -149,12 +158,13 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
       aria-label={t("restart")}
       disabled={segmentCount === 0 || !speech}
       onClick={commands.restartCurrent}
+      className={inline ? "hidden 2xl:inline-flex" : undefined}
      >
       <RotateCcw />
      </Button>
-     {!toolbar?.leadingActions ? <ReaderOutline /> : null}
+     {!inline && !toolbar?.leadingActions ? <ReaderOutline /> : null}
      {speech ? (
-      <div className="hidden md:flex items-center">
+      <div className={inline ? "hidden 2xl:flex items-center" : "hidden md:flex items-center"}>
        <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
          <Button

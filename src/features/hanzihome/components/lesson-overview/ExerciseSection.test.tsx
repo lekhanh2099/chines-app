@@ -242,7 +242,7 @@ describe("ExerciseCard", () => {
 
   expect(html.split("Bài đọc điền từ: Nhổ mầm giúp cây lớn")).toHaveLength(2);
   expect(html).toContain("Nghe bài");
-  expect(html).toContain("Công cụ học");
+  expect(html).toContain("Tùy chọn đọc &amp; nghe");
   expect(html).toContain("Đoạn 1 / 2");
   expect(html).toContain('data-reader-segment="paragraph-01"');
   expect(html).toContain('data-reader-segment="paragraph-02"');
@@ -491,7 +491,7 @@ describe("ReadingCard", () => {
   );
   expect(html).toContain("Đoạn 1 / 3");
   expect(html).toContain("Nghe bài");
-  expect(html).toContain("Công cụ học");
+  expect(html).toContain("Tùy chọn đọc &amp; nghe");
   expect(html).not.toContain('data-reader-group="navigation"');
   expect(html).toContain('data-reader-group="playback"');
   expect(html).toContain('data-reader-group="tools"');

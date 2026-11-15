@@ -70,7 +70,7 @@ vi.mock("@/features/dictionary/hooks/useVocabInspector", () => ({
  useVocabInspector: () => ({ openInspector: vi.fn() }),
 }));
 const toggleBookmarkMock = vi.fn();
-let mockBookmarkedLessonIds: string[] = [];
+const mockBookmarkedLessonIds: string[] = [];
 let mockIsLoading = false;
 
 vi.mock("@/features/hanzihome/hooks/useLearningState", () => ({
@@ -511,8 +511,8 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(trigger).toContain('aria-haspopup="dialog"');
   expect(trigger).toContain('aria-expanded="false"');
   expect(markup.match(/role="tab"/gu)).toHaveLength(1);
-  expect(markup.match(/aria-label="Đánh dấu bài học kỳ này"/gu)).toHaveLength(1);
-  expect(markup).toContain('aria-label="Nội dung bài học: Ngữ pháp"');
+  expect(markup).not.toContain('aria-label="Đánh dấu bài học kỳ này"');
+  expect(markup).toContain('aria-label="Các phần khác của bài học"');
   expect(markup).not.toMatch(/<nav\b[^>]* aria-label="Trong trang"/u);
 
   const navigation = renderWorkspace(
@@ -1139,7 +1139,7 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(segments[0]?.speechText).toContain("-5℃");
   expect(markup).toContain("Bài 1/18");
   expect(markup).toContain("Nghe bài");
-  expect(markup).toContain("Công cụ học");
+  expect(markup).toContain("Tùy chọn đọc &amp; nghe");
   expect(markup).toContain("text-warning");
   expect(markup).not.toContain("decoration-dotted");
   expect(markup).not.toContain(">Ngữ pháp<");
@@ -1360,14 +1360,13 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
 
   expect(markup).toContain("Toàn bài");
-  expect(markup).toContain("Câu chủ đề");
-  expect(markup).toContain("Bài tập");
+  expect(markup).toContain('aria-label="Các phần khác của bài học"');
   expect(markup).toContain("GIỚI THIỆU TỔNG QUAN");
   expect(markup).toContain("BÀI KHÓA CHÍNH");
   expect(markup).toContain("电话会议");
   expect(markup).toContain("Đoạn 1 /");
   expect(markup).toContain("Nghe bài");
-  expect(markup).toContain("Công cụ học");
+  expect(markup).toContain("Tùy chọn đọc &amp; nghe");
   expect(markup.includes(`aria-label="${businessChineseMessages.tabsLabel}"`)).toBe(true);
   expect(markup).toContain(`role="tablist" aria-label="${businessChineseMessages.tabsLabel}"`);
   expect(markup).toContain('role="tab" aria-selected="true"');
@@ -1450,7 +1449,7 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(markup).toContain('aria-label="Pinyin chữ 行 cần kiểm tra"');
   expect(markup).toContain("text-warning");
   expect(markup).not.toContain("decoration-dotted");
-  expect(markup).toContain("Công cụ học");
+  expect(markup).toContain("Tùy chọn đọc &amp; nghe");
  });
 
  it("renders inline lesson translations with the same speaker and TTS structure", () => {
@@ -1486,23 +1485,45 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   );
  });
 
- it("includes Ghi chú and Luyện dịch in the workspace tabs", () => {
-  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
-  const lesson = getBusinessChineseLesson("tm2", 1);
-  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
-
-  const focusedLesson = {
-   ...lesson,
-   sections: lesson.sections.map((section) => ({ ...section, blocks: section.blocks.slice(0, 1) })),
-   vocab: lesson.vocab.slice(0, 1),
-  };
+ it.each([
+  { view: "notes", label: "Ghi chú" },
+  { view: "translation", label: "Luyện dịch" },
+  { view: "dictation", label: "Nghe chép" },
+  { view: "review", label: "Ôn tập" },
+ ])("keeps the current $label module visible in compact navigation", ({ view, label }) => {
+  const lesson = getTextbookLesson("nhip-cau", 1);
+  if (!lesson) throw new Error("Expected Nhịp cầu lesson 1.");
+  mockParams = new URLSearchParams(`lesson=1&tab=${view}`);
   const markup = renderWorkspace(
-   <BusinessChineseStudyWorkspace books={books} lesson={focusedLesson} />,
+   <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
   );
+  const selectedTab = markup.match(
+   /<button\b[^>]*role="tab"[^>]*aria-selected="true"[^>]*>(.*?)<\/button>/u,
+  )?.[1];
+  expect(selectedTab).toContain(label);
+  expect(markup.match(/role="tab"/gu)).toHaveLength(1);
+  expect(markup).toContain('aria-label="Các phần khác của bài học"');
+  expect(markup).not.toContain('aria-label="Đánh dấu bài học kỳ này"');
+ });
 
-  expect(markup).toContain("Ghi chú");
-  expect(markup).toContain("Luyện dịch");
-  expect(markup).toContain("Nghe chép");
+ it("keeps a single reader toolbar beside module navigation before the document panel", () => {
+  const lesson = getTextbookLesson("nhip-cau", 6);
+  const section = lesson?.sections.find((item) => item.category === "text");
+  if (!lesson || !section) throw new Error("Expected Nhịp cầu lesson 6 text.");
+  mockParams = new URLSearchParams("lesson=6&tab=text");
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace
+    books={getTextbookCatalog()}
+    lesson={{ ...lesson, sections: [{ ...section, blocks: section.blocks.slice(0, 2) }] }}
+   />,
+  );
+  const toolbar = markup.indexOf("data-reader-toolbar");
+  expect(markup.match(/data-reader-toolbar/gu)).toHaveLength(1);
+  expect(toolbar).toBeGreaterThan(markup.indexOf('role="tablist"'));
+  expect(toolbar).toBeLessThan(markup.indexOf('role="tabpanel"'));
+  expect(markup).toContain('aria-label="Mở mục lục đoạn"');
+  expect(markup).toContain('aria-label="Tùy chọn đọc &amp; nghe"');
+  expect(markup.match(/role="tab"/gu)).toHaveLength(1);
  });
 
  it("renders the notes tab content when tab=notes is active", () => {
@@ -1517,27 +1538,6 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(markup).toContain("Ghi chú");
   expect(markup).toContain("Chưa có ghi chú riêng cho bài này.");
   expect(markup).not.toContain("data-reader-segment=");
- });
-
- it("includes a Bookmark button on the lesson header and toolbar", () => {
-  mockBookmarkedLessonIds = [];
-  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
-  const lesson = getBusinessChineseLesson("tm2", 1);
-  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
-
-  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
-
-  expect(markup).toContain("Đánh dấu bài học kỳ này");
- });
-
- it("includes Ôn tập in the workspace tabs when lesson has vocabulary", () => {
-  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
-  const lesson = getBusinessChineseLesson("tm2", 1);
-  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
-
-  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
-
-  expect(markup).toContain("Ôn tập");
  });
 
  it("renders the review tab workspace when tab=review is active", () => {
@@ -1590,17 +1590,6 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
 
   expect(markup).toContain("Ôn tập Flashcard");
  });
-
- it("indicates when the current lesson is bookmarked", () => {
-  mockBookmarkedLessonIds = ["business-chinese-tm2-lesson-01"];
-  const books = getTextbookCatalogForBookKeys(["tm2", "tm3"]);
-  const lesson = getBusinessChineseLesson("tm2", 1);
-  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
-
-  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
-
-  expect(markup).toContain("Đã đánh dấu");
- });
 });
 
 describe("textbook persisted settings and view", fullLessonRenderTimeout, () => {
@@ -1646,9 +1635,7 @@ describe("textbook persisted settings and view", fullLessonRenderTimeout, () => 
      readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson.id}:text`),
     ).toBe(true);
    } else {
-    expect(markup).toContain(
-     `aria-label="${businessChineseMessages.tabsLabel}: ${businessChineseMessages.tabs.all}"`,
-    );
+    expect(markup).toContain(`>${businessChineseMessages.tabs.all}</button>`);
    }
   },
  );

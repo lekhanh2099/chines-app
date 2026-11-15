@@ -20,6 +20,7 @@ const readerAnnotationSchema = z.strictObject({
 });
 export type ReaderAnnotation = z.output<typeof readerAnnotationSchema>;
 export type ReaderServices = {
+ compactContent?: boolean;
  toolbar?: {
   stickyOffset?: "none" | "page" | "tabs";
   actions?: ReactNode;
