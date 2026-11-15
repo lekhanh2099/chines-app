@@ -32,24 +32,23 @@ describe("mergeLearningStateAfterConflict", () => {
   expect(merged.settings).not.toHaveProperty("libraryResumeOrder");
  });
 
- it("keeps the local hidden-collection change and otherwise the remote list", () => {
+ it("merges hidden collections by membership so both devices' changes survive", () => {
   const base = stateWith({ settings: { libraryHiddenCollections: ["group:boya"] } });
-  const remote = stateWith({
-   settings: { libraryHiddenCollections: ["group:boya", "group:other"] },
-  });
-  const changedLocally = stateWith({
+  const local = stateWith({
    settings: { libraryHiddenCollections: ["group:boya", "static:khau-ngu"] },
   });
-  const unchangedLocally = stateWith({ settings: { libraryHiddenCollections: ["group:boya"] } });
+  const remote = stateWith({ settings: { libraryHiddenCollections: ["group:other"] } });
 
   expect(
-   mergeLearningStateAfterConflict({ base, local: changedLocally, remote }).settings
-    .libraryHiddenCollections,
-  ).toEqual(["group:boya", "static:khau-ngu"]);
+   mergeLearningStateAfterConflict({ base, local, remote }).settings.libraryHiddenCollections,
+  ).toEqual(["group:other", "static:khau-ngu"]);
   expect(
-   mergeLearningStateAfterConflict({ base, local: unchangedLocally, remote }).settings
-    .libraryHiddenCollections,
-  ).toEqual(["group:boya", "group:other"]);
+   mergeLearningStateAfterConflict({
+    base: stateWith({ settings: {} }),
+    local: stateWith({ settings: { libraryHiddenCollections: ["group:boya"] } }),
+    remote: stateWith({ settings: { libraryHiddenCollections: ["static:khau-ngu"] } }),
+   }).settings.libraryHiddenCollections,
+  ).toEqual(["static:khau-ngu", "group:boya"]);
  });
 
  it("keeps remote library reorders when the cloned local sequences are unchanged", () => {

@@ -246,14 +246,17 @@ export function mergeLearningStateAfterConflict({
   if (localCollectionOrder === undefined) delete settings.libraryCollectionOrder;
   else settings.libraryCollectionOrder = localCollectionOrder;
  }
- const baseHiddenCollections = base.settings.libraryHiddenCollections;
- const localHiddenCollections = local.settings.libraryHiddenCollections;
+ // Hiding is per collection, so independent hides/unhides on two devices must both survive.
  if (
-  localHiddenCollections?.length !== baseHiddenCollections?.length ||
-  localHiddenCollections?.some((id, index) => id !== baseHiddenCollections?.[index])
+  base.settings.libraryHiddenCollections !== undefined ||
+  local.settings.libraryHiddenCollections !== undefined ||
+  remote.settings.libraryHiddenCollections !== undefined
  ) {
-  if (localHiddenCollections === undefined) delete settings.libraryHiddenCollections;
-  else settings.libraryHiddenCollections = localHiddenCollections;
+  settings.libraryHiddenCollections = mergeMembershipList(
+   base.settings.libraryHiddenCollections ?? [],
+   local.settings.libraryHiddenCollections ?? [],
+   remote.settings.libraryHiddenCollections ?? [],
+  );
  }
  const baseResumeOrder = base.settings.libraryResumeOrder;
  const localResumeOrder = local.settings.libraryResumeOrder;
