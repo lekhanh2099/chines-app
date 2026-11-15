@@ -1785,12 +1785,18 @@ it
      "data-active",
      "true",
     );
-    await page.getByRole("button", { name: chrome.tools.title, exact: true }).click();
+    const tools = page.getByRole("button", { name: chrome.tools.title, exact: true });
+    // Below the 64rem compact breakpoint the lesson tools open as a dialog, even for a mouse.
+    await tools.click();
+    await browserExpect(page.getByRole("dialog")).toBeVisible();
+    await browserExpect(page.getByRole("menu")).toHaveCount(0);
+    await page.keyboard.press("Escape");
+    await browserExpect(tools).toBeFocused();
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await tools.click();
     await browserExpect(page.getByRole("menu")).toBeVisible();
     await page.keyboard.press("Escape");
-    await browserExpect(
-     page.getByRole("button", { name: chrome.tools.title, exact: true }),
-    ).toBeFocused();
+    await browserExpect(tools).toBeFocused();
     const touchPage = await browser.newPage({
      viewport: { width: 820, height: 1180 },
      hasTouch: true,
@@ -1888,14 +1894,15 @@ it
       await browserExpect
        .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
        .toBe(true);
-      const nav = page.getByRole("button", {
-       name: `${labels.tabsLabel}: ${labels.tabs.practice}`,
-       exact: true,
-      });
+      // Below the wide toolbar breakpoint the remaining lesson sections open as a dialog.
+      const nav = page.getByRole("button", { name: labels.moreSectionsLabel, exact: true });
       await nav.click();
-      await browserExpect(
-       page.getByRole("menu").getByText(labels.utilities, { exact: true }),
-      ).toBeVisible();
+      const sections = page.getByRole("dialog", { name: labels.tabsLabel, exact: true });
+      await browserExpect(sections).toBeVisible();
+      // Each overflow section is a menu-sized button beside the dialog's close button.
+      await browserExpect
+       .poll(() => sections.locator('[data-size="menu"]').count())
+       .toBeGreaterThan(0);
       await page.keyboard.press("Escape");
       await browserExpect(nav).toBeFocused();
      }
@@ -1919,20 +1926,17 @@ it
          .bookResume?.[`static:${textbookBook.id}`],
       )
       .toEqual({ lessonId: textbook.id, module: "text" });
-     const readerToolbar = page.locator("[data-reader] [data-reader-toolbar]");
+     // The text tab keeps one Reader toolbar in the lesson tab row at every width.
      const tabsToolbar = page
       .getByRole("tablist", { name: labels.tabsLabel, exact: true })
-      .locator("..")
+      .locator("../..")
       .locator("[data-reader-toolbar]");
-     for (const { width, toolbar } of [
-      { width: 1279, toolbar: readerToolbar },
-      { width: 1280, toolbar: tabsToolbar },
-      { width: 1279, toolbar: readerToolbar },
-     ]) {
+     for (const width of [1279, 1280, 820]) {
       await page.setViewportSize({ width, height: 900 });
-      await browserExpect(toolbar, `Reader toolbar at ${width}px (${locale})`).toBeVisible();
+      await browserExpect(tabsToolbar, `Reader toolbar at ${width}px (${locale})`).toBeVisible();
       await browserExpect(page.locator("[data-reader-toolbar]")).toHaveCount(1);
      }
+     await page.setViewportSize({ width: 1440, height: 900 });
     }
     // Mounted resume effects record the most recently studied book: A → B → A.
     const mostRecentBook = async () => {
