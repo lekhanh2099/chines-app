@@ -41,8 +41,8 @@ export function DailyReadingViewHeader({
   reading.enrichment.translation.status === "ready" ? reading.enrichment.translation.data : null;
  const learning = getDailyReadingLearningSummary(reading);
  return (
-  <header className="grid min-w-0 gap-2 border-b border-border-default pb-3">
-   <div className="flex min-w-0 flex-wrap items-center gap-2">
+  <header className="grid min-w-0 gap-1.5">
+   <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
     <Button type="button" variant="ghost" size="toolbar" className="sm:hidden" onClick={onBack}>
      <ArrowLeft />
      {t("document.back")}
@@ -55,36 +55,33 @@ export function DailyReadingViewHeader({
     <Badge size="sm" casing="natural">
      {t(getTopicTranslationKey(reading.classification.topic))}
     </Badge>
-   </div>
-   <div className="grid min-w-0 gap-1.5">
-    {showTitle ? (
-     <>
-      <HanziText as="h1" size="card" weight="black">
-       {reading.article.titleZh}
-      </HanziText>
-      {displayMode.showPinyin && titlePronunciation !== null ? (
-       <PinyinText as="p" variant="bodySmall" tone="accent">
-        {formatContextualReadingPinyin(titlePronunciation)}
-       </PinyinText>
-      ) : null}
-      {translation !== null ? (
-       <Typography variant="bodySmall" tone="secondary">
-        {translation.titleVi}
-       </Typography>
-      ) : null}
-     </>
-    ) : null}
     <Typography variant="caption" tone="muted">
      {t("detail.capturedMeta", {
       time: dateFormatter.format(new Date(reading.capturedAt)),
       publisher: reading.source.publisher,
       minutes: reading.estimatedMinutes,
      })}
-    </Typography>
-    <Typography variant="caption" tone="muted">
+     {" · "}
      {t("library.learningReady", { ready: learning.ready, total: learning.total })}
     </Typography>
    </div>
+   {showTitle ? (
+    <div className="grid min-w-0 gap-1">
+     <HanziText as="h1" size="card" weight="black">
+      {reading.article.titleZh}
+     </HanziText>
+     {displayMode.showPinyin && titlePronunciation !== null ? (
+      <PinyinText as="p" variant="bodySmall" tone="accent">
+       {formatContextualReadingPinyin(titlePronunciation)}
+      </PinyinText>
+     ) : null}
+     {translation !== null ? (
+      <Typography variant="bodySmall" tone="secondary">
+       {translation.titleVi}
+      </Typography>
+     ) : null}
+    </div>
+   ) : null}
   </header>
  );
 }

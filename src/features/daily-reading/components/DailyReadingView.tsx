@@ -162,7 +162,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
  const effectiveTab = tabs.includes(tab) ? tab : "reader";
  const { visibleTabs, overflowTabs } = splitWorkspaceTabs(tabItems, effectiveTab, tabCapacity);
  return (
-  <div className="grid min-w-0 gap-4">
+  <div className="grid min-w-0 gap-3">
    <DailyReadingViewHeader
     reading={reading}
     showTitle={effectiveTab !== "reader"}
