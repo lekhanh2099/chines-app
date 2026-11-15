@@ -15,9 +15,9 @@ import type { TextbookBookSummary } from "@/features/hanzihome/static-json/busin
 
 /**
  * Home reads top-down as one hierarchy: what I am studying (most recent book,
- * then the other books in recency order) beside the PiP study tool, followed by
- * recent work (activity, notes) beside memory tips. Below `xl` the same order
- * stacks into one column, so the current-study surfaces always lead.
+ * then the other books in recency order) and recent work on the left; the PiP
+ * study tool and memory tips on the right. Below `xl` everything stacks with the
+ * current-study surfaces first.
  */
 export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] }) {
  const t = useTranslations("Home");
@@ -30,25 +30,40 @@ export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] 
    <div className="grid w-full min-w-0 gap-5 sm:gap-6">
     <PageHeader title={t("page.title")} description={t("page.description")} />
 
-    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.4fr)_minmax(22rem,1fr)] xl:items-start">
-     <ContinueLearningPanel
-      books={dashboard.resumeBooks}
-      unavailable={dashboard.catalogUnavailable}
-     />
-     {/* Wrapped so the hub keeps its own height instead of stretching to the row. */}
-     <div className="min-w-0">
-      <UnifiedVocabStudyHub />
+    {/*
+      xl: two independent columns, so a long "Học tiếp" list never leaves a gap beside the
+      study tools; the right column stays in view while scrolling. Below xl the same items
+      stack as Học tiếp → PiP hub → activity → notes → tips (the side column dissolves into
+      the flow via `contents`, and `order` keeps the hierarchy).
+    */}
+    <div className="flex min-w-0 flex-col gap-4 sm:gap-5 xl:grid xl:grid-cols-[minmax(0,1.4fr)_minmax(22rem,1fr)] xl:items-start">
+     <div className="order-1 min-w-0 xl:col-start-1 xl:row-start-1">
+      <ContinueLearningPanel
+       books={dashboard.resumeBooks}
+       unavailable={dashboard.catalogUnavailable}
+      />
      </div>
-    </div>
-
-    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.4fr)_minmax(22rem,1fr)] xl:items-start">
-     <div className="grid min-w-0 gap-4 sm:gap-5">
+     <div
+      className="contents xl:sticky xl:top-4 xl:col-start-2 xl:row-span-3 xl:row-start-1 xl:flex xl:min-w-0 xl:flex-col xl:gap-5"
+      aria-label={t("page.overviewAria")}
+      role="complementary"
+     >
+      <div className="order-2 min-w-0">
+       <UnifiedVocabStudyHub />
+      </div>
+      <div className="order-5 min-w-0">
+       <GlobalMemoryTipCard contentOnly showEmptyState className="w-full" />
+      </div>
+     </div>
+     <div className="order-3 min-w-0 xl:col-start-1 xl:row-start-2">
       <RecentLearningActivityPanel
        items={dashboard.recentActivity}
        loading={dashboard.recentActivityLoading}
        unavailable={dashboard.recentActivityUnavailable}
        onRetry={dashboard.retryRecentActivity}
       />
+     </div>
+     <div className="order-4 min-w-0 xl:col-start-1 xl:row-start-3">
       <RecentNotesPanel
        notes={dashboard.recentNotes}
        loading={dashboard.recentNotesLoading}
@@ -56,13 +71,6 @@ export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] 
        onRetry={dashboard.retryRecentNotes}
       />
      </div>
-
-     <aside
-      className="grid min-w-0 gap-4 sm:gap-5 xl:sticky xl:top-4"
-      aria-label={t("page.overviewAria")}
-     >
-      <GlobalMemoryTipCard contentOnly showEmptyState className="w-full" />
-     </aside>
     </div>
    </div>
   </PageContainer>
