@@ -32,6 +32,26 @@ describe("mergeLearningStateAfterConflict", () => {
   expect(merged.settings).not.toHaveProperty("libraryResumeOrder");
  });
 
+ it("keeps the local hidden-collection change and otherwise the remote list", () => {
+  const base = stateWith({ settings: { libraryHiddenCollections: ["group:boya"] } });
+  const remote = stateWith({
+   settings: { libraryHiddenCollections: ["group:boya", "group:other"] },
+  });
+  const changedLocally = stateWith({
+   settings: { libraryHiddenCollections: ["group:boya", "static:khau-ngu"] },
+  });
+  const unchangedLocally = stateWith({ settings: { libraryHiddenCollections: ["group:boya"] } });
+
+  expect(
+   mergeLearningStateAfterConflict({ base, local: changedLocally, remote }).settings
+    .libraryHiddenCollections,
+  ).toEqual(["group:boya", "static:khau-ngu"]);
+  expect(
+   mergeLearningStateAfterConflict({ base, local: unchangedLocally, remote }).settings
+    .libraryHiddenCollections,
+  ).toEqual(["group:boya", "group:other"]);
+ });
+
  it("keeps remote library reorders when the cloned local sequences are unchanged", () => {
   const base = stateWith({
    settings: {

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, EyeOff } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { PageContainer } from "@/components/layout/workspace/page-container";
@@ -27,6 +27,7 @@ import {
 } from "@/features/hanzihome/components/library/library-course-groups";
 import {
  buildLibraryCollectionOrder,
+ excludeHiddenLibraryCollections,
  filterLibraryGroups,
  filterLibraryTextbooks,
  filterVisibleLibraryCollectionIds,
@@ -55,6 +56,7 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
  const coverMenuTrigger = useRef<HTMLButtonElement>(null);
  const [failedCoverRevisions, setFailedCoverRevisions] = useState<string[]>([]);
  const [draggedCollection, setDraggedCollection] = useState("");
+ const [showHidden, setShowHidden] = useState(false);
  const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: true });
  const catalogData = catalogQuery.data;
  const canEdit = useHanziHomeCanEdit();
@@ -95,12 +97,28 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
   courseGroups,
   textbooks,
  );
- const visibleCollectionIds = filterVisibleLibraryCollectionIds(
+ const hiddenCollectionIds = learning.state.settings.libraryHiddenCollections ?? [];
+ const matchingCollectionIds = filterVisibleLibraryCollectionIds(
   collectionOrder,
   visibleGroups,
   visibleTextbooks,
  );
+ const hiddenMatchCount = matchingCollectionIds.filter((id) =>
+  hiddenCollectionIds.includes(id),
+ ).length;
+ const visibleCollectionIds = excludeHiddenLibraryCollections(
+  matchingCollectionIds,
+  hiddenCollectionIds,
+  showHidden,
+ );
  const canReorder = !learning.isLoading && !learning.isError;
+ const setCollectionHidden = (collectionId: string, hidden: boolean) => {
+  if (!canReorder) return;
+  const others = hiddenCollectionIds.filter((id) => id !== collectionId);
+  learning.updateSettings({
+   libraryHiddenCollections: hidden ? [...others, collectionId] : others,
+  });
+ };
  const moveCollection = (sourceId: string, targetId: string) => {
   if (!canReorder || sourceId === targetId) return;
   const sourceIndex = collectionOrder.indexOf(sourceId);
@@ -165,6 +183,19 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
        onQueryChange={setQuery}
        onFilterChange={setFilter}
       />
+      {hiddenMatchCount > 0 ? (
+       <Button
+        type="button"
+        size="toolbar"
+        variant={showHidden ? "active" : "outline"}
+        aria-pressed={showHidden}
+        title={t("hiddenCollectionsHint")}
+        onClick={() => setShowHidden((current) => !current)}
+       >
+        <EyeOff data-icon="inline-start" />
+        {t("hiddenCollections", { count: hiddenMatchCount })}
+       </Button>
+      ) : null}
       <LibraryArrangeDialog
        visibleCollectionIds={visibleCollectionIds}
        visibleGroups={visibleGroups}
@@ -225,6 +256,7 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
          canReorder={canReorder}
          canEditCovers={canEdit && editMode}
          canLoadCovers={coversQuery.isSuccess}
+         hidden={hiddenCollectionIds.includes(id)}
          isCoarsePointer={isCoarsePointer}
          onCoverFailed={(coverRevision) =>
           setFailedCoverRevisions((current) => [...current, coverRevision])
@@ -235,16 +267,14 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
           coverMenuTrigger.current = trigger;
          }}
          onMoveCollection={moveCollection}
+         onHiddenChange={setCollectionHidden}
         />
        );
       })}
      </div>
 
      {catalogQuery.isPending ? <HanziHomeLibrarySkeleton /> : null}
-     {!catalogQuery.isPending &&
-     !catalogQuery.isError &&
-     !visibleGroups.length &&
-     !visibleTextbooks.length ? (
+     {!catalogQuery.isPending && !catalogQuery.isError && !visibleCollectionIds.length ? (
       <EmptyState
        surface="subtle"
        title={t(searchTerm ? "noSearchMatchesTitle" : "noMatchesTitle")}

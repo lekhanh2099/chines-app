@@ -246,6 +246,15 @@ export function mergeLearningStateAfterConflict({
   if (localCollectionOrder === undefined) delete settings.libraryCollectionOrder;
   else settings.libraryCollectionOrder = localCollectionOrder;
  }
+ const baseHiddenCollections = base.settings.libraryHiddenCollections;
+ const localHiddenCollections = local.settings.libraryHiddenCollections;
+ if (
+  localHiddenCollections?.length !== baseHiddenCollections?.length ||
+  localHiddenCollections?.some((id, index) => id !== baseHiddenCollections?.[index])
+ ) {
+  if (localHiddenCollections === undefined) delete settings.libraryHiddenCollections;
+  else settings.libraryHiddenCollections = localHiddenCollections;
+ }
  const baseResumeOrder = base.settings.libraryResumeOrder;
  const localResumeOrder = local.settings.libraryResumeOrder;
  if (

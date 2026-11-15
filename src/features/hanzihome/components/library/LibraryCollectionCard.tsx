@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowDown, ArrowUp, Ellipsis, ImageIcon } from "lucide-react";
+import { ArrowDown, ArrowUp, Ellipsis, Eye, EyeOff, ImageIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
@@ -10,6 +10,7 @@ import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuItem,
+ DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
 import {
@@ -44,12 +45,14 @@ export function LibraryCollectionCard({
  canReorder,
  canEditCovers,
  canLoadCovers,
+ hidden,
  isCoarsePointer,
  onCoverFailed,
  onDraggedCollectionChange,
  onEditCover,
  onMenuTriggerInteract,
  onMoveCollection,
+ onHiddenChange,
 }: {
  id: string;
  index: number;
@@ -65,12 +68,15 @@ export function LibraryCollectionCard({
  canReorder: boolean;
  canEditCovers: boolean;
  canLoadCovers: boolean;
+ /** The learner hid this collection; it is only listed while reviewing hidden collections. */
+ hidden: boolean;
  isCoarsePointer: boolean;
  onCoverFailed: (coverRevision: string) => void;
  onDraggedCollectionChange: (collectionId: string) => void;
  onEditCover: (collectionId: string) => void;
  onMenuTriggerInteract: (trigger: HTMLButtonElement) => void;
  onMoveCollection: (sourceId: string, targetId: string) => void;
+ onHiddenChange: (collectionId: string, hidden: boolean) => void;
 }) {
  const t = useTranslations("Common.library");
  const character = group
@@ -99,7 +105,12 @@ export function LibraryCollectionCard({
  return (
   <article
    data-library-collection={id}
-   className={cn("grid min-w-0 gap-2", draggedCollection === id && "opacity-40")}
+   data-hidden={hidden || undefined}
+   className={cn(
+    "grid min-w-0 gap-2",
+    hidden && "opacity-60",
+    draggedCollection === id && "opacity-40",
+   )}
    onDragOver={(event) => {
     if (draggedCollection && canReorder) {
      event.preventDefault();
@@ -166,7 +177,7 @@ export function LibraryCollectionCard({
        type="button"
        variant="ghost"
        size={isCoarsePointer ? "icon" : "icon-toolbar"}
-       disabled={(!canReorder || visibleCollectionIds.length < 2) && !canEditCovers}
+       disabled={!canReorder && !canEditCovers}
        aria-label={t("reorderCollection", { title })}
        aria-describedby="library-order-hint"
        title={t("reorderCollection", { title })}
@@ -200,6 +211,11 @@ export function LibraryCollectionCard({
       >
        <ArrowDown />
        {t("moveLater")}
+      </DropdownMenuItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem disabled={!canReorder} onSelect={() => onHiddenChange(id, !hidden)}>
+       {hidden ? <Eye /> : <EyeOff />}
+       {t(hidden ? "showCollection" : "hideCollection")}
       </DropdownMenuItem>
       {canEditCovers ? (
        <DropdownMenuItem disabled={!canLoadCovers} onSelect={() => onEditCover(id)}>
