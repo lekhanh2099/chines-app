@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -188,14 +189,17 @@ vi.mock("@/features/reading/hooks/useReaderSessionPronunciation", () => ({
 }));
 
 vi.mock("@/features/reader/components/Reader", () => ({
- Reader: ({ services }: { services?: { annotations?: unknown } }) => (
-  <div
-   data-testid="reader-mock"
-   data-has-annotations={Boolean(services?.annotations) ? "true" : "false"}
-  >
-   Reader Mock
-  </div>
- ),
+ Reader: ({ services }: { services?: ReaderServices }) => {
+  const content = (
+   <div
+    data-testid="reader-mock"
+    data-has-annotations={Boolean(services?.annotations) ? "true" : "false"}
+   >
+    Reader Mock
+   </div>
+  );
+  return services?.renderReader ? services.renderReader({ content, toolbar: null }) : content;
+ },
 }));
 
 vi.mock("@/features/speech/OfflineAudioSettingsDialog", () => ({
@@ -243,8 +247,9 @@ describe("DailyReadingLibrary UI enhancements", () => {
   expect(markup).toContain("hanzihome-liquid-toolbar");
   // The tabs should contain back action
   expect(markup).toContain(messages.DailyReading.document.back);
-  // The tabs should contain notes tab and offline voice action
-  expect(markup).toContain(messages.DailyReading.tabs.notes);
+  // Before the viewport is measured only the active tab is shown; the rest are in the overflow menu.
+  expect(markup).toContain(messages.DailyReading.tabs.reader);
+  expect(markup).toContain(`aria-label="${messages.BusinessChinese.moreSectionsLabel}"`);
   expect(markup).toContain('data-has-annotations="true"');
  });
 });

@@ -7,6 +7,7 @@ import { formatContextualReadingPinyin } from "@/features/hanzihome/pronunciatio
 import type { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { Reader } from "@/features/reader/components/Reader";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
+import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import type { useReaderSessionPronunciation } from "@/features/reading/hooks/useReaderSessionPronunciation";
 import type { useMandarinReaderSpeechService } from "@/features/speech/MandarinTtsProvider";
 import type { analyzeDailyReadingText } from "@/features/daily-reading/components/daily-reading-library-utils";
@@ -23,6 +24,10 @@ type DailyReadingReaderTabProps = {
  annotations: DailyReadingAnnotations["annotationsQuery"]["data"];
  selection: DailyReadingAnnotations["selection"];
  openInspector: ReturnType<typeof useVocabInspector>["openInspector"];
+ /** Place the Reader toolbar in the article tab row (reader tab) instead of above the text. */
+ toolbarInLayout: boolean;
+ /** Lays out the article tabs around the Reader content and its inline toolbar. */
+ renderLayout: NonNullable<ReaderServices["renderReader"]>;
 };
 
 export function DailyReadingReaderTab({
@@ -34,6 +39,8 @@ export function DailyReadingReaderTab({
  annotations,
  selection,
  openInspector,
+ toolbarInLayout,
+ renderLayout,
 }: DailyReadingReaderTabProps) {
  return (
   <>
@@ -48,8 +55,9 @@ export function DailyReadingReaderTab({
     display={display}
     services={{
      speech,
+     placeToolbarInLayout: toolbarInLayout,
+     renderReader: renderLayout,
      toolbar: {
-      stickyOffset: "tabs",
       hidePinyinToggle: true,
       hideTranslationToggle: true,
      },

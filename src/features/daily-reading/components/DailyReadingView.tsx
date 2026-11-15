@@ -44,6 +44,11 @@ import { useDailyReadingPip } from "@/features/daily-reading/hooks/useDailyReadi
 import { useDailyReadingTranslationProgress } from "@/features/daily-reading/hooks/useDailyReadingTranslationProgress";
 import { useDailyReadingLibrary } from "@/features/daily-reading/services/daily-reading.client";
 import { buildDailyReadingReaderDocument } from "@/features/daily-reading/model/daily-reading-view-model";
+import { BusinessChineseWorkspaceNavMenu } from "@/features/hanzihome/components/business-chinese/BusinessChineseWorkspaceNavMenu";
+import {
+ splitWorkspaceTabs,
+ useWorkspaceTabCapacity,
+} from "@/features/hanzihome/components/business-chinese/useWorkspaceTabOverflow";
 
 export function DailyReadingView({ id, onBack }: { id: string; onBack(): void }) {
  const t = useTranslations("DailyReading");
@@ -58,6 +63,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
  const [tab, setTab] = useState<DailyReadingTab>("reader");
  const tabs = reading === null ? fallbackTabs : availableTabs(reading);
  const tabItems = tabs.map((key) => ({ key, label: t(tabLabelKey(key)) }));
+ const tabCapacity = useWorkspaceTabCapacity();
  const translation =
   reading?.enrichment.translation.status === "ready" ? reading.enrichment.translation.data : null;
  const translationRun = library.enrichmentRuns.find(
@@ -153,6 +159,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
  }
 
  const effectiveTab = tabs.includes(tab) ? tab : "reader";
+ const { visibleTabs, overflowTabs } = splitWorkspaceTabs(tabItems, effectiveTab, tabCapacity);
  return (
   <div className="grid min-w-0 gap-4">
    <DailyReadingViewHeader
@@ -163,89 +170,106 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
     dateFormatter={dateFormatter}
    />
 
-   <Tabs
-    value={effectiveTab}
-    items={tabItems}
-    onValueChange={setTab}
-    actions={
-     <div className="flex shrink-0 items-center gap-1.5">
-      <Button
-       type="button"
-       variant="ghost"
-       size="compact"
-       className="gap-1.5 shrink-0"
-       onClick={onBack}
-       title={t("document.back")}
-      >
-       <ArrowLeft className="size-3.5" />
-       <span className="hidden sm:inline">{t("document.back")}</span>
-      </Button>
-     </div>
-    }
-    listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30 bg-background/95 backdrop-blur-md"
-    aria-label={t("tabs.aria")}
-   >
-    <TabsContent value="reader" className="grid gap-3 pt-3">
-     {latestTranslationProgress !== undefined && translation === null ? (
-      <DailyReadingTranslationProgressNotice
-       failed={translationRun?.status === "failed"}
-       progress={latestTranslationProgress}
-      />
-     ) : null}
-     <DailyReadingReaderTab
-      readerDocument={readerDocument}
-      pronunciation={pronunciation}
-      titlePronunciation={titlePronunciation}
-      display={{
-       value: displayMode,
-       onChange: (value) =>
-        learningState.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...value } }),
-      }}
-      speech={speech}
-      annotations={annotationsQuery.data}
-      selection={selection}
-      openInspector={openInspector}
-     />
-    </TabsContent>
+   <DailyReadingReaderTab
+    readerDocument={readerDocument}
+    pronunciation={pronunciation}
+    titlePronunciation={titlePronunciation}
+    display={{
+     value: displayMode,
+     onChange: (value) =>
+      learningState.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...value } }),
+    }}
+    speech={speech}
+    annotations={annotationsQuery.data}
+    selection={selection}
+    openInspector={openInspector}
+    toolbarInLayout={effectiveTab === "reader"}
+    renderLayout={({ content, toolbar }) => (
+     <Tabs
+      value={effectiveTab}
+      items={visibleTabs}
+      onValueChange={setTab}
+      overflow={
+       <BusinessChineseWorkspaceNavMenu
+        tabs={overflowTabs}
+        activeView={effectiveTab}
+        onActiveViewChange={(view) => {
+         const next = tabs.find((key) => key === view);
+         if (next) setTab(next);
+        }}
+        compact={tabCapacity < tabItems.length}
+       />
+      }
+      actions={
+       <div className="flex shrink-0 items-center gap-1.5">
+        {toolbar}
+        <Button
+         type="button"
+         variant="ghost"
+         size="toolbar"
+         // Phones get back navigation from the header breadcrumb; the row keeps room for tabs.
+         className="hidden shrink-0 sm:inline-flex"
+         onClick={onBack}
+         title={t("document.back")}
+        >
+         <ArrowLeft />
+         {t("document.back")}
+        </Button>
+       </div>
+      }
+      listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30 bg-background/95 backdrop-blur-md"
+      aria-label={t("tabs.aria")}
+     >
+      <TabsContent value="reader" className="grid gap-3 pt-3">
+       {latestTranslationProgress !== undefined && translation === null ? (
+        <DailyReadingTranslationProgressNotice
+         failed={translationRun?.status === "failed"}
+         progress={latestTranslationProgress}
+        />
+       ) : null}
+       {content}
+      </TabsContent>
 
-    <TabsContent value="notes" className="grid gap-4 pt-3">
-     {annotationsQuery.data && annotationsQuery.data.length > 0 ? (
-      <ReaderNotes annotations={annotationsQuery.data} onRemove={selection.removeAnnotation} />
-     ) : null}
-     <DailyReadingNoteCard reading={reading} />
-    </TabsContent>
+      <TabsContent value="notes" className="grid gap-4 pt-3">
+       {annotationsQuery.data && annotationsQuery.data.length > 0 ? (
+        <ReaderNotes annotations={annotationsQuery.data} onRemove={selection.removeAnnotation} />
+       ) : null}
+       <DailyReadingNoteCard reading={reading} />
+      </TabsContent>
 
-    <TabsContent value="support" className="pt-3">
-     <DailyReadingLearningSupportPanel reading={reading} />
-    </TabsContent>
+      <TabsContent value="support" className="pt-3">
+       <DailyReadingLearningSupportPanel reading={reading} />
+      </TabsContent>
 
-    <TabsContent value="questions" className="pt-3">
-     <DailyReadingQuestions reading={reading} />
-    </TabsContent>
+      <TabsContent value="questions" className="pt-3">
+       <DailyReadingQuestions reading={reading} />
+      </TabsContent>
 
-    <TabsContent value="vocabulary" className="pt-3">
-     {reading.enrichment.vocabulary.status === "ready" ? (
-      <DailyReadingVocabularyTab
-       vocabItems={vocabItems}
-       filteredVocabItems={filteredVocabItems}
-       vocabSearchQuery={vocabSearchQuery}
-       onVocabSearchQueryChange={setVocabSearchQuery}
-       displayMode={displayMode}
-       isPipActive={pip.isPipOpen || pip.isInAppFloatingOpen}
-       pipMode={pip.pipMode}
-       onTogglePip={(mode) => void pip.handleTogglePip(mode)}
-      />
-     ) : null}
-    </TabsContent>
+      <TabsContent value="vocabulary" className="pt-3">
+       {reading.enrichment.vocabulary.status === "ready" ? (
+        <DailyReadingVocabularyTab
+         vocabItems={vocabItems}
+         filteredVocabItems={filteredVocabItems}
+         vocabSearchQuery={vocabSearchQuery}
+         onVocabSearchQueryChange={setVocabSearchQuery}
+         displayMode={displayMode}
+         isPipActive={pip.isPipOpen || pip.isInAppFloatingOpen}
+         pipMode={pip.pipMode}
+         onTogglePip={(mode) => void pip.handleTogglePip(mode)}
+        />
+       ) : null}
+      </TabsContent>
 
-    <TabsContent value="grammar" className="pt-3">
-     <DailyReadingGrammarList reading={reading} />
-    </TabsContent>
+      <TabsContent value="grammar" className="pt-3">
+       <DailyReadingGrammarList reading={reading} />
+      </TabsContent>
 
-    <TabsContent value="source" className="pt-3">
-     <DailyReadingSourcePanel reading={reading} dateFormatter={dateFormatter} />
-    </TabsContent>
-   </Tabs>
+      <TabsContent value="source" className="pt-3">
+       <DailyReadingSourcePanel reading={reading} dateFormatter={dateFormatter} />
+      </TabsContent>
+     </Tabs>
+    )}
+   />
    <DailyReadingVocabPip reading={reading} vocabItems={vocabItems} pip={pip} />
   </div>
  );
