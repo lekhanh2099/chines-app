@@ -108,5 +108,23 @@
   "count": "{count} mục",
   "openLesson": "Mở bài",
   "reviewLesson": "Ôn bài"
+ },
+ "cards": {
+  "count": "{count} từ",
+  "searchLabel": "Tìm từ vựng",
+  "searchPlaceholder": "Tìm từ, pinyin, nghĩa…",
+  "resultCount": "{count} kết quả",
+  "noResults": "Không có từ nào khớp với “{query}”.",
+  "empty": "Bài này chưa có từ vựng.",
+  "dictationPip": "Chép từ vựng",
+  "dictationPipTitle": "Mở cửa sổ nổi nghe chép từ vựng (nghe tiếng Trung hoặc tiếng Việt)",
+  "reviewPip": "Mở PiP",
+  "reviewPipTitle": "Mở cửa sổ nổi ôn tập từ vựng và bài tập",
+  "saveToVault": "Kho riêng",
+  "savedInVault": "Trong kho",
+  "saveToVaultTitle": "Thêm vào Kho từ vựng riêng",
+  "savedInVaultTitle": "Đã lưu trong Kho riêng (nhấn để gỡ)",
+  "saveToVaultAria": "Thêm {hanzi} vào Kho riêng",
+  "removeFromVaultAria": "Gỡ {hanzi} khỏi Kho riêng"
  }
 }

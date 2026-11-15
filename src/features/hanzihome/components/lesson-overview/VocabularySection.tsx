@@ -1,6 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/display/badge";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import type { VocabularyItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
@@ -8,7 +7,9 @@ import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/Vocab
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 import type { LessonDisplayMode } from "./types";
-import { StudyInstructionText, ReaderHanziText } from "./hanzi-typography";
+import { PinyinText, ReaderHanziText } from "./hanzi-typography";
+import { VocabPreviewRow } from "./overview/VocabPreviewRow";
+import { VocabularyCardGrid } from "./overview/VocabularyCardList";
 import { asRecord, stringValue } from "./utils";
 
 function vocabMeaning(item: VocabularyItem) {
@@ -52,43 +53,41 @@ export function VocabMiniGrid({
      />
     </div>
    ) : null}
-   <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+   <VocabularyCardGrid>
     {items.map((item) => {
      const meaning = vocabMeaning(item);
      const hanviet = stringValue(asRecord(item), "hanviet");
+     const category = item.pos === "unknown" ? "" : item.pos;
      return (
-      <div key={item.id} className="study-content-surface rounded-xl border p-3">
-       <div className="flex flex-wrap items-center gap-2">
-        <ReaderHanziText
-         displayMode={displayMode}
-         tone="default"
-         weight="black"
-         leading="compactLearner"
-        >
-         {item.hanzi}
-        </ReaderHanziText>
-        <MandarinSpeakButton text={item.hanzi} />
-        {displayMode.showPinyin && item.pinyin && (
-         <StudyInstructionText tone="accent" weight="bold">
-          {item.pinyin}
-         </StudyInstructionText>
-        )}
-       </div>
-       {hanviet && (
-        <StudyInstructionText variant="label" tone="muted" weight="bold">
-         {hanviet}
-        </StudyInstructionText>
-       )}
-       {meaning && (
-        <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
-         {meaning}
-        </StudyInstructionText>
-       )}
-       {item.pos !== "unknown" && <Badge>{item.pos}</Badge>}
-      </div>
+      <VocabPreviewRow
+       key={item.id}
+       hanzi={item.hanzi}
+       pinyin={item.pinyin}
+       hanviet={hanviet}
+       category={category}
+       meaning={meaning}
+       header={
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
+         <ReaderHanziText
+          displayMode={displayMode}
+          tone="default"
+          weight="black"
+          leading="compactLearner"
+         >
+          {item.hanzi}
+         </ReaderHanziText>
+         {displayMode.showPinyin && item.pinyin ? (
+          <PinyinText as="span" tone="accent" weight="bold">
+           {item.pinyin}
+          </PinyinText>
+         ) : null}
+         <MandarinSpeakButton text={item.hanzi} />
+        </div>
+       }
+      />
      );
     })}
-   </div>
+   </VocabularyCardGrid>
   </div>
  );
 }

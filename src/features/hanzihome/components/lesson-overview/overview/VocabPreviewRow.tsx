@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { BookmarkPlus, Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
@@ -12,6 +13,7 @@ import {
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 export function VocabPreviewRow({
  hanzi,
@@ -19,6 +21,7 @@ export function VocabPreviewRow({
  hanviet,
  category,
  meaning,
+ rawPinyin,
  rawMeaning,
  rawHanviet,
  header,
@@ -29,11 +32,13 @@ export function VocabPreviewRow({
  hanviet: string;
  category: string;
  meaning: string;
+ rawPinyin?: string;
  rawMeaning?: string;
  rawHanviet?: string;
  header?: ReactNode;
  children?: ReactNode;
 }) {
+ const t = useTranslations("Vocab.cards");
  const learning = useLearningState();
  const customVocabList = learning.state.settings.customVocab ?? [];
  const isSavedToVault = customVocabList.some((word) => word.hanzi.trim() === hanzi.trim());
@@ -43,13 +48,16 @@ export function VocabPreviewRow({
    <div className="flex min-w-0 items-start justify-between gap-2">
     <div className="min-w-0 flex-1">
      {header ?? (
-      <div className="flex min-w-0 items-baseline gap-2">
-       <HanziText as="span" size="card" leading="none" clamp="one">
+      <div className="flex min-w-0 flex-wrap items-center gap-2">
+       <HanziText as="span" size="card" weight="black" leading="none" clamp="one">
         {hanzi}
        </HanziText>
-       <PinyinText as="span" tone="accent" weight="bold" clamp="one">
-        {pinyin}
-       </PinyinText>
+       {pinyin ? (
+        <PinyinText as="span" tone="accent" weight="bold" clamp="one">
+         {pinyin}
+        </PinyinText>
+       ) : null}
+       <MandarinSpeakButton text={hanzi} />
       </div>
      )}
     </div>
@@ -60,17 +68,21 @@ export function VocabPreviewRow({
      onClick={() =>
       learning.toggleCustomVocabByHanzi({
        hanzi,
-       pinyin,
+       pinyin: rawPinyin || pinyin,
        meaning: rawMeaning || meaning || hanzi,
        hanviet: rawHanviet || hanviet || undefined,
        pos: category || undefined,
       })
      }
-     title={isSavedToVault ? "Đã lưu trong Kho riêng (nhấn để gỡ)" : "Thêm vào Kho từ vựng riêng"}
-     aria-label={isSavedToVault ? `Gỡ ${hanzi} khỏi Kho riêng` : `Thêm ${hanzi} vào Kho riêng`}
+     title={isSavedToVault ? t("savedInVaultTitle") : t("saveToVaultTitle")}
+     aria-label={
+      isSavedToVault ? t("removeFromVaultAria", { hanzi }) : t("saveToVaultAria", { hanzi })
+     }
     >
      {isSavedToVault ? <Check className="size-3.5" /> : <BookmarkPlus className="size-3.5" />}
-     <span className="hidden sm:inline">{isSavedToVault ? "Trong kho" : "Kho riêng"}</span>
+     <span className="hidden sm:inline">
+      {isSavedToVault ? t("savedInVault") : t("saveToVault")}
+     </span>
     </Button>
    </div>
    <div className="flex min-w-0 flex-wrap items-center gap-2">

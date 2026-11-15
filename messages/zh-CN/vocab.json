@@ -102,5 +102,23 @@
   "count": "{count} 项",
   "openLesson": "打开课程",
   "reviewLesson": "复习课程"
+ },
+ "cards": {
+  "count": "{count} 个词",
+  "searchLabel": "搜索词汇",
+  "searchPlaceholder": "搜索汉字、拼音或释义…",
+  "resultCount": "{count} 个结果",
+  "noResults": "没有与“{query}”匹配的词。",
+  "empty": "本课还没有词汇。",
+  "dictationPip": "词汇听写",
+  "dictationPipTitle": "打开词汇听写浮窗（听中文或越南语）",
+  "reviewPip": "打开画中画",
+  "reviewPipTitle": "打开词汇复习与练习浮窗",
+  "saveToVault": "我的词库",
+  "savedInVault": "已在词库",
+  "saveToVaultTitle": "加入我的词库",
+  "savedInVaultTitle": "已保存在词库（点击移除）",
+  "saveToVaultAria": "将 {hanzi} 加入我的词库",
+  "removeFromVaultAria": "从我的词库移除 {hanzi}"
  }
 }

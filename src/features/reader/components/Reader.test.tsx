@@ -309,7 +309,9 @@ describe("standalone Reader facade", () => {
       ? messages.Reader.document.text.inspectUnconfirmedPinyin
       : messages.Reader.document.text.inspectPinyin
     ).replace("{character}", character);
-    expect(html).toContain(`aria-label="${label}">${pinyin}</span>`);
+    const alternatives =
+     glyph.alternatives.length > 1 ? ` title="${glyph.alternatives.join(", ")}"` : "";
+    expect(html).toContain(`aria-label="${label}"${alternatives}>${pinyin}</span>`);
    }
    for (const glyph of analysis.unresolved) {
     expect(html).toContain(`>${glyph.text}</span>`);

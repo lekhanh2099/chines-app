@@ -198,21 +198,6 @@
   "saveAnswer": "保存回答",
   "referenceAnswer": "参考答案："
  },
- "vocabulary": {
-  "title": "阅读词汇",
-  "description": "按汉字、拼音或本文释义快速查找。",
-  "count": "{count} 个词",
-  "searchLabel": "搜索词汇",
-  "searchPlaceholder": "搜索汉字、拼音或释义…",
-  "empty": "这篇阅读还没有关联词汇。",
-  "noResults": "没有符合当前搜索条件的词汇。",
-  "tableAria": "阅读词汇",
-  "word": "词 / 短语",
-  "pinyin": "拼音",
-  "meaning": "本文释义",
-  "missingPinyin": "暂无拼音",
-  "missingMeaning": "暂无释义"
- },
  "translation": {
   "empty": "这篇阅读目前没有足够的翻译数据用于练习。",
   "badge": "双向翻译练习",

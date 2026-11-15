@@ -8,29 +8,32 @@ import {
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { useTTS } from "@/hooks/useTTS";
-import { useMemo, useState, type MouseEvent, type ReactNode } from "react";
+import { useMemo, useState, type MouseEvent } from "react";
 import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 import { useLessonAnnotationContext } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
-import type { ResolvedLessonTextAnnotation } from "@/features/hanzihome/annotations/types";
 import type { ReaderAnnotationRow } from "@/features/reading/model/reading-annotation.schemas";
 import {
  analyzeContextualPronunciation,
  formatContextualReadingPinyin,
+ type ContextualPronunciationGlyph,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
+import {
+ renderLearnerGrapheme,
+ type LearnerGlyphModel,
+} from "@/features/reader/components/learner-glyphs";
 
 import type { LessonDisplayMode } from "./types";
-import {
- getActiveCharacterIndex,
- progressiveStudyTextRanges,
- progressiveReadingCharacters,
-} from "./progressive-study-text-utils";
+import { getActiveCharacterIndex } from "./progressive-study-text-utils";
 import {
  nextAvailableRevealStage,
  shouldAdvanceReveal,
  type RevealStage,
 } from "./progressive-reveal";
+
+const graphemeSegmenter = new Intl.Segmenter("zh-CN", { granularity: "grapheme" });
+const noPronunciationGlyphs: ReadonlyMap<number, ContextualPronunciationGlyph> = new Map();
 
 type ReadingPlayback = {
  canSpeak: boolean;
@@ -83,6 +86,8 @@ export function ProgressiveStudyText({
  const [speechText, setSpeechText] = useState("");
  const [speechStartIndex, setSpeechStartIndex] = useState(0);
  const annotationContext = useLessonAnnotationContext();
+ const t = useTranslations("Reader.document.text");
+ const graphemes = useMemo(() => [...graphemeSegmenter.segment(zh)], [zh]);
  const contextualPronunciation = useMemo(
   () => analyzeContextualPronunciation({ text: zh, sourcePinyin: pinyin ?? null }),
   [pinyin, zh],
@@ -93,7 +98,7 @@ export function ProgressiveStudyText({
  );
  const displayPinyin = displayMode.autoDetectPinyin ? contextualPinyin : pinyin;
  const tapMode = displayMode.revealMode === "tap" && !readingMode;
- const characters = Array.from(zh);
+ const characters = graphemes.map((grapheme) => grapheme.segment);
  const revealOptions = { hasPinyin: !!displayPinyin, hasMeaning: !!vi };
  const nextStage = nextAvailableRevealStage(stage, revealOptions);
  const revealActionLabel =
@@ -144,6 +149,58 @@ export function ProgressiveStudyText({
   annotationTarget && annotationContext
    ? annotationContext.getAnnotations(annotationTarget, zh)
    : [];
+ const interactiveReading = readingMode && readingPlayback !== undefined;
+ const glyphModel: LearnerGlyphModel = {
+  graphemes,
+  glyphByStart: noPronunciationGlyphs,
+  rubyPinyin: false,
+  pinyinInspectable: false,
+  onInspectPinyin: () => undefined,
+  labels: t,
+  stateFor: (grapheme, index) => {
+   const end = grapheme.index + grapheme.segment.length;
+   const annotation = annotations.find(
+    (candidate) =>
+     candidate.resolvedStartOffset <= grapheme.index && candidate.resolvedEndOffset >= end,
+   );
+   const readerAnnotation = interactiveReading
+    ? undefined
+    : readerAnnotations.find(
+       (candidate) =>
+        candidate.start_offset !== null &&
+        candidate.end_offset !== null &&
+        candidate.start_offset <= grapheme.index &&
+        candidate.end_offset >= end &&
+        zh.slice(candidate.start_offset, candidate.end_offset) === candidate.selected_text,
+      );
+   const speakable =
+    interactiveReading && readingPlayback.canSpeak && containsHanziText(grapheme.segment);
+   return {
+    highlighted: Boolean(annotation || readerAnnotation),
+    highlightColor: readerAnnotation?.color || (annotation ? "yellow" : ""),
+    active: interactiveReading && index === activeCharacterIndex,
+    actionLabel: annotation
+     ? t("openAnnotation", { text: annotation.selectedText })
+     : readerAnnotation
+       ? t("openAnnotation", { text: readerAnnotation.selected_text })
+       : speakable
+         ? t("playFromCharacter", { character: grapheme.segment })
+         : "",
+    onActivate: (element) => {
+     if (annotation) {
+      annotationContext?.openAnnotation(annotation);
+      return;
+     }
+     if (readerAnnotation) {
+      onOpenReaderAnnotation?.(readerAnnotation, element.getBoundingClientRect());
+      return;
+     }
+     handleSpeakFromCharacter(index);
+    },
+    noteText: "",
+   };
+  },
+ };
  const hanziContent = (
   <ReaderHanziText
    displayMode={displayMode}
@@ -159,19 +216,9 @@ export function ProgressiveStudyText({
    data-node-type={annotationTarget?.nodeType}
    data-node-id={annotationTarget?.nodeId}
   >
-   <AnnotatedText
-    text={zh}
-    annotations={annotations}
-    readerAnnotations={readerAnnotations}
-    onOpenReaderAnnotation={onOpenReaderAnnotation}
-    onOpen={(annotation) => {
-     annotationContext?.openAnnotation(annotation);
-    }}
-    readingMode={readingMode}
-    readingPlayback={readingPlayback}
-    activeCharacterIndex={activeCharacterIndex}
-    onSpeakFrom={handleSpeakFromCharacter}
-   />
+   {interactiveReading || annotations.length > 0 || readerAnnotations.length > 0
+    ? graphemes.map((grapheme, index) => renderLearnerGrapheme(glyphModel, grapheme, index))
+    : zh}
   </ReaderHanziText>
  );
 
@@ -260,145 +307,4 @@ export function ProgressiveStudyText({
    )}
   </div>
  );
-}
-
-function AnnotatedText({
- text,
- annotations,
- readerAnnotations,
- onOpenReaderAnnotation,
- onOpen,
- readingMode,
- readingPlayback,
- activeCharacterIndex,
- onSpeakFrom,
-}: {
- text: string;
- annotations: ResolvedLessonTextAnnotation[];
- readerAnnotations: readonly ReaderAnnotationRow[];
- onOpenReaderAnnotation?: (annotation: ReaderAnnotationRow, rect: DOMRect) => void;
- onOpen: (annotation: ResolvedLessonTextAnnotation) => void;
- readingMode: boolean;
- readingPlayback?: ReadingPlayback;
- activeCharacterIndex: number;
- onSpeakFrom: (index: number) => void;
-}) {
- const t = useTranslations("Reader.document.text");
- if (readingMode && readingPlayback) {
-  return (
-   <InteractiveReadingText
-    text={text}
-    annotations={annotations}
-    onOpen={onOpen}
-    readingPlayback={readingPlayback}
-    activeCharacterIndex={activeCharacterIndex}
-    onSpeakFrom={onSpeakFrom}
-   />
-  );
- }
-
- if (!annotations.length && !readerAnnotations.length) return text;
-
- const output: ReactNode[] = [];
- const { readerRanges, lessonRanges, trailingText } = progressiveStudyTextRanges(
-  text,
-  readerAnnotations,
-  annotations,
- );
- for (const { before, text: annotatedText, annotation } of readerRanges) {
-  output.push(before);
-  output.push(
-   <Button
-    key={annotation.id}
-    type="button"
-    variant="ghost"
-    size="inline"
-    aria-label={t("openAnnotation", { text: annotation.selected_text })}
-    onClick={(event) => {
-     event.stopPropagation();
-     if (window.getSelection()?.isCollapsed === false) return;
-     onOpenReaderAnnotation?.(annotation, event.currentTarget.getBoundingClientRect());
-    }}
-   >
-    <mark className="reading-highlight rounded-sm" data-color={annotation.color}>
-     {annotatedText}
-    </mark>
-   </Button>,
-  );
- }
- for (const { before, text: annotatedText, annotation } of lessonRanges) {
-  output.push(before);
-  output.push(
-   <Button
-    key={annotation.id}
-    type="button"
-    variant="ghost"
-    size="inline"
-    aria-label={`Mở ghi chú cho ${annotatedText}`}
-    onClick={(event) => {
-     event.stopPropagation();
-     if (window.getSelection()?.isCollapsed === false) return;
-     onOpen(annotation);
-    }}
-   >
-    <mark className="reading-highlight rounded-sm" data-color="yellow">
-     {annotatedText}
-    </mark>
-   </Button>,
-  );
- }
- output.push(trailingText);
- return output;
-}
-
-function InteractiveReadingText({
- text,
- annotations,
- onOpen,
- readingPlayback,
- activeCharacterIndex,
- onSpeakFrom,
-}: {
- text: string;
- annotations: ResolvedLessonTextAnnotation[];
- onOpen: (annotation: ResolvedLessonTextAnnotation) => void;
- readingPlayback: ReadingPlayback;
- activeCharacterIndex: number;
- onSpeakFrom: (index: number) => void;
-}) {
- return progressiveReadingCharacters(text, annotations).map(({ character, index, annotation }) => {
-  const active = index === activeCharacterIndex;
-  const className = cn(annotation && "reading-highlight", active && "reading-progress-highlight");
-
-  if (!containsHanziText(character)) {
-   return (
-    <span key={`${character}-${index}`} className={className || undefined}>
-     {character}
-    </span>
-   );
-  }
-
-  return (
-   <Button
-    key={`${character}-${index}`}
-    type="button"
-    variant="ghost"
-    size="inline"
-    className={className || undefined}
-    disabled={!annotation && !readingPlayback.canSpeak}
-    aria-current={active ? "true" : undefined}
-    aria-label={annotation ? `Mở ghi chú cho ${character}` : `Đọc từ chữ ${character}`}
-    onClick={(event) => {
-     event.stopPropagation();
-     if (annotation) {
-      onOpen(annotation);
-      return;
-     }
-     onSpeakFrom(index);
-    }}
-   >
-    {character}
-   </Button>
-  );
- });
 }

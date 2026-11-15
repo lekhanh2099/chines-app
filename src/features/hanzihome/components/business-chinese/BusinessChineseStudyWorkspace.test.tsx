@@ -11,6 +11,7 @@ import shellMessages from "../../../../../messages/vi/shell.json";
 import ttsStudioMessages from "../../../../../messages/vi/tts-studio.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
+import vocabMessages from "../../../../../messages/vi/vocab.json";
 import { HanziInlineText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import type { UserLearningState, LessonTextDisplaySettings } from "@/features/hanzihome/types";
@@ -110,6 +111,7 @@ function renderWorkspace(element: ReactNode) {
     Common: commonMessages,
     Shell: shellMessages,
     TtsStudio: ttsStudioMessages,
+    Vocab: vocabMessages,
     Reader: {
      document: readerDocumentMessages,
      study: readerStudyMessages,
@@ -1232,7 +1234,7 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
    );
 
    expect(markup.includes("<table")).toBe(false);
-   expect(markup).toContain("Từ vựng bài này");
+   expect(markup).toContain(`${lesson.vocab.length} từ`);
    if (book.key === "nhip-cau") {
     expect(markup).toContain('aria-label="Đọc tiếng Trung: 西安"');
     expect(markup).toContain("(thành phố) Tây An");
