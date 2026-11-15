@@ -16,7 +16,7 @@ function SectionWrapper({
 }: SectionWrapperProps) {
  return (
   <Card className={className} variant={variant} padding={padding} {...rest}>
-   <div className={cn("flex flex-col gap-4", contentClassName)}>{children}</div>
+   <div className={cn("flex flex-col gap-3", contentClassName)}>{children}</div>
   </Card>
  );
 }

@@ -14,7 +14,7 @@ export async function HumanitiesPage({ documentId = "" }: { documentId?: string 
  const initialResource = documentId.length > 0 ? await getReaderDocument(documentId) : null;
 
  return (
-  <div className="hanzihome-static-page min-w-0 grid gap-5 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0">
    <nav className="grid grid-cols-2 gap-2 sm:grid-cols-5" aria-label={t("navAria")}>
     <Button asChild variant="active" wrap="normal">
      <Link href="/humanities">{t("nav.program")}</Link>

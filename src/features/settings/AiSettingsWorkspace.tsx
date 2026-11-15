@@ -227,23 +227,23 @@ export function AiSettingsWorkspace({
     router.push(`/settings?section=ai&panel=${nextPanel}`, { scroll: false });
    }}
   >
-   <TabsContent value={AiSettingsPanelSchema.enum.tasks} className="pt-4">
+   <TabsContent value={AiSettingsPanelSchema.enum.tasks} className="pt-3">
     <AiTaskSettingsSection onCustomizeLookup={() => setLookupPromptOpen(true)} />
    </TabsContent>
 
-   <TabsContent value={AiSettingsPanelSchema.enum.conversation} className="pt-4">
+   <TabsContent value={AiSettingsPanelSchema.enum.conversation} className="pt-3">
     <AiConversationSettingsSection />
    </TabsContent>
 
-   <TabsContent value={AiSettingsPanelSchema.enum["daily-reading"]} className="pt-4">
+   <TabsContent value={AiSettingsPanelSchema.enum["daily-reading"]} className="pt-3">
     {dailyReadingSettings}
    </TabsContent>
 
-   <TabsContent value={AiSettingsPanelSchema.enum.providers} className="grid gap-5 pt-4">
+   <TabsContent value={AiSettingsPanelSchema.enum.providers} className="grid gap-5 pt-3">
     <ApiKeyManagerSection />
    </TabsContent>
 
-   <TabsContent value={AiSettingsPanelSchema.enum.usage} className="pt-4">
+   <TabsContent value={AiSettingsPanelSchema.enum.usage} className="pt-3">
     <AiActivitySettings />
    </TabsContent>
 

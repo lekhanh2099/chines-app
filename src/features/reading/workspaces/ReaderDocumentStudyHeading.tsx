@@ -2,6 +2,7 @@
 
 import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
+import type { ReactNode } from "react";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -9,31 +10,36 @@ import { Typography } from "@/components/ui/display/typography";
 import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 
-/** Lesson/unit badges and, outside the reader tab, the document title block. */
+/** Lesson/unit badges with trailing actions and, outside the reader tab, the document title block. */
 export function ReaderDocumentStudyHeading({
  resource,
  lessonLabel,
  unitNumber,
  showTitle,
+ actions,
 }: {
  resource: ReaderDocumentResource;
  lessonLabel: string;
  unitNumber: string;
  showTitle: boolean;
+ actions: ReactNode;
 }) {
  const t = useTranslations("Reader.study");
 
  return (
-  <div className="grid min-w-0 gap-2 border-b border-border-default pb-4 sm:pb-5">
-   <div className="flex flex-wrap gap-2">
-    <Badge variant="success" casing="natural">
-     {lessonLabel}
-    </Badge>
-    {unitNumber ? (
-     <Badge variant="accent" casing="natural">
-      {t("chrome.unit", { unit: unitNumber })}
+  <div className="grid min-w-0 gap-2 border-b border-border-default pb-3">
+   <div className="flex flex-wrap items-center justify-between gap-2">
+    <div className="flex flex-wrap gap-2">
+     <Badge variant="success" casing="natural">
+      {lessonLabel}
      </Badge>
-    ) : null}
+     {unitNumber ? (
+      <Badge variant="accent" casing="natural">
+       {t("chrome.unit", { unit: unitNumber })}
+      </Badge>
+     ) : null}
+    </div>
+    {actions}
    </div>
    {showTitle ? (
     <>

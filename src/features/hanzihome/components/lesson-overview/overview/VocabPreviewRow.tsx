@@ -39,7 +39,7 @@ export function VocabPreviewRow({
  const isSavedToVault = customVocabList.some((word) => word.hanzi.trim() === hanzi.trim());
 
  return (
-  <Card variant="subtle" padding="md" className="grid min-w-0 content-start gap-1.5">
+  <Card variant="subtle" padding="sm" className="grid min-w-0 content-start gap-1.5">
    <div className="flex min-w-0 items-start justify-between gap-2">
     <div className="min-w-0 flex-1">
      {header ?? (

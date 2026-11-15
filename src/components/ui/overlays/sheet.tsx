@@ -61,7 +61,7 @@ export function SheetHeader({
  closeLabel?: string;
 }) {
  return (
-  <div className="flex min-w-0 shrink-0 items-center justify-between gap-3 border-b border-border-default px-4 py-4 sm:px-5">
+  <div className="flex min-w-0 shrink-0 items-center justify-between gap-3 border-b border-border-default px-4 py-3 sm:px-5">
    <DialogPrimitive.Title className="min-w-0 break-words text-xl font-black text-text-primary sm:text-2xl">
     {title}
    </DialogPrimitive.Title>
@@ -85,7 +85,7 @@ export function SheetBody({ className, ...props }: React.ComponentProps<"div">) 
  return (
   <div
    className={cn(
-    "min-h-0 flex-1 overflow-x-hidden overflow-y-auto px-4 py-4 text-sm scrollbar-soft sm:px-5 sm:text-base",
+    "min-h-0 flex-1 overflow-x-hidden overflow-y-auto px-4 py-3 text-sm scrollbar-soft sm:px-5 sm:text-base",
     className,
    )}
    {...props}

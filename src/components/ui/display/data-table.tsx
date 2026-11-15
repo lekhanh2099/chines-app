@@ -42,7 +42,7 @@ function DataTableHead({ className, ...props }: React.ComponentProps<"th">) {
   <th
    data-slot="data-table-head"
    className={cn(
-    "px-4 py-2.5 text-xs font-black tracking-wide text-foreground-muted uppercase sm:px-5",
+    "px-3 py-2 text-xs font-black tracking-wide text-foreground-muted uppercase sm:px-4",
     className,
    )}
    {...props}
@@ -54,7 +54,7 @@ function DataTableCell({ className, ...props }: React.ComponentProps<"td">) {
  return (
   <td
    data-slot="data-table-cell"
-   className={cn("px-4 py-3 align-top text-sm leading-6 text-foreground sm:px-5", className)}
+   className={cn("px-3 py-2 align-top text-sm leading-6 text-foreground sm:px-4", className)}
    {...props}
   />
  );

@@ -89,7 +89,7 @@ export function DeveloperApiPage() {
 
  return (
   <PageContainer>
-   <div className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-4">
     <PageHeader
      title="API & tích hợp"
      description="Boundary server-to-server cho curl, Postman và service riêng; không dùng browser session hay copy Supabase access token."
@@ -142,7 +142,7 @@ export function DeveloperApiPage() {
      </div>
 
      {visibleFeatureGroups.length > 0 ? (
-      <div className="grid gap-6">
+      <div className="grid gap-4">
        {visibleFeatureGroups.map((group) => (
         <section key={group.feature} className="grid gap-3" aria-label={group.feature}>
          <div className="flex flex-wrap items-center justify-between gap-2">

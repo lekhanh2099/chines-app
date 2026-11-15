@@ -50,7 +50,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
 
  return (
   <PageContainer>
-   <div className="flex w-full min-w-0 flex-col gap-5">
+   <div className="flex w-full min-w-0 flex-col gap-4">
     <div className="flex flex-wrap items-center justify-between gap-3">
      <Button asChild variant="outline" size="toolbar">
       <Link href="/hanzihome">
@@ -77,8 +77,8 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
 
     <DictionaryHeroSection viewModel={viewModel} />
 
-    <div className="grid w-full min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_420px] 2xl:grid-cols-[minmax(0,1fr)_460px]">
-     <div className="flex min-w-0 flex-col gap-5">
+    <div className="grid w-full min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_420px] 2xl:grid-cols-[minmax(0,1fr)_460px]">
+     <div className="flex min-w-0 flex-col gap-4">
       <DictionaryDocStructureSection viewModel={viewModel} />
       {viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes || viewModel.ai?.confusion ? (
        <Card variant="subtle" padding="md">
@@ -93,7 +93,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
       <DictionaryPersonalNoteSection viewModel={viewModel} />
      </div>
 
-     <aside className="flex min-w-0 flex-col gap-5 lg:sticky lg:top-5 lg:self-start">
+     <aside className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-3 lg:self-start">
       <DictionaryCharacterSidebar
        characters={viewModel.chineseCharacters}
        selectedCharacter={viewModel.selectedCharacter}

@@ -72,7 +72,7 @@ export function HanziHomeMemoryTipsPage() {
 
  return (
   <PageContainer>
-   <div className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-4">
     <PageHeader
      eyebrow="HanziHome"
      title={t("title")}

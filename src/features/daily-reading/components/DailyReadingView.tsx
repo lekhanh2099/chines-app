@@ -185,7 +185,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
     listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30 bg-background/95 backdrop-blur-md"
     aria-label={t("tabs.aria")}
    >
-    <TabsContent value="reader" className="grid gap-3 pt-4">
+    <TabsContent value="reader" className="grid gap-3 pt-3">
      {latestTranslationProgress !== undefined && translation === null ? (
       <DailyReadingTranslationProgressNotice
        failed={translationRun?.status === "failed"}
@@ -208,22 +208,22 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
      />
     </TabsContent>
 
-    <TabsContent value="notes" className="grid gap-4 pt-4">
+    <TabsContent value="notes" className="grid gap-4 pt-3">
      {annotationsQuery.data && annotationsQuery.data.length > 0 ? (
       <ReaderNotes annotations={annotationsQuery.data} onRemove={selection.removeAnnotation} />
      ) : null}
      <DailyReadingNoteCard reading={reading} />
     </TabsContent>
 
-    <TabsContent value="support" className="pt-4">
+    <TabsContent value="support" className="pt-3">
      <DailyReadingLearningSupportPanel reading={reading} />
     </TabsContent>
 
-    <TabsContent value="questions" className="pt-4">
+    <TabsContent value="questions" className="pt-3">
      <DailyReadingQuestions reading={reading} />
     </TabsContent>
 
-    <TabsContent value="vocabulary" className="pt-4">
+    <TabsContent value="vocabulary" className="pt-3">
      {reading.enrichment.vocabulary.status === "ready" ? (
       <DailyReadingVocabularyTab
        vocabItems={vocabItems}
@@ -238,11 +238,11 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
      ) : null}
     </TabsContent>
 
-    <TabsContent value="grammar" className="pt-4">
+    <TabsContent value="grammar" className="pt-3">
      <DailyReadingGrammarList reading={reading} />
     </TabsContent>
 
-    <TabsContent value="source" className="pt-4">
+    <TabsContent value="source" className="pt-3">
      <DailyReadingSourcePanel reading={reading} dateFormatter={dateFormatter} />
     </TabsContent>
    </Tabs>

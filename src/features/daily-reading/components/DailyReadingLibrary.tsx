@@ -116,7 +116,7 @@ export function DailyReadingLibrary() {
  }
 
  return (
-  <div className="grid min-w-0 gap-5 sm:gap-6">
+  <div className="grid min-w-0 gap-4">
    <PageHeader
     eyebrow={t("header.eyebrow")}
     title={t("header.title")}
@@ -162,7 +162,7 @@ export function DailyReadingLibrary() {
     listClassName="hanzihome-liquid-toolbar flex"
     aria-label={t("library.tabs.aria")}
    >
-    <TabsContent value="articles" className="pt-4">
+    <TabsContent value="articles" className="pt-3">
      <DailyReadingArticleList
       libraryCount={library.items.length}
       filteredArticles={filteredArticles}
@@ -174,7 +174,7 @@ export function DailyReadingLibrary() {
       dateFormatter={dateFormatter}
      />
     </TabsContent>
-    <TabsContent value="activity" className="pt-4">
+    <TabsContent value="activity" className="pt-3">
      <div className="grid gap-3">
       <div className="grid gap-1">
        <Typography as="h2" variant="sectionTitle" weight="bold">

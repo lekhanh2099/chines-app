@@ -54,7 +54,7 @@ export function NotebookPage() {
 
  return (
   <PageContainer>
-   <div className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-4">
     <NotebookToolbar
      data={notebookSeedData}
      sectionIds={notebookSectionIds}

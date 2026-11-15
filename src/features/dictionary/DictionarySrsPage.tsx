@@ -40,7 +40,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
   const common = await getTranslations("Common");
   return (
    <PageContainer>
-    <div className="grid gap-5">
+    <div className="grid gap-4">
      <PageHeader title={t("title")} eyebrow={t("eyebrow")} description={t("description")} />
      <Card role="alert" variant="subtle" padding="md" className="grid gap-3">
       <Typography as="h2" variant="sectionTitle" weight="bold">
