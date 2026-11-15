@@ -198,21 +198,6 @@
   "saveAnswer": "Lưu câu trả lời",
   "referenceAnswer": "Đáp án tham chiếu:"
  },
- "vocabulary": {
-  "title": "Từ vựng bài đọc",
-  "description": "Tra nhanh theo chữ Hán, pinyin hoặc nghĩa trong bài.",
-  "count": "{count} từ",
-  "searchLabel": "Tìm từ vựng",
-  "searchPlaceholder": "Tìm chữ Hán, pinyin hoặc nghĩa…",
-  "empty": "Bài này chưa có từ vựng liên kết.",
-  "noResults": "Không có từ nào khớp với tìm kiếm này.",
-  "tableAria": "Từ vựng bài đọc",
-  "word": "Từ / cụm từ",
-  "pinyin": "Pinyin",
-  "meaning": "Nghĩa trong bài",
-  "missingPinyin": "Chưa có pinyin",
-  "missingMeaning": "Chưa có nghĩa"
- },
  "translation": {
   "empty": "Bài này chưa có đủ bản dịch để luyện.",
   "badge": "Luyện dịch hai chiều",

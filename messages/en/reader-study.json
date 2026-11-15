@@ -204,21 +204,6 @@
   "saveAnswer": "Save answer",
   "referenceAnswer": "Reference answer:"
  },
- "vocabulary": {
-  "title": "Reading vocabulary",
-  "description": "Quickly search Hanzi, pinyin, or meanings used in this reading.",
-  "count": "{count, plural, one {# word} other {# words}}",
-  "searchLabel": "Search vocabulary",
-  "searchPlaceholder": "Search Hanzi, pinyin, or meaning…",
-  "empty": "This reading has no linked vocabulary yet.",
-  "noResults": "No vocabulary matches this search.",
-  "tableAria": "Reading vocabulary",
-  "word": "Word / phrase",
-  "pinyin": "Pinyin",
-  "meaning": "Meaning in this reading",
-  "missingPinyin": "No pinyin available",
-  "missingMeaning": "No meaning available"
- },
  "translation": {
   "empty": "This reading does not have enough translation data for practice yet.",
   "badge": "Two-way translation practice",

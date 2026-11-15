@@ -114,5 +114,23 @@
   "count": "{count} items",
   "openLesson": "Open lesson",
   "reviewLesson": "Review lesson"
+ },
+ "cards": {
+  "count": "{count} words",
+  "searchLabel": "Search vocabulary",
+  "searchPlaceholder": "Search word, pinyin, meaning…",
+  "resultCount": "{count} results",
+  "noResults": "No words match “{query}”.",
+  "empty": "This lesson has no vocabulary yet.",
+  "dictationPip": "Vocabulary dictation",
+  "dictationPipTitle": "Open a floating vocabulary dictation window (listen in Chinese or Vietnamese)",
+  "reviewPip": "Open PiP",
+  "reviewPipTitle": "Open a floating vocabulary review and practice window",
+  "saveToVault": "My vault",
+  "savedInVault": "In vault",
+  "saveToVaultTitle": "Add to my vocabulary vault",
+  "savedInVaultTitle": "Saved in my vault (click to remove)",
+  "saveToVaultAria": "Add {hanzi} to my vault",
+  "removeFromVaultAria": "Remove {hanzi} from my vault"
  }
 }
