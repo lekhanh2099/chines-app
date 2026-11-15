@@ -54,14 +54,12 @@ export function LessonReaderTools({
  onDisplayModeChange,
  menuContent,
  sheetContent,
- compactAtWide: _compactAtWide,
 }: {
  onOpenShadowing?: () => void;
  displayMode: LessonDisplayMode;
  onDisplayModeChange: (updates: Partial<LessonDisplayMode>) => void;
  menuContent?: ReactNode;
  sheetContent?: ReactNode;
- compactAtWide?: boolean;
 }) {
  const t = useTranslations("Reader.study.chrome.tools");
  const common = useTranslations("Common.actions");
