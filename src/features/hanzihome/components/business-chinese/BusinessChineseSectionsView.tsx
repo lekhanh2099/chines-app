@@ -167,7 +167,7 @@ export function BusinessChineseSectionsView({
     <DesktopSectionNavigation sections={visibleSections} onSelect={onSelectSection} />
    ) : null}
    <div className="grid min-w-0 gap-3">
-    <Card variant="section" padding="lg" data-textbook-document className="grid min-w-0 gap-6">
+    <Card variant="section" padding="sm" data-textbook-document className="grid min-w-0 gap-3">
      {lesson.vocab.length > 0 &&
      canonicalVocabularyTableIds.length === 0 &&
      activeView === "all" ? (

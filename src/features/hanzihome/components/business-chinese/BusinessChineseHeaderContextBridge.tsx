@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, type ComponentProps } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useTranslations } from "next-intl";
 import {
@@ -16,6 +16,7 @@ import type {
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
+import { BusinessChineseLessonActions } from "./BusinessChineseWorkspaceToolbar";
 import { BusinessChineseLessonSelector } from "./BusinessChineseLessonSelector";
 
 const headerOwnerId = "business-chinese-study";
@@ -23,9 +24,25 @@ const headerOwnerId = "business-chinese-study";
 export function BusinessChineseHeaderContextBridge({
  books,
  lesson,
+ isLessonBookmarked,
+ onToggleLessonBookmark,
+ isLessonOfflineReady,
+ compact,
+ audioSettingsOpen,
+ onOpenAudioSettings,
+ actionsTriggerRef,
+ onReturnFocus,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
+ isLessonBookmarked: boolean;
+ onToggleLessonBookmark: () => void;
+ isLessonOfflineReady: boolean;
+ compact: boolean;
+ audioSettingsOpen: boolean;
+ onOpenAudioSettings: () => void;
+ actionsTriggerRef: ComponentProps<typeof BusinessChineseLessonActions>["triggerRef"];
+ onReturnFocus: () => void;
 }) {
  const t = useTranslations("BusinessChinese");
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
@@ -33,42 +50,68 @@ export function BusinessChineseHeaderContextBridge({
 
  const content = useMemo(
   () => (
-   <AppHeaderBreadcrumb
-    aria-label={t("lessonSelectLabel")}
-    className="min-w-0 max-w-full justify-self-start"
-   >
-    <AppHeaderBreadcrumbItem className="hidden 2xl:inline-flex shrink-0">
-     <AppHeaderBreadcrumbLink
-      href="/hanzihome"
-      disabled={focusModeEnabled}
-      className="shrink-0"
-      title="HanziHome"
-     >
-      HanziHome
-     </AppHeaderBreadcrumbLink>
-    </AppHeaderBreadcrumbItem>
-    <AppHeaderBreadcrumbSeparator className="hidden 2xl:inline-flex" />
-    <AppHeaderBreadcrumbItem className="min-w-0 shrink-0">
-     <AppHeaderBreadcrumbLink
-      href={buildTextbookHref(lesson.bookKey, 1)}
-      disabled={focusModeEnabled}
-      className="max-w-[10rem] sm:max-w-[14rem] truncate font-medium text-foreground shrink-0"
-      title={selectedBook?.label ?? lesson.bookLabel}
-     >
-      {selectedBook?.label ?? lesson.bookLabel}
-     </AppHeaderBreadcrumbLink>
-    </AppHeaderBreadcrumbItem>
-    <AppHeaderBreadcrumbSeparator />
-    <AppHeaderBreadcrumbItem className="min-w-0">
-     <BusinessChineseLessonSelector
-      books={books}
-      lesson={lesson}
-      focusModeEnabled={focusModeEnabled}
-     />
-    </AppHeaderBreadcrumbItem>
-   </AppHeaderBreadcrumb>
+   <>
+    <AppHeaderBreadcrumb
+     aria-label={t("lessonSelectLabel")}
+     className="min-w-0 max-w-full justify-self-start"
+    >
+     <AppHeaderBreadcrumbItem className="hidden 2xl:inline-flex shrink-0">
+      <AppHeaderBreadcrumbLink
+       href="/hanzihome"
+       disabled={focusModeEnabled}
+       className="shrink-0"
+       title="HanziHome"
+      >
+       HanziHome
+      </AppHeaderBreadcrumbLink>
+     </AppHeaderBreadcrumbItem>
+     <AppHeaderBreadcrumbSeparator className="hidden 2xl:inline-flex" />
+     <AppHeaderBreadcrumbItem className="hidden sm:inline-flex min-w-0 shrink-0">
+      <AppHeaderBreadcrumbLink
+       href={buildTextbookHref(lesson.bookKey, 1)}
+       disabled={focusModeEnabled}
+       className="max-w-[10rem] sm:max-w-[14rem] truncate font-medium text-foreground shrink-0"
+       title={selectedBook?.label ?? lesson.bookLabel}
+      >
+       {selectedBook?.label ?? lesson.bookLabel}
+      </AppHeaderBreadcrumbLink>
+     </AppHeaderBreadcrumbItem>
+     <AppHeaderBreadcrumbSeparator className="hidden sm:inline-flex" />
+     <AppHeaderBreadcrumbItem className="min-w-0">
+      <BusinessChineseLessonSelector
+       books={books}
+       lesson={lesson}
+       focusModeEnabled={focusModeEnabled}
+      />
+     </AppHeaderBreadcrumbItem>
+    </AppHeaderBreadcrumb>
+    <BusinessChineseLessonActions
+     isLessonBookmarked={isLessonBookmarked}
+     onToggleLessonBookmark={onToggleLessonBookmark}
+     isLessonOfflineReady={isLessonOfflineReady}
+     compact={compact}
+     audioSettingsOpen={audioSettingsOpen}
+     onOpenAudioSettings={onOpenAudioSettings}
+     triggerRef={actionsTriggerRef}
+     onReturnFocus={onReturnFocus}
+    />
+   </>
   ),
-  [books, focusModeEnabled, lesson, selectedBook, t],
+  [
+   books,
+   focusModeEnabled,
+   lesson,
+   selectedBook,
+   t,
+   isLessonBookmarked,
+   onToggleLessonBookmark,
+   isLessonOfflineReady,
+   compact,
+   audioSettingsOpen,
+   onOpenAudioSettings,
+   actionsTriggerRef,
+   onReturnFocus,
+  ],
  );
 
  useEffect(() => {

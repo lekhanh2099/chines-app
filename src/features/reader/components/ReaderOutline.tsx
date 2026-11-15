@@ -11,7 +11,7 @@ import {
  useReaderStore,
 } from "../runtime/reader-context";
 
-export function ReaderOutline() {
+export function ReaderOutline({ compact = false }: { compact?: boolean }) {
  const t = useTranslations("Reader.study.chrome.outline");
  const commandLabels = useTranslations("Reader.study.chrome.commands");
  const commands = useReaderCommands();
@@ -20,6 +20,7 @@ export function ReaderOutline() {
  const open = useReaderSelector((state) => state.ui.outlineOpen);
  const content = useReaderSelector((state) => state.content);
  const active = useReaderSelector((state) => state.navigation.activeSegmentId);
+ const index = useReaderSelector((state) => state.navigation.activeIndex);
  const sections = content.sectionIds
   .map((id) => content.sectionsById[id])
   .filter((section) => section !== undefined);
@@ -57,13 +58,17 @@ export function ReaderOutline() {
     hideIcon
     aria-label={commandLabels("openOutline")}
     title={t("aria")}
-    className="w-9 justify-center"
+    className={compact ? "w-12 justify-center" : "w-9 justify-center"}
     disabled={items.length === 0}
     ref={(element) => {
      if (element) registry.setOutlineTrigger(element);
     }}
    >
-    <List />
+    {compact ? (
+     `${content.segmentIds.length === 0 ? 0 : index + 1}/${content.segmentIds.length}`
+    ) : (
+     <List />
+    )}
    </SelectTrigger>
    <SelectContent>
     {items.map((item) => (

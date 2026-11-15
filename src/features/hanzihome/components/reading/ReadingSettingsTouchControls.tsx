@@ -15,10 +15,7 @@ import {
  sizeOptions,
  visibilityOptions,
 } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
-import type {
- HanziReaderSize,
- LessonDisplayMode,
-} from "@/features/hanzihome/components/lesson-overview/types";
+import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 
 export function ReadingSettingsTouchControls({
  displayMode,
@@ -30,10 +27,10 @@ export function ReadingSettingsTouchControls({
  const t = useTranslations("Reader.study.chrome.tools");
 
  return (
-  <div className="grid gap-5">
+  <div className="grid gap-4">
    <section className="grid gap-3">
     <SettingsGroupLabel icon={Type} label="Phông chữ" />
-    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+    <div className="grid gap-2 sm:grid-cols-2">
      {fontOptions.map((option) => {
       const active = displayMode.hanziFont === option.value;
       return (
@@ -42,13 +39,14 @@ export function ReadingSettingsTouchControls({
         type="button"
         variant={active ? "active" : "surfaceCard"}
         size="touch"
+        align="start"
         aria-pressed={active}
         onClick={() => onChange({ hanziFont: option.value })}
        >
         <HanziFontPreview as="span" font={option.value} leading="none">
          文
         </HanziFontPreview>
-        <span className="min-w-0 truncate">{option.label}</span>
+        <span className="min-w-0">{option.label}</span>
        </Button>
       );
      })}
@@ -59,13 +57,19 @@ export function ReadingSettingsTouchControls({
 
    <section className="grid gap-3">
     <SettingsGroupLabel icon={Type} label="Cỡ chữ" />
-    <SegmentedControl<HanziReaderSize>
-     value={displayMode.hanziSize}
-     items={sizeOptions.map((option) => ({ key: option.value, label: option.label }))}
-     onChange={(hanziSize) => onChange({ hanziSize })}
-     density="touch"
-     aria-label="Cỡ chữ Hán"
-    />
+    <div role="group" aria-label={t("size")} className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+     {sizeOptions.map((option) => (
+      <Button
+       key={option.value}
+       variant={displayMode.hanziSize === option.value ? "active" : "surfaceCard"}
+       size="touch"
+       aria-pressed={displayMode.hanziSize === option.value}
+       onClick={() => onChange({ hanziSize: option.value })}
+      >
+       {option.label}
+      </Button>
+     ))}
+    </div>
    </section>
 
    <Separator />
@@ -77,6 +81,7 @@ export function ReadingSettingsTouchControls({
      items={revealOptions.map((option) => ({ key: option.value, label: option.label }))}
      onChange={(revealMode) => onChange({ revealMode })}
      density="touch"
+     layout="wrap"
      aria-label="Cách mở nội dung"
     />
    </section>

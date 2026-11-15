@@ -680,6 +680,7 @@ body {
  min-block-size: 0;
  overflow: hidden;
  padding-block-end: 0;
+ padding-block-start: var(--space-2);
 }
 
 .hanzihome-workspace-shell {

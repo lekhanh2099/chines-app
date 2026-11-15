@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ComponentProps, type ReactNode } from "react";
 import {
  CheckCircle2,
  DownloadCloud,
@@ -52,6 +52,7 @@ type OfflineAudioSettingsDialogProps = {
  readonly trigger?: ReactNode | null;
  readonly open?: boolean;
  readonly onOpenChange?: (open: boolean) => void;
+ readonly onCloseAutoFocus?: ComponentProps<typeof DialogContent>["onCloseAutoFocus"];
 };
 
 export function OfflineAudioSettingsDialog({
@@ -59,6 +60,7 @@ export function OfflineAudioSettingsDialog({
  trigger,
  open: controlledOpen,
  onOpenChange: setControlledOpen,
+ onCloseAutoFocus,
 }: OfflineAudioSettingsDialogProps) {
  const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
  const isControlled = controlledOpen !== undefined;
@@ -170,7 +172,7 @@ export function OfflineAudioSettingsDialog({
     </DialogTrigger>
    ) : null}
 
-   <DialogContent size="md">
+   <DialogContent size="md" onCloseAutoFocus={onCloseAutoFocus}>
     <DialogHeader>
      <DialogTitle icon={<Settings2 />}>Cài đặt Giọng đọc & Bộ nhớ Offline</DialogTitle>
      <DialogDescription>

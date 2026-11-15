@@ -24,6 +24,7 @@ export function BusinessChineseReader({
   () => ({
    ...integration.services,
    ...services,
+   compactContent: true,
    toolbar: {
     stickyOffset: "page",
     hidePinyinToggle: true,

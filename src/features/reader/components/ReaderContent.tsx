@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { LearnerHanziText } from "@/components/patterns/learner-text";
 import { Typography } from "@/components/ui/display/typography";
+import { cn } from "@/lib/utils";
 import { useReaderDisplay, useReaderSelector, useReaderServices } from "../runtime/reader-context";
 import { ReaderSegment } from "./ReaderSegment";
 import { getReaderTypographyStyle } from "./reader-typography";
@@ -14,15 +15,17 @@ export const ReaderContent = memo(function ReaderContent() {
  const t = useTranslations("Reader.study.chrome.surface");
  const content = useReaderSelector((state) => state.content);
  const { value: display } = useReaderDisplay();
- const { renderSection } = useReaderServices();
+ const { renderSection, compactContent } = useReaderServices();
  useReaderContentPositionSync();
  const grouped = new Set(
   content.sectionIds.flatMap((id) => content.sectionsById[id]?.segmentIds ?? []),
  );
  return (
-  <div className="grid min-w-0 gap-4" data-reader-content>
+  <div className={cn("grid min-w-0", compactContent ? "gap-2" : "gap-4")} data-reader-content>
    {content.title ? (
-    <header className="grid min-w-0 gap-2">
+    <header
+     className={cn("grid min-w-0", compactContent ? "sr-only gap-1 sm:not-sr-only" : "gap-2")}
+    >
      {content.title.zh ? (
       <LearnerHanziText
        as="h2"
@@ -48,8 +51,16 @@ export const ReaderContent = memo(function ReaderContent() {
     const section = content.sectionsById[id];
     if (!section) return null;
     const sectionContent = (
-     <section className="grid min-w-0 gap-3" data-reader-section={id}>
-      <Typography as="h3" variant="sectionTitle" wrapping="breakWords">
+     <section
+      className={cn("grid min-w-0", compactContent ? "gap-2" : "gap-3")}
+      data-reader-section={id}
+     >
+      <Typography
+       as="h3"
+       variant="sectionTitle"
+       wrapping="breakWords"
+       className={compactContent ? "sr-only sm:not-sr-only" : undefined}
+      >
        {section.title}
       </Typography>
       {section.segmentIds.map((segmentId) => (

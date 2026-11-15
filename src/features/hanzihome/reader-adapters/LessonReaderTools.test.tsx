@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+import commonMessages from "../../../../messages/vi/common.json";
 import readerDocumentMessages from "../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../messages/vi/reader-study.json";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
@@ -49,7 +50,10 @@ function renderReaderTools() {
  return renderToStaticMarkup(
   <NextIntlClientProvider
    locale="vi"
-   messages={{ Reader: { study: readerStudyMessages, document: readerDocumentMessages } }}
+   messages={{
+    Common: commonMessages,
+    Reader: { study: readerStudyMessages, document: readerDocumentMessages },
+   }}
    timeZone="Asia/Ho_Chi_Minh"
   >
    <Reader
@@ -84,7 +88,10 @@ describe("ReaderTools", () => {
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider
     locale="vi"
-    messages={{ Reader: { study: readerStudyMessages, document: readerDocumentMessages } }}
+    messages={{
+     Common: commonMessages,
+     Reader: { study: readerStudyMessages, document: readerDocumentMessages },
+    }}
     timeZone="Asia/Ho_Chi_Minh"
    >
     <Reader
@@ -106,7 +113,7 @@ describe("ReaderTools", () => {
   expect(markup).toContain(">Đoạn 1 / 14</span>");
   expect(markup).toContain(">Nghe bài</span>");
   expect(markup).toContain('aria-label="Nghe bài"');
-  expect(markup).toContain('aria-label="Công cụ học"');
+  expect(markup).toContain('aria-label="Tùy chọn đọc &amp; nghe"');
   expect(markup.match(/data-reader-toolbar/g)).toHaveLength(1);
   expect(markup).toContain('aria-label="Đoạn trước"');
   expect(markup).toContain('aria-label="Đoạn sau"');
@@ -114,23 +121,23 @@ describe("ReaderTools", () => {
   expect(markup).toContain("Dừng đọc");
   expect(markup).toContain("Tốc độ đọc");
  });
- it("uses the desktop dropdown for mouse and trackpad input regardless of viewport width", () => {
+ it("uses the desktop dropdown for mouse and trackpad input before responsive media hydration", () => {
   pointerState.coarse = false;
 
   const markup = renderReaderTools();
 
-  expect(markup).toContain("Công cụ học");
+  expect(markup).toContain("Tùy chọn đọc &amp; nghe");
   expect(markup).not.toContain('aria-haspopup="dialog"');
   expect(markup).not.toContain("xl:hidden");
   expect(markup).not.toContain("hidden xl:block");
  });
 
- it("uses the touch sheet only for coarse pointer input", () => {
+ it("uses the touch dialog for coarse pointer input", () => {
   pointerState.coarse = true;
 
   const markup = renderReaderTools();
 
-  expect(markup).toContain("Công cụ học");
+  expect(markup).toContain("Tùy chọn đọc &amp; nghe");
   expect(markup).toContain('aria-haspopup="dialog"');
   expect(markup).not.toContain("xl:hidden");
   expect(markup).not.toContain("hidden xl:block");

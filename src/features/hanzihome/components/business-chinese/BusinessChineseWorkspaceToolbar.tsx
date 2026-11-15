@@ -1,199 +1,174 @@
 "use client";
 
-import { useMemo, type ComponentProps, type ReactNode } from "react";
+import { useState, type ComponentProps, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
-import { Bookmark, BookOpen, CloudCheck, DownloadCloud } from "lucide-react";
+import { Bookmark, BookOpen, CloudCheck, MoreHorizontal, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/actions/button";
-import { Badge } from "@/components/ui/display/badge";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuTrigger,
+} from "@/components/ui/overlays/dropdown-menu";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Typography } from "@/components/ui/display/typography";
-import { type SegmentedControlItem } from "@/components/ui/forms/segmented-control";
-import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
-import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettingsDialog";
-import { cn } from "@/lib/utils";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import type { BusinessChineseGrammarNavigationControls } from "./BusinessChineseGrammarNavigation";
-import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 
-type NavMenuProps = ComponentProps<typeof BusinessChineseWorkspaceNavMenu>;
-
-/** Memoized lesson view/bookmark menu shared by the reader toolbar and compact headers. */
-export function useBusinessChineseToolbarNavMenu({
- tabs,
- activeView,
- onActiveViewChange,
+/** Lesson utilities stay with the lesson header, separate from module and audio controls. */
+export function BusinessChineseLessonActions({
  isLessonBookmarked,
  onToggleLessonBookmark,
- className,
+ isLessonOfflineReady,
+ compact,
+ audioSettingsOpen,
+ onOpenAudioSettings,
+ triggerRef,
+ onReturnFocus,
 }: {
- tabs: SegmentedControlItem<string>[];
- activeView: string;
- onActiveViewChange: (value: string) => void;
  isLessonBookmarked: boolean;
  onToggleLessonBookmark: () => void;
- className: NavMenuProps["className"];
+ isLessonOfflineReady: boolean;
+ compact: boolean;
+ audioSettingsOpen: boolean;
+ onOpenAudioSettings: () => void;
+ triggerRef: ComponentProps<typeof Button>["ref"];
+ onReturnFocus: () => void;
 }) {
  const t = useTranslations("BusinessChinese");
- return useMemo(
-  () => (
-   <BusinessChineseWorkspaceNavMenu
-    tabs={tabs}
-    activeView={activeView}
-    onActiveViewChange={onActiveViewChange}
-    isLessonBookmarked={isLessonBookmarked}
-    onToggleLessonBookmark={onToggleLessonBookmark}
-    bookmarkLabel={t("bookmarkLesson")}
-    bookmarkedLabel={t("bookmarked")}
-    offlineReadyLabel={t("offlineReady")}
-    offlineDescription={t("offlineDescription")}
-    menuLabel={t("tabsLabel")}
-    className={className}
-   />
-  ),
-  [tabs, activeView, onActiveViewChange, isLessonBookmarked, onToggleLessonBookmark, t, className],
+ const common = useTranslations("Common.actions");
+ const coarsePointer = useCoarsePointer();
+ const [open, setOpen] = useState(false);
+ const bookmarkLabel = isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson");
+
+ return (
+  <>
+   {compact || coarsePointer ? (
+    <>
+     <Button
+      ref={triggerRef}
+      variant="ghost"
+      size="icon-toolbar"
+      aria-label={t("lessonOptions")}
+      aria-haspopup="dialog"
+      aria-expanded={open}
+      onClick={() => setOpen(true)}
+     >
+      <MoreHorizontal />
+     </Button>
+     <Dialog open={open} onOpenChange={setOpen}>
+      <DialogContent
+       size="sm"
+       closeLabel={common("close")}
+       aria-describedby={undefined}
+       onCloseAutoFocus={(event) => {
+        event.preventDefault();
+        if (!audioSettingsOpen) onReturnFocus();
+       }}
+      >
+       <DialogHeader>
+        <DialogTitle>{t("lessonOptions")}</DialogTitle>
+       </DialogHeader>
+       <DialogBody className="content-start gap-1">
+        <Button variant="menu" size="menu" onClick={onToggleLessonBookmark}>
+         <Bookmark />
+         {bookmarkLabel}
+        </Button>
+        <Button
+         variant="menu"
+         size="menu"
+         onClick={() => {
+          setOpen(false);
+          onOpenAudioSettings();
+         }}
+        >
+         <Volume2 />
+         {t("voiceAndOffline")}
+        </Button>
+        {isLessonOfflineReady ? (
+         <Typography variant="caption" tone="muted">
+          {t("offlineReady")}
+         </Typography>
+        ) : null}
+       </DialogBody>
+      </DialogContent>
+     </Dialog>
+    </>
+   ) : (
+    <DropdownMenu>
+     <DropdownMenuTrigger asChild>
+      <Button ref={triggerRef} variant="ghost" size="icon-toolbar" aria-label={t("lessonOptions")}>
+       <MoreHorizontal />
+      </Button>
+     </DropdownMenuTrigger>
+     <DropdownMenuContent
+      align="start"
+      width="md"
+      onCloseAutoFocus={(event) => {
+       if (audioSettingsOpen) event.preventDefault();
+      }}
+     >
+      <DropdownMenuLabel>{t("lessonOptions")}</DropdownMenuLabel>
+      <DropdownMenuItem onSelect={onToggleLessonBookmark}>
+       <Bookmark />
+       {bookmarkLabel}
+      </DropdownMenuItem>
+      <DropdownMenuItem onSelect={onOpenAudioSettings}>
+       <Volume2 />
+       {t("voiceAndOffline")}
+      </DropdownMenuItem>
+      {isLessonOfflineReady ? (
+       <DropdownMenuItem disabled>
+        <CloudCheck />
+        {t("offlineReady")}
+       </DropdownMenuItem>
+      ) : null}
+     </DropdownMenuContent>
+    </DropdownMenu>
+   )}
+  </>
  );
 }
 
-/** Actions rendered beside the workspace tab list (reader toolbar, audio, bookmark, offline). */
+/** Reader commands and contextual section navigation share the module row. */
 export function BusinessChineseDesktopTabActions({
- lesson,
  readerToolbar,
  showCompactGrammarToolbar,
  grammarNavigationTriggerRef,
  isGrammarNavigationOpen,
  onOpenGrammarNavigation,
- isLessonBookmarked,
- onToggleLessonBookmark,
- isLessonOfflineReady,
- toolbarNavMenu,
 }: {
- lesson: TextbookLesson;
  readerToolbar: ReactNode;
  showCompactGrammarToolbar: boolean;
  grammarNavigationTriggerRef: BusinessChineseGrammarNavigationControls["triggerRef"];
  isGrammarNavigationOpen: boolean;
  onOpenGrammarNavigation: () => void;
- isLessonBookmarked: boolean;
- onToggleLessonBookmark: () => void;
- isLessonOfflineReady: boolean;
- toolbarNavMenu: ReactNode;
 }) {
  const t = useTranslations("BusinessChinese");
- const shellHeader = useTranslations("Shell.header");
  return (
   <>
    {readerToolbar}
    {showCompactGrammarToolbar ? (
     <Button
      ref={grammarNavigationTriggerRef}
-     type="button"
      variant="outline"
      size="toolbar"
      aria-label={t("tocLabel")}
      aria-haspopup="dialog"
      aria-expanded={isGrammarNavigationOpen}
-     title={t("tocLabel")}
      onClick={onOpenGrammarNavigation}
     >
      <BookOpen data-icon="inline-start" />
-     <span>{t("tocLabel")}</span>
+     {t("tocLabel")}
     </Button>
    ) : null}
-   <OfflineAudioSettingsDialog
-    lesson={lesson}
-    trigger={
-     showCompactGrammarToolbar ? (
-      <Button
-       type="button"
-       variant="outline"
-       size="icon-toolbar"
-       aria-label={shellHeader("voiceSettings")}
-       title={shellHeader("voiceSettings")}
-      >
-       <DownloadCloud />
-      </Button>
-     ) : undefined
-    }
-   />
-   <div className="flex shrink-0 items-center gap-1.5">
-    <Button
-     variant="ghost"
-     size="sm"
-     className="gap-1.5 shrink-0"
-     onClick={onToggleLessonBookmark}
-     title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-     aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-    >
-     <Bookmark
-      className={cn(
-       "size-3.5",
-       isLessonBookmarked ? "fill-warning text-warning" : "text-muted-foreground",
-      )}
-     />
-     <span
-      className={cn("hidden sm:inline", isLessonBookmarked && "font-semibold text-warning-text")}
-     >
-      {isLessonBookmarked ? t("bookmarked") : t("bookmarkLesson")}
-     </span>
-    </Button>
-    {isLessonOfflineReady ? (
-     <Badge
-      variant="success"
-      size="sm"
-      casing="natural"
-      className="cursor-default gap-1 shrink-0 hidden md:inline-flex"
-      title={t("offlineDescription")}
-     >
-      <CloudCheck data-icon="inline-start" />
-      <span>{t("offlineReady")}</span>
-     </Badge>
-    ) : null}
-   </div>
-   {showCompactGrammarToolbar ? toolbarNavMenu : null}
   </>
- );
-}
-
-/** Below-xl header for non-reader views: current view label, bookmark and view menu. */
-export function BusinessChineseCompactViewToolbar({
- tabs,
- activeView,
- isLessonBookmarked,
- onToggleLessonBookmark,
- toolbarNavMenu,
-}: {
- tabs: SegmentedControlItem<string>[];
- activeView: string;
- isLessonBookmarked: boolean;
- onToggleLessonBookmark: () => void;
- toolbarNavMenu: ReactNode;
-}) {
- const t = useTranslations("BusinessChinese");
- return (
-  <div className="shrink-0 xl:hidden">
-   <WorkspaceToolbar>
-    <div className="flex min-w-0 flex-1 items-center gap-2">
-     <Typography variant="bodySmall" weight="bold" clamp="one">
-      {tabs.find((tab) => tab.key === activeView)?.label ?? t("tabsLabel")}
-     </Typography>
-    </div>
-    <div className="flex shrink-0 items-center gap-1.5">
-     <Button
-      variant={isLessonBookmarked ? "warning" : "ghost"}
-      size="icon-toolbar"
-      onClick={onToggleLessonBookmark}
-      title={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-      aria-label={isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson")}
-     >
-      <Bookmark
-       className={cn(
-        "size-4",
-        isLessonBookmarked ? "fill-current text-warning" : "text-muted-foreground",
-       )}
-      />
-     </Button>
-     {toolbarNavMenu}
-    </div>
-   </WorkspaceToolbar>
-  </div>
  );
 }

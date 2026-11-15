@@ -1,7 +1,16 @@
 "use client";
 
-import { Focus, Headphones, ListEnd, Play, Repeat2, Settings2, Square } from "lucide-react";
-import { useRef, useState, type ReactNode } from "react";
+import {
+ Focus,
+ Headphones,
+ ListEnd,
+ Play,
+ Repeat2,
+ RotateCcw,
+ Settings2,
+ Square,
+} from "lucide-react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
@@ -16,9 +25,16 @@ import {
  DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
+import { Switch } from "@/components/ui/forms/switch";
 import { SegmentedControl } from "@/components/ui/forms/segmented-control";
 import { Separator } from "@/components/ui/layout/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Typography } from "@/components/ui/display/typography";
 import { HanziHomeReadingQuickSettingsMenu } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";
@@ -48,10 +64,19 @@ export function LessonReaderTools({
  compactAtWide?: boolean;
 }) {
  const t = useTranslations("Reader.study.chrome.tools");
+ const common = useTranslations("Common.actions");
  const commandLabels = useTranslations("Reader.study.chrome.commands");
- const [sheetOpen, setSheetOpen] = useState(false);
+ const [dialogOpen, setDialogOpen] = useState(false);
  const toolsTriggerRef = useRef<HTMLButtonElement>(null);
  const isCoarsePointer = useCoarsePointer();
+ const [compact, setCompact] = useState(false);
+ useEffect(() => {
+  const query = window.matchMedia("(max-width: 63.999rem)");
+  const update = () => setCompact(query.matches);
+  update();
+  query.addEventListener("change", update);
+  return () => query.removeEventListener("change", update);
+ }, []);
  const commands = useReaderCommands();
  const { actions } = useReaderStore();
  const loopCurrent = useReaderSelector((state) => state.playback.loopCurrent);
@@ -62,7 +87,7 @@ export function LessonReaderTools({
 
  return (
   <>
-   {!isCoarsePointer ? (
+   {!isCoarsePointer && !compact ? (
     <DropdownMenu>
      <DropdownMenuTrigger asChild>
       <Button type="button" variant="outline" size="icon-toolbar" aria-label={t("title")}>
@@ -74,6 +99,10 @@ export function LessonReaderTools({
       <DropdownMenuItem onSelect={() => commands.playAll()}>
        <Play />
        {t("playAll")}
+      </DropdownMenuItem>
+      <DropdownMenuItem onSelect={commands.restartCurrent}>
+       <RotateCcw />
+       {commandLabels("restart")}
       </DropdownMenuItem>
       <DropdownMenuItem disabled={playbackStatus === "idle"} onSelect={commands.stop}>
        <Square />
@@ -139,115 +168,130 @@ export function LessonReaderTools({
       aria-haspopup="dialog"
       ref={toolsTriggerRef}
       aria-label={t("title")}
-      aria-expanded={sheetOpen}
-      onClick={() => setSheetOpen(true)}
+      aria-expanded={dialogOpen}
+      onClick={() => setDialogOpen(true)}
      >
       <Settings2 />
      </Button>
 
-     <Sheet
-      open={sheetOpen}
-      onOpenChange={setSheetOpen}
-      side="bottom"
-      height="tall"
-      onCloseAutoFocus={(event) => {
-       event.preventDefault();
-       toolsTriggerRef.current?.focus();
-      }}
-     >
-      <SheetHeader title={t("title")} onClose={() => setSheetOpen(false)} />
-      <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
-       <div className="grid gap-5">
-        <section className="grid gap-3">
-         <div className="flex items-center gap-2">
-          <Headphones aria-hidden="true" className="size-4 text-text-muted" />
-          <Typography as="h3" variant="cardTitle" tone="muted" weight="black" transform="uppercase">
-           {t("listening")}
-          </Typography>
-         </div>
+     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+      <DialogContent
+       size="md"
+       closeLabel={common("close")}
+       aria-describedby={undefined}
+       onCloseAutoFocus={(event) => {
+        event.preventDefault();
+        toolsTriggerRef.current?.focus();
+       }}
+      >
+       <DialogHeader>
+        <DialogTitle>{t("title")}</DialogTitle>
+       </DialogHeader>
+       <DialogBody>
+        <div className="grid gap-4">
+         <section className="grid gap-3">
+          <div className="flex items-center gap-2">
+           <Headphones aria-hidden="true" className="size-4 text-text-muted" />
+           <Typography
+            as="h3"
+            variant="cardTitle"
+            tone="muted"
+            weight="black"
+            transform="uppercase"
+           >
+            {t("listening")}
+           </Typography>
+          </div>
 
-         <div className="grid grid-cols-2 gap-2">
-          <Button type="button" variant="surfaceCard" size="touch" onClick={commands.playAll}>
-           <Play data-icon="inline-start" />
-           {t("playAll")}
-          </Button>
-          <Button
-           type="button"
-           variant="surfaceCard"
-           size="touch"
-           disabled={playbackStatus === "idle"}
-           onClick={commands.stop}
-          >
-           <Square data-icon="inline-start" />
-           {commandLabels("stopReading")}
-          </Button>
-         </div>
+          <div className="grid grid-cols-2 gap-2">
+           <Button type="button" variant="surfaceCard" size="touch" onClick={commands.playAll}>
+            <Play data-icon="inline-start" />
+            {t("playAll")}
+           </Button>
+           <Button
+            type="button"
+            variant="surfaceCard"
+            size="touch"
+            wrap="normal"
+            onClick={commands.restartCurrent}
+           >
+            <RotateCcw data-icon="inline-start" />
+            {commandLabels("restart")}
+           </Button>
+           <Button
+            type="button"
+            variant="surfaceCard"
+            size="touch"
+            wrap="normal"
+            disabled={playbackStatus === "idle"}
+            onClick={commands.stop}
+           >
+            <Square data-icon="inline-start" />
+            {commandLabels("stopReading")}
+           </Button>
+          </div>
 
-         {onOpenShadowing ? (
-          <Button type="button" variant="surfaceCard" size="touch" onClick={onOpenShadowing}>
-           {t("shadowing")}
-          </Button>
+          {onOpenShadowing ? (
+           <Button type="button" variant="surfaceCard" size="touch" onClick={onOpenShadowing}>
+            {t("shadowing")}
+           </Button>
+          ) : null}
+
+          <div className="divide-y divide-border-default">
+           <div className="flex min-h-11 items-center justify-between gap-3 py-1.5">
+            <Typography variant="label">{t("loop")}</Typography>
+            <Switch
+             checked={loopCurrent}
+             onCheckedChange={() => actions.toggleLoop()}
+             aria-label={t("loop")}
+            />
+           </div>
+           <div className="flex min-h-11 items-center justify-between gap-3 py-1.5">
+            <Typography variant="label">{t("autoAdvance")}</Typography>
+            <Switch
+             checked={autoAdvance}
+             onCheckedChange={() => actions.toggleAutoAdvance()}
+             aria-label={t("autoAdvance")}
+            />
+           </div>
+           <div className="flex min-h-11 items-center justify-between gap-3 py-1.5">
+            <Typography variant="label">{t("focus")}</Typography>
+            <Switch
+             checked={focusMode}
+             onCheckedChange={() => actions.toggleFocus()}
+             aria-label={t("focus")}
+            />
+           </div>
+          </div>
+
+          <div className="grid gap-2">
+           <Typography variant="label">{commandLabels("rate")}</Typography>
+           <SegmentedControl<string>
+            value={String(rate)}
+            items={readerRateOptions.map((option) => ({
+             key: String(option),
+             label: `${option}x`,
+            }))}
+            onChange={(value) => commands.setRate(Number(value))}
+            density="touch"
+            layout="wrap"
+            aria-label={commandLabels("rate")}
+           />
+          </div>
+         </section>
+
+         <Separator />
+         <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
+         {sheetContent ? (
+          <>
+           <Separator />
+           {sheetContent}
+          </>
          ) : null}
-
-         <div className="grid grid-cols-3 gap-2">
-          <Button
-           type="button"
-           variant={loopCurrent ? "active" : "surfaceCard"}
-           size="sm"
-           aria-pressed={loopCurrent}
-           onClick={() => actions.toggleLoop()}
-          >
-           <Repeat2 data-icon="inline-start" />
-           <span className="truncate">{t("loop")}</span>
-          </Button>
-          <Button
-           type="button"
-           variant={autoAdvance ? "active" : "surfaceCard"}
-           size="sm"
-           aria-pressed={autoAdvance}
-           onClick={() => actions.toggleAutoAdvance()}
-          >
-           <ListEnd data-icon="inline-start" />
-           <span className="truncate">{t("autoAdvance")}</span>
-          </Button>
-          <Button
-           type="button"
-           variant={focusMode ? "active" : "surfaceCard"}
-           size="sm"
-           aria-pressed={focusMode}
-           onClick={() => actions.toggleFocus()}
-          >
-           <Focus data-icon="inline-start" />
-           <span className="truncate">{t("focus")}</span>
-          </Button>
-         </div>
-
-         <div className="grid gap-2">
-          <Typography variant="label">{commandLabels("rate")}</Typography>
-          <SegmentedControl<string>
-           value={String(rate)}
-           items={readerRateOptions.map((option) => ({
-            key: String(option),
-            label: `${option}x`,
-           }))}
-           onChange={(value) => commands.setRate(Number(value))}
-           density="touch"
-           aria-label={commandLabels("rate")}
-          />
-         </div>
-        </section>
-
-        <Separator />
-        <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
-        {sheetContent ? (
-         <>
-          <Separator />
-          {sheetContent}
-         </>
-        ) : null}
-       </div>
-      </SheetBody>
-     </Sheet>
+        </div>
+       </DialogBody>
+      </DialogContent>
+     </Dialog>
     </>
    )}
   </>
