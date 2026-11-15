@@ -21,7 +21,6 @@ export function VocabPreviewRow({
  hanviet,
  category,
  meaning,
- rawPinyin,
  rawMeaning,
  rawHanviet,
  header,
@@ -32,7 +31,6 @@ export function VocabPreviewRow({
  hanviet: string;
  category: string;
  meaning: string;
- rawPinyin?: string;
  rawMeaning?: string;
  rawHanviet?: string;
  header?: ReactNode;
@@ -68,7 +66,7 @@ export function VocabPreviewRow({
      onClick={() =>
       learning.toggleCustomVocabByHanzi({
        hanzi,
-       pinyin: rawPinyin || pinyin,
+       pinyin,
        meaning: rawMeaning || meaning || hanzi,
        hanviet: rawHanviet || hanviet || undefined,
        pos: category || undefined,

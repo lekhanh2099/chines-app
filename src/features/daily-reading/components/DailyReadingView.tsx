@@ -44,6 +44,7 @@ import { useDailyReadingPip } from "@/features/daily-reading/hooks/useDailyReadi
 import { useDailyReadingTranslationProgress } from "@/features/daily-reading/hooks/useDailyReadingTranslationProgress";
 import { useDailyReadingLibrary } from "@/features/daily-reading/services/daily-reading.client";
 import { buildDailyReadingReaderDocument } from "@/features/daily-reading/model/daily-reading-view-model";
+import { ReaderPronunciationSessionProvider } from "@/features/hanzihome/reader-adapters/reader-pronunciation-session";
 import { BusinessChineseWorkspaceNavMenu } from "@/features/hanzihome/components/business-chinese/BusinessChineseWorkspaceNavMenu";
 import {
  splitWorkspaceTabs,
@@ -171,106 +172,108 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
     onBack={onBack}
    />
 
-   <DailyReadingReaderTab
-    readerDocument={readerDocument}
-    pronunciation={pronunciation}
-    titlePronunciation={titlePronunciation}
-    display={{
-     value: displayMode,
-     onChange: (value) =>
-      learningState.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...value } }),
-    }}
-    speech={speech}
-    annotations={annotationsQuery.data}
-    selection={selection}
-    openInspector={openInspector}
-    readerTabActive={effectiveTab === "reader"}
-    renderLayout={({ content, toolbar }) => (
-     <Tabs
-      value={effectiveTab}
-      items={visibleTabs}
-      onValueChange={setTab}
-      overflow={
-       <BusinessChineseWorkspaceNavMenu
-        tabs={overflowTabs}
-        activeView={effectiveTab}
-        onActiveViewChange={(view) => {
-         const next = tabs.find((key) => key === view);
-         if (next) setTab(next);
-        }}
-        compact={tabCapacity < tabItems.length}
-       />
-      }
-      actions={
-       <div className="flex shrink-0 items-center gap-1.5">
-        {toolbar}
-        <Button
-         type="button"
-         variant="ghost"
-         size="toolbar"
-         // On phones the back action sits in the article header so the tab row keeps room.
-         className="hidden shrink-0 sm:inline-flex"
-         onClick={onBack}
-         title={t("document.back")}
-        >
-         <ArrowLeft />
-         {t("document.back")}
-        </Button>
-       </div>
-      }
-      listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30 bg-background/95 backdrop-blur-md"
-      aria-label={t("tabs.aria")}
-     >
-      <TabsContent value="reader" className="grid gap-3 pt-3">
-       {latestTranslationProgress !== undefined && translation === null ? (
-        <DailyReadingTranslationProgressNotice
-         failed={translationRun?.status === "failed"}
-         progress={latestTranslationProgress}
+   <ReaderPronunciationSessionProvider>
+    <DailyReadingReaderTab
+     readerDocument={readerDocument}
+     pronunciation={pronunciation}
+     titlePronunciation={titlePronunciation}
+     display={{
+      value: displayMode,
+      onChange: (value) =>
+       learningState.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...value } }),
+     }}
+     speech={speech}
+     annotations={annotationsQuery.data}
+     selection={selection}
+     openInspector={openInspector}
+     readerTabActive={effectiveTab === "reader"}
+     renderLayout={({ content, toolbar }) => (
+      <Tabs
+       value={effectiveTab}
+       items={visibleTabs}
+       onValueChange={setTab}
+       overflow={
+        <BusinessChineseWorkspaceNavMenu
+         tabs={overflowTabs}
+         activeView={effectiveTab}
+         onActiveViewChange={(view) => {
+          const next = tabs.find((key) => key === view);
+          if (next) setTab(next);
+         }}
+         compact={tabCapacity < tabItems.length}
         />
-       ) : null}
-       {content}
-      </TabsContent>
+       }
+       actions={
+        <div className="flex shrink-0 items-center gap-1.5">
+         {toolbar}
+         <Button
+          type="button"
+          variant="ghost"
+          size="toolbar"
+          // On phones the back action sits in the article header so the tab row keeps room.
+          className="hidden shrink-0 sm:inline-flex"
+          onClick={onBack}
+          title={t("document.back")}
+         >
+          <ArrowLeft />
+          {t("document.back")}
+         </Button>
+        </div>
+       }
+       listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30 bg-background/95 backdrop-blur-md"
+       aria-label={t("tabs.aria")}
+      >
+       <TabsContent value="reader" className="grid gap-3 pt-3">
+        {latestTranslationProgress !== undefined && translation === null ? (
+         <DailyReadingTranslationProgressNotice
+          failed={translationRun?.status === "failed"}
+          progress={latestTranslationProgress}
+         />
+        ) : null}
+        {content}
+       </TabsContent>
 
-      <TabsContent value="notes" className="grid gap-4 pt-3">
-       {annotationsQuery.data && annotationsQuery.data.length > 0 ? (
-        <ReaderNotes annotations={annotationsQuery.data} onRemove={selection.removeAnnotation} />
-       ) : null}
-       <DailyReadingNoteCard reading={reading} />
-      </TabsContent>
+       <TabsContent value="notes" className="grid gap-4 pt-3">
+        {annotationsQuery.data && annotationsQuery.data.length > 0 ? (
+         <ReaderNotes annotations={annotationsQuery.data} onRemove={selection.removeAnnotation} />
+        ) : null}
+        <DailyReadingNoteCard reading={reading} />
+       </TabsContent>
 
-      <TabsContent value="support" className="pt-3">
-       <DailyReadingLearningSupportPanel reading={reading} />
-      </TabsContent>
+       <TabsContent value="support" className="pt-3">
+        <DailyReadingLearningSupportPanel reading={reading} />
+       </TabsContent>
 
-      <TabsContent value="questions" className="pt-3">
-       <DailyReadingQuestions reading={reading} />
-      </TabsContent>
+       <TabsContent value="questions" className="pt-3">
+        <DailyReadingQuestions reading={reading} />
+       </TabsContent>
 
-      <TabsContent value="vocabulary" className="pt-3">
-       {reading.enrichment.vocabulary.status === "ready" ? (
-        <DailyReadingVocabularyTab
-         vocabItems={vocabItems}
-         filteredVocabItems={filteredVocabItems}
-         vocabSearchQuery={vocabSearchQuery}
-         onVocabSearchQueryChange={setVocabSearchQuery}
-         displayMode={displayMode}
-         isPipActive={pip.isPipOpen || pip.isInAppFloatingOpen}
-         pipMode={pip.pipMode}
-         onTogglePip={(mode) => void pip.handleTogglePip(mode)}
-        />
-       ) : null}
-      </TabsContent>
+       <TabsContent value="vocabulary" className="pt-3">
+        {reading.enrichment.vocabulary.status === "ready" ? (
+         <DailyReadingVocabularyTab
+          vocabItems={vocabItems}
+          filteredVocabItems={filteredVocabItems}
+          vocabSearchQuery={vocabSearchQuery}
+          onVocabSearchQueryChange={setVocabSearchQuery}
+          displayMode={displayMode}
+          isPipActive={pip.isPipOpen || pip.isInAppFloatingOpen}
+          pipMode={pip.pipMode}
+          onTogglePip={(mode) => void pip.handleTogglePip(mode)}
+         />
+        ) : null}
+       </TabsContent>
 
-      <TabsContent value="grammar" className="pt-3">
-       <DailyReadingGrammarList reading={reading} />
-      </TabsContent>
+       <TabsContent value="grammar" className="pt-3">
+        <DailyReadingGrammarList reading={reading} />
+       </TabsContent>
 
-      <TabsContent value="source" className="pt-3">
-       <DailyReadingSourcePanel reading={reading} dateFormatter={dateFormatter} />
-      </TabsContent>
-     </Tabs>
-    )}
-   />
+       <TabsContent value="source" className="pt-3">
+        <DailyReadingSourcePanel reading={reading} dateFormatter={dateFormatter} />
+       </TabsContent>
+      </Tabs>
+     )}
+    />
+   </ReaderPronunciationSessionProvider>
    <DailyReadingVocabPip reading={reading} vocabItems={vocabItems} pip={pip} />
   </div>
  );
