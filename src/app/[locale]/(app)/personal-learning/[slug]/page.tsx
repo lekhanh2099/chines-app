@@ -7,7 +7,7 @@ export default async function PersonalLearningDocumentPage({
 }) {
  const { slug } = await params;
  return (
-  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0">
    <PersonalLearningContent slug={slug} />
   </div>
  );

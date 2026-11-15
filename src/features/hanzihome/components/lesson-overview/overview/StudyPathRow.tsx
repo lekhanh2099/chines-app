@@ -14,7 +14,7 @@ export function StudyPathRow({ section, index }: { section: BookSection; index: 
  const SectionIcon = sectionIcons[section.type] ?? BookOpenCheck;
 
  return (
-  <Card variant="subtle" padding="md" className="flex min-w-0 items-center gap-3.5">
+  <Card variant="subtle" padding="sm" className="flex min-w-0 items-center gap-3">
    <Typography as="span" variant="caption" tone="muted" weight="black">
     {String(index + 1).padStart(2, "0")}
    </Typography>

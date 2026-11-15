@@ -78,7 +78,7 @@ export function SettingsPageContent({
 
  return (
   <PageContainer>
-   <div className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-4">
     <PageHeader title={t("title")} description={t("description")} />
 
     <Tabs<z.infer<typeof SettingsSectionSchema>>
@@ -106,7 +106,7 @@ export function SettingsPageContent({
       router.push(href, { scroll: false });
      }}
     >
-     <TabsContent active={section === SettingsSectionSchema.enum.app} className="grid gap-4 pt-4">
+     <TabsContent active={section === SettingsSectionSchema.enum.app} className="grid gap-4 pt-3">
       <AppearanceSettingsSection />
 
       <Card variant="section" padding="lg" className="grid gap-3">
@@ -187,12 +187,12 @@ export function SettingsPageContent({
       </ActionCard>
      </TabsContent>
 
-     <TabsContent active={section === SettingsSectionSchema.enum.ai} className="pt-4">
+     <TabsContent active={section === SettingsSectionSchema.enum.ai} className="pt-3">
       <AiSettingsWorkspace panelValue={aiPanelValue} dailyReadingSettings={dailyReadingSettings} />
      </TabsContent>
 
      {canManageContent ? (
-      <TabsContent active={section === SettingsSectionSchema.enum.management} className="pt-4">
+      <TabsContent active={section === SettingsSectionSchema.enum.management} className="pt-3">
        <Card variant="section" padding="lg" className="grid gap-4">
         <SectionHeading title={t("management.title")} description={t("management.description")} />
 

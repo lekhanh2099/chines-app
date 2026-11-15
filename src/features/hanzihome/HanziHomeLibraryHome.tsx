@@ -113,7 +113,7 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
 
  return (
   <PageContainer>
-   <div className="grid w-full min-w-0 gap-6">
+   <div className="grid w-full min-w-0 gap-4">
     {selectedCollectionId ? (
      <Button asChild variant="ghost" size="toolbar" align="start" className="justify-self-start">
       <Link href="/hanzihome" replace>

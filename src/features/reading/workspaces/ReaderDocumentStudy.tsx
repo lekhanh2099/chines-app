@@ -303,6 +303,7 @@ function ReaderDocumentStudyContent({
     lessonLabel={readerLessonLabel}
     unitNumber={readerUnitNumber}
     showTitle={activeWorkspaceTab !== "reader"}
+    actions={completionControl}
    />
    {study.pending ? (
     <Typography variant="caption" tone="muted">
@@ -316,7 +317,6 @@ function ReaderDocumentStudyContent({
      </Typography>
     </Card>
    ) : null}
-   {completionControl}
 
    {workspaceTabsEnabled ? (
     <ReaderDocumentStudyTabs

@@ -121,7 +121,7 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
     onValueChange={setWorkspaceTab}
     aria-label={t("workspaceAria")}
    >
-    <TabsContent value="compose" className="pt-4 sm:pt-5">
+    <TabsContent value="compose" className="pt-3">
      {workspaceTab === "compose" ? (
       <>
        <TtsStudioContentCard
@@ -208,7 +208,7 @@ export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string })
      ) : null}
     </TabsContent>
 
-    <TabsContent value="library" className="pt-4 sm:pt-5">
+    <TabsContent value="library" className="pt-3">
      {workspaceTab === "library" ? (
       <TtsStudioLibraryPanel
        libraryQuery={libraryQuery}

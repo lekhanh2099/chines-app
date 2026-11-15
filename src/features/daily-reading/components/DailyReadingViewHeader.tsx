@@ -37,7 +37,7 @@ export function DailyReadingViewHeader({
   reading.enrichment.translation.status === "ready" ? reading.enrichment.translation.data : null;
  const learning = getDailyReadingLearningSummary(reading);
  return (
-  <header className="grid min-w-0 gap-3 border-b border-border-default pb-4 sm:pb-5">
+  <header className="grid min-w-0 gap-2 border-b border-border-default pb-3">
    <div className="flex min-w-0 flex-wrap items-center gap-2">
     {reading.classification.targetLevel !== null ? (
      <Badge variant="warning" size="sm" casing="natural">

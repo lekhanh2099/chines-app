@@ -23,7 +23,7 @@ export default async function DictationPage({
  const initialDictationLessons = listStaticStudioCourseLessons("hanzihome-studio-dictation");
 
  return (
-  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0">
    <StudioDictationWorkspace
     initialReaderDocuments={initialReaderDocuments}
     initialReaderResource={initialReaderResource}

@@ -356,7 +356,7 @@ export function DailyReadingWorkspace({
    ) : null}
    {resource ? (
     <div className="grid min-w-0 gap-3">
-     <div className="grid gap-3 border-b border-border-default pb-4 sm:pb-5">
+     <div className="grid gap-2 border-b border-border-default pb-3">
       <Button
        type="button"
        variant="ghost"
@@ -414,7 +414,7 @@ export function DailyReadingWorkspace({
       listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30"
       aria-label={t("tabs.aria")}
      >
-      <TabsContent value={activeTab} className="grid gap-3 pt-4 sm:pt-5">
+      <TabsContent value={activeTab} className="grid gap-3 pt-3">
        {showLocalOnlyNotice ? (
         <Card variant="subtle" padding="sm">
          <Typography variant="caption" tone="muted">

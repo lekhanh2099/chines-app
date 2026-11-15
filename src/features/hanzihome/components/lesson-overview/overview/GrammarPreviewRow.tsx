@@ -7,7 +7,7 @@ import type { GrammarViewModel } from "@/features/hanzihome/types";
 
 export function GrammarPreviewRow({ point, index }: { point: GrammarViewModel; index: number }) {
  return (
-  <Card variant="subtle" padding="md" className="grid min-w-0 gap-1.5">
+  <Card variant="subtle" padding="sm" className="grid min-w-0 gap-1.5">
    <StudyInstructionText
     variant="overline"
     tone="muted"

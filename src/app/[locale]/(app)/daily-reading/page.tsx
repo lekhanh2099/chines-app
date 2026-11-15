@@ -16,7 +16,7 @@ export default async function DailyReadingPage({
 
  if (documentId.length === 0) {
   return (
-   <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+   <div className="hanzihome-static-page min-w-0">
     <GeneratedDailyReadingArea />
    </div>
   );
@@ -28,7 +28,7 @@ export default async function DailyReadingPage({
   initialResource === null ? null : getStaticStudioLessonDetail(initialResource.document.lesson_id);
 
  return (
-  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0">
    <DailyReadingWorkspace
     initialDocuments={initialDocuments}
     initialResource={initialResource}

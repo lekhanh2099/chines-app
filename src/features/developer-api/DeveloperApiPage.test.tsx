@@ -14,7 +14,7 @@ describe("DeveloperApiPage", () => {
   expect(markup).toContain("Demo response");
   expect(markup).toContain("không gửi request và không dùng key");
   expect(markup).toContain('data-page="true"');
-  expect(markup).toContain("grid w-full min-w-0 gap-5");
+  expect(markup).toContain("grid w-full min-w-0 gap-4");
   expect(markup).not.toContain("max-w-6xl");
  });
 });

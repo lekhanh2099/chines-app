@@ -27,7 +27,7 @@ export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] 
 
  return (
   <PageContainer>
-   <div className="grid w-full min-w-0 gap-5 sm:gap-6">
+   <div className="grid w-full min-w-0 gap-4">
     <PageHeader title={t("page.title")} description={t("page.description")} />
 
     {/*
@@ -36,7 +36,7 @@ export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] 
       stack as Học tiếp → PiP hub → activity → notes → tips (the side column dissolves into
       the flow via `contents`, and `order` keeps the hierarchy).
     */}
-    <div className="flex min-w-0 flex-col gap-4 sm:gap-5 xl:grid xl:grid-cols-[minmax(0,1.4fr)_minmax(22rem,1fr)] xl:items-start">
+    <div className="flex min-w-0 flex-col gap-3 sm:gap-4 xl:grid xl:grid-cols-[minmax(0,1.4fr)_minmax(22rem,1fr)] xl:items-start">
      <div className="order-1 min-w-0 xl:col-start-1 xl:row-start-1">
       <ContinueLearningPanel
        books={dashboard.resumeBooks}
@@ -44,7 +44,7 @@ export function HomeDashboard({ textbooks }: { textbooks: TextbookBookSummary[] 
       />
      </div>
      <div
-      className="contents xl:sticky xl:top-4 xl:col-start-2 xl:row-span-3 xl:row-start-1 xl:flex xl:min-w-0 xl:flex-col xl:gap-5"
+      className="contents xl:sticky xl:top-4 xl:col-start-2 xl:row-span-3 xl:row-start-1 xl:flex xl:min-w-0 xl:flex-col xl:gap-4"
       aria-label={t("page.overviewAria")}
       role="complementary"
      >

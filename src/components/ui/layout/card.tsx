@@ -18,8 +18,8 @@ const cardVariants = cva("rounded-xl border", {
   padding: {
    none: "",
    sm: "p-2.5",
-   md: "p-3 sm:p-4",
-   lg: "p-4 sm:p-5",
+   md: "p-2.5 sm:p-3",
+   lg: "p-3 sm:p-4",
   },
  },
  defaultVariants: {

@@ -185,7 +185,7 @@ export function ModulePane({
    )}
    <div
     data-pane-scroll={paneId}
-    className="min-h-0 min-w-0 overflow-x-hidden overflow-y-auto overscroll-contain rounded-lg bg-bg-subtle/60 p-1 scrollbar-soft sm:rounded-xl sm:p-2 sm:pr-1"
+    className="min-h-0 min-w-0 overflow-x-hidden overflow-y-auto overscroll-contain rounded-lg bg-bg-subtle/60 p-1 scrollbar-soft sm:rounded-xl"
    >
     {children}
    </div>

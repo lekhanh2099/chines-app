@@ -8,7 +8,7 @@ export default async function PersonalLearningPage({
  const params = await searchParams;
  const documentId = typeof params.document === "string" ? params.document : "";
  return (
-  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0">
    <PersonalLearningContent documentId={documentId} />
   </div>
  );

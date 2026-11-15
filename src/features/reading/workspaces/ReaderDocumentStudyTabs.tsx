@@ -76,16 +76,18 @@ export function ReaderDocumentStudyTabs({
    listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
    aria-label={t("chrome.tabsAria")}
   >
-   <TabsContent value={activeGroup} className="grid gap-4 pt-4 sm:pt-5">
-    <SegmentedControl<ReaderWorkspaceTab>
-     value={activeWorkspaceTab}
-     items={activeGroupTabs.map((tab) => ({ key: tab.id, label: tab.label, icon: tab.icon }))}
-     onChange={(nextTab) => {
-      requestNavigation(() => onWorkspaceTabChange(nextTab));
-     }}
-     layout="wrap"
-     aria-label={t("chrome.subtabsAria")}
-    />
+   <TabsContent value={activeGroup} className="grid gap-3 pt-3">
+    {activeGroupTabs.length > 1 ? (
+     <SegmentedControl<ReaderWorkspaceTab>
+      value={activeWorkspaceTab}
+      items={activeGroupTabs.map((tab) => ({ key: tab.id, label: tab.label, icon: tab.icon }))}
+      onChange={(nextTab) => {
+       requestNavigation(() => onWorkspaceTabChange(nextTab));
+      }}
+      layout="wrap"
+      aria-label={t("chrome.subtabsAria")}
+     />
+    ) : null}
     {activeWorkspaceTab === "reader" ? readerSurface : null}
     {activeWorkspaceTab === "overview" ? <ReaderOverview resource={resource} /> : null}
     {activeWorkspaceTab === "exercises" ? (
