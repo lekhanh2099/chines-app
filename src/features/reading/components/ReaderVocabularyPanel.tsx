@@ -1,112 +1,43 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/display/badge";
-import { Card } from "@/components/ui/layout/card";
-import {
- DataTable,
- DataTableBody,
- DataTableCell,
- DataTableHead,
- DataTableHeader,
- DataTableRow,
-} from "@/components/ui/display/data-table";
-import { Input } from "@/components/ui/forms/input";
-import { Typography } from "@/components/ui/display/typography";
-import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
+import { VocabularyCardList } from "@/features/hanzihome/components/lesson-overview/overview/VocabularyCardList";
+import { matchesVocabularyQuery } from "@/features/hanzihome/components/lesson-overview/overview/vocabulary-search";
 
 import type { ReaderDocumentResource } from "@/features/reading/model/reading-document.schemas";
 
 type ReaderVocabulary = ReaderDocumentResource["vocabulary"];
 
-function normalizeSearch(value: string) {
- return value.normalize("NFC").trim().toLocaleLowerCase("vi");
-}
-
 export function ReaderVocabularyPanel({ vocabulary }: { vocabulary: ReaderVocabulary }) {
- const t = useTranslations("Reader.study.vocabulary");
  const [query, setQuery] = useState("");
- const normalizedQuery = normalizeSearch(query);
- const filteredVocabulary = useMemo(() => {
-  if (!normalizedQuery) return vocabulary;
-  return vocabulary.filter((item) =>
-   normalizeSearch(`${item.word} ${item.pinyin} ${item.meaning}`).includes(normalizedQuery),
-  );
- }, [normalizedQuery, vocabulary]);
+ const filteredVocabulary = useMemo(
+  () =>
+   vocabulary.filter((item) =>
+    matchesVocabularyQuery(query, [item.word, item.pinyin, item.meaning]),
+   ),
+  [query, vocabulary],
+ );
 
  return (
-  <Card variant="section" padding="none" className="overflow-hidden">
-   <div className="grid gap-3 px-4 py-4 sm:px-5">
-    <div className="flex flex-wrap items-start justify-between gap-3">
-     <div className="grid gap-1">
-      <Typography as="h3" variant="sectionTitle" weight="black">
-       {t("title")}
-      </Typography>
-      <Typography variant="caption" tone="muted">
-       {t("description")}
-      </Typography>
-     </div>
-     <Badge casing="natural">{t("count", { count: vocabulary.length })}</Badge>
-    </div>
-    {vocabulary.length > 0 ? (
-     <label className="block max-w-md">
-      <span className="sr-only">{t("searchLabel")}</span>
-      <Input
-       value={query}
-       onChange={(event) => setQuery(event.target.value)}
-       placeholder={t("searchPlaceholder")}
-       autoComplete="off"
-      />
-     </label>
-    ) : null}
-   </div>
-
-   {vocabulary.length === 0 ? (
-    <div className="px-4 pb-4 sm:px-5">
-     <Typography variant="bodySmall" tone="muted">
-      {t("empty")}
-     </Typography>
-    </div>
-   ) : filteredVocabulary.length === 0 ? (
-    <div className="px-4 pb-4 sm:px-5">
-     <Typography variant="bodySmall" tone="muted">
-      {t("noResults")}
-     </Typography>
-    </div>
-   ) : (
-    <DataTable aria-label={t("tableAria")}>
-     <DataTableHeader>
-      <DataTableRow>
-       <DataTableHead>{t("word")}</DataTableHead>
-       <DataTableHead>{t("pinyin")}</DataTableHead>
-       <DataTableHead>{t("meaning")}</DataTableHead>
-      </DataTableRow>
-     </DataTableHeader>
-     <DataTableBody>
-      {filteredVocabulary.map((item) => (
-       <DataTableRow key={item.id}>
-        <DataTableCell lang="zh-CN">
-         <Typography as="span" variant="body" weight="black">
-          {item.word}
-         </Typography>
-        </DataTableCell>
-        <DataTableCell>
-         <PinyinText variant="bodySmall" tone="accent">
-          {item.pinyin || t("missingPinyin")}
-         </PinyinText>
-        </DataTableCell>
-        <DataTableCell>
-         <Typography as="span" variant="bodySmall" tone="muted">
-          {item.meaning || t("missingMeaning")}
-         </Typography>
-        </DataTableCell>
-       </DataTableRow>
-      ))}
-     </DataTableBody>
-    </DataTable>
-   )}
-  </Card>
+  <VocabularyCardList
+   totalCount={vocabulary.length}
+   query={query}
+   onQueryChange={setQuery}
+   resultCount={filteredVocabulary.length}
+   actions={null}
+  >
+   {filteredVocabulary.map((item) => (
+    <VocabPreviewRow
+     key={item.id}
+     hanzi={item.word}
+     pinyin={item.pinyin}
+     hanviet=""
+     category=""
+     meaning={item.meaning}
+    />
+   ))}
+  </VocabularyCardList>
  );
 }

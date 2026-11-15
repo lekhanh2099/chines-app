@@ -2,6 +2,7 @@ import type { ComponentProps } from "react";
 import type { z } from "zod";
 
 import type { Badge } from "@/components/ui/display/badge";
+import { matchesVocabularyQuery } from "@/features/hanzihome/components/lesson-overview/overview/vocabulary-search";
 import { analyzeContextualPronunciation } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type {
@@ -157,14 +158,13 @@ export function filterDailyReadingVocabItems(
  vocabItems: readonly DailyReadingVocabularyItem[],
  searchQuery: string,
 ): readonly DailyReadingVocabularyItem[] {
- const trimmedVocabQuery = searchQuery.trim().toLowerCase();
- return trimmedVocabQuery
-  ? vocabItems.filter(
-     (item) =>
-      item.hanzi.toLowerCase().includes(trimmedVocabQuery) ||
-      item.meaningVi.toLowerCase().includes(trimmedVocabQuery) ||
-      item.categoryVi.toLowerCase().includes(trimmedVocabQuery) ||
-      item.meaningInContextVi.toLowerCase().includes(trimmedVocabQuery),
-    )
-  : vocabItems;
+ if (!searchQuery.trim()) return vocabItems;
+ return vocabItems.filter((item) =>
+  matchesVocabularyQuery(searchQuery, [
+   item.hanzi,
+   item.meaningVi,
+   item.categoryVi,
+   item.meaningInContextVi,
+  ]),
+ );
 }
