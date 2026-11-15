@@ -1,7 +1,9 @@
 "use client";
 
+import { ArrowLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
 import { Typography } from "@/components/ui/display/typography";
 import {
@@ -23,6 +25,7 @@ type DailyReadingViewHeaderProps = {
  displayMode: LessonDisplayMode;
  titlePronunciation: ReturnType<typeof analyzeDailyReadingText>;
  dateFormatter: Intl.DateTimeFormat;
+ onBack: () => void;
 };
 
 export function DailyReadingViewHeader({
@@ -31,6 +34,7 @@ export function DailyReadingViewHeader({
  displayMode,
  titlePronunciation,
  dateFormatter,
+ onBack,
 }: DailyReadingViewHeaderProps) {
  const t = useTranslations("DailyReading");
  const translation =
@@ -39,6 +43,10 @@ export function DailyReadingViewHeader({
  return (
   <header className="grid min-w-0 gap-2 border-b border-border-default pb-3">
    <div className="flex min-w-0 flex-wrap items-center gap-2">
+    <Button type="button" variant="ghost" size="toolbar" className="sm:hidden" onClick={onBack}>
+     <ArrowLeft />
+     {t("document.back")}
+    </Button>
     {reading.classification.targetLevel !== null ? (
      <Badge variant="warning" size="sm" casing="natural">
       {reading.classification.targetLevel}

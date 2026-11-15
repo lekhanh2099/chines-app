@@ -1,12 +1,14 @@
 "use client";
 
-import type { ComponentProps } from "react";
+import { useEffect, type ComponentProps } from "react";
 
 import { businessChineseReaderAnnotations } from "@/features/hanzihome/components/business-chinese/business-chinese-study-utils";
 import { formatContextualReadingPinyin } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import type { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { Reader } from "@/features/reader/components/Reader";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
+import { useReaderCommands } from "@/features/reader/runtime/reader-context";
+import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import type { useReaderSessionPronunciation } from "@/features/reading/hooks/useReaderSessionPronunciation";
 import type { useMandarinReaderSpeechService } from "@/features/speech/MandarinTtsProvider";
 import type { analyzeDailyReadingText } from "@/features/daily-reading/components/daily-reading-library-utils";
@@ -23,6 +25,10 @@ type DailyReadingReaderTabProps = {
  annotations: DailyReadingAnnotations["annotationsQuery"]["data"];
  selection: DailyReadingAnnotations["selection"];
  openInspector: ReturnType<typeof useVocabInspector>["openInspector"];
+ /** The reader tab is showing: its toolbar sits in the tab row; otherwise playback stops. */
+ readerTabActive: boolean;
+ /** Lays out the article tabs around the Reader content and its inline toolbar. */
+ renderLayout: NonNullable<ReaderServices["renderReader"]>;
 };
 
 export function DailyReadingReaderTab({
@@ -34,6 +40,8 @@ export function DailyReadingReaderTab({
  annotations,
  selection,
  openInspector,
+ readerTabActive,
+ renderLayout,
 }: DailyReadingReaderTabProps) {
  return (
   <>
@@ -48,8 +56,14 @@ export function DailyReadingReaderTab({
     display={display}
     services={{
      speech,
+     placeToolbarInLayout: readerTabActive,
+     renderReader: (layout) => (
+      <>
+       <StopPlaybackWhenHidden hidden={!readerTabActive} />
+       {renderLayout(layout)}
+      </>
+     ),
      toolbar: {
-      stickyOffset: "tabs",
       hidePinyinToggle: true,
       hideTranslationToggle: true,
      },
@@ -76,4 +90,13 @@ export function DailyReadingReaderTab({
    {selection.popover}
   </>
  );
+}
+
+/** The Reader stays mounted under every article tab; leaving the reader tab must not keep audio playing without controls. */
+function StopPlaybackWhenHidden({ hidden }: { hidden: boolean }) {
+ const commands = useReaderCommands();
+ useEffect(() => {
+  if (hidden) commands.stop();
+ }, [commands, hidden]);
+ return null;
 }

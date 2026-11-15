@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useMemo, useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { type SegmentedControlItem } from "@/components/ui/forms/segmented-control";
@@ -33,6 +33,7 @@ import { useBusinessChineseVocabSearch } from "./BusinessChineseVocabView";
 import { BusinessChineseDesktopTabActions } from "./BusinessChineseWorkspaceToolbar";
 import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import { BusinessChineseWorkspaceViews } from "./BusinessChineseWorkspaceViews";
+import { splitWorkspaceTabs, useWorkspaceTabCapacity } from "./useWorkspaceTabOverflow";
 import { useBusinessChineseAnnotationServices } from "./useBusinessChineseAnnotationServices";
 import {
  useBusinessChineseLessonSections,
@@ -127,26 +128,12 @@ export function BusinessChineseStudyWorkspaceContent({
   });
  }, []);
 
- const [tabCapacity, setTabCapacity] = useState(1);
- useEffect(() => {
-  const desktop = window.matchMedia("(min-width: 90rem)");
-  const tablet = window.matchMedia("(min-width: 40rem)");
-  const update = () =>
-   setTabCapacity(desktop.matches ? Number.MAX_SAFE_INTEGER : tablet.matches ? 3 : 1);
-  update();
-  desktop.addEventListener("change", update);
-  tablet.addEventListener("change", update);
-  return () => {
-   desktop.removeEventListener("change", update);
-   tablet.removeEventListener("change", update);
-  };
- }, []);
- const visibleTabs = tabs.slice(0, showCompactGrammarToolbar ? 1 : tabCapacity);
- const activeTab = tabs.find((tab) => tab.key === activeView);
- if (activeTab && !visibleTabs.some((tab) => tab.key === activeView)) {
-  visibleTabs.splice(visibleTabs.length - 1, 1, activeTab);
- }
- const overflowTabs = tabs.filter((tab) => !visibleTabs.some((visible) => visible.key === tab.key));
+ const tabCapacity = useWorkspaceTabCapacity();
+ const { visibleTabs, overflowTabs } = splitWorkspaceTabs(
+  tabs,
+  activeView,
+  showCompactGrammarToolbar ? 1 : tabCapacity,
+ );
 
  const sectionReaders = useBusinessChineseSectionReaderServices({
   textReaderDocument,
