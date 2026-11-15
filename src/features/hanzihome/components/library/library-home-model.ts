@@ -67,3 +67,14 @@ export function filterVisibleLibraryCollectionIds(
    visibleTextbooks.some((book) => id === `static:${book.id}`),
  );
 }
+
+/** Drops hidden collections from the grid unless the learner is reviewing them. */
+export function excludeHiddenLibraryCollections(
+ collectionIds: string[],
+ hiddenCollectionIds: readonly string[],
+ showHidden: boolean,
+): string[] {
+ return showHidden
+  ? collectionIds
+  : collectionIds.filter((id) => !hiddenCollectionIds.includes(id));
+}

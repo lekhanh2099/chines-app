@@ -974,6 +974,40 @@ it
        expect((await page.evaluate(() => window.readingHarness.snapshot())).settingsWrites).toEqual(
         [],
        );
+       // Hiding a textbook removes it from the grid; the "Hidden (n)" toggle lists it again.
+       const hiddenId = `static:${firstTextbook.id}`;
+       await textbookTrigger.click();
+       await page.getByRole("menuitem", { name: copy.hideCollection, exact: true }).click();
+       await browserExpect(collections).toHaveCount(defaultOrder.length - 1);
+       await browserExpect
+        .poll(
+         async () =>
+          (await page.evaluate(() => window.readingHarness.snapshot())).learningState.settings
+           .libraryHiddenCollections,
+        )
+        .toEqual([hiddenId]);
+       const hiddenToggle = page.getByRole("button", {
+        name: copy.hiddenCollections.replace("{count}", "1"),
+        exact: true,
+       });
+       await hiddenToggle.click();
+       await browserExpect(hiddenToggle).toHaveAttribute("aria-pressed", "true");
+       await browserExpect(collections).toHaveCount(defaultOrder.length);
+       await browserExpect(page.locator(`[data-library-collection="${hiddenId}"]`)).toHaveAttribute(
+        "data-hidden",
+        "true",
+       );
+       await textbookTrigger.click();
+       await page.getByRole("menuitem", { name: copy.showCollection, exact: true }).click();
+       await browserExpect(hiddenToggle).toHaveCount(0);
+       await browserExpect(collections).toHaveCount(defaultOrder.length);
+       await browserExpect
+        .poll(
+         async () =>
+          (await page.evaluate(() => window.readingHarness.snapshot())).learningState.settings
+           .libraryHiddenCollections,
+        )
+        .toEqual([]);
 
        currentCatalog = {
         ...catalog,

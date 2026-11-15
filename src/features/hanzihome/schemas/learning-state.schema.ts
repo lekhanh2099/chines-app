@@ -79,6 +79,8 @@ export const userLearningStateSchema = z.object({
    density: z.enum(["comfortable", "compact", "focus"]).optional(),
    vocabDetailTab: z.string().optional(),
    libraryCollectionOrder: z.array(z.string().min(1)).optional(),
+   // Library collections (`group:*` / `static:*`) the learner chose to hide from the library grid.
+   libraryHiddenCollections: z.array(z.string().min(1)).optional(),
    libraryResumeOrder: z.array(z.string().min(1)).optional(),
    lessonTextDisplayMode: lessonTextDisplayModeSchema.optional(),
    bookDisplayModes: z.record(z.string(), lessonTextDisplayModeSchema).optional(),

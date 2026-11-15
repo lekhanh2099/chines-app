@@ -5,6 +5,7 @@ import type { TextbookBookSummary } from "@/features/hanzihome/static-json/busin
 import type { LibraryCourseGroup, LibraryCourseGroupKey } from "./library-course-groups";
 import {
  buildLibraryCollectionOrder,
+ excludeHiddenLibraryCollections,
  filterLibraryGroups,
  filterLibraryTextbooks,
  filterVisibleLibraryCollectionIds,
@@ -86,5 +87,20 @@ describe("library home model", () => {
    "static:nhip-cau-1",
    "group:hanyu",
   ]);
+ });
+});
+
+describe("hidden library collections", () => {
+ const ids = ["group:hanyu", "static:khau-ngu", "group:boya"];
+
+ it("drops hidden collections from the grid and keeps the saved order", () => {
+  expect(excludeHiddenLibraryCollections(ids, ["static:khau-ngu"], false)).toEqual([
+   "group:hanyu",
+   "group:boya",
+  ]);
+ });
+
+ it("lists every collection while the learner reviews hidden ones", () => {
+  expect(excludeHiddenLibraryCollections(ids, ["static:khau-ngu"], true)).toEqual(ids);
  });
 });
