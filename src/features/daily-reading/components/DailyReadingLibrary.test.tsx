@@ -188,6 +188,11 @@ vi.mock("@/features/reading/hooks/useReaderSessionPronunciation", () => ({
  useReaderSessionPronunciation: () => new Map(),
 }));
 
+vi.mock("@/features/reader/runtime/reader-context", async (importOriginal) => ({
+ ...(await importOriginal()),
+ useReaderCommands: () => ({ stop: vi.fn() }),
+}));
+
 vi.mock("@/features/reader/components/Reader", () => ({
  Reader: ({ services }: { services?: ReaderServices }) => {
   const content = (
