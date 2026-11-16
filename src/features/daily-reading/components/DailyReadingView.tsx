@@ -203,23 +203,7 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
          compact={tabCapacity < tabItems.length}
         />
        }
-       actions={
-        <div className="flex shrink-0 items-center gap-1.5">
-         {toolbar}
-         <Button
-          type="button"
-          variant="ghost"
-          size="toolbar"
-          // On phones the back action sits in the article header so the tab row keeps room.
-          className="hidden shrink-0 sm:inline-flex"
-          onClick={onBack}
-          title={t("document.back")}
-         >
-          <ArrowLeft />
-          {t("document.back")}
-         </Button>
-        </div>
-       }
+       actions={toolbar}
        listClassName="hanzihome-liquid-toolbar flex sticky top-0 z-30 bg-background/95 backdrop-blur-md"
        aria-label={t("tabs.aria")}
       >
