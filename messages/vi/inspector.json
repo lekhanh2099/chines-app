@@ -25,5 +25,33 @@
   "unresolvedReading": "Chưa xác định được cách đọc",
   "unresolvedWarning": "Một số ký tự chưa có cách đọc chắc chắn; hãy kiểm tra lại context hoặc dictionary.",
   "rejectedSourcePinyin": "Pinyin nguồn không khớp độ dài văn bản nên đã không được dùng làm fallback."
+ },
+ "store": {
+  "title": "Tra Hán tự",
+  "description": "{count} từ từ mọi giáo trình, khoá học và bộ thủ. Từ trùng được gộp làm một.",
+  "storeTab": "Kho từ vựng",
+  "lookupTab": "Tra theo ngữ cảnh",
+  "tabsAria": "Chế độ tra cứu",
+  "searchPlaceholder": "Tìm chữ Hán, pinyin, Hán Việt hoặc nghĩa…",
+  "searchAria": "Tìm trong kho từ vựng",
+  "grid": "Lưới",
+  "list": "Danh sách",
+  "viewAria": "Kiểu hiển thị",
+  "results": "{count} từ khớp “{query}”",
+  "openDictionary": "Tra sâu trong từ điển",
+  "empty": "Không có từ nào khớp.",
+  "emptyHelp": "Thử chữ Hán, pinyin không dấu hoặc một từ tiếng Việt khác.",
+  "pagerAria": "Chuyển trang",
+  "previous": "Trang trước",
+  "next": "Trang sau",
+  "page": "{page} / {pageCount}",
+  "openWord": "Xem chi tiết {hanzi}",
+  "hintAria": "Nghĩa của {hanzi} theo từng bài",
+  "occurrenceSummary": "{source} · +{count} nơi khác",
+  "meaningsTitle": "Nghĩa theo từng bài",
+  "meaningsCount": "{count} nơi xuất hiện",
+  "charactersTitle": "Giải nghĩa từng chữ",
+  "openCharacter": "Xem chi tiết chữ {hanzi}",
+  "breadcrumbAria": "Điều hướng kho từ vựng"
  }
 }

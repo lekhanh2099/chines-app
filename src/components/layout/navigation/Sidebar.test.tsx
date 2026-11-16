@@ -30,7 +30,6 @@ const localeCases = [
  {
   locale: "vi",
   personalGroup: "Cá nhân",
-  knowledgeGroup: "Năng lực",
   moreCluster: "Thêm",
   chineseBridge: "Nhịp cầu Hán ngữ",
   readingComprehension: "Đọc hiểu",
@@ -42,7 +41,6 @@ const localeCases = [
  {
   locale: "en",
   personalGroup: "Personal",
-  knowledgeGroup: "Capabilities",
   moreCluster: "More",
   chineseBridge: "Chinese Bridge",
   readingComprehension: "Reading comprehension",
@@ -54,7 +52,6 @@ const localeCases = [
  {
   locale: "zh-CN",
   personalGroup: "个人",
-  knowledgeGroup: "能力",
   moreCluster: "更多",
   chineseBridge: "桥梁",
   readingComprehension: "阅读理解",
@@ -66,7 +63,6 @@ const localeCases = [
 ] satisfies ReadonlyArray<{
  locale: AppLocale;
  personalGroup: string;
- knowledgeGroup: string;
  moreCluster: string;
  chineseBridge: string;
  readingComprehension: string;
@@ -88,7 +84,6 @@ describe("Sidebar translations", () => {
   async ({
    locale,
    personalGroup,
-   knowledgeGroup,
    moreCluster,
    chineseBridge,
    readingComprehension,
@@ -105,7 +100,6 @@ describe("Sidebar translations", () => {
    );
 
    expect(markup).toContain(personalGroup);
-   expect(markup).toContain(knowledgeGroup);
    expect(markup).toContain(moreCluster);
    expect(markup).toContain('viewBox="-2 0 40 40"');
    expect(markup).toContain('aria-label="HanziHome"');

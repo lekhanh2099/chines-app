@@ -47,6 +47,7 @@
   "test:coverage": "vitest run --coverage",
   "source:check": "node scripts/check-source-standards.mjs",
   "route:check": "node scripts/check-route-integrity.mjs",
+  "content:radical-characters": "node scripts/build-radical-characters.mjs",
   "ui:check": "node scripts/check-ui-standards.mjs",
   "api:check": "node scripts/check-api-registry.mjs",
   "audit:prod": "node scripts/check-npm-audit.mjs",

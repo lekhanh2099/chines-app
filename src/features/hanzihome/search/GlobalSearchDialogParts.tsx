@@ -28,8 +28,7 @@ const QUICK_ACCESS_ITEM_IDS = [
  "readingComprehension",
  "spokenChinese",
  "reader",
- "vocab",
- "grammar",
+ "inspector",
  "radicals",
  "notes",
 ] satisfies readonly NavigationItemId[];

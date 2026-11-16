@@ -4,8 +4,6 @@ import { useEffect } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
-import { toast } from "sonner";
 
 import {
  BasePopover as Popover,
@@ -13,7 +11,6 @@ import {
  BasePopoverPopup,
 } from "@/components/ui/overlays/base-popover";
 import { useDebounce } from "@/hooks/useDebounce";
-import { DictionarySrsQueuedError } from "@/types/error";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
 import { extractChinese } from "@/lib/text/chinese-utils";
@@ -24,7 +21,6 @@ import { FloatingMenuLookupToolbar } from "./floating-menu/FloatingMenuLookupToo
 import {
  FloatingMenuInlineNotePanel,
  FloatingMenuLinkSearchPanel,
- FloatingMenuNotePanel,
 } from "./floating-menu/FloatingMenuPanels";
 import { SmartLookupSummary } from "./floating-menu/SmartLookupSummary";
 import { preserveEditorSelection } from "./floating-menu/preserve-editor-selection";
@@ -36,11 +32,10 @@ import { useFloatingMenuSelection } from "./floating-menu/useFloatingMenuSelecti
 const DEBOUNCE_DELAY = 500;
 
 export default function EditorFloatingMenu() {
- const common = useTranslations("Common");
  const [editor] = useLexicalComposerContext();
  const { speak } = useTTS();
  const panels = useFloatingMenuPanels(editor);
- const { note, linkSearch, inlineNote, resetPanels, closePanels, openLinkSearch } = panels;
+ const { linkSearch, inlineNote, resetPanels, closePanels, openLinkSearch } = panels;
  const formatting = useFloatingMenuFormatting(editor);
  const { setIsPinyinActive, syncFormatsFromSelection } = formatting;
  const {
@@ -52,7 +47,6 @@ export default function EditorFloatingMenu() {
   updateSelectionState,
  } = useFloatingMenuSelection({
   editor,
-  showNote: note.isOpen,
   showLinkSearch: linkSearch.isOpen,
   showInlineNote: inlineNote.isOpen,
   resetPanels,
@@ -68,7 +62,6 @@ export default function EditorFloatingMenu() {
  const debouncedSelection = useDebounce(draftSelection, DEBOUNCE_DELAY);
  const selectedText = debouncedSelection.text;
  const contextSentence = debouncedSelection.contextSentence;
- const selectionKey = `${selectedText}::${contextSentence}`;
 
  const {
   data: smartData,
@@ -77,8 +70,6 @@ export default function EditorFloatingMenu() {
   error,
   mode,
   isChineseSelection,
-  saveSelection,
-  isSaving,
  } = useSmartSelectionInsights(selectedText, contextSentence, {
   enabled: lookupEnabled,
  });
@@ -107,25 +98,6 @@ export default function EditorFloatingMenu() {
   return () => window.removeEventListener("resize", hide);
  }, [finalPopupOpen, setIsViewportHidden]);
 
- const handleSave = async (event: React.MouseEvent<HTMLButtonElement>) => {
-  preserveEditorSelection(event);
-  try {
-   await saveSelection({
-    personalNote: note.draft || smartData?.personal_note || "",
-    personalNoteMode: "important",
-   });
-   toast.success(
-    smartMode === "sentence"
-     ? "Đã lưu câu mẫu vào kho ôn tập"
-     : `Đã lưu "${smartData?.entry.hanzi || detailTarget}" vào kho ôn tập`,
-   );
-  } catch (saveError) {
-   if (saveError instanceof DictionarySrsQueuedError)
-    toast.warning(common("offlinePack.srsSaveQueued"));
-   else toast.error(saveError instanceof Error ? saveError.message : "Không thể lưu selection");
-  }
- };
-
  const handleSpeak = (event: React.MouseEvent<HTMLButtonElement>) => {
   preserveEditorSelection(event);
   const speechText = smartMode === "sentence" ? selectedText : detailTarget;
@@ -142,24 +114,6 @@ export default function EditorFloatingMenu() {
    mode: smartMode,
   });
   setIsViewportHidden(true);
- };
-
- const handleSaveNote = async (event: React.MouseEvent<HTMLButtonElement>) => {
-  preserveEditorSelection(event);
-  if (!smartData) return;
-
-  try {
-   await saveSelection({
-    personalNote: note.draft,
-    personalNoteMode: "important",
-   });
-   toast.success("Đã lưu ghi chú nhanh");
-   note.setIsOpen(false);
-  } catch (saveError) {
-   if (saveError instanceof DictionarySrsQueuedError)
-    toast.warning(common("offlinePack.srsSaveQueued"));
-   else toast.error(saveError instanceof Error ? saveError.message : "Không thể lưu ghi chú");
-  }
  };
 
  if (typeof window === "undefined" || !finalPopupOpen) return null;
@@ -202,13 +156,8 @@ export default function EditorFloatingMenu() {
           smartMode={smartMode}
          />
          <FloatingMenuLookupToolbar
-          smartData={smartData}
-          isSaving={isSaving}
           hasLookupTarget={Boolean(detailTarget || selectedText)}
-          isNoteOpen={note.isOpen}
-          onSave={handleSave}
           onSpeak={handleSpeak}
-          onToggleNote={(event) => note.toggle(event, selectionKey, smartData?.personal_note || "")}
           onOpenDetail={handleOpenDetail}
           linkSearch={linkSearch}
           inlineNote={inlineNote}
@@ -224,14 +173,6 @@ export default function EditorFloatingMenu() {
         linkSearch={linkSearch}
         inlineNote={inlineNote}
        />
-
-       {note.isOpen ? (
-        <FloatingMenuNotePanel
-         note={note}
-         isSaveDisabled={isSaving || !smartData}
-         onSave={handleSaveNote}
-        />
-       ) : null}
 
        {linkSearch.isOpen ? <FloatingMenuLinkSearchPanel linkSearch={linkSearch} /> : null}
 

@@ -52,5 +52,27 @@
  "reset": "Reset",
  "saving": "Đang lưu...",
  "save": "Lưu",
- "loading": "Đang tải bộ thủ"
+ "loading": "Đang tải bộ thủ",
+ "characterNotes": {
+  "hintAria": "Giải nghĩa chữ trong “{text}”",
+  "components": "{components} · bộ {radical} ({name})",
+  "openDetail": "Xem chi tiết chữ {hanzi}",
+  "loadError": "Không tải được phần giải nghĩa chữ.",
+  "title": "Giải nghĩa chữ Hán",
+  "count": "{count} chữ",
+  "notInCatalog": "Bộ này chưa có trong danh mục bộ thủ; dưới đây là phần giải nghĩa chữ.",
+  "componentsHeader": "Thiên bàng",
+  "explanationHeader": "Giải nghĩa",
+  "sheetTitle": "{radical} · bộ {name}",
+  "breadcrumbAria": "Điều hướng bộ thủ",
+  "radicalTitle": "Bộ {radical} ({name})",
+  "radicalLoading": "Đang tải thông tin bộ thủ…",
+  "radicalUnavailable": "Chưa tải được thông tin bộ thủ này.",
+  "grid": "Lưới",
+  "list": "Danh sách",
+  "viewAria": "Kiểu hiển thị chữ",
+  "viewing": "Đang xem",
+  "radicalMissing": "Không tìm thấy bộ thủ này.",
+  "editRadical": "Sửa bộ thủ"
+ }
 }

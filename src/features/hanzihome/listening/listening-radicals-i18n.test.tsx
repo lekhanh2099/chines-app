@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
@@ -22,6 +23,10 @@ import { listeningQueryKeys } from "./listening.query-keys";
 import type { HanziHomeFeatureRuntime } from "../context/types";
 import { emptyLearningState } from "../utils/learning-state";
 
+vi.mock("@/i18n/navigation", () => ({
+ Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
+ useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
+}));
 vi.mock("@/components/providers/QueryProvider", () => ({
  useClientSession: () => ({ userId: null }),
 }));
@@ -139,7 +144,9 @@ describe("Listening and radical locale ownership", () => {
    renderToStaticMarkup(
     <NextIntlClientProvider locale={item.locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
      <MandarinTtsProvider>
-      <RadicalWorkspace radicals={[radical]} />
+      <QueryClientProvider client={new QueryClient()}>
+       <RadicalWorkspace radicals={[radical]} />
+      </QueryClientProvider>
       <RadicalDetailPanel radical={radical} editMode={false} onEdit={noop} />
       <ListeningExerciseItems
        exerciseType="single_choice"

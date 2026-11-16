@@ -25,5 +25,33 @@
   "unresolvedReading": "暂时无法确定读音",
   "unresolvedWarning": "部分字符的读音仍不确定，请重新检查语境或词典条目。",
   "rejectedSourcePinyin": "来源拼音的长度与文本不匹配，因此未作为回退数据使用。"
+ },
+ "store": {
+  "title": "查汉字",
+  "description": "来自所有教材、课程和部首的 {count} 个词，重复的词已合并。",
+  "storeTab": "词汇库",
+  "lookupTab": "语境查询",
+  "tabsAria": "查询方式",
+  "searchPlaceholder": "搜索汉字、拼音、汉越音或释义…",
+  "searchAria": "在词汇库中搜索",
+  "grid": "网格",
+  "list": "列表",
+  "viewAria": "显示方式",
+  "results": "{count} 个词匹配“{query}”",
+  "openDictionary": "在词典中深入查询",
+  "empty": "没有匹配的词。",
+  "emptyHelp": "试试汉字、不带声调的拼音或其他越南语词。",
+  "pagerAria": "翻页",
+  "previous": "上一页",
+  "next": "下一页",
+  "page": "{page} / {pageCount}",
+  "openWord": "查看 {hanzi} 的详情",
+  "hintAria": "{hanzi} 在各课中的意思",
+  "occurrenceSummary": "{source} · 另有 {count} 处",
+  "meaningsTitle": "各课中的意思",
+  "meaningsCount": "出现 {count} 处",
+  "charactersTitle": "逐字解析",
+  "openCharacter": "查看 {hanzi} 的详情",
+  "breadcrumbAria": "词汇库导航"
  }
 }

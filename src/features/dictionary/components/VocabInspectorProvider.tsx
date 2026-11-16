@@ -1,7 +1,7 @@
 "use client";
 
 import { Typography } from "@/components/ui/display/typography";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { usePathname } from "next/navigation";
 import {
@@ -9,28 +9,17 @@ import {
  BasePopoverPopup,
  BasePopoverPositioner,
 } from "@/components/ui/overlays/base-popover";
-import { useClientSession } from "@/components/providers/QueryProvider";
 import { Button } from "@/components/ui/actions/button";
 import { VocabDetailDrawer } from "@/features/dictionary/components/VocabDetailDrawer";
 import { containsChinese } from "@/lib/text/chinese-utils";
 import { useInspectorLookup } from "@/features/dictionary/hooks/useInspectorLookup";
-import { logger } from "@/lib/logger";
 import { getPrimaryMeaning } from "@/services/vocab/vocab.service";
 import { vocabDetailDrawerStore } from "@/stores/dictionary/vocab-detail-drawer-store";
 import { inspectorStore } from "@/stores/dictionary/inspector-store";
 import { dictionaryLookupStore } from "@/stores/dictionary/dictionary-lookup-store";
 import { useTTS } from "@/hooks/useTTS";
 import type { VocabData } from "@/types/database";
-import {
- BookmarkPlus,
- ChevronRight,
- CheckCircle,
- Loader2,
- Volume2,
- VolumeOff,
- X,
-} from "lucide-react";
-import { toast } from "sonner";
+import { ChevronRight, Loader2, Volume2, VolumeOff, X } from "lucide-react";
 import { z } from "zod";
 
 type InspectorCardProps = {
@@ -164,45 +153,13 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
 }
 
 function InspectorCard({ onClose }: InspectorCardProps) {
- const { userId } = useClientSession();
  const selectedText = useSelector(inspectorStore, (state) => state.selectedText);
  const lessonId = useSelector(inspectorStore, (state) => state.lessonId);
  const isOpen = useSelector(inspectorStore, (state) => state.isOpen);
  const { vocabData, isLoading } = useInspectorLookup(selectedText, lessonId, isOpen);
 
- const [isSaving, setIsSaving] = useState(false);
- const [isSaved, setIsSaved] = useState(false);
  const { openDetailDrawer } = vocabDetailDrawerStore.actions;
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
-
- const handleSaveToVocab = async () => {
-  if (!vocabData || isSaving || !userId) return;
-
-  setIsSaving(true);
-
-  try {
-   const response = await fetch("/api/dictionary/srs", {
-    method: "POST",
-    headers: {
-     "Content-Type": "application/json",
-     "X-HanziHome-Owner-Id": userId,
-    },
-    body: JSON.stringify({ hanzi: vocabData.hanzi }),
-   });
-   if (!response.ok) {
-    throw new Error("Save failed");
-   }
-
-   setIsSaved(true);
-   toast.success(`Đã thêm "${vocabData.hanzi}" vào kho ôn tập SRS!`);
-   window.setTimeout(() => setIsSaved(false), 3000);
-  } catch (error) {
-   logger.error("Save vocab failed:", error);
-   toast.error("Không thể lưu từ vựng");
-  } finally {
-   setIsSaving(false);
-  }
- };
 
  const handleSpeak = () => {
   if (!vocabData) return;
@@ -293,23 +250,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
        </div>
       </dl>
 
-      <div className="grid grid-cols-2 gap-2 border-t border-border-default pt-2">
-       <Button
-        variant="ghost"
-        size="sm"
-        onMouseDown={preserveSelection}
-        onClick={handleSaveToVocab}
-        disabled={!vocabData || isSaving || isSaved || !userId}
-       >
-        {isSaving ? (
-         <Loader2 className="h-4 w-4 animate-spin" />
-        ) : isSaved ? (
-         <CheckCircle className="h-4 w-4 text-success" />
-        ) : (
-         <BookmarkPlus className="h-4 w-4" />
-        )}
-        <span>{isSaved ? "Đã lưu" : isSaving ? "Đang lưu" : "Lưu (+)"}</span>
-       </Button>
+      <div className="grid gap-2 border-t border-border-default pt-2">
        <Button
         variant="ghost"
         size="sm"

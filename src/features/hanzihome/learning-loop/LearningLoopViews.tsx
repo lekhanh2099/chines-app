@@ -34,9 +34,6 @@ export function LearningLoopCompletionCard({ reviewedInSession }: { reviewedInSe
     <Button asChild>
      <Link href="/">{t("completionHome")}</Link>
     </Button>
-    <Button asChild variant="outline">
-     <Link href="/dictionary">{t("completionDictionary")}</Link>
-    </Button>
    </div>
   </Card>
  );

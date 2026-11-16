@@ -48,7 +48,6 @@
   "synced": "Synced"
  },
  "offlinePack": {
-  "srsSaveQueued": "Saved on this device. SRS will sync when connected; the server has not confirmed it yet.",
   "downloadCourse": "Download for offline",
   "downloading": "Downloading ({percent}%)...",
   "downloadReady": "Offline ready",

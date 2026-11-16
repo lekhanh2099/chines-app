@@ -10,7 +10,6 @@ import {
  Landmark,
  Languages,
  Layers3,
- Library,
  Lightbulb,
  ListTree,
  MessageCircle,
@@ -101,7 +100,6 @@ export const navigationItems = {
   icon: BookOpenText,
   href: "/hsk/khau-ngu-tc1",
  },
- grammar: { messageKey: "navigation.items.grammar", icon: ListTree, href: "/grammar" },
  humanities: {
   messageKey: "navigation.items.humanities",
   icon: Landmark,
@@ -127,11 +125,6 @@ export const navigationItems = {
   icon: Languages,
   href: "/translation",
  },
- dictionary: {
-  messageKey: "navigation.items.dictionary",
-  icon: RefreshCcw,
-  href: "/dictionary",
- },
  memoryTips: {
   messageKey: "navigation.items.memoryTips",
   icon: Lightbulb,
@@ -152,12 +145,17 @@ export const navigationItems = {
   icon: Workflow,
   href: "/learning-loop",
  },
- vocab: { messageKey: "navigation.items.vocab", icon: Library, href: "/vocab" },
- radicals: { messageKey: "navigation.items.radicals", icon: Layers3, href: "/radicals" },
+ radicals: {
+  messageKey: "navigation.items.radicals",
+  icon: Layers3,
+  href: "/radicals",
+  match: "prefix",
+ },
  inspector: {
   messageKey: "navigation.items.inspector",
   icon: SearchCheck,
   href: "/inspector",
+  match: "prefix",
  },
  htmlArtifacts: {
   messageKey: "navigation.items.htmlArtifacts",
@@ -184,19 +182,16 @@ export const navigationItems = {
  chineseBridge: NavigationItemConfig;
  readingComprehension: NavigationItemConfig;
  spokenChinese: NavigationItemConfig;
- grammar: NavigationItemConfig;
  humanities: NavigationItemConfig;
  personalLearning: NavigationItemConfig;
  notebook: NavigationItemConfig;
  notes: NavigationItemConfig;
  dictation: NavigationItemConfig;
  translationStudio: NavigationItemConfig;
- dictionary: NavigationItemConfig;
  memoryTips: NavigationItemConfig;
  conversation: NavigationItemConfig;
  speakingDrills: NavigationItemConfig;
  learningLoop: NavigationItemConfig;
- vocab: NavigationItemConfig;
  radicals: NavigationItemConfig;
  inspector: NavigationItemConfig;
  htmlArtifacts: NavigationItemConfig;
@@ -232,7 +227,16 @@ export const navigationGroups = [
     id: "learning-main",
     messageKey: "navigation.sections.learningMain",
     collapsible: false,
-    itemIds: ["home", "lessons", "dailyReading", "speakingDrills", "reader", "notes"],
+    itemIds: [
+     "home",
+     "lessons",
+     "dailyReading",
+     "speakingDrills",
+     "reader",
+     "notes",
+     "radicals",
+     "inspector",
+    ],
    },
    {
     id: "hsk-reading",
@@ -269,26 +273,7 @@ export const navigationGroups = [
     id: "practice-review",
     messageKey: "navigation.sections.practiceReview",
     collapsible: true,
-    itemIds: ["dictionary", "memoryTips", "learningLoop"],
-   },
-  ],
- },
- {
-  id: "knowledge",
-  messageKey: "navigation.groups.knowledge",
-  icon: Library,
-  sections: [
-   {
-    id: "knowledge-language",
-    messageKey: "navigation.sections.knowledgeLanguage",
-    collapsible: false,
-    itemIds: ["grammar", "vocab"],
-   },
-   {
-    id: "knowledge-hanzi",
-    messageKey: "navigation.sections.knowledgeHanzi",
-    collapsible: true,
-    itemIds: ["radicals", "inspector"],
+    itemIds: ["memoryTips", "learningLoop"],
    },
   ],
  },

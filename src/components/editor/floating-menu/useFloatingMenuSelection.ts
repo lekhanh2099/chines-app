@@ -19,7 +19,6 @@ type DraftSelection = {
 
 type FloatingMenuSelectionOptions = {
  editor: LexicalEditor;
- showNote: boolean;
  showLinkSearch: boolean;
  showInlineNote: boolean;
  resetPanels: () => void;
@@ -30,7 +29,6 @@ type FloatingMenuSelectionOptions = {
 /** Tracks the editor range selection: its draft text/context, popover anchor and visibility. */
 export function useFloatingMenuSelection({
  editor,
- showNote,
  showLinkSearch,
  showInlineNote,
  resetPanels,
@@ -106,7 +104,7 @@ export function useFloatingMenuSelection({
    !nativeSelection ||
    nativeSelection.isCollapsed
   ) {
-   if ((showNote || showLinkSearch || showInlineNote) && latestDraftRef.current.text) return;
+   if ((showLinkSearch || showInlineNote) && latestDraftRef.current.text) return;
    clearSelectionState();
    return;
   }
@@ -146,7 +144,6 @@ export function useFloatingMenuSelection({
   resetPanels,
   showInlineNote,
   showLinkSearch,
-  showNote,
   syncFormatsFromSelection,
   updateAnchorFromNativeSelection,
  ]);

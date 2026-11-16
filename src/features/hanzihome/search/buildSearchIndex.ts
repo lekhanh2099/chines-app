@@ -325,11 +325,9 @@ function buildRadicalItems(radicals: StaticRadicalData[]) {
 function buildGlobalNavigationItems() {
  const items: Array<[string, string, string, HanziHomeSearchKind]> = [
   ["navigation:library", "Thư viện HanziHome", "/", "navigation"],
-  ["navigation:vocab", "Tổng hợp từ vựng", "/vocab", "navigation"],
-  ["navigation:grammar", "Tổng hợp ngữ pháp", "/grammar", "navigation"],
+  ["navigation:inspector", "Tra Hán tự · Kho từ vựng", "/inspector", "navigation"],
   ["navigation:radicals", "Bộ thủ", "/radicals", "navigation"],
   ["navigation:notes", "Ghi chú", "/notes", "note"],
-  ["navigation:dictionary", "SRS từ vựng", "/dictionary", "navigation"],
  ];
 
  return items.map(([id, title, href, kind]) =>

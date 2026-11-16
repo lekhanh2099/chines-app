@@ -6,8 +6,6 @@ import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
-import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
-import { syncPendingDictionarySrs } from "@/features/dictionary/dictionary-srs-outbox";
 import { syncPendingReviewAttempts } from "@/features/hanzihome/local/review-attempt-outbox";
 import { syncPendingPdfAnnotations } from "@/features/reading/pdf/pdf-annotation-outbox";
 import { syncPendingReaderAnnotations } from "@/features/reading/services/reading-annotation-api";
@@ -51,14 +49,6 @@ export function AutoSyncReconnectBridge(): null {
        void queryClient.invalidateQueries({
         queryKey: hanzihomeQueryKeys.readerAnnotations(userId),
        });
-      }
-
-      const savedWords = await syncPendingDictionarySrs(userId);
-      if (!active) return;
-      if (savedWords > 0) {
-       void queryClient.invalidateQueries({ queryKey: dictionaryQueryKeys.vocabListRoot(userId) });
-       void queryClient.invalidateQueries({ queryKey: ["vocab-detail", userId] });
-       void queryClient.invalidateQueries({ queryKey: ["editor-smart-selection", userId] });
       }
 
       const savedPdfPages = await syncPendingPdfAnnotations(userId);

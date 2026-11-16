@@ -44,13 +44,9 @@ type BreadcrumbMessageKey =
  | "breadcrumbs.study"
  | "breadcrumbs.reader"
  | "breadcrumbs.notebook"
- | "breadcrumbs.dictionary"
  | "breadcrumbs.settings"
  | "breadcrumbs.radicals"
  | "breadcrumbs.hanzihome"
- | "breadcrumbs.vocab"
- | "breadcrumbs.vocabReview"
- | "breadcrumbs.grammar"
  | "breadcrumbs.memoryTips"
  | "breadcrumbs.htmlArtifacts"
  | "breadcrumbs.apiDocs"
@@ -223,20 +219,9 @@ function getSimpleHeaderBreadcrumb(pathname: string): SimpleHeaderBreadcrumb | n
   };
  }
  if (pathname === "/notebook") return { labelKey: "breadcrumbs.notebook" };
- if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) {
-  return { labelKey: "breadcrumbs.dictionary" };
- }
  if (pathname === "/settings") return { labelKey: "breadcrumbs.settings" };
  if (pathname === "/radicals") return { labelKey: "breadcrumbs.radicals" };
  if (pathname === "/hanzihome") return { labelKey: "breadcrumbs.hanzihome" };
- if (pathname === "/vocab/review") {
-  return {
-   parent: { labelKey: "breadcrumbs.vocab", href: "/vocab" },
-   labelKey: "breadcrumbs.vocabReview",
-  };
- }
- if (pathname === "/vocab") return { labelKey: "breadcrumbs.vocab" };
- if (pathname === "/grammar") return { labelKey: "breadcrumbs.grammar" };
  if (pathname === "/memory-tips") return { labelKey: "breadcrumbs.memoryTips" };
  if (pathname === "/html-artifacts") return { labelKey: "breadcrumbs.htmlArtifacts" };
  if (pathname === "/api-docs") return { labelKey: "breadcrumbs.apiDocs" };

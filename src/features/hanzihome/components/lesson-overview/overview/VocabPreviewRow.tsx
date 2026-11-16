@@ -14,6 +14,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
+import { CharacterNoteHint } from "@/features/hanzihome/radical-characters/CharacterNoteHint";
 
 export function VocabPreviewRow({
  hanzi,
@@ -59,29 +60,32 @@ export function VocabPreviewRow({
       </div>
      )}
     </div>
-    <Button
-     type="button"
-     variant={isSavedToVault ? "active" : "ghost"}
-     size="compact"
-     onClick={() =>
-      learning.toggleCustomVocabByHanzi({
-       hanzi,
-       pinyin,
-       meaning: rawMeaning || meaning || hanzi,
-       hanviet: rawHanviet || hanviet || undefined,
-       pos: category || undefined,
-      })
-     }
-     title={isSavedToVault ? t("savedInVaultTitle") : t("saveToVaultTitle")}
-     aria-label={
-      isSavedToVault ? t("removeFromVaultAria", { hanzi }) : t("saveToVaultAria", { hanzi })
-     }
-    >
-     {isSavedToVault ? <Check className="size-3.5" /> : <BookmarkPlus className="size-3.5" />}
-     <span className="hidden sm:inline">
-      {isSavedToVault ? t("savedInVault") : t("saveToVault")}
-     </span>
-    </Button>
+    <div className="flex h-11 shrink-0 items-center gap-1">
+     <CharacterNoteHint text={hanzi} />
+     <Button
+      type="button"
+      variant={isSavedToVault ? "active" : "ghost"}
+      size="compact"
+      onClick={() =>
+       learning.toggleCustomVocabByHanzi({
+        hanzi,
+        pinyin,
+        meaning: rawMeaning || meaning || hanzi,
+        hanviet: rawHanviet || hanviet || undefined,
+        pos: category || undefined,
+       })
+      }
+      title={isSavedToVault ? t("savedInVaultTitle") : t("saveToVaultTitle")}
+      aria-label={
+       isSavedToVault ? t("removeFromVaultAria", { hanzi }) : t("saveToVaultAria", { hanzi })
+      }
+     >
+      {isSavedToVault ? <Check className="size-3.5" /> : <BookmarkPlus className="size-3.5" />}
+      <span className="hidden sm:inline">
+       {isSavedToVault ? t("savedInVault") : t("saveToVault")}
+      </span>
+     </Button>
+    </div>
    </div>
    <div className="flex min-w-0 flex-wrap items-center gap-2">
     {hanviet && (

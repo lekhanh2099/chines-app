@@ -9,7 +9,6 @@
  "completionTitle": "Review session complete!",
  "completionDescription": "You completed {count} reviews in this session.",
  "completionHome": "Go to home",
- "completionDictionary": "View saved words",
  "checkAgain": "Check again",
  "dueCount": "{count} due",
  "correctStreak": "Correct streak: {count}",
