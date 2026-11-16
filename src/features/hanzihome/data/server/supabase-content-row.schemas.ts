@@ -123,6 +123,7 @@ const vocabDetailRowSchema = z.object({
 
 export const vocabCoreRowSchema = z.object({
  id: z.string(),
+ word_id: z.string().nullable(),
  lesson_id: z.string(),
  course_id: z.string(),
  book_id: z.string(),

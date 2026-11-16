@@ -501,6 +501,7 @@ export function getStaticStudioAggregateItems({
     const lesson = lessonById.get(item.lesson_id);
     return {
      id: `${item.lesson_id}__${item.id}`,
+     wordId: null,
      courseId: item.course_id,
      bookId: item.book_id,
      lessonId: item.lesson_id,

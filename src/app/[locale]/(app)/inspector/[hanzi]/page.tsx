@@ -9,11 +9,11 @@ export default async function VocabularyWordPage({
 }: Pick<PageProps<"/[locale]/inspector/[hanzi]">, "params">) {
  const hanzi = decodeURIComponent((await params).hanzi);
  const auth = await requireAuthenticatedRoute();
- const [entry] = await getVocabularyEntries({
+ const entries = await getVocabularyEntries({
   ownerId: auth.authenticated ? auth.context.user.id : "",
   hanzi,
  });
- if (!entry) notFound();
+ if (entries.length === 0) notFound();
 
- return <VocabularyWordWorkspace entry={entry} />;
+ return <VocabularyWordWorkspace entries={entries} />;
 }

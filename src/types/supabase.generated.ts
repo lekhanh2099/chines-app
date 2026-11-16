@@ -2150,6 +2150,7 @@ export type Database = {
           tone: string | null
           updated_at: string
           word: string
+          word_id: string | null
         }
         Insert: {
           book_id: string
@@ -2176,6 +2177,7 @@ export type Database = {
           tone?: string | null
           updated_at?: string
           word: string
+          word_id?: string | null
         }
         Update: {
           book_id?: string
@@ -2202,6 +2204,7 @@ export type Database = {
           tone?: string | null
           updated_at?: string
           word?: string
+          word_id?: string | null
         }
         Relationships: [
           {
@@ -2225,7 +2228,44 @@ export type Database = {
             referencedRelation: "hanzihome_lessons"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "hanzihome_vocab_items_word_id_fkey"
+            columns: ["word_id"]
+            isOneToOne: false
+            referencedRelation: "hanzihome_words"
+            referencedColumns: ["id"]
+          },
         ]
+      }
+      hanzihome_words: {
+        Row: {
+          created_at: string
+          han_viet: string
+          id: string
+          pinyin: string
+          pinyin_key: string
+          updated_at: string
+          word: string
+        }
+        Insert: {
+          created_at?: string
+          han_viet?: string
+          id: string
+          pinyin?: string
+          pinyin_key: string
+          updated_at?: string
+          word: string
+        }
+        Update: {
+          created_at?: string
+          han_viet?: string
+          id?: string
+          pinyin?: string
+          pinyin_key?: string
+          updated_at?: string
+          word?: string
+        }
+        Relationships: []
       }
       lesson_note_links: {
         Row: {
@@ -3731,6 +3771,10 @@ export type Database = {
           vocab_item_id: string
           word: string
         }[]
+      }
+      hanzihome_word_pinyin_key: {
+        Args: { p_pinyin: string; p_word: string }
+        Returns: string
       }
       is_hanzihome_content_editor: { Args: never; Returns: boolean }
       update_lesson_text_annotation_note: {

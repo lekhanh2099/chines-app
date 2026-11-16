@@ -189,6 +189,7 @@ const hanziHomeCatalogSchema = z.object({
 
 export const aggregateVocabItemSchema = z.object({
  id: z.string(),
+ wordId: z.string().nullable(),
  courseId: z.string(),
  bookId: z.string(),
  lessonId: z.string(),
