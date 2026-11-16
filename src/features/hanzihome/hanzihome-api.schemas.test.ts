@@ -18,6 +18,34 @@ const lesson = {
 };
 
 describe("HanziHome API response contracts", () => {
+ it("preserves canonical word IDs and nullable links in aggregate vocabulary responses", () => {
+  const item = {
+   id: "lesson-1__vocab-1",
+   wordId: "word-1",
+   courseId: "course-1",
+   bookId: "book-1",
+   lessonId: "lesson-1",
+   lessonNumber: 1,
+   lessonOrder: 1,
+   lessonTitle: "第一课",
+   word: "行",
+   pinyin: "xíng",
+   hanViet: "Hành",
+   meaning: "đi",
+   category: "Từ vựng",
+  };
+  expect(aggregateApiResponseSchema.parse({ items: [item] }).items[0]).toMatchObject({
+   wordId: "word-1",
+   meaning: "đi",
+  });
+  expect(
+   aggregateApiResponseSchema.parse({ items: [{ ...item, wordId: null }] }).items[0],
+  ).toMatchObject({ wordId: null });
+  const { wordId, ...missingLink } = item;
+  expect(wordId).toBe("word-1");
+  expect(aggregateApiResponseSchema.safeParse({ items: [missingLink] }).success).toBe(false);
+ });
+
  it("accepts the summary-only catalog shape", () => {
   const result = catalogApiResponseSchema.safeParse({
    catalog: {

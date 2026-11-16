@@ -206,7 +206,7 @@ export async function getLessonVocabularyRows(lessonId: string) {
    .from("hanzihome_vocab_items")
    .select(
     `
-    id,lesson_id,course_id,book_id,item_order,word,pinyin,han_viet,meaning,meaning_en,category,level,pos_vi,pos_zh,tone,tags,updated_at,
+    id,word_id,lesson_id,course_id,book_id,item_order,word,pinyin,han_viet,meaning,meaning_en,category,level,pos_vi,pos_zh,tone,tags,updated_at,
     examples:hanzihome_vocab_examples(id,vocab_item_id,example_order,zh,pinyin,vi,note,updated_at),
     details:hanzihome_vocab_detail_sections(id,vocab_item_id,section_key,title,lines,section_order,updated_at)
     `,

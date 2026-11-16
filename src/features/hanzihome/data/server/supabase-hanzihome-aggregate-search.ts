@@ -62,6 +62,7 @@ export async function getAggregateItems({
   return rows
    .map((row): AggregateVocabItem => ({
     id: `${row.lesson_id}__${row.id}`,
+    wordId: row.word_id,
     courseId: row.course_id,
     bookId: row.book_id,
     lessonId: row.lesson_id,

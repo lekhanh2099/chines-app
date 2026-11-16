@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 
 import { VocabularyEntryCard } from "./VocabularyEntryCard";
 import type { VocabularyEntry, VocabularyStoreTab } from "./vocabulary-index";
+import { wordPinyinKey } from "./word-key";
 
 function storeHref(pathname: string, query: string, page: number) {
  const params = new URLSearchParams();
@@ -142,7 +143,7 @@ export function VocabularyStoreWorkspace({
        )}
       >
        {items.map((entry) => (
-        <li key={entry.hanzi} className="min-w-0">
+        <li key={`${entry.hanzi}:${wordPinyinKey(entry.hanzi, entry.pinyin)}`} className="min-w-0">
          <VocabularyEntryCard entry={entry} />
         </li>
        ))}

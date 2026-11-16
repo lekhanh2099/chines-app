@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { normalizeSearchText } from "@/features/hanzihome/search/normalize";
+import { wordPinyinKey } from "./word-key";
 
 const vocabularyStoreTabSchema = z.enum(["store", "lookup"]);
 export type VocabularyStoreTab = z.output<typeof vocabularyStoreTabSchema>;
@@ -19,7 +20,7 @@ export type VocabularyRecord = {
 /** The meaning a word carries in one lesson or note. */
 export type VocabularyOccurrence = { meaning: string; source: VocabularySource };
 
-/** One word of the unified store: every occurrence merged under its written form. */
+/** One word of the unified store: occurrences sharing its written form and reading. */
 export type VocabularyEntry = {
  hanzi: string;
  pinyin: string;
@@ -29,22 +30,55 @@ export type VocabularyEntry = {
 
 export const VOCABULARY_PAGE_SIZE = 60;
 
+/** A record names one reading; an empty pinyin or a list ("chuán / zhuàn") names none. */
+function readingKeys(hanzi: string, pinyin: string): string[] {
+ return pinyin
+  .split("/")
+  .map((reading) => wordPinyinKey(hanzi, reading))
+  .filter(Boolean);
+}
+
 /**
- * Merges occurrences by written form: the first non-empty pinyin and Hán-Việt win;
- * each source keeps the meaning the word has there, in first-seen order.
+ * Merges occurrences by written form and reading (see `wordPinyinKey`).
+ * A record without a single reading joins the first reading it lists, else the
+ * first reading of its written form. The first single reading and the first
+ * non-empty Hán-Việt win; each source keeps the meaning the word has there,
+ * in first-seen order.
  */
 export function mergeVocabularyRecords(records: readonly VocabularyRecord[]): VocabularyEntry[] {
+ const readingsByHanzi = new Map<string, string[]>();
+ for (const record of records) {
+  const hanzi = record.hanzi.trim();
+  const [reading = "", ...others] = readingKeys(hanzi, record.pinyin);
+  if (!reading || others.length > 0) continue;
+  const readings = readingsByHanzi.get(hanzi) ?? [];
+  readingsByHanzi.set(hanzi, readings);
+  if (!readings.includes(reading)) readings.push(reading);
+ }
  const entries = new Map<string, VocabularyEntry>();
+ const namedEntries = new Set<string>();
  const seenOccurrences = new Set<string>();
  for (const record of records) {
   const hanzi = record.hanzi.trim();
   if (!hanzi) continue;
-  const entry = entries.get(hanzi) ?? { hanzi, pinyin: "", hanViet: "", occurrences: [] };
-  entries.set(hanzi, entry);
+  const keys = readingKeys(hanzi, record.pinyin);
+  const readings = readingsByHanzi.get(hanzi) ?? [];
+  const [firstKey = ""] = keys;
+  const namesOneReading = keys.length === 1;
+  const pinyinKey = namesOneReading
+   ? firstKey
+   : (keys.find((reading) => readings.includes(reading)) ?? readings[0] ?? "");
+  const key = [hanzi, pinyinKey].join("\u0000");
+  const entry = entries.get(key) ?? { hanzi, pinyin: "", hanViet: "", occurrences: [] };
+  entries.set(key, entry);
+  if (namesOneReading && !namedEntries.has(key)) {
+   namedEntries.add(key);
+   entry.pinyin = record.pinyin.trim();
+  }
   entry.pinyin ||= record.pinyin.trim();
   entry.hanViet ||= record.hanViet.trim();
   const meaning = record.meaning.trim();
-  const occurrenceKey = [hanzi, record.source.href, normalizeSearchText(meaning)].join("\u0000");
+  const occurrenceKey = [key, record.source.href, normalizeSearchText(meaning)].join("\u0000");
   if (!seenOccurrences.has(occurrenceKey)) {
    seenOccurrences.add(occurrenceKey);
    entry.occurrences.push({ meaning, source: record.source });
@@ -54,29 +88,24 @@ export function mergeVocabularyRecords(records: readonly VocabularyRecord[]): Vo
 }
 
 /**
- * Joins two already-merged stores without re-reading their records: words of
- * `primary` come first and absorb the occurrences of the same word in `secondary`.
+ * Joins two already-merged stores using the same word/reading identity.
+ * Words of `primary` come first; source meanings remain attached to their reading.
  */
 export function combineVocabularyEntries(
  primary: readonly VocabularyEntry[],
  secondary: readonly VocabularyEntry[],
 ): VocabularyEntry[] {
- const secondaryByHanzi = new Map(secondary.map((entry) => [entry.hanzi, entry]));
- const primaryWords = new Set(primary.map((entry) => entry.hanzi));
- return [
-  ...primary.map((entry) => {
-   const match = secondaryByHanzi.get(entry.hanzi);
-   return match
-    ? {
-       hanzi: entry.hanzi,
-       pinyin: entry.pinyin || match.pinyin,
-       hanViet: entry.hanViet || match.hanViet,
-       occurrences: [...entry.occurrences, ...match.occurrences],
-      }
-    : entry;
-  }),
-  ...secondary.filter((entry) => !primaryWords.has(entry.hanzi)),
- ];
+ return mergeVocabularyRecords(
+  [...primary, ...secondary].flatMap((entry) =>
+   entry.occurrences.map((occurrence) => ({
+    hanzi: entry.hanzi,
+    pinyin: entry.pinyin,
+    hanViet: entry.hanViet,
+    meaning: occurrence.meaning,
+    source: occurrence.source,
+   })),
+  ),
+ );
 }
 
 /** A store prepared for searching: every field is normalized once, not per query. */

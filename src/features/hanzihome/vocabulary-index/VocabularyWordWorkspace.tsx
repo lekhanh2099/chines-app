@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -29,14 +29,16 @@ import { Link } from "@/i18n/navigation";
 import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
 
 import type { VocabularyEntry } from "./vocabulary-index";
+import { wordPinyinKey } from "./word-key";
 
 const headerOwnerId = "vocabulary-word";
 
 /** Detail page of one store word: its meaning in every lesson and the notes of its characters. */
-export function VocabularyWordWorkspace({ entry }: { entry: VocabularyEntry }) {
+export function VocabularyWordWorkspace({ entries }: { entries: VocabularyEntry[] }) {
+ const hanzi = entries[0]?.hanzi ?? "";
  const t = useTranslations("Inspector.store");
  const tShell = useTranslations("Shell");
- const characters = explainedCharactersIn(entry.hanzi);
+ const characters = explainedCharactersIn(hanzi);
  const characterIndex = useRadicalCharacterIndex(characters.length > 0);
 
  useEffect(() => {
@@ -50,60 +52,70 @@ export function VocabularyWordWorkspace({ entry }: { entry: VocabularyEntry }) {
     </AppHeaderBreadcrumbItem>
     <AppHeaderBreadcrumbSeparator />
     <AppHeaderBreadcrumbItem className="min-w-0">
-     <AppHeaderBreadcrumbPage>{entry.hanzi}</AppHeaderBreadcrumbPage>
+     <AppHeaderBreadcrumbPage>{hanzi}</AppHeaderBreadcrumbPage>
     </AppHeaderBreadcrumbItem>
    </AppHeaderBreadcrumb>,
   );
- }, [entry.hanzi, t, tShell]);
+ }, [hanzi, t, tShell]);
  useEffect(() => () => headerToolbarStore.actions.clearOwnedContent(headerOwnerId), []);
 
  return (
   <div className="hanzihome-static-page grid w-full min-w-0 content-start gap-4">
-   <Card variant="section" padding="md" className="flex min-w-0 flex-wrap items-center gap-4">
-    <HanziText as="h1" size="hero" tone="primary" weight="black" leading="none">
-     {entry.hanzi}
-    </HanziText>
-    <div className="grid min-w-0 flex-1 gap-1">
-     {entry.pinyin ? (
-      <PinyinText variant="sectionTitle" tone="accent" weight="bold">
-       {entry.pinyin}
-      </PinyinText>
-     ) : null}
-     {entry.hanViet ? (
-      <StudyInstructionText as="span" variant="label" tone="purple" transform="uppercase">
-       {entry.hanViet}
-      </StudyInstructionText>
-     ) : null}
-    </div>
-    <MandarinSpeakButton text={entry.hanzi} touchTarget />
-   </Card>
+   {entries.map((entry, index) => (
+    <Fragment key={`${entry.hanzi}:${wordPinyinKey(entry.hanzi, entry.pinyin)}`}>
+     <Card variant="section" padding="md" className="flex min-w-0 flex-wrap items-center gap-4">
+      <HanziText
+       as={index === 0 ? "h1" : "h2"}
+       size="hero"
+       tone="primary"
+       weight="black"
+       leading="none"
+      >
+       {entry.hanzi}
+      </HanziText>
+      <div className="grid min-w-0 flex-1 gap-1">
+       {entry.pinyin ? (
+        <PinyinText variant="sectionTitle" tone="accent" weight="bold">
+         {entry.pinyin}
+        </PinyinText>
+       ) : null}
+       {entry.hanViet ? (
+        <StudyInstructionText as="span" variant="label" tone="purple" transform="uppercase">
+         {entry.hanViet}
+        </StudyInstructionText>
+       ) : null}
+      </div>
+      <MandarinSpeakButton text={entry.hanzi} touchTarget />
+     </Card>
 
-   <section className="grid min-w-0 gap-2" aria-label={t("meaningsTitle")}>
-    <div className="grid gap-0.5">
-     <Typography as="h2" variant="sectionTitle">
-      {t("meaningsTitle")}
-     </Typography>
-     <Typography as="span" variant="caption" tone="muted">
-      {t("meaningsCount", { count: entry.occurrences.length })}
-     </Typography>
-    </div>
-    <ul className="grid min-w-0 gap-2 sm:grid-cols-2 2xl:grid-cols-3">
-     {entry.occurrences.map((occurrence) => (
-      <li key={`${occurrence.source.href}:${occurrence.meaning}`} className="min-w-0">
-       <Card variant="default" padding="md" className="grid h-full content-start gap-1.5">
-        <Link
-         href={occurrence.source.href}
-         className="flex min-w-0 items-center gap-1 text-xs font-bold text-success-text hover:underline"
-        >
-         <span className="truncate">{occurrence.source.label}</span>
-         <ArrowRight className="size-3.5 shrink-0" />
-        </Link>
-        <HanziAwareText text={occurrence.meaning} variant="body" tone="default" />
-       </Card>
-      </li>
-     ))}
-    </ul>
-   </section>
+     <section className="grid min-w-0 gap-2" aria-label={t("meaningsTitle")}>
+      <div className="grid gap-0.5">
+       <Typography as="h2" variant="sectionTitle">
+        {t("meaningsTitle")}
+       </Typography>
+       <Typography as="span" variant="caption" tone="muted">
+        {t("meaningsCount", { count: entry.occurrences.length })}
+       </Typography>
+      </div>
+      <ul className="grid min-w-0 gap-2 sm:grid-cols-2 2xl:grid-cols-3">
+       {entry.occurrences.map((occurrence) => (
+        <li key={`${occurrence.source.href}:${occurrence.meaning}`} className="min-w-0">
+         <Card variant="default" padding="md" className="grid h-full content-start gap-1.5">
+          <Link
+           href={occurrence.source.href}
+           className="flex min-w-0 items-center gap-1 text-xs font-bold text-success-text hover:underline"
+          >
+           <span className="truncate">{occurrence.source.label}</span>
+           <ArrowRight className="size-3.5 shrink-0" />
+          </Link>
+          <HanziAwareText text={occurrence.meaning} variant="body" tone="default" />
+         </Card>
+        </li>
+       ))}
+      </ul>
+     </section>
+    </Fragment>
+   ))}
 
    {characters.length > 0 ? (
     <section className="grid min-w-0 gap-2" aria-label={t("charactersTitle")}>
