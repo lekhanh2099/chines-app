@@ -2,7 +2,6 @@ import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 const homeLearningOverviewSchema = z.strictObject({
- srsDueCount: z.number().int().nonnegative(),
  learningLoopDueCount: z.number().int().nonnegative(),
  readerCompletedCount: z.number().int().nonnegative(),
  readerDocumentCount: z.number().int().nonnegative(),

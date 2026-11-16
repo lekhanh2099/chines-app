@@ -13,6 +13,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { CharacterNoteHint } from "@/features/hanzihome/radical-characters/CharacterNoteHint";
+import { WordOccurrencesHint } from "@/features/hanzihome/vocabulary-index/WordOccurrencesHint";
 
 import type { SpeakingDrillSelection } from "./speaking-drills.types";
 
@@ -45,6 +46,7 @@ export function SpeakingDrillMaterials({ lesson }: { lesson: SpeakingDrillSelect
         </div>
         <TranslationText>{item.vi}</TranslationText>
        </div>
+       <WordOccurrencesHint hanzi={item.hanzi} />
        <CharacterNoteHint text={item.hanzi} />
        <MandarinSpeakButton text={item.hanzi} />
       </li>

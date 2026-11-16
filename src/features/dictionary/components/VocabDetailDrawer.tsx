@@ -20,6 +20,8 @@ import {
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
 import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
+import { useVocabularyWord } from "@/features/hanzihome/vocabulary-index/useVocabularyWords";
+import { WordOccurrenceList } from "@/features/hanzihome/vocabulary-index/WordOccurrenceList";
 import {
  getNormalizedAntonyms,
  getNormalizedDefinitions,
@@ -185,6 +187,18 @@ export function VocabDetailDrawer() {
  );
 }
 
+/** The meaning this word carries in the learner's own lessons, ahead of the dictionary. */
+function LessonMeaningsSection({ hanzi }: { hanzi: string }) {
+ const t = useTranslations("Dictionary.drawer");
+ const word = useVocabularyWord(hanzi, true);
+ if (!word.data || word.data.length === 0) return null;
+ return (
+  <DetailSection title={t("lessonMeanings")}>
+   <WordOccurrenceList hanzi={hanzi} enabled limit={8} />
+  </DetailSection>
+ );
+}
+
 function DetailSection({
  title,
  actions,
@@ -258,6 +272,8 @@ function WordDetailPanel({
      {displayMeaning || t("noSummaryMeaning")}
     </Typography>
    </DetailSection>
+
+   <LessonMeaningsSection hanzi={smartData.entry.hanzi} />
 
    <DetailSection
     title={t("anatomy")}

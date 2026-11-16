@@ -165,6 +165,18 @@ export async function getVocabularyPage({
  };
 }
 
+/** Written forms the learner meets in more than one place across the whole store. */
+export async function getReusedVocabularyWords({ ownerId }: { ownerId: string }) {
+ const occurrenceCounts = new Map<string, number>();
+ for (const { entry } of await searchIndexFor(ownerId)) {
+  occurrenceCounts.set(
+   entry.hanzi,
+   (occurrenceCounts.get(entry.hanzi) ?? 0) + entry.occurrences.length,
+  );
+ }
+ return [...occurrenceCounts].filter(([, count]) => count > 1).map(([hanzi]) => hanzi);
+}
+
 /** The store entry for one written form; empty when the word is not in the store. */
 export async function getVocabularyEntries({ ownerId, hanzi }: { ownerId: string; hanzi: string }) {
  const index = await searchIndexFor(ownerId);

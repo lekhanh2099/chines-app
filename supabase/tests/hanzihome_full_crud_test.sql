@@ -1,6 +1,6 @@
 begin;
 
-select plan(25);
+select plan(28);
 
 insert into auth.users (
   id,
@@ -334,6 +334,29 @@ select is(
   (select qual from pg_policies
    where schemaname = 'public' and tablename = 'hanzihome_words' and cmd = 'SELECT') like '%hanzihome_vocab_items%',
   true, 'canonical word reads follow vocabulary row visibility'
+);
+
+-- Upkeep: a word follows its only lesson row and disappears with its last one.
+insert into public.hanzihome_vocab_items
+  (id, course_id, book_id, lesson_id, item_order, word, pinyin, han_viet, meaning)
+select 'canonical-crud-upkeep', course_id, book_id, lesson_id, 40, '独词', 'dú cí', 'Doc tu', 'từ đơn lẻ'
+from public.hanzihome_vocab_items where id = 'canonical-crud-vocab-2';
+update public.hanzihome_vocab_items set han_viet = 'Độc từ' where id = 'canonical-crud-upkeep';
+select is(
+  (select w.han_viet from public.hanzihome_words w
+   join public.hanzihome_vocab_items v on v.word_id = w.id where v.id = 'canonical-crud-upkeep'),
+  'Độc từ', 'a canonical word follows the Hán-Việt of its only lesson row'
+);
+update public.hanzihome_vocab_items set han_viet = 'Khác' where id = 'canonical-crud-tone-1';
+select is(
+  (select w.han_viet from public.hanzihome_words w
+   join public.hanzihome_vocab_items v on v.word_id = w.id where v.id = 'canonical-crud-tone-1'),
+  'Nhiệt náo', 'a canonical word shared by several rows keeps its text'
+);
+update public.hanzihome_vocab_items set word = '独词二' where id = 'canonical-crud-upkeep';
+select is(
+  (select count(*)::integer from public.hanzihome_words where word = '独词'),
+  0, 'a canonical word without lesson rows is removed'
 );
 
 select * from finish();

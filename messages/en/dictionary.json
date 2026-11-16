@@ -15,6 +15,7 @@
   "error": "Unable to load detail data",
   "empty": "No data to display.",
   "summary": "Summary",
+  "lessonMeanings": "Meanings in your lessons",
   "noSummaryMeaning": "No summary meaning available.",
   "anatomy": "Anatomy",
   "inspectThisChar": "Inspect this character",

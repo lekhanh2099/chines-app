@@ -32,7 +32,6 @@ describe("/api/home/learning-overview", () => {
 
  it("returns the authenticated learner's derived state summary", async () => {
   getHomeLearningOverview.mockResolvedValue({
-   srsDueCount: 3,
    learningLoopDueCount: 2,
    readerCompletedCount: 4,
    readerDocumentCount: 8,
@@ -44,7 +43,6 @@ describe("/api/home/learning-overview", () => {
   expect(getHomeLearningOverview).toHaveBeenCalledWith("user-1");
   await expect(response.json()).resolves.toEqual({
    overview: {
-    srsDueCount: 3,
     learningLoopDueCount: 2,
     readerCompletedCount: 4,
     readerDocumentCount: 8,

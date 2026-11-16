@@ -15,10 +15,7 @@ const selection = SmartSelectionResultSchema.parse({
  mnemonic_story: "",
  translation: "sentence translation",
  grammar_points: [],
- isSaved: false,
  found: true,
- personal_note: "",
- personal_note_mode: "important",
 });
 
 describe("dictionary display meaning", () => {

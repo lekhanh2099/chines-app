@@ -32,7 +32,6 @@ export type DbUserApiKey = z.infer<typeof DbUserApiKeySchema>;
 export const NoteCategorySchema = z.enum(["grammar", "vocabulary", "culture", "general"]);
 const NoteStatusSchema = z.enum(["draft", "reviewed", "mastered"]);
 export const ReadingStatusSchema = z.enum(["inbox", "reading", "completed"]);
-export const PersonalNoteModeSchema = z.enum(["normal", "important"]);
 
 export const DbNoteSchema = z.object({
  revision: z.number().int().nonnegative(),
@@ -68,7 +67,6 @@ export type DbNote = z.infer<typeof DbNoteSchema>;
 
 export type NoteCategory = z.infer<typeof NoteCategorySchema>;
 export type ReadingStatus = z.infer<typeof ReadingStatusSchema>;
-export type PersonalNoteMode = z.infer<typeof PersonalNoteModeSchema>;
 
 /* ══════════════════════════════════════════
    AI Analysis (JSONB shape)
@@ -288,10 +286,7 @@ export const SmartSelectionResultSchema = z.object({
  mnemonic_story: z.string(),
  translation: z.string(),
  grammar_points: z.array(aiGrammarPointSchema),
- isSaved: z.boolean(),
  found: z.boolean(),
- personal_note: z.string(),
- personal_note_mode: PersonalNoteModeSchema,
  runtimeReceipt: aiRuntimeReceiptSchema.optional(),
 });
 export type SmartSelectionResult = z.infer<typeof SmartSelectionResultSchema>;

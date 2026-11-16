@@ -20,8 +20,6 @@ const REQUIRED_DIRECT_FLOWS = new Set([
  "direct:notes-library",
  "direct:note-short-id",
  "direct:lesson-text-annotations",
- "direct:vocabulary-srs-progress",
- "direct:dictionary-srs-list",
  "direct:hanzihome-content-role",
 ]);
 

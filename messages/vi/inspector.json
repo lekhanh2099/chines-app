@@ -1,5 +1,5 @@
 {
- "title": "Hanzi Inspector",
+ "title": "Tra theo ngữ cảnh",
  "description": "Tra cứu bằng dictionary HanziHome và kiểm tra cách đọc theo ngữ cảnh.",
  "fields": {
   "term": "Từ hoặc Hán tự",
@@ -8,7 +8,7 @@
   "contextPlaceholder": "例如：我去银行办事。"
  },
  "actions": {
-  "inspect": "Inspect",
+  "inspect": "Tra",
   "inspecting": "Đang tra…"
  },
  "errors": {
@@ -52,6 +52,8 @@
   "meaningsCount": "{count} nơi xuất hiện",
   "charactersTitle": "Giải nghĩa từng chữ",
   "openCharacter": "Xem chi tiết chữ {hanzi}",
-  "breadcrumbAria": "Điều hướng kho từ vựng"
+  "breadcrumbAria": "Điều hướng kho từ vựng",
+  "reuseHintAria": "{hanzi} xuất hiện ở nhiều bài",
+  "reuseLoadError": "Không tải được các nơi xuất hiện."
  }
 }

@@ -6,7 +6,8 @@ import { wordPinyinKey } from "./word-key";
 const vocabularyStoreTabSchema = z.enum(["store", "lookup"]);
 export type VocabularyStoreTab = z.output<typeof vocabularyStoreTabSchema>;
 
-export type VocabularySource = { label: string; href: string };
+const vocabularySourceSchema = z.object({ label: z.string(), href: z.string() });
+export type VocabularySource = z.output<typeof vocabularySourceSchema>;
 
 /** One occurrence of a word in one content source. */
 export type VocabularyRecord = {
@@ -18,15 +19,26 @@ export type VocabularyRecord = {
 };
 
 /** The meaning a word carries in one lesson or note. */
-export type VocabularyOccurrence = { meaning: string; source: VocabularySource };
+const vocabularyOccurrenceSchema = z.object({
+ meaning: z.string(),
+ source: vocabularySourceSchema,
+});
+export type VocabularyOccurrence = z.output<typeof vocabularyOccurrenceSchema>;
 
 /** One word of the unified store: occurrences sharing its written form and reading. */
-export type VocabularyEntry = {
- hanzi: string;
- pinyin: string;
- hanViet: string;
- occurrences: VocabularyOccurrence[];
-};
+const vocabularyEntrySchema = z.object({
+ hanzi: z.string(),
+ pinyin: z.string(),
+ hanViet: z.string(),
+ occurrences: z.array(vocabularyOccurrenceSchema),
+});
+export type VocabularyEntry = z.output<typeof vocabularyEntrySchema>;
+
+/** Every reading of one written form, as served to study surfaces. */
+export const vocabularyWordResponseSchema = z.object({ entries: z.array(vocabularyEntrySchema) });
+
+/** Written forms that occur in more than one lesson, textbook or note. */
+export const reusedVocabularyResponseSchema = z.object({ words: z.array(z.string()) });
 
 export const VOCABULARY_PAGE_SIZE = 60;
 

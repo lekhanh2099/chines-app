@@ -105,6 +105,15 @@ export const hanzihomeQueryKeys = {
  ttsLibraryForUser: (userId: UserScope) => ["hanzihome", "tts", "library", userId],
  canEdit: ["hanzihome", "can-edit"],
  canEditForUser: (userId: UserScope) => ["hanzihome", "can-edit", userId],
+ vocabularyRoot: ["hanzihome", "vocabulary"],
+ reusedVocabulary: (userId: string) => ["hanzihome", "vocabulary", "reused", userId],
+ vocabularyWord: (userId: string, hanzi: string) => [
+  "hanzihome",
+  "vocabulary",
+  "word",
+  userId,
+  hanzi,
+ ],
  searchRoot: ["hanzihome", "search"],
  // Results include the user's own notes, so the owner is part of the key.
  search: (
