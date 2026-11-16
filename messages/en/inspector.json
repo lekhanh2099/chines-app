@@ -25,5 +25,33 @@
   "unresolvedReading": "Pronunciation could not be resolved",
   "unresolvedWarning": "Some characters still have uncertain readings; verify the context or dictionary entry.",
   "rejectedSourcePinyin": "The source pinyin length did not match the text, so it was not used as a fallback."
+ },
+ "store": {
+  "title": "Hanzi lookup",
+  "description": "{count} words from every textbook, course and radical. Duplicates are merged.",
+  "storeTab": "Vocabulary store",
+  "lookupTab": "Contextual lookup",
+  "tabsAria": "Lookup mode",
+  "searchPlaceholder": "Search Hanzi, pinyin, Sino-Vietnamese or meaning…",
+  "searchAria": "Search the vocabulary store",
+  "grid": "Grid",
+  "list": "List",
+  "viewAria": "Layout",
+  "results": "{count} words match “{query}”",
+  "openDictionary": "Look up in the dictionary",
+  "empty": "No words match.",
+  "emptyHelp": "Try Hanzi, toneless pinyin or another Vietnamese word.",
+  "pagerAria": "Pagination",
+  "previous": "Previous",
+  "next": "Next",
+  "page": "{page} / {pageCount}",
+  "openWord": "Open details for {hanzi}",
+  "hintAria": "Meanings of {hanzi} by lesson",
+  "occurrenceSummary": "{source} · +{count} more",
+  "meaningsTitle": "Meaning in each lesson",
+  "meaningsCount": "{count} occurrences",
+  "charactersTitle": "Character notes",
+  "openCharacter": "Open details for {hanzi}",
+  "breadcrumbAria": "Vocabulary store navigation"
  }
 }

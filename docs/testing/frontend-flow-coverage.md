@@ -137,20 +137,19 @@ Không dùng duration hoặc loaded-file coverage thay feature acceptance. Perfo
 
 Các test opt-in dùng Chromium harness hiện hữu. Normal `test:run` có thể skip chúng; bắt buộc kiểm tra actual selected file/case count, không báo skipped là pass. Flags/files bên dưới là map hiện tại, không phải shell command tự chạy tất cả trên mọi edit.
 
-| Feature                   | Existing files                                                                                                                                         | Opt-in flag                         |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------- |
-| Notes                     | [NoteEditor](../../src/features/notes/hooks/NoteEditor.browser.test.ts), [NoteOwner](../../src/features/notes/hooks/NoteOwner.browser.test.ts)         | `NOTES_BROWSER_TEST=1`              |
-| SRS                       | [Outbox](../../src/features/dictionary/dictionary-srs-outbox.browser.test.ts), [Server page](../../src/features/dictionary/DictionarySrsPage.test.tsx) | `SRS_BROWSER_TEST=1`                |
-| PDF, retained regression  | [Annotations](../../src/features/reading/pdf/PdfAnnotations.browser.test.ts)                                                                           | `PDF_BROWSER_TEST=1`                |
-| TTS preview               | [Preview](../../src/features/hanzihome/tts/TtsAudioPreview.browser.test.ts)                                                                            | `TTS_BROWSER_TEST=1`                |
-| Listening                 | [Exercises](../../src/features/hanzihome/listening/ListeningExercises.browser.test.ts)                                                                 | `LISTENING_BROWSER_TEST=1`          |
-| Recording                 | [ShadowingRecorder](../../src/features/reading/hooks/ShadowingRecorder.browser.test.ts)                                                                | `RECORDER_BROWSER_TEST=1`           |
-| Reading sources           | [Reading](../../src/features/reading/workspaces/Reading.browser.test.ts)                                                                               | `READER_BROWSER_TEST=1`             |
-| Reader runtime            | [Reader](../../src/features/reader/runtime/Reader.browser.test.ts)                                                                                     | `READER_BROWSER_TEST=1`             |
-| Translation               | [Workspace](../../src/features/translation/TranslationWorkspace.browser.test.ts)                                                                       | `TRANSLATION_BROWSER_TEST=1`        |
-| Home/Search/font          | [Dashboard](../../src/features/home/HomeDashboard.browser.test.ts)                                                                                     | `HOME_BROWSER_TEST=1`               |
-| Lesson/linked annotations | [Annotations](../../src/features/hanzihome/annotations/LessonAnnotations.browser.test.ts)                                                              | `LESSON_ANNOTATIONS_BROWSER_TEST=1` |
-| AI streaming              | [Conversation](../../src/features/hanzihome/ai-conversation/AiConversation.browser.test.ts)                                                            | `AI_CONVERSATION_BROWSER_TEST=1`    |
+| Feature                   | Existing files                                                                                                                                 | Opt-in flag                         |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| Notes                     | [NoteEditor](../../src/features/notes/hooks/NoteEditor.browser.test.ts), [NoteOwner](../../src/features/notes/hooks/NoteOwner.browser.test.ts) | `NOTES_BROWSER_TEST=1`              |
+| PDF, retained regression  | [Annotations](../../src/features/reading/pdf/PdfAnnotations.browser.test.ts)                                                                   | `PDF_BROWSER_TEST=1`                |
+| TTS preview               | [Preview](../../src/features/hanzihome/tts/TtsAudioPreview.browser.test.ts)                                                                    | `TTS_BROWSER_TEST=1`                |
+| Listening                 | [Exercises](../../src/features/hanzihome/listening/ListeningExercises.browser.test.ts)                                                         | `LISTENING_BROWSER_TEST=1`          |
+| Recording                 | [ShadowingRecorder](../../src/features/reading/hooks/ShadowingRecorder.browser.test.ts)                                                        | `RECORDER_BROWSER_TEST=1`           |
+| Reading sources           | [Reading](../../src/features/reading/workspaces/Reading.browser.test.ts)                                                                       | `READER_BROWSER_TEST=1`             |
+| Reader runtime            | [Reader](../../src/features/reader/runtime/Reader.browser.test.ts)                                                                             | `READER_BROWSER_TEST=1`             |
+| Translation               | [Workspace](../../src/features/translation/TranslationWorkspace.browser.test.ts)                                                               | `TRANSLATION_BROWSER_TEST=1`        |
+| Home/Search/font          | [Dashboard](../../src/features/home/HomeDashboard.browser.test.ts)                                                                             | `HOME_BROWSER_TEST=1`               |
+| Lesson/linked annotations | [Annotations](../../src/features/hanzihome/annotations/LessonAnnotations.browser.test.ts)                                                      | `LESSON_ANNOTATIONS_BROWSER_TEST=1` |
+| AI streaming              | [Conversation](../../src/features/hanzihome/ai-conversation/AiConversation.browser.test.ts)                                                    | `AI_CONVERSATION_BROWSER_TEST=1`    |
 
 Ví dụ targeted command đã có trong repository:
 

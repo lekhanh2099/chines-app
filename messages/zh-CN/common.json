@@ -48,7 +48,6 @@
   "synced": "已同步"
  },
  "offlinePack": {
-  "srsSaveQueued": "操作已保存在此设备上。联网后将同步到 SRS；服务器尚未确认。",
   "downloadCourse": "下载离线课程",
   "downloading": "正在下载 ({percent}%)...",
   "downloadReady": "已离线就绪",

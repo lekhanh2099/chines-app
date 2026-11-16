@@ -6,6 +6,10 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import commonVi from "../../../../../messages/vi/common.json";
 import type { LearningSyncUiState } from "@/features/hanzihome/context/types";
 
+vi.mock("@/i18n/navigation", () => ({
+ Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
+ useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
+}));
 vi.mock("@/lib/env/public", () => ({
  publicSupabaseEnv: {
   url: "https://example.supabase.co",

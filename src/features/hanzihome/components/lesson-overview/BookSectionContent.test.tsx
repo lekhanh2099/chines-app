@@ -11,6 +11,10 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 
+vi.mock("@/i18n/navigation", () => ({
+ Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
+ useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
+}));
 vi.mock("@/features/hanzihome/hooks/useHanziHomeLessonResources", () => ({
  useHanziHomeLessonDetailResource: () => ({ data: undefined }),
 }));

@@ -19,6 +19,8 @@ const BasePopoverVariantSchema = z.enum([
  "selector",
 ]);
 const BasePopoverTriggerWidthSchema = z.enum(["auto", "full"]);
+// `toolbar` is a labelled command; `hint` is a quiet icon beside the content it explains.
+const BasePopoverTriggerAppearanceSchema = z.enum(["toolbar", "hint"]);
 
 // Popup layout is variant-owned on purpose. Feature code must not replace the
 // primitive className, otherwise background/border/shadow contracts are lost.
@@ -57,19 +59,22 @@ type BasePopoverTriggerProps = Omit<
 > & {
  active?: boolean;
  width?: z.infer<typeof BasePopoverTriggerWidthSchema>;
+ appearance?: z.infer<typeof BasePopoverTriggerAppearanceSchema>;
 };
 
 function BasePopoverTrigger({
  active = false,
  width = BasePopoverTriggerWidthSchema.enum.auto,
+ appearance = BasePopoverTriggerAppearanceSchema.enum.toolbar,
  ...props
 }: BasePopoverTriggerProps) {
+ const hint = appearance === BasePopoverTriggerAppearanceSchema.enum.hint;
  return (
   <Popover.Trigger
    render={
     <Button
-     variant={active ? "active" : "outline"}
-     size="toolbar"
+     variant={active ? "active" : hint ? "ghost" : "outline"}
+     size={hint ? "icon-toolbar" : "toolbar"}
      className={width === BasePopoverTriggerWidthSchema.enum.full ? "w-full" : undefined}
     />
    }

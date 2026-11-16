@@ -52,5 +52,27 @@
  "reset": "Reset",
  "saving": "Saving…",
  "save": "Save",
- "loading": "Loading radicals"
+ "loading": "Loading radicals",
+ "characterNotes": {
+  "hintAria": "Character notes for “{text}”",
+  "components": "{components} · radical {radical} ({name})",
+  "openDetail": "Open details for {hanzi}",
+  "loadError": "Could not load the character notes.",
+  "title": "Character explanations",
+  "count": "{count} characters",
+  "notInCatalog": "This radical is not in the radical catalog yet; its character notes are shown below.",
+  "componentsHeader": "Components",
+  "explanationHeader": "Explanation",
+  "sheetTitle": "{radical} · radical {name}",
+  "breadcrumbAria": "Radical navigation",
+  "radicalTitle": "Radical {radical} ({name})",
+  "radicalLoading": "Loading radical details…",
+  "radicalUnavailable": "This radical's details could not be loaded.",
+  "grid": "Grid",
+  "list": "List",
+  "viewAria": "Character layout",
+  "viewing": "Viewing",
+  "radicalMissing": "This radical was not found.",
+  "editRadical": "Edit radical"
+ }
 }

@@ -48,7 +48,6 @@
   "synced": "Đã đồng bộ"
  },
  "offlinePack": {
-  "srsSaveQueued": "Đã lưu thao tác trên thiết bị. Sẽ đồng bộ SRS khi có mạng; server chưa xác nhận.",
   "downloadCourse": "Tải học offline",
   "downloading": "Đang tải ({percent}%)...",
   "downloadReady": "Đã sẵn sàng offline",

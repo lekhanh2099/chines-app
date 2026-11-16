@@ -11,27 +11,20 @@ import { $createInternalLinkNode } from "../nodes/InternalLinkNode";
 import { preserveEditorSelection } from "./preserve-editor-selection";
 
 /**
- * The three mutually exclusive floating-menu panels (important note, note link
- * search, inline note): their open flags, drafts, focus targets and actions.
+ * The two mutually exclusive floating-menu panels (note link search and inline
+ * note): their open flags, drafts, focus targets and actions.
  */
 export function useFloatingMenuPanels(editor: LexicalEditor) {
- const [showNote, setShowNote] = useState(false);
- const [noteDraft, setNoteDraft] = useState("");
- const [noteSelectionKey, setNoteSelectionKey] = useState("");
  const [showLinkSearch, setShowLinkSearch] = useState(false);
  const [linkSearchQuery, setLinkSearchQuery] = useState("");
  const [linkSearchResults, setLinkSearchResults] = useState<NoteListItem[]>([]);
  const [isSearching, setIsSearching] = useState(false);
  const [showInlineNote, setShowInlineNote] = useState(false);
  const [inlineNoteDraft, setInlineNoteDraft] = useState("");
- const noteTextareaRef = useRef<HTMLTextAreaElement>(null);
  const linkSearchInputRef = useRef<HTMLInputElement>(null);
  const inlineNoteTextareaRef = useRef<HTMLTextAreaElement>(null);
 
  const resetPanels = useCallback(() => {
-  setShowNote(false);
-  setNoteDraft("");
-  setNoteSelectionKey("");
   setShowLinkSearch(false);
   setLinkSearchQuery("");
   setLinkSearchResults([]);
@@ -40,39 +33,17 @@ export function useFloatingMenuPanels(editor: LexicalEditor) {
  }, []);
 
  const closePanels = useCallback(() => {
-  setShowNote(false);
   setShowLinkSearch(false);
   setShowInlineNote(false);
  }, []);
 
  const openLinkSearch = useCallback(() => {
   setShowLinkSearch(true);
-  setShowNote(false);
   setShowInlineNote(false);
   requestAnimationFrame(() => {
    linkSearchInputRef.current?.focus();
   });
  }, []);
-
- const toggleNote = (
-  event: React.MouseEvent<HTMLButtonElement>,
-  selectionKey: string,
-  initialNoteDraft: string,
- ) => {
-  preserveEditorSelection(event);
-  const nextOpen = !showNote;
-  if (nextOpen && noteSelectionKey !== selectionKey) {
-   setNoteDraft(initialNoteDraft);
-   setNoteSelectionKey(selectionKey);
-  }
-  setShowNote(nextOpen);
-  setShowLinkSearch(false);
-  setShowInlineNote(false);
-
-  if (nextOpen) {
-   requestAnimationFrame(() => noteTextareaRef.current?.focus());
-  }
- };
 
  const handleLinkSearch = useCallback(async (query: string) => {
   setLinkSearchQuery(query);
@@ -118,7 +89,6 @@ export function useFloatingMenuPanels(editor: LexicalEditor) {
   preserveEditorSelection(event);
   const next = !showLinkSearch;
   setShowLinkSearch(next);
-  setShowNote(false);
   setShowInlineNote(false);
   if (next) requestAnimationFrame(() => linkSearchInputRef.current?.focus());
  };
@@ -127,7 +97,6 @@ export function useFloatingMenuPanels(editor: LexicalEditor) {
   preserveEditorSelection(event);
   const next = !showInlineNote;
   setShowInlineNote(next);
-  setShowNote(false);
   setShowLinkSearch(false);
   if (next) {
    setInlineNoteDraft("");
@@ -154,14 +123,6 @@ export function useFloatingMenuPanels(editor: LexicalEditor) {
  };
 
  return {
-  note: {
-   isOpen: showNote,
-   setIsOpen: setShowNote,
-   draft: noteDraft,
-   setDraft: setNoteDraft,
-   textareaRef: noteTextareaRef,
-   toggle: toggleNote,
-  },
   linkSearch: {
    isOpen: showLinkSearch,
    setIsOpen: setShowLinkSearch,

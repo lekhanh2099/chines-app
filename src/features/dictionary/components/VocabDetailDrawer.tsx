@@ -2,9 +2,8 @@
 
 import { useState, type ReactNode } from "react";
 import { useSelector } from "@tanstack/react-store";
-import { BookmarkPlus, Check, Loader2, Save, Volume2, VolumeOff } from "lucide-react";
+import { Loader2, Volume2, VolumeOff } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
@@ -12,14 +11,12 @@ import { Card } from "@/components/ui/layout/card";
 import { Chip } from "@/components/ui/actions/chip";
 import { Separator } from "@/components/ui/layout/separator";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
-import { Textarea } from "@/components/ui/forms/textarea";
 import { Typography } from "@/components/ui/display/typography";
 import {
  HanziAwareText,
  HanziText,
  PinyinText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { DictionarySrsQueuedError } from "@/types/error";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
 import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
@@ -38,7 +35,6 @@ import {
 } from "../utils";
 
 export function VocabDetailDrawer() {
- const common = useTranslations("Common");
  const t = useTranslations("Dictionary.drawer");
  const isOpen = useSelector(vocabDetailDrawerStore, (state) => state.isOpen);
  const text = useSelector(vocabDetailDrawerStore, (state) => state.text);
@@ -61,26 +57,6 @@ export function VocabDetailDrawer() {
    return;
   }
   void speak(speechText);
- };
-
- const handleSave = async (noteDraft: string) => {
-  if (!smartData) return;
-
-  try {
-   await detailQuery.saveSelection({
-    personalNote: noteDraft,
-    personalNoteMode: "important",
-   });
-   toast.success(
-    mode === "sentence"
-     ? t("saveSentenceSuccess")
-     : t("saveWordSuccess", { word: smartData.entry.hanzi }),
-   );
-  } catch (error) {
-   if (error instanceof DictionarySrsQueuedError)
-    toast.warning(common("offlinePack.srsSaveQueued"));
-   else toast.error(t("saveError"));
-  }
  };
 
  return (
@@ -193,8 +169,6 @@ export function VocabDetailDrawer() {
       onCharacterSelect={(character) =>
        openDetailDrawer({ text: character, contextSentence: text, mode: "word" })
       }
-      onSave={handleSave}
-      isSaving={detailQuery.isSaving}
      />
     ) : (
      <WordDetailPanel
@@ -203,8 +177,6 @@ export function VocabDetailDrawer() {
       onDrillCharacter={(character) =>
        openDetailDrawer({ text: character, contextSentence: text, mode: "word" })
       }
-      onSave={handleSave}
-      isSaving={detailQuery.isSaving}
       displayMeaning={displayMeaning}
      />
     )}
@@ -247,14 +219,10 @@ function DetailSection({
 function WordDetailPanel({
  smartData,
  onDrillCharacter,
- onSave,
- isSaving,
  displayMeaning,
 }: {
  smartData: NonNullable<ReturnType<typeof useSmartSelectionInsights>["data"]>;
  onDrillCharacter: (character: string) => void;
- onSave: (noteDraft: string) => void;
- isSaving: boolean;
  displayMeaning: string;
 }) {
  const t = useTranslations("Dictionary.drawer");
@@ -280,33 +248,12 @@ function WordDetailPanel({
   characters.includes(activeCharacter) && activeCharacter
    ? activeCharacter
    : characters[0] || smartData.entry.hanzi;
- const [noteDraft, setNoteDraft] = useState(smartData.personal_note || "");
  const etymologyType = typeof ai?.etymology === "object" ? ai.etymology.type : undefined;
  const etymologyText = typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
 
  return (
   <div className="grid gap-4">
-   <DetailSection
-    title={t("summary")}
-    actions={
-     <Button
-      type="button"
-      onClick={() => onSave(noteDraft)}
-      disabled={isSaving}
-      variant="outline"
-      size="toolbar"
-     >
-      {isSaving ? (
-       <Loader2 data-icon="inline-start" className="animate-spin" />
-      ) : smartData.isSaved ? (
-       <Check data-icon="inline-start" className="text-success-text" />
-      ) : (
-       <BookmarkPlus data-icon="inline-start" />
-      )}
-      {smartData.isSaved ? t("saved") : t("save")}
-     </Button>
-    }
-   >
+   <DetailSection title={t("summary")}>
     <Typography as="p" tone="default" weight="semibold" leading="standard">
      {displayMeaning || t("noSummaryMeaning")}
     </Typography>
@@ -489,34 +436,6 @@ function WordDetailPanel({
      />
     </div>
    </DetailSection>
-
-   <DetailSection
-    title={t("personalNote")}
-    actions={
-     <Button
-      type="button"
-      onClick={() => onSave(noteDraft)}
-      disabled={isSaving}
-      variant="outline"
-      size="toolbar"
-     >
-      {isSaving ? (
-       <Loader2 data-icon="inline-start" className="animate-spin" />
-      ) : (
-       <Save data-icon="inline-start" />
-      )}
-      {t("saveNote")}
-     </Button>
-    }
-   >
-    <Textarea
-     value={noteDraft}
-     onChange={(event) => setNoteDraft(event.target.value)}
-     placeholder={t("notePlaceholderWord")}
-     density="comfortable"
-     className="w-full"
-    />
-   </DetailSection>
   </div>
  );
 }
@@ -525,17 +444,12 @@ function SentenceDetailPanel({
  text,
  smartData,
  onCharacterSelect,
- onSave,
- isSaving,
 }: {
  text: string;
  smartData: NonNullable<ReturnType<typeof useSmartSelectionInsights>["data"]>;
  onCharacterSelect: (character: string) => void;
- onSave: (noteDraft: string) => void;
- isSaving: boolean;
 }) {
  const t = useTranslations("Dictionary.drawer");
- const [noteDraft, setNoteDraft] = useState(smartData.personal_note || "");
 
  return (
   <div className="grid gap-4">
@@ -590,34 +504,6 @@ function SentenceDetailPanel({
       ),
      )}
     </div>
-   </DetailSection>
-
-   <DetailSection
-    title={t("personalNote")}
-    actions={
-     <Button
-      type="button"
-      onClick={() => onSave(noteDraft)}
-      disabled={isSaving}
-      variant="outline"
-      size="toolbar"
-     >
-      {isSaving ? (
-       <Loader2 data-icon="inline-start" className="animate-spin" />
-      ) : (
-       <Save data-icon="inline-start" />
-      )}
-      {t("saveNote")}
-     </Button>
-    }
-   >
-    <Textarea
-     value={noteDraft}
-     onChange={(event) => setNoteDraft(event.target.value)}
-     placeholder={t("notePlaceholderSentence")}
-     density="comfortable"
-     className="w-full"
-    />
    </DetailSection>
   </div>
  );

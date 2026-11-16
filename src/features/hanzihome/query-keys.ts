@@ -15,6 +15,7 @@ export const hanzihomeQueryKeys = {
  learningState: (userId: UserScope) => ["hanzihome", "learning-state", userId],
  offlineLessons: (userId: UserScope) => ["hanzihome", "offline-lessons", userId],
  catalogRoot: ["hanzihome", "catalog"],
+ radicalCharacters: ["hanzihome", "radical-characters"],
  libraryCovers: ["hanzihome", "library-covers"],
  catalog: (includeLessons: boolean, includeRadicals = false) => [
   "hanzihome",

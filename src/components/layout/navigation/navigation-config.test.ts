@@ -22,12 +22,7 @@ describe("navigation configuration", () => {
  });
 
  it("keeps the approved top-level information architecture", () => {
-  expect(navigationGroups.map((group) => group.id)).toEqual([
-   "learning",
-   "practice",
-   "knowledge",
-   "personal",
-  ]);
+  expect(navigationGroups.map((group) => group.id)).toEqual(["learning", "practice", "personal"]);
   expect(
    navigationGroups.every((group) => group.sections.every((section) => section.itemIds.length > 0)),
   ).toBe(true);
@@ -37,7 +32,7 @@ describe("navigation configuration", () => {
   expect(
    navigationGroups[0]?.sections.find((section) => section.id === "learning-more")?.itemIds,
   ).toEqual(["humanities", "htmlArtifacts"]);
-  expect(navigationGroups[3]?.sections.flatMap((section) => section.itemIds)).not.toContain(
+  expect(navigationGroups[2]?.sections.flatMap((section) => section.itemIds)).not.toContain(
    "htmlArtifacts",
   );
  });
@@ -50,6 +45,8 @@ describe("navigation configuration", () => {
    "speakingDrills",
    "reader",
    "notes",
+   "radicals",
+   "inspector",
   ]);
  });
 
@@ -73,8 +70,8 @@ describe("navigation configuration", () => {
  });
 
  it("keeps personal destinations together without a separate system group", () => {
-  expect(navigationGroups[3]?.sections[0]?.itemIds).toEqual(["personalLearning", "notebook"]);
-  expect(navigationGroups[3]?.sections).toHaveLength(1);
+  expect(navigationGroups[2]?.sections[0]?.itemIds).toEqual(["personalLearning", "notebook"]);
+  expect(navigationGroups[2]?.sections).toHaveLength(1);
   expect(navigationGroups.some((group) => group.id === "system")).toBe(false);
  });
 

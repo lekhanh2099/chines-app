@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import {
  getClientAiPromptSettingsFingerprint,
  loadClientAiPromptSettings,
@@ -11,12 +11,10 @@ import { enqueueSelectionLookup } from "@/lib/api/selection-lookup-queue";
 import { JsonValueSchema } from "@/types/json";
 import {
  SmartSelectionResultSchema,
- type PersonalNoteMode,
  type SmartSelectionMode,
  type SmartSelectionResult,
 } from "@/types/database";
 import { z } from "zod";
-import { saveDictionarySrsDurably } from "@/features/dictionary/dictionary-srs-outbox";
 
 function resolveMode(selection: string): SmartSelectionMode {
  return selection.length <= 2 ? "word" : "sentence";
@@ -31,7 +29,6 @@ export function useSmartSelectionInsights(
  },
 ) {
  const { userId, isResolved } = useClientSession();
- const queryClient = useQueryClient();
  const trimmedSelection = selectedText.trim();
  const chineseSelection = extractChinese(trimmedSelection);
  const lookupKey = chineseSelection || trimmedSelection;
@@ -82,44 +79,9 @@ export function useSmartSelectionInsights(
    }),
  });
 
- const saveMutation = useMutation({
-  networkMode: "always",
-  mutationFn: async (payload?: { personalNote?: string; personalNoteMode?: PersonalNoteMode }) => {
-   if (!query.data) {
-    throw new Error("Không có dữ liệu để lưu");
-   }
-   if (!userId) throw new Error("Not authenticated");
-
-   return saveDictionarySrsDurably(
-    {
-     hanzi: query.data.entry.hanzi,
-     contextSentence: query.data.context_sentence,
-     personalNote: payload?.personalNote,
-     personalNoteMode: payload?.personalNoteMode,
-    },
-    userId,
-   );
-  },
-  onSuccess: (_result, payload) => {
-   queryClient.setQueryData<typeof query.data>(queryKey, (old) =>
-    old
-     ? {
-        ...old,
-        isSaved: true,
-        personal_note: payload?.personalNote ?? old.personal_note,
-        personal_note_mode: payload?.personalNoteMode ?? old.personal_note_mode,
-       }
-     : old,
-   );
-  },
- });
-
  return {
   ...query,
   mode,
   isChineseSelection,
-  saveSelection: saveMutation.mutateAsync,
-  isSaving: saveMutation.isPending,
-  saveMutation,
  };
 }

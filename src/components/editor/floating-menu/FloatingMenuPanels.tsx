@@ -12,51 +12,6 @@ import type { useFloatingMenuPanels } from "./useFloatingMenuPanels";
 
 type FloatingMenuPanels = ReturnType<typeof useFloatingMenuPanels>;
 
-export function FloatingMenuNotePanel({
- note,
- isSaveDisabled,
- onSave,
-}: {
- note: FloatingMenuPanels["note"];
- isSaveDisabled: boolean;
- onSave: (event: React.MouseEvent<HTMLButtonElement>) => void;
-}) {
- const { draft, setDraft, textareaRef } = note;
-
- return (
-  <div className="grid gap-2 rounded-lg bg-bg-card/70 p-2 border border-border-default/40">
-   <div className="flex items-center justify-between gap-2">
-    <Badge variant="warning">Important</Badge>
-    <Button
-     variant="ghost"
-     size="toolbar"
-     onMouseDown={preserveEditorSelection}
-     onClick={onSave}
-     disabled={isSaveDisabled}
-    >
-     <Save data-icon="inline-start" />
-     Lưu note
-    </Button>
-   </div>
-   <Textarea
-    ref={textareaRef}
-    value={draft}
-    onMouseDown={(event) => {
-     event.preventDefault();
-     event.stopPropagation();
-     requestAnimationFrame(() => textareaRef.current?.focus());
-    }}
-    onClick={(event) => event.stopPropagation()}
-    onChange={(event) => setDraft(event.target.value)}
-    density="compact"
-    surface="transparent"
-    className="w-full"
-    placeholder="Ghi chú nhanh..."
-   />
-  </div>
- );
-}
-
 export function FloatingMenuLinkSearchPanel({
  linkSearch,
 }: {

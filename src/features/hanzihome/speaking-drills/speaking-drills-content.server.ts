@@ -60,3 +60,18 @@ function toSelection(
   topic,
  };
 }
+
+/** Every lesson vocabulary item with the first scenario of its lesson as the link target. */
+export function listSpeakingDrillVocabulary() {
+ return speakingDrillsContent.books.flatMap((book) =>
+  book.lessons.flatMap((lesson) => {
+   const [firstTopic] = lesson.topics;
+   return lesson.vocab.map((item) => ({
+    ...item,
+    bookName: book.name,
+    lessonNo: lesson.no,
+    topicId: firstTopic.id,
+   }));
+  }),
+ );
+}
