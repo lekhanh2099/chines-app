@@ -43,6 +43,7 @@ export async function updateSession(request: NextRequest, initialResponse?: Next
   logicalPathname === "/offline" ||
   logicalPathname === "/daily-reading" ||
   logicalPathname === "/dictation" ||
+  logicalPathname === "/speaking-drills" ||
   logicalPathname === "/humanities" ||
   logicalPathname.startsWith("/humanities/") ||
   logicalPathname === "/personal-learning" ||

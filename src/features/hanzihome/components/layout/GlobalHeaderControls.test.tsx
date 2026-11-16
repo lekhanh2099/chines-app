@@ -17,7 +17,7 @@ vi.mock("@/components/ui/overlays/dropdown-menu", () => {
  };
 });
 
-import { GlobalHeaderStudyActions } from "./GlobalHeaderControls";
+import { GlobalHeaderStudyDialogs, GlobalHeaderStudySettingsItems } from "./GlobalHeaderControls";
 import { speechSettingsDialogStore } from "@/stores/speech/speech-dialog-store";
 
 vi.mock("@/features/speech/OfflineAudioSettingsDialog", () => ({
@@ -69,13 +69,19 @@ function renderWithProviders(element: React.ReactElement) {
 }
 
 describe("GlobalHeaderControls", () => {
- it("renders unified display dropdown and voice button in GlobalHeaderStudyActions", () => {
-  const html = renderWithProviders(createElement(GlobalHeaderStudyActions));
-  expect(html).toContain("Pinyin &amp; Dịch");
-  expect(html).toContain('aria-label="Hiển thị nội dung"');
+ it("puts reading display and voice entries inside the quick settings menu", () => {
+  const html = renderWithProviders(createElement(GlobalHeaderStudySettingsItems));
+  expect(html).toContain("Hiển thị nội dung");
   expect(html).toContain("Hiện phiên âm Pinyin");
   expect(html).toContain("Hiện bản dịch tiếng Việt");
-  expect(html).toContain('aria-label="Cài đặt giọng đọc"');
+  expect(html).toContain("Cài đặt giọng đọc");
+  expect(html).not.toContain("<button");
+ });
+
+ it("keeps the voice settings dialog mounted outside the menu", () => {
+  expect(renderWithProviders(createElement(GlobalHeaderStudyDialogs))).toContain(
+   "offline-dialog-mock",
+  );
  });
 
  it("allows opening and closing speech settings dialog via store", () => {

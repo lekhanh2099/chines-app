@@ -10,6 +10,10 @@ import {
  defaultTextbookDisplaySettings,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
+import {
+ DEFAULT_DIALOGUE_VOICE_A,
+ DEFAULT_DIALOGUE_VOICE_B,
+} from "@/stores/speech/dialogue-voice-store";
 
 type OptionalProgressItem = LearningProgressItem | undefined;
 
@@ -266,6 +270,21 @@ export function mergeLearningStateAfterConflict({
  ) {
   if (localResumeOrder === undefined) delete settings.libraryResumeOrder;
   else settings.libraryResumeOrder = localResumeOrder;
+ }
+ // Each speaker's voice is an independent choice: A changed here and B there both survive.
+ if (
+  base.settings.dialogueVoices !== undefined ||
+  local.settings.dialogueVoices !== undefined ||
+  remote.settings.dialogueVoices !== undefined
+ ) {
+  const defaultVoices = { a: DEFAULT_DIALOGUE_VOICE_A, b: DEFAULT_DIALOGUE_VOICE_B };
+  const baseVoices = base.settings.dialogueVoices ?? defaultVoices;
+  const localVoices = local.settings.dialogueVoices ?? defaultVoices;
+  const remoteVoices = remote.settings.dialogueVoices ?? defaultVoices;
+  settings.dialogueVoices = {
+   a: mergeScalarField(baseVoices.a, localVoices.a, remoteVoices.a),
+   b: mergeScalarField(baseVoices.b, localVoices.b, remoteVoices.b),
+  };
  }
  settings.lessonTextDisplayMode = mergeLessonTextDisplayMode(
   base.settings.lessonTextDisplayMode,

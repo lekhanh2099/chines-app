@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useRef, useState } from "react";
-import { Check, ChevronDown } from "lucide-react";
+import { Check, MoreHorizontal } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/actions/button";
 import {
@@ -56,15 +56,15 @@ export const BusinessChineseWorkspaceNavMenu = memo(function BusinessChineseWork
    <Button
     ref={trigger}
     variant="navigation"
-    size="toolbar"
+    size="icon-toolbar"
     className={className}
     aria-label={t("moreSectionsLabel")}
+    title={t("moreSectionsLabel")}
     aria-haspopup="dialog"
     aria-expanded={open}
     onClick={() => setOpen(true)}
    >
-    {t("moreSections")}
-    <ChevronDown className="hidden sm:inline" />
+    <MoreHorizontal />
    </Button>
    <Dialog open={open} onOpenChange={setOpen}>
     <DialogContent
@@ -104,12 +104,12 @@ export const BusinessChineseWorkspaceNavMenu = memo(function BusinessChineseWork
    <DropdownMenuTrigger asChild>
     <Button
      variant="navigation"
-     size="toolbar"
+     size="icon-toolbar"
      className={className}
      aria-label={t("moreSectionsLabel")}
+     title={t("moreSectionsLabel")}
     >
-     {t("moreSections")}
-     <ChevronDown />
+     <MoreHorizontal />
     </Button>
    </DropdownMenuTrigger>
    <DropdownMenuContent align="start" width="md">

@@ -84,6 +84,8 @@ export const userLearningStateSchema = z.object({
    libraryResumeOrder: z.array(z.string().min(1)).optional(),
    lessonTextDisplayMode: lessonTextDisplayModeSchema.optional(),
    bookDisplayModes: z.record(z.string(), lessonTextDisplayModeSchema).optional(),
+   // Mandarin voices for alternating dialogue speakers (first speaker → a, second → b).
+   dialogueVoices: z.object({ a: z.string().min(1), b: z.string().min(1) }).optional(),
    bookResume: z
     .record(
      z.string(),

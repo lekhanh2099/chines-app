@@ -6,6 +6,11 @@ import { createMandarinReaderSpeechService } from "@/features/speech/MandarinTts
 import { cookReaderData } from "@/features/reader/model/cook-reader-data";
 import { createReaderStore } from "@/features/reader/runtime/reader-store";
 import { createReaderPlayback } from "@/features/reader/runtime/reader-playback";
+import {
+ DEFAULT_DIALOGUE_VOICE_A,
+ DEFAULT_DIALOGUE_VOICE_B,
+ dialogueVoiceStore,
+} from "@/stores/speech/dialogue-voice-store";
 
 vi.mock("@/lib/audio/tts-cache", () => ({
  buildCacheKey: (text: string, voice: string, rate: number) => `${voice}:${rate}:${text}`,
@@ -157,6 +162,38 @@ describe("useTTS terminal lifecycle", () => {
   expect(store.state.playback.segmentId).toBe("b");
   second.onended();
   await vi.waitFor(() => expect(store.state.playback.status).toBe("idle"));
+ });
+
+ it("alternates the saved dialogue voices between Reader speakers", async () => {
+  dialogueVoiceStore.actions.setVoices({ voiceA: "zh-CN-VoiceA", voiceB: "zh-CN-VoiceB" });
+  const tts = controller();
+  const adapter = createMandarinReaderSpeechService(tts);
+  const store = createReaderStore(
+   cookReaderData([
+    { id: "a", kind: "dialogue-turn", zh: "一", speaker: { label: "王" } },
+    { id: "b", kind: "dialogue-turn", zh: "二", speaker: { label: "李" } },
+    { id: "c", kind: "dialogue-turn", zh: "三", speaker: { label: "王" } },
+    { id: "d", zh: "四" },
+   ]),
+  );
+  createReaderPlayback(store, adapter.speech).playAll();
+  for (const index of [0, 1, 2]) (await activeAudio(index)).onended();
+  await activeAudio(3);
+  const voiceByText = new Map(
+   fetchAudio.mock.calls
+    .map(([, init]) => init)
+    .filter((init) => init?.method === "POST")
+    .map((init) => JSON.parse(String(init?.body)))
+    .map((body: { text: string; voice: string }) => [body.text, body.voice]),
+  );
+  expect(voiceByText.get("一")).toBe("zh-CN-VoiceA");
+  expect(voiceByText.get("二")).toBe("zh-CN-VoiceB");
+  expect(voiceByText.get("三")).toBe("zh-CN-VoiceA");
+  expect(voiceByText.get("四")).not.toMatch(/^zh-CN-Voice[AB]$/);
+  dialogueVoiceStore.actions.setVoices({
+   voiceA: DEFAULT_DIALOGUE_VOICE_A,
+   voiceB: DEFAULT_DIALOGUE_VOICE_B,
+  });
  });
 
  it("prepares only the next Reader segment at 50% and reuses its pending synthesis", async () => {

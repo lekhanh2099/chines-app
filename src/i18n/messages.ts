@@ -34,6 +34,7 @@ async function loadViMessages() {
   dictation,
   listening,
   radicals,
+  speakingDrills,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -67,6 +68,7 @@ async function loadViMessages() {
   import("../../messages/vi/dictation.json"),
   import("../../messages/vi/listening.json"),
   import("../../messages/vi/radicals.json"),
+  import("../../messages/vi/speaking-drills.json"),
  ]);
 
  return {
@@ -98,6 +100,7 @@ async function loadViMessages() {
   Dictation: dictation.default,
   Listening: listening.default,
   Radicals: radicals.default,
+  SpeakingDrills: speakingDrills.default,
  };
 }
 
@@ -137,6 +140,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   dictation,
   listening,
   radicals,
+  speakingDrills,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -170,6 +174,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/dictation.json"),
   import("../../messages/en/listening.json"),
   import("../../messages/en/radicals.json"),
+  import("../../messages/en/speaking-drills.json"),
  ]);
 
  return {
@@ -201,6 +206,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   Dictation: dictation.default,
   Listening: listening.default,
   Radicals: radicals.default,
+  SpeakingDrills: speakingDrills.default,
  };
 }
 
@@ -238,6 +244,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   dictation,
   listening,
   radicals,
+  speakingDrills,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -271,6 +278,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/dictation.json"),
   import("../../messages/zh-CN/listening.json"),
   import("../../messages/zh-CN/radicals.json"),
+  import("../../messages/zh-CN/speaking-drills.json"),
  ]);
 
  return {
@@ -302,6 +310,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   Dictation: dictation.default,
   Listening: listening.default,
   Radicals: radicals.default,
+  SpeakingDrills: speakingDrills.default,
  };
 }
 

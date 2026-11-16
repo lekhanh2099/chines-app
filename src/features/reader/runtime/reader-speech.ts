@@ -10,6 +10,8 @@ export const readerSpeechInputSchema = z.strictObject({
  text: z.string().min(1),
  startOffset: z.number().int().nonnegative(),
  rate: z.number().positive(),
+ /** Position of the segment's speaker among the dialogue's speakers; absent outside dialogues. */
+ speakerIndex: z.number().int().nonnegative().optional(),
  onProgress: z
   .function({
    input: z.tuple([readerSpeechProgressSchema]),

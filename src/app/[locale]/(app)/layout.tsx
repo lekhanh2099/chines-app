@@ -3,9 +3,13 @@ import { Header } from "@/components/layout/header/Header";
 import { MobileBottomNavigation, Sidebar } from "@/components/layout/navigation/Sidebar";
 import { UnsavedDraftNavigationGuard } from "@/components/layout/navigation/UnsavedDraftNavigationGuard";
 import { DailyReadingSchedulerAgent } from "@/features/daily-reading/runtime/DailyReadingSchedulerAgent";
-import { GlobalHeaderStudyActions } from "@/features/hanzihome/components/layout/GlobalHeaderControls";
+import {
+ GlobalHeaderStudyDialogs,
+ GlobalHeaderStudySettingsItems,
+} from "@/features/hanzihome/components/layout/GlobalHeaderControls";
 import { HanziHomeGlobalSearchBridge } from "@/features/hanzihome/search/HanziHomeGlobalSearchBridge";
 import { HanziTypographyPreferenceBridge } from "@/features/hanzihome/typography/HanziTypographyPreferenceBridge";
+import { DialogueVoicePreferenceBridge } from "@/features/hanzihome/speech/DialogueVoicePreferenceBridge";
 import { LearningStateSyncAgent } from "@/features/hanzihome/hooks/useLearningState";
 import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import { requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
@@ -27,10 +31,14 @@ export default async function AppLayout({
    <div className="app-shell flex h-dvh w-full min-w-0 items-stretch overflow-hidden bg-background text-foreground">
     <LearningStateSyncAgent />
     <HanziTypographyPreferenceBridge />
+    <DialogueVoicePreferenceBridge />
     <DailyReadingSchedulerAgent />
     <Sidebar canManageContent={canManageContent} />
     <div className="flex h-dvh min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
-     <Header actions={<GlobalHeaderStudyActions />} />
+     <Header
+      actions={<GlobalHeaderStudyDialogs />}
+      quickSettingsExtras={<GlobalHeaderStudySettingsItems />}
+     />
      <HanziHomeGlobalSearchBridge />
      <AppScrollViewport className="page-shell nova-page scrollbar-soft">
       {children}

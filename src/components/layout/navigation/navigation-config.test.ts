@@ -47,6 +47,7 @@ describe("navigation configuration", () => {
    "home",
    "lessons",
    "dailyReading",
+   "speakingDrills",
    "reader",
    "notes",
   ]);

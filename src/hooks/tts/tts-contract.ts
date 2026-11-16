@@ -25,6 +25,8 @@ export type TTSPlaybackOptions = {
  onProgress?: (progress: number) => void;
  onSettled?: () => void;
  rate: number;
+ /** Voice for this run only; empty keeps the learner's selected voice. */
+ voiceName?: string;
 };
 export type TTSPlaybackLifecycle = TTSPlaybackOptions & {
  resolve: (result: TTSPlaybackResult) => void;

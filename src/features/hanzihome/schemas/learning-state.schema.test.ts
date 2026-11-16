@@ -204,3 +204,17 @@ describe("learning-state book study recency", () => {
   ).toBe(false);
  });
 });
+
+describe("learning-state dialogue voices", () => {
+ it("persists the saved A/B dialogue voices and keeps legacy state without them", () => {
+  const voices = { a: "zh-CN-XiaoyiNeural", b: "zh-CN-YunjianNeural" };
+
+  expect(
+   userLearningStateSchema.parse({ settings: { dialogueVoices: voices } }).settings,
+  ).toMatchObject({ dialogueVoices: voices });
+  expect(userLearningStateSchema.parse({ settings: {} }).settings.dialogueVoices).toBeUndefined();
+  expect(
+   userLearningStateSchema.safeParse({ settings: { dialogueVoices: { a: "", b: "x" } } }).success,
+  ).toBe(false);
+ });
+});

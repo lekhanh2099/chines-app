@@ -167,7 +167,7 @@ export function useTTSSpeechCommands({
     void loadVoices()
      .then(async (availableVoices) => {
       if (playbackRunRef.current !== runId) return;
-      const voiceName = selectedVoiceName || availableVoices[0]?.shortName;
+      const voiceName = options.voiceName || selectedVoiceName || availableVoices[0]?.shortName;
       if (!voiceName) {
        throw voiceLoadErrorRef.current ?? new Error("Không tải được giọng Mandarin zh-CN");
       }

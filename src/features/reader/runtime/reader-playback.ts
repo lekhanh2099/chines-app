@@ -5,6 +5,7 @@ import {
  readerSpeechResultSchema,
  type ReaderSpeechService,
 } from "./reader-speech";
+import { readerSpeakerIndexes } from "./reader-speakers";
 
 // A shared transport has one owner. A former owner cannot stop its successor.
 const owners = new WeakMap<ReaderSpeechService, () => void>();
@@ -38,7 +39,9 @@ export function createReaderPlayback(store: ReaderStore, speech?: ReaderSpeechSe
    error: null,
   });
   try {
+   const speakerIndex = readerSpeakerIndexes(store.state.content).get(id);
    const input = readerSpeechInputSchema.parse({
+    ...(speakerIndex === undefined ? {} : { speakerIndex }),
     segmentId: id,
     text: characterStart || offset > 0 ? segment.zh : (segment.speechText ?? segment.zh),
     startOffset: offset,
@@ -65,9 +68,11 @@ export function createReaderPlayback(store: ReaderStore, speech?: ReaderSpeechSe
       const nextSegment =
        nextId === undefined ? undefined : store.state.content.segmentsById[nextId];
       if (nextSegment) {
+       const nextSpeakerIndex = readerSpeakerIndexes(store.state.content).get(nextSegment.id);
        // Preparation failures must not interrupt the current audio. Playback retries normally.
        void speech
         .prepare({
+         ...(nextSpeakerIndex === undefined ? {} : { speakerIndex: nextSpeakerIndex }),
          segmentId: nextSegment.id,
          text: nextSegment.speechText ?? nextSegment.zh,
          startOffset: 0,

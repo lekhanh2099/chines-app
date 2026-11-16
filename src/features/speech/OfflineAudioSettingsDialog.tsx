@@ -42,6 +42,7 @@ import {
 } from "@/lib/audio/tts-cache";
 import { useLessonAudioPack } from "@/features/speech/useLessonAudioPack";
 import { useFastMandarinSpeech } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
+import { DialogueVoiceSettings } from "@/features/hanzihome/speech/DialogueVoiceSettings";
 import { useOptionalSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { DEFAULT_MANDARIN_VOICE, MANDARIN_VOICE_STORAGE_KEY } from "@/hooks/useTTS";
 import { STANDARD_MANDARIN_VOICES } from "@/features/speech/mandarin-voices";
@@ -241,6 +242,8 @@ export function OfflineAudioSettingsDialog({
        </div>
       </div>
      </Card>
+
+     <DialogueVoiceSettings />
 
      {/* Section 2: Auto-Apply Explanation Callout */}
      <Card variant="subtle" padding="md" className="grid gap-1.5">
