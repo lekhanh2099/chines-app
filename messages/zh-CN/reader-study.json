@@ -157,9 +157,6 @@
    "saveNote": "保存",
    "listen": "听",
    "playFromHere": "从这里朗读",
-   "copyPinyin": "复制拼音",
-   "pinyinCopied": "已复制拼音",
-   "copyFailed": "复制失败，请重试",
    "review": "复习",
    "understand": "深入理解"
   }

@@ -25,6 +25,7 @@ import {
 
 import { PwaServiceWorkerRegister } from "@/components/layout/runtime/PwaServiceWorkerRegister";
 import { AutoSyncReconnectBridge } from "@/features/hanzihome/components/layout/AutoSyncReconnectBridge";
+import { PinyinSelectionBridge } from "@/features/reader/components/PinyinSelectionBridge";
 
 const themeBootstrapScript = `(function(){try{var modes=${JSON.stringify(ThemeModeSchema.options)};var palettes=${JSON.stringify(ThemePaletteSchema.options)};var mode=localStorage.getItem(${JSON.stringify(THEME_MODE_STORAGE_KEY)});var palette=localStorage.getItem(${JSON.stringify(THEME_PALETTE_STORAGE_KEY)});if(!modes.includes(mode))mode=${JSON.stringify(DEFAULT_THEME_MODE)};if(!palettes.includes(palette))palette=${JSON.stringify(DEFAULT_THEME_PALETTE)};var theme=mode==="system"?(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):mode;var root=document.documentElement;root.setAttribute("data-theme",theme);root.setAttribute("data-theme-mode",mode);root.setAttribute("data-palette",palette);root.classList.toggle("dark",theme==="dark")}catch{}})()`;
 
@@ -77,6 +78,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
        <QueryProvider>
         <PwaServiceWorkerRegister />
         <AutoSyncReconnectBridge />
+        <PinyinSelectionBridge />
         <MandarinTtsProvider>
          <VocabInspectorProvider>{children}</VocabInspectorProvider>
         </MandarinTtsProvider>

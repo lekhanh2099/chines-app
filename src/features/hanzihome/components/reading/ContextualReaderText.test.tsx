@@ -156,7 +156,7 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain("一");
   expect(markup).toContain("yī");
   expect(markup).toContain("gè");
-  expect(markup).toContain('<rt class="select-none');
+  expect(markup).toContain('<rt class="font-pinyin');
  });
 
  it("retains per-glyph ruby when source mode uses aligned pinyin", () => {

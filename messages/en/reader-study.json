@@ -163,9 +163,6 @@
    "saveNote": "Save",
    "listen": "Listen",
    "playFromHere": "Play from here",
-   "copyPinyin": "Copy Pinyin",
-   "pinyinCopied": "Pinyin copied",
-   "copyFailed": "Could not copy, please try again",
    "review": "Review",
    "understand": "Understand"
   }

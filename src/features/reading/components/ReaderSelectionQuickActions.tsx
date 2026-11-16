@@ -1,14 +1,6 @@
 "use client";
 
-import {
- ClipboardCopy,
- Languages,
- MoreHorizontal,
- StickyNote,
- Trash2,
- Volume2,
- X,
-} from "lucide-react";
+import { Languages, MoreHorizontal, StickyNote, Trash2, Volume2, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
@@ -27,8 +19,6 @@ export function ReaderSelectionQuickActions({
  onRemoveAnnotation,
  onLookup,
  onListen,
- selectedPinyin,
- onCopyPinyin,
 }: ReaderSelectionPopoverContentProps) {
  const t = useTranslations("Reader.study.chrome.selection");
  const notesT = useTranslations("Reader.study.chrome.notes");
@@ -103,19 +93,6 @@ export function ReaderSelectionQuickActions({
     onClick={() => onListen(selection)}
    >
     <Volume2 className="size-3.5" />
-   </Button>
-
-   {/* Nút Sao chép pinyin của đoạn chọn */}
-   <Button
-    type="button"
-    size="icon-xs"
-    variant="ghost"
-    title={selectedPinyin ? `${t("copyPinyin")}: ${selectedPinyin}` : t("missingPinyin")}
-    aria-label={t("copyPinyin")}
-    disabled={!selectedPinyin}
-    onClick={onCopyPinyin}
-   >
-    <ClipboardCopy className="size-3.5" />
    </Button>
 
    {/* Nút Xóa nhanh nếu là annotation có sẵn */}

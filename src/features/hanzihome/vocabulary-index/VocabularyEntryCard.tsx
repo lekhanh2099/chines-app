@@ -32,7 +32,7 @@ export function VocabularyEntryCard({ entry }: { entry: VocabularyEntry }) {
   <Card variant="default" padding="md" className="grid h-full content-start gap-1.5">
    <div className="flex min-w-0 items-start gap-2">
     <div className="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-2 gap-y-1">
-     <Link href={href} aria-label={t("openWord", { hanzi: entry.hanzi })}>
+     <Link href={href} prefetch={false} aria-label={t("openWord", { hanzi: entry.hanzi })}>
       <HanziText as="span" size="card" tone="primary" weight="black" leading="none">
        {entry.hanzi}
       </HanziText>
@@ -63,7 +63,11 @@ export function VocabularyEntryCard({ entry }: { entry: VocabularyEntry }) {
         <HanziAwareText text={occurrence.meaning} variant="bodySmall" tone="default" />
        </div>
       ))}
-      <Link href={href} className="flex items-center gap-1 text-sm font-bold text-primary">
+      <Link
+       href={href}
+       prefetch={false}
+       className="flex items-center gap-1 text-sm font-bold text-primary"
+      >
        {t("openWord", { hanzi: entry.hanzi })}
        <ArrowRight className="size-3.5" />
       </Link>

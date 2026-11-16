@@ -10,7 +10,11 @@ import {
  buildLessonSectionsResource,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import { bookRowSchema, courseRowSchema } from "./supabase-content-row.schemas";
-import { getAggregateItems, getSearchData } from "./supabase-hanzihome-aggregate-search";
+import {
+ getAggregateItems,
+ getAggregateVocabRevision,
+ getSearchData,
+} from "./supabase-hanzihome-aggregate-search";
 import {
  getCatalogStatsRows,
  getLessonDetailRow,
@@ -173,5 +177,6 @@ export const supabaseHanziHomeContentRepository = {
  },
 
  getAggregateItems,
+ getAggregateVocabRevision,
  getSearchData,
 };

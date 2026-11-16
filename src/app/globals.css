@@ -2537,3 +2537,25 @@ select {
  animation: nav-progress-bar-short 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
  animation-delay: 0.95s;
 }
+
+/* Ruby Pinyin stays out of Hanzi selections; a press on Pinyin selects only Pinyin. */
+rt[data-pinyin-selectable] {
+ -webkit-user-select: none;
+ user-select: none;
+}
+/* Unlayered on purpose: it must beat explicit utilities such as `select-text` on Hanzi. */
+html[data-pinyin-selection="true"] body,
+html[data-pinyin-selection="true"] body * {
+ -webkit-user-select: none;
+ user-select: none;
+}
+html[data-pinyin-selection="true"] rt[data-pinyin-selectable],
+html[data-pinyin-selection="true"] rt[data-pinyin-selectable] *,
+html[data-pinyin-selection="true"] :is(input, textarea, [contenteditable="true"]),
+html[data-pinyin-selection="true"] [contenteditable="true"] * {
+ -webkit-user-select: text;
+ user-select: text;
+}
+html[data-pinyin-selection="true"] rt[data-pinyin-selectable] {
+ cursor: text;
+}

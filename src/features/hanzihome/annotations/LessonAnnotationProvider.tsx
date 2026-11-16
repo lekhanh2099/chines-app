@@ -23,8 +23,6 @@ import {
  type Nullable,
 } from "./annotation-note-dialog-model";
 import { LessonAnnotationNoteDialog } from "./LessonAnnotationNoteDialog";
-import { buildCopyablePinyin } from "@/features/hanzihome/pronunciation/copy-pinyin";
-import { useCopyPinyin } from "@/features/hanzihome/pronunciation/useCopyPinyin";
 import { LessonAnnotationSelectionMenu } from "./LessonAnnotationSelectionMenu";
 import type { AnnotationAnchor, LessonTextAnnotation, ResolvedLessonTextAnnotation } from "./types";
 import { useLessonAnnotations } from "./useLessonAnnotations";
@@ -71,7 +69,6 @@ export function LessonAnnotationProvider({
 
  const { selectionDraft, selectionAnchor, closeSelectionMenu } =
   useLessonAnnotationSelection(lessonId);
- const copyPinyin = useCopyPinyin();
 
  const getAnnotations = useCallback(
   (target: AnnotationTarget, text: string) =>
@@ -103,12 +100,6 @@ export function LessonAnnotationProvider({
    lessonId,
    anchorRect: rect,
   });
- };
-
- const copySelectionPinyin = () => {
-  if (!selectionDraft) return;
-  copyPinyin(buildCopyablePinyin({ text: selectionDraft.anchor.selectedText }));
-  closeSelectionMenu();
  };
 
  const handleHighlight = async () => {
@@ -225,7 +216,6 @@ export function LessonAnnotationProvider({
     onLookup={lookUpSelection}
     onHighlight={handleHighlight}
     onNote={openNewNote}
-    onCopyPinyin={copySelectionPinyin}
    />
 
    <LessonAnnotationNoteDialog

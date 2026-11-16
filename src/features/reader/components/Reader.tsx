@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { cookReaderData } from "../model/cook-reader-data";
 import type { CookReaderDataOptions, ReaderDataInput } from "../model/reader.schemas";
 import { ReaderProvider } from "../runtime/ReaderProvider";
+import { isPinyinSelectionActive } from "../runtime/pinyin-selection";
 import type { ReaderServices } from "../runtime/reader-services";
 import { defaultReaderDisplay, type ReaderDisplayAdapter } from "../model/reader-display";
 import { ReaderContent } from "./ReaderContent";
@@ -98,6 +99,7 @@ function ReaderFrame({ className }: { className?: string }) {
    onCopy={(event) => {
     const selection = window.getSelection();
     if (!selection || selection.isCollapsed || selection.rangeCount !== 1) return;
+    if (isPinyinSelectionActive()) return;
     const range = selection.getRangeAt(0);
     if (!event.currentTarget.contains(range.commonAncestorContainer)) return;
     const fragment = range.cloneContents();

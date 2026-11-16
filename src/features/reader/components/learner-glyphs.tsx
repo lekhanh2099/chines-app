@@ -7,6 +7,7 @@ import { Typography } from "@/components/ui/display/typography";
 import { glyphActionClassName } from "@/components/ui/focus-ring";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/overlays/tooltip";
 import { cn } from "@/lib/utils";
+import { isPinyinSelectionActive, selectablePinyinAttribute } from "../runtime/pinyin-selection";
 import {
  formatContextualPinyinRange,
  formatContextualReadingUnitPinyin,
@@ -43,7 +44,7 @@ export type LearnerGlyphModel = {
  labels: ReturnType<typeof useTranslations<"Reader.document.text">>;
 };
 
-const rubyTextClassName = "select-none font-pinyin text-[0.45em] font-medium text-text-secondary";
+const rubyTextClassName = "font-pinyin text-[0.45em] font-medium text-text-secondary";
 
 function activateFromClick(
  event: MouseEvent<HTMLElement>,
@@ -88,6 +89,8 @@ function renderPinyin(
    title={glyph.alternatives.length > 1 ? glyph.alternatives.join(", ") : undefined}
    onClick={(event) => {
     event.stopPropagation();
+    // A drag that selected Pinyin ends in a click; it must not open the inspector.
+    if (isPinyinSelectionActive() && window.getSelection()?.isCollapsed === false) return;
     inspect(event.currentTarget);
    }}
    onKeyDown={(event) => activateFromKey(event, inspect)}
@@ -143,7 +146,7 @@ export function renderLearnerGrapheme(
  return (
   <ruby key={grapheme.index}>
    {annotatedHanzi}
-   <rt className={rubyTextClassName}>
+   <rt className={rubyTextClassName} {...selectablePinyinAttribute}>
     {renderPinyin(model, glyph, grapheme.segment, glyph.spokenPinyin)}
    </rt>
   </ruby>
@@ -175,7 +178,7 @@ export function renderLearnerReadingUnit(
    {unitGraphemes.map((grapheme) =>
     renderLearnerGrapheme(model, grapheme, model.graphemes.indexOf(grapheme), false),
    )}
-   <rt className={rubyTextClassName}>
+   <rt className={rubyTextClassName} {...selectablePinyinAttribute}>
     {unitGraphemes.map((grapheme) => {
      const glyph = model.glyphByStart.get(grapheme.index);
      if (glyph === undefined) return null;

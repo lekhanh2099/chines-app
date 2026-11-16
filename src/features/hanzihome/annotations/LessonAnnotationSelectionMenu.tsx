@@ -1,7 +1,6 @@
 "use client";
 
-import { ClipboardCopy, Highlighter, Languages, StickyNote } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { Highlighter, Languages, StickyNote } from "lucide-react";
 
 import {
  BasePopover as Popover,
@@ -19,7 +18,6 @@ export function LessonAnnotationSelectionMenu({
  onLookup,
  onHighlight,
  onNote,
- onCopyPinyin,
 }: {
  open: boolean;
  anchor: ReturnType<typeof useLessonAnnotationSelection>["selectionAnchor"];
@@ -27,9 +25,7 @@ export function LessonAnnotationSelectionMenu({
  onLookup: () => void;
  onHighlight: () => Promise<void>;
  onNote: () => void;
- onCopyPinyin: () => void;
 }) {
- const t = useTranslations("Reader.study.chrome.selection");
  return (
   <Popover.Root open={open} onOpenChange={(nextOpen) => !nextOpen && onClose()} modal={false}>
    <Popover.Portal>
@@ -53,10 +49,6 @@ export function LessonAnnotationSelectionMenu({
       <Button size="sm" variant="ghost" onClick={onNote}>
        <StickyNote />
        Ghi chú
-      </Button>
-      <Button size="sm" variant="ghost" onClick={onCopyPinyin}>
-       <ClipboardCopy />
-       {t("copyPinyin")}
       </Button>
      </BasePopoverPopup>
     </BasePopoverPositioner>
