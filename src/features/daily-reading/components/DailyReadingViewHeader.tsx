@@ -43,7 +43,7 @@ export function DailyReadingViewHeader({
  return (
   <header className="grid min-w-0 gap-1.5">
    <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
-    <Button type="button" variant="ghost" size="toolbar" className="sm:hidden" onClick={onBack}>
+    <Button type="button" variant="ghost" size="toolbar" className="md:hidden" onClick={onBack}>
      <ArrowLeft />
      {t("document.back")}
     </Button>

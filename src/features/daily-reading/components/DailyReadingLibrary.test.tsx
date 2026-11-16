@@ -239,7 +239,7 @@ describe("DailyReadingLibrary UI enhancements", () => {
   expect(markup).toContain("中越经贸合作迎来新发展");
  });
 
- it("renders DailyReadingView with liquid toolbar and only the mobile header back action", async () => {
+ it("renders DailyReadingView with liquid toolbar and only the compact header back action", async () => {
   const messages = await loadAppMessages(locale);
   const markup = renderToStaticMarkup(
    <QueryClientProvider client={queryClient}>
@@ -250,7 +250,7 @@ describe("DailyReadingLibrary UI enhancements", () => {
   );
 
   expect(markup).toContain("hanzihome-liquid-toolbar");
-  // The mobile article header keeps the back action without duplicating it in the tabs.
+  // The compact article header keeps the back action without duplicating it in the tabs.
   expect(markup.split(messages.DailyReading.document.back)).toHaveLength(2);
   // Before the viewport is measured only the active tab is shown; the rest are in the overflow menu.
   expect(markup).toContain(messages.DailyReading.tabs.reader);
