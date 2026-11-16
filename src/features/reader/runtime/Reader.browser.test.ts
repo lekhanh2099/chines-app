@@ -129,6 +129,13 @@ it.runIf(process.env.READER_BROWSER_TEST === "1")(
      start: 0,
      end: 2,
     });
+    expect(await page.evaluate(() => window.readerHarness.pinyinSelection())).toEqual({
+     copied: "nǐ hǎo",
+     capturedHanzi: null,
+     baseSelectable: "none",
+     pinyinSelectable: "text",
+     activeAfterPressElsewhere: false,
+    });
     await page.evaluate(() => window.readerHarness.mount());
     await browserExpect(page.locator("[data-probe]")).toHaveCount(3);
     const initial: ReturnType<ReaderBrowserHarness["snapshot"]> = await page.evaluate(() =>

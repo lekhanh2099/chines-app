@@ -37,8 +37,6 @@ export type ReaderSelectionPopoverContentProps = {
  onLookup: (selection: ReaderSurfaceSelection) => void;
  onListen: (selection: ReaderSurfaceSelection) => void;
  /** Contextual Pinyin of the selected range; empty when it cannot be resolved. */
- selectedPinyin: string;
- onCopyPinyin: () => void;
  onPlayFromHere?: (selection: ReaderSurfaceSelection) => void;
 };
 

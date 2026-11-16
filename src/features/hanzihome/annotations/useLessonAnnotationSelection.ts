@@ -1,5 +1,6 @@
 "use client";
 
+import { isPinyinSelectionActive } from "@/features/reader/runtime/pinyin-selection";
 import { useCallback, useEffect, useState } from "react";
 
 import { containsChinese } from "@/lib/text/chinese-utils";
@@ -34,6 +35,7 @@ export function useLessonAnnotationSelection(lessonId: string) {
    selectionTimer.current = window.setTimeout(() => {
     const selection = window.getSelection();
     if (!selection || selection.isCollapsed || selection.rangeCount !== 1) return;
+    if (isPinyinSelectionActive()) return;
 
     const range = selection.getRangeAt(0);
     const target = selectionTarget(range);

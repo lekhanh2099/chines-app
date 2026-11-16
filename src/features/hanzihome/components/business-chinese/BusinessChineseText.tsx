@@ -1,6 +1,10 @@
 "use client";
 
 import {
+ isPinyinSelectionActive,
+ selectablePinyinAttribute,
+} from "@/features/reader/runtime/pinyin-selection";
+import {
  useCallback,
  useContext,
  useMemo,
@@ -12,7 +16,6 @@ import {
 } from "react";
 import { useTranslations } from "next-intl";
 import { glyphActionClassName } from "@/components/ui/focus-ring";
-import { CopyBusinessChinesePinyinButton } from "./CopyBusinessChinesePinyinButton";
 import { Typography, type TypographyProps } from "@/components/ui/display/typography";
 import {
  containsHanziText,
@@ -387,7 +390,7 @@ function BusinessChineseMixedText({
     return (
      <ruby key={`${grapheme.index}:${grapheme.segment}`}>
       {hanzi}
-      <rt className="select-none">
+      <rt {...selectablePinyinAttribute}>
        <PinyinText
         as="span"
         tone="secondary"
@@ -406,6 +409,7 @@ function BusinessChineseMixedText({
         title={glyph.alternatives.length > 1 ? glyph.alternatives.join(", ") : undefined}
         onClick={(event: MouseEvent<HTMLElement>) => {
          event.stopPropagation();
+         if (isPinyinSelectionActive() && window.getSelection()?.isCollapsed === false) return;
          onGlyphInspect(glyph, event.currentTarget.getBoundingClientRect());
         }}
         onKeyDown={(event: KeyboardEvent<HTMLElement>) => {
@@ -463,12 +467,6 @@ export function SpeakableBusinessChineseText({
    </div>
    {speechSegments.length > 0 ? (
     <div className="flex shrink-0 items-center">
-     <CopyBusinessChinesePinyinButton
-      pronunciationId={pronunciationId}
-      text={text}
-      sourcePinyin={sourcePinyin}
-      touchTarget
-     />
      <MandarinSpeakButton text={speechSegments.join(" ")} segments={speechSegments} touchTarget />
     </div>
    ) : null}

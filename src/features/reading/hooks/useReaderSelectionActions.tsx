@@ -7,7 +7,6 @@ import { useClientSession } from "@/components/providers/QueryProvider";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import { useSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
-import { useCopyPinyin } from "@/features/hanzihome/pronunciation/useCopyPinyin";
 import { formatContextualPinyinRange } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import {
@@ -63,7 +62,6 @@ export function useReaderSelectionActions({
  stop: ReaderCommands["stop"];
  playFromCharacter?: ReaderCommands["playFromCharacter"];
 }) {
- const copyPinyinToClipboard = useCopyPinyin();
  const queryClient = useQueryClient();
  const tts = useSharedMandarinTts();
  const { openInspector } = useVocabInspector();
@@ -248,7 +246,6 @@ export function useReaderSelectionActions({
   stop();
   tts.speakSequence([current.text]);
  };
- const copyPinyin = () => copyPinyinToClipboard(selectedPinyin);
  const playFromHere = playFromCharacter
   ? (current: ReaderSurfaceSelection) => {
      stop();
@@ -277,8 +274,6 @@ export function useReaderSelectionActions({
      onAddToReview={addToReview}
      onLookup={lookup}
      onListen={listen}
-     selectedPinyin={selectedPinyin}
-     onCopyPinyin={copyPinyin}
      onPlayFromHere={playFromHere}
     />
    ) : null}

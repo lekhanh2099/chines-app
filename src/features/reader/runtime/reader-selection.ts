@@ -1,4 +1,5 @@
 import type { ReaderSegment } from "../model/reader-document.types";
+import { isPinyinSelectionActive } from "./pinyin-selection";
 
 export type ReaderSelection = {
  segmentId: ReaderSegment["id"];
@@ -10,6 +11,7 @@ export type ReaderSelection = {
 
 // Keep selection anchored to source text, never the ruby pronunciation layer.
 export function captureReaderSelection(element: HTMLElement, segment: ReaderSegment) {
+ if (isPinyinSelectionActive()) return;
  const selection = element.ownerDocument.defaultView?.getSelection();
  if (!selection || selection.isCollapsed || selection.rangeCount === 0) return;
  const range = selection.getRangeAt(0);

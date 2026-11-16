@@ -27,6 +27,7 @@ import {
 import type { ReaderCommands } from "./reader-playback";
 import type { ReaderSpeechService } from "./reader-speech";
 import type { ReaderStore } from "./reader-store";
+import { installPinyinSelection, isPinyinSelectionActive } from "./pinyin-selection";
 import { captureReaderSelection } from "./reader-selection";
 
 function IntegratedWorkspace({ children }: { children: ReactNode }) {
@@ -257,6 +258,41 @@ function createHarness() {
    selection?.removeAllRanges();
    wrapper.remove();
    return result ? { text: result.text, start: result.start, end: result.end } : null;
+  },
+  pinyinSelection() {
+   const wrapper = document.createElement("div");
+   wrapper.innerHTML =
+    '<span data-reader-source><ruby><span class="select-text">你</span><rt data-pinyin-selectable><span>nǐ</span></rt></ruby><ruby><span class="select-text">好</span><rt data-pinyin-selectable><span>hǎo</span></rt></ruby></span>';
+   document.body.append(wrapper);
+   const uninstall = installPinyinSelection();
+   const [first, second] = wrapper.querySelectorAll("rt");
+   if (!first || !second) throw new Error("Missing Pinyin selection fixture");
+   first.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true }));
+   const range = document.createRange();
+   range.setStart(first, 0);
+   range.setEnd(second, second.childNodes.length);
+   const selection = window.getSelection();
+   selection?.removeAllRanges();
+   selection?.addRange(range);
+   const clipboardData = new DataTransfer();
+   document.dispatchEvent(new ClipboardEvent("copy", { bubbles: true, clipboardData }));
+   const captured = captureReaderSelection(wrapper, { id: "ruby", kind: "sentence", zh: "你好" });
+   const hanzi = wrapper.querySelector(".select-text");
+   const pinyin = first.querySelector("span");
+   const baseSelectable = hanzi ? getComputedStyle(hanzi).userSelect : "";
+   const pinyinSelectable = pinyin ? getComputedStyle(pinyin).userSelect : "";
+   document.body.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true }));
+   const result = {
+    copied: clipboardData.getData("text/plain"),
+    capturedHanzi: captured?.text ?? null,
+    baseSelectable,
+    pinyinSelectable,
+    activeAfterPressElsewhere: isPinyinSelectionActive(),
+   };
+   selection?.removeAllRanges();
+   uninstall();
+   wrapper.remove();
+   return result;
   },
   unmount: () => root.unmount(),
  };

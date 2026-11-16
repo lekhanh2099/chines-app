@@ -115,11 +115,13 @@ function bundledRecords(): VocabularyRecord[] {
 
 const bundledEntries: VocabularyEntry[][] = [];
 const bundledIndexes: VocabularySearchIndex[] = [];
+const courseIndexes = new Map<string, { revision: string; index: VocabularySearchIndex }>();
+const maxCachedOwners = 20;
 
 /**
- * Course vocabulary is read on every request: it is editable content, so the
- * store must show an edit as soon as the lesson does. Only the immutable
- * bundled content is prepared once.
+ * Course vocabulary is editable, so the store must show an edit as soon as the
+ * lesson does. Each request asks only for the content revision; the full
+ * vocabulary is read and indexed again when that revision changes.
  */
 async function searchIndexFor(ownerId: string): Promise<VocabularySearchIndex> {
  if (bundledEntries.length === 0) bundledEntries.push(mergeVocabularyRecords(bundledRecords()));
@@ -129,12 +131,18 @@ async function searchIndexFor(ownerId: string): Promise<VocabularySearchIndex> {
   const [index] = bundledIndexes;
   return index;
  }
+ const revision = await hanzihomeContentRepository.getAggregateVocabRevision();
+ const cached = courseIndexes.get(ownerId);
+ if (cached?.revision === revision) return cached.index;
  const courseEntries = mergeVocabularyRecords(
   courseRecords(
    await hanzihomeContentRepository.getAggregateItems({ kind: "vocab", filters: allLessons }),
   ),
  );
- return buildVocabularySearchIndex(combineVocabularyEntries(courseEntries, bundled));
+ const index = buildVocabularySearchIndex(combineVocabularyEntries(courseEntries, bundled));
+ if (courseIndexes.size >= maxCachedOwners) courseIndexes.clear();
+ courseIndexes.set(ownerId, { revision, index });
+ return index;
 }
 
 /**
