@@ -58,7 +58,9 @@ describe("BusinessChineseWorkspaceNavMenu", () => {
    expect(markup).not.toContain("Đánh dấu");
    expect(markup).not.toContain("Offline");
    expect(markup).not.toContain("bg-warning");
-   expect(markup).toContain(compact ? 'aria-haspopup="dialog"' : "Khác");
+   if (compact) expect(markup).toContain('aria-haspopup="dialog"');
+   expect(markup).toContain('title="Các phần khác của bài học"');
+   expect(markup).not.toContain(">Khác<");
   },
  );
 

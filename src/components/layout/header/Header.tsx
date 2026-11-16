@@ -363,6 +363,7 @@ function HeaderUtilityArea({
      </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" width="lg">
+     {quickSettingsExtras}
      <DropdownMenuLabel>{t("header.quickSettings")}</DropdownMenuLabel>
      <DropdownMenuCheckboxItem
       checked={theme === "dark"}
@@ -393,7 +394,6 @@ function HeaderUtilityArea({
       <LockKeyhole />
       {t("header.focusMode")}
      </DropdownMenuCheckboxItem>
-     {quickSettingsExtras}
      <DropdownMenuSeparator />
      <DropdownMenuItem asChild>
       <Link href="/settings?section=app">

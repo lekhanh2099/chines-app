@@ -78,5 +78,8 @@
  "stopReading": "Dừng đọc",
  "readChinese": "Đọc tiếng Trung: {text}",
  "disabledReading": "Tạm khóa trong chế độ đọc",
- "noReadingContent": "Chưa có nội dung để đọc"
+ "noReadingContent": "Chưa có nội dung để đọc",
+ "dialogueVoicesTitle": "Giọng hội thoại A/B",
+ "dialogueVoicesHelp": "Áp dụng cho mọi đoạn hội thoại trong giáo trình: người nói thứ nhất dùng giọng A, người thứ hai dùng giọng B.",
+ "dialogueVoiceFor": "Giọng {role}"
 }

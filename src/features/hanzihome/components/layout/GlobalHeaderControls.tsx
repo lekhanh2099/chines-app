@@ -2,16 +2,14 @@
 
 import { useMemo } from "react";
 import { useSelector } from "@tanstack/react-store";
-import { BookOpen, ChevronDown, Languages, Volume2 } from "lucide-react";
+import { BookOpen, Languages, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/actions/button";
 import {
- DropdownMenu,
  DropdownMenuCheckboxItem,
- DropdownMenuContent,
+ DropdownMenuItem,
  DropdownMenuLabel,
- DropdownMenuTrigger,
+ DropdownMenuSeparator,
 } from "@/components/ui/overlays/dropdown-menu";
 import {
  defaultLessonTextDisplaySettings,
@@ -29,11 +27,10 @@ const KNOWN_TEXTBOOK_KEYS: readonly string[] = [
  "static:tm3",
 ];
 
-export function GlobalHeaderStudyActions() {
+/** Reading display and voice entries rendered at the top of the header quick settings menu. */
+export function GlobalHeaderStudySettingsItems() {
  const t = useTranslations("Shell");
  const learning = useLearningState();
- const isAudioSettingsOpen = useSelector(speechSettingsDialogStore, (state) => state.open);
-
  const displayMode = useMemo(() => {
   const current = learning.state.settings.lessonTextDisplayMode;
   if (current) {
@@ -51,13 +48,6 @@ export function GlobalHeaderStudyActions() {
 
  const showPinyin = displayMode.showPinyin;
  const showMeaning = displayMode.showMeaning;
-
- const displayLabel = useMemo(() => {
-  if (showPinyin && showMeaning) return t("header.displayModeBoth");
-  if (showPinyin) return t("header.displayModePinyinOnly");
-  if (showMeaning) return t("header.displayModeMeaningOnly");
-  return t("header.displayModeHanziOnly");
- }, [showPinyin, showMeaning, t]);
 
  const togglePinyin = () => {
   const nextShowPinyin = !showPinyin;
@@ -104,60 +94,41 @@ export function GlobalHeaderStudyActions() {
  };
 
  return (
-  <div className="flex items-center gap-1 shrink-0">
-   <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-     <Button
-      type="button"
-      variant="outline"
-      size="compact"
-      aria-label={t("header.displaySettings")}
-      title={t("header.displaySettings")}
-      className="hidden sm:inline-flex items-center gap-1.5 shrink-0"
-     >
-      <Languages className="size-3.5" />
-      <span>{displayLabel}</span>
-      <ChevronDown className="size-3 text-muted-foreground" />
-     </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent align="end" width="md">
-     <DropdownMenuLabel>{t("header.readingDisplay")}</DropdownMenuLabel>
-     <DropdownMenuCheckboxItem
-      checked={showPinyin}
-      onSelect={(event) => event.preventDefault()}
-      onCheckedChange={togglePinyin}
-     >
-      <Languages className="size-4" />
-      <span>{t("header.showPinyin")}</span>
-     </DropdownMenuCheckboxItem>
-     <DropdownMenuCheckboxItem
-      checked={showMeaning}
-      onSelect={(event) => event.preventDefault()}
-      onCheckedChange={toggleMeaning}
-     >
-      <BookOpen className="size-4" />
-      <span>{t("header.showMeaning")}</span>
-     </DropdownMenuCheckboxItem>
-    </DropdownMenuContent>
-   </DropdownMenu>
-
-   <Button
-    type="button"
-    variant="ghost"
-    size="icon"
-    onClick={() => speechSettingsDialogStore.actions.openDialog()}
-    title={t("header.voiceSettings")}
-    aria-label={t("header.voiceSettings")}
-    className="hidden sm:inline-flex shrink-0"
+  <>
+   <DropdownMenuLabel>{t("header.readingDisplay")}</DropdownMenuLabel>
+   <DropdownMenuCheckboxItem
+    checked={showPinyin}
+    onSelect={(event) => event.preventDefault()}
+    onCheckedChange={togglePinyin}
    >
-    <Volume2 className="size-4" />
-   </Button>
+    <Languages />
+    {t("header.showPinyin")}
+   </DropdownMenuCheckboxItem>
+   <DropdownMenuCheckboxItem
+    checked={showMeaning}
+    onSelect={(event) => event.preventDefault()}
+    onCheckedChange={toggleMeaning}
+   >
+    <BookOpen />
+    {t("header.showMeaning")}
+   </DropdownMenuCheckboxItem>
+   <DropdownMenuItem onSelect={() => speechSettingsDialogStore.actions.openDialog()}>
+    <Volume2 />
+    {t("header.voiceSettings")}
+   </DropdownMenuItem>
+   <DropdownMenuSeparator />
+  </>
+ );
+}
 
-   <OfflineAudioSettingsDialog
-    trigger={null}
-    open={isAudioSettingsOpen}
-    onOpenChange={speechSettingsDialogStore.actions.setOpen}
-   />
-  </div>
+/** Hosts the voice settings dialog opened from the quick settings menu. */
+export function GlobalHeaderStudyDialogs() {
+ const isAudioSettingsOpen = useSelector(speechSettingsDialogStore, (state) => state.open);
+ return (
+  <OfflineAudioSettingsDialog
+   trigger={null}
+   open={isAudioSettingsOpen}
+   onOpenChange={speechSettingsDialogStore.actions.setOpen}
+  />
  );
 }

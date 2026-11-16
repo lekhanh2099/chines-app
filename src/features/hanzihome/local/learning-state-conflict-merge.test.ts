@@ -51,6 +51,30 @@ describe("mergeLearningStateAfterConflict", () => {
   ).toEqual(["static:khau-ngu", "group:boya"]);
  });
 
+ it("keeps a pending dialogue voice choice while preserving unrelated remote changes", () => {
+  const base = stateWith({ settings: {} });
+  const local = stateWith({
+   settings: { dialogueVoices: { a: "zh-CN-XiaoxiaoNeural", b: "zh-CN-YunjianNeural" } },
+  });
+  const remote = stateWith({
+   settings: {
+    density: "compact",
+    dialogueVoices: { a: "zh-CN-XiaoyiNeural", b: "zh-CN-YunxiNeural" },
+   },
+  });
+
+  const merged = mergeLearningStateAfterConflict({ base, local, remote });
+
+  expect(merged.settings.dialogueVoices).toEqual({
+   a: "zh-CN-XiaoyiNeural",
+   b: "zh-CN-YunjianNeural",
+  });
+  expect(merged.settings.density).toBe("compact");
+  expect(
+   mergeLearningStateAfterConflict({ base, local: base, remote: base }).settings.dialogueVoices,
+  ).toBeUndefined();
+ });
+
  it("keeps remote library reorders when the cloned local sequences are unchanged", () => {
   const base = stateWith({
    settings: {

@@ -78,5 +78,8 @@
  "stopReading": "Stop reading",
  "readChinese": "Read Chinese: {text}",
  "disabledReading": "Unavailable in reading mode",
- "noReadingContent": "No content to read yet"
+ "noReadingContent": "No content to read yet",
+ "dialogueVoicesTitle": "A/B dialogue voices",
+ "dialogueVoicesHelp": "Used for every textbook dialogue: the first speaker uses voice A, the second uses voice B.",
+ "dialogueVoiceFor": "Voice {role}"
 }

@@ -14,6 +14,7 @@ import {
  Lightbulb,
  ListTree,
  MessageCircle,
+ Mic,
  Newspaper,
  NotebookPen,
  NotebookTabs,
@@ -141,6 +142,11 @@ export const navigationItems = {
   icon: MessageCircle,
   href: "/conversation",
  },
+ speakingDrills: {
+  messageKey: "navigation.items.speakingDrills",
+  icon: Mic,
+  href: "/speaking-drills",
+ },
  learningLoop: {
   messageKey: "navigation.items.learningLoop",
   icon: Workflow,
@@ -188,6 +194,7 @@ export const navigationItems = {
  dictionary: NavigationItemConfig;
  memoryTips: NavigationItemConfig;
  conversation: NavigationItemConfig;
+ speakingDrills: NavigationItemConfig;
  learningLoop: NavigationItemConfig;
  vocab: NavigationItemConfig;
  radicals: NavigationItemConfig;
@@ -225,7 +232,7 @@ export const navigationGroups = [
     id: "learning-main",
     messageKey: "navigation.sections.learningMain",
     collapsible: false,
-    itemIds: ["home", "lessons", "dailyReading", "reader", "notes"],
+    itemIds: ["home", "lessons", "dailyReading", "speakingDrills", "reader", "notes"],
    },
    {
     id: "hsk-reading",

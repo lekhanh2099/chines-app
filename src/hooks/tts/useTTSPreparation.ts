@@ -30,13 +30,13 @@ export function useTTSPreparation({
  }, []);
 
  const prepareAudio = useCallback(
-  async (text: string, synthesisRate: number): Promise<void> => {
+  async (text: string, synthesisRate: number, voiceOverride = ""): Promise<void> => {
    const normalizedText = splitSpeechSegments([text])[0];
    if (!normalizedText) return;
    const runId = preparationRunRef.current;
    const availableVoices = await loadVoices();
    if (runId !== preparationRunRef.current) return;
-   const voiceName = selectedVoiceName || availableVoices[0]?.shortName;
+   const voiceName = voiceOverride || selectedVoiceName || availableVoices[0]?.shortName;
    if (!voiceName)
     throw voiceLoadErrorRef.current ?? new Error("Không tải được giọng Mandarin zh-CN");
    const key = buildCacheKey(normalizedText, voiceName, synthesisRate);

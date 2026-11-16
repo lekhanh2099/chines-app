@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
 import { useTTS } from "@/hooks/useTTS";
+import { dialogueVoiceForSpeaker } from "@/stores/speech/dialogue-voice-store";
 import type { ReaderSpeechService } from "@/features/reader/runtime/reader-speech";
 
 type MandarinTtsContextValue = ReturnType<typeof useTTS>;
@@ -19,13 +20,22 @@ type MandarinTtsControls = {
 const MandarinTtsControlsContext = createContext<{ value?: MandarinTtsControls }>({});
 const MandarinReaderSpeechContext = createContext<ReaderSpeechService | null>(null);
 
+/**
+ * Adapts the shared TTS controller to the Reader speech contract. Dialogue turns
+ * alternate the learner's A/B dialogue voices; other segments keep the selected voice.
+ */
 export function createMandarinReaderSpeechService(initialController: MandarinTtsContextValue) {
  let controller = initialController;
  let run = 0;
  let pending = false;
  const speech: ReaderSpeechService = {
   prepare: async (input) => {
-   if (pending) await controller.prepareAudio(input.text.slice(input.startOffset), input.rate);
+   if (pending)
+    await controller.prepareAudio(
+     input.text.slice(input.startOffset),
+     input.rate,
+     input.speakerIndex === undefined ? "" : dialogueVoiceForSpeaker(input.speakerIndex),
+    );
   },
   speak: async (input) => {
    const token = ++run;
@@ -33,6 +43,7 @@ export function createMandarinReaderSpeechService(initialController: MandarinTts
    try {
     return await controller.speakWithLifecycle(input.text.slice(input.startOffset), {
      rate: input.rate,
+     voiceName: input.speakerIndex === undefined ? "" : dialogueVoiceForSpeaker(input.speakerIndex),
      onSettled: () => {
       if (token === run) pending = false;
      },
