@@ -1,5 +1,5 @@
 {
- "title": "汉字检查器",
+ "title": "语境查词",
  "description": "使用 HanziHome 词典查询词条并检查语境中的读音。",
  "fields": {
   "term": "词语或汉字",
@@ -52,6 +52,8 @@
   "meaningsCount": "出现 {count} 处",
   "charactersTitle": "逐字解析",
   "openCharacter": "查看 {hanzi} 的详情",
-  "breadcrumbAria": "词汇库导航"
+  "breadcrumbAria": "词汇库导航",
+  "reuseHintAria": "{hanzi} 出现在多个课文中",
+  "reuseLoadError": "无法加载该词出现的位置。"
  }
 }

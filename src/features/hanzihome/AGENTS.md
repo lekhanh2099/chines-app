@@ -58,8 +58,8 @@ silently synchronized:
 
 - `user_learning_state.progress` owns course mastery for lesson-scoped vocab
   and grammar nodes;
-- `user_vocab_progress` owns the learner's saved dictionary collection and its
-  SRS status, keyed by canonical vocabulary identity;
+- `hanzihome_words` owns the canonical identity of a written form and reading;
+  each `hanzihome_vocab_items` row keeps the meaning of its own lesson;
 - `hanzihome_learning_loop_items` owns the due practice queue and scheduling
   state; it is not a second mastery record;
 - `hanzihome_practice_attempts` is immutable attempt evidence, not current

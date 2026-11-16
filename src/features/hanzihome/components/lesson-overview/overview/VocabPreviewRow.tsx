@@ -15,6 +15,7 @@ import {
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { CharacterNoteHint } from "@/features/hanzihome/radical-characters/CharacterNoteHint";
+import { WordOccurrencesHint } from "@/features/hanzihome/vocabulary-index/WordOccurrencesHint";
 
 export function VocabPreviewRow({
  hanzi,
@@ -61,6 +62,7 @@ export function VocabPreviewRow({
      )}
     </div>
     <div className="flex h-11 shrink-0 items-center gap-1">
+     <WordOccurrencesHint hanzi={hanzi} />
      <CharacterNoteHint text={hanzi} />
      <Button
       type="button"

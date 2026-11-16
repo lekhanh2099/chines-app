@@ -45,6 +45,9 @@ export async function invalidateHanziHomeContent({
  // Search results include every content family; a delete/restore/edit must not
  // stay searchable from cached global-search results.
  await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.searchRoot });
+ // The unified store reads lesson vocabulary and lesson titles: its reuse markers
+ // and per-word meanings must follow every content mutation too.
+ await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.vocabularyRoot });
 
  if (!catalogEntityTypes.has(entityType)) return;
 

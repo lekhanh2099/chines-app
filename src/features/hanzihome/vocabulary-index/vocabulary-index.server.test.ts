@@ -10,7 +10,11 @@ vi.mock("@/features/hanzihome/repositories/hanzihome-content-repository", () => 
  hanzihomeContentRepository: repository,
 }));
 
-import { getVocabularyEntries, getVocabularyPage } from "./vocabulary-index.server";
+import {
+ getReusedVocabularyWords,
+ getVocabularyEntries,
+ getVocabularyPage,
+} from "./vocabulary-index.server";
 
 const courseWord = (meaning: string) => ({
  id: "lesson-1__vocab-1",
@@ -50,6 +54,24 @@ describe("vocabulary store course cache", () => {
   const [edited] = await getVocabularyEntries({ ownerId: "owner-1", hanzi: "仅课程词" });
   expect(repository.getAggregateItems).toHaveBeenCalledTimes(2);
   expect(edited?.occurrences[0]?.meaning).toBe("nghĩa mới");
+ });
+
+ it("lists a word as reused only when it occurs in more than one place", async () => {
+  repository.getAggregateVocabRevision.mockResolvedValue("revision-reuse");
+  repository.getAggregateItems.mockResolvedValue([
+   courseWord("một nơi"),
+   { ...courseWord("bài một"), id: "lesson-1__vocab-2", word: "两处词" },
+   {
+    ...courseWord("bài hai"),
+    id: "lesson-2__vocab-3",
+    word: "两处词",
+    lessonId: "lesson-2",
+    lessonNumber: 2,
+   },
+  ]);
+  const reused = await getReusedVocabularyWords({ ownerId: "owner-reuse" });
+  expect(reused).toContain("两处词");
+  expect(reused).not.toContain("仅课程词");
  });
 
  it("does not read course vocabulary for a signed-out visitor", async () => {

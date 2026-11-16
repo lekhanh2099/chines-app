@@ -8,7 +8,6 @@ import { getUserAiPromptSettings } from "@/services/ai/ai-prompt-settings.servic
 import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai/ai.service";
 import {
  getDictionaryEntryByHeadword,
- getUserVocabProgressRecord,
  getPrimaryMeaning,
  getNormalizedDefinitions,
  getNormalizedRadicals,
@@ -19,12 +18,7 @@ import {
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
 } from "@/services/vocab/vocab.service";
-import type {
- PersonalNoteMode,
- SmartSelectionMode,
- SmartSelectionResult,
- VocabData,
-} from "@/types/database";
+import type { SmartSelectionMode, SmartSelectionResult, VocabData } from "@/types/database";
 import { SmartSelectionModeSchema } from "@/types/database";
 import { GeminiModelIdSchema } from "@/lib/ai/gemini-models";
 import type { AiRuntimeReceipt } from "@/lib/ai/ai-task-contract";
@@ -44,7 +38,6 @@ const EditorContextRequestSchema = z.object({
  wordPromptTemplate: z.string().optional(),
  sentencePromptTemplate: z.string().optional(),
 });
-type NullableText = z.infer<z.ZodNullable<z.ZodString>>;
 
 function resolveMode(selection: string): SmartSelectionMode {
  const normalized = extractChinese(selection) || selection;
@@ -61,56 +54,6 @@ function runtimeError(status: "missing-key" | "storage-unavailable" | "task-disa
      { status: 409 },
     )
   : NextResponse.json({ error: "Kho API key an toàn phía server chưa sẵn sàng." }, { status: 503 });
-}
-
-async function getProgressState(
- userId: NullableText,
- vocabId: VocabData["id"],
- dictionaryId: VocabData["dictionary_id"],
- supabase: Awaited<ReturnType<typeof createClient>>,
-): Promise<{
- isSaved: boolean;
- personalNote: string;
- personalNoteMode: PersonalNoteMode;
-}> {
- if (!userId || (!vocabId && !dictionaryId)) {
-  return {
-   isSaved: false,
-   personalNote: "",
-   personalNoteMode: "important",
-  };
- }
-
- let isSaved = false;
-
- if (dictionaryId) {
-  const { data: relationData } = await supabase
-   .from("user_vocabularies")
-   .select("dictionary_id")
-   .eq("user_id", userId)
-   .eq("dictionary_id", dictionaryId)
-   .maybeSingle();
-
-  isSaved = !!relationData;
- }
-
- if (!vocabId) {
-  return {
-   isSaved,
-   personalNote: "",
-   personalNoteMode: "important",
-  };
- }
-
- const data = await getUserVocabProgressRecord(supabase, userId, {
-  vocabId,
- });
-
- return {
-  isSaved: isSaved || !!data,
-  personalNote: data?.personal_note || "",
-  personalNoteMode: data?.personal_note_mode || "important",
- };
 }
 
 export async function POST(request: NextRequest) {
@@ -246,7 +189,6 @@ export async function POST(request: NextRequest) {
 
   const analysis = vocab.ai_analysis || {};
   const definitions = getNormalizedDefinitions(analysis, vocab.meaning);
-  const progress = await getProgressState(user.id, vocab.id, vocab.dictionary_id, supabase);
 
   const etymologyRaw = analysis.etymology;
   const etymologyText =
@@ -265,10 +207,7 @@ export async function POST(request: NextRequest) {
    mnemonic_story: analysis.mnemonic_story || "",
    translation: "",
    grammar_points: [],
-   isSaved: progress.isSaved,
    found: !!(vocab.id || definitions.length || vocab.meaning || vocab.pinyin),
-   personal_note: progress.personalNote,
-   personal_note_mode: progress.personalNoteMode,
    ...(runtimeReceipt ? { runtimeReceipt } : {}),
   };
 
@@ -347,7 +286,6 @@ export async function POST(request: NextRequest) {
     ...(grammarPoints.length ? { grammar_breakdown: grammarPoints } : {}),
    },
   };
-  const progress = await getProgressState(user.id, entry.id, entry.dictionary_id, supabase);
   const result: SmartSelectionResult = {
    mode: "sentence",
    selection: sentenceText,
@@ -361,10 +299,7 @@ export async function POST(request: NextRequest) {
    mnemonic_story: "",
    translation,
    grammar_points: grammarPoints,
-   isSaved: progress.isSaved,
    found: !!(existing || translation || grammarPoints.length),
-   personal_note: progress.personalNote,
-   personal_note_mode: progress.personalNoteMode,
    runtimeReceipt,
   };
 
@@ -382,7 +317,6 @@ export async function POST(request: NextRequest) {
    ...(grammarPoints.length ? { grammar_breakdown: grammarPoints } : {}),
   },
  };
- const progress = await getProgressState(user.id, entry.id, entry.dictionary_id, supabase);
 
  const result: SmartSelectionResult = {
   mode: "sentence",
@@ -397,10 +331,7 @@ export async function POST(request: NextRequest) {
   mnemonic_story: "",
   translation,
   grammar_points: grammarPoints,
-  isSaved: progress.isSaved,
   found: !!(existing || translation || grammarPoints.length),
-  personal_note: progress.personalNote,
-  personal_note_mode: progress.personalNoteMode,
  };
 
  return NextResponse.json(result);

@@ -26,7 +26,6 @@ type HomeLearningPulse = {
  knownCount: number;
  reviewedTodayCount: number;
  bookmarkedCount: number;
- srsDueCount: number;
  learningLoopDueCount: number;
  readerCompletedCount: number;
  readerDocumentCount: number;

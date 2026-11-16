@@ -62,7 +62,7 @@
    },
    "lookupQuick": {
     "title": "Tra nhanh",
-    "when": "Khi cache/từ điển chưa đủ nghĩa cơ bản hoặc SRS cần bổ sung.",
+    "when": "Khi cache/từ điển chưa đủ nghĩa cơ bản.",
     "data": "Từ/cụm từ cần tra; không gửi toàn bộ bài học.",
     "output": "Pinyin, nghĩa ngắn và dữ liệu từ vựng cơ bản.",
     "storage": "Kết quả AI transient; chỉ vào dữ liệu cá nhân khi Save."

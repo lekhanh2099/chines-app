@@ -21,10 +21,13 @@ export function DetailHint({
  label,
  open,
  onOpenChange,
+ icon = <Info />,
  children,
 }: {
  href: string;
  label: string;
+ /** Defaults to the "(i)" glyph. */
+ icon?: ReactNode;
  open: boolean;
  onOpenChange: (open: boolean) => void;
  children: ReactNode;
@@ -50,7 +53,7 @@ export function DetailHint({
     closeDelay={120}
     aria-label={label}
    >
-    <Info />
+    {icon}
    </BasePopoverTrigger>
    <Popover.Portal>
     <BasePopoverPositioner side="bottom" align="start" sideOffset={6} collisionPadding={12}>

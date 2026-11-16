@@ -84,7 +84,6 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1")(
      route.fulfill({
       json: {
        overview: {
-        srsDueCount: 0,
         learningLoopDueCount: 0,
         readerCompletedCount: 0,
         readerDocumentCount: 0,
@@ -396,7 +395,6 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(dashboardViewportCases)(
       return route.fulfill({
        json: {
         overview: {
-         srsDueCount: 0,
          learningLoopDueCount: 0,
          readerCompletedCount: 0,
          readerDocumentCount: 0,
@@ -639,7 +637,6 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(continuationViewportCases)(
       return route.fulfill({
        json: {
         overview: {
-         srsDueCount: 0,
          learningLoopDueCount: 0,
          readerCompletedCount: 0,
          readerDocumentCount: 0,

@@ -1,5 +1,5 @@
 {
- "title": "Hanzi Inspector",
+ "title": "Contextual lookup",
  "description": "Look up HanziHome dictionary entries and verify contextual pronunciation.",
  "fields": {
   "term": "Word or Hanzi",
@@ -52,6 +52,8 @@
   "meaningsCount": "{count} occurrences",
   "charactersTitle": "Character notes",
   "openCharacter": "Open details for {hanzi}",
-  "breadcrumbAria": "Vocabulary store navigation"
+  "breadcrumbAria": "Vocabulary store navigation",
+  "reuseHintAria": "{hanzi} appears in several lessons",
+  "reuseLoadError": "Could not load where this word appears."
  }
 }

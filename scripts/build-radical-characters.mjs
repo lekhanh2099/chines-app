@@ -102,15 +102,34 @@ const forms = [
  ),
 ];
 
-fs.writeFileSync(
- path.join(OUTPUT_DIR, "radical-characters.json"),
- `${JSON.stringify({ radicals }, null, 1)}\n`,
-);
-// Membership list shipped with every vocabulary surface; details load on demand.
-fs.writeFileSync(
- path.join(OUTPUT_DIR, "radical-character-forms.json"),
- `${JSON.stringify({ forms: forms.join("") })}\n`,
-);
+const outputs = [
+ ["radical-characters.json", { radicals }, 1],
+ // Membership list shipped with every vocabulary surface; details load on demand.
+ ["radical-character-forms.json", { forms: forms.join("") }, 0],
+];
+
+// `--check` fails when the notes were edited without regenerating the JSON.
+if (process.argv.includes("--check")) {
+ const stale = outputs
+  .filter(([file, content]) => {
+   const current = JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, file), "utf8"));
+   return JSON.stringify(current) !== JSON.stringify(content);
+  })
+  .map(([file]) => file);
+ if (stale.length > 0) {
+  console.error(
+   `Stale radical data (${stale.join(", ")}): run "npm run content:radical-characters".`,
+  );
+  process.exit(1);
+ }
+} else {
+ for (const [file, content, indent] of outputs) {
+  fs.writeFileSync(
+   path.join(OUTPUT_DIR, file),
+   `${JSON.stringify(content, null, indent || undefined)}\n`,
+  );
+ }
+}
 console.log(
  `radical characters: ${radicals.length} radicals, ${characterCount} rows, ${forms.length} forms`,
 );

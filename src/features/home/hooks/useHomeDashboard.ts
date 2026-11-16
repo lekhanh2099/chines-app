@@ -100,7 +100,6 @@ export function useHomeDashboard(textbooks: TextbookBookSummary[]): HomeDashboar
     knownCount,
     reviewedTodayCount,
     bookmarkedCount,
-    srsDueCount: learningOverview?.srsDueCount ?? 0,
     learningLoopDueCount: learningOverview?.learningLoopDueCount ?? 0,
     readerCompletedCount: learningOverview?.readerCompletedCount ?? 0,
     readerDocumentCount: learningOverview?.readerDocumentCount ?? 0,

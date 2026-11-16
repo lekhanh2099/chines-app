@@ -62,7 +62,7 @@
    },
    "lookupQuick": {
     "title": "Quick lookup",
-    "when": "When dictionary/cache data is insufficient or SRS needs a basic meaning.",
+    "when": "When dictionary/cache data lacks a basic meaning.",
     "data": "The selected word or phrase, not the whole lesson.",
     "output": "Pinyin, concise meaning, and basic vocabulary fields.",
     "storage": "Transient AI result; personal data only after Save."

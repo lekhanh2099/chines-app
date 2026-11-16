@@ -637,79 +637,6 @@ export const publicV1Endpoints = [
  endpoint({
   group: "Học tập",
   methods: ["GET"],
-  path: "/api/v1/vocabulary/[hanzi]/progress",
-  scope: "learning:read",
-  summary: "Lấy tiến độ SRS và ghi chú cá nhân của một từ.",
-  operations: [
-   {
-    method: "GET",
-    query: null,
-    requestBody: null,
-    responseStatus: 200,
-    responseContentType: "application/json",
-    responseBody:
-     '{\n  "item": { "hanzi": "尽量", "isFavorited": true, "personalNote": "Dùng với động từ" }\n}',
-   },
-  ],
- }),
- endpoint({
-  group: "Học tập",
-  methods: ["GET"],
-  path: "/api/v1/vocabulary/progress",
-  scope: "learning:read",
-  summary: "Liệt kê các từ SRS đã lưu của owner, gồm tiến độ và dữ liệu từ điển liên kết.",
-  operations: [
-   {
-    method: "GET",
-    query: "limit=50&offset=0",
-    requestBody: null,
-    responseStatus: 200,
-    responseContentType: "application/json",
-    responseBody:
-     '{\n  "items": [{ "hanzi": "尽量", "isFavorited": true }],\n  "nextOffset": null\n}',
-   },
-  ],
- }),
- endpoint({
-  group: "Học tập",
-  methods: ["POST"],
-  path: "/api/v1/vocabulary/[hanzi]/srs",
-  scope: "learning:write",
-  summary: "Lưu từ vào SRS của owner.",
-  operations: [
-   {
-    method: "POST",
-    query: null,
-    requestBody:
-     '{\n  "vocab": {\n    "hanzi": "尽量",\n    "pinyin": "jǐnliàng",\n    "sino_vietnamese": "tận lượng",\n    "meaning": "cố gắng hết mức có thể",\n    "ai_analysis": {}\n  },\n  "personalNote": "Dùng với động từ",\n  "personalNoteMode": "important"\n}',
-    responseStatus: 200,
-    responseContentType: "application/json",
-    responseBody:
-     '{\n  "item": { "vocabId": "VOCAB_ID", "dictionaryId": "DICTIONARY_ID", "isFavorited": true }\n}',
-   },
-  ],
- }),
- endpoint({
-  group: "Học tập",
-  methods: ["POST"],
-  path: "/api/v1/vocabulary/[hanzi]/track",
-  scope: "learning:write",
-  summary: "Ghi nhận lượt tra từ cho owner.",
-  operations: [
-   {
-    method: "POST",
-    query: null,
-    requestBody:
-     '{\n  "vocab": {\n    "hanzi": "尽量",\n    "pinyin": "jǐnliàng",\n    "meaning": "cố gắng hết mức có thể",\n    "ai_analysis": {}\n  }\n}',
-    responseStatus: 200,
-    responseContentType: "application/json",
-    responseBody: '{\n  "item": { "vocabId": "VOCAB_ID", "isFavorited": false }\n}',
-   },
-  ],
- }),
- endpoint({
-  group: "Học tập",
-  methods: ["GET"],
   path: "/api/v1/hanzihome/lessons/[lessonId]/annotations",
   scope: "learning:read",
   summary: "Liệt kê annotation và note liên kết theo bài học.",
@@ -2035,6 +1962,26 @@ export const currentApiInventory = [
   internalReason: "TTS Studio library metadata is owned by the authenticated HanziHome user.",
  }),
  inventoryEntry({
+  currentPath: "/api/hanzihome/vocabulary/reused",
+  methods: ["GET"],
+  source: "route",
+  group: "HanziHome đọc",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "The unified vocabulary store merges the authenticated user's course vocabulary with bundled content.",
+ }),
+ inventoryEntry({
+  currentPath: "/api/hanzihome/vocabulary/words/[hanzi]",
+  methods: ["GET"],
+  source: "route",
+  group: "HanziHome đọc",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "The unified vocabulary store merges the authenticated user's course vocabulary with bundled content.",
+ }),
+ inventoryEntry({
   currentPath: "/api/hanzihome/search",
   methods: ["GET"],
   source: "route",
@@ -2284,42 +2231,6 @@ export const currentApiInventory = [
   group: "Học tập",
   exposure: "public-v1",
   v1Path: "/api/v1/hanzihome/annotations/[annotationId]",
-  internalReason: null,
- }),
- inventoryEntry({
-  currentPath: "direct:vocabulary-srs-progress",
-  methods: ["GET"],
-  source: "client-flow",
-  group: "Học tập",
-  exposure: "public-v1",
-  v1Path: "/api/v1/vocabulary/[hanzi]/progress",
-  internalReason: null,
- }),
- inventoryEntry({
-  currentPath: "direct:vocabulary-srs-progress:save",
-  methods: ["POST"],
-  source: "client-flow",
-  group: "Học tập",
-  exposure: "public-v1",
-  v1Path: "/api/v1/vocabulary/[hanzi]/srs",
-  internalReason: null,
- }),
- inventoryEntry({
-  currentPath: "direct:dictionary-srs-list",
-  methods: ["GET"],
-  source: "client-flow",
-  group: "Học tập",
-  exposure: "public-v1",
-  v1Path: "/api/v1/vocabulary/progress",
-  internalReason: null,
- }),
- inventoryEntry({
-  currentPath: "direct:vocabulary-srs-progress:track",
-  methods: ["POST"],
-  source: "client-flow",
-  group: "Học tập",
-  exposure: "public-v1",
-  v1Path: "/api/v1/vocabulary/[hanzi]/track",
   internalReason: null,
  }),
  inventoryEntry({
