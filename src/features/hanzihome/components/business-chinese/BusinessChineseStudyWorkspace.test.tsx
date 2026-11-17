@@ -1,3 +1,7 @@
+import {
+ clearPendingTextbookLesson,
+ setPendingTextbookLesson,
+} from "./pending-textbook-lesson-store";
 import type { ReaderDisplayAdapter } from "@/features/reader/model/reader-display";
 import type { ComponentProps, ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -1637,6 +1641,21 @@ describe("textbook persisted settings and view", fullLessonRenderTimeout, () => 
   expect(
    readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson.id}:text`),
   ).toBe(true);
+ });
+
+ it("shows the loading state at once after another lesson is picked", () => {
+  const lesson1 = getTextbookLesson("nhip-cau", 1);
+  if (!lesson1) throw new Error("Missing textbook fixture");
+  setPendingTextbookLesson("nhip-cau-lesson-02");
+  try {
+   const markup = renderWorkspace(
+    <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson1} />,
+   );
+   expect(markup).toContain('aria-busy="true"');
+   expect(markup).not.toContain(lesson1.title);
+  } finally {
+   clearPendingTextbookLesson();
+  }
  });
 
  it("renders the lesson the route passed; lesson content is never resolved in the browser", () => {
