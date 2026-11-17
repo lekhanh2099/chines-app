@@ -11,6 +11,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
+import { radicalForms } from "./radical-workspace-utils";
 
 type RadicalDetailPanelProps = {
  radical: StaticRadicalData;
@@ -20,6 +21,7 @@ type RadicalDetailPanelProps = {
 
 export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailPanelProps) {
  const t = useTranslations("Radicals");
+ const [mainForm = radical.radical, ...otherForms] = radicalForms(radical.radical);
  const relatedComponents = radical.relatedComponents ?? [];
  const groups = radical.groups ?? [];
 
@@ -43,18 +45,25 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
    <div className="flex flex-wrap items-center gap-4 lg:col-span-2">
     <div className="app-brand-gradient flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-theme-sm sm:size-24">
      <HanziText size="radicalHero" tone="inverse" weight="black" leading="none">
-      {radical.radical}
+      {mainForm}
      </HanziText>
     </div>
-    <MandarinSpeakButton text={radical.radical} />
+    <MandarinSpeakButton text={mainForm} />
     <div className="grid min-w-0 gap-2">
      <div className="flex flex-wrap items-center gap-2">
       <Badge>#{radical.index}</Badge>
       <Badge variant="info">{t("strokes", { count: radical.strokes ?? "?" })}</Badge>
      </div>
-     <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-      {radical.nameVi || t("unnamed")}
-     </Typography>
+     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+       {radical.nameVi || t("unnamed")}
+      </Typography>
+      {otherForms.length > 0 ? (
+       <HanziText as="span" size="card" tone="muted" aria-label={t("otherForms")}>
+        {otherForms.join(" / ")}
+       </HanziText>
+      ) : null}
+     </div>
     </div>
    </div>
 
