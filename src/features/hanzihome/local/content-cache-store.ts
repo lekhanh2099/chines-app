@@ -145,33 +145,6 @@ export async function writeContentCache<T extends JsonFieldValue>(params: {
  return writeResult;
 }
 
-export async function pinContentCache(
- ownerId: string,
- resourceType: ContentCacheResourceType,
- resourceId: string,
-): Promise<boolean> {
- const key = buildContentCacheKey(ownerId, resourceType, resourceId);
- try {
-  return await runInLocalTransaction(
-   [HANZIHOME_LOCAL_STORES.contentCache],
-   "readwrite",
-   async (stores) => {
-    const cacheStore = stores[HANZIHOME_LOCAL_STORES.contentCache];
-    const rawExisting = await promisifyRequest(cacheStore.get(key));
-    const parsedExisting = ContentCacheRecordBaseSchema.safeParse(rawExisting);
-    if (!parsedExisting.success || isDeletedContentCacheRecord(parsedExisting.data)) return false;
-    cacheStore.put({
-     ...parsedExisting.data,
-     metadata: { ...parsedExisting.data.metadata, isPinned: true },
-    });
-    return true;
-   },
-  );
- } catch {
-  return false;
- }
-}
-
 export async function readContentCache<T>(params: {
  ownerId: string;
  resourceType: ContentCacheResourceType;
@@ -322,38 +295,6 @@ export async function bumpContentCacheGeneration(
   );
  } catch {
   return 0;
- }
-}
-
-export async function bumpLessonCacheGenerations(
- lessonId: string,
- ownerId?: string,
-): Promise<void> {
- const safeLessonId = lessonId.trim();
- if (!safeLessonId) return;
-
- try {
-  if (ownerId) {
-   await Promise.all([
-    bumpContentCacheGeneration(ownerId, "lesson_detail", safeLessonId),
-    bumpContentCacheGeneration(ownerId, "lesson_vocab", safeLessonId),
-   ]);
-   return;
-  }
-
-  const allEntries = await getAllFromStoreMatching(
-   HANZIHOME_LOCAL_STORES.contentCache,
-   ContentCacheRecordBaseSchema,
-  );
-  for (const entry of allEntries) {
-   if (entry.resourceId === safeLessonId) {
-    await bumpContentCacheGeneration(entry.ownerId, entry.resourceType, entry.resourceId).catch(
-     () => {},
-    );
-   }
-  }
- } catch {
-  // Non-fatal
  }
 }
 

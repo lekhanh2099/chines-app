@@ -11,7 +11,6 @@ import type { LessonModuleFrame } from "@/features/hanzihome/components/lesson-o
 import type { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import type { Reader } from "@/features/reader/components/Reader";
 import { cookReaderData } from "@/features/reader/model/cook-reader-data";
-import { EditableNodeWrapper } from "@/features/hanzihome/editing/components/EditableNodeWrapper";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "../lesson-overview/types";
 import type { TextbookSectionCard } from "./TextbookSectionCard";
 import { HanyuLessonSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
@@ -250,38 +249,16 @@ describe("LessonTextInlineEditor module filtering", () => {
   },
  );
 
- it("binds facade callbacks to the original source paths despite display sorting", () => {
+ it("renders lesson text through the Reader without per-node render overrides", () => {
   renderWorkspace(
    <LessonTextInlineEditor selectedSectionId="__all_lesson_sections__" onSelectSection={vi.fn()} />,
   );
   const props = readerMock.mock.calls[0]?.[0];
   if (!props) throw new Error("Missing Reader facade");
   const data = cookReaderData(props.data);
-  const segment = data.segmentsById["paragraph-first"];
-  const section = data.sectionsById["narrative-first"];
-  if (!segment || !section) throw new Error("Missing source binding");
-  const content = <span>Source content</span>;
-  expect(props.services?.renderSegment?.({ segment, content })).toMatchObject({
-   type: EditableNodeWrapper,
-   props: {
-    lessonId: lesson.id,
-    entityType: "text_paragraph",
-    entityId: "paragraph-first",
-    parentEntityId: "narrative-first",
-    path: ["lesson", "sections", 10, "blocks", 0, "paragraphs", 0],
-    children: content,
-   },
-  });
-  expect(props.services?.renderSection?.({ section, content })).toMatchObject({
-   type: EditableNodeWrapper,
-   props: {
-    lessonId: lesson.id,
-    entityType: "text_block",
-    entityId: "narrative-first",
-    path: ["lesson", "sections", 10, "blocks", 0],
-    children: content,
-   },
-  });
+  expect(data.segmentIds).toEqual(["paragraph-first", "paragraph-second"]);
+  expect(props.services?.renderSegment).toBeUndefined();
+  expect(props.services?.renderSection).toBeUndefined();
  });
  const supplementCases = [
   { module: "vocab", sectionId: "proper-nouns", owner: "Vocabulary workspace", sourceIndex: 2 },
@@ -307,7 +284,6 @@ describe("LessonTextInlineEditor module filtering", () => {
    expect(sectionCardMock.mock.calls[0]?.[0]).toMatchObject({
     lessonId: lesson.id,
     section: { id: sectionId },
-    sectionPath: ["lesson", "sections", sourceIndex],
    });
   },
  );

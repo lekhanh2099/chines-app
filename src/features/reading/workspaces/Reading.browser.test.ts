@@ -118,7 +118,7 @@ it
     page.on("pageerror", (error) => errors.push(error.message));
     if (mode !== "study") {
      const catalog: HanziHomeCatalogData = {
-      source: "db",
+      source: "static",
       courses: [
        {
         id: "course-a",

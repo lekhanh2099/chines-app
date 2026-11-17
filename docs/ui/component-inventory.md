@@ -48,7 +48,6 @@ These are product/domain compositions, not replacement primitives.
 
 | Composition                     | Owner                                                                       | Contract                                                                 |
 | ------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Library CRUD actions            | `src/features/hanzihome/components/library/LibraryCrudActionsMenu.tsx`      | one overflow menu per course/book/lesson + confirmation delete           |
 | HanziHome workspace bar         | `src/features/hanzihome/components/layout/WorkspaceToolbar.tsx`             | feature chrome; children remain canonical controls                       |
 | HanziHome reader quick menu     | `src/features/hanzihome/HanziHomeReadingSettingsSection.tsx`                | lesson-toolbar-only font/size/reveal/visibility preferences              |
 | HanziHome Header context bridge | `src/features/hanzihome/components/layout/HanziHomeHeaderContextBridge.tsx` | owner-safe lesson breadcrumb registration into shared Header slot        |

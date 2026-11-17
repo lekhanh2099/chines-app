@@ -17,7 +17,6 @@ import type {
  HanziHomeVocabItem,
  LearningStatus,
 } from "@/features/hanzihome/types";
-import type { EditableNodePath } from "@/features/hanzihome/editing";
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { z } from "zod";
 
@@ -28,9 +27,6 @@ type GrammarPointReaderProps = {
  status: LearningStatus;
  bookmarked: boolean;
  relatedVocab: HanziHomeVocabItem[];
- lessonId?: string;
- pointPath?: Nullable<EditableNodePath>;
- editMode?: boolean;
  onBookmark: () => void;
  onMarkStatus: (status: LearningStatus) => void;
 };
@@ -40,9 +36,6 @@ export function GrammarPointReader({
  status,
  bookmarked,
  relatedVocab,
- lessonId,
- pointPath,
- editMode,
  onBookmark,
 }: GrammarPointReaderProps) {
  if (!point) {
@@ -88,12 +81,7 @@ export function GrammarPointReader({
     </div>
 
     {hasStructuredContent ? (
-     <StructuredGrammarContent
-      point={point}
-      lessonId={lessonId}
-      pointPath={pointPath ?? undefined}
-      editMode={editMode}
-     />
+     <StructuredGrammarContent point={point} />
     ) : contentMd ? (
      <MarkdownContent content={contentMd} />
     ) : null}

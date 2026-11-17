@@ -8,6 +8,7 @@ export const practiceAttemptSurfaceSchema = z.enum([
  "personal-learning",
  "shadowing",
  "review",
+ "exercise",
 ]);
 
 export const practiceAttemptRowSchema = z.strictObject({

@@ -2,14 +2,11 @@
 
 import { createStore } from "@tanstack/react-store";
 
-import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
 import type { LearningStatus } from "@/features/hanzihome/types";
 import type { DraggedModule, LessonViewMode, PaneId, PaneLayout } from "./types";
 import { readWorkspacePreferences } from "./workspaceLayout";
 
 export type HanziHomeFeatureState = {
- editMode: boolean;
- activeNode: EditableNodeRequest | null;
  splitEnabled: boolean;
  paneLayout: PaneLayout;
  activePane: PaneId;
@@ -38,8 +35,6 @@ export function createHanziHomeFeatureStore(
  const preferences = readWorkspacePreferences();
 
  const initialState: HanziHomeFeatureState = {
-  editMode: false,
-  activeNode: null,
   splitEnabled: preferences.splitEnabled,
   paneLayout: preferences.paneLayout,
   activePane: "left",

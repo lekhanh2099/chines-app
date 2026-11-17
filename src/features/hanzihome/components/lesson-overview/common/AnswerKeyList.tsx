@@ -1,7 +1,6 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import type { JsonFieldValue, JsonValue } from "@/types/json";
+import type { JsonValue } from "@/types/json";
 import type { JsonObject } from "@/types/json";
-import type { ReactNode } from "react";
 
 import {
  answerToString,
@@ -30,12 +29,10 @@ export function AnswerKeyList({
  defaultOpen = false,
  itemId,
  values,
- renderAnswer,
 }: {
  defaultOpen?: boolean;
  itemId: string;
  values: JsonValue[];
- renderAnswer?: (value: JsonFieldValue, index: number, content: ReactNode) => ReactNode;
 }) {
  type AnswerEntry = {
   id: string;
@@ -43,8 +40,6 @@ export function AnswerKeyList({
   value: string;
   pinyin?: string;
   note?: string;
-  sourceValue: JsonFieldValue;
-  sourceIndex: number;
  };
 
  const answers = values.flatMap((answerValue, index): AnswerEntry[] => {
@@ -83,8 +78,6 @@ export function AnswerKeyList({
        value,
        pinyin: pinyin || undefined,
        note: note || undefined,
-       sourceValue: answerValue,
-       sourceIndex: index,
       },
      ]
    : [];
@@ -96,23 +89,11 @@ export function AnswerKeyList({
   <AnswerReveal defaultOpen={defaultOpen} label={`Xem ${answers.length} đáp án`}>
    {answers.map((answer) => (
     <span key={answer.id}>
-     {renderAnswer ? (
-      renderAnswer(
-       answer.sourceValue,
-       answer.sourceIndex,
-       <StudyInstructionText tone="accent" weight="bold">
-        {answer.label}: {answer.value}
-        {answer.pinyin && ` · ${answer.pinyin}`}
-        {answer.note && ` — ${answer.note}`}
-       </StudyInstructionText>,
-      )
-     ) : (
-      <StudyInstructionText tone="accent" weight="bold">
-       {answer.label}: {answer.value}
-       {answer.pinyin && ` · ${answer.pinyin}`}
-       {answer.note && ` — ${answer.note}`}
-      </StudyInstructionText>
-     )}
+     <StudyInstructionText tone="accent" weight="bold">
+      {answer.label}: {answer.value}
+      {answer.pinyin && ` · ${answer.pinyin}`}
+      {answer.note && ` — ${answer.note}`}
+     </StudyInstructionText>
     </span>
    ))}
   </AnswerReveal>

@@ -13,7 +13,6 @@ import type {
 import { createHanziHomeFeatureStore } from "./hanzihomeFeatureStore";
 import { HanziHomeFeatureStoreProvider } from "./hanzihomeFeatureContext";
 import { createHanziHomeFeatureActions } from "./actions";
-import { createHanziHomeFeatureServices } from "./services";
 import type { LearningSyncUiState, ReviewItem, StudyModule } from "./types";
 
 export function HanziHomeFeatureProvider({
@@ -67,7 +66,6 @@ export function HanziHomeFeatureProvider({
   [matchingIntent?.module, matchingIntent?.targetId, readOnly, readOnlyLessonTextSectionId],
  );
  const actions = useMemo(() => createHanziHomeFeatureActions(store), [store]);
- const services = useMemo(() => createHanziHomeFeatureServices(lesson), [lesson]);
  const runtime = useMemo(
   () => ({
    readOnly,
@@ -99,10 +97,7 @@ export function HanziHomeFeatureProvider({
    readOnly,
   ],
  );
- const value = useMemo(
-  () => ({ store, actions, services, runtime }),
-  [actions, runtime, services, store],
- );
+ const value = useMemo(() => ({ store, actions, runtime }), [actions, runtime, store]);
 
  return <HanziHomeFeatureStoreProvider value={value}>{children}</HanziHomeFeatureStoreProvider>;
 }

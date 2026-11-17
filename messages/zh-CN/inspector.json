@@ -52,6 +52,8 @@
   "meaningsCount": "出现 {count} 处",
   "charactersTitle": "逐字解析",
   "openCharacter": "查看 {hanzi} 的详情",
+  "strokesTitle": "笔顺",
+  "strokesHelp": "查看笔顺或练习书写每个字。",
   "breadcrumbAria": "词汇库导航",
   "reuseHintAria": "{hanzi} 出现在多个课文中",
   "reuseLoadError": "无法加载该词出现的位置。"

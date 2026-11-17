@@ -12,16 +12,11 @@ import {
 } from "@/features/hanzihome/components/grammar/grammar-reading";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
-import {
- useHanziHomeEditMode,
- useHanziHomeFeatureSelector,
-} from "@/features/hanzihome/context/selectors";
-import { EditableNodeWrapper, type NullableEditableNodePath } from "@/features/hanzihome/editing";
+import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 import {
  LessonModuleFrame,
  LessonModuleSidebarRailItem,
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
-import { isPublishedStudioContentId } from "@/features/hanzihome/static-json/studio-published-content-id";
 
 type GrammarWorkspaceProps = {
  compact?: boolean;
@@ -39,7 +34,6 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  const selectedPointId = useHanziHomeFeatureSelector(
   (featureState) => featureState.grammarSelectedPointId,
  );
- const editMode = useHanziHomeEditMode() && !isPublishedStudioContentId(lesson.id);
  const isGrammarSidebarOpen = useHanziHomeFeatureSelector(
   (featureState) => featureState.grammarSidebarOpen,
  );
@@ -77,12 +71,6 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
 
  const progress = state.progress.grammar || {};
  const bookmarks = state.bookmarks.grammar || [];
- const selectedPointPath = useMemo<NullableEditableNodePath>(() => {
-  if (!selectedPoint) return null;
-
-  const index = lesson.grammar.findIndex((point) => point.id === selectedPoint.id);
-  return index >= 0 ? ["grammar", index] : null;
- }, [lesson.grammar, selectedPoint]);
 
  const relatedVocab = useMemo(() => {
   if (!selectedPoint) return [];
@@ -114,53 +102,15 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  );
 
  const readerContent = isAllView ? (
-  <AllGrammarPointReader lessonId={lesson.id} points={grammarPoints} editMode={editMode} />
+  <AllGrammarPointReader points={grammarPoints} />
  ) : isReadingView && reading ? (
   <GrammarReadingReader reading={reading} />
- ) : selectedPoint && selectedPointPath ? (
-  editMode ? (
-   <EditableNodeWrapper
-    lessonId={lesson.id}
-    entityType="grammar_point"
-    entityId={selectedPoint.id}
-    path={selectedPointPath}
-    value={selectedPoint}
-    label={selectedPoint.cleanTitle}
-    editLabel="Sửa ngữ pháp"
-   >
-    <GrammarPointReader
-     point={selectedPoint}
-     pointPath={selectedPointPath}
-     status={progress[selectedPoint.id]?.status || "new"}
-     bookmarked={bookmarks.includes(selectedPoint.id)}
-     relatedVocab={relatedVocab}
-     lessonId={lesson.id}
-     editMode={editMode}
-     onBookmark={() => runtime.bookmarkGrammar(selectedPoint.id)}
-     onMarkStatus={(status) => runtime.markGrammar(selectedPoint.id, status)}
-    />
-   </EditableNodeWrapper>
-  ) : (
-   <GrammarPointReader
-    point={selectedPoint}
-    pointPath={selectedPointPath}
-    status={progress[selectedPoint.id]?.status || "new"}
-    bookmarked={bookmarks.includes(selectedPoint.id)}
-    relatedVocab={relatedVocab}
-    lessonId={lesson.id}
-    editMode={editMode}
-    onBookmark={() => runtime.bookmarkGrammar(selectedPoint.id)}
-    onMarkStatus={(status) => runtime.markGrammar(selectedPoint.id, status)}
-   />
-  )
  ) : (
   <GrammarPointReader
    point={selectedPoint}
    status={selectedPoint ? progress[selectedPoint.id]?.status || "new" : "new"}
    bookmarked={selectedPoint ? bookmarks.includes(selectedPoint.id) : false}
    relatedVocab={relatedVocab}
-   lessonId={lesson.id}
-   editMode={editMode}
    onBookmark={() => selectedPoint && runtime.bookmarkGrammar(selectedPoint.id)}
    onMarkStatus={(status) => selectedPoint && runtime.markGrammar(selectedPoint.id, status)}
   />

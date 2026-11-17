@@ -67,7 +67,7 @@ Load a skill only for its matching task:
   `.agents/skills/frontend-feature-workflow/SKILL.md`;
 - UI design, implementation or interaction review:
   `.agents/skills/frontend-ui-system/SKILL.md`;
-- HanziHome content loading, rendering, editing or import:
+- HanziHome content loading, rendering, generation or import:
   `.agents/skills/hanzihome-content-editing/SKILL.md`;
 - requested HanziHome regression/coverage review:
   `.agents/skills/hanzihome-test-review/SKILL.md`;

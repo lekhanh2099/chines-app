@@ -17,11 +17,7 @@
   "delete": "删除",
   "deleting": "正在删除...",
   "itemTypes": {
-   "memoryTip": "速记提示",
-   "course": "课程",
-   "book": "分册",
-   "lesson": "课文",
-   "content": "内容"
+   "memoryTip": "速记提示"
   }
  },
  "language": "语言",
@@ -48,9 +44,6 @@
   "synced": "已同步"
  },
  "offlinePack": {
-  "downloadCourse": "下载离线课程",
-  "downloading": "正在下载 ({percent}%)...",
-  "downloadReady": "已离线就绪",
   "reconnectSyncSuccess": "已重新连接。已同步 {count} 条学习记录。",
   "storagePersisted": "离线存储已受保护",
   "storageQuota": "离线空间: {usedMB} MB / {quotaMB} MB",

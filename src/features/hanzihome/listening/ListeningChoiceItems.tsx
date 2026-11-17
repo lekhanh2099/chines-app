@@ -17,7 +17,6 @@ import {
  ItemHeader,
  StressText,
  type ListeningExerciseItemsProps,
- type ListeningItemEditHandler,
 } from "./ListeningExerciseItemParts";
 import { isListeningChoiceCorrect } from "./listening-exercise-utils";
 
@@ -39,7 +38,6 @@ export function ChoiceItems({
  onSpeakSequence,
  revealedScripts,
  onToggleScript,
- onEditItem,
 }: ListeningExerciseItemsProps & {
  selections: Record<string, string>;
  checked: Record<string, boolean>;
@@ -47,7 +45,6 @@ export function ChoiceItems({
  onCheck: (itemId: string) => void;
  revealedScripts: Record<string, boolean>;
  onToggleScript: (itemId: string) => void;
- onEditItem?: ListeningItemEditHandler;
 }) {
  const t = useTranslations("Listening");
  return items.map((item, index) => {
@@ -63,11 +60,7 @@ export function ChoiceItems({
 
   return (
    <Card key={item.id} variant="section" padding="md" className="grid gap-3">
-    <ItemHeader
-     index={index}
-     type={exerciseType}
-     onEdit={onEditItem ? () => onEditItem(item) : undefined}
-    />
+    <ItemHeader index={index} type={exerciseType} />
     <div lang="zh-CN" className="grid items-start gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
      <div className="grid gap-1">
       <ReaderHanziText displayMode={displayMode} tone="default" leading="relaxed">

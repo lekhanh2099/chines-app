@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { HanyuLessonSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
-import type { HanziHomeData } from "@/features/hanzihome/types";
-import { buildHanziHomeSearchIndex } from "./buildSearchIndex";
+import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import { buildHanziHomeLessonSearchItems } from "./buildSearchIndex";
 
 describe("canonical search index nodes", () => {
  it.each([false, true])("indexes reading once when legacy blocks are mirrored: %s", (hasItems) => {
@@ -25,34 +25,20 @@ describe("canonical search index nodes", () => {
     ],
    },
   });
-  const data: HanziHomeData = {
-   courses: [],
-   books: [],
-   lessons: [
-    {
-     id: "lesson-one",
-     titleZh: "希望工程",
-     title: "Hy vọng",
-     lessonNumber: 1,
-     vocabIds: [],
-     grammarPointIds: [],
-     vocab: [],
-     grammar: [],
-     sourceLesson,
-    },
-   ],
-   radicals: [],
-   meta: {
-    app: "hanzihome",
-    dataset: "fixture",
-    version: "1",
-    generatedAt: "",
-    sourceFiles: [],
-    counts: { lessons: 1, vocab: 0, grammarPoints: 0, radicals: 0, flashcards: 0 },
-    schemaNote: "",
+  const lessons: HanziHomeLesson[] = [
+   {
+    id: "lesson-one",
+    titleZh: "希望工程",
+    title: "Hy vọng",
+    lessonNumber: 1,
+    vocabIds: [],
+    grammarPointIds: [],
+    vocab: [],
+    grammar: [],
+    sourceLesson,
    },
-  };
-  const index = buildHanziHomeSearchIndex(data);
+  ];
+  const index = buildHanziHomeLessonSearchItems(lessons);
   const nodes = index.filter((item) => item.kind === "lesson_text");
   expect(nodes.map((item) => item.id)).toEqual([
    "lesson-text:lesson-one:reading-one",

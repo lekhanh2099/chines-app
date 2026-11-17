@@ -24,8 +24,8 @@ import {
  DialogTitle,
 } from "@/components/ui/overlays/dialog";
 import { Tabs } from "@/components/ui/navigation/tabs";
-import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutation-error";
-import { useRadicalMutation } from "@/features/hanzihome/editing/useRadicalMutation";
+import { isHanziHomeMutationConflict } from "@/features/hanzihome/radical-editing/mutation-error";
+import { useRadicalMutation } from "@/features/hanzihome/radical-editing/useRadicalMutation";
 import {
  radicalFormSchema,
  radicalColumnValuesSchema,
@@ -34,7 +34,7 @@ import {
  columnValuesFromForm,
  changedFields,
  isValidRadicalStrokeText,
-} from "@/features/hanzihome/editing/radical-edit-utils";
+} from "@/features/hanzihome/radical-editing/radical-edit-utils";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 
 type RadicalEditDialogProps = {

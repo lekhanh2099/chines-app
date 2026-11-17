@@ -1,21 +1,23 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type {
  Exercise,
  ReadingItem,
  Section,
 } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
-import { EmptySectionState, ExerciseQuestionCard, LooseItemGrid } from "../CommonCards";
+import {
+ AnswerKeyList,
+ EmptySectionState,
+ ExerciseQuestionCard,
+ LooseItemGrid,
+} from "../CommonCards";
 import { PassageCard } from "../PassageCard";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
-import { EditableAnswerKeyList } from "./EditableAnswerKeyList";
 import { ExerciseRenderIssues } from "./ExerciseRenderIssues";
 import { ExtraPayloadBlock } from "./ExtraPayloadBlock";
 import { InfoBlock } from "./InfoBlock";
 import { MatchingColumn } from "./MatchingColumn";
-import { QuestionExerciseClozeEditControls } from "./QuestionExerciseClozeEditControls";
 import { QuestionExerciseQuestionList } from "./QuestionExerciseQuestionList";
 import { QuestionGroupCard } from "./QuestionGroupCard";
 import { SupplementaryPills } from "./SupplementaryPills";
@@ -23,8 +25,6 @@ import { WordBank } from "./WordBank";
 import { buildQuestionExerciseModel } from "./question-exercise-model";
 
 type QuestionExerciseBodyProps = {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
  readingItems?: readonly ReadingItem[];
@@ -32,8 +32,6 @@ type QuestionExerciseBodyProps = {
 };
 
 export function QuestionExerciseBody({
- lessonId,
- itemPath,
  item,
  displayMode,
  readingItems,
@@ -50,7 +48,6 @@ export function QuestionExerciseBody({
   rightSource,
   rightItems,
   answerKey,
-  answerKeySource,
   wordBank,
   supplementaryWords,
   pattern,
@@ -58,8 +55,6 @@ export function QuestionExerciseBody({
   passage,
   showPassageTitle,
   clozeAnswers,
-  passageSegments,
-  clozeAnswerSource,
   isReadingCloze,
   questionsOnlyProvideClozeAnswers,
   hasStructuredQuestionGroups,
@@ -75,22 +70,7 @@ export function QuestionExerciseBody({
   <div className="grid gap-3">
    <SupplementaryPills itemId={item.id} values={supplementaryWords} displayMode={displayMode} />
 
-   {lessonId && itemPath && wordBank.length > 0 ? (
-    <EditableNodeWrapper
-     lessonId={lessonId}
-     entityType="exercise_word_bank"
-     entityId={`${item.id}-word-bank`}
-     parentEntityType="exercise"
-     parentEntityId={item.id}
-     path={[...itemPath, "word_bank"]}
-     value={wordBank}
-     label="Từ cho sẵn"
-    >
-     <WordBank values={wordBank} displayMode={displayMode} />
-    </EditableNodeWrapper>
-   ) : (
-    <WordBank values={wordBank} displayMode={displayMode} />
-   )}
+   <WordBank values={wordBank} displayMode={displayMode} />
 
    <InfoBlock title="Tình huống" value={scenarioText} />
    <InfoBlock title="Chức năng giao tiếp" value={functionText} />
@@ -115,16 +95,6 @@ export function QuestionExerciseBody({
     />
    )}
 
-   {lessonId && itemPath ? (
-    <QuestionExerciseClozeEditControls
-     lessonId={lessonId}
-     itemPath={itemPath}
-     item={item}
-     passageSegments={passageSegments}
-     clozeAnswerSource={clozeAnswerSource}
-    />
-   ) : null}
-
    {passage ? (
     <PassageCard
      itemId={item.id}
@@ -142,45 +112,15 @@ export function QuestionExerciseBody({
     hasStructuredQuestionGroups={hasStructuredQuestionGroups}
    />
 
-   {items.length > 0 &&
-    (lessonId && itemPath ? (
-     <div className="grid gap-2">
-      {items.map((entryValue, index) => {
-       const entry = asRecord(entryValue);
-       const entityId = stringValue(entry, "id") || `${item.id}-item-${index}`;
-
-       return (
-        <EditableNodeWrapper
-         key={entityId}
-         lessonId={lessonId}
-         entityType="exercise_question"
-         entityId={entityId}
-         parentEntityType="exercise"
-         parentEntityId={item.id}
-         path={[...itemPath, "items", index]}
-         value={entryValue}
-         label={`Mục ${index + 1}`}
-        >
-         <LooseItemGrid items={[entryValue]} displayMode={displayMode} />
-        </EditableNodeWrapper>
-       );
-      })}
-     </div>
-    ) : (
-     <LooseItemGrid items={items} displayMode={displayMode} />
-    ))}
+   {items.length > 0 && <LooseItemGrid items={items} displayMode={displayMode} />}
 
    {parts.length > 0 && (
     <div className="grid gap-3">
      {parts.map((partValue, partIndex) => (
       <QuestionGroupCard
        key={stringValue(asRecord(partValue), "id") || `${item.id}-part-${partIndex}`}
-       lessonId={lessonId}
-       itemPath={itemPath}
        itemId={`${item.id}-part-${partIndex}`}
        exerciseType={item.type}
-       parentExerciseId={item.id}
-       groupPath={["parts", partIndex]}
        groupValue={partValue}
        index={partIndex}
        fallbackTitle={`Phần ${partIndex + 1}`}
@@ -193,8 +133,6 @@ export function QuestionExerciseBody({
    {(leftItems.length > 0 || rightItems.length > 0) && (
     <div className="grid gap-2 md:grid-cols-2">
      <MatchingColumn
-      lessonId={lessonId}
-      itemPath={itemPath}
       itemId={item.id}
       title="Cột A"
       values={leftItems}
@@ -204,8 +142,6 @@ export function QuestionExerciseBody({
      />
 
      <MatchingColumn
-      lessonId={lessonId}
-      itemPath={itemPath}
       itemId={item.id}
       title="Cột B"
       values={rightItems}
@@ -230,12 +166,8 @@ export function QuestionExerciseBody({
      {groups.map((groupValue, index) => (
       <QuestionGroupCard
        key={stringValue(asRecord(groupValue), "id") || `${item.id}-group-${index}`}
-       lessonId={lessonId}
-       itemPath={itemPath}
        itemId={`${item.id}-group-${index}`}
        exerciseType={item.type}
-       parentExerciseId={item.id}
-       groupPath={["groups", index]}
        groupValue={groupValue}
        index={index}
        fallbackTitle="Nhóm câu"
@@ -247,8 +179,6 @@ export function QuestionExerciseBody({
 
    {questions.length > 0 && (!isReadingCloze || !questionsOnlyProvideClozeAnswers) ? (
     <QuestionExerciseQuestionList
-     lessonId={lessonId}
-     itemPath={itemPath}
      item={item}
      displayMode={displayMode}
      questions={questions}
@@ -260,14 +190,7 @@ export function QuestionExerciseBody({
    ) : null}
 
    {shouldRenderAggregateAnswerKey && (
-    <EditableAnswerKeyList
-     lessonId={lessonId}
-     itemPath={itemPath}
-     itemId={item.id}
-     sourcePath={[answerKeySource]}
-     values={answerKey}
-     showAnswers={displayMode.showAnswers}
-    />
+    <AnswerKeyList defaultOpen={displayMode.showAnswers} itemId={item.id} values={answerKey} />
    )}
   </div>
  );

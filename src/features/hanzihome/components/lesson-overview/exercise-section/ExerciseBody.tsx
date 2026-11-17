@@ -1,4 +1,3 @@
-import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type {
  Exercise,
  ReadingItem,
@@ -18,15 +17,11 @@ import { WritingExerciseBody } from "./WritingExerciseBody";
 import { getExerciseRendererMeta } from "./exercise-renderer-registry";
 
 export function ExerciseBody({
- lessonId,
- itemPath,
  item,
  displayMode,
  readingItems,
  readingSections,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
  readingItems?: readonly ReadingItem[];
@@ -35,96 +30,38 @@ export function ExerciseBody({
  const { family } = getExerciseRendererMeta(item.type);
 
  if (family === "matching") {
-  return (
-   <MatchingExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <MatchingExerciseBody item={item} displayMode={displayMode} />;
  }
  if (family === "phonetics") {
-  return (
-   <PhoneticsExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
  }
 
  if (family === "substitution") {
-  return (
-   <SubstitutionExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <SubstitutionExerciseBody item={item} displayMode={displayMode} />;
  }
 
  if (family === "dialogue") {
-  return (
-   <CompleteDialogueExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <CompleteDialogueExerciseBody item={item} displayMode={displayMode} />;
  }
 
  if (family === "communication") {
-  return (
-   <CommunicationExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <CommunicationExerciseBody item={item} displayMode={displayMode} />;
  }
 
  if (family === "reorder") {
-  return (
-   <ReorderExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <ReorderExerciseBody item={item} displayMode={displayMode} />;
  }
 
  if (family === "writing") {
-  return (
-   <WritingExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <WritingExerciseBody item={item} displayMode={displayMode} />;
  }
 
  if (family === "reference") {
-  return (
-   <ExerciseReferenceBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <ExerciseReferenceBody item={item} displayMode={displayMode} />;
  }
 
  return (
   <QuestionExerciseBody
-   lessonId={lessonId}
-   itemPath={itemPath}
    item={item}
    displayMode={displayMode}
    readingItems={readingItems}

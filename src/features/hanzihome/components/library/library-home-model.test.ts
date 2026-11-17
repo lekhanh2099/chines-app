@@ -45,6 +45,10 @@ const books: HanziHomeCourseBook[] = [
 const textbooks: TextbookBookSummary[] = [
  { id: "nhip-cau-1", key: "nhip-cau", label: "Nhịp cầu", lessons: [] },
 ];
+const courseBooks: TextbookBookSummary[] = [
+ { id: "hanyu-q2-shang", key: "hanyu-q2-shang", label: "Quyển 2 · Thượng", lessons: [] },
+ { id: "boya-9e-advanced-1", key: "boya-9e-advanced-1", label: "Cao cấp I", lessons: [] },
+];
 const getGroupTitle = (key: LibraryCourseGroupKey) => `Nhóm ${key}`;
 
 describe("library home model", () => {
@@ -62,11 +66,20 @@ describe("library home model", () => {
   expect(keys("all", "tập một")).toEqual(["boya"]);
  });
 
- it("shows static textbooks only for all and specialized filters", () => {
+ it("shows the specialized textbooks under all and specialized filters", () => {
   expect(filterLibraryTextbooks(textbooks, "all", "nhịp")).toEqual(textbooks);
   expect(filterLibraryTextbooks(textbooks, "specialized", "")).toEqual(textbooks);
   expect(filterLibraryTextbooks(textbooks, "hanyu", "")).toEqual([]);
   expect(filterLibraryTextbooks(textbooks, "all", "boya")).toEqual([]);
+ });
+
+ it("files the converted course books under their own series filter", () => {
+  const [hanyu, boya] = courseBooks;
+  const all = [...textbooks, ...courseBooks];
+  expect(filterLibraryTextbooks(all, "hanyu", "")).toEqual([hanyu]);
+  expect(filterLibraryTextbooks(all, "boya", "")).toEqual([boya]);
+  expect(filterLibraryTextbooks(all, "specialized", "")).toEqual(textbooks);
+  expect(filterLibraryTextbooks(all, "all", "cao cấp")).toEqual([boya]);
  });
 
  it("keeps saved order first, appends new collections once and filters to visible ids", () => {

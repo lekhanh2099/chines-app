@@ -56,7 +56,6 @@ describe("buildQuestionExerciseModel", () => {
   const model = buildQuestionExerciseModel({ item });
 
   expect(model.questions).toHaveLength(1);
-  expect(model.answerKeySource).toBe("answers");
   expect(model.isReadingCloze).toBe(false);
   expect(model.shouldRenderAggregateAnswerKey).toBe(false);
   expect(model.hasStructuredPayload).toBe(true);

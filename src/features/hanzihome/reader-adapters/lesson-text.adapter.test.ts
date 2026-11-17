@@ -80,7 +80,7 @@ const textSection: TextSection = {
 
 describe("lesson text reader adapter", () => {
  it("preserves optional titles and meanings without inventing section headings", () => {
-  const result = lessonTextToReaderDocument({
+  const document = lessonTextToReaderDocument({
    documentId: "untitled:text",
    lessonId: "untitled",
    titleZh: "",
@@ -90,56 +90,30 @@ describe("lesson text reader adapter", () => {
      blocks: textSection.blocks.map((block) => ({ ...block, title: "", title_vi: "" })),
     },
    ],
-   sectionPathFor: () => ["lesson", "sections", 0],
   });
-  expect(result.document.title).toBeUndefined();
-  expect(result.document.sections.map((section) => section.title)).toEqual(["", ""]);
-  expect(result.document.segments[0]?.vi).toBe("Hôm nay là Chủ nhật.");
-  expect(result.document.segments[1]?.vi).toBe("Bạn khỏe không?");
+  expect(document.title).toBeUndefined();
+  expect(document.sections.map((section) => section.title)).toEqual(["", ""]);
+  expect(document.segments[0]?.vi).toBe("Hôm nay là Chủ nhật.");
+  expect(document.segments[1]?.vi).toBe("Bạn khỏe không?");
  });
 
  it("normalizes textbook blocks into ordered continuous reader sections", () => {
-  const result = lessonTextToReaderDocument({
+  const document = lessonTextToReaderDocument({
    documentId: "lesson-1:text",
    lessonId: "lesson-1",
    titleZh: "第一课",
    sections: [textSection],
-   sectionPathFor: () => ["lesson", "sections", 0],
   });
 
-  expect(result.document.sections.map((section) => section.id)).toEqual(["narrative", "dialogue"]);
-  expect(result.document.segments.map((segment) => segment.id)).toEqual([
+  expect(document.sections.map((section) => section.id)).toEqual(["narrative", "dialogue"]);
+  expect(document.segments.map((segment) => segment.id)).toEqual([
    "paragraph-1",
    "line-1",
    "line-2",
   ]);
-  expect(result.document.segments[1]?.speaker?.label).toBe("A");
-  expect(result.document.segments[1]?.role).toBe("Gặp nhau");
-  expect(result.document.capabilities).toContain("pinyin");
-  expect(result.document.capabilities).toContain("translation");
- });
-
- it("keeps lesson edit paths outside the universal document model", () => {
-  const result = lessonTextToReaderDocument({
-   documentId: "lesson-1:text",
-   lessonId: "lesson-1",
-   titleZh: "第一课",
-   sections: [textSection],
-   sectionPathFor: () => ["lesson", "sections", 4],
-  });
-
-  expect(result.segmentBindings.get("line-1")?.path).toEqual([
-   "lesson",
-   "sections",
-   4,
-   "blocks",
-   0,
-   "scenes",
-   0,
-   "lines",
-   1,
-  ]);
-  expect(result.document.segments[1]).not.toHaveProperty("path");
-  expect(result.document.segments[1]).not.toHaveProperty("lessonId");
+  expect(document.segments[1]?.speaker?.label).toBe("A");
+  expect(document.segments[1]?.role).toBe("Gặp nhau");
+  expect(document.capabilities).toContain("pinyin");
+  expect(document.capabilities).toContain("translation");
  });
 });

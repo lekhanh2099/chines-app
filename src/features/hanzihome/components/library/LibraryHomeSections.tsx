@@ -55,7 +55,6 @@ export function LibrarySelectedCollection({
  selectedTextbook,
  books,
  lessons,
- editMode,
  isCatalogError,
  isCatalogPending,
  onRetryCatalog,
@@ -64,7 +63,6 @@ export function LibrarySelectedCollection({
  selectedTextbook?: TextbookBookSummary;
  books: CourseCollectionSectionProps["books"];
  lessons: CourseCollectionSectionProps["lessons"];
- editMode: CourseCollectionSectionProps["editMode"];
  isCatalogError: boolean;
  isCatalogPending: boolean;
  onRetryCatalog: () => void;
@@ -83,12 +81,7 @@ export function LibrarySelectedCollection({
     />
    ) : null}
    {selectedGroup ? (
-    <CourseCollectionSection
-     group={selectedGroup}
-     books={books}
-     lessons={lessons}
-     editMode={editMode}
-    />
+    <CourseCollectionSection group={selectedGroup} books={books} lessons={lessons} />
    ) : selectedTextbook ? (
     <LibraryTextbookCollection textbook={selectedTextbook} />
    ) : isCatalogPending ? (

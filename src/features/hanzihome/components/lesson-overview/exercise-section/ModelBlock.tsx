@@ -1,5 +1,4 @@
-import type { JsonFieldValue, JsonValue } from "@/types/json";
-import type { ReactNode } from "react";
+import type { JsonValue } from "@/types/json";
 
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
@@ -10,12 +9,10 @@ export function ModelBlock({
  title = "Mẫu",
  values,
  displayMode,
- renderValue,
 }: {
  title?: string;
  values: JsonValue[];
  displayMode: LessonDisplayMode;
- renderValue?: (value: JsonFieldValue, index: number, content: ReactNode) => ReactNode;
 }) {
  const visibleValues = values.filter((value) => {
   if (answerToString(value)) return true;
@@ -66,12 +63,12 @@ export function ModelBlock({
        </ReaderHanziText>
       );
 
-      return <div key={key}>{renderValue ? renderValue(value, index, content) : content}</div>;
+      return <div key={key}>{content}</div>;
      }
 
      const content = <TextLineCard zh={zh} pinyin={pinyin} vi={vi} displayMode={displayMode} />;
 
-     return <div key={key}>{renderValue ? renderValue(value, index, content) : content}</div>;
+     return <div key={key}>{content}</div>;
     })}
    </div>
   </div>

@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Tags } from "lucide-react";
 import { LessonPreviewCard } from "@/features/hanzihome/components/lesson-overview/overview/LessonPreviewCard";
+import { VocabStatusControl } from "@/features/hanzihome/components/lesson-overview/overview/VocabStatusControl";
 import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
 import { VocabularyCardGrid } from "@/features/hanzihome/components/lesson-overview/overview/VocabularyCardList";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
@@ -36,7 +37,9 @@ export function TextbookVocabularyCards({
      variant="body"
     />
    }
-  />
+  >
+   <VocabStatusControl progressId={word.id} hanzi={word.hanzi} />
+  </VocabPreviewRow>
  ));
 }
 

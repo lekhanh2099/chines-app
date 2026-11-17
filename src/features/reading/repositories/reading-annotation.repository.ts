@@ -5,9 +5,10 @@ import { z } from "zod";
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role.server";
 import {
+ getCourseTextbookCatalog,
  getTextbookCatalog,
- getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { getTextbookLessonOnServer } from "@/features/hanzihome/static-json/course-textbooks.server";
 
 import {
  readerAnnotationRowSchema,
@@ -24,11 +25,11 @@ async function requireStaticReaderDocument(documentId: string) {
  const resource = await getReaderDocument(documentId);
  if (resource !== null) return readerResourceToDocument(resource);
 
- const textbookSummary = getTextbookCatalog()
+ const textbookSummary = [...getTextbookCatalog(), ...getCourseTextbookCatalog()]
   .flatMap((book) => book.lessons)
   .find((lesson) => `${lesson.id}:text` === documentId);
  const textbook = textbookSummary
-  ? getTextbookLesson(textbookSummary.bookKey, textbookSummary.number)
+  ? getTextbookLessonOnServer(textbookSummary.bookKey, textbookSummary.number)
   : null;
  if (textbook === null) throw new Error("Reader document is not in the static package");
  return buildBusinessChineseReaderDocument(textbook, "text");

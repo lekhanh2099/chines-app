@@ -1,5 +1,3 @@
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
-
 import { ExerciseQuestionCard } from "../CommonCards";
 import { StudyInstructionText, ReaderHanziText } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
@@ -8,20 +6,14 @@ import { promptToString } from "./exercise-utils";
 
 /** One `items[]`/`questions[]` entry: an inline model + prompts drill or a prompt/answer card. */
 export function SubstitutionItemEntry({
- lessonId,
- itemPath,
  itemId,
  displayMode,
  entryValue,
- entityId,
  index,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  itemId: string;
  displayMode: LessonDisplayMode;
  entryValue: ReturnType<typeof arrayValue>[number];
- entityId: string;
  index: number;
 }) {
  const entry = asRecord(entryValue);
@@ -98,22 +90,7 @@ export function SubstitutionItemEntry({
    </ExerciseQuestionCard>
   );
 
-  return lessonId && itemPath ? (
-   <EditableNodeWrapper
-    lessonId={lessonId}
-    entityType="exercise_question"
-    entityId={entityId}
-    parentEntityType="exercise"
-    parentEntityId={itemId}
-    path={[...itemPath, "items", index]}
-    value={entryValue}
-    label={`Mẫu ${index + 1}`}
-   >
-    {content}
-   </EditableNodeWrapper>
-  ) : (
-   <div>{content}</div>
-  );
+  return <div>{content}</div>;
  }
 
  // Standard items (prompt/answer based)
@@ -140,20 +117,5 @@ export function SubstitutionItemEntry({
   />
  );
 
- return lessonId && itemPath ? (
-  <EditableNodeWrapper
-   lessonId={lessonId}
-   entityType="exercise_question"
-   entityId={entityId}
-   parentEntityType="exercise"
-   parentEntityId={itemId}
-   path={[...itemPath, "items", index]}
-   value={entryValue}
-   label={`Câu ${index + 1}`}
-  >
-   {content}
-  </EditableNodeWrapper>
- ) : (
-  <div>{content}</div>
- );
+ return <div>{content}</div>;
 }

@@ -7,7 +7,10 @@ import { type SegmentedControlItem } from "@/components/ui/forms/segmented-contr
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { dictationSourcesFromTextbook } from "@/features/hanzihome/practice/translation-practice";
-import { buildTextbookHref } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
+import {
+ buildTextbookHref,
+ courseTextbookRoutePrefix,
+} from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
 import {
  getTextbookCatalogForBookKeys,
  getTextbookLesson,
@@ -46,15 +49,20 @@ export function useBusinessChineseLessonView({
  const { toggleBookmark } = learning;
 
  const currentPath = usePathname();
- const detectedBookKey: TextbookLesson["bookKey"] = currentPath.includes("/khau-ngu-tc1")
-  ? "khau-ngu"
-  : currentPath.includes("/doc-hieu")
-    ? "doc-hieu"
-    : currentPath.includes("/han-thuong-mai")
-      ? "tm3"
-      : currentPath.includes("/nhip-cau")
-        ? "nhip-cau"
-        : initialLesson.bookKey;
+ // A course book is rendered from the lesson the server passed for this route.
+ const detectedBookKey: TextbookLesson["bookKey"] = currentPath.startsWith(
+  courseTextbookRoutePrefix,
+ )
+  ? initialLesson.bookKey
+  : currentPath.includes("/khau-ngu-tc1")
+    ? "khau-ngu"
+    : currentPath.includes("/doc-hieu")
+      ? "doc-hieu"
+      : currentPath.includes("/han-thuong-mai")
+        ? "tm3"
+        : currentPath.includes("/nhip-cau")
+          ? "nhip-cau"
+          : initialLesson.bookKey;
 
  const requestedLessonNumber =
   typeof searchParams.get("lesson") === "string" ? Number(searchParams.get("lesson")) : null;

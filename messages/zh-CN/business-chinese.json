@@ -69,7 +69,12 @@
   "dictation": {
    "description": "练习听写本课的短句。",
    "open": "打开听写练习（{count} 句）"
-  }
+  },
+  "previous": {
+   "correct": "上次：正确",
+   "incorrect": "上次：不正确"
+  },
+  "saveFailed": "无法保存练习结果。"
  },
  "vocabReview": {
   "eyebrow": "本课词汇复习",
@@ -100,9 +105,6 @@
    "source": "任选课程",
    "selectLabel": "任选一课学习",
    "placeholder": "选择一课开始学习",
-   "groupLabel": "{course} · {book}",
-   "lessonOption": "第 {number} 课：{title}",
-   "bundleTitle": "{book} · {lesson}",
    "summariesLoading": "正在加载课程列表…",
    "summariesError": "部分课程列表加载失败。",
    "loading": "正在加载课程…",

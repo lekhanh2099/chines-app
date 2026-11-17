@@ -29,7 +29,7 @@ import {
  WarningSection,
  WordFormationPreview,
 } from "@/features/hanzihome/components/vocab-detail/VocabDetailSections";
-import type { HanziHomeLesson, LearningStatus } from "@/features/hanzihome/types";
+import type { LearningStatus } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import type { FlashcardDetailDialogProps } from "./types";
 
@@ -39,13 +39,11 @@ function ReviewVocabDetailContent({
  item,
  status,
  bookmarked,
- itemLesson,
  onToggleBookmark,
 }: {
  item: ReviewVocabItem;
  status: LearningStatus;
  bookmarked: boolean;
- itemLesson: HanziHomeLesson;
  onToggleBookmark?: FlashcardDetailDialogProps["onToggleBookmark"];
 }) {
  const word = item.source;
@@ -147,12 +145,7 @@ function ReviewVocabDetailContent({
      </Card>
     )}
 
-    <StructuredVocabSections
-     item={word}
-     lessonId={itemLesson.id}
-     sectionView="all"
-     keyword={word.hanzi}
-    />
+    <StructuredVocabSections item={word} sectionView="all" keyword={word.hanzi} />
    </div>
 
    <aside className="grid min-w-0 content-start gap-4">
@@ -186,7 +179,6 @@ export function FlashcardDetailDialog({
  lesson,
  onAnswer,
  onToggleBookmark,
- itemLesson,
 }: FlashcardDetailDialogProps) {
  const status =
   item.type === "vocab"
@@ -210,7 +202,6 @@ export function FlashcardDetailDialog({
        item={item}
        status={status}
        bookmarked={bookmarked}
-       itemLesson={itemLesson}
        onToggleBookmark={onToggleBookmark}
       />
      ) : (
@@ -219,7 +210,6 @@ export function FlashcardDetailDialog({
        status={status}
        bookmarked={bookmarked}
        relatedVocab={lesson.vocab}
-       lessonId={itemLesson.id}
        onBookmark={() => onToggleBookmark?.("grammar", item.id)}
        onMarkStatus={(nextStatus) => {
         if (nextStatus === "hard") onAnswer({ type: "grammar", id: item.id }, "hard");

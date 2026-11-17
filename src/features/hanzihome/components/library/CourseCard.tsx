@@ -25,24 +25,14 @@ import type {
 } from "@/features/hanzihome/types";
 import { Link, useRouter } from "@/i18n/navigation";
 
-import { BookCrudActions } from "./BookCrudActions";
-import { LessonCrudActions } from "./LessonCrudActions";
-import { CourseOfflineDownloadButton } from "@/features/hanzihome/offline-pack/CourseOfflineDownloadButton";
-
 export function CourseCard({
  course,
  book,
  lessons,
- editMode = false,
- canMoveBookUp = false,
- canMoveBookDown = false,
 }: {
  course: HanziHomeCatalogCourse;
  book: HanziHomeCourseBook;
  lessons: HanziHomeLesson[];
- editMode?: boolean;
- canMoveBookUp?: boolean;
- canMoveBookDown?: boolean;
 }) {
  const t = useTranslations("Common.library");
  const router = useRouter();
@@ -84,9 +74,6 @@ export function CourseCard({
        <Typography as="h4" variant="cardTitle" weight="black" clamp="one" leading="snug">
         {book.shortTitle || book.title}
        </Typography>
-       {editMode ? (
-        <BookCrudActions book={book} canMoveUp={canMoveBookUp} canMoveDown={canMoveBookDown} />
-       ) : null}
       </div>
      </div>
     </div>
@@ -122,8 +109,6 @@ export function CourseCard({
       </Select>
      </div>
 
-     {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
-     <CourseOfflineDownloadButton courseId={course.id} lessonIds={bookLessons.map((l) => l.id)} />
      <Button
       asChild
       size="toolbar"

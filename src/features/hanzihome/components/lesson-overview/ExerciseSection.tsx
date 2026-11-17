@@ -3,7 +3,6 @@ import type {
  ReadingItem,
  Section,
 } from "@/features/hanzihome/schemas/hanyu-lesson.types";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { ExerciseBody } from "./exercise-section/ExerciseBody";
 import { RawExerciseDataDetails } from "./exercise-section/RawExerciseDataDetails";
@@ -19,18 +18,12 @@ function meaningfulVietnameseTitle(value: Exercise["title_vi"]) {
 }
 
 export function ExerciseCard({
- lessonId,
- parentSectionId,
- path,
  item,
  displayMode,
  debugMode = false,
  readingItems,
  readingSections,
 }: {
- lessonId?: string;
- parentSectionId?: string;
- path?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
  debugMode?: boolean;
@@ -45,7 +38,7 @@ export function ExerciseCard({
   meaningfulVietnameseTitle(stringValue(instruction, "vi")) || stringValue(instruction, "zh");
  const instructionText = rawInstruction !== title ? rawInstruction : "";
 
- const content = (
+ return (
   <article className="exercise-card-surface grid gap-4 rounded-xl border p-4 shadow-theme-sm sm:p-5">
    <div className="flex items-start justify-between gap-3">
     <StudyInstructionText
@@ -78,8 +71,6 @@ export function ExerciseCard({
    </div>
 
    <ExerciseBody
-    lessonId={lessonId}
-    itemPath={path}
     item={item}
     displayMode={displayMode}
     readingItems={readingItems}
@@ -88,23 +79,5 @@ export function ExerciseCard({
 
    {debugMode && <RawExerciseDataDetails value={item} />}
   </article>
- );
-
- if (!lessonId || !path) return content;
-
- return (
-  <EditableNodeWrapper
-   lessonId={lessonId}
-   entityType="exercise"
-   entityId={item.id}
-   parentEntityType="section"
-   parentEntityId={parentSectionId}
-   path={path}
-   value={item}
-   label={title}
-   editLabel="Sửa nội dung"
-  >
-   {content}
-  </EditableNodeWrapper>
  );
 }

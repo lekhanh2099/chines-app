@@ -1,26 +1,20 @@
+import { Fragment } from "react";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonValue } from "@/types/json";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { AnswerReveal } from "../CommonCards";
 import { asRecord, stringValue } from "../utils";
 import { matchingAnswerText } from "./matching-answer-utils";
 
 export function MatchingAnswerDetails({
- lessonId,
- itemPath,
  itemId,
  answers,
- sourceKey,
  leftItems,
  rightItems,
  showAnswers = false,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  itemId: string;
  answers: JsonValue[];
- sourceKey: string;
  leftItems: JsonValue[];
  rightItems: JsonValue[];
  showAnswers?: boolean;
@@ -61,23 +55,7 @@ export function MatchingAnswerDetails({
       </div>
      );
 
-     return lessonId && itemPath ? (
-      <EditableNodeWrapper
-       key={`${itemId}-matching-answer-${answerId}-${index}`}
-       lessonId={lessonId}
-       entityType="exercise_answer_key"
-       entityId={`${itemId}-matching-answer-${answerId}`}
-       parentEntityType="exercise"
-       parentEntityId={itemId}
-       path={[...itemPath, sourceKey, index]}
-       value={answerValue}
-       label={`Đáp án nối câu ${index + 1}`}
-      >
-       {content}
-      </EditableNodeWrapper>
-     ) : (
-      <div key={`${itemId}-matching-answer-${answerId}-${index}`}>{content}</div>
-     );
+     return <Fragment key={`${itemId}-matching-answer-${answerId}-${index}`}>{content}</Fragment>;
     })}
    </div>
   </AnswerReveal>

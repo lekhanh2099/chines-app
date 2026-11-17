@@ -1,4 +1,4 @@
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
+import { Fragment } from "react";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { ReadingQuestionCard } from "../reading-section/ReadingQuestionCard";
@@ -11,16 +11,12 @@ type QuestionExerciseModel = ReturnType<typeof buildQuestionExerciseModel>;
 
 /** Question cards (reading or generic), each editable in Edit Mode. */
 export function QuestionExerciseQuestionList({
- lessonId,
- itemPath,
  item,
  displayMode,
  questions,
  answerKey,
  isReadingExercise,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
  questions: QuestionExerciseModel["questions"];
@@ -52,23 +48,7 @@ export function QuestionExerciseQuestionList({
      />
     );
 
-    return lessonId && itemPath ? (
-     <EditableNodeWrapper
-      key={questionId}
-      lessonId={lessonId}
-      entityType="exercise_question"
-      entityId={questionId}
-      parentEntityType="exercise"
-      parentEntityId={item.id}
-      path={[...itemPath, "questions", index]}
-      value={questionValue}
-      label={`Câu ${index + 1}`}
-     >
-      {questionCard}
-     </EditableNodeWrapper>
-    ) : (
-     <div key={questionId}>{questionCard}</div>
-    );
+    return <Fragment key={questionId}>{questionCard}</Fragment>;
    })}
   </div>
  );

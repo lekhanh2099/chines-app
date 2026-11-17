@@ -48,13 +48,6 @@ export const generateSmartPinyin: typeof actualGenerateSmartPinyin = (...args) =
  return result;
 };
 
-// The fixture pins Study mode; production UI and grading utilities remain real.
-export function useHanziHomeEditMode() {
- return false;
-}
-export function useHanziHomeFeatureActions() {
- return { openEditableNode: () => {} };
-}
 export function useClientSession(): ReturnType<typeof sessionHook> {
  return { supabase, user: null, userId: null, isResolved: true };
 }

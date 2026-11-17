@@ -49,7 +49,7 @@ describe("HanziHome API response contracts", () => {
  it("accepts the summary-only catalog shape", () => {
   const result = catalogApiResponseSchema.safeParse({
    catalog: {
-    source: "db",
+    source: "static",
     courses: [
      {
       id: "course-1",

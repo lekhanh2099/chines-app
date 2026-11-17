@@ -1,13 +1,12 @@
+import { Fragment } from "react";
 import type { JsonFieldValue } from "@/types/json";
 import type { JsonObject } from "@/types/json";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
-import { LooseItemGrid } from "../CommonCards";
+import { AnswerKeyList, LooseItemGrid } from "../CommonCards";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, stringValue } from "../utils";
-import { EditableAnswerKeyList } from "./EditableAnswerKeyList";
 import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
 function dialogueLineText(value: JsonFieldValue) {
@@ -29,13 +28,9 @@ function dialogueAnswerValues(dialogue: JsonObject) {
 }
 
 export function CompleteDialogueExerciseBody({
- lessonId,
- itemPath,
  item,
  displayMode,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -44,14 +39,7 @@ export function CompleteDialogueExerciseBody({
  const fallbackItems = [...arrayValue(record, "items"), ...arrayValue(record, "questions")];
 
  if (dialogues.length === 0 && arrayValue(record, "questions").length > 0) {
-  return (
-   <QuestionExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <QuestionExerciseBody item={item} displayMode={displayMode} />;
  }
 
  return (
@@ -80,32 +68,13 @@ export function CompleteDialogueExerciseBody({
        );
        const lineId = stringValue(line, "id") || `${item.id}-line-${lineIndex}`;
 
-       return lessonId && itemPath ? (
-        <EditableNodeWrapper
-         key={lineId}
-         lessonId={lessonId}
-         entityType="exercise_dialogue_line"
-         entityId={lineId}
-         parentEntityType="exercise"
-         parentEntityId={item.id}
-         path={[...itemPath, "dialogues", index, "lines", lineIndex]}
-         value={lineValue}
-         label={`Dòng hội thoại ${lineIndex + 1}`}
-        >
-         {lineCard}
-        </EditableNodeWrapper>
-       ) : (
-        <div key={lineId}>{lineCard}</div>
-       );
+       return <Fragment key={lineId}>{lineCard}</Fragment>;
       })}
 
-      <EditableAnswerKeyList
-       lessonId={lessonId}
-       itemPath={itemPath}
+      <AnswerKeyList
+       defaultOpen={displayMode.showAnswers}
        itemId={`${item.id}-dialogue-${index}`}
-       sourcePath={["dialogues", index, "sample_answers"]}
        values={answers}
-       showAnswers={displayMode.showAnswers}
       />
      </div>
     );
@@ -119,13 +88,10 @@ export function CompleteDialogueExerciseBody({
     />
    )}
 
-   <EditableAnswerKeyList
-    lessonId={lessonId}
-    itemPath={itemPath}
+   <AnswerKeyList
+    defaultOpen={displayMode.showAnswers}
     itemId={item.id}
-    sourcePath={["answer_key"]}
     values={arrayValue(record, "answer_key")}
-    showAnswers={displayMode.showAnswers}
    />
   </div>
  );

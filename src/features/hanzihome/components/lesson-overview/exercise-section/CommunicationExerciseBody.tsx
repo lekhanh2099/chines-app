@@ -1,4 +1,4 @@
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
+import { Fragment } from "react";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { ExerciseQuestionCard } from "../CommonCards";
@@ -8,13 +8,9 @@ import { arrayValue, asRecord, nonEmptyStrings, stringValue } from "../utils";
 import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
 export function CommunicationExerciseBody({
- lessonId,
- itemPath,
  item,
  displayMode,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -44,27 +40,8 @@ export function CommunicationExerciseBody({
        />
       );
       const lineId = stringValue(line, "id") || `${stringValue(line, "speaker")}-${index}`;
-      const linePath = Array.isArray(dialogueValue)
-       ? [...(itemPath ?? []), "dialogue", index]
-       : [...(itemPath ?? []), "dialogue", "lines", index];
 
-      return lessonId && itemPath ? (
-       <EditableNodeWrapper
-        key={lineId}
-        lessonId={lessonId}
-        entityType="exercise_dialogue_line"
-        entityId={lineId}
-        parentEntityType="exercise"
-        parentEntityId={item.id}
-        path={linePath}
-        value={lineValue}
-        label={`Dòng hội thoại ${index + 1}`}
-       >
-        {lineCard}
-       </EditableNodeWrapper>
-      ) : (
-       <div key={lineId}>{lineCard}</div>
-      );
+      return <Fragment key={lineId}>{lineCard}</Fragment>;
      })}
     </div>
    )}
@@ -94,32 +71,11 @@ export function CommunicationExerciseBody({
      />
     );
 
-    return lessonId && itemPath ? (
-     <EditableNodeWrapper
-      key={taskId}
-      lessonId={lessonId}
-      entityType="exercise_question"
-      entityId={taskId}
-      parentEntityType="exercise"
-      parentEntityId={item.id}
-      path={[...itemPath, "practice_tasks", index]}
-      value={taskValue}
-      label={`Practice task ${index + 1}`}
-     >
-      {content}
-     </EditableNodeWrapper>
-    ) : (
-     <div key={taskId}>{content}</div>
-    );
+    return <Fragment key={taskId}>{content}</Fragment>;
    })}
 
    {(questions.length > 0 || parts.length > 0) && (
-    <QuestionExerciseBody
-     lessonId={lessonId}
-     itemPath={itemPath}
-     item={item}
-     displayMode={displayMode}
-    />
+    <QuestionExerciseBody item={item} displayMode={displayMode} />
    )}
   </div>
  );

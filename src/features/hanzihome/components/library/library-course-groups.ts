@@ -30,6 +30,12 @@ export const libraryTextbookCharacters: Record<TextbookBookSummary["key"], strin
  "nhip-cau": "桥",
  "doc-hieu": "读",
  "khau-ngu": "说",
+ "hanyu-q2-shang": "汉",
+ "hanyu-q2-xia": "汉",
+ "hanyu-q3-shang": "汉",
+ "hanyu-q3-xia": "汉",
+ "boya-9e-advanced-1": "雅",
+ "boya-9e-advanced-2": "雅",
 };
 
 export type LibraryCourseGroup = {

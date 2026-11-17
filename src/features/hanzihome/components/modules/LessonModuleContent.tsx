@@ -114,11 +114,6 @@ export function LessonModuleContent({
        key={section.id}
        lessonId={lesson.id}
        section={section}
-       sectionPath={[
-        "lesson",
-        "sections",
-        lesson.sourceLesson?.lesson.sections.findIndex((item) => item.id === section.id) ?? -1,
-       ]}
        displayMode={lessonDisplaySettings(runtime.learningState, runtime.lesson)}
        interactiveReading={false}
        readingMode={false}

@@ -12,7 +12,6 @@ import type {
 export type StudyModule = Exclude<HanziHomeModule, "radicals">;
 export type PaneId = "left" | "right";
 export type LessonViewMode = "study" | "debug";
-export type EditingToolsPresentation = "toolbar" | "menu";
 
 export type PaneLayout = {
  left: StudyModule[];

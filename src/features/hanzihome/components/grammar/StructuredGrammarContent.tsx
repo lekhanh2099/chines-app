@@ -9,9 +9,7 @@ import { Typography } from "@/components/ui/display/typography";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Card } from "@/components/ui/layout/card";
 import { Lightbulb, Sigma } from "lucide-react";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
-import { CreateNormalizedChildDialog } from "@/features/hanzihome/editing/components/CreateNormalizedChildDialog";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import { GrammarDetailSectionCard } from "./GrammarDetailSectionCard";
@@ -19,19 +17,10 @@ import { cleanGrammarDisplayLine, isDuplicateCoreSection } from "./grammar-displ
 
 type StructuredGrammarContentProps = {
  point: GrammarViewModel;
- lessonId?: string;
- pointPath?: EditableNodePath;
  exampleLimit?: number;
- editMode?: boolean;
 };
 
-export function StructuredGrammarContent({
- point,
- lessonId,
- pointPath,
- exampleLimit,
- editMode = false,
-}: StructuredGrammarContentProps) {
+export function StructuredGrammarContent({ point, exampleLimit }: StructuredGrammarContentProps) {
  const hasExampleDetailSection = Boolean(
   point.detailSections?.some((section) =>
    section.title.toLocaleLowerCase("vi-VN").includes("ví dụ"),
@@ -47,11 +36,6 @@ export function StructuredGrammarContent({
 
  return (
   <div className="grid gap-4">
-   {editMode && lessonId && point.editMeta ? (
-    <div className="flex justify-end">
-     <CreateNormalizedChildDialog family="grammar" lessonId={lessonId} parent={point.editMeta} />
-    </div>
-   ) : null}
    {point.core && (
     <section className="grid gap-3 rounded-xl border border-primary/20 bg-primary/8 p-4">
      <div className="flex items-center gap-2">
@@ -127,56 +111,37 @@ export function StructuredGrammarContent({
      <Typography as="h3" variant="cardTitle" tone="default" weight="black">
       Ví dụ nhanh
      </Typography>
-     {examples.map((example, index) => {
-      const content = (
-       <div className="rounded-xl border border-border-subtle bg-bg-subtle p-3 sm:p-4">
-        <div className="flex min-w-0 items-start gap-2">
-         <HanziText
-          as="p"
-          size="inherit"
-          variant="sectionTitle"
-          tone="default"
-          weight="black"
-          leading="relaxed"
-          className="min-w-0 flex-1"
-         >
-          {example.zh}
-         </HanziText>
-         <MandarinSpeakButton text={example.zh} touchTarget />
-        </div>
-        {example.pinyin && (
-         <StudyInstructionText variant="caption" tone="info" weight="semibold" leading="relaxed">
-          {example.pinyin}
-         </StudyInstructionText>
-        )}
-        {example.vi && (
-         <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
-          {example.vi}
-         </StudyInstructionText>
-        )}
+     {examples.map((example, index) => (
+      <div
+       key={example.id || index}
+       className="rounded-xl border border-border-subtle bg-bg-subtle p-3 sm:p-4"
+      >
+       <div className="flex min-w-0 items-start gap-2">
+        <HanziText
+         as="p"
+         size="inherit"
+         variant="sectionTitle"
+         tone="default"
+         weight="black"
+         leading="relaxed"
+         className="min-w-0 flex-1"
+        >
+         {example.zh}
+        </HanziText>
+        <MandarinSpeakButton text={example.zh} touchTarget />
        </div>
-      );
-
-      if (!lessonId || !pointPath || !example.id) {
-       return <div key={example.id || index}>{content}</div>;
-      }
-
-      return (
-       <EditableNodeWrapper
-        key={example.id}
-        lessonId={lessonId}
-        entityType="grammar_example"
-        entityId={example.id}
-        parentEntityType="grammar_point"
-        parentEntityId={point.id}
-        path={[...pointPath, "examplesParsed", index]}
-        value={example}
-        label={example.zh}
-       >
-        {content}
-       </EditableNodeWrapper>
-      );
-     })}
+       {example.pinyin && (
+        <StudyInstructionText variant="caption" tone="info" weight="semibold" leading="relaxed">
+         {example.pinyin}
+        </StudyInstructionText>
+       )}
+       {example.vi && (
+        <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
+         {example.vi}
+        </StudyInstructionText>
+       )}
+      </div>
+     ))}
     </section>
    )}
 
@@ -201,12 +166,12 @@ export function StructuredGrammarContent({
      <Typography as="h3" variant="cardTitle" tone="default" weight="black">
       Chi tiết
      </Typography>
-     {detailSections.map((section, index) => {
+     {detailSections.map((section) => {
       const isReferenceSection =
        section.key === "source" || section.key === "verification" || section.key === "categories";
-      const content = isReferenceSection ? (
-       <Card asChild variant="subtle" padding="sm">
-        <details open={editMode || undefined} className="grid gap-2">
+      return isReferenceSection ? (
+       <Card key={section.id || section.key} asChild variant="subtle" padding="sm">
+        <details className="grid gap-2">
          <summary className={`min-h-11 cursor-pointer rounded-lg py-3 ${focusRingClassName}`}>
           <HanziAwareText
            as="span"
@@ -220,27 +185,7 @@ export function StructuredGrammarContent({
         </details>
        </Card>
       ) : (
-       <GrammarDetailSectionCard section={section} />
-      );
-
-      if (!lessonId || !pointPath || !section.id) {
-       return <div key={section.id || section.key}>{content}</div>;
-      }
-
-      return (
-       <EditableNodeWrapper
-        key={section.id}
-        lessonId={lessonId}
-        entityType="grammar_detail_section"
-        entityId={section.id}
-        parentEntityType="grammar_point"
-        parentEntityId={point.id}
-        path={[...pointPath, "detailSections", index]}
-        value={section}
-        label={section.title}
-       >
-        {content}
-       </EditableNodeWrapper>
+       <GrammarDetailSectionCard key={section.id || section.key} section={section} />
       );
      })}
     </section>

@@ -1,6 +1,6 @@
+import { Fragment } from "react";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonValue } from "@/types/json";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "../types";
 import { z } from "zod";
@@ -11,8 +11,6 @@ import { MatchingOptionCard } from "./MatchingOptionCard";
 const MatchingColumnLabelModeSchema = z.enum(["number", "letter"]);
 
 export function MatchingColumn({
- lessonId,
- itemPath,
  itemId,
  title,
  values,
@@ -20,8 +18,6 @@ export function MatchingColumn({
  labelMode,
  displayMode,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  itemId: string;
  title: string;
  values: JsonValue[];
@@ -51,23 +47,7 @@ export function MatchingColumn({
       labelMode === MatchingColumnLabelModeSchema.enum.number ? `${index + 1}` : letterLabel(index);
      const content = <MatchingOptionCard label={label} value={value} displayMode={displayMode} />;
 
-     return lessonId && itemPath ? (
-      <EditableNodeWrapper
-       key={entityId}
-       lessonId={lessonId}
-       entityType="exercise_matching_item"
-       entityId={entityId}
-       parentEntityType="exercise"
-       parentEntityId={itemId}
-       path={[...itemPath, sourceKey, index]}
-       value={value}
-       label={`${title} ${label}`}
-      >
-       {content}
-      </EditableNodeWrapper>
-     ) : (
-      <div key={entityId}>{content}</div>
-     );
+     return <Fragment key={entityId}>{content}</Fragment>;
     })}
    </div>
   </div>

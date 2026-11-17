@@ -3,12 +3,12 @@ import "server-only";
 import { radicalCharacterHref } from "@/features/hanzihome/radical-characters/radical-character-forms";
 import { radicalCharactersContentSchema } from "@/features/hanzihome/radical-characters/radical-characters.schemas";
 import { buildTextbookHref } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
-import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
 import type { AggregateResourceItem } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import { listSpeakingDrillVocabulary } from "@/features/hanzihome/speaking-drills/speaking-drills-content.server";
 import { speakingDrillsHref } from "@/features/hanzihome/speaking-drills/speaking-drills-utils";
 import {
+ courseBookKeySchema,
  getTextbookCatalog,
  getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
@@ -29,6 +29,14 @@ import {
 
 const allLessons = { courseId: "", bookId: "", lessonId: "", q: "" };
 
+/** Course vocabulary lives in the database; its lessons are the converted course books. */
+function courseVocabularyHref(bookId: string, lessonNumber: number) {
+ const bookKey = courseBookKeySchema.safeParse(bookId);
+ return bookKey.success
+  ? `${buildTextbookHref(bookKey.data, lessonNumber)}&tab=vocab`
+  : "/hanzihome";
+}
+
 function courseRecords(items: readonly AggregateResourceItem[]): VocabularyRecord[] {
  return items.flatMap((item) =>
   "word" in item
@@ -40,12 +48,7 @@ function courseRecords(items: readonly AggregateResourceItem[]): VocabularyRecor
        meaning: item.meaning,
        source: {
         label: item.lessonTitle,
-        href: buildHanziHomeLessonHref({
-         courseId: item.courseId,
-         bookId: item.bookId,
-         lessonNumber: item.lessonNumber,
-         module: "vocab",
-        }),
+        href: courseVocabularyHref(item.bookId, item.lessonNumber),
        },
       },
      ]

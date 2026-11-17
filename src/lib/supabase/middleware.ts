@@ -37,7 +37,8 @@ export async function updateSession(request: NextRequest, initialResponse?: Next
   logicalPathname === "/reader" ||
   logicalPathname.startsWith("/reader/") ||
   logicalPathname === "/hsk" ||
-  logicalPathname.startsWith("/hsk/");
+  logicalPathname.startsWith("/hsk/") ||
+  logicalPathname.startsWith("/textbooks/");
  const isPublicStaticLearningRoute =
   isPublicReaderRoute ||
   logicalPathname === "/offline" ||

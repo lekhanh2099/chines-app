@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/layout/card";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { BusinessChineseText, SpeakableBusinessChineseText } from "./BusinessChineseText";
+import { useLessonExerciseResults } from "./LessonExerciseResults";
 import {
  evaluatePracticeAnswer,
  parsePracticeExerciseItem,
@@ -38,7 +39,17 @@ export function BusinessChineseExercise({
   evaluatePracticeAnswer("", parsed),
  );
  const answerVisible = displayMode.showAnswers || revealed;
- const handleCheck = () => setEvaluation(evaluatePracticeAnswer(draft, parsed));
+ const results = useLessonExerciseResults();
+ const previousCorrect = results.latestByBlock.get(block.id);
+ const handleCheck = () => {
+  const next = evaluatePracticeAnswer(draft, parsed);
+  setEvaluation(next);
+  if (next.isAnswered) results.record(block.id, next.isExactMatch || next.isKeywordMatch, draft);
+ };
+ const handleChoice = (choice: string) => {
+  setSelectedChoice(choice);
+  results.record(block.id, choice === parsed.correctChoice, choice);
+ };
  const handleReset = () => {
   setDraft("");
   setSelectedTokenIndexes([]);
@@ -70,6 +81,11 @@ export function BusinessChineseExercise({
      learnerContent
      variant="body"
     />
+    {previousCorrect !== undefined ? (
+     <Badge variant={previousCorrect ? "success" : "warning"} size="md" casing="natural">
+      {t(previousCorrect ? "practice.previous.correct" : "practice.previous.incorrect")}
+     </Badge>
+    ) : null}
     {parsed.keywordHint ? (
      <Badge variant="accent" size="md" casing="natural">
       {t("practice.keywordHint", { keyword: parsed.keywordHint })}
@@ -93,7 +109,7 @@ export function BusinessChineseExercise({
            : "outline"
          }
          aria-pressed={selectedChoice === choice.key}
-         onClick={() => setSelectedChoice(choice.key)}
+         onClick={() => handleChoice(choice.key)}
         >{`${choice.key}.`}</Button>
         <div className="min-w-0 flex-1">
          <BusinessChineseText

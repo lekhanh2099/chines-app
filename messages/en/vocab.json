@@ -15,6 +15,14 @@
   "saveToVaultTitle": "Add to my vocabulary vault",
   "savedInVaultTitle": "Saved in my vault (click to remove)",
   "saveToVaultAria": "Add {hanzi} to my vault",
-  "removeFromVaultAria": "Remove {hanzi} from my vault"
+  "removeFromVaultAria": "Remove {hanzi} from my vault",
+  "status": {
+   "all": "All",
+   "learning": "Learning",
+   "hard": "Hard",
+   "known": "Known",
+   "aria": "Progress of {hanzi}",
+   "filterAria": "Filter by progress"
+  }
  }
 }

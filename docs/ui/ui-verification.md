@@ -179,10 +179,8 @@ and iPad portrait, and verify the wide-desktop menu separately.
 - collection → course → book hierarchy is clear without bordered nesting at every level;
 - ordinary count metadata does not compete with status Badges;
 - Select and adjacent Open button use the same 36px toolbar family;
-- edit mode exposes one action menu per course/book/lesson instead of permanent icon clusters;
-- action menu supports edit, reorder and delete by keyboard;
-- delete opens confirmation, reports pending state and describes recoverability accurately;
-- course/book/lesson Query invalidation refreshes affected library data.
+- converted Hán ngữ and Boya books appear as textbook collections and answer the Hán ngữ / Boya filters;
+- the library has no course, book or lesson create/rename/delete controls; the edit toggle only unlocks collection covers for editors.
 
 ### HanziHome workspace
 
@@ -208,7 +206,7 @@ and iPad portrait, and verify the wide-desktop menu separately.
 - a word that occurs in more than one lesson, textbook or note shows the reuse marker; a word that occurs once does not;
 - the marker previews meanings on hover or tap and opens the word page on a mouse or keyboard press;
 - the lookup drawer shows the learner's lesson meanings ahead of the dictionary, and nothing when the word is not in the store;
-- after editing a vocabulary row, the marker and the lesson meanings reflect the edit without a reload.
+- a course word links to its lesson in the textbook reader (`/textbooks/[book]?lesson=N&tab=vocab`).
 
 ### Pinyin selection
 

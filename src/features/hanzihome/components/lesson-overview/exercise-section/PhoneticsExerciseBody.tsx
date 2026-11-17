@@ -1,7 +1,6 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/display/typography";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
-import type { EditableNodePath } from "@/features/hanzihome/editing";
 
 import { LooseItemGrid } from "../CommonCards";
 import { TextLineCard } from "../TextLineCard";
@@ -12,13 +11,9 @@ import { QuestionExerciseBody } from "./QuestionExerciseBody";
 export function PhoneticsExerciseBody({
  item,
  displayMode,
- lessonId,
- itemPath,
 }: {
  item: Exercise;
  displayMode: LessonDisplayMode;
- lessonId?: string;
- itemPath?: EditableNodePath;
 }) {
  const record = asRecord(item);
  const parts = arrayValue(record, "parts");
@@ -30,14 +25,7 @@ export function PhoneticsExerciseBody({
  ];
 
  if (parts.length === 0 && questions.length > 0) {
-  return (
-   <QuestionExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <QuestionExerciseBody item={item} displayMode={displayMode} />;
  }
 
  if (parts.length === 0) {

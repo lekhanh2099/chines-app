@@ -17,5 +17,4 @@ export type FlashcardDetailDialogProps = {
  lesson: HanziHomeLesson;
  onAnswer: ReviewAnswerHandler;
  onToggleBookmark?: ReviewBookmarkHandler;
- itemLesson: HanziHomeLesson;
 };

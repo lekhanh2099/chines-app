@@ -8,7 +8,6 @@ import {
  saveLibraryCoverPayloadSchema,
 } from "@/features/hanzihome/components/library/library-cover.schema";
 import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
-import { mutationError } from "@/features/hanzihome/server/canonical-content-mutation";
 import {
  apiError,
  privateNoStoreJson,
@@ -19,6 +18,10 @@ import type { JsonFieldValue } from "@/types/json";
 export const dynamic = "force-dynamic";
 
 type RouteContext = { params: Promise<{ collectionId: string }> };
+
+function mutationError(message: string, status: number, details?: JsonFieldValue) {
+ return Response.json({ error: message, details }, { status });
+}
 
 function statusForMutationError(code: Parameters<typeof apiError>[2]) {
  if (code === "40001") return 409;

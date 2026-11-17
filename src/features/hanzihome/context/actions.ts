@@ -1,7 +1,5 @@
 "use client";
 
-import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
-
 import { useHanziHomeFeatureContext } from "./hanzihomeFeatureContext";
 import type { HanziHomeFeatureStore } from "./hanzihomeFeatureStore";
 import type { LessonViewMode, PaneId, PaneLayout } from "./types";
@@ -14,33 +12,8 @@ import {
  persistViewMode,
 } from "./workspaceLayout";
 
-function setEditMode(store: HanziHomeFeatureStore, enabled: boolean) {
- store.setState((state) => ({
-  ...state,
-  editMode: enabled,
-  activeNode: enabled ? state.activeNode : null,
- }));
-}
-
-function openEditableNode(store: HanziHomeFeatureStore, node: EditableNodeRequest) {
- store.setState((state) => ({
-  ...state,
-  activeNode: node,
- }));
-}
-
-function closeEditableNode(store: HanziHomeFeatureStore) {
- store.setState((state) => ({
-  ...state,
-  activeNode: null,
- }));
-}
-
 export function createHanziHomeFeatureActions(store: HanziHomeFeatureStore) {
  return {
-  setEditMode: (enabled: boolean) => setEditMode(store, enabled),
-  openEditableNode: (node: EditableNodeRequest) => openEditableNode(store, node),
-  closeEditableNode: () => closeEditableNode(store),
   setSplitEnabled: (enabled: boolean) => {
    store.setState((state) => ({ ...state, splitEnabled: enabled }));
    persistSplitEnabled(enabled);

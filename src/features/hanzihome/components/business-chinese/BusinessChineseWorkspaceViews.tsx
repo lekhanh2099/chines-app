@@ -136,6 +136,8 @@ export function BusinessChineseWorkspaceViews({
      lesson={lesson}
      vocabSearchQuery={vocabSearch.vocabSearchQuery}
      onVocabSearchQueryChange={vocabSearch.setVocabSearchQuery}
+     statusFilter={vocabSearch.statusFilter}
+     onStatusFilterChange={vocabSearch.setStatusFilter}
      filteredVocab={vocabSearch.filteredVocab}
      displayMode={effectiveDisplayMode}
      visibleSections={visibleSections}

@@ -3,7 +3,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 
-import { HanziHomeMutationError } from "@/features/hanzihome/editing/mutation-error";
+import { HanziHomeMutationError } from "@/features/hanzihome/radical-editing/mutation-error";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import * as api from "./library-cover-api";
 import { useResetLibraryCoverMutation, useSaveLibraryCoverMutation } from "./useLibraryCovers";

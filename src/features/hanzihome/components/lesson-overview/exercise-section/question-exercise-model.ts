@@ -1,5 +1,4 @@
 import type { JsonFieldValue } from "@/types/json";
-import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type {
  Exercise,
  ReadingItem,
@@ -175,12 +174,6 @@ export function buildQuestionExerciseModel({
    : arrayValue(record, "answer_key").length > 0
      ? arrayValue(record, "answer_key")
      : arrayValue(record, "answers");
- const answerKeySource =
-  arrayValue(record, "blanks").length > 0
-   ? "blanks"
-   : arrayValue(record, "answer_key").length > 0
-     ? "answer_key"
-     : "answers";
 
  const wordBank = arrayValue(record, "word_bank");
  const readingReference =
@@ -224,26 +217,6 @@ export function buildQuestionExerciseModel({
      ? referencedClozeAnswers
      : passageClozeAnswers;
  const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
- const directPassage = asRecord(record.passage);
- const passageSegmentsPath: EditableNodePath = ["passage", "segments"];
- const segmentsPath: EditableNodePath = ["segments"];
- const passageSegments =
-  arrayValue(directPassage, "segments").length > 0
-   ? {
-      path: passageSegmentsPath,
-      values: arrayValue(directPassage, "segments"),
-     }
-   : arrayValue(record, "segments").length > 0
-     ? {
-        path: segmentsPath,
-        values: arrayValue(record, "segments"),
-       }
-     : null;
- const clozeAnswerSource = firstArraySource(
-  record,
-  ["blanks", "answers", "answer_key", "cloze_answers", "suggested_answers"],
-  hasClozeAnswerValue,
- );
  const rendering = asRecord(record.rendering);
  const renderer = stringValue(rendering, "renderer");
  const variant = stringValue(record, "variant");
@@ -308,7 +281,6 @@ export function buildQuestionExerciseModel({
   rightSource,
   rightItems,
   answerKey,
-  answerKeySource,
   wordBank,
   supplementaryWords,
   pattern,
@@ -316,8 +288,6 @@ export function buildQuestionExerciseModel({
   passage,
   showPassageTitle,
   clozeAnswers,
-  passageSegments,
-  clozeAnswerSource,
   isReadingCloze,
   questionsOnlyProvideClozeAnswers,
   hasStructuredQuestionGroups,

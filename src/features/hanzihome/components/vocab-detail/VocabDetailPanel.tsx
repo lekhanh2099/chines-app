@@ -10,9 +10,6 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
-import type { EditableNodePath } from "@/features/hanzihome/editing";
-import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
-import { CreateNormalizedChildDialog } from "@/features/hanzihome/editing/components/CreateNormalizedChildDialog";
 import { HanziStrokeWriter } from "@/features/hanzihome/components/HanziStrokeWriter";
 
 import { hasCultureContent, hasSectionInItem, hasWarningContent } from "./content-checks";
@@ -41,7 +38,6 @@ function isTypingTarget(element: Document["activeElement"]) {
 
 type VocabDetailPanelProps = {
  word: Nullable<HanziHomeVocabItem>;
- wordPath?: Nullable<EditableNodePath>;
  status: LearningStatus;
  bookmarked: boolean;
  onBookmark: () => void;
@@ -52,7 +48,6 @@ type VocabDetailPanelProps = {
 
 export function VocabDetailPanel({
  word,
- wordPath,
  bookmarked,
  onBookmark,
  lessonId,
@@ -60,7 +55,6 @@ export function VocabDetailPanel({
 }: VocabDetailPanelProps) {
  const [sectionView, setSectionView] = useState<SectionView>("all");
  const [selectedWritableCharacterIndex, setSelectedWritableCharacterIndex] = useState(0);
- const editMode = useHanziHomeEditMode();
 
  useEffect(() => {
   if (!word) return;
@@ -153,18 +147,7 @@ export function VocabDetailPanel({
     </Card>
 
     <div className="grid gap-4">
-     {editMode && lessonId && word.editMeta ? (
-      <div className="flex justify-end">
-       <CreateNormalizedChildDialog family="vocab" lessonId={lessonId} parent={word.editMeta} />
-      </div>
-     ) : null}
-     <StructuredVocabSections
-      item={word}
-      itemPath={wordPath ?? undefined}
-      lessonId={lessonId}
-      sectionView={effectiveSectionView}
-      keyword={word.hanzi}
-     />
+     <StructuredVocabSections item={word} sectionView={effectiveSectionView} keyword={word.hanzi} />
     </div>
    </div>
 

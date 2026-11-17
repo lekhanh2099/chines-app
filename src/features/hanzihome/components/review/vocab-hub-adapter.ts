@@ -1,9 +1,13 @@
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import {
+ courseBookKeySchema,
+ getCourseTextbookCatalog,
  getTextbookCatalog,
  getTextbookLesson,
+ textbookLessonSchema,
  type TextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { z } from "zod";
 import { textbookLessonToReviewLesson } from "@/features/hanzihome/components/business-chinese/business-chinese-study-utils";
 import { adaptAllLessonExercises } from "@/features/hanzihome/components/practice/universal-exercise-adapter";
 import type { UniversalExerciseItem } from "@/features/hanzihome/components/practice/universal-exercise.types";
@@ -53,7 +57,7 @@ function buildTextbookGroups(
   lesson: ReturnType<typeof getTextbookCatalog>[number]["lessons"][number],
  ) => boolean,
 ): BookmarkedTextbookGroup[] {
- const catalog = getTextbookCatalog();
+ const catalog = [...getCourseTextbookCatalog(), ...getTextbookCatalog()];
  const groups: BookmarkedTextbookGroup[] = [];
 
  for (const book of catalog) {
@@ -82,16 +86,29 @@ function buildTextbookGroups(
  return groups;
 }
 
-export function buildStudyBundleFromBookmarkedLessons(
+const textbookLessonResponseSchema = z.object({ lesson: textbookLessonSchema });
+
+/** A bundled textbook lesson, or a converted course lesson fetched from the server. */
+async function loadTextbookLesson(entry: BookmarkedLessonEntry): Promise<TextbookLesson | null> {
+ if (!courseBookKeySchema.safeParse(entry.bookKey).success) {
+  return getTextbookLesson(entry.bookKey, entry.number);
+ }
+ const response = await fetch(`/api/hanzihome/textbooks/${entry.bookKey}/lessons/${entry.number}`);
+ if (!response.ok) throw new Error(`Textbook lesson failed with status ${response.status}`);
+ return textbookLessonResponseSchema.parse(await response.json()).lesson;
+}
+
+export async function buildStudyBundleFromBookmarkedLessons(
  selectedLessonEntries: readonly BookmarkedLessonEntry[],
-): StudyBundle {
+): Promise<StudyBundle> {
+ const lessons = await Promise.all(selectedLessonEntries.map(loadTextbookLesson));
  const vocabItems: HanziHomeVocabItem[] = [];
  const grammarItems: PipGrammarPoint[] = [];
  const practiceItems: UniversalExerciseItem[] = [];
  const seenVocabIds = new Set<string>();
 
- for (const entry of selectedLessonEntries) {
-  const fullLesson = getTextbookLesson(entry.bookKey, entry.number);
+ for (const [index, entry] of selectedLessonEntries.entries()) {
+  const fullLesson = lessons[index];
   if (!fullLesson) continue;
 
   const reviewLesson = textbookLessonToReviewLesson(fullLesson);

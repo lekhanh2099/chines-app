@@ -17,11 +17,7 @@
   "delete": "Xóa",
   "deleting": "Đang xóa...",
   "itemTypes": {
-   "memoryTip": "nhắc nhanh",
-   "course": "khóa học",
-   "book": "quyển",
-   "lesson": "bài học",
-   "content": "nội dung"
+   "memoryTip": "nhắc nhanh"
   }
  },
  "language": "Ngôn ngữ",
@@ -48,9 +44,6 @@
   "synced": "Đã đồng bộ"
  },
  "offlinePack": {
-  "downloadCourse": "Tải học offline",
-  "downloading": "Đang tải ({percent}%)...",
-  "downloadReady": "Đã sẵn sàng offline",
   "reconnectSyncSuccess": "Đã kết nối lại. Đã đồng bộ {count} kết quả học.",
   "storagePersisted": "Bộ nhớ offline đã được bảo vệ",
   "storageQuota": "Dung lượng offline: {usedMB} MB / {quotaMB} MB",

@@ -17,37 +17,31 @@ Current hierarchy:
 Course → Book/Volume → Lesson → Module
 ```
 
-Study Mode, Debug/Audit Mode and Edit Mode MUST remain separate.
+Study Mode and Debug/Audit Mode MUST remain separate. Study Mode is the
+learner-facing default; Debug/Audit Mode is explicit and may expose raw or
+unmapped data. Lesson content is not edited in the app (no Edit Mode).
 
-- Study Mode is the learner-facing default.
-- Debug/Audit Mode is explicit and may expose raw or unmapped data.
-- Edit Mode overlays the current study render tree; it MUST NOT replace Study
-  Mode.
+Lesson content is checked-in static JSON under `static-json/`:
 
-Supabase normalized tables are the runtime content source, except for the
-reviewed static Reader/practice corpus. That immutable package is the explicit
-runtime source for Reader content; Supabase owns only its user state.
+- textbooks and the converted courses (Giáo trình Hán ngữ, Boya) render in the
+  textbook reader (`/textbooks/[book]`); course books are loaded only on the
+  server (`course-textbooks.server.ts`);
+- the built-in Hanzi Studio courses (`studio-seed.json`) are served by
+  `static-json/studio-published-content.server.ts` through the catalog, lesson,
+  vocabulary, aggregate and listening routes; unknown ids answer not found;
+- radicals (`hanzihome_radicals`) and the vocabulary store rows
+  (`hanzihome_vocab_items`) are the remaining database content.
 
-External static seed artifacts are migration/bootstrap/audit inputs. The app
-MUST NOT:
+The app MUST NOT mutate static content files, create local JSON write APIs or
+silently convert shared content into user-owned rows.
 
-- mutate external seed artifacts;
-- create local JSON write APIs;
-- silently use static files as a runtime fallback;
-- silently convert shared seed rows into user-owned rows.
+Vocabulary store rows:
 
-Vocabulary has one canonical runtime ownership model:
-
-- `hanzihome_vocab_items` owns each vocabulary word or phrase;
-- `hanzihome_vocab_examples` and `hanzihome_vocab_detail_sections` are child
-  content, not additional vocabulary sources;
-- vocabulary lesson sections preserve ordering and metadata only; their
-  persisted `payload.items` MUST remain empty;
-- mini-grid, lesson view models, vocab workspace, review and editing MUST share
-  the normalized vocabulary resource/query cache;
+- `hanzihome_vocab_items` owns each course vocabulary word or phrase; a row's
+  lesson is the converted course lesson listed in
+  `static-json/courses/legacy-routes.json`;
 - one active word or phrase is unique within a lesson by
-  `(lesson_id, word, pinyin)`;
-- the same word or phrase MAY appear in a different lesson.
+  `(lesson_id, word, pinyin)`; the same word MAY appear in another lesson.
 
 Canonical word identity:
 
@@ -67,9 +61,8 @@ Explained characters come from the notes in `docs/radicals/`. The JSON under
 `npm run content:radical-characters`; `npm run content:check` (part of
 `npm run check`) fails when the notes changed without regenerating it.
 
-Import, seed, migration or editing work MUST NOT recreate vocabulary items in a
-lesson-section payload, maintain two independently editable vocab copies, or
-weaken the active lesson/word/pinyin uniqueness invariant.
+Import, seed or migration work MUST NOT maintain two independent vocabulary
+copies or weaken the active lesson/word/pinyin uniqueness invariant.
 
 Learning records have separate product meanings and MUST NOT be mirrored or
 silently synchronized:
@@ -96,13 +89,6 @@ Consumer hooks MUST NOT install duplicate retry listeners.
 Import or bulk-edit work MUST validate the complete input, reconcile counts and
 stable identities, and produce a preview/diff before persistence. A mismatch
 MUST remain untouched and be reported; preview is not authorization to write.
-
-Editing seed content requires an explicit policy:
-
-- admin seed edit; or
-- copy-on-write user override.
-
-If that policy is unclear, STOP AND CONFIRM.
 
 ## 2. Data-loading contract
 
@@ -131,73 +117,16 @@ Rules:
 - Query keys MUST include every variable that changes returned data.
 - Invalidate the smallest correct scope after mutation.
 
-## 3. Render and edit contract
+## 3. Editing
 
-The edit system follows the rendered node tree.
+Lesson content is changed in the static JSON (and its generators), never from
+the app. The only in-app content edits are radicals
+(`radical-editing/`, `/api/hanzihome/content/radicals/[entityId]`) and library
+collection covers; both are editor-only and use optimistic concurrency.
+Non-trivial edit forms use the repository TanStack Form adapter and Zod; the
+form library owns form state.
 
-Examples of meaningful editable nodes include:
-
-- lesson and section;
-- text block, scene, line or paragraph;
-- vocab item, example and detail section;
-- grammar point, block, formula, example and block item;
-- exercise metadata, question, choice, answer key, word bank, matching item,
-  dialogue line, cloze segment and cloze answer;
-- reading item, paragraph, question and answer;
-- character-writing item;
-- note and proper noun.
-
-Required flow:
-
-```text
-rendered node
-→ edit action visible only in Edit Mode
-→ form for the smallest owning node
-→ Zod validation
-→ smallest field/node persistence
-→ smallest correct query invalidation
-```
-
-Normal edits MUST NOT:
-
-- submit an entire parent object for one field;
-- delete and reinsert child arrays;
-- mutate renderer props;
-- key durable editable children only by array index;
-- expose raw JSON as the main editor.
-
-Bulk replace is allowed only as an explicit bulk action with clear UI copy and
-a separate route/action contract.
-
-## 4. Stable identity
-
-Every durable editable child needs a stable database identity before direct
-persistence.
-
-Index-based identity is only a temporary static-render fallback.
-
-When a node has no stable write target:
-
-- do not invent one in the client;
-- use a draft patch only if the task explicitly supports it;
-- otherwise report the missing contract.
-
-## 5. Forms
-
-Non-trivial edit forms use the repository TanStack Form adapter and Zod.
-
-Each form needs:
-
-- adapter-derived initial values;
-- appropriate field and submit validation;
-- visible error rendering;
-- submit disabled/loading state;
-- cancel/reset behavior;
-- dirty-state handling when loss is possible.
-
-The form library owns form state. Do not mirror it into `useState`.
-
-## 6. API and persistence
+## 4. API and persistence
 
 Server routes MUST:
 
@@ -217,7 +146,7 @@ choices, word bank, answer/key, acceptable answers, explanations, refs,
 dialogue, sample answers, cloze segments/answers and matching sides/matches.
 Do not generalize one exercise shape to all families.
 
-## 7. Study renderer
+## 5. Study renderer
 
 Study Mode SHOULD render typed view models.
 
@@ -235,7 +164,7 @@ If data cannot be rendered safely:
 - report the unmapped shape;
 - do not guess arbitrary keys throughout UI components.
 
-## 8. HanziHome UI
+## 6. HanziHome UI
 
 Preserve:
 
@@ -254,13 +183,11 @@ Do not expose answer content by default in practice UI.
 
 Do not expose developer JSON in Study Mode.
 
-## 9. Stop conditions
+## 7. Stop conditions
 
 STOP AND CONFIRM before code mutation when:
 
-- seed edit policy is unclear;
 - DB schema/RLS changes are required;
-- a small edit appears to require replace-all child operations;
 - a dashboard would need full content loading;
 - an exercise shape is unknown;
 - a Study renderer would need broad arbitrary JSON guessing;
@@ -268,12 +195,11 @@ STOP AND CONFIRM before code mutation when:
 - the task expands from one content family to another without a reviewed
   contract.
 
-## 10. Verification
+## 8. Verification
 
 In addition to repository checks:
 
 - renderer changes: inspect representative real payloads;
-- edit changes: verify one field/node save does not modify siblings;
 - query changes: verify first load, stale/refetch, empty and error states;
 - exercise changes: verify every supported subpart;
 - UI changes: verify iPad portrait and keyboard interaction.

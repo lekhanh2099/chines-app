@@ -1,13 +1,16 @@
 import "server-only";
 
-import type { HanziHomeData } from "@/features/hanzihome/types";
+import type { StaticRadicalData } from "@/features/hanzihome/types";
 import {
  getStaticStudioLessonDetail,
  listStaticStudioCourseLessons,
 } from "@/features/hanzihome/static-json/studio-static-content";
-import { isPublishedStudioGrammarCourseId } from "@/features/hanzihome/static-json/studio-published-content-id";
 
-import { buildHanziHomeLessonSearchItems, buildHanziHomeSearchIndex } from "../buildSearchIndex";
+import {
+ buildHanziHomeLessonSearchItems,
+ buildHanziHomeNavigationSearchItems,
+ buildHanziHomeRadicalSearchItems,
+} from "../buildSearchIndex";
 import type { HanziHomeSearchIndexItem } from "../types";
 import type { SearchDocument } from "./search-engine";
 
@@ -25,14 +28,14 @@ export function courseItemToSearchDocument(indexItem: HanziHomeSearchIndexItem):
  };
 }
 
-/**
- * Supabase course content as visible to the requesting user. The static
- * Studio grammar course replaces any Supabase copy, as the catalog does.
- */
-export function collectSupabaseCourseDocuments(data: HanziHomeData) {
- return buildHanziHomeSearchIndex(data)
-  .filter((item) => !isPublishedStudioGrammarCourseId(item.courseId ?? ""))
-  .map(courseItemToSearchDocument);
+/** Radicals as stored in the database; they are shared seed content, not owned by a user. */
+export function collectRadicalDocuments(radicals: readonly StaticRadicalData[]) {
+ return buildHanziHomeRadicalSearchItems(radicals).map(courseItemToSearchDocument);
+}
+
+/** Shortcuts to the main surfaces. */
+export function collectNavigationDocuments() {
+ return buildHanziHomeNavigationSearchItems().map(courseItemToSearchDocument);
 }
 
 /** The checked-in Studio grammar course, which the catalog serves from static content. */

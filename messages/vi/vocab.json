@@ -15,6 +15,14 @@
   "saveToVaultTitle": "Thêm vào Kho từ vựng riêng",
   "savedInVaultTitle": "Đã lưu trong Kho riêng (nhấn để gỡ)",
   "saveToVaultAria": "Thêm {hanzi} vào Kho riêng",
-  "removeFromVaultAria": "Gỡ {hanzi} khỏi Kho riêng"
+  "removeFromVaultAria": "Gỡ {hanzi} khỏi Kho riêng",
+  "status": {
+   "all": "Tất cả",
+   "learning": "Đang học",
+   "hard": "Còn khó",
+   "known": "Đã biết",
+   "aria": "Tiến độ của {hanzi}",
+   "filterAria": "Lọc theo tiến độ"
+  }
  }
 }

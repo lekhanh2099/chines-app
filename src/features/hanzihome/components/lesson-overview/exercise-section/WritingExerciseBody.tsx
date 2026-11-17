@@ -1,19 +1,14 @@
-import type { EditableNodePath } from "@/features/hanzihome/editing";
+import { Fragment } from "react";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
-import { EditableNodeWrapper } from "@/features/hanzihome/editing";
 import { ExerciseQuestionCard } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, stringValue } from "../utils";
 
 export function WritingExerciseBody({
- lessonId,
- itemPath,
  item,
  displayMode,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -46,23 +41,7 @@ export function WritingExerciseBody({
      />
     );
 
-    return lessonId && itemPath ? (
-     <EditableNodeWrapper
-      key={questionId}
-      lessonId={lessonId}
-      entityType="exercise_question"
-      entityId={questionId}
-      parentEntityType="exercise"
-      parentEntityId={item.id}
-      path={[...itemPath, "questions", index]}
-      value={question}
-      label={`Câu viết ${index + 1}`}
-     >
-      {content}
-     </EditableNodeWrapper>
-    ) : (
-     <div key={questionId}>{content}</div>
-    );
+    return <Fragment key={questionId}>{content}</Fragment>;
    })}
   </div>
  );

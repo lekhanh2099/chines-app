@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
+import { z } from "zod";
 import { Button } from "@/components/ui/actions/button";
 import { matchesVocabularyQuery } from "@/features/hanzihome/components/lesson-overview/overview/vocabulary-search";
 import {
@@ -9,21 +10,30 @@ import {
  VocabularyNoResults,
  VocabularyPipActions,
 } from "@/features/hanzihome/components/lesson-overview/overview/VocabularyCardList";
+import { SegmentedControl } from "@/components/ui/forms/segmented-control";
+import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { BusinessChineseSection } from "./BusinessChineseSection";
 import { TextbookVocabularyPreview } from "./TextbookVocabularyPreview";
 import type { BusinessChinesePipControls } from "./useBusinessChinesePip";
 
+const vocabStatusFilterSchema = z.enum(["all", "learning", "hard", "known"]);
+type VocabStatusFilter = z.output<typeof vocabStatusFilterSchema>;
+
 /** Owns the vocab tab search query; it persists across tab switches within the lesson. */
 export function useBusinessChineseVocabSearch(vocab: TextbookLesson["vocab"]) {
  const [vocabSearchQuery, setVocabSearchQuery] = useState("");
+ const [statusFilter, setStatusFilter] = useState<VocabStatusFilter>("all");
+ const progress = useLearningState().state.progress.vocab;
  const filteredVocab = useMemo(() => {
-  return vocab.filter((word) =>
-   matchesVocabularyQuery(vocabSearchQuery, [word.hanzi, word.pinyin, word.meaning, word.hanviet]),
+  return vocab.filter(
+   (word) =>
+    (statusFilter === "all" || (progress?.[word.id]?.status ?? "new") === statusFilter) &&
+    matchesVocabularyQuery(vocabSearchQuery, [word.hanzi, word.pinyin, word.meaning, word.hanviet]),
   );
- }, [vocab, vocabSearchQuery]);
- return { vocabSearchQuery, setVocabSearchQuery, filteredVocab };
+ }, [progress, statusFilter, vocab, vocabSearchQuery]);
+ return { vocabSearchQuery, setVocabSearchQuery, statusFilter, setStatusFilter, filteredVocab };
 }
 
 /** The lesson "vocab" tab: search, review/PiP launchers and the vocabulary sections. */
@@ -31,6 +41,8 @@ export function BusinessChineseVocabView({
  lesson,
  vocabSearchQuery,
  onVocabSearchQueryChange,
+ statusFilter,
+ onStatusFilterChange,
  filteredVocab,
  displayMode,
  visibleSections,
@@ -42,6 +54,8 @@ export function BusinessChineseVocabView({
  lesson: TextbookLesson;
  vocabSearchQuery: string;
  onVocabSearchQueryChange: (query: string) => void;
+ statusFilter: VocabStatusFilter;
+ onStatusFilterChange: (filter: VocabStatusFilter) => void;
  filteredVocab: TextbookLesson["vocab"];
  displayMode: LessonDisplayMode;
  visibleSections: TextbookLesson["sections"];
@@ -51,6 +65,7 @@ export function BusinessChineseVocabView({
  onActiveViewChange: (value: string) => void;
 }) {
  const t = useTranslations("BusinessChinese");
+ const tStatus = useTranslations("Vocab.cards.status");
  const { isPipOpen, isInAppFloatingOpen, pipMode, handleTogglePip } = pip;
 
  return (
@@ -63,6 +78,17 @@ export function BusinessChineseVocabView({
      resultCount={filteredVocab.length}
      actions={
       <>
+       <SegmentedControl<VocabStatusFilter>
+        value={statusFilter}
+        items={vocabStatusFilterSchema.options.map((key) => ({
+         key,
+         label: tStatus(key),
+        }))}
+        onChange={onStatusFilterChange}
+        density="toolbar"
+        aria-label={tStatus("filterAria")}
+        className="w-auto"
+       />
        <Button type="button" size="toolbar" onClick={() => onActiveViewChange("review")}>
         {t("vocabReview.startReview")}
        </Button>
@@ -76,7 +102,7 @@ export function BusinessChineseVocabView({
     />
    ) : null}
 
-   {filteredVocab.length === 0 && vocabSearchQuery ? (
+   {filteredVocab.length === 0 && (vocabSearchQuery || statusFilter !== "all") ? (
     <VocabularyNoResults query={vocabSearchQuery} />
    ) : null}
 

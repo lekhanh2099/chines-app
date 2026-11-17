@@ -11,7 +11,6 @@ import { useFlashcardControls } from "@/features/hanzihome/hooks/useFlashcardCon
 import {
  useVocabReviewSession,
  type ReviewDeckMode,
- type ReviewItem,
 } from "@/features/hanzihome/hooks/useVocabReviewSession";
 import type { HanziHomeLesson, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
 import { FlashcardDetailDialog } from "./FlashcardDetailDialog";
@@ -29,7 +28,6 @@ type VocabReviewPanelProps = {
  description?: string;
  onAnswer: ReviewAnswerHandler;
  onToggleBookmark?: ReviewBookmarkHandler;
- getItemLesson?: (item: ReviewItem) => HanziHomeLesson | null;
 };
 
 export function VocabReviewPanel({
@@ -41,7 +39,6 @@ export function VocabReviewPanel({
  description,
  onAnswer,
  onToggleBookmark,
- getItemLesson,
 }: VocabReviewPanelProps) {
  const modes = deckModeOptions.filter(
   (item) => !availableModes || availableModes.includes(item.value),
@@ -209,7 +206,6 @@ export function VocabReviewPanel({
      lesson={lesson}
      onAnswer={(reviewItem, result) => onAnswer({ ...reviewItem, label: item.prompt }, result)}
      onToggleBookmark={onToggleBookmark}
-     itemLesson={getItemLesson?.(item) ?? lesson}
     />
 
     <div className="flex flex-wrap items-center justify-center gap-2">

@@ -101,27 +101,6 @@ describe("StructuredGrammarContent", () => {
   expect(html.indexOf("虽然很累")).toBeLessThan(html.indexOf("<details"));
  });
 
- it("keeps reference details open in edit mode", () => {
-  const html = renderToStaticMarkup(
-   <StructuredGrammarContent
-    editMode
-    point={{
-     ...point,
-     detailSections: [
-      {
-       id: "grammar-01-source",
-       key: "source",
-       title: "Nguồn",
-       lines: ["Tài liệu ngữ pháp HSK."],
-      },
-     ],
-    }}
-   />,
-  );
-
-  expect(html.match(/<details\b[^>]*>/)?.[0]).toContain('open=""');
- });
-
  it("preserves the displayed teaching and reference content of the real first HSK1 point", () => {
   const hskPoint = getStaticStudioLessonDetail("hanzihome-studio-grammar:lesson:HSK1")?.grammar[0];
   if (!hskPoint) throw new Error("The first HSK1 grammar point must exist.");

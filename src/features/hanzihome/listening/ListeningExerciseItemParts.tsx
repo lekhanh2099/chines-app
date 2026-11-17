@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 
-import { Pencil, Play } from "lucide-react";
+import { Play } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
 import { IconTile } from "@/components/ui/display/icon-tile";
@@ -32,8 +32,6 @@ export type ListeningExerciseItemsProps = {
  lessonId: string;
 };
 
-export type ListeningItemEditHandler = (item: ListeningRuntimeItem) => void;
-
 export function ExerciseAudioButton({
  promptText,
  transcriptText,
@@ -62,15 +60,7 @@ export function ExerciseAudioButton({
  );
 }
 
-export function ItemHeader({
- index,
- type,
- onEdit,
-}: {
- index: number;
- type: ListeningExerciseType;
- onEdit?: () => void;
-}) {
+export function ItemHeader({ index, type }: { index: number; type: ListeningExerciseType }) {
  const t = useTranslations("Listening");
  const typeLabels = new Map([
   ["single_choice", t("exerciseTypes.single_choice")],
@@ -100,19 +90,6 @@ export function ItemHeader({
    >
     {typeLabels.get(type)}
    </StudyInstructionText>
-   {onEdit ? (
-    <Button
-     type="button"
-     variant="outline"
-     size="icon-toolbar"
-     className="ml-auto"
-     aria-label={t("editQuestion")}
-     title={t("editQuestion")}
-     onClick={onEdit}
-    >
-     <Pencil />
-    </Button>
-   ) : null}
   </div>
  );
 }
