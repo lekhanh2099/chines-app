@@ -39,6 +39,12 @@ enqueue path using the subtree learning-state contract, especially when retry
 behavior changes.
 HanziHome query keys belong in `src/features/hanzihome/query-keys.ts`.
 
+A vocabulary write also changes the unified vocabulary store and the canonical
+word link: the mutation path invalidates `hanzihomeQueryKeys.vocabularyRoot`,
+and `word_id` is assigned by the database trigger, never by the caller. For
+explained characters, edit the notes in `docs/radicals/` and regenerate with
+`npm run content:radical-characters`.
+
 ## Editing and import
 
 Trace the validated node payload, ownership/parent checks, update and sibling

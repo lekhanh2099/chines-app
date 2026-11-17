@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useSelector } from "@tanstack/react-store";
@@ -28,6 +28,7 @@ import {
  DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
+import { Separator } from "@/components/ui/layout/separator";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
 import { Typography } from "@/components/ui/display/typography";
 import { focusRingClassName } from "@/components/ui/focus-ring";
@@ -182,6 +183,65 @@ function NavRow({
  );
 }
 
+/** A folded part of the navigation: one row that opens the destinations beneath it. */
+function NavDisclosure({
+ id,
+ label,
+ icon: Icon,
+ open,
+ onToggle,
+ children,
+}: {
+ id: string;
+ label: string;
+ icon: NavigationItemConfig["icon"];
+ open: boolean;
+ onToggle: () => void;
+ children: ReactNode;
+}) {
+ return (
+  <div className="grid content-start">
+   <Button
+    type="button"
+    variant="navigation"
+    size="toolbar"
+    align="between"
+    className="w-full min-w-0"
+    aria-expanded={open}
+    aria-controls={id}
+    onClick={onToggle}
+   >
+    <span className="flex min-w-0 flex-1 items-center gap-2.5">
+     <Icon className={cn("size-4 shrink-0", open ? "text-primary" : "text-foreground-muted")} />
+     <Typography
+      as="span"
+      variant="bodySmall"
+      tone={open ? "default" : "inherit"}
+      weight={open ? "bold" : "medium"}
+      clamp="one"
+      className="min-w-0 flex-1 text-start"
+     >
+      {label}
+     </Typography>
+    </span>
+    <ChevronRight
+     data-icon="inline-end"
+     className={cn(
+      "size-3.5 shrink-0 text-foreground-muted transition-transform duration-200",
+      open && "rotate-90",
+     )}
+    />
+   </Button>
+   {/* Stays mounted so every destination remains in the document while folded. */}
+   <div hidden={!open} className="pl-4 pt-0.5 pb-1.5">
+    <div id={id} className="grid gap-0.5 border-l border-border-default pl-2">
+     {children}
+    </div>
+   </div>
+  </div>
+ );
+}
+
 function CollapsedGroupMenu({
  group,
  pathname,
@@ -217,7 +277,9 @@ function CollapsedGroupMenu({
     {group.sections.map((section, sectionIndex) => (
      <Fragment key={section.id}>
       {sectionIndex > 0 ? <DropdownMenuSeparator /> : null}
-      {section.collapsible ? <DropdownMenuLabel>{t(section.messageKey)}</DropdownMenuLabel> : null}
+      {section.collapsible || section.labelled ? (
+       <DropdownMenuLabel>{t(section.messageKey)}</DropdownMenuLabel>
+      ) : null}
       {section.itemIds.map((itemId) => {
        const item = navigationItems[itemId];
        const Icon = item.icon;
@@ -266,24 +328,41 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
  const searchParams = useSearchParams();
  const isCollapsed = useSelector(sidebarStore, (state) => state.isCollapsed);
  const { toggle: toggleSidebar, hydrate: hydrateSidebar } = sidebarStore.actions;
- const activeGroupId = visibleNavigationGroups.find((group) =>
-  groupHasActiveRoute(group, pathname, searchParams),
- )?.id;
+ // Disclosure ids that contain the current route: folded groups and the folded
+ // sections of the learning journey.
+ const activeDisclosureIds = visibleNavigationGroups.flatMap((group) =>
+  group.id === "learning"
+   ? group.sections
+      .filter(
+       (section) =>
+        section.collapsible &&
+        section.itemIds.some((itemId) => isActive(pathname, searchParams, itemId)),
+      )
+      .map((section) => section.id)
+   : groupHasActiveRoute(group, pathname, searchParams)
+     ? [group.id]
+     : [],
+ );
  const routeKey = `${pathname}?${searchParams.toString()}`;
- const [openGroupOverrides, setOpenGroupOverrides] = useState<Record<string, boolean>>({});
+ const [openOverrides, setOpenOverrides] = useState<Record<string, boolean>>({});
  const [lastRouteKey, setLastRouteKey] = useState(routeKey);
 
  if (lastRouteKey !== routeKey) {
   setLastRouteKey(routeKey);
-  if (activeGroupId && openGroupOverrides[activeGroupId] === false) {
-   setOpenGroupOverrides((prev) => ({ ...prev, [activeGroupId]: true }));
+  // Arriving inside a disclosure the learner closed earlier opens it again.
+  const reopened = activeDisclosureIds.filter((id) => openOverrides[id] === false);
+  if (reopened.length > 0) {
+   setOpenOverrides((prev) => ({
+    ...prev,
+    ...Object.fromEntries(reopened.map((id) => [id, true])),
+   }));
   }
  }
 
- const isGroupExpanded = (groupId: string) => {
-  const override = openGroupOverrides[groupId];
-  if (override !== undefined) return override;
-  return groupId === activeGroupId;
+ const isExpanded = (id: string) => openOverrides[id] ?? activeDisclosureIds.includes(id);
+ const toggleExpanded = (id: string) => {
+  const next = !isExpanded(id);
+  setOpenOverrides((prev) => ({ ...prev, [id]: next }));
  };
 
  useEffect(() => {
@@ -363,151 +442,80 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
       ))}
      </div>
     ) : (
-     <div className="grid content-start gap-1.5">
+     <div className="grid content-start gap-1">
       {visibleNavigationGroups.map((group) => {
-       const isLearning = group.id === "learning";
-       const groupOpen = isLearning || isGroupExpanded(group.id);
-       const GroupIcon = group.icon;
        const groupLabel = t(group.messageKey);
-       const activeSection =
-        group.id === "learning"
-         ? group.sections.find(
-            (section) =>
-             section.collapsible &&
-             section.itemIds.some((itemId) => isActive(pathname, searchParams, itemId)),
-           )
-         : undefined;
-       const sections = activeSection
-        ? [
-           ...group.sections.filter((section) => !section.collapsible),
-           activeSection,
-           ...group.sections.filter((section) => section.collapsible && section !== activeSection),
-          ]
-        : group.sections;
+       const rows = (itemIds: readonly NavigationItemId[]) =>
+        itemIds.map((itemId) => (
+         <NavRow
+          key={itemId}
+          itemId={itemId}
+          active={isActive(pathname, searchParams, itemId)}
+          collapsed={false}
+         />
+        ));
+       const heading = (label: string) => (
+        <Typography as="h3" variant="overline" tone="muted" className="px-2.5 pt-3 pb-1">
+         {label}
+        </Typography>
+       );
 
-       return (
-        <section key={group.id} aria-label={groupLabel} className="grid content-start">
-         {!isLearning ? (
-          <Button
-           type="button"
-           variant="navigation"
-           size="toolbar"
-           align="between"
-           className="w-full min-w-0"
-           aria-expanded={groupOpen}
-           aria-controls={`sidebar-group-${group.id}`}
-           onClick={() => {
-            const currentOpen = isGroupExpanded(group.id);
-            setOpenGroupOverrides((prev) => ({
-             ...prev,
-             [group.id]: !currentOpen,
-            }));
-           }}
+       if (group.id !== "learning") {
+        return (
+         <section key={group.id} aria-label={groupLabel} className="grid content-start">
+          <NavDisclosure
+           id={`sidebar-group-${group.id}`}
+           label={groupLabel}
+           icon={group.icon}
+           open={isExpanded(group.id)}
+           onToggle={() => toggleExpanded(group.id)}
           >
-           <span className="flex min-w-0 flex-1 items-center gap-2.5">
-            <GroupIcon
-             className={cn("size-4 shrink-0", groupOpen ? "text-primary" : "text-foreground-muted")}
-            />
-            <Typography
-             as="span"
-             variant="bodySmall"
-             tone={groupOpen ? "default" : "inherit"}
-             weight={groupOpen ? "bold" : "medium"}
-             clamp="one"
-             className="min-w-0 flex-1 text-start"
-            >
-             {groupLabel}
-            </Typography>
-           </span>
-           <ChevronRight
-            data-icon="inline-end"
-            className={cn(
-             "size-3.5 shrink-0 text-foreground-muted transition-transform duration-200",
-             groupOpen && "rotate-90",
-            )}
-           />
-          </Button>
-         ) : null}
+           {group.sections.map((section) => (
+            <div key={section.id} id={`sidebar-section-${section.id}`} className="grid gap-0.5">
+             {section.labelled ? heading(t(section.messageKey)) : null}
+             {rows(section.itemIds)}
+            </div>
+           ))}
+          </NavDisclosure>
+         </section>
+        );
+       }
 
-         {groupOpen ? (
-          <div id={`sidebar-group-${group.id}`} className="grid gap-0.5 pt-0.5 pb-2">
-           {sections.map((section) => {
-            if (group.id === "learning" && section.collapsible) {
-             const activeItem = section.itemIds.find((itemId) =>
-              isActive(pathname, searchParams, itemId),
-             );
-             return (
-              <div key={section.id} id={`sidebar-section-${section.id}`} className="grid gap-0.5">
-               {activeItem ? (
-                <>
-                 {section.id === "textbooks" ? (
-                  <Typography
-                   as="h3"
-                   variant="overline"
-                   tone="muted"
-                   weight="bold"
-                   className="px-2.5 pt-2"
-                  >
-                   {t("search.quickAccess")}
-                  </Typography>
-                 ) : null}
-                 <NavRow itemId={activeItem} active collapsed={false} />
-                </>
-               ) : null}
-               <details className="group/section">
-                <summary
-                 className={cn(
-                  "flex min-h-9 cursor-pointer list-none items-center justify-between rounded-lg px-2.5 [&::-webkit-details-marker]:hidden",
-                  focusRingClassName,
-                 )}
-                >
-                 <Typography as="span" variant="overline" tone="muted" weight="bold">
-                  {t(section.messageKey)}
-                 </Typography>
-                 <ChevronRight
-                  aria-hidden="true"
-                  className="size-3.5 shrink-0 text-foreground-muted group-open/section:rotate-90"
-                 />
-                </summary>
-                <div className="grid gap-0.5">
-                 {section.itemIds
-                  .filter((itemId) => itemId !== activeItem)
-                  .map((itemId) => (
-                   <NavRow key={itemId} itemId={itemId} active={false} collapsed={false} />
-                  ))}
-                </div>
-               </details>
-              </div>
-             );
-            }
-            return (
-             <div key={section.id} id={`sidebar-section-${section.id}`} className="grid gap-0.5">
-              {section.collapsible ? (
-               <div className="px-2.5 pt-2.5 pb-1">
-                <Typography
-                 as="h3"
-                 variant="overline"
-                 tone="muted"
-                 weight="bold"
-                 className="select-none"
-                >
-                 {t(section.messageKey)}
-                </Typography>
-               </div>
-              ) : null}
-              {section.itemIds.map((itemId) => (
-               <NavRow
-                key={itemId}
-                itemId={itemId}
-                active={isActive(pathname, searchParams, itemId)}
-                collapsed={false}
-               />
-              ))}
-             </div>
-            );
-           })}
-          </div>
-         ) : null}
+       // The learning journey stays visible: everyday destinations are listed,
+       // larger libraries fold behind the same disclosure rows as the other groups.
+       const firstFolded = group.sections.find((section) => section.collapsible);
+       return (
+        <section
+         key={group.id}
+         id={`sidebar-group-${group.id}`}
+         aria-label={groupLabel}
+         className="grid content-start gap-1"
+        >
+         {group.sections.map((section) => (
+          <Fragment key={section.id}>
+           {section === firstFolded ? (
+            <div className="px-2.5 py-2">
+             <Separator />
+            </div>
+           ) : null}
+           {section.collapsible ? (
+            <NavDisclosure
+             id={`sidebar-section-${section.id}`}
+             label={t(section.messageKey)}
+             icon={section.icon}
+             open={isExpanded(section.id)}
+             onToggle={() => toggleExpanded(section.id)}
+            >
+             {rows(section.itemIds)}
+            </NavDisclosure>
+           ) : (
+            <div id={`sidebar-section-${section.id}`} className="grid gap-0.5">
+             {section.labelled ? heading(t(section.messageKey)) : null}
+             {rows(section.itemIds)}
+            </div>
+           )}
+          </Fragment>
+         ))}
         </section>
        );
       })}
@@ -660,7 +668,7 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
          </Typography>
          {group.sections.map((section) => (
           <div key={section.id} className="grid gap-1">
-           {section.collapsible ? (
+           {section.collapsible || section.labelled ? (
             <Typography variant="caption" tone="muted" weight="bold" className="px-2.5 pt-1">
              {t(section.messageKey)}
             </Typography>

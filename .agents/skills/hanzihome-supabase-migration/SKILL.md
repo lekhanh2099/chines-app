@@ -31,6 +31,18 @@ exercise shape is unresolved.
    database and repository checks.
 4. Run security/performance advisors when live access is available and report
    unresolved findings.
+5. After a remote apply, the repository filename must carry the version the
+   registry assigned; rename the file (content unchanged) rather than editing
+   `supabase_migrations.schema_migrations`.
+
+Order the rollout by what the deployed application reads. An additive column
+or table the new code requires is applied **before** the code merges; a table
+or column the old code still reads is dropped only **after** the code that
+stopped reading it is deployed. A destructive migration needs its own explicit
+owner confirmation, with row counts and an export offer.
+
+Assertions in `supabase/tests` must pass on a clean database: build every row
+the assertion depends on inside the test, never rely on leftover local data.
 
 ## Verification
 

@@ -44,16 +44,21 @@ describe("navigation configuration", () => {
    "dailyReading",
    "speakingDrills",
    "reader",
-   "notes",
-   "radicals",
-   "inspector",
   ]);
+  expect(navigationGroups[0]?.sections[1]).toMatchObject({
+   id: "learning-reference",
+   collapsible: false,
+   labelled: true,
+   itemIds: ["notes", "radicals", "inspector"],
+  });
  });
 
  it("keeps reading and HSK destinations inside the learning journey", () => {
   expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("reader");
   expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("dailyReading");
-  expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
+  expect(
+   navigationGroups[0]?.sections.find((section) => section.id === "hsk-reading")?.itemIds,
+  ).toEqual(["hskReading", "hskGrammar"]);
  });
 
  it("exposes the four extended textbooks while retaining the lesson library aliases", () => {

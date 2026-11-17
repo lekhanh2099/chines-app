@@ -92,9 +92,9 @@ export function VocabPreviewRow({
    <div className="flex min-w-0 flex-wrap items-center gap-2">
     {hanviet && (
      <StudyInstructionText
-      variant="label"
-      tone="muted"
-      weight="bold"
+      variant="bodySmall"
+      tone="purple"
+      weight="medium"
       wrapping="preWrap"
       tracking="wide"
       transform="uppercase"
@@ -109,7 +109,7 @@ export function VocabPreviewRow({
     )}
    </div>
    {meaning && (
-    <StudyInstructionText variant="bodySmall" tone="secondary" weight="semibold" wrapping="preWrap">
+    <StudyInstructionText variant="body" tone="default" weight="medium" wrapping="preWrap">
      {meaning}
     </StudyInstructionText>
    )}

@@ -40,7 +40,7 @@ export function RadicalCharacterNotes({
      <Typography as="h2" variant="sectionTitle">
       {t("title")}
      </Typography>
-     <Typography as="span" variant="caption" tone="muted">
+     <Typography as="span" variant="bodySmall" tone="muted">
       {t("count", { count })}
      </Typography>
     </div>
@@ -93,7 +93,7 @@ export function RadicalCharacterNotes({
             <PinyinText tone="accent" weight="bold">
              {character.pinyin}
             </PinyinText>
-            <StudyInstructionText as="span" variant="caption" tone="purple" transform="uppercase">
+            <StudyInstructionText as="span" variant="bodySmall" tone="purple" transform="uppercase">
              {character.hanViet}
             </StudyInstructionText>
             {focused ? (

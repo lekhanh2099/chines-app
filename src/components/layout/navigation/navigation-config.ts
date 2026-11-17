@@ -10,6 +10,8 @@ import {
  Landmark,
  Languages,
  Layers3,
+ LayoutGrid,
+ LibraryBig,
  Lightbulb,
  ListTree,
  MessageCircle,
@@ -207,7 +209,11 @@ const contentCapabilityNavigationItemIds: readonly NavigationItemId[] = [
 type NavigationSectionConfig = {
  id: string;
  messageKey: NavigationSectionMessageKey;
+ icon: typeof Home;
+ /** Folded behind a disclosure row instead of always listed. */
  collapsible: boolean;
+ /** An always-listed section that shows its name above its items. */
+ labelled: boolean;
  itemIds: readonly NavigationItemId[];
 };
 export type NavigationGroupConfig = {
@@ -226,34 +232,41 @@ export const navigationGroups = [
    {
     id: "learning-main",
     messageKey: "navigation.sections.learningMain",
+    icon: GraduationCap,
     collapsible: false,
-    itemIds: [
-     "home",
-     "lessons",
-     "dailyReading",
-     "speakingDrills",
-     "reader",
-     "notes",
-     "radicals",
-     "inspector",
-    ],
+    labelled: false,
+    itemIds: ["home", "lessons", "dailyReading", "speakingDrills", "reader"],
    },
    {
-    id: "hsk-reading",
-    messageKey: "navigation.sections.hskReading",
-    collapsible: true,
-    itemIds: ["hskReading", "hskGrammar"],
+    id: "learning-reference",
+    messageKey: "navigation.sections.learningReference",
+    icon: SearchCheck,
+    collapsible: false,
+    labelled: true,
+    itemIds: ["notes", "radicals", "inspector"],
    },
    {
     id: "textbooks",
     messageKey: "navigation.sections.textbooks",
+    icon: LibraryBig,
     collapsible: true,
+    labelled: false,
     itemIds: ["businessChinese", "chineseBridge", "readingComprehension", "spokenChinese"],
+   },
+   {
+    id: "hsk-reading",
+    messageKey: "navigation.sections.hskReading",
+    icon: BookMarked,
+    collapsible: true,
+    labelled: false,
+    itemIds: ["hskReading", "hskGrammar"],
    },
    {
     id: "learning-more",
     messageKey: "navigation.sections.learningMore",
+    icon: LayoutGrid,
     collapsible: true,
+    labelled: false,
     itemIds: ["humanities", "htmlArtifacts"],
    },
   ],
@@ -266,13 +279,17 @@ export const navigationGroups = [
    {
     id: "practice-main",
     messageKey: "navigation.sections.practiceListeningSpeaking",
+    icon: Target,
     collapsible: false,
+    labelled: false,
     itemIds: ["dictation", "conversation", "translationStudio"],
    },
    {
     id: "practice-review",
     messageKey: "navigation.sections.practiceReview",
-    collapsible: true,
+    icon: RefreshCcw,
+    collapsible: false,
+    labelled: true,
     itemIds: ["memoryTips", "learningLoop"],
    },
   ],
@@ -285,7 +302,9 @@ export const navigationGroups = [
    {
     id: "personal-workspace",
     messageKey: "navigation.sections.personalWorkspace",
+    icon: Brain,
     collapsible: false,
+    labelled: false,
     itemIds: ["personalLearning", "notebook"],
    },
   ],

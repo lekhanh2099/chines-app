@@ -126,7 +126,7 @@ export function VocabularyStoreWorkspace({
        {pagerButton(page + 1, t("next"), <ChevronRight />)}
       </nav>
      </div>
-     <Typography as="p" variant="caption" tone="muted" aria-live="polite">
+     <Typography as="p" variant="bodySmall" tone="muted" aria-live="polite">
       {query ? t("results", { count: total, query }) : t("description", { count: storeTotal })}
      </Typography>
     </div>

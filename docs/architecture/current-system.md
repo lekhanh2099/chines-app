@@ -44,16 +44,16 @@ validation.
 
 ## Read contracts
 
-| Screen/resource         | Owner                                          | Payload rule                                | Query key family             |
-| ----------------------- | ---------------------------------------------- | ------------------------------------------- | ---------------------------- |
-| Course library          | `/api/hanzihome/catalog`                       | Summary and counts; lesson detail is opt-in | `hanzihome/catalog`          |
-| Course lesson picker    | catalog API with `courseId`                    | Lesson summaries for one course             | `hanzihome/course-lessons`   |
-| Lesson workspace        | `/api/hanzihome/lessons/[lessonId]`            | One selected lesson detail                  | `hanzihome/lesson-detail`    |
-| Aggregate vocab/grammar | `/api/hanzihome/aggregate/[kind]`              | Explicit course/book/lesson/search scope    | `hanzihome/aggregate`        |
-| Learning state          | `/api/learning-state`                          | Authenticated user state only               | `hanzihome/learning-state`   |
-| Studio Reader catalog   | `/api/hanzihome/reader/documents`              | One selected static collection at a time    | `hanzihome/reader/documents` |
-| Studio Reader document  | `/api/hanzihome/reader/documents/[documentId]` | One static document and resolved references | `hanzihome/reader/document`  |
-| Global search           | `/api/hanzihome/search`                        | Ranked, capped results + category counts    | `hanzihome/search`           |
+| Screen/resource        | Owner                                            | Payload rule                                                                                  | Query key family             |
+| ---------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------- | ---------------------------- |
+| Course library         | `/api/hanzihome/catalog`                         | Summary and counts; lesson detail is opt-in                                                   | `hanzihome/catalog`          |
+| Course lesson picker   | catalog API with `courseId`                      | Lesson summaries for one course                                                               | `hanzihome/course-lessons`   |
+| Lesson workspace       | `/api/hanzihome/lessons/[lessonId]`              | One selected lesson detail                                                                    | `hanzihome/lesson-detail`    |
+| Vocabulary store       | server component + `/api/hanzihome/vocabulary/*` | Course vocabulary merged with bundled content; rebuilt only when the content revision changes | `hanzihome/vocabulary`       |
+| Learning state         | `/api/learning-state`                            | Authenticated user state only                                                                 | `hanzihome/learning-state`   |
+| Studio Reader catalog  | `/api/hanzihome/reader/documents`                | One selected static collection at a time                                                      | `hanzihome/reader/documents` |
+| Studio Reader document | `/api/hanzihome/reader/documents/[documentId]`   | One static document and resolved references                                                   | `hanzihome/reader/document`  |
+| Global search          | `/api/hanzihome/search`                          | Ranked, capped results + category counts                                                      | `hanzihome/search`           |
 
 Global search is server-side (`src/features/hanzihome/search/server/`, MiniSearch).
 The static index (extended textbooks, Studio grammar course, Studio Reader) is built

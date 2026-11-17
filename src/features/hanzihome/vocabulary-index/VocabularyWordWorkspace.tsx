@@ -93,7 +93,7 @@ export function VocabularyWordWorkspace({ entries }: { entries: VocabularyEntry[
        <Typography as="h2" variant="sectionTitle">
         {t("meaningsTitle")}
        </Typography>
-       <Typography as="span" variant="caption" tone="muted">
+       <Typography as="span" variant="bodySmall" tone="muted">
         {t("meaningsCount", { count: entry.occurrences.length })}
        </Typography>
       </div>
@@ -103,7 +103,7 @@ export function VocabularyWordWorkspace({ entries }: { entries: VocabularyEntry[
          <Card variant="default" padding="md" className="grid h-full content-start gap-1.5">
           <Link
            href={occurrence.source.href}
-           className="flex min-w-0 items-center gap-1 text-xs font-bold text-success-text hover:underline"
+           className="flex min-w-0 items-center gap-1 text-sm font-medium text-success-text hover:underline"
           >
            <span className="truncate">{occurrence.source.label}</span>
            <ArrowRight className="size-3.5 shrink-0" />
@@ -140,13 +140,13 @@ export function VocabularyWordWorkspace({ entries }: { entries: VocabularyEntry[
            <PinyinText tone="accent" weight="bold">
             {note.character.pinyin}
            </PinyinText>
-           <StudyInstructionText as="span" variant="caption" tone="purple" transform="uppercase">
+           <StudyInstructionText as="span" variant="bodySmall" tone="purple" transform="uppercase">
             {note.character.hanViet}
            </StudyInstructionText>
           </div>
           <HanziAwareText
            text={`${note.character.components} · ${note.radical.radical} (${note.radical.hanViet})`}
-           variant="caption"
+           variant="bodySmall"
            tone="success"
           />
           <HanziAwareText text={note.character.explanation} variant="bodySmall" tone="default" />
