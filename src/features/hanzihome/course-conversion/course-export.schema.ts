@@ -1,9 +1,10 @@
 import { z } from "zod";
 
 /**
- * Rows of the retired database-backed course tables, as written by
- * `scripts/export-course-content.mjs`. Only the columns the converter reads are
- * declared; Zod drops the rest.
+ * Rows of the retired database-backed course tables, from the one-time export
+ * taken before the tables were dropped (kept outside the repository, one JSON
+ * array per table). Only the columns the converter reads are declared; Zod
+ * drops the rest.
  */
 const deletedAtSchema = z.string().nullable().default(null);
 
