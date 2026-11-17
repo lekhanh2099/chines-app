@@ -55,3 +55,20 @@ export function countRadicalSupportingItems(radical: StaticRadicalData) {
   (radical.groups?.reduce((total, group) => total + group.chars.length, 0) ?? 0)
  );
 }
+
+/**
+ * Radicals shown in the list. The catalog also holds empty rows (no name, no
+ * content) that repeat a radical documented under another index; they are not
+ * listed.
+ */
+export function listedRadicals(radicals: readonly StaticRadicalData[]) {
+ return radicals.filter((radical) => Boolean(radical.nameVi?.trim()));
+}
+
+/** Written forms of a radical entry such as `戶 / 户`, main form first. */
+export function radicalForms(radical: string) {
+ return radical
+  .split("/")
+  .map((form) => form.trim())
+  .filter(Boolean);
+}

@@ -4,6 +4,8 @@ import {
  countRadicalStrokeFilters,
  countRadicalSupportingItems,
  filterRadicals,
+ listedRadicals,
+ radicalForms,
 } from "./radical-workspace-utils";
 
 const radicals: StaticRadicalData[] = [
@@ -56,4 +58,17 @@ it("counts variant, related and grouped items while keeping absent lists empty",
    groups: [{ name: "water", chars: ["河", "海"] }],
   }),
  ).toBe(4);
+});
+it("lists only named radicals, leaving out the empty rows that repeat another entry", () => {
+ expect(listedRadicals(radicals).map((item) => item.id)).toEqual(["water"]);
+ expect(
+  listedRadicals([
+   { ...radicals[2], id: "note", radical: "卩/㔾 — đã học ở mục 109", nameVi: " " },
+  ]),
+ ).toEqual([]);
+});
+it("splits an entry into its written forms, main form first", () => {
+ expect(radicalForms("戶 / 户")).toEqual(["戶", "户"]);
+ expect(radicalForms("西/覀 / 襾")).toEqual(["西", "覀", "襾"]);
+ expect(radicalForms("人")).toEqual(["人"]);
 });
