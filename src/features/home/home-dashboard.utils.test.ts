@@ -141,7 +141,7 @@ describe("buildHomeRecentActivity", () => {
 
 describe("Home textbook continuation", () => {
  const catalog: HanziHomeCatalogData = {
-  source: "db",
+  source: "static",
   radicals: [],
   meta: {
    app: "hanzihome",

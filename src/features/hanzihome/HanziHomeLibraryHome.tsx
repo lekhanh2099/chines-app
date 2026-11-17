@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/actions/button";
 import { QueryErrorCard } from "@/components/ui/feedback/query-error-card";
 import { Typography } from "@/components/ui/display/typography";
 import { HanziHomeLibrarySkeleton } from "@/features/hanzihome/components/library/HanziHomeLibrarySkeleton";
-import { HanziHomeLibraryCrudToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryCrudToolbar";
+import { HanziHomeLibraryToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryToolbar";
 import { LibraryArrangeDialog } from "@/features/hanzihome/components/library/LibraryArrangeDialog";
 import { LibraryCollectionCard } from "@/features/hanzihome/components/library/LibraryCollectionCard";
 import {
@@ -145,12 +145,7 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
      </Typography>
     )}
     {canEdit ? (
-     <HanziHomeLibraryCrudToolbar
-      courses={courses}
-      books={books}
-      editMode={editMode}
-      onEditModeChange={setEditMode}
-     />
+     <HanziHomeLibraryToolbar editMode={editMode} onEditModeChange={setEditMode} />
     ) : null}
 
     <LibrarySyncNotice learning={learning} />
@@ -161,7 +156,6 @@ export function HanziHomeLibraryHome({ textbooks }: { textbooks: TextbookBookSum
       selectedTextbook={selectedTextbook}
       books={books}
       lessons={lessons}
-      editMode={canEdit && editMode}
       isCatalogError={catalogQuery.isError}
       isCatalogPending={catalogQuery.isPending}
       onRetryCatalog={() => void catalogQuery.refetch()}

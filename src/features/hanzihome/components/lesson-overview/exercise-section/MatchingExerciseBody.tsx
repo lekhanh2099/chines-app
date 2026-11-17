@@ -1,4 +1,3 @@
-import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import type { LessonDisplayMode } from "../types";
@@ -9,13 +8,9 @@ import { QuestionExerciseBody } from "./QuestionExerciseBody";
 import { firstArraySource } from "./exercise-utils";
 
 export function MatchingExerciseBody({
- lessonId,
- itemPath,
  item,
  displayMode,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -43,22 +38,13 @@ export function MatchingExerciseBody({
  const answers = answerSource?.values ?? [];
 
  if (leftItems.length === 0 && rightItems.length === 0) {
-  return (
-   <QuestionExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <QuestionExerciseBody item={item} displayMode={displayMode} />;
  }
 
  return (
   <div className="grid gap-3">
    <div className="grid gap-3 md:grid-cols-2">
     <MatchingColumn
-     lessonId={lessonId}
-     itemPath={itemPath}
      itemId={item.id}
      title="Cột A"
      values={leftItems}
@@ -68,8 +54,6 @@ export function MatchingExerciseBody({
     />
 
     <MatchingColumn
-     lessonId={lessonId}
-     itemPath={itemPath}
      itemId={item.id}
      title="Cột B"
      values={rightItems}
@@ -80,11 +64,8 @@ export function MatchingExerciseBody({
    </div>
 
    <MatchingAnswerDetails
-    lessonId={lessonId}
-    itemPath={itemPath}
     itemId={item.id}
     answers={answers}
-    sourceKey={answerSource?.key ?? "answer_key"}
     leftItems={leftItems}
     rightItems={rightItems}
     showAnswers={displayMode.showAnswers}

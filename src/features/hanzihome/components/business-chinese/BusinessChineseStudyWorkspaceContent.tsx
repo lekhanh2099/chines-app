@@ -33,6 +33,7 @@ import { useBusinessChineseVocabSearch } from "./BusinessChineseVocabView";
 import { BusinessChineseDesktopTabActions } from "./BusinessChineseWorkspaceToolbar";
 import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMenu";
 import { BusinessChineseWorkspaceViews } from "./BusinessChineseWorkspaceViews";
+import { LessonExerciseResultsProvider } from "./LessonExerciseResults";
 import { splitWorkspaceTabs, useWorkspaceTabCapacity } from "./useWorkspaceTabOverflow";
 import { useBusinessChineseAnnotationServices } from "./useBusinessChineseAnnotationServices";
 import {
@@ -156,124 +157,126 @@ export function BusinessChineseStudyWorkspaceContent({
  );
 
  return (
-  <BusinessChineseAnnotationsContext.Provider value={annotationsContextValue}>
-   <ReaderServicesContext.Provider value={readerServicesValue}>
-    <BusinessChineseHeaderContextBridge
-     books={books}
-     lesson={lesson}
-     isLessonBookmarked={isLessonBookmarked}
-     onToggleLessonBookmark={onToggleLessonBookmark}
-     isLessonOfflineReady={isLessonOfflineReady}
-     compact={!hasWideToolbar}
-     audioSettingsOpen={audioSettingsOpen}
-     onOpenAudioSettings={openAudioSettings}
-     actionsTriggerRef={lessonActionsTrigger}
-     onReturnFocus={returnToLessonActions}
-    />
-    <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
-     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2">
-      <BusinessChineseLessonHeading books={books} lesson={lesson} />
-      <Tabs
-       value={activeView}
-       items={visibleTabs}
-       onValueChange={onActiveViewChange}
-       overflow={
-        <BusinessChineseWorkspaceNavMenu
-         tabs={overflowTabs}
-         activeView={activeView}
-         onActiveViewChange={onActiveViewChange}
-         compact={!hasWideToolbar}
-        />
-       }
-       actions={
-        <BusinessChineseDesktopTabActions
-         readerToolbar={readerToolbar}
-         showCompactGrammarToolbar={showCompactGrammarToolbar}
-         grammarNavigationTriggerRef={grammarNavigationTriggerRef}
-         isGrammarNavigationOpen={isGrammarNavigationOpen}
-         onOpenGrammarNavigation={() => setIsGrammarNavigationOpen(true)}
-        />
-       }
-       aria-label={t("tabsLabel")}
-       className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
-       listClassName="hanzihome-liquid-toolbar flex"
-      >
-       <TabsContent
+  <LessonExerciseResultsProvider lessonId={lesson.id}>
+   <BusinessChineseAnnotationsContext.Provider value={annotationsContextValue}>
+    <ReaderServicesContext.Provider value={readerServicesValue}>
+     <BusinessChineseHeaderContextBridge
+      books={books}
+      lesson={lesson}
+      isLessonBookmarked={isLessonBookmarked}
+      onToggleLessonBookmark={onToggleLessonBookmark}
+      isLessonOfflineReady={isLessonOfflineReady}
+      compact={!hasWideToolbar}
+      audioSettingsOpen={audioSettingsOpen}
+      onOpenAudioSettings={openAudioSettings}
+      actionsTriggerRef={lessonActionsTrigger}
+      onReturnFocus={returnToLessonActions}
+     />
+     <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
+      <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2">
+       <BusinessChineseLessonHeading books={books} lesson={lesson} />
+       <Tabs
         value={activeView}
-        className={cn(
-         "min-h-0 overflow-hidden",
-         showWideGrammarNavigation &&
-          "grid grid-cols-[15rem_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] gap-3",
-        )}
-       >
-        {showWideGrammarNavigation ? (
-         <BusinessChineseGrammarNavigationPanel
-          panelRef={grammarNavigationPanelRef}
-          summary={grammarNavigationSummary}
-          sections={visibleSections}
-          onSelect={selectSection}
-         />
-        ) : null}
-        <div className="relative h-full min-h-0 min-w-0 overflow-y-auto overflow-x-hidden pr-1 scrollbar-soft">
-         <BusinessChineseWorkspaceViews
-          lesson={lesson}
+        items={visibleTabs}
+        onValueChange={onActiveViewChange}
+        overflow={
+         <BusinessChineseWorkspaceNavMenu
+          tabs={overflowTabs}
           activeView={activeView}
           onActiveViewChange={onActiveViewChange}
-          displayMode={displayMode}
-          effectiveDisplayMode={effectiveDisplayMode}
-          readerContent={readerContent}
-          bookKey={bookKey}
-          annotationError={annotationError}
-          annotationsError={annotationsError}
-          lessonSections={lessonSections}
-          practice={practice}
-          vocabSearch={vocabSearch}
-          sectionReaders={sectionReaders}
-          textReaderDocument={textReaderDocument}
-          pip={pip}
-          reviewMode={reviewMode}
-          onReviewModeChange={setReviewMode}
-          onSelectSection={selectSection}
-          showDesktopSectionNavigation={showDesktopSectionNavigation}
-          showGrammarNavigation={showGrammarNavigation}
-          isInteractivePracticeOpen={isInteractivePracticeOpen}
-          onInteractivePracticeOpenChange={setIsInteractivePracticeOpen}
+          compact={!hasWideToolbar}
          />
-        </div>
-       </TabsContent>
-      </Tabs>
-      {showCompactGrammarToolbar ? (
-       <BusinessChineseGrammarNavigationSheet
-        isOpen={isGrammarNavigationOpen}
-        setIsOpen={setIsGrammarNavigationOpen}
-        triggerRef={grammarNavigationTriggerRef}
-        panelRef={grammarNavigationPanelRef}
-        summary={grammarNavigationSummary}
-        sections={visibleSections}
-        onSelect={selectSection}
+        }
+        actions={
+         <BusinessChineseDesktopTabActions
+          readerToolbar={readerToolbar}
+          showCompactGrammarToolbar={showCompactGrammarToolbar}
+          grammarNavigationTriggerRef={grammarNavigationTriggerRef}
+          isGrammarNavigationOpen={isGrammarNavigationOpen}
+          onOpenGrammarNavigation={() => setIsGrammarNavigationOpen(true)}
+         />
+        }
+        aria-label={t("tabsLabel")}
+        className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
+        listClassName="hanzihome-liquid-toolbar flex"
+       >
+        <TabsContent
+         value={activeView}
+         className={cn(
+          "min-h-0 overflow-hidden",
+          showWideGrammarNavigation &&
+           "grid grid-cols-[15rem_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] gap-3",
+         )}
+        >
+         {showWideGrammarNavigation ? (
+          <BusinessChineseGrammarNavigationPanel
+           panelRef={grammarNavigationPanelRef}
+           summary={grammarNavigationSummary}
+           sections={visibleSections}
+           onSelect={selectSection}
+          />
+         ) : null}
+         <div className="relative h-full min-h-0 min-w-0 overflow-y-auto overflow-x-hidden pr-1 scrollbar-soft">
+          <BusinessChineseWorkspaceViews
+           lesson={lesson}
+           activeView={activeView}
+           onActiveViewChange={onActiveViewChange}
+           displayMode={displayMode}
+           effectiveDisplayMode={effectiveDisplayMode}
+           readerContent={readerContent}
+           bookKey={bookKey}
+           annotationError={annotationError}
+           annotationsError={annotationsError}
+           lessonSections={lessonSections}
+           practice={practice}
+           vocabSearch={vocabSearch}
+           sectionReaders={sectionReaders}
+           textReaderDocument={textReaderDocument}
+           pip={pip}
+           reviewMode={reviewMode}
+           onReviewModeChange={setReviewMode}
+           onSelectSection={selectSection}
+           showDesktopSectionNavigation={showDesktopSectionNavigation}
+           showGrammarNavigation={showGrammarNavigation}
+           isInteractivePracticeOpen={isInteractivePracticeOpen}
+           onInteractivePracticeOpenChange={setIsInteractivePracticeOpen}
+          />
+         </div>
+        </TabsContent>
+       </Tabs>
+       {showCompactGrammarToolbar ? (
+        <BusinessChineseGrammarNavigationSheet
+         isOpen={isGrammarNavigationOpen}
+         setIsOpen={setIsGrammarNavigationOpen}
+         triggerRef={grammarNavigationTriggerRef}
+         panelRef={grammarNavigationPanelRef}
+         summary={grammarNavigationSummary}
+         sections={visibleSections}
+         onSelect={selectSection}
+        />
+       ) : null}
+       <OfflineAudioSettingsDialog
+        lesson={lesson}
+        trigger={null}
+        open={audioSettingsOpen}
+        onOpenChange={setAudioSettingsOpen}
+        onCloseAutoFocus={(event) => {
+         event.preventDefault();
+         returnToLessonActions();
+        }}
        />
-      ) : null}
-      <OfflineAudioSettingsDialog
-       lesson={lesson}
-       trigger={null}
-       open={audioSettingsOpen}
-       onOpenChange={setAudioSettingsOpen}
-       onCloseAutoFocus={(event) => {
-        event.preventDefault();
-        returnToLessonActions();
-       }}
-      />
-      {selectionPopover}
-      <BusinessChinesePipWindows
-       pip={pip}
-       lessonTitle={lesson.title}
-       vocabItems={practice.reviewLesson.vocab}
-       grammarItems={practice.textbookGrammarPoints}
-       practiceItems={practice.universalTextbookPracticeItems}
-      />
+       {selectionPopover}
+       <BusinessChinesePipWindows
+        pip={pip}
+        lessonTitle={lesson.title}
+        vocabItems={practice.reviewLesson.vocab}
+        grammarItems={practice.textbookGrammarPoints}
+        practiceItems={practice.universalTextbookPracticeItems}
+       />
+      </div>
      </div>
-    </div>
-   </ReaderServicesContext.Provider>
-  </BusinessChineseAnnotationsContext.Provider>
+    </ReaderServicesContext.Provider>
+   </BusinessChineseAnnotationsContext.Provider>
+  </LessonExerciseResultsProvider>
  );
 }

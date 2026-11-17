@@ -22,14 +22,7 @@ export const hanzihomeQueryKeys = {
   "catalog",
   { includeLessons, includeRadicals },
  ],
- courseLessonsRoot: ["hanzihome", "course-lessons"],
  courseLessons: (courseId: string) => ["hanzihome", "course-lessons", courseId],
- courseOfflineStatus: (courseId: string, userId: UserScope) => [
-  "hanzihome",
-  "course-offline-status",
-  courseId,
-  userId,
- ],
  lessonDetail: (lessonId: string | null) => ["hanzihome", "lesson-detail", lessonId],
  lessonResource: (lessonId: string, resource: LessonResourceKind) => [
   "hanzihome",
@@ -105,6 +98,12 @@ export const hanzihomeQueryKeys = {
  ttsLibraryForUser: (userId: UserScope) => ["hanzihome", "tts", "library", userId],
  canEdit: ["hanzihome", "can-edit"],
  canEditForUser: (userId: UserScope) => ["hanzihome", "can-edit", userId],
+ exerciseResults: (userId: string, lessonId: string) => [
+  "hanzihome",
+  "exercise-results",
+  userId,
+  lessonId,
+ ],
  vocabularyRoot: ["hanzihome", "vocabulary"],
  reusedVocabulary: (userId: string) => ["hanzihome", "vocabulary", "reused", userId],
  vocabularyWord: (userId: string, hanzi: string) => [
@@ -135,6 +134,4 @@ export const hanzihomeQueryKeys = {
   "bundle",
   [...lessonIds],
  ],
- vocabChildManagerRoot: ["hanzihome", "vocab-child-manager"],
- deletedContent: ["hanzihome", "deleted-content"],
 };

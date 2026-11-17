@@ -49,6 +49,8 @@
   "route:check": "node scripts/check-route-integrity.mjs",
   "content:radical-characters": "node scripts/build-radical-characters.mjs",
   "content:check": "node scripts/build-radical-characters.mjs --check",
+  "content:export-course": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/export-course-content.mjs",
+  "content:build-courses": "COURSE_EXPORT_DIR=\"${COURSE_EXPORT_DIR:-$HOME/Documents/AI-Handoffs/chines-app/course-export}\" vitest run src/features/hanzihome/course-conversion/build-course-books.generator.test.ts",
   "ui:check": "node scripts/check-ui-standards.mjs",
   "api:check": "node scripts/check-api-registry.mjs",
   "audit:prod": "node scripts/check-npm-audit.mjs",

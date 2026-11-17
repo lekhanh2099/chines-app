@@ -15,6 +15,14 @@
   "saveToVaultTitle": "加入我的词库",
   "savedInVaultTitle": "已保存在词库（点击移除）",
   "saveToVaultAria": "将 {hanzi} 加入我的词库",
-  "removeFromVaultAria": "从我的词库移除 {hanzi}"
+  "removeFromVaultAria": "从我的词库移除 {hanzi}",
+  "status": {
+   "all": "全部",
+   "learning": "在学",
+   "hard": "较难",
+   "known": "已会",
+   "aria": "{hanzi} 的学习进度",
+   "filterAria": "按进度筛选"
+  }
  }
 }

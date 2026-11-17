@@ -13,11 +13,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 
-import {
- ExerciseAudioButton,
- ItemHeader,
- type ListeningItemEditHandler,
-} from "./ListeningExerciseItemParts";
+import { ExerciseAudioButton, ItemHeader } from "./ListeningExerciseItemParts";
 import type { ListeningRuntimeItem } from "./listening.types";
 
 const AnswerExerciseTypeSchema = z.enum(["short_answer", "oral_response"]);
@@ -33,7 +29,6 @@ export function AnswerItems({
  transcriptText,
  displayMode,
  onSpeak,
- onEditItem,
 }: {
  items: ListeningRuntimeItem[];
  exerciseType: z.infer<typeof AnswerExerciseTypeSchema>;
@@ -45,16 +40,11 @@ export function AnswerItems({
  transcriptText?: string;
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
- onEditItem?: ListeningItemEditHandler;
 }) {
  const t = useTranslations("Listening");
  return items.map((item, index) => (
   <Card key={item.id} variant="section" padding="md" className="grid gap-3">
-   <ItemHeader
-    index={index}
-    type={exerciseType}
-    onEdit={onEditItem ? () => onEditItem(item) : undefined}
-   />
+   <ItemHeader index={index} type={exerciseType} />
    <div lang="zh-CN" className="grid items-start gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
     <div className="grid gap-1">
      <ReaderHanziText displayMode={displayMode} tone="default" leading="relaxed">

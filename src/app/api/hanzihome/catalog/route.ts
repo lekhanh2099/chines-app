@@ -1,7 +1,7 @@
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
 import {
+ getPublishedStudioCatalog,
  getPublishedStudioCourseLessons,
- mergePublishedStudioCatalog,
 } from "@/features/hanzihome/static-json/studio-published-content.server";
 import {
  apiError,
@@ -22,14 +22,8 @@ export async function GET(request: Request) {
   const courseId = url.searchParams.get("courseId")?.trim();
 
   if (courseId) {
-   const publishedLessons = getPublishedStudioCourseLessons(courseId);
-   if (publishedLessons) return privateNoStoreJson({ lessons: publishedLessons });
-
-   const auth = await requireAuthenticatedRoute();
-   if (!auth.authenticated) return auth.response;
-
-   const lessons = await hanzihomeContentRepository.getCourseLessonSummaries(courseId);
-
+   const lessons = getPublishedStudioCourseLessons(courseId);
+   if (!lessons) return apiError("Course not found", 404, "COURSE_NOT_FOUND");
    return privateNoStoreJson({ lessons });
   }
 
@@ -37,11 +31,8 @@ export async function GET(request: Request) {
   const includeRadicals = parseBooleanParam(url.searchParams.get("includeRadicals"));
   const auth = await requireAuthenticatedRoute();
   if (!auth.authenticated) return auth.response;
-  const catalog = await hanzihomeContentRepository.getCatalogSummary({
-   includeLessons,
-   includeRadicals,
-  });
-  return privateNoStoreJson({ catalog: mergePublishedStudioCatalog(catalog, includeLessons) });
+  const radicals = includeRadicals ? await hanzihomeContentRepository.getRadicals() : [];
+  return privateNoStoreJson({ catalog: getPublishedStudioCatalog({ includeLessons, radicals }) });
  } catch {
   return apiError("Could not load HanziHome catalog", 503, "CATALOG_UNAVAILABLE");
  }

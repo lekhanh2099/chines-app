@@ -3,7 +3,7 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vite
 
 import type { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
 import { HanziHomeSearchResponseSchema } from "@/features/hanzihome/search/types";
-import type { HanziHomeData } from "@/features/hanzihome/types";
+import type { StaticRadicalData } from "@/features/hanzihome/types";
 import {
  apiError,
  type AuthenticatedRouteContext,
@@ -13,7 +13,7 @@ import type { getUserNotesForSearch } from "@/services/notes/notes.service";
 import type { Database } from "@/types/supabase.generated";
 
 const boundary = vi.hoisted(() => ({
- getSearchData: vi.fn<typeof hanzihomeContentRepository.getSearchData>(),
+ getRadicals: vi.fn<typeof hanzihomeContentRepository.getRadicals>(),
  getNotes: vi.fn<typeof getUserNotesForSearch>(),
  authenticate: vi.fn<typeof requireAuthenticatedRoute>(),
 }));
@@ -21,7 +21,7 @@ const boundary = vi.hoisted(() => ({
 vi.setConfig({ testTimeout: 30_000 });
 vi.mock("server-only", () => ({}));
 vi.mock("@/features/hanzihome/repositories/hanzihome-content-repository", () => ({
- hanzihomeContentRepository: { getSearchData: boundary.getSearchData },
+ hanzihomeContentRepository: { getRadicals: boundary.getRadicals },
 }));
 vi.mock("@/services/notes/notes.service", () => ({ getUserNotesForSearch: boundary.getNotes }));
 vi.mock("@/lib/api/authenticated-route", async (importOriginal) => ({
@@ -45,35 +45,14 @@ const contextB: AuthenticatedRouteContext = {
  ...contextA,
  user: { ...contextA.user, id: "00000000-0000-4000-8000-000000000002" },
 };
-const dataA: HanziHomeData = {
- courses: [],
- books: [],
- lessons: [
-  {
-   id: "editor-visible-lesson",
-   titleZh: "编辑可见团聚",
-   title: "Editor-visible fixture",
-   lessonNumber: 1,
-   vocabIds: [],
-   grammarPointIds: [],
-   vocab: [],
-   grammar: [],
-  },
- ],
- radicals: [],
- meta: {
-  app: "hanzihome",
-  dataset: "fixture",
-  version: "1",
-  generatedAt: "",
-  sourceFiles: [],
-  counts: { lessons: 1, vocab: 0, grammarPoints: 0, radicals: 0, flashcards: 0 },
- },
-};
-const dataB: HanziHomeData = {
- ...dataA,
- lessons: [],
- meta: { ...dataA.meta, counts: { ...dataA.meta.counts, lessons: 0 } },
+const radical: StaticRadicalData = {
+ id: "radical-fixture",
+ index: 1,
+ radical: "龘",
+ nameVi: "Bộ thử nghiệm",
+ coreMeaning: { modern: "rồng bay" },
+ variants: [],
+ distinguish: [],
 };
 const noteA = {
  id: "note-a",
@@ -101,9 +80,10 @@ describe("GET /api/hanzihome/search", () => {
  }, 60_000);
  beforeEach(() => {
   vi.resetModules();
-  boundary.getSearchData.mockReset();
+  boundary.getRadicals.mockReset();
   boundary.getNotes.mockReset();
   boundary.authenticate.mockReset();
+  boundary.getRadicals.mockResolvedValue([]);
   boundary.getNotes.mockResolvedValue([]);
  });
  afterEach(() => vi.useRealTimers());
@@ -115,7 +95,7 @@ describe("GET /api/hanzihome/search", () => {
    response: apiError("Unauthorized", 401, "UNAUTHORIZED"),
   });
   expect((await GET(request("q=%E5%9B%A2%E8%81%9A"))).status).toBe(401);
-  expect(boundary.getSearchData).not.toHaveBeenCalled();
+  expect(boundary.getRadicals).not.toHaveBeenCalled();
   expect(boundary.getNotes).not.toHaveBeenCalled();
  });
 
@@ -130,14 +110,13 @@ describe("GET /api/hanzihome/search", () => {
     error: "Invalid search request",
     code: "INVALID_SEARCH_REQUEST",
    });
-   expect(boundary.getSearchData).not.toHaveBeenCalled();
+   expect(boundary.getRadicals).not.toHaveBeenCalled();
   },
  );
 
- it("returns ranked course, textbook and note results with category counts", async () => {
+ it("returns ranked textbook and note results with category counts", async () => {
   const { GET } = await import("./route");
   boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextA });
-  boundary.getSearchData.mockResolvedValue(dataA);
   boundary.getNotes.mockResolvedValue([noteA]);
   const response = await GET(request("q=%E5%9B%A2%E8%81%9A&limit=60"));
   expect(response.status).toBe(200);
@@ -148,7 +127,6 @@ describe("GET /api/hanzihome/search", () => {
   expect(payload.category).toBe("all");
   expect(payload.results.length).toBeLessThanOrEqual(60);
   expect(resultIds).toContain("note:note-a");
-  expect(resultIds.some((id) => id.startsWith("navigation:editor-visible-lesson"))).toBe(true);
   expect(resultIds.some((id) => id.startsWith("textbook-"))).toBe(true);
   expect(payload.counts.all).toBeGreaterThanOrEqual(payload.results.length);
   expect(payload.counts.note).toBe(1);
@@ -161,38 +139,54 @@ describe("GET /api/hanzihome/search", () => {
   expect(notesOnly.counts).toEqual(payload.counts);
  });
 
- it("caches course content per owner, reads notes live and expires on the TTL", async () => {
+ it("finds a converted course lesson and opens it in the textbook reader", async () => {
+  const { GET } = await import("./route");
+  boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextA });
+  // 父亲的谜语 is lesson 1 of the converted Boya book.
+  const payload = HanziHomeSearchResponseSchema.parse(
+   await (await GET(request("q=%E7%88%B6%E4%BA%B2%E7%9A%84%E8%B0%9C%E8%AF%AD&limit=60"))).json(),
+  );
+  const lesson = payload.results.find(
+   (result) => result.item.id === "textbook-lesson:boya-9e-advanced-1-lesson-01",
+  );
+  expect(lesson?.item.href).toBe("/textbooks/boya-9e-advanced-1?lesson=1");
+ });
+
+ it("reads each owner's notes live and never serves them to another owner", async () => {
+  const { GET } = await import("./route");
+  const query = "q=%E5%9B%A2%E8%81%9A&category=note";
+  boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextA });
+  boundary.getNotes.mockResolvedValueOnce([noteA]);
+  expect(await ids(await GET(request(query)))).toEqual(["note:note-a"]);
+
+  boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextB });
+  expect(await ids(await GET(request(query)))).toEqual([]);
+  expect(boundary.getNotes).toHaveBeenLastCalledWith(contextB.supabase, contextB.user.id, 300);
+  expect(boundary.getNotes).toHaveBeenCalledTimes(2);
+ });
+
+ it("indexes radicals once for every owner and re-reads them on the TTL", async () => {
   vi.useFakeTimers({ toFake: ["Date"] });
   vi.setSystemTime(0);
   const { GET } = await import("./route");
   boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextA });
-  boundary.getSearchData.mockResolvedValueOnce(dataA).mockResolvedValueOnce(dataB);
-  const query = "q=%E7%BC%96%E8%BE%91";
-  expect((await ids(await GET(request(query)))).length).toBeGreaterThan(0);
-  vi.setSystemTime(5 * 60 * 1000 - 1);
-  expect((await ids(await GET(request(query)))).length).toBeGreaterThan(0);
-  expect(boundary.getSearchData).toHaveBeenCalledTimes(1);
-  expect(boundary.getNotes).toHaveBeenCalledTimes(2);
-
+  boundary.getRadicals.mockResolvedValueOnce([radical]).mockResolvedValueOnce([]);
+  const query = "q=%E9%BE%98";
+  expect(await ids(await GET(request(query)))).toContain("radical:radical-fixture");
   boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextB });
-  boundary.getSearchData.mockResolvedValueOnce(dataB);
-  expect(await ids(await GET(request(query)))).toEqual([]);
-  expect(boundary.getSearchData).toHaveBeenCalledTimes(2);
+  vi.setSystemTime(5 * 60 * 1000 - 1);
+  expect(await ids(await GET(request(query)))).toContain("radical:radical-fixture");
+  expect(boundary.getRadicals).toHaveBeenCalledTimes(1);
 
-  boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextA });
-  boundary.getSearchData.mockResolvedValueOnce(dataB);
   vi.setSystemTime(5 * 60 * 1000);
-  expect(await ids(await GET(request(query)))).toEqual([]);
-  expect(boundary.getSearchData).toHaveBeenCalledTimes(3);
+  expect(await ids(await GET(request(query)))).not.toContain("radical:radical-fixture");
+  expect(boundary.getRadicals).toHaveBeenCalledTimes(2);
  });
 
- it("returns a redacted 503 without serving another owner's cached courses", async () => {
+ it("returns a redacted 503 when radicals or notes cannot be read", async () => {
   const { GET } = await import("./route");
   boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextA });
-  boundary.getSearchData.mockResolvedValueOnce(dataA);
-  await GET(request("q=a"));
-  boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextB });
-  boundary.getSearchData.mockRejectedValueOnce(new Error("private database failure"));
+  boundary.getRadicals.mockRejectedValueOnce(new Error("private database failure"));
   const response = await GET(request("q=a"));
   expect(response.status).toBe(503);
   await expect(response.json()).resolves.toEqual({
@@ -200,7 +194,6 @@ describe("GET /api/hanzihome/search", () => {
    code: "SEARCH_UNAVAILABLE",
   });
   boundary.getNotes.mockRejectedValueOnce(new Error("private notes failure"));
-  boundary.authenticate.mockResolvedValue({ authenticated: true, context: contextA });
   expect((await GET(request("q=a"))).status).toBe(503);
  });
 });

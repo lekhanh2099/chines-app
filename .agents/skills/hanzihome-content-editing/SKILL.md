@@ -1,57 +1,53 @@
 ---
 name: hanzihome-content-editing
-description: Trace and change HanziHome content loading, rendering, node-level editing, import and persistence. Use when lesson data or edit contracts are affected, not for styling, copy-only changes or unrelated UI state.
+description: Trace and change HanziHome content loading, rendering, static content generation, import and the remaining database content (radicals, vocabulary store rows). Use when lesson data or content contracts are affected, not for styling, copy-only changes or unrelated UI state.
 metadata:
   author: chines-app
-  version: "3.0"
-  compatibility: chines-app HanziHome; Supabase; TanStack Query; TanStack Form; Zod
+  version: "4.0"
+  compatibility: chines-app HanziHome; static JSON content; Supabase; TanStack Query; TanStack Form; Zod
 ---
 
 # HanziHome Content Editing
 
 [`HanziHome AGENTS.md`](../../../src/features/hanzihome/AGENTS.md) owns the
-Study/Edit/Debug, vocabulary, learning-state, identity and persistence
+Study/Debug, content-source, vocabulary, learning-state and persistence
 invariants. Read it with the affected implementation; do not load a general
 frontend workflow as a prerequisite.
 
 ## Trace the content contract
 
-Identify mode (Study, Debug/Audit, Edit, API, DB, Import or Query), content family,
-rendered node, stable identity, parent relationship, query key and write target.
+Identify mode (Study, Debug/Audit, API, DB, Import or Query), content family,
+rendered node, stable identity, query key and source.
 
 ```text
-Supabase/import payload
-→ schema/normalizer
-→ repository/query
+static JSON (textbooks, converted courses, Hanzi Studio seed)
+→ schema/adapter (static-json/*, reader-adapters/*)
+→ server route or server page
 → view model/renderer
-→ editable node/form
-→ smallest owning save
-→ smallest correct invalidation
 ```
 
-Start from the smallest editable node, not a large parent dialog or full-object
-payload. Inspect unsupported shapes before editing.
+Lesson content is not edited in the app: change the JSON or its generator
+(`course-conversion/`, `npm run content:build-courses`) and review the diff.
+Inspect unsupported shapes before changing a renderer.
 
-For vocabulary, follow the canonical row and lesson resource/query cache from
-the subtree contract through mini-grid, workspace, review and editor consumers.
-For learning-state fields, trace the persisted owner, sync agent and consumer
-enqueue path using the subtree learning-state contract, especially when retry
-behavior changes.
+For vocabulary, follow the store row (`hanzihome_vocab_items`) through
+`data/server/supabase-hanzihome-vocabulary.ts` into the unified vocabulary store
+(`vocabulary-index/`). `word_id` is assigned by the database trigger, never by a
+caller. For learning-state fields, trace the persisted owner, sync agent and
+consumer enqueue path using the subtree learning-state contract.
 HanziHome query keys belong in `src/features/hanzihome/query-keys.ts`.
 
-A vocabulary write also changes the unified vocabulary store and the canonical
-word link: the mutation path invalidates `hanzihomeQueryKeys.vocabularyRoot`,
-and `word_id` is assigned by the database trigger, never by the caller. For
-explained characters, edit the notes in `docs/radicals/` and regenerate with
-`npm run content:radical-characters`.
+For explained characters, edit the notes in `docs/radicals/` and regenerate
+with `npm run content:radical-characters`.
 
 ## Editing and import
 
-Trace the validated node payload, ownership/parent checks, update and sibling
-isolation. Apply the subtree
+The remaining in-app edits are radicals and library covers. Trace the
+validated payload, editor capability, optimistic-concurrency token and the
+smallest invalidation. Apply the subtree
 [content/import policy](../../../src/features/hanzihome/AGENTS.md#1-product-and-content-truth)
-and [persistence inventory](../../../src/features/hanzihome/AGENTS.md#6-api-and-persistence)
-to the affected family before preparing a write.
+and [persistence inventory](../../../src/features/hanzihome/AGENTS.md#4-api-and-persistence)
+before preparing a write or an import.
 
 ## Context and verification
 
@@ -62,10 +58,10 @@ interface copy/navigation in [`i18n.md`](../../../docs/architecture/i18n.md).
 Load only the affected sections.
 
 Select the tier from [root verification](../../../AGENTS.md#6-working-method),
-node/query/renderer proof from
-[subtree verification](../../../src/features/hanzihome/AGENTS.md#10-verification),
+renderer/query proof from
+[subtree verification](../../../src/features/hanzihome/AGENTS.md#8-verification),
 and relevant cases from
 [coverage requirements](../../../docs/testing/frontend-flow-coverage.md#required-proof-by-change-type).
 
-The handoff adds the entity/node, read/write owner, stable ID, sibling evidence
-and residual data risk to the root completion requirements.
+The handoff adds the content family, read owner, stable ID and residual data
+risk to the root completion requirements.

@@ -30,6 +30,7 @@ import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
 
 import type { VocabularyEntry } from "./vocabulary-index";
 import { wordPinyinKey } from "./word-key";
+import { WordStrokePanel } from "./WordStrokePanel";
 
 const headerOwnerId = "vocabulary-word";
 
@@ -60,103 +61,106 @@ export function VocabularyWordWorkspace({ entries }: { entries: VocabularyEntry[
  useEffect(() => () => headerToolbarStore.actions.clearOwnedContent(headerOwnerId), []);
 
  return (
-  <div className="hanzihome-static-page grid w-full min-w-0 content-start gap-4">
-   {entries.map((entry, index) => (
-    <Fragment key={`${entry.hanzi}:${wordPinyinKey(entry.hanzi, entry.pinyin)}`}>
-     <Card variant="section" padding="md" className="flex min-w-0 flex-wrap items-center gap-4">
-      <HanziText
-       as={index === 0 ? "h1" : "h2"}
-       size="hero"
-       tone="primary"
-       weight="black"
-       leading="none"
-      >
-       {entry.hanzi}
-      </HanziText>
-      <div className="grid min-w-0 flex-1 gap-1">
-       {entry.pinyin ? (
-        <PinyinText variant="sectionTitle" tone="accent" weight="bold">
-         {entry.pinyin}
-        </PinyinText>
-       ) : null}
-       {entry.hanViet ? (
-        <StudyInstructionText as="span" variant="label" tone="purple" transform="uppercase">
-         {entry.hanViet}
-        </StudyInstructionText>
-       ) : null}
-      </div>
-      <MandarinSpeakButton text={entry.hanzi} touchTarget />
-     </Card>
+  <div className="hanzihome-static-page grid w-full min-w-0 content-start gap-4 xl:grid-cols-[minmax(0,1fr)_20rem] xl:items-start">
+   <div className="grid min-w-0 content-start gap-4">
+    {entries.map((entry, index) => (
+     <Fragment key={`${entry.hanzi}:${wordPinyinKey(entry.hanzi, entry.pinyin)}`}>
+      <Card variant="section" padding="md" className="flex min-w-0 flex-wrap items-center gap-4">
+       <HanziText
+        as={index === 0 ? "h1" : "h2"}
+        size="hero"
+        tone="primary"
+        weight="black"
+        leading="none"
+       >
+        {entry.hanzi}
+       </HanziText>
+       <div className="grid min-w-0 flex-1 gap-1">
+        {entry.pinyin ? (
+         <PinyinText variant="sectionTitle" tone="accent" weight="bold">
+          {entry.pinyin}
+         </PinyinText>
+        ) : null}
+        {entry.hanViet ? (
+         <StudyInstructionText as="span" variant="label" tone="purple" transform="uppercase">
+          {entry.hanViet}
+         </StudyInstructionText>
+        ) : null}
+       </div>
+       <MandarinSpeakButton text={entry.hanzi} touchTarget />
+      </Card>
 
-     <section className="grid min-w-0 gap-2" aria-label={t("meaningsTitle")}>
-      <div className="grid gap-0.5">
-       <Typography as="h2" variant="sectionTitle">
-        {t("meaningsTitle")}
-       </Typography>
-       <Typography as="span" variant="bodySmall" tone="muted">
-        {t("meaningsCount", { count: entry.occurrences.length })}
-       </Typography>
-      </div>
+      <section className="grid min-w-0 gap-2" aria-label={t("meaningsTitle")}>
+       <div className="grid gap-0.5">
+        <Typography as="h2" variant="sectionTitle">
+         {t("meaningsTitle")}
+        </Typography>
+        <Typography as="span" variant="bodySmall" tone="muted">
+         {t("meaningsCount", { count: entry.occurrences.length })}
+        </Typography>
+       </div>
+       <ul className="grid min-w-0 gap-2 sm:grid-cols-2 2xl:grid-cols-3">
+        {entry.occurrences.map((occurrence) => (
+         <li key={`${occurrence.source.href}:${occurrence.meaning}`} className="min-w-0">
+          <Card variant="default" padding="md" className="grid h-full content-start gap-1.5">
+           <Link
+            href={occurrence.source.href}
+            className="flex min-w-0 items-center gap-1 text-sm font-medium text-success-text hover:underline"
+           >
+            <span className="truncate">{occurrence.source.label}</span>
+            <ArrowRight className="size-3.5 shrink-0" />
+           </Link>
+           <HanziAwareText text={occurrence.meaning} variant="body" tone="default" />
+          </Card>
+         </li>
+        ))}
+       </ul>
+      </section>
+     </Fragment>
+    ))}
+
+    {characters.length > 0 ? (
+     <section className="grid min-w-0 gap-2" aria-label={t("charactersTitle")}>
+      <Typography as="h2" variant="sectionTitle">
+       {t("charactersTitle")}
+      </Typography>
       <ul className="grid min-w-0 gap-2 sm:grid-cols-2 2xl:grid-cols-3">
-       {entry.occurrences.map((occurrence) => (
-        <li key={`${occurrence.source.href}:${occurrence.meaning}`} className="min-w-0">
-         <Card variant="default" padding="md" className="grid h-full content-start gap-1.5">
-          <Link
-           href={occurrence.source.href}
-           className="flex min-w-0 items-center gap-1 text-sm font-medium text-success-text hover:underline"
-          >
-           <span className="truncate">{occurrence.source.label}</span>
-           <ArrowRight className="size-3.5 shrink-0" />
-          </Link>
-          <HanziAwareText text={occurrence.meaning} variant="body" tone="default" />
-         </Card>
-        </li>
-       ))}
+       {characters.map((character) => {
+        const [note] = characterIndex.data?.notesByForm.get(character) ?? [];
+        return note ? (
+         <li key={character} className="min-w-0">
+          <Card variant="default" padding="md" className="grid h-full content-start gap-1.5">
+           <div className="flex min-w-0 flex-wrap items-baseline gap-x-2">
+            <Link
+             href={radicalCharacterHref(character)}
+             aria-label={t("openCharacter", { hanzi: note.character.hanzi })}
+            >
+             <HanziText as="span" size="card" tone="primary" weight="black" leading="none">
+              {note.character.hanzi}
+             </HanziText>
+            </Link>
+            <PinyinText tone="accent" weight="bold">
+             {note.character.pinyin}
+            </PinyinText>
+            <StudyInstructionText as="span" variant="bodySmall" tone="purple" transform="uppercase">
+             {note.character.hanViet}
+            </StudyInstructionText>
+           </div>
+           <HanziAwareText
+            text={`${note.character.components} · ${note.radical.radical} (${note.radical.hanViet})`}
+            variant="bodySmall"
+            tone="success"
+           />
+           <HanziAwareText text={note.character.explanation} variant="bodySmall" tone="default" />
+          </Card>
+         </li>
+        ) : null;
+       })}
       </ul>
      </section>
-    </Fragment>
-   ))}
-
-   {characters.length > 0 ? (
-    <section className="grid min-w-0 gap-2" aria-label={t("charactersTitle")}>
-     <Typography as="h2" variant="sectionTitle">
-      {t("charactersTitle")}
-     </Typography>
-     <ul className="grid min-w-0 gap-2 sm:grid-cols-2 2xl:grid-cols-3">
-      {characters.map((character) => {
-       const [note] = characterIndex.data?.notesByForm.get(character) ?? [];
-       return note ? (
-        <li key={character} className="min-w-0">
-         <Card variant="default" padding="md" className="grid h-full content-start gap-1.5">
-          <div className="flex min-w-0 flex-wrap items-baseline gap-x-2">
-           <Link
-            href={radicalCharacterHref(character)}
-            aria-label={t("openCharacter", { hanzi: note.character.hanzi })}
-           >
-            <HanziText as="span" size="card" tone="primary" weight="black" leading="none">
-             {note.character.hanzi}
-            </HanziText>
-           </Link>
-           <PinyinText tone="accent" weight="bold">
-            {note.character.pinyin}
-           </PinyinText>
-           <StudyInstructionText as="span" variant="bodySmall" tone="purple" transform="uppercase">
-            {note.character.hanViet}
-           </StudyInstructionText>
-          </div>
-          <HanziAwareText
-           text={`${note.character.components} · ${note.radical.radical} (${note.radical.hanViet})`}
-           variant="bodySmall"
-           tone="success"
-          />
-          <HanziAwareText text={note.character.explanation} variant="bodySmall" tone="default" />
-         </Card>
-        </li>
-       ) : null;
-      })}
-     </ul>
-    </section>
-   ) : null}
+    ) : null}
+   </div>
+   <WordStrokePanel hanzi={hanzi} />
   </div>
  );
 }

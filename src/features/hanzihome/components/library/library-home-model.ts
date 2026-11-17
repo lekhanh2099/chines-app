@@ -32,14 +32,25 @@ export function filterLibraryGroups({
  );
 }
 
+/** The converted Hán ngữ and Boya course books answer their own filter; the rest are specialized. */
+function textbookMatchesFilter(book: TextbookBookSummary, filter: string) {
+ const series = book.key.startsWith("hanyu-")
+  ? "hanyu"
+  : book.key.startsWith("boya-")
+    ? "boya"
+    : "specialized";
+ return filter === "all" || filter === series;
+}
+
 export function filterLibraryTextbooks(
  textbooks: TextbookBookSummary[],
  filter: string,
  searchTerm: string,
 ): TextbookBookSummary[] {
- return filter === "all" || filter === "specialized"
-  ? textbooks.filter((book) => book.label.toLocaleLowerCase().includes(searchTerm))
-  : [];
+ return textbooks.filter(
+  (book) =>
+   textbookMatchesFilter(book, filter) && book.label.toLocaleLowerCase().includes(searchTerm),
+ );
 }
 
 export function buildLibraryCollectionOrder(

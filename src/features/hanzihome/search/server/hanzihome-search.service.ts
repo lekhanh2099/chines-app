@@ -1,6 +1,8 @@
 import "server-only";
 
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
+import { getCourseTextbookCatalog } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { getTextbookLessonOnServer } from "@/features/hanzihome/static-json/course-textbooks.server";
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { getUserNotesForSearch } from "@/services/notes/notes.service";
 
@@ -9,15 +11,15 @@ import { collectNoteDocuments } from "./collect-note-documents";
 import { collectReaderDocuments } from "./collect-reader-documents";
 import { collectTextbookDocuments } from "./collect-textbook-documents";
 import {
+ collectNavigationDocuments,
+ collectRadicalDocuments,
  collectStudioCourseDocuments,
- collectSupabaseCourseDocuments,
 } from "./collect-course-documents";
 import { createSearchEngine, prepareSearchQuery, type SearchEngine } from "./search-engine";
 import { rankSearchHits } from "./search-ranking";
 
-/** Supabase course content is re-read on this TTL; static content only changes on deploy. */
-export const COURSE_SEARCH_INDEX_TTL_MS = 5 * 60 * 1000;
-const MAX_CACHED_COURSE_OWNERS = 8;
+/** Radicals are editable, so they are re-read on this TTL; static content only changes on deploy. */
+const RADICAL_SEARCH_INDEX_TTL_MS = 5 * 60 * 1000;
 /** Notes are read live per request; this bounds the per-request read to the most recent notes. */
 export const NOTE_SEARCH_LIMIT = 300;
 
@@ -27,13 +29,21 @@ async function buildStaticSearchEngine() {
  const readerDocuments = await collectReaderDocuments();
  return createSearchEngine([
   ...collectTextbookDocuments(),
+  ...collectTextbookDocuments({
+   catalog: getCourseTextbookCatalog(),
+   getLesson: getTextbookLessonOnServer,
+  }),
   ...collectStudioCourseDocuments(),
+  ...collectNavigationDocuments(),
   ...readerDocuments,
  ]);
 }
 
-/** Static textbooks, the Studio course and Studio Reader, built once per server process. */
-export function getStaticSearchEngine() {
+/**
+ * Static textbooks, the converted course books, the Studio course, Studio Reader
+ * and the navigation shortcuts, built once per server process.
+ */
+function getStaticSearchEngine() {
  if (!staticEngineCache.promise) {
   const promise = buildStaticSearchEngine();
   staticEngineCache.promise = promise;
@@ -44,30 +54,19 @@ export function getStaticSearchEngine() {
  return staticEngineCache.promise;
 }
 
-type CachedCourseEngine = { engine: SearchEngine; expiresAt: number };
-const courseEngines = new Map<AuthenticatedRouteContext["user"]["id"], CachedCourseEngine>();
+const radicalEngineCache: { engine?: SearchEngine; expiresAt: number } = { expiresAt: 0 };
 
-/**
- * Course visibility follows the requesting user's Supabase session (RLS), so
- * the course index is cached per owner and never served to another user.
- */
-async function getCourseSearchEngine(ownerId: AuthenticatedRouteContext["user"]["id"]) {
+/** Radicals are shared seed rows, so one index serves every signed-in learner. */
+async function getRadicalSearchEngine() {
  const now = Date.now();
- const cached = courseEngines.get(ownerId);
- if (cached && cached.expiresAt > now) return cached.engine;
-
- const data = await hanzihomeContentRepository.getSearchData();
- const engine = createSearchEngine(collectSupabaseCourseDocuments(data));
- for (const [key, entry] of courseEngines) {
-  if (entry.expiresAt <= now) courseEngines.delete(key);
+ if (radicalEngineCache.engine && radicalEngineCache.expiresAt > now) {
+  return radicalEngineCache.engine;
  }
- courseEngines.delete(ownerId);
- courseEngines.set(ownerId, { engine, expiresAt: now + COURSE_SEARCH_INDEX_TTL_MS });
- while (courseEngines.size > MAX_CACHED_COURSE_OWNERS) {
-  const oldest = courseEngines.keys().next();
-  if (oldest.done) break;
-  courseEngines.delete(oldest.value);
- }
+ const engine = createSearchEngine(
+  collectRadicalDocuments(await hanzihomeContentRepository.getRadicals()),
+ );
+ radicalEngineCache.engine = engine;
+ radicalEngineCache.expiresAt = now + RADICAL_SEARCH_INDEX_TTL_MS;
  return engine;
 }
 
@@ -76,7 +75,7 @@ async function getNoteSearchEngine(context: AuthenticatedRouteContext) {
  return createSearchEngine(collectNoteDocuments(rows));
 }
 
-/** Searches static content, the user's visible courses and the user's own notes. */
+/** Searches static content, the radicals and the user's own notes. */
 export async function searchHanziHome(
  context: AuthenticatedRouteContext,
  request: HanziHomeSearchRequest,
@@ -84,7 +83,7 @@ export async function searchHanziHome(
  const query = prepareSearchQuery(request.q);
  const engines = await Promise.all([
   getStaticSearchEngine(),
-  getCourseSearchEngine(context.user.id),
+  getRadicalSearchEngine(),
   getNoteSearchEngine(context),
  ]);
  return rankSearchHits(engines, query, request);

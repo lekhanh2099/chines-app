@@ -3,7 +3,7 @@
 import { Label } from "@/components/ui/forms/label";
 import { Typography } from "@/components/ui/display/typography";
 import { EmptyState } from "@/components/patterns/empty-state";
-import { useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
+import { useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import {
  Bookmark,
  CheckCircle2,
@@ -40,7 +40,6 @@ type VocabListProps = {
  searchValue: string;
  statusFilter: VocabStatusFilter;
  compact?: boolean;
- actions?: ReactNode;
  onSearchChange: (value: string) => void;
  onStatusFilterChange: (value: VocabStatusFilter) => void;
  onSelectWord: (wordId: string) => void;
@@ -70,7 +69,6 @@ export function VocabList({
  searchValue,
  statusFilter,
  compact = false,
- actions,
  onSearchChange,
  onStatusFilterChange,
  onSelectWord,
@@ -152,7 +150,6 @@ export function VocabList({
      </div>
 
      <div className="flex flex-wrap items-center gap-1.5">
-      {actions}
       {statusItems.map((item) => {
        const Icon = item.icon;
        const active = statusFilter === item.value;

@@ -19,8 +19,6 @@ it.runIf(process.env.LISTENING_BROWSER_TEST === "1")(
    resolve: {
     alias: [
      { find: "@/components/providers/QueryProvider", replacement: fixture },
-     { find: "@/features/hanzihome/context/selectors", replacement: fixture },
-     { find: "@/features/hanzihome/context/actions", replacement: fixture },
      { find: "@/i18n/navigation", replacement: fixture },
      { find: "next/navigation", replacement: fixture },
      { find: "@/lib/pronunciation/pinyin-engine", replacement: fixture },
@@ -215,8 +213,6 @@ it.runIf(process.env.LISTENING_BROWSER_TEST === "1")(
    resolve: {
     alias: [
      { find: "@/components/providers/QueryProvider", replacement: fixture },
-     { find: "@/features/hanzihome/context/selectors", replacement: fixture },
-     { find: "@/features/hanzihome/context/actions", replacement: fixture },
      { find: "@/i18n/navigation", replacement: fixture },
      { find: "next/navigation", replacement: fixture },
      { find: "@/lib/pronunciation/pinyin-engine", replacement: fixture },

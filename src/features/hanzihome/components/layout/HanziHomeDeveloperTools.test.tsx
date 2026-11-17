@@ -6,14 +6,12 @@ import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 
 let canEdit = false;
-let editMode = false;
 
 vi.mock("@/features/hanzihome/hooks/useHanziHomeCanEdit", () => ({
  useHanziHomeCanEdit: () => canEdit,
 }));
 
 vi.mock("@/features/hanzihome/context/selectors", () => ({
- useHanziHomeEditMode: () => editMode,
  useHanziHomeFeatureSelector: () => "debug",
 }));
 
@@ -22,13 +20,7 @@ vi.mock("@/features/hanzihome/context/actions", () => ({
 }));
 
 vi.mock("@/features/hanzihome/context/workspaceLayout", () => ({
- contentEditingEnabled: true,
  developerToolsEnabled: true,
-}));
-
-vi.mock("@/features/hanzihome/editing", () => ({
- HanziHomeEditingTools: () => <span>Edit tools</span>,
- HanziHomeEditingDialogShell: () => null,
 }));
 
 import { HanziHomeDeveloperToolsSheetContent } from "./HanziHomeDeveloperTools";
@@ -36,7 +28,6 @@ import { HanziHomeDeveloperToolsSheetContent } from "./HanziHomeDeveloperTools";
 describe("HanziHomeDeveloperToolsSheetContent", () => {
  beforeEach(() => {
   canEdit = false;
-  editMode = false;
  });
 
  it("keeps learner workspace controls but hides technical choices without content permission", async () => {
@@ -49,10 +40,9 @@ describe("HanziHomeDeveloperToolsSheetContent", () => {
 
   expect(html).toContain("Chia đôi màn hình");
   expect(html).not.toContain("Kiểm tra dữ liệu");
-  expect(html).not.toContain("Edit tools");
  });
 
- it("keeps technical choices hidden until an authorized editor enables edit mode", async () => {
+ it("shows the data audit view choice to an authorized developer", async () => {
   const messages = await loadAppMessages("vi");
   canEdit = true;
   const html = renderToStaticMarkup(
@@ -61,16 +51,8 @@ describe("HanziHomeDeveloperToolsSheetContent", () => {
    </NextIntlClientProvider>,
   );
 
-  expect(html).not.toContain("Kiểm tra dữ liệu");
-  expect(html).toContain("Edit tools");
-
-  editMode = true;
-  const editingHtml = renderToStaticMarkup(
-   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
-    <HanziHomeDeveloperToolsSheetContent splitEnabled={false} onToggleSplit={() => {}} />
-   </NextIntlClientProvider>,
-  );
-  expect(editingHtml).toContain("Kiểm tra dữ liệu");
+  expect(html).toContain("Chia đôi màn hình");
+  expect(html).toContain("Kiểm tra dữ liệu");
  });
 
  it.each([
@@ -81,7 +63,6 @@ describe("HanziHomeDeveloperToolsSheetContent", () => {
   async ({ locale, split, audit }) => {
    const messages = await loadAppMessages(locale);
    canEdit = true;
-   editMode = true;
    const html = renderToStaticMarkup(
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
      <HanziHomeDeveloperToolsSheetContent splitEnabled={false} onToggleSplit={() => {}} />

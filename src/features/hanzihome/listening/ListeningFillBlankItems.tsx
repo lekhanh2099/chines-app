@@ -11,11 +11,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 
-import {
- ExerciseAudioButton,
- ItemHeader,
- type ListeningItemEditHandler,
-} from "./ListeningExerciseItemParts";
+import { ExerciseAudioButton, ItemHeader } from "./ListeningExerciseItemParts";
 import { isListeningBlankCorrect } from "./listening-exercise-utils";
 import type { ListeningRuntimeItem } from "./listening.types";
 
@@ -28,7 +24,6 @@ export function FillBlankItems({
  transcriptText,
  displayMode,
  onSpeak,
- onEditItem,
 }: {
  items: ListeningRuntimeItem[];
  answers: Record<string, string>;
@@ -38,7 +33,6 @@ export function FillBlankItems({
  transcriptText?: string;
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
- onEditItem?: ListeningItemEditHandler;
 }) {
  const t = useTranslations("Listening");
  return items.map((item, index) => {
@@ -48,11 +42,7 @@ export function FillBlankItems({
   const parts = item.metadata.promptParts ?? [item.promptZh ?? "", ""];
   return (
    <Card key={item.id} variant="section" padding="md" className="grid gap-3">
-    <ItemHeader
-     index={index}
-     type="fill_blank"
-     onEdit={onEditItem ? () => onEditItem(item) : undefined}
-    />
+    <ItemHeader index={index} type="fill_blank" />
     <ReaderHanziText
      as="div"
      displayMode={displayMode}

@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import { useMemo, useState } from "react";
-import { Pencil, Play } from "lucide-react";
+import { Play } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
@@ -14,7 +14,6 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 
-import type { ListeningItemEditHandler } from "./ListeningExerciseItemParts";
 import { groupListeningShadowingItems } from "./listening-exercise-utils";
 import type { ListeningRuntimeItem } from "./listening.types";
 
@@ -22,12 +21,10 @@ export function ShadowingItems({
  items,
  displayMode,
  onSpeak,
- onEditItem,
 }: {
  items: ListeningRuntimeItem[];
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
- onEditItem?: ListeningItemEditHandler;
 }) {
  const t = useTranslations("Listening");
  const [done, setDone] = useState<Record<string, boolean>>({});
@@ -62,18 +59,6 @@ export function ShadowingItems({
       </StudyInstructionText>
      </span>
      <span className="flex items-center gap-1">
-      {onEditItem ? (
-       <Button
-        type="button"
-        variant="outline"
-        size="icon-toolbar"
-        aria-label={t("editQuestion")}
-        title={t("editQuestion")}
-        onClick={() => onEditItem(item)}
-       >
-        <Pencil />
-       </Button>
-      ) : null}
       <Button
        type="button"
        variant="outline"

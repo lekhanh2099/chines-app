@@ -179,7 +179,7 @@ const metaSchema = z.object({
 });
 
 const hanziHomeCatalogSchema = z.object({
- source: z.enum(["db", "empty"]),
+ source: z.enum(["static", "empty"]),
  courses: z.array(catalogCourseSchema),
  books: z.array(bookSchema),
  lessons: z.array(lessonSchema),

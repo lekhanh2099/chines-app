@@ -21,10 +21,9 @@ The repository root `AGENTS.md` remains authoritative.
   database checks; static checks alone do not prove a live environment.
 - Report the environment actually touched. Production application, schema, auth, RLS, or data
   mutation requires explicit confirmation.
-- Preserve `hanzihome_vocab_items` as the single canonical vocabulary parent.
-  `hanzihome_vocab_examples` and `hanzihome_vocab_detail_sections` are canonical
-  child tables; `hanzihome_lesson_sections.payload.items` is not a vocabulary
-  store and MUST remain empty for vocabulary sections.
+- Lesson content is static JSON in the app; the database keeps radicals and the
+  vocabulary store rows. Preserve `hanzihome_vocab_items` as the single
+  canonical vocabulary row table (read by the unified vocabulary store).
 - Preserve active vocabulary uniqueness within a lesson by
   `(lesson_id, word, pinyin)`. Do not make vocabulary globally unique across
   lessons.

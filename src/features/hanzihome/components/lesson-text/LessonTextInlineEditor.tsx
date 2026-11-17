@@ -1,7 +1,7 @@
 "use client";
 
 import { FileText, Layers } from "lucide-react";
-import { useCallback, useMemo, type ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
 import { Card } from "@/components/ui/layout/card";
@@ -19,19 +19,14 @@ import {
  sectionTitle,
 } from "@/features/hanzihome/components/lesson-overview/utils";
 import { useHanziHomeLessonSections } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 import type { StudyModule } from "@/features/hanzihome/context/types";
 import { lessonDisplaySettings, lessonBookKey } from "@/features/hanzihome/utils/learning-state";
-import {
- lessonTextToReaderDocument,
- type LessonReaderEditBinding,
-} from "@/features/hanzihome/reader-adapters/lesson-text.adapter";
+import { lessonTextToReaderDocument } from "@/features/hanzihome/reader-adapters/lesson-text.adapter";
 import { Reader } from "@/features/reader/components/Reader";
-import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
 
 const allSectionsId = "__all_lesson_sections__";
@@ -81,7 +76,7 @@ export function LessonTextInlineEditor({
    selectedSectionId={selectedSectionId}
    onSelectSection={onSelectSection}
    sourceSections={sourceSections}
-   editable
+   withLearnerState
    readerToolsMenuContent={readerToolsMenuContent}
    readerToolsSheetContent={readerToolsSheetContent}
   />
@@ -134,7 +129,7 @@ export function ReadOnlyLessonTextWorkspace({
    selectedSectionId={selectedSectionId}
    onSelectSection={onSelectSection}
    sourceSections={sourceSections}
-   editable={false}
+   withLearnerState={false}
   />
  );
 }
@@ -146,13 +141,14 @@ function LessonTextWorkspace({
  selectedSectionId,
  onSelectSection,
  sourceSections,
- editable,
+ withLearnerState,
  readerToolsMenuContent,
  readerToolsSheetContent,
 }: LessonTextInlineEditorProps & {
  module: StudyModule;
  sourceSections: readonly Section[];
- editable: boolean;
+ /** The lesson workspace keeps the learner's annotations; a read-only preview does not. */
+ withLearnerState: boolean;
 }) {
  const tModules = useTranslations("Shell.studyModules");
  const runtime = useHanziHomeRuntime();
@@ -173,17 +169,6 @@ function LessonTextWorkspace({
  const showAllSections =
   !showSectionNavigation || selectedSectionId === allSectionsId || !selectedSection;
 
- const sectionPathFor = useCallback(
-  (section: Section): EditableNodePath => {
-   const sourceIndex =
-    lesson.sourceLesson?.lesson.sections.findIndex(
-     (sourceSection) => sourceSection.id === section.id,
-    ) ?? -1;
-   return ["lesson", "sections", sourceIndex >= 0 ? sourceIndex : sourceSections.indexOf(section)];
-  },
-  [lesson.sourceLesson, sourceSections],
- );
-
  const visibleTextSections = useMemo(
   () =>
    (showAllSections ? sourceSections : selectedSection ? [selectedSection] : []).filter(
@@ -191,7 +176,7 @@ function LessonTextWorkspace({
    ),
   [selectedSection, showAllSections, sourceSections],
  );
- const lessonReader = useMemo(
+ const lessonDocument = useMemo(
   () =>
    lessonTextToReaderDocument({
     documentId: `${lesson.id}:text:${visibleTextSections.map((section) => section.id).join(",")}`,
@@ -200,39 +185,15 @@ function LessonTextWorkspace({
     titlePinyin: lesson.titlePinyin,
     titleVi: lesson.title,
     sections: visibleTextSections,
-    sectionPathFor,
    }),
-  [
-   lesson.id,
-   lesson.title,
-   lesson.titlePinyin,
-   lesson.titleZh,
-   sectionPathFor,
-   visibleTextSections,
-  ],
- );
-
- const wrapBinding = useCallback(
-  (binding: LessonReaderEditBinding | undefined, content: ReactNode) => {
-   if (!editable || !binding) return content;
-   return <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>;
-  },
-  [editable],
- );
- const renderReaderSegment = useCallback<NonNullable<ReaderServices["renderSegment"]>>(
-  ({ segment, content }) => wrapBinding(lessonReader.segmentBindings.get(segment.id), content),
-  [lessonReader.segmentBindings, wrapBinding],
- );
- const renderReaderSection = useCallback<NonNullable<ReaderServices["renderSection"]>>(
-  ({ section, content }) => wrapBinding(lessonReader.sectionBindings.get(section.id), content),
-  [lessonReader.sectionBindings, wrapBinding],
+  [lesson.id, lesson.title, lesson.titlePinyin, lesson.titleZh, visibleTextSections],
  );
 
  const integration = useLessonReader({
-  document: lessonReader.document,
+  document: lessonDocument,
   bookKey: lessonBookKey(lesson),
-  lessonId: editable ? lesson.id : undefined,
-  displayMode: editable ? undefined : displayMode,
+  lessonId: withLearnerState ? lesson.id : undefined,
+  displayMode: withLearnerState ? undefined : displayMode,
   menuContent: readerToolsMenuContent,
   sheetContent: readerToolsSheetContent,
  });
@@ -286,16 +247,8 @@ function LessonTextWorkspace({
  ) : null;
 
  const renderTextReader = () =>
-  lessonReader.document.segments.length > 0 ? (
-   <Reader
-    data={integration.data}
-    display={integration.display}
-    services={{
-     ...integration.services,
-     renderSegment: editable ? renderReaderSegment : undefined,
-     renderSection: editable ? renderReaderSection : undefined,
-    }}
-   />
+  lessonDocument.segments.length > 0 ? (
+   <Reader data={integration.data} display={integration.display} services={integration.services} />
   ) : null;
  const firstTextSectionId = visibleTextSections[0]?.id;
 
@@ -343,14 +296,13 @@ function LessonTextWorkspace({
       sourceSections.map((section) => {
        if (section.type === "text") {
         if (section.id !== firstTextSectionId) return null;
-        return lessonReader.document.segments.length > 0 ? (
+        return lessonDocument.segments.length > 0 ? (
          <div key={section.id}>{renderTextReader()}</div>
         ) : (
          <TextbookSectionCard
           key={section.id}
-          lessonId={editable ? lesson.id : undefined}
+          lessonId={withLearnerState ? lesson.id : undefined}
           section={section}
-          sectionPath={editable ? sectionPathFor(section) : undefined}
           displayMode={displayMode}
           readingItems={readingItems}
           readingSections={readingSections}
@@ -362,9 +314,8 @@ function LessonTextWorkspace({
        return (
         <TextbookSectionCard
          key={section.id}
-         lessonId={editable ? lesson.id : undefined}
+         lessonId={withLearnerState ? lesson.id : undefined}
          section={section}
-         sectionPath={editable ? sectionPathFor(section) : undefined}
          displayMode={displayMode}
          readingItems={readingItems}
          readingSections={readingSections}
@@ -373,13 +324,12 @@ function LessonTextWorkspace({
         />
        );
       })
-     ) : selectedSection?.type === "text" && lessonReader.document.segments.length > 0 ? (
+     ) : selectedSection?.type === "text" && lessonDocument.segments.length > 0 ? (
       renderTextReader()
      ) : selectedSection ? (
       <TextbookSectionCard
-       lessonId={editable ? lesson.id : undefined}
+       lessonId={withLearnerState ? lesson.id : undefined}
        section={selectedSection}
-       sectionPath={editable ? sectionPathFor(selectedSection) : undefined}
        displayMode={displayMode}
        readingItems={readingItems}
        readingSections={readingSections}

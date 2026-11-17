@@ -41,7 +41,19 @@ describe("GET /api/hanzihome/aggregate/:kind", () => {
   expect(payload.items).toHaveLength(577);
  });
 
- it("merges unscoped canonical and bundled Studio aggregates", async () => {
+ it("serves grammar from bundled content only, without a session or a database read", async () => {
+  const response = await GET(new Request("https://app.example/api"), {
+   params: Promise.resolve({ kind: "grammar" }),
+  });
+
+  expect(response.status).toBe(200);
+  expect(requireAuthenticatedRoute).not.toHaveBeenCalled();
+  expect(getAggregateItems).not.toHaveBeenCalled();
+  const payload = await response.json();
+  expect(payload.items).toHaveLength(581);
+ });
+
+ it("merges the vocabulary store rows with bundled Studio vocabulary", async () => {
   requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
   getAggregateItems.mockResolvedValue([
    {

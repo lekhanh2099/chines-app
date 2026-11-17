@@ -5,7 +5,7 @@ import {
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import {
  getPublishedStudioAggregateItems,
- isPublishedStudioAggregateScope,
+ isPublishedStudioContentId,
 } from "@/features/hanzihome/static-json/studio-published-content.server";
 import {
  apiError,
@@ -39,7 +39,11 @@ export async function GET(request: Request, context: RouteContext) {
    q: url.searchParams.get("q") ?? "",
   };
   const staticItems = getPublishedStudioAggregateItems({ kind: kind.data, filters });
-  if (isPublishedStudioAggregateScope(filters)) {
+  // Grammar is static content only; the database keeps the vocabulary store rows.
+  if (
+   kind.data !== "vocab" ||
+   isPublishedStudioContentId(filters.courseId || filters.bookId || filters.lessonId)
+  ) {
    return privateNoStoreJson({ items: staticItems });
   }
 
@@ -47,7 +51,7 @@ export async function GET(request: Request, context: RouteContext) {
   if (!auth.authenticated) return auth.response;
 
   const items = [
-   ...(await hanzihomeContentRepository.getAggregateItems({ kind: kind.data, filters })),
+   ...(await hanzihomeContentRepository.getAggregateItems({ kind: "vocab", filters })),
    ...staticItems,
   ];
 

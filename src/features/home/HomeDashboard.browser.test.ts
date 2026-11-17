@@ -550,7 +550,7 @@ it.runIf(process.env.HOME_BROWSER_TEST === "1").each(continuationViewportCases)(
     grammar: [],
    });
    const catalog: HanziHomeCatalogData = {
-    source: "db",
+    source: "static",
     courses: [
      {
       id: "hanyu",

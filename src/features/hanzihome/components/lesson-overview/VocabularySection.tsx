@@ -1,9 +1,6 @@
 "use client";
 
-import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import type { VocabularyItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
-import type { EditableNodePath } from "@/features/hanzihome/editing";
-import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/VocabBulkEditDialog";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 import type { LessonDisplayMode } from "./types";
@@ -26,33 +23,14 @@ function vocabMeaning(item: VocabularyItem) {
 }
 
 export function VocabMiniGrid({
- lessonId,
- parentSectionId,
- itemsPath,
  items,
  displayMode,
 }: {
- lessonId?: string;
- parentSectionId?: string;
- itemsPath?: EditableNodePath;
  items: VocabularyItem[];
  displayMode: LessonDisplayMode;
 }) {
- const editMode = useHanziHomeEditMode();
-
  return (
   <div className="grid gap-2">
-   {editMode && lessonId && itemsPath && items.length > 0 ? (
-    <div className="flex items-center justify-end">
-     <VocabBulkEditDialog
-      lessonId={lessonId}
-      parentSectionId={parentSectionId}
-      items={items}
-      getEntityId={(item) => item.id}
-      getItemPath={(_, index) => [...itemsPath, index]}
-     />
-    </div>
-   ) : null}
    <VocabularyCardGrid>
     {items.map((item) => {
      const meaning = vocabMeaning(item);

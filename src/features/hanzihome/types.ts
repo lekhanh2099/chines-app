@@ -212,7 +212,7 @@ export type HanziHomeData = {
 };
 
 const HanziHomeDatasetSchema = z.enum(["q2", "q3"]);
-const HanziHomeCatalogSourceSchema = z.enum(["db", "static", "empty"]);
+const HanziHomeCatalogSourceSchema = z.enum(["static", "empty"]);
 type HanziHomeCatalogSource = z.infer<typeof HanziHomeCatalogSourceSchema>;
 
 type HanziHomeCourseStats = {

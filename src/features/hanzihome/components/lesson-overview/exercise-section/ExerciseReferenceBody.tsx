@@ -1,20 +1,15 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { PenLine } from "lucide-react";
 
-import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, stringValue } from "../utils";
 import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
 export function ExerciseReferenceBody({
- lessonId,
- itemPath,
  item,
  displayMode,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -22,14 +17,7 @@ export function ExerciseReferenceBody({
  const reference = stringValue(record, "character_writing_ref");
 
  if (arrayValue(record, "questions").length > 0) {
-  return (
-   <QuestionExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <QuestionExerciseBody item={item} displayMode={displayMode} />;
  }
 
  return (

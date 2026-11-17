@@ -40,10 +40,6 @@ vi.mock("@/features/hanzihome/hooks/useHanziHomeCanEdit", () => ({
 vi.mock("@/features/hanzihome/search/searchNavigationStore", () => ({
  useHanziHomeSearchNavigationIntent: () => null,
 }));
-vi.mock("@/features/hanzihome/context/selectors", () => ({ useHanziHomeEditMode: () => false }));
-vi.mock("@/features/hanzihome/context/actions", () => ({
- useHanziHomeFeatureActions: () => ({ openEditableNode: () => {} }),
-}));
 const cases = [
  {
   locale: "vi",

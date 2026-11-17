@@ -69,7 +69,12 @@
   "dictation": {
    "description": "Practice listening and transcribing short sentences from this lesson.",
    "open": "Open dictation ({count} sentences)"
-  }
+  },
+  "previous": {
+   "correct": "Last time: correct",
+   "incorrect": "Last time: not correct"
+  },
+  "saveFailed": "Could not save the exercise result."
  },
  "vocabReview": {
   "eyebrow": "Vocabulary Review",
@@ -100,9 +105,6 @@
    "source": "Pick any lesson",
    "selectLabel": "Pick any lesson",
    "placeholder": "Choose a lesson to study",
-   "groupLabel": "{course} · {book}",
-   "lessonOption": "Lesson {number}: {title}",
-   "bundleTitle": "{book} · {lesson}",
    "summariesLoading": "Loading lessons…",
    "summariesError": "Part of the lesson list could not be loaded.",
    "loading": "Loading lesson…",

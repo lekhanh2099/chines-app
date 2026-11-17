@@ -145,7 +145,6 @@ function OfflineLessonLibrary({ ownerId }: { ownerId: string }) {
          onClick={() => {
           const next = new URLSearchParams();
           next.set("lessonId", lesson.id);
-          next.set("module", "lessonText");
           window.history.pushState(null, "", `?${next.toString()}`);
          }}
         >

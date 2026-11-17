@@ -1,5 +1,8 @@
 import { containsHanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import {
+ courseBookKeySchema,
+ type TextbookLesson,
+} from "@/features/hanzihome/static-json/business-chinese-static-content";
 import type {
  ReaderDocumentModel,
  ReaderSegment,
@@ -8,7 +11,13 @@ import type {
 const chineseSpeechSegmentPattern =
  /[\p{Script=Han}\p{Number}%％，。！？；：、“”‘’（）《》〈〉…—\s]+/gu;
 
+/** Route prefix of the converted course books: `/textbooks/<bookKey>?lesson=N`. */
+export const courseTextbookRoutePrefix = "/textbooks/";
+
 export function buildTextbookHref(book: TextbookLesson["bookKey"], lessonNumber: number) {
+ if (courseBookKeySchema.safeParse(book).success) {
+  return `${courseTextbookRoutePrefix}${book}?lesson=${lessonNumber}`;
+ }
  if (book === "nhip-cau") return `/hsk/nhip-cau-han-ngu?lesson=${lessonNumber}`;
  if (book === "doc-hieu") return `/hsk/doc-hieu?lesson=${lessonNumber}`;
  if (book === "khau-ngu") return `/hsk/khau-ngu-tc1?lesson=${lessonNumber}`;

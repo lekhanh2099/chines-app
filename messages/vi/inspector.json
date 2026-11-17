@@ -52,6 +52,8 @@
   "meaningsCount": "{count} nơi xuất hiện",
   "charactersTitle": "Giải nghĩa từng chữ",
   "openCharacter": "Xem chi tiết chữ {hanzi}",
+  "strokesTitle": "Nét viết",
+  "strokesHelp": "Xem thứ tự nét hoặc luyện viết từng chữ.",
   "breadcrumbAria": "Điều hướng kho từ vựng",
   "reuseHintAria": "{hanzi} xuất hiện ở nhiều bài",
   "reuseLoadError": "Không tải được các nơi xuất hiện."

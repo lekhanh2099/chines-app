@@ -16,7 +16,6 @@ import {
 } from "@/features/hanzihome/static-json/it-web-vocab-static-content";
 import { mergeLearningStateAfterConflict } from "@/features/hanzihome/local/learning-state-conflict-merge";
 import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
-import type { HanziHomeCatalogData, HanziHomeLesson } from "@/features/hanzihome/types";
 import {
  buildStudyBundleFromBookmarkedLessons,
  getBookmarkedTextbookGroups,
@@ -24,8 +23,6 @@ import {
  type StudyBundle,
 } from "./vocab-hub-adapter";
 import {
- buildCatalogLessonBundle,
- buildCatalogLessonGroups,
  buildTextbookLessonGroups,
  findAnyLessonOption,
  resolveAnyLessonDeck,
@@ -116,7 +113,7 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
   expect(group1.length).toBe(firstGroup.items.length);
  });
 
- it("filters textbook groups strictly to bookmarked lessons and builds combined study bundles", () => {
+ it("filters textbook groups strictly to bookmarked lessons and builds combined study bundles", async () => {
   const emptyGroups = getBookmarkedTextbookGroups([]);
   expect(emptyGroups).toHaveLength(0);
 
@@ -131,7 +128,7 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
   expect(groups.every((g) => g.lessons.length === 1)).toBe(true);
 
   const selectedEntries = groups.flatMap((g) => g.lessons);
-  const bundle = buildStudyBundleFromBookmarkedLessons(selectedEntries);
+  const bundle = await buildStudyBundleFromBookmarkedLessons(selectedEntries);
   expect(bundle.vocabItems.length).toBeGreaterThan(20);
   expect(bundle.practiceItems.length).toBeGreaterThan(10);
  });
@@ -296,39 +293,6 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
 });
 
 describe("PiP any-lesson source", () => {
- const format = {
-  group: (course: string, book: string) => `${course} · ${book}`,
-  lesson: (number: number, title: string) => `Bài ${number}: ${title}`,
- };
- const catalogLesson = (id: string, bookId: string, lessonNumber: number): HanziHomeLesson => ({
-  id,
-  bookId,
-  courseId: "hanyu",
-  lessonNumber,
-  title: `title-${id}`,
-  titleZh: `课-${id}`,
-  vocabIds: [],
-  grammarPointIds: [],
-  vocab: [],
-  grammar: [],
- });
- const catalog = {
-  courses: [
-   {
-    id: "hanyu",
-    slug: "hanyu",
-    title: "Hán ngữ",
-    type: "hanyu",
-    order: 1,
-    stats: { bookCount: 2, lessonCount: 2, vocabCount: 0, grammarCount: 0 },
-   },
-  ],
-  books: [
-   { id: "q2", courseId: "hanyu", title: "Quyển 2", order: 2 },
-   { id: "q1", courseId: "hanyu", title: "Quyển 1", order: 1 },
-  ],
-  lessons: [catalogLesson("q2-3", "q2", 3), catalogLesson("q1-3", "q1", 3)],
- } satisfies Pick<HanziHomeCatalogData, "courses" | "books" | "lessons">;
  const emptyBundle: StudyBundle = {
   title: "Chọn bài bất kỳ",
   vocabItems: [],
@@ -343,58 +307,33 @@ describe("PiP any-lesson source", () => {
   empty: "empty",
  };
 
- it("lists every library textbook lesson, bookmarked or not, and keeps Hán thương mại 2 hidden", () => {
+ it("lists every library textbook lesson, including converted courses, and keeps Hán thương mại 2 hidden", () => {
   const groups = getSelectableTextbookGroups();
-  expect(groups.map((group) => group.bookKey)).toEqual(["tm3", "nhip-cau", "doc-hieu", "khau-ngu"]);
+  expect(groups.map((group) => group.bookKey)).toEqual([
+   "boya-9e-advanced-1",
+   "boya-9e-advanced-2",
+   "hanyu-q2-shang",
+   "hanyu-q2-xia",
+   "hanyu-q3-shang",
+   "hanyu-q3-xia",
+   "tm3",
+   "nhip-cau",
+   "doc-hieu",
+   "khau-ngu",
+  ]);
   expect(groups.find((group) => group.bookKey === "khau-ngu")?.lessons).toHaveLength(24);
   const options = buildTextbookLessonGroups(groups).flatMap((group) => group.lessons);
   expect(options.some((option) => option.lessonId.includes("tm2"))).toBe(false);
-  expect(options.every((option) => option.value.startsWith("static:") && !option.isCatalog)).toBe(
-   true,
-  );
- });
-
- it("groups catalog summaries by course/book and keeps equal lesson numbers apart", () => {
-  const groups = buildCatalogLessonGroups(catalog, format);
-  expect(groups.map((group) => group.label)).toEqual(["Hán ngữ · Quyển 1", "Hán ngữ · Quyển 2"]);
-  const first = findAnyLessonOption(groups, "catalog:q1-3");
-  const second = findAnyLessonOption(groups, "catalog:q2-3");
-  expect(first).toMatchObject({
-   lessonId: "q1-3",
-   label: "Bài 3: 课-q1-3",
-   bookTitle: "Hán ngữ · Quyển 1",
-  });
-  expect(second).toMatchObject({ lessonId: "q2-3", bookTitle: "Hán ngữ · Quyển 2" });
-  expect(findAnyLessonOption(groups, "")).toBeUndefined();
- });
-
- it("builds a catalog deck from the canonical vocabulary resource and generated practice", () => {
-  const vocab = customVocabListToHanziHomeVocabItems([
-   {
-    id: "w1",
-    hanzi: "排期",
-    pinyin: "páiqī",
-    meaning: "Lên lịch",
-    exampleZh: "这个需求什么时候能排期？",
-    createdAt: "2026-11-07T00:00:00.000Z",
-   },
-  ]);
-  const lesson = { ...catalogLesson("q1-3", "q1", 3), vocab };
-  const bundle = buildCatalogLessonBundle(lesson, "Quyển 1 · Bài 3");
-  expect(bundle.title).toBe("Quyển 1 · Bài 3");
-  expect(bundle.vocabItems).toBe(lesson.vocab);
-  expect(bundle.practiceItems).toEqual(buildExercisesFromVocabItems(vocab));
-  expect(bundle.grammarItems).toEqual([]);
+  expect(options.every((option) => option.value.startsWith("static:"))).toBe(true);
  });
 
  it("never auto-selects and never shows a stale deck while a new pick loads or fails", () => {
-  const groups = buildCatalogLessonGroups(catalog, format);
+  const groups = buildTextbookLessonGroups(getSelectableTextbookGroups());
   const ready: StudyBundle = { ...emptyBundle, title: "Quyển 1 · Bài 3", vocabItems: [] };
   const base = {
    isSummaryLoading: false,
    isLoading: false,
    isError: false,
-   isMissing: false,
    emptyBundle,
    messages,
   };
@@ -403,56 +342,99 @@ describe("PiP any-lesson source", () => {
    status: "placeholder",
    canRetry: false,
   });
-  const option = findAnyLessonOption(groups, "catalog:q2-3");
+  const option = findAnyLessonOption(groups, "static:khau-ngu-lesson-03");
   // Switching to a new lesson whose deck is not built yet shows loading, not the old deck.
   expect(
-   resolveAnyLessonDeck({ ...base, selection: "catalog:q2-3", option, isLoading: true }),
+   resolveAnyLessonDeck({
+    ...base,
+    selection: "static:khau-ngu-lesson-03",
+    option,
+    isLoading: true,
+   }),
   ).toEqual({ bundle: emptyBundle, status: "loading", canRetry: false });
-  expect(resolveAnyLessonDeck({ ...base, selection: "catalog:q2-3", option })).toMatchObject({
+  expect(
+   resolveAnyLessonDeck({ ...base, selection: "static:khau-ngu-lesson-03", option }),
+  ).toMatchObject({
    bundle: emptyBundle,
    status: "loading",
   });
   expect(
    resolveAnyLessonDeck({
     ...base,
-    selection: "catalog:q2-3",
+    selection: "static:khau-ngu-lesson-03",
     option,
     isError: true,
     bundle: ready,
    }),
   ).toEqual({ bundle: emptyBundle, status: "error", canRetry: true });
-  expect(
-   resolveAnyLessonDeck({
-    ...base,
-    selection: "catalog:q2-3",
-    option,
-    isMissing: true,
-    isError: true,
-   }),
-  ).toMatchObject({ status: "missing", canRetry: false });
-  expect(resolveAnyLessonDeck({ ...base, selection: "catalog:removed" })).toMatchObject({
+  expect(resolveAnyLessonDeck({ ...base, selection: "static:removed" })).toMatchObject({
    status: "missing",
   });
   expect(
-   resolveAnyLessonDeck({ ...base, selection: "catalog:removed", isSummaryLoading: true }),
+   resolveAnyLessonDeck({ ...base, selection: "static:removed", isSummaryLoading: true }),
   ).toMatchObject({ status: "loading" });
   expect(
-   resolveAnyLessonDeck({ ...base, selection: "catalog:q2-3", option, bundle: ready }),
+   resolveAnyLessonDeck({ ...base, selection: "static:khau-ngu-lesson-03", option, bundle: ready }),
   ).toEqual({ bundle: ready, status: "empty", canRetry: false });
   const studyable = { ...ready, vocabItems: getItWebVocabItemsByFilter({ preset: "core20" }) };
   expect(
-   resolveAnyLessonDeck({ ...base, selection: "catalog:q2-3", option, bundle: studyable }),
+   resolveAnyLessonDeck({
+    ...base,
+    selection: "static:khau-ngu-lesson-03",
+    option,
+    bundle: studyable,
+   }),
   ).toEqual({ bundle: studyable, status: "", canRetry: false });
  });
 
- it("loads a static pick through the existing textbook pipeline", () => {
+ it("loads a static pick through the existing textbook pipeline", async () => {
   const entry = getSelectableTextbookGroups()
    .flatMap((group) => group.lessons)
    .find((lesson) => lesson.id === "khau-ngu-lesson-03");
   if (!entry) throw new Error("Expected Khẩu ngữ lesson 3");
-  const bundle = buildStudyBundleFromBookmarkedLessons([entry]);
+  const bundle = await buildStudyBundleFromBookmarkedLessons([entry]);
   expect(bundle.title).toBe(`${entry.bookLabel} · ${entry.title}`);
   expect(bundle.vocabItems.length).toBeGreaterThan(0);
+ });
+
+ it("loads a converted course pick from the server lesson route", async () => {
+  const entry = getSelectableTextbookGroups()
+   .flatMap((group) => group.lessons)
+   .find((lesson) => lesson.bookKey === "hanyu-q2-shang" && lesson.number === 3);
+  if (!entry) throw new Error("Expected Hán ngữ 2 Thượng lesson 3");
+  const lesson = {
+   id: entry.id,
+   bookKey: entry.bookKey,
+   bookLabel: entry.bookLabel,
+   number: entry.number,
+   rawTitle: entry.title,
+   title: entry.title,
+   intro: [],
+   sections: [],
+   vocab: [
+    {
+     id: `${entry.id}-vocab-a`,
+     hanzi: "套",
+     traditional: "",
+     pinyin: "tào",
+     pos: "",
+     hanviet: "",
+     meaning: "bộ",
+    },
+   ],
+  };
+  const fetchMock = vi
+   .spyOn(globalThis, "fetch")
+   .mockResolvedValue(new Response(JSON.stringify({ lesson }), { status: 200 }));
+  try {
+   const bundle = await buildStudyBundleFromBookmarkedLessons([entry]);
+   expect(fetchMock).toHaveBeenCalledWith(
+    `/api/hanzihome/textbooks/${entry.bookKey}/lessons/${entry.number}`,
+   );
+   expect(bundle.vocabItems.map((item) => item.hanzi)).toEqual(["套"]);
+  } finally {
+   fetchMock.mockRestore();
+  }
  });
 
  it.each(appLocales)(
@@ -461,19 +443,6 @@ describe("PiP any-lesson source", () => {
    const localeMessages = await loadAppMessages(locale);
    const copy = localeMessages.BusinessChinese.vocabHub.anyLesson;
    const queryClient = new QueryClient();
-   queryClient.setQueryData(hanzihomeQueryKeys.catalog(true, false), {
-    source: "db",
-    radicals: [],
-    meta: {
-     app: "hanzihome",
-     dataset: "test",
-     version: "1",
-     generatedAt: "",
-     sourceFiles: [],
-     counts: { lessons: 2, vocab: 0, grammarPoints: 0, radicals: 0, flashcards: 0 },
-    },
-    ...catalog,
-   } satisfies HanziHomeCatalogData);
    queryClient.setQueryData(
     hanzihomeQueryKeys.selectableTextbookGroups,
     getSelectableTextbookGroups(),

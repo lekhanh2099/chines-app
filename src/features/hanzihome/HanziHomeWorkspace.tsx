@@ -92,11 +92,12 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   [catalogData.books, catalogData.courses],
  );
 
+ // A saved course that the catalog no longer serves (a converted course) falls back to the first.
+ const lastCourseId = courseCatalog.courses.find(
+  (course) => course.id === learning.state.settings.lastCourseId,
+ )?.id;
  const selectedCourseId =
-  searchParams.get("courseId") ||
-  learning.state.settings.lastCourseId ||
-  courseCatalog.courses[0]?.id ||
-  "";
+  searchParams.get("courseId") || lastCourseId || courseCatalog.courses[0]?.id || "";
 
  const {
   lessons: courseLessonSummaries,

@@ -10,14 +10,12 @@ import { IconTile } from "@/components/ui/display/icon-tile";
 import { Separator } from "@/components/ui/layout/separator";
 import { Typography } from "@/components/ui/display/typography";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
-import { CourseCrudActions } from "@/features/hanzihome/components/library/CourseCrudActions";
 import {
  getLibraryCourseEntries,
  type LibraryCourseGroup,
  type LibraryCourseGroupKey,
 } from "@/features/hanzihome/components/library/library-course-groups";
 import type { HanziHomeCourseBook, HanziHomeLesson } from "@/features/hanzihome/types";
-import { isPublishedStudioContentId } from "@/features/hanzihome/static-json/studio-published-content-id";
 
 const groupIcons = {
  hanyu: LibraryBig,
@@ -31,12 +29,10 @@ export function CourseCollectionSection({
  group,
  books,
  lessons,
- editMode,
 }: {
  group: LibraryCourseGroup;
  books: HanziHomeCourseBook[];
  lessons: HanziHomeLesson[];
- editMode: boolean;
 }) {
  const t = useTranslations("Common.library");
  const GroupIcon = groupIcons[group.key];
@@ -87,65 +83,52 @@ export function CourseCollectionSection({
    {hasBooks ? (
     <div className="grid gap-4" aria-labelledby={`${group.key}-collection-heading`}>
      {coursesWithBooks.map(
-      ({ course, books: courseBooks, lessons: courseLessons }, courseIndex) => {
-       const canEditCourse = editMode && !isPublishedStudioContentId(course.id);
-
-       return (
-        <section key={course.id} aria-labelledby={`${course.id}-heading`} className="grid gap-3">
-         {courseIndex > 0 ? <Separator /> : null}
-         <header className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-          <div className="flex min-w-0 items-start gap-2.5">
-           <IconTile size="sm" tone="neutral">
-            <BookOpenCheck />
-           </IconTile>
-           <div className="grid min-w-0 gap-0.5">
-            <div className="flex flex-wrap items-center gap-2">
-             <Typography variant="caption" tone="accent" weight="black">
-              {t("levelPosition", { current: courseIndex + 1, total: group.courses.length })}
-             </Typography>
-             <Typography as="h2" variant="cardTitle" id={`${course.id}-heading`} weight="black">
-              {course.title}
-             </Typography>
-             {canEditCourse ? <CourseCrudActions course={course} /> : null}
-            </div>
-            {course.subtitle ? (
-             <Typography as="p" variant="caption" tone="muted" weight="semibold">
-              {course.subtitle}
-             </Typography>
-            ) : null}
+      ({ course, books: courseBooks, lessons: courseLessons }, courseIndex) => (
+       <section key={course.id} aria-labelledby={`${course.id}-heading`} className="grid gap-3">
+        {courseIndex > 0 ? <Separator /> : null}
+        <header className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+         <div className="flex min-w-0 items-start gap-2.5">
+          <IconTile size="sm" tone="neutral">
+           <BookOpenCheck />
+          </IconTile>
+          <div className="grid min-w-0 gap-0.5">
+           <div className="flex flex-wrap items-center gap-2">
+            <Typography variant="caption" tone="accent" weight="black">
+             {t("levelPosition", { current: courseIndex + 1, total: group.courses.length })}
+            </Typography>
+            <Typography as="h2" variant="cardTitle" id={`${course.id}-heading`} weight="black">
+             {course.title}
+            </Typography>
            </div>
+           {course.subtitle ? (
+            <Typography as="p" variant="caption" tone="muted" weight="semibold">
+             {course.subtitle}
+            </Typography>
+           ) : null}
           </div>
-          <Typography variant="caption" tone="muted" weight="bold" className="pl-10 sm:pl-0">
-           {t("courseCounts", { books: courseBooks.length, lessons: course.stats.lessonCount })}
-          </Typography>
-         </header>
+         </div>
+         <Typography variant="caption" tone="muted" weight="bold" className="pl-10 sm:pl-0">
+          {t("courseCounts", { books: courseBooks.length, lessons: course.stats.lessonCount })}
+         </Typography>
+        </header>
 
-         {courseBooks.length > 0 ? (
-          <div className="grid gap-3 md:grid-cols-2">
-           {courseBooks.map((book, bookIndex) => (
-            <CourseCard
-             key={book.id}
-             course={course}
-             book={book}
-             lessons={courseLessons}
-             editMode={canEditCourse}
-             canMoveBookUp={bookIndex > 0}
-             canMoveBookDown={bookIndex < courseBooks.length - 1}
-            />
-           ))}
-          </div>
-         ) : (
-          <EmptyState
-           size="compact"
-           surface="subtle"
-           align="start"
-           title={t("noBooksTitle")}
-           description={t("noBooksDescription")}
-          />
-         )}
-        </section>
-       );
-      },
+        {courseBooks.length > 0 ? (
+         <div className="grid gap-3 md:grid-cols-2">
+          {courseBooks.map((book) => (
+           <CourseCard key={book.id} course={course} book={book} lessons={courseLessons} />
+          ))}
+         </div>
+        ) : (
+         <EmptyState
+          size="compact"
+          surface="subtle"
+          align="start"
+          title={t("noBooksTitle")}
+          description={t("noBooksDescription")}
+         />
+        )}
+       </section>
+      ),
      )}
     </div>
    ) : (

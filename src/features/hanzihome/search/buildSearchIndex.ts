@@ -1,6 +1,5 @@
 import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/json";
 import type {
- HanziHomeData,
  HanziHomeLesson,
  HanziHomeModule,
  StaticRadicalData,
@@ -283,8 +282,9 @@ function buildLessonNavigationItems(lesson: HanziHomeLesson) {
  );
 }
 
-function buildRadicalItems(radicals: StaticRadicalData[]) {
- return (radicals ?? []).map((radical) => {
+/** Radicals are read from the database; every radical opens the radical workspace. */
+export function buildHanziHomeRadicalSearchItems(radicals: readonly StaticRadicalData[]) {
+ return radicals.map((radical) => {
   const record = asRecord(radical);
   const radicalChar = radical.radical || text(record, "radical") || text(record, "character");
   const radicalId = radical.id || text(record, "id") || radicalChar;
@@ -322,7 +322,8 @@ function buildRadicalItems(radicals: StaticRadicalData[]) {
  });
 }
 
-function buildGlobalNavigationItems() {
+/** Shortcuts to the main surfaces; they do not depend on any content. */
+export function buildHanziHomeNavigationSearchItems() {
  const items: Array<[string, string, string, HanziHomeSearchKind]> = [
   ["navigation:library", "Thư viện HanziHome", "/", "navigation"],
   ["navigation:inspector", "Tra Hán tự · Kho từ vựng", "/inspector", "navigation"],
@@ -351,12 +352,4 @@ export function buildHanziHomeLessonSearchItems(lessons: readonly HanziHomeLesso
   ...buildTextItems(lesson),
   ...buildExerciseItems(lesson),
  ]);
-}
-
-export function buildHanziHomeSearchIndex(data: HanziHomeData) {
- return [
-  ...buildHanziHomeLessonSearchItems(data.lessons),
-  ...buildRadicalItems(data.radicals),
-  ...buildGlobalNavigationItems(),
- ];
 }

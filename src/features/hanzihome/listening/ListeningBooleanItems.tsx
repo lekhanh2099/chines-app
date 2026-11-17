@@ -12,11 +12,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 
-import {
- ExerciseAudioButton,
- ItemHeader,
- type ListeningItemEditHandler,
-} from "./ListeningExerciseItemParts";
+import { ExerciseAudioButton, ItemHeader } from "./ListeningExerciseItemParts";
 import { isListeningBooleanCorrect } from "./listening-exercise-utils";
 import type { ListeningRuntimeItem } from "./listening.types";
 
@@ -35,7 +31,6 @@ export function BooleanItems({
  transcriptText,
  displayMode,
  onSpeak,
- onEditItem,
 }: {
  items: ListeningRuntimeItem[];
  exerciseType: z.infer<typeof BooleanExerciseTypeSchema>;
@@ -49,7 +44,6 @@ export function BooleanItems({
  transcriptText?: string;
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
- onEditItem?: ListeningItemEditHandler;
 }) {
  const t = useTranslations("Listening");
  return items.map((item, index) => {
@@ -59,11 +53,7 @@ export function BooleanItems({
   const sameDifferent = exerciseType === BooleanExerciseTypeSchema.enum.same_different;
   return (
    <Card key={item.id} variant="section" padding="md" className="grid gap-3">
-    <ItemHeader
-     index={index}
-     type={exerciseType}
-     onEdit={onEditItem ? () => onEditItem(item) : undefined}
-    />
+    <ItemHeader index={index} type={exerciseType} />
     <div className="grid items-start gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
      <ReaderHanziText displayMode={displayMode} tone="default" leading="relaxed">
       {sameDifferent ? item.metadata.printedPinyin : item.promptZh}

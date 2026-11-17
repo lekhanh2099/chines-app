@@ -14,14 +14,6 @@ export function useHanziHomeFeatureSelector<TSelected>(
  return useSelector(store, selector, options);
 }
 
-export function useHanziHomeEditMode() {
- return useHanziHomeFeatureSelector((state) => state.editMode);
-}
-
-export function useHanziHomeActiveEditableNode() {
- return useHanziHomeFeatureSelector((state) => state.activeNode);
-}
-
 export function useHanziHomeWorkspaceLayout() {
  const splitEnabled = useHanziHomeFeatureSelector((state) => state.splitEnabled);
  const paneLayout = useHanziHomeFeatureSelector((state) => state.paneLayout);

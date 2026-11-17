@@ -1,4 +1,3 @@
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { ReadingItem, Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { EmptySectionState, GenericItemCard, hasRenderableValue } from "./CommonCards";
@@ -11,7 +10,6 @@ import { ProperNounCard } from "./book-section/ProperNounCard";
 import { PreparationSectionView } from "./book-section/PreparationSectionView";
 import { SectionContentFrame } from "./book-section/SectionContentFrame";
 import { SummarySectionView } from "./book-section/SummarySectionView";
-import { properNounFrontText } from "./book-section/proper-noun-utils";
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { VocabMiniGrid } from "./VocabularySection";
 import { WritingCard } from "./WritingSection";
@@ -20,7 +18,6 @@ import { arrayValue, asRecord, sectionEmptyReason, stringValue } from "./utils";
 export function BookSectionContent({
  lessonId,
  section,
- sectionPath,
  displayMode = DEFAULT_LESSON_DISPLAY_MODE,
  debugMode = false,
  readingItems,
@@ -28,7 +25,6 @@ export function BookSectionContent({
 }: {
  lessonId?: string;
  section: Section;
- sectionPath?: EditableNodePath;
  displayMode?: LessonDisplayMode;
  debugMode?: boolean;
  readingItems?: readonly ReadingItem[];
@@ -46,19 +42,9 @@ export function BookSectionContent({
 
  if (section.type === "text") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.blocks.length > 0 ? (
-     <TextSectionView
-      lessonId={lessonId}
-      section={section}
-      sectionPath={sectionPath}
-      displayMode={displayMode}
-     />
+     <TextSectionView lessonId={lessonId} section={section} displayMode={displayMode} />
     ) : (
      renderSectionFallback()
     )}
@@ -68,20 +54,9 @@ export function BookSectionContent({
 
  if (section.type === "vocabulary") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
-     <VocabMiniGrid
-      lessonId={lessonId}
-      parentSectionId={section.id}
-      itemsPath={sectionPath ? [...sectionPath, "items"] : undefined}
-      items={section.items}
-      displayMode={displayMode}
-     />
+     <VocabMiniGrid items={section.items} displayMode={displayMode} />
     ) : (
      renderSectionFallback()
     )}
@@ -91,12 +66,7 @@ export function BookSectionContent({
 
  if (section.type === "notes") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-3">
       {section.items.map((item) => (
@@ -112,23 +82,11 @@ export function BookSectionContent({
 
  if (section.type === "grammar") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-3">
-      {section.items.map((item, index) => (
-       <GrammarCard
-        key={item.id}
-        lessonId={lessonId}
-        parentSectionId={section.id}
-        path={sectionPath ? [...sectionPath, "items", index] : undefined}
-        item={item}
-        displayMode={displayMode}
-       />
+      {section.items.map((item) => (
+       <GrammarCard key={item.id} lessonId={lessonId} item={item} displayMode={displayMode} />
       ))}
      </div>
     ) : (
@@ -140,20 +98,12 @@ export function BookSectionContent({
 
  if (section.type === "exercises") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-4">
-      {section.items.map((item, index) => (
+      {section.items.map((item) => (
        <ExerciseCard
         key={item.id}
-        lessonId={lessonId}
-        parentSectionId={section.id}
-        path={sectionPath ? [...sectionPath, "items", index] : undefined}
         item={item}
         displayMode={displayMode}
         debugMode={debugMode}
@@ -171,20 +121,13 @@ export function BookSectionContent({
 
  if (section.type === "reading") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-2">
-      {section.items.map((item, index) => (
+      {section.items.map((item) => (
        <ReadingCard
         key={item.id}
         lessonId={lessonId}
-        parentSectionId={section.id}
-        path={sectionPath ? [...sectionPath, "items", index] : undefined}
         item={item}
         displayMode={displayMode}
         debugMode={debugMode}
@@ -200,23 +143,11 @@ export function BookSectionContent({
 
  if (section.type === "character_writing") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-2 md:grid-cols-3">
-      {section.items.map((item, index) => (
-       <WritingCard
-        key={item.id}
-        lessonId={lessonId}
-        parentSectionId={section.id}
-        path={sectionPath ? [...sectionPath, "items", index] : undefined}
-        item={item}
-        displayMode={displayMode}
-       />
+      {section.items.map((item) => (
+       <WritingCard key={item.id} item={item} displayMode={displayMode} />
       ))}
      </div>
     ) : (
@@ -228,12 +159,7 @@ export function BookSectionContent({
 
  if (section.type === "summary") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     <SummarySectionView section={section} displayMode={displayMode} />
    </SectionContentFrame>
   );
@@ -244,12 +170,7 @@ export function BookSectionContent({
 
  if (section.type === "communication") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <PreparationSectionView
       items={section.items}
@@ -265,32 +186,15 @@ export function BookSectionContent({
 
  if (section.type === "proper_nouns") {
   return (
-   <SectionContentFrame
-    lessonId={lessonId}
-    section={section}
-    sectionPath={sectionPath}
-    debugMode={debugMode}
-   >
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {looseItems.length > 0 ? (
      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
       {looseItems.map((item, index) => {
        const itemId = stringValue(asRecord(item), "id") || `${section.id}-${index}`;
        const card = <ProperNounCard item={item} displayMode={displayMode} debugMode={debugMode} />;
-
-       return lessonId && sectionPath ? (
-        <EditableNodeWrapper
-         key={itemId}
-         lessonId={lessonId}
-         entityType="proper_noun"
-         entityId={itemId}
-         parentEntityType="section"
-         parentEntityId={section.id}
-         path={[...sectionPath, "items", index]}
-         value={item}
-         label={properNounFrontText(asRecord(item))}
-        >
-         {card}
-        </EditableNodeWrapper>
+       // The lesson workspace renders cards directly; read-only previews keep a grid cell.
+       return lessonId ? (
+        <ProperNounCard key={itemId} item={item} displayMode={displayMode} debugMode={debugMode} />
        ) : (
         <div key={itemId}>{card}</div>
        );
@@ -304,12 +208,7 @@ export function BookSectionContent({
  }
 
  return (
-  <SectionContentFrame
-   lessonId={lessonId}
-   section={section}
-   sectionPath={sectionPath}
-   debugMode={debugMode}
-  >
+  <SectionContentFrame section={section} debugMode={debugMode}>
    {looseItems.length > 0 ? (
     <div className="grid gap-2">
      {looseItems.map((item, index) => (

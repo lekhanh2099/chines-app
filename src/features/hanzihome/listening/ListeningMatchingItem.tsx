@@ -13,11 +13,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 
-import {
- ExerciseAudioButton,
- ItemHeader,
- type ListeningItemEditHandler,
-} from "./ListeningExerciseItemParts";
+import { ExerciseAudioButton, ItemHeader } from "./ListeningExerciseItemParts";
 import { isListeningMatchingCorrect } from "./listening-exercise-utils";
 import type { ListeningRuntimeItem } from "./listening.types";
 
@@ -26,13 +22,11 @@ export function MatchingItem({
  transcriptText,
  displayMode,
  onSpeak,
- onEditItem,
 }: {
  item: ListeningRuntimeItem;
  transcriptText?: string;
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
- onEditItem?: ListeningItemEditHandler;
 }) {
  const t = useTranslations("Listening");
  const left = item.metadata.left ?? [];
@@ -44,7 +38,7 @@ export function MatchingItem({
 
  return (
   <Card variant="section" padding="md" className="grid gap-3">
-   <ItemHeader index={0} type="matching" onEdit={onEditItem ? () => onEditItem(item) : undefined} />
+   <ItemHeader index={0} type="matching" />
    <div className="grid gap-1">
     <ReaderHanziText displayMode={displayMode}>{item.promptZh}</ReaderHanziText>
     <ExerciseAudioButton

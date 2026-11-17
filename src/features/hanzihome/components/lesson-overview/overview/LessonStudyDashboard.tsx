@@ -8,7 +8,6 @@ import { GraduationCap, Headphones, Tags } from "lucide-react";
 
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
-import { EditableNodeWrapper } from "@/features/hanzihome/editing";
 import type { StudyModule } from "@/features/hanzihome/context/types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
@@ -96,23 +95,7 @@ export function LessonStudyDashboard({
 
  return (
   <div className="grid gap-3 sm:gap-4">
-   {lesson.sourceLesson ? (
-    <EditableNodeWrapper
-     lessonId={lesson.id}
-     entityType="lesson"
-     entityId={lesson.sourceLesson.lesson.id}
-     path={["lesson"]}
-     value={{
-      ...lesson.sourceLesson.lesson,
-      source_file: lesson.sourceFile ?? "",
-     }}
-     label="Thông tin bài học"
-    >
-     {header}
-    </EditableNodeWrapper>
-   ) : (
-    header
-   )}
+   {header}
 
    {(lesson.vocab.length > 0 || lesson.grammar.length > 0) && (
     <div className="grid gap-3 lg:grid-cols-2">

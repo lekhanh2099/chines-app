@@ -69,7 +69,12 @@
   "dictation": {
    "description": "Luyện nghe chép chính tả từng câu ngắn trong bài.",
    "open": "Mở Nghe chép ({count} câu)"
-  }
+  },
+  "previous": {
+   "correct": "Lần trước: đúng",
+   "incorrect": "Lần trước: chưa đúng"
+  },
+  "saveFailed": "Không lưu được kết quả bài tập."
  },
  "vocabReview": {
   "eyebrow": "Ôn tập từ vựng",
@@ -100,9 +105,6 @@
    "source": "Chọn bài bất kỳ",
    "selectLabel": "Chọn bài học bất kỳ",
    "placeholder": "Chọn một bài để học",
-   "groupLabel": "{course} · {book}",
-   "lessonOption": "Bài {number}: {title}",
-   "bundleTitle": "{book} · {lesson}",
    "summariesLoading": "Đang tải danh sách bài…",
    "summariesError": "Chưa tải được một phần danh sách bài.",
    "loading": "Đang tải bài học…",

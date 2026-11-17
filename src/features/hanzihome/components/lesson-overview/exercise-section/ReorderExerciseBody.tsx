@@ -1,9 +1,8 @@
+import { Fragment } from "react";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/display/typography";
-import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
-import { EditableNodeWrapper } from "@/features/hanzihome/editing";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, arrayValue, asRecord, stringValue } from "../utils";
 import { AnswerReveal } from "../common/AnswerReveal";
@@ -12,13 +11,9 @@ import { MatchingOptionCard } from "./MatchingOptionCard";
 import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
 export function ReorderExerciseBody({
- lessonId,
- itemPath,
  item,
  displayMode,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -37,14 +32,7 @@ export function ReorderExerciseBody({
  });
 
  if (!hasStructuredOptions) {
-  return (
-   <QuestionExerciseBody
-    lessonId={lessonId}
-    itemPath={itemPath}
-    item={item}
-    displayMode={displayMode}
-   />
-  );
+  return <QuestionExerciseBody item={item} displayMode={displayMode} />;
  }
 
  return (
@@ -89,23 +77,7 @@ export function ReorderExerciseBody({
      </section>
     );
 
-    return lessonId && itemPath ? (
-     <EditableNodeWrapper
-      key={questionId}
-      lessonId={lessonId}
-      entityType="exercise_question"
-      entityId={questionId}
-      parentEntityType="exercise"
-      parentEntityId={item.id}
-      path={[...itemPath, "questions", questionIndex]}
-      value={questionValue}
-      label={`Nhóm sắp xếp ${questionIndex + 1}`}
-     >
-      {content}
-     </EditableNodeWrapper>
-    ) : (
-     <div key={questionId}>{content}</div>
-    );
+    return <Fragment key={questionId}>{content}</Fragment>;
    })}
   </div>
  );

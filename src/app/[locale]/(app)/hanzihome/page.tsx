@@ -1,7 +1,11 @@
 import { notFound, permanentRedirect } from "next/navigation";
 
 import { HanziHomePage as HanziHomeFeaturePage } from "@/features/hanzihome/HanziHomePage";
-import { getTextbookCatalog } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import {
+ getCourseTextbookCatalog,
+ getTextbookCatalog,
+} from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { legacyCourseLessonHref } from "@/features/hanzihome/static-json/course-legacy-routes";
 import { isAppLocale, localizePathname } from "@/i18n/config";
 
 export default async function HanziHomePage({
@@ -25,7 +29,22 @@ export default async function HanziHomePage({
   permanentRedirect(localizePathname(target, locale));
  }
 
+ const first = (value: (typeof query)[string]) => (Array.isArray(value) ? value[0] : value);
+ const convertedCourseHref = legacyCourseLessonHref({
+  courseId: first(query.courseId),
+  bookId: first(query.bookId),
+  lesson: first(query.lesson),
+  lessonId: first(query.lessonId),
+  module: moduleParam,
+ });
+ if (convertedCourseHref) permanentRedirect(localizePathname(convertedCourseHref, locale));
+
  return (
-  <HanziHomeFeaturePage textbooks={getTextbookCatalog().filter((book) => book.key !== "tm2")} />
+  <HanziHomeFeaturePage
+   textbooks={[
+    ...getCourseTextbookCatalog(),
+    ...getTextbookCatalog().filter((book) => book.key !== "tm2"),
+   ]}
+  />
  );
 }

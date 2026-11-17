@@ -2,7 +2,7 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutation-error";
+import { isHanziHomeMutationConflict } from "@/features/hanzihome/radical-editing/mutation-error";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { getLibraryCovers, resetLibraryCover, saveLibraryCover } from "./library-cover-api";
 

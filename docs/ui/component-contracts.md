@@ -102,8 +102,8 @@ feature-specific navigation and contextual UI.
 Feature code MUST NOT reproduce primitive anatomy.
 
 Stable product-specific compositions MAY remain in a feature when their meaning
-is domain-specific. Example: `LibraryCrudActionsMenu` represents the
-course/book/lesson edit grammar; it does not replace DropdownMenu.
+is domain-specific. Example: `LibraryCollectionCard` owns the collection
+reorder/hide/cover menu; it does not replace DropdownMenu.
 
 ### Shell
 

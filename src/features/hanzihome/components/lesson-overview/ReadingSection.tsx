@@ -1,11 +1,6 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/display/typography";
 import type { ReadingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
-import {
- EditableNodeWrapper,
- NestedEditControls,
- type EditableNodePath,
-} from "@/features/hanzihome/editing";
 
 import { AnswerKeyList, RawDataDetails } from "./CommonCards";
 import { PassageCard } from "./PassageCard";
@@ -29,15 +24,11 @@ import {
 
 export function ReadingCard({
  lessonId,
- parentSectionId,
- path,
  item,
  displayMode,
  debugMode = false,
 }: {
  lessonId?: string;
- parentSectionId?: string;
- path?: EditableNodePath;
  item: ReadingItem;
  displayMode: LessonDisplayMode;
  debugMode?: boolean;
@@ -52,32 +43,6 @@ export function ReadingCard({
  const readingTitle = item.title_vi || item.title;
  const showPassageTitle = passageTitle !== readingTitle && passageTitle !== item.title;
  const clozeAnswers = getClozeAnswerValues(record);
- const directPassage = asRecord(record.passage);
- const passageSegmentsPath: EditableNodePath = ["passage", "segments"];
- const segmentsPath: EditableNodePath = ["segments"];
- const passageSegments =
-  arrayValue(directPassage, "segments").length > 0
-   ? {
-      path: passageSegmentsPath,
-      values: arrayValue(directPassage, "segments"),
-     }
-   : arrayValue(record, "segments").length > 0
-     ? {
-        path: segmentsPath,
-        values: arrayValue(record, "segments"),
-       }
-     : null;
- const clozeAnswerSource = [
-  "blanks",
-  "answers",
-  "answer_key",
-  "cloze_answers",
-  "suggested_answers",
-  "questions",
- ]
-  .map((key) => ({ key, values: arrayValue(record, key) }))
-  .find(({ values }) => values.some(hasClozeAnswerValue));
-
  const supplementaryWords = [
   ...arrayValue(record, "supplementary_words"),
   ...arrayValue(record, "supplementary_vocab"),
@@ -118,7 +83,7 @@ export function ReadingCard({
  const generatedQuestions = arrayValue(record, "generated_comprehension_questions");
  const passageOwnsClozeAnswers = Boolean(passage) && clozeAnswers.length > 0;
 
- const content = (
+ return (
   <article className="grid min-w-0 gap-3">
    {!passage || instructionText ? (
     <div>
@@ -133,47 +98,6 @@ export function ReadingCard({
       </StudyInstructionText>
      )}
     </div>
-   ) : null}
-
-   {lessonId && path && passageSegments ? (
-    <NestedEditControls
-     lessonId={lessonId}
-     parentEntityType="reading_item"
-     parentEntityId={item.id}
-     title="Cloze segments"
-     nodes={passageSegments.values.map((segment, index) => {
-      const segmentRecord = asRecord(segment);
-      return {
-       entityType: "exercise_cloze_segment",
-       entityId: stringValue(segmentRecord, "id") || `${item.id}-segment-${index}`,
-       path: [...path, ...passageSegments.path, index],
-       value: segment,
-       label: `Segment ${index + 1}`,
-      };
-     })}
-    />
-   ) : null}
-
-   {lessonId && path && clozeAnswerSource ? (
-    <NestedEditControls
-     lessonId={lessonId}
-     parentEntityType="reading_item"
-     parentEntityId={item.id}
-     title="Đáp án cloze"
-     nodes={clozeAnswerSource.values.map((answer, index) => {
-      const answerRecord = asRecord(answer);
-      return {
-       entityType: "exercise_cloze_answer",
-       entityId:
-        stringValue(answerRecord, "id") ||
-        stringValue(answerRecord, "blank_id") ||
-        `${item.id}-cloze-answer-${index}`,
-       path: [...path, clozeAnswerSource.key, index],
-       value: answer,
-       label: `Đáp án ${index + 1}`,
-      };
-     })}
-    />
    ) : null}
 
    <PassageCard
@@ -200,6 +124,7 @@ export function ReadingCard({
       const questionId = stringValue(asRecord(questionValue), "id") || `${item.id}-${index}`;
       const questionCard = (
        <ReadingQuestionCard
+        key={questionId}
         itemId={item.id}
         readingType={item.type}
         questionValue={questionValue}
@@ -209,23 +134,8 @@ export function ReadingCard({
        />
       );
 
-      return lessonId && path ? (
-       <EditableNodeWrapper
-        key={questionId}
-        lessonId={lessonId}
-        entityType="reading_question"
-        entityId={questionId}
-        parentEntityType="reading_item"
-        parentEntityId={item.id}
-        path={[...path, "questions", index]}
-        value={questionValue}
-        label={`Câu đọc hiểu ${index + 1}`}
-       >
-        {questionCard}
-       </EditableNodeWrapper>
-      ) : (
-       <div key={questionId}>{questionCard}</div>
-      );
+      // The lesson workspace renders cards directly; read-only previews keep a grid cell.
+      return lessonId ? questionCard : <div key={questionId}>{questionCard}</div>;
      })}
     </div>
    )}
@@ -254,23 +164,5 @@ export function ReadingCard({
 
    {debugMode && <RawDataDetails value={item} label="Dữ liệu gốc của reading item" />}
   </article>
- );
-
- if (!lessonId || !path) return content;
-
- return (
-  <EditableNodeWrapper
-   lessonId={lessonId}
-   entityType="reading_item"
-   entityId={item.id}
-   parentEntityType="section"
-   parentEntityId={parentSectionId}
-   path={path}
-   value={item}
-   label={item.title_vi || item.title}
-   editLabel="Sửa bài đọc"
-  >
-   {content}
-  </EditableNodeWrapper>
  );
 }

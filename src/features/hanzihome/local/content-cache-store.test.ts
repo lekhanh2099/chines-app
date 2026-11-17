@@ -84,11 +84,9 @@ vi.mock("./hanzihome-local-db", () => ({
 import {
  buildContentCacheKey,
  bumpContentCacheGeneration,
- bumpLessonCacheGenerations,
  deleteContentCache,
  getContentCacheGeneration,
  hasContentCache,
- pinContentCache,
  pruneContentCacheForOwner,
  readContentCache,
  writeContentCache,
@@ -362,31 +360,6 @@ describe("content-cache-store", () => {
   expect(current).toEqual(v2Data);
  });
 
- it("bumps cache generations for a lesson on demand", async () => {
-  await writeContentCache({
-   ownerId: "user-123",
-   resourceType: "lesson_detail",
-   resourceId: "lesson-1",
-   data: sampleLessonData,
-  });
-  await writeContentCache({
-   ownerId: "user-123",
-   resourceType: "lesson_vocab",
-   resourceId: "lesson-1",
-   data: { words: ["你好"] },
-  });
-
-  const genBefore = await getContentCacheGeneration("user-123", "lesson_detail", "lesson-1");
-  expect(genBefore).toBe(1);
-
-  await bumpLessonCacheGenerations("lesson-1", "user-123");
-
-  const genAfter = await getContentCacheGeneration("user-123", "lesson_detail", "lesson-1");
-  expect(genAfter).toBe(2);
-  const vocabGenAfter = await getContentCacheGeneration("user-123", "lesson_vocab", "lesson-1");
-  expect(vocabGenAfter).toBe(2);
- });
-
  it("bumps cache generation for a specific resource coordinate", async () => {
   await writeContentCache({
    ownerId: "user-123",
@@ -487,25 +460,5 @@ describe("content-cache-store", () => {
 
   expect(lateWrite.written).toBe(false);
   expect(await hasContentCache("user-123", "lesson_detail", "lesson-1")).toBe(false);
- });
-
- it("A7 Invariant: ordinary cache writes do not evict an offline-pack-pinned lesson", async () => {
-  await writeContentCache({
-   ownerId: "user-123",
-   resourceType: "lesson_detail",
-   resourceId: "offline-lesson",
-   data: sampleLessonData,
-  });
-  expect(await pinContentCache("user-123", "lesson_detail", "offline-lesson")).toBe(true);
-
-  await writeContentCache({
-   ownerId: "user-123",
-   resourceType: "lesson_detail",
-   resourceId: "ordinary-lesson",
-   data: { ...sampleLessonData, id: "ordinary-lesson" },
-   maxEntries: 1,
-  });
-
-  expect(await hasContentCache("user-123", "lesson_detail", "offline-lesson")).toBe(true);
  });
 });

@@ -5,7 +5,7 @@ import type {
  AggregateKind,
  AggregateResourceItem,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
-import type { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
+import type { HanziHomeCatalogData, StaticRadicalData } from "@/features/hanzihome/types";
 import {
  getStaticStudioAggregateItems,
  getStaticStudioCourseCatalog,
@@ -18,10 +18,6 @@ import {
  isPublishedStudioGrammarCourseId,
 } from "@/features/hanzihome/static-json/studio-published-content-id";
 
-type HanziHomeCatalogSummary = Awaited<
- ReturnType<(typeof hanzihomeContentRepository)["getCatalogSummary"]>
->;
-
 export {
  isPublishedStudioContentId,
  isPublishedStudioDictationLessonId,
@@ -33,53 +29,36 @@ export function getPublishedStudioCourseLessons(courseId: string) {
  return getStaticStudioCourseCatalog(courseId)?.lessons ?? null;
 }
 
-export function mergePublishedStudioCatalog(
- catalog: HanziHomeCatalogSummary,
- includeLessons: boolean,
-) {
- const staticGrammarCourse = getStaticStudioCourseCatalog("hanzihome-studio-grammar");
- if (!staticGrammarCourse) return catalog;
-
- const existingStaticCourse = catalog.courses.find(
-  (course) => course.id === staticGrammarCourse.course.id,
- );
- const withoutStaticCourse = catalog.courses.filter(
-  (course) => course.id !== staticGrammarCourse.course.id,
- );
- const withoutStaticBooks = catalog.books.filter(
-  (book) => book.courseId !== staticGrammarCourse.course.id,
- );
- const withoutStaticLessons = catalog.lessons.filter(
-  (lesson) => lesson.courseId !== staticGrammarCourse.course.id,
- );
-
+/**
+ * The course catalog: the built-in Studio grammar course, plus the radicals the
+ * caller read from the database.
+ */
+export function getPublishedStudioCatalog({
+ includeLessons,
+ radicals,
+}: {
+ includeLessons: boolean;
+ radicals: StaticRadicalData[];
+}): HanziHomeCatalogData {
+ const grammarCourse = getStaticStudioCourseCatalog("hanzihome-studio-grammar");
  return {
-  ...catalog,
-  courses: [...withoutStaticCourse, staticGrammarCourse.course],
-  books: [...withoutStaticBooks, ...staticGrammarCourse.books],
-  lessons: includeLessons
-   ? [...withoutStaticLessons, ...staticGrammarCourse.lessons]
-   : withoutStaticLessons,
+  source: "static",
+  courses: grammarCourse ? [grammarCourse.course] : [],
+  books: grammarCourse?.books ?? [],
+  lessons: includeLessons ? (grammarCourse?.lessons ?? []) : [],
+  radicals,
   meta: {
-   ...catalog.meta,
-   sourceFiles: [
-    ...catalog.meta.sourceFiles,
-    "src/features/hanzihome/static-json/studio-seed.json",
-   ],
+   app: "hanzihome",
+   dataset: "static",
+   version: "2",
+   generatedAt: "",
+   sourceFiles: ["src/features/hanzihome/static-json/studio-seed.json"],
    counts: {
-    ...catalog.meta.counts,
-    lessons:
-     catalog.meta.counts.lessons -
-     (existingStaticCourse?.stats.lessonCount ?? 0) +
-     staticGrammarCourse.course.stats.lessonCount,
-    vocab:
-     catalog.meta.counts.vocab -
-     (existingStaticCourse?.stats.vocabCount ?? 0) +
-     staticGrammarCourse.course.stats.vocabCount,
-    grammarPoints:
-     catalog.meta.counts.grammarPoints -
-     (existingStaticCourse?.stats.grammarCount ?? 0) +
-     staticGrammarCourse.course.stats.grammarCount,
+    lessons: grammarCourse?.course.stats.lessonCount ?? 0,
+    vocab: grammarCourse?.course.stats.vocabCount ?? 0,
+    grammarPoints: grammarCourse?.course.stats.grammarCount ?? 0,
+    radicals: radicals.length,
+    flashcards: 0,
    },
   },
  };
@@ -109,11 +88,6 @@ export function getPublishedStudioAggregateItems({
  filters: AggregateFilters;
 }): AggregateResourceItem[] {
  return getStaticStudioAggregateItems({ kind, filters });
-}
-
-export function isPublishedStudioAggregateScope(filters: AggregateFilters): boolean {
- const scopedId = filters.courseId || filters.bookId || filters.lessonId;
- return isPublishedStudioContentId(scopedId);
 }
 
 export function getPublishedStudioListeningLessonBundle(lessonId: string) {

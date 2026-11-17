@@ -52,6 +52,8 @@
   "meaningsCount": "{count} occurrences",
   "charactersTitle": "Character notes",
   "openCharacter": "Open details for {hanzi}",
+  "strokesTitle": "Strokes",
+  "strokesHelp": "Watch the stroke order or practise writing each character.",
   "breadcrumbAria": "Vocabulary store navigation",
   "reuseHintAria": "{hanzi} appears in several lessons",
   "reuseLoadError": "Could not load where this word appears."

@@ -134,30 +134,6 @@ curl --request POST \
   }'
 ```
 
-### Create or update canonical HanziHome content
-
-This call needs `content:write` and the key owner must already have the
-HanziHome `editor` or `admin` role. `reason` and `expectedUpdatedAt` retain the
-same audit and concurrency protections as the signed-in editor.
-
-```sh
-curl --request POST \
-  --url "$HANZIHOME_API_BASE/api/v1/hanzihome/content/mutations" \
-  --header "Authorization: Bearer $HANZIHOME_INTEGRATION_KEY" \
-  --header "Content-Type: application/json" \
-  --data '{
-    "entityType": "vocab_item",
-    "operation": "update",
-    "entityId": "VOCAB_ITEM_ID",
-    "expectedUpdatedAt": "2026-08-09T00:00:00.000Z",
-    "reason": "Đồng bộ từ CMS ngoài",
-    "changes": { "meaning": "ý nghĩa mới" }
-  }'
-```
-
-The external API supports create, update, soft delete, restore and reorder.
-Permanent purge is intentionally unavailable.
-
 ### Generate TTS
 
 This call needs `tts:generate`. A key is limited atomically to ten TTS requests
@@ -180,8 +156,8 @@ curl --request POST \
 
 | Scope                                    | Covers                                                                                                   |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `content:read`                           | Catalog, lessons, aggregates, search index and editor-only deleted-content reads.                        |
-| `content:write`                          | Canonical content mutations, radicals, listening and vocabulary-child bulk mutations.                    |
+| `content:read`                           | Catalog and lessons of the built-in Studio courses, aggregates and search.                               |
+| `content:write`                          | Radical updates. Lesson content is static and has no write API.                                          |
 | `notes:read` / `notes:write`             | Note library, folders and lesson links.                                                                  |
 | `learning:read` / `learning:write`       | Learning state, annotations and personal memory tips.                                                    |
 | `artifacts:read` / `artifacts:write`     | HTML artifacts, folders and runtime state.                                                               |

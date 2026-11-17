@@ -43,7 +43,6 @@ vi.mock("./content-cache-store", async (importOriginal) => ({
   generations.set(key, nextGen);
   return Promise.resolve(nextGen);
  }),
- bumpLessonCacheGenerations: vi.fn(() => Promise.resolve()),
 }));
 
 const api = vi.hoisted(() => ({

@@ -29,13 +29,11 @@ import {
 } from "@/features/hanzihome/components/layout/useModuleSplitWorkspaceLayout";
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
 import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/DebugRawDataPanel";
-import { HanziHomeEditingDialogShell } from "@/features/hanzihome/editing";
 import { type LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import {
- useHanziHomeEditMode,
  useHanziHomeFeatureSelector,
  useHanziHomeWorkspaceLayout,
 } from "@/features/hanzihome/context/selectors";
@@ -48,7 +46,6 @@ export function ModuleSplitWorkspaceContent() {
  const tModules = useTranslations("Shell.studyModules");
  const runtime = useHanziHomeRuntime();
  const canEdit = useHanziHomeCanEdit();
- const editMode = useHanziHomeEditMode();
  const { splitEnabled, paneLayout, activePane, viewMode, splitPaneSize } =
   useHanziHomeWorkspaceLayout();
  const actions = useHanziHomeFeatureActions();
@@ -94,7 +91,7 @@ export function ModuleSplitWorkspaceContent() {
  const workspaceTools = runtime.readOnly ? (
   <ReadOnlyWorkspaceToolsMenu />
  ) : (
-  <HanziHomeDeveloperTools inline>
+  <HanziHomeDeveloperTools>
    <DropdownMenuItem onSelect={enableSplit}>
     <Columns2 />
     {tModules("splitScreen")}
@@ -161,7 +158,7 @@ export function ModuleSplitWorkspaceContent() {
      {runtime.readOnly ? (
       workspaceTools
      ) : (
-      <HanziHomeDeveloperTools inline>
+      <HanziHomeDeveloperTools>
        <DropdownMenuItem onSelect={() => requestNavigation(() => actions.setSplitEnabled(false))}>
         <Columns2 />
         {tModules("closeSplitScreen")}
@@ -194,7 +191,6 @@ export function ModuleSplitWorkspaceContent() {
   !runtime.readOnly &&
   developerToolsEnabled &&
   canEdit &&
-  editMode &&
   viewMode === "debug" &&
   runtime.activeModule !== "overview" ? (
    <div className="hidden xl:block">
@@ -212,9 +208,6 @@ export function ModuleSplitWorkspaceContent() {
      <div className="flex min-w-0 flex-1 items-center gap-2">{workspaceControls}</div>
     </WorkspaceToolbar>
     <div className="grid h-full min-h-0 overflow-hidden">
-     {runtime.activeModule === "lessonText" && !runtime.readOnly ? (
-      <HanziHomeEditingDialogShell />
-     ) : null}
      <div className="min-h-0 min-w-0 overflow-y-auto scrollbar-soft">
       <LessonModuleContent
        module={runtime.activeModule}
@@ -238,9 +231,6 @@ export function ModuleSplitWorkspaceContent() {
   <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
    <WorkspaceToolbar>{workspaceControls}</WorkspaceToolbar>
    <div className="grid h-full min-h-0 min-w-0 overflow-hidden">
-    {runtime.activeModule === "lessonText" && !runtime.readOnly ? (
-     <HanziHomeEditingDialogShell />
-    ) : null}
     <ModuleSplitPanes
      activePane={activePane}
      isHorizontalSplit={isHorizontalSplit}

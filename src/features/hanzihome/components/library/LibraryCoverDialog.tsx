@@ -17,7 +17,7 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/overlays/dialog";
-import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutation-error";
+import { isHanziHomeMutationConflict } from "@/features/hanzihome/radical-editing/mutation-error";
 import { HanziInlineText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  saveLibraryCoverPayloadSchema,

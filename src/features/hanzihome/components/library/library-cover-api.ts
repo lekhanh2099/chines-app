@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { HanziHomeMutationError } from "@/features/hanzihome/editing/mutation-error";
+import { HanziHomeMutationError } from "@/features/hanzihome/radical-editing/mutation-error";
 import { JsonValueSchema } from "@/types/json";
 import {
  libraryCollectionIdSchema,

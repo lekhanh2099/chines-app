@@ -1,33 +1,24 @@
+import { Fragment } from "react";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/display/typography";
 import type { JsonFieldValue } from "@/types/json";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
-import { LooseItemGrid } from "../CommonCards";
+import { AnswerKeyList, LooseItemGrid } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, arrayValue, asRecord, nonEmptyStrings, stringValue } from "../utils";
-import { EditableAnswerKeyList } from "./EditableAnswerKeyList";
 import { QuestionCard } from "./QuestionCard";
 import { WordBank } from "./WordBank";
 
 export function QuestionGroupCard({
- lessonId,
- itemPath,
  itemId,
  exerciseType,
- parentExerciseId,
- groupPath,
  groupValue,
  index,
  fallbackTitle,
  displayMode,
 }: {
- lessonId?: string;
- itemPath?: EditableNodePath;
  itemId: string;
  exerciseType: string;
- parentExerciseId: string;
- groupPath?: EditableNodePath;
  groupValue: JsonFieldValue;
  index: number;
  fallbackTitle: string;
@@ -85,23 +76,7 @@ export function QuestionGroupCard({
        />
       );
 
-      return lessonId && itemPath && groupPath ? (
-       <EditableNodeWrapper
-        key={questionId}
-        lessonId={lessonId}
-        entityType="exercise_question"
-        entityId={questionId}
-        parentEntityType="exercise"
-        parentEntityId={parentExerciseId}
-        path={[...itemPath, ...groupPath, "questions", questionIndex]}
-        value={questionValue}
-        label={`Câu ${index + 1}.${questionIndex + 1}`}
-       >
-        {content}
-       </EditableNodeWrapper>
-      ) : (
-       <div key={questionId}>{content}</div>
-      );
+      return <Fragment key={questionId}>{content}</Fragment>;
      })}
     </div>
    )}
@@ -111,24 +86,18 @@ export function QuestionGroupCard({
    {partEntries.length > 0 && <LooseItemGrid items={partEntries} displayMode={displayMode} />}
 
    {orderedAnswer && (
-    <EditableAnswerKeyList
-     lessonId={lessonId}
-     itemPath={itemPath}
+    <AnswerKeyList
+     defaultOpen={displayMode.showAnswers}
      itemId={`${itemId}-ordered-answer`}
-     sourcePath={groupPath ? [...groupPath, "ordered_answer"] : ["ordered_answer"]}
      values={[orderedAnswer]}
-     showAnswers={displayMode.showAnswers}
     />
    )}
 
    {questions.length === 0 && answers.length > 0 && !orderedAnswer && (
-    <EditableAnswerKeyList
-     lessonId={lessonId}
-     itemPath={itemPath}
+    <AnswerKeyList
+     defaultOpen={displayMode.showAnswers}
      itemId={`${itemId}-answers`}
-     sourcePath={groupPath ? [...groupPath, answerSourceKey] : [answerSourceKey]}
      values={answers}
-     showAnswers={displayMode.showAnswers}
     />
    )}
   </div>

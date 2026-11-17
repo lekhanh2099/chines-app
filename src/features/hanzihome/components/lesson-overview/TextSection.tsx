@@ -1,7 +1,6 @@
 "use client";
 
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { lessonTextToReaderDocument } from "@/features/hanzihome/reader-adapters/lesson-text.adapter";
 import { Reader } from "@/features/reader/components/Reader";
 import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
@@ -10,51 +9,26 @@ import type { LessonDisplayMode } from "./types";
 export function TextSectionView({
  lessonId,
  section,
- sectionPath,
  displayMode,
 }: {
  lessonId?: string;
  section: Extract<Section, { type: "text" }>;
- sectionPath?: EditableNodePath;
  displayMode: LessonDisplayMode;
 }) {
- const reader = lessonTextToReaderDocument({
+ const document = lessonTextToReaderDocument({
   documentId: `${lessonId ?? "text"}:${section.id}`,
   lessonId: lessonId ?? "",
   titleZh: section.title,
   titleVi: section.title_vi,
   sections: [section],
-  sectionPathFor: () => sectionPath ?? [],
  });
 
  const integration = useLessonReader({
-  document: reader.document,
+  document,
   lessonId,
   displayMode: lessonId ? undefined : displayMode,
  });
  return (
-  <Reader
-   data={integration.data}
-   display={integration.display}
-   services={{
-    ...integration.services,
-    renderSegment: ({ segment, content }) => {
-     const binding = reader.segmentBindings.get(segment.id);
-     return lessonId && sectionPath && binding ? (
-      <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>
-     ) : (
-      content
-     );
-    },
-    renderSection: ({ section: readerSection, content }) => {
-     const binding = reader.sectionBindings.get(readerSection.id);
-     return lessonId && sectionPath && binding ? (
-      <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>
-     ) : (
-      content
-     );
-    },
-   }}
-  />
+  <Reader data={integration.data} display={integration.display} services={integration.services} />
  );
 }

@@ -11,7 +11,6 @@ const lessonViewModeKey = "hanzihome:lesson-view-mode:v1";
 const splitPaneSizeKey = "hanzihome:module-split-size:v1";
 
 export const developerToolsEnabled = process.env.NODE_ENV === "development";
-export const contentEditingEnabled = true;
 
 const StudyModuleSchema = moduleSchema.exclude(["radicals"]);
 const LessonViewModeSchema = z.enum(["study", "debug"]);
