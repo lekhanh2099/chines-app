@@ -13,7 +13,7 @@ import type {
  DictationSource,
  TranslationSegment,
 } from "@/features/hanzihome/practice/translation-practice";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { cn } from "@/lib/utils";

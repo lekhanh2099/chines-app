@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { getTextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import {

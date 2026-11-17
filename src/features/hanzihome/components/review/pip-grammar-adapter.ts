@@ -1,4 +1,4 @@
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 type PipGrammarExample = {

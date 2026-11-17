@@ -4,7 +4,7 @@ import {
  courseBookKeySchema,
  textbookBookSchema,
  textbookLessonSchema,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 
 export { courseBookKeySchema };
 

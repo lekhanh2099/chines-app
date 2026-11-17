@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { LibraryCourseGroup, LibraryCourseGroupKey } from "./library-course-groups";
 import {
  buildLibraryCollectionOrder,

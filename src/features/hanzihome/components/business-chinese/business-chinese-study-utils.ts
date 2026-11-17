@@ -1,4 +1,4 @@
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type { ReaderAnnotation } from "@/features/reader/runtime/reader-services";

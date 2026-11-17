@@ -38,7 +38,7 @@ import { resolveLibraryResumes } from "@/features/hanzihome/components/library/r
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 import { Link } from "@/i18n/navigation";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { cn } from "@/lib/utils";

@@ -18,7 +18,7 @@ import {
 import type { LibraryCourseGroup } from "@/features/hanzihome/components/library/library-course-groups";
 import { RecentLearningCard } from "@/features/hanzihome/components/library/RecentLearningCard";
 import { HanziInlineText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 
 type RecentLearningCardProps = ComponentProps<typeof RecentLearningCard>;
 

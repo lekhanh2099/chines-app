@@ -4,13 +4,12 @@ import { useTranslations } from "next-intl";
 
 import { Typography } from "@/components/ui/display/typography";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, LayoutGrid, List, Search } from "lucide-react";
+import { LayoutGrid, List, Search } from "lucide-react";
 
 import { ActionCard } from "@/components/ui/actions/action-card";
 import { Badge } from "@/components/ui/display/badge";
 import { Card } from "@/components/ui/layout/card";
 import { Chip } from "@/components/ui/actions/chip";
-import { IconTile } from "@/components/ui/display/icon-tile";
 import { Input } from "@/components/ui/forms/input";
 import { SegmentedControl } from "@/components/ui/forms/segmented-control";
 import {
@@ -86,24 +85,13 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
       </StudyInstructionText>
      </Card>
     ) : (
-     <div className="mx-auto grid w-full max-w-7xl gap-5 p-2 sm:p-3 lg:gap-7 lg:p-5">
-      <section className="grid gap-3" aria-labelledby="radical-filter-heading">
-       <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-         <Typography
-          as="h2"
-          variant="sectionTitle"
-          id="radical-filter-heading"
-          tone="default"
-          weight="black"
-         >
-          {t("filterTitle")}
-         </Typography>
-         <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
-          {t("filterHelp", { count: radicals.length })}
-         </StudyInstructionText>
-        </div>
-        <div className="relative min-w-0 lg:w-80">
+     <div className="grid w-full min-w-0 gap-3 p-2 sm:p-3">
+      <section className="grid gap-2" aria-labelledby="radical-list-heading">
+       <Typography as="h2" variant="pageTitle" id="radical-list-heading" className="sr-only">
+        {t("allRadicals")}
+       </Typography>
+       <div className="flex min-w-0 flex-wrap items-center gap-2">
+        <div className="relative min-w-40 flex-1 sm:max-w-80">
          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
          <Input
           value={searchValue}
@@ -113,47 +101,29 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
           adornment="start"
          />
         </div>
-       </div>
-
-       <div className="flex max-w-full gap-2 overflow-x-auto pb-1 scrollbar-none lg:flex-wrap">
-        {strokeFilters.map((filter) => {
-         const active = strokeFilter === filter.value;
-         return (
-          <Chip
-           key={filter.value}
-           type="button"
-           variant={active ? "accent" : "default"}
-           size="touch"
-           pressed={active}
-           onClick={() => setStrokeFilter(filter.value)}
-          >
-           {filter.label}
-           <Typography as="span" variant="caption" tone="muted" weight="bold">
-            {filterCounts.get(filter.value)}
-           </Typography>
-          </Chip>
-         );
-        })}
-       </div>
-      </section>
-
-      <section className="grid gap-3" aria-labelledby="radical-list-heading">
-       <div className="flex items-center justify-between gap-3 border-t border-border-default pt-5 lg:pt-7">
-        <div className="min-w-0">
-         <Typography
-          as="h2"
-          variant="sectionTitle"
-          id="radical-list-heading"
-          tone="default"
-          weight="black"
-         >
-          {strokeFilter === "all"
-           ? t("allRadicals")
-           : strokeFilters.find((filter) => filter.value === strokeFilter)?.label}
-         </Typography>
-         <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
-          {t("results", { count: visibleRadicals.length })}
-         </StudyInstructionText>
+        <div
+         className="flex min-w-0 max-w-full flex-1 gap-1.5 overflow-x-auto scrollbar-none"
+         role="group"
+         aria-label={t("filterTitle")}
+        >
+         {strokeFilters.map((filter) => {
+          const active = strokeFilter === filter.value;
+          return (
+           <Chip
+            key={filter.value}
+            type="button"
+            variant={active ? "accent" : "default"}
+            size="md"
+            pressed={active}
+            onClick={() => setStrokeFilter(filter.value)}
+           >
+            {filter.label}
+            <Typography as="span" variant="bodySmall" tone="muted">
+             {filterCounts.get(filter.value)}
+            </Typography>
+           </Chip>
+          );
+         })}
         </div>
         <SegmentedControl<RadicalView>
          value={view}
@@ -167,23 +137,26 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
          className="w-auto"
         />
        </div>
+       <StudyInstructionText variant="bodySmall" tone="muted" aria-live="polite">
+        {t("results", { count: visibleRadicals.length })}
+       </StudyInstructionText>
 
        {visibleRadicals.length > 0 ? (
-        <div
+        <ul
          className={cn(
-          "grid gap-3",
-          view === "grid" ? "sm:grid-cols-2 2xl:grid-cols-3" : "grid-cols-1",
+          "grid min-w-0 gap-2",
+          view === "grid" ? "grid-cols-[repeat(auto-fill,minmax(16rem,1fr))]" : "grid-cols-1",
          )}
         >
          {visibleRadicals.map((radical) => (
-          <RadicalBrowseCard
-           key={radical.id}
-           radical={radical}
-           compact={view === "list"}
-           onOpen={() => router.push(radicalHref(radical.id))}
-          />
+          <li key={radical.id} className="min-w-0">
+           <RadicalBrowseCard
+            radical={radical}
+            onOpen={() => router.push(radicalHref(radical.id))}
+           />
+          </li>
          ))}
-        </div>
+        </ul>
        ) : (
         <Card variant="subtle" padding="lg" className="grid gap-1">
          <StudyInstructionText tone="default" weight="semibold" align="center">
@@ -202,71 +175,44 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
  );
 }
 
+/** One radical: the glyph at reading size, its name and strokes, and the core meaning. */
 function RadicalBrowseCard({
  radical,
- compact,
  onOpen,
 }: {
  radical: StaticRadicalData;
- compact: boolean;
  onOpen: () => void;
 }) {
  const t = useTranslations("Radicals");
  const supportingCount = countRadicalSupportingItems(radical);
+ const name = radical.nameVi || t("unnamed");
 
  return (
   <ActionCard
    padding="md"
    onClick={onOpen}
-   className={cn(
-    "group grid min-w-0 gap-4",
-    compact ? "sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center" : "content-between",
-   )}
+   aria-label={t("openRadical", { radical: radical.radical, name })}
+   className="flex h-full min-w-0 items-center gap-3"
   >
-   <div
-    className={cn("flex min-w-0 gap-3", compact ? "items-center" : "items-start justify-between")}
-   >
-    <IconTile tone="inverse" size="lg">
-     <HanziText size="card" tone="inverse" weight="black" leading="none">
-      {radical.radical}
-     </HanziText>
-    </IconTile>
-    {compact ? null : (
-     <Badge variant="info" size="sm">
+   <HanziText as="span" size="review" tone="primary" weight="black" leading="none">
+    {radical.radical}
+   </HanziText>
+   <div className="grid min-w-0 flex-1 gap-0.5">
+    <div className="flex min-w-0 items-center justify-between gap-2">
+     <Typography as="h3" variant="cardTitle" tone="default" clamp="one">
+      {name}
+     </Typography>
+     <Badge variant="info" size="sm" casing="natural">
       {t("strokes", { count: radical.strokes ?? "?" })}
      </Badge>
-    )}
-   </div>
-
-   <div className="grid min-w-0 gap-2">
-    <div className="flex flex-wrap items-center gap-2">
-     <Typography as="h3" variant="cardTitle" tone="default" weight="black" clamp="one">
-      {radical.nameVi || t("unnamed")}
-     </Typography>
-     {compact ? (
-      <Badge variant="info" size="sm">
-       {t("strokes", { count: radical.strokes ?? "?" })}
-      </Badge>
-     ) : null}
     </div>
-    <StudyInstructionText variant="bodySmall" tone="muted" clamp="two" leading="relaxed">
+    <StudyInstructionText variant="bodySmall" tone="secondary" clamp="two">
      {radical.coreMeaning.modern || radical.recognition || t("noDescription")}
     </StudyInstructionText>
-    <StudyInstructionText variant="caption" tone="muted" weight="semibold">
+    <StudyInstructionText variant="bodySmall" tone="muted">
      #{radical.index} · {t("relatedCount", { count: supportingCount })}
     </StudyInstructionText>
    </div>
-
-   <Typography
-    as="span"
-    variant="label"
-    tone="accent"
-    weight="bold"
-    className="flex items-center gap-1.5"
-   >
-    {t("details")}
-    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-   </Typography>
   </ActionCard>
  );
 }

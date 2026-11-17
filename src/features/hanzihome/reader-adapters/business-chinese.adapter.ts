@@ -2,7 +2,7 @@ import { containsHanziText } from "@/features/hanzihome/components/lesson-overvi
 import {
  courseBookKeySchema,
  type TextbookLesson,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 import type {
  ReaderDocumentModel,
  ReaderSegment,

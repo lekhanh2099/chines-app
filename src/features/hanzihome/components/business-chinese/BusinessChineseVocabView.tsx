@@ -13,7 +13,7 @@ import {
 import { SegmentedControl } from "@/components/ui/forms/segmented-control";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { BusinessChineseSection } from "./BusinessChineseSection";
 import { TextbookVocabularyPreview } from "./TextbookVocabularyPreview";
 import type { BusinessChinesePipControls } from "./useBusinessChinesePip";

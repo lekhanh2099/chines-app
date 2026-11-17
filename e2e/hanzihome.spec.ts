@@ -57,6 +57,27 @@ function createAdminClient(): SupabaseClient<Database> {
  });
 }
 
+/** Opens textbook lessons online so they are kept for offline reading. */
+async function openTextbookLessonsOnline(
+ page: Page,
+ lessons: readonly { path: string; key: string; number: number }[],
+) {
+ for (const lesson of lessons) {
+  await page.goto(`/vi/hsk/${lesson.path}?lesson=${lesson.number}`);
+  await expect
+   .poll(() =>
+    page.evaluate(
+     async (url) => Boolean(await (await caches.open("hanzihome-textbook-lessons")).match(url)),
+     `/api/hanzihome/textbooks/${lesson.key}/lessons/${lesson.number}`,
+    ),
+   )
+   .toBe(true);
+ }
+ // Leave from the offline page with its link prefetches settled, as before the warm-up.
+ await page.goto("/vi/offline");
+ await page.waitForLoadState("networkidle");
+}
+
 async function login(page: Page, account: typeof accountA) {
  if (page.url() !== new URL("/vi/login", baseURL).href) await page.goto("/vi/login");
  await page.waitForLoadState("load");
@@ -557,6 +578,16 @@ test.describe(() => {
    page.on("request", (request) => {
     if (request.url().includes("_rsc=")) navigationRequests.push(request.url());
    });
+   await openTextbookLessonsOnline(
+    page,
+    [1, 2, ...(book.key === "khau-ngu" ? [5] : [])].map((number) => ({
+     path: book.path,
+     key: book.key,
+     number,
+    })),
+   );
+   // Only requests made while offline are asserted below.
+   navigationRequests.length = 0;
    try {
     await context.setOffline(true);
     await page.goto(`/vi/hsk/${book.path}?lesson=1&tab=text`);
@@ -635,6 +666,12 @@ test.describe(() => {
   page.on("request", (request) => {
    if (request.url().includes("_rsc=")) navigationRequests.push(request.url());
   });
+  await openTextbookLessonsOnline(page, [
+   { path: "doc-hieu", key: "doc-hieu", number: 2 },
+   { path: "nhip-cau-han-ngu", key: "nhip-cau", number: 1 },
+  ]);
+  // Only requests made while offline are asserted below.
+  navigationRequests.length = 0;
   try {
    await context.setOffline(true);
    await page.goto("/vi/offline?book=doc-hieu&lesson=2&tab=vocab");
@@ -667,6 +704,10 @@ test.describe(() => {
      () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
     ),
    ).toBe(true);
+   await page.goto("/vi/offline?book=nhip-cau&lesson=7");
+   await expect(
+    page.getByRole("heading", { name: "Bài này chưa có trên máy", exact: true }),
+   ).toBeVisible();
    await page.goto("/vi/offline?book=tm2");
    await expect(
     page.getByRole("heading", { name: "Giáo trình không khả dụng", exact: true }),

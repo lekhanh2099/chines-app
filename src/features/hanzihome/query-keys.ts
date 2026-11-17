@@ -104,6 +104,12 @@ export const hanzihomeQueryKeys = {
   userId,
   lessonId,
  ],
+ textbookLesson: (bookKey: string, lessonNumber: number) => [
+  "hanzihome",
+  "textbook-lesson",
+  bookKey,
+  lessonNumber,
+ ],
  vocabularyRoot: ["hanzihome", "vocabulary"],
  reusedVocabulary: (userId: string) => ["hanzihome", "vocabulary", "reused", userId],
  vocabularyWord: (userId: string, hanzi: string) => [

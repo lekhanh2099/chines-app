@@ -5,7 +5,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type { usePrefetchHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
-import { getTextbookCatalogForBookKeys } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { getTextbookCatalogForBookKeys } from "@/features/hanzihome/static-json/textbook-catalog";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,

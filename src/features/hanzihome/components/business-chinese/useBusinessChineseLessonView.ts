@@ -7,16 +7,11 @@ import { type SegmentedControlItem } from "@/components/ui/forms/segmented-contr
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { dictationSourcesFromTextbook } from "@/features/hanzihome/practice/translation-practice";
-import {
- buildTextbookHref,
- courseTextbookRoutePrefix,
-} from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
-import {
- getTextbookCatalogForBookKeys,
- getTextbookLesson,
- type TextbookBookSummary,
- type TextbookLesson,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { buildTextbookHref } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
+import type {
+ TextbookBookSummary,
+ TextbookLesson,
+} from "@/features/hanzihome/static-json/textbook-catalog";
 import {
  defaultTextbookDisplaySettings,
  markBookStudied,
@@ -49,43 +44,10 @@ export function useBusinessChineseLessonView({
  const { toggleBookmark } = learning;
 
  const currentPath = usePathname();
- // A course book is rendered from the lesson the server passed for this route.
- const detectedBookKey: TextbookLesson["bookKey"] = currentPath.startsWith(
-  courseTextbookRoutePrefix,
- )
-  ? initialLesson.bookKey
-  : currentPath.includes("/khau-ngu-tc1")
-    ? "khau-ngu"
-    : currentPath.includes("/doc-hieu")
-      ? "doc-hieu"
-      : currentPath.includes("/han-thuong-mai")
-        ? "tm3"
-        : currentPath.includes("/nhip-cau")
-          ? "nhip-cau"
-          : initialLesson.bookKey;
-
- const requestedLessonNumber =
-  typeof searchParams.get("lesson") === "string" ? Number(searchParams.get("lesson")) : null;
-
- const lesson = useMemo(() => {
-  const targetNumber =
-   requestedLessonNumber && Number.isInteger(requestedLessonNumber)
-    ? requestedLessonNumber
-    : detectedBookKey !== initialLesson.bookKey
-      ? 1
-      : initialLesson.number;
-
-  if (detectedBookKey !== initialLesson.bookKey || targetNumber !== initialLesson.number) {
-   const resolved = getTextbookLesson(detectedBookKey, targetNumber);
-   if (resolved) return resolved;
-  }
-  return initialLesson;
- }, [detectedBookKey, initialLesson, requestedLessonNumber]);
-
- const books = useMemo(() => {
-  if (initialBooks.some((b) => b.key === lesson.bookKey)) return initialBooks;
-  return getTextbookCatalogForBookKeys([lesson.bookKey]);
- }, [initialBooks, lesson.bookKey]);
+ // Lesson content is not bundled with the client: the route (or the offline
+ // workspace) passes the lesson to render, and a lesson change is a navigation.
+ const lesson = initialLesson;
+ const books = initialBooks;
 
  const book = books.find((item) => item.key === lesson.bookKey);
  const bookKey = `static:${book?.id ?? lesson.bookKey}`;

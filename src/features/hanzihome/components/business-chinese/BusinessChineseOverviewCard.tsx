@@ -12,7 +12,7 @@ import {
 import type {
  TextbookBookSummary,
  TextbookLesson,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 import { BusinessChineseText } from "./BusinessChineseText";
 
 /** The lesson "overview" tab: title, translation, intro and section/vocab counts. */

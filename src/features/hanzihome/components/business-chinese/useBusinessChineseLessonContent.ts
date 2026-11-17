@@ -7,7 +7,7 @@ import {
  dictationSourcesFromTextbook,
  translationSegmentsFromTextbook,
 } from "@/features/hanzihome/practice/translation-practice";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import {
  generateContextualVocabDrills,
  textbookLessonToReviewLesson,

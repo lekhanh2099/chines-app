@@ -21,7 +21,7 @@ import {
  buildTextbookHref,
  lessonDisplayTitle,
 } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,

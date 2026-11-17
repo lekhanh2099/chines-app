@@ -10,7 +10,7 @@ import { useIsLessonCached } from "@/features/hanzihome/hooks/useHanziHomeLesson
 import type {
  TextbookBookSummary,
  TextbookLesson,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 import {
  ReaderServicesContext,
  useReaderDisplay,

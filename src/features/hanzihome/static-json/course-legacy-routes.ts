@@ -6,7 +6,7 @@ import {
  courseBookKeySchema,
  getCourseTextbookCatalog,
  type CourseBookKey,
-} from "./business-chinese-static-content";
+} from "./textbook-catalog";
 import legacyRoutesSeed from "./courses/legacy-routes.json";
 
 const legacyRoutesSchema = z.object({

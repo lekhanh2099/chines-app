@@ -9,7 +9,7 @@ import {
  sanitizeSpeechTextForVoice,
 } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
 import { dictationSourcesFromTextbook } from "@/features/hanzihome/practice/translation-practice";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 
 type LessonAudioPackStatus = "idle" | "checking" | "downloading" | "ready" | "error";
 

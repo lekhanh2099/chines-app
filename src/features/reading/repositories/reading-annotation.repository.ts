@@ -7,7 +7,7 @@ import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role.ser
 import {
  getCourseTextbookCatalog,
  getTextbookCatalog,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 import { getTextbookLessonOnServer } from "@/features/hanzihome/static-json/course-textbooks.server";
 
 import {

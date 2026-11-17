@@ -46,7 +46,7 @@ import { DialogueVoiceSettings } from "@/features/hanzihome/speech/DialogueVoice
 import { useOptionalSharedMandarinTts } from "@/features/speech/MandarinTtsProvider";
 import { DEFAULT_MANDARIN_VOICE, MANDARIN_VOICE_STORAGE_KEY } from "@/hooks/useTTS";
 import { STANDARD_MANDARIN_VOICES } from "@/features/speech/mandarin-voices";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 
 type OfflineAudioSettingsDialogProps = {
  readonly lesson?: TextbookLesson | null;

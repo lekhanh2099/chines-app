@@ -1,0 +1,576 @@
+[
+ {
+  "id": "business-chinese-tm2",
+  "key": "tm2",
+  "label": "Hán thương mại 2",
+  "lessons": [
+   {
+    "id": "business-chinese-tm2-lesson-01",
+    "bookKey": "tm2",
+    "number": 1,
+    "title": "BÀI 1: 订购真丝面料 (Đặt mua vải lụa tơ tằm)",
+    "vocabCount": 21
+   },
+   {
+    "id": "business-chinese-tm2-lesson-02",
+    "bookKey": "tm2",
+    "number": 2,
+    "title": "BÀI 2: 请您参加产品推介会",
+    "vocabCount": 22
+   },
+   {
+    "id": "business-chinese-tm2-lesson-03",
+    "bookKey": "tm2",
+    "number": 3,
+    "title": "BÀI 3: 拜访总裁",
+    "vocabCount": 13
+   },
+   {
+    "id": "business-chinese-tm2-lesson-04",
+    "bookKey": "tm2",
+    "number": 4,
+    "title": "BÀI 4: 送别宴会",
+    "vocabCount": 20
+   },
+   {
+    "id": "business-chinese-tm2-lesson-05",
+    "bookKey": "tm2",
+    "number": 5,
+    "title": "BÀI 5: 就“云南七日游”吧",
+    "vocabCount": 16
+   },
+   {
+    "id": "business-chinese-tm2-lesson-06",
+    "bookKey": "tm2",
+    "number": 6,
+    "title": "BÀI 6: 有下午的航班吗",
+    "vocabCount": 10
+   },
+   {
+    "id": "business-chinese-tm2-lesson-07",
+    "bookKey": "tm2",
+    "number": 7,
+    "title": "BÀI 7: 贵公司规模不小吧？",
+    "vocabCount": 15
+   },
+   {
+    "id": "business-chinese-tm2-lesson-08",
+    "bookKey": "tm2",
+    "number": 8,
+    "title": "BÀI 8: 这次展销会收获很大",
+    "vocabCount": 18
+   },
+   {
+    "id": "business-chinese-tm2-lesson-09",
+    "bookKey": "tm2",
+    "number": 9,
+    "title": "BÀI 9: 给商店起个好名字",
+    "vocabCount": 12
+   },
+   {
+    "id": "business-chinese-tm2-lesson-10",
+    "bookKey": "tm2",
+    "number": 10,
+    "title": "BÀI 10: 恭喜发财",
+    "vocabCount": 20
+   }
+  ]
+ },
+ {
+  "id": "business-chinese-tm3",
+  "key": "tm3",
+  "label": "Hán thương mại 3",
+  "lessons": [
+   {
+    "id": "business-chinese-tm3-lesson-01",
+    "bookKey": "tm3",
+    "number": 1,
+    "title": "BÀI 1: 开户汇款",
+    "vocabCount": 17
+   },
+   {
+    "id": "business-chinese-tm3-lesson-02",
+    "bookKey": "tm3",
+    "number": 2,
+    "title": "BÀI 2: 按揭买房",
+    "vocabCount": 31
+   },
+   {
+    "id": "business-chinese-tm3-lesson-03",
+    "bookKey": "tm3",
+    "number": 3,
+    "title": "BÀI 3: 租金可以再便宜一点儿吗？",
+    "vocabCount": 12
+   },
+   {
+    "id": "business-chinese-tm3-lesson-04",
+    "bookKey": "tm3",
+    "number": 4,
+    "title": "BÀI 4: 召开业主大会",
+    "vocabCount": 34
+   },
+   {
+    "id": "business-chinese-tm3-lesson-05",
+    "bookKey": "tm3",
+    "number": 5,
+    "title": "BÀI 5: 搞一些促销活动吧",
+    "vocabCount": 18
+   },
+   {
+    "id": "business-chinese-tm3-lesson-06",
+    "bookKey": "tm3",
+    "number": 6,
+    "title": "BÀI 6: 参加服装交易会",
+    "vocabCount": 19
+   },
+   {
+    "id": "business-chinese-tm3-lesson-07",
+    "bookKey": "tm3",
+    "number": 7,
+    "title": "BÀI 7: 广告策划得怎么样了？",
+    "vocabCount": 22
+   },
+   {
+    "id": "business-chinese-tm3-lesson-08",
+    "bookKey": "tm3",
+    "number": 8,
+    "title": "BÀI 8: 无限商机尽在互联网",
+    "vocabCount": 29
+   },
+   {
+    "id": "business-chinese-tm3-lesson-09",
+    "bookKey": "tm3",
+    "number": 9,
+    "title": "BÀI 9: “顾问式”销售理念",
+    "vocabCount": 22
+   },
+   {
+    "id": "business-chinese-tm3-lesson-10",
+    "bookKey": "tm3",
+    "number": 10,
+    "title": "BÀI 10: 海尔服务美名传",
+    "vocabCount": 22
+   }
+  ]
+ },
+ {
+  "id": "nhip-cau",
+  "key": "nhip-cau",
+  "label": "Nhịp cầu Hán ngữ",
+  "lessons": [
+   {
+    "id": "nhip-cau-lesson-01",
+    "bookKey": "nhip-cau",
+    "number": 1,
+    "title": "BÀI 1: 我的\"希望工程\"",
+    "vocabCount": 60
+   },
+   {
+    "id": "nhip-cau-lesson-02",
+    "bookKey": "nhip-cau",
+    "number": 2,
+    "title": "BÀI 2: 差不多先生传",
+    "vocabCount": 43
+   },
+   {
+    "id": "nhip-cau-lesson-03",
+    "bookKey": "nhip-cau",
+    "number": 3,
+    "title": "BÀI 3: 我记忆中的两个女孩",
+    "vocabCount": 64
+   },
+   {
+    "id": "nhip-cau-lesson-04",
+    "bookKey": "nhip-cau",
+    "number": 4,
+    "title": "BÀI 4: 醉人的春夜",
+    "vocabCount": 62
+   },
+   {
+    "id": "nhip-cau-lesson-05",
+    "bookKey": "nhip-cau",
+    "number": 5,
+    "title": "BÀI 5: 话说\"面的\"",
+    "vocabCount": 59
+   },
+   {
+    "id": "nhip-cau-lesson-06",
+    "bookKey": "nhip-cau",
+    "number": 6,
+    "title": "BÀI 6: 眼光",
+    "vocabCount": 58
+   },
+   {
+    "id": "nhip-cau-lesson-07",
+    "bookKey": "nhip-cau",
+    "number": 7,
+    "title": "BÀI 7: 吸烟者的烦恼",
+    "vocabCount": 54
+   },
+   {
+    "id": "nhip-cau-lesson-08",
+    "bookKey": "nhip-cau",
+    "number": 8,
+    "title": "BÀI 8: 广告与顾客",
+    "vocabCount": 65
+   },
+   {
+    "id": "nhip-cau-lesson-09",
+    "bookKey": "nhip-cau",
+    "number": 9,
+    "title": "BÀI 9: 李群求职记",
+    "vocabCount": 57
+   },
+   {
+    "id": "nhip-cau-lesson-10",
+    "bookKey": "nhip-cau",
+    "number": 10,
+    "title": "BÀI 10: 写在助残日之前",
+    "vocabCount": 59
+   },
+   {
+    "id": "nhip-cau-lesson-11",
+    "bookKey": "nhip-cau",
+    "number": 11,
+    "title": "BÀI 11: 热爱绿色",
+    "vocabCount": 63
+   },
+   {
+    "id": "nhip-cau-lesson-12",
+    "bookKey": "nhip-cau",
+    "number": 12,
+    "title": "BÀI 12: 买彩票",
+    "vocabCount": 50
+   },
+   {
+    "id": "nhip-cau-lesson-13",
+    "bookKey": "nhip-cau",
+    "number": 13,
+    "title": "BÀI 13: 我的第二故乡",
+    "vocabCount": 42
+   },
+   {
+    "id": "nhip-cau-lesson-14",
+    "bookKey": "nhip-cau",
+    "number": 14,
+    "title": "BÀI 14: 在那遥远的地方",
+    "vocabCount": 71
+   },
+   {
+    "id": "nhip-cau-lesson-15",
+    "bookKey": "nhip-cau",
+    "number": 15,
+    "title": "BÀI 15: 公文包丢失之后",
+    "vocabCount": 24
+   }
+  ]
+ },
+ {
+  "id": "doc-hieu",
+  "key": "doc-hieu",
+  "label": "Đọc hiểu",
+  "lessons": [
+   {
+    "id": "doc-hieu-unit-01",
+    "bookKey": "doc-hieu",
+    "number": 1,
+    "title": "UNIT 1 – TOÀN BỘ 5 BÀI",
+    "vocabCount": 49
+   },
+   {
+    "id": "doc-hieu-unit-02",
+    "bookKey": "doc-hieu",
+    "number": 2,
+    "title": "UNIT 2 – GIA ĐÌNH VÀ LỄ TẾT",
+    "vocabCount": 58
+   },
+   {
+    "id": "doc-hieu-unit-03",
+    "bookKey": "doc-hieu",
+    "number": 3,
+    "title": "UNIT 3 – HÔN NHÂN VÀ GIA ĐÌNH ĐA VĂN HÓA",
+    "vocabCount": 80
+   },
+   {
+    "id": "doc-hieu-unit-04",
+    "bookKey": "doc-hieu",
+    "number": 4,
+    "title": "UNIT 4 – NGƯỜI CAO TUỔI, SỞ THÍCH, SỨC KHỎE",
+    "vocabCount": 78
+   },
+   {
+    "id": "doc-hieu-unit-05",
+    "bookKey": "doc-hieu",
+    "number": 5,
+    "title": "UNIT 5 – CON CÁI, GIÁO DỤC, TƯ TƯỞNG TRỌNG NAM KHINH NỮ",
+    "vocabCount": 66
+   },
+   {
+    "id": "doc-hieu-unit-06",
+    "bookKey": "doc-hieu",
+    "number": 6,
+    "title": "UNIT 6 – GIÁO DỤC, HỌC HÀNH, THI CỬ",
+    "vocabCount": 67
+   },
+   {
+    "id": "doc-hieu-unit-07",
+    "bookKey": "doc-hieu",
+    "number": 7,
+    "title": "UNIT 7 – CÔNG NGHỆ, TÀI CHÍNH, GIAO THÔNG, LÀM VIỆC TỪ XA",
+    "vocabCount": 79
+   },
+   {
+    "id": "doc-hieu-unit-08",
+    "bookKey": "doc-hieu",
+    "number": 8,
+    "title": "UNIT 8 – TRANG PHỤC, THỜI TRANG, VĂN HÓA MẶC",
+    "vocabCount": 80
+   },
+   {
+    "id": "doc-hieu-unit-09",
+    "bookKey": "doc-hieu",
+    "number": 9,
+    "title": "UNIT 9 – ẨM THỰC TRUNG HOA",
+    "vocabCount": 79
+   },
+   {
+    "id": "doc-hieu-unit-10",
+    "bookKey": "doc-hieu",
+    "number": 10,
+    "title": "UNIT 10 – VĂN HỌC DÂN GIAN, TRUYỆN CƯỜI, THÀNH NGỮ",
+    "vocabCount": 51
+   },
+   {
+    "id": "doc-hieu-unit-11",
+    "bookKey": "doc-hieu",
+    "number": 11,
+    "title": "UNIT 11 – VĂN HÓA DÂN GIAN, PHONG TỤC TẬP QUÁN",
+    "vocabCount": 50
+   },
+   {
+    "id": "doc-hieu-unit-12",
+    "bookKey": "doc-hieu",
+    "number": 12,
+    "title": "UNIT 12 – KHOA HỌC THƯỜNG THỨC VỀ CƠ THỂ, TÂM LÝ",
+    "vocabCount": 52
+   },
+   {
+    "id": "doc-hieu-unit-13",
+    "bookKey": "doc-hieu",
+    "number": 13,
+    "title": "UNIT 13 – KHOA HỌC TỰ NHIÊN",
+    "vocabCount": 59
+   },
+   {
+    "id": "doc-hieu-unit-14",
+    "bookKey": "doc-hieu",
+    "number": 14,
+    "title": "UNIT 14 – MÔI TRƯỜNG VÀ BẢO VỆ MÔI TRƯỜNG",
+    "vocabCount": 61
+   },
+   {
+    "id": "doc-hieu-unit-15",
+    "bookKey": "doc-hieu",
+    "number": 15,
+    "title": "UNIT 15 – THỂ THAO, SỨC KHỎE, GIẢI TRÍ",
+    "vocabCount": 84
+   },
+   {
+    "id": "doc-hieu-unit-16",
+    "bookKey": "doc-hieu",
+    "number": 16,
+    "title": "UNIT 16 – NGHỆ THUẬT, ĐIỆN ẢNH, NHIẾP ẢNH",
+    "vocabCount": 94
+   },
+   {
+    "id": "doc-hieu-unit-17",
+    "bookKey": "doc-hieu",
+    "number": 17,
+    "title": "UNIT 17 – DU LỊCH, KHÁM PHÁ THIÊN NHIÊN",
+    "vocabCount": 76
+   },
+   {
+    "id": "doc-hieu-unit-18",
+    "bookKey": "doc-hieu",
+    "number": 18,
+    "title": "UNIT 18 – THIÊN NHIÊN, ĐỘNG THỰC VẬT",
+    "vocabCount": 77
+   }
+  ]
+ },
+ {
+  "id": "khau-ngu",
+  "key": "khau-ngu",
+  "label": "Khẩu ngữ Trung cấp 1",
+  "lessons": [
+   {
+    "id": "khau-ngu-lesson-01",
+    "bookKey": "khau-ngu",
+    "number": 1,
+    "title": "BÀI 1: 让我们认识一下，好吗？",
+    "vocabCount": 29
+   },
+   {
+    "id": "khau-ngu-lesson-02",
+    "bookKey": "khau-ngu",
+    "number": 2,
+    "title": "BÀI 2: 健康第一",
+    "vocabCount": 28
+   },
+   {
+    "id": "khau-ngu-lesson-03",
+    "bookKey": "khau-ngu",
+    "number": 3,
+    "title": "BÀI 3: 好东西人人爱吃",
+    "vocabCount": 31
+   },
+   {
+    "id": "khau-ngu-lesson-04",
+    "bookKey": "khau-ngu",
+    "number": 4,
+    "title": "BÀI 4: 这种款式适合我吗？",
+    "vocabCount": 46
+   },
+   {
+    "id": "khau-ngu-lesson-05",
+    "bookKey": "khau-ngu",
+    "number": 5,
+    "title": "BÀI 5: 你喜欢逛商店吗？",
+    "vocabCount": 29
+   },
+   {
+    "id": "khau-ngu-review-01",
+    "bookKey": "khau-ngu",
+    "number": 21,
+    "title": "ÔN TẬP 1: 我来介绍一下",
+    "vocabCount": 8
+   },
+   {
+    "id": "khau-ngu-lesson-06",
+    "bookKey": "khau-ngu",
+    "number": 6,
+    "title": "BÀI 6: 生活有时候就是琐碎的",
+    "vocabCount": 35
+   },
+   {
+    "id": "khau-ngu-lesson-07",
+    "bookKey": "khau-ngu",
+    "number": 7,
+    "title": "BÀI 7: 让我们轻松一下",
+    "vocabCount": 28
+   },
+   {
+    "id": "khau-ngu-lesson-08",
+    "bookKey": "khau-ngu",
+    "number": 8,
+    "title": "BÀI 8: 计划赶不上变化",
+    "vocabCount": 24
+   },
+   {
+    "id": "khau-ngu-lesson-09",
+    "bookKey": "khau-ngu",
+    "number": 9,
+    "title": "BÀI 9: 大手大脚还是精打细算",
+    "vocabCount": 30
+   },
+   {
+    "id": "khau-ngu-lesson-10",
+    "bookKey": "khau-ngu",
+    "number": 10,
+    "title": "BÀI 10: 我想咨询一下",
+    "vocabCount": 34
+   },
+   {
+    "id": "khau-ngu-review-02",
+    "bookKey": "khau-ngu",
+    "number": 22,
+    "title": "ÔN TẬP 2: 我的新房子",
+    "vocabCount": 25
+   },
+   {
+    "id": "khau-ngu-lesson-11",
+    "bookKey": "khau-ngu",
+    "number": 11,
+    "title": "BÀI 11: 有话好商量",
+    "vocabCount": 24
+   },
+   {
+    "id": "khau-ngu-lesson-12",
+    "bookKey": "khau-ngu",
+    "number": 12,
+    "title": "BÀI 12: 我们生活在人群里",
+    "vocabCount": 38
+   },
+   {
+    "id": "khau-ngu-lesson-13",
+    "bookKey": "khau-ngu",
+    "number": 13,
+    "title": "BÀI 13: 特别的经历",
+    "vocabCount": 33
+   },
+   {
+    "id": "khau-ngu-lesson-14",
+    "bookKey": "khau-ngu",
+    "number": 14,
+    "title": "BÀI 14: 我想去旅行",
+    "vocabCount": 32
+   },
+   {
+    "id": "khau-ngu-lesson-15",
+    "bookKey": "khau-ngu",
+    "number": 15,
+    "title": "BÀI 15: 谁能说自己不喜欢艺术？",
+    "vocabCount": 38
+   },
+   {
+    "id": "khau-ngu-review-03",
+    "bookKey": "khau-ngu",
+    "number": 23,
+    "title": "ÔN TẬP 3: 昨天我有个约会",
+    "vocabCount": 11
+   },
+   {
+    "id": "khau-ngu-lesson-16",
+    "bookKey": "khau-ngu",
+    "number": 16,
+    "title": "BÀI 16: 轻轻松松挣大钱",
+    "vocabCount": 34
+   },
+   {
+    "id": "khau-ngu-lesson-17",
+    "bookKey": "khau-ngu",
+    "number": 17,
+    "title": "BÀI 17: 永远的爱情 永远的家",
+    "vocabCount": 36
+   },
+   {
+    "id": "khau-ngu-lesson-18",
+    "bookKey": "khau-ngu",
+    "number": 18,
+    "title": "BÀI 18: 地球村",
+    "vocabCount": 38
+   },
+   {
+    "id": "khau-ngu-lesson-19",
+    "bookKey": "khau-ngu",
+    "number": 19,
+    "title": "BÀI 19: 我们的生活",
+    "vocabCount": 44
+   },
+   {
+    "id": "khau-ngu-lesson-20",
+    "bookKey": "khau-ngu",
+    "number": 20,
+    "title": "BÀI 20: 今天有什么新闻？",
+    "vocabCount": 46
+   },
+   {
+    "id": "khau-ngu-review-04",
+    "bookKey": "khau-ngu",
+    "number": 24,
+    "title": "ÔN TẬP 4: 国际婚姻",
+    "vocabCount": 9
+   }
+  ]
+ }
+]

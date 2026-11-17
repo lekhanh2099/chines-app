@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { buildBusinessChineseReaderDocument } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import {
  useReaderCommands,
  useReaderServices,

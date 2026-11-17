@@ -9,7 +9,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { cn } from "@/lib/utils";
 import { BusinessChineseText, SpeakableBusinessChineseText } from "./BusinessChineseText";
 import { businessChineseTableColumns } from "./business-chinese-study-utils";

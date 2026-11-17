@@ -13,7 +13,7 @@ import {
  splitTrailingTranslation,
  stripLeadingEmoji,
 } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { cn } from "@/lib/utils";
 import { BusinessChineseExercise } from "./BusinessChineseExercise";
 import { BusinessChineseTable } from "./BusinessChineseTable";

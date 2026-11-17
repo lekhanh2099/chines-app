@@ -3,6 +3,9 @@ const CACHE_VERSION = "v13";
 const STATIC_CACHE = `hanzihome-static-${CACHE_VERSION}`;
 const OFFLINE_OWNER_CACHE = "hanzihome-offline-owner";
 const OFFLINE_OWNER_CACHE_PATH = "/__hanzihome-offline-owner";
+// Public textbook lessons the learner opened; kept across worker versions.
+const TEXTBOOK_LESSON_CACHE = "hanzihome-textbook-lessons";
+const TEXTBOOK_LESSON_PATH = "/api/hanzihome/textbooks/";
 
 const PRECACHE_ASSETS = [
  "/favicon.svg",
@@ -88,7 +91,7 @@ self.addEventListener("activate", (event) => {
   caches.keys().then((keys) => {
    return Promise.all(
     keys.map(async (key) => {
-     if (key === OFFLINE_OWNER_CACHE) return;
+     if (key === OFFLINE_OWNER_CACHE || key === TEXTBOOK_LESSON_CACHE) return;
      if (key === STATIC_CACHE || key.startsWith("hanzihome-static-")) {
       // Earlier workers stored authenticated HTML/RSC in these shared caches.
       // Remove those copies while retaining public assets and owner-scoped IDB data.
@@ -197,6 +200,31 @@ self.addEventListener("fetch", (event) => {
 
  // Do not intercept non-HTTP schemes (e.g. chrome-extension:)
  if (!url.protocol.startsWith("http")) return;
+
+ // Textbook lessons are public content: serve the network copy and keep it for
+ // offline reading; fall back to the kept copy when the network is unavailable.
+ if (url.origin === self.location.origin && url.pathname.startsWith(TEXTBOOK_LESSON_PATH)) {
+  event.respondWith(
+   (async () => {
+    const cache = await caches.open(TEXTBOOK_LESSON_CACHE);
+    try {
+     const networkResponse = await fetch(request);
+     if (networkResponse.status === 200) {
+      try {
+       await cache.put(url.pathname, networkResponse.clone());
+      } catch {
+       // A full or unavailable cache must not fail the online read.
+      }
+     }
+     return networkResponse;
+    } catch {
+     const cached = await cache.match(url.pathname);
+     return cached ?? new Response("", { status: 503, statusText: "Offline" });
+    }
+   })(),
+  );
+  return;
+ }
 
  // Safe PWA principle: NEVER cache private API or auth responses
  if (
