@@ -289,13 +289,13 @@ export function OfflineStudyWorkspace() {
     ) : textbookLesson.isPending && book ? (
      <HanziHomeWorkspaceLoading />
     ) : (
-     <Card padding="lg">
+     <Card padding="lg" className="grid gap-4">
       <PageHeader
        title={t(book ? "lessonNotSaved" : "textbookUnavailable")}
        description={t(book ? "lessonNotSavedDescription" : "emptyDescription")}
       />
       {book && savedLessons.length > 0 ? (
-       <section className="mt-4 grid gap-2" aria-labelledby="offline-saved-lessons-heading">
+       <section className="grid gap-2" aria-labelledby="offline-saved-lessons-heading">
         <Typography as="h2" variant="cardTitle" id="offline-saved-lessons-heading">
          {t("savedLessons")}
         </Typography>
