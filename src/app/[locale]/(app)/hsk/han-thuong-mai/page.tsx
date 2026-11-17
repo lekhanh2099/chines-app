@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { BusinessChineseStudyWorkspace } from "@/features/hanzihome/components/business-chinese/BusinessChineseStudyWorkspace";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import {
  getTextbookCatalogForBookKeys,
  getBusinessChineseLesson,

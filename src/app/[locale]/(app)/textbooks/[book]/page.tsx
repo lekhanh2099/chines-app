@@ -4,7 +4,7 @@ import { BusinessChineseStudyWorkspace } from "@/features/hanzihome/components/b
 import {
  courseBookKeySchema,
  getTextbookCatalogForBookKeys,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 import { getTextbookLessonOnServer } from "@/features/hanzihome/static-json/course-textbooks.server";
 
 export default async function CourseTextbookPage({

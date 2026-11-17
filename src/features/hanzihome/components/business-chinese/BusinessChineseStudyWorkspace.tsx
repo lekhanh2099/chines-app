@@ -1,13 +1,14 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { buildBusinessChineseReaderDocument } from "@/features/hanzihome/reader-adapters/business-chinese.adapter";
 import { ReaderPronunciationSessionProvider } from "@/features/hanzihome/reader-adapters/reader-pronunciation-session";
 import type {
  TextbookBookSummary,
  TextbookLesson,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
+import { rememberTextbookLesson } from "@/features/hanzihome/static-json/textbook-lesson-client";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { MandarinTtsProvider } from "@/features/speech/MandarinTtsProvider";
 import { BusinessChineseReader } from "./BusinessChineseReader";
@@ -26,6 +27,10 @@ export function BusinessChineseStudyWorkspace({
  lesson: TextbookLesson;
 }) {
  const lessonView = useBusinessChineseLessonView({ books: initialBooks, lesson: initialLesson });
+ // An opened lesson stays readable offline without downloading it a second time.
+ useEffect(() => {
+  void rememberTextbookLesson(initialLesson);
+ }, [initialLesson]);
  const {
   lesson,
   books,

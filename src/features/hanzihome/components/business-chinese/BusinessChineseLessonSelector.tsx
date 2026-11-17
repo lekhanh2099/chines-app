@@ -21,7 +21,7 @@ import { buildTextbookHref } from "@/features/hanzihome/reader-adapters/business
 import type {
  TextbookBookSummary,
  TextbookLesson,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 
 function LessonDropdownRow({
  item,

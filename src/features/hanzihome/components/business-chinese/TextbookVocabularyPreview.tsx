@@ -7,7 +7,7 @@ import { VocabStatusControl } from "@/features/hanzihome/components/lesson-overv
 import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
 import { VocabularyCardGrid } from "@/features/hanzihome/components/lesson-overview/overview/VocabularyCardList";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { SpeakableBusinessChineseText } from "./BusinessChineseText";
 
 /** Textbook vocabulary as shared vocabulary cards with the textbook's pronunciation-aware header. */

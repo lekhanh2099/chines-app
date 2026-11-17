@@ -14,7 +14,7 @@ import { HanziHomeLibrarySkeleton } from "@/features/hanzihome/components/librar
 import { LibraryTextbookCollection } from "@/features/hanzihome/components/library/LibraryTextbookCollection";
 import type { LibraryCourseGroup } from "@/features/hanzihome/components/library/library-course-groups";
 import type { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 
 type CourseCollectionSectionProps = ComponentProps<typeof CourseCollectionSection>;
 

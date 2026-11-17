@@ -1,7 +1,7 @@
 import { groupLibraryCourses } from "@/features/hanzihome/components/library/library-course-groups";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import type { HanziHomeCatalogData, UserLearningState } from "@/features/hanzihome/types";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { HomeCourseGroup, HomeResumeBook } from "@/features/home/types";
 import { bookStudiedAtMs, lessonBookKey } from "@/features/hanzihome/utils/learning-state";
 import { sortLessonsByCourseBookOrder } from "@/features/hanzihome/courses/course-catalog";

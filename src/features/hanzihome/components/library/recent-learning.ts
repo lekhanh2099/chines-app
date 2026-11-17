@@ -5,7 +5,7 @@ import type {
  HanziHomeModule,
  UserLearningState,
 } from "@/features/hanzihome/types";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 import { lessonBookKey } from "@/features/hanzihome/utils/learning-state";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import { parseHanziHomeModule, resolveLessonModule } from "@/features/hanzihome/workspace-modules";

@@ -12,7 +12,7 @@ import {
  type UniversalAmbientPipProps,
 } from "@/features/hanzihome/components/review/UniversalAmbientPip";
 import { FastSpeechSuspendedContext } from "@/features/hanzihome/hooks/useFastMandarinSpeech";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { BusinessChineseContextualDrills } from "./BusinessChineseContextualDrills";
 import type { ContextualVocabDrillItem } from "./business-chinese-study-utils";
 import type { BusinessChinesePipControls } from "./useBusinessChinesePip";

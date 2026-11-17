@@ -5,7 +5,7 @@ import { expect, it } from "vitest";
 
 import type { HanziHomeCatalogData } from "@/features/hanzihome/types";
 import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
-import { getTextbookCatalog } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { getTextbookCatalog } from "@/features/hanzihome/static-json/textbook-catalog";
 import { customVocabListToHanziHomeVocabItems } from "@/features/hanzihome/components/review/vocab-hub-custom";
 import type { NoteListItem } from "@/services/notes/notes.service";
 import type { HanziHomeSearchResult } from "@/features/hanzihome/search/types";

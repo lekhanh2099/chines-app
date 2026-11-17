@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, type ReactNode } from "react";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { CompactSectionNavigation } from "./BusinessChineseSectionNavigation";

@@ -1,7 +1,7 @@
 import "server-only";
 
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
-import { getCourseTextbookCatalog } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { getCourseTextbookCatalog } from "@/features/hanzihome/static-json/textbook-catalog";
 import { getTextbookLessonOnServer } from "@/features/hanzihome/static-json/course-textbooks.server";
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { getUserNotesForSearch } from "@/services/notes/notes.service";

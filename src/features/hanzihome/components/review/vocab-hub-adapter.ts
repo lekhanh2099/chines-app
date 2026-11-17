@@ -1,13 +1,10 @@
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import {
- courseBookKeySchema,
  getCourseTextbookCatalog,
  getTextbookCatalog,
- getTextbookLesson,
- textbookLessonSchema,
  type TextbookLesson,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
-import { z } from "zod";
+} from "@/features/hanzihome/static-json/textbook-catalog";
+import { fetchTextbookLesson } from "@/features/hanzihome/static-json/textbook-lesson-client";
 import { textbookLessonToReviewLesson } from "@/features/hanzihome/components/business-chinese/business-chinese-study-utils";
 import { adaptAllLessonExercises } from "@/features/hanzihome/components/practice/universal-exercise-adapter";
 import type { UniversalExerciseItem } from "@/features/hanzihome/components/practice/universal-exercise.types";
@@ -86,22 +83,13 @@ function buildTextbookGroups(
  return groups;
 }
 
-const textbookLessonResponseSchema = z.object({ lesson: textbookLessonSchema });
-
-/** A bundled textbook lesson, or a converted course lesson fetched from the server. */
-async function loadTextbookLesson(entry: BookmarkedLessonEntry): Promise<TextbookLesson | null> {
- if (!courseBookKeySchema.safeParse(entry.bookKey).success) {
-  return getTextbookLesson(entry.bookKey, entry.number);
- }
- const response = await fetch(`/api/hanzihome/textbooks/${entry.bookKey}/lessons/${entry.number}`);
- if (!response.ok) throw new Error(`Textbook lesson failed with status ${response.status}`);
- return textbookLessonResponseSchema.parse(await response.json()).lesson;
-}
-
 export async function buildStudyBundleFromBookmarkedLessons(
  selectedLessonEntries: readonly BookmarkedLessonEntry[],
 ): Promise<StudyBundle> {
- const lessons = await Promise.all(selectedLessonEntries.map(loadTextbookLesson));
+ // Lesson content is not bundled with the client; each lesson is loaded on demand.
+ const lessons = await Promise.all(
+  selectedLessonEntries.map((entry) => fetchTextbookLesson(entry.bookKey, entry.number)),
+ );
  const vocabItems: HanziHomeVocabItem[] = [];
  const grammarItems: PipGrammarPoint[] = [];
  const practiceItems: UniversalExerciseItem[] = [];

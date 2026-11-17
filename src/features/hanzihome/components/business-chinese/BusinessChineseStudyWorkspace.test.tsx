@@ -22,7 +22,7 @@ import {
  getTextbookCatalogForBookKeys,
  getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { appLocales } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 import * as exerciseAdapter from "../practice/universal-exercise-adapter";
@@ -453,24 +453,6 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
    expect(markup).not.toContain("BusinessChinese.practice.");
   },
  );
-
- it("resolves the routed book when a mounted textbook workspace receives a new pathname", () => {
-  const previousLesson = getTextbookLesson("khau-ngu", 3);
-  const currentLesson = getTextbookLesson("doc-hieu", 1);
-  const practice = currentLesson?.sections.find((section) => section.category === "practice");
-  if (!previousLesson || !currentLesson || !practice)
-   throw new Error("Expected the two textbook lessons and reading practice.");
-  mockPathname = "/hsk/doc-hieu";
-  mockParams = new URLSearchParams("lesson=1&tab=practice");
-
-  const markup = renderWorkspace(
-   <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={previousLesson} />,
-  );
-
-  expect(markup).toContain(currentLesson.title);
-  expect(markup).not.toContain(previousLesson.title);
-  expect(markup).toContain(`id="${practice.id}"`);
- });
 
  it("renders each grammar point with its own heading, navigation target and original audio", () => {
   const lesson = getTextbookLesson("nhip-cau", 3);
@@ -1657,18 +1639,16 @@ describe("textbook persisted settings and view", fullLessonRenderTimeout, () => 
   ).toBe(true);
  });
 
- it("resolves lesson 2 dynamically from searchParams when initialLesson is lesson 1", () => {
+ it("renders the lesson the route passed; lesson content is never resolved in the browser", () => {
   const books = getTextbookCatalog();
   const lesson1 = getTextbookLesson("nhip-cau", 1);
-  const lesson2 = getTextbookLesson("nhip-cau", 2);
-  if (!lesson1 || !lesson2) throw new Error("Missing textbook fixture");
+  if (!lesson1) throw new Error("Missing textbook fixture");
   mockParams = new URLSearchParams("lesson=2&tab=text");
   readerDocumentMock.mockClear();
 
-  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson1} />);
-  expect(markup).not.toContain('sr-only">Đang tải bài học');
+  renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson1} />);
   expect(
-   readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson2.id}:text`),
+   readerDocumentMock.mock.calls.some(([document]) => document.id === `${lesson1.id}:text`),
   ).toBe(true);
  });
 });

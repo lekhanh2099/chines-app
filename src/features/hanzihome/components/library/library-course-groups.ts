@@ -5,7 +5,7 @@ import type {
 } from "@/features/hanzihome/types";
 import { z } from "zod";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 
 export const LibraryCourseGroupKeySchema = z.enum([
  "hanyu",

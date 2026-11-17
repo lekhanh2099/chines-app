@@ -1,5 +1,5 @@
 import type { HanziHomeCatalogData } from "@/features/hanzihome/types";
-import { getTextbookCatalog } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { getTextbookCatalog } from "@/features/hanzihome/static-json/textbook-catalog";
 import { buildHomeCourseGroups, buildHomeResumeBooks } from "./home-dashboard.utils";
 import { describe, expect, it } from "vitest";
 

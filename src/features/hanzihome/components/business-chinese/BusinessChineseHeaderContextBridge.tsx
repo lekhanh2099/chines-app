@@ -13,7 +13,7 @@ import { buildTextbookHref } from "@/features/hanzihome/reader-adapters/business
 import type {
  TextbookBookSummary,
  TextbookLesson,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
 import { BusinessChineseLessonActions } from "./BusinessChineseWorkspaceToolbar";

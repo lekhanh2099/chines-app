@@ -12,7 +12,7 @@ import {
  createTextbookPersonalNoteContent,
  createTextbookReadingContent,
 } from "@/features/hanzihome/components/notes/lessonNoteContent";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { useCreateLessonLinkedNote } from "@/features/notes/hooks/useCreateLessonLinkedNote";
 import { useLessonLinkedNote } from "@/features/notes/hooks/useLessonLinkedNote";
 

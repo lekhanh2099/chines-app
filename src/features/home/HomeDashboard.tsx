@@ -11,7 +11,7 @@ import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
 import { useHomeDashboard } from "@/features/home/hooks/useHomeDashboard";
 import { useTranslations } from "next-intl";
 
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 
 /**
  * Home reads top-down as one hierarchy: what I am studying (most recent book,

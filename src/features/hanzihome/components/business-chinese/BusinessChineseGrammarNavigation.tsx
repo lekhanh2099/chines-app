@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/display/badge";
 import { Typography } from "@/components/ui/display/typography";
 import { Card } from "@/components/ui/layout/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { GrammarSectionNavigation } from "./BusinessChineseSectionNavigation";
 
 /** Owns the compact grammar table-of-contents sheet and its focus-return targets. */

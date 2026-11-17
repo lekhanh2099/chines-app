@@ -15,7 +15,7 @@ import {
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { useRecentNotes } from "@/features/notes/hooks/useRecentNotes";
 import { fetchHomeLearningOverview } from "@/features/home/home-learning-overview-api";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 import { buildHomeCourseGroups, buildHomeResumeBooks } from "@/features/home/home-dashboard.utils";
 import { buildHomeRecentActivity } from "@/features/home/home-dashboard.utils";
 import type { HomeDashboardModel } from "@/features/home/types";

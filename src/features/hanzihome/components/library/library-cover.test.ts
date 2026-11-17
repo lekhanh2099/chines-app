@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { getTextbookCatalog } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import { getTextbookCatalog } from "@/features/hanzihome/static-json/textbook-catalog";
 import { HanziHomeMutationError } from "@/features/hanzihome/radical-editing/mutation-error";
 import { LibraryCourseGroupKeySchema } from "./library-course-groups";
 import { getLibraryCovers, resetLibraryCover, saveLibraryCover } from "./library-cover-api";

@@ -4,7 +4,7 @@ import { HanziHomePage as HanziHomeFeaturePage } from "@/features/hanzihome/Hanz
 import {
  getCourseTextbookCatalog,
  getTextbookCatalog,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 import { legacyCourseLessonHref } from "@/features/hanzihome/static-json/course-legacy-routes";
 import { isAppLocale, localizePathname } from "@/i18n/config";
 

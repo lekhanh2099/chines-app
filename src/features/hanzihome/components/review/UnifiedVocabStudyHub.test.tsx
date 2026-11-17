@@ -9,7 +9,10 @@ import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { loadAppMessages } from "@/i18n/messages";
 import type { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import * as pipHook from "@/features/hanzihome/hooks/useDocumentPip";
-import { getTextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import {
+ getTextbookLesson,
+ textbookLessonSchema,
+} from "@/features/hanzihome/static-json/business-chinese-static-content";
 import {
  getItWebVocabCorpus,
  getItWebVocabItemsByFilter,
@@ -94,6 +97,17 @@ vi.mock("@/i18n/navigation", () => ({
  Link: ({ children, href }: { children: ReactNode; href: string }) => <a href={href}>{children}</a>,
 }));
 
+/** Serves the lesson route from the bundled content, as the server does. */
+function serveBundledLessons() {
+ return vi.spyOn(globalThis, "fetch").mockImplementation(async (input) => {
+  const [, bookKey = "", lessonNumber = ""] =
+   /\/api\/hanzihome\/textbooks\/([^/]+)\/lessons\/(\d+)$/.exec(String(input)) ?? [];
+  const book = textbookLessonSchema.shape.bookKey.parse(bookKey);
+  const lesson = getTextbookLesson(book, Number(lessonNumber));
+  return new Response(JSON.stringify({ lesson }), { status: lesson ? 200 : 404 });
+ });
+}
+
 describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
  it("loads the IT / Web communication vocabulary corpus with 10 groups and core-20 day-1 preset", () => {
   const corpus = getItWebVocabCorpus();
@@ -128,9 +142,14 @@ describe("UnifiedVocabStudyHub & Vocab Hub Adapter", () => {
   expect(groups.every((g) => g.lessons.length === 1)).toBe(true);
 
   const selectedEntries = groups.flatMap((g) => g.lessons);
-  const bundle = await buildStudyBundleFromBookmarkedLessons(selectedEntries);
-  expect(bundle.vocabItems.length).toBeGreaterThan(20);
-  expect(bundle.practiceItems.length).toBeGreaterThan(10);
+  const fetchMock = serveBundledLessons();
+  try {
+   const bundle = await buildStudyBundleFromBookmarkedLessons(selectedEntries);
+   expect(bundle.vocabItems.length).toBeGreaterThan(20);
+   expect(bundle.practiceItems.length).toBeGreaterThan(10);
+  } finally {
+   fetchMock.mockRestore();
+  }
  });
 
  it("parses multi-format bulk custom vocabulary input and generates contextual exercises", () => {
@@ -387,14 +406,22 @@ describe("PiP any-lesson source", () => {
   ).toEqual({ bundle: studyable, status: "", canRetry: false });
  });
 
- it("loads a static pick through the existing textbook pipeline", async () => {
+ it("loads a bundled textbook pick from the server lesson route", async () => {
   const entry = getSelectableTextbookGroups()
    .flatMap((group) => group.lessons)
    .find((lesson) => lesson.id === "khau-ngu-lesson-03");
   if (!entry) throw new Error("Expected Khẩu ngữ lesson 3");
-  const bundle = await buildStudyBundleFromBookmarkedLessons([entry]);
-  expect(bundle.title).toBe(`${entry.bookLabel} · ${entry.title}`);
-  expect(bundle.vocabItems.length).toBeGreaterThan(0);
+  const fetchMock = serveBundledLessons();
+  try {
+   const bundle = await buildStudyBundleFromBookmarkedLessons([entry]);
+   expect(fetchMock).toHaveBeenCalledWith("/api/hanzihome/textbooks/khau-ngu/lessons/3", {
+    signal: undefined,
+   });
+   expect(bundle.title).toBe(`${entry.bookLabel} · ${entry.title}`);
+   expect(bundle.vocabItems.length).toBeGreaterThan(0);
+  } finally {
+   fetchMock.mockRestore();
+  }
  });
 
  it("loads a converted course pick from the server lesson route", async () => {
@@ -430,6 +457,7 @@ describe("PiP any-lesson source", () => {
    const bundle = await buildStudyBundleFromBookmarkedLessons([entry]);
    expect(fetchMock).toHaveBeenCalledWith(
     `/api/hanzihome/textbooks/${entry.bookKey}/lessons/${entry.number}`,
+    { signal: undefined },
    );
    expect(bundle.vocabItems.map((item) => item.hanzi)).toEqual(["套"]);
   } finally {

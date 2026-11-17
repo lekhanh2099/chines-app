@@ -5,7 +5,7 @@ import { Typography } from "@/components/ui/display/typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { LessonDictationWorkspace } from "@/features/hanzihome/practice/LessonDictationWorkspace";
 import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
 import { BusinessChineseOverviewCard } from "./BusinessChineseOverviewCard";
 import {

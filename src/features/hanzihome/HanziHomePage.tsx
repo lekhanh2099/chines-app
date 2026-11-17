@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 
 import { HanziHomeLibraryHome } from "@/features/hanzihome/HanziHomeLibraryHome";
 import { HanziHomeWorkspace } from "@/features/hanzihome/HanziHomeWorkspace";
-import type { TextbookBookSummary } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookBookSummary } from "@/features/hanzihome/static-json/textbook-catalog";
 
 export function HanziHomePage({ textbooks }: { textbooks: TextbookBookSummary[] }) {
  const searchParams = useSearchParams();

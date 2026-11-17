@@ -21,11 +21,20 @@ import { listCachedLessonSummaries } from "./local/lesson-content-cache";
 import { hanzihomeQueryKeys } from "./query-keys";
 import { findLessonByRouteParam } from "./utils/lesson-route";
 import { parseHanziHomeModule, resolveLessonModule } from "./workspace-modules";
+import { getTextbookCatalogForBookKeys, type TextbookLesson } from "./static-json/textbook-catalog";
 import {
- getTextbookCatalogForBookKeys,
- getTextbookLesson,
-} from "./static-json/business-chinese-static-content";
+ fetchTextbookLesson,
+ listRememberedTextbookLessons,
+} from "./static-json/textbook-lesson-client";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
+
+/** Textbooks offered offline; a lesson is readable once it has been opened online. */
+const offlineTextbookKeys = [
+ "tm3",
+ "nhip-cau",
+ "doc-hieu",
+ "khau-ngu",
+] satisfies readonly TextbookLesson["bookKey"][];
 
 function OfflineLessonStudy({ lessonId }: { lessonId: string }) {
  const searchParams = useSearchParams();
@@ -164,7 +173,7 @@ function OfflineLessonLibrary({ ownerId }: { ownerId: string }) {
      className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"
      aria-label={t("offlineStudy.textbooks")}
     >
-     {getTextbookCatalogForBookKeys(["tm3", "nhip-cau", "doc-hieu", "khau-ngu"]).map((book) => (
+     {getTextbookCatalogForBookKeys(offlineTextbookKeys).map((book) => (
       <li key={book.id}>
        <Card padding="md" className="grid h-full gap-3">
         <Typography as="h2" variant="sectionTitle">
@@ -197,6 +206,43 @@ export function OfflineStudyWorkspace() {
  const t = useTranslations("Common.offlineStudy");
  const shell = useTranslations("Shell");
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
+ const books = getTextbookCatalogForBookKeys(offlineTextbookKeys);
+ const book = books.find((item) => item.key === searchParams.get("book"));
+ // Without a lesson in the URL, open the lesson the learner last studied in this
+ // book (known once the learning state has loaded), otherwise the first one.
+ const learning = useLearningState();
+ const resumeLessonId = book
+  ? learning.state.settings.bookResume?.[`static:${book.id}`]?.lessonId
+  : undefined;
+ const summary = searchParams.has("lesson")
+  ? (book?.lessons.find((item) => item.number === Number(searchParams.get("lesson"))) ??
+    book?.lessons[0])
+  : learning.isLoading
+    ? undefined
+    : (book?.lessons.find((item) => item.id === resumeLessonId) ?? book?.lessons[0]);
+ // Lessons are not bundled: a lesson opened while online is served again from
+ // the offline cache by the service worker.
+ const textbookLesson = useQuery({
+  queryKey: hanzihomeQueryKeys.textbookLesson(book?.key ?? "", summary?.number ?? 0),
+  queryFn: ({ signal }) =>
+   book && summary ? fetchTextbookLesson(book.key, summary.number, signal) : null,
+  enabled: Boolean(book && summary),
+  staleTime: Number.POSITIVE_INFINITY,
+  retry: false,
+  // The service worker answers from the offline cache; never pause while offline.
+  networkMode: "always",
+ });
+ // When the requested lesson is not on the device, the saved ones stay reachable.
+ const lessonUnavailable = Boolean(book) && textbookLesson.isError;
+ const rememberedLessons = useQuery({
+  queryKey: hanzihomeQueryKeys.rememberedTextbookLessons(book?.key ?? ""),
+  queryFn: () => (book ? listRememberedTextbookLessons(book.key) : []),
+  enabled: lessonUnavailable,
+  networkMode: "always",
+  staleTime: 0,
+ });
+ const savedLessons =
+  book?.lessons.filter((item) => rememberedLessons.data?.includes(item.number)) ?? [];
  if (!isResolved || !userId) {
   return (
    <Card padding="lg">
@@ -204,12 +250,7 @@ export function OfflineStudyWorkspace() {
    </Card>
   );
  }
- const books = getTextbookCatalogForBookKeys(["tm3", "nhip-cau", "doc-hieu", "khau-ngu"]);
- const book = books.find((item) => item.key === searchParams.get("book"));
- const summary =
-  book?.lessons.find((item) => item.number === Number(searchParams.get("lesson"))) ??
-  book?.lessons[0];
- const lesson = book && summary ? getTextbookLesson(book.key, summary.number) : null;
+ const lesson = textbookLesson.data ?? null;
  return (
   <>
    <FocusModeRouteGuard />
@@ -254,9 +295,35 @@ export function OfflineStudyWorkspace() {
    {searchParams.has("book") ? (
     lesson ? (
      <BusinessChineseStudyWorkspace key={`${userId}:${lesson.id}`} books={books} lesson={lesson} />
+    ) : textbookLesson.isPending && book ? (
+     <HanziHomeWorkspaceLoading />
     ) : (
-     <Card padding="lg">
-      <PageHeader title={t("textbookUnavailable")} description={t("emptyDescription")} />
+     <Card padding="lg" className="grid gap-4">
+      <PageHeader
+       title={t(book ? "lessonNotSaved" : "textbookUnavailable")}
+       description={t(book ? "lessonNotSavedDescription" : "emptyDescription")}
+      />
+      {book && savedLessons.length > 0 ? (
+       <section className="grid gap-2" aria-labelledby="offline-saved-lessons-heading">
+        <Typography as="h2" variant="cardTitle" id="offline-saved-lessons-heading">
+         {t("savedLessons")}
+        </Typography>
+        <ul className="flex flex-wrap gap-2">
+         {savedLessons.map((item) => (
+          <li key={item.id}>
+           <Button
+            variant="outline"
+            onClick={() =>
+             window.history.pushState(null, "", `?book=${book.key}&lesson=${item.number}`)
+            }
+           >
+            {item.title}
+           </Button>
+          </li>
+         ))}
+        </ul>
+       </section>
+      ) : null}
      </Card>
     )
    ) : (

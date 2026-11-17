@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/display/badge";
 import { Input } from "@/components/ui/forms/input";
 import { Card } from "@/components/ui/layout/card";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { BusinessChineseText, SpeakableBusinessChineseText } from "./BusinessChineseText";
 import { useLessonExerciseResults } from "./LessonExerciseResults";
 import {

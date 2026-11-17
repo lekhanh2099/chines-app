@@ -3,7 +3,7 @@ import { HomeDashboard } from "@/features/home/HomeDashboard";
 import {
  getCourseTextbookCatalog,
  getTextbookCatalog,
-} from "@/features/hanzihome/static-json/business-chinese-static-content";
+} from "@/features/hanzihome/static-json/textbook-catalog";
 
 export default function HomePage() {
  return (

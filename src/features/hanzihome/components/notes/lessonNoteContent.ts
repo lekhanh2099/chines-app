@@ -1,6 +1,6 @@
 import type { JsonObject } from "@/types/json";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import { z } from "zod";
 

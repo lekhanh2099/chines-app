@@ -28,7 +28,7 @@ import { StudioDictationPracticePanel } from "@/features/dictation/StudioDictati
 import { StudioDictationReferencePanel } from "@/features/dictation/StudioDictationReferencePanel";
 import type { StudioDictationScriptMode } from "@/features/dictation/StudioDictationSettingsMenu";
 import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettingsDialog";
-import type { TextbookLesson } from "@/features/hanzihome/static-json/business-chinese-static-content";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { dictationSourcesFromLesson, type DictationSource } from "./translation-practice";
 
 type LessonDictationWorkspaceProps = {
