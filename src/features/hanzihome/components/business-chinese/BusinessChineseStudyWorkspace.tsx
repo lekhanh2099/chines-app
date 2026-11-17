@@ -12,6 +12,10 @@ import { rememberTextbookLesson } from "@/features/hanzihome/static-json/textboo
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 import { MandarinTtsProvider } from "@/features/speech/MandarinTtsProvider";
 import { BusinessChineseReader } from "./BusinessChineseReader";
+import {
+ clearPendingTextbookLesson,
+ usePendingTextbookLessonId,
+} from "./pending-textbook-lesson-store";
 import { BusinessChineseStudyWorkspaceContent } from "./BusinessChineseStudyWorkspaceContent";
 import {
  useBusinessChineseLessonResume,
@@ -27,6 +31,14 @@ export function BusinessChineseStudyWorkspace({
  lesson: TextbookLesson;
 }) {
  const lessonView = useBusinessChineseLessonView({ books: initialBooks, lesson: initialLesson });
+ // The learner picked another lesson: show the loading state at once; this
+ // workspace is replaced when that lesson's page arrives.
+ const pendingLessonId = usePendingTextbookLessonId();
+ const isLeavingLesson = pendingLessonId !== "" && pendingLessonId !== initialLesson.id;
+ useEffect(() => {
+  if (pendingLessonId === initialLesson.id) clearPendingTextbookLesson();
+ }, [initialLesson.id, pendingLessonId]);
+ useEffect(() => clearPendingTextbookLesson, []);
  // An opened lesson stays readable offline without downloading it a second time.
  useEffect(() => {
   void rememberTextbookLesson(initialLesson);
@@ -91,7 +103,7 @@ export function BusinessChineseStudyWorkspace({
   ],
  );
 
- if (shouldRestoreLesson) return <HanziHomeWorkspaceLoading />;
+ if (shouldRestoreLesson || isLeavingLesson) return <HanziHomeWorkspaceLoading />;
 
  return (
   <MandarinTtsProvider>
