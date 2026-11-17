@@ -208,9 +208,18 @@ export function OfflineStudyWorkspace() {
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const books = getTextbookCatalogForBookKeys(offlineTextbookKeys);
  const book = books.find((item) => item.key === searchParams.get("book"));
- const summary =
-  book?.lessons.find((item) => item.number === Number(searchParams.get("lesson"))) ??
-  book?.lessons[0];
+ // Without a lesson in the URL, open the lesson the learner last studied in this
+ // book (known once the learning state has loaded), otherwise the first one.
+ const learning = useLearningState();
+ const resumeLessonId = book
+  ? learning.state.settings.bookResume?.[`static:${book.id}`]?.lessonId
+  : undefined;
+ const summary = searchParams.has("lesson")
+  ? (book?.lessons.find((item) => item.number === Number(searchParams.get("lesson"))) ??
+    book?.lessons[0])
+  : learning.isLoading
+    ? undefined
+    : (book?.lessons.find((item) => item.id === resumeLessonId) ?? book?.lessons[0]);
  // Lessons are not bundled: a lesson opened while online is served again from
  // the offline cache by the service worker.
  const textbookLesson = useQuery({
