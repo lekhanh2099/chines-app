@@ -1,5 +1,6 @@
 "use client";
 
+import { setPendingTextbookLesson } from "./pending-textbook-lesson-store";
 import { useCallback, useMemo, useRef, useState } from "react";
 import { Bookmark, Check, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -114,11 +115,13 @@ export function BusinessChineseLessonSelector({
     window.history.pushState(null, "", `?${params.toString()}`);
     return;
    }
+   if (targetLesson.id === lesson.id) return;
+   setPendingTextbookLesson(targetLesson.id);
    router.push(buildTextbookHref(targetLesson.bookKey, targetLesson.number), {
     scroll: false,
    });
   },
-  [router],
+  [lesson.id, router],
  );
 
  return (
