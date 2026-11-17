@@ -104,6 +104,12 @@ export const hanzihomeQueryKeys = {
   userId,
   lessonId,
  ],
+ rememberedTextbookLessons: (bookKey: string) => [
+  "hanzihome",
+  "textbook-lesson",
+  "remembered",
+  bookKey,
+ ],
  textbookLesson: (bookKey: string, lessonNumber: number) => [
   "hanzihome",
   "textbook-lesson",

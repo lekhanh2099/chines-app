@@ -708,6 +708,8 @@ test.describe(() => {
    await expect(
     page.getByRole("heading", { name: "Bài này chưa có trên máy", exact: true }),
    ).toBeVisible();
+   await page.getByRole("button", { name: /^BÀI 1:/ }).click();
+   await expect(page.locator("[data-reader-segment]").first()).toBeVisible();
    await page.goto("/vi/offline?book=tm2");
    await expect(
     page.getByRole("heading", { name: "Giáo trình không khả dụng", exact: true }),

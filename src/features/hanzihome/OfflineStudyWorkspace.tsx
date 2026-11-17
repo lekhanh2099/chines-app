@@ -22,7 +22,10 @@ import { hanzihomeQueryKeys } from "./query-keys";
 import { findLessonByRouteParam } from "./utils/lesson-route";
 import { parseHanziHomeModule, resolveLessonModule } from "./workspace-modules";
 import { getTextbookCatalogForBookKeys, type TextbookLesson } from "./static-json/textbook-catalog";
-import { fetchTextbookLesson } from "./static-json/textbook-lesson-client";
+import {
+ fetchTextbookLesson,
+ listRememberedTextbookLessons,
+} from "./static-json/textbook-lesson-client";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
 
 /** Textbooks offered offline; a lesson is readable once it has been opened online. */
@@ -217,7 +220,20 @@ export function OfflineStudyWorkspace() {
   enabled: Boolean(book && summary),
   staleTime: Number.POSITIVE_INFINITY,
   retry: false,
+  // The service worker answers from the offline cache; never pause while offline.
+  networkMode: "always",
  });
+ // When the requested lesson is not on the device, the saved ones stay reachable.
+ const lessonUnavailable = Boolean(book) && textbookLesson.isError;
+ const rememberedLessons = useQuery({
+  queryKey: hanzihomeQueryKeys.rememberedTextbookLessons(book?.key ?? ""),
+  queryFn: () => (book ? listRememberedTextbookLessons(book.key) : []),
+  enabled: lessonUnavailable,
+  networkMode: "always",
+  staleTime: 0,
+ });
+ const savedLessons =
+  book?.lessons.filter((item) => rememberedLessons.data?.includes(item.number)) ?? [];
  if (!isResolved || !userId) {
   return (
    <Card padding="lg">
@@ -278,6 +294,27 @@ export function OfflineStudyWorkspace() {
        title={t(book ? "lessonNotSaved" : "textbookUnavailable")}
        description={t(book ? "lessonNotSavedDescription" : "emptyDescription")}
       />
+      {book && savedLessons.length > 0 ? (
+       <section className="mt-4 grid gap-2" aria-labelledby="offline-saved-lessons-heading">
+        <Typography as="h2" variant="cardTitle" id="offline-saved-lessons-heading">
+         {t("savedLessons")}
+        </Typography>
+        <ul className="flex flex-wrap gap-2">
+         {savedLessons.map((item) => (
+          <li key={item.id}>
+           <Button
+            variant="outline"
+            onClick={() =>
+             window.history.pushState(null, "", `?book=${book.key}&lesson=${item.number}`)
+            }
+           >
+            {item.title}
+           </Button>
+          </li>
+         ))}
+        </ul>
+       </section>
+      ) : null}
      </Card>
     )
    ) : (

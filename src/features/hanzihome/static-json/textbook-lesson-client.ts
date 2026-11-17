@@ -40,3 +40,16 @@ export async function rememberTextbookLesson(lesson: TextbookLesson) {
   // Offline availability is best effort; storage can be unavailable or full.
  }
 }
+
+/** Lesson numbers of `bookKey` that are kept on this device for offline reading. */
+export async function listRememberedTextbookLessons(bookKey: TextbookLesson["bookKey"]) {
+ if (typeof caches === "undefined") return [];
+ const prefix = textbookLessonUrl(bookKey, 0).slice(0, -1);
+ const cache = await caches.open(textbookLessonCacheName);
+ return (await cache.keys())
+  .map((request) => new URL(request.url).pathname)
+  .filter((pathname) => pathname.startsWith(prefix))
+  .map((pathname) => Number(pathname.slice(prefix.length)))
+  .filter((lessonNumber) => Number.isInteger(lessonNumber))
+  .sort((left, right) => left - right);
+}
