@@ -43,7 +43,7 @@ export function VocabularyEntryCard({ entry }: { entry: VocabularyEntry }) {
       </PinyinText>
      ) : null}
      {entry.hanViet ? (
-      <StudyInstructionText as="span" variant="caption" tone="purple" transform="uppercase">
+      <StudyInstructionText as="span" variant="bodySmall" tone="purple" transform="uppercase">
        {entry.hanViet}
       </StudyInstructionText>
      ) : null}
@@ -57,7 +57,7 @@ export function VocabularyEntryCard({ entry }: { entry: VocabularyEntry }) {
      >
       {entry.occurrences.slice(0, previewOccurrenceCount).map((occurrence) => (
        <div key={`${occurrence.source.href}:${occurrence.meaning}`} className="grid gap-0.5">
-        <Typography as="span" variant="caption" tone="success">
+        <Typography as="span" variant="bodySmall" tone="success">
          {occurrence.source.label}
         </Typography>
         <HanziAwareText text={occurrence.meaning} variant="bodySmall" tone="default" />
@@ -78,7 +78,7 @@ export function VocabularyEntryCard({ entry }: { entry: VocabularyEntry }) {
    {firstOccurrence ? (
     <HanziAwareText text={firstOccurrence.meaning} variant="bodySmall" tone="default" clamp="two" />
    ) : null}
-   <Typography as="span" variant="caption" tone="muted">
+   <Typography as="span" variant="bodySmall" tone="muted">
     {otherCount > 0
      ? t("occurrenceSummary", { source: firstOccurrence?.source.label ?? "", count: otherCount })
      : (firstOccurrence?.source.label ?? "")}

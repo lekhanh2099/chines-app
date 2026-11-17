@@ -118,16 +118,6 @@ curl --request GET \
   --header "Authorization: Bearer $HANZIHOME_INTEGRATION_KEY"
 ```
 
-### List saved SRS vocabulary
-
-This call needs `learning:read`.
-
-```sh
-curl --request GET \
-  --url "$HANZIHOME_API_BASE/api/v1/vocabulary/progress?limit=50" \
-  --header "Authorization: Bearer $HANZIHOME_INTEGRATION_KEY"
-```
-
 ### Create a note
 
 This call needs `notes:write`.
@@ -193,7 +183,7 @@ curl --request POST \
 | `content:read`                           | Catalog, lessons, aggregates, search index and editor-only deleted-content reads.                        |
 | `content:write`                          | Canonical content mutations, radicals, listening and vocabulary-child bulk mutations.                    |
 | `notes:read` / `notes:write`             | Note library, folders and lesson links.                                                                  |
-| `learning:read` / `learning:write`       | Learning state, saved SRS list/progress, annotations and personal memory tips.                           |
+| `learning:read` / `learning:write`       | Learning state, annotations and personal memory tips.                                                    |
 | `artifacts:read` / `artifacts:write`     | HTML artifacts, folders and runtime state.                                                               |
 | `lookup:read`                            | Basic lookup calls.                                                                                      |
 | `ai:generate`                            | Deep lookup, vocabulary generation and editor context; only the key owner's BYOK credential may be used. |

@@ -212,11 +212,17 @@ describe("Sidebar translations", () => {
    expect(markup.indexOf('id="sidebar-section-textbooks"')).toBeLessThan(
     markup.indexOf('id="sidebar-section-hsk-reading"'),
    );
-   const textbookDisclosure = textbookSection.match(/<details\b[^>]*>/)?.[0];
-   expect(textbookDisclosure).toBeDefined();
-   expect(textbookDisclosure).not.toContain("open=");
-   expect(textbookSection.split("<details")[0]).toContain(messages.Shell.search.quickAccess);
-   expect(textbookSection.split("<details")[0]).toContain(`href="${pathname}"`);
+   // The active textbook stays in place inside its opened disclosure.
+   expect(markup).toMatch(
+    /<button(?=[^>]*aria-expanded="true")(?=[^>]*aria-controls="sidebar-section-textbooks")/,
+   );
+   expect(markup).toMatch(
+    /<button(?=[^>]*aria-expanded="false")(?=[^>]*aria-controls="sidebar-section-hsk-reading")/,
+   );
+   expect(textbookSection.split('id="sidebar-section-hsk-reading"')[0]).toContain(
+    `href="${pathname}"`,
+   );
+   expect(markup).not.toContain(messages.Shell.search.quickAccess);
    currentPathname = "/reader";
   },
  );

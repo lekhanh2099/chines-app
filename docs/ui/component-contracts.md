@@ -317,6 +317,16 @@ asset; otherwise use a Simplified-Chinese-capable font already delivered by
 the app before generic serif/sans-serif. HanziWriter stroke glyphs are vector
 data and do not follow CSS font selection.
 
+Learner cards keep small text readable: secondary facts on a vocabulary or
+character card (Hán-Việt, source, components, meaning) use at least `bodySmall`
+at regular or medium weight. Do not combine `caption`/`text-xs` with bold or
+semibold weight for content a learner must read; reserve bold for the Hanzi,
+the pinyin and headings.
+
+A study list links a word to more detail through `DetailHint`: hover or tap
+previews, a mouse or keyboard press opens the detail **route**. Detail views are
+routes, not sheets.
+
 ## 11. Dialog and destructive actions
 
 Every dialog requires a title, managed focus, Escape behavior, focus return and
@@ -395,9 +405,15 @@ What recent work should I continue?
 What needs attention next?
 ```
 
-Sidebar groups routes as Học, Luyện, Năng lực and Cá nhân. When pathname
-changes, the group containing the active route must become expanded so the
-current location is never hidden. User-opened unrelated groups may stay open.
+Sidebar lists the everyday learning destinations directly (the learning
+journey, then a labelled "look up & notes" section) and folds larger libraries
+and the Luyện / Cá nhân groups behind one disclosure-row pattern: icon, label,
+chevron, with the destinations indented beneath. Do not mix a second collapse
+style, and do not move the active destination out of its section. When pathname
+changes, the disclosure containing the active route must become expanded so the
+current location is never hidden. User-opened unrelated disclosures may stay
+open. Folded destinations stay mounted (`hidden`) so every route remains in the
+document.
 
 HanziHome module navigation is contextual and remains inside the feature.
 

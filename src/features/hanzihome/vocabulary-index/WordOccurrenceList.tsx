@@ -44,7 +44,7 @@ export function WordOccurrenceList({
    ) : null}
    {entry.occurrences.slice(0, limit).map((occurrence) => (
     <div key={`${occurrence.source.href}:${occurrence.meaning}`} className="grid gap-0.5">
-     <Typography as="span" variant="caption" tone="success">
+     <Typography as="span" variant="bodySmall" tone="success">
       {occurrence.source.label}
      </Typography>
      <HanziAwareText text={occurrence.meaning} variant="bodySmall" tone="default" />

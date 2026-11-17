@@ -194,14 +194,32 @@ and iPad portrait, and verify the wide-desktop menu separately.
 - resizing persists without update loops;
 - developer actions remain contextual and do not alter learner state accidentally.
 
-### Aggregate vocab/grammar library
+### Vocabulary store (Tra Hán tự)
 
-- PageHeader, lesson-selection tools and filter bar remain readable at all viewports;
-- keyword Input + filter Selects + reset action align without mixed density;
-- loading, fetch error and no-results are distinct;
-- per-lesson Open/Ôn actions are keyboard reachable;
-- vocab review preserves selected lesson URL state;
-- grammar review enters/leaves active review without losing filter state.
+- the store shell and its skeleton appear immediately; the list streams in;
+- search by Hanzi, toneless pinyin, Hán-Việt and accent-insensitive Vietnamese meaning updates the URL (`q`, `page`) and survives Back;
+- a polyphonic written form shows one card per reading and one block per reading on its word page;
+- card hover lists the meaning per lesson; the word page is a route, never a sheet;
+- the list scrolls inside its own region and never scrolls the page horizontally;
+- small card text (Hán-Việt, source, meaning) is at least `bodySmall` and not bold.
+
+### Vocabulary lists and lookup
+
+- a word that occurs in more than one lesson, textbook or note shows the reuse marker; a word that occurs once does not;
+- the marker previews meanings on hover or tap and opens the word page on a mouse or keyboard press;
+- the lookup drawer shows the learner's lesson meanings ahead of the dictionary, and nothing when the word is not in the store;
+- after editing a vocabulary row, the marker and the lesson meanings reflect the edit without a reload.
+
+### Pinyin selection
+
+- a drag that starts on ruby Pinyin selects only Pinyin and copies it as plain text (syllables separated by spaces, one line per block);
+- a drag that starts on Hanzi selects Hanzi without Pinyin, and lookup, annotation and Reader copy behave as before;
+- a press outside Pinyin leaves Pinyin selection; a Pinyin drag never opens the pronunciation inspector.
+
+### Route changes
+
+- navigating to any route under the signed-in app replaces the content area with a skeleton immediately while the sidebar and header stay interactive;
+- routes with their own `loading.tsx` show their own skeleton.
 
 ### Notes
 
@@ -225,14 +243,6 @@ and iPad portrait, and verify the wide-desktop menu separately.
 - view mode uses one SegmentedControl contract in normal and compact toolbar states;
 - compact enter/exit thresholds do not flicker;
 - section/group filters remain keyboard reachable and horizontally scrollable when narrow.
-
-### Dictionary / SRS
-
-- route stays thin and feature owns query-normalization/UI composition;
-- saved vocabulary, legacy fallback and missing-table behavior remain distinct;
-- search no-results differs from a genuinely empty SRS;
-- interactive SRS Card/Link has visible focus;
-- long pinyin/meaning/note content does not create horizontal page overflow.
 
 ### Memory Tips
 

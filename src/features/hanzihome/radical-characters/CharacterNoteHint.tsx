@@ -46,7 +46,7 @@ export function CharacterNoteHint({ text }: { text: string }) {
         <PinyinText tone="accent" weight="bold">
          {note.character.pinyin}
         </PinyinText>
-        <StudyInstructionText as="span" variant="caption" tone="muted" transform="uppercase">
+        <StudyInstructionText as="span" variant="bodySmall" tone="muted" transform="uppercase">
          {note.character.hanViet}
         </StudyInstructionText>
        </div>
@@ -56,7 +56,7 @@ export function CharacterNoteHint({ text }: { text: string }) {
          radical: note.radical.radical,
          name: note.radical.hanViet,
         })}
-        variant="caption"
+        variant="bodySmall"
         tone="muted"
        />
        <HanziAwareText text={note.character.explanation} variant="bodySmall" tone="secondary" />
