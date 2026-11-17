@@ -33,6 +33,8 @@ import {
  countRadicalStrokeFilters,
  countRadicalSupportingItems,
  filterRadicals,
+ listedRadicals,
+ radicalForms,
 } from "./radical-workspace-utils";
 
 type RadicalWorkspaceProps = {
@@ -42,8 +44,9 @@ type RadicalWorkspaceProps = {
 const RadicalViewSchema = z.enum(["grid", "list"]);
 type RadicalView = z.infer<typeof RadicalViewSchema>;
 
-export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
+export function RadicalWorkspace({ radicals: catalog }: RadicalWorkspaceProps) {
  const t = useTranslations("Radicals");
+ const radicals = useMemo(() => listedRadicals(catalog), [catalog]);
  const strokeFilters = useMemo(
   () => [
    { value: StrokeFilterSchema.enum.all, label: t("all") },
@@ -186,31 +189,41 @@ function RadicalBrowseCard({
  const t = useTranslations("Radicals");
  const supportingCount = countRadicalSupportingItems(radical);
  const name = radical.nameVi || t("unnamed");
+ const [mainForm = radical.radical, ...otherForms] = radicalForms(radical.radical);
 
  return (
   <ActionCard
    padding="md"
    onClick={onOpen}
    aria-label={t("openRadical", { radical: radical.radical, name })}
-   className="flex h-full min-w-0 items-center gap-3"
+   className="flex h-full w-full min-w-0 items-center gap-3 text-left"
   >
-   <HanziText as="span" size="review" tone="primary" weight="black" leading="none">
-    {radical.radical}
+   <HanziText
+    as="span"
+    size="review"
+    tone="primary"
+    weight="black"
+    leading="none"
+    className="w-12 shrink-0 text-center"
+   >
+    {mainForm}
    </HanziText>
    <div className="grid min-w-0 flex-1 gap-0.5">
     <div className="flex min-w-0 items-center justify-between gap-2">
-     <Typography as="h3" variant="cardTitle" tone="default" clamp="one">
+     <Typography as="h3" variant="cardTitle" tone="default" clamp="one" className="min-w-0">
       {name}
      </Typography>
-     <Badge variant="info" size="sm" casing="natural">
+     <Badge variant="info" size="sm" casing="natural" className="shrink-0 whitespace-nowrap">
       {t("strokes", { count: radical.strokes ?? "?" })}
      </Badge>
     </div>
     <StudyInstructionText variant="bodySmall" tone="secondary" clamp="two">
      {radical.coreMeaning.modern || radical.recognition || t("noDescription")}
     </StudyInstructionText>
-    <StudyInstructionText variant="bodySmall" tone="muted">
-     #{radical.index} · {t("relatedCount", { count: supportingCount })}
+    <StudyInstructionText variant="bodySmall" tone="muted" clamp="one">
+     #{radical.index}
+     {otherForms.length > 0 ? ` · ${otherForms.join(" / ")}` : ""} ·{" "}
+     {t("relatedCount", { count: supportingCount })}
     </StudyInstructionText>
    </div>
   </ActionCard>
