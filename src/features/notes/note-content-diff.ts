@@ -113,10 +113,28 @@ function mergeParts(parts: DiffPart[]): DiffPart[] {
  return merged;
 }
 
+// Share of a block's characters that must survive for it to count as edited.
+const EDITED_BLOCK_MIN_SHARED = 0.5;
+
+/** True when most characters are kept, i.e. one block was edited, not replaced. */
+function isSameBlockEdited(parts: DiffPart[]): boolean {
+ let shared = 0;
+ let removed = 0;
+ let added = 0;
+ for (const part of parts) {
+  const length = Array.from(part.text).length;
+  if (part.kind === "same") shared += length;
+  else if (part.kind === "removed") removed += length;
+  else added += length;
+ }
+ return shared >= EDITED_BLOCK_MIN_SHARED * Math.max(shared + removed, shared + added);
+}
+
 /**
  * Line diff from `before` (server) to `after` (this device). Inside a run of
  * removed lines followed by added lines, the k-th removed and k-th added line
- * pair up as one "changed" line with a character-level diff.
+ * pair up as one "changed" line with a character-level diff when they share
+ * most of their text; otherwise both are shown whole.
  */
 export function diffNoteLines(before: readonly string[], after: readonly string[]): DiffLine[] {
  const parts = lcsDiff(before, after);
@@ -140,13 +158,19 @@ export function diffNoteLines(before: readonly string[], after: readonly string[
    index += 1;
   }
   const paired = Math.min(removed.length, added.length);
+  const unpaired: DiffPart[] = [];
   for (let pair = 0; pair < paired; pair += 1) {
-   lines.push({
-    kind: diffKindSchema.enum.changed,
-    parts: mergeParts(lcsDiff(Array.from(removed[pair].text), Array.from(added[pair].text))),
-   });
+   const parts = mergeParts(lcsDiff(Array.from(removed[pair].text), Array.from(added[pair].text)));
+   if (isSameBlockEdited(parts)) lines.push({ kind: diffKindSchema.enum.changed, parts });
+   else unpaired.push(removed[pair], added[pair]);
   }
-  for (const rest of [...removed.slice(paired), ...added.slice(paired)]) {
+  // Blocks that were rewritten rather than edited read better whole.
+  for (const rest of [
+   ...unpaired.filter((part) => part.kind === "removed"),
+   ...removed.slice(paired),
+   ...unpaired.filter((part) => part.kind === "added"),
+   ...added.slice(paired),
+  ]) {
    lines.push({ kind: rest.kind, parts: [rest] });
   }
  }

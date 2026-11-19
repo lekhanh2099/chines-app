@@ -49,7 +49,19 @@ describe("note content diff", () => {
     { kind: "same", text: "去公园" },
    ],
   });
-  expect(lines[2]?.kind).toBe("changed");
+  expect(lines[2]).toEqual({
+   kind: "changed",
+   parts: [
+    { kind: "removed", text: "旧" },
+    { kind: "added", text: "新加" },
+    { kind: "same", text: "的一行" },
+   ],
+  });
+  // A rewritten block is shown whole on both sides rather than as fragments.
+  expect(diffNoteLines(["B retained local draft"], ["A committed version"])).toEqual([
+   { kind: "removed", parts: [{ kind: "removed", text: "B retained local draft" }] },
+   { kind: "added", parts: [{ kind: "added", text: "A committed version" }] },
+  ]);
  });
 
  it("reports identical versions as unchanged only", () => {
