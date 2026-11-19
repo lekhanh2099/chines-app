@@ -262,15 +262,16 @@ const PUNCTUATION_SHARE = 0.4;
 const SQUARE_ASPECTS = { min: 0.62, max: 1.6 };
 /** Finished characters needed before the grouping is trusted over the first guess. */
 const MIN_CHARACTERS = 3;
-/** Until then, the first stroke of a page weighs at least this share of the first guess. */
+/** Until then, the very first stroke of a page weighs at least this share of the first guess. */
 const WARM_UP_STROKES = 2;
-const WARM_UP_FLOOR = 0.6;
+const WARM_UP_FLOOR = 0.35;
 
 /**
  * The size of the characters being written, from strokes in writing order
  * (the finished one last; the character it belongs to is still in progress
  * and does not count). `emPerBox` and `emPerHeight` are how much larger
- * than the box, and the height, its strokes span a character is.
+ * than the box, and the height, its strokes span a character is. `settled`
+ * says whether enough characters are finished to trust the estimate.
  */
 export function estimateWritingEm(
  strokes: readonly (readonly BrushPoint[])[],
@@ -310,15 +311,19 @@ export function estimateWritingEm(
    best = { em, score, distance, characters: recentAspects.length };
   }
  }
- if (best.characters >= MIN_CHARACTERS) return best.em;
+ if (best.characters >= MIN_CHARACTERS) return { em: best.em, settled: true };
  // Too few finished characters (the start of a page) to judge a grouping by.
  // Measure height instead: however many characters a group takes in while
- // the size is still unknown, a row of them is as tall as one. For the very
- // first stroke (it may be a flat 横 or a short dot), the first guess keeps
- // the weight from starting out far too light.
+ // the size is still unknown, a row of them is as tall as one.
  const tallest = Math.max(0, ...brushCharacterSizes(strokes, guess / emPerBox).heights);
- const floor = strokes.length < WARM_UP_STROKES ? guess * WARM_UP_FLOOR : 0;
- return Math.max(tallest * emPerHeight, floor);
+ if (strokes.length >= WARM_UP_STROKES) return { em: tallest * emPerHeight, settled: false };
+ // The very first stroke: its longer side (a 竖, 横 or 撇 spans most of a
+ // character), floored so a dot does not start out far too light.
+ const only = strokes[0] ?? [];
+ const xs = only.map((point) => point.x);
+ const ys = only.map((point) => point.y);
+ const side = Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys));
+ return { em: Math.max(side * emPerHeight, guess * WARM_UP_FLOOR), settled: false };
 }
 
 /** Which segment a position along the stroke (0–1) falls in, and its place within it. */

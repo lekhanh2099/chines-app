@@ -30,7 +30,7 @@ describe("finishing a Kaishu brush stroke", () => {
  it("fixes one width per point and leaves the other strokes alone", () => {
   const pen = createPdfStroke("pen", "#ef4444", 4, { x: 0.1, y: 0.1 });
   const stroke = brush([0.2, 0.2], [0.2, 0.26]);
-  const [kept, finished] = finishPdfBrushStroke([pen, stroke], stroke.id, 1.4, 4);
+  const [kept, finished] = finishPdfBrushStroke([pen, stroke], stroke.id, 1.4, 4, 0).strokes;
   expect(kept).toBe(pen);
   expect(finished?.widths).toHaveLength(stroke.points.length);
   expect(pdfAnnotationPayloadSchema.safeParse({ strokes: [kept, finished] }).success).toBe(true);
@@ -39,22 +39,30 @@ describe("finishing a Kaishu brush stroke", () => {
  it("sizes the brush to the writing, like a real brush on larger characters", () => {
   const small = brush([0.2, 0.2], [0.2, 0.21]);
   const large = brush([0.2, 0.2], [0.2, 0.25]);
-  const smallWidth = finishPdfBrushStroke([small], small.id, 1.4, 4)[0]?.width ?? 0;
-  const largeWidth = finishPdfBrushStroke([large], large.id, 1.4, 4)[0]?.width ?? 0;
+  const widthOf = (stroke: PdfStroke, setting: number) =>
+   finishPdfBrushStroke([stroke], stroke.id, 1.4, setting, 0).strokes[0]?.width ?? 0;
+  const smallWidth = widthOf(small, 4);
+  const largeWidth = widthOf(large, 4);
   expect(largeWidth).toBeCloseTo(smallWidth * 5, 0);
-  const heavier = finishPdfBrushStroke([large], large.id, 1.4, 8)[0]?.width ?? 0;
+  const heavier = widthOf(large, 8);
   expect(heavier).toBeCloseTo(largeWidth * 2, 1);
  });
 
  it("draws the next stroke at the last brush width while it is in progress", () => {
-  const finished = finishPdfBrushStroke([brush([0.2, 0.2], [0.2, 0.4])], "missing", 1.4, 4);
+  const finished = finishPdfBrushStroke(
+   [brush([0.2, 0.2], [0.2, 0.4])],
+   "missing",
+   1.4,
+   4,
+   0,
+  ).strokes;
   expect(liveBrushWidth(finished, 4)).toBe(8);
   expect(liveBrushWidth([], 5)).toBe(10);
  });
 
  it("outlines a finished stroke as a filled shape", () => {
   const stroke = brush([0.2, 0.2], [0.2, 0.3]);
-  const [finished] = finishPdfBrushStroke([stroke], stroke.id, 1.4, 4);
+  const [finished] = finishPdfBrushStroke([stroke], stroke.id, 1.4, 4, 0).strokes;
   expect(finished && pdfBrushOutlinePath(finished, 1.4)).toMatch(/^M .* Z$/);
  });
 });
@@ -94,26 +102,65 @@ describe("weighing whole characters", () => {
  const write = (characters: PdfStroke[][]) => {
   let page: PdfStroke[] = [];
   for (const strokes of characters) {
-   for (const stroke of strokes) page = finishPdfBrushStroke([...page, stroke], stroke.id, 1.4, 4);
+   for (const stroke of strokes) {
+    page = finishPdfBrushStroke([...page, stroke], stroke.id, 1.4, 4, prior).strokes;
+   }
   }
   return page;
  };
-
- it("re-weighs a finished character for its own size when the writing gets smaller", () => {
-  const big = Array.from({ length: 5 }, (_, index) => character(0.05 + index * 0.12, 0.1, 0.1));
-  const small = Array.from({ length: 4 }, (_, index) => character(0.05 + index * 0.05, 0.4, 0.04));
-  const page = write([...big, ...small]);
-  const widthsOf = (characterIndex: number) =>
-   page.slice(characterIndex * 4, characterIndex * 4 + 4).map((stroke) => stroke.width);
-  const lastBig = widthsOf(big.length - 2);
-  const firstSmall = widthsOf(big.length);
-  const thirdSmall = widthsOf(big.length + 2);
-  // The first small character, finished once the next one starts, weighs
-  // like the small characters after it, not like the big ones before it.
-  firstSmall.forEach((width, index) => {
-   expect(width).toBeCloseTo(thirdSmall[index] ?? 0, 0);
-   expect(width).toBeLessThan((lastBig[index] ?? 0) * 0.6);
+ let prior = 0;
+ /**
+  * Shapes a character like a handwritten one: as tall as its size on a page
+  * 1.4 times taller than wide, and a little narrower than tall.
+  */
+ const squared = (strokes: PdfStroke[], top: number): PdfStroke[] =>
+  strokes.map((stroke) => {
+   const left = Math.min(...strokes.flatMap((item) => item.points.map((point) => point.x)));
+   return {
+    ...stroke,
+    points: stroke.points.map((point) => ({
+     x: left + (point.x - left) * 0.8,
+     y: top + (point.y - top) / 1.4,
+    })),
+   };
   });
+ const widthsOf = (page: PdfStroke[], index: number) =>
+  page.slice(index * 4, index * 4 + 4).map((stroke) => stroke.width);
+
+ it("never changes a stroke once it is finished", () => {
+  prior = 0;
+  const characters = [
+   ...Array.from({ length: 4 }, (_, index) => character(0.05 + index * 0.12, 0.1, 0.1)),
+   ...Array.from({ length: 4 }, (_, index) => character(0.05 + index * 0.05, 0.4, 0.04)),
+  ];
+  let page: PdfStroke[] = [];
+  for (const strokes of characters) {
+   for (const stroke of strokes) {
+    const next = finishPdfBrushStroke([...page, stroke], stroke.id, 1.4, 4, 0).strokes;
+    page.forEach((finished, index) => expect(next[index]).toBe(finished));
+    page = next;
+   }
+  }
+ });
+
+ it("keeps every character even, and follows a new writing size within a few characters", () => {
+  prior = 0;
+  // Square characters (the page is 1.4 times taller than wide), spaced like handwriting.
+  const big = Array.from({ length: 5 }, (_, index) =>
+   character(0.05 + index * 0.125, 0.1, 0.1),
+  ).map((strokes) => squared(strokes, 0.1));
+  const small = Array.from({ length: 8 }, (_, index) =>
+   character(0.05 + index * 0.05, 0.4, 0.04),
+  ).map((strokes) => squared(strokes, 0.4));
+  const page = write([...big, ...small]);
+  for (let index = 0; index < big.length + small.length; index += 1) {
+   const widths = widthsOf(page, index);
+   for (const width of widths) expect(width).toBeCloseTo(widths[0] ?? 0, 5);
+  }
+  const lastBig = widthsOf(page, big.length - 1)[0] ?? 0;
+  for (let index = big.length + small.length - 3; index < big.length + small.length; index += 1) {
+   expect(widthsOf(page, index)[0] ?? 0).toBeLessThan(lastBig * 0.6);
+  }
  });
 
  it("gives a detached part (口 beside 襄 in 嚷) the weight of its character", () => {
@@ -144,24 +191,15 @@ describe("weighing whole characters", () => {
   for (const width of part) expect(width).toBeCloseTo(body[0] ?? 0, 0);
  });
 
- it("weighs the first characters on a page right away, without a jump later", () => {
+ it("weighs the first character of a page from the writer's usual size", () => {
   const characters = Array.from({ length: 5 }, (_, index) =>
    character(0.05 + index * 0.06, 0.1, 0.05),
   );
-  const widthsOf = (page: PdfStroke[], index: number) =>
-   page.slice(index * 4, index * 4 + 4).map((stroke) => stroke.width);
-  const afterThree = write(characters.slice(0, 3));
-  const afterFive = write(characters);
-  for (let index = 0; index < 3; index += 1) {
-   // Writing on does not change the first characters noticeably…
-   widthsOf(afterThree, index).forEach((width, stroke) => {
-    const later = widthsOf(afterFive, index)[stroke] ?? 0;
-    expect(Math.abs(width - later)).toBeLessThan(later * 0.12);
-   });
-   // …and they already weigh like the characters after them.
-   for (const width of widthsOf(afterFive, index)) {
-    expect(Math.abs(width - (widthsOf(afterFive, 4)[0] ?? 0))).toBeLessThan(width * 0.15);
-   }
-  }
+  prior = 0;
+  const settled = widthsOf(write(characters), 4)[0] ?? 0;
+  // The usual size (in page units) of characters this big.
+  prior = (0.05 * 1000 * 1.4 * 1.26) / 1.05;
+  const first = widthsOf(write(characters.slice(0, 1)), 0);
+  for (const width of first) expect(Math.abs(width - settled)).toBeLessThan(settled * 0.15);
  });
 });

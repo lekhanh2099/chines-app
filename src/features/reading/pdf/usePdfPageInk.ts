@@ -30,6 +30,11 @@ export const PEN_COLORS = ["#ef4444", "#2563eb", "#16a34a", "#f59e0b", "#111827"
 
 type PdfAnnotations = ReturnType<typeof usePdfAnnotations>;
 
+/** Handwriting on a tablet is about this tall on screen (CSS pixels) until the writer's own size is known. */
+const DEFAULT_SCREEN_EM_PX = 40;
+/** The remembered on-screen character size is updated when it moves by more than this share. */
+const SCREEN_EM_CHANGE = 0.1;
+
 /** A finger must travel this far before it pans, so a palm settling does not scroll. */
 const PAN_SLOP_PX = 8;
 
@@ -57,6 +62,28 @@ function useStoredSwitch(key: string, fallback: boolean) {
  return { value, update };
 }
 
+/**
+ * The writer's usual Kaishu character size on screen, in CSS pixels: people
+ * keep writing at about the same size on the glass whatever the zoom, so it
+ * sizes the first strokes of a page before any character there is finished.
+ */
+function useStoredScreenEm() {
+ const config = {
+  key: "hanzihome-pdf-brush-screen-em",
+  version: 1,
+  schema: z.number().positive(),
+  fallback: DEFAULT_SCREEN_EM_PX,
+ };
+ const [value, setValue] = useState(() => readVersionedStorage(getBrowserStorage(), config));
+ const update = (next: number) => {
+  // Only a real change is remembered, not every stroke's rounding.
+  if (Math.abs(next - value) < value * SCREEN_EM_CHANGE) return;
+  setValue(next);
+  writeVersionedStorage(getBrowserStorage(), config, next);
+ };
+ return { value, update };
+}
+
 /** Owns the ink tool choice (tool, colour, widths); it can outlive a single page. */
 export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = {}) {
  const [drawingTool, setDrawingToolState] = useState<PdfEditorTool | null>(null);
@@ -76,6 +103,7 @@ export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = 
   "hanzihome-pdf-eraser-returns",
   false,
  );
+ const { value: brushScreenEm, update: rememberBrushScreenEm } = useStoredScreenEm();
  const finishEraseStroke = () => {
   if (eraserReturns) setDrawingToolState(toolBeforeEraserRef.current);
  };
@@ -103,6 +131,8 @@ export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = 
   eraserReturns,
   setEraserReturns,
   finishEraseStroke,
+  brushScreenEm,
+  rememberBrushScreenEm,
   color,
   setColor,
   width,
@@ -311,9 +341,17 @@ export function usePdfPageInk({
    const page = event.currentTarget.getBoundingClientRect();
    const stillThere = gestureStrokesRef.current.some((stroke) => stroke.id === finished);
    if (page.width > 0 && drawingTool === "brush" && stillThere) {
-    replaceGestureStrokes(
-     finishPdfBrushStroke(gestureStrokesRef.current, finished, page.height / page.width, width),
+    // Page units per CSS pixel: 1000 across the page as it is drawn now.
+    const unitsPerPixel = 1000 / page.width;
+    const result = finishPdfBrushStroke(
+     gestureStrokesRef.current,
+     finished,
+     page.height / page.width,
+     width,
+     tools.brushScreenEm * unitsPerPixel,
     );
+    replaceGestureStrokes(result.strokes);
+    if (result.learnedEm > 0) tools.rememberBrushScreenEm(result.learnedEm / unitsPerPixel);
    }
   }
   commitGesture();
