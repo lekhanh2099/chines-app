@@ -93,20 +93,22 @@ export function NoteEditorMobileActionsSheet({
      >
       {t("readMode")}
      </Typography>
-     <Button
-      type="button"
-      variant={!isReadOnlyMode ? "active" : "menu"}
-      size="touch"
-      align="start"
-      className="w-full"
-      onClick={() => {
-       setReadOnlyOverride(!isReadOnlyMode);
-       setMobileActionsOpen(false);
-      }}
-     >
-      {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
-      {isReadOnlyMode ? t("editMode") : t("viewModeAction")}
-     </Button>
+     {isPdfView && !isSplitView ? null : (
+      <Button
+       type="button"
+       variant={!isReadOnlyMode ? "active" : "menu"}
+       size="touch"
+       align="start"
+       className="w-full"
+       onClick={() => {
+        setReadOnlyOverride(!isReadOnlyMode);
+        setMobileActionsOpen(false);
+       }}
+      >
+       {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
+       {isReadOnlyMode ? t("editMode") : t("viewModeAction")}
+      </Button>
+     )}
      <Button
       type="button"
       variant={isPdfView ? "active" : "menu"}
@@ -140,7 +142,7 @@ export function NoteEditorMobileActionsSheet({
       )}
       {isSplitView ? t("closeSplit") : t("openSplit")}
      </Button>
-     {!isReadOnlyMode ? (
+     {!isReadOnlyMode && !(isPdfView && !isSplitView) ? (
       <Button
        type="button"
        variant={isToolbarVisible ? "active" : "menu"}

@@ -66,30 +66,35 @@ export function NoteEditorDesktopActions({
  return (
   <div className="hidden min-w-max items-center gap-2 xl:flex">
    <SaveStatusBadge status={displaySaveStatus} onRetry={handleRetrySave} />
-   <Button
-    type="button"
-    variant={!isReadOnlyMode ? "active" : "outline"}
-    size="icon-sm"
-    onClick={() => setReadOnlyOverride(!isReadOnlyMode)}
-    title={editModeLabel}
-    aria-label={editModeLabel}
-    className={noteEditorActionButtonClassName}
-   >
-    {isReadOnlyMode ? <Eye /> : <Pencil />}
-   </Button>
-   {!isReadOnlyMode ? (
-    <Button
-     type="button"
-     variant={isToolbarVisible ? "active" : "outline"}
-     size="icon-sm"
-     onClick={() => setIsToolbarVisible((current) => !current)}
-     title={toolbarLabel}
-     aria-label={toolbarLabel}
-     className={noteEditorActionButtonClassName}
-    >
-     {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
-    </Button>
-   ) : null}
+   {/* The text editor is hidden behind a PDF-only view, so are its controls. */}
+   {isPdfView && !isSplitView ? null : (
+    <>
+     <Button
+      type="button"
+      variant={!isReadOnlyMode ? "active" : "outline"}
+      size="icon-sm"
+      onClick={() => setReadOnlyOverride(!isReadOnlyMode)}
+      title={editModeLabel}
+      aria-label={editModeLabel}
+      className={noteEditorActionButtonClassName}
+     >
+      {isReadOnlyMode ? <Eye /> : <Pencil />}
+     </Button>
+     {!isReadOnlyMode ? (
+      <Button
+       type="button"
+       variant={isToolbarVisible ? "active" : "outline"}
+       size="icon-sm"
+       onClick={() => setIsToolbarVisible((current) => !current)}
+       title={toolbarLabel}
+       aria-label={toolbarLabel}
+       className={noteEditorActionButtonClassName}
+      >
+       {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
+      </Button>
+     ) : null}
+    </>
+   )}
    <Button
     type="button"
     variant={isPdfView ? "active" : "outline"}
