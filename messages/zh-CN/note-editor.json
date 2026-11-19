@@ -43,7 +43,17 @@
   "serverTitle": "服务器版本：{title}（版本 {revision}）",
   "useServer": "使用服务器版本",
   "keepLocal": "保留我的草稿并保存",
-  "error": "暂时无法解决冲突。两个版本均被保留。"
+  "error": "暂时无法解决冲突。两个版本均被保留。",
+  "viewLabel": "查看方式",
+  "diffView": "差异",
+  "fullView": "完整版本",
+  "legendLocal": "仅在本设备版本中",
+  "legendServer": "仅在服务器版本中",
+  "comparedWithServer": "{name}与服务器版本对比",
+  "identical": "内容与服务器版本相同。",
+  "changedCount": "{count} 段不同",
+  "sameLines": "… {count} 段相同",
+  "readingContent": "阅读内容（分屏）"
  },
  "save": {
   "saving": "保存中...",
