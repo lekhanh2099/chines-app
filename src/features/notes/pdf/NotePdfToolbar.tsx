@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type RefObject } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 import {
  ChevronLeft,
  ChevronRight,
@@ -57,6 +57,8 @@ type PdfPageInk = ReturnType<typeof usePdfPageInk>;
 type PdfAnnotations = ReturnType<typeof usePdfAnnotations>;
 type PdfViewport = ReturnType<typeof usePdfPageViewport>;
 
+const COMPACT_BAR_WIDTH_PX = 704;
+
 /**
  * The single GoodNotes-style command bar of a note PDF: pages on the left,
  * ink tools in the middle, view/save/menu on the right. Tapping the active
@@ -107,14 +109,31 @@ export function NotePdfToolbar({
   setDrawingTool(tool);
  };
  const save = () => void annotations.retrySave().catch(() => {});
+ // Below this bar width zoom and fullscreen move into the "…" menu. The menu
+ // renders in a portal, so this is measured rather than a container query.
+ const barRef = useRef<HTMLDivElement>(null);
+ const [compact, setCompact] = useState(false);
+ useEffect(() => {
+  const bar = barRef.current;
+  if (!bar) return;
+  const observer = new ResizeObserver(([entry]) => {
+   if (entry) setCompact(entry.contentRect.width < COMPACT_BAR_WIDTH_PX);
+  });
+  observer.observe(bar);
+  return () => observer.disconnect();
+ }, []);
 
  return (
-  <div className="@container flex min-h-12 min-w-0 flex-wrap items-center justify-between gap-x-2 gap-y-1 border-b border-border bg-surface px-2 py-1">
-   <div className="flex min-w-0 items-center gap-1">
+  <div
+   ref={barRef}
+   className="@container flex min-h-12 min-w-0 items-center gap-1 border-b border-border bg-surface px-1.5 py-1 sm:px-2"
+  >
+   <div className="flex shrink-0 items-center gap-1">
     <Button
      type="button"
      variant="ghost"
      size="icon-toolbar"
+     className="hidden @[34rem]:inline-flex"
      aria-label={t("previousPage")}
      disabled={pageNumber <= 1}
      onClick={() => onGoToPage(pageNumber - 1)}
@@ -134,7 +153,7 @@ export function NotePdfToolbar({
       aria-label={t("goToPage")}
       inputMode="numeric"
       enterKeyHint="go"
-      className="w-12 text-center"
+      className="w-11 text-center"
       value={pageDraft}
       onChange={(event) => setPageDraft(event.target.value.replace(/\D/gu, ""))}
       onBlur={() => setPageDraft(String(pageNumber))}
@@ -147,6 +166,7 @@ export function NotePdfToolbar({
      type="button"
      variant="ghost"
      size="icon-toolbar"
+     className="hidden @[34rem]:inline-flex"
      aria-label={t("nextPage")}
      disabled={pageNumber >= pageCount}
      onClick={() => onGoToPage(pageNumber + 1)}
@@ -155,148 +175,128 @@ export function NotePdfToolbar({
     </Button>
    </div>
 
-   <div
-    className="flex min-w-0 flex-wrap items-center justify-center gap-0.5"
-    role="toolbar"
-    aria-label={t("tools")}
-   >
-    <Button
-     type="button"
-     size="icon-toolbar"
-     variant={drawingTool === null ? "active" : "ghost"}
-     aria-label={reader("pan")}
-     aria-pressed={drawingTool === null}
-     onClick={() => chooseTool(null)}
-    >
-     <Hand />
-    </Button>
-    <Button
-     ref={penRef}
-     type="button"
-     size="icon-toolbar"
-     variant={drawingTool === "pen" ? "active" : "ghost"}
-     aria-label={reader("pen")}
-     aria-pressed={drawingTool === "pen"}
-     disabled={!canEdit}
-     onClick={() => chooseTool("pen")}
-    >
-     <Pen />
-    </Button>
-    <Button
-     ref={highlighterRef}
-     type="button"
-     size="icon-toolbar"
-     variant={drawingTool === "highlighter" ? "active" : "ghost"}
-     aria-label={reader("highlighter")}
-     aria-pressed={drawingTool === "highlighter"}
-     disabled={!canEdit}
-     onClick={() => chooseTool("highlighter")}
-    >
-     <Highlighter />
-    </Button>
-    <Button
-     ref={eraserRef}
-     type="button"
-     size="icon-toolbar"
-     variant={drawingTool === "eraser" ? "active" : "ghost"}
-     aria-label={reader("eraser")}
-     aria-pressed={drawingTool === "eraser"}
-     disabled={!canEdit}
-     onClick={() => chooseTool("eraser")}
-    >
-     <Eraser />
-    </Button>
+   {/* Centred when it fits; scrolls sideways instead of wrapping when it does not. */}
+   <div className="no-scrollbar min-w-0 flex-1 overflow-x-auto">
+    <div className="mx-auto flex w-max items-center gap-0.5" role="toolbar" aria-label={t("tools")}>
+     <Button
+      type="button"
+      size="icon-toolbar"
+      variant={drawingTool === null ? "active" : "ghost"}
+      aria-label={reader("pan")}
+      aria-pressed={drawingTool === null}
+      onClick={() => chooseTool(null)}
+     >
+      <Hand />
+     </Button>
+     <Button
+      ref={penRef}
+      type="button"
+      size="icon-toolbar"
+      variant={drawingTool === "pen" ? "active" : "ghost"}
+      aria-label={reader("pen")}
+      aria-pressed={drawingTool === "pen"}
+      disabled={!canEdit}
+      onClick={() => chooseTool("pen")}
+     >
+      <Pen />
+     </Button>
+     <Button
+      ref={highlighterRef}
+      type="button"
+      size="icon-toolbar"
+      variant={drawingTool === "highlighter" ? "active" : "ghost"}
+      aria-label={reader("highlighter")}
+      aria-pressed={drawingTool === "highlighter"}
+      disabled={!canEdit}
+      onClick={() => chooseTool("highlighter")}
+     >
+      <Highlighter />
+     </Button>
+     <Button
+      ref={eraserRef}
+      type="button"
+      size="icon-toolbar"
+      variant={drawingTool === "eraser" ? "active" : "ghost"}
+      aria-label={reader("eraser")}
+      aria-pressed={drawingTool === "eraser"}
+      disabled={!canEdit}
+      onClick={() => chooseTool("eraser")}
+     >
+      <Eraser />
+     </Button>
 
-    {drawingTool === "pen" ? (
-     <>
-      <NotePdfColorSwatches ink={ink} className="hidden @[52rem]:flex" />
-      <Button
-       type="button"
-       size="icon-toolbar"
-       variant="ghost"
-       className="@[52rem]:hidden"
-       aria-label={reader("penColor")}
-       aria-haspopup="dialog"
-       onClick={() => setOptionsOpen(true)}
-      >
-       <span
-        aria-hidden="true"
-        className="size-5 rounded-full border border-border-strong"
-        style={{ backgroundColor: color }}
-       />
-      </Button>
-     </>
-    ) : null}
+     {drawingTool === "pen" ? (
+      <>
+       <NotePdfColorSwatches ink={ink} className="hidden @[52rem]:flex" />
+       <Button
+        type="button"
+        size="icon-toolbar"
+        variant="ghost"
+        className="@[52rem]:hidden"
+        aria-label={reader("penColor")}
+        aria-haspopup="dialog"
+        onClick={() => setOptionsOpen(true)}
+       >
+        <span
+         aria-hidden="true"
+         className="size-5 rounded-full border border-border-strong"
+         style={{ backgroundColor: color }}
+        />
+       </Button>
+      </>
+     ) : null}
 
-    <span className="h-6 w-px bg-border" aria-hidden="true" />
-    <Button
-     type="button"
-     size="icon-toolbar"
-     variant="ghost"
-     aria-label={reader("undo")}
-     disabled={!canEdit || ink.past.length === 0}
-     onClick={ink.undo}
-    >
-     <Undo2 />
-    </Button>
-    <Button
-     type="button"
-     size="icon-toolbar"
-     variant="ghost"
-     aria-label={reader("redo")}
-     disabled={!canEdit || ink.future.length === 0}
-     onClick={ink.redo}
-    >
-     <Redo2 />
-    </Button>
+     <span className="h-6 w-px bg-border" aria-hidden="true" />
+     <Button
+      type="button"
+      size="icon-toolbar"
+      variant="ghost"
+      aria-label={reader("undo")}
+      disabled={!canEdit || ink.past.length === 0}
+      onClick={ink.undo}
+     >
+      <Undo2 />
+     </Button>
+     <Button
+      type="button"
+      size="icon-toolbar"
+      variant="ghost"
+      aria-label={reader("redo")}
+      disabled={!canEdit || ink.future.length === 0}
+      onClick={ink.redo}
+     >
+      <Redo2 />
+     </Button>
+    </div>
    </div>
 
-   <div className="flex items-center gap-0.5">
-    <NotePdfZoomControl viewport={viewport} />
-
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
-     aria-label={reader("fullscreen")}
-     aria-pressed={viewport.isFullscreen}
-     onClick={() => void viewport.toggleFullscreen()}
-    >
-     {viewport.isFullscreen ? <Minimize /> : <Expand />}
-    </Button>
+   <div className="flex shrink-0 items-center gap-0.5">
+    {compact ? null : (
+     <>
+      <NotePdfZoomControl viewport={viewport} />
+      <Button
+       type="button"
+       variant="ghost"
+       size="icon-toolbar"
+       aria-label={reader("fullscreen")}
+       aria-pressed={viewport.isFullscreen}
+       onClick={() => void viewport.toggleFullscreen()}
+      >
+       {viewport.isFullscreen ? <Minimize /> : <Expand />}
+      </Button>
+     </>
+    )}
 
     <NotePdfSaveButton annotations={annotations} onSave={save} />
 
-    <DropdownMenu>
-     <DropdownMenuTrigger asChild>
-      <Button type="button" variant="ghost" size="icon-toolbar" aria-label={t("more")}>
-       <Ellipsis />
-      </Button>
-     </DropdownMenuTrigger>
-     <DropdownMenuContent align="end" width="md">
-      <DropdownMenuCheckboxItem
-       checked={ink.touchInk}
-       onSelect={(event) => event.preventDefault()}
-       onCheckedChange={(checked) => ink.setTouchInk(checked === true)}
-      >
-       <Pointer />
-       <span>{t("fingerInk")}</span>
-      </DropdownMenuCheckboxItem>
-      <DropdownMenuItem disabled={!canEdit || strokes.length === 0} onSelect={ink.clear}>
-       <Trash2 />
-       <span>{t("clearPage")}</span>
-      </DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem onSelect={onReplace}>
-       <Replace />
-       <span>{t("replace")}</span>
-      </DropdownMenuItem>
-      <DropdownMenuItem tone="destructive" onSelect={onRemove}>
-       <FileX />
-       <span>{t("remove")}</span>
-      </DropdownMenuItem>
-     </DropdownMenuContent>
-    </DropdownMenu>
+    <NotePdfMoreMenu
+     ink={ink}
+     canClear={canEdit && strokes.length > 0}
+     compact={compact}
+     viewport={viewport}
+     onReplace={onReplace}
+     onRemove={onRemove}
+    />
    </div>
 
    <Popover.Root open={optionsOpen && drawingTool !== null} onOpenChange={setOptionsOpen}>
@@ -315,6 +315,100 @@ export function NotePdfToolbar({
     </Popover.Portal>
    </Popover.Root>
   </div>
+ );
+}
+
+/** The "…" menu: finger ink, clear page, replace/remove PDF, and zoom/fullscreen on a narrow bar. */
+function NotePdfMoreMenu({
+ ink,
+ canClear,
+ compact,
+ viewport,
+ onReplace,
+ onRemove,
+}: {
+ ink: PdfPageInk;
+ canClear: boolean;
+ compact: boolean;
+ viewport: Pick<
+  PdfViewport,
+  "zoom" | "setZoom" | "fitToContainer" | "setFitToContainer" | "isFullscreen" | "toggleFullscreen"
+ >;
+ onReplace: () => void;
+ onRemove: () => void;
+}) {
+ const t = useTranslations("Notes.editor.pdf");
+ const reader = useTranslations("Reader.pdf");
+
+ return (
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button type="button" variant="ghost" size="icon-toolbar" aria-label={t("more")}>
+     <Ellipsis />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="end" width="md">
+    {compact ? (
+     <>
+      <DropdownMenuItem
+       disabled={!viewport.fitToContainer && viewport.zoom >= PDF_MAX_ZOOM}
+       onSelect={(event) => {
+        event.preventDefault();
+        viewport.setFitToContainer(false);
+        viewport.setZoom(nextPdfZoom(viewport.zoom));
+       }}
+      >
+       <ZoomIn />
+       <span>{reader("zoomIn")}</span>
+      </DropdownMenuItem>
+      <DropdownMenuItem
+       disabled={!viewport.fitToContainer && viewport.zoom <= PDF_MIN_ZOOM}
+       onSelect={(event) => {
+        event.preventDefault();
+        viewport.setFitToContainer(false);
+        viewport.setZoom(previousPdfZoom(viewport.zoom));
+       }}
+      >
+       <ZoomOut />
+       <span>{reader("zoomOut")}</span>
+      </DropdownMenuItem>
+      <DropdownMenuCheckboxItem
+       checked={viewport.fitToContainer}
+       onSelect={(event) => event.preventDefault()}
+       onCheckedChange={() => viewport.setFitToContainer(true)}
+      >
+       <span>{reader("fitWidth")}</span>
+      </DropdownMenuCheckboxItem>
+      <DropdownMenuItem onSelect={() => void viewport.toggleFullscreen()}>
+       {viewport.isFullscreen ? <Minimize /> : <Expand />}
+       <span>{reader("fullscreen")}</span>
+      </DropdownMenuItem>
+      <DropdownMenuSeparator />
+     </>
+    ) : null}
+    <DropdownMenuCheckboxItem
+     checked={ink.touchInk}
+     onSelect={(event) => event.preventDefault()}
+     onCheckedChange={(checked) => ink.setTouchInk(checked === true)}
+    >
+     <Pointer />
+     <span>{t("fingerInk")}</span>
+    </DropdownMenuCheckboxItem>
+    <DropdownMenuItem disabled={!canClear} onSelect={ink.clear}>
+     <Trash2 />
+     <span>{t("clearPage")}</span>
+    </DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem onSelect={onReplace}>
+     <Replace />
+     <span>{t("replace")}</span>
+    </DropdownMenuItem>
+    <DropdownMenuItem tone="destructive" onSelect={onRemove}>
+     <FileX />
+     <span>{t("remove")}</span>
+    </DropdownMenuItem>
+   </DropdownMenuContent>
+  </DropdownMenu>
  );
 }
 
