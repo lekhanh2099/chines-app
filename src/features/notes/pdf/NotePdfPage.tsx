@@ -16,9 +16,10 @@ import { NotePdfPageCanvas } from "./NotePdfPageCanvas";
 import { NotePdfToolbar } from "./NotePdfToolbar";
 import type { PdfDocument } from "./pdfjs-loader";
 
-// Ink is pushed to the server this long after drawing pauses (and when the
-// page scrolls far away, the app is hidden or the note closes).
-const IDLE_SAVE_MS = 1500;
+// Ink is kept on the device as it is drawn and pushed to the server when the
+// page is left (it scrolls far away, the note closes, the app is hidden or the
+// tab closes) — and, while it stays open, once every five minutes.
+const SAVE_EVERY_MS = 5 * 60 * 1000;
 
 type ToolbarProps = Omit<
  ComponentProps<typeof NotePdfToolbar>,
@@ -54,7 +55,7 @@ export function NotePdfPage({
  const reader = useTranslations("Reader.pdf");
  const annotations = usePdfAnnotations(
   { assetId: notePdfAssetId(attachmentId), pageNumber },
-  { deferServerSave: true, idleSaveMs: IDLE_SAVE_MS },
+  { deferServerSave: true, saveEveryMs: SAVE_EVERY_MS },
  );
  const { strokes, replaceStrokes, canEdit, conflict } = annotations;
  const ink = usePdfPageInk({ strokes, replaceStrokes, canEdit, tools });

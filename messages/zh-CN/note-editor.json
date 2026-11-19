@@ -98,6 +98,9 @@
   "tools": "书写工具",
   "zoom": "缩放",
   "fingerInk": "用手指书写",
+  "quickActionsHold": "长按笔打开快捷菜单",
+  "quickActionsHoldSeconds": "长按 {seconds} 秒",
+  "quickActionsHoldOff": "关闭",
   "clearPage": "清除本页笔迹",
   "colors": {
    "red": "红色",

@@ -151,6 +151,7 @@
   "pen": "画笔",
   "highlighter": "荧光笔",
   "brush": "楷书笔",
+  "color": "颜色",
   "quickActions": "快捷操作",
   "colors": {
    "red": "红色",

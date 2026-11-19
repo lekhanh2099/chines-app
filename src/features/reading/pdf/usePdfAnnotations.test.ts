@@ -94,16 +94,19 @@ describe("PDF durable write hook boundary", () => {
   await hook.retrySave();
   expect(mocks.flush).toHaveBeenCalledWith({ assetId: "asset-1", pageNumber: 1 }, ownerId);
  });
- it("saves deferred edits automatically once drawing pauses, once per pause", async () => {
-  const hook = controller({ deferServerSave: true, idleSaveMs: 30 });
+ it("saves deferred edits once per period, counted from the first unsaved edit", async () => {
+  const hook = controller({ deferServerSave: true, saveEveryMs: 80 });
   const first = createPdfStroke("pen", "#ff0000", 4, { x: 0.1, y: 0.1 });
   const second = createPdfStroke("pen", "#ff0000", 4, { x: 0.2, y: 0.2 });
   hook.replaceStrokes([first]);
+  await new Promise((resolve) => setTimeout(resolve, 40));
+  // Drawing on does not push the save back…
   hook.replaceStrokes([first, second]);
   await vi.waitFor(() => expect(mocks.enqueue).toHaveBeenCalledTimes(2));
   expect(mocks.flush).not.toHaveBeenCalled();
-  await vi.waitFor(() => expect(mocks.flush).toHaveBeenCalledTimes(1));
-  await new Promise((resolve) => setTimeout(resolve, 60));
+  // …so it lands one period after the first edit, and only once.
+  await vi.waitFor(() => expect(mocks.flush).toHaveBeenCalledTimes(1), { timeout: 70 });
+  await new Promise((resolve) => setTimeout(resolve, 120));
   expect(mocks.flush).toHaveBeenCalledTimes(1);
  });
 });
