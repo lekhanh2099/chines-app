@@ -85,11 +85,13 @@
   "error": "Không thể tạo ghi chú."
  },
  "import": {
-  "label": "Import ghi chú",
+  "label": "Import ghi chú (.json) hoặc PDF",
   "button": "Import",
   "focusBlocked": "Focus mode đang bật. Không thể import thành ghi chú mới.",
   "success": "Đã import ghi chú.",
-  "error": "File import không đúng định dạng ghi chú."
+  "error": "File import không đúng định dạng ghi chú.",
+  "pdfSuccess": "Đã tạo ghi chú từ PDF.",
+  "pdfImporting": "Đang tải PDF..."
  },
  "quick": {
   "label": "Tạo ghi chú nhanh",
@@ -171,5 +173,13 @@
   "untitled": "Ghi chú chưa đặt tên",
   "lessonNumber": "Bài {number}",
   "bookLesson": "{book} · Bài {number}"
+ },
+ "grid": {
+  "pdfPages": "PDF · {count} trang",
+  "viewLabel": "Kiểu hiển thị",
+  "grid": "Lưới",
+  "list": "Danh sách",
+  "addPdf": "Thêm PDF",
+  "addPdfHint": "Tạo ghi chú từ file PDF"
  }
 }

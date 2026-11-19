@@ -10,9 +10,17 @@
   "title": "筛选",
   "allCategories": "所有分类",
   "allSources": "所有来源",
-  "categories": { "general": "通用", "grammar": "语法", "vocabulary": "词汇", "culture": "文化" }
+  "categories": {
+   "general": "通用",
+   "grammar": "语法",
+   "vocabulary": "词汇",
+   "culture": "文化"
+  }
  },
- "loadError": { "title": "无法加载笔记库", "description": "笔记、文件夹或课程数据当前不可用。" },
+ "loadError": {
+  "title": "无法加载笔记库",
+  "description": "笔记、文件夹或课程数据当前不可用。"
+ },
  "views": {
   "library": "资料库",
   "recent": "最近",
@@ -77,11 +85,13 @@
   "error": "无法创建笔记。"
  },
  "import": {
-  "label": "导入笔记",
+  "label": "导入笔记（.json）或 PDF",
   "button": "导入",
   "focusBlocked": "专注模式已开启，无法导入为新笔记。",
   "success": "笔记已导入。",
-  "error": "导入文件不是有效的笔记格式。"
+  "error": "导入文件不是有效的笔记格式。",
+  "pdfSuccess": "已从 PDF 创建笔记。",
+  "pdfImporting": "正在上传 PDF..."
  },
  "quick": {
   "label": "创建快速笔记",
@@ -149,7 +159,12 @@
    "grammar": "语法",
    "annotation": "标注"
   },
-  "categories": { "grammar": "语法", "vocabulary": "词汇", "culture": "文化", "general": "通用" },
+  "categories": {
+   "grammar": "语法",
+   "vocabulary": "词汇",
+   "culture": "文化",
+   "general": "通用"
+  },
   "lessonNote": "课程笔记",
   "quickNote": "快速笔记",
   "normalNote": "普通笔记",
@@ -158,5 +173,13 @@
   "untitled": "未命名笔记",
   "lessonNumber": "第 {number} 课",
   "bookLesson": "{book} · 第 {number} 课"
+ },
+ "grid": {
+  "pdfPages": "PDF · {count} 页",
+  "viewLabel": "显示方式",
+  "grid": "网格",
+  "list": "列表",
+  "addPdf": "添加 PDF",
+  "addPdfHint": "用 PDF 文件创建笔记"
  }
 }

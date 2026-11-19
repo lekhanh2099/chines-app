@@ -20,12 +20,8 @@ import {
 } from "@/components/ui/overlays/dialog";
 import { EmptyState } from "@/components/patterns/empty-state";
 import { NotePdfViewer } from "./NotePdfViewer";
-import {
- NotePdfSizeError,
- NotePdfTypeError,
- NotePdfUnreadableError,
- type useNotePdf,
-} from "./useNotePdf";
+import { NotePdfSizeError, NotePdfTypeError, NotePdfUnreadableError } from "./note-pdf-file";
+import type { useNotePdf } from "./useNotePdf";
 
 type NotePdf = ReturnType<typeof useNotePdf>;
 

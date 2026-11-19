@@ -45,13 +45,3 @@ export async function openPdfDocument(file: Blob) {
 }
 
 export type PdfDocument = Awaited<ReturnType<typeof openPdfDocument>>["document"];
-
-/** Reads the page count, which also proves the file is a PDF pdf.js can open. */
-export async function countPdfPages(file: Blob) {
- const opened = await openPdfDocument(file);
- try {
-  return opened.document.numPages;
- } finally {
-  void opened.close();
- }
-}

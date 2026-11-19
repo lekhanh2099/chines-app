@@ -43,7 +43,17 @@
   "serverTitle": "Bản server: {title} (revision {revision})",
   "useServer": "Dùng bản server",
   "keepLocal": "Giữ bản của tôi và lưu tiếp",
-  "error": "Chưa thể xử lý xung đột. Các bản vẫn được giữ."
+  "error": "Chưa thể xử lý xung đột. Các bản vẫn được giữ.",
+  "viewLabel": "Cách xem",
+  "diffView": "Khác biệt",
+  "fullView": "Xem đầy đủ",
+  "legendLocal": "Chỉ có trong bản trên thiết bị này",
+  "legendServer": "Chỉ có trong bản server",
+  "comparedWithServer": "{name} so với bản server",
+  "identical": "Nội dung giống hệt bản server.",
+  "changedCount": "{count} đoạn khác nhau",
+  "sameLines": "… {count} đoạn giống nhau",
+  "readingContent": "Bài đọc (split view)"
  },
  "save": {
   "saving": "Đang lưu...",

@@ -43,7 +43,17 @@
   "serverTitle": "Server version: {title} (revision {revision})",
   "useServer": "Use server version",
   "keepLocal": "Keep my draft and save",
-  "error": "Could not resolve the conflict. Both versions are retained."
+  "error": "Could not resolve the conflict. Both versions are retained.",
+  "viewLabel": "View",
+  "diffView": "Differences",
+  "fullView": "Full versions",
+  "legendLocal": "Only in the version on this device",
+  "legendServer": "Only in the server version",
+  "comparedWithServer": "{name} compared with the server",
+  "identical": "Same content as the server version.",
+  "changedCount": "{count} blocks differ",
+  "sameLines": "… {count} unchanged blocks",
+  "readingContent": "Reading (split view)"
  },
  "save": {
   "saving": "Saving...",

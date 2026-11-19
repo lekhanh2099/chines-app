@@ -85,11 +85,13 @@
   "error": "Unable to create the note."
  },
  "import": {
-  "label": "Import note",
+  "label": "Import a note (.json) or a PDF",
   "button": "Import",
   "focusBlocked": "Focus mode is on. You cannot import a new note.",
   "success": "Note imported.",
-  "error": "The import file is not a valid note export."
+  "error": "The import file is not a valid note export.",
+  "pdfSuccess": "Created a note from the PDF.",
+  "pdfImporting": "Uploading PDF..."
  },
  "quick": {
   "label": "Create quick note",
@@ -171,5 +173,13 @@
   "untitled": "Untitled note",
   "lessonNumber": "Lesson {number}",
   "bookLesson": "{book} · Lesson {number}"
+ },
+ "grid": {
+  "pdfPages": "PDF · {count} pages",
+  "viewLabel": "Layout",
+  "grid": "Grid",
+  "list": "List",
+  "addPdf": "Add PDF",
+  "addPdfHint": "Create a note from a PDF file"
  }
 }

@@ -28,6 +28,16 @@ export async function getNotePdfAttachment(supabase: AppSupabaseClient, noteId: 
  return data;
 }
 
+/** Every PDF the signed-in owner has attached, for the notes library covers. */
+export async function listNotePdfAttachments(supabase: AppSupabaseClient) {
+ const { data, error } = await supabase
+  .from("note_pdf_attachments")
+  .select("*")
+  .order("created_at", { ascending: false });
+ if (error) throw new Error(error.message);
+ return data;
+}
+
 export async function attachNotePdf(
  supabase: AppSupabaseClient,
  input: { noteId: string; ownerUserId: string; file: File; pageCount: number },

@@ -7,28 +7,17 @@ import { noteQueryKeys } from "@/features/notes/query-keys";
 import {
  deleteCachedNotePdf,
  writeCachedNotePdf,
+ writeCachedNotePdfCover,
 } from "@/features/notes/local/note-pdf-file-cache";
 import { notePdfAssetId } from "@/features/reading/pdf/note-pdf-asset-id";
 import { discardPendingPdfAnnotationsForAsset } from "@/features/reading/pdf/pdf-annotation-outbox";
 import {
  attachNotePdf,
  getNotePdfAttachment,
- NOTE_PDF_MAX_BYTES,
  removeNotePdf,
  type NotePdfAttachment,
 } from "@/services/notes/note-pdf.service";
-import { countPdfPages } from "./pdfjs-loader";
-
-/** The picked file is not a PDF. */
-export class NotePdfTypeError extends Error {}
-/** The PDF is larger than the bucket limit. */
-export class NotePdfSizeError extends Error {}
-/** pdf.js could not open the file (damaged or password protected). */
-export class NotePdfUnreadableError extends Error {}
-
-function isPdfFile(file: File) {
- return file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf");
-}
+import { readNotePdfFile } from "./note-pdf-file";
 
 /** The one PDF a note holds: read, import (upload) and removal. */
 export function useNotePdf(noteId: string) {
@@ -46,11 +35,7 @@ export function useNotePdf(noteId: string) {
  const importMutation = useMutation({
   mutationFn: async (file: File) => {
    if (!userId) throw new Error("Not authenticated");
-   if (!isPdfFile(file)) throw new NotePdfTypeError(file.name);
-   if (file.size > NOTE_PDF_MAX_BYTES) throw new NotePdfSizeError(file.name);
-   const pageCount = await countPdfPages(file).catch(() => {
-    throw new NotePdfUnreadableError(file.name);
-   });
+   const { pageCount, cover } = await readNotePdfFile(file);
    const previous = query.data;
    if (previous) await removeAttachment(previous, userId);
    const attachment = await attachNotePdf(supabase, {
@@ -59,10 +44,16 @@ export function useNotePdf(noteId: string) {
     file,
     pageCount,
    });
-   await writeCachedNotePdf(userId, attachment.id, file);
+   await Promise.all([
+    writeCachedNotePdf(userId, attachment.id, file),
+    writeCachedNotePdfCover(userId, attachment.id, cover),
+   ]);
    return attachment;
   },
-  onSuccess: (attachment) => queryClient.setQueryData(queryKey, attachment),
+  onSuccess: (attachment) => {
+   queryClient.setQueryData(queryKey, attachment);
+   void queryClient.invalidateQueries({ queryKey: noteQueryKeys.pdfAttachments(userId) });
+  },
   onError: () => queryClient.invalidateQueries({ queryKey }),
  });
 
@@ -71,7 +62,10 @@ export function useNotePdf(noteId: string) {
    if (!userId) throw new Error("Not authenticated");
    if (query.data) await removeAttachment(query.data, userId);
   },
-  onSuccess: () => queryClient.setQueryData(queryKey, null),
+  onSuccess: () => {
+   queryClient.setQueryData(queryKey, null);
+   void queryClient.invalidateQueries({ queryKey: noteQueryKeys.pdfAttachments(userId) });
+  },
  });
 
  async function removeAttachment(attachment: NotePdfAttachment, ownerUserId: string) {
