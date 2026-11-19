@@ -30,6 +30,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/actions/button";
 import { Typography } from "@/components/ui/display/typography";
 import { Input } from "@/components/ui/forms/input";
+import { Switch } from "@/components/ui/forms/switch";
 import { cn } from "@/lib/utils";
 import {
  BasePopover as Popover,
@@ -540,18 +541,26 @@ function NotePdfToolOptions({ ink }: { ink: PdfPageInk }) {
 
  if (drawingTool === "eraser") {
   return (
-   <label className="grid gap-2 px-1">
-    <Typography as="span" variant="label">
-     {reader("eraserSize", { size: eraserSize })}
-    </Typography>
-    <Input
-     type="range"
-     min={12}
-     max={56}
-     value={eraserSize}
-     onChange={(event) => setEraserSize(Number(event.target.value))}
+   <div className="grid gap-3">
+    <label className="grid gap-2 px-1">
+     <Typography as="span" variant="label">
+      {reader("eraserSize", { size: eraserSize })}
+     </Typography>
+     <Input
+      type="range"
+      min={12}
+      max={56}
+      value={eraserSize}
+      onChange={(event) => setEraserSize(Number(event.target.value))}
+     />
+    </label>
+    <NotePdfInkSwitch
+     label={reader("eraserReturns")}
+     hint={reader("eraserReturnsHint")}
+     checked={ink.eraserReturns}
+     onCheckedChange={ink.setEraserReturns}
     />
-   </label>
+   </div>
   );
  }
 
@@ -582,7 +591,42 @@ function NotePdfToolOptions({ ink }: { ink: PdfPageInk }) {
      onChange={(event) => setWidth(Number(event.target.value))}
     />
    </label>
+   {highlighter ? null : (
+    <NotePdfInkSwitch
+     label={reader("scribbleErase")}
+     hint={reader("scribbleEraseHint")}
+     checked={ink.scribbleErase}
+     onCheckedChange={ink.setScribbleErase}
+    />
+   )}
   </div>
+ );
+}
+
+/** One on/off ink preference with its explanation. */
+function NotePdfInkSwitch({
+ label,
+ hint,
+ checked,
+ onCheckedChange,
+}: {
+ label: string;
+ hint: string;
+ checked: boolean;
+ onCheckedChange: (checked: boolean) => void;
+}) {
+ return (
+  <label className="flex items-center justify-between gap-3 px-1">
+   <span className="grid min-w-0 gap-0.5">
+    <Typography as="span" variant="label">
+     {label}
+    </Typography>
+    <Typography as="span" variant="caption" tone="muted">
+     {hint}
+    </Typography>
+   </span>
+   <Switch checked={checked} onCheckedChange={onCheckedChange} />
+  </label>
  );
 }
 

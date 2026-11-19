@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
- appendPdfStrokePoint,
+ appendPdfStrokePoints,
  equalPdfAnnotationPayloads,
  createPdfStroke,
  erasePdfStrokesAtPoint,
@@ -27,10 +27,39 @@ describe("HanziHome PDF annotation geometry", () => {
 
  it("creates and appends normalized strokes deterministically", () => {
   const stroke = createPdfStroke("pen", "#ff0000", 4, point);
-  expect(appendPdfStrokePoint(stroke, point)).toEqual(stroke);
-  const extended = appendPdfStrokePoint(stroke, { x: 0.4, y: 0.5 });
+  expect(appendPdfStrokePoints(stroke, [point])).toBe(stroke);
+  const extended = appendPdfStrokePoints(stroke, [{ x: 0.4, y: 0.5 }]);
   expect(extended.points).toHaveLength(2);
-  expect(pdfStrokePath(extended)).toContain("M 200 300 L 400 500");
+  expect(pdfStrokePath(extended)).toBe("M 200 300 L 400 500");
+ });
+
+ it("keeps every sample a zoomed-in page can show, and drops sub-pixel jitter", () => {
+  const stroke = createPdfStroke("pen", "#ff0000", 4, point);
+  const samples = [
+   { x: 0.2005, y: 0.3 },
+   { x: 0.20052, y: 0.3 },
+   { x: 0.201, y: 0.3 },
+  ];
+  expect(appendPdfStrokePoints(stroke, samples).points).toHaveLength(1);
+  expect(appendPdfStrokePoints(stroke, samples, 0.0003).points).toEqual([
+   point,
+   { x: 0.2005, y: 0.3 },
+   { x: 0.201, y: 0.3 },
+  ]);
+ });
+
+ it("draws a smooth curve through the midpoints between samples", () => {
+  const stroke = {
+   ...createPdfStroke("pen", "#ff0000", 4, { x: 0, y: 0 }),
+   points: [
+    { x: 0, y: 0 },
+    { x: 0.1, y: 0.1 },
+    { x: 0.2, y: 0 },
+    { x: 0.3, y: 0.1 },
+   ],
+  };
+  expect(pdfStrokePath(stroke)).toBe("M 0 0 Q 100 100 150 50 Q 200 0 250 50 L 300 100");
+  expect(pdfStrokePath({ ...stroke, points: [point] })).toBe("M 200 300 L 200 300");
  });
 
  it("erases only strokes touched by the normalized point", () => {
@@ -42,10 +71,10 @@ describe("HanziHome PDF annotation geometry", () => {
  it("extends only the identified stroke without replacing other strokes or source points", () => {
   const first = createPdfStroke("pen", "#ff0000", 4, point);
   const second = createPdfStroke("pen", "#000000", 4, { x: 0.8, y: 0.8 });
-  const updated = updateStrokeAtId([first, second], first.id, { x: 0.4, y: 0.5 });
+  const updated = updateStrokeAtId([first, second], first.id, [{ x: 0.4, y: 0.5 }]);
   expect(updated[0]?.points).toEqual([point, { x: 0.4, y: 0.5 }]);
   expect(updated[1]).toBe(second);
   expect(first.points).toEqual([point]);
-  expect(updateStrokeAtId([first, second], "missing", point)).toEqual([first, second]);
+  expect(updateStrokeAtId([first, second], "missing", [point])).toEqual([first, second]);
  });
 });

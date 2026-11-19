@@ -6,7 +6,7 @@ The product flow is Course → Book/Volume → Lesson → Module. Supabase norma
 
 ## Local setup
 
-Requirements: Node.js 22.22.2 or newer and npm 12.2.0 (pinned in `packageManager` and CI).
+Requirements: Node.js 24 (`engines`, `.nvmrc`, CI and Vercel) and npm 12.2.0 (pinned in `packageManager` and CI).
 
 The shared control CSS variants live in `src/app/globals.css`; the shadcn CLI is
 used on demand with `npx shadcn@latest`, rather than installed with the app.

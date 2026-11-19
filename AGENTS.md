@@ -113,7 +113,7 @@ Do not reread unchanged instructions already loaded in the task.
 ## 2. Verified project truth
 
 - Package manager: npm `12.2.0` (`packageManager` in `package.json`). Change dependencies with that version (`npx npm@12.2.0 install …`); a lockfile written by another npm fails `npm ci` in CI.
-- Runtime: Node.js 22+.
+- Runtime: Node.js 24 (`engines.node`, `.nvmrc`, CI; Vercel builds with the `engines` major).
 - Framework: Next.js App Router.
 - UI: React, TypeScript, Tailwind CSS 4, local shadcn-style components.
 - Data/state: Supabase, TanStack Query, TanStack Form, TanStack Store, Zod.
