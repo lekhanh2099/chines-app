@@ -5,6 +5,7 @@ import {
  brushWidthsForStroke,
  classifyBrushStroke,
  estimateBrushEm,
+ estimateWritingEm,
  type BrushPoint,
 } from "./kaishu-brush";
 import { KAISHU_BRUSH_TEMPLATES } from "./kaishu-brush-templates";
@@ -88,5 +89,46 @@ describe("Kaishu brush widths", () => {
    expect(area).toBeGreaterThanOrEqual(0);
   }
   expect(brushOutline([{ x: 5, y: 5 }], [4]).match(/L/g)).toHaveLength(9);
+ });
+});
+
+describe("Kaishu brush character size", () => {
+ /** A sparse character (a cross of two long strokes) in a box at `left`. */
+ const sparse = (left: number, size: number) => [
+  drawn({ x: left, y: size / 2 }, { x: left + size, y: size / 2 }),
+  drawn({ x: left + size / 2, y: 0 }, { x: left + size / 2, y: size }),
+ ];
+ /**
+  * A dense character like 呢 or 镶: a left part (a vertical crossed by three
+  * short horizontals) and a boxed right part, with a small gap between them.
+  */
+ const dense = (left: number, size: number) => [
+  drawn({ x: left + size * 0.15, y: 0 }, { x: left + size * 0.15, y: size }),
+  ...[0.2, 0.5, 0.8].map((row) =>
+   drawn({ x: left, y: size * row }, { x: left + size * 0.3, y: size * row }),
+  ),
+  drawn({ x: left + size * 0.5, y: 0 }, { x: left + size * 0.5, y: size }),
+  drawn({ x: left + size, y: 0 }, { x: left + size, y: size }),
+  ...[0, 0.33, 0.66, 1].map((row) =>
+   drawn({ x: left + size * 0.5, y: size * row }, { x: left + size, y: size * row }),
+  ),
+ ];
+
+ it("gives a sparse and a dense character of the same size the same weight", () => {
+  const size = 60;
+  const strokes: BrushPoint[][] = [];
+  const estimates: { kind: string; em: number }[] = [];
+  for (let index = 0; index < 12; index += 1) {
+   const kind = index % 2 === 0 ? "sparse" : "dense";
+   const character = kind === "sparse" ? sparse(index * 75, size) : dense(index * 75, size);
+   for (const stroke of character) {
+    strokes.push(stroke);
+    if (index >= 4) estimates.push({ kind, em: estimateWritingEm(strokes, 1.2) });
+   }
+  }
+  for (const { em } of estimates) {
+   expect(em).toBeGreaterThan(size * 1.2 * 0.85);
+   expect(em).toBeLessThan(size * 1.2 * 1.15);
+  }
  });
 });
