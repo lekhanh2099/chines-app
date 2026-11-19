@@ -1,6 +1,6 @@
 "use client";
 
-import { Eraser, Hand, Highlighter, Pen, Redo2, Trash2, Undo2 } from "lucide-react";
+import { Brush, Eraser, Hand, Highlighter, Pen, Redo2, Trash2, Undo2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
@@ -62,6 +62,16 @@ export function PdfInkToolbar({
       onClick={() => setDrawingTool("highlighter")}
      >
       <Highlighter />
+     </Button>
+     <Button
+      type="button"
+      size="icon-toolbar"
+      variant={drawingTool === "brush" ? "active" : "ghost"}
+      aria-label={t("brush")}
+      disabled={!canEdit}
+      onClick={() => setDrawingTool("brush")}
+     >
+      <Brush />
      </Button>
      <Button
       type="button"

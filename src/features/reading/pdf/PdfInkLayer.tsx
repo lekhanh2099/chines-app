@@ -2,10 +2,11 @@
 
 import { useSelector } from "@tanstack/react-store";
 import { useTranslations } from "next-intl";
-import { memo } from "react";
+import { memo, useLayoutEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { pdfStrokePath, type PdfStroke } from "@/features/reading/pdf/pdf-annotations";
+import { pdfBrushOutlinePath } from "@/features/reading/pdf/pdf-brush-strokes";
 import type { usePdfPageInk } from "@/features/reading/pdf/usePdfPageInk";
 
 type PdfPageInk = ReturnType<typeof usePdfPageInk>;
@@ -27,12 +28,42 @@ export function PdfInkLayer({ ink, strokes }: { ink: PdfPageInk; strokes: readon
  // their identity, so only the stroke being drawn recomputes its path.
  const live = useSelector(ink.liveInk, (state) => state);
  const shown = live.active ? live.strokes : strokes;
+ const layerRef = useRef<SVGSVGElement>(null);
+ // Page height over width: brush outlines are built in isotropic units and
+ // scaled back into the stretched 1000×1000 view box.
+ const [aspect, setAspect] = useState(0);
+
+ useLayoutEffect(() => {
+  const layer = layerRef.current;
+  if (!layer) return;
+  const measure = () => {
+   const { width, height } = layer.getBoundingClientRect();
+   if (width > 0) setAspect(height / width);
+  };
+  measure();
+  const observer = new ResizeObserver(measure);
+  observer.observe(layer);
+  return () => observer.disconnect();
+ }, []);
+
+ useLayoutEffect(() => {
+  const layer = layerRef.current;
+  if (!layer || !capturesTouch) return;
+  // iPad Safari turns quick taps and presses into text selection (double or
+  // triple tap selects the page, a long press shows the callout). Pointer
+  // `preventDefault()` does not stop that; cancelling the touch does, and
+  // pointer events still arrive.
+  const cancelNativeGestures = (event: TouchEvent) => event.preventDefault();
+  layer.addEventListener("touchstart", cancelNativeGestures, { passive: false });
+  return () => layer.removeEventListener("touchstart", cancelNativeGestures);
+ }, [capturesTouch]);
 
  return (
   <svg
+   ref={layerRef}
    aria-label={t("annotationLayer")}
    className={cn(
-    "pointer-events-none absolute inset-0 size-full",
+    "pointer-events-none absolute inset-0 size-full select-none",
     capturesTouch && "pointer-events-auto cursor-crosshair",
    )}
    viewBox="0 0 1000 1000"
@@ -47,16 +78,31 @@ export function PdfInkLayer({ ink, strokes }: { ink: PdfPageInk; strokes: readon
    style={{
     touchAction: capturesTouch ? "none" : "pan-x pan-y",
     blockSize: "100%",
+    WebkitTouchCallout: "none",
+    WebkitUserSelect: "none",
    }}
   >
    {shown.map((stroke) => (
-    <PdfStrokePath key={stroke.id} stroke={stroke} />
+    <PdfStrokePath key={stroke.id} stroke={stroke} aspect={aspect} />
    ))}
   </svg>
  );
 }
 
-const PdfStrokePath = memo(function PdfStrokePath({ stroke }: { stroke: PdfStroke }) {
+const PdfStrokePath = memo(function PdfStrokePath({
+ stroke,
+ aspect,
+}: {
+ stroke: PdfStroke;
+ aspect: number;
+}) {
+ if (stroke.widths && aspect > 0) {
+  return (
+   <g transform={`scale(1 ${1 / aspect})`}>
+    <path d={pdfBrushOutlinePath(stroke, aspect)} fill={stroke.color} />
+   </g>
+  );
+ }
  return (
   <path
    d={pdfStrokePath(stroke)}
