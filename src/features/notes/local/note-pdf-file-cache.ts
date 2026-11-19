@@ -12,6 +12,10 @@ function cacheKey(ownerUserId: string, attachmentId: string) {
  return `/__note-pdf-cache/${ownerUserId}/${attachmentId}.pdf`;
 }
 
+function coverKey(ownerUserId: string, attachmentId: string) {
+ return `/__note-pdf-cache/${ownerUserId}/${attachmentId}.cover.webp`;
+}
+
 function cacheAvailable() {
  return typeof window !== "undefined" && "caches" in window;
 }
@@ -50,7 +54,37 @@ export async function deleteCachedNotePdf(ownerUserId: string, attachmentId: str
  try {
   const cache = await caches.open(CACHE_NAME);
   await cache.delete(cacheKey(ownerUserId, attachmentId));
+  await cache.delete(coverKey(ownerUserId, attachmentId));
  } catch {
   // Nothing to clean up when Cache Storage is unavailable.
+ }
+}
+
+/** Library cover (page 1 as WebP), or undefined when this device has none yet. */
+export async function readCachedNotePdfCover(ownerUserId: string, attachmentId: string) {
+ if (!cacheAvailable()) return undefined;
+ try {
+  const cache = await caches.open(CACHE_NAME);
+  const response = await cache.match(coverKey(ownerUserId, attachmentId));
+  return await response?.blob();
+ } catch {
+  return undefined;
+ }
+}
+
+export async function writeCachedNotePdfCover(
+ ownerUserId: string,
+ attachmentId: string,
+ cover: Blob,
+): Promise<void> {
+ if (!cacheAvailable() || cover.size === 0) return;
+ try {
+  const cache = await caches.open(CACHE_NAME);
+  await cache.put(
+   coverKey(ownerUserId, attachmentId),
+   new Response(cover, { headers: { "Content-Type": "image/webp" } }),
+  );
+ } catch {
+  // The library falls back to the PDF placeholder cover.
  }
 }
