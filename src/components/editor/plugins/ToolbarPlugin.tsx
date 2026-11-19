@@ -131,7 +131,7 @@ export default function ToolbarPlugin() {
   <div
    role="group"
    aria-label="Công cụ định dạng ghi chú"
-   className="toolbar flex flex-nowrap items-center gap-1 overflow-x-auto"
+   className="toolbar flex flex-nowrap items-center gap-1 overflow-x-auto overflow-y-hidden"
    onMouseDown={pf}
   >
    {/* ── Undo / Redo ── */}

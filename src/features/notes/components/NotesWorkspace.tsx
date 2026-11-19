@@ -19,7 +19,13 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/forms/select";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Typography } from "@/components/ui/display/typography";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
@@ -268,10 +274,14 @@ export function NotesWorkspace() {
     />
    </div>
 
-   <Sheet open={navigatorOpen} onOpenChange={setNavigatorOpen} side="right">
-    <SheetHeader title={t("library")} onClose={() => setNavigatorOpen(false)} />
-    <SheetBody>{navigator}</SheetBody>
-   </Sheet>
+   <Dialog open={navigatorOpen} onOpenChange={setNavigatorOpen}>
+    <DialogContent size="sm" aria-describedby={undefined}>
+     <DialogHeader>
+      <DialogTitle>{t("library")}</DialogTitle>
+     </DialogHeader>
+     <DialogBody>{navigator}</DialogBody>
+    </DialogContent>
+   </Dialog>
   </div>
  );
 }

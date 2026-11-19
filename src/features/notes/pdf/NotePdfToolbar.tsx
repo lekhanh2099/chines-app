@@ -15,6 +15,7 @@ import {
  Highlighter,
  Loader2,
  Minimize,
+ PanelLeft,
  Pen,
  Pointer,
  Redo2,
@@ -74,6 +75,8 @@ export function NotePdfToolbar({
  viewport,
  onReplace,
  onRemove,
+ sidebarOpen,
+ onToggleSidebar,
 }: {
  fileName: string;
  pageNumber: number;
@@ -87,6 +90,8 @@ export function NotePdfToolbar({
  >;
  onReplace: () => void;
  onRemove: () => void;
+ sidebarOpen: boolean;
+ onToggleSidebar: () => void;
 }) {
  const t = useTranslations("Notes.editor.pdf");
  const reader = useTranslations("Reader.pdf");
@@ -131,6 +136,16 @@ export function NotePdfToolbar({
    <div className="flex shrink-0 items-center gap-1">
     <Button
      type="button"
+     variant={sidebarOpen ? "active" : "ghost"}
+     size="icon-toolbar"
+     aria-label={t("pages")}
+     aria-pressed={sidebarOpen}
+     onClick={onToggleSidebar}
+    >
+     <PanelLeft />
+    </Button>
+    <Button
+     type="button"
      variant="ghost"
      size="icon-toolbar"
      className="hidden @[34rem]:inline-flex"
@@ -153,7 +168,9 @@ export function NotePdfToolbar({
       aria-label={t("goToPage")}
       inputMode="numeric"
       enterKeyHint="go"
-      className="w-11 text-center"
+      className="min-w-11 text-center"
+      // Wide enough for the largest page number (e.g. "297").
+      style={{ inlineSize: `calc(${String(pageCount).length}ch + 1.5rem + 2px)` }}
       value={pageDraft}
       onChange={(event) => setPageDraft(event.target.value.replace(/\D/gu, ""))}
       onBlur={() => setPageDraft(String(pageNumber))}
@@ -176,7 +193,7 @@ export function NotePdfToolbar({
    </div>
 
    {/* Centred when it fits; scrolls sideways instead of wrapping when it does not. */}
-   <div className="no-scrollbar min-w-0 flex-1 overflow-x-auto">
+   <div className="no-scrollbar min-w-0 flex-1 overflow-x-auto overflow-y-hidden">
     <div className="mx-auto flex w-max items-center gap-0.5" role="toolbar" aria-label={t("tools")}>
      <Button
       type="button"
@@ -278,7 +295,8 @@ export function NotePdfToolbar({
        type="button"
        variant="ghost"
        size="icon-toolbar"
-       aria-label={reader("fullscreen")}
+       aria-label={viewport.isFullscreen ? t("exitExpand") : t("expand")}
+       title={viewport.isFullscreen ? t("exitExpand") : t("expand")}
        aria-pressed={viewport.isFullscreen}
        onClick={() => void viewport.toggleFullscreen()}
       >
@@ -568,7 +586,7 @@ function NotePdfToolOptions({ ink }: { ink: PdfPageInk }) {
  );
 }
 
-/** Cloud icon: saved, unsaved (tap to save now), saving, or failed (tap to retry). */
+/** Cloud status: saved, waiting for the automatic save, saving, or failed (tap to retry). */
 function NotePdfSaveButton({
  annotations,
  onSave,
@@ -615,16 +633,17 @@ function NotePdfSaveButton({
   );
  }
  if (annotations.isQueued) {
+  // Saved automatically shortly after drawing pauses; tapping saves right away.
   return (
    <Button
     type="button"
-    variant="active"
+    variant="ghost"
     size="icon-toolbar"
-    aria-label={t("save")}
-    title={t("unsavedHint")}
+    aria-label={t("autoSaving")}
+    title={t("autoSaving")}
     onClick={onSave}
    >
-    <CloudUpload />
+    <CloudUpload className="animate-pulse" />
    </Button>
   );
  }

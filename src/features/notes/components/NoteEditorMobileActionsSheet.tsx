@@ -19,7 +19,13 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
 import { Separator } from "@/components/ui/layout/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Typography } from "@/components/ui/display/typography";
 import { useRouter } from "@/i18n/navigation";
 import { noteTabsStore } from "@/stores/notes/note-tabs-store";
@@ -70,202 +76,204 @@ export function NoteEditorMobileActionsSheet({
  const toolbarLabel = isToolbarVisible ? t("hideToolbar") : t("showToolbar");
 
  return (
-  <Sheet
-   open={mobileActionsOpen}
-   onOpenChange={setMobileActionsOpen}
-   side="bottom"
-   height="tall"
-   onCloseAutoFocus={(event) => {
-    event.preventDefault();
-    mobileActionsTriggerRef.current?.focus();
-   }}
-  >
-   <SheetHeader title={t("options")} onClose={() => setMobileActionsOpen(false)} />
-   <SheetBody className="grid content-start gap-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
-    <section className="grid gap-1">
-     <Typography
-      as="h3"
-      variant="overline"
-      tone="muted"
-      weight="black"
-      transform="uppercase"
-      className="px-2.5"
-     >
-      {t("readMode")}
-     </Typography>
-     {isPdfView && !isSplitView ? null : (
-      <Button
-       type="button"
-       variant={!isReadOnlyMode ? "active" : "menu"}
-       size="touch"
-       align="start"
-       className="w-full"
-       onClick={() => {
-        setReadOnlyOverride(!isReadOnlyMode);
-        setMobileActionsOpen(false);
-       }}
+  <Dialog open={mobileActionsOpen} onOpenChange={setMobileActionsOpen}>
+   <DialogContent
+    size="sm"
+    onCloseAutoFocus={(event) => {
+     event.preventDefault();
+     mobileActionsTriggerRef.current?.focus();
+    }}
+    aria-describedby={undefined}
+   >
+    <DialogHeader>
+     <DialogTitle>{t("options")}</DialogTitle>
+    </DialogHeader>
+    <DialogBody className="grid content-start gap-4">
+     <section className="grid gap-1">
+      <Typography
+       as="h3"
+       variant="overline"
+       tone="muted"
+       weight="black"
+       transform="uppercase"
+       className="px-2.5"
       >
-       {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
-       {isReadOnlyMode ? t("editMode") : t("viewModeAction")}
-      </Button>
-     )}
-     <Button
-      type="button"
-      variant={isPdfView ? "active" : "menu"}
-      size="touch"
-      align="start"
-      className="w-full"
-      aria-pressed={isPdfView}
-      onClick={() => {
-       handleTogglePdfView();
-       setMobileActionsOpen(false);
-      }}
-     >
-      <FileText data-icon="inline-start" />
-      {isPdfView ? t("pdf.close") : t("pdf.open")}
-     </Button>
-     <Button
-      type="button"
-      variant={isSplitView ? "active" : "menu"}
-      size="touch"
-      align="start"
-      className="w-full"
-      onClick={() => {
-       handleToggleSplitView();
-       setMobileActionsOpen(false);
-      }}
-     >
-      {isSplitView ? (
-       <PanelLeftClose data-icon="inline-start" />
-      ) : (
-       <PanelLeft data-icon="inline-start" />
+       {t("readMode")}
+      </Typography>
+      {isPdfView && !isSplitView ? null : (
+       <Button
+        type="button"
+        variant={!isReadOnlyMode ? "active" : "menu"}
+        size="touch"
+        align="start"
+        className="w-full"
+        onClick={() => {
+         setReadOnlyOverride(!isReadOnlyMode);
+         setMobileActionsOpen(false);
+        }}
+       >
+        {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
+        {isReadOnlyMode ? t("editMode") : t("viewModeAction")}
+       </Button>
       )}
-      {isSplitView ? t("closeSplit") : t("openSplit")}
-     </Button>
-     {!isReadOnlyMode && !(isPdfView && !isSplitView) ? (
       <Button
        type="button"
-       variant={isToolbarVisible ? "active" : "menu"}
+       variant={isPdfView ? "active" : "menu"}
+       size="touch"
+       align="start"
+       className="w-full"
+       aria-pressed={isPdfView}
+       onClick={() => {
+        handleTogglePdfView();
+        setMobileActionsOpen(false);
+       }}
+      >
+       <FileText data-icon="inline-start" />
+       {isPdfView ? t("pdf.close") : t("pdf.open")}
+      </Button>
+      <Button
+       type="button"
+       variant={isSplitView ? "active" : "menu"}
        size="touch"
        align="start"
        className="w-full"
        onClick={() => {
-        setIsToolbarVisible((current) => !current);
+        handleToggleSplitView();
         setMobileActionsOpen(false);
        }}
       >
-       {isToolbarVisible ? (
-        <PanelTopClose data-icon="inline-start" />
+       {isSplitView ? (
+        <PanelLeftClose data-icon="inline-start" />
        ) : (
-        <PanelTopOpen data-icon="inline-start" />
+        <PanelLeft data-icon="inline-start" />
        )}
-       {toolbarLabel}
+       {isSplitView ? t("closeSplit") : t("openSplit")}
       </Button>
-     ) : null}
-    </section>
+      {!isReadOnlyMode && !(isPdfView && !isSplitView) ? (
+       <Button
+        type="button"
+        variant={isToolbarVisible ? "active" : "menu"}
+        size="touch"
+        align="start"
+        className="w-full"
+        onClick={() => {
+         setIsToolbarVisible((current) => !current);
+         setMobileActionsOpen(false);
+        }}
+       >
+        {isToolbarVisible ? (
+         <PanelTopClose data-icon="inline-start" />
+        ) : (
+         <PanelTopOpen data-icon="inline-start" />
+        )}
+        {toolbarLabel}
+       </Button>
+      ) : null}
+     </section>
 
-    <Separator />
+     <Separator />
 
-    <section className="grid gap-1">
-     <Typography
-      as="h3"
-      variant="overline"
-      tone="muted"
-      weight="black"
-      transform="uppercase"
-      className="px-2.5"
-     >
-      {t("noteSection")}
-     </Typography>
-     <Button
-      type="button"
-      variant="menu"
-      size="touch"
-      align="start"
-      className="w-full"
-      onClick={() => {
-       setMobileActionsOpen(false);
-       requestAnimationFrame(() => setMetadataOpen(true));
-      }}
-     >
-      <Settings2 data-icon="inline-start" />
-      {t("metadata")}
-     </Button>
-     <Button
-      type="button"
-      variant="menu"
-      size="touch"
-      align="start"
-      className="w-full"
-      disabled={isImporting}
-      onClick={() => {
-       setMobileActionsOpen(false);
-       requestAnimationFrame(() => importInputRef.current?.click());
-      }}
-     >
-      <Upload data-icon="inline-start" />
-      {t("importAction")}
-     </Button>
-     <Button
-      type="button"
-      variant="menu"
-      size="touch"
-      align="start"
-      className="w-full"
-      onClick={() => {
-       handleExport();
-       setMobileActionsOpen(false);
-      }}
-     >
-      <Download data-icon="inline-start" />
-      {t("exportAction")}
-     </Button>
-     <Button
-      type="button"
-      variant="menu"
-      size="touch"
-      align="start"
-      className="w-full"
-      disabled={focusModeEnabled}
-      onClick={() => {
-       setMobileActionsOpen(false);
-       router.push("/notes?action=new");
-      }}
-     >
-      <Plus data-icon="inline-start" />
-      {t("openNew")}
-     </Button>
-     <Button
-      type="button"
-      variant="menu"
-      size="touch"
-      align="start"
-      className="w-full"
-      disabled={focusModeEnabled}
-      onClick={() => {
-       closeTab(noteId);
-       setMobileActionsOpen(false);
-      }}
-     >
-      <PanelLeftClose data-icon="inline-start" />
-      {t("closeCurrentTab")}
-     </Button>
-     <Button
-      type="button"
-      variant="menuDestructive"
-      size="touch"
-      align="start"
-      className="w-full"
-      onClick={() => {
-       setMobileActionsOpen(false);
-       requestAnimationFrame(() => setShowDeleteConfirm(true));
-      }}
-     >
-      <Trash2 data-icon="inline-start" />
-      {t("delete")}
-     </Button>
-    </section>
-   </SheetBody>
-  </Sheet>
+     <section className="grid gap-1">
+      <Typography
+       as="h3"
+       variant="overline"
+       tone="muted"
+       weight="black"
+       transform="uppercase"
+       className="px-2.5"
+      >
+       {t("noteSection")}
+      </Typography>
+      <Button
+       type="button"
+       variant="menu"
+       size="touch"
+       align="start"
+       className="w-full"
+       onClick={() => {
+        setMobileActionsOpen(false);
+        requestAnimationFrame(() => setMetadataOpen(true));
+       }}
+      >
+       <Settings2 data-icon="inline-start" />
+       {t("metadata")}
+      </Button>
+      <Button
+       type="button"
+       variant="menu"
+       size="touch"
+       align="start"
+       className="w-full"
+       disabled={isImporting}
+       onClick={() => {
+        setMobileActionsOpen(false);
+        requestAnimationFrame(() => importInputRef.current?.click());
+       }}
+      >
+       <Upload data-icon="inline-start" />
+       {t("importAction")}
+      </Button>
+      <Button
+       type="button"
+       variant="menu"
+       size="touch"
+       align="start"
+       className="w-full"
+       onClick={() => {
+        handleExport();
+        setMobileActionsOpen(false);
+       }}
+      >
+       <Download data-icon="inline-start" />
+       {t("exportAction")}
+      </Button>
+      <Button
+       type="button"
+       variant="menu"
+       size="touch"
+       align="start"
+       className="w-full"
+       disabled={focusModeEnabled}
+       onClick={() => {
+        setMobileActionsOpen(false);
+        router.push("/notes?action=new");
+       }}
+      >
+       <Plus data-icon="inline-start" />
+       {t("openNew")}
+      </Button>
+      <Button
+       type="button"
+       variant="menu"
+       size="touch"
+       align="start"
+       className="w-full"
+       disabled={focusModeEnabled}
+       onClick={() => {
+        closeTab(noteId);
+        setMobileActionsOpen(false);
+       }}
+      >
+       <PanelLeftClose data-icon="inline-start" />
+       {t("closeCurrentTab")}
+      </Button>
+      <Button
+       type="button"
+       variant="menuDestructive"
+       size="touch"
+       align="start"
+       className="w-full"
+       onClick={() => {
+        setMobileActionsOpen(false);
+        requestAnimationFrame(() => setShowDeleteConfirm(true));
+       }}
+      >
+       <Trash2 data-icon="inline-start" />
+       {t("delete")}
+      </Button>
+     </section>
+    </DialogBody>
+   </DialogContent>
+  </Dialog>
  );
 }

@@ -28,7 +28,12 @@ function touchCenter(touches: TouchList, fallback: Point): Point {
  * ignored and Ctrl+wheel, trackpad pinch or a two-finger pinch would zoom the
  * whole browser page together with the PDF.
  */
-export function usePdfPageViewport() {
+export function usePdfPageViewport({
+ expandInPage = false,
+}: {
+ /** Expand by covering the app (header, toolbars) inside the page instead of browser fullscreen. */
+ expandInPage?: boolean;
+} = {}) {
  const viewerRef = useRef<HTMLElement>(null);
  const [scrollArea, setScrollArea] = useState<HTMLDivElement>();
  const [zoom, setZoom] = useState(100);
@@ -102,7 +107,20 @@ export function usePdfPageViewport() {
   };
  }, [scrollArea]);
 
+ useEffect(() => {
+  if (!expandInPage || !isFullscreen) return;
+  const closeOnEscape = (event: KeyboardEvent) => {
+   if (event.key === "Escape") setIsFullscreen(false);
+  };
+  window.addEventListener("keydown", closeOnEscape);
+  return () => window.removeEventListener("keydown", closeOnEscape);
+ }, [expandInPage, isFullscreen]);
+
  const toggleFullscreen = async () => {
+  if (expandInPage) {
+   setIsFullscreen((current) => !current);
+   return;
+  }
   const element = viewerRef.current;
   if (!element) return;
   if (document.fullscreenElement === element) {

@@ -209,10 +209,10 @@ export function NotebookToolbar({
 
     {filtersOpen ? (
      <div className="grid gap-2 border-t border-border-default/70 pt-2">
-      <div className="flex min-w-0 gap-1.5 overflow-x-auto pb-0.5 scrollbar-soft">
+      <div className="flex min-w-0 gap-1.5 overflow-x-auto overflow-y-hidden pb-0.5 scrollbar-soft">
        {sectionButtons}
       </div>
-      <div className="flex min-w-0 gap-1.5 overflow-x-auto pb-0.5 scrollbar-soft">
+      <div className="flex min-w-0 gap-1.5 overflow-x-auto overflow-y-hidden pb-0.5 scrollbar-soft">
        {groupButtons}
       </div>
      </div>
@@ -228,7 +228,9 @@ export function NotebookToolbar({
    padding="md"
    className="sticky top-2 z-30 grid min-w-0 gap-3 sm:top-3"
   >
-   <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{sectionButtons}</div>
+   <div className="flex gap-2 overflow-x-auto overflow-y-hidden pb-1 scrollbar-soft">
+    {sectionButtons}
+   </div>
 
    <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
     <Label variant="label" className="relative block min-w-0 flex-1">
@@ -245,7 +247,9 @@ export function NotebookToolbar({
     <div className="shrink-0">{viewControl}</div>
    </div>
 
-   <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{groupButtons}</div>
+   <div className="flex gap-2 overflow-x-auto overflow-y-hidden pb-1 scrollbar-soft">
+    {groupButtons}
+   </div>
   </Card>
  );
 }

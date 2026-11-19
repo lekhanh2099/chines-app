@@ -6,7 +6,13 @@ import { useLocale, useTranslations } from "next-intl";
 import { EmptyState } from "@/components/patterns/empty-state";
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Typography } from "@/components/ui/display/typography";
 
 import type {
@@ -57,97 +63,101 @@ export function AiConversationHistorySheet({
  });
 
  return (
-  <Sheet open={open} onOpenChange={onOpenChange} side="right">
-   <SheetHeader title={t("history.title")} onClose={() => onOpenChange(false)} />
-   <SheetBody className="grid content-start gap-4">
-    <Button
-     type="button"
-     variant="outline"
-     size="touch"
-     onClick={onCreate}
-     disabled={disabled || isCreating}
-    >
-     <MessageSquarePlus data-icon="inline-start" />
-     {isCreating ? t("history.creating") : t("history.newConversation")}
-    </Button>
+  <Dialog open={open} onOpenChange={onOpenChange}>
+   <DialogContent size="md" aria-describedby={undefined}>
+    <DialogHeader>
+     <DialogTitle>{t("history.title")}</DialogTitle>
+    </DialogHeader>
+    <DialogBody className="grid content-start gap-4">
+     <Button
+      type="button"
+      variant="outline"
+      size="touch"
+      onClick={onCreate}
+      disabled={disabled || isCreating}
+     >
+      <MessageSquarePlus data-icon="inline-start" />
+      {isCreating ? t("history.creating") : t("history.newConversation")}
+     </Button>
 
-    {error ? (
-     <Typography as="p" variant="bodySmall" tone="danger" role="alert">
-      {error}
-     </Typography>
-    ) : null}
+     {error ? (
+      <Typography as="p" variant="bodySmall" tone="danger" role="alert">
+       {error}
+      </Typography>
+     ) : null}
 
-    {isLoading ? (
-     <Typography as="p" variant="bodySmall" tone="muted">
-      {t("history.loading")}
-     </Typography>
-    ) : items.length === 0 ? (
-     <EmptyState
-      size="compact"
-      icon={<MessageCircle aria-hidden="true" />}
-      title={t("history.emptyTitle")}
-      description={t("history.emptyDescription")}
-     />
-    ) : (
-     <div className="grid gap-1" role="list" aria-label={t("history.listAria")}>
-      {items.map((item) => {
-       const isCurrent = item.id === currentConversationId;
-       const activityAt = item.lastMessageAt ?? item.createdAt;
-       const title = item.title.trim() || t("history.untitled");
-       return (
-        <div
-         key={item.id}
-         role="listitem"
-         className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-1"
-        >
-         <Button
-          type="button"
-          variant={isCurrent ? "active" : "navigation"}
-          size="touch"
-          align="start"
-          wrap="normal"
-          layout="grid"
-          className="w-full min-w-0"
-          aria-current={isCurrent ? "true" : undefined}
-          onClick={() => onSelect(item.id)}
-          disabled={disabled}
+     {isLoading ? (
+      <Typography as="p" variant="bodySmall" tone="muted">
+       {t("history.loading")}
+      </Typography>
+     ) : items.length === 0 ? (
+      <EmptyState
+       size="compact"
+       icon={<MessageCircle aria-hidden="true" />}
+       title={t("history.emptyTitle")}
+       description={t("history.emptyDescription")}
+      />
+     ) : (
+      <div className="grid gap-1" role="list" aria-label={t("history.listAria")}>
+       {items.map((item) => {
+        const isCurrent = item.id === currentConversationId;
+        const activityAt = item.lastMessageAt ?? item.createdAt;
+        const title = item.title.trim() || t("history.untitled");
+        return (
+         <div
+          key={item.id}
+          role="listitem"
+          className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-1"
          >
-          <span className="grid min-w-0 gap-1">
-           <Typography as="span" variant="bodySmall" weight="bold" clamp="one">
-            {title}
-           </Typography>
-           <span className="flex min-w-0 flex-wrap items-center gap-2">
-            <Badge variant="default" size="sm" casing="natural">
-             {modeLabels[item.mode]}
-            </Badge>
-            {item.memoryPolicy === "disabled" ? (
-             <Badge variant="warning" size="sm" casing="natural">
-              {t("memory.offShort")}
-             </Badge>
-            ) : null}
-            <Typography as="span" variant="caption" tone="muted">
-             {dateFormatter.format(new Date(activityAt))}
+          <Button
+           type="button"
+           variant={isCurrent ? "active" : "navigation"}
+           size="touch"
+           align="start"
+           wrap="normal"
+           layout="grid"
+           className="w-full min-w-0"
+           aria-current={isCurrent ? "true" : undefined}
+           onClick={() => onSelect(item.id)}
+           disabled={disabled}
+          >
+           <span className="grid min-w-0 gap-1">
+            <Typography as="span" variant="bodySmall" weight="bold" clamp="one">
+             {title}
             </Typography>
+            <span className="flex min-w-0 flex-wrap items-center gap-2">
+             <Badge variant="default" size="sm" casing="natural">
+              {modeLabels[item.mode]}
+             </Badge>
+             {item.memoryPolicy === "disabled" ? (
+              <Badge variant="warning" size="sm" casing="natural">
+               {t("memory.offShort")}
+              </Badge>
+             ) : null}
+             <Typography as="span" variant="caption" tone="muted">
+              {dateFormatter.format(new Date(activityAt))}
+             </Typography>
+            </span>
            </span>
-          </span>
-         </Button>
+          </Button>
 
-         <Button
-          type="button"
-          variant="ghost"
-          size="icon"
-          aria-label={`${t("history.archive")}: ${title}`}
-          disabled={disabled || archivingConversationId === item.id}
-          onClick={() => onRequestArchive(item)}
-         >
-          <Archive />
-         </Button>
-        </div>
-       );
-      })}
-     </div>
-    )}
-   </SheetBody>
-  </Sheet>
+          <Button
+           type="button"
+           variant="ghost"
+           size="icon"
+           aria-label={`${t("history.archive")}: ${title}`}
+           disabled={disabled || archivingConversationId === item.id}
+           onClick={() => onRequestArchive(item)}
+          >
+           <Archive />
+          </Button>
+         </div>
+        );
+       })}
+      </div>
+     )}
+    </DialogBody>
+   </DialogContent>
+  </Dialog>
  );
 }

@@ -29,7 +29,13 @@ import {
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
 import { Separator } from "@/components/ui/layout/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Typography } from "@/components/ui/display/typography";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { useTheme } from "@/components/layout/theme/ThemeProvider";
@@ -618,95 +624,99 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
     </div>
    </nav>
 
-   <Sheet open={moreOpen} onOpenChange={setMoreOpen} side="bottom">
-    <SheetHeader title={t("navigation.sheetTitle")} onClose={() => setMoreOpen(false)} />
-    <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
-     <div className="grid gap-2 border-b border-border-default pb-4 sm:grid-cols-2">
-      <Typography as="h2" variant="overline" tone="muted" className="sm:col-span-2">
-       {t("header.quickSettings")}
-      </Typography>
-      <Button
-       type="button"
-       variant={theme === "dark" ? "active" : "outline"}
-       size="touch"
-       align="start"
-       aria-pressed={theme === "dark"}
-       onClick={toggleTheme}
-       className="w-full"
-      >
-       {theme === "dark" ? <Sun data-icon="inline-start" /> : <Moon data-icon="inline-start" />}
-       {t("header.darkTheme")}
-      </Button>
-      <Button
-       type="button"
-       variant={focusModeEnabled ? "active" : "outline"}
-       size="touch"
-       align="start"
-       aria-pressed={focusModeEnabled}
-       onClick={() => {
-        if (!focusModeEnabled) {
-         toast.warning(t("header.focusModeWarning"), { duration: 5200 });
-        }
-        focusModeStore.actions.setEnabled(!focusModeEnabled);
-       }}
-       className="w-full"
-      >
-       <LockKeyhole data-icon="inline-start" />
-       {t("header.focusMode")}
-      </Button>
-     </div>
-     <nav aria-label={t("navigation.aria.all")} className="pt-4">
-      <div className="grid gap-5 sm:grid-cols-2">
-       {visibleNavigationGroups.map((group) => (
+   <Dialog open={moreOpen} onOpenChange={setMoreOpen}>
+    <DialogContent size="md" aria-describedby={undefined}>
+     <DialogHeader>
+      <DialogTitle>{t("navigation.sheetTitle")}</DialogTitle>
+     </DialogHeader>
+     <DialogBody>
+      <div className="grid gap-2 border-b border-border-default pb-4 sm:grid-cols-2">
+       <Typography as="h2" variant="overline" tone="muted" className="sm:col-span-2">
+        {t("header.quickSettings")}
+       </Typography>
+       <Button
+        type="button"
+        variant={theme === "dark" ? "active" : "outline"}
+        size="touch"
+        align="start"
+        aria-pressed={theme === "dark"}
+        onClick={toggleTheme}
+        className="w-full"
+       >
+        {theme === "dark" ? <Sun data-icon="inline-start" /> : <Moon data-icon="inline-start" />}
+        {t("header.darkTheme")}
+       </Button>
+       <Button
+        type="button"
+        variant={focusModeEnabled ? "active" : "outline"}
+        size="touch"
+        align="start"
+        aria-pressed={focusModeEnabled}
+        onClick={() => {
+         if (!focusModeEnabled) {
+          toast.warning(t("header.focusModeWarning"), { duration: 5200 });
+         }
+         focusModeStore.actions.setEnabled(!focusModeEnabled);
+        }}
+        className="w-full"
+       >
+        <LockKeyhole data-icon="inline-start" />
+        {t("header.focusMode")}
+       </Button>
+      </div>
+      <nav aria-label={t("navigation.aria.all")} className="pt-4">
+       <div className="grid gap-5 sm:grid-cols-2">
+        {visibleNavigationGroups.map((group) => (
+         <section
+          key={group.id}
+          className="grid content-start gap-2"
+          aria-label={t(group.messageKey)}
+         >
+          <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
+           {t(group.messageKey)}
+          </Typography>
+          {group.sections.map((section) => (
+           <div key={section.id} className="grid gap-1">
+            {section.collapsible || section.labelled ? (
+             <Typography variant="caption" tone="muted" weight="bold" className="px-2.5 pt-1">
+              {t(section.messageKey)}
+             </Typography>
+            ) : null}
+            {section.itemIds.map((itemId) => (
+             <NavRow
+              key={itemId}
+              itemId={itemId}
+              active={isActive(pathname, searchParams, itemId)}
+              collapsed={false}
+              onNavigate={() => setMoreOpen(false)}
+             />
+            ))}
+           </div>
+          ))}
+         </section>
+        ))}
         <section
-         key={group.id}
-         className="grid content-start gap-2"
-         aria-label={t(group.messageKey)}
+         className="grid content-start gap-1.5"
+         aria-label={t(navigationItems.settings.messageKey)}
         >
          <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
-          {t(group.messageKey)}
+          {t(navigationItems.settings.messageKey)}
          </Typography>
-         {group.sections.map((section) => (
-          <div key={section.id} className="grid gap-1">
-           {section.collapsible || section.labelled ? (
-            <Typography variant="caption" tone="muted" weight="bold" className="px-2.5 pt-1">
-             {t(section.messageKey)}
-            </Typography>
-           ) : null}
-           {section.itemIds.map((itemId) => (
-            <NavRow
-             key={itemId}
-             itemId={itemId}
-             active={isActive(pathname, searchParams, itemId)}
-             collapsed={false}
-             onNavigate={() => setMoreOpen(false)}
-            />
-           ))}
-          </div>
+         {mobileUtilityItemIds.map((itemId) => (
+          <NavRow
+           key={itemId}
+           itemId={itemId}
+           active={isActive(pathname, searchParams, itemId)}
+           collapsed={false}
+           onNavigate={() => setMoreOpen(false)}
+          />
          ))}
         </section>
-       ))}
-       <section
-        className="grid content-start gap-1.5"
-        aria-label={t(navigationItems.settings.messageKey)}
-       >
-        <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
-         {t(navigationItems.settings.messageKey)}
-        </Typography>
-        {mobileUtilityItemIds.map((itemId) => (
-         <NavRow
-          key={itemId}
-          itemId={itemId}
-          active={isActive(pathname, searchParams, itemId)}
-          collapsed={false}
-          onNavigate={() => setMoreOpen(false)}
-         />
-        ))}
-       </section>
-      </div>
-     </nav>
-    </SheetBody>
-   </Sheet>
+       </div>
+      </nav>
+     </DialogBody>
+    </DialogContent>
+   </Dialog>
   </>
  );
 }

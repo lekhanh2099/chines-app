@@ -92,8 +92,6 @@
   "removed": "Đã gỡ PDF.",
   "removeError": "Chưa gỡ được PDF. Hãy thử lại.",
   "saved": "Đã lưu",
-  "unsavedHint": "Nét vẽ đã giữ trên máy; sẽ tự lưu khi bạn rời trang hoặc thoát.",
-  "save": "Lưu",
   "saving": "Đang lưu...",
   "saveError": "Chưa lưu được lên server. Nét vẽ vẫn còn trên máy.",
   "loadErrorDescription": "Kiểm tra kết nối rồi thử tải lại.",
@@ -107,6 +105,11 @@
    "green": "Màu xanh lá",
    "orange": "Màu cam",
    "black": "Màu đen"
-  }
+  },
+  "pages": "Danh sách trang",
+  "goToPageNumber": "Tới trang {page}",
+  "expand": "Mở rộng (ẩn header và thanh công cụ)",
+  "exitExpand": "Thu về",
+  "autoSaving": "Đang chờ lưu tự động"
  }
 }

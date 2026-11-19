@@ -17,7 +17,13 @@ import {
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
 import { Separator } from "@/components/ui/layout/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Switch } from "@/components/ui/forms/switch";
 import { Typography } from "@/components/ui/display/typography";
 import { SegmentedControl } from "@/components/ui/forms/segmented-control";
@@ -160,113 +166,115 @@ export function ReaderTools() {
    </DropdownMenu>
 
    {onChange ? (
-    <Sheet
-     open={open}
-     onOpenChange={setOpen}
-     side="bottom"
-     height="tall"
-     onCloseAutoFocus={(event) => {
-      event.preventDefault();
-      trigger.current?.focus();
-     }}
-    >
-     <SheetHeader title={t("title")} onClose={() => setOpen(false)} />
-     <SheetBody className="grid content-start gap-5">
-      <section className="grid gap-3">
-       <Typography as="h3" variant="sectionTitle">
-        {t("font")}
-       </Typography>
-       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-        {readerFontSchema.options.map((font) => (
-         <Button
-          key={font}
-          size="touch"
-          variant={display.hanziFont === font ? "active" : "outline"}
-          aria-pressed={display.hanziFont === font}
-          onClick={() => onChange({ ...display, hanziFont: font })}
-         >
-          {t(`fonts.${font}`)}
-         </Button>
-        ))}
-       </div>
-      </section>
-
-      <Separator />
-
-      <section className="grid gap-3">
-       <Typography as="h3" variant="sectionTitle">
-        {t("size")}
-       </Typography>
-       <SegmentedControl
-        value={display.hanziSize}
-        density="touch"
-        aria-label={t("size")}
-        items={readerSizeSchema.options.map((key) => ({ key, label: t(`sizes.${key}`) }))}
-        onChange={(hanziSize) => onChange({ ...display, hanziSize })}
-       />
-      </section>
-
-      <Separator />
-
-      <section className="grid gap-3">
-       <Typography as="h3" variant="sectionTitle">
-        {t("reveal")}
-       </Typography>
-       <SegmentedControl
-        value={display.revealMode}
-        density="touch"
-        aria-label={t("reveal")}
-        items={readerRevealModeSchema.options.map((key) => ({
-         key,
-         label: t(`revealModes.${key}`),
-        }))}
-        onChange={(revealMode) => onChange({ ...display, revealMode })}
-       />
-      </section>
-
-      <Separator />
-
-      <section className="grid gap-2">
-       <Typography as="h3" variant="sectionTitle">
-        {t("display")}
-       </Typography>
-       <div className="divide-y divide-border-default">
-        <div className="flex min-h-14 items-center justify-between gap-4 py-2.5">
-         <div className="grid min-w-0 gap-0.5">
-          <Typography as="p" variant="label" tone="default" weight="bold">
-           {t("pinyin")}
-          </Typography>
-          <Typography as="p" variant="caption" tone="muted">
-           {display.revealMode === "tap" ? t("revealModes.tap") : t("showPinyin")}
-          </Typography>
-         </div>
-         <Switch
-          checked={display.showPinyin}
-          disabled={display.revealMode === "tap"}
-          onCheckedChange={(checked) => onChange({ ...display, showPinyin: checked })}
-          aria-label={t("showPinyin")}
-         />
+    <Dialog open={open} onOpenChange={setOpen}>
+     <DialogContent
+      size="md"
+      onCloseAutoFocus={(event) => {
+       event.preventDefault();
+       trigger.current?.focus();
+      }}
+      aria-describedby={undefined}
+     >
+      <DialogHeader>
+       <DialogTitle>{t("title")}</DialogTitle>
+      </DialogHeader>
+      <DialogBody className="grid content-start gap-5">
+       <section className="grid gap-3">
+        <Typography as="h3" variant="sectionTitle">
+         {t("font")}
+        </Typography>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+         {readerFontSchema.options.map((font) => (
+          <Button
+           key={font}
+           size="touch"
+           variant={display.hanziFont === font ? "active" : "outline"}
+           aria-pressed={display.hanziFont === font}
+           onClick={() => onChange({ ...display, hanziFont: font })}
+          >
+           {t(`fonts.${font}`)}
+          </Button>
+         ))}
         </div>
-        <div className="flex min-h-14 items-center justify-between gap-4 py-2.5">
-         <div className="grid min-w-0 gap-0.5">
-          <Typography as="p" variant="label" tone="default" weight="bold">
-           {t("translation")}
-          </Typography>
-          <Typography as="p" variant="caption" tone="muted">
-           {display.revealMode === "tap" ? t("revealModes.tap") : t("showTranslation")}
-          </Typography>
+       </section>
+
+       <Separator />
+
+       <section className="grid gap-3">
+        <Typography as="h3" variant="sectionTitle">
+         {t("size")}
+        </Typography>
+        <SegmentedControl
+         value={display.hanziSize}
+         density="touch"
+         aria-label={t("size")}
+         items={readerSizeSchema.options.map((key) => ({ key, label: t(`sizes.${key}`) }))}
+         onChange={(hanziSize) => onChange({ ...display, hanziSize })}
+        />
+       </section>
+
+       <Separator />
+
+       <section className="grid gap-3">
+        <Typography as="h3" variant="sectionTitle">
+         {t("reveal")}
+        </Typography>
+        <SegmentedControl
+         value={display.revealMode}
+         density="touch"
+         aria-label={t("reveal")}
+         items={readerRevealModeSchema.options.map((key) => ({
+          key,
+          label: t(`revealModes.${key}`),
+         }))}
+         onChange={(revealMode) => onChange({ ...display, revealMode })}
+        />
+       </section>
+
+       <Separator />
+
+       <section className="grid gap-2">
+        <Typography as="h3" variant="sectionTitle">
+         {t("display")}
+        </Typography>
+        <div className="divide-y divide-border-default">
+         <div className="flex min-h-14 items-center justify-between gap-4 py-2.5">
+          <div className="grid min-w-0 gap-0.5">
+           <Typography as="p" variant="label" tone="default" weight="bold">
+            {t("pinyin")}
+           </Typography>
+           <Typography as="p" variant="caption" tone="muted">
+            {display.revealMode === "tap" ? t("revealModes.tap") : t("showPinyin")}
+           </Typography>
+          </div>
+          <Switch
+           checked={display.showPinyin}
+           disabled={display.revealMode === "tap"}
+           onCheckedChange={(checked) => onChange({ ...display, showPinyin: checked })}
+           aria-label={t("showPinyin")}
+          />
          </div>
-         <Switch
-          checked={display.showMeaning}
-          disabled={display.revealMode === "tap"}
-          onCheckedChange={(checked) => onChange({ ...display, showMeaning: checked })}
-          aria-label={t("showTranslation")}
-         />
+         <div className="flex min-h-14 items-center justify-between gap-4 py-2.5">
+          <div className="grid min-w-0 gap-0.5">
+           <Typography as="p" variant="label" tone="default" weight="bold">
+            {t("translation")}
+           </Typography>
+           <Typography as="p" variant="caption" tone="muted">
+            {display.revealMode === "tap" ? t("revealModes.tap") : t("showTranslation")}
+           </Typography>
+          </div>
+          <Switch
+           checked={display.showMeaning}
+           disabled={display.revealMode === "tap"}
+           onCheckedChange={(checked) => onChange({ ...display, showMeaning: checked })}
+           aria-label={t("showTranslation")}
+          />
+         </div>
         </div>
-       </div>
-      </section>
-     </SheetBody>
-    </Sheet>
+       </section>
+      </DialogBody>
+     </DialogContent>
+    </Dialog>
    ) : null}
   </>
  );

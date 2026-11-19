@@ -9,7 +9,13 @@ import {
  DropdownMenuContent,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";
 
@@ -39,12 +45,16 @@ export function HanziHomeReadOnlyReadingSettingsTrigger({
     </Button>
    </div>
 
-   <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
-    <SheetHeader title="Thiết lập đọc" onClose={() => setSheetOpen(false)} />
-    <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
-     <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
-    </SheetBody>
-   </Sheet>
+   <Dialog open={sheetOpen} onOpenChange={setSheetOpen}>
+    <DialogContent size="md" aria-describedby={undefined}>
+     <DialogHeader>
+      <DialogTitle>Thiết lập đọc</DialogTitle>
+     </DialogHeader>
+     <DialogBody>
+      <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
+     </DialogBody>
+    </DialogContent>
+   </Dialog>
 
    <div className="hidden xl:block">
     <DropdownMenu>

@@ -92,8 +92,6 @@
   "removed": "PDF removed.",
   "removeError": "The PDF was not removed. Please try again.",
   "saved": "Saved",
-  "unsavedHint": "Ink is kept on this device and saves when you leave the page or close the app.",
-  "save": "Save",
   "saving": "Saving...",
   "saveError": "Could not save to the server. Ink is still on this device.",
   "loadErrorDescription": "Check your connection and try again.",
@@ -107,6 +105,11 @@
    "green": "Green",
    "orange": "Orange",
    "black": "Black"
-  }
+  },
+  "pages": "Pages",
+  "goToPageNumber": "Go to page {page}",
+  "expand": "Expand (hide header and toolbars)",
+  "exitExpand": "Collapse",
+  "autoSaving": "Saving automatically soon"
  }
 }

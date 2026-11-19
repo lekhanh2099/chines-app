@@ -3,6 +3,11 @@
 import * as React from "react";
 
 import { Button } from "@/components/ui/actions/button";
+import {
+ BasePopover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+} from "@/components/ui/overlays/base-popover";
 import type {
  SegmentedControlGroup,
  SegmentedControlItem,
@@ -42,6 +47,7 @@ export function Tabs<T extends string>({
  listClassName,
  actions,
  overflow,
+ itemMenu,
  "aria-label": ariaLabel,
 }: {
  value: T;
@@ -53,6 +59,11 @@ export function Tabs<T extends string>({
  listClassName?: string;
  actions?: React.ReactNode;
  overflow?: React.ReactNode;
+ /**
+  * Optional quick-jump content per tab, shown while the pointer hovers the tab
+  * (e.g. the sections inside it). Clicking the tab still just selects it.
+  */
+ itemMenu?: (key: T) => React.ReactNode;
  "aria-label"?: string;
 }) {
  const generatedId = React.useId();
@@ -103,7 +114,7 @@ export function Tabs<T extends string>({
             const Icon = item.icon;
             const selected = value === item.key;
 
-            return (
+            const tab = (
              <Button
               key={item.key}
               id={`${baseId}-tab-${flatIndex}`}
@@ -158,6 +169,8 @@ export function Tabs<T extends string>({
               {item.suffix}
              </Button>
             );
+            const menu = itemMenu?.(item.key);
+            return menu ? <TabWithHoverMenu key={item.key} tab={tab} menu={menu} /> : tab;
            })}
           </React.Fragment>
          ))}
@@ -186,7 +199,7 @@ export function Tabs<T extends string>({
           const Icon = item.icon;
           const selected = value === item.key;
 
-          return (
+          const tab = (
            <Button
             key={item.key}
             id={`${baseId}-tab-${flatIndex}`}
@@ -241,6 +254,8 @@ export function Tabs<T extends string>({
             {item.suffix}
            </Button>
           );
+          const menu = itemMenu?.(item.key);
+          return menu ? <TabWithHoverMenu key={item.key} tab={tab} menu={menu} /> : tab;
          })}
         </React.Fragment>
        ))}
@@ -286,5 +301,29 @@ export function TabsContent({
   >
    {children}
   </div>
+ );
+}
+
+/** A tab that opens its quick-jump menu on hover (not on click, which selects the tab). */
+function TabWithHoverMenu({ tab, menu }: { tab: React.ReactElement; menu: React.ReactNode }) {
+ const [open, setOpen] = React.useState(false);
+
+ return (
+  <BasePopover.Root
+   open={open}
+   onOpenChange={(next, details) => {
+    if (details.reason === "trigger-press") return;
+    setOpen(next);
+   }}
+  >
+   <BasePopover.Trigger openOnHover delay={200} closeDelay={150} render={tab} />
+   <BasePopover.Portal>
+    <BasePopoverPositioner side="bottom" align="start" sideOffset={6} collisionPadding={8}>
+     <BasePopoverPopup variant="menu" onClick={() => setOpen(false)}>
+      {menu}
+     </BasePopoverPopup>
+    </BasePopoverPositioner>
+   </BasePopover.Portal>
+  </BasePopover.Root>
  );
 }

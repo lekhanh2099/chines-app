@@ -48,7 +48,7 @@ export function FloatingMenuFormatToolbar({
 
  return (
   <div className="grid gap-1.5">
-   <div className="flex items-center justify-between gap-2 overflow-x-auto scrollbar-none py-0.5">
+   <div className="flex items-center justify-between gap-2 overflow-x-auto overflow-y-hidden scrollbar-none py-0.5">
     <div className="flex items-center gap-1">
      {showPanelToggles ? (
       <>
@@ -100,7 +100,7 @@ export function FloatingMenuFormatToolbar({
     </div>
    </div>
 
-   <div className="flex items-center justify-between gap-1 border-t border-border-default/40 pt-1.5 overflow-x-auto scrollbar-none">
+   <div className="flex items-center justify-between gap-1 border-t border-border-default/40 pt-1.5 overflow-x-auto overflow-y-hidden scrollbar-none">
     <div className="flex items-center gap-0.5">
      <FormatButton active={formats.isBold} onClick={() => formatText("bold")} title="Bold (Ctrl+B)">
       <Bold />

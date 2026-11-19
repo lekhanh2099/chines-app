@@ -55,17 +55,22 @@ vi.mock("@/components/ui/overlays/dropdown-menu", () => {
  };
 });
 
-vi.mock("@/components/ui/overlays/sheet", () => ({
- Sheet: ({ children }: { children?: ReactNode }) => <div data-testid="sheet">{children}</div>,
- SheetHeader: ({ title }: { title: string }) => <div>{title}</div>,
- SheetBody: ({ children }: { children?: ReactNode }) => <div>{children}</div>,
- SheetFooter: ({ children }: { children?: ReactNode }) => <div>{children}</div>,
-}));
+vi.mock("@/components/ui/overlays/dialog", () => {
+ const passthrough = ({ children }: { children?: ReactNode }) => <div>{children}</div>;
+ return {
+  Dialog: passthrough,
+  DialogBody: passthrough,
+  DialogContent: passthrough,
+  DialogFooter: passthrough,
+  DialogHeader: passthrough,
+  DialogTitle: passthrough,
+ };
+});
 
 import { HanziHomeReadingSettingsTrigger } from "./HanziHomeReadingSettingsTrigger";
 
 describe("HanziHomeReadingSettingsTrigger", () => {
- it("uses one sheet control surface through tablet layouts and keeps the wide desktop menu separate", () => {
+ it("uses one dialog control surface through tablet layouts and keeps the wide desktop menu separate", () => {
   const markup = renderToStaticMarkup(
    <NextIntlClientProvider
     locale="vi"

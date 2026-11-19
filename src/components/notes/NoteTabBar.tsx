@@ -133,7 +133,7 @@ export function NoteTabBar({
     </Button>
     <div
      ref={actionsRef}
-     className="flex min-w-0 flex-1 items-center justify-end gap-1.5 overflow-x-auto scrollbar-none empty:hidden sm:gap-2 md:max-w-[min(56vw,44rem)] md:flex-none"
+     className="flex min-w-0 flex-1 items-center justify-end gap-1.5 overflow-x-auto overflow-y-hidden scrollbar-none empty:hidden sm:gap-2 md:max-w-[min(56vw,44rem)] md:flex-none"
     />
    </div>
   </div>

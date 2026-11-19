@@ -154,7 +154,7 @@ export function ModulePane({
     <div className="flex min-w-0 items-center gap-1">
      <div
       className={[
-       "no-scrollbar flex min-w-0 flex-1 gap-1 overflow-x-auto rounded-lg border border-transparent bg-bg-subtle p-1 transition-colors",
+       "no-scrollbar flex min-w-0 flex-1 gap-1 overflow-x-auto overflow-y-hidden rounded-lg border border-transparent bg-bg-subtle p-1 transition-colors",
        canDropIntoPane ? "border-dashed border-accent/60" : "",
       ].join(" ")}
       onDragOver={(event) => {
