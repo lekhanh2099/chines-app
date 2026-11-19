@@ -9,22 +9,13 @@ import type { usePdfPageInk } from "@/features/reading/pdf/usePdfPageInk";
 type PdfPageInk = ReturnType<typeof usePdfPageInk>;
 
 /**
- * Stroke overlay drawn over one PDF page.
+ * Stroke overlay drawn over one PDF page; it fills the page box it is placed in.
  *
  * The global media reset (`svg { block-size: auto }`) is unlayered and beats
- * `size-full`, so without `fillPageHeight` the layer is a width-sized square at
- * the top of the page. The Reader keeps that geometry because its saved ink
- * was drawn in it; note PDFs fill the whole page.
+ * `size-full`, so the full height is set inline; otherwise the layer is a
+ * width-sized square at the top of the page.
  */
-export function PdfInkLayer({
- ink,
- strokes,
- fillPageHeight = false,
-}: {
- ink: PdfPageInk;
- strokes: readonly PdfStroke[];
- fillPageHeight?: boolean;
-}) {
+export function PdfInkLayer({ ink, strokes }: { ink: PdfPageInk; strokes: readonly PdfStroke[] }) {
  const t = useTranslations("Reader.pdf");
  const { drawingTool, touchInk } = ink;
  const capturesTouch = drawingTool !== null && touchInk;
@@ -47,7 +38,7 @@ export function PdfInkLayer({
    onPointerCancel={ink.endStroke}
    style={{
     touchAction: capturesTouch ? "none" : "pan-x pan-y",
-    blockSize: fillPageHeight ? "100%" : undefined,
+    blockSize: "100%",
    }}
   >
    {strokes.map((stroke) => (

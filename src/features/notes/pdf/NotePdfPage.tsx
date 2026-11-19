@@ -90,7 +90,6 @@ export function NotePdfPage({
    {conflict.active ? (
     <PdfAnnotationConflict
      pageBackground={<NotePdfPageCanvas document={document} pageNumber={pageNumber} />}
-     fillPageHeight
      strokes={strokes}
      conflict={conflict}
      open={conflictOpen}
@@ -127,7 +126,7 @@ export function NotePdfPage({
         pageNumber={pageNumber}
         onFailed={() => setPageFailed(true)}
        />
-       <PdfInkLayer ink={ink} strokes={strokes} fillPageHeight />
+       <PdfInkLayer ink={ink} strokes={strokes} />
       </>
      )}
     </div>

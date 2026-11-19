@@ -23,7 +23,6 @@ type PdfAnnotations = ReturnType<typeof usePdfAnnotations>;
 /** Conflict alert plus the local-vs-server comparison dialog for a PDF page. */
 export function PdfAnnotationConflict({
  pageBackground,
- fillPageHeight = false,
  strokes,
  conflict,
  open,
@@ -33,8 +32,6 @@ export function PdfAnnotationConflict({
 }: {
  /** The page image both stroke versions are drawn over. */
  pageBackground: ReactNode;
- /** Same geometry switch as `PdfInkLayer`. */
- fillPageHeight?: boolean;
  strokes: PdfAnnotations["strokes"];
  conflict: PdfAnnotations["conflict"];
  open: boolean;
@@ -81,7 +78,7 @@ export function PdfAnnotationConflict({
           role="img"
           aria-label={label}
           className="absolute inset-0 size-full"
-          style={{ blockSize: fillPageHeight ? "100%" : undefined }}
+          style={{ blockSize: "100%" }}
          >
           {preview.map((stroke) => (
            <path

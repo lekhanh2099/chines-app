@@ -65,4 +65,4 @@ Outbox ghi nhớ revision server đã xác nhận theo trang (trong tab) để n
 
 pdf.js (`pdfjs-dist`) chỉ tải khi mở/import note PDF. CMap/font chuẩn/ICC/WASM được `scripts/copy-pdfjs-assets.mjs` chép vào `public/vendor/pdfjs/<version>/` (git-ignored) trước `dev`/`build`.
 
-Lớp nét Reader sách vẫn là hình vuông theo chiều rộng trang (reset `svg { block-size: auto }` thắng `size-full`); note PDF bật `fillPageHeight`. Sửa Reader cần quyết định riêng vì nét đã lưu được vẽ theo hình học cũ.
+Lớp nét (Reader và note PDF) phủ hết trang: reset toàn cục `svg { block-size: auto }` thắng `size-full`, nên chiều cao 100% đặt inline. Nét Reader vẽ trước khi sửa (theo khung vuông) bị xoá bằng migration `20261119121000_clear_square_reader_pdf_ink.sql`.
