@@ -17,15 +17,17 @@ type PdfPageInk = ReturnType<typeof usePdfPageInk>;
  */
 export function PdfInkLayer({ ink, strokes }: { ink: PdfPageInk; strokes: readonly PdfStroke[] }) {
  const t = useTranslations("Reader.pdf");
- const { drawingTool, touchInk } = ink;
- const capturesTouch = drawingTool !== null && touchInk;
+ // With a tool active the layer takes every touch: iPad Safari applies
+ // `touch-action` to Apple Pencil too, so native finger panning would make the
+ // pencil scroll. The ink hook pans for fingers that do not draw.
+ const capturesTouch = ink.drawingTool !== null;
 
  return (
   <svg
    aria-label={t("annotationLayer")}
    className={cn(
     "pointer-events-none absolute inset-0 size-full",
-    drawingTool !== null && "pointer-events-auto cursor-crosshair",
+    capturesTouch && "pointer-events-auto cursor-crosshair",
    )}
    viewBox="0 0 1000 1000"
    preserveAspectRatio="none"

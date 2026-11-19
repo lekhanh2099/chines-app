@@ -10,6 +10,7 @@ import {
  updateStrokeAtId,
 } from "@/features/reading/pdf/pdf-annotations";
 import type { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
+import { createPdfInkPointerGate } from "@/features/reading/pdf/pdf-ink-pointer-gate";
 import { normalizedPdfPoint } from "@/features/reading/pdf/pdf-viewer-utils";
 
 type PdfEditorTool = PdfDrawingTool | "eraser";
@@ -18,6 +19,9 @@ export const PEN_COLORS = ["#ef4444", "#2563eb", "#16a34a", "#f59e0b", "#111827"
 
 type PdfAnnotations = ReturnType<typeof usePdfAnnotations>;
 
+/** A finger must travel this far before it pans, so a palm settling does not scroll. */
+const PAN_SLOP_PX = 8;
+
 /** Owns the ink tool choice (tool, colour, widths); it can outlive a single page. */
 export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = {}) {
  const [drawingTool, setDrawingTool] = useState<PdfEditorTool | null>(null);
@@ -25,12 +29,21 @@ export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = 
  const [color, setColor] = useState(PEN_COLORS[0] ?? "#ef4444");
  const [width, setWidth] = useState(4);
  const [eraserSize, setEraserSize] = useState(24);
+ // The first stylus stroke switches finger ink off once, so a resting palm
+ // cannot draw; turning it back on afterwards is the reader's choice.
+ const penSeenRef = useRef(false);
+ const preferPenInk = () => {
+  if (penSeenRef.current) return;
+  penSeenRef.current = true;
+  setTouchInk(false);
+ };
 
  return {
   drawingTool,
   setDrawingTool,
   touchInk,
   setTouchInk,
+  preferPenInk,
   color,
   setColor,
   width,
@@ -53,8 +66,7 @@ export function usePdfPageInk({
  tools: ReturnType<typeof usePdfInkTools>;
 }) {
  const activeStrokeRef = useRef("");
- // Touch pointers currently down: a second finger means pan/zoom, not ink.
- const touchPointersRef = useRef(new Set<number>());
+ const [pointerGate] = useState(createPdfInkPointerGate);
  const strokesBeforeRef = useRef<PdfStroke[]>([]);
  // The stroke list of the gesture in progress. Pointer events can arrive
  // faster than React re-renders, so each move builds on this, not on the
@@ -73,8 +85,8 @@ export function usePdfPageInk({
   setFuture([]);
   activeStrokeRef.current = "";
  };
- const checkpoint = () => {
-  setPast((current) => [...current, strokes]);
+ const checkpoint = (base: PdfStroke[] = strokes) => {
+  setPast((current) => [...current, base]);
   setFuture([]);
  };
  const undo = () => {
@@ -96,36 +108,36 @@ export function usePdfPageInk({
   checkpoint();
   replaceStrokes([]);
  };
- const pointerCanInk = (event: PointerEvent<SVGSVGElement>) =>
-  canEdit && drawingTool !== null && (event.pointerType !== "touch" || touchInk);
  const pointFromEvent = (event: PointerEvent<SVGSVGElement>) =>
   normalizedPdfPoint(event.clientX, event.clientY, event.currentTarget.getBoundingClientRect());
+ // Where the panning finger last was, and whether it has moved far enough to
+ // count as a pan rather than a palm settling on the screen.
+ const panRef = useRef({ x: 0, y: 0, started: false });
  const beginStroke = (event: PointerEvent<SVGSVGElement>) => {
-  if (event.pointerType === "touch") {
-   // A primary pointer starts a new touch sequence: forget fingers whose
-   // pointerup never reached the layer.
-   if (event.isPrimary) touchPointersRef.current.clear();
-   touchPointersRef.current.add(event.pointerId);
+  const { draws, pans, discardActive, penArrived } = pointerGate.down(event, {
+   canInk: canEdit && drawingTool !== null,
+   touchInk,
+  });
+  if (penArrived) tools.preferPenInk();
+  if (pans) panRef.current = { x: event.clientX, y: event.clientY, started: false };
+  if (discardActive && activeStrokeRef.current) {
+   // The touch stroke in progress was a resting palm or the first finger of
+   // a pinch: take it back.
+   setPast((current) => current.slice(0, -1));
+   replaceGestureStrokes(strokesBeforeRef.current);
+   activeStrokeRef.current = "";
   }
-  if (touchPointersRef.current.size > 1) {
-   // The first finger's mark was the start of a two-finger gesture: take it back.
-   if (activeStrokeRef.current) {
-    setPast((current) => current.slice(0, -1));
-    replaceStrokes(strokesBeforeRef.current);
-    activeStrokeRef.current = "";
-   }
-   return;
-  }
-  if (!pointerCanInk(event)) return;
+  if (!draws) return;
   event.preventDefault();
-  strokesBeforeRef.current = strokes;
-  gestureStrokesRef.current = strokes;
-  checkpoint();
+  const base = discardActive ? strokesBeforeRef.current : strokes;
+  strokesBeforeRef.current = base;
+  gestureStrokesRef.current = base;
+  checkpoint(base);
   const point = pointFromEvent(event);
   const tool = drawingTool;
   if (tool === "eraser") {
    activeStrokeRef.current = "eraser";
-   replaceGestureStrokes(erasePdfStrokesAtPoint(strokes, point, eraserSize / 1000));
+   replaceGestureStrokes(erasePdfStrokesAtPoint(base, point, eraserSize / 1000));
    return;
   }
   if (tool === null) return;
@@ -135,12 +147,23 @@ export function usePdfPageInk({
    tool === "highlighter" ? Math.max(12, width * 4) : width,
    point,
   );
-  replaceGestureStrokes([...strokes, stroke]);
+  replaceGestureStrokes([...base, stroke]);
   activeStrokeRef.current = stroke.id;
  };
+ const panPage = (event: PointerEvent<SVGSVGElement>) => {
+  const pan = panRef.current;
+  const dx = event.clientX - pan.x;
+  const dy = event.clientY - pan.y;
+  if (!pan.started && Math.hypot(dx, dy) < PAN_SLOP_PX) return;
+  panRef.current = { x: event.clientX, y: event.clientY, started: true };
+  event.currentTarget.closest("[data-pdf-scroll]")?.scrollBy(-dx, -dy);
+ };
  const continueStroke = (event: PointerEvent<SVGSVGElement>) => {
-  if (touchPointersRef.current.size > 1) return;
-  if (!pointerCanInk(event) || !activeStrokeRef.current) return;
+  if (pointerGate.pans(event)) {
+   panPage(event);
+   return;
+  }
+  if (!pointerGate.inks(event) || !activeStrokeRef.current) return;
   event.preventDefault();
   const point = pointFromEvent(event);
   const current = gestureStrokesRef.current;
@@ -152,11 +175,13 @@ export function usePdfPageInk({
   replaceGestureStrokes(updateStrokeAtId(current, activeStrokeRef.current, point));
  };
  const endStroke = (event: PointerEvent<SVGSVGElement>) => {
-  touchPointersRef.current.delete(event.pointerId);
+  // A palm lifting mid-stroke must not end the pen's stroke.
+  const endsInk = pointerGate.inks(event);
+  pointerGate.up(event);
   if (event.currentTarget.hasPointerCapture(event.pointerId)) {
    event.currentTarget.releasePointerCapture(event.pointerId);
   }
-  activeStrokeRef.current = "";
+  if (endsInk) activeStrokeRef.current = "";
  };
 
  return {
