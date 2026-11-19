@@ -17,11 +17,10 @@ import { z } from "zod";
 
 import {
  BRUSH_TEMPLATE_BINS,
- brushPathLength,
+ brushCharacterSizes,
  brushSegmentAt,
  brushWidthAt,
  classifyBrushStroke,
- estimateBrushEm,
  exactTemplateKey,
  resampleBrushPoints,
  segmentTemplateKey,
@@ -160,7 +159,7 @@ function handwritten(median: readonly BrushPoint[]): BrushPoint[] {
 // ---- load -------------------------------------------------------------------
 type Sample = { train: boolean; seen: BrushPoint[]; truth: number[]; character: number };
 const samples: Sample[] = [];
-const lengthsByCharacter = new Map<number, number[]>();
+const pointsByCharacter = new Map<number, BrushPoint[][]>();
 let widthSum = 0;
 let widthCount = 0;
 
@@ -178,10 +177,7 @@ readdirSync(dataDir)
    widthSum += mean;
    widthCount += 1;
    const seen = handwritten(median);
-   lengthsByCharacter.set(character, [
-    ...(lengthsByCharacter.get(character) ?? []),
-    brushPathLength(seen),
-   ]);
+   pointsByCharacter.set(character, [...(pointsByCharacter.get(character) ?? []), seen]);
    samples.push({
     train: character % 2 === 0,
     seen,
@@ -191,15 +187,27 @@ readdirSync(dataDir)
   });
  });
 
-// How much larger than its median stroke a character is (learned on the training half).
-const ratios = [...lengthsByCharacter.entries()]
+// How much larger than the box its strokes span a character is (learned on the
+// training half); the app measures that box by grouping strokes into characters.
+const boxRatios = [...pointsByCharacter.entries()]
  .filter(([character]) => character % 2 === 0)
- .map(([, lengths]) => EM / estimateBrushEm(lengths, 1))
- .filter(Number.isFinite)
+ .map(([, strokes]) => EM / Math.max(1, ...brushCharacterSizes([strokes.flat()], Infinity).sizes))
  .sort((left, right) => left - right);
-const emPerMedianStroke = ratios[Math.floor(ratios.length / 2)] ?? 3;
+const emPerBox = boxRatios[Math.floor(boxRatios.length / 2)] ?? 1.2;
+// …and how much larger than its height (what the app re-weighs finished characters by).
+const heightRatios = [...pointsByCharacter.entries()]
+ .filter(([character]) => character % 2 === 0)
+ .map(([, strokes]) => {
+  const ys = strokes.flat().map((point) => point.y);
+  return EM / Math.max(1, Math.max(...ys) - Math.min(...ys));
+ })
+ .sort((left, right) => left - right);
+const emPerHeight = heightRatios[Math.floor(heightRatios.length / 2)] ?? 1.26;
 const emOf = (sample: Sample) =>
- estimateBrushEm(lengthsByCharacter.get(sample.character) ?? [EM], emPerMedianStroke);
+ Math.max(
+  1,
+  ...brushCharacterSizes([(pointsByCharacter.get(sample.character) ?? []).flat()], Infinity).sizes,
+ ) * emPerBox;
 
 // ---- templates ----------------------------------------------------------------
 const shareAt = (index: number) => (index + 1) / (SAMPLES + 1);
@@ -284,8 +292,10 @@ writeFileSync(
 // (makemeahanzi, stroke outlines from Arphic KaiTi, Arphic Public License).
 // Median KaiTi width profiles; do not edit by hand.
 
-/** A character is this many times longer than its median stroke. */
-export const KAISHU_EM_PER_MEDIAN_STROKE = ${Math.round(emPerMedianStroke * 1000) / 1000};
+/** A character is this many times larger than the box its strokes span. */
+export const KAISHU_EM_PER_CHARACTER_BOX = ${Math.round(emPerBox * 1000) / 1000};
+/** A character is this many times taller than the height its strokes span. */
+export const KAISHU_EM_PER_CHARACTER_HEIGHT = ${Math.round(emPerHeight * 1000) / 1000};
 /** Mean KaiTi stroke width as a share of the character size. */
 export const KAISHU_WIDTH_PER_EM = ${widthPerEm};
 

@@ -76,11 +76,11 @@ export function resampleBrushPoints(points: readonly BrushPoint[], count: number
 /** The basic stroke a straight run of ink reads as, from its direction of travel. */
 function lineType(from: BrushPoint, to: BrushPoint): string {
  const angle = (Math.atan2(to.y - from.y, to.x - from.x) * 180) / Math.PI;
- if (angle > -20 && angle <= 22) return "heng";
+ if (angle > -26 && angle <= 22) return "heng";
  if (angle > 22 && angle <= 68) return "na";
  if (angle > 68 && angle <= 105) return "shu";
  if (angle > 105 && angle <= 170) return "pie";
- if (angle > -75 && angle <= -20) return "ti";
+ if (angle > -75 && angle <= -26) return "ti";
  return "other";
 }
 
@@ -164,6 +164,156 @@ export function estimateBrushEm(strokeLengths: readonly number[], emPerMedianStr
  return middle * emPerMedianStroke;
 }
 
+export type BrushBox = { minX: number; minY: number; maxX: number; maxY: number };
+
+function strokeBox(points: readonly BrushPoint[]): BrushBox {
+ return {
+  minX: Math.min(...points.map((point) => point.x)),
+  minY: Math.min(...points.map((point) => point.y)),
+  maxX: Math.max(...points.map((point) => point.x)),
+  maxY: Math.max(...points.map((point) => point.y)),
+ };
+}
+
+const boxSize = (box: BrushBox) => Math.max(box.maxX - box.minX, box.maxY - box.minY);
+
+/** A stroke joins the character in progress when it comes this close to it (share of a character box). */
+const CHARACTER_JOIN_MARGIN = 0.25;
+/** …unless the character would then grow beyond this share of a character box. */
+const CHARACTER_MAX_SIZE = 1.15;
+
+/**
+ * Groups strokes, in writing order, into characters and returns each
+ * character's size (the longer side of its box). `typicalBox` is the
+ * expected size of a character box: a stroke joins the character in
+ * progress when it comes within a quarter of that (less than the gap
+ * between lines), unless the character
+ * would grow clearly larger than one character — so the separate parts of
+ * one character (马 and 聚 in 骤) stay together while neighbours stay apart.
+ */
+export function brushCharacterSizes(
+ strokes: readonly (readonly BrushPoint[])[],
+ typicalBox: number,
+) {
+ const margin = typicalBox * CHARACTER_JOIN_MARGIN;
+ const boxes: BrushBox[] = [];
+ // The character each stroke belongs to (-1 for an empty stroke).
+ const members: number[] = [];
+ for (const points of strokes) {
+  if (!points.length) {
+   members.push(-1);
+   continue;
+  }
+  const box = strokeBox(points);
+  const current = boxes.at(-1);
+  if (current) {
+   const touches =
+    box.minX <= current.maxX + margin &&
+    box.maxX >= current.minX - margin &&
+    box.minY <= current.maxY + margin &&
+    box.maxY >= current.minY - margin;
+   const merged = {
+    minX: Math.min(current.minX, box.minX),
+    minY: Math.min(current.minY, box.minY),
+    maxX: Math.max(current.maxX, box.maxX),
+    maxY: Math.max(current.maxY, box.maxY),
+   };
+   if (touches && boxSize(merged) <= typicalBox * CHARACTER_MAX_SIZE) {
+    boxes[boxes.length - 1] = merged;
+    members.push(boxes.length - 1);
+    continue;
+   }
+  }
+  boxes.push(box);
+  members.push(boxes.length - 1);
+ }
+ return {
+  sizes: boxes.map(boxSize),
+  /** Width over height of each character's box. */
+  aspects: boxes.map((box) => (box.maxX - box.minX) / Math.max(1e-6, box.maxY - box.minY)),
+  /**
+   * Each character's height. Two neighbours taken for one character are no
+   * taller than one, so this measures a character's size even then.
+   */
+  heights: boxes.map((box) => box.maxY - box.minY),
+  boxes,
+  members,
+ };
+}
+
+/** A first guess at the character size: a character is about this many times its median stroke. */
+const EM_PER_MEDIAN_STROKE = 3.25;
+/** Strokes the first guess looks at. */
+const GUESS_FROM_STROKES = 24;
+/** The grouping is tried from first guesses this many times smaller or larger… */
+const GUESS_FACTORS = [0.6, 0.8, 1, 1.25, 1.6];
+/** …and refined this many times from each… */
+const GROUPING_PASSES = 5;
+/** …from the size at this share of the recent characters (splitting a character only makes parts smaller)… */
+const SIZE_QUANTILE = 0.8;
+const SIZE_FROM_CHARACTERS = 10;
+/** Characters smaller than this share of the median are punctuation and left out. */
+const PUNCTUATION_SHARE = 0.4;
+/**
+ * …and the result whose characters are closest to square wins: Hanzi are
+ * roughly square, while two characters merged are wide and the parts of a
+ * split character are tall or flat.
+ */
+const SQUARE_ASPECTS = { min: 0.62, max: 1.6 };
+/** Finished characters needed before the grouping is trusted over the first guess. */
+const MIN_CHARACTERS = 3;
+/** Until then, characters may be up to this much larger than the first guess. */
+const WARM_UP_GROWTH = 1.6;
+
+/**
+ * The size of the characters being written, from strokes in writing order
+ * (the finished one last; the character it belongs to is still in progress
+ * and does not count). `emPerBox` is how much larger than the box its
+ * strokes span a character is.
+ */
+export function estimateWritingEm(strokes: readonly (readonly BrushPoint[])[], emPerBox: number) {
+ const guess = estimateBrushEm(
+  strokes.slice(-GUESS_FROM_STROKES).map(brushPathLength),
+  EM_PER_MEDIAN_STROKE,
+ );
+ let best = { em: guess, score: -1, distance: Infinity, characters: 0 };
+ for (const factor of GUESS_FACTORS) {
+  let em = guess * factor;
+  let recentAspects: number[] = [];
+  for (let pass = 0; pass < GROUPING_PASSES; pass += 1) {
+   const grouped = brushCharacterSizes(strokes, em / emPerBox);
+   const complete = grouped.sizes.slice(0, -1);
+   const sorted = [...complete].sort((left, right) => left - right);
+   const typical = sorted[Math.floor(sorted.length / 2)];
+   if (typical === undefined) break;
+   const recent = complete
+    .map((size, index) => ({ size, aspect: grouped.aspects[index] ?? 1 }))
+    .filter(({ size }) => size >= typical * PUNCTUATION_SHARE)
+    .slice(-SIZE_FROM_CHARACTERS);
+   const sizes = recent.map(({ size }) => size).sort((left, right) => left - right);
+   const chosen = sizes[Math.min(sizes.length - 1, Math.floor(sizes.length * SIZE_QUANTILE))];
+   if (chosen === undefined) break;
+   em = chosen * emPerBox;
+   recentAspects = recent.map(({ aspect }) => aspect);
+  }
+  const square = recentAspects.filter(
+   (aspect) => aspect >= SQUARE_ASPECTS.min && aspect <= SQUARE_ASPECTS.max,
+  ).length;
+  const score = recentAspects.length ? square / recentAspects.length : 0;
+  const distance = Math.abs(Math.log(em / guess));
+  if (score > best.score || (score === best.score && distance < best.distance)) {
+   best = { em, score, distance, characters: recentAspects.length };
+  }
+ }
+ if (best.characters >= MIN_CHARACTERS) return best.em;
+ // Too few finished characters (the start of a page) to judge a grouping by:
+ // group generously (there is little to merge by mistake yet) and take the
+ // largest character so far, the one in progress included.
+ const generous = (guess * WARM_UP_GROWTH) / emPerBox;
+ const largest = Math.max(0, ...brushCharacterSizes(strokes, generous).sizes);
+ return Math.min(guess * WARM_UP_GROWTH, Math.max(guess, largest * emPerBox));
+}
+
 /** Which segment a position along the stroke (0–1) falls in, and its place within it. */
 export function brushSegmentAt(share: number, cuts: readonly number[]) {
  let segment = 0;
@@ -227,6 +377,21 @@ const DISC_SIDES = 10;
 const SAMPLES_PER_WIDTH = 2.5;
 const MAX_OUTLINE_SAMPLES = 96;
 
+/**
+ * A shaky hand wobbles the centreline, and every wobble shows on both edges
+ * of a wide stroke: a short moving average evens it out. The ends stay put.
+ */
+function smoothCenterline(points: readonly BrushPoint[]): BrushPoint[] {
+ return points.map((point, index) => {
+  if (index === 0 || index === points.length - 1) return point;
+  const window = points.slice(Math.max(0, index - 2), Math.min(points.length, index + 3));
+  return {
+   x: window.reduce((sum, item) => sum + item.x, 0) / window.length,
+   y: window.reduce((sum, item) => sum + item.y, 0) / window.length,
+  };
+ });
+}
+
 /** Signed area of a polygon; the shapes of an outline are all wound the same way. */
 function signedArea(polygon: readonly BrushPoint[]): number {
  let area = 0;
@@ -274,7 +439,7 @@ export function brushOutline(points: readonly BrushPoint[], widths: readonly num
   const point = points[index] ?? previous;
   shares.push((shares[index - 1] ?? 0) + distance(previous, point) / (total || 1));
  }
- const samples = resampleBrushPoints(points, count);
+ const samples = smoothCenterline(resampleBrushPoints(points, count));
  let segment = 1;
  const sampleWidths = samples.map((_, step) => {
   const share = step / (count - 1);

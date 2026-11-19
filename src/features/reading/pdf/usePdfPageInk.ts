@@ -260,6 +260,7 @@ export function usePdfPageInk({
   event.currentTarget.closest("[data-pdf-scroll]")?.scrollBy(-dx, -dy);
  };
  const continueStroke = (event: PointerEvent<SVGSVGElement>) => {
+  pointerGate.track(event);
   if (pointerGate.pans(event)) {
    panPage(event);
    return;
@@ -293,17 +294,23 @@ export function usePdfPageInk({
  const endStroke = (event: PointerEvent<SVGSVGElement>) => {
   // A palm lifting mid-stroke must not end the pen's stroke.
   const endsInk = pointerGate.inks(event);
-  pointerGate.up(event);
+  const { tapFingers } = pointerGate.up(event);
   if (event.currentTarget.hasPointerCapture(event.pointerId)) {
    event.currentTarget.releasePointerCapture(event.pointerId);
   }
+  // Two-finger tap undoes, three-finger tap redoes (as in GoodNotes).
+  if (tapFingers === 2) undo();
+  if (tapFingers === 3) redo();
   if (!endsInk) return;
   const finished = activeStrokeRef.current;
   activeStrokeRef.current = "";
-  if (finished !== "eraser" && finished && event.type === "pointerup") {
-   eraseScribbledInk(finished);
+  if (finished !== "eraser" && finished) {
+   // A deliberate lift may be a scribble; a cancelled stroke (the system took
+   // the touch) is kept as written.
+   if (event.type === "pointerup") eraseScribbledInk(finished);
    const page = event.currentTarget.getBoundingClientRect();
-   if (page.width > 0 && drawingTool === "brush") {
+   const stillThere = gestureStrokesRef.current.some((stroke) => stroke.id === finished);
+   if (page.width > 0 && drawingTool === "brush" && stillThere) {
     replaceGestureStrokes(
      finishPdfBrushStroke(gestureStrokesRef.current, finished, page.height / page.width, width),
     );
