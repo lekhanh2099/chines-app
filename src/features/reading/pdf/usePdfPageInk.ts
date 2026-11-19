@@ -35,8 +35,8 @@ const DEFAULT_SCREEN_EM_PX = 40;
 /** The remembered on-screen character size is updated when it moves by more than this share. */
 const SCREEN_EM_CHANGE = 0.1;
 
-/** Holding the pen this long without moving opens the quick-action menu… */
-const QUICK_ACTIONS_HOLD_MS = 3000;
+/** Holding the pen this long without moving opens the quick-action menu (0 turns it off)… */
+const DEFAULT_QUICK_ACTIONS_HOLD_MS = 2000;
 /** …as long as it stays within this many pixels of where it pressed. */
 const QUICK_ACTIONS_SLOP_PX = 6;
 
@@ -104,6 +104,22 @@ function useStoredScreenEm() {
  return { value, update };
 }
 
+/** How long holding the pen still opens the quick-action menu, remembered (0 turns it off). */
+function useStoredHold() {
+ const config = {
+  key: "hanzihome-pdf-quick-actions-hold",
+  version: 1,
+  schema: z.number().int().min(0).max(10_000),
+  fallback: DEFAULT_QUICK_ACTIONS_HOLD_MS,
+ };
+ const [value, setValue] = useState(() => readVersionedStorage(getBrowserStorage(), config));
+ const update = (next: number) => {
+  setValue(next);
+  writeVersionedStorage(getBrowserStorage(), config, next);
+ };
+ return { value, update };
+}
+
 /** Owns the ink tool choice (tool, colour, widths); it can outlive a single page. */
 export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = {}) {
  const [drawingTool, setDrawingToolState] = useState<PdfEditorTool | null>(null);
@@ -124,6 +140,7 @@ export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = 
   false,
  );
  const { value: brushScreenEm, update: rememberBrushScreenEm } = useStoredScreenEm();
+ const { value: quickActionsHoldMs, update: setQuickActionsHoldMs } = useStoredHold();
  const finishEraseStroke = () => {
   if (eraserReturns) setDrawingToolState(toolBeforeEraserRef.current);
  };
@@ -153,6 +170,8 @@ export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = 
   finishEraseStroke,
   brushScreenEm,
   rememberBrushScreenEm,
+  quickActionsHoldMs,
+  setQuickActionsHoldMs,
   color,
   setColor,
   width,
@@ -324,7 +343,9 @@ export function usePdfPageInk({
   const point = pointFromEvent(event);
   cancelHold();
   holdStartRef.current = { x: event.clientX, y: event.clientY, pointerId: event.pointerId };
-  holdTimerRef.current = setTimeout(() => openQuickActions(point), QUICK_ACTIONS_HOLD_MS);
+  if (tools.quickActionsHoldMs > 0) {
+   holdTimerRef.current = setTimeout(() => openQuickActions(point), tools.quickActionsHoldMs);
+  }
   const tool = drawingTool;
   if (tool === "eraser") {
    activeStrokeRef.current = "eraser";

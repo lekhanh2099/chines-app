@@ -98,6 +98,9 @@
   "tools": "Công cụ viết",
   "zoom": "Thu phóng",
   "fingerInk": "Viết bằng ngón tay",
+  "quickActionsHold": "Giữ bút để mở menu nhanh",
+  "quickActionsHoldSeconds": "Giữ {seconds} giây",
+  "quickActionsHoldOff": "Tắt",
   "clearPage": "Xoá nét vẽ trang này",
   "colors": {
    "red": "Màu đỏ",

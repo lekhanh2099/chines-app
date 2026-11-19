@@ -98,6 +98,9 @@
   "tools": "Ink tools",
   "zoom": "Zoom",
   "fingerInk": "Write with finger",
+  "quickActionsHold": "Hold the pen for quick actions",
+  "quickActionsHoldSeconds": "Hold {seconds} s",
+  "quickActionsHoldOff": "Off",
   "clearPage": "Clear ink on this page",
   "colors": {
    "red": "Red",

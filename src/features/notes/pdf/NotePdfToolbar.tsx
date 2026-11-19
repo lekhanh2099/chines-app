@@ -43,6 +43,9 @@ import {
  DropdownMenuCheckboxItem,
  DropdownMenuContent,
  DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuRadioGroup,
+ DropdownMenuRadioItem,
  DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
@@ -60,6 +63,8 @@ type PdfPageInk = ReturnType<typeof usePdfPageInk>;
 type PdfAnnotations = ReturnType<typeof usePdfAnnotations>;
 type PdfViewport = ReturnType<typeof usePdfPageViewport>;
 
+/** Hold durations offered for opening the quick-action menu (0 turns it off). */
+const QUICK_ACTIONS_HOLD_OPTIONS = [1000, 2000, 3000, 0];
 const COMPACT_BAR_WIDTH_PX = 704;
 
 /**
@@ -433,6 +438,24 @@ function NotePdfMoreMenu({
      <Pointer />
      <span>{t("fingerInk")}</span>
     </DropdownMenuCheckboxItem>
+    <DropdownMenuLabel>{t("quickActionsHold")}</DropdownMenuLabel>
+    <DropdownMenuRadioGroup
+     value={String(ink.quickActionsHoldMs)}
+     onValueChange={(value) => ink.setQuickActionsHoldMs(Number(value))}
+    >
+     {QUICK_ACTIONS_HOLD_OPTIONS.map((milliseconds) => (
+      <DropdownMenuRadioItem
+       key={milliseconds}
+       value={String(milliseconds)}
+       onSelect={(event) => event.preventDefault()}
+      >
+       {milliseconds
+        ? t("quickActionsHoldSeconds", { seconds: milliseconds / 1000 })
+        : t("quickActionsHoldOff")}
+      </DropdownMenuRadioItem>
+     ))}
+    </DropdownMenuRadioGroup>
+    <DropdownMenuSeparator />
     <DropdownMenuItem disabled={!canClear} onSelect={ink.clear}>
      <Trash2 />
      <span>{t("clearPage")}</span>

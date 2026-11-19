@@ -22,14 +22,15 @@ import type { PdfStroke } from "./pdf-annotations";
  * Every edit is committed to the IndexedDB outbox first. By default the page is
  * pushed to the server after each edit; with `deferServerSave` it is pushed
  * when the page closes, the app is hidden, `retrySave` is called, or (with
- * `idleSaveMs`) once drawing has paused that long.
+ * `saveEveryMs`) that long after the first edit not yet pushed — at most once
+ * per period, however much is drawn meanwhile.
  */
 export function usePdfAnnotations(
  input: PdfAnnotationQuery,
  {
   deferServerSave = false,
-  idleSaveMs = 0,
- }: { deferServerSave?: boolean; idleSaveMs?: number } = {},
+  saveEveryMs = 0,
+ }: { deferServerSave?: boolean; saveEveryMs?: number } = {},
 ) {
  const { assetId, pageNumber } = input;
  const { userId, isResolved } = useClientSession();
@@ -47,8 +48,8 @@ export function usePdfAnnotations(
  const disposed = useRef(false);
  const editCount = useRef(0);
  const pushedRestoredEdits = useRef(false);
- const idleSave = useRef<ReturnType<typeof setTimeout>>(undefined);
- useEffect(() => () => clearTimeout(idleSave.current), []);
+ const periodicSave = useRef<ReturnType<typeof setTimeout>>(undefined);
+ useEffect(() => () => clearTimeout(periodicSave.current), []);
  const [restored, setRestored] = useState(false);
  const [local, setLocal] = useState<{ edited: boolean; strokes: PdfStroke[] }>({
   edited: false,
@@ -165,14 +166,16 @@ export function usePdfAnnotations(
      if (disposed.current) return;
      setIsQueued(true);
      if (deferServerSave) {
-      if (idleSaveMs > 0) {
-       clearTimeout(idleSave.current);
-       idleSave.current = setTimeout(() => {
+      // One save per period, counted from the first edit not yet pushed;
+      // further edits ride along instead of pushing the save back.
+      if (saveEveryMs > 0 && !periodicSave.current) {
+       periodicSave.current = setTimeout(() => {
+        periodicSave.current = undefined;
         void (saving.current ?? Promise.resolve())
          .catch(() => {})
          .then(flush)
          .catch(() => {});
-       }, idleSaveMs);
+       }, saveEveryMs);
       }
       return;
      }
@@ -188,8 +191,8 @@ export function usePdfAnnotations(
    conflict.active,
    deferServerSave,
    flush,
-   idleSaveMs,
    pageNumber,
+   saveEveryMs,
    query.isSuccess,
    userId,
   ],
