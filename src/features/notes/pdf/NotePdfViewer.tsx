@@ -234,6 +234,7 @@ export function NotePdfViewer({
      <div
       ref={scrollRef}
       className="relative min-h-0 min-w-0 flex-1 overflow-auto overscroll-contain px-2 py-4 sm:px-6"
+      data-pdf-scroll
      >
       <div
        className={cn(
