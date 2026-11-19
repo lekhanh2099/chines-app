@@ -1725,6 +1725,47 @@ export type Database = {
           },
         ]
       }
+      note_pdf_attachments: {
+        Row: {
+          byte_size: number
+          created_at: string
+          file_name: string
+          id: string
+          note_id: string
+          page_count: number
+          storage_path: string
+          user_id: string
+        }
+        Insert: {
+          byte_size: number
+          created_at?: string
+          file_name: string
+          id?: string
+          note_id: string
+          page_count: number
+          storage_path: string
+          user_id?: string
+        }
+        Update: {
+          byte_size?: number
+          created_at?: string
+          file_name?: string
+          id?: string
+          note_id?: string
+          page_count?: number
+          storage_path?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "note_pdf_attachments_note_id_fkey"
+            columns: ["note_id"]
+            isOneToOne: true
+            referencedRelation: "notes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       notes: {
         Row: {
           category: string | null

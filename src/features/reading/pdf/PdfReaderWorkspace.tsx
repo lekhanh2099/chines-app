@@ -16,12 +16,12 @@ import {
 } from "@/components/ui/overlays/base-popover";
 import { cn } from "@/lib/utils";
 
-import { pdfStrokePath } from "@/features/reading/pdf/pdf-annotations";
 import { PdfAnnotationConflict } from "@/features/reading/pdf/PdfAnnotationConflict";
+import { PdfInkLayer } from "@/features/reading/pdf/PdfInkLayer";
 import { PdfInkToolbar } from "@/features/reading/pdf/PdfInkToolbar";
 import { PdfPageViewerHeader } from "@/features/reading/pdf/PdfPageViewerHeader";
 import { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
-import { usePdfPageInk } from "@/features/reading/pdf/usePdfPageInk";
+import { usePdfInkTools, usePdfPageInk } from "@/features/reading/pdf/usePdfPageInk";
 import { usePdfPageViewport } from "@/features/reading/pdf/usePdfPageViewport";
 import {
  pdfPageWidthRem,
@@ -205,8 +205,8 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
   handleTouchEnd,
  } = usePdfPageViewport();
  const [imageFailed, setImageFailed] = useState(false);
- const ink = usePdfPageInk({ strokes, replaceStrokes, canEdit });
- const { drawingTool, touchInk } = ink;
+ const tools = usePdfInkTools();
+ const ink = usePdfPageInk({ strokes, replaceStrokes, canEdit, tools });
  const [conflictOpen, setConflictOpen] = useState(true);
  const [resolvingConflict, setResolvingConflict] = useState(false);
  const chooseConflict = async (useServer: boolean) => {
@@ -269,7 +269,10 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
 
    {conflict.active ? (
     <PdfAnnotationConflict
-     asset={asset}
+     pageBackground={
+      // oxlint-disable-next-line next/no-img-element -- same local PDF page geometry as the annotation canvas
+      <img src={asset.imageSrc} alt="" className="block h-auto w-full" />
+     }
      strokes={strokes}
      conflict={conflict}
      open={conflictOpen}
@@ -320,35 +323,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
          draggable={false}
          onError={() => setImageFailed(true)}
         />
-        <svg
-         aria-label={t("annotationLayer")}
-         className={cn(
-          "pointer-events-none absolute inset-0 size-full",
-          drawingTool !== null && "pointer-events-auto cursor-crosshair",
-         )}
-         viewBox="0 0 1000 1000"
-         preserveAspectRatio="none"
-         role="img"
-         onContextMenu={(event) => event.preventDefault()}
-         onPointerDown={ink.beginStroke}
-         onPointerMove={ink.continueStroke}
-         onPointerUp={ink.endStroke}
-         onPointerCancel={ink.endStroke}
-         style={{ touchAction: drawingTool !== null && touchInk ? "none" : "pan-x pan-y" }}
-        >
-         {strokes.map((stroke) => (
-          <path
-           key={stroke.id}
-           d={pdfStrokePath(stroke)}
-           fill="none"
-           stroke={stroke.color}
-           strokeLinecap="round"
-           strokeLinejoin="round"
-           strokeWidth={stroke.width}
-           opacity={stroke.tool === "highlighter" ? 0.42 : 1}
-          />
-         ))}
-        </svg>
+        <PdfInkLayer ink={ink} strokes={strokes} />
        </>
       )}
      </div>

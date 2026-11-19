@@ -6,6 +6,8 @@ const OFFLINE_OWNER_CACHE_PATH = "/__hanzihome-offline-owner";
 // Public textbook lessons the learner opened; kept across worker versions.
 const TEXTBOOK_LESSON_CACHE = "hanzihome-textbook-lessons";
 const TEXTBOOK_LESSON_PATH = "/api/hanzihome/textbooks/";
+// Device copies of PDFs imported into notes (written by the page, owner-keyed).
+const NOTE_PDF_CACHE = "hanzihome-note-pdfs-v1";
 
 const PRECACHE_ASSETS = [
  "/favicon.svg",
@@ -91,7 +93,8 @@ self.addEventListener("activate", (event) => {
   caches.keys().then((keys) => {
    return Promise.all(
     keys.map(async (key) => {
-     if (key === OFFLINE_OWNER_CACHE || key === TEXTBOOK_LESSON_CACHE) return;
+     if (key === OFFLINE_OWNER_CACHE || key === TEXTBOOK_LESSON_CACHE || key === NOTE_PDF_CACHE)
+      return;
      if (key === STATIC_CACHE || key.startsWith("hanzihome-static-")) {
       // Earlier workers stored authenticated HTML/RSC in these shared caches.
       // Remove those copies while retaining public assets and owner-scoped IDB data.

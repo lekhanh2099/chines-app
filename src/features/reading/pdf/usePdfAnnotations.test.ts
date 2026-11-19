@@ -27,10 +27,10 @@ vi.mock("./pdf-annotation-outbox", () => ({
 }));
 let client: QueryClient;
 const key = hanzihomeQueryKeys.readerPdfAnnotation(ownerId, "asset-1", 1);
-function controller() {
+function controller(options: Parameters<typeof usePdfAnnotations>[1] = {}) {
  const captures: ReturnType<typeof usePdfAnnotations>[] = [];
  function Probe() {
-  captures.push(usePdfAnnotations({ assetId: "asset-1", pageNumber: 1 }));
+  captures.push(usePdfAnnotations({ assetId: "asset-1", pageNumber: 1 }, options));
   return null;
  }
  renderToStaticMarkup(createElement(QueryClientProvider, { client }, createElement(Probe)));
@@ -83,5 +83,15 @@ describe("PDF durable write hook boundary", () => {
   mocks.flush.mockResolvedValueOnce(saved);
   await hook.retrySave();
   expect(client.getQueryData(key)).toEqual(saved);
+ });
+ it("keeps deferred edits on the device until the page asks to save", async () => {
+  const hook = controller({ deferServerSave: true });
+  const stroke = createPdfStroke("highlighter", "#facc15", 16, { x: 0.4, y: 0.4 });
+  hook.replaceStrokes([stroke]);
+  await vi.waitFor(() => expect(mocks.enqueue).toHaveBeenCalledTimes(1));
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  expect(mocks.flush).not.toHaveBeenCalled();
+  await hook.retrySave();
+  expect(mocks.flush).toHaveBeenCalledWith({ assetId: "asset-1", pageNumber: 1 }, ownerId);
  });
 });

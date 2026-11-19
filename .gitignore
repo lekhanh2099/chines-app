@@ -21,6 +21,9 @@
 # production
 /build
 
+# pdf.js runtime assets, copied from node_modules by scripts/copy-pdfjs-assets.mjs
+/public/vendor/pdfjs/
+
 # misc
 .DS_Store
 *.pem

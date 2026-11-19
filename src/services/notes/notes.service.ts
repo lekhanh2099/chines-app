@@ -11,6 +11,7 @@ import { logger } from "@/lib/logger";
 import { EMPTY_LEXICAL_DOCUMENT } from "@/lib/editor/editor-document";
 import { DbNoteSchema, type DbNote, type NoteCategory } from "@/types/database";
 import type { Database, TablesUpdate } from "@/types/supabase.generated";
+import { removeNotePdfFileForNote } from "./note-pdf.service";
 
 type AppSupabaseClient = SupabaseClient<Database>;
 
@@ -460,6 +461,7 @@ export function updateNoteCategory(
 
 /** Delete a note */
 export async function deleteNote(supabase: AppSupabaseClient, noteId: string): Promise<boolean> {
+ await removeNotePdfFileForNote(supabase, noteId);
  const { data, error } = await supabase
   .from("notes")
   .delete()

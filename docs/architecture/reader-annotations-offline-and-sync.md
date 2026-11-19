@@ -49,3 +49,20 @@ API owner giữ create/update/delete offline/retry semantics, pending-create can
 **Storage failure chưa có durable guarantee:** các local save/enqueue helpers hiện catch IndexedDB errors như non-fatal. Vì thế một service result hoặc màu highlight trên màn hình không chứng minh intent đã commit vào IDB khi storage unavailable/quota failure. Không mô tả tất cả annotations là commit-before-queued; C11 phải kiểm chứng seam này trước khi đóng durability acceptance. Việc dọn docs không sửa application behavior.
 
 Production Notes/Reader rollout mới có additive expand trong last-verified snapshot; enforcement cần quyết định riêng trong master. Không xóa local rows/drafts/pending intent hoặc reset DB để rollback code. Tests cần actual hook/API/IDB/query wiring, same-owner reload và stale-generation/auth failure; mocks không chứng minh production DB/provider behavior.
+
+## PDF trong ghi chú (note PDF)
+
+Một note giữ tối đa một PDF. File nằm ở bucket private `note-pdfs` (`<user>/<note>/<attachment>.pdf`), bản ghi ở `public.note_pdf_attachments` (page count, tên file; xoá note thì cascade, xoá bản ghi thì trigger xoá nét). Nét vẽ **không có bảng riêng**: dùng lại `hanzihome_pdf_annotations` + CAS `hanzihome_upsert_pdf_annotation_cas` với `asset_id = note-pdf:<attachment id>`; repository xác thực trang theo `page_count` của attachment thay vì static package.
+
+| Owner                                                                                      | Trách nhiệm                                                                                                                    |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| [note-pdf.service](../../src/services/notes/note-pdf.service.ts)                           | Upload/đọc/xoá file + bản ghi; xoá file khi xoá note.                                                                          |
+| [useNotePdf](../../src/features/notes/pdf/useNotePdf.ts)                                   | Query attachment, import (kiểm loại/50 MB/đếm trang bằng pdf.js), gỡ PDF, dọn cache + outbox.                                  |
+| [note-pdf-file-cache](../../src/features/notes/local/note-pdf-file-cache.ts)               | Bản sao file trên máy (Cache Storage `hanzihome-note-pdfs-v1`, SW giữ lại qua các phiên bản).                                  |
+| [usePdfAnnotations](../../src/features/reading/pdf/usePdfAnnotations.ts) `deferServerSave` | Mỗi nét ghi vào outbox IndexedDB ngay; chỉ đẩy lên server khi rời trang (unmount), app bị ẩn/`pagehide`, hoặc bấm nút đám mây. |
+
+Outbox ghi nhớ revision server đã xác nhận theo trang (trong tab) để nét mới không xung đột với lần lưu do reconnect sync hoặc trang vừa đóng thực hiện. Trang PDF không còn tồn tại trả 404 `PDF_PAGE_NOT_FOUND`; `syncPendingPdfAnnotations` bỏ mục đó và tiếp tục các trang sau.
+
+pdf.js (`pdfjs-dist`) chỉ tải khi mở/import note PDF. CMap/font chuẩn/ICC/WASM được `scripts/copy-pdfjs-assets.mjs` chép vào `public/vendor/pdfjs/<version>/` (git-ignored) trước `dev`/`build`.
+
+Lớp nét (Reader và note PDF) phủ hết trang: reset toàn cục `svg { block-size: auto }` thắng `size-full`, nên chiều cao 100% đặt inline. Nét Reader vẽ trước khi sửa (theo khung vuông) bị xoá bằng migration `20261119121000_clear_square_reader_pdf_ink.sql`.
