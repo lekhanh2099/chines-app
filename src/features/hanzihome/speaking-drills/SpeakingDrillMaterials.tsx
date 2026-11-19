@@ -7,17 +7,23 @@ import { Separator } from "@/components/ui/layout/separator";
 import { Typography } from "@/components/ui/display/typography";
 import {
  HanziAwareText,
- HanziText,
- PinyinText,
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
-import { CharacterNoteHint } from "@/features/hanzihome/radical-characters/CharacterNoteHint";
-import { WordOccurrencesHint } from "@/features/hanzihome/vocabulary-index/WordOccurrencesHint";
+import { SpeakableBusinessChineseText } from "@/features/hanzihome/components/business-chinese/BusinessChineseText";
+import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
+import { VocabPreviewRow } from "@/features/hanzihome/components/lesson-overview/overview/VocabPreviewRow";
+import { VocabularyCardGrid } from "@/features/hanzihome/components/lesson-overview/overview/VocabularyCardList";
 
 import type { SpeakingDrillSelection } from "./speaking-drills.types";
 
-export function SpeakingDrillMaterials({ lesson }: { lesson: SpeakingDrillSelection["lesson"] }) {
+/** Lesson vocabulary (shared vocabulary cards with the app's pinyin), patterns, expressions and notes. */
+export function SpeakingDrillMaterials({
+ lesson,
+ displayMode,
+}: {
+ lesson: SpeakingDrillSelection["lesson"];
+ displayMode: LessonDisplayMode;
+}) {
  const t = useTranslations("SpeakingDrills");
 
  return (
@@ -31,27 +37,28 @@ export function SpeakingDrillMaterials({ lesson }: { lesson: SpeakingDrillSelect
       {t("vocabCount", { count: lesson.vocab.length })}
      </Typography>
     </div>
-    <ul className="grid gap-x-6 sm:grid-cols-2 2xl:grid-cols-1">
-     {lesson.vocab.map((item) => (
-      <li
+    <VocabularyCardGrid>
+     {lesson.vocab.map((item, index) => (
+      <VocabPreviewRow
        key={`${item.hanzi}:${item.pinyin}`}
-       className="flex min-w-0 items-center gap-3 border-b border-border-default py-2"
-      >
-       <div className="grid min-w-0 flex-1 gap-0.5">
-        <div className="flex min-w-0 flex-wrap items-baseline gap-x-2">
-         <HanziText as="span" size="large">
-          {item.hanzi}
-         </HanziText>
-         {item.pinyin ? <PinyinText>{item.pinyin}</PinyinText> : null}
-        </div>
-        <TranslationText>{item.vi}</TranslationText>
-       </div>
-       <WordOccurrencesHint hanzi={item.hanzi} />
-       <CharacterNoteHint text={item.hanzi} />
-       <MandarinSpeakButton text={item.hanzi} />
-      </li>
+       hanzi={item.hanzi}
+       pinyin={item.pinyin}
+       hanviet=""
+       category=""
+       meaning={displayMode.showMeaning ? item.vi : ""}
+       rawMeaning={item.vi}
+       header={
+        <SpeakableBusinessChineseText
+         pronunciationId={`speaking-drill-vocab-${lesson.id}-${index}`}
+         text={item.hanzi}
+         sourcePinyin={item.pinyin}
+         displayMode={displayMode}
+         variant="body"
+        />
+       }
+      />
      ))}
-    </ul>
+    </VocabularyCardGrid>
    </Card>
 
    <div className="grid min-w-0 gap-3">
@@ -69,17 +76,19 @@ export function SpeakingDrillMaterials({ lesson }: { lesson: SpeakingDrillSelect
         ) : null}
         {pattern.examples.length > 0 ? (
          <ul className="grid gap-2">
-          {pattern.examples.map((example) => (
+          {pattern.examples.map((example, exampleIndex) => (
            <li key={example.zh}>
-            <Card variant="subtle" padding="sm" className="flex min-w-0 items-start gap-2">
-             <div className="grid min-w-0 flex-1 gap-0.5">
-              <HanziText as="p" size="medium">
-               {example.zh}
-              </HanziText>
-              {example.pinyin ? <PinyinText as="p">{example.pinyin}</PinyinText> : null}
-              {example.vi ? <TranslationText>{example.vi}</TranslationText> : null}
-             </div>
-             <MandarinSpeakButton text={example.zh} />
+            <Card variant="subtle" padding="sm" className="grid min-w-0 gap-1">
+             <SpeakableBusinessChineseText
+              pronunciationId={`speaking-drill-pattern-${lesson.id}-${index}-${exampleIndex}`}
+              text={example.zh}
+              sourcePinyin={example.pinyin || undefined}
+              displayMode={displayMode}
+              variant="body"
+             />
+             {displayMode.showMeaning && example.vi ? (
+              <TranslationText>{example.vi}</TranslationText>
+             ) : null}
             </Card>
            </li>
           ))}
