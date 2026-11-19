@@ -134,7 +134,7 @@ export function finishPdfBrushStroke(
  // Only the stroke just drawn (the latest brush stroke) is finished here.
  if (!finished || finished.id !== strokeId) return [...strokes];
  const points = recent.map((stroke) => isotropicPoints(stroke, aspect));
- const em = estimateWritingEm(points, KAISHU_EM_PER_CHARACTER_BOX);
+ const em = estimateWritingEm(points, KAISHU_EM_PER_CHARACTER_BOX, KAISHU_EM_PER_CHARACTER_HEIGHT);
  const box = em / KAISHU_EM_PER_CHARACTER_BOX;
  // Re-weigh the finished characters among the latest strokes for their own
  // size, one weight per character, measured by its height.
@@ -145,8 +145,12 @@ export function finishPdfBrushStroke(
  const firstChecked = Math.max(0, recent.length - REWEIGH_STROKES);
  recent.forEach((stroke, index) => {
   const character = characters[index] ?? -1;
-  if (index < firstChecked || character < 0 || character === inProgress) return;
-  const ownEm = (ownHeights[character] ?? 0) * KAISHU_EM_PER_CHARACTER_HEIGHT;
+  if (index < firstChecked || character < 0) return;
+  // The character in progress follows the latest estimate, so its strokes
+  // stay even with each other while it is written; finished characters take
+  // their own height.
+  const ownEm =
+   character === inProgress ? em : (ownHeights[character] ?? 0) * KAISHU_EM_PER_CHARACTER_HEIGHT;
   const share = ownEm / em;
   if (share < OWN_SIZE_RANGE.min || share > OWN_SIZE_RANGE.max) return;
   const target = weighBrushStroke(stroke, ownEm, aspect, widthSetting);

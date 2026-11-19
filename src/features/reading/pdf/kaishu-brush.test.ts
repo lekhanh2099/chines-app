@@ -123,7 +123,7 @@ describe("Kaishu brush character size", () => {
    const character = kind === "sparse" ? sparse(index * 75, size) : dense(index * 75, size);
    for (const stroke of character) {
     strokes.push(stroke);
-    if (index >= 4) estimates.push({ kind, em: estimateWritingEm(strokes, 1.2) });
+    if (index >= 4) estimates.push({ kind, em: estimateWritingEm(strokes, 1.2, 1.26) });
    }
   }
   for (const { em } of estimates) {

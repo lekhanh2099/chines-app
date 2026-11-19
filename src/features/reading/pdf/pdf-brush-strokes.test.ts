@@ -143,4 +143,25 @@ describe("weighing whole characters", () => {
   const body = page.slice(19, 23).map((stroke) => stroke.width);
   for (const width of part) expect(width).toBeCloseTo(body[0] ?? 0, 0);
  });
+
+ it("weighs the first characters on a page right away, without a jump later", () => {
+  const characters = Array.from({ length: 5 }, (_, index) =>
+   character(0.05 + index * 0.06, 0.1, 0.05),
+  );
+  const widthsOf = (page: PdfStroke[], index: number) =>
+   page.slice(index * 4, index * 4 + 4).map((stroke) => stroke.width);
+  const afterThree = write(characters.slice(0, 3));
+  const afterFive = write(characters);
+  for (let index = 0; index < 3; index += 1) {
+   // Writing on does not change the first characters noticeably…
+   widthsOf(afterThree, index).forEach((width, stroke) => {
+    const later = widthsOf(afterFive, index)[stroke] ?? 0;
+    expect(Math.abs(width - later)).toBeLessThan(later * 0.12);
+   });
+   // …and they already weigh like the characters after them.
+   for (const width of widthsOf(afterFive, index)) {
+    expect(Math.abs(width - (widthsOf(afterFive, 4)[0] ?? 0))).toBeLessThan(width * 0.15);
+   }
+  }
+ });
 });
