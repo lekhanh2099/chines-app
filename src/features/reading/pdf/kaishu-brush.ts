@@ -262,16 +262,21 @@ const PUNCTUATION_SHARE = 0.4;
 const SQUARE_ASPECTS = { min: 0.62, max: 1.6 };
 /** Finished characters needed before the grouping is trusted over the first guess. */
 const MIN_CHARACTERS = 3;
-/** Until then, characters may be up to this much larger than the first guess. */
-const WARM_UP_GROWTH = 1.6;
+/** Until then, the first stroke of a page weighs at least this share of the first guess. */
+const WARM_UP_STROKES = 2;
+const WARM_UP_FLOOR = 0.6;
 
 /**
  * The size of the characters being written, from strokes in writing order
  * (the finished one last; the character it belongs to is still in progress
- * and does not count). `emPerBox` is how much larger than the box its
- * strokes span a character is.
+ * and does not count). `emPerBox` and `emPerHeight` are how much larger
+ * than the box, and the height, its strokes span a character is.
  */
-export function estimateWritingEm(strokes: readonly (readonly BrushPoint[])[], emPerBox: number) {
+export function estimateWritingEm(
+ strokes: readonly (readonly BrushPoint[])[],
+ emPerBox: number,
+ emPerHeight: number,
+) {
  const guess = estimateBrushEm(
   strokes.slice(-GUESS_FROM_STROKES).map(brushPathLength),
   EM_PER_MEDIAN_STROKE,
@@ -306,12 +311,14 @@ export function estimateWritingEm(strokes: readonly (readonly BrushPoint[])[], e
   }
  }
  if (best.characters >= MIN_CHARACTERS) return best.em;
- // Too few finished characters (the start of a page) to judge a grouping by:
- // group generously (there is little to merge by mistake yet) and take the
- // largest character so far, the one in progress included.
- const generous = (guess * WARM_UP_GROWTH) / emPerBox;
- const largest = Math.max(0, ...brushCharacterSizes(strokes, generous).sizes);
- return Math.min(guess * WARM_UP_GROWTH, Math.max(guess, largest * emPerBox));
+ // Too few finished characters (the start of a page) to judge a grouping by.
+ // Measure height instead: however many characters a group takes in while
+ // the size is still unknown, a row of them is as tall as one. For the very
+ // first stroke (it may be a flat 横 or a short dot), the first guess keeps
+ // the weight from starting out far too light.
+ const tallest = Math.max(0, ...brushCharacterSizes(strokes, guess / emPerBox).heights);
+ const floor = strokes.length < WARM_UP_STROKES ? guess * WARM_UP_FLOOR : 0;
+ return Math.max(tallest * emPerHeight, floor);
 }
 
 /** Which segment a position along the stroke (0–1) falls in, and its place within it. */
