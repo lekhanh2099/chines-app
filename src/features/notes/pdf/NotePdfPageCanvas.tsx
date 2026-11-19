@@ -13,18 +13,21 @@ const MAX_CANVAS_PIXELS = 8_000_000;
 // While pinch-zooming the old bitmap is stretched; re-render once it settles.
 const RENDER_SETTLE_MS = 140;
 // A4 portrait until the real page size is known.
-const DEFAULT_ASPECT_RATIO = 1 / Math.SQRT2;
+export const DEFAULT_PDF_PAGE_ASPECT = 1 / Math.SQRT2;
 
 /** Renders one PDF page into a canvas that fills the page box it creates. */
 export function NotePdfPageCanvas({
  document,
  pageNumber,
  className,
+ aspectRatioHint = DEFAULT_PDF_PAGE_ASPECT,
  onFailed,
 }: {
  document: PdfDocument;
  pageNumber: number;
  className?: string;
+ /** Box ratio until the page's own size is known (avoids a layout jump). */
+ aspectRatioHint?: number;
  onFailed?: () => void;
 }) {
  const boxRef = useRef<HTMLDivElement>(null);
@@ -101,7 +104,7 @@ export function NotePdfPageCanvas({
   <div
    ref={boxRef}
    className={cn("relative w-full bg-surface", className)}
-   style={{ aspectRatio: base ? base.width / base.height : DEFAULT_ASPECT_RATIO }}
+   style={{ aspectRatio: base ? base.width / base.height : aspectRatioHint }}
   >
    <canvas
     ref={canvasRef}

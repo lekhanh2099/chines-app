@@ -70,6 +70,8 @@ export function BusinessChineseStudyWorkspace({
    toolbar: {
     hidePinyinToggle: true,
     hideTranslationToggle: true,
+    // Sections are reached from the tab hover menus instead of segment stepping.
+    hideSegmentNavigation: true,
    },
    renderReader: ({ content, toolbar }) => (
     <BusinessChineseStudyWorkspaceContent

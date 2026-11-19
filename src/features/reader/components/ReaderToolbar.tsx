@@ -79,7 +79,7 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
     className={
      inline
       ? "flex shrink-0 items-center gap-1"
-      : "flex min-w-0 items-center gap-1.5 overflow-x-auto scrollbar-none"
+      : "flex min-w-0 items-center gap-1.5 overflow-x-auto overflow-y-hidden scrollbar-none"
     }
     data-reader-toolbar
    >
@@ -118,51 +118,57 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
        <Square className="size-3.5 fill-current" />
       </Button>
      ) : null}
-     <Button
-      variant="ghost"
-      size="icon-toolbar"
-      aria-label={t("previous")}
-      disabled={index === 0 || segmentCount === 0}
-      onClick={commands.previous}
-     >
-      <ChevronLeft />
-     </Button>
-     {inline ? (
-      <ReaderOutline compact />
-     ) : (
-      <Typography
-       variant="caption"
-       weight="medium"
-       tone="muted"
-       className="hidden md:inline whitespace-nowrap px-1 select-none"
-       aria-label={t("segment", {
-        current: segmentCount === 0 ? 0 : index + 1,
-        total: segmentCount,
-       })}
-      >
-       {t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
-      </Typography>
+     {toolbar?.hideSegmentNavigation ? null : (
+      <>
+       <Button
+        variant="ghost"
+        size="icon-toolbar"
+        aria-label={t("previous")}
+        disabled={index === 0 || segmentCount === 0}
+        onClick={commands.previous}
+       >
+        <ChevronLeft />
+       </Button>
+       {inline ? (
+        <ReaderOutline compact />
+       ) : (
+        <Typography
+         variant="caption"
+         weight="medium"
+         tone="muted"
+         className="hidden md:inline whitespace-nowrap px-1 select-none"
+         aria-label={t("segment", {
+          current: segmentCount === 0 ? 0 : index + 1,
+          total: segmentCount,
+         })}
+        >
+         {t("segment", { current: segmentCount === 0 ? 0 : index + 1, total: segmentCount })}
+        </Typography>
+       )}
+       <Button
+        variant="ghost"
+        size="icon-toolbar"
+        aria-label={t("next")}
+        disabled={segmentCount === 0 || index >= segmentCount - 1}
+        onClick={commands.next}
+       >
+        <ChevronRight />
+       </Button>
+       <Button
+        variant="ghost"
+        size="icon-toolbar"
+        aria-label={t("restart")}
+        disabled={segmentCount === 0 || !speech}
+        onClick={commands.restartCurrent}
+        className={inline ? "hidden 2xl:inline-flex" : undefined}
+       >
+        <RotateCcw />
+       </Button>
+      </>
      )}
-     <Button
-      variant="ghost"
-      size="icon-toolbar"
-      aria-label={t("next")}
-      disabled={segmentCount === 0 || index >= segmentCount - 1}
-      onClick={commands.next}
-     >
-      <ChevronRight />
-     </Button>
-     <Button
-      variant="ghost"
-      size="icon-toolbar"
-      aria-label={t("restart")}
-      disabled={segmentCount === 0 || !speech}
-      onClick={commands.restartCurrent}
-      className={inline ? "hidden 2xl:inline-flex" : undefined}
-     >
-      <RotateCcw />
-     </Button>
-     {!inline && !toolbar?.leadingActions ? <ReaderOutline /> : null}
+     {!inline && !toolbar?.leadingActions && !toolbar?.hideSegmentNavigation ? (
+      <ReaderOutline />
+     ) : null}
      {speech ? (
       <div className={inline ? "hidden 2xl:flex items-center" : "hidden md:flex items-center"}>
        <DropdownMenu modal={false}>

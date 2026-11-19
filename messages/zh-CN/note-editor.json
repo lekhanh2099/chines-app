@@ -92,8 +92,6 @@
   "removed": "已移除 PDF。",
   "removeError": "PDF 移除失败，请重试。",
   "saved": "已保存",
-  "unsavedHint": "笔迹已保存在本设备，离开页面或关闭应用时会自动保存。",
-  "save": "保存",
   "saving": "正在保存...",
   "saveError": "无法保存到服务器，笔迹仍在本设备上。",
   "loadErrorDescription": "请检查网络后重试。",
@@ -107,6 +105,11 @@
    "green": "绿色",
    "orange": "橙色",
    "black": "黑色"
-  }
+  },
+  "pages": "页面列表",
+  "goToPageNumber": "跳到第 {page} 页",
+  "expand": "展开（隐藏页眉和工具栏）",
+  "exitExpand": "收起",
+  "autoSaving": "即将自动保存"
  }
 }

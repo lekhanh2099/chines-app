@@ -14,7 +14,6 @@ local components or product interaction contracts.
 | Icon-only action              | `Button` icon size + optional `Tooltip` | always keep an accessible name          |
 | Modal task                    | `Dialog`                                | typed size, placement, scroll ownership |
 | Destructive confirmation      | confirmation Dialog pattern             | explicit consequence + pending state    |
-| Side or bottom panel          | `Sheet`                                 | responsive panel contract               |
 | Non-modal contextual content  | shared Popover wrapper                  | not an action menu                      |
 | Action/function list          | `DropdownMenu`                          | keyboard/menu semantics                 |
 | Compact preference in a menu  | `DropdownMenuCheckboxItem`              | checkbox-menu semantics                 |
@@ -57,7 +56,6 @@ src/components/ui/layout/page-header.tsx
 src/components/ui/forms/radio-group.tsx
 src/components/ui/forms/select.tsx
 src/components/ui/layout/separator.tsx
-src/components/ui/overlays/sheet.tsx
 src/components/ui/forms/switch.tsx
 src/components/ui/navigation/tabs.tsx
 src/components/ui/overlays/tooltip.tsx
@@ -384,7 +382,7 @@ narrow screens it follows in document flow.
 ### Touch overlays
 
 Wide pointer layouts may use shallow DropdownMenu submenus. Phone and iPad
-portrait preference flows use one modal Sheet/Dialog with the choices inside,
+portrait preference flows use one modal Dialog with the choices inside,
 even when a desktop submenu would physically fit. The active modal owns focus,
 scroll, dismissal and safe-area handling and disables/covers bottom navigation.
 Do not leave a parent menu visible beside a child panel. Constrain floating
@@ -420,7 +418,7 @@ HanziHome module navigation is contextual and remains inside the feature.
 ### Responsive shell and Home
 
 Persistent Sidebar starts at `lg`; below it, quick navigation and a
-full-navigation Sheet keep every global route reachable. iPad portrait around
+full-navigation Dialog keep every global route reachable. iPad portrait around
 820px is a tablet workspace. Breakpoints must account for the width consumed
 by Sidebar: do not enable feature columns at the same breakpoint unless both
 remain readable. Home stays one-column on portrait/Sidebar-constrained tablet
@@ -448,7 +446,7 @@ normalize imported font sizes without modifying persisted content; edit mode
 preserves the stored formatting. Keep body text readable and adjust relative
 heading scale/spacing. Wrap long code when horizontal preservation has no
 semantic purpose, contain table overflow, and remove redundant nested insets
-on narrow screens. A long read-only action list uses a modal Sheet with
+on narrow screens. A long read-only action list uses a modal Dialog with
 touch-sized rows rather than a small floating Popover.
 
 ## 15. SegmentedControl and Tabs

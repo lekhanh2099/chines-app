@@ -1,63 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ComponentProps } from "react";
+import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Typography } from "@/components/ui/display/typography";
-import { cn } from "@/lib/utils";
 import { notePdfAssetId } from "@/features/reading/pdf/note-pdf-asset-id";
 import { PdfAnnotationConflict } from "@/features/reading/pdf/PdfAnnotationConflict";
 import { PdfInkLayer } from "@/features/reading/pdf/PdfInkLayer";
 import { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
 import { usePdfPageInk, type usePdfInkTools } from "@/features/reading/pdf/usePdfPageInk";
-import type { usePdfPageViewport } from "@/features/reading/pdf/usePdfPageViewport";
-import { pdfPageWidthRem } from "@/features/reading/pdf/pdf-viewer-utils";
 import { NotePdfPageCanvas } from "./NotePdfPageCanvas";
 import { NotePdfToolbar } from "./NotePdfToolbar";
 import type { PdfDocument } from "./pdfjs-loader";
 
-type PdfViewport = ReturnType<typeof usePdfPageViewport>;
+// Ink is pushed to the server this long after drawing pauses (and when the
+// page scrolls far away, the app is hidden or the note closes).
+const IDLE_SAVE_MS = 1500;
+
+type ToolbarProps = Omit<
+ ComponentProps<typeof NotePdfToolbar>,
+ "ink" | "annotations" | "pageNumber"
+>;
 
 /**
- * One page of a note PDF: the command bar and the page with its ink. Ink is
- * kept on the device as it is drawn and saved to the server when this page
- * unmounts (page change, closing the PDF or the note), when the app is hidden,
- * or from the cloud button.
+ * One page of the vertically scrolling note PDF with its own ink. Mounted only
+ * while near the viewport; the current page also renders the command bar into
+ * the viewer's toolbar slot, so undo/redo and save state follow that page.
  */
 export function NotePdfPage({
  document,
  attachmentId,
- fileName,
  pageNumber,
- onGoToPage,
+ aspectRatio,
  tools,
- viewport,
- onReplace,
- onRemove,
+ isCurrent,
+ toolbarSlot,
+ toolbarProps,
 }: {
  document: PdfDocument;
  attachmentId: string;
- fileName: string;
  pageNumber: number;
- onGoToPage: (page: number) => void;
+ /** First page's ratio, the box size until this page's own size is known. */
+ aspectRatio: number;
  tools: ReturnType<typeof usePdfInkTools>;
- viewport: PdfViewport;
- onReplace: () => void;
- onRemove: () => void;
+ isCurrent: boolean;
+ toolbarSlot: HTMLElement;
+ toolbarProps: ToolbarProps;
 }) {
  const t = useTranslations("Notes.editor.pdf");
  const reader = useTranslations("Reader.pdf");
  const annotations = usePdfAnnotations(
   { assetId: notePdfAssetId(attachmentId), pageNumber },
-  { deferServerSave: true },
+  { deferServerSave: true, idleSaveMs: IDLE_SAVE_MS },
  );
  const { strokes, replaceStrokes, canEdit, conflict } = annotations;
  const ink = usePdfPageInk({ strokes, replaceStrokes, canEdit, tools });
  const [pageFailed, setPageFailed] = useState(false);
  const [conflictOpen, setConflictOpen] = useState(true);
  const [resolvingConflict, setResolvingConflict] = useState(false);
- const { zoom, fitToContainer, scrollAreaRef } = viewport;
 
  const chooseConflict = async (useServer: boolean) => {
   setResolvingConflict(true);
@@ -74,17 +76,17 @@ export function NotePdfPage({
 
  return (
   <>
-   <NotePdfToolbar
-    fileName={fileName}
-    pageNumber={pageNumber}
-    pageCount={document.numPages}
-    onGoToPage={onGoToPage}
-    ink={ink}
-    annotations={annotations}
-    viewport={viewport}
-    onReplace={onReplace}
-    onRemove={onRemove}
-   />
+   {isCurrent
+    ? createPortal(
+       <NotePdfToolbar
+        {...toolbarProps}
+        pageNumber={pageNumber}
+        ink={ink}
+        annotations={annotations}
+       />,
+       toolbarSlot,
+      )
+    : null}
 
    {conflict.active ? (
     <PdfAnnotationConflict
@@ -98,35 +100,23 @@ export function NotePdfPage({
     />
    ) : null}
 
-   <div
-    className="grid min-h-0 flex-1 content-start justify-items-center overflow-auto overscroll-contain px-2 py-4 sm:px-6"
-    ref={scrollAreaRef}
-   >
-    <div
-     className={cn(
-      "relative min-w-[18.75rem] shadow-lg",
-      fitToContainer ? "w-full max-w-[60rem]" : "max-w-none",
-     )}
-     style={fitToContainer ? undefined : { inlineSize: `${pdfPageWidthRem(zoom)}rem` }}
-    >
-     {pageFailed ? (
-      <div className="grid aspect-[1/1.414] place-content-center bg-surface p-8 text-center">
-       <Typography variant="bodySmall" tone="muted">
-        {t("pageError")}
-       </Typography>
-      </div>
-     ) : (
-      <>
-       <NotePdfPageCanvas
-        document={document}
-        pageNumber={pageNumber}
-        onFailed={() => setPageFailed(true)}
-       />
-       <PdfInkLayer ink={ink} strokes={strokes} />
-      </>
-     )}
+   {pageFailed ? (
+    <div className="grid place-content-center bg-surface p-8 text-center" style={{ aspectRatio }}>
+     <Typography variant="bodySmall" tone="muted">
+      {t("pageError")}
+     </Typography>
     </div>
-   </div>
+   ) : (
+    <>
+     <NotePdfPageCanvas
+      document={document}
+      pageNumber={pageNumber}
+      aspectRatioHint={aspectRatio}
+      onFailed={() => setPageFailed(true)}
+     />
+     <PdfInkLayer ink={ink} strokes={strokes} />
+    </>
+   )}
   </>
  );
 }

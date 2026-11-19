@@ -12,7 +12,14 @@ import {
  DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
-import { Sheet, SheetBody, SheetFooter, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogFooter,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Spinner } from "@/components/ui/feedback/spinner";
 import { Typography } from "@/components/ui/display/typography";
 import { HanziHomeReadingQuickSettingsMenu } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
@@ -69,47 +76,51 @@ function ConnectedReadingSettingsTrigger() {
     </Button>
    </div>
 
-   <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
-    <SheetHeader title="Thiết lập đọc" onClose={() => setSheetOpen(false)} />
-    <SheetBody className="pb-6">
-     {learning.isLoading ? (
-      <div className="flex min-h-40 items-center justify-center gap-2">
-       <Spinner />
-       <Typography variant="label" tone="muted" weight="bold">
-        Đang tải cài đặt đọc…
-       </Typography>
-      </div>
-     ) : (
-      <div className="grid gap-4">
-       {learning.isError ? (
-        <div className="flex flex-wrap items-center justify-between gap-3">
-         <Typography as="p" variant="bodySmall" tone="secondary" className="min-w-0 flex-1">
-          {learning.lastSyncError ||
-           "Chưa thể đồng bộ cài đặt đọc. Các thay đổi cục bộ vẫn được giữ."}
-         </Typography>
-         <Button
-          type="button"
-          variant="outline"
-          size="toolbar"
-          onClick={() => void learning.retrySync()}
-         >
-          Thử đồng bộ lại
-         </Button>
-        </div>
-       ) : null}
-       <ReadingSettingsTouchControls displayMode={displayMode} onChange={updateDisplayMode} />
-      </div>
-     )}
-    </SheetBody>
-    <SheetFooter className="pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
-     <Button variant="outline" size="touch" asChild className="w-full sm:w-auto">
-      <Link href="/settings?section=reading" onClick={() => setSheetOpen(false)}>
-       <Settings2 data-icon="inline-start" />
-       Mở cài đặt đọc đầy đủ
-      </Link>
-     </Button>
-    </SheetFooter>
-   </Sheet>
+   <Dialog open={sheetOpen} onOpenChange={setSheetOpen}>
+    <DialogContent size="md" aria-describedby={undefined}>
+     <DialogHeader>
+      <DialogTitle>Thiết lập đọc</DialogTitle>
+     </DialogHeader>
+     <DialogBody className="pb-6">
+      {learning.isLoading ? (
+       <div className="flex min-h-40 items-center justify-center gap-2">
+        <Spinner />
+        <Typography variant="label" tone="muted" weight="bold">
+         Đang tải cài đặt đọc…
+        </Typography>
+       </div>
+      ) : (
+       <div className="grid gap-4">
+        {learning.isError ? (
+         <div className="flex flex-wrap items-center justify-between gap-3">
+          <Typography as="p" variant="bodySmall" tone="secondary" className="min-w-0 flex-1">
+           {learning.lastSyncError ||
+            "Chưa thể đồng bộ cài đặt đọc. Các thay đổi cục bộ vẫn được giữ."}
+          </Typography>
+          <Button
+           type="button"
+           variant="outline"
+           size="toolbar"
+           onClick={() => void learning.retrySync()}
+          >
+           Thử đồng bộ lại
+          </Button>
+         </div>
+        ) : null}
+        <ReadingSettingsTouchControls displayMode={displayMode} onChange={updateDisplayMode} />
+       </div>
+      )}
+     </DialogBody>
+     <DialogFooter>
+      <Button variant="outline" size="touch" asChild className="w-full sm:w-auto">
+       <Link href="/settings?section=reading" onClick={() => setSheetOpen(false)}>
+        <Settings2 data-icon="inline-start" />
+        Mở cài đặt đọc đầy đủ
+       </Link>
+      </Button>
+     </DialogFooter>
+    </DialogContent>
+   </Dialog>
 
    <div className="hidden xl:block">
     <DropdownMenu>

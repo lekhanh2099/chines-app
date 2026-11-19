@@ -1509,7 +1509,9 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(markup.match(/data-reader-toolbar/gu)).toHaveLength(1);
   expect(toolbar).toBeGreaterThan(markup.indexOf('role="tablist"'));
   expect(toolbar).toBeLessThan(markup.indexOf('role="tabpanel"'));
-  expect(markup).toContain('aria-label="Mở mục lục đoạn"');
+  // Segment stepping (‹ n/N ›) is gone; sections are reached from the tab hover menus.
+  expect(markup).not.toContain('aria-label="Mở mục lục đoạn"');
+  expect(markup).not.toContain('aria-label="Đoạn sau"');
   expect(markup).toContain('aria-label="Tùy chọn đọc &amp; nghe"');
   expect(markup.match(/role="tab"/gu)).toHaveLength(1);
  });

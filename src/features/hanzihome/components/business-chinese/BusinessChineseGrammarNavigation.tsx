@@ -7,7 +7,13 @@ import { Button } from "@/components/ui/actions/button";
 import { Badge } from "@/components/ui/display/badge";
 import { Typography } from "@/components/ui/display/typography";
 import { Card } from "@/components/ui/layout/card";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { GrammarSectionNavigation } from "./BusinessChineseSectionNavigation";
 
@@ -112,32 +118,32 @@ export function BusinessChineseGrammarNavigationSheet({
  const t = useTranslations("BusinessChinese");
  const common = useTranslations("Common");
  return (
-  <Sheet
-   open={isOpen}
-   onOpenChange={setIsOpen}
-   side="bottom"
-   onCloseAutoFocus={(event) => {
-    event.preventDefault();
-    setIsOpen(false);
-    const focusTarget = triggerRef.current ?? panelRef.current;
-    focusTarget?.focus({ preventScroll: true });
-   }}
-  >
-   <SheetHeader
-    title={t("tocLabel")}
-    onClose={() => setIsOpen(false)}
+  <Dialog open={isOpen} onOpenChange={setIsOpen}>
+   <DialogContent
+    size="sm"
+    onCloseAutoFocus={(event) => {
+     event.preventDefault();
+     setIsOpen(false);
+     const focusTarget = triggerRef.current ?? panelRef.current;
+     focusTarget?.focus({ preventScroll: true });
+    }}
     closeLabel={common("actions.close")}
-   />
-   <SheetBody className="grid content-start gap-3 pb-[calc(1rem+env(safe-area-inset-bottom))]">
-    {summary}
-    <GrammarSectionNavigation
-     sections={sections}
-     onSelect={(sectionId) => {
-      setIsOpen(false);
-      onSelect(sectionId);
-     }}
-    />
-   </SheetBody>
-  </Sheet>
+    aria-describedby={undefined}
+   >
+    <DialogHeader>
+     <DialogTitle>{t("tocLabel")}</DialogTitle>
+    </DialogHeader>
+    <DialogBody className="grid content-start gap-3">
+     {summary}
+     <GrammarSectionNavigation
+      sections={sections}
+      onSelect={(sectionId) => {
+       setIsOpen(false);
+       onSelect(sectionId);
+      }}
+     />
+    </DialogBody>
+   </DialogContent>
+  </Dialog>
  );
 }

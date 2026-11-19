@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { type SegmentedControlItem } from "@/components/ui/forms/segmented-control";
@@ -35,6 +36,9 @@ import { BusinessChineseWorkspaceNavMenu } from "./BusinessChineseWorkspaceNavMe
 import { BusinessChineseWorkspaceViews } from "./BusinessChineseWorkspaceViews";
 import { LessonExerciseResultsProvider } from "./LessonExerciseResults";
 import { splitWorkspaceTabs, useWorkspaceTabCapacity } from "./useWorkspaceTabOverflow";
+import { TabSectionMenu } from "./BusinessChineseSectionNavigation";
+import { businessChineseVisibleSections } from "./business-chinese-study-utils";
+
 import { useBusinessChineseAnnotationServices } from "./useBusinessChineseAnnotationServices";
 import {
  useBusinessChineseLessonSections,
@@ -42,6 +46,21 @@ import {
 } from "./useBusinessChineseLessonContent";
 import { useBusinessChineseSectionReaderServices } from "./useBusinessChineseSectionReaderServices";
 import { useBusinessChinesePip } from "./useBusinessChinesePip";
+
+// Tabs whose hover menu lists their sections (texts and extra readings, grammar points, exercises).
+const SECTION_MENU_TABS = new Set(["text", "grammar", "practice"]);
+
+const NO_PENDING_SECTION = { tab: "", sectionId: "" };
+// Written only in the browser while switching tabs from a hover menu.
+let sectionAfterTabSwitch = NO_PENDING_SECTION;
+
+/** Grammar/practice sections carry their id; text sections render through the reader. */
+function findSectionElement(sectionId: string) {
+ return (
+  document.getElementById(sectionId) ??
+  document.querySelector<HTMLElement>(`[data-reader-section="${CSS.escape(sectionId)}"]`)
+ );
+}
 
 export function BusinessChineseStudyWorkspaceContent({
  books,
@@ -102,7 +121,7 @@ export function BusinessChineseStudyWorkspaceContent({
  const focusMode = useReaderSelector((state) => state.ui.focusMode);
 
  const lessonSections = useBusinessChineseLessonSections(lesson, activeView);
- const { visibleSections } = lessonSections;
+ const { visibleSections, contentSections } = lessonSections;
  const showGrammarNavigation = activeView === "grammar" && visibleSections.length > 0;
  const showCompactGrammarToolbar = showGrammarNavigation && !hasWideToolbar;
  const showWideGrammarNavigation = showGrammarNavigation && hasWideToolbar;
@@ -122,12 +141,55 @@ export function BusinessChineseStudyWorkspaceContent({
   needsPracticeItems: activeView === "practice" || isReviewView || isPipOpen || isInAppFloatingOpen,
  });
  const selectSection = useCallback((sectionId: string) => {
-  scrollAppContentToElement(document.getElementById(sectionId), {
+  scrollAppContentToElement(findSectionElement(sectionId), {
    behavior: "smooth",
    block: "start",
    allowViewport: true,
   });
  }, []);
+
+ // A section picked from another tab's hover menu: switch tab, then scroll once
+ // the navigation has landed and the section is in the DOM. The workspace
+ // remounts when the URL changes, so the target is handed over at module level.
+ const [pendingSection, setPendingSection] = useState(() => sectionAfterTabSwitch);
+ const urlTab = useSearchParams().get("tab");
+ const pendingSectionId = pendingSection.tab === urlTab ? pendingSection.sectionId : "";
+ useEffect(() => {
+  if (!pendingSectionId) return;
+  let frames = 0;
+  let frame = 0;
+  const scrollWhenRendered = () => {
+   const target = findSectionElement(pendingSectionId);
+   frames += 1;
+   if (target || frames > 120) {
+    if (target) selectSection(pendingSectionId);
+    sectionAfterTabSwitch = NO_PENDING_SECTION;
+    setPendingSection(NO_PENDING_SECTION);
+    return;
+   }
+   frame = window.requestAnimationFrame(scrollWhenRendered);
+  };
+  frame = window.requestAnimationFrame(scrollWhenRendered);
+  return () => window.cancelAnimationFrame(frame);
+ }, [pendingSectionId, selectSection]);
+ const tabSectionMenu = (tabKey: string) => {
+  if (!SECTION_MENU_TABS.has(tabKey)) return null;
+  const sections = businessChineseVisibleSections(contentSections, tabKey);
+  if (sections.length < 2) return null;
+  return (
+   <TabSectionMenu
+    sections={sections}
+    onSelect={(sectionId) => {
+     if (tabKey === activeView) selectSection(sectionId);
+     else {
+      sectionAfterTabSwitch = { tab: tabKey, sectionId };
+      setPendingSection(sectionAfterTabSwitch);
+      onActiveViewChange(tabKey);
+     }
+    }}
+   />
+  );
+ };
 
  const tabCapacity = useWorkspaceTabCapacity();
  const { visibleTabs, overflowTabs } = splitWorkspaceTabs(
@@ -196,6 +258,7 @@ export function BusinessChineseStudyWorkspaceContent({
           onOpenGrammarNavigation={() => setIsGrammarNavigationOpen(true)}
          />
         }
+        itemMenu={tabSectionMenu}
         aria-label={t("tabsLabel")}
         className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
         listClassName="hanzihome-liquid-toolbar flex"

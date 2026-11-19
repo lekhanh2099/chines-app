@@ -21,11 +21,15 @@ import type { PdfStroke } from "./pdf-annotations";
 /**
  * Every edit is committed to the IndexedDB outbox first. By default the page is
  * pushed to the server after each edit; with `deferServerSave` it is pushed
- * only when the page closes, the app is hidden or `retrySave` is called.
+ * when the page closes, the app is hidden, `retrySave` is called, or (with
+ * `idleSaveMs`) once drawing has paused that long.
  */
 export function usePdfAnnotations(
  input: PdfAnnotationQuery,
- { deferServerSave = false }: { deferServerSave?: boolean } = {},
+ {
+  deferServerSave = false,
+  idleSaveMs = 0,
+ }: { deferServerSave?: boolean; idleSaveMs?: number } = {},
 ) {
  const { assetId, pageNumber } = input;
  const { userId, isResolved } = useClientSession();
@@ -43,6 +47,8 @@ export function usePdfAnnotations(
  const disposed = useRef(false);
  const editCount = useRef(0);
  const pushedRestoredEdits = useRef(false);
+ const idleSave = useRef<ReturnType<typeof setTimeout>>(undefined);
+ useEffect(() => () => clearTimeout(idleSave.current), []);
  const [restored, setRestored] = useState(false);
  const [local, setLocal] = useState<{ edited: boolean; strokes: PdfStroke[] }>({
   edited: false,
@@ -158,7 +164,18 @@ export function usePdfAnnotations(
     .then(async () => {
      if (disposed.current) return;
      setIsQueued(true);
-     if (deferServerSave) return;
+     if (deferServerSave) {
+      if (idleSaveMs > 0) {
+       clearTimeout(idleSave.current);
+       idleSave.current = setTimeout(() => {
+        void (saving.current ?? Promise.resolve())
+         .catch(() => {})
+         .then(flush)
+         .catch(() => {});
+       }, idleSaveMs);
+      }
+      return;
+     }
      if (saving.current) await saving.current.catch(() => {});
      await flush();
     })
@@ -166,7 +183,16 @@ export function usePdfAnnotations(
      if (!disposed.current) setSaveFailed(true);
     });
   },
-  [assetId, conflict.active, deferServerSave, flush, pageNumber, query.isSuccess, userId],
+  [
+   assetId,
+   conflict.active,
+   deferServerSave,
+   flush,
+   idleSaveMs,
+   pageNumber,
+   query.isSuccess,
+   userId,
+  ],
  );
 
  useEffect(() => {

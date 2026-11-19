@@ -29,6 +29,8 @@ export type ReaderServices = {
   hideContentDisplay?: boolean;
   hidePinyinToggle?: boolean;
   hideTranslationToggle?: boolean;
+  /** Hides previous / segment counter / next / restart (the surface offers its own navigation). */
+  hideSegmentNavigation?: boolean;
  };
  renderReader?: (input: { content: ReactNode; toolbar: ReactNode }) => ReactNode;
  placeToolbarInLayout?: boolean;

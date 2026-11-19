@@ -105,7 +105,7 @@ export function RadicalWorkspace({ radicals: catalog }: RadicalWorkspaceProps) {
          />
         </div>
         <div
-         className="flex min-w-0 max-w-full flex-1 gap-1.5 overflow-x-auto scrollbar-none"
+         className="flex min-w-0 max-w-full flex-1 gap-1.5 overflow-x-auto overflow-y-hidden scrollbar-none"
          role="group"
          aria-label={t("filterTitle")}
         >

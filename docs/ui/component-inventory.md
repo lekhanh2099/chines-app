@@ -23,7 +23,6 @@ override generic shadcn or vendor guidance.
 | Typography       | `src/components/ui/display/typography.tsx`      | canonical                | application text hierarchy                    |
 | Avatar           | `src/components/ui/display/avatar.tsx`          | canonical                | profile image/fallback                        |
 | IconTile         | `src/components/ui/display/icon-tile.tsx`       | canonical                | decorative icon tile                          |
-| Sheet            | `src/components/ui/overlays/sheet.tsx`          | canonical                | responsive side/bottom panels                 |
 | Popover          | `src/components/ui/overlays/base-popover.tsx`   | canonical                | contextual non-menu content                   |
 | Card             | `src/components/ui/layout/card.tsx`             | canonical                | section/subtle/interactive surfaces           |
 | Input            | `src/components/ui/forms/input.tsx`             | canonical                | text input + density                          |

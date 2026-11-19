@@ -22,7 +22,13 @@ import {
  SelectValue,
 } from "@/components/ui/forms/select";
 import { Separator } from "@/components/ui/layout/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import {
  HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
  HanziHomeCommandBarPortal,
@@ -263,15 +269,14 @@ export function LessonModuleFrame({
     </div>
 
     {!compact ? (
-     <Sheet
-      open={sidebarSheetOpen}
-      onOpenChange={setSidebarSheetOpen}
-      side="right"
-      className="sm:max-w-md"
-     >
-      <SheetHeader title={sidebarLabel} onClose={() => setSidebarSheetOpen(false)} />
-      <SheetBody>{sidebar}</SheetBody>
-     </Sheet>
+     <Dialog open={sidebarSheetOpen} onOpenChange={setSidebarSheetOpen}>
+      <DialogContent size="sm" aria-describedby={undefined}>
+       <DialogHeader>
+        <DialogTitle>{sidebarLabel}</DialogTitle>
+       </DialogHeader>
+       <DialogBody>{sidebar}</DialogBody>
+      </DialogContent>
+     </Dialog>
     ) : null}
    </div>
   </>

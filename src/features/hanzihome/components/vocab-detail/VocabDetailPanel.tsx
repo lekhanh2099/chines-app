@@ -124,7 +124,7 @@ export function VocabDetailPanel({
       />
 
       <nav
-       className="no-scrollbar flex gap-2 overflow-x-auto pb-1"
+       className="no-scrollbar flex gap-2 overflow-x-auto overflow-y-hidden pb-1"
        aria-label="Điều hướng phần từ vựng"
       >
        {sectionTabs.map((item) => (

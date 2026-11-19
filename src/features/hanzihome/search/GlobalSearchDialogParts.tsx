@@ -62,7 +62,7 @@ export function SearchCategoryTabs({
  const t = useTranslations("Shell.search");
 
  return (
-  <div className="flex items-center gap-1 overflow-x-auto border-b border-border-default bg-bg-subtle/40 px-3 py-1.5 scrollbar-none">
+  <div className="flex items-center gap-1 overflow-x-auto overflow-y-hidden border-b border-border-default bg-bg-subtle/40 px-3 py-1.5 scrollbar-none">
    {CATEGORIES.map((cat) => {
     const isSelected = selectedCategory === cat;
     const count = categoryCounts[cat];

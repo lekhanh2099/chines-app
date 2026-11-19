@@ -111,7 +111,7 @@ Check:
 Verify:
 
 - app Header stays below transient overlays;
-- Dialog/Sheet/Popover/Menu appears above shell;
+- Dialog/Popover/Menu appears above shell;
 - Select inside Dialog/Popover appears above parent overlay;
 - no feature-local z-index repair is required;
 - nested overlays return focus correctly.
@@ -167,7 +167,7 @@ and iPad portrait, and verify the wide-desktop menu separately.
 - the quick reader control is available from the lesson workspace toolbar only;
 - font/size/reveal/visibility menu groups expose current state;
 - font radio items visually preview the represented Hanzi font;
-- phone/iPad use one modal Sheet rather than parent + lateral submenu panels;
+- phone/iPad use one modal Dialog rather than parent + lateral submenu panels;
 - menu keyboard navigation and Escape/focus return work on desktop;
 - loading/sync-error state is observable;
 - full reading settings link routes to `/settings?section=reading`;
@@ -197,7 +197,7 @@ and iPad portrait, and verify the wide-desktop menu separately.
 - the store shell and its skeleton appear immediately; the list streams in;
 - search by Hanzi, toneless pinyin, Hán-Việt and accent-insensitive Vietnamese meaning updates the URL (`q`, `page`) and survives Back;
 - a polyphonic written form shows one card per reading and one block per reading on its word page;
-- card hover lists the meaning per lesson; the word page is a route, never a sheet;
+- card hover lists the meaning per lesson; the word page is a route, never a dialog;
 - the list scrolls inside its own region and never scrolls the page horizontally;
 - small card text (Hán-Việt, source, meaning) is at least `bodySmall` and not bold.
 
@@ -222,12 +222,12 @@ and iPad portrait, and verify the wide-desktop menu separately.
 ### Notes
 
 - Notes workspace fills available shell height without hard-coded subtraction;
-- desktop library pane and mobile Sheet remain usable after Header/mobile-nav size changes;
+- desktop library pane and mobile Dialog remain usable after Header/mobile-nav size changes;
 - search, filters and create/import actions wrap without horizontal overflow;
 - loading/error states occupy a usable route surface;
 - phone note Header preserves title/quick-select width while showing only high-value contextual actions plus search/profile;
 - successful autosave does not permanently consume a phone Header slot, while saving and save-error states remain visible;
-- phone note action overflow opens one modal bottom Sheet with touch-sized rows rather than a long floating Popover;
+- phone note action overflow opens one modal Dialog with touch-sized rows rather than a long floating Popover;
 - read-only phone rendering normalizes imported inline font sizes without mutating stored note content;
 - switching to edit mode restores the stored formatting contract rather than persisting the mobile presentation override;
 - body/heading/quote rhythm fits the phone width without globally shrinking text to an unreadable size;

@@ -10,7 +10,13 @@ import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { Chip } from "@/components/ui/actions/chip";
 import { Separator } from "@/components/ui/layout/separator";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/overlays/sheet";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 import { Typography } from "@/components/ui/display/typography";
 import {
  HanziAwareText,
@@ -62,128 +68,127 @@ export function VocabDetailDrawer() {
  };
 
  return (
-  <Sheet
+  <Dialog
    open={isOpen}
    onOpenChange={(open) => {
     if (!open) closeDetailDrawer();
    }}
-   side="right"
-   className="sm:max-w-[44rem]"
   >
-   <SheetHeader
-    title={mode === "sentence" ? t("sentenceDetail") : t("vocabDetail")}
-    onClose={closeDetailDrawer}
-   />
-   <div className="border-b border-border-default px-4 py-3 sm:px-5">
-    <div className="grid min-w-0 gap-1">
-     <div className="flex items-center gap-2">
-      <HanziText as="p" size="review" tone="default" weight="black" clamp="one" leading="tight">
-       {smartData?.entry.hanzi || text}
-      </HanziText>
-      <Button
-       type="button"
-       variant="ghost"
-       size="icon-toolbar"
-       onClick={handleSpeak}
-       disabled={isTTSLoading}
-       aria-label={isSpeaking ? t("stopSpeak") : t("playSpeak")}
-      >
-       {isTTSLoading ? (
-        <Loader2 className="animate-spin" />
-       ) : isSpeaking ? (
-        <VolumeOff />
-       ) : (
-        <Volume2 />
-       )}
-      </Button>
-     </div>
-     {smartData?.entry.pinyin ? (
-      <PinyinText as="p" tone="accent" weight="semibold">
-       {smartData.entry.pinyin}
-      </PinyinText>
-     ) : detailQuery.isLoading && mode === "word" ? (
-      <div aria-hidden="true" className="h-6 w-28 animate-pulse rounded-md bg-bg-subtle" />
-     ) : null}
-     {smartData?.runtimeReceipt ? (
-      <div className="flex flex-wrap gap-1.5">
-       <Badge variant="default" size="sm" casing="natural">
-        {smartData.runtimeReceipt.provider}
-       </Badge>
-       <Badge variant="default" size="sm" casing="natural">
-        {smartData.runtimeReceipt.model}
-       </Badge>
-       <Badge variant="default" size="sm" casing="natural">
-        {smartData.runtimeReceipt.keyLabel}
-       </Badge>
+   <DialogContent size="lg" aria-describedby={undefined}>
+    <DialogHeader>
+     <DialogTitle>{mode === "sentence" ? t("sentenceDetail") : t("vocabDetail")}</DialogTitle>
+    </DialogHeader>
+    <div className="border-b border-border-default px-4 py-3 sm:px-5">
+     <div className="grid min-w-0 gap-1">
+      <div className="flex items-center gap-2">
+       <HanziText as="p" size="review" tone="default" weight="black" clamp="one" leading="tight">
+        {smartData?.entry.hanzi || text}
+       </HanziText>
+       <Button
+        type="button"
+        variant="ghost"
+        size="icon-toolbar"
+        onClick={handleSpeak}
+        disabled={isTTSLoading}
+        aria-label={isSpeaking ? t("stopSpeak") : t("playSpeak")}
+       >
+        {isTTSLoading ? (
+         <Loader2 className="animate-spin" />
+        ) : isSpeaking ? (
+         <VolumeOff />
+        ) : (
+         <Volume2 />
+        )}
+       </Button>
       </div>
-     ) : null}
+      {smartData?.entry.pinyin ? (
+       <PinyinText as="p" tone="accent" weight="semibold">
+        {smartData.entry.pinyin}
+       </PinyinText>
+      ) : detailQuery.isLoading && mode === "word" ? (
+       <div aria-hidden="true" className="h-6 w-28 animate-pulse rounded-md bg-bg-subtle" />
+      ) : null}
+      {smartData?.runtimeReceipt ? (
+       <div className="flex flex-wrap gap-1.5">
+        <Badge variant="default" size="sm" casing="natural">
+         {smartData.runtimeReceipt.provider}
+        </Badge>
+        <Badge variant="default" size="sm" casing="natural">
+         {smartData.runtimeReceipt.model}
+        </Badge>
+        <Badge variant="default" size="sm" casing="natural">
+         {smartData.runtimeReceipt.keyLabel}
+        </Badge>
+       </div>
+      ) : null}
+     </div>
     </div>
-   </div>
 
-   <SheetBody>
-    {detailQuery.isLoading ? (
-     <div className="grid animate-pulse gap-4" aria-busy="true" aria-live="polite">
-      <Card variant="section" padding="md" className="grid gap-3">
-       <div className="h-4 w-24 rounded-md bg-bg-subtle" />
-       <div className="h-5 w-full max-w-80 rounded-md bg-bg-subtle" />
-      </Card>
-      {mode === "word" ? (
+    <DialogBody>
+     {detailQuery.isLoading ? (
+      <div className="grid animate-pulse gap-4" aria-busy="true" aria-live="polite">
        <Card variant="section" padding="md" className="grid gap-3">
         <div className="h-4 w-24 rounded-md bg-bg-subtle" />
-        <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
-         <Card
-          variant="section"
-          padding="md"
-          className="flex w-full min-w-0 flex-col items-center gap-3"
-         >
-          <div className="aspect-square w-full max-w-40 rounded-xl bg-bg-subtle" />
-          <div className="flex flex-wrap items-center justify-center gap-2">
-           <div className="h-11 w-20 rounded-lg bg-bg-subtle" />
-           <div className="h-11 w-20 rounded-lg bg-bg-subtle" />
-          </div>
-         </Card>
-         <div className="grid content-start gap-2">
-          <div className="h-4 w-20 rounded-md bg-bg-subtle" />
-          <div className="h-4 w-full max-w-48 rounded-md bg-bg-subtle" />
-         </div>
-        </div>
+        <div className="h-5 w-full max-w-80 rounded-md bg-bg-subtle" />
        </Card>
-      ) : null}
-      <span className="sr-only">{t("loading")}</span>
-     </div>
-    ) : detailQuery.isError ? (
-     <Card variant="subtle" padding="md" role="alert">
-      <Typography as="p" variant="bodySmall" tone="danger" weight="semibold">
-       {detailQuery.error instanceof Error ? detailQuery.error.message : t("error")}
-      </Typography>
-     </Card>
-    ) : !smartData ? (
-     <Card variant="subtle" padding="lg">
-      <Typography as="p" tone="muted" align="center">
-       {t("empty")}
-      </Typography>
-     </Card>
-    ) : mode === "sentence" ? (
-     <SentenceDetailPanel
-      key={`${smartData.selection}-sentence`}
-      text={text}
-      smartData={smartData}
-      onCharacterSelect={(character) =>
-       openDetailDrawer({ text: character, contextSentence: text, mode: "word" })
-      }
-     />
-    ) : (
-     <WordDetailPanel
-      key={`${smartData.selection}-word`}
-      smartData={smartData}
-      onDrillCharacter={(character) =>
-       openDetailDrawer({ text: character, contextSentence: text, mode: "word" })
-      }
-      displayMeaning={displayMeaning}
-     />
-    )}
-   </SheetBody>
-  </Sheet>
+       {mode === "word" ? (
+        <Card variant="section" padding="md" className="grid gap-3">
+         <div className="h-4 w-24 rounded-md bg-bg-subtle" />
+         <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
+          <Card
+           variant="section"
+           padding="md"
+           className="flex w-full min-w-0 flex-col items-center gap-3"
+          >
+           <div className="aspect-square w-full max-w-40 rounded-xl bg-bg-subtle" />
+           <div className="flex flex-wrap items-center justify-center gap-2">
+            <div className="h-11 w-20 rounded-lg bg-bg-subtle" />
+            <div className="h-11 w-20 rounded-lg bg-bg-subtle" />
+           </div>
+          </Card>
+          <div className="grid content-start gap-2">
+           <div className="h-4 w-20 rounded-md bg-bg-subtle" />
+           <div className="h-4 w-full max-w-48 rounded-md bg-bg-subtle" />
+          </div>
+         </div>
+        </Card>
+       ) : null}
+       <span className="sr-only">{t("loading")}</span>
+      </div>
+     ) : detailQuery.isError ? (
+      <Card variant="subtle" padding="md" role="alert">
+       <Typography as="p" variant="bodySmall" tone="danger" weight="semibold">
+        {detailQuery.error instanceof Error ? detailQuery.error.message : t("error")}
+       </Typography>
+      </Card>
+     ) : !smartData ? (
+      <Card variant="subtle" padding="lg">
+       <Typography as="p" tone="muted" align="center">
+        {t("empty")}
+       </Typography>
+      </Card>
+     ) : mode === "sentence" ? (
+      <SentenceDetailPanel
+       key={`${smartData.selection}-sentence`}
+       text={text}
+       smartData={smartData}
+       onCharacterSelect={(character) =>
+        openDetailDrawer({ text: character, contextSentence: text, mode: "word" })
+       }
+      />
+     ) : (
+      <WordDetailPanel
+       key={`${smartData.selection}-word`}
+       smartData={smartData}
+       onDrillCharacter={(character) =>
+        openDetailDrawer({ text: character, contextSentence: text, mode: "word" })
+       }
+       displayMeaning={displayMeaning}
+      />
+     )}
+    </DialogBody>
+   </DialogContent>
+  </Dialog>
  );
 }
 

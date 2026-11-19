@@ -134,7 +134,7 @@ export function DeveloperApiFilters({
     <Typography as="span" variant="caption" tone="muted">
      Theo feature
     </Typography>
-    <div className="flex max-w-full flex-nowrap gap-2 overflow-x-auto pb-1 scrollbar-soft">
+    <div className="flex max-w-full flex-nowrap gap-2 overflow-x-auto overflow-y-hidden pb-1 scrollbar-soft">
      <Chip
       variant={featureFilter === "all" ? "accent" : "outline"}
       size="sm"

@@ -162,7 +162,8 @@ export function NoteEditorPanel({
    className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-bg-primary"
    style={{ display: isVisible ? "flex" : "none" }}
   >
-   {isLoading ? (
+   {/* Wait for the PDF lookup too: a note with a PDF opens on it, not on the text first. */}
+   {isLoading || notePdf.isLoading ? (
     <NoteEditorSkeleton splitView={isSplitView} />
    ) : error ? (
     <QueryErrorCard

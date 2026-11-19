@@ -24,6 +24,11 @@ import {
 import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { cn } from "@/lib/utils";
 
+/** Drops a title's own numbering ("1. ", "(一) ", "[2] ") so lists can number it once. */
+function withoutLeadingNumber(title: string) {
+ return title.replace(/^(?:\([一二三四五六七八九十]+\)|\[\d+\]|\d+\.?)\s+/u, "");
+}
+
 export function CompactSectionNavigation({
  sections,
  onSelect,
@@ -120,7 +125,7 @@ export function GrammarSectionNavigation({
   <nav aria-label={t("tocLabel")} className="grid min-w-0 gap-1">
    {sections.map((section, index) => {
     const title = stripLeadingEmoji(section.title);
-    const heading = title.replace(/^(?:\([一二三四五六七八九十]+\)|\[\d+\]|\d+\.?)\s+/u, "");
+    const heading = withoutLeadingNumber(title);
     const shortTitle =
      title.match(/ – "([^"]+)"/u)?.[1] ??
      splitTrailingTranslation(heading.replace(/^Cấu trúc:\s*/u, "").split(" - ")[0]).source;
@@ -192,5 +197,39 @@ export function DesktopSectionNavigation({
     </div>
    </div>
   </Card>
+ );
+}
+
+/** Quick-jump list shown while hovering a lesson tab: its sections, e.g. main text and extra readings. */
+export function TabSectionMenu({
+ sections,
+ onSelect,
+}: {
+ sections: TextbookLesson["sections"];
+ onSelect: (sectionId: string) => void;
+}) {
+ return (
+  <nav className="grid min-w-0 gap-0.5">
+   {sections.map((section, index) => {
+    const title = stripLeadingEmoji(section.title);
+    return (
+     <Button
+      key={section.id}
+      type="button"
+      size="menu"
+      variant="navigation"
+      align="start"
+      wrap="normal"
+      className="min-w-0"
+      title={title}
+      onClick={() => onSelect(section.id)}
+     >
+      <span className="min-w-0">
+       <HanziInlineText text={`${index + 1}. ${withoutLeadingNumber(title)}`} />
+      </span>
+     </Button>
+    );
+   })}
+  </nav>
  );
 }

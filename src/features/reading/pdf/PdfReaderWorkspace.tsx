@@ -151,7 +151,7 @@ export function PdfReaderWorkspace({
     </div>
     {showAssetPicker ? (
      <div
-      className="flex max-w-full gap-2 overflow-x-auto pb-1 scrollbar-soft"
+      className="flex max-w-full gap-2 overflow-x-auto overflow-y-hidden pb-1 scrollbar-soft"
       aria-label={t("pagePicker")}
      >
       {assets.map((asset) => (
