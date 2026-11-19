@@ -245,7 +245,7 @@ export function SpeakingDrillsWorkspace({
          </TabsContent>
 
          <TabsContent value="materials" className="pt-3">
-          <SpeakingDrillMaterials lesson={lesson} />
+          <SpeakingDrillMaterials lesson={lesson} displayMode={displayMode} />
          </TabsContent>
 
          <TabsContent value="compare" className="pt-3">

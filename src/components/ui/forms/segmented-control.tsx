@@ -71,7 +71,7 @@ export function SegmentedControl<T extends string>({
    aria-label={ariaLabel}
    className={cn(
     "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1",
-    wraps ? "flex-wrap overflow-visible" : "overflow-x-auto overscroll-x-contain",
+    wraps ? "flex-wrap overflow-visible" : "overflow-x-auto overflow-y-hidden overscroll-x-contain",
     surface === "subtle" ? "rounded-lg bg-bg-subtle/70 p-0.5" : "bg-transparent p-0",
     className,
    )}

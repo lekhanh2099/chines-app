@@ -91,7 +91,7 @@ export function Tabs<T extends string>({
          role="tablist"
          aria-label={ariaLabel}
          aria-orientation="horizontal"
-         className="no-scrollbar flex min-w-0 flex-1 items-center gap-1 overflow-x-auto overscroll-x-contain"
+         className="no-scrollbar flex min-w-0 flex-1 items-center gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain"
         >
          {resolvedGroups.map((group, groupIndex) => (
           <React.Fragment key={group.key}>
@@ -172,7 +172,7 @@ export function Tabs<T extends string>({
        aria-label={ariaLabel}
        aria-orientation="horizontal"
        className={cn(
-        "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-lg bg-bg-subtle/70 p-0.5",
+        "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain rounded-lg bg-bg-subtle/70 p-0.5",
         listClassName,
        )}
       >
