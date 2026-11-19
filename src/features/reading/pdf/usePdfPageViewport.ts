@@ -8,6 +8,7 @@ import { clampPdfZoom } from "@/features/reading/pdf/pdf-viewer-utils";
 export function usePdfPageViewport() {
  const viewerRef = useRef<HTMLElement>(null);
  const pinchDistanceRef = useRef<number | null>(null);
+ const pinchCenterRef = useRef({ x: 0, y: 0 });
  const [zoom, setZoom] = useState(100);
  const [fitToContainer, setFitToContainer] = useState(true);
  const [isFullscreen, setIsFullscreen] = useState(false);
@@ -47,12 +48,30 @@ export function usePdfPageViewport() {
   if (!first || !second) return null;
   return Math.hypot(second.clientX - first.clientX, second.clientY - first.clientY);
  };
+ const touchCenter = (event: TouchEvent<HTMLDivElement>) => {
+  const first = event.touches[0];
+  const second = event.touches[1];
+  if (!first || !second) return pinchCenterRef.current;
+  return { x: (first.clientX + second.clientX) / 2, y: (first.clientY + second.clientY) / 2 };
+ };
  const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
   pinchDistanceRef.current = touchDistance(event);
+  pinchCenterRef.current = touchCenter(event);
  };
  const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
   const distance = touchDistance(event);
   const previousDistance = pinchDistanceRef.current;
+  const inkCapturesTouch =
+   event.target instanceof Element && event.target.closest("[data-touch-ink]") !== null;
+  if (inkCapturesTouch && distance !== null && previousDistance !== null) {
+   // Finger ink disables native touch scrolling, so two fingers scroll here.
+   const center = touchCenter(event);
+   event.currentTarget.scrollBy(
+    pinchCenterRef.current.x - center.x,
+    pinchCenterRef.current.y - center.y,
+   );
+   pinchCenterRef.current = center;
+  }
   if (distance === null || previousDistance === null || Math.abs(distance - previousDistance) < 2)
    return;
   event.preventDefault();

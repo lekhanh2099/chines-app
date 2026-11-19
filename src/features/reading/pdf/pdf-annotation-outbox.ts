@@ -12,6 +12,7 @@ import {
 import {
  annotationPayloadSchema,
  fetchPdfAnnotation,
+ PdfAnnotationApiError,
  PdfAnnotationConflictError,
  savePdfAnnotation,
  type PdfAnnotationPayloadInput,
@@ -38,6 +39,11 @@ const pendingPdfSchema = z.strictObject({
 });
 type PendingPdfAnnotation = z.output<typeof pendingPdfSchema>;
 const ownerWriteTails = new Map<string, Promise<void>>();
+// Revision the server last acknowledged for a page queued from this tab. A page
+// view whose queue was drained by another caller (the reconnect sync, or the
+// flush of a page view that just closed) still holds the revision it loaded;
+// a new edit must build on this one or it would conflict with its own save.
+const acknowledgedRevisions = new Map<string, number>();
 
 async function withPdfOwnerLock<T>(ownerUserId: string, operation: () => Promise<T>): Promise<T> {
  if (typeof navigator !== "undefined" && navigator.locks) {
@@ -55,6 +61,20 @@ async function withPdfOwnerLock<T>(ownerUserId: string, operation: () => Promise
  } finally {
   if (ownerWriteTails.get(ownerUserId) === tail) ownerWriteTails.delete(ownerUserId);
  }
+}
+
+function rebaseOnAcknowledged(item: PendingPdfAnnotation): PendingPdfAnnotation {
+ const acknowledged = acknowledgedRevisions.get(item.id);
+ if (
+  acknowledged === undefined ||
+  (item.input.expectedAbsent === false && item.input.expectedRevision >= acknowledged)
+ ) {
+  return item;
+ }
+ return {
+  ...item,
+  input: { ...item.input, expectedRevision: acknowledged, expectedAbsent: false },
+ };
 }
 
 function pendingId(ownerUserId: string, input: PdfAnnotationQuery) {
@@ -100,7 +120,7 @@ export async function enqueuePdfAnnotation(
         },
         submittedInput: previous.data.submittedInput,
        }
-     : item,
+     : rebaseOnAcknowledged(item),
    );
   };
   tx.oncomplete = () => resolve();
@@ -186,6 +206,7 @@ export function flushPendingPdfAnnotation(input: PdfAnnotationQuery, ownerUserId
     saved = await savePdfAnnotation({ ...submitted, expectedAbsent }, ownerUserId);
    }
    acknowledged = saved;
+   acknowledgedRevisions.set(item.id, saved.revision);
    const sent = submitted;
    const deleted = await deleteFromStoreIf(
     HANZIHOME_LOCAL_STORES.pendingMutations,
@@ -265,10 +286,46 @@ export async function syncPendingPdfAnnotations(ownerUserId: string): Promise<nu
  let synced = 0;
  for (const item of pending.filter((row) => row.ownerUserId === ownerUserId)) {
   try {
-   if (await flushPendingPdfAnnotation(item.input, ownerUserId)) synced += 1;
-  } catch {
+   // The page key only: the strict query parser rejects the queued payload.
+   const page = { assetId: item.input.assetId, pageNumber: item.input.pageNumber };
+   if (await flushPendingPdfAnnotation(page, ownerUserId)) synced += 1;
+  } catch (error) {
+   // Ink for a PDF page that no longer exists can never be saved; drop it so
+   // the pages queued after it still sync.
+   if (error instanceof PdfAnnotationApiError && error.status === 404) {
+    await deleteFromStoreIf(
+     HANZIHOME_LOCAL_STORES.pendingMutations,
+     item.id,
+     pendingPdfSchema,
+     (current) => current.operationId === item.operationId,
+    );
+    continue;
+   }
    break;
   }
  }
  return synced;
+}
+
+/**
+ * Drops queued ink for a PDF that no longer exists (a note PDF that was removed
+ * or whose note was deleted); replaying it would fail forever and stop
+ * `syncPendingPdfAnnotations` from reaching the pages queued after it.
+ */
+export function discardPendingPdfAnnotationsForAsset(assetId: string, ownerUserId: string) {
+ return withPdfOwnerLock(ownerUserId, async () => {
+  const pending = await getAllFromStoreMatching(
+   HANZIHOME_LOCAL_STORES.pendingMutations,
+   pendingPdfSchema,
+  );
+  for (const item of pending) {
+   if (item.ownerUserId !== ownerUserId || item.input.assetId !== assetId) continue;
+   await deleteFromStoreIf(
+    HANZIHOME_LOCAL_STORES.pendingMutations,
+    item.id,
+    pendingPdfSchema,
+    (current) => current.input.assetId === assetId,
+   );
+  }
+ });
 }

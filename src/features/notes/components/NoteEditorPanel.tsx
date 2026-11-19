@@ -3,7 +3,7 @@
 import { useCallback, useRef, useState, useSyncExternalStore } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { createPortal } from "react-dom";
-import { SlidersHorizontal } from "lucide-react";
+import { FileText, SlidersHorizontal } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
@@ -17,6 +17,8 @@ import { Typography } from "@/components/ui/display/typography";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
 import { NoteConflictDialog } from "@/features/notes/components/NoteConflictDialog";
 import { useNoteEditor } from "@/features/notes/hooks/useNoteEditor";
+import { NotePdfPanel } from "@/features/notes/pdf/NotePdfPanel";
+import { useNotePdf } from "@/features/notes/pdf/useNotePdf";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
 import { noteTabsStore } from "@/stores/notes/note-tabs-store";
 import { NoteEditorDeleteDialog } from "./NoteEditorDeleteDialog";
@@ -77,6 +79,19 @@ export function NoteEditorPanel({
   isDeleting,
  } = useNoteEditor(noteId);
 
+ const notePdf = useNotePdf(noteId);
+ const [isPdfView, setIsPdfView] = useState(false);
+ // Open the PDF side whenever a (new) PDF becomes the note's PDF.
+ const pdfAttachmentId = notePdf.attachment?.id ?? "";
+ const [shownPdfAttachmentId, setShownPdfAttachmentId] = useState("");
+ if (pdfAttachmentId !== shownPdfAttachmentId) {
+  setShownPdfAttachmentId(pdfAttachmentId);
+  if (pdfAttachmentId) setIsPdfView(true);
+ }
+ const { forgetDeletedNotePdf } = notePdf;
+ const handleTogglePdfView = () => setIsPdfView((current) => !current);
+ const pdfViewLabel = isPdfView ? t("pdf.close") : t("pdf.open");
+
  const { closeTab } = noteTabsStore.actions;
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
 
@@ -105,13 +120,14 @@ export function NoteEditorPanel({
   if (isImporting) return;
   try {
    await deleteNoteMutation();
+   await forgetDeletedNotePdf();
    toast.success(t("deleted"));
    setShowDeleteConfirm(false);
    closeTab(noteId);
   } catch {
    toast.error(t("deleteError"));
   }
- }, [closeTab, deleteNoteMutation, isImporting, noteId, t]);
+ }, [closeTab, deleteNoteMutation, forgetDeletedNotePdf, isImporting, noteId, t]);
 
  const handleExport = useCallback(() => {
   try {
@@ -191,6 +207,18 @@ export function NoteEditorPanel({
           <SaveStatusBadge status={displaySaveStatus} onRetry={handleRetrySave} />
           <Button
            type="button"
+           variant={isPdfView ? "active" : "ghost"}
+           size="icon"
+           className="shrink-0 xl:hidden"
+           aria-pressed={isPdfView}
+           aria-label={pdfViewLabel}
+           title={pdfViewLabel}
+           onClick={handleTogglePdfView}
+          >
+           <FileText />
+          </Button>
+          <Button
+           type="button"
            variant="ghost"
            size="icon"
            className="shrink-0 xl:hidden"
@@ -224,6 +252,8 @@ export function NoteEditorPanel({
           isImporting={isImporting}
           handleExport={handleExport}
           setShowDeleteConfirm={setShowDeleteConfirm}
+          isPdfView={isPdfView}
+          handleTogglePdfView={handleTogglePdfView}
          />,
          desktopActionsContainer,
         )
@@ -246,6 +276,8 @@ export function NoteEditorPanel({
       isImporting={isImporting}
       focusModeEnabled={focusModeEnabled}
       handleExport={handleExport}
+      isPdfView={isPdfView}
+      handleTogglePdfView={handleTogglePdfView}
      />
 
      {metadataOpen ? (
@@ -261,10 +293,15 @@ export function NoteEditorPanel({
       handleDelete={handleDelete}
      />
 
-     {isSplitView ? (
+     {isPdfView && !isSplitView ? (
+      <div className="note-editor-split-panel min-h-0 flex-1 overflow-hidden">
+       <NotePdfPanel notePdf={notePdf} />
+      </div>
+     ) : isSplitView ? (
       <div className="note-editor-split-panel min-h-0 flex-1 overflow-hidden p-0 sm:p-2 lg:p-4">
        <SplitViewEditor
         key={`split-${importVersion}`}
+        leadingPane={isPdfView ? <NotePdfPanel notePdf={notePdf} /> : undefined}
         noteId={noteId}
         noteContent={noteContent}
         readingContent={readingContent}

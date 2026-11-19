@@ -18,7 +18,15 @@ import {
 } from "./pdf-annotation-outbox";
 import type { PdfStroke } from "./pdf-annotations";
 
-export function usePdfAnnotations(input: PdfAnnotationQuery) {
+/**
+ * Every edit is committed to the IndexedDB outbox first. By default the page is
+ * pushed to the server after each edit; with `deferServerSave` it is pushed
+ * only when the page closes, the app is hidden or `retrySave` is called.
+ */
+export function usePdfAnnotations(
+ input: PdfAnnotationQuery,
+ { deferServerSave = false }: { deferServerSave?: boolean } = {},
+) {
  const { assetId, pageNumber } = input;
  const { userId, isResolved } = useClientSession();
  const queryClient = useQueryClient();
@@ -34,6 +42,7 @@ export function usePdfAnnotations(input: PdfAnnotationQuery) {
  const blocked = useRef(false);
  const disposed = useRef(false);
  const editCount = useRef(0);
+ const pushedRestoredEdits = useRef(false);
  const [restored, setRestored] = useState(false);
  const [local, setLocal] = useState<{ edited: boolean; strokes: PdfStroke[] }>({
   edited: false,
@@ -110,7 +119,9 @@ export function usePdfAnnotations(input: PdfAnnotationQuery) {
   if (!query.isSuccess || !restored) return;
   if (!local.edited)
    base.current = { revision: query.data?.revision ?? 0, absent: query.data === null };
-  void flush().catch(() => {});
+  // A deferred page only pushes what an earlier visit left in the outbox.
+  if (!deferServerSave || !pushedRestoredEdits.current) void flush().catch(() => {});
+  pushedRestoredEdits.current = true;
   const retryOnReconnect = () => {
    if (conflict.active) return;
    blocked.current = false;
@@ -118,7 +129,7 @@ export function usePdfAnnotations(input: PdfAnnotationQuery) {
   };
   window.addEventListener("online", retryOnReconnect);
   return () => window.removeEventListener("online", retryOnReconnect);
- }, [conflict.active, flush, local.edited, query.data, query.isSuccess, restored]);
+ }, [conflict.active, deferServerSave, flush, local.edited, query.data, query.isSuccess, restored]);
 
  useEffect(() => {
   disposed.current = false;
@@ -147,6 +158,7 @@ export function usePdfAnnotations(input: PdfAnnotationQuery) {
     .then(async () => {
      if (disposed.current) return;
      setIsQueued(true);
+     if (deferServerSave) return;
      if (saving.current) await saving.current.catch(() => {});
      await flush();
     })
@@ -154,8 +166,41 @@ export function usePdfAnnotations(input: PdfAnnotationQuery) {
      if (!disposed.current) setSaveFailed(true);
     });
   },
-  [assetId, conflict.active, flush, pageNumber, query.isSuccess, userId],
+  [assetId, conflict.active, deferServerSave, flush, pageNumber, query.isSuccess, userId],
  );
+
+ useEffect(() => {
+  if (!deferServerSave) return;
+  const flushWhenHidden = () => {
+   if (document.visibilityState === "hidden") void flush().catch(() => {});
+  };
+  const flushOnPageHide = () => void flush().catch(() => {});
+  document.addEventListener("visibilitychange", flushWhenHidden);
+  window.addEventListener("pagehide", flushOnPageHide);
+  return () => {
+   document.removeEventListener("visibilitychange", flushWhenHidden);
+   window.removeEventListener("pagehide", flushOnPageHide);
+  };
+ }, [deferServerSave, flush]);
+
+ useEffect(() => {
+  if (!deferServerSave || !userId) return;
+  return () => {
+   // Leaving the page: the outbox already holds every stroke, so push it
+   // without this (now unmounted) hook's state.
+   if (blocked.current) return;
+   void writing.current
+    .then(() => flushPendingPdfAnnotation({ assetId, pageNumber }, userId))
+    .then((saved) => {
+     if (saved)
+      queryClient.setQueryData(
+       hanzihomeQueryKeys.readerPdfAnnotation(userId, assetId, pageNumber),
+       saved,
+      );
+    })
+    .catch(() => {});
+  };
+ }, [assetId, deferServerSave, pageNumber, queryClient, userId]);
 
  const retrySave = useCallback(async () => {
   if (conflict.active) return;

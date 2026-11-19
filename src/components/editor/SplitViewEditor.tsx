@@ -1,14 +1,15 @@
 /**
  * SplitViewEditor — Dual-pane editor with reading passage (left) and notes (right).
  *
- * Left pane: Full editor for lesson/reading content with highlight support.
+ * Left pane: Full editor for lesson/reading content with highlight support,
+ * or a caller-provided pane such as the note's PDF.
  * Right pane: Standard note editor (100% same as current).
  * Resizable divider between panes.
  */
 "use client";
 
 import type { JsonObject } from "@/types/json";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useRef } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { Editor } from "./Editor";
@@ -30,6 +31,8 @@ interface SplitViewEditorProps {
  onReadingChange?: (json: JsonObject) => void;
  readOnly?: boolean;
  toolbarVisible?: boolean;
+ /** Replaces the reading editor in the leading pane (e.g. a note's PDF). */
+ leadingPane?: ReactNode;
 }
 
 type SplitViewStyle = CSSProperties & {
@@ -45,6 +48,7 @@ export function SplitViewEditor({
  onReadingChange,
  readOnly = false,
  toolbarVisible = true,
+ leadingPane,
 }: SplitViewEditorProps) {
  const containerRef = useRef<HTMLDivElement>(null);
  const dividerPosition = useSelector(splitViewStore, selectNoteDividerPosition(noteId));
@@ -66,13 +70,15 @@ export function SplitViewEditor({
    {/* Left Pane — Reading / Lesson Passage */}
    <div className="split-view-pane split-view-pane-left">
     <div className="split-view-pane-content">
-     <Editor
-      initialContent={readingContent}
-      onChange={onReadingChange}
-      readOnly={readOnly}
-      toolbarVisible={toolbarVisible}
-      seamless
-     />
+     {leadingPane ?? (
+      <Editor
+       initialContent={readingContent}
+       onChange={onReadingChange}
+       readOnly={readOnly}
+       toolbarVisible={toolbarVisible}
+       seamless
+      />
+     )}
     </div>
    </div>
 

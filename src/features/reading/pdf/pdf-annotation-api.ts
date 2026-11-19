@@ -27,6 +27,9 @@ export const annotationPayloadSchema = z.strictObject({
 export type PdfAnnotationQuery = z.output<typeof annotationQuerySchema>;
 export type PdfAnnotationPayloadInput = z.output<typeof annotationPayloadSchema>;
 
+/** The PDF page the ink belongs to does not exist (removed note PDF, unknown asset). */
+export class PdfAnnotationTargetMissingError extends Error {}
+
 export class PdfAnnotationApiError extends Error {
  constructor(
   message: string,

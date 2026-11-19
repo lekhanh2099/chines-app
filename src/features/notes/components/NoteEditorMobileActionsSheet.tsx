@@ -4,6 +4,7 @@ import type { Dispatch, RefObject, SetStateAction } from "react";
 import {
  Download,
  Eye,
+ FileText,
  PanelLeft,
  PanelLeftClose,
  PanelTopClose,
@@ -41,6 +42,8 @@ export function NoteEditorMobileActionsSheet({
  isImporting,
  focusModeEnabled,
  handleExport,
+ isPdfView,
+ handleTogglePdfView,
 }: {
  noteId: string;
  mobileActionsOpen: boolean;
@@ -58,6 +61,8 @@ export function NoteEditorMobileActionsSheet({
  isImporting: boolean;
  focusModeEnabled: boolean;
  handleExport: () => void;
+ isPdfView: boolean;
+ handleTogglePdfView: () => void;
 }) {
  const t = useTranslations("Notes.editor");
  const router = useRouter();
@@ -101,6 +106,21 @@ export function NoteEditorMobileActionsSheet({
      >
       {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
       {isReadOnlyMode ? t("editMode") : t("viewModeAction")}
+     </Button>
+     <Button
+      type="button"
+      variant={isPdfView ? "active" : "menu"}
+      size="touch"
+      align="start"
+      className="w-full"
+      aria-pressed={isPdfView}
+      onClick={() => {
+       handleTogglePdfView();
+       setMobileActionsOpen(false);
+      }}
+     >
+      <FileText data-icon="inline-start" />
+      {isPdfView ? t("pdf.close") : t("pdf.open")}
      </Button>
      <Button
       type="button"

@@ -27,6 +27,7 @@ vi.mock("@/lib/api/authenticated-route", () => ({
   Response.json(body, { ...init, headers: { "Cache-Control": "private, no-store" } }),
 }));
 
+import { PdfAnnotationTargetMissingError } from "@/features/reading/pdf/pdf-annotation-api";
 import { GET, PUT } from "./route";
 
 describe("/api/hanzihome/reader/pdf-annotations", () => {
@@ -145,5 +146,30 @@ describe("/api/hanzihome/reader/pdf-annotations", () => {
    }),
   );
   expect(response.status).toBe(503);
+ });
+ it("reports a removed PDF page as missing so queued ink can be dropped", async () => {
+  getPdfAnnotation.mockRejectedValue(new PdfAnnotationTargetMissingError("gone"));
+  savePdfAnnotation.mockRejectedValue(new PdfAnnotationTargetMissingError("gone"));
+  const assetId = "note-pdf:33333333-3333-4333-8333-333333333333";
+  const read = await GET(
+   new Request(
+    `https://app.example/api/reading/pdf/annotations?assetId=${encodeURIComponent(assetId)}&pageNumber=2`,
+   ),
+  );
+  expect(read.status).toBe(404);
+  const write = await PUT(
+   new Request("https://app.example/api/reading/pdf/annotations", {
+    method: "PUT",
+    body: JSON.stringify({
+     assetId,
+     pageNumber: 2,
+     payload: { strokes: [] },
+     expectedRevision: 0,
+     expectedAbsent: true,
+    }),
+   }),
+  );
+  expect(write.status).toBe(404);
+  await expect(write.json()).resolves.toMatchObject({ code: "PDF_PAGE_NOT_FOUND" });
  });
 });

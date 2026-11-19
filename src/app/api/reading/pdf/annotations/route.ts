@@ -5,7 +5,10 @@ import {
  getPdfAnnotation,
  savePdfAnnotation,
 } from "@/features/reading/pdf/pdf-annotation-repository";
-import { annotationPayloadSchema } from "@/features/reading/pdf/pdf-annotation-api";
+import {
+ annotationPayloadSchema,
+ PdfAnnotationTargetMissingError,
+} from "@/features/reading/pdf/pdf-annotation-api";
 import {
  apiError,
  privateNoStoreJson,
@@ -40,7 +43,9 @@ export async function GET(request: Request) {
 
  try {
   return privateNoStoreJson({ annotation: await getPdfAnnotation(parsed.data, auth.context) });
- } catch {
+ } catch (error) {
+  if (error instanceof PdfAnnotationTargetMissingError)
+   return apiError("PDF page not found", 404, "PDF_PAGE_NOT_FOUND");
   return apiError("Could not load PDF annotation", 503, "PDF_ANNOTATION_UNAVAILABLE");
  }
 }
@@ -61,7 +66,9 @@ export async function PUT(request: Request) {
    { annotation: result.annotation },
    { status: result.saved ? 200 : 409 },
   );
- } catch {
+ } catch (error) {
+  if (error instanceof PdfAnnotationTargetMissingError)
+   return apiError("PDF page not found", 404, "PDF_PAGE_NOT_FOUND");
   return apiError("Could not save PDF annotation", 503, "PDF_ANNOTATION_UNAVAILABLE");
  }
 }

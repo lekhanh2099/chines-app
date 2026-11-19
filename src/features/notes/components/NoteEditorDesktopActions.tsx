@@ -5,6 +5,7 @@ import type { MutationStatus } from "@tanstack/react-query";
 import {
  Download,
  Eye,
+ FileText,
  PanelLeft,
  PanelLeftClose,
  PanelTopClose,
@@ -36,6 +37,8 @@ export function NoteEditorDesktopActions({
  isImporting,
  handleExport,
  setShowDeleteConfirm,
+ isPdfView,
+ handleTogglePdfView,
 }: {
  note: ComponentProps<typeof NoteLibraryMetadataDialog>["note"];
  displaySaveStatus: MutationStatus;
@@ -50,12 +53,15 @@ export function NoteEditorDesktopActions({
  isImporting: boolean;
  handleExport: () => void;
  setShowDeleteConfirm: Dispatch<SetStateAction<boolean>>;
+ isPdfView: boolean;
+ handleTogglePdfView: () => void;
 }) {
  const t = useTranslations("Notes.editor");
  const editModeLabel = isReadOnlyMode ? t("editMode") : t("viewMode");
  const toolbarLabel = isToolbarVisible ? t("hideToolbar") : t("showToolbar");
  const splitLabel = isSplitView ? t("disableSplit") : t("enableSplit");
  const splitTitle = isSplitView ? t("disableSplitShortcut") : t("enableSplitShortcut");
+ const pdfLabel = isPdfView ? t("pdf.close") : t("pdf.open");
 
  return (
   <div className="hidden min-w-max items-center gap-2 xl:flex">
@@ -84,6 +90,18 @@ export function NoteEditorDesktopActions({
      {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
     </Button>
    ) : null}
+   <Button
+    type="button"
+    variant={isPdfView ? "active" : "outline"}
+    size="icon-sm"
+    aria-pressed={isPdfView}
+    onClick={handleTogglePdfView}
+    title={pdfLabel}
+    aria-label={pdfLabel}
+    className={noteEditorActionButtonClassName}
+   >
+    <FileText />
+   </Button>
    <Button
     type="button"
     variant={isSplitView ? "active" : "outline"}

@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/actions/button";
@@ -14,7 +15,6 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/overlays/dialog";
-import type { ReaderPdfAsset } from "@/features/reading/model/reading-assets.schemas";
 import { pdfStrokePath } from "@/features/reading/pdf/pdf-annotations";
 import type { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
 
@@ -22,7 +22,8 @@ type PdfAnnotations = ReturnType<typeof usePdfAnnotations>;
 
 /** Conflict alert plus the local-vs-server comparison dialog for a PDF page. */
 export function PdfAnnotationConflict({
- asset,
+ pageBackground,
+ fillPageHeight = false,
  strokes,
  conflict,
  open,
@@ -30,7 +31,10 @@ export function PdfAnnotationConflict({
  resolving,
  onChoose,
 }: {
- asset: ReaderPdfAsset;
+ /** The page image both stroke versions are drawn over. */
+ pageBackground: ReactNode;
+ /** Same geometry switch as `PdfInkLayer`. */
+ fillPageHeight?: boolean;
  strokes: PdfAnnotations["strokes"];
  conflict: PdfAnnotations["conflict"];
  open: boolean;
@@ -70,14 +74,14 @@ export function PdfAnnotationConflict({
          {t("conflict.strokeCount", { count: preview.length })}
         </Typography>
         <div className="relative">
-         {/* oxlint-disable-next-line next/no-img-element -- same local PDF page geometry as the annotation canvas */}
-         <img src={asset.imageSrc} alt="" className="block h-auto w-full" />
+         {pageBackground}
          <svg
           viewBox="0 0 1000 1000"
           preserveAspectRatio="none"
           role="img"
           aria-label={label}
           className="absolute inset-0 size-full"
+          style={{ blockSize: fillPageHeight ? "100%" : undefined }}
          >
           {preview.map((stroke) => (
            <path

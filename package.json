@@ -33,7 +33,9 @@
   }
  },
  "scripts": {
+  "predev": "node scripts/copy-pdfjs-assets.mjs",
   "dev": "next dev -p 3001",
+  "prebuild": "node scripts/copy-pdfjs-assets.mjs",
   "build": "next build --webpack",
   "format": "oxfmt --write .",
   "format:check": "oxfmt --check .",
@@ -89,6 +91,7 @@
   "minisearch": "^7.2.0",
   "next": "^16.4.6",
   "next-intl": "^4.14.9",
+  "pdfjs-dist": "6.5.438",
   "pinyin-pro": "^3.29.4",
   "prettier": "^3.9.9",
   "radix-ui": "^1.6.7",
