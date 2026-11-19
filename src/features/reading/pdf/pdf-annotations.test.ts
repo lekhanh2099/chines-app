@@ -77,4 +77,44 @@ describe("HanziHome PDF annotation geometry", () => {
   expect(first.points).toEqual([point]);
   expect(updateStrokeAtId([first, second], "missing", [point])).toEqual([first, second]);
  });
+
+ it("erases within a circle that is round on screen, along whole segments", () => {
+  // A page 1.4 times taller than wide: 0.01 of its height is 0.014 of its width.
+  const aspect = 1.4;
+  const line = createPdfStroke("pen", "#000000", 1, { x: 0.2, y: 0.5 });
+  const across = {
+   ...line,
+   points: [
+    { x: 0.2, y: 0.5 },
+    { x: 0.8, y: 0.5 },
+   ],
+  };
+  // The middle of a long segment is hit, though no recorded point is near it.
+  expect(erasePdfStrokesAtPoint([across], { x: 0.5, y: 0.5 }, 0.01, aspect)).toEqual([]);
+  // 0.009 of the height above is 0.0126 of the width: outside a 0.01 eraser…
+  expect(erasePdfStrokesAtPoint([across], { x: 0.5, y: 0.491 }, 0.01, aspect)).toEqual([across]);
+  // …while 0.009 of the width to the side of an upright line is inside it.
+  const upright = {
+   ...line,
+   points: [
+    { x: 0.5, y: 0.2 },
+    { x: 0.5, y: 0.8 },
+   ],
+  };
+  expect(erasePdfStrokesAtPoint([upright], { x: 0.509, y: 0.5 }, 0.01, aspect)).toEqual([]);
+ });
+
+ it("reaches the widest part of a brush stroke", () => {
+  const brush = {
+   ...createPdfStroke("brush", "#000000", 10, { x: 0.2, y: 0.5 }),
+   points: [
+    { x: 0.2, y: 0.5 },
+    { x: 0.8, y: 0.5 },
+   ],
+   widths: [1, 2],
+  };
+  // Half the widest width (10 × 2 / 1000 / 2 = 0.01) plus a 0.001 eraser.
+  expect(erasePdfStrokesAtPoint([brush], { x: 0.5, y: 0.5105 }, 0.001)).toEqual([]);
+  expect(erasePdfStrokesAtPoint([brush], { x: 0.5, y: 0.512 }, 0.001)).toEqual([brush]);
+ });
 });

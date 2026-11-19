@@ -151,6 +151,14 @@
   "pen": "Bút vẽ",
   "highlighter": "Bút highlight",
   "brush": "Bút khải thư",
+  "quickActions": "Thao tác nhanh",
+  "colors": {
+   "red": "Đỏ",
+   "blue": "Xanh dương",
+   "green": "Xanh lá",
+   "orange": "Cam",
+   "black": "Đen"
+  },
   "eraser": "Tẩy",
   "undo": "Hoàn tác",
   "redo": "Làm lại",

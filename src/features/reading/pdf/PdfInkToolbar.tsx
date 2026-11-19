@@ -166,7 +166,7 @@ export function PdfInkToolbar({
        onChange={(event) => setWidth(Number(event.target.value))}
       />
      </label>
-     {drawingTool === "pen" ? (
+     {drawingTool === "pen" || drawingTool === "brush" ? (
       <label className="flex items-center gap-2 text-xs font-bold">
        <span>{t("scribbleErase")}</span>
        <Switch checked={ink.scribbleErase} onCheckedChange={ink.setScribbleErase} />

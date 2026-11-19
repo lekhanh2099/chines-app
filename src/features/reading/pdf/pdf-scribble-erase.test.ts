@@ -139,4 +139,11 @@ describe("scribble to erase", () => {
  it("needs several passes: a single back-and-forth is not a scribble", () => {
   expect(isPdfScribble(scribbleOver(0.29, 0.39, 0.485, 2).points)).toBe(false);
  });
+
+ it("erases with the Kaishu brush too, after four passes", () => {
+  const brushScribble: PdfStroke = { ...scribbleOver(0.29, 0.39, 0.485, 4), tool: "brush" };
+  expect(pdfStrokesErasedByScribble([...word, brushScribble], brushScribble)).toHaveLength(
+   word.length,
+  );
+ });
 });

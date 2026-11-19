@@ -611,7 +611,7 @@ function NotePdfToolOptions({ ink }: { ink: PdfPageInk }) {
      onChange={(event) => setWidth(Number(event.target.value))}
     />
    </label>
-   {drawingTool === "pen" ? (
+   {drawingTool === "pen" || drawingTool === "brush" ? (
     <NotePdfInkSwitch
      label={reader("scribbleErase")}
      hint={reader("scribbleEraseHint")}

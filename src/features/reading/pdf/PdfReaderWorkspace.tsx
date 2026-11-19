@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 
 import { PdfAnnotationConflict } from "@/features/reading/pdf/PdfAnnotationConflict";
 import { PdfInkLayer } from "@/features/reading/pdf/PdfInkLayer";
+import { PdfInkQuickActions } from "@/features/reading/pdf/PdfInkQuickActions";
 import { PdfInkToolbar } from "@/features/reading/pdf/PdfInkToolbar";
 import { PdfPageViewerHeader } from "@/features/reading/pdf/PdfPageViewerHeader";
 import { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
@@ -318,6 +319,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
          onError={() => setImageFailed(true)}
         />
         <PdfInkLayer ink={ink} strokes={strokes} />
+        <PdfInkQuickActions ink={ink} />
        </>
       )}
      </div>

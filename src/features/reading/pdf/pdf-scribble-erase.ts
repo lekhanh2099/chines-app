@@ -6,10 +6,10 @@ import type { PdfPoint, PdfStroke } from "@/features/reading/pdf/pdf-annotations
  * back and forth across the ink, while writing (even a zigzag such as "mmm"
  * or "www") keeps moving on along that axis.
  */
-const MIN_REVERSALS = 4;
+const MIN_REVERSALS = 3;
 /**
- * Ink length over the bounding-box diagonal. Five passes over the same
- * ground give about 5; looped handwriting such as "ooo" stays under 3.
+ * Ink length over the bounding-box diagonal. Four passes over the same
+ * ground give about 4; looped handwriting such as "ooo" stays under 3.
  */
 const MIN_PATH_TO_DIAGONAL = 3;
 /** Share of an inked stroke's points inside the scribble for it to count as covered. */
@@ -63,7 +63,7 @@ function pathLength(points: readonly PdfPoint[]): number {
  return length;
 }
 
-/** Whether a pen stroke is a quick back-and-forth scribble rather than writing. */
+/** Whether a pen or brush stroke is a quick back-and-forth scribble rather than writing. */
 export function isPdfScribble(points: readonly PdfPoint[]): boolean {
  if (points.length < 8) return false;
  const box = boundingBox(points);
@@ -123,7 +123,7 @@ export function pdfStrokesErasedByScribble(
  strokes: readonly PdfStroke[],
  scribble: PdfStroke,
 ): string[] {
- if (scribble.tool !== "pen" || !isPdfScribble(scribble.points)) return [];
+ if (scribble.tool === "highlighter" || !isPdfScribble(scribble.points)) return [];
  const scribbleRadius = scribble.width / 1000 / 2;
  return strokes
   .filter((stroke) => {

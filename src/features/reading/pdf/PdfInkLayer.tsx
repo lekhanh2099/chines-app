@@ -85,6 +85,22 @@ export function PdfInkLayer({ ink, strokes }: { ink: PdfPageInk; strokes: readon
    {shown.map((stroke) => (
     <PdfStrokePath key={stroke.id} stroke={stroke} aspect={aspect} />
    ))}
+   {live.eraser.radius > 0 && aspect > 0 ? (
+    // The eraser's reach, round on screen in the stretched view box.
+    <ellipse
+     className="text-muted-foreground"
+     cx={live.eraser.x * 1000}
+     cy={live.eraser.y * 1000}
+     rx={live.eraser.radius * 1000}
+     ry={(live.eraser.radius * 1000) / aspect}
+     fill="currentColor"
+     fillOpacity={0.12}
+     stroke="currentColor"
+     strokeOpacity={0.6}
+     strokeWidth={1}
+     vectorEffect="non-scaling-stroke"
+    />
+   ) : null}
   </svg>
  );
 }
