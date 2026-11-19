@@ -151,6 +151,14 @@
   "pen": "Pen",
   "highlighter": "Highlighter",
   "brush": "Kaishu brush",
+  "quickActions": "Quick actions",
+  "colors": {
+   "red": "Red",
+   "blue": "Blue",
+   "green": "Green",
+   "orange": "Orange",
+   "black": "Black"
+  },
   "eraser": "Eraser",
   "undo": "Undo",
   "redo": "Redo",

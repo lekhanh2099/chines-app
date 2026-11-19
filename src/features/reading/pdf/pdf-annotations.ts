@@ -139,18 +139,52 @@ export function pdfStrokePath(stroke: PdfStroke): string {
  return [start, ...curves, `L ${pathNumber(last.x)} ${pathNumber(last.y)}`].join(" ");
 }
 
-function strokeTouchesPoint(stroke: PdfStroke, point: PdfPoint, eraserRadius = 0.018): boolean {
- const strokeRadius = Math.max(0.0025, stroke.width / 1000 / 2);
- const threshold = eraserRadius + strokeRadius;
- return stroke.points.some(
-  (candidate) => Math.hypot(candidate.x - point.x, candidate.y - point.y) <= threshold,
- );
+/**
+ * Distance from `point` to the segment `start`–`end`, with page-normalised
+ * coordinates made even: y is scaled by `aspect` (the page's height over its
+ * width), so a distance means the same on screen in every direction.
+ */
+function evenDistanceToSegment(point: PdfPoint, start: PdfPoint, end: PdfPoint, aspect: number) {
+ const dx = end.x - start.x;
+ const dy = (end.y - start.y) * aspect;
+ const px = point.x - start.x;
+ const py = (point.y - start.y) * aspect;
+ const lengthSquared = dx * dx + dy * dy;
+ const along =
+  lengthSquared === 0 ? 0 : Math.min(1, Math.max(0, (px * dx + py * dy) / lengthSquared));
+ return Math.hypot(px - along * dx, py - along * dy);
 }
 
+function strokeTouchesPoint(
+ stroke: PdfStroke,
+ point: PdfPoint,
+ eraserRadius: number,
+ aspect: number,
+): boolean {
+ // Half the drawn width, at its widest for a brush stroke.
+ const widest = Math.max(1, ...(stroke.widths ?? [1]));
+ const threshold = eraserRadius + Math.max(0.0025, (stroke.width * widest) / 1000 / 2);
+ const [first] = stroke.points;
+ if (!first) return false;
+ if (stroke.points.length === 1)
+  return evenDistanceToSegment(point, first, first, aspect) <= threshold;
+ return stroke.points.some((end, index) => {
+  const start = stroke.points[index - 1];
+  return start !== undefined && evenDistanceToSegment(point, start, end, aspect) <= threshold;
+ });
+}
+
+/**
+ * Strokes left after erasing at `point`: those the eraser (a circle of
+ * `eraserRadius`, in page widths) does not reach along any of their
+ * segments. `aspect` is the page's height over its width, so the circle is
+ * round on screen.
+ */
 export function erasePdfStrokesAtPoint(
  strokes: readonly PdfStroke[],
  point: PdfPoint,
  eraserRadius = 0.018,
+ aspect = 1,
 ): PdfStroke[] {
- return strokes.filter((stroke) => !strokeTouchesPoint(stroke, point, eraserRadius));
+ return strokes.filter((stroke) => !strokeTouchesPoint(stroke, point, eraserRadius, aspect));
 }

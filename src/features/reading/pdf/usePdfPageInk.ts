@@ -35,6 +35,11 @@ const DEFAULT_SCREEN_EM_PX = 40;
 /** The remembered on-screen character size is updated when it moves by more than this share. */
 const SCREEN_EM_CHANGE = 0.1;
 
+/** Holding the pen this long without moving opens the quick-action menu… */
+const QUICK_ACTIONS_HOLD_MS = 3000;
+/** …as long as it stays within this many pixels of where it pressed. */
+const QUICK_ACTIONS_SLOP_PX = 6;
+
 /** A finger must travel this far before it pans, so a palm settling does not scroll. */
 const PAN_SLOP_PX = 8;
 
@@ -44,10 +49,25 @@ const roundedPdfPoint = (point: PdfPoint): PdfPoint => ({
  y: Math.round(point.y * 10_000) / 10_000,
 });
 
-type LiveInk = { active: boolean; strokes: PdfStroke[] };
+/**
+ * What the ink layer shows on top of the saved ink: the gesture in progress,
+ * the eraser's reach while erasing (radius 0 when hidden, in page widths) and
+ * the quick-action menu opened by holding the pen still.
+ */
+type LiveInk = {
+ active: boolean;
+ strokes: PdfStroke[];
+ eraser: { x: number; y: number; radius: number };
+ menu: { open: boolean; x: number; y: number };
+};
 
 const createLiveInkStore = () => {
- const idle: LiveInk = { active: false, strokes: [] };
+ const idle: LiveInk = {
+  active: false,
+  strokes: [],
+  eraser: { x: 0, y: 0, radius: 0 },
+  menu: { open: false, x: 0, y: 0 },
+ };
  return createStore(idle);
 };
 
@@ -168,9 +188,19 @@ export function usePdfPageInk({
  const [liveInk] = useState(createLiveInkStore);
  const replaceGestureStrokes = (next: PdfStroke[]) => {
   gestureStrokesRef.current = next;
-  liveInk.setState(() => ({ active: true, strokes: next }));
+  liveInk.setState((state) => ({ ...state, active: true, strokes: next }));
  };
- const endLiveInk = () => liveInk.setState(() => ({ active: false, strokes: [] }));
+ const endLiveInk = () =>
+  liveInk.setState((state) => ({
+   ...state,
+   active: false,
+   strokes: [],
+   eraser: { x: 0, y: 0, radius: 0 },
+  }));
+ const showEraser = (point: PdfPoint, radius: number) =>
+  liveInk.setState((state) => ({ ...state, eraser: { x: point.x, y: point.y, radius } }));
+ const closeQuickActions = () =>
+  liveInk.setState((state) => ({ ...state, menu: { ...state.menu, open: false } }));
  /** Saves the gesture's strokes once; a gesture that changed nothing leaves no undo step. */
  const commitGesture = () => {
   if (!liveInk.state.active) return;
@@ -231,6 +261,35 @@ export function usePdfPageInk({
  /** About one screen pixel on the page as rendered, so zooming in keeps detail. */
  const minPointDistance = (event: PointerEvent<SVGSVGElement>) =>
   1 / Math.max(1, event.currentTarget.getBoundingClientRect().width);
+ /**
+  * The eraser's reach in page widths: its size is a diameter in screen
+  * pixels, so it erases the same area on screen at any zoom.
+  */
+ const eraserReach = (event: PointerEvent<SVGSVGElement>) => {
+  const page = event.currentTarget.getBoundingClientRect();
+  return {
+   radius: eraserSize / 2 / Math.max(1, page.width),
+   aspect: page.width > 0 ? page.height / page.width : 1,
+  };
+ };
+ // Holding the pen still opens the quick-action menu where it presses.
+ const holdTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+ const holdStartRef = useRef({ x: 0, y: 0, pointerId: -1 });
+ const cancelHold = () => {
+  clearTimeout(holdTimerRef.current);
+  holdStartRef.current = { x: 0, y: 0, pointerId: -1 };
+ };
+ const openQuickActions = (at: PdfPoint) => {
+  holdStartRef.current = { x: 0, y: 0, pointerId: -1 };
+  // The press was for the menu, not ink: take back what it drew or erased.
+  if (activeStrokeRef.current) {
+   setPast((current) => current.slice(0, -1));
+   gestureStrokesRef.current = strokesBeforeRef.current;
+   endLiveInk();
+   activeStrokeRef.current = "";
+  }
+  liveInk.setState((state) => ({ ...state, menu: { open: true, x: at.x, y: at.y } }));
+ };
  // Where the panning finger last was, and whether it has moved far enough to
  // count as a pan rather than a palm settling on the screen.
  const panRef = useRef({ x: 0, y: 0, started: false });
@@ -253,16 +312,26 @@ export function usePdfPageInk({
   event.preventDefault();
   // A press on the page must not start (or keep) a native text selection.
   window.getSelection()?.removeAllRanges();
+  // While the quick-action menu is open, a press elsewhere only closes it.
+  if (liveInk.state.menu.open) {
+   closeQuickActions();
+   return;
+  }
   const base = discardActive ? strokesBeforeRef.current : strokes;
   strokesBeforeRef.current = base;
   gestureStrokesRef.current = base;
   checkpoint(base);
   const point = pointFromEvent(event);
+  cancelHold();
+  holdStartRef.current = { x: event.clientX, y: event.clientY, pointerId: event.pointerId };
+  holdTimerRef.current = setTimeout(() => openQuickActions(point), QUICK_ACTIONS_HOLD_MS);
   const tool = drawingTool;
   if (tool === "eraser") {
    activeStrokeRef.current = "eraser";
-   const remaining = erasePdfStrokesAtPoint(base, point, eraserSize / 1000);
+   const { radius, aspect } = eraserReach(event);
+   const remaining = erasePdfStrokesAtPoint(base, point, radius, aspect);
    replaceGestureStrokes(remaining.length === base.length ? base : remaining);
+   showEraser(point, radius);
    return;
   }
   if (tool === null) return;
@@ -295,16 +364,26 @@ export function usePdfPageInk({
    panPage(event);
    return;
   }
+  const hold = holdStartRef.current;
+  if (
+   hold.pointerId === event.pointerId &&
+   Math.hypot(event.clientX - hold.x, event.clientY - hold.y) > QUICK_ACTIONS_SLOP_PX
+  ) {
+   cancelHold();
+  }
   if (!pointerGate.inks(event) || !activeStrokeRef.current) return;
   event.preventDefault();
   const points = pointsFromMove(event);
   const current = gestureStrokesRef.current;
   if (activeStrokeRef.current === "eraser") {
+   const { radius, aspect } = eraserReach(event);
    const remaining = points.reduce<PdfStroke[]>(
-    (left, point) => erasePdfStrokesAtPoint(left, point, eraserSize / 1000),
+    (left, point) => erasePdfStrokesAtPoint(left, point, radius, aspect),
     current,
    );
    if (remaining.length !== current.length) replaceGestureStrokes(remaining);
+   const last = points.at(-1);
+   if (last) showEraser(last, radius);
    return;
   }
   const next = updateStrokeAtId(current, activeStrokeRef.current, points, minPointDistance(event));
@@ -322,6 +401,7 @@ export function usePdfPageInk({
   replaceGestureStrokes(current.filter((stroke) => !erased.has(stroke.id)));
  };
  const endStroke = (event: PointerEvent<SVGSVGElement>) => {
+  if (holdStartRef.current.pointerId === event.pointerId) cancelHold();
   // A palm lifting mid-stroke must not end the pen's stroke.
   const endsInk = pointerGate.inks(event);
   const { tapFingers } = pointerGate.up(event);
@@ -361,6 +441,7 @@ export function usePdfPageInk({
  return {
   ...tools,
   liveInk,
+  closeQuickActions,
   past,
   future,
   resetHistory,

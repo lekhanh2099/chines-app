@@ -9,6 +9,7 @@ import { Typography } from "@/components/ui/display/typography";
 import { notePdfAssetId } from "@/features/reading/pdf/note-pdf-asset-id";
 import { PdfAnnotationConflict } from "@/features/reading/pdf/PdfAnnotationConflict";
 import { PdfInkLayer } from "@/features/reading/pdf/PdfInkLayer";
+import { PdfInkQuickActions } from "@/features/reading/pdf/PdfInkQuickActions";
 import { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
 import { usePdfPageInk, type usePdfInkTools } from "@/features/reading/pdf/usePdfPageInk";
 import { NotePdfPageCanvas } from "./NotePdfPageCanvas";
@@ -115,6 +116,7 @@ export function NotePdfPage({
       onFailed={() => setPageFailed(true)}
      />
      <PdfInkLayer ink={ink} strokes={strokes} />
+     <PdfInkQuickActions ink={ink} />
     </>
    )}
   </>
