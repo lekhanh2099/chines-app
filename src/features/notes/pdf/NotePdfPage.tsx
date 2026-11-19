@@ -57,8 +57,7 @@ export function NotePdfPage({
  const [pageFailed, setPageFailed] = useState(false);
  const [conflictOpen, setConflictOpen] = useState(true);
  const [resolvingConflict, setResolvingConflict] = useState(false);
- const { zoom, fitToContainer, handleWheel, handleTouchStart, handleTouchMove, handleTouchEnd } =
-  viewport;
+ const { zoom, fitToContainer, scrollAreaRef } = viewport;
 
  const chooseConflict = async (useServer: boolean) => {
   setResolvingConflict(true);
@@ -101,10 +100,7 @@ export function NotePdfPage({
 
    <div
     className="grid min-h-0 flex-1 content-start justify-items-center overflow-auto overscroll-contain px-2 py-4 sm:px-6"
-    onWheel={handleWheel}
-    onTouchStart={handleTouchStart}
-    onTouchMove={handleTouchMove}
-    onTouchEnd={handleTouchEnd}
+    ref={scrollAreaRef}
    >
     <div
      className={cn(
