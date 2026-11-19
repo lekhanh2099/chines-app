@@ -17,18 +17,32 @@ import {
 /** Brush strokes looked back over to estimate the size of the characters being written. */
 const SIZE_FROM_STROKES = 150;
 /**
- * Finished characters are re-weighed for their own size when it is within
- * this range of the writing size: smaller is
- * punctuation (、，。) or a lone flat stroke such as 一.
+ * A finished character tells the size of the next one when it is within
+ * this range of the writing size: smaller is punctuation (、，。) or a lone
+ * flat stroke such as 一.
  */
-const OWN_SIZE_RANGE = { min: 0.4, max: 3 };
+const OWN_SIZE_RANGE = { min: 0.25, max: 3 };
 /** A group this much shorter than the character beside it, and this close to it, is part of it. */
 const PART_HEIGHT_RATIO = 1.5;
 const PART_MAX_GAP = 0.5;
-/** Finished characters among this many latest strokes are re-weighed… */
-const REWEIGH_STROKES = 60;
-/** …when their weight is off by more than this share. */
-const REWEIGH_TOLERANCE = 0.08;
+/** A stroke further than this (in character sizes) from the writing just before starts somewhere new. */
+const NEIGHBOUR_REACH_IN_EM = 1.5;
+/** A stroke this close to the character just written, and not to its right, continues it. */
+const CONTINUE_GAP_IN_EM = 0.3;
+/** Characters just written that must all agree before the weight follows a new writing size… */
+const SIZE_WITNESSES = 3;
+/** …each this much larger or smaller than the page's size. */
+const SIZE_CHANGE = 0.35;
+/** Strokes the first character at a new place needs before the next one follows its size. */
+const OPENING_CHARACTER_STROKES = 3;
+/** A stroke this close to the right of the character just written is a separate part of it. */
+const SAME_CHARACTER_GAP_IN_EM = 0.08;
+/** The weight in use is kept while it is this close to the size the writing calls for. */
+const KEEP_WEIGHT = 0.15;
+/** Strokes a character needs before a stroke to its right is taken for the next character. */
+const MIN_CHARACTER_STROKES = 2;
+/** A stroke "starts to the right" even if it overlaps the character's right edge by this share. */
+const RIGHT_OVERLAP = 0.1;
 /** The default pen-width setting; the brush weight scales with it. */
 const DEFAULT_WIDTH_SETTING = 4;
 /**
@@ -116,51 +130,156 @@ function weighBrushStroke(
  return { ...stroke, width, widths };
 }
 
+/** The character size a finished brush stroke was weighed for, from its width. */
+function emOfWeight(stroke: PdfStroke, widthSetting: number): number {
+ return (
+  stroke.width / (KAISHU_WIDTH_PER_EM * BRUSH_WEIGHT * (widthSetting / DEFAULT_WIDTH_SETTING))
+ );
+}
+
+function boxOf(points: readonly BrushPoint[]): BrushBox {
+ return {
+  minX: Math.min(...points.map((point) => point.x)),
+  minY: Math.min(...points.map((point) => point.y)),
+  maxX: Math.max(...points.map((point) => point.x)),
+  maxY: Math.max(...points.map((point) => point.y)),
+ };
+}
+
+function boxGap(first: BrushBox, second: BrushBox): number {
+ const dx = Math.max(second.minX - first.maxX, 0, first.minX - second.maxX);
+ const dy = Math.max(second.minY - first.maxY, 0, first.minY - second.maxY);
+ return Math.hypot(dx, dy);
+}
+
 /**
- * Finishes the brush stroke `strokeId`. It is weighed for the size of the
- * characters being written, and the finished characters before it are
- * re-weighed for their own size, so simple and dense characters, and a
- * change of writing size, all come out even. Other strokes are returned as
- * they are.
+ * The size the latest stroke is weighed for, decided from the writing just
+ * before it — handwriting drifts and slants, so no line is assumed, only
+ * writing order, closeness and that characters follow each other rightwards:
+ * - inside or over the character just written: another stroke of it, at the
+ *   size the previous stroke was given, so a character is even;
+ * - starting to its right: the next character (or a separate right part of
+ *   the same one, such as 尔 in 你), at the same weight while that stays near
+ *   the page's size, or the new size when the writing changed size;
+ * - anywhere else: `pageEm`.
+ */
+function strokeEm(
+ recent: readonly PdfStroke[],
+ points: readonly BrushPoint[][],
+ pageEm: number,
+ widthSetting: number,
+): number {
+ const before = points.slice(0, -1);
+ const previous = recent.at(-2);
+ const stroke = points.at(-1);
+ if (!before.length || !previous?.widths || !stroke?.length) return pageEm;
+ // Group what came before at the larger of the weight in use and the page's
+ // size. Grouping too small splits characters (李 into 木 and 子) and
+ // under-measures them; grouping large only joins neighbours side by side,
+ // which keeps the height. So neither a weight left small by smaller writing
+ // nor a page size dipping for a moment can mis-measure what follows.
+ const current = emOfWeight(previous, widthSetting);
+ const box = Math.max(current, pageEm) / KAISHU_EM_PER_CHARACTER_BOX;
+ const { heights, boxes, members } = brushCharacterSizes(before, box);
+ const index = boxes.length - 1;
+ const written = boxes[index];
+ if (!written) return pageEm;
+ const sizeOf = (group: number) =>
+  (partOfNeighbour(boxes, group, box) ?? heights[group] ?? 0) * KAISHU_EM_PER_CHARACTER_HEIGHT;
+ const ownEm = sizeOf(index);
+ const share = ownEm / pageEm;
+ const sized = share >= OWN_SIZE_RANGE.min && share <= OWN_SIZE_RANGE.max;
+ const scale = sized ? ownEm : pageEm;
+ const next = boxOf(stroke);
+ const gap = boxGap(next, written);
+ if (gap > scale * NEIGHBOUR_REACH_IN_EM) return pageEm;
+ const startsRight = next.minX >= written.maxX - (written.maxX - written.minX) * RIGHT_OVERLAP;
+ // A single stroke is not a character yet: what follows continues it.
+ const formed = members.filter((member) => member === index).length >= MIN_CHARACTER_STROKES;
+ if (!(startsRight && formed) && gap <= scale * CONTINUE_GAP_IN_EM) return current;
+ // Right against it: a separate right part of the same character (青 in 情).
+ if (gap <= scale * SAME_CHARACTER_GAP_IN_EM) return current;
+ // The writing changed size only when the three characters just written all
+ // measure clearly bigger or smaller than the page's size — one or two
+ // oddly grouped characters (the top of 鼎 on its own) are not enough.
+ // The character just written opened a new place (a new line, a note in the
+ // margin): it is the only word on the size there, so the next character
+ // follows it once it is formed.
+ const before2 = boxes[index - 1];
+ const opened = !before2 || boxGap(before2, written) > scale * NEIGHBOUR_REACH_IN_EM;
+ const established =
+  members.filter((member) => member === index).length >= OPENING_CHARACTER_STROKES;
+ if (sized && opened && established) {
+  return Math.abs(current / ownEm - 1) > KEEP_WEIGHT ? ownEm : current;
+ }
+ const witnesses = [ownEm];
+ for (let group = index - 1; sized && group >= 0 && witnesses.length < SIZE_WITNESSES; group -= 1) {
+  const candidate = boxes[group];
+  const later = boxes[group + 1];
+  if (!candidate || !later || boxGap(candidate, later) > scale * NEIGHBOUR_REACH_IN_EM) break;
+  witnesses.push(sizeOf(group));
+ }
+ const complete = sized && witnesses.length >= SIZE_WITNESSES;
+ const changedSize =
+  complete &&
+  (witnesses.every((em) => em < pageEm * (1 - SIZE_CHANGE)) ||
+   witnesses.every((em) => em > pageEm * (1 + SIZE_CHANGE)));
+ // The next character — or the separate right part of the same character —
+ // keeps the weight in use, so neighbours and parts stay even. It moves to
+ // the new size when the writing changed size, or back to the page's size
+ // when the weight has drifted away from it and the two characters just
+ // written agree with the page rather than with the weight (right after a
+ // few characters the page's size is still unsteady).
+ if (changedSize) {
+  const size = [...witnesses].sort((low, high) => low - high)[1] ?? ownEm;
+  return Math.abs(current / size - 1) > KEEP_WEIGHT ? size : current;
+ }
+ const drifted = Math.abs(current / pageEm - 1) > KEEP_WEIGHT;
+ const pageAgrees =
+  witnesses.length >= 2 &&
+  witnesses.slice(0, 2).every((em) => Math.abs(em - pageEm) < Math.abs(em - current));
+ return drifted && pageAgrees ? pageEm : current;
+}
+
+/**
+ * Finishes the brush stroke `strokeId` once and for all: strokes already on
+ * the page never change. The stroke is weighed for the size of the character
+ * it belongs to —
+ * - a later stroke of a character takes the size its first stroke was given,
+ *   so a character is even;
+ * - a character's first stroke takes the size of the characters written
+ *   just before it when it is close to them (their own height), else the
+ *   size estimated from the
+ *   characters on the page, else `priorEm` (the writer's usual size, 0 when
+ *   unknown), else a first guess from the strokes so far.
+ *
+ * `learnedEm` is the settled size of the writing (0 until enough characters
+ * are finished), for remembering the writer's usual size.
  */
 export function finishPdfBrushStroke(
  strokes: readonly PdfStroke[],
  strokeId: string,
  aspect: number,
  widthSetting: number,
-): PdfStroke[] {
+ priorEm: number,
+): { strokes: PdfStroke[]; learnedEm: number } {
  const recent = strokes.filter((stroke) => stroke.tool === "brush").slice(-SIZE_FROM_STROKES);
  const finished = recent.at(-1);
  // Only the stroke just drawn (the latest brush stroke) is finished here.
- if (!finished || finished.id !== strokeId) return [...strokes];
+ if (!finished || finished.id !== strokeId) return { strokes: [...strokes], learnedEm: 0 };
  const points = recent.map((stroke) => isotropicPoints(stroke, aspect));
- const em = estimateWritingEm(points, KAISHU_EM_PER_CHARACTER_BOX, KAISHU_EM_PER_CHARACTER_HEIGHT);
- const box = em / KAISHU_EM_PER_CHARACTER_BOX;
- // Re-weigh the finished characters among the latest strokes for their own
- // size, one weight per character, measured by its height.
- const { heights, boxes, members: characters } = brushCharacterSizes(points, box);
- const inProgress = characters.at(-1) ?? -1;
- const ownHeights = heights.map((height, index) => partOfNeighbour(boxes, index, box) ?? height);
- const reweighed = new Map<string, PdfStroke>();
- const firstChecked = Math.max(0, recent.length - REWEIGH_STROKES);
- recent.forEach((stroke, index) => {
-  const character = characters[index] ?? -1;
-  if (index < firstChecked || character < 0) return;
-  // The character in progress follows the latest estimate, so its strokes
-  // stay even with each other while it is written; finished characters take
-  // their own height.
-  const ownEm =
-   character === inProgress ? em : (ownHeights[character] ?? 0) * KAISHU_EM_PER_CHARACTER_HEIGHT;
-  const share = ownEm / em;
-  if (share < OWN_SIZE_RANGE.min || share > OWN_SIZE_RANGE.max) return;
-  const target = weighBrushStroke(stroke, ownEm, aspect, widthSetting);
-  // Leave strokes that are already about right, so finished ink stays put.
-  if (Math.abs(target.width - stroke.width) > stroke.width * REWEIGH_TOLERANCE) {
-   reweighed.set(stroke.id, target);
-  }
- });
- reweighed.set(strokeId, weighBrushStroke(finished, em, aspect, widthSetting));
- return strokes.map((stroke) => reweighed.get(stroke.id) ?? stroke);
+ const estimate = estimateWritingEm(
+  points,
+  KAISHU_EM_PER_CHARACTER_BOX,
+  KAISHU_EM_PER_CHARACTER_HEIGHT,
+ );
+ const pageEm = estimate.settled ? estimate.em : priorEm || estimate.em;
+ const em = strokeEm(recent, points, pageEm, widthSetting);
+ const weighed = weighBrushStroke(finished, em, aspect, widthSetting);
+ return {
+  strokes: strokes.map((stroke) => (stroke.id === strokeId ? weighed : stroke)),
+  learnedEm: estimate.settled ? estimate.em : 0,
+ };
 }
 
 /** The filled outline of a finished brush stroke, in isotropic units. */
