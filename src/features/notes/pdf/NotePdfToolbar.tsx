@@ -13,6 +13,7 @@ import {
  FileX,
  Hand,
  Highlighter,
+ Brush,
  Loader2,
  Minimize,
  PanelLeft,
@@ -102,9 +103,16 @@ export function NotePdfToolbar({
  const [optionsOpen, setOptionsOpen] = useState(false);
  const penRef = useRef<HTMLButtonElement>(null);
  const highlighterRef = useRef<HTMLButtonElement>(null);
+ const brushRef = useRef<HTMLButtonElement>(null);
  const eraserRef = useRef<HTMLButtonElement>(null);
  const optionsAnchor: RefObject<HTMLButtonElement | null> =
-  drawingTool === "eraser" ? eraserRef : drawingTool === "highlighter" ? highlighterRef : penRef;
+  drawingTool === "eraser"
+   ? eraserRef
+   : drawingTool === "highlighter"
+     ? highlighterRef
+     : drawingTool === "brush"
+       ? brushRef
+       : penRef;
 
  const chooseTool = (tool: PdfPageInk["drawingTool"]) => {
   if (tool !== null && drawingTool === tool) {
@@ -231,6 +239,18 @@ export function NotePdfToolbar({
       <Highlighter />
      </Button>
      <Button
+      ref={brushRef}
+      type="button"
+      size="icon-toolbar"
+      variant={drawingTool === "brush" ? "active" : "ghost"}
+      aria-label={reader("brush")}
+      aria-pressed={drawingTool === "brush"}
+      disabled={!canEdit}
+      onClick={() => chooseTool("brush")}
+     >
+      <Brush />
+     </Button>
+     <Button
       ref={eraserRef}
       type="button"
       size="icon-toolbar"
@@ -243,7 +263,7 @@ export function NotePdfToolbar({
       <Eraser />
      </Button>
 
-     {drawingTool === "pen" ? (
+     {drawingTool === "pen" || drawingTool === "brush" ? (
       <>
        <NotePdfColorSwatches ink={ink} className="hidden @[52rem]:flex" />
        <Button
@@ -591,14 +611,14 @@ function NotePdfToolOptions({ ink }: { ink: PdfPageInk }) {
      onChange={(event) => setWidth(Number(event.target.value))}
     />
    </label>
-   {highlighter ? null : (
+   {drawingTool === "pen" ? (
     <NotePdfInkSwitch
      label={reader("scribbleErase")}
      hint={reader("scribbleEraseHint")}
      checked={ink.scribbleErase}
      onCheckedChange={ink.setScribbleErase}
     />
-   )}
+   ) : null}
   </div>
  );
 }

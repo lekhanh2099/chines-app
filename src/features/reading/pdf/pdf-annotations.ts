@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const pdfDrawingToolSchema = z.enum(["pen", "highlighter"]);
+const pdfDrawingToolSchema = z.enum(["pen", "highlighter", "brush"]);
 export type PdfDrawingTool = z.output<typeof pdfDrawingToolSchema>;
 
 const pdfPointSchema = z.strictObject({
@@ -9,13 +9,20 @@ const pdfPointSchema = z.strictObject({
 });
 const pdfColorSchema = z.string().regex(/^#[0-9a-f]{6}$/iu);
 
-const pdfStrokeSchema = z.strictObject({
- id: z.string().min(1),
- tool: pdfDrawingToolSchema,
- color: pdfColorSchema,
- width: z.number().min(1).max(64),
- points: z.array(pdfPointSchema).min(1),
-});
+const pdfStrokeSchema = z
+ .strictObject({
+  id: z.string().min(1),
+  tool: pdfDrawingToolSchema,
+  color: pdfColorSchema,
+  width: z.number().min(1).max(64),
+  points: z.array(pdfPointSchema).min(1),
+  /** Kaishu brush: width multiplier at each point, fixed when the stroke is finished. */
+  widths: z.array(z.number().min(0).max(8)).optional(),
+ })
+ .refine((stroke) => !stroke.widths || stroke.widths.length === stroke.points.length, {
+  message: "A brush stroke needs one width per point",
+  path: ["widths"],
+ });
 
 export type PdfPoint = z.output<typeof pdfPointSchema>;
 export type PdfStroke = z.output<typeof pdfStrokeSchema>;
@@ -53,6 +60,7 @@ export function equalPdfAnnotationPayloads(
     stroke.color === other.color &&
     stroke.width === other.width &&
     stroke.points.length === other.points.length &&
+    (stroke.widths ?? []).join() === (other.widths ?? []).join() &&
     stroke.points.every((point, pointIndex) => {
      const otherPoint = other.points[pointIndex];
      return otherPoint && point.x === otherPoint.x && point.y === otherPoint.y;

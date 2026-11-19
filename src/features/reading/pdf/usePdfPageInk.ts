@@ -20,6 +20,7 @@ import {
 } from "@/features/reading/pdf/pdf-annotations";
 import type { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
 import { createPdfInkPointerGate } from "@/features/reading/pdf/pdf-ink-pointer-gate";
+import { finishPdfBrushStroke, liveBrushWidth } from "@/features/reading/pdf/pdf-brush-strokes";
 import { pdfStrokesErasedByScribble } from "@/features/reading/pdf/pdf-scribble-erase";
 import { normalizedPdfPoint } from "@/features/reading/pdf/pdf-viewer-utils";
 
@@ -220,6 +221,8 @@ export function usePdfPageInk({
   }
   if (!draws) return;
   event.preventDefault();
+  // A press on the page must not start (or keep) a native text selection.
+  window.getSelection()?.removeAllRanges();
   const base = discardActive ? strokesBeforeRef.current : strokes;
   strokesBeforeRef.current = base;
   gestureStrokesRef.current = base;
@@ -233,10 +236,16 @@ export function usePdfPageInk({
    return;
   }
   if (tool === null) return;
+  const strokeWidth =
+   tool === "highlighter"
+    ? Math.max(12, width * 4)
+    : tool === "brush"
+      ? liveBrushWidth(base, width)
+      : width;
   const stroke = createPdfStroke(
    tool,
    tool === "highlighter" ? "#facc15" : color,
-   tool === "highlighter" ? Math.max(12, width * 4) : width,
+   strokeWidth,
    point,
   );
   replaceGestureStrokes([...base, stroke]);
@@ -293,6 +302,12 @@ export function usePdfPageInk({
   activeStrokeRef.current = "";
   if (finished !== "eraser" && finished && event.type === "pointerup") {
    eraseScribbledInk(finished);
+   const page = event.currentTarget.getBoundingClientRect();
+   if (page.width > 0 && drawingTool === "brush") {
+    replaceGestureStrokes(
+     finishPdfBrushStroke(gestureStrokesRef.current, finished, page.height / page.width, width),
+    );
+   }
   }
   commitGesture();
   if (finished === "eraser") tools.finishEraseStroke();
