@@ -199,10 +199,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
   setFitToContainer,
   isFullscreen,
   toggleFullscreen,
-  handleWheel,
-  handleTouchStart,
-  handleTouchMove,
-  handleTouchEnd,
+  scrollAreaRef,
  } = usePdfPageViewport();
  const [imageFailed, setImageFailed] = useState(false);
  const tools = usePdfInkTools();
@@ -285,10 +282,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
    <div
     className="relative grid min-h-0 flex-1 gap-2 overflow-auto overscroll-contain bg-bg-subtle px-3 py-4 sm:px-6"
     data-pdf-scroll
-    onWheel={handleWheel}
-    onTouchStart={handleTouchStart}
-    onTouchMove={handleTouchMove}
-    onTouchEnd={handleTouchEnd}
+    ref={scrollAreaRef}
    >
     <PdfInkToolbar ink={ink} canEdit={canEdit} strokeCount={strokes.length} />
 
