@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/actions/button";
 import { Card } from "@/components/ui/layout/card";
 import { Input } from "@/components/ui/forms/input";
+import { Switch } from "@/components/ui/forms/switch";
 import { PEN_COLORS, type usePdfPageInk } from "@/features/reading/pdf/usePdfPageInk";
 
 type PdfPageInk = ReturnType<typeof usePdfPageInk>;
@@ -155,16 +156,21 @@ export function PdfInkToolbar({
        onChange={(event) => setWidth(Number(event.target.value))}
       />
      </label>
+     {drawingTool === "pen" ? (
+      <label className="flex items-center gap-2 text-xs font-bold">
+       <span>{t("scribbleErase")}</span>
+       <Switch checked={ink.scribbleErase} onCheckedChange={ink.setScribbleErase} />
+      </label>
+     ) : null}
     </Card>
    ) : null}
    {drawingTool === "eraser" ? (
     <Card
-     asChild
      variant="elevated"
      padding="sm"
-     className="sticky top-16 z-20 flex max-w-xs items-center gap-2 self-center"
+     className="sticky top-16 z-20 flex max-w-full flex-wrap items-center justify-center gap-3 self-center"
     >
-     <label>
+     <label className="flex items-center gap-2">
       <span>{t("eraserSize", { size: eraserSize })}</span>
       <Input
        type="range"
@@ -174,6 +180,10 @@ export function PdfInkToolbar({
        aria-label={t("eraserSize", { size: eraserSize })}
        onChange={(event) => setEraserSize(Number(event.target.value))}
       />
+     </label>
+     <label className="flex items-center gap-2 text-xs font-bold">
+      <span>{t("eraserReturns")}</span>
+      <Switch checked={ink.eraserReturns} onCheckedChange={ink.setEraserReturns} />
      </label>
     </Card>
    ) : null}

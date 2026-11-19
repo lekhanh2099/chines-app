@@ -33,7 +33,7 @@ jobs:
       fetch-depth: 0
    - uses: actions/setup-node@v5
      with:
-      node-version: 22
+      node-version: 24
    - name: Select checks from the tested Git diff
      id: scope
      env:
@@ -196,7 +196,7 @@ jobs:
 
    - uses: actions/setup-node@v5
      with:
-      node-version: 22
+      node-version: 24
       cache: npm
 
    - run: npm install --global npm@12.2.0
@@ -331,7 +331,7 @@ jobs:
 
    - uses: actions/setup-node@v5
      with:
-      node-version: 22
+      node-version: 24
       cache: npm
 
    - run: npm install --global npm@12.2.0

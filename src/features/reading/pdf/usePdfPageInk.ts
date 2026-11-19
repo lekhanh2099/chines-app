@@ -1,16 +1,26 @@
 "use client";
 
+import { createStore } from "@tanstack/react-store";
 import { useRef, useState, type PointerEvent } from "react";
+import { z } from "zod";
+
+import {
+ getBrowserStorage,
+ readVersionedStorage,
+ writeVersionedStorage,
+} from "@/lib/storage/versioned-storage";
 
 import {
  createPdfStroke,
  erasePdfStrokesAtPoint,
  type PdfDrawingTool,
+ type PdfPoint,
  type PdfStroke,
  updateStrokeAtId,
 } from "@/features/reading/pdf/pdf-annotations";
 import type { usePdfAnnotations } from "@/features/reading/pdf/usePdfAnnotations";
 import { createPdfInkPointerGate } from "@/features/reading/pdf/pdf-ink-pointer-gate";
+import { pdfStrokesErasedByScribble } from "@/features/reading/pdf/pdf-scribble-erase";
 import { normalizedPdfPoint } from "@/features/reading/pdf/pdf-viewer-utils";
 
 type PdfEditorTool = PdfDrawingTool | "eraser";
@@ -22,9 +32,52 @@ type PdfAnnotations = ReturnType<typeof usePdfAnnotations>;
 /** A finger must travel this far before it pans, so a palm settling does not scroll. */
 const PAN_SLOP_PX = 8;
 
+/** Four decimals of the page is well under a pixel even zoomed in, and keeps saved ink small. */
+const roundedPdfPoint = (point: PdfPoint): PdfPoint => ({
+ x: Math.round(point.x * 10_000) / 10_000,
+ y: Math.round(point.y * 10_000) / 10_000,
+});
+
+type LiveInk = { active: boolean; strokes: PdfStroke[] };
+
+const createLiveInkStore = () => {
+ const idle: LiveInk = { active: false, strokes: [] };
+ return createStore(idle);
+};
+
+/** A remembered on/off ink preference; storage is a convenience, so failures fall back. */
+function useStoredSwitch(key: string, fallback: boolean) {
+ const config = { key, version: 1, schema: z.boolean(), fallback };
+ const [value, setValue] = useState(() => readVersionedStorage(getBrowserStorage(), config));
+ const update = (next: boolean) => {
+  setValue(next);
+  writeVersionedStorage(getBrowserStorage(), config, next);
+ };
+ return { value, update };
+}
+
 /** Owns the ink tool choice (tool, colour, widths); it can outlive a single page. */
 export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = {}) {
- const [drawingTool, setDrawingTool] = useState<PdfEditorTool | null>(null);
+ const [drawingTool, setDrawingToolState] = useState<PdfEditorTool | null>(null);
+ // The tool picked before the eraser, which the eraser hands back to.
+ const toolBeforeEraserRef = useRef<typeof drawingTool>(null);
+ const setDrawingTool = (tool: typeof drawingTool) => {
+  if (tool === "eraser" && drawingTool !== "eraser") toolBeforeEraserRef.current = drawingTool;
+  setDrawingToolState(tool);
+ };
+ // Scribbling back and forth over ink with the pen erases it.
+ const { value: scribbleErase, update: setScribbleErase } = useStoredSwitch(
+  "hanzihome-pdf-scribble-erase",
+  true,
+ );
+ // After an erase stroke, go back to the tool used before the eraser.
+ const { value: eraserReturns, update: setEraserReturns } = useStoredSwitch(
+  "hanzihome-pdf-eraser-returns",
+  false,
+ );
+ const finishEraseStroke = () => {
+  if (eraserReturns) setDrawingToolState(toolBeforeEraserRef.current);
+ };
  const [touchInk, setTouchInk] = useState(fingerInk);
  const [color, setColor] = useState(PEN_COLORS[0] ?? "#ef4444");
  const [width, setWidth] = useState(4);
@@ -44,6 +97,11 @@ export function usePdfInkTools({ fingerInk = false }: { fingerInk?: boolean } = 
   touchInk,
   setTouchInk,
   preferPenInk,
+  scribbleErase,
+  setScribbleErase,
+  eraserReturns,
+  setEraserReturns,
+  finishEraseStroke,
   color,
   setColor,
   width,
@@ -72,9 +130,23 @@ export function usePdfPageInk({
  // faster than React re-renders, so each move builds on this, not on the
  // `strokes` captured by the last render.
  const gestureStrokesRef = useRef<PdfStroke[]>([]);
+ // What the ink layer shows while a gesture is in progress. Only the layer
+ // subscribes, so a pencil move repaints the strokes and nothing else; the
+ // page's annotations (and their device outbox write) change once, when the
+ // gesture ends.
+ const [liveInk] = useState(createLiveInkStore);
  const replaceGestureStrokes = (next: PdfStroke[]) => {
   gestureStrokesRef.current = next;
-  replaceStrokes(next);
+  liveInk.setState(() => ({ active: true, strokes: next }));
+ };
+ const endLiveInk = () => liveInk.setState(() => ({ active: false, strokes: [] }));
+ /** Saves the gesture's strokes once; a gesture that changed nothing leaves no undo step. */
+ const commitGesture = () => {
+  if (!liveInk.state.active) return;
+  const next = gestureStrokesRef.current;
+  if (next === strokesBeforeRef.current) setPast((current) => current.slice(0, -1));
+  else replaceStrokes(next);
+  endLiveInk();
  };
  const { drawingTool, touchInk, color, width, eraserSize } = tools;
  const [past, setPast] = useState<PdfStroke[][]>([]);
@@ -109,7 +181,25 @@ export function usePdfPageInk({
   replaceStrokes([]);
  };
  const pointFromEvent = (event: PointerEvent<SVGSVGElement>) =>
-  normalizedPdfPoint(event.clientX, event.clientY, event.currentTarget.getBoundingClientRect());
+  roundedPdfPoint(
+   normalizedPdfPoint(event.clientX, event.clientY, event.currentTarget.getBoundingClientRect()),
+  );
+ /**
+  * Every sample since the last move: Apple Pencil reports up to 240 per
+  * second but moves arrive once per frame, and the skipped samples are what
+  * keeps a fast curve round.
+  */
+ const pointsFromMove = (event: PointerEvent<SVGSVGElement>) => {
+  const rect = event.currentTarget.getBoundingClientRect();
+  const native = event.nativeEvent;
+  const samples = "getCoalescedEvents" in native ? native.getCoalescedEvents() : [];
+  return (samples.length ? samples : [native]).map((sample) =>
+   roundedPdfPoint(normalizedPdfPoint(sample.clientX, sample.clientY, rect)),
+  );
+ };
+ /** About one screen pixel on the page as rendered, so zooming in keeps detail. */
+ const minPointDistance = (event: PointerEvent<SVGSVGElement>) =>
+  1 / Math.max(1, event.currentTarget.getBoundingClientRect().width);
  // Where the panning finger last was, and whether it has moved far enough to
  // count as a pan rather than a palm settling on the screen.
  const panRef = useRef({ x: 0, y: 0, started: false });
@@ -124,7 +214,8 @@ export function usePdfPageInk({
    // The touch stroke in progress was a resting palm or the first finger of
    // a pinch: take it back.
    setPast((current) => current.slice(0, -1));
-   replaceGestureStrokes(strokesBeforeRef.current);
+   gestureStrokesRef.current = strokesBeforeRef.current;
+   endLiveInk();
    activeStrokeRef.current = "";
   }
   if (!draws) return;
@@ -137,7 +228,8 @@ export function usePdfPageInk({
   const tool = drawingTool;
   if (tool === "eraser") {
    activeStrokeRef.current = "eraser";
-   replaceGestureStrokes(erasePdfStrokesAtPoint(base, point, eraserSize / 1000));
+   const remaining = erasePdfStrokesAtPoint(base, point, eraserSize / 1000);
+   replaceGestureStrokes(remaining.length === base.length ? base : remaining);
    return;
   }
   if (tool === null) return;
@@ -165,14 +257,29 @@ export function usePdfPageInk({
   }
   if (!pointerGate.inks(event) || !activeStrokeRef.current) return;
   event.preventDefault();
-  const point = pointFromEvent(event);
+  const points = pointsFromMove(event);
   const current = gestureStrokesRef.current;
   if (activeStrokeRef.current === "eraser") {
-   const remaining = erasePdfStrokesAtPoint(current, point, eraserSize / 1000);
+   const remaining = points.reduce<PdfStroke[]>(
+    (left, point) => erasePdfStrokesAtPoint(left, point, eraserSize / 1000),
+    current,
+   );
    if (remaining.length !== current.length) replaceGestureStrokes(remaining);
    return;
   }
-  replaceGestureStrokes(updateStrokeAtId(current, activeStrokeRef.current, point));
+  const next = updateStrokeAtId(current, activeStrokeRef.current, points, minPointDistance(event));
+  if (next.some((stroke, index) => stroke !== current[index])) replaceGestureStrokes(next);
+ };
+ /** Scribble to erase: a pen scribble over ink removes that ink and itself. */
+ const eraseScribbledInk = (strokeId: string) => {
+  if (!tools.scribbleErase) return;
+  const current = gestureStrokesRef.current;
+  const scribble = current.find((stroke) => stroke.id === strokeId);
+  if (!scribble) return;
+  const erased = new Set(pdfStrokesErasedByScribble(current, scribble));
+  if (!erased.size) return;
+  erased.add(strokeId);
+  replaceGestureStrokes(current.filter((stroke) => !erased.has(stroke.id)));
  };
  const endStroke = (event: PointerEvent<SVGSVGElement>) => {
   // A palm lifting mid-stroke must not end the pen's stroke.
@@ -181,11 +288,19 @@ export function usePdfPageInk({
   if (event.currentTarget.hasPointerCapture(event.pointerId)) {
    event.currentTarget.releasePointerCapture(event.pointerId);
   }
-  if (endsInk) activeStrokeRef.current = "";
+  if (!endsInk) return;
+  const finished = activeStrokeRef.current;
+  activeStrokeRef.current = "";
+  if (finished !== "eraser" && finished && event.type === "pointerup") {
+   eraseScribbledInk(finished);
+  }
+  commitGesture();
+  if (finished === "eraser") tools.finishEraseStroke();
  };
 
  return {
   ...tools,
+  liveInk,
   past,
   future,
   resetHistory,

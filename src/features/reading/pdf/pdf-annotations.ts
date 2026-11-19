@@ -77,31 +77,58 @@ export function createPdfStroke(
  });
 }
 
-export function appendPdfStrokePoint(stroke: PdfStroke, point: PdfPoint): PdfStroke {
- const previous = stroke.points.at(-1);
- if (previous && Math.hypot(point.x - previous.x, point.y - previous.y) < 0.0015) {
-  return stroke;
+/**
+ * Points closer than this (as a fraction of the page width) to the previous
+ * one are dropped. The ink hook passes a smaller, zoom-aware value so a
+ * zoomed-in page still records every visible movement.
+ */
+const DEFAULT_MIN_POINT_DISTANCE = 0.0015;
+
+export function appendPdfStrokePoints(
+ stroke: PdfStroke,
+ points: readonly PdfPoint[],
+ minDistance = DEFAULT_MIN_POINT_DISTANCE,
+): PdfStroke {
+ const next = [...stroke.points];
+ for (const point of points) {
+  const previous = next.at(-1);
+  if (previous && Math.hypot(point.x - previous.x, point.y - previous.y) < minDistance) continue;
+  next.push(point);
  }
- return { ...stroke, points: [...stroke.points, point] };
+ return next.length === stroke.points.length ? stroke : { ...stroke, points: next };
 }
 
 export function updateStrokeAtId(
  strokes: readonly PdfStroke[],
  id: PdfStroke["id"],
- point: PdfPoint,
+ points: readonly PdfPoint[],
+ minDistance = DEFAULT_MIN_POINT_DISTANCE,
 ) {
- return strokes.map((stroke) => (stroke.id === id ? appendPdfStrokePoint(stroke, point) : stroke));
+ return strokes.map((stroke) =>
+  stroke.id === id ? appendPdfStrokePoints(stroke, points, minDistance) : stroke,
+ );
 }
 
+const pathNumber = (value: number) => Math.round(value * 1000 * 100) / 100;
+
+/**
+ * A smooth SVG path through the stroke: each recorded point is a quadratic
+ * control point and the curve passes through the midpoints between them, so
+ * fast pencil movement draws curves instead of a visible polyline.
+ */
 export function pdfStrokePath(stroke: PdfStroke): string {
- const path = stroke.points
-  .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x * 1000} ${point.y * 1000}`)
-  .join(" ");
- const first = stroke.points[0];
- if (stroke.points.length === 1 && first) {
-  return `${path} L ${first.x * 1000} ${first.y * 1000}`;
- }
- return path;
+ const [first, ...rest] = stroke.points;
+ if (!first) return "";
+ const start = `M ${pathNumber(first.x)} ${pathNumber(first.y)}`;
+ const last = rest.at(-1);
+ if (!last) return `${start} L ${pathNumber(first.x)} ${pathNumber(first.y)}`;
+ const curves = rest.slice(0, -1).map((point, index) => {
+  const next = rest[index + 1] ?? point;
+  const midX = (point.x + next.x) / 2;
+  const midY = (point.y + next.y) / 2;
+  return `Q ${pathNumber(point.x)} ${pathNumber(point.y)} ${pathNumber(midX)} ${pathNumber(midY)}`;
+ });
+ return [start, ...curves, `L ${pathNumber(last.x)} ${pathNumber(last.y)}`].join(" ");
 }
 
 function strokeTouchesPoint(stroke: PdfStroke, point: PdfPoint, eraserRadius = 0.018): boolean {
