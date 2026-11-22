@@ -1,6 +1,6 @@
 "use client";
 
-import type { KeyboardEvent, MouseEvent } from "react";
+import { Fragment, type KeyboardEvent, type MouseEvent } from "react";
 import type { useTranslations } from "next-intl";
 
 import { Typography } from "@/components/ui/display/typography";
@@ -174,20 +174,23 @@ export function renderLearnerReadingUnit(
 
  let previousPinyin = "";
  return (
-  <ruby key={unit.id} className="whitespace-nowrap">
-   {unitGraphemes.map((grapheme) =>
-    renderLearnerGrapheme(model, grapheme, model.graphemes.indexOf(grapheme), false),
-   )}
-   <rt className={rubyTextClassName} {...selectablePinyinAttribute}>
-    {unitGraphemes.map((grapheme) => {
-     const glyph = model.glyphByStart.get(grapheme.index);
-     if (glyph === undefined) return null;
-     const pinyin = formatContextualPinyinRange(analysis, glyph.start, glyph.end);
-     const separator = shouldSeparatePinyinSyllables(previousPinyin, pinyin) ? "'" : "";
-     previousPinyin = pinyin;
-     return renderPinyin(model, glyph, grapheme.segment, `${separator}${pinyin}`);
-    })}
-   </rt>
-  </ruby>
+  <Fragment key={unit.id}>
+   <wbr />
+   <ruby className="whitespace-nowrap">
+    {unitGraphemes.map((grapheme) =>
+     renderLearnerGrapheme(model, grapheme, model.graphemes.indexOf(grapheme), false),
+    )}
+    <rt className={rubyTextClassName} {...selectablePinyinAttribute}>
+     {unitGraphemes.map((grapheme) => {
+      const glyph = model.glyphByStart.get(grapheme.index);
+      if (glyph === undefined) return null;
+      const pinyin = formatContextualPinyinRange(analysis, glyph.start, glyph.end);
+      const separator = shouldSeparatePinyinSyllables(previousPinyin, pinyin) ? "'" : "";
+      previousPinyin = pinyin;
+      return renderPinyin(model, glyph, grapheme.segment, `${separator}${pinyin}`);
+     })}
+    </rt>
+   </ruby>
+  </Fragment>
  );
 }

@@ -328,7 +328,7 @@ describe("standalone Reader facade", () => {
   },
  );
 
- it("keeps every grouped ruby unit intact when a long passage wraps", async () => {
+ it("allows wrapping between grouped ruby units while keeping each word intact", async () => {
   const messages = await loadAppMessages("vi");
   const analysis = analyzeContextualPronunciation({
    text: "一位北京的大学生收到了井冈山少年的一封信，由此引出下面一个感人的故事。",
@@ -351,7 +351,7 @@ describe("standalone Reader facade", () => {
    </NextIntlClientProvider>,
   );
 
-  expect(html.match(/<ruby class="whitespace-nowrap"/g)).toHaveLength(rubyUnitCount);
+  expect(html.match(/<wbr\/><ruby class="whitespace-nowrap"/g)).toHaveLength(rubyUnitCount);
   expect(html).toContain("leading-[1.7]");
  });
 });
