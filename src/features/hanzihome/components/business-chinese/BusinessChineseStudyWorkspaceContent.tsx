@@ -228,11 +228,9 @@ export function BusinessChineseStudyWorkspaceContent({
       isLessonBookmarked={isLessonBookmarked}
       onToggleLessonBookmark={onToggleLessonBookmark}
       isLessonOfflineReady={isLessonOfflineReady}
-      compact={!hasWideToolbar}
       audioSettingsOpen={audioSettingsOpen}
       onOpenAudioSettings={openAudioSettings}
       actionsTriggerRef={lessonActionsTrigger}
-      onReturnFocus={returnToLessonActions}
      />
      <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
       <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2">

@@ -177,14 +177,10 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
      {!inline && !toolbar?.leadingActions && !toolbar?.hideSegmentNavigation ? (
       <ReaderOutline />
      ) : null}
-     {speech ? (
-      <div
-       className={
-        inline && !toolbar?.hideSegmentNavigation
-         ? "hidden 2xl:flex items-center"
-         : "flex items-center"
-       }
-      >
+     {inline && toolbar?.hideSegmentNavigation ? (
+      <ReaderOutline />
+     ) : speech ? (
+      <div className={inline ? "hidden 2xl:flex items-center" : "flex items-center"}>
        <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
          <Button

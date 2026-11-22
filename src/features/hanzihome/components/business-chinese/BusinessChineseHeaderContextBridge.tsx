@@ -27,22 +27,18 @@ export function BusinessChineseHeaderContextBridge({
  isLessonBookmarked,
  onToggleLessonBookmark,
  isLessonOfflineReady,
- compact,
  audioSettingsOpen,
  onOpenAudioSettings,
  actionsTriggerRef,
- onReturnFocus,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
  isLessonBookmarked: boolean;
  onToggleLessonBookmark: () => void;
  isLessonOfflineReady: boolean;
- compact: boolean;
  audioSettingsOpen: boolean;
  onOpenAudioSettings: () => void;
  actionsTriggerRef: ComponentProps<typeof BusinessChineseLessonActions>["triggerRef"];
- onReturnFocus: () => void;
 }) {
  const t = useTranslations("BusinessChinese");
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
@@ -89,11 +85,9 @@ export function BusinessChineseHeaderContextBridge({
      isLessonBookmarked={isLessonBookmarked}
      onToggleLessonBookmark={onToggleLessonBookmark}
      isLessonOfflineReady={isLessonOfflineReady}
-     compact={compact}
      audioSettingsOpen={audioSettingsOpen}
      onOpenAudioSettings={onOpenAudioSettings}
      triggerRef={actionsTriggerRef}
-     onReturnFocus={onReturnFocus}
     />
    </>
   ),
@@ -106,11 +100,9 @@ export function BusinessChineseHeaderContextBridge({
    isLessonBookmarked,
    onToggleLessonBookmark,
    isLessonOfflineReady,
-   compact,
    audioSettingsOpen,
    onOpenAudioSettings,
    actionsTriggerRef,
-   onReturnFocus,
   ],
  );
 
