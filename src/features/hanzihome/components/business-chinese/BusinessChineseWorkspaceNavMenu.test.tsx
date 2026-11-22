@@ -91,11 +91,9 @@ describe("BusinessChineseWorkspaceNavMenu", () => {
        audioSettingsOpen={false}
        onOpenAudioSettings={vi.fn()}
        triggerRef={null}
-       onReturnFocus={vi.fn()}
        isLessonBookmarked={isLessonBookmarked}
        onToggleLessonBookmark={vi.fn()}
        isLessonOfflineReady
-       compact
       />
      </NextIntlClientProvider>,
     );

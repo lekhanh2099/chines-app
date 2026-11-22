@@ -44,5 +44,12 @@ export function BusinessChineseReader({
   [integration.services, services],
  );
 
- return <Reader data={integration.data} display={integration.display} services={mergedServices} />;
+ return (
+  <Reader
+   data={integration.data}
+   display={integration.display}
+   services={mergedServices}
+   className="[&_[data-reader-segment-playback]]:hidden xl:[&_[data-reader-segment-playback]]:inline-flex"
+  />
+ );
 }

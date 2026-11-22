@@ -182,6 +182,7 @@ export const ReaderSegment = memo(function ReaderSegment({ segmentId }: { segmen
        type="button"
        variant={active ? "active" : "ghost"}
        size="icon"
+       data-reader-segment-playback
        className="shrink-0 self-end"
        aria-label={commandLabels("listen")}
        onClick={() => commands.playFromCharacter(segmentId, 0)}
