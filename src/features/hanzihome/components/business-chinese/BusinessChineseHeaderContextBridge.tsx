@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, type ComponentProps } from "react";
+import { useEffect, useMemo } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useTranslations } from "next-intl";
 import {
@@ -27,18 +27,12 @@ export function BusinessChineseHeaderContextBridge({
  isLessonBookmarked,
  onToggleLessonBookmark,
  isLessonOfflineReady,
- audioSettingsOpen,
- onOpenAudioSettings,
- actionsTriggerRef,
 }: {
  books: TextbookBookSummary[];
  lesson: TextbookLesson;
  isLessonBookmarked: boolean;
  onToggleLessonBookmark: () => void;
  isLessonOfflineReady: boolean;
- audioSettingsOpen: boolean;
- onOpenAudioSettings: () => void;
- actionsTriggerRef: ComponentProps<typeof BusinessChineseLessonActions>["triggerRef"];
 }) {
  const t = useTranslations("BusinessChinese");
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
@@ -85,9 +79,6 @@ export function BusinessChineseHeaderContextBridge({
      isLessonBookmarked={isLessonBookmarked}
      onToggleLessonBookmark={onToggleLessonBookmark}
      isLessonOfflineReady={isLessonOfflineReady}
-     audioSettingsOpen={audioSettingsOpen}
-     onOpenAudioSettings={onOpenAudioSettings}
-     triggerRef={actionsTriggerRef}
     />
    </>
   ),
@@ -100,9 +91,6 @@ export function BusinessChineseHeaderContextBridge({
    isLessonBookmarked,
    onToggleLessonBookmark,
    isLessonOfflineReady,
-   audioSettingsOpen,
-   onOpenAudioSettings,
-   actionsTriggerRef,
   ],
  );
 

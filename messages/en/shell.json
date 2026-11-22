@@ -98,7 +98,10 @@
   "displayModePinyinOnly": "Pinyin",
   "displayModeMeaningOnly": "Meaning",
   "displayModeHanziOnly": "Hanzi only",
-  "voiceSettings": "Voice & Audio settings"
+  "voiceSettings": "Voice & Audio settings",
+  "displayTab": "Display",
+  "listeningTab": "Listening",
+  "generalTab": "General"
  },
  "breadcrumbs": {
   "study": "Learn",

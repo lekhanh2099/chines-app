@@ -190,7 +190,7 @@ export function useLessonReader({
    annotations,
   ],
  );
- return { data, display, displayMode, services };
+ return { data, display, displayMode, updateDisplay, services };
 }
 
 function LessonReaderContent({ children }: { children: ReactNode }) {

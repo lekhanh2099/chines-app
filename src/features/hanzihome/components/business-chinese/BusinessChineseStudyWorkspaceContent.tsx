@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
@@ -17,7 +17,6 @@ import {
  useReaderDisplay,
  useReaderSelector,
 } from "@/features/reader/runtime/reader-context";
-import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettingsDialog";
 import { cn } from "@/lib/utils";
 import { BusinessChineseAnnotationsContext } from "./business-chinese-annotations-context";
 import {
@@ -91,10 +90,6 @@ export function BusinessChineseStudyWorkspaceContent({
 }) {
  const t = useTranslations("BusinessChinese");
  const isReviewView = activeView === "review";
- const [audioSettingsOpen, setAudioSettingsOpen] = useState(false);
- const lessonActionsTrigger = useRef<HTMLButtonElement>(null);
- const openAudioSettings = useCallback(() => setAudioSettingsOpen(true), []);
- const returnToLessonActions = useCallback(() => lessonActionsTrigger.current?.focus(), []);
  const pip = useBusinessChinesePip();
  const { isPipOpen, isInAppFloatingOpen, pipMode, handleTogglePip } = pip;
  const [reviewMode, setReviewMode] = useState<BusinessChineseReviewMode>("flashcard");
@@ -228,9 +223,6 @@ export function BusinessChineseStudyWorkspaceContent({
       isLessonBookmarked={isLessonBookmarked}
       onToggleLessonBookmark={onToggleLessonBookmark}
       isLessonOfflineReady={isLessonOfflineReady}
-      audioSettingsOpen={audioSettingsOpen}
-      onOpenAudioSettings={openAudioSettings}
-      actionsTriggerRef={lessonActionsTrigger}
      />
      <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
       <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2">
@@ -244,7 +236,6 @@ export function BusinessChineseStudyWorkspaceContent({
           tabs={overflowTabs}
           activeView={activeView}
           onActiveViewChange={onActiveViewChange}
-          compact={!hasWideToolbar}
          />
         }
         actions={
@@ -316,16 +307,6 @@ export function BusinessChineseStudyWorkspaceContent({
          onSelect={selectSection}
         />
        ) : null}
-       <OfflineAudioSettingsDialog
-        lesson={lesson}
-        trigger={null}
-        open={audioSettingsOpen}
-        onOpenChange={setAudioSettingsOpen}
-        onCloseAutoFocus={(event) => {
-         event.preventDefault();
-         returnToLessonActions();
-        }}
-       />
        {selectionPopover}
        <BusinessChinesePipWindows
         pip={pip}

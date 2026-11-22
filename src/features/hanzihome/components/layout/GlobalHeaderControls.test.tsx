@@ -1,21 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import { createElement } from "react";
+import { BasePopover } from "@/components/ui/overlays/base-popover";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-vi.mock("@/components/ui/overlays/dropdown-menu", () => {
- const passthrough = ({ children }: { children?: React.ReactNode }) => <div>{children}</div>;
- return {
-  DropdownMenu: passthrough,
-  DropdownMenuTrigger: passthrough,
-  DropdownMenuContent: passthrough,
-  DropdownMenuItem: ({ children }: { children?: React.ReactNode }) => <div>{children}</div>,
-  DropdownMenuLabel: ({ children }: { children?: React.ReactNode }) => <div>{children}</div>,
-  DropdownMenuSeparator: () => <hr />,
-  DropdownMenuCheckboxItem: ({ children }: { children?: React.ReactNode }) => <div>{children}</div>,
- };
-});
 
 import { GlobalHeaderStudyDialogs, GlobalHeaderStudySettingsItems } from "./GlobalHeaderControls";
 import { speechSettingsDialogStore } from "@/stores/speech/speech-dialog-store";
@@ -69,13 +57,22 @@ function renderWithProviders(element: React.ReactElement) {
 }
 
 describe("GlobalHeaderControls", () => {
- it("puts reading display and voice entries inside the quick settings menu", () => {
+ it("keeps global display switches separate from the listening panel", () => {
   const html = renderWithProviders(createElement(GlobalHeaderStudySettingsItems));
-  expect(html).toContain("Hiển thị nội dung");
   expect(html).toContain("Hiện phiên âm Pinyin");
   expect(html).toContain("Hiện bản dịch tiếng Việt");
+  expect(html).toContain('role="switch"');
+  expect(html).not.toContain("Cài đặt giọng đọc");
+ });
+
+ it("keeps voice settings in the listening tab", () => {
+  const html = renderWithProviders(
+   <BasePopover.Root>
+    <GlobalHeaderStudySettingsItems listening />
+   </BasePopover.Root>,
+  );
   expect(html).toContain("Cài đặt giọng đọc");
-  expect(html).not.toContain("<button");
+  expect(html).not.toContain("Hiện phiên âm Pinyin");
  });
 
  it("keeps the voice settings dialog mounted outside the menu", () => {

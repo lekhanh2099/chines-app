@@ -98,7 +98,10 @@
   "displayModePinyinOnly": "Pinyin",
   "displayModeMeaningOnly": "Bản dịch",
   "displayModeHanziOnly": "Chữ Hán",
-  "voiceSettings": "Cài đặt giọng đọc & Âm thanh"
+  "voiceSettings": "Cài đặt giọng đọc & Âm thanh",
+  "displayTab": "Hiển thị",
+  "listeningTab": "Luyện nghe",
+  "generalTab": "Chung"
  },
  "breadcrumbs": {
   "study": "Học",

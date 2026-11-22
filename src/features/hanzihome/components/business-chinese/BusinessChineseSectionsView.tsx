@@ -221,6 +221,7 @@ export function BusinessChineseSectionsView({
         {section.category === "text" ? (
          <div className="min-w-0 content-auto">
           <BusinessChineseReader
+           lesson={lesson}
            bookKey={bookKey}
            document={sectionDocuments.get(section.id) ?? textReaderDocument}
            services={index === 0 ? firstSectionServices : otherSectionServices}

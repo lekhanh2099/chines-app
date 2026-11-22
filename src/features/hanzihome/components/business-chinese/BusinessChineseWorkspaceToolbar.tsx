@@ -1,8 +1,8 @@
 "use client";
 
-import type { ComponentProps, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
-import { Bookmark, BookOpen, CloudCheck, MoreHorizontal, Volume2 } from "lucide-react";
+import { Bookmark, BookOpen, CloudCheck, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
@@ -18,16 +18,10 @@ export function BusinessChineseLessonActions({
  isLessonBookmarked,
  onToggleLessonBookmark,
  isLessonOfflineReady,
- audioSettingsOpen,
- onOpenAudioSettings,
- triggerRef,
 }: {
  isLessonBookmarked: boolean;
  onToggleLessonBookmark: () => void;
  isLessonOfflineReady: boolean;
- audioSettingsOpen: boolean;
- onOpenAudioSettings: () => void;
- triggerRef: ComponentProps<typeof Button>["ref"];
 }) {
  const t = useTranslations("BusinessChinese");
  const bookmarkLabel = isLessonBookmarked ? t("unbookmarkLesson") : t("bookmarkLesson");
@@ -35,25 +29,15 @@ export function BusinessChineseLessonActions({
  return (
   <DropdownMenu>
    <DropdownMenuTrigger asChild>
-    <Button ref={triggerRef} variant="ghost" size="icon-toolbar" aria-label={t("lessonOptions")}>
+    <Button variant="ghost" size="icon-toolbar" aria-label={t("lessonOptions")}>
      <MoreHorizontal />
     </Button>
    </DropdownMenuTrigger>
-   <DropdownMenuContent
-    align="start"
-    width="md"
-    onCloseAutoFocus={(event) => {
-     if (audioSettingsOpen) event.preventDefault();
-    }}
-   >
+   <DropdownMenuContent align="start" width="md">
     <DropdownMenuLabel>{t("lessonOptions")}</DropdownMenuLabel>
     <DropdownMenuItem onSelect={onToggleLessonBookmark}>
      <Bookmark />
      {bookmarkLabel}
-    </DropdownMenuItem>
-    <DropdownMenuItem onSelect={onOpenAudioSettings}>
-     <Volume2 />
-     {t("voiceAndOffline")}
     </DropdownMenuItem>
     {isLessonOfflineReady ? (
      <DropdownMenuItem disabled>

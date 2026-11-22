@@ -45,6 +45,7 @@ export function Tabs<T extends string>({
  children,
  className,
  listClassName,
+ underline = false,
  actions,
  overflow,
  itemMenu,
@@ -57,6 +58,7 @@ export function Tabs<T extends string>({
  children?: React.ReactNode;
  className?: string;
  listClassName?: string;
+ underline?: boolean;
  actions?: React.ReactNode;
  overflow?: React.ReactNode;
  /**
@@ -94,6 +96,7 @@ export function Tabs<T extends string>({
       <div
        className={cn(
         "flex w-full max-w-full min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl p-1",
+        underline && "rounded-none border-b border-border-default bg-transparent p-0",
         listClassName,
        )}
       >
@@ -124,9 +127,13 @@ export function Tabs<T extends string>({
               aria-controls={`${baseId}-panel-${flatIndex}`}
               tabIndex={selected ? 0 : -1}
               size="toolbar"
-              variant={selected ? "active" : "navigation"}
+              variant={selected && !underline ? "active" : "navigation"}
               disabled={item.disabled}
-              className="shrink-0"
+              className={cn(
+               "shrink-0",
+               underline && "h-11 min-h-11 flex-1 rounded-none border-b-2 border-transparent",
+               underline && selected && "border-b-primary text-text-primary",
+              )}
               onClick={() => onValueChange(item.key)}
               onKeyDown={(event) => {
                if (event.key === "ArrowRight") {
@@ -186,6 +193,7 @@ export function Tabs<T extends string>({
        aria-orientation="horizontal"
        className={cn(
         "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain rounded-lg bg-bg-subtle/70 p-0.5",
+        underline && "rounded-none border-b border-border-default bg-transparent p-0",
         listClassName,
        )}
       >
@@ -209,9 +217,13 @@ export function Tabs<T extends string>({
             aria-controls={`${baseId}-panel-${flatIndex}`}
             tabIndex={selected ? 0 : -1}
             size="toolbar"
-            variant={selected ? "active" : "navigation"}
+            variant={selected && !underline ? "active" : "navigation"}
             disabled={item.disabled}
-            className="shrink-0"
+            className={cn(
+             "shrink-0",
+             underline && "h-11 min-h-11 flex-1 rounded-none border-b-2 border-transparent",
+             underline && selected && "border-b-primary text-text-primary",
+            )}
             onClick={() => onValueChange(item.key)}
             onKeyDown={(event) => {
              if (event.key === "ArrowRight") {

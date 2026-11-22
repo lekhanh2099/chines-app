@@ -111,6 +111,7 @@ export function BusinessChineseStudyWorkspace({
   <MandarinTtsProvider>
    <ReaderPronunciationSessionProvider key={lesson.id}>
     <BusinessChineseReader
+     lesson={lesson}
      key={readerDocument.id}
      document={readerDocument}
      bookKey={bookKey}
