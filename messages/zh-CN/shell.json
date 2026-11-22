@@ -98,7 +98,10 @@
   "displayModePinyinOnly": "拼音",
   "displayModeMeaningOnly": "翻译",
   "displayModeHanziOnly": "仅汉字",
-  "voiceSettings": "语音与音频设置"
+  "voiceSettings": "语音与音频设置",
+  "displayTab": "显示",
+  "listeningTab": "听力",
+  "generalTab": "通用"
  },
  "breadcrumbs": {
   "study": "学习",

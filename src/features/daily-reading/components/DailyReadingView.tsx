@@ -200,7 +200,6 @@ export function DailyReadingView({ id, onBack }: { id: string; onBack(): void })
           const next = tabs.find((key) => key === view);
           if (next) setTab(next);
          }}
-         compact={tabCapacity < tabItems.length}
         />
        }
        actions={toolbar}

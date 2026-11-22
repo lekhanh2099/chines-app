@@ -362,18 +362,24 @@ confirmation dialog for delete.
 
 Global settings entry points are intentionally narrow:
 
-- Header Gear contains only global Theme, route-scoped lookup and Focus mode,
-  plus a link to the full Settings hub;
+- Header Gear is the single quick-settings entry on phone, tablet and desktop.
+  Its non-modal Popover has three Tabs: Display, Listening and General, with
+  the full Settings hub link below the panels;
 - Avatar contains identity/provider context and logout only;
 - `/settings?section=app|reading|ai` remains the complete settings hub.
 
-HanziHome reader settings are contextual learner controls, so their quick entry
-lives in the lesson workspace toolbar, not in global Gear. The reader menu owns
-font, size, reveal and visibility groups and links to full reading settings.
-Font choices preview the actual Hanzi font.
+The textbook workspace publishes Display and Listening controls through the
+existing owned Header toolbar store. Reader commands and learning settings keep
+their existing state owners; the shell only renders the supplied controls.
+Leaving the workspace clears its controls without letting stale owner cleanup
+clear a newer workspace. The lesson toolbar retains playback and section
+navigation; it has no second settings trigger. Display contains font, size,
+reveal and visibility controls; Listening contains playback, rate, repeat and
+voice/offline settings for the current lesson. General contains theme, lookup
+and global focus mode. Font choices preview the actual Hanzi font.
 
-Use Switch for full settings-page boolean rows. Use menu checkbox/radio items
-inside compact menus.
+Use Switch for settings-page and tabbed quick-settings boolean rows. Use menu
+checkbox/radio items inside action menus.
 
 Reading settings preview font, size, reveal behavior, pinyin, meaning and
 answers live. On tablet/wide screens the preview may sit beside controls; on
@@ -381,8 +387,13 @@ narrow screens it follows in document flow.
 
 ### Touch overlays
 
-Wide pointer layouts may use shallow DropdownMenu submenus. Phone and iPad
-portrait preference flows use one modal Dialog with the choices inside,
+Textbook module overflow uses the same DropdownMenu on phone, iPad and desktop.
+The unified Header settings uses one viewport-constrained non-modal Popover
+with Tabs and flat choices on all three sizes. Voice/offline details keep their
+existing Dialog and return focus to Header Gear when closed.
+
+Other wide pointer layouts may use shallow DropdownMenu submenus. Other phone
+and iPad portrait preference flows use one modal Dialog with the choices inside,
 even when a desktop submenu would physically fit. The active modal owns focus,
 scroll, dismissal and safe-area handling and disables/covers bottom navigation.
 Do not leave a parent menu visible beside a child panel. Constrain floating

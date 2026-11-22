@@ -9,6 +9,8 @@ afterEach(() => {
  headerToolbarStore.actions.clearOwnedContent(OWNER_A);
  headerToolbarStore.actions.clearOwnedContent(OWNER_B);
  headerToolbarStore.actions.clearContent();
+ headerToolbarStore.actions.clearOwnedSettings(OWNER_A);
+ headerToolbarStore.actions.clearOwnedSettings(OWNER_B);
 });
 
 describe("headerToolbarStore", () => {
@@ -38,5 +40,23 @@ describe("headerToolbarStore", () => {
   headerToolbarStore.actions.setOwnedContent(OWNER_A, "Stable toolbar");
 
   expect(headerToolbarStore.state).toBe(stableState);
+ });
+ it("keeps the current Reader settings when an older Reader unmounts", () => {
+  headerToolbarStore.actions.setOwnedSettings(OWNER_A, "Old display", "Old playback");
+  headerToolbarStore.actions.setOwnedSettings(OWNER_B, "Current display", "Current playback");
+  headerToolbarStore.actions.clearOwnedSettings(OWNER_A);
+  expect(headerToolbarStore.state.readingSettings).toBe("Current display");
+  expect(headerToolbarStore.state.listeningSettings).toBe("Current playback");
+  headerToolbarStore.actions.clearOwnedSettings(OWNER_B);
+  expect(headerToolbarStore.state.readingSettings).toBeNull();
+  expect(headerToolbarStore.state.listeningSettings).toBeNull();
+  expect(headerToolbarStore.state.settingsOwnerId).toBeNull();
+ });
+ it("keeps Reader settings independent of breadcrumb registration", () => {
+  headerToolbarStore.actions.setOwnedSettings(OWNER_A, "Display", "Playback");
+  headerToolbarStore.actions.setOwnedContent(OWNER_B, "Breadcrumb");
+  headerToolbarStore.actions.clearOwnedContent(OWNER_B);
+  expect(headerToolbarStore.state.readingSettings).toBe("Display");
+  expect(headerToolbarStore.state.listeningSettings).toBe("Playback");
  });
 });

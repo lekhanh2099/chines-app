@@ -1,6 +1,6 @@
 "use client";
 
-import { type FormEvent, type ReactNode, useEffect, useSyncExternalStore } from "react";
+import { type FormEvent, type ReactNode, useEffect, useState, useSyncExternalStore } from "react";
 import { Languages, LockKeyhole, Moon, Search, Settings, Sun, WifiOff } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
 import { useTranslations } from "next-intl";
@@ -11,14 +11,14 @@ import { useClientSession } from "@/components/providers/QueryProvider";
 import { Badge } from "@/components/ui/display/badge";
 import { Button } from "@/components/ui/actions/button";
 import {
- DropdownMenu,
- DropdownMenuCheckboxItem,
- DropdownMenuContent,
- DropdownMenuItem,
- DropdownMenuLabel,
- DropdownMenuSeparator,
- DropdownMenuTrigger,
-} from "@/components/ui/overlays/dropdown-menu";
+ BasePopover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+} from "@/components/ui/overlays/base-popover";
+import { Tabs, TabsContent } from "@/components/ui/navigation/tabs";
+import { Switch } from "@/components/ui/forms/switch";
+import { Typography } from "@/components/ui/display/typography";
+import { Separator } from "@/components/ui/layout/separator";
 import { Input } from "@/components/ui/forms/input";
 import { useSearchParams } from "next/navigation";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -64,9 +64,10 @@ type SimpleHeaderBreadcrumb = {
 type HeaderProps = {
  actions?: ReactNode;
  quickSettingsExtras?: ReactNode;
+ quickListeningExtras?: ReactNode;
 };
 
-export function Header({ actions, quickSettingsExtras }: HeaderProps = {}) {
+export function Header({ actions, quickSettingsExtras, quickListeningExtras }: HeaderProps = {}) {
  const t = useTranslations("Shell");
  const { user } = useClientSession();
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
@@ -162,6 +163,7 @@ export function Header({ actions, quickSettingsExtras }: HeaderProps = {}) {
       onFocusModeEnabledChange={setFocusModeEnabled}
       actions={actions}
       quickSettingsExtras={quickSettingsExtras}
+      quickListeningExtras={quickListeningExtras}
      />
     </div>
    </header>
@@ -293,6 +295,7 @@ function HeaderUtilityArea({
  onFocusModeEnabledChange,
  actions,
  quickSettingsExtras,
+ quickListeningExtras,
 }: {
  routeToolbarActive: boolean;
  focusModeEnabled: boolean;
@@ -305,8 +308,12 @@ function HeaderUtilityArea({
  onFocusModeEnabledChange: (enabled: boolean) => void;
  actions?: ReactNode;
  quickSettingsExtras?: ReactNode;
+ quickListeningExtras?: ReactNode;
 }) {
  const t = useTranslations("Shell");
+ const [settingsTab, setSettingsTab] = useState("reading");
+ const readingSettings = useSelector(headerToolbarStore, (state) => state.readingSettings);
+ const listeningSettings = useSelector(headerToolbarStore, (state) => state.listeningSettings);
 
  return (
   <div
@@ -334,60 +341,97 @@ function HeaderUtilityArea({
 
    {actions}
 
-   <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-     <Button
-      type="button"
-      variant="ghost"
-      size="icon"
-      aria-label={t("header.quickSettings")}
-      title={t("header.quickSettings")}
-      className="hidden sm:inline-flex"
-     >
-      <Settings />
-     </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent align="end" width="lg">
-     {quickSettingsExtras}
-     <DropdownMenuLabel>{t("header.quickSettings")}</DropdownMenuLabel>
-     <DropdownMenuCheckboxItem
-      checked={theme === "dark"}
-      onSelect={(event) => event.preventDefault()}
-      onCheckedChange={onToggleTheme}
-     >
-      {theme === "dark" ? <Sun /> : <Moon />}
-      {t("header.darkTheme")}
-     </DropdownMenuCheckboxItem>
-     <DropdownMenuCheckboxItem
-      checked={lookupEnabled}
-      onSelect={(event) => event.preventDefault()}
-      onCheckedChange={onLookupEnabledChange}
-     >
-      <Languages />
-      {t("header.pageLookup")}
-     </DropdownMenuCheckboxItem>
-     <DropdownMenuCheckboxItem
-      checked={focusModeEnabled}
-      onSelect={(event) => event.preventDefault()}
-      onCheckedChange={(enabled) => {
-       if (enabled && !focusModeEnabled) {
-        toast.warning(t("header.focusModeWarning"), { duration: 5200 });
-       }
-       onFocusModeEnabledChange(enabled);
-      }}
-     >
-      <LockKeyhole />
-      {t("header.focusMode")}
-     </DropdownMenuCheckboxItem>
-     <DropdownMenuSeparator />
-     <DropdownMenuItem asChild>
-      <Link href="/settings?section=app">
-       <Settings />
-       {t("header.openAllSettings")}
-      </Link>
-     </DropdownMenuItem>
-    </DropdownMenuContent>
-   </DropdownMenu>
+   <BasePopover.Root>
+    <BasePopover.Trigger
+     render={
+      <Button
+       type="button"
+       variant="ghost"
+       size="icon"
+       id="header-quick-settings-trigger"
+       aria-label={t("header.quickSettings")}
+       title={t("header.quickSettings")}
+      />
+     }
+    >
+     <Settings />
+    </BasePopover.Trigger>
+    <BasePopover.Portal>
+     <BasePopoverPositioner side="bottom" align="end" sideOffset={6} collisionPadding={8}>
+      <BasePopoverPopup variant="profile" aria-label={t("header.quickSettings")}>
+       <Tabs
+        value={settingsTab}
+        onValueChange={setSettingsTab}
+        underline
+        items={[
+         { key: "reading", label: t("header.displayTab") },
+         { key: "listening", label: t("header.listeningTab") },
+         { key: "general", label: t("header.generalTab") },
+        ]}
+        aria-label={t("header.quickSettings")}
+        className="grid gap-2"
+       >
+        <TabsContent value="reading" className="grid gap-2">
+         {readingSettings ?? quickSettingsExtras}
+        </TabsContent>
+        <TabsContent value="listening" className="grid gap-2">
+         {listeningSettings}
+         {listeningSettings ? null : quickListeningExtras}
+        </TabsContent>
+        <TabsContent value="general" className="grid divide-y divide-border-default">
+         <label className="flex min-h-12 items-center justify-between gap-3 px-3 py-2">
+          <Typography as="span" variant="bodySmall" className="flex items-center gap-2">
+           {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+           {t("header.darkTheme")}
+          </Typography>
+          <Switch
+           checked={theme === "dark"}
+           onCheckedChange={onToggleTheme}
+           aria-label={t("header.darkTheme")}
+          />
+         </label>
+         <label className="flex min-h-12 items-center justify-between gap-3 px-3 py-2">
+          <Typography as="span" variant="bodySmall" className="flex items-center gap-2">
+           <Languages className="size-4" />
+           {t("header.pageLookup")}
+          </Typography>
+          <Switch
+           checked={lookupEnabled}
+           onCheckedChange={onLookupEnabledChange}
+           aria-label={t("header.pageLookup")}
+          />
+         </label>
+         <label className="flex min-h-12 items-center justify-between gap-3 px-3 py-2">
+          <Typography as="span" variant="bodySmall" className="flex items-center gap-2">
+           <LockKeyhole className="size-4" />
+           {t("header.focusMode")}
+          </Typography>
+          <Switch
+           checked={focusModeEnabled}
+           aria-label={t("header.focusMode")}
+           onCheckedChange={(enabled) => {
+            if (enabled && !focusModeEnabled)
+             toast.warning(t("header.focusModeWarning"), { duration: 5200 });
+            onFocusModeEnabledChange(enabled);
+           }}
+          />
+         </label>
+        </TabsContent>
+       </Tabs>
+       <Separator />
+       <BasePopover.Close
+        nativeButton={false}
+        render={<Button asChild variant="menu" size="menu" align="start" className="w-full" />}
+       >
+        <Link href="/settings?section=app">
+         <Settings />
+         {t("header.openAllSettings")}
+        </Link>
+       </BasePopover.Close>
+      </BasePopoverPopup>
+     </BasePopoverPositioner>
+    </BasePopover.Portal>
+   </BasePopover.Root>
    <ProfileSettingsMenu user={user} focusModeEnabled={focusModeEnabled} />
   </div>
  );

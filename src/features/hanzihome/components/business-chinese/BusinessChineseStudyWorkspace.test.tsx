@@ -1127,7 +1127,7 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(segments[0]?.speechText).toContain("-5℃");
   expect(markup).toContain("Bài 1/18");
   expect(markup).toContain("Nghe bài");
-  expect(markup).toContain("Tùy chọn đọc &amp; nghe");
+  expect(markup).not.toContain("Tùy chọn đọc &amp; nghe");
   expect(markup).toContain("text-warning");
   expect(markup).not.toContain("decoration-dotted");
   expect(markup).not.toContain(">Ngữ pháp<");
@@ -1354,7 +1354,7 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(markup).toContain("电话会议");
   expect(markup).toContain("Đoạn 1 /");
   expect(markup).toContain("Nghe bài");
-  expect(markup).toContain("Tùy chọn đọc &amp; nghe");
+  expect(markup).not.toContain("Tùy chọn đọc &amp; nghe");
   expect(markup.includes(`aria-label="${businessChineseMessages.tabsLabel}"`)).toBe(true);
   expect(markup).toContain(`role="tablist" aria-label="${businessChineseMessages.tabsLabel}"`);
   expect(markup).toContain('role="tab" aria-selected="true"');
@@ -1437,7 +1437,7 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(markup).toContain('aria-label="Pinyin chữ 行 cần kiểm tra"');
   expect(markup).toContain("text-warning");
   expect(markup).not.toContain("decoration-dotted");
-  expect(markup).toContain("Tùy chọn đọc &amp; nghe");
+  expect(markup).not.toContain("Tùy chọn đọc &amp; nghe");
  });
 
  it("renders inline lesson translations with the same speaker and TTS structure", () => {
@@ -1513,7 +1513,7 @@ describe("BusinessChineseStudyWorkspace", fullLessonRenderTimeout, () => {
   expect(markup).toContain('aria-label="Mở mục lục đoạn"');
   expect(markup).not.toContain('aria-label="Tốc độ đọc"');
   expect(markup).not.toContain('aria-label="Đoạn sau"');
-  expect(markup).toContain('aria-label="Tùy chọn đọc &amp; nghe"');
+  expect(markup).not.toContain('aria-label="Tùy chọn đọc &amp; nghe"');
   expect(markup.match(/role="tab"/gu)).toHaveLength(1);
  });
 

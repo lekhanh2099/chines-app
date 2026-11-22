@@ -38,6 +38,7 @@ export default async function AppLayout({
      <Header
       actions={<GlobalHeaderStudyDialogs />}
       quickSettingsExtras={<GlobalHeaderStudySettingsItems />}
+      quickListeningExtras={<GlobalHeaderStudySettingsItems listening />}
      />
      <HanziHomeGlobalSearchBridge />
      <AppScrollViewport className="page-shell nova-page scrollbar-soft">

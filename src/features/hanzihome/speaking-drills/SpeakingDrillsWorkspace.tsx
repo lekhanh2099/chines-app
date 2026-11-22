@@ -145,7 +145,6 @@ export function SpeakingDrillsWorkspace({
             const next = tabKeys.find((key) => key === view);
             if (next) setTab(next);
            }}
-           compact={tabCapacity < tabItems.length}
           />
          }
          actions={toolbar}

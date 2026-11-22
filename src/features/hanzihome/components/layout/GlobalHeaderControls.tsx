@@ -5,12 +5,10 @@ import { useSelector } from "@tanstack/react-store";
 import { BookOpen, Languages, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import {
- DropdownMenuCheckboxItem,
- DropdownMenuItem,
- DropdownMenuLabel,
- DropdownMenuSeparator,
-} from "@/components/ui/overlays/dropdown-menu";
+import { Button } from "@/components/ui/actions/button";
+import { Switch } from "@/components/ui/forms/switch";
+import { Typography } from "@/components/ui/display/typography";
+import { BasePopover } from "@/components/ui/overlays/base-popover";
 import {
  defaultLessonTextDisplaySettings,
  defaultTextbookDisplaySettings,
@@ -28,7 +26,9 @@ const KNOWN_TEXTBOOK_KEYS: readonly string[] = [
 ];
 
 /** Reading display and voice entries rendered at the top of the header quick settings menu. */
-export function GlobalHeaderStudySettingsItems() {
+export function GlobalHeaderStudySettingsItems({
+ listening = false,
+}: { listening?: boolean } = {}) {
  const t = useTranslations("Shell");
  const learning = useLearningState();
  const displayMode = useMemo(() => {
@@ -93,31 +93,43 @@ export function GlobalHeaderStudySettingsItems() {
   });
  };
 
- return (
-  <>
-   <DropdownMenuLabel>{t("header.readingDisplay")}</DropdownMenuLabel>
-   <DropdownMenuCheckboxItem
-    checked={showPinyin}
-    onSelect={(event) => event.preventDefault()}
-    onCheckedChange={togglePinyin}
+ if (listening)
+  return (
+   <BasePopover.Close
+    render={<Button variant="menu" size="menu" align="start" className="w-full" />}
+    onClick={() => speechSettingsDialogStore.actions.openDialog()}
    >
-    <Languages />
-    {t("header.showPinyin")}
-   </DropdownMenuCheckboxItem>
-   <DropdownMenuCheckboxItem
-    checked={showMeaning}
-    onSelect={(event) => event.preventDefault()}
-    onCheckedChange={toggleMeaning}
-   >
-    <BookOpen />
-    {t("header.showMeaning")}
-   </DropdownMenuCheckboxItem>
-   <DropdownMenuItem onSelect={() => speechSettingsDialogStore.actions.openDialog()}>
     <Volume2 />
     {t("header.voiceSettings")}
-   </DropdownMenuItem>
-   <DropdownMenuSeparator />
-  </>
+   </BasePopover.Close>
+  );
+ return (
+  <div className="grid divide-y divide-border-default">
+   <label className="flex min-h-12 items-center justify-between gap-3 px-3 py-2">
+    <Typography as="span" variant="bodySmall" className="flex items-center gap-2">
+     <Languages className="size-4" />
+     {t("header.showPinyin")}
+    </Typography>
+    <Switch
+     checked={showPinyin}
+     onCheckedChange={togglePinyin}
+     disabled={learning.isLoading}
+     aria-label={t("header.showPinyin")}
+    />
+   </label>
+   <label className="flex min-h-12 items-center justify-between gap-3 px-3 py-2">
+    <Typography as="span" variant="bodySmall" className="flex items-center gap-2">
+     <BookOpen className="size-4" />
+     {t("header.showMeaning")}
+    </Typography>
+    <Switch
+     checked={showMeaning}
+     onCheckedChange={toggleMeaning}
+     disabled={learning.isLoading}
+     aria-label={t("header.showMeaning")}
+    />
+   </label>
+  </div>
  );
 }
 
@@ -129,6 +141,13 @@ export function GlobalHeaderStudyDialogs() {
    trigger={null}
    open={isAudioSettingsOpen}
    onOpenChange={speechSettingsDialogStore.actions.setOpen}
+   onCloseAutoFocus={(event) => {
+    const trigger = document.getElementById("header-quick-settings-trigger");
+    if (trigger) {
+     event.preventDefault();
+     trigger.focus();
+    }
+   }}
   />
  );
 }

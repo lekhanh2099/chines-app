@@ -2,16 +2,20 @@
 
 import { useMemo } from "react";
 import { useLessonReader } from "@/features/hanzihome/reader-adapters/useLessonReader";
+import { LessonReaderHeaderSettings } from "@/features/hanzihome/reader-adapters/LessonReaderTools";
 import { Reader } from "@/features/reader/components/Reader";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
+import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { ReaderServices } from "@/features/reader/runtime/reader-services";
 
 export function BusinessChineseReader({
  document,
+ lesson,
  bookKey,
  services,
 }: {
  document: ReaderDocumentModel;
+ lesson: TextbookLesson;
  bookKey: string;
  services?: ReaderServices;
 }) {
@@ -29,19 +33,29 @@ export function BusinessChineseReader({
     stickyOffset: "page",
     hidePinyinToggle: true,
     hideTranslationToggle: true,
+    hideAdvancedTools: true,
     ...integration.services.toolbar,
     ...services?.toolbar,
    },
    renderReader: ({ content, toolbar }) => {
-    const workspace = services?.renderReader
-     ? services.renderReader({ content, toolbar })
-     : content;
+    const workspace = services?.renderReader ? (
+     <>
+      <LessonReaderHeaderSettings
+       lesson={lesson}
+       displayMode={integration.displayMode}
+       onDisplayModeChange={integration.updateDisplay}
+      />
+      {services.renderReader({ content, toolbar })}
+     </>
+    ) : (
+     content
+    );
     return integration.services.renderReader
      ? integration.services.renderReader({ content: workspace, toolbar: null })
      : workspace;
    },
   }),
-  [integration.services, services],
+  [integration.services, integration.displayMode, integration.updateDisplay, services, lesson],
  );
 
  return (

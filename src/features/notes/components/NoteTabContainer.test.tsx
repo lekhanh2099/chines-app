@@ -58,7 +58,13 @@ describe("NoteTabContainer route synchronization", () => {
    localStorage,
   });
   vi.stubGlobal("localStorage", localStorage);
-  headerToolbarStore.setState(() => ({ content: null, ownerId: null }));
+  headerToolbarStore.setState(() => ({
+   content: null,
+   ownerId: null,
+   settingsOwnerId: null,
+   readingSettings: null,
+   listeningSettings: null,
+  }));
   noteTabsStore.setState(() => ({
    ownerId: "owner-a",
    tabs: [{ noteId: "note-b", title: "Note B" }],
