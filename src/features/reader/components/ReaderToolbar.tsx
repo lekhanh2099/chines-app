@@ -95,7 +95,11 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
      {speech ? (
       <Button
        size="toolbar"
-       className={inline ? "w-9 justify-center 2xl:w-auto" : "w-9 justify-center sm:w-auto"}
+       className={
+        inline && !toolbar?.hideSegmentNavigation
+         ? "w-9 justify-center 2xl:w-auto"
+         : "justify-center"
+       }
        aria-label={label}
        disabled={
         segmentCount === 0 ||
@@ -105,7 +109,11 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
        onClick={playback}
       >
        <PlaybackIcon data-icon="inline-start" />
-       <span className={inline ? "hidden 2xl:inline" : "hidden sm:inline"}>{label}</span>
+       <span
+        className={inline && !toolbar?.hideSegmentNavigation ? "hidden 2xl:inline" : undefined}
+       >
+        {label}
+       </span>
       </Button>
      ) : null}
      {speech && status !== "idle" && !inline ? (
@@ -170,7 +178,13 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
       <ReaderOutline />
      ) : null}
      {speech ? (
-      <div className={inline ? "hidden 2xl:flex items-center" : "hidden md:flex items-center"}>
+      <div
+       className={
+        inline && !toolbar?.hideSegmentNavigation
+         ? "hidden 2xl:flex items-center"
+         : "flex items-center"
+       }
+      >
        <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
          <Button
@@ -260,10 +274,10 @@ export function ReaderToolbar({ inline = false }: { inline?: boolean }) {
    variant={toolbar?.stickyOffset ? "elevated" : "default"}
    className={
     toolbar?.stickyOffset === "tabs"
-     ? "sticky top-12 z-20"
+     ? "min-w-0 sticky top-12 z-20"
      : toolbar?.stickyOffset === "page"
-       ? "sticky top-0 z-20"
-       : undefined
+       ? "min-w-0 sticky top-0 z-20"
+       : "min-w-0"
    }
   >
    {controls}

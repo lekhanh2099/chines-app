@@ -219,7 +219,7 @@ export function BusinessChineseSectionsView({
       return (
        <Fragment key={section.id}>
         {section.category === "text" ? (
-         <div className="content-auto">
+         <div className="min-w-0 content-auto">
           <BusinessChineseReader
            bookKey={bookKey}
            document={sectionDocuments.get(section.id) ?? textReaderDocument}

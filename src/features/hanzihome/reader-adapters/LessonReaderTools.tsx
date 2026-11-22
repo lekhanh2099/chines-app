@@ -1,15 +1,6 @@
 "use client";
 
-import {
- Focus,
- Headphones,
- ListEnd,
- Play,
- Repeat2,
- RotateCcw,
- Settings2,
- Square,
-} from "lucide-react";
+import { Focus, ListEnd, Play, Repeat2, RotateCcw, Settings2, Square, Type } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
@@ -25,8 +16,6 @@ import {
  DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
-import { Switch } from "@/components/ui/forms/switch";
-import { SegmentedControl } from "@/components/ui/forms/segmented-control";
 import { Separator } from "@/components/ui/layout/separator";
 import {
  Dialog,
@@ -35,7 +24,6 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/overlays/dialog";
-import { Typography } from "@/components/ui/display/typography";
 import { HanziHomeReadingQuickSettingsMenu } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
@@ -85,213 +73,112 @@ export function LessonReaderTools({
 
  return (
   <>
-   {!isCoarsePointer && !compact ? (
-    <DropdownMenu>
-     <DropdownMenuTrigger asChild>
-      <Button type="button" variant="outline" size="icon-toolbar" aria-label={t("title")}>
-       <Settings2 />
-      </Button>
-     </DropdownMenuTrigger>
-     <DropdownMenuContent align="end" width="lg">
-      <DropdownMenuLabel>{t("listening")}</DropdownMenuLabel>
-      <DropdownMenuItem onSelect={() => commands.playAll()}>
-       <Play />
-       {t("playAll")}
-      </DropdownMenuItem>
-      <DropdownMenuItem onSelect={commands.restartCurrent}>
-       <RotateCcw />
-       {commandLabels("restart")}
-      </DropdownMenuItem>
-      <DropdownMenuItem disabled={playbackStatus === "idle"} onSelect={commands.stop}>
-       <Square />
-       {commandLabels("stopReading")}
-      </DropdownMenuItem>
-      <DropdownMenuLabel>{commandLabels("rate")}</DropdownMenuLabel>
-      <DropdownMenuRadioGroup
-       value={String(rate)}
-       onValueChange={(value) => commands.setRate(Number(value))}
-      >
-       {readerRateOptions.map((option) => (
-        <DropdownMenuRadioItem key={option} value={String(option)}>
-         {option.toFixed(2)}x
-        </DropdownMenuRadioItem>
-       ))}
-      </DropdownMenuRadioGroup>
-      <DropdownMenuSeparator />
-      <DropdownMenuCheckboxItem
-       checked={loopCurrent}
-       onSelect={(event) => event.preventDefault()}
-       onCheckedChange={() => actions.toggleLoop()}
-      >
-       <Repeat2 />
-       {t("loop")}
-      </DropdownMenuCheckboxItem>
-      <DropdownMenuCheckboxItem
-       checked={autoAdvance}
-       onSelect={(event) => event.preventDefault()}
-       onCheckedChange={() => actions.toggleAutoAdvance()}
-      >
-       <ListEnd />
-       {t("autoAdvance")}
-      </DropdownMenuCheckboxItem>
-      {onOpenShadowing ? (
-       <DropdownMenuItem onSelect={onOpenShadowing}>{t("shadowing")}</DropdownMenuItem>
-      ) : null}
-      <DropdownMenuSeparator />
-      <DropdownMenuLabel>{t("display")}</DropdownMenuLabel>
-      <DropdownMenuCheckboxItem
-       checked={focusMode}
-       onSelect={(event) => event.preventDefault()}
-       onCheckedChange={() => actions.toggleFocus()}
-      >
-       <Focus />
-       {t("focus")}
-      </DropdownMenuCheckboxItem>
-      <DropdownMenuSeparator />
-      {
-       <HanziHomeReadingQuickSettingsMenu
-        displayMode={displayMode}
-        onChange={onDisplayModeChange}
-       />
-      }
-      {menuContent}
-     </DropdownMenuContent>
-    </DropdownMenu>
-   ) : (
-    <>
+   <DropdownMenu>
+    <DropdownMenuTrigger asChild>
      <Button
+      ref={toolsTriggerRef}
       type="button"
       variant="outline"
       size="icon-toolbar"
-      aria-haspopup="dialog"
-      ref={toolsTriggerRef}
       aria-label={t("title")}
-      aria-expanded={dialogOpen}
-      onClick={() => setDialogOpen(true)}
      >
       <Settings2 />
      </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="end" width="lg">
+     <DropdownMenuLabel>{t("listening")}</DropdownMenuLabel>
+     <DropdownMenuItem onSelect={() => commands.playAll()}>
+      <Play />
+      {t("playAll")}
+     </DropdownMenuItem>
+     <DropdownMenuItem onSelect={commands.restartCurrent}>
+      <RotateCcw />
+      {commandLabels("restart")}
+     </DropdownMenuItem>
+     <DropdownMenuItem disabled={playbackStatus === "idle"} onSelect={commands.stop}>
+      <Square />
+      {commandLabels("stopReading")}
+     </DropdownMenuItem>
+     <DropdownMenuLabel>{commandLabels("rate")}</DropdownMenuLabel>
+     <DropdownMenuRadioGroup
+      value={String(rate)}
+      onValueChange={(value) => commands.setRate(Number(value))}
+     >
+      {readerRateOptions.map((option) => (
+       <DropdownMenuRadioItem key={option} value={String(option)}>
+        {option.toFixed(2)}x
+       </DropdownMenuRadioItem>
+      ))}
+     </DropdownMenuRadioGroup>
+     <DropdownMenuSeparator />
+     <DropdownMenuCheckboxItem
+      checked={loopCurrent}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={() => actions.toggleLoop()}
+     >
+      <Repeat2 />
+      {t("loop")}
+     </DropdownMenuCheckboxItem>
+     <DropdownMenuCheckboxItem
+      checked={autoAdvance}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={() => actions.toggleAutoAdvance()}
+     >
+      <ListEnd />
+      {t("autoAdvance")}
+     </DropdownMenuCheckboxItem>
+     {onOpenShadowing ? (
+      <DropdownMenuItem onSelect={onOpenShadowing}>{t("shadowing")}</DropdownMenuItem>
+     ) : null}
+     <DropdownMenuSeparator />
+     <DropdownMenuLabel>{t("display")}</DropdownMenuLabel>
+     <DropdownMenuCheckboxItem
+      checked={focusMode}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={() => actions.toggleFocus()}
+     >
+      <Focus />
+      {t("focus")}
+     </DropdownMenuCheckboxItem>
+     <DropdownMenuSeparator />
+     {isCoarsePointer || compact ? (
+      <DropdownMenuItem onSelect={() => setDialogOpen(true)}>
+       <Type />
+       {t("font")} / {t("size")}
+      </DropdownMenuItem>
+     ) : (
+      <HanziHomeReadingQuickSettingsMenu displayMode={displayMode} onChange={onDisplayModeChange} />
+     )}
+     {isCoarsePointer || compact ? null : menuContent}
+    </DropdownMenuContent>
+   </DropdownMenu>
 
-     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-      <DialogContent
-       size="md"
-       closeLabel={common("close")}
-       aria-describedby={undefined}
-       onCloseAutoFocus={(event) => {
-        event.preventDefault();
-        toolsTriggerRef.current?.focus();
-       }}
-      >
-       <DialogHeader>
-        <DialogTitle>{t("title")}</DialogTitle>
-       </DialogHeader>
-       <DialogBody>
-        <div className="grid gap-4">
-         <section className="grid gap-3">
-          <div className="flex items-center gap-2">
-           <Headphones aria-hidden="true" className="size-4 text-text-muted" />
-           <Typography
-            as="h3"
-            variant="cardTitle"
-            tone="muted"
-            weight="black"
-            transform="uppercase"
-           >
-            {t("listening")}
-           </Typography>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2">
-           <Button type="button" variant="surfaceCard" size="touch" onClick={commands.playAll}>
-            <Play data-icon="inline-start" />
-            {t("playAll")}
-           </Button>
-           <Button
-            type="button"
-            variant="surfaceCard"
-            size="touch"
-            wrap="normal"
-            onClick={commands.restartCurrent}
-           >
-            <RotateCcw data-icon="inline-start" />
-            {commandLabels("restart")}
-           </Button>
-           <Button
-            type="button"
-            variant="surfaceCard"
-            size="touch"
-            wrap="normal"
-            disabled={playbackStatus === "idle"}
-            onClick={commands.stop}
-           >
-            <Square data-icon="inline-start" />
-            {commandLabels("stopReading")}
-           </Button>
-          </div>
-
-          {onOpenShadowing ? (
-           <Button type="button" variant="surfaceCard" size="touch" onClick={onOpenShadowing}>
-            {t("shadowing")}
-           </Button>
-          ) : null}
-
-          <div className="divide-y divide-border-default">
-           <div className="flex min-h-11 items-center justify-between gap-3 py-1.5">
-            <Typography variant="label">{t("loop")}</Typography>
-            <Switch
-             checked={loopCurrent}
-             onCheckedChange={() => actions.toggleLoop()}
-             aria-label={t("loop")}
-            />
-           </div>
-           <div className="flex min-h-11 items-center justify-between gap-3 py-1.5">
-            <Typography variant="label">{t("autoAdvance")}</Typography>
-            <Switch
-             checked={autoAdvance}
-             onCheckedChange={() => actions.toggleAutoAdvance()}
-             aria-label={t("autoAdvance")}
-            />
-           </div>
-           <div className="flex min-h-11 items-center justify-between gap-3 py-1.5">
-            <Typography variant="label">{t("focus")}</Typography>
-            <Switch
-             checked={focusMode}
-             onCheckedChange={() => actions.toggleFocus()}
-             aria-label={t("focus")}
-            />
-           </div>
-          </div>
-
-          <div className="grid gap-2">
-           <Typography variant="label">{commandLabels("rate")}</Typography>
-           <SegmentedControl<string>
-            value={String(rate)}
-            items={readerRateOptions.map((option) => ({
-             key: String(option),
-             label: `${option}x`,
-            }))}
-            onChange={(value) => commands.setRate(Number(value))}
-            density="touch"
-            layout="wrap"
-            aria-label={commandLabels("rate")}
-           />
-          </div>
-         </section>
-
+   <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+    <DialogContent
+     size="md"
+     closeLabel={common("close")}
+     aria-describedby={undefined}
+     onCloseAutoFocus={(event) => {
+      event.preventDefault();
+      toolsTriggerRef.current?.focus();
+     }}
+    >
+     <DialogHeader>
+      <DialogTitle>{t("title")}</DialogTitle>
+     </DialogHeader>
+     <DialogBody>
+      <div className="grid gap-4">
+       <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
+       {sheetContent ? (
+        <>
          <Separator />
-         <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
-         {sheetContent ? (
-          <>
-           <Separator />
-           {sheetContent}
-          </>
-         ) : null}
-        </div>
-       </DialogBody>
-      </DialogContent>
-     </Dialog>
-    </>
-   )}
+         {sheetContent}
+        </>
+       ) : null}
+      </div>
+     </DialogBody>
+    </DialogContent>
+   </Dialog>
   </>
  );
 }
