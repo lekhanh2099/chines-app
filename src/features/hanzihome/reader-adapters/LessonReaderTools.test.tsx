@@ -132,13 +132,18 @@ describe("ReaderTools", () => {
   expect(markup).not.toContain("hidden xl:block");
  });
 
- it("uses the touch dialog for coarse pointer input", () => {
+ it("keeps listening commands in the shared menu and opens touch settings separately", () => {
   pointerState.coarse = true;
 
   const markup = renderReaderTools();
 
   expect(markup).toContain("Tùy chọn đọc &amp; nghe");
-  expect(markup).toContain('aria-haspopup="dialog"');
+  expect(markup).not.toContain('aria-haspopup="dialog"');
+  expect(markup).toContain("Đọc cả bài");
+  expect(markup).toContain("Nghe lại đoạn");
+  expect(markup).toContain("Phông chữ");
+  expect(markup).toContain("Cỡ chữ");
+  expect(markup).not.toContain("ZCOOL XiaoWei");
   expect(markup).not.toContain("xl:hidden");
   expect(markup).not.toContain("hidden xl:block");
  });
