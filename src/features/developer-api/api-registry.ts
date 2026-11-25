@@ -1445,6 +1445,16 @@ export const currentApiInventory = [
    "Home projects authenticated learner state without creating another progress owner.",
  }),
  inventoryEntry({
+  currentPath: "/api/shadowing/youtube-transcript",
+  methods: ["GET"],
+  source: "route",
+  group: "Học tập",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "Shadowing reads public YouTube captions for the signed-in learner; nothing is stored.",
+ }),
+ inventoryEntry({
   currentPath: "/api/learning-state",
   methods: ["GET", "PUT"],
   source: "route",

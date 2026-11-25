@@ -167,8 +167,9 @@ function NavRow({
    <Link
     href={item.href}
     onClick={(event) => {
+     const baseHref = item.href.split("?")[0] ?? item.href;
      if (
-      (active && (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
+      (active && pathname === baseHref && (itemId !== "lessons" || searchParams.size === 0)) ||
       isPendingThisItem
      ) {
       event.preventDefault();
@@ -300,9 +301,11 @@ function CollapsedGroupMenu({
           aria-busy={isPendingThisItem ? "true" : undefined}
           className={cn(isPendingThisItem && "pointer-events-none opacity-80")}
           onClick={(event) => {
+           const baseHref = item.href.split("?")[0] ?? item.href;
            if (
             (itemActive &&
-             (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
+             pathname === baseHref &&
+             (itemId !== "lessons" || searchParams.size === 0)) ||
             isPendingThisItem
            ) {
             event.preventDefault();
@@ -584,9 +587,9 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
         <Link
          href={item.href}
          onClick={(event) => {
+          const baseHref = item.href.split("?")[0] ?? item.href;
           if (
-           (active &&
-            (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
+           (active && pathname === baseHref && (itemId !== "lessons" || searchParams.size === 0)) ||
            isPendingThisItem
           ) {
            event.preventDefault();

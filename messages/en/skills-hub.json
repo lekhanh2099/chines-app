@@ -1,0 +1,31 @@
+{
+ "header": {
+  "title": "Skills hub",
+  "description": "Listening, speaking, daily reading, and dictation in one place.",
+  "breadcrumbAria": "Skills hub navigation",
+  "switchSectionAria": "Switch skill practice section"
+ },
+ "sections": {
+  "shadowing": {
+   "title": "Video shadowing",
+   "description": "Paste a YouTube link (≤ 30 min) to load Chinese captions, shadow along, and record locally.",
+   "action": "Start"
+  },
+  "speakingDrills": {
+   "description": "Practice spoken Mandarin sentence by sentence through real-life scenarios.",
+   "action": "Open"
+  },
+  "conversation": {
+   "description": "Chat in Chinese freely or by scenario with an AI conversation partner.",
+   "action": "Open"
+  },
+  "dailyReading": {
+   "description": "Read short daily Chinese articles with pinyin, lookup, and translation.",
+   "action": "Open"
+  },
+  "dictation": {
+   "description": "Listen and type each sentence to sharpen listening comprehension and recall.",
+   "action": "Open"
+  }
+ }
+}

@@ -45,12 +45,13 @@ override generic shadcn or vendor guidance.
 
 These are product/domain compositions, not replacement primitives.
 
-| Composition                     | Owner                                                                       | Contract                                                                 |
-| ------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| HanziHome workspace bar         | `src/features/hanzihome/components/layout/WorkspaceToolbar.tsx`             | feature chrome; children remain canonical controls                       |
-| HanziHome reader quick menu     | `src/features/hanzihome/HanziHomeReadingSettingsSection.tsx`                | lesson-toolbar-only font/size/reveal/visibility preferences              |
-| HanziHome Header context bridge | `src/features/hanzihome/components/layout/HanziHomeHeaderContextBridge.tsx` | owner-safe lesson breadcrumb registration into shared Header slot        |
-| HanziHome search bridge         | `src/features/hanzihome/search/HanziHomeGlobalSearchBridge.tsx`             | feature data/results/navigation over shared open/query interaction state |
+| Composition                     | Owner                                                                       | Contract                                                                  |
+| ------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| HanziHome workspace bar         | `src/features/hanzihome/components/layout/WorkspaceToolbar.tsx`             | feature chrome; children remain canonical controls                        |
+| HanziHome reader quick menu     | `src/features/hanzihome/HanziHomeReadingSettingsSection.tsx`                | lesson-toolbar-only font/size/reveal/visibility preferences               |
+| HanziHome Header context bridge | `src/features/hanzihome/components/layout/HanziHomeHeaderContextBridge.tsx` | owner-safe lesson breadcrumb registration into shared Header slot         |
+| Skills Hub Header context       | `src/features/skills-hub/SkillsHubHeaderContext.tsx`                        | feature-owned contextual breadcrumb and section switcher into Header slot |
+| HanziHome search bridge         | `src/features/hanzihome/search/HanziHomeGlobalSearchBridge.tsx`             | feature data/results/navigation over shared open/query interaction state  |
 
 Do not promote these to `src/components/ui` unless the same semantic contract is
 proven outside the feature.

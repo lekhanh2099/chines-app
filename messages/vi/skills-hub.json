@@ -1,0 +1,31 @@
+{
+ "header": {
+  "title": "Luyện kỹ năng",
+  "description": "Nghe, nói, đọc và chép chính tả ở cùng một chỗ.",
+  "breadcrumbAria": "Điều hướng Luyện kỹ năng",
+  "switchSectionAria": "Chuyển khu vực luyện kỹ năng"
+ },
+ "sections": {
+  "shadowing": {
+   "title": "Shadowing theo video",
+   "description": "Dán link YouTube (≤ 30 phút), tự lấy phụ đề tiếng Trung, nói đuổi theo và ghi âm ngay trong phiên.",
+   "action": "Bắt đầu"
+  },
+  "speakingDrills": {
+   "description": "Luyện phản xạ khẩu ngữ theo tình huống giao tiếp thực tế từng câu một.",
+   "action": "Mở"
+  },
+  "conversation": {
+   "description": "Trò chuyện tiếng Trung tự do hoặc theo kịch bản cùng trợ lý AI.",
+   "action": "Mở"
+  },
+  "dailyReading": {
+   "description": "Đọc bài ngắn tiếng Trung mỗi ngày kèm phiên âm, tra từ và dịch nghĩa.",
+   "action": "Mở"
+  },
+  "dictation": {
+   "description": "Nghe và gõ lại từng câu để rèn phản xạ nghe hiểu và nhớ mặt chữ.",
+   "action": "Mở"
+  }
+ }
+}

@@ -5,8 +5,8 @@ import {
  Brain,
  FileCode2,
  GraduationCap,
+ Headphones,
  Home,
- Keyboard,
  Landmark,
  Languages,
  Layers3,
@@ -14,9 +14,6 @@ import {
  LibraryBig,
  Lightbulb,
  ListTree,
- MessageCircle,
- Mic,
- Newspaper,
  NotebookPen,
  NotebookTabs,
  RefreshCcw,
@@ -49,16 +46,17 @@ export const navigationItems = {
   href: "/hanzihome",
   aliases: ["/hsk/han-thuong-mai", "/hsk/nhip-cau-han-ngu", "/hsk/doc-hieu", "/hsk/khau-ngu-tc1"],
  },
+ skillsHub: {
+  messageKey: "navigation.items.skillsHub",
+  icon: Headphones,
+  href: "/skills",
+  aliases: ["/shadowing", "/speaking-drills", "/daily-reading", "/conversation", "/dictation"],
+ },
  reader: { messageKey: "navigation.items.reader", icon: BookOpenText, href: "/reader" },
  readerCourse: {
   messageKey: "navigation.items.readerCourse",
   icon: BookOpenText,
   href: "/reader/course",
- },
- dailyReading: {
-  messageKey: "navigation.items.dailyReading",
-  icon: Newspaper,
-  href: "/daily-reading",
  },
  readerPractice: {
   messageKey: "navigation.items.readerPractice",
@@ -121,7 +119,6 @@ export const navigationItems = {
   href: "/notes",
   match: "prefix",
  },
- dictation: { messageKey: "navigation.items.dictation", icon: Keyboard, href: "/dictation" },
  translationStudio: {
   messageKey: "navigation.items.translationStudio",
   icon: Languages,
@@ -131,16 +128,6 @@ export const navigationItems = {
   messageKey: "navigation.items.memoryTips",
   icon: Lightbulb,
   href: "/memory-tips",
- },
- conversation: {
-  messageKey: "navigation.items.conversation",
-  icon: MessageCircle,
-  href: "/conversation",
- },
- speakingDrills: {
-  messageKey: "navigation.items.speakingDrills",
-  icon: Mic,
-  href: "/speaking-drills",
  },
  learningLoop: {
   messageKey: "navigation.items.learningLoop",
@@ -173,9 +160,9 @@ export const navigationItems = {
 } satisfies {
  home: NavigationItemConfig;
  lessons: NavigationItemConfig;
+ skillsHub: NavigationItemConfig;
  reader: NavigationItemConfig;
  readerCourse: NavigationItemConfig;
- dailyReading: NavigationItemConfig;
  readerPractice: NavigationItemConfig;
  readerMock: NavigationItemConfig;
  hskReading: NavigationItemConfig;
@@ -188,11 +175,8 @@ export const navigationItems = {
  personalLearning: NavigationItemConfig;
  notebook: NavigationItemConfig;
  notes: NavigationItemConfig;
- dictation: NavigationItemConfig;
  translationStudio: NavigationItemConfig;
  memoryTips: NavigationItemConfig;
- conversation: NavigationItemConfig;
- speakingDrills: NavigationItemConfig;
  learningLoop: NavigationItemConfig;
  radicals: NavigationItemConfig;
  inspector: NavigationItemConfig;
@@ -235,7 +219,7 @@ export const navigationGroups = [
     icon: GraduationCap,
     collapsible: false,
     labelled: false,
-    itemIds: ["home", "lessons", "dailyReading", "speakingDrills", "reader"],
+    itemIds: ["home", "lessons", "skillsHub", "reader"],
    },
    {
     id: "learning-reference",
@@ -282,7 +266,7 @@ export const navigationGroups = [
     icon: Target,
     collapsible: false,
     labelled: false,
-    itemIds: ["dictation", "conversation", "translationStudio"],
+    itemIds: ["translationStudio"],
    },
    {
     id: "practice-review",
@@ -336,7 +320,7 @@ export function filterNavigationGroupsForContentCapability(
 export const mobileNavigationItemIds = [
  "home",
  "lessons",
- "dictation",
+ "skillsHub",
  "notes",
 ] satisfies readonly NavigationItemId[];
 export const mobileUtilityItemIds = ["settings"] satisfies readonly NavigationItemId[];

@@ -32,6 +32,8 @@
   "items": {
    "home": "Home",
    "lessons": "Curricula",
+   "skillsHub": "Skills hub",
+   "shadowing": "Shadowing",
    "reader": "Reading hub",
    "readerCourse": "Course readings",
    "dailyReading": "Daily reading",
@@ -64,7 +66,7 @@
   "mobileItems": {
    "home": "Home",
    "lessons": "Lessons",
-   "dictation": "Dictation",
+   "skillsHub": "Skills",
    "notes": "Notes"
   },
   "sidebarLabel": "navigation sidebar",

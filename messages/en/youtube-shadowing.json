@@ -1,0 +1,97 @@
+{
+ "empty": {
+  "title": "YouTube video shadowing",
+  "description": "Paste a Chinese YouTube link (≤ 30 min) to fetch captions automatically, shadow along, and record locally for this session.",
+  "tip1": "Pick a video up to 30 minutes long with Chinese captions (manual captions work best).",
+  "tip2": "Wear headphones so your microphone captures your voice cleanly without video bleed.",
+  "tip3": "Recordings and pasted scripts stay in memory for this session only — no grading, nothing saved."
+ },
+ "linkForm": {
+  "placeholder": "https://youtu.be/… or YouTube link",
+  "inputAria": "YouTube video URL",
+  "submit": "Start",
+  "invalidUrl": "Invalid YouTube link. Paste a full YouTube video URL (for example youtu.be/… or youtube.com/watch?v=…)."
+ },
+ "tooLong": {
+  "title": "Video exceeds the 30-minute limit",
+  "description": "This video is {minutes} minutes long. Only videos up to 30 minutes are currently supported. Please try a shorter video."
+ },
+ "controls": {
+  "shadow": "Shadow",
+  "stop": "Stop",
+  "requestingMic": "Requesting mic…",
+  "replaySentence": "Replay current sentence",
+  "loopSentence": "Loop current sentence",
+  "speedLabel": "Speed",
+  "speedAria": "Video playback speed",
+  "speed05": "0.5×",
+  "speed075": "0.75×",
+  "speed1": "1×"
+ },
+ "status": {
+  "recording": "Recording {duration}",
+  "tapToPlay": "Tap ▶ on the video to start playback — your microphone is still recording."
+ },
+ "hints": {
+  "headphones": "Wear headphones while shadowing so your mic does not pick up the video audio."
+ },
+ "playerErrors": {
+  "embedDisabled": "This video does not allow embedded playback outside YouTube.",
+  "unavailable": "This video does not exist, was removed, or is private.",
+  "generic": "Could not load the YouTube player for this video.",
+  "openOnYoutube": "Open on YouTube"
+ },
+ "recorderErrors": {
+  "permissionDenied": "Microphone access was denied. Allow microphone permission in your browser and try again.",
+  "unsupported": "This browser does not support audio recording (MediaRecorder). You can still listen and follow the script.",
+  "recordingFailed": "Could not record audio right now. Check your microphone and try again."
+ },
+ "recordings": {
+  "title": "Recordings ({count})",
+  "memoryHint": "Keeps last 3 · cleared on reload",
+  "empty": "No recordings yet. Press Shadow to speak along and listen back.",
+  "item": "Take {number} · {duration}",
+  "itemWithSentence": "Take {number} · {duration} · from line {sentence}",
+  "audioAria": "Play back recording take {number}",
+  "deleteAria": "Delete recording take {number}"
+ },
+ "script": {
+  "displayModeAria": "Script display mode",
+  "modeHanzi": "Hanzi",
+  "modePinyin": "+ Pinyin",
+  "modeHidden": "Hide",
+  "segmentCount": "{count} lines",
+  "manualBadge": "Pasted",
+  "pasteAnother": "Paste another script",
+  "untimedBanner": "Untimed script — use the buttons on the right to move through lines manually.",
+  "previousSentence": "Previous",
+  "nextSentence": "Next",
+  "listAria": "Caption transcript lines",
+  "hiddenMask": "••••••••••••"
+ },
+ "noScript": {
+  "title": "No Chinese captions found",
+  "fetchErrorTitle": "Could not load captions automatically",
+  "noCaptionsDescription": "You can still play the video here and paste a script manually to practice shadowing.",
+  "blockedDescription": "YouTube temporarily declined the caption request from the server. You can retry or paste a script manually.",
+  "fetchFailedDescription": "Could not reach YouTube or parse captions right now. You can retry or paste a script manually.",
+  "availableLanguages": "Available caption languages on this video: {languages}.",
+  "pasteScript": "Paste script",
+  "retry": "Retry",
+  "tryAnotherVideo": "Try another video",
+  "guideTitle": "How to copy a script from YouTube",
+  "guideSteps": "On YouTube: open the video description → … More → Show transcript → copy and paste it here.",
+  "chatbotWarning": "Do not ask a chatbot for a transcript using only the link — it may fabricate content. Only use tools that actually transcribe the audio."
+ },
+ "manualDialog": {
+  "title": "Paste script manually",
+  "description": "Supports one line per sentence, inline timestamps (01:23 text), or text copied directly from YouTube \"Show transcript\".",
+  "placeholder": "0:05\n早上好，我是佳佳\n0:10\n今天我们一起练习中文…",
+  "textareaAria": "Chinese script text",
+  "preview": "Detected {total} lines, {timed} with timestamps.",
+  "untimedNotice": "Fewer than 50% of lines have timestamps, so manual line stepping will be used.",
+  "cancel": "Cancel",
+  "apply": "Use script",
+  "close": "Close"
+ }
+}
