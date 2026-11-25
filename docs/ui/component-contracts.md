@@ -432,6 +432,8 @@ document.
 
 HanziHome module navigation is contextual and remains inside the feature.
 
+Các đích luyện kỹ năng (shadowing, khẩu ngữ, hội thoại AI, bài đọc hôm nay, chép chính tả) thuộc hub `/skills`; Sidebar chỉ liệt kê hub và giữ nó active trên các trang con. Home không lặp lại hub.
+
 ### Responsive shell and Home
 
 Persistent Sidebar starts at `lg`; below it, quick navigation and a

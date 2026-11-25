@@ -139,6 +139,7 @@ Verify:
 - `Thêm` exposes every non-primary route plus the Settings destination so hiding the phone Header gear never makes Settings unreachable;
 - bottom navigation includes device safe-area within its compact labeled bar;
 - Home contains continuation/recent-work content and does not duplicate the global sitemap as large navigation cards;
+- Skills hub (`/skills`) stays active in Sidebar and in the phone bottom bar (`Kỹ năng`) across `/skills` and all five child routes (`/shadowing`, `/speaking-drills`, `/daily-reading`, `/conversation`, `/dictation`), including with query parameters;
 - Home loading skeleton matches current hierarchy.
 
 For Home layout work, verify a narrow phone, iPad portrait, a

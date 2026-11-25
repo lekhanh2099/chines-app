@@ -119,6 +119,33 @@ function isActive(pathname: string, searchParams: URLSearchParams, itemId: Navig
  );
 }
 
+function isAliasRoute(itemId: NavigationItemId, pathname: string) {
+ const item: NavigationItemConfig = navigationItems[itemId];
+ return (item.aliases ?? []).includes(pathname);
+}
+
+export function shouldBlockActiveNavigation({
+ itemId,
+ active,
+ pathname,
+ searchParams,
+ isPending,
+}: {
+ itemId: NavigationItemId;
+ active: boolean;
+ pathname: string;
+ searchParams: URLSearchParams;
+ isPending: boolean;
+}) {
+ const item: NavigationItemConfig = navigationItems[itemId];
+ return (
+  (active &&
+   !isAliasRoute(itemId, pathname) &&
+   (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
+  isPending
+ );
+}
+
 function groupHasActiveRoute(
  group: NavigationGroup,
  pathname: string,
@@ -168,8 +195,13 @@ function NavRow({
     href={item.href}
     onClick={(event) => {
      if (
-      (active && (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
-      isPendingThisItem
+      shouldBlockActiveNavigation({
+       itemId,
+       active,
+       pathname,
+       searchParams,
+       isPending: isPendingThisItem,
+      })
      ) {
       event.preventDefault();
       return;
@@ -301,9 +333,13 @@ function CollapsedGroupMenu({
           className={cn(isPendingThisItem && "pointer-events-none opacity-80")}
           onClick={(event) => {
            if (
-            (itemActive &&
-             (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
-            isPendingThisItem
+            shouldBlockActiveNavigation({
+             itemId,
+             active: itemActive,
+             pathname,
+             searchParams,
+             isPending: isPendingThisItem,
+            })
            ) {
             event.preventDefault();
             return;
@@ -585,9 +621,13 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
          href={item.href}
          onClick={(event) => {
           if (
-           (active &&
-            (itemId !== "lessons" || (pathname === item.href && searchParams.size === 0))) ||
-           isPendingThisItem
+           shouldBlockActiveNavigation({
+            itemId,
+            active,
+            pathname,
+            searchParams,
+            isPending: isPendingThisItem,
+           })
           ) {
            event.preventDefault();
            return;

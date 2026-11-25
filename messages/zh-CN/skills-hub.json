@@ -1,0 +1,31 @@
+{
+ "header": {
+  "title": "技能练习",
+  "description": "把听力、口语、每日阅读和听写集中在同一处。",
+  "breadcrumbAria": "技能练习导航",
+  "switchSectionAria": "切换技能练习栏目"
+ },
+ "sections": {
+  "shadowing": {
+   "title": "视频跟读 Shadowing",
+   "description": "粘贴中文 YouTube 链接（≤ 30 分钟），自动获取字幕并边听边跟读录音。",
+   "action": "开始"
+  },
+  "speakingDrills": {
+   "description": "按日常交际场景逐句练习口语表达与反应速度。",
+   "action": "打开"
+  },
+  "conversation": {
+   "description": "与 AI 伙伴自由对话或按情境练习中文交流。",
+   "action": "打开"
+  },
+  "dailyReading": {
+   "description": "每天阅读简短中文文章，支持拼音、查词与译文对照。",
+   "action": "打开"
+  },
+  "dictation": {
+   "description": "逐句听写，强化听力辨音与汉字记忆。",
+   "action": "打开"
+  }
+ }
+}

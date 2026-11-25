@@ -32,6 +32,8 @@
   "items": {
    "home": "Trang chủ",
    "lessons": "Giáo trình",
+   "skillsHub": "Luyện kỹ năng",
+   "shadowing": "Shadowing",
    "reader": "Đọc bài",
    "readerCourse": "Bài đọc giáo trình",
    "dailyReading": "Bài đọc hôm nay",
@@ -64,7 +66,7 @@
   "mobileItems": {
    "home": "Trang chủ",
    "lessons": "Giáo trình",
-   "dictation": "Chính tả",
+   "skillsHub": "Kỹ năng",
    "notes": "Ghi chú"
   },
   "sidebarLabel": "thanh điều hướng",

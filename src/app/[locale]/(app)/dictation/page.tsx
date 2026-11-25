@@ -4,6 +4,7 @@ import {
  listReaderDocuments,
 } from "@/features/reading/repositories/reading-content.repository";
 import { listStaticStudioCourseLessons } from "@/features/hanzihome/static-json/studio-static-content";
+import { SkillsHubHeaderContext } from "@/features/skills-hub/SkillsHubHeaderContext";
 
 export default async function DictationPage({
  searchParams,
@@ -23,13 +24,16 @@ export default async function DictationPage({
  const initialDictationLessons = listStaticStudioCourseLessons("hanzihome-studio-dictation");
 
  return (
-  <div className="hanzihome-static-page min-w-0">
-   <StudioDictationWorkspace
-    initialReaderDocuments={initialReaderDocuments}
-    initialReaderResource={initialReaderResource}
-    initialReaderCourseResource={initialReaderCourseResource}
-    initialDictationLessons={initialDictationLessons}
-   />
-  </div>
+  <>
+   <SkillsHubHeaderContext sectionId="dictation" />
+   <div className="hanzihome-static-page min-w-0">
+    <StudioDictationWorkspace
+     initialReaderDocuments={initialReaderDocuments}
+     initialReaderResource={initialReaderResource}
+     initialReaderCourseResource={initialReaderCourseResource}
+     initialDictationLessons={initialDictationLessons}
+    />
+   </div>
+  </>
  );
 }

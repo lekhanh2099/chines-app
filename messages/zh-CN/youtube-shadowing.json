@@ -1,0 +1,127 @@
+{
+ "empty": {
+  "title": "YouTube 视频跟读",
+  "description": "粘贴中文 YouTube 链接（≤ 30 分钟），自动获取字幕，边听边跟读并本地录音。",
+  "tip1": "请选择 30 分钟以内且带中文字幕的视频（人工字幕效果最佳）。",
+  "tip2": "建议佩戴耳机，减少麦克风录进视频原声。",
+  "tip3": "录音和手动粘贴的文稿仅保留在当前会话，不评分、不保存。"
+ },
+ "linkForm": {
+  "placeholder": "https://youtu.be/… 或 YouTube 链接",
+  "inputAria": "YouTube 视频链接",
+  "submit": "开始",
+  "invalidUrl": "YouTube 链接无效。请粘贴完整的 YouTube 视频地址（例如 youtu.be/… 或 youtube.com/watch?v=…）。"
+ },
+ "tooLong": {
+  "title": "视频超过 30 分钟限制",
+  "description": "该视频时长约 {minutes} 分钟，目前仅支持 30 分钟以内的视频，请换一个较短的视频。"
+ },
+ "controls": {
+  "shadow": "跟读录音",
+  "stop": "停止",
+  "requestingMic": "正在请求麦克风…",
+  "replaySentence": "重播当前句",
+  "loopSentence": "单句循环",
+  "changeVideo": "更换视频",
+  "recordingsButton": "录音（{count}）",
+  "speedLabel": "倍速",
+  "speedAria": "视频播放速度",
+  "speed05": "0.5×",
+  "speed075": "0.75×",
+  "speed1": "1×"
+ },
+ "status": {
+  "recording": "正在录音 {duration}",
+  "recordedLatest": "已录第 {number} 次 · {duration}",
+  "playLatest": "回听",
+  "stopLatest": "停止播放",
+  "tapToPlay": "请轻点视频上的 ▶ 开始播放，麦克风仍在录音中。"
+ },
+ "hints": {
+  "headphones": "跟读时建议佩戴耳机，避免麦克风录进视频声音。"
+ },
+ "playerErrors": {
+  "embedDisabled": "该视频禁止在 YouTube 站外嵌入播放。",
+  "unavailable": "该视频不存在、已删除或设为私密。",
+  "generic": "无法加载该视频的 YouTube 播放器。",
+  "openOnYoutube": "在 YouTube 打开"
+ },
+ "recorderErrors": {
+  "permissionDenied": "未获得麦克风权限。请在浏览器中允许访问麦克风后重试。",
+  "unsupported": "当前浏览器不支持录音（MediaRecorder），但仍可收听并查看文稿。",
+  "recordingFailed": "暂时无法录音，请检查麦克风后重试。"
+ },
+ "recordings": {
+  "title": "录音记录（{count}）",
+  "memoryHint": "最多保留最近 3 条 · 刷新后清空",
+  "empty": "还没有录音。点击“跟读录音”边听边说，结束后即可回听。",
+  "item": "第 {number} 次 · {duration}",
+  "itemWithSentence": "第 {number} 次 · {duration} · 从第 {sentence} 句开始",
+  "audioAria": "回听第 {number} 次录音",
+  "deleteAria": "删除第 {number} 次录音",
+  "dialogTitle": "本次录音记录",
+  "dialogClose": "关闭"
+ },
+ "changeVideoDialog": {
+  "title": "更换 YouTube 视频",
+  "description": "粘贴另一个中文 YouTube 视频链接（≤ 30 分钟）。",
+  "close": "关闭"
+ },
+ "script": {
+  "displayModeAria": "文稿显示模式",
+  "modeHanzi": "汉字",
+  "modePinyin": "+ 拼音",
+  "modeHidden": "隐藏",
+  "segmentCount": "{count} 句",
+  "manualBadge": "手动粘贴",
+  "pasteAnother": "粘贴其他文稿",
+  "untimedBanner": "当前文稿无时间戳，可使用右侧按钮手动切换句子。",
+  "previousSentence": "上一句",
+  "nextSentence": "下一句",
+  "listAria": "字幕文稿列表",
+  "hiddenMask": "••••••••••••"
+ },
+ "noScript": {
+  "title": "该视频暂无中文字幕",
+  "fetchErrorTitle": "暂时无法自动获取字幕",
+  "noCaptionsDescription": "你仍可在左侧播放视频，并手动粘贴文稿进行跟读练习。",
+  "blockedDescription": "YouTube 暂时拒绝了服务器的字幕请求。你可以重试或手动粘贴文稿。",
+  "fetchFailedDescription": "暂时无法连接 YouTube 或解析字幕。你可以重试或手动粘贴文稿。",
+  "availableLanguages": "该视频仅提供以下字幕：{languages}。",
+  "pasteScript": "粘贴文稿",
+  "retry": "重试",
+  "tryAnotherVideo": "换一个视频",
+  "guideTitle": "如何从 YouTube 复制文稿",
+  "guideSteps": "在 YouTube 上：展开视频简介 → … 更多 → 显示文稿 → 复制后粘贴到这里。",
+  "chatbotWarning": "请勿仅凭链接让聊天机器人生成文稿，它可能会编造内容。请仅使用真正听写音频的工具。"
+ },
+ "manualDialog": {
+  "title": "手动粘贴文稿",
+  "description": "支持每行一句、行首时间戳（01:23 句子），或直接从 YouTube“显示文稿”复制的格式。",
+  "placeholder": "0:05\n早上好，我是佳佳\n0:10\n今天我们一起练习中文…",
+  "textareaAria": "中文文稿内容",
+  "preview": "识别到 {total} 句，其中 {timed} 句带时间戳。",
+  "untimedNotice": "带时间戳的句子少于 50%，将以手动切句模式运行。",
+  "cancel": "取消",
+  "apply": "使用文稿",
+  "close": "关闭"
+ },
+ "dictationMode": {
+  "switchAria": "练习模式",
+  "tabShadowing": "跟读",
+  "tabDictation": "听写",
+  "untimedDisabledHint": "听写需要带时间戳的文稿才能逐句播放。",
+  "sentenceCounter": "第 {current} / {total} 句",
+  "sessionSummary": "已做 {attempted} 句 · 平均正确 {average}%",
+  "listenSentence": "听这一句",
+  "previousSentence": "上一句",
+  "nextSentence": "下一句",
+  "inputPlaceholder": "输入听到的汉字…",
+  "inputAria": "输入当前句子的中文听写内容",
+  "check": "检查",
+  "retry": "重做",
+  "resultLabel": "逐字对比",
+  "answerLabel": "正确答案：",
+  "lastSentenceSummary": "已到最后一句 · 共完成 {attempted} / {total} 句 · 平均正确 {average}%。"
+ }
+}

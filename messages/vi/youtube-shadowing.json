@@ -1,0 +1,127 @@
+{
+ "empty": {
+  "title": "Shadowing theo video YouTube",
+  "description": "Dán link video tiếng Trung (≤ 30 phút) để tự lấy phụ đề, nghe đuổi theo và ghi âm ngay trong phiên.",
+  "tip1": "Chọn video ≤ 30 phút có phụ đề tiếng Trung (tốt nhất là phụ đề thủ công rõ ràng).",
+  "tip2": "Đeo tai nghe để micro thu giọng bạn rõ hơn và ít bị lẫn tiếng video.",
+  "tip3": "Bản ghi và script dán tay chỉ giữ trong phiên hiện tại; không chấm điểm, không lưu."
+ },
+ "linkForm": {
+  "placeholder": "https://youtu.be/… hoặc link YouTube",
+  "inputAria": "Đường dẫn video YouTube",
+  "submit": "Bắt đầu",
+  "invalidUrl": "Link YouTube chưa hợp lệ. Hãy dán đường dẫn video YouTube đầy đủ (ví dụ youtu.be/… hoặc youtube.com/watch?v=…)."
+ },
+ "tooLong": {
+  "title": "Video vượt quá giới hạn 30 phút",
+  "description": "Video dài {minutes} phút, hiện chỉ hỗ trợ video ≤ 30 phút. Hãy chọn một video ngắn hơn."
+ },
+ "controls": {
+  "shadow": "Shadow",
+  "stop": "Dừng",
+  "requestingMic": "Đang xin mic…",
+  "replaySentence": "Phát lại câu hiện tại",
+  "loopSentence": "Lặp câu hiện tại",
+  "changeVideo": "Đổi video",
+  "recordingsButton": "Bản ghi ({count})",
+  "speedLabel": "Tốc độ",
+  "speedAria": "Tốc độ phát video",
+  "speed05": "0.5×",
+  "speed075": "0.75×",
+  "speed1": "1×"
+ },
+ "status": {
+  "recording": "Đang ghi {duration}",
+  "recordedLatest": "Đã ghi lần {number} · {duration}",
+  "playLatest": "Nghe lại",
+  "stopLatest": "Dừng nghe",
+  "tapToPlay": "Chạm ▶ trên video để bắt đầu phát — micro vẫn đang ghi âm."
+ },
+ "hints": {
+  "headphones": "Nên đeo tai nghe khi shadowing để tránh micro thu lẫn tiếng video."
+ },
+ "playerErrors": {
+  "embedDisabled": "Video này không cho phép phát nhúng ngoài YouTube.",
+  "unavailable": "Video không tồn tại, đã bị xoá hoặc đang ở chế độ riêng tư.",
+  "generic": "Không thể tải trình phát YouTube cho video này.",
+  "openOnYoutube": "Mở trên YouTube"
+ },
+ "recorderErrors": {
+  "permissionDenied": "Trình duyệt chưa được cấp quyền micro. Hãy cho phép micro rồi thử lại.",
+  "unsupported": "Trình duyệt hiện tại không hỗ trợ ghi âm (MediaRecorder). Bạn vẫn có thể nghe và theo dõi script.",
+  "recordingFailed": "Không thể ghi âm lúc này. Hãy kiểm tra micro rồi thử lại."
+ },
+ "recordings": {
+  "title": "Bản ghi ({count})",
+  "memoryHint": "Tối đa 3 bản gần nhất · tải lại là mất",
+  "empty": "Chưa có bản ghi nào. Bấm Shadow để vừa nghe vừa nói và tự nghe lại.",
+  "item": "Lần {number} · {duration}",
+  "itemWithSentence": "Lần {number} · {duration} · từ câu {sentence}",
+  "audioAria": "Nghe lại bản ghi lần {number}",
+  "deleteAria": "Xoá bản ghi lần {number}",
+  "dialogTitle": "Bản ghi trong phiên",
+  "dialogClose": "Đóng"
+ },
+ "changeVideoDialog": {
+  "title": "Đổi video YouTube",
+  "description": "Dán đường dẫn video YouTube tiếng Trung khác (≤ 30 phút).",
+  "close": "Đóng"
+ },
+ "script": {
+  "displayModeAria": "Chế độ hiển thị script",
+  "modeHanzi": "Chữ Hán",
+  "modePinyin": "+ Pinyin",
+  "modeHidden": "Ẩn",
+  "segmentCount": "{count} câu",
+  "manualBadge": "Dán tay",
+  "pasteAnother": "Dán script khác",
+  "untimedBanner": "Script không có mốc thời gian — dùng nút bên phải để đánh dấu câu đang đọc.",
+  "previousSentence": "Câu trước",
+  "nextSentence": "Câu sau",
+  "listAria": "Danh sách câu phụ đề",
+  "hiddenMask": "••••••••••••"
+ },
+ "noScript": {
+  "title": "Video này chưa có phụ đề tiếng Trung",
+  "fetchErrorTitle": "Chưa lấy được phụ đề tự động",
+  "noCaptionsDescription": "Bạn vẫn có thể phát video ở bên cạnh và dán script thủ công để luyện shadowing.",
+  "blockedDescription": "YouTube tạm thời từ chối yêu cầu lấy phụ đề từ máy chủ. Bạn có thể thử lại hoặc dán script thủ công.",
+  "fetchFailedDescription": "Không thể kết nối hoặc đọc phụ đề từ YouTube lúc này. Bạn có thể thử lại hoặc dán script thủ công.",
+  "availableLanguages": "Video này chỉ có phụ đề: {languages}.",
+  "pasteScript": "Dán script",
+  "retry": "Thử lại",
+  "tryAnotherVideo": "Thử video khác",
+  "guideTitle": "Cách lấy script từ YouTube",
+  "guideSteps": "Trên YouTube: mở mô tả video → … Thêm → Hiện bản chép lời → copy toàn bộ và dán vào đây.",
+  "chatbotWarning": "Đừng nhờ chatbot lấy script chỉ từ link: nó có thể bịa nội dung. Chỉ dùng công cụ thật sự nghe được audio."
+ },
+ "manualDialog": {
+  "title": "Dán script thủ công",
+  "description": "Hỗ trợ mỗi dòng một câu, dòng kèm mốc thời gian (01:23 câu), hoặc định dạng copy trực tiếp từ \"Hiện bản chép lời\" của YouTube.",
+  "placeholder": "0:05\n早上好，我是佳佳\n0:10\n今天我们一起练习中文…",
+  "textareaAria": "Nội dung script tiếng Trung",
+  "preview": "Nhận được {total} câu, {timed} câu có mốc thời gian.",
+  "untimedNotice": "Dưới 50% câu có mốc thời gian nên sẽ chạy ở chế độ tự chuyển câu.",
+  "cancel": "Huỷ",
+  "apply": "Dùng script",
+  "close": "Đóng"
+ },
+ "dictationMode": {
+  "switchAria": "Chế độ luyện tập",
+  "tabShadowing": "Shadowing",
+  "tabDictation": "Chép chính tả",
+  "untimedDisabledHint": "Chép chính tả cần script có mốc thời gian để phát từng câu.",
+  "sentenceCounter": "Câu {current} / {total}",
+  "sessionSummary": "Đã làm {attempted} · Đúng TB {average}%",
+  "listenSentence": "Nghe câu",
+  "previousSentence": "Câu trước",
+  "nextSentence": "Câu sau",
+  "inputPlaceholder": "Gõ chữ Hán bạn nghe được…",
+  "inputAria": "Nhập chữ Hán chép chính tả cho câu hiện tại",
+  "check": "Kiểm tra",
+  "retry": "Làm lại",
+  "resultLabel": "Kết quả so chữ",
+  "answerLabel": "Đáp án:",
+  "lastSentenceSummary": "Đã tới câu cuối · Hoàn thành {attempted} / {total} câu · Đúng TB {average}%."
+ }
+}

@@ -41,8 +41,7 @@ describe("navigation configuration", () => {
   expect(navigationGroups[0]?.sections[0]?.itemIds).toEqual([
    "home",
    "lessons",
-   "dailyReading",
-   "speakingDrills",
+   "skillsHub",
    "reader",
   ]);
   expect(navigationGroups[0]?.sections[1]).toMatchObject({
@@ -53,9 +52,24 @@ describe("navigation configuration", () => {
   });
  });
 
+ it("groups all five skills destinations under the skills hub aliases", () => {
+  expect(navigationItems.skillsHub.href).toBe("/skills");
+  expect(navigationItems.skillsHub.aliases).toEqual([
+   "/shadowing",
+   "/speaking-drills",
+   "/daily-reading",
+   "/conversation",
+   "/dictation",
+  ]);
+  expect(Object.hasOwn(navigationItems, "dailyReading")).toBe(false);
+  expect(Object.hasOwn(navigationItems, "speakingDrills")).toBe(false);
+  expect(Object.hasOwn(navigationItems, "dictation")).toBe(false);
+  expect(Object.hasOwn(navigationItems, "conversation")).toBe(false);
+ });
+
  it("keeps reading and HSK destinations inside the learning journey", () => {
   expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("reader");
-  expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("dailyReading");
+  expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("skillsHub");
   expect(
    navigationGroups[0]?.sections.find((section) => section.id === "hsk-reading")?.itemIds,
   ).toEqual(["hskReading", "hskGrammar"]);
@@ -84,11 +98,7 @@ describe("navigation configuration", () => {
   expect(Object.hasOwn(navigationItems, "dataQuality")).toBe(false);
   expect(Object.hasOwn(navigationItems, "apiDocs")).toBe(false);
   expect(Object.hasOwn(navigationItems, "tts")).toBe(false);
-  expect(navigationGroups[1]?.sections[0]?.itemIds).toEqual([
-   "dictation",
-   "conversation",
-   "translationStudio",
-  ]);
+  expect(navigationGroups[1]?.sections[0]?.itemIds).toEqual(["translationStudio"]);
   expect(navigationItems.settings.aliases).toEqual(["/tts", "/data-quality", "/api-docs"]);
  });
 

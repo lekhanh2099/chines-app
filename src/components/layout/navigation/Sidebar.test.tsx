@@ -13,7 +13,7 @@ import { AppLogoMark } from "./AppLogoMark";
 import { GlyphHPlain, GlyphHRoof } from "./brand-glyph";
 import { BrandWordmark } from "./BrandWordmark";
 import { filterNavigationGroupsForContentCapability, navigationItems } from "./navigation-config";
-import { MobileBottomNavigation, Sidebar } from "./Sidebar";
+import { MobileBottomNavigation, shouldBlockActiveNavigation, Sidebar } from "./Sidebar";
 
 vi.mock("next/navigation", () => ({
  useSearchParams: () => currentSearchParams,
@@ -283,6 +283,73 @@ describe("Sidebar translations", () => {
   expect(activeLinks[0]).toContain('href="/hanzihome"');
   currentPathname = "/reader";
   currentSearchParams = new URLSearchParams();
+ });
+
+ it.each([
+  ["/skills", ""],
+  ["/shadowing", "v=oLHfnK9IVZs"],
+  ["/speaking-drills", "topic=topic-1"],
+  ["/daily-reading", "document=doc-1"],
+  ["/conversation", ""],
+  ["/dictation", ""],
+ ])("keeps the skills hub active on desktop and mobile for %s?%s", async (pathname, query) => {
+  currentPathname = pathname;
+  currentSearchParams = new URLSearchParams(query);
+  const messages = await loadAppMessages("vi");
+  const sidebarMarkup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <Sidebar canManageContent={false} />
+   </NextIntlClientProvider>,
+  );
+  const mobileMarkup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <ThemeProvider>
+     <MobileBottomNavigation canManageContent={false} />
+    </ThemeProvider>
+   </NextIntlClientProvider>,
+  );
+
+  const activeDesktopLinks = sidebarMarkup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
+  const activeMobileLinks = mobileMarkup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
+
+  expect(activeDesktopLinks).toHaveLength(1);
+  expect(activeDesktopLinks[0]).toContain('href="/skills"');
+  expect(activeMobileLinks).toHaveLength(1);
+  expect(activeMobileLinks[0]).toContain('href="/skills"');
+  currentPathname = "/reader";
+  currentSearchParams = new URLSearchParams();
+ });
+
+ it("allows clicking active skillsHub only from an alias route, preserving other prefix routes", () => {
+  expect(
+   shouldBlockActiveNavigation({
+    itemId: "skillsHub",
+    active: true,
+    pathname: "/shadowing",
+    searchParams: new URLSearchParams(),
+    isPending: false,
+   }),
+  ).toBe(false);
+
+  expect(
+   shouldBlockActiveNavigation({
+    itemId: "notes",
+    active: true,
+    pathname: "/notes/abc",
+    searchParams: new URLSearchParams(),
+    isPending: false,
+   }),
+  ).toBe(true);
+
+  expect(
+   shouldBlockActiveNavigation({
+    itemId: "skillsHub",
+    active: true,
+    pathname: "/skills",
+    searchParams: new URLSearchParams(),
+    isPending: false,
+   }),
+  ).toBe(true);
  });
 
  it.each(["/hsk", "/hsk/grammar"])("preserves the HSK selection on %s", async (pathname) => {

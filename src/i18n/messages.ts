@@ -35,6 +35,8 @@ async function loadViMessages() {
   listening,
   radicals,
   speakingDrills,
+  youtubeShadowing,
+  skillsHub,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -69,6 +71,8 @@ async function loadViMessages() {
   import("../../messages/vi/listening.json"),
   import("../../messages/vi/radicals.json"),
   import("../../messages/vi/speaking-drills.json"),
+  import("../../messages/vi/youtube-shadowing.json"),
+  import("../../messages/vi/skills-hub.json"),
  ]);
 
  return {
@@ -101,6 +105,8 @@ async function loadViMessages() {
   Listening: listening.default,
   Radicals: radicals.default,
   SpeakingDrills: speakingDrills.default,
+  YoutubeShadowing: youtubeShadowing.default,
+  SkillsHub: skillsHub.default,
  };
 }
 
@@ -141,6 +147,8 @@ async function loadEnMessages(): Promise<AppMessages> {
   listening,
   radicals,
   speakingDrills,
+  youtubeShadowing,
+  skillsHub,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -175,6 +183,8 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/listening.json"),
   import("../../messages/en/radicals.json"),
   import("../../messages/en/speaking-drills.json"),
+  import("../../messages/en/youtube-shadowing.json"),
+  import("../../messages/en/skills-hub.json"),
  ]);
 
  return {
@@ -207,6 +217,8 @@ async function loadEnMessages(): Promise<AppMessages> {
   Listening: listening.default,
   Radicals: radicals.default,
   SpeakingDrills: speakingDrills.default,
+  YoutubeShadowing: youtubeShadowing.default,
+  SkillsHub: skillsHub.default,
  };
 }
 
@@ -245,6 +257,8 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   listening,
   radicals,
   speakingDrills,
+  youtubeShadowing,
+  skillsHub,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -279,6 +293,8 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/listening.json"),
   import("../../messages/zh-CN/radicals.json"),
   import("../../messages/zh-CN/speaking-drills.json"),
+  import("../../messages/zh-CN/youtube-shadowing.json"),
+  import("../../messages/zh-CN/skills-hub.json"),
  ]);
 
  return {
@@ -311,6 +327,8 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   Listening: listening.default,
   Radicals: radicals.default,
   SpeakingDrills: speakingDrills.default,
+  YoutubeShadowing: youtubeShadowing.default,
+  SkillsHub: skillsHub.default,
  };
 }
 
