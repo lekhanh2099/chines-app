@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
+import { useSelector } from "@tanstack/react-store";
 import { useTranslations } from "next-intl";
 import { scrollAppContentToElement } from "@/components/layout/scroll/app-scroll";
 import { type SegmentedControlItem } from "@/components/ui/forms/segmented-control";
@@ -12,12 +13,9 @@ import type {
  TextbookBookSummary,
  TextbookLesson,
 } from "@/features/hanzihome/static-json/textbook-catalog";
-import {
- ReaderServicesContext,
- useReaderDisplay,
- useReaderSelector,
-} from "@/features/reader/runtime/reader-context";
+import { ReaderServicesContext, useReaderDisplay } from "@/features/reader/runtime/reader-context";
 import { cn } from "@/lib/utils";
+import { readingFocusStore } from "@/stores/shell/reading-focus-store";
 import { BusinessChineseAnnotationsContext } from "./business-chinese-annotations-context";
 import {
  BusinessChineseGrammarNavigationPanel,
@@ -113,13 +111,13 @@ export function BusinessChineseStudyWorkspaceContent({
   readerServicesValue,
  } = useBusinessChineseAnnotationServices(lesson);
  const { value: readerDisplay } = useReaderDisplay();
- const focusMode = useReaderSelector((state) => state.ui.focusMode);
+ const focusMode = useSelector(readingFocusStore, (state) => state.enabled);
 
  const lessonSections = useBusinessChineseLessonSections(lesson, activeView);
  const { visibleSections, contentSections } = lessonSections;
  const showGrammarNavigation = activeView === "grammar" && visibleSections.length > 0;
- const showCompactGrammarToolbar = showGrammarNavigation && !hasWideToolbar;
- const showWideGrammarNavigation = showGrammarNavigation && hasWideToolbar;
+ const showWideGrammarNavigation = showGrammarNavigation && hasWideToolbar && !focusMode;
+ const showCompactGrammarToolbar = showGrammarNavigation && !showWideGrammarNavigation;
  const showDesktopSectionNavigation =
   !showGrammarNavigation && !focusMode && visibleSections.length > 1;
  const effectiveDisplayMode: LessonDisplayMode = useMemo(
@@ -190,7 +188,7 @@ export function BusinessChineseStudyWorkspaceContent({
  const { visibleTabs, overflowTabs } = splitWorkspaceTabs(
   tabs,
   activeView,
-  showCompactGrammarToolbar ? 1 : tabCapacity,
+  showCompactGrammarToolbar && !hasWideToolbar ? 1 : tabCapacity,
  );
 
  const sectionReaders = useBusinessChineseSectionReaderServices({
@@ -290,6 +288,7 @@ export function BusinessChineseStudyWorkspaceContent({
            onSelectSection={selectSection}
            showDesktopSectionNavigation={showDesktopSectionNavigation}
            showGrammarNavigation={showGrammarNavigation}
+           focusMode={focusMode}
            isInteractivePracticeOpen={isInteractivePracticeOpen}
            onInteractivePracticeOpenChange={setIsInteractivePracticeOpen}
           />

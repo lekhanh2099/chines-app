@@ -22,6 +22,7 @@ import {
  useBusinessChineseLessonView,
  useBusinessChineseWideToolbar,
 } from "./useBusinessChineseLessonView";
+import { useReadingFocusWorkspace } from "./useReadingFocusWorkspace";
 
 export function BusinessChineseStudyWorkspace({
  books: initialBooks,
@@ -62,6 +63,7 @@ export function BusinessChineseStudyWorkspace({
   [activeView, lesson],
  );
  useBusinessChineseLessonResume(lessonView);
+ useReadingFocusWorkspace();
 
  const workspaceReaderServices = useMemo<ReaderServices>(
   () => ({

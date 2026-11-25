@@ -43,6 +43,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { appShellStore } from "@/stores/shell/app-shell-store";
 import { focusModeStore } from "@/stores/shell/focus-mode-store";
+import { readingFocusStore, selectReadingFocusActive } from "@/stores/shell/reading-focus-store";
 import { navigationPendingStore } from "@/stores/shell/navigation-pending-store";
 import { sidebarStore } from "@/stores/shell/sidebar-store";
 
@@ -330,6 +331,7 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
  const pendingHref = useSelector(navigationPendingStore, (state) => state.pendingHref);
  const visibleNavigationGroups = filterNavigationGroupsForContentCapability(canManageContent);
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
+ const isReadingFocused = useSelector(readingFocusStore, selectReadingFocusActive);
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const isCollapsed = useSelector(sidebarStore, (state) => state.isCollapsed);
@@ -375,7 +377,7 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
   hydrateSidebar();
  }, [hydrateSidebar]);
 
- if (isContentFullscreen) return null;
+ if (isContentFullscreen || isReadingFocused) return null;
 
  return (
   <aside
@@ -538,6 +540,7 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
  const pendingHref = useSelector(navigationPendingStore, (state) => state.pendingHref);
  const visibleNavigationGroups = filterNavigationGroupsForContentCapability(canManageContent);
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
+ const isReadingFocused = useSelector(readingFocusStore, selectReadingFocusActive);
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const pathname = usePathname();
  const searchParams = useSearchParams();
@@ -549,7 +552,7 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
  );
  const moreActive = !primaryRouteActive;
 
- if (isContentFullscreen) return null;
+ if (isContentFullscreen || isReadingFocused) return null;
 
  return (
   <>
