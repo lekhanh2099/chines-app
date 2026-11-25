@@ -22,6 +22,8 @@
   "requestingMic": "正在请求麦克风…",
   "replaySentence": "重播当前句",
   "loopSentence": "单句循环",
+  "changeVideo": "更换视频",
+  "recordingsButton": "录音（{count}）",
   "speedLabel": "倍速",
   "speedAria": "视频播放速度",
   "speed05": "0.5×",
@@ -30,6 +32,9 @@
  },
  "status": {
   "recording": "正在录音 {duration}",
+  "recordedLatest": "已录第 {number} 次 · {duration}",
+  "playLatest": "回听",
+  "stopLatest": "停止播放",
   "tapToPlay": "请轻点视频上的 ▶ 开始播放，麦克风仍在录音中。"
  },
  "hints": {
@@ -53,7 +58,14 @@
   "item": "第 {number} 次 · {duration}",
   "itemWithSentence": "第 {number} 次 · {duration} · 从第 {sentence} 句开始",
   "audioAria": "回听第 {number} 次录音",
-  "deleteAria": "删除第 {number} 次录音"
+  "deleteAria": "删除第 {number} 次录音",
+  "dialogTitle": "本次录音记录",
+  "dialogClose": "关闭"
+ },
+ "changeVideoDialog": {
+  "title": "更换 YouTube 视频",
+  "description": "粘贴另一个中文 YouTube 视频链接（≤ 30 分钟）。",
+  "close": "关闭"
  },
  "script": {
   "displayModeAria": "文稿显示模式",
@@ -93,5 +105,23 @@
   "cancel": "取消",
   "apply": "使用文稿",
   "close": "关闭"
+ },
+ "dictationMode": {
+  "switchAria": "练习模式",
+  "tabShadowing": "跟读",
+  "tabDictation": "听写",
+  "untimedDisabledHint": "听写需要带时间戳的文稿才能逐句播放。",
+  "sentenceCounter": "第 {current} / {total} 句",
+  "sessionSummary": "已做 {attempted} 句 · 平均正确 {average}%",
+  "listenSentence": "听这一句",
+  "previousSentence": "上一句",
+  "nextSentence": "下一句",
+  "inputPlaceholder": "输入听到的汉字…",
+  "inputAria": "输入当前句子的中文听写内容",
+  "check": "检查",
+  "retry": "重做",
+  "resultLabel": "逐字对比",
+  "answerLabel": "正确答案：",
+  "lastSentenceSummary": "已到最后一句 · 共完成 {attempted} / {total} 句 · 平均正确 {average}%。"
  }
 }

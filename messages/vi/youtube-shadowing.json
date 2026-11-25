@@ -22,6 +22,8 @@
   "requestingMic": "Đang xin mic…",
   "replaySentence": "Phát lại câu hiện tại",
   "loopSentence": "Lặp câu hiện tại",
+  "changeVideo": "Đổi video",
+  "recordingsButton": "Bản ghi ({count})",
   "speedLabel": "Tốc độ",
   "speedAria": "Tốc độ phát video",
   "speed05": "0.5×",
@@ -30,6 +32,9 @@
  },
  "status": {
   "recording": "Đang ghi {duration}",
+  "recordedLatest": "Đã ghi lần {number} · {duration}",
+  "playLatest": "Nghe lại",
+  "stopLatest": "Dừng nghe",
   "tapToPlay": "Chạm ▶ trên video để bắt đầu phát — micro vẫn đang ghi âm."
  },
  "hints": {
@@ -53,7 +58,14 @@
   "item": "Lần {number} · {duration}",
   "itemWithSentence": "Lần {number} · {duration} · từ câu {sentence}",
   "audioAria": "Nghe lại bản ghi lần {number}",
-  "deleteAria": "Xoá bản ghi lần {number}"
+  "deleteAria": "Xoá bản ghi lần {number}",
+  "dialogTitle": "Bản ghi trong phiên",
+  "dialogClose": "Đóng"
+ },
+ "changeVideoDialog": {
+  "title": "Đổi video YouTube",
+  "description": "Dán đường dẫn video YouTube tiếng Trung khác (≤ 30 phút).",
+  "close": "Đóng"
  },
  "script": {
   "displayModeAria": "Chế độ hiển thị script",
@@ -93,5 +105,23 @@
   "cancel": "Huỷ",
   "apply": "Dùng script",
   "close": "Đóng"
+ },
+ "dictationMode": {
+  "switchAria": "Chế độ luyện tập",
+  "tabShadowing": "Shadowing",
+  "tabDictation": "Chép chính tả",
+  "untimedDisabledHint": "Chép chính tả cần script có mốc thời gian để phát từng câu.",
+  "sentenceCounter": "Câu {current} / {total}",
+  "sessionSummary": "Đã làm {attempted} · Đúng TB {average}%",
+  "listenSentence": "Nghe câu",
+  "previousSentence": "Câu trước",
+  "nextSentence": "Câu sau",
+  "inputPlaceholder": "Gõ chữ Hán bạn nghe được…",
+  "inputAria": "Nhập chữ Hán chép chính tả cho câu hiện tại",
+  "check": "Kiểm tra",
+  "retry": "Làm lại",
+  "resultLabel": "Kết quả so chữ",
+  "answerLabel": "Đáp án:",
+  "lastSentenceSummary": "Đã tới câu cuối · Hoàn thành {attempted} / {total} câu · Đúng TB {average}%."
  }
 }

@@ -35,6 +35,5 @@ export async function fetchYoutubeTranscriptClient(
   throw error;
  }
 
- const json: ReturnType<typeof JSON.parse> = await response.json();
- return youtubeTranscriptResponseSchema.parse(json);
+ return youtubeTranscriptResponseSchema.parse(await response.json());
 }

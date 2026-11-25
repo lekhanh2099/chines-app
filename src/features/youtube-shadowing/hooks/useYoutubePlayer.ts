@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const YOUTUBE_IFRAME_API_SRC = "https://www.youtube.com/iframe_api";
 const POLL_INTERVAL_MS = 100;
@@ -42,6 +42,7 @@ function loadYoutubeIframeApi(): Promise<YoutubeIframeApi> {
   script.src = YOUTUBE_IFRAME_API_SRC;
   script.async = true;
   script.onerror = () => {
+   script.remove();
    iframeApiLoader.pending = undefined;
    reject(new Error("Failed to load YouTube IFrame API"));
   };
@@ -57,13 +58,22 @@ export function useYoutubePlayer(videoId: string) {
  const containerRef = useRef<HTMLDivElement>(null);
  const playerRef = useRef<YoutubePlayerInstance>(undefined);
  const pollTimerRef = useRef<number>(undefined);
- const lastDispatchedMsRef = useRef(0);
+ const currentMsRef = useRef(0);
+ const timeListenersRef = useRef<Set<(ms: number) => void>>(new Set());
+
  const [isReady, setIsReady] = useState(false);
  const [isPlaying, setIsPlaying] = useState(false);
  const [hasEnded, setHasEnded] = useState(false);
- const [currentMs, setCurrentMs] = useState(0);
  const [durationMs, setDurationMs] = useState(0);
  const [errorCode, setErrorCode] = useState(0);
+
+ const emitTime = useCallback((nextMs: number, force = false) => {
+  if (!force && Math.abs(nextMs - currentMsRef.current) < MIN_TIME_DELTA_MS) return;
+  currentMsRef.current = nextMs;
+  for (const listener of timeListenersRef.current) {
+   listener(nextMs);
+  }
+ }, []);
 
  const stopPolling = useCallback(() => {
   if (pollTimerRef.current === undefined) return;
@@ -78,12 +88,9 @@ export function useYoutubePlayer(videoId: string) {
    if (!player) return;
    const seconds = player.getCurrentTime();
    if (!Number.isFinite(seconds)) return;
-   const nextMs = Math.max(0, Math.round(seconds * 1000));
-   if (Math.abs(nextMs - lastDispatchedMsRef.current) < MIN_TIME_DELTA_MS) return;
-   lastDispatchedMsRef.current = nextMs;
-   setCurrentMs(nextMs);
+   emitTime(Math.max(0, Math.round(seconds * 1000)));
   }, POLL_INTERVAL_MS);
- }, []);
+ }, [emitTime]);
 
  useEffect(() => {
   if (!videoId) return;
@@ -127,14 +134,16 @@ export function useYoutubePlayer(videoId: string) {
         if (Number.isFinite(totalSeconds) && totalSeconds > 0) {
          setDurationMs(Math.round(totalSeconds * 1000));
         }
+        const seconds = event.target.getCurrentTime();
+        if (Number.isFinite(seconds)) {
+         emitTime(Math.max(0, Math.round(seconds * 1000)), true);
+        }
         startPolling();
        } else {
         stopPolling();
         const seconds = event.target.getCurrentTime();
         if (Number.isFinite(seconds)) {
-         const nextMs = Math.max(0, Math.round(seconds * 1000));
-         lastDispatchedMsRef.current = nextMs;
-         setCurrentMs(nextMs);
+         emitTime(Math.max(0, Math.round(seconds * 1000)), true);
         }
        }
       },
@@ -168,7 +177,7 @@ export function useYoutubePlayer(videoId: string) {
    }
    container?.replaceChildren();
   };
- }, [startPolling, stopPolling, videoId]);
+ }, [emitTime, startPolling, stopPolling, videoId]);
 
  const play = useCallback(() => {
   playerRef.current?.playVideo();
@@ -178,29 +187,56 @@ export function useYoutubePlayer(videoId: string) {
   playerRef.current?.pauseVideo();
  }, []);
 
- const seekTo = useCallback((ms: number) => {
-  const safeMs = Math.max(0, Math.round(ms));
-  lastDispatchedMsRef.current = safeMs;
-  setCurrentMs(safeMs);
-  setHasEnded(false);
-  playerRef.current?.seekTo(safeMs / 1000, true);
- }, []);
+ const seekTo = useCallback(
+  (ms: number) => {
+   const safeMs = Math.max(0, Math.round(ms));
+   setHasEnded(false);
+   playerRef.current?.seekTo(safeMs / 1000, true);
+   emitTime(safeMs, true);
+  },
+  [emitTime],
+ );
 
  const setRate = useCallback((rate: number) => {
   playerRef.current?.setPlaybackRate(rate);
  }, []);
 
- return {
-  containerRef,
-  isReady,
-  isPlaying,
-  hasEnded,
-  currentMs,
-  durationMs,
-  errorCode,
-  play,
-  pause,
-  seekTo,
-  setRate,
- };
+ const getCurrentMs = useCallback(() => currentMsRef.current, []);
+
+ const subscribeTime = useCallback((listener: (ms: number) => void) => {
+  timeListenersRef.current.add(listener);
+  return () => {
+   timeListenersRef.current.delete(listener);
+  };
+ }, []);
+
+ return useMemo(
+  () => ({
+   containerRef,
+   isReady,
+   isPlaying,
+   hasEnded,
+   durationMs,
+   errorCode,
+   getCurrentMs,
+   subscribeTime,
+   play,
+   pause,
+   seekTo,
+   setRate,
+  }),
+  [
+   durationMs,
+   errorCode,
+   getCurrentMs,
+   hasEnded,
+   isPlaying,
+   isReady,
+   pause,
+   play,
+   seekTo,
+   setRate,
+   subscribeTime,
+  ],
+ );
 }

@@ -1,16 +1,26 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
-import { AudioLines, Clock } from "lucide-react";
+import { useCallback, useMemo, useRef, useState } from "react";
+import { AudioLines, Clock, Headphones } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
+import { PageContainer } from "@/components/layout/workspace/page-container";
 import { IconTile } from "@/components/ui/display/icon-tile";
 import { Typography } from "@/components/ui/display/typography";
 import { Card } from "@/components/ui/layout/card";
 import { PageHeader } from "@/components/ui/layout/page-header";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogDescription,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/overlays/dialog";
 
 import { ManualScriptDialog } from "./components/ManualScriptDialog";
+import { PracticeModeSwitch } from "./components/PracticeModeSwitch";
 import {
  ShadowingNoScriptPanel,
  noScriptPanelVariantSchema,
@@ -26,12 +36,15 @@ import {
  scriptDisplayModeSchema,
  type ScriptDisplayMode,
 } from "./components/ShadowingScriptList";
+import { VideoDictationPanel } from "./components/VideoDictationPanel";
 import { YoutubeLinkForm } from "./components/YoutubeLinkForm";
+import { useSegmentPlayback } from "./hooks/useSegmentPlayback";
 import { useShadowingSession } from "./hooks/useShadowingSession";
+import { useVideoDictation } from "./hooks/useVideoDictation";
 import { useYoutubePlayer } from "./hooks/useYoutubePlayer";
 import { useYoutubeTranscript } from "./hooks/useYoutubeTranscript";
 import type { ParsedManualScript } from "./model/manual-script";
-import { findActiveSegmentIndex } from "./model/transcript-segments";
+import { parsePracticeMode, practiceModeSchema, type PracticeMode } from "./model/practice-mode";
 import {
  youtubeVideoIdSchema,
  type TranscriptSegment,
@@ -44,27 +57,14 @@ const RATE_VALUE_BY_KEY: Record<PlaybackRateKey, number> = {
  "1": 1,
 };
 
-const XL_MEDIA_QUERY = "(min-width: 1280px)";
-
-function subscribeXlMedia(callback: () => void) {
- if (typeof window === "undefined") return () => {};
- const query = window.matchMedia(XL_MEDIA_QUERY);
- query.addEventListener("change", callback);
- return () => query.removeEventListener("change", callback);
-}
-
-function getXlSnapshot() {
- if (typeof window === "undefined") return false;
- return window.matchMedia(XL_MEDIA_QUERY).matches;
-}
-
-function getServerXlSnapshot() {
- return false;
-}
-
 function ScriptLoadingSkeleton() {
  return (
-  <Card variant="section" padding="md" className="grid min-w-0 gap-3" aria-busy="true">
+  <Card
+   variant="section"
+   padding="md"
+   className="grid h-full min-h-0 min-w-0 content-start gap-3 overflow-y-auto"
+   aria-busy="true"
+  >
    <div className="h-9 w-2/3 animate-pulse rounded-lg bg-bg-subtle" />
    <div className="grid gap-2">
     <div className="h-12 w-full animate-pulse rounded-lg bg-bg-subtle" />
@@ -79,20 +79,24 @@ function ScriptLoadingSkeleton() {
 
 function ShadowingActiveSession({
  videoId,
+ requestedMode,
  transcriptData,
  isTranscriptPending,
  isTranscriptError,
  transcriptErrorCode,
  onRetryTranscript,
  onFocusLinkInput,
+ onOpenChangeVideoDialog,
 }: {
  videoId: string;
+ requestedMode: PracticeMode;
  transcriptData?: YoutubeTranscriptResponse;
  isTranscriptPending: boolean;
  isTranscriptError: boolean;
  transcriptErrorCode: string;
  onRetryTranscript: () => void;
  onFocusLinkInput: () => void;
+ onOpenChangeVideoDialog: () => void;
 }) {
  const t = useTranslations("YoutubeShadowing");
  const player = useYoutubePlayer(videoId);
@@ -102,14 +106,12 @@ function ShadowingActiveSession({
   isTimed: false,
   timedCount: 0,
  });
- const [manualActiveIndex, setManualActiveIndex] = useState(0);
  const [displayMode, setDisplayMode] = useState<ScriptDisplayMode>(
   scriptDisplayModeSchema.enum.hanzi,
  );
- const [loopEnabled, setLoopEnabled] = useState(false);
- const [loopIndex, setLoopIndex] = useState(-1);
  const [playbackRate, setPlaybackRate] = useState<PlaybackRateKey>(playbackRateKeySchema.enum["1"]);
  const [manualDialogOpen, setManualDialogOpen] = useState(false);
+ const [recordingsDialogOpen, setRecordingsDialogOpen] = useState(false);
 
  const hasManualScript = manualScript.segments.length > 0;
  const effectiveSegments: TranscriptSegment[] = useMemo(() => {
@@ -118,98 +120,73 @@ function ShadowingActiveSession({
   return [];
  }, [hasManualScript, manualScript.segments, transcriptData]);
  const isTimed = hasManualScript ? manualScript.isTimed : transcriptData?.outcome === "ready";
+ const canUseDictation = isTimed && effectiveSegments.length > 0;
+ const isDictationMode = requestedMode === practiceModeSchema.enum.dictation && canUseDictation;
+ const effectiveMode = isDictationMode
+  ? practiceModeSchema.enum.dictation
+  : practiceModeSchema.enum.shadowing;
  const scriptLanguage = hasManualScript
   ? t("script.manualBadge")
   : (transcriptData?.language ?? "");
 
- const timedActiveIndex = isTimed
-  ? findActiveSegmentIndex(effectiveSegments, player.currentMs)
-  : -1;
- const activeIndex = isTimed
-  ? timedActiveIndex
-  : effectiveSegments.length > 0
-    ? Math.min(manualActiveIndex, effectiveSegments.length - 1)
-    : -1;
+ const playback = useSegmentPlayback({
+  player,
+  segments: effectiveSegments,
+  isTimed,
+ });
 
- const session = useShadowingSession({ player, activeIndex });
+ const session = useShadowingSession({ player, activeIndex: playback.activeIndex });
+ const dictation = useVideoDictation({
+  segments: effectiveSegments,
+  playSegment: playback.playSegment,
+  cancelAutoStop: playback.cancelAutoStop,
+ });
 
- useEffect(() => {
-  if (!loopEnabled || !isTimed || !player.isPlaying) return;
-  const targetSegment = effectiveSegments[loopIndex];
-  if (!targetSegment || targetSegment.endMs <= targetSegment.startMs) return;
-  if (player.currentMs >= targetSegment.endMs) {
-   player.seekTo(targetSegment.startMs);
-  }
- }, [effectiveSegments, isTimed, loopEnabled, loopIndex, player]);
-
+ const setPlayerRate = player.setRate;
  const handlePlaybackRateChange = useCallback(
   (nextRate: PlaybackRateKey) => {
    setPlaybackRate(nextRate);
-   player.setRate(RATE_VALUE_BY_KEY[nextRate]);
+   setPlayerRate(RATE_VALUE_BY_KEY[nextRate]);
   },
-  [player],
+  [setPlayerRate],
  );
 
- const handleReplaySentence = useCallback(() => {
-  if (!isTimed || effectiveSegments.length === 0) return;
-  const targetIndex = activeIndex >= 0 ? activeIndex : 0;
-  const segment = effectiveSegments[targetIndex];
-  if (!segment) return;
-  player.seekTo(segment.startMs);
-  player.play();
- }, [activeIndex, effectiveSegments, isTimed, player]);
+ const resetManualAndLoop = playback.resetManualAndLoop;
+ const resetDictation = dictation.reset;
+ const handleApplyManualScript = useCallback(
+  (parsed: ParsedManualScript) => {
+   setManualScript(parsed);
+   resetManualAndLoop();
+   resetDictation();
+  },
+  [resetDictation, resetManualAndLoop],
+ );
 
- const handleToggleLoop = useCallback(() => {
-  if (!isTimed || effectiveSegments.length === 0) return;
-  setLoopEnabled((current) => {
-   const next = !current;
-   if (next) {
-    setLoopIndex(activeIndex >= 0 ? activeIndex : 0);
-   }
-   return next;
-  });
- }, [activeIndex, effectiveSegments.length, isTimed]);
-
- const handleSelectSegment = useCallback(
-  (index: number) => {
-   const segment = effectiveSegments[index];
-   if (!segment) return;
-   if (isTimed) {
-    if (loopEnabled) setLoopIndex(index);
-    player.seekTo(segment.startMs);
+ const stopShadowing = session.stopShadowing;
+ const isShadowingOrRecording = session.isShadowing || session.isRecording;
+ const disableLoop = playback.disableLoop;
+ const cancelAutoStop = playback.cancelAutoStop;
+ const handleBeforeModeChange = useCallback(
+  (nextMode: PracticeMode) => {
+   if (nextMode === practiceModeSchema.enum.dictation) {
+    if (isShadowingOrRecording) stopShadowing();
+    disableLoop();
    } else {
-    setManualActiveIndex(index);
+    cancelAutoStop();
    }
   },
-  [effectiveSegments, isTimed, loopEnabled, player],
+  [cancelAutoStop, disableLoop, isShadowingOrRecording, stopShadowing],
  );
 
- const handleStepManual = useCallback(
-  (delta: number) => {
-   setManualActiveIndex((current) =>
-    Math.max(0, Math.min(effectiveSegments.length - 1, current + delta)),
-   );
-  },
-  [effectiveSegments.length],
- );
-
- const handleApplyManualScript = useCallback((parsed: ParsedManualScript) => {
-  setManualScript(parsed);
-  setManualActiveIndex(0);
-  setLoopEnabled(false);
-  setLoopIndex(-1);
- }, []);
+ const openManualDialog = useCallback(() => setManualDialogOpen(true), []);
+ const openRecordingsDialog = useCallback(() => setRecordingsDialogOpen(true), []);
 
  const videoDurationMs =
   player.durationMs > 0 ? player.durationMs : (transcriptData?.lengthSeconds ?? 0) * 1000;
- const isXlLayout = useSyncExternalStore(subscribeXlMedia, getXlSnapshot, getServerXlSnapshot);
- const recordingsView = (
-  <ShadowingRecordings recordings={session.recordings} onDelete={session.deleteRecording} />
- );
 
  return (
   <>
-   <div className="grid min-w-0 items-start gap-5 xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+   <div className="grid min-h-0 flex-1 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden sm:gap-3 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:grid-rows-1 lg:gap-4">
     <ShadowingPlayerPanel
      videoId={videoId}
      videoTitle={transcriptData?.title ?? ""}
@@ -222,57 +199,92 @@ function ShadowingActiveSession({
      recordingDurationSeconds={session.recordingDurationSeconds}
      recorderErrorCode={session.recorderErrorCode}
      needsTapToPlay={session.needsTapToPlay}
-     canNavigateTimed={isTimed && effectiveSegments.length > 0}
-     loopEnabled={loopEnabled}
+     recordings={session.recordings}
+     canNavigateTimed={canUseDictation}
+     loopEnabled={playback.loopEnabled}
      playbackRate={playbackRate}
+     isDictationMode={isDictationMode}
+     modeSwitchSlot={
+      <PracticeModeSwitch
+       value={effectiveMode}
+       canUseDictation={canUseDictation}
+       showUntimedHint={effectiveSegments.length > 0 && !isTimed}
+       onBeforeChange={handleBeforeModeChange}
+      />
+     }
+     dictationSlot={
+      isDictationMode ? (
+       <VideoDictationPanel
+        currentIndex={dictation.currentIndex}
+        totalSegments={effectiveSegments.length}
+        expectedText={dictation.currentSegment?.text ?? ""}
+        draft={dictation.draft}
+        checked={dictation.checked}
+        currentScore={dictation.currentResult?.score ?? 0}
+        attemptedCount={dictation.summary.attempted}
+        averageScore={dictation.summary.averageScore}
+        playbackRate={playbackRate}
+        hasPlayerError={player.errorCode !== 0}
+        onDraftChange={dictation.setDraft}
+        onCheck={dictation.check}
+        onRetry={dictation.retry}
+        onListen={dictation.listen}
+        onPrevious={dictation.previous}
+        onNext={dictation.next}
+        onPlaybackRateChange={handlePlaybackRateChange}
+       />
+      ) : null
+     }
      onStartShadowing={() => void session.startShadowing()}
      onStopShadowing={session.stopShadowing}
-     onReplaySentence={handleReplaySentence}
-     onToggleLoop={handleToggleLoop}
+     onReplaySentence={playback.replayActive}
+     onToggleLoop={playback.toggleLoop}
      onPlaybackRateChange={handlePlaybackRateChange}
-     recordingsSlot={isXlLayout ? recordingsView : undefined}
+     onDeleteRecording={session.deleteRecording}
+     onOpenRecordingsDialog={openRecordingsDialog}
+     onOpenChangeVideoDialog={onOpenChangeVideoDialog}
     />
 
-    <div className="min-w-0">
+    <div className="h-full min-h-0 min-w-0 overflow-hidden">
      {effectiveSegments.length > 0 ? (
       <ShadowingScriptList
        segments={effectiveSegments}
        isTimed={isTimed}
        language={scriptLanguage}
-       activeIndex={activeIndex}
+       activeIndex={isDictationMode ? dictation.currentIndex : playback.activeIndex}
        isPlaying={player.isPlaying}
        displayMode={displayMode}
+       isDictationMode={isDictationMode}
+       dictationScores={dictation.scores}
        onDisplayModeChange={setDisplayMode}
-       onSelectSegment={handleSelectSegment}
-       onOpenManualDialog={() => setManualDialogOpen(true)}
-       onStepManual={handleStepManual}
+       onSelectSegment={isDictationMode ? dictation.goTo : playback.selectSegment}
+       onOpenManualDialog={openManualDialog}
+       onStepManual={playback.stepManual}
       />
      ) : isTranscriptPending ? (
       <ScriptLoadingSkeleton />
      ) : isTranscriptError ? (
-      <ShadowingNoScriptPanel
-       variant={noScriptPanelVariantSchema.enum["fetch-error"]}
-       errorCode={transcriptErrorCode}
-       availableLanguages={[]}
-       onOpenManualDialog={() => setManualDialogOpen(true)}
-       onFocusLinkInput={onFocusLinkInput}
-       onRetry={onRetryTranscript}
-      />
+      <div className="h-full min-h-0 overflow-y-auto overscroll-contain scrollbar-soft">
+       <ShadowingNoScriptPanel
+        variant={noScriptPanelVariantSchema.enum["fetch-error"]}
+        errorCode={transcriptErrorCode}
+        availableLanguages={[]}
+        onOpenManualDialog={openManualDialog}
+        onFocusLinkInput={onFocusLinkInput}
+        onRetry={onRetryTranscript}
+       />
+      </div>
      ) : (
-      <ShadowingNoScriptPanel
-       variant={noScriptPanelVariantSchema.enum["no-captions"]}
-       availableLanguages={transcriptData?.availableLanguages ?? []}
-       onOpenManualDialog={() => setManualDialogOpen(true)}
-       onFocusLinkInput={onFocusLinkInput}
-      />
+      <div className="h-full min-h-0 overflow-y-auto overscroll-contain scrollbar-soft">
+       <ShadowingNoScriptPanel
+        variant={noScriptPanelVariantSchema.enum["no-captions"]}
+        availableLanguages={transcriptData?.availableLanguages ?? []}
+        onOpenManualDialog={openManualDialog}
+        onFocusLinkInput={onFocusLinkInput}
+       />
+      </div>
      )}
     </div>
-
-    {!isXlLayout ? (
-     <Card variant="section" padding="md" className="min-w-0">
-      {recordingsView}
-     </Card>
-    ) : null}
    </div>
 
    <ManualScriptDialog
@@ -281,6 +293,21 @@ function ShadowingActiveSession({
     durationMs={videoDurationMs}
     onApply={handleApplyManualScript}
    />
+
+   <Dialog open={recordingsDialogOpen} onOpenChange={setRecordingsDialogOpen}>
+    <DialogContent size="md" scrollMode="content" closeLabel={t("recordings.dialogClose")}>
+     <DialogHeader>
+      <DialogTitle>{t("recordings.dialogTitle")}</DialogTitle>
+     </DialogHeader>
+     <DialogBody>
+      <Typography as="p" variant="caption" tone="muted" className="flex items-center gap-2">
+       <Headphones aria-hidden="true" className="size-4 shrink-0" />
+       <span>{t("hints.headphones")}</span>
+      </Typography>
+      <ShadowingRecordings recordings={session.recordings} onDelete={session.deleteRecording} />
+     </DialogBody>
+    </DialogContent>
+   </Dialog>
   </>
  );
 }
@@ -289,10 +316,12 @@ export function YoutubeShadowingWorkspace() {
  const t = useTranslations("YoutubeShadowing");
  const searchParams = useSearchParams();
  const linkInputRef = useRef<HTMLInputElement>(null);
+ const [changeVideoOpen, setChangeVideoOpen] = useState(false);
 
  const rawVideoId = searchParams.get("v") ?? "";
  const parsedVideoId = youtubeVideoIdSchema.safeParse(rawVideoId);
  const videoId = parsedVideoId.success ? parsedVideoId.data : "";
+ const requestedMode = parsePracticeMode(searchParams.get("mode") ?? "");
 
  const transcriptQuery = useYoutubeTranscript(videoId);
  const isTooLong = transcriptQuery.data?.outcome === "too-long";
@@ -301,90 +330,123 @@ export function YoutubeShadowingWorkspace() {
   : 0;
 
  const focusLinkInput = useCallback(() => {
+  if (typeof window !== "undefined" && !window.matchMedia("(min-width: 1024px)").matches) {
+   setChangeVideoOpen(true);
+   return;
+  }
   linkInputRef.current?.focus();
   linkInputRef.current?.select();
  }, []);
 
+ const openChangeVideoDialog = useCallback(() => setChangeVideoOpen(true), []);
+
  if (!videoId) {
   return (
-   <div className="grid min-w-0 gap-5">
-    <div className="flex min-w-0 items-start gap-3 border-b border-border-default pb-4">
-     <IconTile tone="accent" size="md">
-      <AudioLines aria-hidden="true" />
-     </IconTile>
-     <PageHeader
-      title={t("empty.title")}
-      description={t("empty.description")}
-      className="min-w-0 flex-1"
-     />
-    </div>
+   <PageContainer>
+    <div className="grid min-w-0 gap-5">
+     <div className="flex min-w-0 items-start gap-3 border-b border-border-default pb-4">
+      <IconTile tone="accent" size="md">
+       <AudioLines aria-hidden="true" />
+      </IconTile>
+      <PageHeader
+       title={t("empty.title")}
+       description={t("empty.description")}
+       className="min-w-0 flex-1"
+      />
+     </div>
 
-    <Card variant="section" padding="lg" className="grid min-w-0 gap-4">
-     <YoutubeLinkForm inputRef={linkInputRef} />
-     <ul className="grid gap-1.5">
-      <li>
-       <Typography as="span" variant="bodySmall" tone="secondary">
-        {t("empty.tip1")}
-       </Typography>
-      </li>
-      <li>
-       <Typography as="span" variant="bodySmall" tone="secondary">
-        {t("empty.tip2")}
-       </Typography>
-      </li>
-      <li>
-       <Typography as="span" variant="bodySmall" tone="secondary">
-        {t("empty.tip3")}
-       </Typography>
-      </li>
-     </ul>
-    </Card>
-   </div>
+     <Card variant="section" padding="lg" className="grid min-w-0 gap-4">
+      <YoutubeLinkForm inputRef={linkInputRef} />
+      <ul className="grid gap-1.5">
+       <li>
+        <Typography as="span" variant="bodySmall" tone="secondary">
+         {t("empty.tip1")}
+        </Typography>
+       </li>
+       <li>
+        <Typography as="span" variant="bodySmall" tone="secondary">
+         {t("empty.tip2")}
+        </Typography>
+       </li>
+       <li>
+        <Typography as="span" variant="bodySmall" tone="secondary">
+         {t("empty.tip3")}
+        </Typography>
+       </li>
+      </ul>
+     </Card>
+    </div>
+   </PageContainer>
   );
  }
 
  if (isTooLong) {
   return (
-   <div className="grid min-w-0 gap-5">
-    <Card variant="section" padding="lg" className="grid min-w-0 gap-4">
-     <div className="flex min-w-0 items-start gap-3">
-      <IconTile tone="warning" size="md">
-       <Clock aria-hidden="true" />
-      </IconTile>
-      <div className="grid min-w-0 gap-1">
-       <Typography as="h1" variant="sectionTitle">
-        {t("tooLong.title")}
-       </Typography>
-       <Typography as="p" variant="bodySmall" tone="secondary" role="alert">
-        {t("tooLong.description", { minutes: tooLongMinutes })}
-       </Typography>
+   <PageContainer>
+    <div className="grid min-w-0 gap-5">
+     <Card variant="section" padding="lg" className="grid min-w-0 gap-4">
+      <div className="flex min-w-0 items-start gap-3">
+       <IconTile tone="warning" size="md">
+        <Clock aria-hidden="true" />
+       </IconTile>
+       <div className="grid min-w-0 gap-1">
+        <Typography as="h1" variant="sectionTitle">
+         {t("tooLong.title")}
+        </Typography>
+        <Typography as="p" variant="bodySmall" tone="secondary" role="alert">
+         {t("tooLong.description", { minutes: tooLongMinutes })}
+        </Typography>
+       </div>
       </div>
-     </div>
-     <YoutubeLinkForm inputRef={linkInputRef} />
-    </Card>
-   </div>
+      <YoutubeLinkForm inputRef={linkInputRef} />
+     </Card>
+    </div>
+   </PageContainer>
   );
  }
 
  return (
-  <div className="grid min-w-0 gap-4">
-   <YoutubeLinkForm
-    key={`form-${videoId}`}
-    initialValue={`https://www.youtube.com/watch?v=${videoId}`}
-    density="compact"
-    inputRef={linkInputRef}
-   />
+  <div
+   data-page
+   className="flex h-full min-h-0 w-full min-w-0 flex-col gap-2 overflow-hidden px-3 py-2 sm:gap-3 sm:px-4 sm:py-3 lg:px-5"
+  >
+   <div className="hidden shrink-0 lg:block">
+    <YoutubeLinkForm
+     key={`form-${videoId}`}
+     initialValue={`https://www.youtube.com/watch?v=${videoId}`}
+     density="compact"
+     inputRef={linkInputRef}
+    />
+   </div>
 
    <ShadowingActiveSession
     key={videoId}
     videoId={videoId}
+    requestedMode={requestedMode}
     transcriptData={transcriptQuery.data}
     isTranscriptPending={transcriptQuery.isPending}
     isTranscriptError={transcriptQuery.isError}
     transcriptErrorCode={transcriptQuery.error?.name ?? ""}
     onRetryTranscript={() => void transcriptQuery.refetch()}
     onFocusLinkInput={focusLinkInput}
+    onOpenChangeVideoDialog={openChangeVideoDialog}
    />
+
+   <Dialog open={changeVideoOpen} onOpenChange={setChangeVideoOpen}>
+    <DialogContent size="md" scrollMode="content" closeLabel={t("changeVideoDialog.close")}>
+     <DialogHeader>
+      <DialogTitle>{t("changeVideoDialog.title")}</DialogTitle>
+      <DialogDescription>{t("changeVideoDialog.description")}</DialogDescription>
+     </DialogHeader>
+     <DialogBody>
+      <YoutubeLinkForm
+       key={`dialog-form-${videoId}`}
+       initialValue={`https://www.youtube.com/watch?v=${videoId}`}
+       onSubmitted={() => setChangeVideoOpen(false)}
+      />
+     </DialogBody>
+    </DialogContent>
+   </Dialog>
   </div>
  );
 }

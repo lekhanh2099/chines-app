@@ -13,7 +13,7 @@ import { AppLogoMark } from "./AppLogoMark";
 import { GlyphHPlain, GlyphHRoof } from "./brand-glyph";
 import { BrandWordmark } from "./BrandWordmark";
 import { filterNavigationGroupsForContentCapability, navigationItems } from "./navigation-config";
-import { MobileBottomNavigation, Sidebar } from "./Sidebar";
+import { MobileBottomNavigation, shouldBlockActiveNavigation, Sidebar } from "./Sidebar";
 
 vi.mock("next/navigation", () => ({
  useSearchParams: () => currentSearchParams,
@@ -318,6 +318,38 @@ describe("Sidebar translations", () => {
   expect(activeMobileLinks[0]).toContain('href="/skills"');
   currentPathname = "/reader";
   currentSearchParams = new URLSearchParams();
+ });
+
+ it("allows clicking active skillsHub only from an alias route, preserving other prefix routes", () => {
+  expect(
+   shouldBlockActiveNavigation({
+    itemId: "skillsHub",
+    active: true,
+    pathname: "/shadowing",
+    searchParams: new URLSearchParams(),
+    isPending: false,
+   }),
+  ).toBe(false);
+
+  expect(
+   shouldBlockActiveNavigation({
+    itemId: "notes",
+    active: true,
+    pathname: "/notes/abc",
+    searchParams: new URLSearchParams(),
+    isPending: false,
+   }),
+  ).toBe(true);
+
+  expect(
+   shouldBlockActiveNavigation({
+    itemId: "skillsHub",
+    active: true,
+    pathname: "/skills",
+    searchParams: new URLSearchParams(),
+    isPending: false,
+   }),
+  ).toBe(true);
  });
 
  it.each(["/hsk", "/hsk/grammar"])("preserves the HSK selection on %s", async (pathname) => {

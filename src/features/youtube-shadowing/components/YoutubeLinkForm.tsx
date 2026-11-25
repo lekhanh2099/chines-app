@@ -19,10 +19,12 @@ export function YoutubeLinkForm({
  initialValue = "",
  density = youtubeLinkFormDensitySchema.enum.default,
  inputRef,
+ onSubmitted,
 }: {
  initialValue?: string;
  density?: YoutubeLinkFormDensity;
  inputRef?: Ref<HTMLInputElement>;
+ onSubmitted?: () => void;
 }) {
  const t = useTranslations("YoutubeShadowing");
  const router = useRouter();
@@ -40,6 +42,7 @@ export function YoutubeLinkForm({
   }
 
   setHasError(false);
+  onSubmitted?.();
   router.push(`/shadowing?v=${parsedId}`);
  }
 

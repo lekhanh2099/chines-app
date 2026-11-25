@@ -22,6 +22,8 @@
   "requestingMic": "Requesting mic…",
   "replaySentence": "Replay current sentence",
   "loopSentence": "Loop current sentence",
+  "changeVideo": "Change video",
+  "recordingsButton": "Recordings ({count})",
   "speedLabel": "Speed",
   "speedAria": "Video playback speed",
   "speed05": "0.5×",
@@ -30,6 +32,9 @@
  },
  "status": {
   "recording": "Recording {duration}",
+  "recordedLatest": "Recorded take {number} · {duration}",
+  "playLatest": "Play",
+  "stopLatest": "Stop",
   "tapToPlay": "Tap ▶ on the video to start playback — your microphone is still recording."
  },
  "hints": {
@@ -53,7 +58,14 @@
   "item": "Take {number} · {duration}",
   "itemWithSentence": "Take {number} · {duration} · from line {sentence}",
   "audioAria": "Play back recording take {number}",
-  "deleteAria": "Delete recording take {number}"
+  "deleteAria": "Delete recording take {number}",
+  "dialogTitle": "Session recordings",
+  "dialogClose": "Close"
+ },
+ "changeVideoDialog": {
+  "title": "Switch YouTube video",
+  "description": "Paste another Chinese YouTube video link (≤ 30 min).",
+  "close": "Close"
  },
  "script": {
   "displayModeAria": "Script display mode",
@@ -93,5 +105,23 @@
   "cancel": "Cancel",
   "apply": "Use script",
   "close": "Close"
+ },
+ "dictationMode": {
+  "switchAria": "Practice mode",
+  "tabShadowing": "Shadowing",
+  "tabDictation": "Dictation",
+  "untimedDisabledHint": "Dictation requires a timed script so each sentence can be played individually.",
+  "sentenceCounter": "Line {current} / {total}",
+  "sessionSummary": "Done {attempted} · Avg {average}%",
+  "listenSentence": "Play line",
+  "previousSentence": "Previous line",
+  "nextSentence": "Next line",
+  "inputPlaceholder": "Type the Chinese characters you hear…",
+  "inputAria": "Type Chinese dictation answer for the current line",
+  "check": "Check",
+  "retry": "Try again",
+  "resultLabel": "Character diff",
+  "answerLabel": "Answer:",
+  "lastSentenceSummary": "Last line reached · Completed {attempted} / {total} lines · Avg {average}%."
  }
 }

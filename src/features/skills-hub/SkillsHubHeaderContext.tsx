@@ -15,8 +15,10 @@ import { Button } from "@/components/ui/actions/button";
 import {
  DropdownMenu,
  DropdownMenuContent,
+ DropdownMenuItem,
  DropdownMenuRadioGroup,
  DropdownMenuRadioItem,
+ DropdownMenuSeparator,
  DropdownMenuTrigger,
 } from "@/components/ui/overlays/dropdown-menu";
 import { useRouter } from "@/i18n/navigation";
@@ -39,12 +41,12 @@ export function SkillsHubHeaderContext({ sectionId }: { sectionId?: SkillsHubSec
 
   const content = currentSection ? (
    <AppHeaderBreadcrumb aria-label={t("header.breadcrumbAria")} className="min-w-0 max-w-full">
-    <AppHeaderBreadcrumbItem className="shrink-0">
+    <AppHeaderBreadcrumbItem className="hidden shrink-0 sm:inline-flex">
      <AppHeaderBreadcrumbLink href="/skills" className="shrink-0">
       {hubLabel}
      </AppHeaderBreadcrumbLink>
     </AppHeaderBreadcrumbItem>
-    <AppHeaderBreadcrumbSeparator />
+    <AppHeaderBreadcrumbSeparator className="hidden sm:inline-flex" />
     <AppHeaderBreadcrumbItem className="min-w-0">
      <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -60,6 +62,10 @@ export function SkillsHubHeaderContext({ sectionId }: { sectionId?: SkillsHubSec
        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" width="md">
+       <DropdownMenuItem className="sm:hidden" onSelect={() => router.push("/skills")}>
+        <span className="truncate">{hubLabel}</span>
+       </DropdownMenuItem>
+       <DropdownMenuSeparator className="sm:hidden" />
        <DropdownMenuRadioGroup
         value={currentSection.id}
         onValueChange={(nextId) => {

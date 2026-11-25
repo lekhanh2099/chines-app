@@ -39,6 +39,7 @@ export function useShadowingSession({
  const recorder = useShadowingRecorder();
  const [isShadowing, setIsShadowing] = useState(false);
  const [tapHintElapsed, setTapHintElapsed] = useState(false);
+ const [hasPlayedSinceStart, setHasPlayedSinceStart] = useState(false);
  const [recordings, setRecordings] = useState<ShadowingRecordingItem[]>([]);
 
  const tapHintTimerRef = useRef<number>(undefined);
@@ -52,7 +53,12 @@ export function useShadowingSession({
 
  useEffect(() => {
   isPlayingRef.current = player.isPlaying;
- }, [player.isPlaying]);
+  if (isShadowing && player.isPlaying) {
+   queueMicrotask(() => {
+    setHasPlayedSinceStart(true);
+   });
+  }
+ }, [isShadowing, player.isPlaying]);
 
  useEffect(() => {
   isShadowingRef.current = isShadowing;
@@ -74,11 +80,13 @@ export function useShadowingSession({
   recorder.stop();
   setIsShadowing(false);
   setTapHintElapsed(false);
+  setHasPlayedSinceStart(false);
  }, [clearTapHintTimer, player, recorder]);
 
  const startShadowing = useCallback(async () => {
   clearTapHintTimer();
   setTapHintElapsed(false);
+  setHasPlayedSinceStart(false);
   recorder.clear();
 
   const started = await recorder.start();
@@ -158,7 +166,7 @@ export function useShadowingSession({
 
  const isHydrated = useSyncExternalStore(subscribeNoop, getClientHydrated, getServerHydrated);
  const isRecorderSupported = isHydrated ? recorder.isSupported : true;
- const needsTapToPlay = isShadowing && tapHintElapsed && !player.isPlaying;
+ const needsTapToPlay = isShadowing && tapHintElapsed && !hasPlayedSinceStart;
  const recorderErrorCode = !isHydrated
   ? ""
   : recorder.error === "permission-denied"
