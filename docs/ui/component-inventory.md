@@ -62,6 +62,7 @@ proven outside the feature.
 | `header-toolbar-store.ts`    | ReactNode slot registration for route/feature Header context; owner-safe cleanup |
 | `global-search-store.ts`     | search open/query interaction state only; no search result/domain data           |
 | `focus-mode-store.ts`        | cross-route focus preference                                                     |
+| `reading-focus-store.ts`     | textbook reading focus choice and the mounted workspace that may hide navigation |
 | `dictionary-lookup-store.ts` | route-scoped lookup preference                                                   |
 
 Shared stores must not become a back door for copying TanStack Query/server data

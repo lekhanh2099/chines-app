@@ -378,6 +378,12 @@ reveal and visibility controls; Listening contains playback, rate, repeat and
 voice/offline settings for the current lesson. General contains theme, lookup
 and global focus mode. Font choices preview the actual Hanzi font.
 
+Display also owns textbook reading focus. It applies to every lesson tab, stays
+on across tab and lesson changes, hides Sidebar, bottom navigation and the section
+outline, and centers the content. Header Gear stays visible to turn it off; Escape
+also leaves it when no overlay or editor has the key. Navigation returns whenever
+no textbook workspace is mounted. Global focus mode (route lock) is separate.
+
 Use Switch for settings-page and tabbed quick-settings boolean rows. Use menu
 checkbox/radio items inside action menus.
 

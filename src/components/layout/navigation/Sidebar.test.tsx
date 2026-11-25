@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 import { ThemeProvider } from "@/components/layout/theme/ThemeProvider";
+import { readingFocusStore } from "@/stores/shell/reading-focus-store";
 import { sidebarStore } from "@/stores/shell/sidebar-store";
 
 import { AppLogoMark } from "./AppLogoMark";
@@ -363,5 +364,36 @@ describe("HanziHome brand", () => {
   expect(roof).toContain('class="brand-roof"');
   expect(plain).toContain('width="8.5"');
   expect(roof).toContain('stroke-width="6.5"');
+ });
+});
+
+describe("reading focus", () => {
+ afterEach(() => {
+  readingFocusStore.actions.setEnabled(false);
+  readingFocusStore.actions.release("lesson");
+ });
+
+ it("hides shell navigation only while a lesson workspace owns reading focus", async () => {
+  const messages = await loadAppMessages("vi");
+  const render = () =>
+   renderToStaticMarkup(
+    <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+     <ThemeProvider>
+      <Sidebar canManageContent />
+      <MobileBottomNavigation canManageContent />
+     </ThemeProvider>
+    </NextIntlClientProvider>,
+   );
+
+  readingFocusStore.actions.setEnabled(true);
+  expect(render()).toContain("nova-shell-sidebar");
+
+  readingFocusStore.actions.claim("lesson");
+  const focused = render();
+  expect(focused).not.toContain("nova-shell-sidebar");
+  expect(focused).not.toContain(messages.Shell.navigation.aria.quick);
+
+  readingFocusStore.actions.release("lesson");
+  expect(render()).toContain("nova-shell-sidebar");
  });
 });

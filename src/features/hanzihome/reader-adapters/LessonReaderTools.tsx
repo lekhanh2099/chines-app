@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
+import { useSelector } from "@tanstack/react-store";
 
 import { Button } from "@/components/ui/actions/button";
 import {
@@ -31,6 +32,7 @@ import { BasePopover } from "@/components/ui/overlays/base-popover";
 import { OfflineAudioSettingsDialog } from "@/features/speech/OfflineAudioSettingsDialog";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import { headerToolbarStore } from "@/stores/shell/header-toolbar-store";
+import { readingFocusStore } from "@/stores/shell/reading-focus-store";
 import { Switch } from "@/components/ui/forms/switch";
 import {
  Select,
@@ -234,7 +236,7 @@ export function LessonReaderHeaderSettings({
  const { actions } = useReaderStore();
  const loopCurrent = useReaderSelector((state) => state.playback.loopCurrent);
  const autoAdvance = useReaderSelector((state) => state.playback.autoAdvance);
- const focusMode = useReaderSelector((state) => state.ui.focusMode);
+ const focusMode = useSelector(readingFocusStore, (state) => state.enabled);
  const rate = useReaderSelector((state) => state.playback.rate);
  const playbackStatus = useReaderSelector((state) => state.playback.status);
  const segmentCount = useReaderSelector((state) => state.content.segmentIds.length);
@@ -355,7 +357,7 @@ export function LessonReaderHeaderSettings({
       <Switch
        checked={focusMode}
        aria-label={t("focus")}
-       onCheckedChange={() => actions.toggleFocus()}
+       onCheckedChange={readingFocusStore.actions.setEnabled}
       />
      </label>
     </div>

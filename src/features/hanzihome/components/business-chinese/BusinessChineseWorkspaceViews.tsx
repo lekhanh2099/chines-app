@@ -7,6 +7,7 @@ import { LessonDictationWorkspace } from "@/features/hanzihome/practice/LessonDi
 import { LessonTranslationWorkspace } from "@/features/hanzihome/practice/LessonTranslationWorkspace";
 import type { TextbookLesson } from "@/features/hanzihome/static-json/textbook-catalog";
 import type { ReaderDocumentModel } from "@/features/reader/model/reader-document.types";
+import { cn } from "@/lib/utils";
 import { BusinessChineseOverviewCard } from "./BusinessChineseOverviewCard";
 import {
  BusinessChineseReviewView,
@@ -50,6 +51,7 @@ export function BusinessChineseWorkspaceViews({
  onSelectSection,
  showDesktopSectionNavigation,
  showGrammarNavigation,
+ focusMode,
  isInteractivePracticeOpen,
  onInteractivePracticeOpenChange,
 }: {
@@ -73,6 +75,7 @@ export function BusinessChineseWorkspaceViews({
  onSelectSection: (sectionId: string) => void;
  showDesktopSectionNavigation: boolean;
  showGrammarNavigation: boolean;
+ focusMode: boolean;
  isInteractivePracticeOpen: boolean;
  onInteractivePracticeOpenChange: Dispatch<SetStateAction<boolean>>;
 }) {
@@ -81,7 +84,7 @@ export function BusinessChineseWorkspaceViews({
  const { isPipOpen, isInAppFloatingOpen, pipMode, handleTogglePip } = pip;
 
  return (
-  <div className="grid min-w-0 gap-3 pb-4">
+  <div className={cn("grid min-w-0 gap-3 pb-4", focusMode && "mx-auto w-full max-w-5xl")}>
    {annotationError || annotationsError ? (
     <Typography variant="bodySmall" tone="danger" role="alert">
      {annotationError || annotationsError?.message}
